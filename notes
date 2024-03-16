@@ -13,3 +13,6 @@ class = 1 for sect (normal), 2 for sect secret enchantment, 3 for side job, 4 fo
 - phase 1=me, 2=fo, 3=vi, 4=im, 5=in, 6=di
 - cards within a [class][sect/job][phase] are sorted alphabetically to generate the mapping from id to card. the first card has id "01".
 - upgrade level is 1,2, or 3, all other values are disallowed.
+
+divine brush can roll secret enchantment cards. including divine ones.
+divine brush does not get locked out when it copies a continuous card
