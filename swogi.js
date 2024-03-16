@@ -138,7 +138,7 @@ class GameState {
         const prev_triggering_idx = this.players[0].currently_triggering_card_idx;
         var card = swogi[card_id];
         this.players[0].currently_triggering_card_idx = idx;
-        this.players[0].this_card_sword_intent = this.players[0].sword_intent;
+        this.players[0].this_card_sword_intent = 0;
         this.players[0].this_card_injured = false;
         this.players[0].bonus_atk_amt = 0;
         this.players[0].bonus_rep_amt = 0;
@@ -184,6 +184,10 @@ class GameState {
     }
     can_play_a_card() {
         return this.players[0].next_card_index < this.players[0].cards.length && this.players[0].can_play[this.players[0].next_card_index];
+    }
+    gain_qi_to_afford_card() {
+        // TODO: wu ce's immortal fate
+        this.qi(1);
     }
     sim_turn() {
         this.players[0].chases = 0;
@@ -245,8 +249,8 @@ class GameState {
                 qi_cost = Math.max(0, qi_cost - this.players[0][x]);
             }
             if (this.players[0].qi < qi_cost) {
-                this.qi(1);
-                this.log("player 0 gained 1 qi instead of playing " + card.name + ". They now have " + this.players[0].qi + "/" + card.qi_cost + " qi");
+                this.gain_qi_to_afford_card();
+                this.log("player 0 gained qi instead of playing " + card.name + ". They now have " + this.players[0].qi + "/" + qi_cost + " qi");
             } else {
                 if (qi_cost > 0 || base_qi_cost > 0) {
                     this.players[0].qi -= qi_cost;
@@ -296,11 +300,10 @@ class GameState {
             dmg += this.players[0].bonus_atk_amt;
             this.log("gained " + this.players[0].bonus_atk_amt + " bonus atk. Now attacking for " + dmg + " damage");
         }
-        if (!this.players[0].this_card_attacked) {
-            if (this.players[0].this_card_sword_intent > 0) {
-                this.log("losing " + this.players[0].sword_intent + " sword intent");
-                this.players[0].sword_intent = 0;
-            }
+        if (this.players[0].sword_intent > 0) {
+            this.log("consuming " + this.players[0].sword_intent + " sword intent");
+            this.players[0].this_card_sword_intent += this.players[0].sword_intent;
+            this.players[0].sword_intent = 0;
         }
         this.players[0].this_card_attacked = true;
         this.players[0].this_turn_attacked = true;
