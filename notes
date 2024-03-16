@@ -1,0 +1,15 @@
+card id is:
+[class][sect/job][phase][2 digit id][upgrade level]
+class = 1 for sect (normal), 2 for sect secret enchantment, 3 for side job, 4 for talisman, 5 for pet, 6 for character-specific
+"sect/job" really refers to the marking behind the card text. There are more than 10 but we're using only 1 digit using the following scheme:
+- 0 means "no marking" unless class is 4,5
+- if class is 1,2, sect/job means sect
+	- sects are 1=sw, 2=he, 3=fe, 4=dx
+- if class is 3, sect/job means job
+	- jobs are 1=el, 2=fu, 3=mu, 4=pa, 5=fo, 6=pl
+- if class is 4, the marking is always "talisman" and sect/job is always 0
+- if class is 5, the marking is always "pet" and sect/job is always 0
+- if class is 6, the marking is always "no marking" and sect/job is always 0
+- phase 1=me, 2=fo, 3=vi, 4=im, 5=in, 6=di
+- cards within a [class][sect/job][phase] are sorted alphabetically to generate the mapping from id to card. the first card has id "01".
+- upgrade level is 1,2, or 3, all other values are disallowed.
