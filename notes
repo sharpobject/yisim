@@ -16,3 +16,7 @@ class = 1 for sect (normal), 2 for sect secret enchantment, 3 for side job, 4 fo
 
 divine brush can roll secret enchantment cards. including divine ones.
 divine brush does not get locked out when it copies a continuous card
+emptiness sword formation triggers from itself being played
+emptiness sword formation triggers only 1 time when you play chain sword formation, it doesn't seem to care about the inner sword formation card that was triggered
+	what if you use echo formation to copy a sword formation card?
+chain sword formation can let u trigger emptiness agian, adding 7 more stacks (duh)

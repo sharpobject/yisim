@@ -470,13 +470,13 @@
 	},
 	"115011": {
 		"name": "Cloud Sword - Dragon Roam",
-		"actions": [["rep", 2, ["atk", 2]], ["cloud_hit", ["def", 3]], ["injured", ["chase"]]]
+		"actions": [["rep", 2, [["atk", 2], ["injured", ["chase"]]]], ["cloud_hit", ["def", 3]]]
 	},
 	"115012": {
-		"actions": [["rep", 3, ["atk", 2]], ["cloud_hit", ["def", 5]], ["injured", ["chase"]]]
+		"actions": [["rep", 3, [["atk", 2], ["injured", ["chase"]]]], ["cloud_hit", ["def", 5]]]
 	},
 	"115013": {
-		"actions": [["rep", 4, ["atk", 2]], ["cloud_hit", ["def", 7]], ["injured", ["chase"]]]
+		"actions": [["rep", 4, [["atk", 2], ["injured", ["chase"]]]], ["cloud_hit", ["def", 7]]]
 	},
 	"115021": {
 		"name": "Cloud Sword - Step Lightly",
@@ -490,13 +490,13 @@
 	},
 	"115031": {
 		"name": "Flying Spirit Shade Sword",
-		"actions": [["rep", 4, [["atk", 1], ["injured", ["qi", 1]], ["reset_injured"]]]]
+		"actions": [["rep", 4, [["atk", 1], ["injured", ["qi", 1]]]]]
 	},
 	"115032": {
-		"actions": [["rep", 5, [["atk", 1], ["injured", ["qi", 1]], ["reset_injured"]]]]
+		"actions": [["rep", 5, [["atk", 1], ["injured", ["qi", 1]]]]]
 	},
 	"115033": {
-		"actions": [["rep", 6, [["atk", 1], ["injured", ["qi", 1]], ["reset_injured"]]]]
+		"actions": [["rep", 6, [["atk", 1], ["injured", ["qi", 1]]]]]
 	},
 	"115041": {
 		"name": "Dharma Spirit Sword",

@@ -54,7 +54,7 @@ class Player {
         this.sword_intent = 0; // the amount of sword intent we currently have in some sense
         this.this_card_attacked = false; // whether the player has attacked with this card
         this.this_turn_attacked = false; // whether the player has attacked this turn
-        this.this_card_injured = false; // whether the enemy hp has been injured by this card's atk
+        this.this_atk_injured = false; // whether the enemy hp has been injured by this atk
         this.ignore_def = 0;
         this.guard_up = 0;
         this.def_decay = 50; // the normal rate of def decay is 50%
@@ -64,6 +64,12 @@ class Player {
         this.unrestrained_sword_count = 0;
         this.cloud_sword_softheart_stacks = 0;
         this.next_turn_def = 0;
+        // for situations where multiple chases are allowed (Loong),
+        // I'm not sure whether a single card chasing two times works the same as two cards chasing once.
+        // So cards record their chases in `this_card_chases`, and then we can change how we apply that to
+        // `chases` later. Also, what's the interaction of 2 chase on 1 card with entangle?
+        // we can check irl i guess...
+        this.this_card_chases = 0;
         this.chases = 0;
         this.max_chases = 1;
         this.currently_playing_card_idx = undefined;
@@ -90,6 +96,9 @@ class GameState {
         this.players[0] = new Player();
         this.players[1] = new Player();
         this.output = [];
+    }
+    dump() {
+        console.log(this.output.join("\n"));
     }
     log(str) {
         this.output.push(this.indentation + str);
@@ -139,13 +148,14 @@ class GameState {
         var card = swogi[card_id];
         this.players[0].currently_triggering_card_idx = idx;
         this.players[0].this_card_sword_intent = 0;
-        this.players[0].this_card_injured = false;
+        this.players[0].this_atk_injured = false;
         this.players[0].bonus_atk_amt = 0;
         this.players[0].bonus_rep_amt = 0;
         this.do_action(card.actions);
         this.players[0].currently_triggering_card_idx = prev_triggering_idx;
     }
     play_card(card_id, idx) {
+        this.players[0].this_card_chases = 0;
         this.players[0].currently_playing_card_idx = idx;
 
         // if this card has "Cloud Sword" in the name, gain hp for each cloud_sword_softheart_stacks
@@ -167,6 +177,12 @@ class GameState {
                 this.players[0].cloud_sword_chain_count = 0;
                 this.log("reset cloud_sword_chain_count to 0");
             }
+        }
+        // if we chased 1 or more times during this card, let's regard that as 1 chase for now...
+        if (this.players[0].this_card_chases > 0) {
+            // TODO: entangle, predicament, etc.
+            this.players[0].chases += 1;
+            this.log("incremented chases to " + this.players[0].chases);
         }
         this.players[0].currently_playing_card_idx = undefined;
         this.players[0].this_card_attacked = false;
@@ -224,7 +240,7 @@ class GameState {
         this.players[0].next_turn_def = 0;
         // 
         var action_idx = 0;
-        while (action_idx <= this.players[0].chases && action_idx < this.players[0].max_chases) {
+        while (action_idx <= this.players[0].chases && action_idx <= this.players[0].max_chases) {
             if (action_idx > 0) {
                 this.log("chase!!");
             }
@@ -289,12 +305,13 @@ class GameState {
         if (is_atk) {
             this.players[0].damage_dealt_to_hp_by_atk = damage_actually_dealt_to_hp;
             if (damage_actually_dealt_to_hp > 0) {
-                this.players[0].this_card_injured = true;
+                this.players[0].this_atk_injured = true;
             }
         }
         this.log("dealt " + damage_to_def + " damage to def and " + damage_to_hp + " damage to hp");
     }
     atk(dmg) {
+        this.players[0].this_atk_injured = false;
         // if this is the first ask of a card, exhaust sword intent
         if (this.players[0].bonus_atk_amt > 0) {
             dmg += this.players[0].bonus_atk_amt;
@@ -322,11 +339,11 @@ class GameState {
         }
     }
     injured(arr) {
-        // injured means "if the atk so far have dealt damage to the enemy hp, do an action"
-        if (this.players[0].this_card_injured) {
+        // injured means "if the immediately preceding atk has done damage to the enemy hp, do an action"
+        if (this.players[0].this_atk_injured) {
             this.do_action(arr);
         } else {
-            this.log("no injured because the atk so far have not dealt damage to the enemy hp");
+            this.log("no injured because the most recent atk has not dealt damage to the enemy hp");
         }
     }
     def(amt) {
@@ -415,7 +432,7 @@ class GameState {
         this.log("gained " + amt + " next turn def. Now have " + this.players[0].next_turn_def + " next turn def");
     }
     chase() {
-        this.players[0].chases += 1;
+        this.players[0].this_card_chases += 1;
     }
     reduce_enemy_x_by_c(x, c) {
         if (typeof this.players[1][x] !== "number") {
@@ -447,9 +464,6 @@ class GameState {
         var amt_to_add = Math.min(c, this.players[0][x]);
         this.add_c_of_x(amt_to_add, y);
     }
-    reset_injured() {
-        this.players[0].this_card_injured = false;
-    }
     retrigger_previous_sword_formation() {
         const my_idx = this.players[0].currently_triggering_card_idx;
         var idx = my_idx - 1;
@@ -470,10 +484,10 @@ if (fuzz) {
     for (var i=0;; i++) {
         // now generate a random deck of 8 cards from among these keys
         var decks = [[],[]];
-        for (var j=1; j<2; j++) {
-            for (var j=0; j<8; j++) {
+        for (var j=0; j<2; j++) {
+            for (var k=0; k<8; k++) {
                 var index = Math.floor(Math.random() * keys.length);
-                decks.push(keys[index]);
+                decks[j].push(keys[index]);
             }
         }
         var game = new GameState();
