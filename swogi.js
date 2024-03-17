@@ -52,20 +52,22 @@ class Player {
         this.next_card_index = 0;
         this.cards = [];
         this.can_play = []; // used for consumption/continuous cards
+        this.destiny = 100;
+        this.cultivation = 70;
+        this.speed = 0;
         this.qi = 0;
-        this.hp = 42;
-        this.max_hp = 42;
+        this.hp = 100;
+        this.max_hp = 100;
         this.def = 0;
         this.this_card_attacked = false; // whether the player has attacked with this card
         this.this_turn_attacked = false; // whether the player has attacked this turn
         this.this_atk_injured = false; // whether the enemy hp has been injured by this atk
+        this.damage_dealt_to_hp_by_atk = 0; // for stuff that keys off how much damage went through to hp
         this.ignore_def = 0;
         this.guard_up = 0;
-        this.def_decay = 50; // the normal rate of def decay is 50%
         this.bonus_atk_amt = 0; // card-specific bonus atk
         this.bonus_dmg_amt = 0; // card-specific bonus dmg
         this.bonus_rep_amt = 0; // card-specific bonus rep
-        this.damage_dealt_to_hp_by_atk = 0; // for stuff that keys off how much damage went through to hp
         this.next_turn_def = 0;
         // for situations where multiple chases are allowed (Loong),
         // I'm not sure whether a single card chasing two times works the same as two cards chasing once.
