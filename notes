@@ -17,6 +17,22 @@ class = 1 for sect (normal), 2 for sect secret enchantment, 3 for side job, 4 fo
 divine brush can roll secret enchantment cards. including divine ones.
 divine brush does not get locked out when it copies a continuous card
 emptiness sword formation triggers from itself being played
+emptiness sword formation does not trigger when you play it using divine brush
+speculation: emptiness sword formation does not trigger when you play it using echo formation
 emptiness sword formation triggers only 1 time when you play chain sword formation, it doesn't seem to care about the inner sword formation card that was triggered
 	what if you use echo formation to copy a sword formation card?
+		you won't get any attacks from emptiness if you are only playing sword formation cards via divine brush
+		so presumably it is the same for echo formation
 chain sword formation can let u trigger emptiness agian, adding 7 more stacks (duh)
+
+If you play sword slash and you have an extra attack at the end from endless sword formation, the extra attack at the end will consume the sword intent, and you will be left with 0.
+If have sword intent and you play flying fang sword, and you have an extra attack at the end from endless sword formation, the extra attack at the end will NOT consume the sword intent.
+
+unlike emptiness sword formation, zero and softheart will trigger from cards that are triggered by other cards (e.g. divine brush triggering an unrestrained sword - one, or divine brush triggering a cloud sword - touch sky)
+TODO: ensure that this rules engine actually has the above-mentioned behavior.
+
+speculation: zero does not trigger if an "unrestrained sword: divine brush" (enabled by unrestrained_sword_clear_heart_stacks) triggers some other non-US attack.
+
+some cards like tremolo and cloud sword - cat paw say "this card's attacks ignore def".
+if you already have some ignore_def, and you play cat paw, then cat paw's attacks do not consume the ignore_def.
+if you also have an extra attack added to the end of cat paw (e.g. by endless sword formation) then that attack is a normal, non-def-ignoring attack. so it will consume a stack of ignore_def if you have any.

@@ -544,12 +544,112 @@
 	},
 	"115081": {
 		"name": "Unrestrained Sword - Zero",
-		"actions": [["continuous"], ["add_c_of_x", 3, "unrestrained_sword_zero_stacks"]]
+		"actions": [["continuous"], ["add_c_of_x", 30, "unrestrained_sword_zero_stacks"]]
 	},
 	"115082": {
-		"actions": [["continuous"], ["add_c_of_x", 5, "unrestrained_sword_zero_stacks"]]
+		"actions": [["continuous"], ["add_c_of_x", 50, "unrestrained_sword_zero_stacks"]]
 	},
 	"115083": {
-		"actions": [["continuous"], ["add_c_of_x", 7, "unrestrained_sword_zero_stacks"]]
+		"actions": [["continuous"], ["add_c_of_x", 70, "unrestrained_sword_zero_stacks"]]
+	},
+	"311011": {
+		"name": "Earth Spirit Elixir",
+		"actions": [["def", 11], ["consumption"]]
+	},
+	"311012": {
+		"actions": [["def", 16], ["consumption"]]
+	},
+	"311013": {
+		"actions": [["def", 21], ["consumption"]]
+	},
+	"311021": {
+		"name": "Fundamental Elixir",
+		"actions": [["qi", 2], ["def", 3], ["consumption"]]
+	},
+	"311022": {
+		"actions": [["qi", 3], ["def", 5], ["consumption"]]
+	},
+	"311023": {
+		"actions": [["qi", 4], ["def", 7], ["consumption"]]
+	},
+	"311031": {
+		"name": "Small Recover Elixir",
+		"actions": [["heal", 8], ["consumption"]]
+	},
+	"311032": {
+		"actions": [["heal", 12], ["consumption"]]
+	},
+	"311033": {
+		"actions": [["heal", 16], ["consumption"]]
+	},
+	"312011": {
+		"name": "Cloud Elixir",
+		"actions": [["qi", 2], ["gain_ignore_def", 2], ["consumption"]]
+	},
+	"312012": {
+		"actions": [["qi", 3], ["gain_ignore_def", 3], ["consumption"]]
+	},
+	"312013": {
+		"actions": [["qi", 4], ["gain_ignore_def", 4], ["consumption"]]
+	},
+	"312021": {
+		"name": "Exorcism Elixir",
+		"actions": [["def", 8], ["reduce_random_debuff_by_c_n_times", 3, 2], ["consumption"]]
+	},
+	"312022": {
+		"actions": [["def", 12], ["reduce_random_debuff_by_c_n_times", 3, 3], ["consumption"]]
+	},
+	"312023": {
+		"actions": [["def", 16], ["reduce_random_debuff_by_c_n_times", 3, 4], ["consumption"]]
+	},
+	"313011": {
+		"name": "Healing Elixir",
+		"actions": [["heal", 7], ["for_each_x_add_c_y", "qi", 2, "hp"], ["consumption"]]
+	},
+	"313012": {
+		"actions": [["heal", 12], ["for_each_x_add_c_y", "qi", 2, "hp"], ["consumption"]]
+	},
+	"313013": {
+		"actions": [["heal", 17], ["for_each_x_add_c_y", "qi", 2, "hp"], ["consumption"]]
+	},
+	"313021": {
+		"name": "Divine Power Elixir",
+		"actions": [["add_c_of_x", 1, "increase_atk"], ["consumption"]]
+	},
+	"313022": {
+		"actions": [["add_c_of_x", 2, "increase_atk"], ["consumption"]]
+	},
+	"313023": {
+		"actions": [["add_c_of_x", 3, "increase_atk"], ["consumption"]]
+	},
+	"314011": {
+		"name": "Great Recover Elixir",
+		"actions": [["add_c_of_x", 13, "max_hp"], ["heal", 13], ["consumption"]]
+	},
+	"314012": {
+		"actions": [["add_c_of_x", 19, "max_hp"], ["heal", 19], ["consumption"]]
+	},
+	"314013": {
+		"actions": [["add_c_of_x", 25, "max_hp"], ["heal", 25], ["consumption"]]
+	},
+	"314021": {
+		"name": "Spiritage Elixir",
+		"actions": [["qi", 4], ["consumption"]]
+	},
+	"314022": {
+		"actions": [["qi", 6], ["consumption"]]
+	},
+	"314023": {
+		"actions": [["qi", 8], ["consumption"]]
+	},
+	"315011": {
+		"name": "Ice Spirit Guard Elixir",
+		"actions": [["add_c_of_x", 2, "guard_up"], ["consumption"]]
+	},
+	"315012": {
+		"actions": [["add_c_of_x", 3, "guard_up"], ["consumption"]]
+	},
+	"315013": {
+		"actions": [["add_c_of_x", 4, "guard_up"], ["consumption"]]
 	}
 }
