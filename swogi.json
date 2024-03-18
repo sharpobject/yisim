@@ -218,13 +218,13 @@
 	"112091": {
 		"name": "Earth Evil Sword",
 		"qi_cost": 1,
-		"actions": [["atk", 8], ["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "def"]]
+		"actions": [["atk", 8], ["injured", ["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "def"]]]
 	},
 	"112092": {
-		"actions": [["atk", 11], ["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "def"]]
+		"actions": [["atk", 11], ["injured", ["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "def"]]]
 	},
 	"112093": {
-		"actions": [["atk", 14], ["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "def"]]
+		"actions": [["atk", 14], ["injured", ["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "def"]]]
 	},
 	"112101": {
 		"name": "Form-Intention Sword",
@@ -480,13 +480,25 @@
 	},
 	"115021": {
 		"name": "Cloud Sword - Step Lightly",
-		"actions": [["rep", 2, ["atk", 3]], ["def", 3], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 3, "def"]]]
+		"actions": [
+			["rep", 2, ["atk", 3]],
+			["def", 3],
+			["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 3, "def"]]
+		]
 	},
 	"115022": {
-		"actions": [["rep", 3, ["atk", 3]], ["def", 4], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 4, "def"]]]
+		"actions": [
+			["rep", 3, ["atk", 3]],
+			["def", 4],
+			["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 4, "def"]]
+		]
 	},
 	"115023": {
-		"actions": [["rep", 4, ["atk", 3]], ["def", 5], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 5, "def"]]]
+		"actions": [
+			["rep", 4, ["atk", 3]],
+			["def", 5],
+			["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 5, "def"]]
+		]
 	},
 	"115031": {
 		"name": "Flying Spirit Shade Sword",
@@ -551,6 +563,232 @@
 	},
 	"115083": {
 		"actions": [["continuous"], ["add_c_of_x", 70, "unrestrained_sword_zero_stacks"]]
+	},
+	"211011": {
+		"name": "Rhyme Spirit Sword",
+		"actions": [["atk", 4], ["injured", ["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "qi"]]]
+	},
+	"211012": {
+		"actions": [["atk", 5], ["injured", ["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "qi"]]]
+	},
+	"211013": {
+		"actions": [["atk", 6], ["injured", ["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "qi"]]]
+	},
+	"211021": {
+		"name": "Diligent Sword",
+		"actions": [["for_each_x_add_c_pct_y", "cultivation", 20, "bonus_atk_amt"], ["atk", 6]]
+	},
+	"211022": {
+		"actions": [["for_each_x_add_c_pct_y", "cultivation", 25, "bonus_atk_amt"], ["atk", 6]]
+	},
+	"211023": {
+		"actions": [["for_each_x_add_c_pct_y", "cultivation", 33.3334, "bonus_atk_amt"], ["atk", 6]]
+	},
+	"212011": {
+		"name": "Cloud Sword - Dawn",
+		"actions": [["def", 4], ["cloud_hit", ["rep", 3, ["atk", 2]]]]
+	},
+	"212012": {
+		"actions": [["def", 6], ["cloud_hit", ["rep", 3, ["atk", 3]]]]
+	},
+	"212013": {
+		"actions": [["def", 8], ["cloud_hit", ["rep", 3, ["atk", 4]]]]
+	},
+	"212021": {
+		"name": "Giant Ape Spirit Sword",
+		"qi_cost": 2,
+		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
+		"actions": [["atk", 8], ["add_c_of_x", 2, "increase_atk"]]
+	},
+	"212022": {
+		"actions": [["atk", 8], ["add_c_of_x", 3, "increase_atk"]]
+	},
+	"212023": {
+		"actions": [["atk", 8], ["add_c_of_x", 4, "increase_atk"]]
+	},
+	"213011": {
+		"name": "Unrestrained Sword - Dragon Coiled",
+		"actions": [["for_each_x_add_c_y", "unrestrained_sword_count", 6, "bonus_def_amt"], ["def", 6]]
+	},
+	"213012": {
+		"actions": [["for_each_x_add_c_y", "unrestrained_sword_count", 8, "bonus_def_amt"], ["def", 8]]
+	},
+	"213013": {
+		"actions": [["for_each_x_add_c_y", "unrestrained_sword_count", 10, "bonus_def_amt"], ["def", 10]]
+	},
+	"213021": {
+		"name": "One Heart One Sword",
+		"actions": [["add_c_of_x", 3, "bonus_sword_intent_multiplier"], ["ignore_weaken"], ["atk", 6]]
+	},
+	"213022": {
+		"actions": [["add_c_of_x", 4, "bonus_sword_intent_multiplier"], ["ignore_weaken"], ["atk", 6]]
+	},
+	"213023": {
+		"actions": [["add_c_of_x", 5, "bonus_sword_intent_multiplier"], ["ignore_weaken"], ["atk", 6]]
+	},
+	"213031": {
+		"name": "Synergy Sword Formation",
+		"actions": [
+			["for_each_x_add_c_y", "other_sword_formation_deck_count", 3, "bonus_atk_amt"],
+			["for_each_x_add_c_y", "other_sword_formation_deck_count", 3, "bonus_def_amt"],
+			["atk", 4],
+			["def", 4]
+		]
+	},
+	"213032": {
+		"actions": [
+			["for_each_x_add_c_y", "other_sword_formation_deck_count", 4, "bonus_atk_amt"],
+			["for_each_x_add_c_y", "other_sword_formation_deck_count", 4, "bonus_def_amt"],
+			["atk", 4],
+			["def", 4]
+		]
+	},
+	"213033": {
+		"actions": [
+			["for_each_x_add_c_y", "other_sword_formation_deck_count", 5, "bonus_atk_amt"],
+			["for_each_x_add_c_y", "other_sword_formation_deck_count", 5, "bonus_def_amt"],
+			["atk", 4],
+			["def", 4]
+		]
+	},
+	"214011": {
+		"name": "Sword Intent Flow",
+		"actions": [
+			["sword_intent", 2],
+			["add_c_of_x", 1, "sword_intent_flow_stacks"]
+		]
+	},
+	"214012": {
+		"actions": [
+			["sword_intent", 3],
+			["add_c_of_x", 1, "sword_intent_flow_stacks"]
+		]
+	},
+	"214013": {
+		"actions": [
+			["sword_intent", 4],
+			["add_c_of_x", 1, "sword_intent_flow_stacks"]
+		]
+	},
+	"214021": {
+		"name": "Emptiness Sword Formation",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 7, "emptiness_sword_formation_stacks"]
+		]
+	},
+	"214022": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 10, "emptiness_sword_formation_stacks"]
+		]
+	},
+	"214023": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 13, "emptiness_sword_formation_stacks"]
+		]
+	},
+	"215011": {
+		"name": "Apex Sword Citta-Dharma",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "apex_sword_citta_dharma_stacks"]
+		]
+	},
+	"215012": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "apex_sword_citta_dharma_stacks"]
+		]
+	},
+	"215013": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "apex_sword_citta_dharma_stacks"]
+		]
+	},
+	"215021": {
+		"name": "Step Moon Into Cloud",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 1, "step_moon_into_cloud_stacks"]
+		]
+	},
+	"215022": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 1, "step_moon_into_cloud_stacks"],
+			["chase"]
+		]
+	},
+	"215023": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "step_moon_into_cloud_stacks"],
+			["chase"]
+		]
+	},
+	"215031": {
+		"name": "Unrestrained Sword - Twin Dragons",
+		"actions": [
+			["atk", 2],
+			["add_c_of_x", 1, "unrestrained_sword_twin_dragons_stacks"]
+		]
+	},
+	"215032": {
+		"actions": [
+			["atk", 8],
+			["add_c_of_x", 1, "unrestrained_sword_twin_dragons_stacks"]
+		]
+	},
+	"215033": {
+		"actions": [
+			["atk", 14],
+			["add_c_of_x", 1, "unrestrained_sword_twin_dragons_stacks"]
+		]
+	},
+	"216011": {
+		"name": "Remnant Cloud Phocosky Sword",
+		"qi_cost": 1,
+		"actions": [
+			["for_each_x_add_c_y", "cloud_sword_hand_count", 8, "bonus_atk_amt"],
+			["atk", 8]
+		]
+	},
+	"216012": {
+		"actions": [
+			["for_each_x_add_c_y", "cloud_sword_hand_count", 10, "bonus_atk_amt"],
+			["atk", 10]
+		]
+	},
+	"216013": {
+		"actions": [
+			["for_each_x_add_c_y", "cloud_sword_hand_count", 12, "bonus_atk_amt"],
+			["atk", 12]
+		]
+	},
+	"216021": {
+		"name": "Secret Sword - Spirit Cloud",
+		"actions": [
+			["cloud_hit", ["add_c_of_x", 4, "bonus_atk_amt"]],
+			["for_each_x_add_y", "qi", "bonus_rep_amt"],
+			["rep", 1, ["atk", 4]]
+		]
+	},
+	"216022": {
+		"actions": [
+			["cloud_hit", ["add_c_of_x", 6, "bonus_atk_amt"]],
+			["for_each_x_add_y", "qi", "bonus_rep_amt"],
+			["rep", 1, ["atk", 6]]
+		]
+	},
+	"216023": {
+		"actions": [
+			["cloud_hit", ["add_c_of_x", 8, "bonus_atk_amt"]],
+			["for_each_x_add_y", "qi", "bonus_rep_amt"],
+			["rep", 1, ["atk", 8]]
+		]
 	},
 	"311011": {
 		"name": "Earth Spirit Elixir",

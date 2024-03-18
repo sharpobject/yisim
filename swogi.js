@@ -42,6 +42,9 @@ function is_unrestrained_sword(card_id) {
 function is_cloud_sword(card_id) {
     return swogi[card_id].name.includes("Cloud Sword");
 }
+function is_sword_formation(card_id) {
+    return swogi[card_id].name.includes("Sword Formation");
+}
 // simulate 6 turns of the game
 // the way the game works is that each turn, the next card in the deck is played
 // if the player doesn't have enough qi, they spend 1 turn to gain 1 qi
@@ -60,7 +63,11 @@ class Player {
         this.max_hp = 100;
         this.def = 0;
         this.this_card_attacked = false; // whether the player has attacked with this card
+        // TODO: the above is for... nothing?
+        this.this_card_directly_attacked = false; // whether this card attacked, excluding attacks by triggering other cards
+        // TODO: the above is for endless sword formation
         this.this_turn_attacked = false; // whether the player has attacked this turn
+        // TODO: the above is for sword in sheathed
         this.this_atk_injured = false; // whether the enemy hp has been injured by this atk
         this.damage_dealt_to_hp_by_atk = 0; // for stuff that keys off how much damage went through to hp
         this.ignore_def = 0;
@@ -68,6 +75,7 @@ class Player {
         this.bonus_atk_amt = 0; // card-specific bonus atk
         this.bonus_dmg_amt = 0; // card-specific bonus dmg
         this.bonus_rep_amt = 0; // card-specific bonus rep
+        this.bonus_def_amt = 0; // card-specific bonus def
         this.next_turn_def = 0;
         // for situations where multiple chases are allowed (Loong),
         // I'm not sure whether a single card chasing two times works the same as two cards chasing once.
@@ -78,7 +86,7 @@ class Player {
         this.chases = 0;
         this.max_chases = 1;
         this.currently_playing_card_idx = undefined;
-        this.currently_playing_card_id = undefined;
+        //this.currently_playing_card_id = undefined;
         this.currently_triggering_card_idx = undefined;
         this.currently_triggering_card_id = undefined;
         this.trigger_depth = 0; // used to decide whether "continuous" and "consumption" deactivate a card
@@ -91,8 +99,7 @@ class Player {
         this.flaw = 0;
         this.entangle = 0;
         this.wound = 0;
-        // cloud sword sect
-        this.sword_intent_flow_stacks = 0;
+        // cloud sword sect normal cards
         this.sword_intent_flow_mode = false; // whether the current card is in sword intent flow mode
         this.this_card_sword_intent = 0; // the amount of sword intent restored by flying fang sword
         this.sword_intent = 0; // the amount of sword intent we currently have in some sense
@@ -104,17 +111,46 @@ class Player {
         this.spirit_gather_citta_dharma_stacks = 0;
         this.spirit_gather_citta_dharma_odd_gives_qi = true;
         this.unrestrained_sword_zero_stacks = 0;
+        // cloud sword sect secret enchantment cards
+        this.bonus_sword_intent_multiplier = 0;
+        this.ignore_weaken = false;
+        this.sword_formation_deck_count = 0;
+        this.other_sword_formation_deck_count = 0;
+        this.sword_intent_flow_stacks = 0;
+        this.emptiness_sword_formation_stacks = 0;
+        this.apex_sword_citta_dharma_stacks = 0;
+        this.step_moon_into_cloud_stacks = 0;
+        this.unrestrained_sword_twin_dragons_stacks = 0;
+        this.cloud_sword_hand_count = 17;
+        // cloud sword sect character-specific cards
         this.unrestrained_sword_clear_heart_stacks = 0;
         this.cloud_sword_clear_heart_stacks = 0;
-        // 5e sect
+        // heptastar sect normal cards
+        this.strike_twice_stacks = 0;
+        // 5e sect normal cards
         this.metal_spirit_iron_bone_stacks = 0;
         this.water_spirit_dive_stacks = 0;
+        // formation master cards
+        this.endless_sword_formation_stacks = 0;
     }
     reset_can_play() {
         this.can_play = [];
         for (var i=0; i<this.cards.length; i++) {
             this.can_play.push(true);
         }
+    }
+    reset_deck_counts() {
+        for (var i=0; i<this.cards.length; i++) {
+            var card_id = this.cards[i];
+            var card = swogi[card_id];
+            if (is_sword_formation(card_id)) {
+                this.sword_formation_deck_count += 1;
+            }
+        }
+    }
+    post_deck_setup() {
+        this.reset_can_play();
+        this.reset_deck_counts();
     }
 }
 class GameState {
@@ -143,8 +179,8 @@ class GameState {
         this.indentation = this.indentation.substring(2);
     }
     sim_n_turns(n) {
-        this.players[0].reset_can_play();
-        this.players[1].reset_can_play();
+        this.players[0].post_deck_setup();
+        this.players[1].post_deck_setup();
         for (var i=0; i<n; i++) {
             this.log("turn " + i + " begins");
             this.indent();
@@ -183,7 +219,7 @@ class GameState {
     }
     do_unrestrained_sword_count(card_id) {
         // if this card has "Unrestrained Sword" in the name, increment unrestrained_sword_count
-        if (is_unrestrained_sword(card_id) || this.players[0].unrestrained_sword_clear_heart_stacks > 0) {
+        if (is_unrestrained_sword(card_id) || this.is_fake_unrestrained_sword()) {
             this.players[0].unrestrained_sword_count += 1;
             this.log("incremented unrestrained_sword_count to " + this.players[0].unrestrained_sword_count);
         }
@@ -200,6 +236,36 @@ class GameState {
             }
         }
     }
+    do_sword_formation_deck_count(card_id) {
+        this.players[0].other_sword_formation_deck_count = this.players[0].sword_formation_deck_count;
+        if (is_sword_formation(card_id)) {
+            this.players[0].other_sword_formation_deck_count -= 1;
+        }
+    }
+    do_step_moon_into_cloud(card_id) {
+        if (is_cloud_sword(card_id)) {
+            this.for_each_x_add_y("step_moon_into_cloud_stacks", "increase_atk");
+        }
+    }
+    do_emptiness_sword_formation(card_id) {
+        if (this.players[0].trigger_depth > 1) {
+            return;
+        }
+        const atk = this.players[0].emptiness_sword_formation_stacks;
+        if (atk > 0) {
+            if (is_sword_formation(card_id)) {
+                this.log("Attacking for " + atk + " from emptiness sword formation.");
+                this.atk(atk);
+            }
+        }
+    }
+    do_endless_sword_formation() {
+        if (this.players[0].endless_sword_formation_stacks > 0 && this.players[0].this_card_directly_attacked) {
+            this.reduce_idx_x_by_c(0, "endless_sword_formation_stacks", 1);
+            this.log("Attacking for 5 from endless sword formation.");
+            this.atk(5);
+        }
+    }
     trigger_card(card_id, idx) {
         this.indent();
         this.players[0].trigger_depth += 1;
@@ -208,27 +274,36 @@ class GameState {
         const prev_bonus_atk_amt = this.players[0].bonus_atk_amt;
         const prev_bonus_dmg_amt = this.players[0].bonus_dmg_amt;
         const prev_bonus_rep_amt = this.players[0].bonus_rep_amt;
+        const prev_bonus_def_amt = this.players[0].bonus_def_amt;
         var card = swogi[card_id];
         this.players[0].currently_triggering_card_idx = idx;
         this.players[0].currently_triggering_card_id = card_id;
         this.players[0].bonus_atk_amt = 0;
+        this.players[0].bonus_dmg_amt = 0;
         this.players[0].bonus_rep_amt = 0;
+        this.players[0].bonus_def_amt = 0;
         this.do_cloud_sword_softheart(card_id);
         this.do_action(card.actions);
+        this.do_emptiness_sword_formation(card_id);
+        this.do_endless_sword_formation();
+        this.do_step_moon_into_cloud(card_id);
         this.do_unrestrained_sword_count(card_id);
         this.players[0].currently_triggering_card_idx = prev_triggering_idx;
         this.players[0].currently_triggering_card_id = prev_triggering_id;
         this.players[0].bonus_atk_amt = prev_bonus_atk_amt;
         this.players[0].bonus_dmg_amt = prev_bonus_dmg_amt;
         this.players[0].bonus_rep_amt = prev_bonus_rep_amt;
+        this.players[0].bonus_def_amt = prev_bonus_def_amt;
         this.players[0].trigger_depth -= 1;
         this.unindent();
     }
-    play_card(card_id, idx) {
+    play_card_inner(card_id, idx) {
         this.players[0].this_card_attacked = false;
+        this.players[0].this_card_directly_attacked = false;
         this.players[0].sword_intent_flow_mode = false;
         this.players[0].this_card_chases = 0;
-        this.players[0].currently_playing_card_idx = idx;
+        this.players[0].this_card_sword_intent = 0;
+        this.do_sword_formation_deck_count(card_id);
         this.trigger_card(card_id, idx);
         this.do_cloud_sword_chain_count(card_id);
         // if we chased 1 or more times during this card, let's regard that as 1 chase for now...
@@ -238,6 +313,23 @@ class GameState {
             this.log("incremented chases to " + this.players[0].chases);
         }
         this.reduce_idx_x_by_c(0, "unrestrained_sword_clear_heart_stacks", 1);
+    }
+    play_card(card_id, idx) {
+        this.players[0].currently_playing_card_idx = idx;
+        var plays = 1;
+        if (this.players[0].unrestrained_sword_twin_dragons_stacks > 0) {
+            if (is_unrestrained_sword(card_id) || this.is_fake_unrestrained_sword()) {
+                plays += 1;
+                this.reduce_idx_x_by_c(0, "unrestrained_sword_twin_dragons_stacks", 1);
+            }
+        }
+        if (this.players[0].strike_twice_stacks > 0) {
+            plays += 1;
+            this.reduce_idx_x_by_c(0, "strike_twice_stacks", 1);
+        }
+        for (var i=0; i<plays; i++) {
+            this.play_card_inner(card_id, idx);
+        }
         this.players[0].currently_playing_card_idx = undefined;
     }
     advance_next_card_index() {
@@ -271,6 +363,9 @@ class GameState {
             this.qi(qi_gain);
             this.log("gained " + qi_gain + " qi from spirit_gather_citta_dharma_stacks");
         }
+    }
+    do_apex_sword_citta_dharma() {
+        this.for_each_x_add_y("apex_sword_citta_dharma_stacks", "sword_intent");
     }
     do_def_decay() {
         // def lost is is def*def_decay / 100, rounded up
@@ -307,6 +402,7 @@ class GameState {
         this.reduce_idx_x_by_c(0, "metal_spirit_iron_bone_stacks", 1);
         this.reduce_idx_x_by_c(0, "water_spirit_dive_stacks", 1);
         this.do_spirit_gather_citta_dharma();
+        this.do_apex_sword_citta_dharma();
         this.do_next_turn_def();
         this.do_regen();
         this.do_internal_injury();
@@ -337,11 +433,11 @@ class GameState {
             }
             if (this.players[0].qi < qi_cost) {
                 this.gain_qi_to_afford_card();
-                this.log("player 0 gained qi instead of playing " + card.name + ". They now have " + this.players[0].qi + "/" + qi_cost + " qi");
+                this.log("player 0 gained qi instead of playing " + format_card(card_id) + ". They now have " + this.players[0].qi + "/" + qi_cost + " qi");
             } else {
                 if (qi_cost > 0) {
                     this.reduce_idx_x_by_c(0, "qi", qi_cost);
-                    this.log("player 0 spent " + qi_cost + " qi to play " + card.name + ".");
+                    this.log("player 0 spent " + qi_cost + " qi to play " + format_card(card_id));
                 } else {
                     this.log("player 0 is playing " + format_card(card_id));
                 }
@@ -400,6 +496,18 @@ class GameState {
     increase_enemy_hp(amt) {
         return this.increase_idx_hp(1, amt);
     }
+    increase_idx_def(idx, amt) {
+        if (amt < 0) {
+            this.log("error: amt is negative: " + amt);
+            this.crash();
+        }
+        if (amt === 0) {
+            return;
+        }
+        amt += this.players[idx].bonus_def_amt;
+        this.players[idx].def += amt;
+        this.log("gained " + amt + " def. Now have " + this.players[idx].def + " def");
+    }
     increase_idx_x_by_c(idx, x, c) {
         if (typeof this.players[idx][x] !== "number") {
             this.log("error: " + x + " is not a number");
@@ -407,6 +515,9 @@ class GameState {
         }
         if (x === "hp") {
             return this.increase_idx_hp(idx, c);
+        }
+        if (x === "def") {
+            return this.increase_idx_def(idx, c);
         }
         if (c < 0) {
             this.log("error: c is negative: " + c);
@@ -446,6 +557,9 @@ class GameState {
         var pct_multiplier = 100;
         if (is_atk) {
             this.players[0].this_atk_injured = false;
+            if (this.players[0].trigger_depth <= 1) {
+                this.players[0].this_card_directly_attacked = true;
+            }
             this.players[0].this_card_attacked = true;
             this.players[0].this_turn_attacked = true;
             if (!this.players[0].sword_intent_flow_mode && this.players[0].sword_intent_flow_stacks > 0) {
@@ -465,7 +579,7 @@ class GameState {
                 }
             }
             dmg += this.players[0].bonus_atk_amt;
-            dmg += this.players[0].this_card_sword_intent;
+            dmg += this.players[0].this_card_sword_intent * (1 + this.players[0].bonus_sword_intent_multiplier);
             dmg += this.players[0].increase_atk;
             dmg -= this.players[0].decrease_atk;
             dmg += this.players[1].wound;
@@ -475,12 +589,14 @@ class GameState {
             if (this.players[1].water_spirit_dive_stacks > 0) {
                 pct_multiplier -= 40;
             }
-            if (this.players[0].weaken > 0) {
+            if (this.players[0].weaken > 0 && !this.players[0].ignore_weaken) {
                 pct_multiplier -= 40;
             }
             if (this.players[1].flaw > 0) {
                 pct_multiplier += 40;
             }
+            this.players[0].ignore_weaken = false;
+            this.players[0].bonus_sword_intent_multiplier = 0;
         }
         dmg += this.players[0].bonus_dmg_amt;
         dmg = Math.floor(dmg * pct_multiplier / 100);
@@ -501,8 +617,7 @@ class GameState {
             if (damage_actually_dealt_to_hp > 0) {
                 this.players[0].this_atk_injured = true;
                 if (this.players[0].unrestrained_sword_zero_stacks > 0) {
-                    if (is_unrestrained_sword(this.players[0].currently_triggering_card_id) ||
-                            (this.players[0].unrestrained_sword_clear_heart_stacks > 0 && this.players[0].trigger_depth === 1)) {
+                    if (is_unrestrained_sword(this.players[0].currently_triggering_card_id) || this.is_fake_unrestrained_sword()) {
                         var healing_amt = Math.floor(damage_actually_dealt_to_hp * this.players[0].unrestrained_sword_zero_stacks / 100);
                         this.heal(healing_amt);
                     }
@@ -654,6 +769,13 @@ class GameState {
     // both, it's not really random - the order doesn't matter.
     reduce_random_debuff_by_c_n_times(c,n) {
         // TODO: reduce a random debuff by amt
+    }
+    is_fake_unrestrained_sword() {
+        return (this.players[0].unrestrained_sword_clear_heart_stacks > 0 &&
+            this.players[0].trigger_depth <= 1);
+    }
+    ignore_weaken() {
+        this.players[0].ignore_weaken = true;
     }
 }
 var fuzz = true;
