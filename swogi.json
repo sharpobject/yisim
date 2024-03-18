@@ -8,7 +8,7 @@
 			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "agility"],
 			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "bonus_atk_amt"],
 			["rep", 1, ["atk", 3]],
-			["if_x_at_least_c_do", "carefree_guqin_stacks", ["chase"]]
+			["if_x_at_least_c_do", "carefree_guqin_stacks", 1, ["chase"]]
 		]
 	},
 	"101012": {
@@ -19,7 +19,7 @@
 			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "agility"],
 			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "bonus_atk_amt"],
 			["rep", 1, ["atk", 6]],
-			["if_x_at_least_c_do", "carefree_guqin_stacks", ["chase"]]
+			["if_x_at_least_c_do", "carefree_guqin_stacks", 1, ["chase"]]
 		]
 	},
 	"101013": {
@@ -30,7 +30,7 @@
 			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "agility"],
 			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "bonus_atk_amt"],
 			["rep", 1, ["atk", 9]],
-			["if_x_at_least_c_do", "carefree_guqin_stacks", ["chase"]]
+			["if_x_at_least_c_do", "carefree_guqin_stacks", 1, ["chase"]]
 		]
 	},
 	"111011": {
@@ -916,6 +916,857 @@
 	"315013": {
 		"actions": [["add_c_of_x", 4, "guard_up"], ["consumption"]]
 	},
+	"321011": {
+		"name": "Thunder Fulu",
+		"actions": [
+			["deal_damage", ["rand_range", 4, 12]],
+			["consumption"]
+		]
+	},
+	"321012": {
+		"actions": [
+			["deal_damage", ["rand_range", 7, 15]],
+			["consumption"]
+		]
+	},
+	"321013": {
+		"actions": [
+			["deal_damage", ["rand_range", 10, 18]],
+			["consumption"]
+		]
+	},
+	"321021": {
+		"name": "Guard Spirit Fulu",
+		"actions": [
+			["qi", 1],
+			["def", 7],
+			["consumption"]
+		]
+	},
+	"321022": {
+		"actions": [
+			["qi", 1],
+			["def", 11],
+			["consumption"]
+		]
+	},
+	"321023": {
+		"actions": [
+			["qi", 1],
+			["def", 15],
+			["consumption"]
+		]
+	},
+	"321031": {
+		"name": "Sharp Metal Fulu",
+		"actions": [
+			["deal_damage", 8],
+			["consumption"]
+		]
+	},
+	"321032": {
+		"actions": [
+			["deal_damage", 11],
+			["consumption"]
+		]
+	},
+	"321033": {
+		"actions": [
+			["deal_damage", 14],
+			["consumption"]
+		]
+	},
+	"322011": {
+		"name": "Fire Cloud Fulu",
+		"qi_cost": 1,
+		"actions": [
+			["reduce_enemy_c_of_x", 11, "hp"],
+			["reduce_enemy_c_of_x", 11, "max_hp"],
+			["consumption"]
+		]
+	},
+	"322012": {
+		"actions": [
+			["reduce_enemy_c_of_x", 15, "hp"],
+			["reduce_enemy_c_of_x", 15, "max_hp"],
+			["consumption"]
+		]
+	},
+	"322013": {
+		"actions": [
+			["reduce_enemy_c_of_x", 19, "hp"],
+			["reduce_enemy_c_of_x", 19, "max_hp"],
+			["consumption"]
+		]
+	},
+	"322021": {
+		"name": "Calm Incantation",
+		"actions": [
+			["qi", 2],
+			["reduce_c_of_x", 2, "internal_injury"],
+			["reduce_c_of_x", 2, "weaken"],
+			["reduce_c_of_x", 2, "flaw"],
+			["reduce_c_of_x", 2, "decrease_atk"],
+			["reduce_c_of_x", 2, "entangle"],
+			["reduce_c_of_x", 2, "wound"]
+		]
+	},
+	"322022": {
+		"actions": [
+			["qi", 3],
+			["reduce_c_of_x", 3, "internal_injury"],
+			["reduce_c_of_x", 3, "weaken"],
+			["reduce_c_of_x", 3, "flaw"],
+			["reduce_c_of_x", 3, "decrease_atk"],
+			["reduce_c_of_x", 3, "entangle"],
+			["reduce_c_of_x", 3, "wound"]
+		]
+	},
+	"322023": {
+		"actions": [
+			["qi", 4],
+			["reduce_c_of_x", 4, "internal_injury"],
+			["reduce_c_of_x", 4, "weaken"],
+			["reduce_c_of_x", 4, "flaw"],
+			["reduce_c_of_x", 4, "decrease_atk"],
+			["reduce_c_of_x", 4, "entangle"],
+			["reduce_c_of_x", 4, "wound"]
+		]
+	},
+	"322031": {
+		"name": "Mist Fulu",
+		"actions": [
+			["qi", 1],
+			["deal_damage", 6],
+			["consumption"]
+		]
+	},
+	"322032": {
+		"actions": [
+			["qi", 1],
+			["deal_damage", 10],
+			["consumption"]
+		]
+	},
+	"322033": {
+		"actions": [
+			["qi", 1],
+			["deal_damage", 14],
+			["consumption"]
+		]
+	},
+	"323011": {
+		"name": "Ice Incantation",
+		"actions": ["rep", 2, [
+			["reduce_enemy_c_of_x", 4, "hp"]
+		]]
+	},
+	"323012": {
+		"actions": ["rep", 3, [
+			["reduce_enemy_c_of_x", 4, "hp"]
+		]]
+	},
+	"323013": {
+		"actions": ["rep", 4, [
+			["reduce_enemy_c_of_x", 4, "hp"]
+		]]
+	},
+	"323021": {
+		"name": "Spirit Absorb Fulu",
+		"actions": [
+			["qi", 2],
+			["reduce_enemy_c_of_x", 1, "qi"],
+			["consumption"]
+		]
+	},
+	"323022": {
+		"actions": [
+			["qi", 3],
+			["reduce_enemy_c_of_x", 2, "qi"],
+			["consumption"]
+		]
+	},
+	"323023": {
+		"actions": [
+			["qi", 4],
+			["reduce_enemy_c_of_x", 3, "qi"],
+			["consumption"]
+		]
+	},
+	"323031": {
+		"name": "Miasma Fulu",
+		"actions": [
+			["add_enemy_c_of_x", 2, "internal_injury"]
+		]
+	},
+	"323032": {
+		"actions": [
+			["add_enemy_c_of_x", 3, "internal_injury"]
+		]
+	},
+	"323033": {
+		"actions": [
+			["add_enemy_c_of_x", 4, "internal_injury"]
+		]
+	},
+	"324011": {
+		"name": "Spiritage Incanation",
+		"actions": [
+			["qi", 3],
+			["for_each_x_up_to_c_add_y", "qi", 5, "def"]
+		]
+	},
+	"324012": {
+		"actions": [
+			["qi", 4],
+			["for_each_x_up_to_c_add_y", "qi", 11, "def"]
+		]
+	},
+	"324013": {
+		"actions": [
+			["qi", 5],
+			["for_each_x_up_to_c_add_y", "qi", 17, "def"]
+		]
+	},
+	"324021": {
+		"name": "Disturbing Fulu",
+		"actions": [
+			["add_enemy_c_of_x", 3, "flaw"],
+			["consumption"]
+		]
+	},
+	"324022": {
+		"actions": [
+			["add_enemy_c_of_x", 4, "flaw"],
+			["consumption"]
+		]
+	},
+	"324023": {
+		"actions": [
+			["add_enemy_c_of_x", 5, "flaw"],
+			["consumption"]
+		]
+	},
+	"324031": {
+		"name": "Weaken Fulu",
+		"actions": [
+			["add_enemy_c_of_x", 2, "weaken"],
+			["consumption"]
+		]
+	},
+	"324032": {
+		"actions": [
+			["add_enemy_c_of_x", 3, "weaken"],
+			["consumption"]
+		]
+	},
+	"324033": {
+		"actions": [
+			["add_enemy_c_of_x", 4, "weaken"],
+			["consumption"]
+		]
+	},
+	"325011": {
+		"name": "Soul Requiem Fulu",
+		"actions": [
+			["reduce_enemy_x_by_c_pct_enemy_y", "hp", 15, "hp"],
+			["reduce_enemy_c_of_x", 2, "qi"],
+			["consumption"]
+		]
+	},
+	"325012": {
+		"actions": [
+			["reduce_enemy_x_by_c_pct_enemy_y", "hp", 20, "hp"],
+			["reduce_enemy_c_of_x", 3, "qi"],
+			["consumption"]
+		]
+	},
+	"325013": {
+		"actions": [
+			["reduce_enemy_x_by_c_pct_enemy_y", "hp", 25, "hp"],
+			["reduce_enemy_c_of_x", 4, "qi"],
+			["consumption"]
+		]
+	},
+	"325021": {
+		"name": "Divine Walk Fulu",
+		"actions": [
+			["qi", 2],
+			["consumption"],
+			["chase"]
+		]
+	},
+	"325022": {
+		"actions": [
+			["qi", 4],
+			["consumption"],
+			["chase"]
+		]
+	},
+	"325023": {
+		"actions": [
+			["qi", 6],
+			["consumption"],
+			["chase"]
+		]
+	},
+	"325031": {
+		"name": "Thousand Evil Incanation",
+		"qi_cost": 2,
+		"actions": [
+			["add_enemy_c_of_x", 2, "internal_injury"],
+			["add_enemy_c_of_x", 2, "flaw"],
+			["add_enemy_c_of_x", 1, "weaken"]
+		]
+	},
+	"325032": {
+		"actions": [
+			["add_enemy_c_of_x", 3, "internal_injury"],
+			["add_enemy_c_of_x", 2, "flaw"],
+			["add_enemy_c_of_x", 2, "weaken"]
+		]
+	},
+	"325033": {
+		"actions": [
+			["add_enemy_c_of_x", 3, "internal_injury"],
+			["add_enemy_c_of_x", 3, "flaw"],
+			["add_enemy_c_of_x", 3, "weaken"]
+		]
+	},
+	"331011": {
+		"name": "Cracking Voice",
+		"actions": [
+			["gain_ignore_def", 1],
+			["atk", 6]
+		]
+	},
+	"331012": {
+		"actions": [
+			["gain_ignore_def", 1],
+			["atk", 9]
+		]
+	},
+	"331013": {
+		"actions": [
+			["gain_ignore_def", 1],
+			["atk", 12]
+		]
+	},
+	"331021": {
+		"name": "Earth Tune",
+		"actions": [
+			["add_c_of_x", 14, "def"],
+			["add_enemy_c_of_x", 14, "def"]
+		]
+	},
+	"331022": {
+		"actions": [
+			["add_c_of_x", 20, "def"],
+			["add_enemy_c_of_x", 20, "def"]
+		]
+	},
+	"331023": {
+		"actions": [
+			["add_c_of_x", 26, "def"],
+			["add_enemy_c_of_x", 26, "def"]
+		]
+	},
+	"331031": {
+		"name": "Carefree Tune",
+		"actions": [
+			["add_c_of_x", 4, "carefree_tune_stacks"],
+			["add_enemy_c_of_x", 4, "carefree_tune_stacks"]
+		]
+	},
+	"331032": {
+		"actions": [
+			["add_c_of_x", 6, "carefree_tune_stacks"],
+			["add_enemy_c_of_x", 6, "carefree_tune_stacks"]
+		]
+	},
+	"331033": {
+		"actions": [
+			["add_c_of_x", 9, "carefree_tune_stacks"],
+			["add_enemy_c_of_x", 9, "carefree_tune_stacks"]
+		]
+	},
+	"332011": {
+		"name": "Kindness Tune",
+		"actions": [
+			["set_c_up_to_x", 4, "kindness_tune_stacks"],
+			["set_enemy_c_up_to_x", 4, "kindness_tune_stacks"]
+		]
+	},
+	"332012": {
+		"actions": [
+			["set_c_up_to_x", 6, "kindness_tune_stacks"],
+			["set_enemy_c_up_to_x", 6, "kindness_tune_stacks"]
+		]
+	},
+	"332013": {
+		"actions": [
+			["set_c_up_to_x", 8, "kindness_tune_stacks"],
+			["set_enemy_c_up_to_x", 8, "kindness_tune_stacks"]
+		]
+	},
+	"332021": {
+		"name": "Illusion Tune",
+		"actions": [
+			["add_c_of_x", 3, "illusion_tune_stacks"],
+			["add_enemy_c_of_x", 3, "illusion_tune_stacks"]
+		]
+	},
+	"332022": {
+		"actions": [
+			["add_c_of_x", 5, "illusion_tune_stacks"],
+			["add_enemy_c_of_x", 5, "illusion_tune_stacks"]
+		]
+	},
+	"332023": {
+		"actions": [
+			["add_c_of_x", 7, "illusion_tune_stacks"],
+			["add_enemy_c_of_x", 7, "illusion_tune_stacks"]
+		]
+	},
+	"332031": {
+		"name": "Sky Spirit Tune",
+		"actions": [
+			["add_c_of_x", 3, "qi"],
+			["add_enemy_c_of_x", 3, "qi"]
+		]
+	},
+	"332032": {
+		"actions": [
+			["add_c_of_x", 5, "qi"],
+			["add_enemy_c_of_x", 5, "qi"]
+		]
+	},
+	"332033": {
+		"actions": [
+			["add_c_of_x", 7, "qi"],
+			["add_enemy_c_of_x", 7, "qi"]
+		]
+	},
+	"333011": {
+		"name": "Heartbroken Tune",
+		"actions": [
+			["add_c_of_x", 1, "heartbroken_tune_stacks"],
+			["add_enemy_c_of_x", 1, "heartbroken_tune_stacks"]
+		]
+	},
+	"333012": {
+		"actions": [
+			["add_c_of_x", 2, "heartbroken_tune_stacks"],
+			["add_enemy_c_of_x", 2, "heartbroken_tune_stacks"]
+		]
+	},
+	"333013": {
+		"actions": [
+			["add_c_of_x", 3, "heartbroken_tune_stacks"],
+			["add_enemy_c_of_x", 3, "heartbroken_tune_stacks"]
+		]
+	},
+	"333021": {
+		"name": "Craze Dance Tune",
+		"actions": [
+			["add_c_of_x", 2, "craze_dance_tune_stacks"],
+			["add_enemy_c_of_x", 2, "craze_dance_tune_stacks"]
+		]
+	},
+	"333022": {
+		"actions": [
+			["add_c_of_x", 4, "craze_dance_tune_stacks"],
+			["add_enemy_c_of_x", 4, "craze_dance_tune_stacks"]
+		]
+	},
+	"333023": {
+		"actions": [
+			["add_c_of_x", 6, "craze_dance_tune_stacks"],
+			["add_enemy_c_of_x", 6, "craze_dance_tune_stacks"]
+		]
+	},
+	"333031": {
+		"name": "Tremolo",
+		"actions": ["rep", 3, [
+			["gain_ignore_def", 1],
+			["atk", 2]
+		]]
+	},
+	"333032": {
+		"actions": ["rep", 3, [
+			["gain_ignore_def", 1],
+			["atk", 3]
+		]]
+	},
+	"333033": {
+		"actions": ["rep", 3, [
+			["gain_ignore_def", 1],
+			["atk", 4]
+		]]
+	},
+	"334011": {
+		"name": "Regen Tune",
+		"actions": [
+			["add_c_of_x", 3, "regen_tune_stacks"],
+			["add_enemy_c_of_x", 3, "regen_tune_stacks"]
+		]
+	},
+	"334012": {
+		"actions": [
+			["add_c_of_x", 5, "regen_tune_stacks"],
+			["add_enemy_c_of_x", 5, "regen_tune_stacks"]
+		]
+	},
+	"334013": {
+		"actions": [
+			["add_c_of_x", 7, "regen_tune_stacks"],
+			["add_enemy_c_of_x", 7, "regen_tune_stacks"]
+		]
+	},
+	"334021": {
+		"name": "Nine Evil Ruptsprite",
+		"actions": [
+			["reduce_c_of_x", 3, "qi"],
+			["reduce_enemy_c_of_x", 3, "qi"]
+		]
+	},
+	"334022": {
+		"actions": [
+			["reduce_c_of_x", 5, "qi"],
+			["reduce_enemy_c_of_x", 5, "qi"]
+		]
+	},
+	"334023": {
+		"actions": [
+			["reduce_c_of_x", 7, "qi"],
+			["reduce_enemy_c_of_x", 7, "qi"]
+		]
+	},
+	"334031": {
+		"name": "Concentric Tune",
+		"qi_cost": 2,
+		"actions": [
+			["add_my_x_to_enemy_y", "internal_injury", "internal_injury"],
+			["add_my_x_to_enemy_y", "weaken", "weaken"],
+			["add_my_x_to_enemy_y", "flaw", "flaw"],
+			["add_my_x_to_enemy_y", "decrease_atk", "decrease_atk"],
+			["add_my_x_to_enemy_y", "entangle", "entangle"],
+			["add_my_x_to_enemy_y", "wound", "wound"]
+		]
+	},
+	"334032": {
+		"qi_cost": 1,
+		"actions": [
+			["add_my_x_to_enemy_y", "internal_injury", "internal_injury"],
+			["add_my_x_to_enemy_y", "weaken", "weaken"],
+			["add_my_x_to_enemy_y", "flaw", "flaw"],
+			["add_my_x_to_enemy_y", "decrease_atk", "decrease_atk"],
+			["add_my_x_to_enemy_y", "entangle", "entangle"],
+			["add_my_x_to_enemy_y", "wound", "wound"]
+		]
+	},
+	"334033": {
+		"qi_cost": 0,
+		"actions": [
+			["add_my_x_to_enemy_y", "internal_injury", "internal_injury"],
+			["add_my_x_to_enemy_y", "weaken", "weaken"],
+			["add_my_x_to_enemy_y", "flaw", "flaw"],
+			["add_my_x_to_enemy_y", "decrease_atk", "decrease_atk"],
+			["add_my_x_to_enemy_y", "entangle", "entangle"],
+			["add_my_x_to_enemy_y", "wound", "wound"]
+		]
+	},
+	"335011": {
+		"name": "Predicament for Immortals",
+		"qi_cost": 2,
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 1, "predicament_for_immortals_stacks"],
+			["add_enemy_c_of_x", 1, "predicament_for_immortals_stacks"]
+		]
+	},
+	"335012": {
+		"qi_cost": 1,
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 1, "predicament_for_immortals_stacks"],
+			["add_enemy_c_of_x", 1, "predicament_for_immortals_stacks"]
+		]
+	},
+	"335013": {
+		"qi_cost": 0,
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 1, "predicament_for_immortals_stacks"],
+			["add_enemy_c_of_x", 1, "predicament_for_immortals_stacks"]
+		]
+	},
+	"335021": {
+		"name": "Apparition Confusion",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "apparition_confusion_stacks"],
+			["add_enemy_c_of_x", 4, "apparition_confusion_stacks"]
+		]
+	},
+	"335022": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 5, "apparition_confusion_stacks"],
+			["add_enemy_c_of_x", 5, "apparition_confusion_stacks"]
+		]
+	},
+	"335023": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 6, "apparition_confusion_stacks"],
+			["add_enemy_c_of_x", 6, "apparition_confusion_stacks"]
+		]
+	},
+	"335031": {
+		"name": "Chord In Tune",
+		"actions": [
+			["qi", 2],
+			["do_chord_in_tune_thing"]
+		]
+	},
+	"335032": {
+		"actions": [
+			["qi", 4],
+			["do_chord_in_tune_thing"]
+		]
+	},
+	"335033": {
+		"actions": [
+			["qi", 6],
+			["do_chord_in_tune_thing"]
+		]
+	},
+	"341011": {
+		"name": "Toning",
+		"actions": [
+			["atk", 3],
+			["qi", 1],
+			["def", 3]
+		]
+	},
+	"341012": {
+		"actions": [
+			["atk", 3],
+			["qi", 2],
+			["def", 3]
+		]
+	},
+	"341013": {
+		"actions": [
+			["atk", 4],
+			["qi", 3],
+			["def", 3]
+		]
+	},
+	"341021": {
+		"name": "Grinding Ink",
+		"qi_cost": 1,
+		"actions": [
+			["atk", 8],
+			["qi", 1]
+		]
+	},
+	"341022": {
+		"actions": [
+			["atk", 11],
+			["qi", 1]
+		]
+	},
+	"341023": {
+		"actions": [
+			["atk", 14],
+			["qi", 1]
+		]
+	},
+	"342011": {
+		"name": "Pen Walks Dragon Snake",
+		"actions": [
+			["def", ["rand_range", 5, 16]]
+		]
+	},
+	"342012": {
+		"actions": [
+			["def", ["rand_range", 10, 21]]
+		]
+	},
+	"342013": {
+		"actions": [
+			["def", ["rand_range", 15, 26]]
+		]
+	},
+	"342021": {
+		"name": "Feed on Illusions",
+		"actions": [
+			["add_c_of_x", 10, "max_hp"],
+			["qi", 2]
+		]
+	},
+	"342022": {
+		"actions": [
+			["add_c_of_x", 15, "max_hp"],
+			["qi", 3]
+		]
+	},
+	"342023": {
+		"actions": [
+			["add_c_of_x", 20, "max_hp"],
+			["qi", 4]
+		]
+	},
+	"342031": {
+		"name": "Gild The Lily",
+		"actions": [
+			["rep", 2, ["atk", 5]],
+			["add_enemy_c_of_x", 8, "def"]
+		]
+	},
+	"342032": {
+		"actions": [
+			["rep", 2, ["atk", 7]],
+			["add_enemy_c_of_x", 8, "def"]
+		]
+	},
+	"342033": {
+		"actions": [
+			["rep", 2, ["atk", 9]],
+			["add_enemy_c_of_x", 8, "def"]
+		]
+	},
+	"343011": {
+		"name": "Splash Ink",
+		"actions": ["do_one_randomly", [
+			["add_enemy_c_of_x", 2, "internal_injury"],
+			["add_enemy_c_of_x", 2, "weaken"],
+			["add_enemy_c_of_x", 2, "flaw"],
+			["add_enemy_c_of_x", 2, "decrease_atk"],
+			["add_enemy_c_of_x", 2, "entangle"],
+			["add_enemy_c_of_x", 2, "wound"]
+		]]
+	},
+	"343012": {
+		"actions": ["do_one_randomly", [
+			["add_enemy_c_of_x", 3, "internal_injury"],
+			["add_enemy_c_of_x", 3, "weaken"],
+			["add_enemy_c_of_x", 3, "flaw"],
+			["add_enemy_c_of_x", 3, "decrease_atk"],
+			["add_enemy_c_of_x", 3, "entangle"],
+			["add_enemy_c_of_x", 3, "wound"]
+		]]
+	},
+	"343013": {
+		"actions": ["do_one_randomly", [
+			["add_enemy_c_of_x", 4, "internal_injury"],
+			["add_enemy_c_of_x", 4, "weaken"],
+			["add_enemy_c_of_x", 4, "flaw"],
+			["add_enemy_c_of_x", 4, "decrease_atk"],
+			["add_enemy_c_of_x", 4, "entangle"],
+			["add_enemy_c_of_x", 4, "wound"]
+		]]
+	},
+	"343021": {
+		"name": "Inspiration",
+		"actions": [
+			["qi", 2],
+			["add_c_of_x", 2, "inspiration_stacks"]
+		]
+	},
+	"343022": {
+		"actions": [
+			["qi", 3],
+			["add_c_of_x", 3, "inspiration_stacks"]
+		]
+	},
+	"343023": {
+		"actions": [
+			["qi", 4],
+			["add_c_of_x", 4, "inspiration_stacks"]
+		]
+	},
+	"344011": {
+		"name": "Divine Brush",
+		"actions": [
+			["def", 4],
+			["trigger_random_sect_card"]
+		]
+	},
+	"344012": {
+		"actions": [
+			["def", 6],
+			["trigger_random_sect_card"]
+		]
+	},
+	"344013": {
+		"actions": [
+			["def", 8],
+			["trigger_random_sect_card"]
+		]
+	},
+	"344021": {
+		"name": "Falling Paper Clouds",
+		"actions": ["do_one_randomly", [
+			["def", 16],
+			["heal", 12],
+			["add_c_of_x", 1, "guard_up"]
+		]]
+	},
+	"344022": {
+		"actions": ["do_one_randomly", [
+			["def", 24],
+			["heal", 18],
+			["add_c_of_x", 2, "guard_up"]
+		]]
+	},
+	"344023": {
+		"actions": ["do_one_randomly", [
+			["def", 32],
+			["heal", 24],
+			["add_c_of_x", 3, "guard_up"]
+		]]
+	},
+	"345011": {
+		"name": "Flying Brush",
+		"actions": [
+			["def", 6],
+			["add_c_of_x", 1, "flying_brush_stacks"]
+		]
+	},
+	"345012": {
+		"actions": [
+			["def", 12],
+			["add_c_of_x", 1, "flying_brush_stacks"]
+		]
+	},
+	"345013": {
+		"actions": [
+			["def", 18],
+			["add_c_of_x", 1, "flying_brush_stacks"]
+		]
+	},
+	"345021": {
+		"name": "Finishing Touch",
+		"actions": [
+			["add_c_of_x", 3, "finishing_touch_stacks"],
+			["consumption"]
+		]
+	},
+	"345022": {
+		"actions": [
+			["add_c_of_x", 4, "finishing_touch_stacks"],
+			["consumption"]
+		]
+	},
+	"345023": {
+		"actions": [
+			["add_c_of_x", 5, "finishing_touch_stacks"],
+			["consumption"]
+		]
+	},
 	"401011": {
 		"name": "Black Silver Armor",
 		"actions": [
@@ -1273,19 +2124,19 @@
 		"name": "Dark Star Bat",
 		"actions": [
 			["continuous"],
-			["set_c_of_x", 5, "dark_star_bat_stacks"]
+			["set_c_up_to_x", 5, "dark_star_bat_stacks"]
 		]
 	},
 	"502012": {
 		"actions": [
 			["continuous"],
-			["set_c_of_x", 7, "dark_star_bat_stacks"]
+			["set_c_up_to_x", 7, "dark_star_bat_stacks"]
 		]
 	},
 	"502013": {
 		"actions": [
 			["continuous"],
-			["set_c_of_x", 9, "dark_star_bat_stacks"]
+			["set_c_up_to_x", 9, "dark_star_bat_stacks"]
 		]
 	},
 	"502021": {
@@ -1477,7 +2328,7 @@
 		"actions": [
 			["deal_damage", 1],
 			["continuous"],
-			["add_c_of_x", 1, "nether_void_canine_stacks"]
+			["add_enemy_c_of_x", 1, "nether_void_canine_stacks"]
 		]
 	},
 	"506022": {
@@ -1485,7 +2336,7 @@
 		"actions": [
 			["deal_damage", 5],
 			["continuous"],
-			["add_c_of_x", 1, "nether_void_canine_stacks"]
+			["add_enemy_c_of_x", 1, "nether_void_canine_stacks"]
 		]
 	},
 	"506023": {
@@ -1493,7 +2344,7 @@
 		"actions": [
 			["deal_damage", 9],
 			["continuous"],
-			["add_c_of_x", 1, "nether_void_canine_stacks"]
+			["add_enemy_c_of_x", 1, "nether_void_canine_stacks"]
 		]
 	},
 	"601011": {

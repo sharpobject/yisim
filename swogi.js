@@ -11,6 +11,28 @@ function format_card(card_id) {
     var card_level = card_id.substring(card_id.length-1);
     return card_name + " (level " + card_level + ")";
 }
+const SECTS = ["no marking", "sw", "he", "fe", "dx"];
+const JOBS = ["no marking", "el", "fu", "mu", "pa", "fo", "pl"];
+function get_marking(card_id) {
+    const sect = card_id.substring(1, 2);
+    const class_ = card_id.substring(0, 1);
+    if (class_ === "1" || class_ === "2") {
+        return SECTS[parseInt(sect)];
+    }
+    if (class_ === "3") {
+        return JOBS[parseInt(sect)];
+    }
+    if (class_ === "4") {
+        return "talisman";
+    }
+    if (class_ === "5") {
+        return "spiritual_pet";
+    }
+    if (class_ === "6") {
+        return "no marking";
+    }
+    throw new Error("suspicious card id " + card_id);
+}
 for (var i=0; i<keys.length; i++) {
   var card_id = keys[i];
   var card = swogi[card_id];
@@ -30,6 +52,7 @@ for (var i=0; i<keys.length; i++) {
       card.decrease_qi_cost_by_x = base.decrease_qi_cost_by_x;
     }
   }
+  card.marking = get_marking(card_id);
 }
 function is_unrestrained_sword(card_id) {
     return swogi[card_id].name.includes("Unrestrained Sword");
@@ -122,6 +145,7 @@ class Player {
         this.unrestrained_sword_clear_heart_stacks = 0;
         this.cloud_sword_clear_heart_stacks = 0;
         // heptastar sect normal cards
+        this.hexagram = 0;
         this.strike_twice_stacks = 0;
         // heptastar sect character-specific cards
         this.cannot_act_stacks = 0;
@@ -136,6 +160,18 @@ class Player {
         this.return_to_simplicity_stacks = 0;
         // musician side job cards
         this.carefree_tune_stacks = 0;
+        this.kindness_tune_stacks = 0;
+        this.illusion_tune_stacks = 0;
+        this.heartbroken_tune_stacks = 0;
+        this.craze_dance_tune_stacks = 0;
+        this.regen_tune_stacks = 0;
+        this.predicament_for_immortals_stacks = 0;
+        this.apparition_confusion_stacks = 0;
+        this.has_played_musician_card = false;
+        // painter side job cards
+        this.inspiration_stacks = 0;
+        this.flying_brush_stacks = 0;
+        this.finishing_touch_stacks = 0;
         // formation master side job cards
         this.endless_sword_formation_stacks = 0;
         // talisman cards
@@ -212,6 +248,7 @@ class GameState {
     }
     crash() {
         this.dump();
+        console.trace();
         process.exit(1);
     }
     dump() {
@@ -307,16 +344,20 @@ class GameState {
     do_action(arr) {
         // the actions list is like this: [["atk", 14], ["injured", ["regain_sword_intent"]]]
         // so we need to call this[arr[0]] passing in the rest of the array as arguments
+        var ret = undefined;
         if (arr.length === 0) {
             this.log("empty action list");
-            return;
+            return ret;
         }
         // if arr[0] is actually an array, then try calling do_action on all the elements of arr
         if (Array.isArray(arr[0])) {
             for (var i=0; i<arr.length; i++) {
-                this.do_action(arr[i]);
+                ret = this.do_action(arr[i]);
+                if (this.game_over) {
+                    return ret;
+                }
             }
-            return;
+            return ret;
         }
         var action_name = arr[0];
         var args = arr.slice(1);
@@ -324,7 +365,7 @@ class GameState {
             this.log("action " + action_name + " is not defined");
             this.crash();
         }
-        this[action_name](...args);
+        return this[action_name](...args);
     }
     do_cloud_sword_softheart_and_friends(card_id) {
         if (is_cloud_sword(card_id)) {
@@ -422,6 +463,11 @@ class GameState {
             this.add_c_of_x(1, "moon_water_sword_formation_stacks");
         }
     }
+    do_record_musician_card_played_for_chord_in_tune(card_id) {
+        if (swogi[card_id].marking === "mu") {
+            this.players[0].has_played_musician_card = true;
+        }
+    }
     trigger_card(card_id, idx) {
         this.indent();
         this.players[0].trigger_depth += 1;
@@ -441,9 +487,12 @@ class GameState {
         this.do_cloud_sword_softheart_and_friends(card_id);
         this.do_sword_formation_guard(idx);
         this.do_action(card.actions);
-        this.do_emptiness_sword_formation(card_id);
-        this.do_endless_sword_formation();
-        this.do_step_moon_into_cloud(card_id);
+        if (!this.game_over) {
+            this.do_emptiness_sword_formation(card_id);
+        }
+        if (!this.game_over) {
+            this.do_endless_sword_formation();
+        }
         this.do_unrestrained_sword_count(card_id);
         this.players[0].currently_triggering_card_idx = prev_triggering_idx;
         this.players[0].currently_triggering_card_id = prev_triggering_id;
@@ -454,6 +503,13 @@ class GameState {
         this.players[0].trigger_depth -= 1;
         this.unindent();
     }
+    process_this_card_chases() {
+        // if we chased 1 or more times during this card, let's regard that as 1 chase for now...
+        if (this.players[0].this_card_chases > 0) {
+            this.players[0].chases += 1;
+            this.log("incremented chases to " + this.players[0].chases);
+        }
+    }
     play_card_inner(card_id, idx) {
         this.players[0].this_card_attacked = false;
         this.players[0].this_card_directly_attacked = false;
@@ -463,12 +519,7 @@ class GameState {
         this.do_sword_formation_deck_count(card_id);
         this.trigger_card(card_id, idx);
         this.do_cloud_sword_chain_count(card_id);
-        // if we chased 1 or more times during this card, let's regard that as 1 chase for now...
-        if (this.players[0].this_card_chases > 0) {
-            // TODO: entangle, predicament, etc.
-            this.players[0].chases += 1;
-            this.log("incremented chases to " + this.players[0].chases);
-        }
+        this.do_record_musician_card_played_for_chord_in_tune(card_id);
         this.reduce_idx_x_by_c(0, "unrestrained_sword_clear_heart_stacks", 1);
     }
     play_card(card_id, idx) {
@@ -485,20 +536,25 @@ class GameState {
             this.reduce_idx_x_by_c(0, "strike_twice_stacks", 1);
         }
         for (var i=0; i<plays; i++) {
-            this.play_card_inner(card_id, idx);
+            if (!this.game_over) {
+                this.play_card_inner(card_id, idx);
+            }
         }
         this.players[0].currently_playing_card_idx = undefined;
     }
-    advance_next_card_index() {
+    get_next_playable_idx(idx) {
         for (var i=0; i<this.players[0].cards.length; i++) {
-            this.players[0].next_card_index += 1;
-            if (this.players[0].next_card_index >= this.players[0].cards.length) {
-                this.players[0].next_card_index = 0;
+            idx += 1;
+            if (idx >= this.players[0].cards.length) {
+                idx = 0;
             }
-            if (this.players[0].can_play[this.players[0].next_card_index]) {
-                return;
+            if (this.players[0].can_play[idx]) {
+                return idx;
             }
         }
+    }
+    advance_next_card_index() {
+        this.players[0].next_card_index = this.get_next_playable_idx(this.players[0].next_card_index);
     }
     can_play_a_card() {
         return this.players[0].next_card_index < this.players[0].cards.length && this.players[0].can_play[this.players[0].next_card_index];
@@ -552,10 +608,25 @@ class GameState {
             this.heal(this.players[0].regen);
         }
     }
+    do_regen_tune() {
+        if (this.players[0].regen_tune_stacks > 0) {
+            this.heal(this.players[0].regen_tune_stacks);
+        }
+    }
     do_internal_injury() {
         if (this.players[0].internal_injury > 0) {
             this.reduce_my_hp(this.players[0].internal_injury);
         }
+    }
+    do_illusion_tune() {
+        const amt = this.players[0].illusion_tune_stacks;
+        if (amt > 0) {
+            this.reduce_my_hp(amt);
+            this.def(amt);
+        }
+    }
+    do_heartbroken_tune() {
+        this.for_each_x_add_y("heartbroken_tune_stacks", "internal_injury");
     }
     do_unrestrained_sword_zero() {
         if (this.players[0].unrestrained_sword_zero_stacks > 0) {
@@ -598,6 +669,12 @@ class GameState {
         }
         return 0;
     }
+    do_flying_brush_chase() {
+        if (this.players[0].flying_brush_stacks > 0) {
+            this.chase();
+            this.reduce_idx_x_by_c(0, "flying_brush_stacks", 1);
+        }
+    }
     do_shadow_owl_rabbit_chase() {
         if (this.players[0].shadow_owl_rabbit_stacks > 0) {
             this.chase();
@@ -616,14 +693,28 @@ class GameState {
             this.increase_idx_x_by_c(0, "qi", to_steal);
         }
     }
+    do_finishing_touch() {
+        if (this.players[0].finishing_touch_stacks > 0) {
+            const existing_id = this.players[0].cards[this.players[0].next_card_index];
+            const existing_upgrade_level = existing_id.substring(existing_id.length-1);
+            if (existing_upgrade_level === "3") {
+                return;
+            }
+            const new_upgrade_level = (parseInt(existing_upgrade_level) + 1).toString();
+            const new_id = existing_id.substring(0, existing_id.length-1) + new_upgrade_level;
+            this.log("Finishing Touch is upgrading " + format_card(existing_id) + " to " + format_card(new_id));
+            this.players[0].cards[this.players[0].next_card_index] = new_id;
+            this.reduce_idx_x_by_c(0, "finishing_touch_stacks", 1);
+        }
+    }
     do_nether_void_canine() {
-        if (this.players[1].nether_void_canine_stacks > 0) {
+        if (this.players[0].nether_void_canine_stacks > 0) {
             const exising_id = this.players[0].cards[this.players[0].next_card_index];
             const existing_upgrade_level = exising_id.substring(exising_id.length-1);
             const new_id = "10101" + existing_upgrade_level;
             this.log("Nether Void Canine is replacing " + format_card(exising_id) + " with " + format_card(new_id));
             this.players[0].cards[this.players[0].next_card_index] = new_id;
-            this.reduce_idx_x_by_c(1, "nether_void_canine_stacks", 1);
+            this.reduce_idx_x_by_c(0, "nether_void_canine_stacks", 1);
         }
     }
     do_sword_in_sheathed() {
@@ -661,7 +752,10 @@ class GameState {
         this.do_apex_sword_citta_dharma();
         this.do_next_turn_def();
         this.do_regen();
+        this.do_regen_tune();
+        this.do_heartbroken_tune();
         this.do_internal_injury();
+        this.do_illusion_tune();
         if (this.check_idx_for_death(0)) {
             return;
         }
@@ -675,6 +769,7 @@ class GameState {
             if (this.check_idx_for_death(0)) {
                 return;
             }
+            const can_flying_brush_chase = this.players[0].flying_brush_stacks > 0;
             if (action_idx > 0) {
                 this.log("chase!!");
             }
@@ -683,6 +778,7 @@ class GameState {
                 this.log("can't play any card :( ending turn");
                 break;
             }
+            this.do_finishing_touch();
             this.do_nether_void_canine();
             var card_id = this.players[0].cards[this.players[0].next_card_index];
             var card = swogi[card_id];
@@ -699,10 +795,12 @@ class GameState {
                 }
                 qi_cost = Math.max(0, qi_cost - this.players[0][x]);
             }
+            qi_cost = Math.max(0, qi_cost - this.players[0].inspiration_stacks);
             if (this.players[0].qi < qi_cost) {
                 this.gain_qi_to_afford_card();
                 this.log("player 0 gained qi instead of playing " + format_card(card_id) + ". They now have " + this.players[0].qi + "/" + qi_cost + " qi");
             } else {
+                this.players[0].inspiration_stacks = 0;
                 if (qi_cost > 0) {
                     this.reduce_idx_x_by_c(0, "qi", qi_cost);
                     this.log("player 0 spent " + qi_cost + " qi to play " + format_card(card_id));
@@ -710,10 +808,20 @@ class GameState {
                     this.log("player 0 is playing " + format_card(card_id));
                 }
                 this.play_card(card_id, this.players[0].next_card_index);
+                if (this.game_over) {
+                    return;
+                }
                 this.log("player 0 finished playing " + card.name);
                 this.advance_next_card_index();
+                if (can_flying_brush_chase) {
+                    this.do_flying_brush_chase();
+                }
+                this.do_shadow_owl_rabbit_chase();
+                this.process_this_card_chases();
             }
-            this.do_shadow_owl_rabbit_chase();
+            if (this.predicament_for_immortals_stacks > 0) {
+                break;
+            }
         }
         if (this.check_idx_for_death(0)) {
             return;
@@ -874,6 +982,7 @@ class GameState {
             dmg += this.players[0].bonus_atk_amt;
             dmg += this.players[0].this_card_sword_intent * (1 + this.players[0].bonus_sword_intent_multiplier);
             dmg += this.players[0].increase_atk;
+            dmg += this.players[0].craze_dance_tune_stacks;
             dmg -= this.players[0].decrease_atk;
             dmg += this.players[1].wound;
             if (this.players[1].metal_spirit_iron_bone_stacks > 0) {
@@ -917,11 +1026,28 @@ class GameState {
             }
         }
     }
+    eval(x) {
+        if (typeof x === "number") {
+            return x;
+        }
+        if (Array.isArray(x)) {
+            return this.do_action(x);
+        }
+        this.log("error: " + x + " is not a number or array");
+        this.crash();
+    }
     deal_damage(dmg) {
+        dmg = this.eval(dmg);
         var ignore_def = false;
         this.deal_damage_inner(dmg, ignore_def, false);
     }
     atk(dmg) {
+        if (this.players[0].apparition_confusion_stacks > 0) {
+            this.reduce_my_hp(this.players[0].apparition_confusion_stacks);
+            if (this.check_idx_for_death(0)) {
+                return;
+            }
+        }
         var ignore_def = false;
         if (this.players[0].ignore_def > 0) {
             this.reduce_idx_x_by_c(0, "ignore_def", 1);
@@ -946,6 +1072,7 @@ class GameState {
         }
     }
     def(amt) {
+        amt = this.eval(amt);
         this.increase_idx_x_by_c(0, "def", amt);
     }
     qi(amt) {
@@ -1010,6 +1137,13 @@ class GameState {
     for_each_x_add_y(x, y) {
         this.for_each_x_add_c_y(x, 1, y);
     }
+    add_my_x_to_enemy_y(x, y) {
+        if (typeof this.players[0][x] !== "number") {
+            this.log("error: " + x + " is not a number");
+            this.crash();
+        }
+        this.add_enemy_c_of_x(this.players[0][x], y);
+    }
     exhaust_x_to_add_y(x, y) {
         this.exhaust_x_to_add_c_y(x, 1, y);
     }
@@ -1055,6 +1189,14 @@ class GameState {
     }
     reduce_enemy_c_of_x(c, x) {
         this.reduce_idx_x_by_c(1, x, c);
+    }
+    reduce_enemy_x_by_c_pct_enemy_y(x, c, y) {
+        if (typeof this.players[1][y] !== "number") {
+            this.log("error: " + y + " is not a number");
+            this.crash();
+        }
+        const to_lose = Math.ceil(this.players[1][y] * c / 100);
+        this.reduce_idx_x_by_c(1, x, to_lose);
     }
     reduce_enemy_x_by_enemy_y(x, y) {
         if (typeof this.players[1][y] !== "number") {
@@ -1155,7 +1297,7 @@ class GameState {
             this.players[idx].hp = 0;
             this.game_over = true;
             this.log("player " + idx + " has died of destiny loss");
-            return;
+            return true;
         }
         while (this.players[idx].hp <= 0) {
             if (this.players[idx].ashes_phoenix_stacks > 0) {
@@ -1167,8 +1309,21 @@ class GameState {
             } else {
                 this.game_over = true;
                 this.log("player " + idx + " has died of hp loss");
-                return;
+                return true;
             }
+        }
+        return false;
+    }
+    set_c_up_to_x(c, x) {
+        const current_value = this.players[0][x];
+        if (current_value < c) {
+            this.increase_idx_x_by_c(0, x, c - current_value);
+        }
+    }
+    set_enemy_c_up_to_x(c, x) {
+        const current_value = this.players[1][x];
+        if (current_value < c) {
+            this.increase_idx_x_by_c(1, x, c - current_value);
         }
     }
     set_c_of_x(c, x) {
@@ -1178,6 +1333,35 @@ class GameState {
         } else if (current_value < c) {
             this.increase_idx_x_by_c(0, x, c - current_value);
         }
+    }
+    rand_range(lo_inclusive, hi_inclusive) {
+        if (this.players[0].hexagram > 0) {
+            this.reduce_idx_x_by_c(0, "hexagram", 1);
+            return hi_inclusive;
+        }
+        this.used_randomness = true;
+        const extent = hi_inclusive - lo_inclusive + 1;
+        return lo_inclusive + Math.floor(Math.random() * extent);
+    }
+    do_one_randomly(arr) {
+        const idx = Math.floor(Math.random() * arr.length);
+        this.used_randomness = true;
+        this.do_action(arr[idx]);
+    }
+    do_chord_in_tune_thing() {
+        if (this.players[0].has_played_musician_card) {
+            this.chase();
+            return;
+        }
+        const next_idx = this.get_next_playable_idx(this.players[0].currently_playing_card_idx);
+        const next_id = this.players[0].cards[next_idx];
+        if (swogi[next_id].marking === "musician") {
+            this.chase();
+        }
+    }
+    trigger_random_sect_card() {
+        this.used_randomness = true;
+        //TODO: this.
     }
 }
 var fuzz = true;
@@ -1194,6 +1378,13 @@ if (fuzz) {
         var game = new GameState();
         game.players[0].cards = decks[0];
         game.players[1].cards = decks[1];
+        var decks_formatted = [[],[]];
+        for (var j=0; j<2; j++) {
+            for (var k=0; k<8; k++) {
+                decks_formatted[j].push(format_card(decks[j][k]));
+            }
+        }
+        console.log("decks: " + JSON.stringify(decks_formatted));
         game.sim_n_turns(32);
         game.dump();
         if (i % 10000 === 0) {
