@@ -1168,7 +1168,7 @@ class GameState {
                 this.game_over = true;
                 this.log("player " + idx + " has died of hp loss");
                 return;
-            }            
+            }
         }
     }
     set_c_of_x(c, x) {
