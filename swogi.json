@@ -1,13 +1,37 @@
 {
 	"101011": {
 		"name": "Normal Attack",
-		"actions": [["atk", 3]]
+		"actions": [
+			["for_each_x_add_y", "carefree_tune_stacks", "bonus_atk_amt"],
+			["for_each_x_add_y", "carefree_guqin_stacks", "bonus_atk_amt"],
+			["exhaust_x_to_add_y", "lying_drunk_stacks", "bonus_rep_amt"],
+			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "agility"],
+			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "bonus_atk_amt"],
+			["rep", 1, ["atk", 3]],
+			["if_x_at_least_c_do", "carefree_guqin_stacks", ["chase"]]
+		]
 	},
 	"101012": {
-		"actions": [["atk", 6]]
+		"actions": [
+			["for_each_x_add_y", "carefree_tune_stacks", "bonus_atk_amt"],
+			["for_each_x_add_y", "carefree_guqin_stacks", "bonus_atk_amt"],
+			["exhaust_x_to_add_y", "lying_drunk_stacks", "bonus_rep_amt"],
+			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "agility"],
+			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "bonus_atk_amt"],
+			["rep", 1, ["atk", 6]],
+			["if_x_at_least_c_do", "carefree_guqin_stacks", ["chase"]]
+		]
 	},
 	"101013": {
-		"actions": [["atk", 9]]
+		"actions": [
+			["for_each_x_add_y", "carefree_tune_stacks", "bonus_atk_amt"],
+			["for_each_x_add_y", "carefree_guqin_stacks", "bonus_atk_amt"],
+			["exhaust_x_to_add_y", "lying_drunk_stacks", "bonus_rep_amt"],
+			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "agility"],
+			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "bonus_atk_amt"],
+			["rep", 1, ["atk", 9]],
+			["if_x_at_least_c_do", "carefree_guqin_stacks", ["chase"]]
+		]
 	},
 	"111011": {
 		"name": "Cloud Sword - Touch Sky",
@@ -311,13 +335,13 @@
 	"113071": {
 		"name": "Burst Sword",
 		"qi_cost": 1,
-		"actions": [["atk", 11], ["injured", ["reduce_enemy_x_by_c", "qi", 1]]]
+		"actions": [["atk", 11], ["injured", ["reduce_enemy_c_of_x", 1, "qi"]]]
 	},
 	"113072": {
-		"actions": [["atk", 13], ["injured", ["reduce_enemy_x_by_c", "qi", 2]]]
+		"actions": [["atk", 13], ["injured", ["reduce_enemy_c_of_x", 2, "qi"]]]
 	},
 	"113073": {
-		"actions": [["atk", 15], ["injured", ["reduce_enemy_x_by_c", "qi", 3]]]
+		"actions": [["atk", 15], ["injured", ["reduce_enemy_c_of_x", 3, "qi"]]]
 	},
 	"113081": {
 		"name": "Giant Roc Spirit Sword",
@@ -566,6 +590,7 @@
 	},
 	"211011": {
 		"name": "Rhyme Spirit Sword",
+		"reduce_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
 		"actions": [["atk", 4], ["injured", ["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "qi"]]]
 	},
 	"211012": {
@@ -770,6 +795,7 @@
 	},
 	"216021": {
 		"name": "Secret Sword - Spirit Cloud",
+		"unknown_scaling": true,
 		"actions": [
 			["cloud_hit", ["add_c_of_x", 4, "bonus_atk_amt"]],
 			["for_each_x_add_y", "qi", "bonus_rep_amt"],
@@ -889,5 +915,744 @@
 	},
 	"315013": {
 		"actions": [["add_c_of_x", 4, "guard_up"], ["consumption"]]
+	},
+	"401011": {
+		"name": "Black Silver Armor",
+		"actions": [
+			["def", 5],
+			["for_each_x_add_y", "def", "def"]
+		]
+	},
+	"401012": {
+		"actions": [
+			["def", 8],
+			["for_each_x_add_y", "def", "def"]
+		]
+	},
+	"401013": {
+		"actions": [
+			["def", 11],
+			["for_each_x_add_y", "def", "def"]
+		]
+	},
+	"401021": {
+		"name": "Thorns Spear",
+		"qi_cost": 1,
+		"actions": [
+			["do_thorns_spear_thing"],
+			["atk", 12]
+		]
+	},
+	"401022": {
+		"actions": [
+			["do_thorns_spear_thing"],
+			["atk", 16]
+		]
+	},
+	"401023": {
+		"actions": [
+			["do_thorns_spear_thing"],
+			["atk", 20]
+		]
+	},
+	"402011": {
+		"name": "Dew Jade Vase",
+		"qi_cost": 1,
+		"actions": [
+			["heal", 11],
+			["add_c_of_x", 2, "destiny"]
+		]
+	},
+	"402012": {
+		"actions": [
+			["heal", 14],
+			["add_c_of_x", 3, "destiny"]
+		]
+	},
+	"402013": {
+		"actions": [
+			["heal", 17],
+			["add_c_of_x", 4, "destiny"]
+		]
+	},
+	"402021": {
+		"name": "Nameless Ancient Sword",
+		"qi_cost": 1,
+		"actions": [
+			["if_x_at_most_c_do", "hp", 11, ["add_c_of_x", 11, "bonus_atk_amt"]],
+			["atk", 11]
+		]
+	},
+	"402022": {
+		"actions": [
+			["if_x_at_most_c_do", "hp", 11, ["add_c_of_x", 15, "bonus_atk_amt"]],
+			["atk", 15]
+		]
+	},
+	"402023": {
+		"actions": [
+			["if_x_at_most_c_do", "hp", 11, ["add_c_of_x", 19, "bonus_atk_amt"]],
+			["atk", 19]
+		]
+	},
+	"403011": {
+		"name": "Fire Soul Refinement Flag",
+		"qi_cost": 2,
+		"actions": [
+			["reduce_enemy_c_of_x", 15, "hp"],
+			["reduce_enemy_c_of_x", 15, "max_hp"],
+			["add_enemy_c_of_x", 1, "internal_injury"]
+		]
+	},
+	"403012": {
+		"actions": [
+			["reduce_enemy_c_of_x", 15, "hp"],
+			["reduce_enemy_c_of_x", 15, "max_hp"],
+			["add_enemy_c_of_x", 2, "internal_injury"]
+		]
+	},
+	"403013": {
+		"actions": [
+			["reduce_enemy_c_of_x", 15, "hp"],
+			["reduce_enemy_c_of_x", 15, "max_hp"],
+			["add_enemy_c_of_x", 3, "internal_injury"]
+		]
+	},
+	"403021": {
+		"name": "Requiem Jade Lotus",
+		"qi_cost": 2,
+		"actions": [
+			["add_c_of_x", 15, "max_hp"],
+			["heal", 15],
+			["add_c_of_x", 1, "regen"]
+		]
+	},
+	"403022": {
+		"actions": [
+			["add_c_of_x", 15, "max_hp"],
+			["heal", 15],
+			["add_c_of_x", 2, "regen"]
+		]
+	},
+	"403023": {
+		"actions": [
+			["add_c_of_x", 15, "max_hp"],
+			["heal", 15],
+			["add_c_of_x", 3, "regen"]
+		]
+	},
+	"403031": {
+		"name": "Blood Crystal of Wolf King",
+		"actions": [
+			["for_each_x_reduce_c_pct_y", "hp", 15, "hp"],
+			["add_c_of_x", 4, "increase_atk"]
+		]
+	},
+	"403032": {
+		"actions": [
+			["for_each_x_reduce_c_pct_y", "hp", 15, "hp"],
+			["add_c_of_x", 5, "increase_atk"]
+		]
+	},
+	"403033": {
+		"actions": [
+			["for_each_x_reduce_c_pct_y", "hp", 15, "hp"],
+			["add_c_of_x", 6, "increase_atk"]
+		]
+	},
+	"404011": {
+		"name": "Cosmos Seal Divine Orb",
+		"qi_cost": 2,
+		"actions": [
+			["deal_damage", 9],
+			["add_enemy_c_of_x", 3, "weaken"]
+		]
+	},
+	"404012": {
+		"actions": [
+			["deal_damage", 9],
+			["add_enemy_c_of_x", 4, "weaken"]
+		]
+	},
+	"404013": {
+		"actions": [
+			["deal_damage", 9],
+			["add_enemy_c_of_x", 5, "weaken"]
+		]
+	},
+	"404021": {
+		"name": "Metal Tri-Thorn Spear",
+		"qi_cost": 2,
+		"actions": ["rep", 3, [
+			["atk", 3],
+			["add_enemy_c_of_x", 1, "flaw"]
+		]]
+	},
+	"404022": {
+		"actions": ["rep", 3, [
+			["atk", 5],
+			["add_enemy_c_of_x", 1, "flaw"]
+		]]
+	},
+	"404023": {
+		"actions": ["rep", 3, [
+			["atk", 7],
+			["add_enemy_c_of_x", 1, "flaw"]
+		]]
+	},
+	"404031": {
+		"name": "Carefree Guqin",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "carefree_guqin_stacks"],
+			["add_enemy_c_of_x", 2, "carefree_guqin_stacks"]
+		]
+	},
+	"404032": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 5, "carefree_guqin_stacks"],
+			["add_enemy_c_of_x", 5, "carefree_guqin_stacks"]
+		]
+	},
+	"404033": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 8, "carefree_guqin_stacks"],
+			["add_enemy_c_of_x", 8, "carefree_guqin_stacks"]
+		]
+	},
+	"405011": {
+		"name": "Nether Seal Evil Signet",
+		"qi_cost": 3,
+		"actions": [
+			["reduce_enemy_x_by_enemy_y", "def", "def"],
+			["reduce_enemy_x_by_enemy_y", "guard_up", "guard_up"],
+			["deal_damage", 30]
+		]
+	},
+	"405012": {
+		"actions": [
+			["reduce_enemy_x_by_enemy_y", "def", "def"],
+			["reduce_enemy_x_by_enemy_y", "guard_up", "guard_up"],
+			["deal_damage", 36]
+		]
+	},
+	"405013": {
+		"actions": [
+			["reduce_enemy_x_by_enemy_y", "def", "def"],
+			["reduce_enemy_x_by_enemy_y", "guard_up", "guard_up"],
+			["deal_damage", 42]
+		]
+	},
+	"405021": {
+		"name": "Dark Crystal Heart Shield",
+		"qi_cost": 3,
+		"actions": [
+			["def", 20],
+			["add_c_of_x", 2, "guard_up"]
+		]
+	},
+	"405022": {
+		"actions": [
+			["def", 20],
+			["add_c_of_x", 3, "guard_up"]
+		]
+	},
+	"405023": {
+		"actions": [
+			["def", 20],
+			["add_c_of_x", 4, "guard_up"]
+		]
+	},
+	"405031": {
+		"name": "Bow of Hunting Owl",
+		"qi_cost": 2,
+		"actions": [
+			["atk", 12],
+			["injured", ["add_enemy_c_of_x", 6, "entangle"]]
+		]
+	},
+	"405032": {
+		"actions": [
+			["atk", 14],
+			["injured", ["add_enemy_c_of_x", 7, "entangle"]]
+		]
+	},
+	"405033": {
+		"actions": [
+			["atk", 16],
+			["injured", ["add_enemy_c_of_x", 8, "entangle"]]
+		]
+	},
+	"406011": {
+		"name": "Void Split Spear",
+		"qi_cost": 3,
+		"actions": [
+			["atk", 30],
+			["reduce_enemy_c_of_x", 4, "destiny"]
+		]
+	},
+	"406012": {
+		"actions": [
+			["atk", 35],
+			["reduce_enemy_c_of_x", 7, "destiny"]
+		]
+	},
+	"406013": {
+		"actions": [
+			["atk", 40],
+			["reduce_enemy_c_of_x", 10, "destiny"]
+		]
+	},
+	"406021": {
+		"name": "Mysterious Gates Devil Seal Tower",
+		"qi_cost": 3,
+		"actions": [
+			["deal_damage", 25],
+			["add_enemy_c_of_x", 1, "cannot_act_stacks"]
+		]
+	},
+	"406022": {
+		"actions": [
+			["deal_damage", 32],
+			["add_enemy_c_of_x", 1, "cannot_act_stacks"]
+		]
+	},
+	"406023": {
+		"actions": [
+			["deal_damage", 32],
+			["add_enemy_c_of_x", 2, "cannot_act_stacks"]
+		]
+	},
+	"501011": {
+		"name": "Break Sky Eagle",
+		"actions": [
+			["deal_damage", 4],
+			["continuous"],
+			["add_c_of_x", 1, "break_sky_eagle_stacks"]
+		]
+	},
+	"501012": {
+		"actions": [
+			["deal_damage", 4],
+			["continuous"],
+			["add_c_of_x", 2, "break_sky_eagle_stacks"]
+		]
+	},
+	"501013": {
+		"actions": [
+			["deal_damage", 4],
+			["continuous"],
+			["add_c_of_x", 3, "break_sky_eagle_stacks"]
+		]
+	},
+	"501021": {
+		"name": "Fat Immortal Raccoon",
+		"actions": [
+			["heal", 4],
+			["continuous"],
+			["add_c_of_x", 1, "fat_immortal_raccoon_stacks"]
+		]
+	},
+	"501022": {
+		"actions": [
+			["heal", 4],
+			["continuous"],
+			["add_c_of_x", 2, "fat_immortal_raccoon_stacks"]
+		]
+	},
+	"501023": {
+		"actions": [
+			["heal", 4],
+			["continuous"],
+			["add_c_of_x", 3, "fat_immortal_raccoon_stacks"]
+		]
+	},
+	"502011": {
+		"name": "Dark Star Bat",
+		"actions": [
+			["continuous"],
+			["set_c_of_x", 5, "dark_star_bat_stacks"]
+		]
+	},
+	"502012": {
+		"actions": [
+			["continuous"],
+			["set_c_of_x", 7, "dark_star_bat_stacks"]
+		]
+	},
+	"502013": {
+		"actions": [
+			["continuous"],
+			["set_c_of_x", 9, "dark_star_bat_stacks"]
+		]
+	},
+	"502021": {
+		"name": "Lonely Night Wolf",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "lonely_night_wolf_stacks"]
+		]
+	},
+	"502022": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 5, "lonely_night_wolf_stacks"]
+		]
+	},
+	"502023": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 6, "lonely_night_wolf_stacks"]
+		]
+	},
+	"503011": {
+		"name": "Black Earth Turtle",
+		"actions": [
+			["def", 4],
+			["continuous"],
+			["add_c_of_x", 2, "black_earth_turtle_stacks"]
+		]
+	},
+	"503012": {
+		"actions": [
+			["def", 8],
+			["continuous"],
+			["add_c_of_x", 3, "black_earth_turtle_stacks"]
+		]
+	},
+	"503013": {
+		"actions": [
+			["def", 12],
+			["continuous"],
+			["add_c_of_x", 4, "black_earth_turtle_stacks"]
+		]
+	},
+	"503021": {
+		"name": "Brocade Rat",
+		"actions": [
+			["reduce_c_of_x", 4, "hp"],
+			["continuous"],
+			["add_c_of_x", 1, "brocade_rat_stacks"]
+		]
+	},
+	"503022": {
+		"actions": [
+			["reduce_c_of_x", 8, "hp"],
+			["continuous"],
+			["add_c_of_x", 2, "brocade_rat_stacks"]
+		]
+	},
+	"503023": {
+		"actions": [
+			["reduce_c_of_x", 12, "hp"],
+			["continuous"],
+			["add_c_of_x", 3, "brocade_rat_stacks"]
+		]
+	},
+	"504011": {
+		"name": "Scarlet-Eye The Sky Consumer",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "scarlet_eye_the_sky_consumer_stacks"]
+		]
+	},
+	"504012": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "scarlet_eye_the_sky_consumer_stacks"]
+		]
+	},
+	"504013": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "scarlet_eye_the_sky_consumer_stacks"]
+		]
+	},
+	"504021": {
+		"name": "Ashes Phoenix",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 10, "ashes_phoenix_stacks"]
+		]
+	},
+	"504022": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 15, "ashes_phoenix_stacks"]
+		]
+	},
+	"504023": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 20, "ashes_phoenix_stacks"]
+		]
+	},
+	"504031": {
+		"name": "Three Tailed Cat",
+		"actions": [
+			["add_c_of_x", 1, "exchange_card_chance"],
+			["continuous"],
+			["add_c_of_x", 1, "three_tailed_cat_stacks"]
+		]
+	},
+	"504032": {
+		"actions": [
+			["add_c_of_x", 2, "exchange_card_chance"],
+			["continuous"],
+			["add_c_of_x", 1, "three_tailed_cat_stacks"]
+		]
+	},
+	"504033": {
+		"actions": [
+			["add_c_of_x", 3, "exchange_card_chance"],
+			["continuous"],
+			["add_c_of_x", 1, "three_tailed_cat_stacks"]
+		]
+	},
+	"505011": {
+		"name": "Colorful Spirit Crane",
+		"actions": [
+			["continuous"],
+			["set_c_of_x", 2, "colorful_spirit_crane_stacks"]
+		]
+	},
+	"505012": {
+		"actions": [
+			["qi", 2],
+			["continuous"],
+			["set_c_of_x", 2, "colorful_spirit_crane_stacks"]
+		]
+	},
+	"505013": {
+		"actions": [
+			["qi", 4],
+			["continuous"],
+			["set_c_of_x", 2, "colorful_spirit_crane_stacks"]
+		]
+	},
+	"505021": {
+		"name": "Shadow Owl Rabbit",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 10, "shadow_owl_rabbit_stacks"]
+		]
+	},
+	"505022": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 8, "shadow_owl_rabbit_stacks"]
+		]
+	},
+	"505023": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 6, "shadow_owl_rabbit_stacks"]
+		]
+	},
+	"506011": {
+		"name": "Void The Spirit Consumer",
+		"qi_cost": 1,
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 1, "void_the_spirit_consumer_stacks"]
+		]
+	},
+	"506012": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "void_the_spirit_consumer_stacks"]
+		]
+	},
+	"506013": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "void_the_spirit_consumer_stacks"]
+		]
+	},
+	"506021": {
+		"name": "Nether Void Canine",
+		"qi_cost": 2,
+		"actions": [
+			["deal_damage", 1],
+			["continuous"],
+			["add_c_of_x", 1, "nether_void_canine_stacks"]
+		]
+	},
+	"506022": {
+		"qi_cost": 1,
+		"actions": [
+			["deal_damage", 5],
+			["continuous"],
+			["add_c_of_x", 1, "nether_void_canine_stacks"]
+		]
+	},
+	"506023": {
+		"qi_cost": 0,
+		"actions": [
+			["deal_damage", 9],
+			["continuous"],
+			["add_c_of_x", 1, "nether_void_canine_stacks"]
+		]
+	},
+	"601011": {
+		"name": "Cloud Sword - Flying Sand",
+		"actions": [
+			["atk", 6],
+			["cloud_hit", ["add_enemy_c_of_x", 2, "flaw"]]
+		]
+	},
+	"601012": {
+		"actions": [
+			["atk", 10],
+			["cloud_hit", ["add_enemy_c_of_x", 2, "flaw"]]
+		]
+	},
+	"601013": {
+		"actions": [
+			["atk", 10],
+			["cloud_hit", ["add_enemy_c_of_x", 3, "flaw"]]
+		]
+	},
+	"601021": {
+		"name": "Bronze Cat",
+		"actions": [
+			["for_each_x_add_c_y", "sword_intent", 2, "bonus_def_amt"],
+			["def", 5]
+		]
+	},
+	"601022": {
+		"actions": [
+			["for_each_x_add_c_y", "sword_intent", 3, "bonus_def_amt"],
+			["def", 5]
+		]
+	},
+	"601023": {
+		"actions": [
+			["for_each_x_add_c_y", "sword_intent", 4, "bonus_def_amt"],
+			["def", 5]
+		]
+	},
+	"602011": {
+		"name": "Cloud Sword - Cat Paw",
+		"actions": ["rep", 2, [
+			["gain_ignore_def", 1],
+			["atk", 5]
+		]]
+	},
+	"602012": {
+		"actions": ["rep", 2, [
+			["gain_ignore_def", 1],
+			["atk", 7]
+		]]
+	},
+	"602013": {
+		"actions": ["rep", 2, [
+			["gain_ignore_def", 1],
+			["atk", 9]
+		]]
+	},
+	"604011": {
+		"name": "Cloud Sword - Avalanche",
+		"actions": [
+			["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 4, "bonus_atk_amt"]],
+			["atk", 2]
+		]
+	},
+	"604012": {
+		"actions": [
+			["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 5, "bonus_atk_amt"]],
+			["atk", 2]
+		]
+	},
+	"604013": {
+		"actions": [
+			["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 6, "bonus_atk_amt"]],
+			["atk", 2]
+		]
+	},
+	"604021": {
+		"name": "Cloud Sword - Pray Rain",
+		"actions": [
+			["rep", 3, ["atk", 3]],
+			["add_c_of_x", 2, "regen"],
+			["cloud_hit", ["qi", 1]]
+		]
+	},
+	"604022": {
+		"actions": [
+			["rep", 4, ["atk", 3]],
+			["add_c_of_x", 2, "regen"],
+			["cloud_hit", ["qi", 1]]
+		]
+	},
+	"604023": {
+		"actions": [
+			["rep", 5, ["atk", 3]],
+			["add_c_of_x", 2, "regen"],
+			["cloud_hit", ["qi", 1]]
+		]
+	},
+	"604031": {
+		"name": "Spirit Cat Chaos Sword",
+		"actions": [
+			["for_each_x_up_to_c_add_y", "hand_count", 3, "bonus_rep_amt"],
+			["rep", 2, ["atk", 2]]
+		]
+	},
+	"604032": {
+		"actions": [
+			["for_each_x_up_to_c_add_y", "hand_count", 3, "bonus_rep_amt"],
+			["rep", 3, ["atk", 2]]
+		]
+	},
+	"604033": {
+		"actions": [
+			["for_each_x_up_to_c_add_y", "hand_count", 3, "bonus_rep_amt"],
+			["rep", 4, ["atk", 2]]
+		]
+	},
+	"605011": {
+		"name": "Unrestrained Sword - Flame Dance",
+		"actions": [
+			["atk", 6],
+			["if_x_at_least_c_do", "unrestrained_sword_count", 1, ["chase"]]
+		]
+	},
+	"605012": {
+		"actions": [
+			["atk", 12],
+			["if_x_at_least_c_do", "unrestrained_sword_count", 1, ["chase"]]
+		]
+	},
+	"605013": {
+		"actions": [
+			["atk", 18],
+			["if_x_at_least_c_do", "unrestrained_sword_count", 1, ["chase"]]
+		]
+	},
+	"605021": {
+		"name": "Sky Delicate Bracelet",
+		"qi_cost": 1,
+		"actions": [
+			["def", 5],
+			["add_c_of_x", 1, "guard_up"],
+			["chase"]
+		]
+	},
+	"605022": {
+		"actions": [
+			["def", 5],
+			["add_c_of_x", 2, "guard_up"],
+			["chase"]
+		]
+	},
+	"605023": {
+		"actions": [
+			["def", 5],
+			["add_c_of_x", 3, "guard_up"],
+			["chase"]
+		]
 	}
 }

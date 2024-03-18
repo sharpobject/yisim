@@ -36,3 +36,5 @@ speculation: zero does not trigger if an "unrestrained sword: divine brush" (ena
 some cards like tremolo and cloud sword - cat paw say "this card's attacks ignore def".
 if you already have some ignore_def, and you play cat paw, then cat paw's attacks do not consume the ignore_def.
 if you also have an extra attack added to the end of cat paw (e.g. by endless sword formation) then that attack is a normal, non-def-ignoring attack. so it will consume a stack of ignore_def if you have any.
+
+Colorful Spirit Crane and Dark Star Bat just set your stacks to a certain amount. So if you retrigger them, you get no additional stacks. What other cards work this way?
