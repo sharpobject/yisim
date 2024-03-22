@@ -432,6 +432,7 @@ class Player {
         this.fire_spirit_generation_stacks = 0;
         this.flame_soul_rebirth_stacks = 0;
         this.five_elements_explosion_stacks = 0;
+        this.swift_burning_seal_stacks = 0;
         // duan xuan sect immortal fates
         this.courage_to_fight_stacks = 0;
         this.stance_of_fierce_attack_stacks = 0;
@@ -1544,6 +1545,9 @@ class GameState {
             if (this.players[my_idx].is_star_point[this.players[0].currently_playing_card_idx]) {
                 dmg += this.players[my_idx].star_power * (1 + this.players[my_idx].bonus_star_power_multiplier);
             }
+            if (this.players[enemy_idx].metal_spirit_iron_bone_stacks > 0) {
+                dmg -= 5;
+            }
             dmg += this.do_lonely_night_wolf();
             dmg += this.players[my_idx].bonus_atk_amt;
             dmg += this.players[my_idx].this_card_sword_intent * (1 + this.players[my_idx].bonus_sword_intent_multiplier);
@@ -1569,12 +1573,6 @@ class GameState {
             dmg += this.players[my_idx].bonus_dmg_amt;
         }
         dmg = Math.floor(dmg * pct_multiplier / 100);
-        if (is_atk) {
-            dmg += this.players[enemy_idx].wound;
-            if (this.players[enemy_idx].metal_spirit_iron_bone_stacks > 0) {
-                dmg -= 5;
-            }
-        }
         dmg = Math.max(1, dmg);
         if (this.players[enemy_idx].def < 0) {
             this.log("error: def is negative: " + this.players[enemy_idx].def);
@@ -1595,6 +1593,9 @@ class GameState {
                     damage_to_hp += this.players[my_idx].penetrate;
                     this.reduce_c_of_x(this.players[my_idx].penetrate, "penetrate");
                 }
+            }
+            if (damage_to_hp > 0 && this.players[enemy_idx].guard_up === 0) {
+                dmg += this.players[enemy_idx].wound;
             }
             if (this.players[0].metal_spirit_giant_tripod_stacks > 0) {
                 this.players[0].metal_spirit_giant_tripod_stacks -= 1;
