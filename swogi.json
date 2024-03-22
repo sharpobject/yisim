@@ -1,38 +1,4 @@
 {
-	"101011": {
-		"name": "Normal Attack",
-		"actions": [
-			["for_each_x_add_y", "carefree_tune_stacks", "bonus_atk_amt"],
-			["for_each_x_add_y", "carefree_guqin_stacks", "bonus_atk_amt"],
-			["exhaust_x_to_add_y", "lying_drunk_stacks", "bonus_rep_amt"],
-			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "agility"],
-			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "bonus_atk_amt"],
-			["rep", 1, ["atk", 3]],
-			["if_x_at_least_c_do", "carefree_guqin_stacks", 1, ["chase"]]
-		]
-	},
-	"101012": {
-		"actions": [
-			["for_each_x_add_y", "carefree_tune_stacks", "bonus_atk_amt"],
-			["for_each_x_add_y", "carefree_guqin_stacks", "bonus_atk_amt"],
-			["exhaust_x_to_add_y", "lying_drunk_stacks", "bonus_rep_amt"],
-			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "agility"],
-			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "bonus_atk_amt"],
-			["rep", 1, ["atk", 6]],
-			["if_x_at_least_c_do", "carefree_guqin_stacks", 1, ["chase"]]
-		]
-	},
-	"101013": {
-		"actions": [
-			["for_each_x_add_y", "carefree_tune_stacks", "bonus_atk_amt"],
-			["for_each_x_add_y", "carefree_guqin_stacks", "bonus_atk_amt"],
-			["exhaust_x_to_add_y", "lying_drunk_stacks", "bonus_rep_amt"],
-			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "agility"],
-			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "bonus_atk_amt"],
-			["rep", 1, ["atk", 9]],
-			["if_x_at_least_c_do", "carefree_guqin_stacks", 1, ["chase"]]
-		]
-	},
 	"111011": {
 		"name": "Cloud Sword - Touch Sky",
 		"actions": [["atk", 6]]
@@ -588,6 +554,995 @@
 	"115083": {
 		"actions": [["continuous"], ["add_c_of_x", 70, "unrestrained_sword_zero_stacks"]]
 	},
+	"122091": {
+		"name": "Stillness Citta-Dharma",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "stillness_citta_dharma_stacks"]
+		]
+	},
+	"122092": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "stillness_citta_dharma_stacks"]
+		]
+	},
+	"122093": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "stillness_citta_dharma_stacks"]
+		]
+	},
+	"123021": {
+		"name": "Astral Move - Hit",
+		"qi_cost": 1,
+		"actions": [
+			["rep", 2, ["atk", 5]],
+			["star_point", ["atk", 5]]
+		]
+	},
+	"123022": {
+		"actions": [
+			["rep", 2, ["atk", 6]],
+			["star_point", ["atk", 7]]
+		]
+	},
+	"123023": {
+		"actions": [
+			["rep", 2, ["atk", 7]],
+			["star_point", ["atk", 9]]
+		]
+	},
+	"123091": {
+		"name": "Revitalized",
+		"qi_cost": 1,
+		"actions": [
+			["for_each_x_add_c_pct_y", "hp_gained", 20, "bonus_atk_amt"],
+			["atk", 10]
+		]
+	},
+	"123092": {
+		"actions": [
+			["for_each_x_add_c_pct_y", "hp_gained", 25, "bonus_atk_amt"],
+			["atk", 10]
+		]
+	},
+	"123093": {
+		"actions": [
+			["for_each_x_add_c_pct_y", "hp_gained", 33.333334, "bonus_atk_amt"],
+			["atk", 10]
+		]
+	},
+	"124011": {
+		"name": "Astral Move - Fly",
+		"qi_cost": 1,
+		"actions": [
+			["rep", 2, ["atk", 2]],
+			["star_point", ["chase"]]
+		]
+	},
+	"124012": {
+		"actions": [
+			["rep", 2, ["atk", 4]],
+			["star_point", ["chase"]]
+		]
+	},
+	"124013": {
+		"actions": [
+			["rep", 2, ["atk", 6]],
+			["star_point", ["chase"]]
+		]
+	},
+	"124021": {
+		"name": "Astral Move - Tiger",
+		"actions": [
+			["rep", 3, ["atk", 1]],
+			["star_point", ["add_enemy_c_of_x", 1, "weaken"]]
+		]
+	},
+	"124022": {
+		"actions": [
+			["rep", 3, ["atk", 1]],
+			["star_point", ["add_enemy_c_of_x", 2, "weaken"]]
+		]
+	},
+	"124023": {
+		"actions": [
+			["rep", 3, ["atk", 1]],
+			["star_point", ["add_enemy_c_of_x", 3, "weaken"]]
+		]
+	},
+	"124091": {
+		"name": "Escape Plan",
+		"qi_cost": 1,
+		"actions": [
+			["def", 9],
+			["heal", 9],
+			["post_action", ["add_c_of_x", 1, "guard_up"]]
+		]
+	},
+	"124092": {
+		"actions": [
+			["def", 12],
+			["heal", 12],
+			["post_action", ["add_c_of_x", 1, "guard_up"]]
+		]
+	},
+	"124093": {
+		"actions": [
+			["def", 15],
+			["heal", 15],
+			["post_action", ["add_c_of_x", 1, "guard_up"]]
+		]
+	},
+	"125011": {
+		"name": "Polaris Citta-Dharma",
+		"actions": [
+			["continuous"],
+			["do_polaris_citta_dharma", 1]
+		]
+	},
+	"125012": {
+		"actions": [
+			["continuous"],
+			["do_polaris_citta_dharma", 2]
+		]
+	},
+	"125013": {
+		"actions": [
+			["continuous"],
+			["do_polaris_citta_dharma", 3]
+		]
+	},
+	"125031": {
+		"name": "Heaven Hexagram",
+		"actions": [
+			["qi", 1],
+			["add_c_of_x", 1, "hexagram"],
+			["if_x_at_least_c_do", "hexagram", 3, ["chase"]]
+		]
+	},
+	"125032": {
+		"actions": [
+			["qi", 2],
+			["add_c_of_x", 2, "hexagram"],
+			["if_x_at_least_c_do", "hexagram", 3, ["chase"]]
+		]
+	},
+	"125033": {
+		"actions": [
+			["qi", 3],
+			["add_c_of_x", 3, "hexagram"],
+			["if_x_at_least_c_do", "hexagram", 3, ["chase"]]
+		]
+	},
+	"125041": {
+		"name": "Five Thunders",
+		"qi_cost": 1,
+		"actions": ["rep", 5, [
+			["if_c_pct_do", 30, ["atk", 8]]
+		]]
+	},
+	"125042": {
+		"actions": ["rep", 5, [
+			["if_c_pct_do", 30, ["atk", 10]]
+		]]
+	},
+	"125043": {
+		"actions": ["rep", 5, [
+			["if_c_pct_do", 30, ["atk", 12]]
+		]]
+	},
+	"125051": {
+		"name": "Strike Twice",
+		"qi_cost": 1,
+		"actions": [
+			["heal", 2],
+			["add_c_of_x", 1, "strike_twice_stacks"]
+		]
+	},
+	"125052": {
+		"actions": [
+			["heal", 8],
+			["add_c_of_x", 1, "strike_twice_stacks"]
+		]
+	},
+	"125053": {
+		"actions": [
+			["heal", 14],
+			["add_c_of_x", 1, "strike_twice_stacks"]
+		]
+	},
+	"125061": {
+		"name": "Great Spirit",
+		"qi_cost": 2,
+		"actions": [
+			["add_c_of_x", 12, "max_hp"],
+			["chase"],
+			["post_action", ["heal", 24]]
+		]
+	},
+	"125062": {
+		"actions": [
+			["add_c_of_x", 16, "max_hp"],
+			["chase"],
+			["post_action", ["heal", 31]]
+		]
+	},
+	"125063": {
+		"actions": [
+			["add_c_of_x", 20, "max_hp"],
+			["chase"],
+			["post_action", ["heal", 38]]
+		]
+	},
+	"125081": {
+		"name": "Propitious Omen",
+		"actions": [
+			["qi", 2],
+			["do_propitious_omen", 3]
+		]
+	},
+	"125082": {
+		"actions": [
+			["qi", 2],
+			["do_propitious_omen", 5]
+		]
+	},
+	"125083": {
+		"actions": [
+			["qi", 2],
+			["do_propitious_omen", 7]
+		]
+	},
+	"132031": {
+		"name": "Fire Spirit - Flame Eater",
+		"actions": [
+			["qi", 2],
+			["fire_spirit", [
+				["reduce_c_of_x", 3, "hp"],
+				["reduce_c_of_x", 3, "max_hp"]
+			]]
+		]
+	},
+	"132032": {
+		"actions": [
+			["qi", 3],
+			["fire_spirit", [
+				["reduce_c_of_x", 4, "hp"],
+				["reduce_c_of_x", 4, "max_hp"]
+			]]
+		]
+	},
+	"132033": {
+		"actions": [
+			["qi", 4],
+			["fire_spirit", [
+				["reduce_c_of_x", 6, "hp"],
+				["reduce_c_of_x", 6, "max_hp"]
+			]]
+		]
+	},
+	"132051": {
+		"name": "Earth Spirit Formation",
+		"actions": [
+			["def", 4],
+			["continuous"],
+			["add_c_of_x", 2, "earth_spirit_formation_stacks"]
+		]
+	},
+	"132052": {
+		"actions": [
+			["def", 6],
+			["continuous"],
+			["add_c_of_x", 3, "earth_spirit_formation_stacks"]
+		]
+	},
+	"132053": {
+		"actions": [
+			["def", 8],
+			["continuous"],
+			["add_c_of_x", 4, "earth_spirit_formation_stacks"]
+		]
+	},
+	"132061": {
+		"name": "Earth Spirit - Mountains",
+		"actions": [
+			["atk", 5],
+			["def", 2],
+			["earth_spirit", ["add_c_of_x", 3, "next_turn_def"]]
+		]
+	},
+	"132062": {
+		"actions": [
+			["atk", 6],
+			["def", 3],
+			["earth_spirit", ["add_c_of_x", 6, "next_turn_def"]]
+		]
+	},
+	"132063": {
+		"actions": [
+			["atk", 7],
+			["def", 4],
+			["earth_spirit", ["add_c_of_x", 9, "next_turn_def"]]
+		]
+	},
+	"132071": {
+		"name": "Metal Spirit Formation",
+		"actions": [
+			["add_c_of_x", 4, "penetrate"],
+			["continuous"],
+			["add_c_of_x", 1, "metal_spirit_formation_stacks"]
+		]
+	},
+	"132072": {
+		"actions": [
+			["add_c_of_x", 4, "penetrate"],
+			["continuous"],
+			["add_c_of_x", 2, "metal_spirit_formation_stacks"]
+		]
+	},
+	"132073": {
+		"actions": [
+			["add_c_of_x", 4, "penetrate"],
+			["continuous"],
+			["add_c_of_x", 3, "metal_spirit_formation_stacks"]
+		]
+	},
+	"132081": {
+		"name": "Metal Spirit - Heart Pierce",
+		"actions": [
+			["atk", 7],
+			["metal_spirit", ["add_c_of_x", 1, "ignore_def"]]
+		]
+	},
+	"132082": {
+		"actions": [
+			["atk", 10],
+			["metal_spirit", ["add_c_of_x", 2, "ignore_def"]]
+		]
+	},
+	"132083": {
+		"actions": [
+			["atk", 13],
+			["metal_spirit", ["add_c_of_x", 3, "ignore_def"]]
+		]
+	},
+	"133031": {
+		"name": "Fire Spirit Formation",
+		"actions": [
+			["reduce_enemy_c_of_x", 2, "hp"],
+			["reduce_enemy_c_of_x", 2, "max_hp"],
+			["continuous"],
+			["add_c_of_x", 2, "fire_spirit_formation_stacks"]
+		]
+	},
+	"133032": {
+		"actions": [
+			["reduce_enemy_c_of_x", 3, "hp"],
+			["reduce_enemy_c_of_x", 3, "max_hp"],
+			["continuous"],
+			["add_c_of_x", 3, "fire_spirit_formation_stacks"]
+		]
+	},
+	"133033": {
+		"actions": [
+			["reduce_enemy_c_of_x", 4, "hp"],
+			["reduce_enemy_c_of_x", 4, "max_hp"],
+			["continuous"],
+			["add_c_of_x", 4, "fire_spirit_formation_stacks"]
+		]
+	},
+	"133041": {
+		"name": "Fire Spirit - Blast",
+		"qi_cost": 1,
+		"actions": [
+			["add_c_of_x", 1, "increase_atk"],
+			["for_each_x_add_y", "increase_atk", "bonus_reduce_enemy_hp_amt"],
+			["for_each_x_add_y", "increase_atk", "bonus_reduce_enemy_max_hp_amt"],
+			["reduce_enemy_c_of_x", 7, "hp"],
+			["reduce_enemy_c_of_x", 7, "max_hp"]
+		]
+	},
+	"133042": {
+		"actions": [
+			["add_c_of_x", 2, "increase_atk"],
+			["for_each_x_add_y", "increase_atk", "bonus_reduce_enemy_hp_amt"],
+			["for_each_x_add_y", "increase_atk", "bonus_reduce_enemy_max_hp_amt"],
+			["reduce_enemy_c_of_x", 7, "hp"],
+			["reduce_enemy_c_of_x", 7, "max_hp"]
+		]
+	},
+	"133043": {
+		"actions": [
+			["add_c_of_x", 3, "increase_atk"],
+			["for_each_x_add_y", "increase_atk", "bonus_reduce_enemy_hp_amt"],
+			["for_each_x_add_y", "increase_atk", "bonus_reduce_enemy_max_hp_amt"],
+			["reduce_enemy_c_of_x", 7, "hp"],
+			["reduce_enemy_c_of_x", 7, "max_hp"]
+		]
+	},
+	"133061": {
+		"name": "Earth Spirit - Cliff",
+		"actions": [
+			["def", 10],
+			["earth_spirit", ["add_c_of_x", 1, "earth_spirit_cliff_stacks"]]
+		]
+	},
+	"133062": {
+		"actions": [
+			["def", 15],
+			["earth_spirit", ["add_c_of_x", 1, "earth_spirit_cliff_stacks"]]
+		]
+	},
+	"133063": {
+		"actions": [
+			["def", 20],
+			["earth_spirit", ["add_c_of_x", 1, "earth_spirit_cliff_stacks"]]
+		]
+	},
+	"133071": {
+		"name": "Metal Spirit - Charge",
+		"actions": [
+			["def", 4],
+			["add_c_of_x", 4, "penetrate"],
+			["metal_spirit", ["for_each_x_add_c_pct_y", "def", 25, "penetrate"]]
+		]
+	},
+	"133072": {
+		"actions": [
+			["def", 6],
+			["add_c_of_x", 6, "penetrate"],
+			["metal_spirit", ["for_each_x_add_c_pct_y", "def", 25, "penetrate"]]
+		]
+	},
+	"133073": {
+		"actions": [
+			["def", 8],
+			["add_c_of_x", 8, "penetrate"],
+			["metal_spirit", ["for_each_x_add_c_pct_y", "def", 25, "penetrate"]]
+		]
+	},
+	"134031": {
+		"name": "Fire Spirit - Flash Fire",
+		"actions": [
+			["reduce_enemy_c_of_x", 4, "max_hp"],
+			["fire_spirit", ["chase"]]
+		]
+	},
+	"134032": {
+		"actions": [
+			["reduce_enemy_c_of_x", 8, "max_hp"],
+			["fire_spirit", ["chase"]]
+		]
+	},
+	"134033": {
+		"actions": [
+			["reduce_enemy_c_of_x", 12, "max_hp"],
+			["fire_spirit", ["chase"]]
+		]
+	},
+	"134041": {
+		"name": "Fire Spirit - Heart Fire",
+		"actions": [
+			["rep", 2, ["atk", 4]],
+			["fire_spirit",
+				["for_each_x_reduce_enemy_c_y", "damage_dealt_to_hp_by_this_card_atk", 2, "max_hp"]]
+		]
+	},
+	"134042": {
+		"actions": [
+			["rep", 2, ["atk", 5]],
+			["fire_spirit",
+				["for_each_x_reduce_enemy_c_y", "damage_dealt_to_hp_by_this_card_atk", 2, "max_hp"]]
+		]
+	},
+	"134043": {
+		"actions": [
+			["rep", 2, ["atk", 7]],
+			["fire_spirit",
+				["for_each_x_reduce_enemy_c_y", "damage_dealt_to_hp_by_this_card_atk", 2, "max_hp"]]
+		]
+	},
+	"134051": {
+		"name": "Earth Spirit - Steep",
+		"actions": [
+			["earth_spirit", ["for_each_x_add_c_pct_y", "def_lost", 16.666667, "bonus_def_amt"]],
+			["def", 12]
+		]
+	},
+	"134052": {
+		"actions": [
+			["earth_spirit", ["for_each_x_add_c_pct_y", "def_lost", 20, "bonus_def_amt"]],
+			["def", 12]
+		]
+	},
+	"134053": {
+		"actions": [
+			["earth_spirit", ["for_each_x_add_c_pct_y", "def_lost", 25, "bonus_def_amt"]],
+			["def", 12]
+		]
+	},
+	"134061": {
+		"name": "Earth Spirit - Quicksand",
+		"actions": [
+			["earth_spirit", ["for_each_x_add_c_pct_y", "def_lost", 16.666667, "bonus_atk_amt"]],
+			["atk", 9]
+		]
+	},
+	"134062": {
+		"actions": [
+			["earth_spirit", ["for_each_x_add_c_pct_y", "def_lost", 20, "bonus_atk_amt"]],
+			["atk", 9]
+		]
+	},
+	"134063": {
+		"actions": [
+			["earth_spirit", ["for_each_x_add_c_pct_y", "def_lost", 25, "bonus_atk_amt"]],
+			["atk", 9]
+		]
+	},
+	"134071": {
+		"name": "Metal Spirit - Shuttle",
+		"actions": [
+			["add_c_of_x", 1, "disable_penetrate_stacks"],
+			["atk", 4],
+			["metal_spirit", ["chase"]]
+		]
+	},
+	"134072": {
+		"actions": [
+			["add_c_of_x", 1, "disable_penetrate_stacks"],
+			["atk", 8],
+			["metal_spirit", ["chase"]]
+		]
+	},
+	"134073": {
+		"actions": [
+			["add_c_of_x", 1, "disable_penetrate_stacks"],
+			["atk", 12],
+			["metal_spirit", ["chase"]]
+		]
+	},
+	"134081": {
+		"name": "Metal Spirit - Iron Bone",
+		"actions": [
+			["metal_spirit", ["add_c_of_x", 2, "metal_spirit_iron_bone_stacks"]]
+		]
+	},
+	"134082": {
+		"actions": [
+			["metal_spirit", ["add_c_of_x", 3, "metal_spirit_iron_bone_stacks"]]
+		]
+	},
+	"134083": {
+		"actions": [
+			["metal_spirit", ["add_c_of_x", 4, "metal_spirit_iron_bone_stacks"]]
+		]
+	},
+	"135021": {
+		"name": "Fire Spirit - Blazing Praerie",
+		"qi_cost": 2,
+		"actions": [
+			["rep", 3, ["atk", 6]],
+			["fire_spirit", ["do_fire_spirit_blazing_praerie", 2]]
+		]
+	},
+	"135022": {
+		"actions": [
+			["rep", 3, ["atk", 8]],
+			["fire_spirit", ["do_fire_spirit_blazing_praerie", 3]]
+		]
+	},
+	"135023": {
+		"actions": [
+			["rep", 3, ["atk", 10]],
+			["fire_spirit", ["do_fire_spirit_blazing_praerie", 4]]
+		]
+	},
+	"135031": {
+		"name": "Earth Spirit - Combine World",
+		"actions": [
+			["def", 12],
+			["add_c_of_x", 2, "earth_spirit_combine_world_stacks"]
+		]
+	},
+	"135032": {
+		"actions": [
+			["def", 12],
+			["add_c_of_x", 3, "earth_spirit_combine_world_stacks"]
+		]
+	},
+	"135033": {
+		"actions": [
+			["def", 12],
+			["add_c_of_x", 4, "earth_spirit_combine_world_stacks"]
+		]
+	},
+	"135041": {
+		"name": "Metal Spirit - Giant Tripod",
+		"actions": [
+			["metal_spirit", ["add_c_of_x", 1, "metal_spirit_giant_tripod_stacks"]],
+			["atk", 7]
+		]
+	},
+	"135042": {
+		"actions": [
+			["metal_spirit", ["add_c_of_x", 1, "metal_spirit_giant_tripod_stacks"]],
+			["atk", 11]
+		]
+	},
+	"135043": {
+		"actions": [
+			["metal_spirit", ["add_c_of_x", 1, "metal_spirit_giant_tripod_stacks"]],
+			["atk", 15]
+		]
+	},
+	"135061": {
+		"name": "Ultimate World Formation",
+		"actions": [
+			["continuous"],
+			["do_ultimate_world_formation", 0]
+		]
+	},
+	"135062": {
+		"actions": [
+			["continuous"],
+			["do_ultimate_world_formation", 2]
+		]
+	},
+	"135063": {
+		"actions": [
+			["continuous"],
+			["do_ultimate_world_formation", 4]
+		]
+	},
+	"135071": {
+		"name": "Five Elements Heavenly Marrow Rhythm",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "five_elements_heavenly_marrow_rhythm_stacks"]
+		]
+	},
+	"135072": {
+		"actions": [
+			["qi", 2],
+			["continuous"],
+			["add_c_of_x", 2, "five_elements_heavenly_marrow_rhythm_stacks"]
+		]
+	},
+	"135073": {
+		"actions": [
+			["qi", 2],
+			["continuous"],
+			["add_c_of_x", 3, "five_elements_heavenly_marrow_rhythm_stacks"]
+		]
+	},
+	"143031": {
+		"name": "Crash Fist - Subdue Dragon",
+		"hp_cost": 5,
+		"actions": [
+			["def", 0],
+			["atk", 10],
+			["add_c_of_x", 5, "crash_fist_subdue_dragon_stacks"]
+		]
+	},
+	"143032": {
+		"actions": [
+			["def", 0],
+			["atk", 12],
+			["add_c_of_x", 7, "crash_fist_subdue_dragon_stacks"]
+		]
+	},
+	"143033": {
+		"actions": [
+			["def", 0],
+			["atk", 14],
+			["add_c_of_x", 9, "crash_fist_subdue_dragon_stacks"]
+		]
+	},
+	"144011": {
+		"name": "Crash Citta-Dharma",
+		"actions": [
+			["add_c_of_x", 2, "force"],
+			["continuous"],
+			["add_c_of_x", 1, "crash_citta_dharma_stacks"]
+		]
+	},
+	"144012": {
+		"actions": [
+			["add_c_of_x", 3, "force"],
+			["continuous"],
+			["add_c_of_x", 1, "crash_citta_dharma_stacks"]
+		]
+	},
+	"144013": {
+		"actions": [
+			["add_c_of_x", 4, "force"],
+			["continuous"],
+			["add_c_of_x", 1, "crash_citta_dharma_stacks"]
+		]
+	},
+	"144021": {
+		"name": "Crash Fist - Inch Force",
+		"hp_cost": 5,
+		"actions": [
+			["add_c_of_x", 1, "this_card_crash_fist_inch_force_stacks"],
+			["add_c_of_x", 1, "crash_fist_inch_force_stacks"],
+			["def", 0],
+			["atk", 10]
+		]
+	},
+	"144022": {
+		"actions": [
+			["add_c_of_x", 1, "this_card_crash_fist_inch_force_stacks"],
+			["add_c_of_x", 1, "crash_fist_inch_force_stacks"],
+			["def", 0],
+			["atk", 14]
+		]
+	},
+	"144023": {
+		"actions": [
+			["add_c_of_x", 1, "this_card_crash_fist_inch_force_stacks"],
+			["add_c_of_x", 1, "crash_fist_inch_force_stacks"],
+			["def", 0],
+			["atk", 18]
+		]
+	},
+	"144031": {
+		"name": "Crash Fist - Continue",
+		"hp_cost": 6,
+		"actions": [
+			["def", 0],
+			["atk", 11]
+		]
+	},
+	"144032": {
+		"actions": [
+			["def", 0],
+			["atk", 16]
+		]
+	},
+	"144033": {
+		"actions": [
+			["def", 0],
+			["atk", 21]
+		]
+	},
+	"144041": {
+		"name": "Exercise Marrow",
+		"actions": [
+			["physique", 3],
+			["for_each_x_add_c_pct_y", "max_hp", 8, "hp"]
+		]
+	},
+	"144042": {
+		"actions": [
+			["physique", 3],
+			["for_each_x_add_c_pct_y", "max_hp", 12, "hp"]
+		]
+	},
+	"144043": {
+		"actions": [
+			["physique", 3],
+			["for_each_x_add_c_pct_y", "max_hp", 16, "hp"]
+		]
+	},
+	"144051": {
+		"name": "Crane Footwork",
+		"actions": [
+			["heal", 4],
+			["for_each_x_add_c_pct_y_up_to_d", "physique", 25, "agility", 10]
+		]
+	},
+	"144052": {
+		"actions": [
+			["heal", 5],
+			["for_each_x_add_c_pct_y_up_to_d", "physique", 25, "agility", 13]
+		]
+	},
+	"144053": {
+		"actions": [
+			["heal", 6],
+			["for_each_x_add_c_pct_y_up_to_d", "physique", 25, "agility", 16]
+		]
+	},
+	"144061": {
+		"name": "Elusive Footwork",
+		"actions": [
+			["qi", 1],
+			["add_c_of_x", 2, "agility"],
+			["continuous"],
+			["add_c_of_x", 1, "elusive_footwork_stacks"]
+		]
+	},
+	"144062": {
+		"actions": [
+			["qi", 2],
+			["add_c_of_x", 3, "agility"],
+			["continuous"],
+			["add_c_of_x", 1, "elusive_footwork_stacks"]
+		]
+	},
+	"144063": {
+		"actions": [
+			["qi", 3],
+			["add_c_of_x", 4, "agility"],
+			["continuous"],
+			["add_c_of_x", 1, "elusive_footwork_stacks"]
+		]
+	},
+	"144091": {
+		"name": "Surging Waves",
+		"actions": [
+			["qi", 1],
+			["for_each_x_add_y", "qi", "force"],
+			["add_c_of_x", 5, "agility"]
+		]
+	},
+	"144092": {
+		"actions": [
+			["qi", 2],
+			["for_each_x_add_y", "qi", "force"],
+			["add_c_of_x", 5, "agility"]
+		]
+	},
+	"144093": {
+		"actions": [
+			["qi", 3],
+			["for_each_x_add_y", "qi", "force"],
+			["add_c_of_x", 5, "agility"]
+		]
+	},
+	"144101": {
+		"name": "Overwhelming Force",
+		"actions": [
+			["for_each_x_add_c_y", "force", 4, "bonus_def_amt"],
+			["for_each_x_add_c_y", "force", 3, "bonus_dmg_amt"],
+			["exhaust_x_to_add_y", "force", "bonus_rep_amt"],
+			["def", 0],
+			["deal_damage", 0],
+			["add_c_of_x", 5, "agility"]
+		]
+	},
+	"144102": {
+		"actions": [
+			["for_each_x_add_c_y", "force", 4, "bonus_def_amt"],
+			["for_each_x_add_c_y", "force", 4, "bonus_dmg_amt"],
+			["exhaust_x_to_add_y", "force", "bonus_rep_amt"],
+			["def", 0],
+			["deal_damage", 0],
+			["add_c_of_x", 6, "agility"]
+		]
+	},
+	"144103": {
+		"actions": [
+			["for_each_x_add_c_y", "force", 4, "bonus_def_amt"],
+			["for_each_x_add_c_y", "force", 5, "bonus_dmg_amt"],
+			["exhaust_x_to_add_y", "force", "bonus_rep_amt"],
+			["def", 0],
+			["deal_damage", 0],
+			["add_c_of_x", 7, "agility"]
+		]
+	},
+	"145021": {
+		"name": "Crash Fist - Shocked",
+		"hp_cost": 8,
+		"actions": [
+			["def", 0],
+			["atk", 10],
+			["add_c_of_x", 1, "crash_fist_shocked_stacks"]
+		]
+	},
+	"145022": {
+		"actions": [
+			["def", 0],
+			["atk", 16],
+			["add_c_of_x", 1, "crash_fist_shocked_stacks"]
+		]
+	},
+	"145023": {
+		"actions": [
+			["def", 0],
+			["atk", 22],
+			["add_c_of_x", 1, "crash_fist_shocked_stacks"]
+		]
+	},
+	"145031": {
+		"name": "Exercise Soul",
+		"actions": [
+			["atk", 4],
+			["physique", 3],
+			["if_x_at_least_c_do", "physique", 50, ["add_c_of_x", 1, "increase_atk"]],
+			["if_x_at_least_c_do", "physique", 65, ["add_c_of_x", 4, "agility"]]
+		]
+	},
+	"145032": {
+		"actions": [
+			["atk", 8],
+			["physique", 4],
+			["if_x_at_least_c_do", "physique", 50, ["add_c_of_x", 1, "increase_atk"]],
+			["if_x_at_least_c_do", "physique", 65, ["add_c_of_x", 5, "agility"]]
+		]
+	},
+	"145033": {
+		"actions": [
+			["atk", 12],
+			["physique", 5],
+			["if_x_at_least_c_do", "physique", 50, ["add_c_of_x", 1, "increase_atk"]],
+			["if_x_at_least_c_do", "physique", 65, ["add_c_of_x", 6, "agility"]]
+		]
+	},
+	"145041": {
+		"name": "Realm Killing Palms",
+		"actions": [
+			["for_each_x_add_c_pct_y", "physique", 4, "bonus_rep_amt"],
+			["for_each_x_add_c_pct_y", "physique_gained", 25, "bonus_atk_amt"],
+			["rep", 1, ["atk", 3]]
+		]
+	},
+	"145042": {
+		"actions": [
+			["for_each_x_add_c_pct_y", "physique", 4, "bonus_rep_amt"],
+			["for_each_x_add_c_pct_y", "physique_gained", 33.333334, "bonus_atk_amt"],
+			["rep", 1, ["atk", 4]]
+		]
+	},
+	"145043": {
+		"actions": [
+			["for_each_x_add_c_pct_y", "physique", 4, "bonus_rep_amt"],
+			["for_each_x_add_c_pct_y", "physique_gained", 50, "bonus_atk_amt"],
+			["rep", 1, ["atk", 5]]
+		]
+	},
+	"145071": {
+		"name": "Gather Intense Force",
+		"actions": [
+			["def", 8],
+			["add_c_of_x", 3, "max_force"],
+			["add_c_of_x", 3, "force"]
+		]
+	},
+	"145072": {
+		"actions": [
+			["def", 10],
+			["add_c_of_x", 4, "max_force"],
+			["add_c_of_x", 4, "force"]
+		]
+	},
+	"145073": {
+		"actions": [
+			["def", 12],
+			["add_c_of_x", 5, "max_force"],
+			["add_c_of_x", 5, "force"]
+		]
+	},
+	"145081": {
+		"name": "Vast Universe",
+		"qi_cost": 2,
+		"actions": [
+			["atk", 10],
+			["heal", 4],
+			["add_c_of_x", 4, "agility"],
+			["for_each_x_add_c_y", "force", 2, "agility"]
+		]
+	},
+	"145082": {
+		"actions": [
+			["atk", 12],
+			["heal", 6],
+			["add_c_of_x", 5, "agility"],
+			["for_each_x_add_c_y", "force", 2, "agility"]
+		]
+	},
+	"145083": {
+		"actions": [
+			["atk", 14],
+			["heal", 8],
+			["add_c_of_x", 6, "agility"],
+			["for_each_x_add_c_y", "force", 2, "agility"]
+		]
+	},
 	"211011": {
 		"name": "Rhyme Spirit Sword",
 		"reduce_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
@@ -607,7 +1562,7 @@
 		"actions": [["for_each_x_add_c_pct_y", "cultivation", 25, "bonus_atk_amt"], ["atk", 6]]
 	},
 	"211023": {
-		"actions": [["for_each_x_add_c_pct_y", "cultivation", 33.3334, "bonus_atk_amt"], ["atk", 6]]
+		"actions": [["for_each_x_add_c_pct_y", "cultivation", 33.333334, "bonus_atk_amt"], ["atk", 6]]
 	},
 	"212011": {
 		"name": "Cloud Sword - Dawn",
@@ -814,6 +1769,66 @@
 			["cloud_hit", ["add_c_of_x", 8, "bonus_atk_amt"]],
 			["for_each_x_add_y", "qi", "bonus_rep_amt"],
 			["rep", 1, ["atk", 8]]
+		]
+	},
+	"224021": {
+		"name": "Astral Move - Dragon Slay",
+		"actions": [
+			["add_c_of_x", 4, "bonus_star_power_multiplier"],
+			["atk", 10]
+		]
+	},
+	"224022": {
+		"actions": [
+			["add_c_of_x", 5, "bonus_star_power_multiplier"],
+			["atk", 12]
+		]
+	},
+	"224023": {
+		"actions": [
+			["add_c_of_x", 6, "bonus_star_power_multiplier"],
+			["atk", 14]
+		]
+	},
+	"231011": {
+		"name": "Wood Spirit Secret Seal",
+		"actions": [
+			["add_c_of_x", 2, "increase_atk"],
+			["activate_wood_spirit"]
+		]
+	},
+	"231012": {
+		"actions": [
+			["add_c_of_x", 3, "increase_atk"],
+			["activate_wood_spirit"]
+		]
+	},
+	"231013": {
+		"actions": [
+			["add_c_of_x", 4, "increase_atk"],
+			["activate_wood_spirit"]
+		]
+	},
+	"231021": {
+		"name": "Fire Spirit Secret Seal",
+		"actions": [
+			["reduce_enemy_c_of_x", 8, "hp"],
+			["reduce_enemy_c_of_x", 8, "max_hp"],
+			["activate_fire_spirit"]
+		]
+	},
+	"231022": {
+		"actions": [
+			["reduce_enemy_c_of_x", 12, "hp"],
+			["reduce_enemy_c_of_x", 12, "max_hp"],
+			["activate_fire_spirit"]
+		]
+	},
+	"231023": {
+		"actions": [
+			["reduce_enemy_c_of_x", 16, "hp"],
+			["reduce_enemy_c_of_x", 16, "max_hp"],
+			["activate_fire_spirit"]
 		]
 	},
 	"311011": {
@@ -1767,6 +2782,97 @@
 			["consumption"]
 		]
 	},
+	"354011": {
+		"name": "Heavenly Spirit Forceage Formation",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "heavenly_spirit_forceage_formation_stacks"]
+		]
+	},
+	"354012": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "heavenly_spirit_forceage_formation_stacks"]
+		]
+	},
+	"354013": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "heavenly_spirit_forceage_formation_stacks"]
+		]
+	},
+	"355031": {
+		"name": "Meru Formation",
+		"actions": [
+			["add_c_of_x", 1, "skip_next_card_stacks"],
+			["if_played_continuous", ["chase"]]
+		]
+	},
+	"355032": {
+		"actions": [
+			["add_c_of_x", 2, "skip_next_card_stacks"],
+			["if_played_continuous", ["chase"]]
+		]
+	},
+	"355033": {
+		"actions": [
+			["add_c_of_x", 3, "skip_next_card_stacks"],
+			["if_played_continuous", ["chase"]]
+		]
+	},
+	"362031": {
+		"name": "Leaf Shield Flower",
+		"actions": [
+			["def", 8]
+		]
+	},
+	"362032": {
+		"actions": [
+			["def", 14]
+		]
+	},
+	"362033": {
+		"actions": [
+			["def", 20],
+			["continuous"],
+			["add_c_of_x", 1, "leaf_shield_flower_stacks"]
+		]
+	},
+	"365021": {
+		"name": "Space Spiritual Field",
+		"actions": [
+			["qi", 4]
+		]
+	},
+	"365022": {
+		"actions": [
+			["qi", 5]
+		]
+	},
+	"365023": {
+		"actions": [
+			["qi", 6]
+		]
+	},
+	"365031": {
+		"name": "Entangling Ancient Vine",
+		"qi_cost": 1,
+		"actions": [
+			["add_enemy_c_of_x", 1, "entangle"]
+		]
+	},
+	"365032": {
+		"actions": [
+			["add_enemy_c_of_x", 2, "entangle"]
+		]
+	},
+	"365033": {
+		"actions": [
+			["add_enemy_c_of_x", 3, "entangle"],
+			["continuous"],
+			["add_enemy_c_of_x", 1, "entangling_ancient_vine_stacks"]
+		]
+	},
 	"401011": {
 		"name": "Black Silver Armor",
 		"actions": [
@@ -2348,82 +3454,132 @@
 		]
 	},
 	"601011": {
+		"name": "Normal Attack",
+		"actions": [
+			["for_each_x_add_y", "carefree_tune_stacks", "bonus_atk_amt"],
+			["for_each_x_add_y", "carefree_guqin_stacks", "bonus_atk_amt"],
+			["exhaust_x_to_add_y", "lying_drunk_stacks", "bonus_rep_amt"],
+			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "agility"],
+			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "bonus_atk_amt"],
+			["rep", 1, ["atk", 3]],
+			["if_x_at_least_c_do", "carefree_guqin_stacks", 1, ["chase"]]
+		]
+	},
+	"601012": {
+		"actions": [
+			["for_each_x_add_y", "carefree_tune_stacks", "bonus_atk_amt"],
+			["for_each_x_add_y", "carefree_guqin_stacks", "bonus_atk_amt"],
+			["exhaust_x_to_add_y", "lying_drunk_stacks", "bonus_rep_amt"],
+			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "agility"],
+			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "bonus_atk_amt"],
+			["rep", 1, ["atk", 6]],
+			["if_x_at_least_c_do", "carefree_guqin_stacks", 1, ["chase"]]
+		]
+	},
+	"601013": {
+		"actions": [
+			["for_each_x_add_y", "carefree_tune_stacks", "bonus_atk_amt"],
+			["for_each_x_add_y", "carefree_guqin_stacks", "bonus_atk_amt"],
+			["exhaust_x_to_add_y", "lying_drunk_stacks", "bonus_rep_amt"],
+			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "agility"],
+			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "bonus_atk_amt"],
+			["rep", 1, ["atk", 9]],
+			["if_x_at_least_c_do", "carefree_guqin_stacks", 1, ["chase"]]
+		]
+	},
+	"611011": {
 		"name": "Cloud Sword - Flying Sand",
 		"actions": [
 			["atk", 6],
 			["cloud_hit", ["add_enemy_c_of_x", 2, "flaw"]]
 		]
 	},
-	"601012": {
+	"611012": {
 		"actions": [
 			["atk", 10],
 			["cloud_hit", ["add_enemy_c_of_x", 2, "flaw"]]
 		]
 	},
-	"601013": {
+	"611013": {
 		"actions": [
 			["atk", 10],
 			["cloud_hit", ["add_enemy_c_of_x", 3, "flaw"]]
 		]
 	},
-	"601021": {
+	"611021": {
 		"name": "Bronze Cat",
 		"actions": [
 			["for_each_x_add_c_y", "sword_intent", 2, "bonus_def_amt"],
 			["def", 5]
 		]
 	},
-	"601022": {
+	"611022": {
 		"actions": [
 			["for_each_x_add_c_y", "sword_intent", 3, "bonus_def_amt"],
 			["def", 5]
 		]
 	},
-	"601023": {
+	"611023": {
 		"actions": [
 			["for_each_x_add_c_y", "sword_intent", 4, "bonus_def_amt"],
 			["def", 5]
 		]
 	},
-	"602011": {
+	"611031": {
+		"name": "Clear Heart Sword Embryo",
+		"actions": [
+			["do_clear_heart"]
+		]
+	},
+	"611032": {
+		"actions": [
+			["do_clear_heart"]
+		]
+	},
+	"611033": {
+		"actions": [
+			["do_clear_heart"]
+		]
+	},
+	"612011": {
 		"name": "Cloud Sword - Cat Paw",
 		"actions": ["rep", 2, [
 			["gain_ignore_def", 1],
 			["atk", 5]
 		]]
 	},
-	"602012": {
+	"612012": {
 		"actions": ["rep", 2, [
 			["gain_ignore_def", 1],
 			["atk", 7]
 		]]
 	},
-	"602013": {
+	"612013": {
 		"actions": ["rep", 2, [
 			["gain_ignore_def", 1],
 			["atk", 9]
 		]]
 	},
-	"604011": {
+	"614011": {
 		"name": "Cloud Sword - Avalanche",
 		"actions": [
 			["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 4, "bonus_atk_amt"]],
 			["atk", 2]
 		]
 	},
-	"604012": {
+	"614012": {
 		"actions": [
 			["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 5, "bonus_atk_amt"]],
 			["atk", 2]
 		]
 	},
-	"604013": {
+	"614013": {
 		"actions": [
 			["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 6, "bonus_atk_amt"]],
 			["atk", 2]
 		]
 	},
-	"604021": {
+	"614021": {
 		"name": "Cloud Sword - Pray Rain",
 		"actions": [
 			["rep", 3, ["atk", 3]],
@@ -2431,59 +3587,59 @@
 			["cloud_hit", ["qi", 1]]
 		]
 	},
-	"604022": {
+	"614022": {
 		"actions": [
 			["rep", 4, ["atk", 3]],
 			["add_c_of_x", 2, "regen"],
 			["cloud_hit", ["qi", 1]]
 		]
 	},
-	"604023": {
+	"614023": {
 		"actions": [
 			["rep", 5, ["atk", 3]],
 			["add_c_of_x", 2, "regen"],
 			["cloud_hit", ["qi", 1]]
 		]
 	},
-	"604031": {
+	"614031": {
 		"name": "Spirit Cat Chaos Sword",
 		"actions": [
 			["for_each_x_up_to_c_add_y", "hand_count", 3, "bonus_rep_amt"],
 			["rep", 2, ["atk", 2]]
 		]
 	},
-	"604032": {
+	"614032": {
 		"actions": [
 			["for_each_x_up_to_c_add_y", "hand_count", 3, "bonus_rep_amt"],
 			["rep", 3, ["atk", 2]]
 		]
 	},
-	"604033": {
+	"614033": {
 		"actions": [
 			["for_each_x_up_to_c_add_y", "hand_count", 3, "bonus_rep_amt"],
 			["rep", 4, ["atk", 2]]
 		]
 	},
-	"605011": {
+	"615011": {
 		"name": "Unrestrained Sword - Flame Dance",
 		"actions": [
 			["atk", 6],
 			["if_x_at_least_c_do", "unrestrained_sword_count", 1, ["chase"]]
 		]
 	},
-	"605012": {
+	"615012": {
 		"actions": [
 			["atk", 12],
 			["if_x_at_least_c_do", "unrestrained_sword_count", 1, ["chase"]]
 		]
 	},
-	"605013": {
+	"615013": {
 		"actions": [
 			["atk", 18],
 			["if_x_at_least_c_do", "unrestrained_sword_count", 1, ["chase"]]
 		]
 	},
-	"605021": {
+	"615021": {
 		"name": "Sky Delicate Bracelet",
 		"qi_cost": 1,
 		"actions": [
@@ -2492,18 +3648,100 @@
 			["chase"]
 		]
 	},
-	"605022": {
+	"615022": {
 		"actions": [
 			["def", 5],
 			["add_c_of_x", 2, "guard_up"],
 			["chase"]
 		]
 	},
-	"605023": {
+	"615023": {
 		"actions": [
 			["def", 5],
 			["add_c_of_x", 3, "guard_up"],
 			["chase"]
+		]
+	},
+	"622011": {
+		"name": "Only Traces",
+		"actions": [
+			["qi", 3],
+			["post_action", ["chase"]]
+		]
+	},
+	"622012": {
+		"actions": [
+			["qi", 3],
+			["chase"]
+		]
+	},
+	"622013": {
+		"actions": [
+			["qi", 4],
+			["chase"]
+		]
+	},
+	"633011": {
+		"name": "Kun Wu Metal Ring",
+		"actions": [
+			["activate_earth_spirit"],
+			["activate_metal_spirit"],
+			["continuous"],
+			["add_c_of_x", 2, "kun_wu_metal_ring_stacks"]
+		]
+	},
+	"633012": {
+		"actions": [
+			["activate_earth_spirit"],
+			["activate_metal_spirit"],
+			["continuous"],
+			["add_c_of_x", 3, "kun_wu_metal_ring_stacks"]
+		]
+	},
+	"633013": {
+		"actions": [
+			["activate_earth_spirit"],
+			["activate_metal_spirit"],
+			["continuous"],
+			["add_c_of_x", 4, "kun_wu_metal_ring_stacks"]
+		]
+	},
+	"634011": {
+		"name": "Metal Spirit - Vigorous",
+		"actions": [
+			["add_c_of_x", 1, "disable_penetrate_stacks"],
+			["for_each_x_add_y", "penetrate", "bonus_atk_amt"],
+			["atk", 6]
+		]
+	},
+	"634012": {
+		"actions": [
+			["add_c_of_x", 1, "disable_penetrate_stacks"],
+			["for_each_x_add_y", "penetrate", "bonus_atk_amt"],
+			["atk", 12]
+		]
+	},
+	"634013": {
+		"actions": [
+			["add_c_of_x", 1, "disable_penetrate_stacks"],
+			["for_each_x_add_y", "penetrate", "bonus_atk_amt"],
+			["atk", 18]
+		]
+	},
+	"635011": {
+		"name": "Earth Spirit - Landslide",
+		"actions": [
+			["do_earth_spirit_landslide", 8, 3]
+		]
+	},
+	"635012": {
+		"actions": [
+			["do_earth_spirit_landslide", 15, 3]
+		]
+	},
+	"635013": {
+		"actions": [
+			["do_earth_spirit_landslide", 15, 4]
 		]
 	}
 }
