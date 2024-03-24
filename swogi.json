@@ -573,6 +573,25 @@
 			["add_c_of_x", 4, "stillness_citta_dharma_stacks"]
 		]
 	},
+	"123011": {
+		"name": "Starry Moon",
+		"actions": [
+			["add_c_of_x", 2, "star_power"],
+			["become_star_point", 2]
+		]
+	},
+	"123012": {
+		"actions": [
+			["add_c_of_x", 3, "star_power"],
+			["become_star_point", 2]
+		]
+	},
+	"123013": {
+		"actions": [
+			["add_c_of_x", 4, "star_power"],
+			["become_star_point", 2]
+		]
+	},
 	"123021": {
 		"name": "Astral Move - Hit",
 		"qi_cost": 1,
@@ -692,6 +711,26 @@
 		"actions": [
 			["continuous"],
 			["do_polaris_citta_dharma", 3]
+		]
+	},
+	"125021": {
+		"name": "Astral Move - Cide",
+		"qi_cost": 1,
+		"actions": [
+			["atk", 16],
+			["star_point", ["add_enemy_c_of_x", 1, "skip_next_card_stacks"]]
+		]
+	},
+	"125022": {
+		"actions": [
+			["atk", 22],
+			["star_point", ["add_enemy_c_of_x", 1, "skip_next_card_stacks"]]
+		]
+	},
+	"125023": {
+		"actions": [
+			["atk", 28],
+			["star_point", ["add_enemy_c_of_x", 1, "skip_next_card_stacks"]]
 		]
 	},
 	"125031": {
@@ -908,6 +947,64 @@
 			["metal_spirit", ["add_c_of_x", 3, "ignore_def"]]
 		]
 	},
+	"132101": {
+		"name": "Water Spirit - Turbulent",
+		"qi_cost": 1,
+		"actions": [
+			["water_spirit",
+				["for_each_x_add_y", "force_of_water", "bonus_atk_amt"]],
+			["atk", 10]
+		]
+	},
+	"132102": {
+		"actions": [
+			["water_spirit",
+				["for_each_x_add_y", "force_of_water", "bonus_atk_amt"]],
+			["atk", 14]
+		]
+	},
+	"132103": {
+		"actions": [
+			["water_spirit",
+				["for_each_x_add_y", "force_of_water", "bonus_atk_amt"]],
+			["atk", 18]
+		]
+	},
+	"133021": {
+		"name": "Wood Spirit - Forest Guard",
+		"qi_cost": 1,
+		"actions": [
+			["rep", 2, [
+				["add_c_of_x", 1, "smash_def"],
+				["atk", 1]
+			]],
+			["wood_spirit",
+				["if_x_at_least_c_do", "hp_gained", 1, ["chase"]]
+			]
+		]
+	},
+	"133022": {
+		"actions": [
+			["rep", 2, [
+				["add_c_of_x", 1, "smash_def"],
+				["atk", 2]
+			]],
+			["wood_spirit",
+				["if_x_at_least_c_do", "hp_gained", 1, ["chase"]]
+			]
+		]
+	},
+	"133023": {
+		"actions": [
+			["rep", 2, [
+				["add_c_of_x", 1, "smash_def"],
+				["atk", 3]
+			]],
+			["wood_spirit",
+				["if_x_at_least_c_do", "hp_gained", 1, ["chase"]]
+			]
+		]
+	},
 	"133031": {
 		"name": "Fire Spirit Formation",
 		"actions": [
@@ -962,6 +1059,25 @@
 			["reduce_enemy_c_of_x", 7, "max_hp"]
 		]
 	},
+	"133051": {
+		"name": "Earth Spirit - Dust",
+		"actions": [
+			["atk", 8],
+			["earth_spirit", ["do_earth_spirit_dust"]]
+		]
+	},
+	"133052": {
+		"actions": [
+			["atk", 12],
+			["earth_spirit", ["do_earth_spirit_dust"]]
+		]
+	},
+	"133053": {
+		"actions": [
+			["atk", 16],
+			["earth_spirit", ["do_earth_spirit_dust"]]
+		]
+	},
 	"133061": {
 		"name": "Earth Spirit - Cliff",
 		"actions": [
@@ -1001,6 +1117,117 @@
 			["def", 8],
 			["add_c_of_x", 8, "penetrate"],
 			["metal_spirit", ["for_each_x_add_c_pct_y", "def", 25, "penetrate"]]
+		]
+	},
+	"133091": {
+		"name": "Water Spirit Formation",
+		"actions": [
+			["qi", 2],
+			["continuous"],
+			["add_c_of_x", 1, "water_spirit_formation_stacks"]
+		]
+	},
+	"133092": {
+		"actions": [
+			["qi", 3],
+			["continuous"],
+			["add_c_of_x", 1, "water_spirit_formation_stacks"]
+		]
+	},
+	"133093": {
+		"actions": [
+			["qi", 5],
+			["continuous"],
+			["add_c_of_x", 1, "water_spirit_formation_stacks"]
+		]
+	},
+	"133101": {
+		"name": "Water Spirit - Spring",
+		"actions": [
+			["qi", 2],
+			["water_spirit", ["add_c_of_x", 1, "water_spirit_spring_stacks"]]
+		]
+	},
+	"133102": {
+		"actions": [
+			["qi", 3],
+			["water_spirit", ["add_c_of_x", 1, "water_spirit_spring_stacks"]]
+		]
+	},
+	"133103": {
+		"actions": [
+			["qi", 4],
+			["water_spirit", ["add_c_of_x", 1, "water_spirit_spring_stacks"]]
+		]
+	},
+	"133111": {
+		"name": "Five Elements Circulation",
+		"actions": [
+			["do_five_elements_circulation", 1]
+		]
+	},
+	"133112": {
+		"actions": [
+			["do_five_elements_circulation", 2]
+		]
+	},
+	"133113": {
+		"actions": [
+			["do_five_elements_circulation", 3]
+		]
+	},
+	"134011": {
+		"name": "Wood Spirit - Fragrant",
+		"actions": [
+			["qi", 2],
+			["heal", 2],
+			["wood_spirit",
+				["for_each_x_add_c_pct_y", "qi", 33.333334, "increase_atk"]]
+		]
+	},
+	"134012": {
+		"actions": [
+			["qi", 3],
+			["heal", 3],
+			["wood_spirit",
+				["for_each_x_add_c_pct_y", "qi", 33.333334, "increase_atk"]]
+		]
+	},
+	"134013": {
+		"actions": [
+			["qi", 4],
+			["heal", 4],
+			["wood_spirit",
+				["for_each_x_add_c_pct_y", "qi", 33.333334, "increase_atk"]]
+		]
+	},
+	"134021": {
+		"name": "Wood Spirit - Thorn",
+		"qi_cost": 1,
+		"actions": [
+			["rep", 3, ["atk", 4]],
+			["wood_spirit", [
+				["for_each_x_add_c_pct_y", "damage_dealt_to_hp_by_this_card_atk", 33.333334, "bonus_heal_amt"],
+				["heal", 0]
+			]]
+		]
+	},
+	"134022": {
+		"actions": [
+			["rep", 4, ["atk", 4]],
+			["wood_spirit", [
+				["for_each_x_add_c_pct_y", "damage_dealt_to_hp_by_this_card_atk", 33.333334, "bonus_heal_amt"],
+				["heal", 0]
+			]]
+		]
+	},
+	"134023": {
+		"actions": [
+			["rep", 5, ["atk", 4]],
+			["wood_spirit", [
+				["for_each_x_add_c_pct_y", "damage_dealt_to_hp_by_this_card_atk", 33.333334, "bonus_heal_amt"],
+				["heal", 0]
+			]]
 		]
 	},
 	"134031": {
@@ -1120,6 +1347,97 @@
 			["metal_spirit", ["add_c_of_x", 4, "metal_spirit_iron_bone_stacks"]]
 		]
 	},
+	"134091": {
+		"name": "Water Spirit - Great Waves",
+		"actions": [
+			["qi", 2],
+			["add_c_of_x", 2, "max_hp"],
+			["water_spirit", ["for_each_x_add_c_pct_y", "qi", 50, "force_of_water"]]
+		]
+	},
+	"134092": {
+		"actions": [
+			["qi", 3],
+			["add_c_of_x", 3, "max_hp"],
+			["water_spirit", ["for_each_x_add_c_pct_y", "qi", 50, "force_of_water"]]
+		]
+	},
+	"134093": {
+		"actions": [
+			["qi", 4],
+			["add_c_of_x", 4, "max_hp"],
+			["water_spirit", ["for_each_x_add_c_pct_y", "qi", 50, "force_of_water"]]
+		]
+	},
+	"134101": {
+		"name": "Water Spirit - Dive",
+		"qi_cost": 1,
+		"actions": [
+			["add_c_of_x", 2, "max_hp"],
+			["heal", 2],
+			["water_spirit", ["add_c_of_x", 2, "water_spirit_dive_stacks"]]
+		]
+	},
+	"134102": {
+		"actions": [
+			["add_c_of_x", 7, "max_hp"],
+			["heal", 7],
+			["water_spirit", ["add_c_of_x", 2, "water_spirit_dive_stacks"]]
+		]
+	},
+	"134103": {
+		"actions": [
+			["add_c_of_x", 12, "max_hp"],
+			["heal", 12],
+			["water_spirit", ["add_c_of_x", 2, "water_spirit_dive_stacks"]]
+		]
+	},
+	"134111": {
+		"name": "World Smash",
+		"qi_cost": 1,
+		"actions": [
+			["for_each_x_add_c_y", "different_five_elements", 4, "bonus_atk_amt"],
+			["add_c_of_x", 1, "smash_def"],
+			["atk", 4]
+		]
+	},
+	"134112": {
+		"actions": [
+			["for_each_x_add_c_y", "different_five_elements", 5, "bonus_atk_amt"],
+			["add_c_of_x", 1, "smash_def"],
+			["atk", 7]
+		]
+	},
+	"134113": {
+		"actions": [
+			["for_each_x_add_c_y", "different_five_elements", 6, "bonus_atk_amt"],
+			["add_c_of_x", 1, "smash_def"],
+			["atk", 10]
+		]
+	},
+	"135011": {
+		"name": "Wood Spirit - Willow Leaf",
+		"qi_cost": 1,
+		"actions": [
+			["add_c_of_x", 1, "increase_atk"],
+			["heal", 3],
+			["wood_spirit", ["chase"]]
+		]
+	},
+	"135012": {
+		"actions": [
+			["add_c_of_x", 2, "increase_atk"],
+			["heal", 3],
+			["wood_spirit", ["chase"]]
+		]
+	},
+	"135013": {
+		"actions": [
+			["add_c_of_x", 3, "increase_atk"],
+			["heal", 3],
+			["wood_spirit", ["chase"]]
+		]
+	},
 	"135021": {
 		"name": "Fire Spirit - Blazing Praerie",
 		"qi_cost": 2,
@@ -1178,6 +1496,41 @@
 			["atk", 15]
 		]
 	},
+	"135051": {
+		"name": "Water Spirit - Combine Rivers",
+		"qi_cost": 2,
+		"actions": [
+			["add_c_of_x", 3, "force_of_water"],
+			["water_spirit", [
+				["for_each_x_add_y", "force_of_water", "bonus_max_hp_amt"],
+				["for_each_x_add_y", "force_of_water", "bonus_heal_amt"],
+				["add_c_of_x", 6, "max_hp"],
+				["heal", 6]
+			]]
+		]
+	},
+	"135052": {
+		"actions": [
+			["add_c_of_x", 4, "force_of_water"],
+			["water_spirit", [
+				["for_each_x_add_y", "force_of_water", "bonus_max_hp_amt"],
+				["for_each_x_add_y", "force_of_water", "bonus_heal_amt"],
+				["add_c_of_x", 8, "max_hp"],
+				["heal", 8]
+			]]
+		]
+	},
+	"135053": {
+		"actions": [
+			["add_c_of_x", 5, "force_of_water"],
+			["water_spirit", [
+				["for_each_x_add_y", "force_of_water", "bonus_max_hp_amt"],
+				["for_each_x_add_y", "force_of_water", "bonus_heal_amt"],
+				["add_c_of_x", 10, "max_hp"],
+				["heal", 10]
+			]]
+		]
+	},
 	"135061": {
 		"name": "Ultimate World Formation",
 		"actions": [
@@ -1201,21 +1554,47 @@
 		"name": "Five Elements Heavenly Marrow Rhythm",
 		"actions": [
 			["continuous"],
-			["add_c_of_x", 2, "five_elements_heavenly_marrow_rhythm_stacks"]
+			["if_x_at_most_c_do", "different_five_elements", 1,
+				["add_c_of_x", 2, "five_elements_heavenly_marrow_rhythm_stacks"]]
 		]
 	},
 	"135072": {
 		"actions": [
 			["qi", 2],
 			["continuous"],
-			["add_c_of_x", 2, "five_elements_heavenly_marrow_rhythm_stacks"]
+			["if_x_at_most_c_do", "different_five_elements", 1,
+				["add_c_of_x", 2, "five_elements_heavenly_marrow_rhythm_stacks"]]
 		]
 	},
 	"135073": {
 		"actions": [
 			["qi", 2],
 			["continuous"],
-			["add_c_of_x", 3, "five_elements_heavenly_marrow_rhythm_stacks"]
+			["if_x_at_most_c_do", "different_five_elements", 1,
+				["add_c_of_x", 3, "five_elements_heavenly_marrow_rhythm_stacks"]]
+		]
+	},
+	"142071": {
+		"name": "Ghost Howling",
+		"qi_cost": 1,
+		"actions": [
+			["gain_ignore_def", 1],
+			["atk", 14],
+			["add_c_of_x", 3, "weaken"]
+		]
+	},
+	"142072": {
+		"actions": [
+			["gain_ignore_def", 1],
+			["atk", 18],
+			["add_c_of_x", 3, "weaken"]
+		]
+	},
+	"142073": {
+		"actions": [
+			["gain_ignore_def", 1],
+			["atk", 22],
+			["add_c_of_x", 3, "weaken"]
 		]
 	},
 	"143031": {
@@ -1239,6 +1618,28 @@
 			["def", 0],
 			["atk", 14],
 			["add_c_of_x", 9, "crash_fist_subdue_dragon_stacks"]
+		]
+	},
+	"143091": {
+		"name": "Majestic Qi",
+		"actions": [
+			["qi", 2],
+			["add_c_of_x", 1, "force"],
+			["add_c_of_x", 2, "majestic_qi_stacks"]
+		]
+	},
+	"143092": {
+		"actions": [
+			["qi", 3],
+			["add_c_of_x", 1, "force"],
+			["add_c_of_x", 3, "majestic_qi_stacks"]
+		]
+	},
+	"143093": {
+		"actions": [
+			["qi", 4],
+			["add_c_of_x", 1, "force"],
+			["add_c_of_x", 4, "majestic_qi_stacks"]
 		]
 	},
 	"144011": {
@@ -1372,6 +1773,57 @@
 			["add_c_of_x", 1, "elusive_footwork_stacks"]
 		]
 	},
+	"144071": {
+		"name": "Styx Agility",
+		"hp_cost": 1,
+		"actions": [
+			["add_c_of_x", 1, "decrease_atk"],
+			["add_c_of_x", 10, "agility"]
+		]
+	},
+	"144072": {
+		"hp_cost": 3,
+		"actions": [
+			["add_c_of_x", 1, "decrease_atk"],
+			["add_c_of_x", 14, "agility"]
+		]
+	},
+	"144073": {
+		"hp_cost": 5,
+		"actions": [
+			["add_c_of_x", 2, "decrease_atk"],
+			["add_c_of_x", 18, "agility"]
+		]
+	},
+	"144081": {
+		"name": "Soul Seizing",
+		"qi_cost": 1,
+		"actions": [
+			["for_each_x_add_y", "debuff", "bonus_reduce_enemy_hp_amt"],
+			["set_x_down_to_c", "bonus_reduce_enemy_hp_amt", 7],
+			["for_each_x_add_y", "bonus_reduce_enemy_hp_amt", "bonus_heal_amt"],
+			["reduce_enemy_c_of_x", 7, "hp"],
+			["heal", 7]
+		]
+	},
+	"144082": {
+		"actions": [
+			["for_each_x_add_y", "debuff", "bonus_reduce_enemy_hp_amt"],
+			["set_x_down_to_c", "bonus_reduce_enemy_hp_amt", 10],
+			["for_each_x_add_y", "bonus_reduce_enemy_hp_amt", "bonus_heal_amt"],
+			["reduce_enemy_c_of_x", 10, "hp"],
+			["heal", 10]
+		]
+	},
+	"144083": {
+		"actions": [
+			["for_each_x_add_y", "debuff", "bonus_reduce_enemy_hp_amt"],
+			["set_x_down_to_c", "bonus_reduce_enemy_hp_amt", 13],
+			["for_each_x_add_y", "bonus_reduce_enemy_hp_amt", "bonus_heal_amt"],
+			["reduce_enemy_c_of_x", 13, "hp"],
+			["heal", 13]
+		]
+	},
 	"144091": {
 		"name": "Surging Waves",
 		"actions": [
@@ -1474,7 +1926,7 @@
 		]
 	},
 	"145041": {
-		"name": "Realm Killing Palms",
+		"name": "Realm-Killing Palms",
 		"actions": [
 			["for_each_x_add_c_pct_y", "physique", 4, "bonus_rep_amt"],
 			["for_each_x_add_c_pct_y", "physique_gained", 25, "bonus_atk_amt"],
@@ -1493,6 +1945,87 @@
 			["for_each_x_add_c_pct_y", "physique", 4, "bonus_rep_amt"],
 			["for_each_x_add_c_pct_y", "physique_gained", 50, "bonus_atk_amt"],
 			["rep", 1, ["atk", 5]]
+		]
+	},
+	"145051": {
+		"name": "Shura Roar",
+		"actions": [
+			["add_c_of_x", 4, "internal_injury"],
+			["add_enemy_c_of_x", 4, "internal_injury"],
+			["for_each_x_add_c_pct_y", "debuff", 50, "qi"],
+			["for_each_x_add_c_pct_y", "debuff", 50, "hp"]
+		]
+	},
+	"145052": {
+		"actions": [
+			["add_c_of_x", 6, "internal_injury"],
+			["add_enemy_c_of_x", 6, "internal_injury"],
+			["for_each_x_add_c_pct_y", "debuff", 50, "qi"],
+			["for_each_x_add_c_pct_y", "debuff", 50, "hp"]
+		]
+	},
+	"145053": {
+		"actions": [
+			["add_c_of_x", 8, "internal_injury"],
+			["add_enemy_c_of_x", 8, "internal_injury"],
+			["for_each_x_add_c_pct_y", "debuff", 50, "qi"],
+			["for_each_x_add_c_pct_y", "debuff", 50, "hp"]
+		]
+	},
+	"145061": {
+		"name": "Soul Cleaving",
+		"qi_cost": 1,
+		"actions": [
+			["if_x_at_least_c_do", "internal_injury", 1,
+				["add_enemy_c_of_x", 2, "internal_injury"]],
+			["if_x_at_least_c_do", "weaken", 1,
+				["add_enemy_c_of_x", 2, "weaken"]],
+			["if_x_at_least_c_do", "flaw", 1,
+				["add_enemy_c_of_x", 2, "flaw"]],
+			["if_x_at_least_c_do", "decrease_atk", 1,
+				["add_enemy_c_of_x", 2, "decrease_atk"]],
+			["if_x_at_least_c_do", "entangle", 1,
+				["add_enemy_c_of_x", 2, "entangle"]],
+			["if_x_at_least_c_do", "wound", 1,
+				["add_enemy_c_of_x", 2, "wound"]],
+			["for_each_x_add_y", "debuff", "bonus_force_amt"],
+			["atk", 10]
+		]
+	},
+	"145062": {
+		"actions": [
+			["if_x_at_least_c_do", "internal_injury", 1,
+				["add_enemy_c_of_x", 2, "internal_injury"]],
+			["if_x_at_least_c_do", "weaken", 1,
+				["add_enemy_c_of_x", 2, "weaken"]],
+			["if_x_at_least_c_do", "flaw", 1,
+				["add_enemy_c_of_x", 2, "flaw"]],
+			["if_x_at_least_c_do", "decrease_atk", 1,
+				["add_enemy_c_of_x", 2, "decrease_atk"]],
+			["if_x_at_least_c_do", "entangle", 1,
+				["add_enemy_c_of_x", 2, "entangle"]],
+			["if_x_at_least_c_do", "wound", 1,
+				["add_enemy_c_of_x", 2, "wound"]],
+			["for_each_x_add_y", "debuff", "bonus_force_amt"],
+			["atk", 15]
+		]
+	},
+	"145063": {
+		"actions": [
+			["if_x_at_least_c_do", "internal_injury", 1,
+				["add_enemy_c_of_x", 2, "internal_injury"]],
+			["if_x_at_least_c_do", "weaken", 1,
+				["add_enemy_c_of_x", 2, "weaken"]],
+			["if_x_at_least_c_do", "flaw", 1,
+				["add_enemy_c_of_x", 2, "flaw"]],
+			["if_x_at_least_c_do", "decrease_atk", 1,
+				["add_enemy_c_of_x", 2, "decrease_atk"]],
+			["if_x_at_least_c_do", "entangle", 1,
+				["add_enemy_c_of_x", 2, "entangle"]],
+			["if_x_at_least_c_do", "wound", 1,
+				["add_enemy_c_of_x", 2, "wound"]],
+			["for_each_x_add_y", "debuff", "bonus_force_amt"],
+			["atk", 20]
 		]
 	},
 	"145071": {
@@ -2801,6 +3334,22 @@
 			["add_c_of_x", 4, "heavenly_spirit_forceage_formation_stacks"]
 		]
 	},
+	"355021": {
+		"name": "Echo Formation",
+		"actions": [
+			["do_echo_formation_thing", 0]
+		]
+	},
+	"355022": {
+		"actions": [
+			["do_echo_formation_thing", 1]
+		]
+	},
+	"355023": {
+		"actions": [
+			["do_echo_formation_thing", 2]
+		]
+	},
 	"355031": {
 		"name": "Meru Formation",
 		"actions": [
@@ -3681,6 +4230,50 @@
 			["chase"]
 		]
 	},
+	"624011": {
+		"name": "Heptastar Soulstat",
+		"actions": [
+			["reduce_enemy_c_of_x", 4, "hp"],
+			["add_enemy_c_of_x", 1, "cannot_act_stacks"]
+		]
+	},
+	"624012": {
+		"actions": [
+			["reduce_enemy_c_of_x", 9, "hp"],
+			["add_enemy_c_of_x", 1, "cannot_act_stacks"]
+		]
+	},
+	"624013": {
+		"actions": [
+			["reduce_enemy_c_of_x", 14, "hp"],
+			["add_enemy_c_of_x", 1, "cannot_act_stacks"]
+		]
+	},
+	"625011": {
+		"name": "Star Moon Folding Fan",
+		"actions": [
+			["if_x_at_least_c_do", "qi", 1, ["add_c_of_x", 1, "star_power"]],
+			["if_x_at_least_c_do", "star_power", 3, ["chase"]],
+			["continuous"],
+			["add_c_of_x", 1, "reduce_qi_cost_on_star_point_stacks"]
+		]
+	},
+	"625012": {
+		"actions": [
+			["if_x_at_least_c_do", "qi", 1, ["add_c_of_x", 2, "star_power"]],
+			["if_x_at_least_c_do", "star_power", 3, ["chase"]],
+			["continuous"],
+			["add_c_of_x", 1, "reduce_qi_cost_on_star_point_stacks"]
+		]
+	},
+	"625013": {
+		"actions": [
+			["if_x_at_least_c_do", "qi", 1, ["add_c_of_x", 3, "star_power"]],
+			["if_x_at_least_c_do", "star_power", 3, ["chase"]],
+			["continuous"],
+			["add_c_of_x", 1, "reduce_qi_cost_on_star_point_stacks"]
+		]
+	},
 	"633011": {
 		"name": "Kun Wu Metal Ring",
 		"actions": [
@@ -3704,6 +4297,40 @@
 			["activate_metal_spirit"],
 			["continuous"],
 			["add_c_of_x", 4, "kun_wu_metal_ring_stacks"]
+		]
+	},
+	"633021": {
+		"name": "Gourd Of Leisurely",
+		"actions": [
+			["qi", 1],
+			["heal", 3],
+			["if_x_at_least_c_do", "activate_wood_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_fire_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_earth_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_metal_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_water_spirit_stacks", 1, ["chase"]]
+		]
+	},
+	"633022": {
+		"actions": [
+			["qi", 2],
+			["heal", 5],
+			["if_x_at_least_c_do", "activate_wood_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_fire_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_earth_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_metal_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_water_spirit_stacks", 1, ["chase"]]
+		]
+	},
+	"633023": {
+		"actions": [
+			["qi", 3],
+			["heal", 7],
+			["if_x_at_least_c_do", "activate_wood_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_fire_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_earth_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_metal_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_water_spirit_stacks", 1, ["chase"]]
 		]
 	},
 	"634011": {
