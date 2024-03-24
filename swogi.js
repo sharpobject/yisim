@@ -1812,7 +1812,7 @@ class GameState {
             const effective_def = Math.floor(this.players[enemy_idx].def * .5);
             const pre_multiplied_damage_to_def = Math.min(effective_def, dmg);
             damage_to_def = pre_multiplied_damage_to_def * 2;
-            if (this.players[enemy_idx].def % 2 === 1) {
+            if (this.players[enemy_idx].def % 2 === 1 && effective_def < dmg) {
                 damage_to_def += 1;
             }
             damage_to_hp = dmg - pre_multiplied_damage_to_def;
