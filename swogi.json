@@ -2323,6 +2323,23 @@
 			["atk", 14]
 		]
 	},
+	"226021": {
+		"name": "Covert Shift",
+		"qi_cost": 1,
+		"actions": [
+			["add_c_of_x", 2, "covert_shift_stacks"]
+		]
+	},
+	"226022": {
+		"actions": [
+			["add_c_of_x", 3, "covert_shift_stacks"]
+		]
+	},
+	"226023": {
+		"actions": [
+			["add_c_of_x", 4, "covert_shift_stacks"]
+		]
+	},
 	"231011": {
 		"name": "Wood Spirit Secret Seal",
 		"actions": [

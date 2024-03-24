@@ -334,6 +334,7 @@ class Player {
         this.card_play_direction = 1;
         // heptastar sect secret enchantment cards
         this.bonus_star_power_multiplier = 0;
+        this.covert_shift_stacks = 0;
         // heptastar sect character-specific cards
         this.cannot_act_stacks = 0;
         this.reduce_qi_cost_on_star_point_stacks = 0;
@@ -1501,6 +1502,11 @@ class GameState {
             this.players[idx].guard_up -= 1;
             this.log("prevented " + dmg + " damage to hp with guard up. " + this.players[idx].guard_up + " guard up remaining");
             return 0;
+        } else if (this.players[idx].covert_shift_stacks > 0 && !is_cost) {
+            this.players[idx].covert_shift_stacks -= 1;
+            this.log("reversed " + dmg + " damage to hp with covert shift. " + this.players[idx].covert_shift_stacks + " covert shift remaining");
+            this.increase_idx_hp(idx, dmg);
+            return 0;
         } else {
             this.players[idx].hp_lost += dmg;
             this.players[idx].hp -= dmg;
@@ -1819,18 +1825,20 @@ class GameState {
             if (this.players[0].disable_penetrate_stacks > 0) {
                 this.players[0].disable_penetrate_stacks -= 1;
             } else if (this.players[my_idx].penetrate > 0) {
-                if (damage_to_hp > 0 && this.players[enemy_idx].guard_up === 0) {
+                if (damage_to_hp > 0 && this.players[enemy_idx].guard_up === 0 && this.players[enemy_idx].covert_shift_stacks === 0) {
                     this.log("penetrating " + this.players[my_idx].penetrate + " damage");
                     damage_to_hp += this.players[my_idx].penetrate;
                     this.reduce_c_of_x(this.players[my_idx].penetrate, "penetrate");
                 }
             }
-            if (damage_to_hp > 0 && this.players[enemy_idx].guard_up === 0) {
+            if (damage_to_hp > 0 && this.players[enemy_idx].guard_up === 0 && this.players[enemy_idx].covert_shift_stacks === 0) {
                 dmg += this.players[enemy_idx].wound;
             }
             if (this.players[0].metal_spirit_giant_tripod_stacks > 0) {
                 this.players[0].metal_spirit_giant_tripod_stacks -= 1;
-                damage_to_hp *= 2;
+                if (this.players[enemy_idx].covert_shift_stacks === 0) {
+                    damage_to_hp *= 2;
+                }
             }
         }
         var damage_actually_dealt_to_hp = this.reduce_idx_hp(enemy_idx, damage_to_hp, false);
