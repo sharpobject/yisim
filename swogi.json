@@ -844,6 +844,124 @@
 			]]
 		]
 	},
+	"131011": {
+		"name": "Wood Spirit - Bud",
+		"qi_cost": 1,
+		"actions": [
+			["rep", 4, ["atk", 3]],
+			["wood_spirit", ["heal", 5]]
+		]
+	},
+	"131012": {
+		"actions": [
+			["rep", 4, ["atk", 3]],
+			["wood_spirit", ["heal", 5]]
+		]
+	},
+	"131013": {
+		"actions": [
+			["rep", 4, ["atk", 3]],
+			["wood_spirit", ["heal", 5]]
+		]
+	},
+	"131021": {
+		"name": "Frozen Blood Lotus",
+		"actions": [
+			["do_frozen_blood_lotus"]
+		]
+	},
+	"131022": {
+		"actions": [
+			["do_frozen_blood_lotus"]
+		]
+	},
+	"131023": {
+		"actions": [
+			["do_frozen_blood_lotus"]
+		]
+	},
+	"131031": {
+		"name": "Hunter Hunting Hunter",
+		"actions": [
+			["reverse_card_play_direction"],
+			["continuous"],
+			["add_c_of_x", 7, "hunter_hunting_hunter_stacks"]
+		]
+	},
+	"131032": {
+		"actions": [
+			["reverse_card_play_direction"],
+			["continuous"],
+			["add_c_of_x", 10, "hunter_hunting_hunter_stacks"]
+		]
+	},
+	"131033": {
+		"actions": [
+			["reverse_card_play_direction"],
+			["continuous"],
+			["add_c_of_x", 13, "hunter_hunting_hunter_stacks"]
+		]
+	},
+	"131041": {
+		"name": "Drag Moon In Sea",
+		"actions": ["post_action", [
+			["atk", 12],
+			["chase"]
+		]]
+	},
+	"131042": {
+		"actions": ["post_action", [
+			["atk", 18],
+			["chase"]
+		]]
+	},
+	"131043": {
+		"actions": ["post_action", [
+			["atk", 24],
+			["chase"]
+		]]
+	},
+	"131051": {
+		"name": "Hunter Becomes Preyer",
+		"actions": [
+			["rep", 2, ["atk", 2]],
+			["heal", 4],
+			["post_action", ["atk", 7]]
+		]
+	},
+	"131052": {
+		"actions": [
+			["rep", 2, ["atk", 3]],
+			["heal", 6],
+			["post_action", ["atk", 10]]
+		]
+	},
+	"131053": {
+		"actions": [
+			["rep", 2, ["atk", 4]],
+			["heal", 8],
+			["post_action", ["atk", 13]]
+		]
+	},
+	"131061": {
+		"name": "Flame Hexagram",
+		"actions": [
+			["add_c_of_x", 3, "hexagram"],
+			["reduce_enemy_c_of_x", 2, "max_hp"]
+		]
+	},
+	"131062": {
+		"actions": [
+			["add_c_of_x", 4, "hexagram"],
+			["reduce_enemy_c_of_x", 4, "max_hp"]
+		]
+	},
+	"131063": {
+		"actions": [
+			["add_c_of_x", 5, "hexagram"],
+			["reduce_enemy_c_of_x", 6, "max_hp"]
+		]
+	},
 	"132032": {
 		"actions": [
 			["qi", 3],
@@ -860,6 +978,26 @@
 				["reduce_c_of_x", 6, "hp"],
 				["reduce_c_of_x", 6, "max_hp"]
 			]]
+		]
+	},
+	"132041": {
+		"name": "Fire Spirit - Scarlet Flame",
+		"qi_cost": 1,
+		"actions": [
+			["rep", 2, ["atk", 4]],
+			["fire_spirit", ["atk", 4]]
+		]
+	},
+	"132042": {
+		"actions": [
+			["rep", 2, ["atk", 5]],
+			["fire_spirit", ["atk", 6]]
+		]
+	},
+	"132043": {
+		"actions": [
+			["rep", 2, ["atk", 6]],
+			["fire_spirit", ["atk", 8]]
 		]
 	},
 	"132051": {
@@ -1117,6 +1255,25 @@
 			["def", 8],
 			["add_c_of_x", 8, "penetrate"],
 			["metal_spirit", ["for_each_x_add_c_pct_y", "def", 25, "penetrate"]]
+		]
+	},
+	"133081": {
+		"name": "Metal Spirit - Sharp",
+		"actions": [
+			["atk", 6],
+			["metal_spirit", ["for_each_x_add_c_pct_y", "damage_dealt_to_hp_by_atk", 50, "penetrate"]]
+		]
+	},
+	"133082": {
+		"actions": [
+			["atk", 9],
+			["metal_spirit", ["for_each_x_add_c_pct_y", "damage_dealt_to_hp_by_atk", 50, "penetrate"]]
+		]
+	},
+	"133083": {
+		"actions": [
+			["atk", 12],
+			["metal_spirit", ["for_each_x_add_c_pct_y", "damage_dealt_to_hp_by_atk", 50, "penetrate"]]
 		]
 	},
 	"133091": {
@@ -1439,7 +1596,7 @@
 		]
 	},
 	"135021": {
-		"name": "Fire Spirit - Blazing Praerie",
+		"name": "Fire Spirit - Blazing Prairie",
 		"qi_cost": 2,
 		"actions": [
 			["rep", 3, ["atk", 6]],
@@ -1618,6 +1775,25 @@
 			["def", 0],
 			["atk", 14],
 			["add_c_of_x", 9, "crash_fist_subdue_dragon_stacks"]
+		]
+	},
+	"143061": {
+		"name": "Windward Palms",
+		"actions": [
+			["for_each_x_add_c_pct_y_up_to_d", "physique", 16.666667, "bonus_atk_amt", 3],
+			["rep", 2, ["atk", 4]]
+		]
+	},
+	"143062": {
+		"actions": [
+			["for_each_x_add_c_pct_y_up_to_d", "physique", 16.666667, "bonus_atk_amt", 5],
+			["rep", 2, ["atk", 5]]
+		]
+	},
+	"143063": {
+		"actions": [
+			["for_each_x_add_c_pct_y_up_to_d", "physique", 16.666667, "bonus_atk_amt", 7],
+			["rep", 2, ["atk", 6]]
 		]
 	},
 	"143091": {
@@ -2473,6 +2649,7 @@
 	},
 	"315011": {
 		"name": "Ice Spirit Guard Elixir",
+		"qi_cost": 1,
 		"actions": [["add_c_of_x", 2, "guard_up"], ["consumption"]]
 	},
 	"315012": {
