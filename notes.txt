@@ -42,3 +42,7 @@ Colorful Spirit Crane and Dark Star Bat just set your stacks to a certain amount
 If u use lv2 dark star bat and then lv1, does lv1 decrease your stacks or leave them the same?
 
 TODO: Metal Spirit - Charge should add penetrate only 1 time (this matters because it only benefits from Kun Wu 1 time)
+
+It seems like revives such as nangong's revive trigger at the same times that the player could actually lose (so the current implementation is correct).
+
+I heard that astral eclipse increases the first debuff-adding event wihout considering hexproof. So if you try to add 1 weaken and your opponent has 10 hexproof, and you took p5 astral eclipse, it will use up your astral eclipse and consume 4 hexproof.
