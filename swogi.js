@@ -6266,7 +6266,7 @@ riddles["99"] = () => {
             game.players[enemy_idx].mark_of_five_elements_stacks = 1;
             game.sim_n_turns(64);
             if (game.winner == my_idx && !game.used_randomness) {
-                const winning_margin = game.turns_taken;//game.players[my_idx].hp - game.players[enemy_idx].hp;
+                const winning_margin = game.players[my_idx].hp - game.players[enemy_idx].hp;
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
                     best_winning_margin = winning_margin;
