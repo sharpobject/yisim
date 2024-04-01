@@ -632,6 +632,47 @@
 			["atk", 10]
 		]
 	},
+	"123101": {
+		"name": "Hunter Becomes Preyer",
+		"actions": [
+			["rep", 2, ["atk", 2]],
+			["heal", 4],
+			["post_action", ["atk", 7]]
+		]
+	},
+	"123102": {
+		"actions": [
+			["rep", 2, ["atk", 3]],
+			["heal", 6],
+			["post_action", ["atk", 10]]
+		]
+	},
+	"123103": {
+		"actions": [
+			["rep", 2, ["atk", 4]],
+			["heal", 8],
+			["post_action", ["atk", 13]]
+		]
+	},
+	"123111": {
+		"name": "Drag Moon In Sea",
+		"actions": ["post_action", [
+			["atk", 12],
+			["chase"]
+		]]
+	},
+	"123112": {
+		"actions": ["post_action", [
+			["atk", 18],
+			["chase"]
+		]]
+	},
+	"123113": {
+		"actions": ["post_action", [
+			["atk", 24],
+			["chase"]
+		]]
+	},
 	"124011": {
 		"name": "Astral Move - Fly",
 		"qi_cost": 1,
@@ -669,6 +710,25 @@
 		"actions": [
 			["rep", 3, ["atk", 1]],
 			["star_point", ["add_enemy_c_of_x", 3, "weaken"]]
+		]
+	},
+	"124041": {
+		"name": "Flame Hexagram",
+		"actions": [
+			["add_c_of_x", 3, "hexagram"],
+			["reduce_enemy_c_of_x", 2, "max_hp"]
+		]
+	},
+	"124042": {
+		"actions": [
+			["add_c_of_x", 4, "hexagram"],
+			["reduce_enemy_c_of_x", 4, "max_hp"]
+		]
+	},
+	"124043": {
+		"actions": [
+			["add_c_of_x", 5, "hexagram"],
+			["reduce_enemy_c_of_x", 6, "max_hp"]
 		]
 	},
 	"124091": {
@@ -815,6 +875,28 @@
 			["post_action", ["heal", 38]]
 		]
 	},
+	"125071": {
+		"name": "Hunter Hunting Hunter",
+		"actions": [
+			["reverse_card_play_direction"],
+			["continuous"],
+			["add_c_of_x", 7, "hunter_hunting_hunter_stacks"]
+		]
+	},
+	"125072": {
+		"actions": [
+			["reverse_card_play_direction"],
+			["continuous"],
+			["add_c_of_x", 10, "hunter_hunting_hunter_stacks"]
+		]
+	},
+	"125073": {
+		"actions": [
+			["reverse_card_play_direction"],
+			["continuous"],
+			["add_c_of_x", 13, "hunter_hunting_hunter_stacks"]
+		]
+	},
 	"125081": {
 		"name": "Propitious Omen",
 		"actions": [
@@ -834,6 +916,65 @@
 			["do_propitious_omen", 7]
 		]
 	},
+	"131021": {
+		"name": "Wood Spirit - Bud",
+		"qi_cost": 1,
+		"actions": [
+			["rep", 2, ["atk", 3]],
+			["wood_spirit", ["heal", 5]]
+		]
+	},
+	"131022": {
+		"actions": [
+			["rep", 3, ["atk", 3]],
+			["wood_spirit", ["heal", 5]]
+		]
+	},
+	"131023": {
+		"actions": [
+			["rep", 4, ["atk", 3]],
+			["wood_spirit", ["heal", 5]]
+		]
+	},
+	"131041": {
+		"name": "Fire Spirit - Rush",
+		"qi_cost": 1,
+		"actions": [
+			["atk", 9],
+			["fire_spirit", ["atk", 2]]
+		]
+	},
+	"131042": {
+		"actions": [
+			["atk", 11],
+			["fire_spirit", ["atk", 3]]
+		]
+	},
+	"131043": {
+		"actions": [
+			["atk", 13],
+			["fire_spirit", ["atk", 4]]
+		]
+	},
+	"131091": {
+		"name": "Water Spirit Seal",
+		"actions": [
+			["qi", 2],
+			["activate_water_spirit"]
+		]
+	},
+	"131092": {
+		"actions": [
+			["qi", 3],
+			["activate_water_spirit"]
+		]
+	},
+	"131093": {
+		"actions": [
+			["qi", 4],
+			["activate_water_spirit"]
+		]
+	},
 	"132031": {
 		"name": "Fire Spirit - Flame Eater",
 		"actions": [
@@ -842,124 +983,6 @@
 				["reduce_c_of_x", 3, "hp"],
 				["reduce_c_of_x", 3, "max_hp"]
 			]]
-		]
-	},
-	"131011": {
-		"name": "Wood Spirit - Bud",
-		"qi_cost": 1,
-		"actions": [
-			["rep", 4, ["atk", 3]],
-			["wood_spirit", ["heal", 5]]
-		]
-	},
-	"131012": {
-		"actions": [
-			["rep", 4, ["atk", 3]],
-			["wood_spirit", ["heal", 5]]
-		]
-	},
-	"131013": {
-		"actions": [
-			["rep", 4, ["atk", 3]],
-			["wood_spirit", ["heal", 5]]
-		]
-	},
-	"131021": {
-		"name": "Frozen Blood Lotus",
-		"actions": [
-			["do_frozen_blood_lotus"]
-		]
-	},
-	"131022": {
-		"actions": [
-			["do_frozen_blood_lotus"]
-		]
-	},
-	"131023": {
-		"actions": [
-			["do_frozen_blood_lotus"]
-		]
-	},
-	"131031": {
-		"name": "Hunter Hunting Hunter",
-		"actions": [
-			["reverse_card_play_direction"],
-			["continuous"],
-			["add_c_of_x", 7, "hunter_hunting_hunter_stacks"]
-		]
-	},
-	"131032": {
-		"actions": [
-			["reverse_card_play_direction"],
-			["continuous"],
-			["add_c_of_x", 10, "hunter_hunting_hunter_stacks"]
-		]
-	},
-	"131033": {
-		"actions": [
-			["reverse_card_play_direction"],
-			["continuous"],
-			["add_c_of_x", 13, "hunter_hunting_hunter_stacks"]
-		]
-	},
-	"131041": {
-		"name": "Drag Moon In Sea",
-		"actions": ["post_action", [
-			["atk", 12],
-			["chase"]
-		]]
-	},
-	"131042": {
-		"actions": ["post_action", [
-			["atk", 18],
-			["chase"]
-		]]
-	},
-	"131043": {
-		"actions": ["post_action", [
-			["atk", 24],
-			["chase"]
-		]]
-	},
-	"131051": {
-		"name": "Hunter Becomes Preyer",
-		"actions": [
-			["rep", 2, ["atk", 2]],
-			["heal", 4],
-			["post_action", ["atk", 7]]
-		]
-	},
-	"131052": {
-		"actions": [
-			["rep", 2, ["atk", 3]],
-			["heal", 6],
-			["post_action", ["atk", 10]]
-		]
-	},
-	"131053": {
-		"actions": [
-			["rep", 2, ["atk", 4]],
-			["heal", 8],
-			["post_action", ["atk", 13]]
-		]
-	},
-	"131061": {
-		"name": "Flame Hexagram",
-		"actions": [
-			["add_c_of_x", 3, "hexagram"],
-			["reduce_enemy_c_of_x", 2, "max_hp"]
-		]
-	},
-	"131062": {
-		"actions": [
-			["add_c_of_x", 4, "hexagram"],
-			["reduce_enemy_c_of_x", 4, "max_hp"]
-		]
-	},
-	"131063": {
-		"actions": [
-			["add_c_of_x", 5, "hexagram"],
-			["reduce_enemy_c_of_x", 6, "max_hp"]
 		]
 	},
 	"132032": {
@@ -1239,22 +1262,19 @@
 		"name": "Metal Spirit - Charge",
 		"actions": [
 			["def", 4],
-			["add_c_of_x", 4, "penetrate"],
-			["metal_spirit", ["for_each_x_add_c_pct_y", "def", 25, "penetrate"]]
+			["do_metal_spirit_charge", 4]
 		]
 	},
 	"133072": {
 		"actions": [
 			["def", 6],
-			["add_c_of_x", 6, "penetrate"],
-			["metal_spirit", ["for_each_x_add_c_pct_y", "def", 25, "penetrate"]]
+			["do_metal_spirit_charge", 6]
 		]
 	},
 	"133073": {
 		"actions": [
 			["def", 8],
-			["add_c_of_x", 8, "penetrate"],
-			["metal_spirit", ["for_each_x_add_c_pct_y", "def", 25, "penetrate"]]
+			["do_metal_spirit_charge", 8]
 		]
 	},
 	"133081": {
@@ -1619,19 +1639,22 @@
 		"name": "Earth Spirit - Combine World",
 		"actions": [
 			["def", 12],
-			["add_c_of_x", 2, "earth_spirit_combine_world_stacks"]
+			["earth_spirit",
+				["add_c_of_x", 2, "earth_spirit_combine_world_stacks"]]
 		]
 	},
 	"135032": {
 		"actions": [
 			["def", 12],
-			["add_c_of_x", 3, "earth_spirit_combine_world_stacks"]
+			["earth_spirit",
+				["add_c_of_x", 3, "earth_spirit_combine_world_stacks"]]
 		]
 	},
 	"135033": {
 		"actions": [
 			["def", 12],
-			["add_c_of_x", 4, "earth_spirit_combine_world_stacks"]
+			["earth_spirit",
+				["add_c_of_x", 4, "earth_spirit_combine_world_stacks"]]
 		]
 	},
 	"135041": {
@@ -2871,7 +2894,7 @@
 		]
 	},
 	"324021": {
-		"name": "Disturbing Fulu",
+		"name": "Distubing Fulu",
 		"actions": [
 			["add_enemy_c_of_x", 3, "flaw"],
 			["consumption"]
@@ -3509,6 +3532,177 @@
 			["consumption"]
 		]
 	},
+	"351011": {
+		"name": "Thunderphilia Formation",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "thunderphilia_formation_stacks"]
+		]
+	},
+	"351012": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "thunderphilia_formation_stacks"]
+		]
+	},
+	"351013": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "thunderphilia_formation_stacks"]
+		]
+	},
+	"351021": {
+		"name": "Fraccide Formation",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "fraccide_formation_stacks"]
+		]
+	},
+	"351022": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "fraccide_formation_stacks"]
+		]
+	},
+	"351023": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "fraccide_formation_stacks"]
+		]
+	},
+	"351031": {
+		"name": "Impact Formation",
+		"actions": [
+			["if_played_continuous", ["add_c_of_x", 2, "bonus_atk_amt"]],
+			["atk", 6]
+		]
+	},
+	"351032": {
+		"actions": [
+			["if_played_continuous", ["add_c_of_x", 3, "bonus_atk_amt"]],
+			["atk", 8]
+		]
+	},
+	"351033": {
+		"actions": [
+			["if_played_continuous", ["add_c_of_x", 4, "bonus_atk_amt"]],
+			["atk", 10]
+		]
+	},
+	"352011": {
+		"name": "Scutturtle Formation",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "scutturtle_formation_stacks"]
+		]
+	},
+	"352012": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 6, "scutturtle_formation_stacks"]
+		]
+	},
+	"352013": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 8, "scutturtle_formation_stacks"]
+		]
+	},
+	"352021": {
+		"name": "Cacopoisonous Formation",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "cacopoisonous_formation_stacks"]
+		]
+	},
+	"352022": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "cacopoisonous_formation_stacks"]
+		]
+	},
+	"352023": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "cacopoisonous_formation_stacks"]
+		]
+	},
+	"352031": {
+		"name": "Cure Formation",
+		"actions": [
+			["if_played_continuous", ["add_c_of_x", 6, "max_hp"]],
+			["heal", 7]
+		]
+	},
+	"352032": {
+		"actions": [
+			["if_played_continuous", ["add_c_of_x", 9, "max_hp"]],
+			["heal", 11]
+		]
+	},
+	"352033": {
+		"actions": [
+			["if_played_continuous", ["add_c_of_x", 12, "max_hp"]],
+			["heal", 15]
+		]
+	},
+	"353011": {
+		"name": "Spiritage Formation",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "spiritage_formation_stacks"]
+		]
+	},
+	"353012": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "spiritage_formation_stacks"]
+		]
+	},
+	"353013": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "spiritage_formation_stacks"]
+		]
+	},
+	"353021": {
+		"name": "Endless Sword Formation",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "endless_sword_formation_stacks"]
+		]
+	},
+	"353022": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "endless_sword_formation_stacks"]
+		]
+	},
+	"353023": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "endless_sword_formation_stacks"]
+		]
+	},
+	"353031": {
+		"name": "Hexproof Formation",
+		"actions": [
+			["add_c_of_x", 3, "hexproof"],
+			["if_played_continuous", ["def", 10]]
+		]
+	},
+	"353032": {
+		"actions": [
+			["add_c_of_x", 4, "hexproof"],
+			["if_played_continuous", ["def", 14]]
+		]
+	},
+	"353033": {
+		"actions": [
+			["add_c_of_x", 5, "hexproof"],
+			["if_played_continuous", ["def", 18]]
+		]
+	},
 	"354011": {
 		"name": "Heavenly Spirit Forceage Formation",
 		"actions": [
@@ -3526,6 +3720,63 @@
 		"actions": [
 			["continuous"],
 			["add_c_of_x", 4, "heavenly_spirit_forceage_formation_stacks"]
+		]
+	},
+	"354021": {
+		"name": "Octgates Lock Formation",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "octgates_lock_formation_stacks"]
+		]
+	},
+	"354022": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "octgates_lock_formation_stacks"]
+		]
+	},
+	"354023": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "octgates_lock_formation_stacks"]
+		]
+	},
+	"354031": {
+		"name": "Motionless Tutelary Formation",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "motionless_tutelary_formation_stacks"]
+		]
+	},
+	"354032": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "motionless_tutelary_formation_stacks"]
+		]
+	},
+	"354033": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "motionless_tutelary_formation_stacks"]
+		]
+	},
+	"355011": {
+		"name": "Anthomania Formation",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "anthomania_formation_stacks"]
+		]
+	},
+	"355012": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "anthomania_formation_stacks"]
+		]
+	},
+	"355013": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "anthomania_formation_stacks"]
 		]
 	},
 	"355021": {
@@ -3563,6 +3814,40 @@
 			["if_played_continuous", ["chase"]]
 		]
 	},
+	"361011": {
+		"name": "Sword Bamboo",
+		"actions": [
+			["atk", 6]
+		]
+	},
+	"361012": {
+		"actions": [
+			["rep", 2, ["atk", 4]]
+		]
+	},
+	"361013": {
+		"actions": [
+			["rep", 3, ["atk", 3]]
+		]
+	},
+	"361021": {
+		"name": "Hard Bamboo",
+		"actions": [
+			["def", 4]
+		]
+	},
+	"361022": {
+		"actions": [
+			["def", 6]
+		]
+	},
+	"361023": {
+		"actions": [
+			["def", 8],
+			["continuous"],
+			["add_c_of_x", 1, "hard_bamboo_stacks"]
+		]
+	},
 	"362031": {
 		"name": "Leaf Shield Flower",
 		"actions": [
@@ -3579,6 +3864,106 @@
 			["def", 20],
 			["continuous"],
 			["add_c_of_x", 1, "leaf_shield_flower_stacks"]
+		]
+	},
+	"362041": {
+		"name": "Leaf Blade Flower",
+		"actions": [
+			["atk", 4]
+		]
+	},
+	"362042": {
+		"actions": [
+			["rep", 2, ["atk", 4]]
+		]
+	},
+	"362043": {
+		"actions": [
+			["rep", 3, ["atk", 4]],
+			["continuous"],
+			["add_c_of_x", 1, "leaf_blade_flower_stacks"]
+		]
+	},
+	"363011": {
+		"name": "Qi-seeking Sunflower",
+		"actions": [
+			["qi", 2]
+		]
+	},
+	"363012": {
+		"actions": [
+			["qi", 3]
+		]
+	},
+	"363013": {
+		"actions": [
+			["do_qi_seeking_sunflower"]
+		]
+	},
+	"363021": {
+		"name": "Qi-corrupting Sunflower",
+		"actions": [
+			["reduce_enemy_c_of_x", 1, "qi"]
+		]
+	},
+	"363022": {
+		"actions": [
+			["reduce_enemy_c_of_x", 2, "qi"]
+		]
+	},
+	"363023": {
+		"actions": [
+			["do_qi_corrupting_sunflower"]
+		]
+	},
+	"364011": {
+		"name": "Frozen Snow Lotus",
+		"actions": [
+			["heal", 5]
+		]
+	},
+	"364012": {
+		"actions": [
+			["heal", 10]
+		]
+	},
+	"364013": {
+		"actions": [
+			["heal", 10],
+			["add_c_of_x", 3, "frozen_snow_lotus_stacks"]
+		]
+	},
+	"364021": {
+		"name": "Detoxific Purple Fern",
+		"actions": [
+			["reduce_random_debuff_by_c_n_times", 1, 1]
+		]
+	},
+	"364022": {
+		"actions": [
+			["reduce_random_debuff_by_c_n_times", 2, 1]
+		]
+	},
+	"364023": {
+		"actions": [
+			["reduce_random_debuff_by_c_n_times", 3, 1],
+			["if_no_debuff", ["chase"]]
+		]
+	},
+	"364031": {
+		"name": "Frozen Blood Lotus",
+		"actions": [
+			["do_frozen_blood_lotus", 1]
+		]
+	},
+	"364032": {
+		"actions": [
+			["do_frozen_blood_lotus", 2]
+		]
+	},
+	"364033": {
+		"actions": [
+			["do_frozen_blood_lotus", 3]
 		]
 	},
 	"365021": {
@@ -3614,6 +3999,27 @@
 			["add_enemy_c_of_x", 3, "entangle"],
 			["continuous"],
 			["add_enemy_c_of_x", 1, "entangling_ancient_vine_stacks"]
+		]
+	},
+	"365041": {
+		"name": "Devouring Ancient Vine",
+		"actions": [
+			["reduce_enemy_c_of_x", 5, "hp"],
+			["heal", 5]
+		]
+	},
+	"365042": {
+		"actions": [
+			["reduce_enemy_c_of_x", 10, "hp"],
+			["heal", 10]
+		]
+	},
+	"365043": {
+		"actions": [
+			["reduce_enemy_c_of_x", 10, "hp"],
+			["heal", 10],
+			["continuous"],
+			["add_c_of_x", 6, "devouring_ancient_vine_stacks"]
 		]
 	},
 	"401011": {
