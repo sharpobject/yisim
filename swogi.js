@@ -801,7 +801,7 @@ class GameState {
             this.players[0].cloud_sword_chain_count += 1;
             this.log("incremented cloud_sword_chain_count to " + this.players[0].cloud_sword_chain_count);
         } else {
-            if (this.players[0].cloud_sword_chain_count > 0) {
+            if (this.players[0].cloud_sword_chain_count > 0 && this.players[0].endurance_as_cloud_sea_stacks === 0) {
                 this.players[0].cloud_sword_chain_count = 0;
                 this.log("reset cloud_sword_chain_count to 0");
             }

@@ -2105,7 +2105,7 @@
 			["atk", 4],
 			["physique", 3],
 			["if_x_at_least_c_do", "physique", 50, ["add_c_of_x", 1, "increase_atk"]],
-			["if_x_at_least_c_do", "physique", 65, ["add_c_of_x", 4, "agility"]]
+			["if_x_at_least_c_do", "physique", 65, ["add_c_of_x", 5, "agility"]]
 		]
 	},
 	"145032": {
@@ -2113,7 +2113,7 @@
 			["atk", 8],
 			["physique", 4],
 			["if_x_at_least_c_do", "physique", 50, ["add_c_of_x", 1, "increase_atk"]],
-			["if_x_at_least_c_do", "physique", 65, ["add_c_of_x", 5, "agility"]]
+			["if_x_at_least_c_do", "physique", 65, ["add_c_of_x", 6, "agility"]]
 		]
 	},
 	"145033": {
@@ -2121,7 +2121,7 @@
 			["atk", 12],
 			["physique", 5],
 			["if_x_at_least_c_do", "physique", 50, ["add_c_of_x", 1, "increase_atk"]],
-			["if_x_at_least_c_do", "physique", 65, ["add_c_of_x", 6, "agility"]]
+			["if_x_at_least_c_do", "physique", 65, ["add_c_of_x", 7, "agility"]]
 		]
 	},
 	"145041": {
@@ -2188,7 +2188,7 @@
 			["if_x_at_least_c_do", "wound", 1,
 				["add_enemy_c_of_x", 2, "wound"]],
 			["for_each_x_add_y", "debuff", "bonus_force_amt"],
-			["atk", 10]
+			["atk", 8]
 		]
 	},
 	"145062": {
@@ -2206,7 +2206,7 @@
 			["if_x_at_least_c_do", "wound", 1,
 				["add_enemy_c_of_x", 2, "wound"]],
 			["for_each_x_add_y", "debuff", "bonus_force_amt"],
-			["atk", 15]
+			["atk", 14]
 		]
 	},
 	"145063": {
@@ -4639,19 +4639,19 @@
 	"611011": {
 		"name": "Cloud Sword - Flying Sand",
 		"actions": [
-			["atk", 6],
+			["atk", 5],
 			["cloud_hit", ["add_enemy_c_of_x", 2, "flaw"]]
 		]
 	},
 	"611012": {
 		"actions": [
-			["atk", 10],
+			["atk", 8],
 			["cloud_hit", ["add_enemy_c_of_x", 2, "flaw"]]
 		]
 	},
 	"611013": {
 		"actions": [
-			["atk", 10],
+			["atk", 9],
 			["cloud_hit", ["add_enemy_c_of_x", 3, "flaw"]]
 		]
 	},
@@ -4694,19 +4694,19 @@
 		"name": "Cloud Sword - Cat Paw",
 		"actions": ["rep", 2, [
 			["gain_ignore_def", 1],
-			["atk", 5]
+			["atk", 4]
 		]]
 	},
 	"612012": {
 		"actions": ["rep", 2, [
 			["gain_ignore_def", 1],
-			["atk", 7]
+			["atk", 6]
 		]]
 	},
 	"612013": {
 		"actions": ["rep", 2, [
 			["gain_ignore_def", 1],
-			["atk", 9]
+			["atk", 8]
 		]]
 	},
 	"614011": {
