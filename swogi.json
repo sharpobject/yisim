@@ -3580,6 +3580,282 @@
 			["activate_water_spirit"]
 		]
 	},
+	"232011": {
+		"name": "Metal Spirit - Chokehold",
+		"actions": [
+			["atk", 8],
+			["metal_spirit", ["add_enemy_c_of_x", 2, "metal_spirit_chokehold_stacks"]]
+		]
+	},
+	"232012": {
+		"actions": [
+			["atk", 12],
+			["metal_spirit", ["add_enemy_c_of_x", 3, "metal_spirit_chokehold_stacks"]]
+		]
+	},
+	"232013": {
+		"actions": [
+			["atk", 16],
+			["metal_spirit", ["add_enemy_c_of_x", 4, "metal_spirit_chokehold_stacks"]]
+		]
+	},
+	"232021": {
+		"name": "Water Spirit - Rhythm Wood",
+		"actions": [
+			["water_spirit", ["qi", 2]],
+			["wood_spirit", ["for_each_x_add_c_y", "qi", 2, "hp"]]
+		]
+	},
+	"232022": {
+		"actions": [
+			["water_spirit", ["qi", 3]],
+			["wood_spirit", ["for_each_x_add_c_y", "qi", 2, "hp"]]
+		]
+	},
+	"232023": {
+		"actions": [
+			["water_spirit", ["qi", 4]],
+			["wood_spirit", ["for_each_x_add_c_y", "qi", 2, "hp"]]
+		]
+	},
+	"232031": {
+		"name": "Fire Spirit - Rhythm Earth",
+		"actions": [
+			["do_fire_spirit_rhythm_earth", 8, 4]
+		]
+	},
+	"232032": {
+		"actions": [
+			["do_fire_spirit_rhythm_earth", 12, 6]
+		]
+	},
+	"232033": {
+		"actions": [
+			["do_fire_spirit_rhythm_earth", 16, 8]
+		]
+	},
+	"233011": {
+		"name": "Wood Spirit - Vine",
+		"actions": [
+			["wood_spirit",
+				["for_each_x_add_c_pct_y_up_to_d", "hp_gained", 20, "bonus_rep_amt", 3]],
+			["rep", 2, ["atk", 4]]
+		]
+	},
+	"233012": {
+		"actions": [
+			["wood_spirit",
+				["for_each_x_add_c_pct_y_up_to_d", "hp_gained", 20, "bonus_rep_amt", 4]],
+			["rep", 2, ["atk", 4]]
+		]
+	},
+	"233013": {
+		"actions": [
+			["wood_spirit",
+				["for_each_x_add_c_pct_y_up_to_d", "hp_gained", 20, "bonus_rep_amt", 5]],
+			["rep", 2, ["atk", 4]]
+		]
+	},
+	"233021": {
+		"name": "Metal Spirit - Rhythm Water",
+		"actions": [
+			["do_metal_spirit_rhythm_water", 4]
+		]
+	},
+	"233022": {
+		"actions": [
+			["do_metal_spirit_rhythm_water", 6]
+		]
+	},
+	"233023": {
+		"actions": [
+			["do_metal_spirit_rhythm_water", 8]
+		]
+	},
+	"233031": {
+		"name": "Five Elements Escape",
+		"actions": [
+			["do_five_elements_escape", 8]
+		]
+	},
+	"233032": {
+		"actions": [
+			["do_five_elements_escape", 13]
+		]
+	},
+	"233033": {
+		"actions": [
+			["do_five_elements_escape", 18]
+		]
+	},
+	"234011": {
+		"name": "Earth Spirit - Earthquake",
+		"actions": [
+			["atk", 6],
+			["def", 6],
+			["earth_spirit", [
+				["reduce_enemy_x_by_c_pct_enemy_y", "qi", 50, "qi"],
+				["reduce_enemy_x_by_c_pct_enemy_y", "def", 50, "def"]
+			]]
+		]
+	},
+	"234012": {
+		"actions": [
+			["atk", 9],
+			["def", 9],
+			["earth_spirit", [
+				["reduce_enemy_x_by_c_pct_enemy_y", "qi", 50, "qi"],
+				["reduce_enemy_x_by_c_pct_enemy_y", "def", 50, "def"]
+			]]
+		]
+	},
+	"234013": {
+		"actions": [
+			["atk", 12],
+			["def", 12],
+			["earth_spirit", [
+				["reduce_enemy_x_by_c_pct_enemy_y", "qi", 50, "qi"],
+				["reduce_enemy_x_by_c_pct_enemy_y", "def", 50, "def"]
+			]]
+		]
+	},
+	"234021": {
+		"name": "Wood Spirit - Rhythm Fire",
+		"qi_cost": 1,
+		"actions": [
+			["do_wood_spirit_rhythm_fire", 16]
+		]
+	},
+	"234022": {
+		"actions": [
+			["do_wood_spirit_rhythm_fire", 22]
+		]
+	},
+	"234023": {
+		"actions": [
+			["do_wood_spirit_rhythm_fire", 28]
+		]
+	},
+	"234031": {
+		"name": "Earth Spirit - Rhythm Metal",
+		"actions": [
+			["do_earth_spirit_rhythm_metal", 10]
+		]
+	},
+	"234032": {
+		"actions": [
+			["do_earth_spirit_rhythm_metal", 15]
+		]
+	},
+	"234033": {
+		"actions": [
+			["do_earth_spirit_rhythm_metal", 20]
+		]
+	},
+	"235011": {
+		"name": "Fire Spirit - Burning Sky",
+		"qi_cost": 3,
+		"actions": [
+			["do_fire_spirit_burning_sky", 3]
+		]
+	},
+	"235012": {
+		"qi_cost": 2,
+		"actions": [
+			["do_fire_spirit_burning_sky", 5]
+		]
+	},
+	"235013": {
+		"qi_cost": 1,
+		"actions": [
+			["do_fire_spirit_burning_sky", 7]
+		]
+	},
+	"235021": {
+		"name": "Water Spirit - Tsunami",
+		"qi_cost": 4,
+		"actions": [
+			["add_c_of_x", 4, "force_of_water"],
+			["water_spirit", ["add_enemy_c_of_x", 1, "cannot_act_stacks"]]
+		]
+	},
+	"235022": {
+		"qi_cost": 3,
+		"actions": [
+			["add_c_of_x", 5, "force_of_water"],
+			["water_spirit", ["add_enemy_c_of_x", 1, "cannot_act_stacks"]]
+		]
+	},
+	"235023": {
+		"qi_cost": 2,
+		"actions": [
+			["add_c_of_x", 6, "force_of_water"],
+			["water_spirit", ["add_enemy_c_of_x", 1, "cannot_act_stacks"]]
+		]
+	},
+	"236011": {
+		"name": "Five Elements Spirit Blast",
+		"qi_cost": 3,
+		"actions": [
+			["wood_spirit", ["atk", 25]],
+			["fire_spirit", ["atk", 25]],
+			["earth_spirit", ["atk", 25]],
+			["metal_spirit", ["atk", 25]],
+			["water_spirit", ["atk", 25]]
+		]
+	},
+	"236012": {
+		"actions": [
+			["wood_spirit", ["atk", 28]],
+			["fire_spirit", ["atk", 28]],
+			["earth_spirit", ["atk", 28]],
+			["metal_spirit", ["atk", 28]],
+			["water_spirit", ["atk", 28]]
+		]
+	},
+	"236013": {
+		"actions": [
+			["wood_spirit", ["atk", 31]],
+			["fire_spirit", ["atk", 31]],
+			["earth_spirit", ["atk", 31]],
+			["metal_spirit", ["atk", 31]],
+			["water_spirit", ["atk", 31]]
+		]
+	},
+	"236021": {
+		"name": "Five Elements Blossom",
+		"actions": [
+			["trigger_card_by_id", "131011"],
+			["trigger_card_by_id", "131031"],
+			["trigger_card_by_id", "131051"],
+			["trigger_card_by_id", "131071"],
+			["trigger_card_by_id", "131091"],
+			["chase"],
+			["consumption"]
+		]
+	},
+	"236022": {
+		"actions": [
+			["trigger_card_by_id", "131012"],
+			["trigger_card_by_id", "131032"],
+			["trigger_card_by_id", "131052"],
+			["trigger_card_by_id", "131072"],
+			["trigger_card_by_id", "131092"],
+			["chase"],
+			["consumption"]
+		]
+	},
+	"236023": {
+		"actions": [
+			["trigger_card_by_id", "131013"],
+			["trigger_card_by_id", "131033"],
+			["trigger_card_by_id", "131053"],
+			["trigger_card_by_id", "131073"],
+			["trigger_card_by_id", "131093"],
+			["chase"],
+			["consumption"]
+		]
+	},
 	"311011": {
 		"name": "Earth Spirit Elixir",
 		"actions": [["def", 11], ["consumption"]]

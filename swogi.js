@@ -381,6 +381,9 @@ class Player {
         this.five_elements_heavenly_marrow_rhythm_stacks = 0;
         this.different_five_elements = 0;
         this.water_spirit_spring_stacks = 0;
+        // five elements sect secret enchantment cards
+        this.metal_spirit_chokehold_stacks = 0;
+        this.max_hp_lost = 0;
         // five elements sect character-specific cards
         this.kun_wu_metal_ring_stacks = 0;
         // duan xuan sect normal cards
@@ -1599,6 +1602,7 @@ class GameState {
         this.do_thunderphilia_formation();
         this.do_hard_bamboo();
         this.do_force_of_water();
+        this.reduce_idx_x_by_c(0, "metal_spirit_chokehold_stacks", 1);
         if (this.check_idx_for_death(1)) {
             return;
         }
@@ -1676,6 +1680,7 @@ class GameState {
             return;
         }
         this.players[idx].max_hp -= amt;
+        this.players[idx].max_hp_lost += amt;
         if (this.players[idx].hp > this.players[idx].max_hp) {
             this.log("reducing hp to max_hp of " + this.players[idx].max_hp);
             this.players[idx].hp = this.players[idx].max_hp;
@@ -1689,6 +1694,10 @@ class GameState {
         const prev_hp = this.players[idx].hp;
         if (prev_hp <= 0) {
             this.log("refusing to heal a dead player");
+            return 0;
+        }
+        if (this.players[idx].metal_spirit_chokehold_stacks > 0) {
+            this.log("refusing to heal a player with metal_spirit_chokehold_stacks");
             return 0;
         }
         this.players[idx].hp += amt;
@@ -2813,6 +2822,79 @@ class GameState {
             this.players[0].activate_metal_spirit_stacks > 0 ||
             this.players[0].activate_water_spirit_stacks > 0) {
             this.do_action(arr);
+        }
+    }
+    do_metal_spirit_rhythm_water(pen_gain_amt) {
+        if (this.if_metal_spirit()) {
+            this.increase_idx_x_by_c(0, "penetrate", pen_gain_amt);
+        }
+        if (this.if_water_spirit()) {
+            const amt = Math.ceil(this.players[0].penetrate / 2);
+            this.reduce_c_of_x(amt, "penetrate");
+            this.add_c_of_x(amt, "force_of_water");
+        }
+    }
+    trigger_card_by_id(id) {
+        this.trigger_card(id, this.players[0].currently_playing_card_idx);
+    }
+    do_fire_spirit_rhythm_earth(burn_amt, def_amt) {
+        if (this.if_fire_spirit()) {
+            this.reduce_enemy_hp(burn_amt);
+            this.reduce_enemy_max_hp(burn_amt);
+        }
+        if (this.if_earth_spirit()) {
+            def_amt += Math.floor(this.players[1].max_hp_lost / 2);
+            this.increase_idx_x_by_c(0, "def", def_amt);
+        }
+    }
+    do_earth_spirit_rhythm_metal(def_amt) {
+        if (this.if_earth_spirit()) {
+            this.def(def_amt);
+            def_amt = this.players[0].def;
+            this.reduce_idx_def(0, def_amt);
+            this.def(def_amt);
+        }
+        if (this.if_metal_spirit()) {
+            const pen_amt = Math.floor(this.players[0].def_lost / 4);
+            this.add_c_of_x(pen_amt, "penetrate");
+        }
+    }
+    do_fire_spirit_burning_sky(atk_amt) {
+        atk_amt += Math.floor(this.players[1].max_hp_lost / 3);
+        for (var i=0; i<3; i++) {
+            this.atk(atk_amt);
+        }
+    }
+    do_wood_spirit_rhythm_fire(heal_amt) {
+        const hp_to_reduce = Math.ceil(this.players[0].hp / 2);
+        if (this.if_wood_spirit()) {
+            this.heal(heal_amt);
+        }
+        if (this.if_fire_spirit()) {
+            this.reduce_idx_hp(0, hp_to_reduce);
+            this.atk(1 + hp_to_reduce);
+        }
+    }
+    do_five_elements_escape(def) {
+        this.def(def);
+        var activated = 0;
+        if (this.players[0].activate_wood_spirit_stacks > 0) {
+            activated += 1;
+        }
+        if (this.players[0].activate_fire_spirit_stacks > 0) {
+            activated += 1;
+        }
+        if (this.players[0].activate_earth_spirit_stacks > 0) {
+            activated += 1;
+        }
+        if (this.players[0].activate_metal_spirit_stacks > 0) {
+            activated += 1;
+        }
+        if (this.players[0].activate_water_spirit_stacks > 0) {
+            activated += 1;
+        }
+        if (activated >= 2) {
+            this.chase();
         }
     }
 }
