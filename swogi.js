@@ -338,6 +338,9 @@ class Player {
         this.strike_twice_stacks = 0;
         this.hp_gained = 0;
         this.stillness_citta_dharma_stacks = 0;
+        this.triggered_hexagram_count = 0;
+        this.hexagram_formacide_stacks = 0;
+        this.repel_citta_dharma_stacks = 0;
         this.card_play_direction = 1;
         this.hunter_hunting_hunter_stacks = 0;
         // heptastar sect secret enchantment cards
@@ -1229,9 +1232,9 @@ class GameState {
             this.heal(this.players[0].regen_tune_stacks);
         }
     }
-    do_internal_injury() {
-        if (this.players[0].internal_injury > 0) {
-            this.reduce_my_hp(this.players[0].internal_injury);
+    do_internal_injury(idx) {
+        if (this.players[idx].internal_injury > 0) {
+            this.reduce_idx_hp(idx, this.players[idx].internal_injury);
         }
     }
     do_illusion_tune() {
@@ -1466,7 +1469,7 @@ class GameState {
         this.do_regen();
         this.do_regen_tune();
         this.do_heartbroken_tune();
-        this.do_internal_injury();
+        this.do_internal_injury(0);
         this.do_illusion_tune();
         this.do_heavenly_spirit_forceage_formation();
         this.do_cacopoisonous_formation();
@@ -1771,6 +1774,10 @@ class GameState {
         if (this.players[idx].astrology_stacks > 0 && this.players[idx].star_power === 0) {
             this.increase_idx_x_by_c(idx, "star_power", 1);
         }
+        if (this.players[idx].hexagram_formacide_stacks > 0) {
+            const dmg = amt * this.players[idx].hexagram_formacide_stacks;
+            this.deal_damage_inner(dmg, false, false, idx);
+        }
         this.log("gained " + amt + " hexagram. Now have " + this.players[idx].hexagram + " hexagram");
     }
     increase_idx_debuff(idx, x, amt) {
@@ -1992,18 +1999,7 @@ class GameState {
             }
         }
     }
-    eval(x) {
-        if (typeof x === "number") {
-            return x;
-        }
-        if (Array.isArray(x)) {
-            return this.do_action(x);
-        }
-        this.log("error: " + x + " is not a number or array");
-        this.crash();
-    }
     deal_damage(dmg) {
-        dmg = this.eval(dmg);
         var ignore_def = false;
         this.deal_damage_inner(dmg, ignore_def, false, 0);
     }
@@ -2013,6 +2009,10 @@ class GameState {
             if (this.check_idx_for_death(0)) {
                 return;
             }
+        }
+        if (this.players[1].repel_citta_dharma_stacks > 0) {
+            const repel_dmg = this.players[1].repel_citta_dharma_stacks;
+            this.deal_damage_inner(repel_dmg, false, false, 1);
         }
         var ignore_def = false;
         if (this.players[0].ignore_def > 0) {
@@ -2039,7 +2039,6 @@ class GameState {
         }
     }
     def(amt) {
-        amt = this.eval(amt);
         this.increase_idx_x_by_c(0, "def", amt);
     }
     qi(amt) {
@@ -2331,9 +2330,16 @@ class GameState {
             this.increase_idx_x_by_c(0, x, c - current_value);
         }
     }
+    trigger_hexagram(idx) {
+        if (this.players[idx].hexagram > 0) {
+            this.reduce_idx_x_by_c(idx, "hexagram", 1);
+            this.increase_idx_x_by_c(idx, "triggered_hexagram_count", 1);
+            return true;
+        }
+        return false;
+    }
     rand_range(lo_inclusive, hi_inclusive) {
-        if (this.players[0].hexagram > 0) {
-            this.reduce_idx_x_by_c(0, "hexagram", 1);
+        if (this.trigger_hexagram(0)) {
             return hi_inclusive;
         }
         this.used_randomness = true;
@@ -2547,16 +2553,14 @@ class GameState {
         }
     }
     if_c_pct(c) {
-        if (this.players[0].hexagram > 0) {
-            this.reduce_idx_x_by_c(0, "hexagram", 1);
+        if (this.trigger_hexagram(0)) {
             return true;
         }
         this.used_randomness = true;
         return Math.random() < c / 100;
     }
     if_c_pct_do(c, arr) {
-        if (this.players[0].hexagram > 0) {
-            this.reduce_idx_x_by_c(0, "hexagram", 1);
+        if (this.trigger_hexagram(0)) {
             this.do_action(arr);
             return;
         }
@@ -2709,16 +2713,21 @@ class GameState {
         }
         this.increase_idx_x_by_c(0, "penetrate", amt);
     }
-    if_no_debuff() {
-        return this.players[0].internal_injury === 0 &&
-                this.players[0].weaken === 0 &&
-                this.players[0].flaw === 0 &&
-                this.players[0].decrease_atk === 0 &&
-                this.players[0].entangle === 0 &&
-                this.players[0].wound === 0;
+    idx_has_debuff(idx) {
+        return this.players[idx].internal_injury > 0 ||
+            this.players[idx].weaken > 0 ||
+            this.players[idx].flaw > 0 ||
+            this.players[idx].decrease_atk > 0 ||
+            this.players[idx].entangle > 0 ||
+            this.players[idx].wound > 0;
     }
     if_no_debuff_do(arr) {
-        if (this.if_no_debuff()) {
+        if (!this.idx_has_debuff(0)) {
+            this.do_action(arr);
+        }
+    }
+    if_enemy_has_debuff_do(arr) {
+        if (this.idx_has_debuff(1)) {
             this.do_action(arr);
         }
     }
@@ -2737,6 +2746,46 @@ class GameState {
             amt += 2;
         }
         this.increase_idx_x_by_c(0, "qi", amt);
+    }
+    reduce_enemy_max_hp(amt) {
+        this.reduce_idx_x_by_c(1, "max_hp", amt);
+    }
+    def_rand_range(lo_inclusive, hi_inclusive) {
+        const amt = this.rand_range(lo_inclusive, hi_inclusive);
+        this.def(amt);
+    }
+    atk_rand_range(lo_inclusive, hi_inclusive) {
+        const amt = this.rand_range(lo_inclusive, hi_inclusive);
+        this.atk(amt);
+    }
+    reduce_enemy_max_hp_rand_range(lo_inclusive, hi_inclusive) {
+        const amt = this.rand_range(lo_inclusive, hi_inclusive);
+        this.reduce_enemy_max_hp(amt);
+    }
+    heal_rand_range(lo_inclusive, hi_inclusive) {
+        const amt = this.rand_range(lo_inclusive, hi_inclusive);
+        this.heal(amt);
+    }
+    deal_damage_rand_range(lo_inclusive, hi_inclusive) {
+        const amt = this.rand_range(lo_inclusive, hi_inclusive);
+        this.deal_damage(amt);
+    }
+    do_star_trail_divination(def, sp, qi, hp) {
+        this.def(def);
+        const amt = this.players[0].hexagram;
+        this.reduce_c_of_x(amt, "hexagram");
+        this.add_c_of_x(amt*sp, "star_power");
+        this.add_c_of_x(amt*qi, "qi");
+        this.heal(amt*hp);
+    }
+    do_thunder_and_lightning(hi_inclusive) {
+        for (var i=0; i<2; i++) {
+            const had_hexagram = this.players[0].hexagram > 0;
+            this.atk_rand_range(1, hi_inclusive);
+            if (had_hexagram) {
+                this.qi(1);
+            }
+        }
     }
 }
 

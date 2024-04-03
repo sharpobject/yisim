@@ -554,6 +554,392 @@
 	"115083": {
 		"actions": [["continuous"], ["add_c_of_x", 70, "unrestrained_sword_zero_stacks"]]
 	},
+	"121011": {
+		"name": "Shifting Stars",
+		"actions": [
+			["atk", 5],
+			["become_star_point", 1]
+		]
+	},
+	"121012": {
+		"actions": [
+			["atk", 8],
+			["become_star_point", 1]
+		]
+	},
+	"121013": {
+		"actions": [
+			["atk", 8],
+			["become_star_point", 2]
+		]
+	},
+	"121021": {
+		"name": "Dotted Around",
+		"actions": [
+			["qi", 1],
+			["def", 2],
+			["add_c_of_x", 1, "star_power"]
+		]
+	},
+	"121022": {
+		"actions": [
+			["qi", 2],
+			["def", 3],
+			["add_c_of_x", 1, "star_power"]
+		]
+	},
+	"121023": {
+		"actions": [
+			["qi", 2],
+			["def", 4],
+			["add_c_of_x", 2, "star_power"]
+		]
+	},
+	"121031": {
+		"name": "Astral Move - Block",
+		"actions": [
+			["atk", 6],
+			["star_point", ["def", 2]]
+		]
+	},
+	"121032": {
+		"actions": [
+			["atk", 8],
+			["star_point", ["def", 4]]
+		]
+	},
+	"121033": {
+		"actions": [
+			["atk", 10],
+			["star_point", ["def", 6]]
+		]
+	},
+	"121041": {
+		"name": "Astral Move - Flank",
+		"qi_cost": 1,
+		"actions": [
+			["atk", 6],
+			["star_point", ["atk", 5]]
+		]
+	},
+	"121042": {
+		"actions": [
+			["atk", 7],
+			["star_point", ["atk", 7]]
+		]
+	},
+	"121043": {
+		"actions": [
+			["atk", 8],
+			["star_point", ["atk", 9]]
+		]
+	},
+	"121051": {
+		"name": "Zhen Hexagram",
+		"actions": [
+			["atk", 4],
+			["add_c_of_x", 1, "hexagram"]
+		]
+	},
+	"121052": {
+		"actions": [
+			["atk", 7],
+			["add_c_of_x", 1, "hexagram"]
+		]
+	},
+	"121053": {
+		"actions": [
+			["atk", 10],
+			["add_c_of_x", 1, "hexagram"]
+		]
+	},
+	"121061": {
+		"name": "Earth Hexagram",
+		"actions": [
+			["def", 2],
+			["add_c_of_x", 2, "hexagram"]
+		]
+	},
+	"121062": {
+		"actions": [
+			["def", 2],
+			["add_c_of_x", 3, "hexagram"]
+		]
+	},
+	"121063": {
+		"actions": [
+			["def", 2],
+			["add_c_of_x", 4, "hexagram"]
+		]
+	},
+	"121071": {
+		"name": "Wind Hexagram",
+		"actions": [
+			["qi", 1],
+			["add_c_of_x", 1, "hexagram"]
+		]
+	},
+	"121072": {
+		"actions": [
+			["qi", 2],
+			["add_c_of_x", 1, "hexagram"]
+		]
+	},
+	"121073": {
+		"actions": [
+			["qi", 2],
+			["add_c_of_x", 2, "hexagram"]
+		]
+	},
+	"121081": {
+		"name": "Palm Thunder",
+		"actions": [
+			["atk_rand_range", 2, 10]
+		]
+	},
+	"121082": {
+		"actions": [
+			["atk_rand_range", 5, 13]
+		]
+	},
+	"121083": {
+		"actions": [
+			["atk_rand_range", 8, 16]
+		]
+	},
+	"121091": {
+		"name": "White Crane Bright Wings",
+		"actions": [
+			["atk_rand_range", 1, 8],
+			["qi", 1]
+		]
+	},
+	"121092": {
+		"actions": [
+			["atk_rand_range", 1, 8],
+			["qi", 2]
+		]
+	},
+	"121093": {
+		"actions": [
+			["atk_rand_range", 1, 8],
+			["qi", 3]
+		]
+	},
+	"121101": {
+		"name": "Sparrow's Tail",
+		"qi_cost": 1,
+		"actions": [
+			["atk", 9],
+			["if_c_pct_do", 10, ["atk", 5]]
+		]
+	},
+	"121102": {
+		"actions": [
+			["atk", 10],
+			["if_c_pct_do", 10, ["atk", 7]]
+		]
+	},
+	"121103": {
+		"actions": [
+			["atk", 11],
+			["if_c_pct_do", 10, ["atk", 9]]
+		]
+	},
+	"121111": {
+		"name": "Striding Into the Wind",
+		"qi_cost": 1,
+		"actions": [
+			["rep", 2, ["atk", 3]],
+			["def_rand_range", 1, 10]
+		]
+	},
+	"121112": {
+		"actions": [
+			["rep", 2, ["atk", 4]],
+			["def_rand_range", 1, 12]
+		]
+	},
+	"121113": {
+		"actions": [
+			["rep", 2, ["atk", 5]],
+			["def_rand_range", 1, 14]
+		]
+	},
+	"121121": {
+		"name": "Incessant",
+		"actions": [
+			["atk", 6],
+			["post_action", ["heal", 2]]
+		]
+	},
+	"121122": {
+		"actions": [
+			["atk", 9],
+			["post_action", ["heal", 4]]
+		]
+	},
+	"121123": {
+		"actions": [
+			["atk", 12],
+			["post_action", ["heal", 6]]
+		]
+	},
+	"122011": {
+		"name": "Astral Fleche",
+		"actions": [
+			["atk", 5],
+			["add_c_of_x", 1, "star_power"]
+		]
+	},
+	"122012": {
+		"actions": [
+			["atk", 5],
+			["add_c_of_x", 2, "star_power"]
+		]
+	},
+	"122013": {
+		"actions": [
+			["atk", 5],
+			["add_c_of_x", 3, "star_power"]
+		]
+	},
+	"122021": {
+		"name": "Astral Move - Point",
+		"actions": [
+			["atk", 6],
+			["star_point", ["reduce_enemy_c_of_x", 1, "qi"]]
+		]
+	},
+	"122022": {
+		"actions": [
+			["atk", 10],
+			["star_point", ["reduce_enemy_c_of_x", 1, "qi"]]
+		]
+	},
+	"122023": {
+		"actions": [
+			["atk", 14],
+			["star_point", ["reduce_enemy_c_of_x", 1, "qi"]]
+		]
+	},
+	"122031": {
+		"name": "Astral Move - Stand",
+		"actions": [
+			["atk", 7],
+			["star_point", ["qi", 1]]
+		]
+	},
+	"122032": {
+		"actions": [
+			["atk", 8],
+			["star_point", ["qi", 2]]
+		]
+	},
+	"122033": {
+		"actions": [
+			["atk", 9],
+			["star_point", ["qi", 3]]
+		]
+	},
+	"122041": {
+		"name": "Mountain Hexagram",
+		"actions": [
+			["add_c_of_x", 2, "hexagram"],
+			["add_c_of_x", 2, "max_hp"],
+			["heal", 2]
+		]
+	},
+	"122042": {
+		"actions": [
+			["add_c_of_x", 3, "hexagram"],
+			["add_c_of_x", 3, "max_hp"],
+			["heal", 3]
+		]
+	},
+	"122043": {
+		"actions": [
+			["add_c_of_x", 4, "hexagram"],
+			["add_c_of_x", 4, "max_hp"],
+			["heal", 4]
+		]
+	},
+	"122051": {
+		"name": "Water Hexagram",
+		"actions": [
+			["add_c_of_x", 2, "hexagram"],
+			["become_star_point", 1]
+		]
+	},
+	"122052": {
+		"actions": [
+			["add_c_of_x", 3, "hexagram"],
+			["become_star_point", 1]
+		]
+	},
+	"122053": {
+		"actions": [
+			["add_c_of_x", 4, "hexagram"],
+			["become_star_point", 1]
+		]
+	},
+	"122061": {
+		"name": "Falling Thunder",
+		"qi_cost": 1,
+		"actions": [
+			["atk_rand_range", 6, 16]
+		]
+	},
+	"122062": {
+		"actions": [
+			["atk_rand_range", 9, 20]
+		]
+	},
+	"122063": {
+		"actions": [
+			["atk_rand_range", 12, 24]
+		]
+	},
+	"122071": {
+		"name": "Cutting Weeds",
+		"qi_cost": 1,
+		"actions": [
+			["rep", 2, ["atk", 5]],
+			["reduce_enemy_max_hp_rand_range", 3, 13]
+		]
+	},
+	"122072": {
+		"actions": [
+			["rep", 2, ["atk", 7]],
+			["reduce_enemy_max_hp_rand_range", 6, 17]
+		]
+	},
+	"122073": {
+		"actions": [
+			["rep", 2, ["atk", 9]],
+			["reduce_enemy_max_hp_rand_range", 9, 21]
+		]
+	},
+	"122081": {
+		"name": "Golden Rooster Independence",
+		"qi_cost": 1,
+		"actions": [
+			["atk", 11],
+			["if_c_pct_do", 11, ["add_enemy_c_of_x", 1, "weaken"]]
+		]
+	},
+	"122082": {
+		"actions": [
+			["atk", 15],
+			["if_c_pct_do", 11, ["add_enemy_c_of_x", 1, "weaken"]]
+		]
+	},
+	"122083": {
+		"actions": [
+			["atk", 15],
+			["if_c_pct_do", 11, ["add_enemy_c_of_x", 2, "weaken"]]
+		]
+	},
 	"122091": {
 		"name": "Stillness Citta-Dharma",
 		"actions": [
@@ -571,6 +957,47 @@
 		"actions": [
 			["continuous"],
 			["add_c_of_x", 4, "stillness_citta_dharma_stacks"]
+		]
+	},
+	"122101": {
+		"name": "Flower Sentient",
+		"actions": [
+			["qi", 1],
+			["def", 1],
+			["add_enemy_c_of_x", 1, "internal_injury"]
+		]
+	},
+	"122102": {
+		"actions": [
+			["qi", 2],
+			["def", 2],
+			["add_enemy_c_of_x", 1, "internal_injury"]
+		]
+	},
+	"122103": {
+		"actions": [
+			["qi", 3],
+			["def", 3],
+			["add_enemy_c_of_x", 1, "internal_injury"]
+		]
+	},
+	"122111": {
+		"name": "Imposing",
+		"actions": [
+			["qi", 2],
+			["post_action", ["heal", 6]]
+		]
+	},
+	"122112": {
+		"actions": [
+			["qi", 3],
+			["post_action", ["heal", 9]]
+		]
+	},
+	"122113": {
+		"actions": [
+			["qi", 4],
+			["post_action", ["heal", 12]]
 		]
 	},
 	"123011": {
@@ -610,6 +1037,128 @@
 		"actions": [
 			["rep", 2, ["atk", 7]],
 			["star_point", ["atk", 9]]
+		]
+	},
+	"123031": {
+		"name": "Lake Hexagram",
+		"actions": [
+			["add_c_of_x", 2, "hexagram"],
+			["qi", 2],
+			["add_enemy_c_of_x", 2, "qi"]
+		]
+	},
+	"123032": {
+		"actions": [
+			["add_c_of_x", 3, "hexagram"],
+			["qi", 3],
+			["add_enemy_c_of_x", 3, "qi"]
+		]
+	},
+	"123033": {
+		"actions": [
+			["add_c_of_x", 4, "hexagram"],
+			["qi", 4],
+			["add_enemy_c_of_x", 4, "qi"]
+		]
+	},
+	"123041": {
+		"name": "White Snake",
+		"actions": [
+			["if_c_pct_do", 10, ["add_enemy_c_of_x", 2, "flaw"]],
+			["atk", 6]
+		]
+	},
+	"123042": {
+		"actions": [
+			["if_c_pct_do", 10, ["add_enemy_c_of_x", 3, "flaw"]],
+			["atk", 6]
+		]
+	},
+	"123043": {
+		"actions": [
+			["if_c_pct_do", 10, ["add_enemy_c_of_x", 4, "flaw"]],
+			["atk", 6]
+		]
+	},
+	"123051": {
+		"name": "Thunder Hexagram Rhythm",
+		"actions": [
+			["atk_rand_range", 1, 9],
+			["for_each_x_up_to_c_add_y", "triggered_hexagram_count", 3, "hexagram"]
+		]
+	},
+	"123052": {
+		"actions": [
+			["atk_rand_range", 1, 10],
+			["for_each_x_up_to_c_add_y", "triggered_hexagram_count", 4, "hexagram"]
+		]
+	},
+	"123053": {
+		"actions": [
+			["atk_rand_range", 1, 11],
+			["for_each_x_up_to_c_add_y", "triggered_hexagram_count", 5, "hexagram"]
+		]
+	},
+	"123061": {
+		"name": "Yin Yang Formation",
+		"actions": [
+			["qi", 2],
+			["for_each_x_add_c_y", "hexagram", 1, "def"],
+			["for_each_x_add_c_y", "hexagram", 1, "hp"]
+		]
+	},
+	"123062": {
+		"actions": [
+			["qi", 3],
+			["for_each_x_add_c_y", "hexagram", 2, "def"],
+			["for_each_x_add_c_y", "hexagram", 1, "hp"]
+		]
+	},
+	"123063": {
+		"actions": [
+			["qi", 4],
+			["for_each_x_add_c_y", "hexagram", 2, "def"],
+			["for_each_x_add_c_y", "hexagram", 2, "hp"]
+		]
+	},
+	"123071": {
+		"name": "Ruthless Water",
+		"qi_cost": 1,
+		"actions": [
+			["atk", 6],
+			["if_enemy_has_debuff_do", ["add_enemy_c_of_x", 2, "internal_injury"]]
+		]
+	},
+	"123072": {
+		"actions": [
+			["atk", 6],
+			["if_enemy_has_debuff_do", ["add_enemy_c_of_x", 3, "internal_injury"]]
+		]
+	},
+	"123073": {
+		"actions": [
+			["atk", 6],
+			["if_enemy_has_debuff_do", ["add_enemy_c_of_x", 4, "internal_injury"]]
+		]
+	},
+	"123081": {
+		"name": "Qi Therapy",
+		"qi_cost": 1,
+		"actions": [
+			["add_c_of_x", 8, "max_hp"],
+			["heal_rand_range", 8, 18]
+		]
+	},
+	"123082": {
+		"actions": [
+			["add_c_of_x", 12, "max_hp"],
+			["heal_rand_range", 12, 22]
+		]
+	},
+	"123083": {
+		"actions": [
+			["add_c_of_x", 16, "max_hp"],
+			["heal_rand_range", 16, 26]
 		]
 	},
 	"123091": {
@@ -712,6 +1261,25 @@
 			["star_point", ["add_enemy_c_of_x", 3, "weaken"]]
 		]
 	},
+	"124031": {
+		"name": "Hexagram Formacide",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "hexagram_formacide_stacks"]
+		]
+	},
+	"124032": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "hexagram_formacide_stacks"]
+		]
+	},
+	"124033": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 5, "hexagram_formacide_stacks"]
+		]
+	},
 	"124041": {
 		"name": "Flame Hexagram",
 		"actions": [
@@ -729,6 +1297,82 @@
 		"actions": [
 			["add_c_of_x", 5, "hexagram"],
 			["reduce_enemy_c_of_x", 6, "max_hp"]
+		]
+	},
+	"124051": {
+		"name": "Star Trail Divination",
+		"actions": [
+			["do_star_trail_divination", 6, 1, 1, 1]
+		]
+	},
+	"124052": {
+		"actions": [
+			["do_star_trail_divination", 12, 1, 1, 1]
+		]
+	},
+	"124053": {
+		"actions": [
+			["do_star_trail_divination", 18, 1, 1, 2]
+		]
+	},
+	"124061": {
+		"name": "Dance Of The Dragonfly",
+		"actions": [
+			["atk", 5],
+			["if_c_pct_do", 10, ["chase"]]
+		]
+	},
+	"124062": {
+		"actions": [
+			["atk", 9],
+			["if_c_pct_do", 10, ["chase"]]
+		]
+	},
+	"124063": {
+		"actions": [
+			["atk", 13],
+			["if_c_pct_do", 10, ["chase"]]
+		]
+	},
+	"124071": {
+		"name": "Thunder And Lightning",
+		"actions": [
+			["do_thunder_and_lightning", 10]
+		]
+	},
+	"124072": {
+		"actions": [
+			["do_thunder_and_lightning", 13]
+		]
+	},
+	"124073": {
+		"actions": [
+			["do_thunder_and_lightning", 16]
+		]
+	},
+	"124081": {
+		"name": "Repel Citta-Dharma",
+		"actions": [
+			["add_c_of_x", 4, "max_hp"],
+			["heal", 4],
+			["continuous"],
+			["add_c_of_x", 2, "repel_citta_dharma_stacks"]
+		]
+	},
+	"124082": {
+		"actions": [
+			["add_c_of_x", 6, "max_hp"],
+			["heal", 6],
+			["continuous"],
+			["add_c_of_x", 3, "repel_citta_dharma_stacks"]
+		]
+	},
+	"124083": {
+		"actions": [
+			["add_c_of_x", 8, "max_hp"],
+			["heal", 8],
+			["continuous"],
+			["add_c_of_x", 4, "repel_citta_dharma_stacks"]
 		]
 	},
 	"124091": {
@@ -752,6 +1396,25 @@
 			["def", 15],
 			["heal", 15],
 			["post_action", ["add_c_of_x", 1, "guard_up"]]
+		]
+	},
+	"124101": {
+		"name": "Extremely Suspicious",
+		"actions": [
+			["add_enemy_c_of_x", 2, "internal_injury"],
+			["do_internal_injury", 1]
+		]
+	},
+	"124102": {
+		"actions": [
+			["add_enemy_c_of_x", 3, "internal_injury"],
+			["do_internal_injury", 1]
+		]
+	},
+	"124103": {
+		"actions": [
+			["add_enemy_c_of_x", 4, "internal_injury"],
+			["do_internal_injury", 1]
 		]
 	},
 	"125011": {
@@ -2684,19 +3347,19 @@
 	"321011": {
 		"name": "Thunder Fulu",
 		"actions": [
-			["deal_damage", ["rand_range", 4, 12]],
+			["deal_damage_rand_range", 4, 12],
 			["consumption"]
 		]
 	},
 	"321012": {
 		"actions": [
-			["deal_damage", ["rand_range", 7, 15]],
+			["deal_damage_rand_range", 7, 15],
 			["consumption"]
 		]
 	},
 	"321013": {
 		"actions": [
-			["deal_damage", ["rand_range", 10, 18]],
+			["deal_damage_rand_range", 10, 18],
 			["consumption"]
 		]
 	},
@@ -3352,17 +4015,17 @@
 	"342011": {
 		"name": "Pen Walks Dragon Snake",
 		"actions": [
-			["def", ["rand_range", 5, 16]]
+			["def_rand_range", 5, 16]
 		]
 	},
 	"342012": {
 		"actions": [
-			["def", ["rand_range", 10, 21]]
+			["def_rand_range", 10, 21]
 		]
 	},
 	"342013": {
 		"actions": [
-			["def", ["rand_range", 15, 26]]
+			["def_rand_range", 15, 26]
 		]
 	},
 	"342021": {
