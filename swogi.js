@@ -410,14 +410,25 @@ class Player {
         this.flying_brush_stacks = 0;
         this.finishing_touch_stacks = 0;
         // formation master side job cards
+        this.thunderphilia_formation_stacks = 0;
+        this.fraccide_formation_stacks = 0;
+        this.scutturtle_formation_stacks = 0;
+        this.cacopoisonous_formation_stacks = 0;
+        this.spiritage_formation_stacks = 0;
         this.endless_sword_formation_stacks = 0;
         this.heavenly_spirit_forceage_formation_stacks = 0;
+        this.octgates_lock_formation_stacks = 0;
+        this.motionless_tutelary_formation_stacks = 0;
         this.skip_next_card_stacks = 0;
         this.has_played_continuous_card = false;
+        this.anthomania_formation_stacks = 0;
         // plant master side job cards
+        this.hard_bamboo_stacks = 0;
+        this.leaf_blade_flower_stacks = 0;
         this.leaf_shield_flower_stacks = 0;
-        // TODO: the above is not implemented
+        this.frozen_snow_lotus_stacks = 0;
         this.entangling_ancient_vine_stacks = 0;
+        this.devouring_ancient_vine_stacks = 0;
         // talisman cards
         this.carefree_guqin_stacks = 0;
         // spiritual pet cards
@@ -1306,6 +1317,18 @@ class GameState {
             this.reduce_my_hp(this.players[0].shadow_owl_rabbit_stacks);
         }
     }
+    do_octgates_lock_formation(action_idx) {
+        if (action_idx > 0 && this.players[0].octgates_lock_formation_stacks > 0) {
+            this.deal_damage_inner(12, false, false, 1);
+            this.reduce_idx_x_by_c(0, "octgates_lock_formation_stacks", 1);
+        }
+    }
+    do_devouring_ancient_vine(action_idx) {
+        if (action_idx > 0 && this.players[0].entangling_ancient_vine_stacks > 0) {
+            this.reduce_idx_hp(0, this.players[0].entangling_ancient_vine_stacks);
+            this.increase_idx_hp(1, this.players[0].entangling_ancient_vine_stacks);
+        }
+    }
     do_void_the_spirit_consumer() {
         const amt = this.players[0].void_the_spirit_consumer_stacks;
         if (amt > 0) {
@@ -1345,6 +1368,44 @@ class GameState {
             }
         }
     }
+    do_anthomania_formation() {
+        if (this.players[0].anthomania_formation_stacks > 0) {
+            this.increase_idx_debuff(1, "decrease_atk", 1);
+            const amt = this.players[1].decrease_atk;
+            this.reduce_idx_hp(1, amt);
+            this.increase_idx_hp(0, amt);
+            this.reduce_idx_x_by_c(0, "anthomania_formation_stacks", 1);
+        }
+    }
+    do_motionless_tutelary_formation(action_idx) {
+        if (this.players[0].motionless_tutelary_formation_stacks > 0) {
+            this.def(7);
+            if (action_idx === 1 || action_idx === 9999) {
+                this.increase_idx_x_by_c(0, "max_hp", 7);
+                this.heal(7);
+            }
+            this.reduce_idx_x_by_c(0, "motionless_tutelary_formation_stacks", 1);
+        }
+    }
+    do_scutturtle_formation() {
+        if (this.players[0].scutturtle_formation_stacks > 0) {
+            this.def(3);
+            this.reduce_idx_x_by_c(0, "scutturtle_formation_stacks", 1);
+        }
+    }
+    do_thunderphilia_formation() {
+        if (this.players[0].thunderphilia_formation_stacks > 0) {
+            this.deal_damage(4);
+            this.reduce_idx_x_by_c(0, "thunderphilia_formation_stacks", 1);
+        }
+    }
+    do_hard_bamboo() {
+        if (this.players[0].hard_bamboo_stacks > 0) {
+            const dmg_per_stack = Math.floor(this.players[0].def / 4);
+            const dmg = dmg_per_stack * this.players[0].hard_bamboo_stacks;
+            this.deal_damage(dmg);
+        }
+    }
     do_force_of_water() {
         if (this.players[0].force_of_water > 0) {
             this.deal_damage(this.players[0].force_of_water);
@@ -1366,8 +1427,20 @@ class GameState {
     }
     do_heavenly_spirit_forceage_formation() {
         if (this.players[0].heavenly_spirit_forceage_formation_stacks > 0) {
-            this.players[0].heavenly_spirit_forceage_formation_stacks -= 1;
+            this.reduce_idx_x_by_c(0, "heavenly_spirit_forceage_formation_stacks", 1);
             this.add_c_of_x(1, "increase_atk");
+        }
+    }
+    do_cacopoisonous_formation() {
+        if (this.players[0].cacopoisonous_formation_stacks > 0) {
+            this.reduce_idx_x_by_c(0, "cacopoisonous_formation_stacks", 1);
+            this.add_enemy_c_of_x(1, "internal_injury");
+        }
+    }
+    do_spiritage_formation() {
+        if (this.players[0].spiritage_formation_stacks > 0) {
+            this.reduce_idx_x_by_c(0, "spiritage_formation_stacks", 1);
+            this.add_c_of_x(2, "qi");
         }
     }
     do_skip_next_card() {
@@ -1396,6 +1469,8 @@ class GameState {
         this.do_internal_injury();
         this.do_illusion_tune();
         this.do_heavenly_spirit_forceage_formation();
+        this.do_cacopoisonous_formation();
+        this.do_spiritage_formation();
         if (this.check_idx_for_death(0)) {
             return;
         }
@@ -1409,6 +1484,8 @@ class GameState {
         }
         while (action_idx <= this.players[0].chases && action_idx <= this.players[0].max_chases) {
             this.do_shadow_owl_rabbit_lose_hp(action_idx);
+            this.do_octgates_lock_formation(action_idx);
+            this.do_devouring_ancient_vine(action_idx);
             if (this.check_idx_for_death(0) || this.check_idx_for_death(1)) {
                 return;
             }
@@ -1499,6 +1576,11 @@ class GameState {
         this.reduce_idx_x_by_c(0, "weaken", 1);
         this.do_three_tailed_cat();
         this.do_sword_in_sheathed();
+        this.do_anthomania_formation();
+        this.do_motionless_tutelary_formation(action_idx);
+        this.do_scutturtle_formation();
+        this.do_thunderphilia_formation();
+        this.do_hard_bamboo();
         this.do_force_of_water();
         if (this.check_idx_for_death(1)) {
             return;
@@ -1544,6 +1626,12 @@ class GameState {
             this.increase_idx_hp(idx, dmg);
             return 0;
         } else {
+            if (this.players[idx].leaf_shield_flower_stacks > 0) {
+                var dmg_to_def = Math.floor(dmg / 2);
+                dmg_to_def = Math.min(dmg_to_def, this.players[idx].def);
+                this.reduce_idx_def(idx, dmg_to_def);
+                dmg -= dmg_to_def;
+            }
             this.players[idx].hp_lost += dmg;
             this.players[idx].hp -= dmg;
             this.log("reduced player " + idx +" hp by " + dmg + " to " + this.players[idx].hp);
@@ -1554,6 +1642,10 @@ class GameState {
             }
             for (var i=0; i<this.players[idx].birdie_wind_stacks; i++) {
                 this.increase_idx_def(idx, 1);
+            }
+            if (this.players[idx].frozen_snow_lotus_stacks > 0) {
+                this.increase_idx_def(idx, dmg);
+                this.reduce_idx_x_by_c(idx, "frozen_snow_lotus_stacks", 1);
             }
             return dmg;
         }
@@ -1768,6 +1860,7 @@ class GameState {
     deal_damage_inner(dmg, ignore_def, is_atk, my_idx) {
         const enemy_idx = 1 - my_idx;
         var pct_multiplier = 100;
+        var smash_def = false;
         if (is_atk) {
             this.players[my_idx].this_atk_injured = false;
             if (this.players[my_idx].trigger_depth <= 1) {
@@ -1796,6 +1889,18 @@ class GameState {
             }
             if (this.players[enemy_idx].metal_spirit_iron_bone_stacks > 0) {
                 dmg -= 5;
+            }
+            if (this.players[my_idx].smash_def > 0) {
+                this.reduce_idx_x_by_c(my_idx, "smash_def", 1);
+                smash_def = true;
+            }
+            if (this.players[my_idx].fraccide_formation_stacks > 0) {
+                this.reduce_idx_x_by_c(my_idx, "fraccide_formation_stacks", 1);
+                smash_def = true;
+                dmg += 3;
+            }
+            if (this.players[my_idx].leaf_blade_flower_stacks > 0) {
+                smash_def = true;
             }
             dmg += this.do_lonely_night_wolf();
             dmg += this.players[my_idx].bonus_atk_amt;
@@ -1830,11 +1935,6 @@ class GameState {
         }
         dmg = Math.floor(dmg * pct_multiplier / 100);
         dmg = Math.max(1, dmg);
-        var smash_def = false;
-        if (is_atk && this.players[my_idx].smash_def > 0) {
-            this.reduce_idx_x_by_c(my_idx, "smash_def", 1);
-            smash_def = true;
-        }
         if (this.players[enemy_idx].def < 0) {
             this.log("error: def is negative: " + this.players[enemy_idx].def);
             this.crash();
@@ -2336,34 +2436,43 @@ class GameState {
     activate_water_spirit() {
         this.add_c_of_x(1, "activate_water_spirit_stacks");
     }
+    if_wood_spirit() {
+        return this.players[0].activate_wood_spirit_stacks > 0 || this.players[0].last_card_is_water_spirit || this.players[0].last_card_is_wood_spirit;
+    }
     wood_spirit(arr) {
-        if (this.players[0].activate_wood_spirit_stacks > 0 || this.players[0].last_card_is_water_spirit || this.players[0].last_card_is_wood_spirit) {
+        if (this.if_wood_spirit()) {
             this.do_action(arr);
         }
+    }
+    if_fire_spirit() {
+        return this.players[0].activate_fire_spirit_stacks > 0 || this.players[0].last_card_is_wood_spirit || this.players[0].last_card_is_fire_spirit;
     }
     fire_spirit(arr) {
-        //this.log("checking for fire spirit.");
-        //this.log("activate_fire_spirit_stacks: " + this.players[0].activate_fire_spirit_stacks);
-        //this.log("last_card_is_wood_spirit: " + this.players[0].last_card_is_wood_spirit);
-        //this.log("last_card_is_fire_spirit: " + this.players[0].last_card_is_fire_spirit);
-        //this.log("current card name: " + swogi[this.players[0].cards[this.players[0].currently_playing_card_idx]].name);
-        //this.log("current is_fire_spirit: " + is_fire_spirit(this.players[0].cards[this.players[0].currently_playing_card_idx]));
-        if (this.players[0].activate_fire_spirit_stacks > 0 || this.players[0].last_card_is_wood_spirit || this.players[0].last_card_is_fire_spirit) {
+        if (this.if_fire_spirit()) {
             this.do_action(arr);
         }
+    }
+    if_earth_spirit() {
+        return this.players[0].activate_earth_spirit_stacks > 0 || this.players[0].last_card_is_fire_spirit || this.players[0].last_card_is_earth_spirit;
     }
     earth_spirit(arr) {
-        if (this.players[0].activate_earth_spirit_stacks > 0 || this.players[0].last_card_is_fire_spirit || this.players[0].last_card_is_earth_spirit) {
+        if (this.if_earth_spirit()) {
             this.do_action(arr);
         }
+    }
+    if_metal_spirit() {
+        return this.players[0].activate_metal_spirit_stacks > 0 || this.players[0].last_card_is_earth_spirit || this.players[0].last_card_is_metal_spirit;
     }
     metal_spirit(arr) {
-        if (this.players[0].activate_metal_spirit_stacks > 0 || this.players[0].last_card_is_earth_spirit || this.players[0].last_card_is_metal_spirit) {
+        if (this.if_metal_spirit()) {
             this.do_action(arr);
         }
     }
+    if_water_spirit() {
+        return this.players[0].activate_water_spirit_stacks > 0 || this.players[0].last_card_is_metal_spirit || this.players[0].last_card_is_water_spirit;
+    }
     water_spirit(arr) {
-        if (this.players[0].activate_water_spirit_stacks > 0 || this.players[0].last_card_is_metal_spirit || this.players[0].last_card_is_water_spirit) {
+        if (this.if_water_spirit()) {
             this.do_action(arr);
         }
     }
@@ -2593,6 +2702,41 @@ class GameState {
     }
     reverse_card_play_direction() {
         this.players[0].card_play_direction *= -1;
+    }
+    do_metal_spirit_charge(amt) {
+        if (this.if_metal_spirit()) {
+            amt += Math.floor(this.players[0].def / 4);
+        }
+        this.increase_idx_x_by_c(0, "penetrate", amt);
+    }
+    if_no_debuff() {
+        return this.players[0].internal_injury === 0 &&
+                this.players[0].weaken === 0 &&
+                this.players[0].flaw === 0 &&
+                this.players[0].decrease_atk === 0 &&
+                this.players[0].entangle === 0 &&
+                this.players[0].wound === 0;
+    }
+    if_no_debuff_do(arr) {
+        if (this.if_no_debuff()) {
+            this.do_action(arr);
+        }
+    }
+    do_qi_corrupting_sunflower() {
+        const desired_qi_reduction = 3;
+        const qi_reduction = Math.min(desired_qi_reduction, this.players[1].qi);
+        const damage = (desired_qi_reduction - qi_reduction) * 5;
+        this.reduce_idx_x_by_c(1, "qi", qi_reduction);
+        if (damage > 0) {
+            this.deal_damage(damage);
+        }
+    }
+    do_qi_seeking_sunflower() {
+        var amt = 4;
+        if (this.players[0].qi > 0 || this.players[1].qi > 0) {
+            amt += 2;
+        }
+        this.increase_idx_x_by_c(0, "qi", amt);
     }
 }
 
@@ -6285,7 +6429,7 @@ riddles["99"] = () => {
     return;
 
 };
-riddles["99"]();
+//riddles["99"]();
 var fuzz = true;
 if (fuzz) {
     const start_time = process.hrtime();

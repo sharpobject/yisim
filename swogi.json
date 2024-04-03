@@ -3726,19 +3726,19 @@
 		"name": "Octgates Lock Formation",
 		"actions": [
 			["continuous"],
-			["add_c_of_x", 2, "octgates_lock_formation_stacks"]
+			["add_enemy_c_of_x", 2, "octgates_lock_formation_stacks"]
 		]
 	},
 	"354022": {
 		"actions": [
 			["continuous"],
-			["add_c_of_x", 3, "octgates_lock_formation_stacks"]
+			["add_enemy_c_of_x", 3, "octgates_lock_formation_stacks"]
 		]
 	},
 	"354023": {
 		"actions": [
 			["continuous"],
-			["add_c_of_x", 4, "octgates_lock_formation_stacks"]
+			["add_enemy_c_of_x", 4, "octgates_lock_formation_stacks"]
 		]
 	},
 	"354031": {
@@ -3947,7 +3947,7 @@
 	"364023": {
 		"actions": [
 			["reduce_random_debuff_by_c_n_times", 3, 1],
-			["if_no_debuff", ["chase"]]
+			["if_no_debuff_do", ["chase"]]
 		]
 	},
 	"364031": {
@@ -4019,7 +4019,7 @@
 			["reduce_enemy_c_of_x", 10, "hp"],
 			["heal", 10],
 			["continuous"],
-			["add_c_of_x", 6, "devouring_ancient_vine_stacks"]
+			["add_enemy_c_of_x", 6, "devouring_ancient_vine_stacks"]
 		]
 	},
 	"401011": {
