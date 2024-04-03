@@ -1579,6 +1579,28 @@
 			["do_propitious_omen", 7]
 		]
 	},
+	"131011": {
+		"name": "Wood Spirit Seal",
+		"actions": [
+			["qi", 1],
+			["heal", 4],
+			["activate_wood_spirit"]
+		]
+	},
+	"131012": {
+		"actions": [
+			["qi", 2],
+			["heal", 4],
+			["activate_wood_spirit"]
+		]
+	},
+	"131013": {
+		"actions": [
+			["qi", 3],
+			["heal", 4],
+			["activate_wood_spirit"]
+		]
+	},
 	"131021": {
 		"name": "Wood Spirit - Bud",
 		"qi_cost": 1,
@@ -1597,6 +1619,31 @@
 		"actions": [
 			["rep", 4, ["atk", 3]],
 			["wood_spirit", ["heal", 5]]
+		]
+	},
+	"131031": {
+		"name": "Fire Spirit Seal",
+		"actions": [
+			["reduce_enemy_c_of_x", 3, "hp"],
+			["reduce_enemy_c_of_x", 3, "max_hp"],
+			["qi", 1],
+			["activate_fire_spirit"]
+		]
+	},
+	"131032": {
+		"actions": [
+			["reduce_enemy_c_of_x", 3, "hp"],
+			["reduce_enemy_c_of_x", 3, "max_hp"],
+			["qi", 2],
+			["activate_fire_spirit"]
+		]
+	},
+	"131033": {
+		"actions": [
+			["reduce_enemy_c_of_x", 3, "hp"],
+			["reduce_enemy_c_of_x", 3, "max_hp"],
+			["qi", 3],
+			["activate_fire_spirit"]
 		]
 	},
 	"131041": {
@@ -1619,6 +1666,85 @@
 			["fire_spirit", ["atk", 4]]
 		]
 	},
+	"131051": {
+		"name": "Earth Spirit Seal",
+		"actions": [
+			["atk", 3],
+			["def", 4],
+			["activate_earth_spirit"]
+		]
+	},
+	"131052": {
+		"actions": [
+			["atk", 5],
+			["def", 6],
+			["activate_earth_spirit"]
+		]
+	},
+	"131053": {
+		"actions": [
+			["atk", 7],
+			["def", 8],
+			["activate_earth_spirit"]
+		]
+	},
+	"131061": {
+		"name": "Earth Spirit - Smash",
+		"actions": [
+			["earth_spirit", ["if_either_has_def_do", ["add_c_of_x", 3, "bonus_atk_amt"]]],
+			["atk", 6]
+		]
+	},
+	"131062": {
+		"actions": [
+			["earth_spirit", ["if_either_has_def_do", ["add_c_of_x", 5, "bonus_atk_amt"]]],
+			["atk", 7]
+		]
+	},
+	"131063": {
+		"actions": [
+			["earth_spirit", ["if_either_has_def_do", ["add_c_of_x", 7, "bonus_atk_amt"]]],
+			["atk", 8]
+		]
+	},
+	"131071": {
+		"name": "Metal Spirit Seal",
+		"actions": [
+			["atk", 6],
+			["activate_metal_spirit"]
+		]
+	},
+	"131072": {
+		"actions": [
+			["atk", 9],
+			["activate_metal_spirit"]
+		]
+	},
+	"131073": {
+		"actions": [
+			["atk", 12],
+			["activate_metal_spirit"]
+		]
+	},
+	"131081": {
+		"name": "Metal Spirit - Needle",
+		"actions": [
+			["atk", 6],
+			["metal_spirit", ["add_c_of_x", 2, "penetrate"]]
+		]
+	},
+	"131082": {
+		"actions": [
+			["atk", 7],
+			["metal_spirit", ["add_c_of_x", 4, "penetrate"]]
+		]
+	},
+	"131083": {
+		"actions": [
+			["atk", 8],
+			["metal_spirit", ["add_c_of_x", 6, "penetrate"]]
+		]
+	},
 	"131091": {
 		"name": "Water Spirit Seal",
 		"actions": [
@@ -1636,6 +1762,96 @@
 		"actions": [
 			["qi", 4],
 			["activate_water_spirit"]
+		]
+	},
+	"131101": {
+		"name": "Water Spirit - Waves",
+		"qi_cost": 2,
+		"actions": [
+			["atk", 10],
+			["water_spirit", ["add_c_of_x", 1, "force_of_water"]]
+		]
+	},
+	"131102": {
+		"actions": [
+			["atk", 13],
+			["water_spirit", ["add_c_of_x", 1, "force_of_water"]]
+		]
+	},
+	"131103": {
+		"actions": [
+			["atk", 16],
+			["water_spirit", ["add_c_of_x", 1, "force_of_water"]]
+		]
+	},
+	"131111": {
+		"name": "Five Elements Fleche",
+		"actions": [
+			["if_any_element_activated_do",
+				["add_c_of_x", 3, "bonus_atk_amt"]],
+			["atk", 5]
+		]
+	},
+	"131112": {
+		"actions": [
+			["if_any_element_activated_do",
+				["add_c_of_x", 6, "bonus_atk_amt"]],
+			["atk", 5]
+		]
+	},
+	"131113": {
+		"actions": [
+			["if_any_element_activated_do",
+				["add_c_of_x", 9, "bonus_atk_amt"]],
+			["atk", 5]
+		]
+	},
+	"132011": {
+		"name": "Wood Spirit - Recovery",
+		"actions": [
+			["qi", 2],
+			["wood_spirit",	[
+				["for_each_x_add_y", "increase_atk", "bonus_heal_amt"],
+				["heal", 3]
+			]]
+		]
+	},
+	"132012": {
+		"actions": [
+			["qi", 3],
+			["wood_spirit",	[
+				["for_each_x_add_y", "increase_atk", "bonus_heal_amt"],
+				["heal", 4]
+			]]
+		]
+	},
+	"132013": {
+		"actions": [
+			["qi", 4],
+			["wood_spirit",	[
+				["for_each_x_add_y", "increase_atk", "bonus_heal_amt"],
+				["heal", 6]
+			]]
+		]
+	},
+	"132021": {
+		"name": "Wood Spirit - Sparse Shadow",
+		"qi_cost": 1,
+		"actions": [
+			["rep", 2, ["atk", 3]],
+			["wood_spirit", ["add_c_of_x", 1, "increase_atk"]]
+		]
+	},
+	"132022": {
+		"actions": [
+			["rep", 3, ["atk", 3]],
+			["wood_spirit", ["add_c_of_x", 1, "increase_atk"]]
+		]
+	},
+	"132023": {
+		"actions": [
+			["rep", 4, ["atk", 3]],
+			["wood_spirit", ["add_c_of_x", 1, "increase_atk"]]
 		]
 	},
 	"132031": {
@@ -1771,6 +1987,24 @@
 			["metal_spirit", ["add_c_of_x", 3, "ignore_def"]]
 		]
 	},
+	"132091": {
+		"name": "Water Spirit - Billows",
+		"qi_cost": 2,
+		"water_spirit_cost_0_qi": true,
+		"actions": [
+			["add_c_of_x", 2, "force_of_water"]
+		]
+	},
+	"132092": {
+		"actions": [
+			["add_c_of_x", 3, "force_of_water"]
+		]
+	},
+	"132093": {
+		"actions": [
+			["add_c_of_x", 4, "force_of_water"]
+		]
+	},
 	"132101": {
 		"name": "Water Spirit - Turbulent",
 		"qi_cost": 1,
@@ -1792,6 +2026,50 @@
 			["water_spirit",
 				["for_each_x_add_y", "force_of_water", "bonus_atk_amt"]],
 			["atk", 18]
+		]
+	},
+	"132111": {
+		"name": "Cosmos Seal",
+		"actions": [
+			["atk", 5],
+			["qi", 1],
+			["add_c_of_x", 1, "cosmos_seal_stacks"]
+		]
+	},
+	"132112": {
+		"actions": [
+			["atk", 9],
+			["qi", 1],
+			["add_c_of_x", 1, "cosmos_seal_stacks"]
+		]
+	},
+	"132113": {
+		"actions": [
+			["atk", 13],
+			["qi", 1],
+			["add_c_of_x", 1, "cosmos_seal_stacks"]
+		]
+	},
+	"133011": {
+		"name": "Wood Spirit Formation",
+		"actions": [
+			["add_c_of_x", 10, "max_hp"],
+			["continuous"],
+			["add_c_of_x", 2, "wood_spirit_formation_stacks"]
+		]
+	},
+	"133012": {
+		"actions": [
+			["add_c_of_x", 15, "max_hp"],
+			["continuous"],
+			["add_c_of_x", 3, "wood_spirit_formation_stacks"]
+		]
+	},
+	"133013": {
+		"actions": [
+			["add_c_of_x", 20, "max_hp"],
+			["continuous"],
+			["add_c_of_x", 4, "wood_spirit_formation_stacks"]
 		]
 	},
 	"133021": {
@@ -3145,7 +3423,6 @@
 	},
 	"216021": {
 		"name": "Secret Sword - Spirit Cloud",
-		"unknown_scaling": true,
 		"actions": [
 			["cloud_hit", ["add_c_of_x", 4, "bonus_atk_amt"]],
 			["for_each_x_add_y", "qi", "bonus_rep_amt"],
@@ -3241,6 +3518,66 @@
 			["reduce_enemy_c_of_x", 16, "hp"],
 			["reduce_enemy_c_of_x", 16, "max_hp"],
 			["activate_fire_spirit"]
+		]
+	},
+	"231031": {
+		"name": "Earth Spirit Secret Seal",
+		"actions": [
+			["def", 6],
+			["next_turn_def", 6],
+			["activate_earth_spirit"]
+		]
+	},
+	"231032": {
+		"actions": [
+			["def", 9],
+			["next_turn_def", 9],
+			["activate_earth_spirit"]
+		]
+	},
+	"231033": {
+		"actions": [
+			["def", 12],
+			["next_turn_def", 12],
+			["activate_earth_spirit"]
+		]
+	},
+	"231041": {
+		"name": "Metal Spirit Secret Seal",
+		"actions": [
+			["add_c_of_x", 8, "penetrate"],
+			["activate_metal_spirit"]
+		]
+	},
+	"231042": {
+		"actions": [
+			["add_c_of_x", 11, "penetrate"],
+			["activate_metal_spirit"]
+		]
+	},
+	"231043": {
+		"actions": [
+			["add_c_of_x", 14, "penetrate"],
+			["activate_metal_spirit"]
+		]
+	},
+	"231051": {
+		"name": "Water Spirit Secret Seal",
+		"actions": [
+			["add_c_of_x", 2, "force_of_water"],
+			["activate_water_spirit"]
+		]
+	},
+	"231052": {
+		"actions": [
+			["add_c_of_x", 3, "force_of_water"],
+			["activate_water_spirit"]
+		]
+	},
+	"231053": {
+		"actions": [
+			["add_c_of_x", 4, "force_of_water"],
+			["activate_water_spirit"]
 		]
 	},
 	"311011": {

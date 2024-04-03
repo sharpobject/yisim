@@ -152,11 +152,13 @@ for (var i=0; i<keys.length; i++) {
     var qi_cost = with_default(swogi[card_id].qi_cost, with_default(swogi[base_id].qi_cost, 0));
     var hp_cost = with_default(swogi[card_id].hp_cost, with_default(swogi[base_id].hp_cost, 0));
     var decrease_qi_cost_by_x = with_default(swogi[card_id].decrease_qi_cost_by_x, with_default(swogi[base_id].decrease_qi_cost_by_x, undefined));
+    var water_spirit_cost_0_qi = with_default(swogi[card_id].water_spirit_cost_0_qi, with_default(swogi[base_id].water_spirit_cost_0_qi, undefined));
     var card = {
         name: name,
         qi_cost: qi_cost,
         hp_cost: hp_cost,
         decrease_qi_cost_by_x: decrease_qi_cost_by_x,
+        water_spirit_cost_0_qi: water_spirit_cost_0_qi,
         actions: swogi[card_id].actions,
         is_continuous: id_is_continuous(card_id),
         is_consumption: id_is_consumption(card_id),
@@ -362,6 +364,8 @@ class Player {
         this.activate_water_spirit_stacks = 0;
         this.penetrate = 0;
         this.force_of_water = 0;
+        this.cosmos_seal_stacks = 0;
+        this.wood_spirit_formation_stacks = 0;
         this.fire_spirit_formation_stacks = 0;
         this.earth_spirit_formation_stacks = 0;
         this.metal_spirit_formation_stacks = 0;
@@ -578,6 +582,7 @@ class Player {
             }
         }
         this.different_five_elements = different_elements;
+        this.cosmos_seal_stacks = this.mark_of_five_elements_stacks;
     }
     reset_deck_counts() {
         for (var i=0; i<this.cards.length; i++) {
@@ -976,6 +981,11 @@ class GameState {
         this.players[0].this_card_crash_fist_inch_force_stacks = 0;
         this.players[0].this_card_crash_fist_shocked_stacks = 0;
     }
+    do_wood_spirit_formation(card_id) {
+        if (is_wood_spirit(card_id)) {
+            this.for_each_x_add_y("wood_spirit_formation_stacks", "hp");
+        }
+    }
     do_earth_spirit_formation(card_id) {
         if (is_earth_spirit(card_id)) {
             this.for_each_x_add_y("earth_spirit_formation_stacks", "def");
@@ -1003,31 +1013,31 @@ class GameState {
             this.increase_idx_x_by_c(0, "hexagram", 1);
         }
     }
-    do_mark_of_five_elements(card_id) {
-        if (this.players[0].mark_of_five_elements_stacks > 0) {
+    do_cosmos_seal(card_id) {
+        if (this.players[0].cosmos_seal_stacks > 0) {
             if (is_wood_spirit(card_id)) {
                 this.activate_wood_spirit();
-                this.players[0].mark_of_five_elements_stacks = 0;
+                this.players[0].cosmos_seal_stacks -= 1;
                 return;
             }
             if (is_fire_spirit(card_id)) {
                 this.activate_fire_spirit();
-                this.players[0].mark_of_five_elements_stacks = 0;
+                this.players[0].cosmos_seal_stacks -= 1;
                 return;
             }
             if (is_earth_spirit(card_id)) {
                 this.activate_earth_spirit();
-                this.players[0].mark_of_five_elements_stacks = 0;
+                this.players[0].cosmos_seal_stacks -= 1;
                 return;
             }
             if (is_metal_spirit(card_id)) {
                 this.activate_metal_spirit();
-                this.players[0].mark_of_five_elements_stacks = 0;
+                this.players[0].cosmos_seal_stacks -= 1;
                 return;
             }
             if (is_water_spirit(card_id)) {
                 this.activate_water_spirit();
-                this.players[0].mark_of_five_elements_stacks = 0;
+                this.players[0].cosmos_seal_stacks -= 1;
                 return;
             }
         }
@@ -1058,6 +1068,7 @@ class GameState {
         this.do_regenerating_body(idx);
         this.do_crash_citta_dharma(card_id);
         this.do_pre_crash_fist(card_id);
+        this.do_wood_spirit_formation(card_id);
         this.do_fire_spirit_formation(card_id);
         this.do_earth_spirit_formation(card_id);
         this.do_metal_spirit_formation(card_id);
@@ -1117,7 +1128,7 @@ class GameState {
         this.players[0].this_card_chases = 0;
         this.players[0].this_card_sword_intent = 0;
         this.do_sword_formation_deck_count(card_id);
-        this.do_mark_of_five_elements(card_id);
+        this.do_cosmos_seal(card_id);
         this.trigger_card(card_id, idx);
         this.do_cloud_sword_chain_count(card_id);
         this.do_elemental_spirit_stuff(card_id);
@@ -1519,6 +1530,9 @@ class GameState {
                     this.crash();
                 }
                 qi_cost = Math.max(0, qi_cost - this.players[0][x]);
+            }
+            if (card.water_spirit_cost_0_qi && this.if_water_spirit()) {
+                qi_cost = 0;
             }
             if (this.players[0].is_star_point[this.players[0].next_card_index]) {
                 qi_cost = Math.max(0, qi_cost - this.players[0].reduce_qi_cost_on_star_point_stacks);
@@ -2785,6 +2799,20 @@ class GameState {
             if (had_hexagram) {
                 this.qi(1);
             }
+        }
+    }
+    if_either_has_def_do(arr) {
+        if (this.players[0].def > 0 || this.players[1].def > 0) {
+            this.do_action(arr);
+        }
+    }
+    if_any_element_activated_do(arr) {
+        if (this.players[0].activate_wood_spirit_stacks > 0 ||
+            this.players[0].activate_fire_spirit_stacks > 0 ||
+            this.players[0].activate_earth_spirit_stacks > 0 ||
+            this.players[0].activate_metal_spirit_stacks > 0 ||
+            this.players[0].activate_water_spirit_stacks > 0) {
+            this.do_action(arr);
         }
     }
 }
