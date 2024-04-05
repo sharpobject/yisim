@@ -3443,6 +3443,168 @@
 			["rep", 1, ["atk", 8]]
 		]
 	},
+	"221011": {
+		"name": "Hexagrams Spirit Resurrection",
+		"actions": [
+			["exhaust_x_to_add_c_y", "hexagram", 4, "bonus_heal_amt"],
+			["exhaust_x_to_add_c_y", "qi", 4, "bonus_heal_amt"],
+			["if_x_at_least_c_do", "bonus_heal_amt", 1, ["heal", 0]]
+		]
+	},
+	"221012": {
+		"actions": [
+			["exhaust_x_to_add_c_y", "hexagram", 5, "bonus_heal_amt"],
+			["exhaust_x_to_add_c_y", "qi", 5, "bonus_heal_amt"],
+			["if_x_at_least_c_do", "bonus_heal_amt", 1, ["heal", 0]]
+		]
+	},
+	"221013": {
+		"actions": [
+			["exhaust_x_to_add_c_y", "hexagram", 6, "bonus_heal_amt"],
+			["exhaust_x_to_add_c_y", "qi", 6, "bonus_heal_amt"],
+			["if_x_at_least_c_do", "bonus_heal_amt", 1, ["heal", 0]]
+		]
+	},
+	"221021": {
+		"name": "Throwing Stones For Directions",
+		"actions": [
+			["atk", 6],
+			["add_enemy_rand_range_of_x", 0, 2, "weaken"],
+			["add_enemy_rand_range_of_x", 0, 2, "flaw"]
+		]
+	},
+	"221022": {
+		"actions": [
+			["atk", 6],
+			["add_enemy_rand_range_of_x", 0, 2, "weaken"],
+			["add_enemy_rand_range_of_x", 0, 3, "flaw"]
+		]
+	},
+	"221023": {
+		"actions": [
+			["atk", 6],
+			["add_enemy_rand_range_of_x", 0, 3, "weaken"],
+			["add_enemy_rand_range_of_x", 0, 3, "flaw"]
+		]
+	},
+	"222011": {
+		"name": "Vitality Blossom",
+		"actions": [
+			["add_c_of_x", 7, "max_hp"],
+			["heal", 7],
+			["continuous"],
+			["add_c_of_x", 1, "vitality_blossom_stacks"]
+		]
+	},
+	"222012": {
+		"actions": [
+			["add_c_of_x", 11, "max_hp"],
+			["heal", 11],
+			["continuous"],
+			["add_c_of_x", 1, "vitality_blossom_stacks"]
+		]
+	},
+	"222013": {
+		"actions": [
+			["add_c_of_x", 15, "max_hp"],
+			["heal", 15],
+			["continuous"],
+			["add_c_of_x", 1, "vitality_blossom_stacks"]
+		]
+	},
+	"222021": {
+		"name": "Star Born Rhythm",
+		"actions": [
+			["add_c_of_x", 2, "star_power"],
+			["post_action", ["chase"]]
+		]
+	},
+	"222022": {
+		"actions": [
+			["add_c_of_x", 3, "star_power"],
+			["post_action", ["chase"]]
+		]
+	},
+	"222023": {
+		"actions": [
+			["add_c_of_x", 4, "star_power"],
+			["post_action", ["chase"]]
+		]
+	},
+	"223011": {
+		"name": "Sun And Moon For Glory",
+		"qi_cost": 1,
+		"actions": [
+			["do_sun_and_moon_for_glory", 13, 0.5]
+		]
+	},
+	"223012": {
+		"actions": [
+			["do_sun_and_moon_for_glory", 17, 0.5]
+		]
+	},
+	"223013": {
+		"actions": [
+			["do_sun_and_moon_for_glory", 17, 1]
+		]
+	},
+	"223021": {
+		"name": "All-Or-Nothing",
+		"qi_cost": 2,
+		"actions": [
+			["atk_rand_range", 2, 20],
+			["def_rand_range", 2, 20]
+		]
+	},
+	"223022": {
+		"actions": [
+			["atk_rand_range", 8, 23],
+			["def_rand_range", 8, 23]
+		]
+	},
+	"223023": {
+		"actions": [
+			["atk_rand_range", 14, 26],
+			["def_rand_range", 14, 26]
+		]
+	},
+	"224011": {
+		"name": "Flowers And Water",
+		"actions": [
+			["add_enemy_c_of_x", 1, "internal_injury"],
+			["for_each_enemy_x_add_y", "internal_injury", "bonus_rep_amt"],
+			["for_each_enemy_x_add_y", "weaken", "bonus_rep_amt"],
+			["for_each_enemy_x_add_y", "flaw", "bonus_rep_amt"],
+			["for_each_enemy_x_add_y", "decrease_atk", "bonus_rep_amt"],
+			["for_each_enemy_x_add_y", "entangle", "bonus_rep_amt"],
+			["for_each_enemy_x_add_y", "wound", "bonus_rep_amt"],
+			["rep", 0, ["atk", 1]]
+		]
+	},
+	"224012": {
+		"actions": [
+			["add_enemy_c_of_x", 2, "internal_injury"],
+			["for_each_enemy_x_add_y", "internal_injury", "bonus_rep_amt"],
+			["for_each_enemy_x_add_y", "weaken", "bonus_rep_amt"],
+			["for_each_enemy_x_add_y", "flaw", "bonus_rep_amt"],
+			["for_each_enemy_x_add_y", "decrease_atk", "bonus_rep_amt"],
+			["for_each_enemy_x_add_y", "entangle", "bonus_rep_amt"],
+			["for_each_enemy_x_add_y", "wound", "bonus_rep_amt"],
+			["rep", 0, ["atk", 1]]
+		]
+	},
+	"224013": {
+		"actions": [
+			["add_enemy_c_of_x", 3, "internal_injury"],
+			["for_each_enemy_x_add_y", "internal_injury", "bonus_rep_amt"],
+			["for_each_enemy_x_add_y", "weaken", "bonus_rep_amt"],
+			["for_each_enemy_x_add_y", "flaw", "bonus_rep_amt"],
+			["for_each_enemy_x_add_y", "decrease_atk", "bonus_rep_amt"],
+			["for_each_enemy_x_add_y", "entangle", "bonus_rep_amt"],
+			["for_each_enemy_x_add_y", "wound", "bonus_rep_amt"],
+			["rep", 0, ["atk", 1]]
+		]
+	},
 	"224021": {
 		"name": "Astral Move - Dragon Slay",
 		"actions": [
@@ -3460,6 +3622,140 @@
 		"actions": [
 			["add_c_of_x", 6, "bonus_star_power_multiplier"],
 			["atk", 14]
+		]
+	},
+	"224031": {
+		"name": "Thunder Citta-Dharma",
+		"actions": [
+			["add_c_of_x", 1, "hexagram"],
+			["continuous"],
+			["add_c_of_x", 40, "thunder_citta_dharma_stacks"]
+		]
+	},
+	"224032": {
+		"actions": [
+			["add_c_of_x", 2, "hexagram"],
+			["continuous"],
+			["add_c_of_x", 50, "thunder_citta_dharma_stacks"]
+		]
+	},
+	"224033": {
+		"actions": [
+			["add_c_of_x", 3, "hexagram"],
+			["continuous"],
+			["add_c_of_x", 60, "thunder_citta_dharma_stacks"]
+		]
+	},
+	"225011": {
+		"name": "Thin On The Ground",
+		"actions": [
+			["if_c_pct_do", 1,
+				[
+					["add_c_of_x", 4, "max_hp"],
+					["heal", 30]
+				],
+				[
+					["add_c_of_x", 2, "max_hp"],
+					["heal", 15]
+				]
+			],
+			["consumption"]
+		]
+	},
+	"225012": {
+		"actions": [
+			["if_c_pct_do", 1,
+				[
+					["add_c_of_x", 6, "max_hp"],
+					["heal", 40]
+				],
+				[
+					["add_c_of_x", 3, "max_hp"],
+					["heal", 20]
+				]
+			],
+			["consumption"]
+		]
+	},
+	"225013": {
+		"actions": [
+			["if_c_pct_do", 1,
+				[
+					["add_c_of_x", 8, "max_hp"],
+					["heal", 50]
+				],
+				[
+					["add_c_of_x", 4, "max_hp"],
+					["heal", 25]
+				]
+			],
+			["consumption"]
+		]
+	},
+	"225021": {
+		"name": "Preemptive Strike",
+		"actions": [
+			["atk", 4],
+			["continuous"],
+			["add_c_of_x", 1, "preemptive_strike_stacks"]
+		]
+	},
+	"225022": {
+		"actions": [
+			["atk", 10],
+			["continuous"],
+			["add_c_of_x", 1, "preemptive_strike_stacks"]
+		]
+	},
+	"225023": {
+		"actions": [
+			["atk", 16],
+			["continuous"],
+			["add_c_of_x", 1, "preemptive_strike_stacks"]
+		]
+	},
+	"225031": {
+		"name": "Meteorite Meteor",
+		"actions": [
+			["exhaust_x_to_add_y", "star_power", "bonus_rep_amt"],
+			["rep", 0, ["deal_damage", 8]]
+		]
+	},
+	"225032": {
+		"actions": [
+			["exhaust_x_to_add_y", "star_power", "bonus_rep_amt"],
+			["rep", 0, ["deal_damage", 9]]
+		]
+	},
+	"225033": {
+		"actions": [
+			["exhaust_x_to_add_y", "star_power", "bonus_rep_amt"],
+			["rep", 0, ["deal_damage", 10]]
+		]
+	},
+	"226011": {
+		"name": "Destiny Catastrophe",
+		"qi_cost": 2,
+		"actions": [
+			["if_x_at_least_c_do", "hexagram", 8,
+				["if_x_at_most_c_do", "hexagram", 8,
+					["set_enemy_c_of_x", 8, "hp"]]]
+		]
+	},
+	"226012": {
+		"qi_cost": 1,
+		"actions": [
+			["if_x_at_least_c_do", "hexagram", 8,
+				["if_x_at_most_c_do", "hexagram", 8,
+					["set_enemy_c_of_x", 4, "hp"]]]
+		]
+	},
+	"226013": {
+		"qi_cost": 0,
+		"actions": [
+			["if_x_at_least_c_do", "hexagram", 8,
+				["if_x_at_most_c_do", "hexagram", 8,
+					["set_enemy_c_of_x", 1, "hp"]]]
 		]
 	},
 	"226021": {

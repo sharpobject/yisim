@@ -121,6 +121,9 @@ let is_fire_spirit = function(card_id) {
     return swogi[card_id].name.includes("Fire Spirit");
 }
 let is_earth_spirit = function(card_id) {
+    if (swogi[card_id].name === "Earth Spirit Elixir") {
+        return false;
+    }
     return swogi[card_id].name.includes("Earth Spirit");
 }
 let is_metal_spirit = function(card_id) {
@@ -137,6 +140,9 @@ let is_astral_move = function(card_id) {
 }
 let is_post_action = function(card_id) {
     return actions_contains_str(swogi[card_id].actions, "post_action");
+}
+let is_thunder = function(card_id) {
+    return swogi[card_id].name.includes("Thunder");
 }
 function with_default(x, default_val) {
     if (x === undefined) {
@@ -174,6 +180,7 @@ for (var i=0; i<keys.length; i++) {
         is_add_physique: is_add_physique(card_id),
         is_astral_move: is_astral_move(card_id),
         is_post_action: is_post_action(card_id),
+        is_thunder: is_thunder(card_id),
         marking: get_marking(card_id),
     };
     swogi[card_id] = card;
@@ -213,6 +220,9 @@ is_astral_move = function(card_id) {
 }
 is_post_action = function(card_id) {
     return swogi[card_id].is_post_action;
+}
+is_thunder = function(card_id) {
+    return swogi[card_id].is_thunder;
 }
 const card_names = [];
 const card_name_to_id = {};
@@ -346,12 +356,16 @@ class Player {
         this.card_play_direction = 1;
         this.hunter_hunting_hunter_stacks = 0;
         // heptastar sect secret enchantment cards
+        this.vitality_blossom_stacks = 0;
         this.bonus_star_power_multiplier = 0;
+        this.thunder_citta_dharma_stacks = 0;
+        this.preemptive_strike_stacks = 0;
         this.covert_shift_stacks = 0;
         // heptastar sect character-specific cards
         this.cannot_act_stacks = 0;
         this.reduce_qi_cost_on_star_point_stacks = 0;
         // five elements sect normal cards
+        this.last_card_id = undefined;
         this.last_card_is_wood_spirit = false;
         this.last_card_is_fire_spirit = false;
         this.last_card_is_earth_spirit = false;
@@ -835,6 +849,7 @@ class GameState {
         this.players[0].last_card_is_earth_spirit = is_earth_spirit(card_id);
         this.players[0].last_card_is_metal_spirit = is_metal_spirit(card_id);
         this.players[0].last_card_is_water_spirit = is_water_spirit(card_id);
+        this.players[0].last_card_id = card_id;
     }
     do_sword_formation_deck_count(card_id) {
         this.players[0].other_sword_formation_deck_count = this.players[0].sword_formation_deck_count;
@@ -1077,21 +1092,15 @@ class GameState {
         this.do_metal_spirit_formation(card_id);
         this.do_water_spirit_formation(card_id);
         this.do_action(card.actions);
-        if (!this.game_over) {
-            this.do_stance_of_fierce_attack(card_id);
-        }
-        if (!this.game_over) {
-            this.do_emptiness_sword_formation(card_id);
-        }
-        if (!this.game_over) {
-            this.do_hunter_hunting_hunter(card_id);
-        }
-        if (!this.game_over) {
-            this.do_post_crash_fist(card_id);
-        }
-        if (!this.game_over) {
-            this.do_endless_sword_formation();
-        }
+        // Extra attacks zone
+        this.do_emptiness_sword_formation(card_id);
+        this.do_hunter_hunting_hunter(card_id);
+        this.do_endless_sword_formation();
+        // Engless sword formation seems to not trigger for cards that only attacked
+        // because of Shocked or Stance of Fierce Attack.
+        this.do_post_crash_fist(card_id);
+        this.do_stance_of_fierce_attack(card_id);
+        // End of extra attacks zone
         this.do_unrestrained_sword_count(card_id);
         this.players[0].currently_triggering_card_idx = prev_triggering_idx;
         this.players[0].currently_triggering_card_id = prev_triggering_id;
@@ -1703,7 +1712,13 @@ class GameState {
         this.players[idx].hp += amt;
         this.players[idx].hp_gained += amt;
         if (this.players[idx].hp > this.players[idx].max_hp) {
-            this.players[idx].hp = this.players[idx].max_hp;
+            if (this.players[idx].vitality_blossom_stacks > 0) {
+                const exccess_hp = this.players[idx].hp - this.players[idx].max_hp;
+                this.increase_idx_x_by_c(idx, "max_hp", exccess_hp);
+            }
+            if (this.players[idx].hp > this.players[idx].max_hp) {
+                this.players[idx].hp = this.players[idx].max_hp;
+            }
         }
         if (prev_hp !== this.players[idx].hp) {
             for (var i=0; i<this.players[idx].birdie_wind_stacks; i++) {
@@ -1955,6 +1970,9 @@ class GameState {
             }
             if (this.players[enemy_idx].flaw > 0) {
                 pct_multiplier += 40;
+            }
+            if (is_thunder(this.players[0].currently_triggering_card_id)) {
+                pct_multiplier += this.players[0].thunder_citta_dharma_stacks;
             }
             this.players[my_idx].ignore_weaken = false;
             this.players[my_idx].bonus_sword_intent_multiplier = 0;
@@ -2255,16 +2273,16 @@ class GameState {
     }
     retrigger_previous_sword_formation() {
         const my_idx = this.players[0].currently_triggering_card_idx;
-        var idx = my_idx - 1;
-        while (idx >= 0) {
+        const step = -this.players[0].card_play_direction;
+        var idx = my_idx + step;
+        while (idx >= 0 && idx < this.players[0].cards.length) {
             var card_id = this.players[0].cards[idx];
-            var card = swogi[card_id];
-            if (card.name.includes("Sword Formation")) {
+            if (is_sword_formation(card_id)) {
                 this.log("retriggering " + format_card(card_id));
                 this.trigger_card(card_id, idx);
                 return;
             }
-            idx -= 1;
+            idx += step;
         }
     }
     // the reason this wouldn't just use `rep` is that we'd like to
@@ -2466,7 +2484,9 @@ class GameState {
         this.add_c_of_x(1, "activate_water_spirit_stacks");
     }
     if_wood_spirit() {
-        return this.players[0].activate_wood_spirit_stacks > 0 || this.players[0].last_card_is_water_spirit || this.players[0].last_card_is_wood_spirit;
+        return this.players[0].activate_wood_spirit_stacks > 0 ||
+            this.players[0].last_card_is_wood_spirit ||
+            this.cards_have_generating_interaction(this.last_card_id, "131011");
     }
     wood_spirit(arr) {
         if (this.if_wood_spirit()) {
@@ -2474,7 +2494,9 @@ class GameState {
         }
     }
     if_fire_spirit() {
-        return this.players[0].activate_fire_spirit_stacks > 0 || this.players[0].last_card_is_wood_spirit || this.players[0].last_card_is_fire_spirit;
+        return this.players[0].activate_fire_spirit_stacks > 0 ||
+            this.players[0].last_card_is_fire_spirit ||
+            this.cards_have_generating_interaction(this.last_card_id, "131031");
     }
     fire_spirit(arr) {
         if (this.if_fire_spirit()) {
@@ -2482,7 +2504,9 @@ class GameState {
         }
     }
     if_earth_spirit() {
-        return this.players[0].activate_earth_spirit_stacks > 0 || this.players[0].last_card_is_fire_spirit || this.players[0].last_card_is_earth_spirit;
+        return this.players[0].activate_earth_spirit_stacks > 0 ||
+            this.players[0].last_card_is_earth_spirit ||
+            this.cards_have_generating_interaction(this.last_card_id, "131051");
     }
     earth_spirit(arr) {
         if (this.if_earth_spirit()) {
@@ -2490,7 +2514,9 @@ class GameState {
         }
     }
     if_metal_spirit() {
-        return this.players[0].activate_metal_spirit_stacks > 0 || this.players[0].last_card_is_earth_spirit || this.players[0].last_card_is_metal_spirit;
+        return this.players[0].activate_metal_spirit_stacks > 0 ||
+            this.players[0].last_card_is_metal_spirit ||
+            this.cards_have_generating_interaction(this.last_card_id, "131071");
     }
     metal_spirit(arr) {
         if (this.if_metal_spirit()) {
@@ -2498,7 +2524,9 @@ class GameState {
         }
     }
     if_water_spirit() {
-        return this.players[0].activate_water_spirit_stacks > 0 || this.players[0].last_card_is_metal_spirit || this.players[0].last_card_is_water_spirit;
+        return this.players[0].activate_water_spirit_stacks > 0 ||
+            this.players[0].last_card_is_water_spirit ||
+            this.cards_have_generating_interaction(this.last_card_id, "131091");
     }
     water_spirit(arr) {
         if (this.if_water_spirit()) {
@@ -2582,7 +2610,7 @@ class GameState {
         this.used_randomness = true;
         return Math.random() < c / 100;
     }
-    if_c_pct_do(c, arr) {
+    if_c_pct_do(c, arr, arr2) {
         if (this.trigger_hexagram(0)) {
             this.do_action(arr);
             return;
@@ -2590,6 +2618,8 @@ class GameState {
         this.used_randomness = true;
         if (Math.random() < c / 100) {
             this.do_action(arr);
+        } else if (typeof arr2 !== "undefined") {
+            this.do_action(arr2);
         }
     }
     do_fire_spirit_blazing_praerie(amt) {
@@ -2608,6 +2638,8 @@ class GameState {
     post_action(arr) {
         var can_post_action = false;
         if (this.players[0].can_post_action[this.players[0].currently_playing_card_idx]) {
+            can_post_action = true;
+        } else if (this.players[0].preemptive_strike_stacks > 0) {
             can_post_action = true;
         } else if (this.players[0].act_underhand_stacks > 0) {
             can_post_action = this.if_c_pct(1);
@@ -2647,6 +2679,9 @@ class GameState {
         this.add_c_of_x(qi_amt, "qi");
     }
     cards_have_generating_interaction(id1, id2) {
+        if (id1 === undefined || id2 === undefined) {
+            return false;
+        }
         if (this.players[0].fire_spirit_generation_stacks > 0) {
             if (is_fire_spirit(id1)) {
                 return is_wood_spirit(id2) || is_earth_spirit(id2) || is_metal_spirit(id2) || is_water_spirit(id2);
@@ -2669,6 +2704,16 @@ class GameState {
         }
         if (is_water_spirit(id1)) {
             return is_wood_spirit(id2);
+        }
+        return false;
+    }
+    cards_have_overcoming_interaction(id1, id2) {
+        for (var i=1; i<10; i+=2) {
+            const mid = "1310" + i + "1";
+            if (this.cards_have_generating_interaction(id1, mid) &&
+                this.cards_have_generating_interaction(mid, id2)) {
+                return true;
+            }
         }
         return false;
     }
@@ -2895,6 +2940,28 @@ class GameState {
         }
         if (activated >= 2) {
             this.chase();
+        }
+    }
+    for_each_enemy_x_add_y(x, y) {
+        this.add_c_of_x(this.players[1][x], y);
+    }
+    do_sun_and_moon_for_glory(atk_amt, multiplier) {
+        const hp_diff = this.players[0].max_hp - this.players[1].max_hp;
+        if (hp_diff > 0) {
+            atk_amt += Math.floor(hp_diff * multiplier);
+        }
+        this.deal_damage(atk_amt);
+    }
+    add_enemy_rand_range_of_x(lo_inclusive, hi_inclusive, x) {
+        const amt = this.rand_range(lo_inclusive, hi_inclusive);
+        this.add_enemy_c_of_x(amt, x);
+    }
+    set_enemy_c_of_x(c, x) {
+        const current_value = this.players[1][x];
+        if (current_value > c) {
+            this.reduce_enemy_c_of_x(current_value - c, x);
+        } else if (current_value < c) {
+            this.add_enemy_c_of_x(c - current_value, x);
         }
     }
 }
