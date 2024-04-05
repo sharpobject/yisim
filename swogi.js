@@ -277,6 +277,7 @@ class Player {
         this.this_card_attacked = false; // whether the player has attacked with this card
         // TODO: the above is for... nothing?
         this.this_card_directly_attacked = false; // whether this card attacked, excluding attacks by triggering other cards
+        this.this_trigger_directly_attacked = false; // whether this card (the triggering one) attacked, excluding attacks by triggering other cards
         this.this_turn_attacked = false; // whether the player has attacked this turn
         this.this_atk_injured = false; // whether the enemy hp has been injured by this atk
         this.damage_dealt_to_hp_by_atk = 0; // for stuff that keys off how much damage went through to hp
@@ -405,19 +406,29 @@ class Player {
         this.physique = 0;
         this.max_force = 6;
         this.force = 0;
+        this.crash_fist_poke_stacks = 0;
+        this.crash_fist_block_stacks = 0;
+        this.crash_fist_bounce_stacks = 0;
+        this.crash_fist_shake_stacks = 0;
+        this.crash_fist_entangle_stacks = 0;
+        this.crash_fist_blitz_stacks = 0;
+        this.this_card_crash_fist_blitz_stacks = 0;
+        this.crash_footwork_stacks = 0;
+        this.crash_fist_truncate_stacks = 0;
+        this.crash_fist_blink_stacks = 0;
+        this.crash_fist_inch_force_stacks = 0;
+        this.this_card_crash_fist_inch_force_stacks = 0;
+        this.crash_fist_shocked_stacks = 0;
+        this.this_card_crash_fist_shocked_stacks = 0;
         this.elusive_footwork_triggered = false;
         this.elusive_footwork_stacks = 0;
         this.crash_citta_dharma_stacks = 0;
-        this.crash_fist_subdue_dragon_stacks = 0;
-        this.this_card_crash_fist_inch_force_stacks = 0;
-        this.crash_fist_inch_force_stacks = 0;
-        this.this_card_crash_fist_shocked_stacks = 0;
-        this.crash_fist_shocked_stacks = 0;
         this.hp_lost = 0;
         this.physique_gained = 0;
         this.majestic_qi_stacks = 0;
         // duan xuan sect secret enchantment cards
         this.lying_drunk_stacks = 0;
+        this.crash_fist_double_stacks = 0;
         this.return_to_simplicity_stacks = 0;
         // musician side job cards
         this.carefree_tune_stacks = 0;
@@ -974,28 +985,49 @@ class GameState {
             this.for_each_x_add_y("crash_citta_dharma_stacks", "force");
         }
     }
+    is_crash_fist(card_id) {
+        return this.players[0].crash_footwork_stacks > 0 || is_crash_fist(card_id);
+    }
     do_pre_crash_fist(card_id) {
-        if (is_crash_fist(card_id)) {
-            this.for_each_x_add_y("crash_fist_subdue_dragon_stacks", "bonus_atk_amt");
-            this.for_each_x_add_y("crash_fist_subdue_dragon_stacks", "bonus_def_amt");
-            this.for_each_x_add_y("crash_fist_inch_force_stacks", "this_card_crash_fist_inch_force_stacks");
-            this.for_each_x_add_y("crash_fist_shocked_stacks", "this_card_crash_fist_shocked_stacks");
+        if (!this.is_crash_fist(card_id)) {
+            return;
         }
+        this.for_each_x_add_y("crash_fist_poke_stacks", "bonus_atk_amt");
+        this.for_each_x_add_y("crash_fist_block_stacks", "def");
+        this.for_each_x_add_y("crash_fist_shake_stacks", "force");
+        const wound_amt = this.players[0].crash_fist_entangle_stacks;
+        this.increase_idx_x_by_c(1, "wound", wound_amt);
+        this.for_each_x_add_y("crash_fist_blitz_stacks", "this_card_crash_fist_blitz_stacks");
+        if (this.players[0].crash_fist_truncate_stacks > 0) {
+            this.transfer_random_debuff();
+        }
+        this.for_each_x_add_y("crash_fist_inch_force_stacks", "this_card_crash_fist_inch_force_stacks");
+        this.for_each_x_add_y("crash_fist_blink_stacks", "agility");
+        this.for_each_x_add_y("crash_fist_shocked_stacks", "this_card_crash_fist_shocked_stacks");
         if (swogi[card_id].name !== "Crash Fist - Continue") {
-            this.players[0].crash_fist_subdue_dragon_stacks = 0;
+            this.players[0].crash_fist_block_stacks = 0;
+            this.players[0].crash_fist_shake_stacks = 0;
+            this.players[0].crash_fist_entangle_stacks = 0;
+            this.players[0].crash_fist_blitz_stacks = 0;
+            this.players[0].crash_fist_truncate_stacks = 0;
             this.players[0].crash_fist_inch_force_stacks = 0;
+            this.players[0].crash_fist_blink_stacks = 0;
             this.players[0].crash_fist_shocked_stacks = 0;
         }
     }
     do_post_crash_fist(card_id) {
-        if (is_crash_fist(card_id)) {
+        if (this.is_crash_fist(card_id)) {
             if (this.players[0].this_card_crash_fist_shocked_stacks > 0) {
                 var atk_amt = 1;
                 atk_amt += Math.floor(0.2 * this.players[0].hp_lost);
                 this.log("Attacking for " + atk_amt + " from crash fist - shocked effect.");
                 this.atk(atk_amt);
             }
+            if (this.players[0].this_trigger_directly_attacked && swogi[card_id].name !== "Crash Fist - Continue") {
+                this.players[0].crash_fist_poke_stacks = 0;
+            }
         }
+        this.players[0].this_card_crash_fist_blitz_stacks = 0;
         this.players[0].this_card_crash_fist_inch_force_stacks = 0;
         this.players[0].this_card_crash_fist_shocked_stacks = 0;
     }
@@ -1072,6 +1104,7 @@ class GameState {
         const prev_bonus_reduce_enemy_hp_amt = this.players[0].bonus_reduce_enemy_hp_amt;
         const prev_bonus_reduce_enemy_max_hp_amt = this.players[0].bonus_reduce_enemy_max_hp_amt;
         const prev_bonus_heal_amt = this.players[0].bonus_heal_amt;
+        const prev_this_trigger_directly_attacked = this.players[0].this_trigger_directly_attacked;
         var card = swogi[card_id];
         this.players[0].currently_triggering_card_idx = idx;
         this.players[0].currently_triggering_card_id = card_id;
@@ -1092,18 +1125,6 @@ class GameState {
         this.do_metal_spirit_formation(card_id);
         this.do_water_spirit_formation(card_id);
         this.do_action(card.actions);
-        // Extra attacks zone
-        this.do_emptiness_sword_formation(card_id);
-        this.do_hunter_hunting_hunter(card_id);
-        this.do_endless_sword_formation();
-        // Engless sword formation seems to not trigger for cards that only attacked
-        // because of Shocked or Stance of Fierce Attack.
-        this.do_post_crash_fist(card_id);
-        this.do_stance_of_fierce_attack(card_id);
-        // End of extra attacks zone
-        this.do_unrestrained_sword_count(card_id);
-        this.players[0].currently_triggering_card_idx = prev_triggering_idx;
-        this.players[0].currently_triggering_card_id = prev_triggering_id;
         this.players[0].bonus_atk_amt = prev_bonus_atk_amt;
         this.players[0].bonus_dmg_amt = prev_bonus_dmg_amt;
         this.players[0].bonus_rep_amt = prev_bonus_rep_amt;
@@ -1111,6 +1132,19 @@ class GameState {
         this.players[0].bonus_reduce_enemy_hp_amt = prev_bonus_reduce_enemy_hp_amt;
         this.players[0].bonus_reduce_enemy_max_hp_amt = prev_bonus_reduce_enemy_max_hp_amt;
         this.players[0].bonus_heal_amt = prev_bonus_heal_amt;
+        // Extra attacks zone
+        this.do_emptiness_sword_formation(card_id);
+        this.do_hunter_hunting_hunter(card_id);
+        this.do_endless_sword_formation();
+        // Engless sword formation seems to not trigger for cards that only attacked
+        // because of Shocked or Stance of Fierce Attack.
+        this.do_stance_of_fierce_attack(card_id);
+        this.do_post_crash_fist(card_id);
+        // End of extra attacks zone
+        this.do_unrestrained_sword_count(card_id);
+        this.players[0].this_trigger_directly_attacked = prev_this_trigger_directly_attacked;
+        this.players[0].currently_triggering_card_idx = prev_triggering_idx;
+        this.players[0].currently_triggering_card_id = prev_triggering_id;
         this.players[0].trigger_depth -= 1;
         this.unindent();
     }
@@ -1161,6 +1195,14 @@ class GameState {
         if (this.players[0].strike_twice_stacks > 0) {
             plays += 1;
             this.reduce_idx_x_by_c(0, "strike_twice_stacks", 1);
+        }
+        if (this.players[0].crash_fist_double_stacks > 0) {
+            if (this.is_crash_fist(card_id)) {
+                plays += 1;
+                if (swogi[card_id].name !== "Crash Fist - Continue") {
+                    this.reduce_idx_x_by_c(0, "crash_fist_double_stacks", 1);
+                }
+            }
         }
         for (var i=0; i<plays; i++) {
             if (!this.game_over) {
@@ -1575,6 +1617,13 @@ class GameState {
                 if (hp_cost > 0) {
                     this.reduce_idx_hp(0, hp_cost, true);
                     this.log("player 0 spent " + hp_cost + " hp to play " + format_card(card_id));
+                    if (this.players[0].crash_fist_bounce_stacks > 0 && this.is_crash_fist(card_id)) {
+                        this.heal(hp_cost);
+                        this.log("player 0 healed " + hp_cost + " hp from crash fist bounce");
+                        if (swogi[card_id].name !== "Crash Fist - Continue") {
+                            this.players[0].crash_fist_bounce_stacks = 0;
+                        }
+                    }
                 }
                 if (physique_cost > 0) {
                     this.reduce_idx_x_by_c(0, "physique", physique_cost);
@@ -1911,6 +1960,7 @@ class GameState {
             if (this.players[my_idx].trigger_depth <= 1) {
                 this.players[my_idx].this_card_directly_attacked = true;
             }
+            this.players[my_idx].this_trigger_directly_attacked = true;
             this.players[my_idx].this_card_attacked = true;
             this.players[my_idx].this_turn_attacked = true;
             if (!this.players[my_idx].sword_intent_flow_mode && this.players[my_idx].sword_intent_flow_stacks > 0) {
@@ -1945,6 +1995,9 @@ class GameState {
                 dmg += 3;
             }
             if (this.players[my_idx].leaf_blade_flower_stacks > 0) {
+                smash_def = true;
+            }
+            if (this.players[my_idx].this_card_crash_fist_blitz_stacks > 0) {
                 smash_def = true;
             }
             dmg += this.do_lonely_night_wolf();
@@ -2318,6 +2371,24 @@ class GameState {
                 my_debuff_stack_counts.splice(debuff_idx, 1);
             }
         }
+    }
+    transfer_random_debuff() {
+        var my_debuff_names = [];
+        for (var i=0; i<DEBUFF_NAMES.length; i++) {
+            if (this.players[0][DEBUFF_NAMES[i]] > 0) {
+                my_debuff_names.push(DEBUFF_NAMES[i]);
+            }
+        }
+        if (my_debuff_names.length === 0) {
+            return;
+        }
+        if (my_debuff_names.length > 1) {
+            this.used_randomness = true;
+        }
+        var debuff_idx = Math.floor(Math.random() * my_debuff_names.length);
+        var debuff_name = my_debuff_names[debuff_idx];
+        this.reduce_idx_x_by_c(0, debuff_name, 1);
+        this.increase_idx_x_by_c(1, debuff_name, 1);
     }
     is_fake_unrestrained_sword() {
         return (this.players[0].unrestrained_sword_clear_heart_stacks > 0 &&

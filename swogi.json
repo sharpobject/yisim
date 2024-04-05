@@ -2695,6 +2695,132 @@
 				["add_c_of_x", 3, "five_elements_heavenly_marrow_rhythm_stacks"]]
 		]
 	},
+	"141011": {
+		"name": "Crash Fist - Poke",
+		"hp_cost": 3,
+		"actions": [
+			["atk", 9],
+			["add_c_of_x", 2, "crash_fist_poke_stacks"]
+		]
+	},
+	"141012": {
+		"actions": [
+			["atk", 11],
+			["add_c_of_x", 3, "crash_fist_poke_stacks"]
+		]
+	},
+	"141013": {
+		"actions": [
+			["atk", 13],
+			["add_c_of_x", 4, "crash_fist_poke_stacks"]
+		]
+	},
+	"141021": {
+		"name": "Crash Fist - Block",
+		"hp_cost": 3,
+		"actions": [
+			["atk", 7],
+			["def", 2],
+			["add_c_of_x", 2, "crash_fist_block_stacks"]
+		]
+	},
+	"141022": {
+		"actions": [
+			["atk", 9],
+			["def", 3],
+			["add_c_of_x", 3, "crash_fist_block_stacks"]
+		]
+	},
+	"141023": {
+		"actions": [
+			["atk", 11],
+			["def", 4],
+			["add_c_of_x", 4, "crash_fist_block_stacks"]
+		]
+	},
+	"141031": {
+		"name": "Crash Fist - Bounce",
+		"hp_cost": 2,
+		"actions": [
+			["atk", 8],
+			["add_c_of_x", 1, "crash_fist_bounce_stacks"]
+		]
+	},
+	"141032": {
+		"actions": [
+			["atk", 11],
+			["add_c_of_x", 1, "crash_fist_bounce_stacks"]
+		]
+	},
+	"141033": {
+		"actions": [
+			["atk", 14],
+			["add_c_of_x", 1, "crash_fist_bounce_stacks"]
+		]
+	},
+	"142011": {
+		"name": "Crash Fist - Shake",
+		"hp_cost": 4,
+		"actions": [
+			["atk", 10],
+			["add_c_of_x", 2, "crash_fist_shake_stacks"]
+		]
+	},
+	"142012": {
+		"actions": [
+			["atk", 11],
+			["add_c_of_x", 3, "crash_fist_shake_stacks"]
+		]
+	},
+	"142013": {
+		"actions": [
+			["atk", 12],
+			["add_c_of_x", 4, "crash_fist_shake_stacks"]
+		]
+	},
+	"142021": {
+		"name": "Crash Fist - Entangle",
+		"hp_cost": 4,
+		"actions": [
+			["atk", 10],
+			["add_c_of_x", 1, "crash_fist_entangle_stacks"]
+		]
+	},
+	"142022": {
+		"actions": [
+			["atk", 11],
+			["add_c_of_x", 2, "crash_fist_entangle_stacks"]
+		]
+	},
+	"142023": {
+		"actions": [
+			["atk", 12],
+			["add_c_of_x", 3, "crash_fist_entangle_stacks"]
+		]
+	},
+	"142031": {
+		"name": "Crash Fist - Blitz",
+		"hp_cost": 4,
+		"actions": [
+			["add_c_of_x", 1, "smash_def"],
+			["atk", 10],
+			["add_c_of_x", 1, "crash_fist_blitz_stacks"]
+		]
+	},
+	"142032": {
+		"actions": [
+			["add_c_of_x", 1, "smash_def"],
+			["atk", 14],
+			["add_c_of_x", 1, "crash_fist_blitz_stacks"]
+		]
+	},
+	"142033": {
+		"actions": [
+			["add_c_of_x", 1, "smash_def"],
+			["atk", 18],
+			["add_c_of_x", 1, "crash_fist_blitz_stacks"]
+		]
+	},
 	"142071": {
 		"name": "Ghost Howling",
 		"qi_cost": 1,
@@ -2718,27 +2844,75 @@
 			["add_c_of_x", 3, "weaken"]
 		]
 	},
+	"143011": {
+		"name": "Crash Footwork",
+		"actions": [
+			["qi", 1],
+			["add_c_of_x", 4, "agility"],
+			["continuous"],
+			["add_c_of_x", 1, "crash_footwork_stacks"]
+		]
+	},
+	"143012": {
+		"actions": [
+			["qi", 2],
+			["add_c_of_x", 4, "agility"],
+			["continuous"],
+			["add_c_of_x", 1, "crash_footwork_stacks"]
+		]
+	},
+	"143013": {
+		"actions": [
+			["qi", 3],
+			["add_c_of_x", 4, "agility"],
+			["continuous"],
+			["add_c_of_x", 1, "crash_footwork_stacks"]
+		]
+	},
+	"143021": {
+		"name": "Crash Fist - Truncate",
+		"hp_cost": 4,
+		"actions": [
+			["transfer_random_debuff"],
+			["atk", 9],
+			["add_c_of_x", 1, "crash_fist_truncate_stacks"]
+		]
+	},
+	"143022": {
+		"actions": [
+			["transfer_random_debuff"],
+			["atk", 13],
+			["add_c_of_x", 1, "crash_fist_truncate_stacks"]
+		]
+	},
+	"143023": {
+		"actions": [
+			["transfer_random_debuff"],
+			["atk", 17],
+			["add_c_of_x", 1, "crash_fist_truncate_stacks"]
+		]
+	},
 	"143031": {
 		"name": "Crash Fist - Subdue Dragon",
 		"hp_cost": 5,
 		"actions": [
-			["def", 0],
 			["atk", 10],
-			["add_c_of_x", 5, "crash_fist_subdue_dragon_stacks"]
+			["add_c_of_x", 5, "crash_fist_poke_stacks"],
+			["add_c_of_x", 5, "crash_fist_block_stacks"]
 		]
 	},
 	"143032": {
 		"actions": [
-			["def", 0],
 			["atk", 12],
-			["add_c_of_x", 7, "crash_fist_subdue_dragon_stacks"]
+			["add_c_of_x", 7, "crash_fist_poke_stacks"],
+			["add_c_of_x", 7, "crash_fist_block_stacks"]
 		]
 	},
 	"143033": {
 		"actions": [
-			["def", 0],
 			["atk", 14],
-			["add_c_of_x", 9, "crash_fist_subdue_dragon_stacks"]
+			["add_c_of_x", 9, "crash_fist_poke_stacks"],
+			["add_c_of_x", 9, "crash_fist_block_stacks"]
 		]
 	},
 	"143061": {
@@ -2810,7 +2984,6 @@
 		"actions": [
 			["add_c_of_x", 1, "this_card_crash_fist_inch_force_stacks"],
 			["add_c_of_x", 1, "crash_fist_inch_force_stacks"],
-			["def", 0],
 			["atk", 10]
 		]
 	},
@@ -2818,7 +2991,6 @@
 		"actions": [
 			["add_c_of_x", 1, "this_card_crash_fist_inch_force_stacks"],
 			["add_c_of_x", 1, "crash_fist_inch_force_stacks"],
-			["def", 0],
 			["atk", 14]
 		]
 	},
@@ -2826,7 +2998,6 @@
 		"actions": [
 			["add_c_of_x", 1, "this_card_crash_fist_inch_force_stacks"],
 			["add_c_of_x", 1, "crash_fist_inch_force_stacks"],
-			["def", 0],
 			["atk", 18]
 		]
 	},
@@ -2834,19 +3005,16 @@
 		"name": "Crash Fist - Continue",
 		"hp_cost": 6,
 		"actions": [
-			["def", 0],
 			["atk", 11]
 		]
 	},
 	"144032": {
 		"actions": [
-			["def", 0],
 			["atk", 16]
 		]
 	},
 	"144033": {
 		"actions": [
-			["def", 0],
 			["atk", 21]
 		]
 	},
@@ -3017,25 +3185,45 @@
 			["add_c_of_x", 7, "agility"]
 		]
 	},
+	"145011": {
+		"name": "Crash Fist - Blink",
+		"hp_cost": 7,
+		"actions": [
+			["atk", 5],
+			["add_c_of_x", 7, "agility"],
+			["add_c_of_x", 7, "crash_fist_blink_stacks"]
+		]
+	},
+	"145012": {
+		"actions": [
+			["atk", 7],
+			["add_c_of_x", 8, "agility"],
+			["add_c_of_x", 8, "crash_fist_blink_stacks"]
+		]
+	},
+	"145013": {
+		"actions": [
+			["atk", 9],
+			["add_c_of_x", 9, "agility"],
+			["add_c_of_x", 9, "crash_fist_blink_stacks"]
+		]
+	},
 	"145021": {
 		"name": "Crash Fist - Shocked",
 		"hp_cost": 8,
 		"actions": [
-			["def", 0],
 			["atk", 10],
 			["add_c_of_x", 1, "crash_fist_shocked_stacks"]
 		]
 	},
 	"145022": {
 		"actions": [
-			["def", 0],
 			["atk", 16],
 			["add_c_of_x", 1, "crash_fist_shocked_stacks"]
 		]
 	},
 	"145023": {
 		"actions": [
-			["def", 0],
 			["atk", 22],
 			["add_c_of_x", 1, "crash_fist_shocked_stacks"]
 		]
