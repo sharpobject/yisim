@@ -1400,7 +1400,6 @@ class GameState {
     do_void_the_spirit_consumer() {
         const amt = this.players[0].void_the_spirit_consumer_stacks;
         if (amt > 0) {
-            const to_steal = Math.min(amt, this.players[1].qi);
             this.reduce_idx_x_by_c(1, "qi", to_steal);
             this.increase_idx_x_by_c(0, "qi", to_steal);
         }
