@@ -6590,6 +6590,27 @@
 			["chase"]
 		]
 	},
+	"623011": {
+		"name": "Ultimate Hexagram Base",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 1, "ultimate_hexagram_base_stacks"]
+		]
+	},
+	"623012": {
+		"actions": [
+			["add_c_of_x", 2, "hexagram"],
+			["continuous"],
+			["add_c_of_x", 1, "ultimate_hexagram_base_stacks"]
+		]
+	},
+	"623013": {
+		"actions": [
+			["add_c_of_x", 4, "hexagram"],
+			["continuous"],
+			["add_c_of_x", 1, "ultimate_hexagram_base_stacks"]
+		]
+	},
 	"624011": {
 		"name": "Heptastar Soulstat",
 		"actions": [
