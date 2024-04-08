@@ -4635,7 +4635,7 @@
 		]
 	},
 	"324011": {
-		"name": "Spiritage Incanation",
+		"name": "Spiritage Incantation",
 		"actions": [
 			["qi", 3],
 			["for_each_x_up_to_c_add_y", "qi", 5, "def"]
@@ -6571,6 +6571,32 @@
 			["chase"]
 		]
 	},
+	"621011": {
+		"name": "Perfectly Planned",
+		"actions": [
+			["qi", 1],
+			["add_c_of_x", 1, "hexagram"],
+			["become_star_point", 1]
+		]
+	},
+	"621012": {
+		"actions": [
+			["qi", 1],
+			["add_c_of_x", 1, "hexagram"],
+			["become_star_point", 1],
+			["add_c_of_x", 1, "star_power"]
+		]
+	},
+	"621013": {
+		"actions": [
+			["qi", 1],
+			["add_c_of_x", 1, "hexagram"],
+			["become_star_point", 1],
+			["add_c_of_x", 1, "star_power"],
+			["add_c_of_x", 4, "max_hp"],
+			["heal", 4]
+		]
+	},
 	"622011": {
 		"name": "Only Traces",
 		"actions": [
@@ -6611,6 +6637,65 @@
 			["add_c_of_x", 1, "ultimate_hexagram_base_stacks"]
 		]
 	},
+	"623021": {
+		"name": "Starburst",
+		"actions": [
+			["if_x_at_least_c_do", "star_power", 1,
+				[
+					["reduce_c_of_x", 1, "star_power"],
+					["atk", 16]
+				],
+				[
+					["atk", 8]
+				]
+			]
+		]
+	},
+	"623022": {
+		"actions": [
+			["if_x_at_least_c_do", "star_power", 1,
+				[
+					["reduce_c_of_x", 1, "star_power"],
+					["atk", 20]
+				],
+				[
+					["atk", 10]
+				]
+			]
+		]
+	},
+	"623023": {
+		"actions": [
+			["if_x_at_least_c_do", "star_power", 1,
+				[
+					["reduce_c_of_x", 1, "star_power"],
+					["atk", 25]
+				],
+				[
+					["atk", 12]
+				]
+			]
+		]
+	},
+	"623031": {
+		"name": "Flame Flutter",
+		"actions": [
+			["atk", 3],
+			["add_enemy_rand_range_of_x", 1, 3, "internal_injury"]
+		]
+	},
+	"623032": {
+		"actions": [
+			["atk", 4],
+			["add_enemy_rand_range_of_x", 2, 4, "internal_injury"]
+		]
+	},
+	"623033": {
+		"actions": [
+			["atk", 5],
+			["add_enemy_rand_range_of_x", 3, 5, "internal_injury"]
+		]
+	},
 	"624011": {
 		"name": "Heptastar Soulstat",
 		"actions": [
@@ -6628,6 +6713,50 @@
 		"actions": [
 			["reduce_enemy_c_of_x", 14, "hp"],
 			["add_enemy_c_of_x", 1, "cannot_act_stacks"]
+		]
+	},
+	"624021": {
+		"name": "Within Reach",
+		"actions": [
+			["for_each_enemy_x_add_y", "debuff", "bonus_atk_amt"],
+			["for_each_x_add_c_y", "bonus_atk_amt", 1, "bonus_atk_amt"],
+			["atk", 9]
+		]
+	},
+	"624022": {
+		"actions": [
+			["for_each_enemy_x_add_y", "debuff", "bonus_atk_amt"],
+			["for_each_x_add_c_y", "bonus_atk_amt", 2, "bonus_atk_amt"],
+			["atk", 9]
+		]
+	},
+	"624023": {
+		"actions": [
+			["for_each_enemy_x_add_y", "debuff", "bonus_atk_amt"],
+			["for_each_x_add_c_y", "bonus_atk_amt", 3, "bonus_atk_amt"],
+			["atk", 9]
+		]
+	},
+	"624031": {
+		"name": "Rotary Divination Hexagram",
+		"actions": [
+			["add_c_of_x", 4, "hexagram"],
+			["reduce_enemy_c_of_x", 2, "hp"],
+			["reduce_enemy_c_of_x", 1, "qi"]
+		]
+	},
+	"624032": {
+		"actions": [
+			["add_c_of_x", 5, "hexagram"],
+			["reduce_enemy_c_of_x", 3, "hp"],
+			["reduce_enemy_c_of_x", 2, "qi"]
+		]
+	},
+	"624033": {
+		"actions": [
+			["add_c_of_x", 6, "hexagram"],
+			["reduce_enemy_c_of_x", 4, "hp"],
+			["reduce_enemy_c_of_x", 3, "qi"]
 		]
 	},
 	"625011": {
@@ -6653,6 +6782,22 @@
 			["if_x_at_least_c_do", "star_power", 3, ["chase"]],
 			["continuous"],
 			["add_c_of_x", 1, "reduce_qi_cost_on_star_point_stacks"]
+		]
+	},
+	"625021": {
+		"name": "Fury Thunder",
+		"actions": [
+			["do_fury_thunder", 1]
+		]
+	},
+	"625022": {
+		"actions": [
+			["do_fury_thunder", 2]
+		]
+	},
+	"625023": {
+		"actions": [
+			["do_fury_thunder", 3]
 		]
 	},
 	"633011": {
@@ -6734,6 +6879,22 @@
 			["add_c_of_x", 1, "disable_penetrate_stacks"],
 			["for_each_x_add_y", "penetrate", "bonus_atk_amt"],
 			["atk", 18]
+		]
+	},
+	"634021": {
+		"name": "Overcome With Each Other",
+		"actions": [
+			["do_overcome_with_each_other", 1, 3]
+		]
+	},
+	"634022": {
+		"actions": [
+			["do_overcome_with_each_other", 2, 5]
+		]
+	},
+	"634023": {
+		"actions": [
+			["do_overcome_with_each_other", 3, 7]
 		]
 	},
 	"635011": {
