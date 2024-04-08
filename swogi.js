@@ -144,6 +144,12 @@ let is_post_action = function(card_id) {
 let is_thunder = function(card_id) {
     return swogi[card_id].name.includes("Thunder");
 }
+let is_seal = function(card_id) {
+    if (swogi[card_id].name === "Mysterious Gates Devil Seal Tower") {
+        return false;
+    }
+    return swogi[card_id].name.includes("Seal");
+}
 function with_default(x, default_val) {
     if (x === undefined) {
         return default_val;
@@ -181,6 +187,7 @@ for (var i=0; i<keys.length; i++) {
         is_astral_move: is_astral_move(card_id),
         is_post_action: is_post_action(card_id),
         is_thunder: is_thunder(card_id),
+        is_seal: is_seal(card_id),
         marking: get_marking(card_id),
     };
     swogi[card_id] = card;
@@ -223,6 +230,9 @@ is_post_action = function(card_id) {
 }
 is_thunder = function(card_id) {
     return swogi[card_id].is_thunder;
+}
+is_seal = function(card_id) {
+    return swogi[card_id].is_seal;
 }
 const card_names = [];
 const card_name_to_id = {};
@@ -401,6 +411,7 @@ class Player {
         this.max_hp_lost = 0;
         // five elements sect character-specific cards
         this.kun_wu_metal_ring_stacks = 0;
+        this.water_spirit_spring_rain_stacks = 0;
         // duan xuan sect normal cards
         this.agility = 0;
         this.physique = 0;
@@ -430,6 +441,8 @@ class Player {
         this.lying_drunk_stacks = 0;
         this.crash_fist_double_stacks = 0;
         this.return_to_simplicity_stacks = 0;
+        // duan xuan sect character-specific cards
+        this.overwhelming_power_stacks = 0;
         // musician side job cards
         this.carefree_tune_stacks = 0;
         this.kindness_tune_stacks = 0;
@@ -562,6 +575,9 @@ class Player {
         this.innate_water_stacks = 0;
         this.innate_mark_stacks = 0;
         this.five_elements_anima_stacks = 0;
+        this.peach_branch_ruyi_stacks = 0;
+        this.mark_of_water_spirit_stacks = 0;
+        this.blossom_dance_stacks = 0;
         this.p2_cycle_of_five_elements_stacks = 0;
         this.p3_cycle_of_five_elements_stacks = 0;
         this.p4_cycle_of_five_elements_stacks = 0;
@@ -579,6 +595,7 @@ class Player {
         this.unbounded_qi_stacks = 0;
         this.unwavering_soul_stacks = 0;
         this.courage_to_fight_stacks = 0;
+        this.cracking_fist_stacks = 0;
         this.stance_of_fierce_attack_stacks = 0;
         this.p2_firmness_body_stacks = 0;
         this.p3_firmness_body_stacks = 0;
@@ -588,6 +605,14 @@ class Player {
         this.p3_regenerating_body_stacks = 0;
         this.p4_regenerating_body_stacks = 0;
         this.p5_regenerating_body_stacks = 0;
+        this.p2_full_of_force_stacks = 0;
+        this.p3_full_of_force_stacks = 0;
+        this.p4_full_of_force_stacks = 0;
+        this.p5_full_of_force_stacks = 0;
+        this.p2_mark_of_dark_heart_stacks = 0;
+        this.p3_mark_of_dark_heart_stacks = 0;
+        this.p4_mark_of_dark_heart_stacks = 0;
+        this.p5_mark_of_dark_heart_stacks = 0;
     }
     reset_can_play() {
         this.cards = this.cards.slice();
@@ -805,6 +830,17 @@ class GameState {
             this.increase_idx_x_by_c(idx, "activate_water_spirit_stacks", 1);
         }
     }
+    do_peach_branch_ruyi(idx) {
+        for (var i=0; i<this.players[idx].peach_branch_ruyi_stacks; i++) {
+            this.increase_idx_x_by_c(idx, "guard_up", 1);
+        }
+    }
+    do_mark_of_water_spirit(idx) {
+        for (var i=0; i<this.players[idx].mark_of_water_spirit_stacks; i++) {
+            this.increase_idx_x_by_c(idx, "activate_water_spirit_stacks", 1);
+            this.increase_idx_x_by_c(idx, "qi", 1);
+        }
+    }
     do_courage_to_fight(idx) {
         for (var i=0; i<this.players[idx].courage_to_fight_stacks; i++) {
             this.increase_idx_x_by_c(idx, "increase_atk", 1);
@@ -825,6 +861,41 @@ class GameState {
             this.for_each_x_add_c_pct_y("physique", 16.666667, "hp");
         }
     }
+    do_full_of_force(idx) {
+        for (var i=0; i<this.players[idx].p2_full_of_force_stacks; i++) {
+            this.increase_idx_x_by_c(idx, "force", 1);
+        }
+        for (var i=0; i<this.players[idx].p3_full_of_force_stacks; i++) {
+            this.increase_idx_x_by_c(idx, "max_force", 1);
+            this.increase_idx_x_by_c(idx, "force", 1);
+        }
+        for (var i=0; i<this.players[idx].p4_full_of_force_stacks; i++) {
+            this.increase_idx_x_by_c(idx, "max_force", 2);
+            this.increase_idx_x_by_c(idx, "force", 1);
+        }
+        for (var i=0; i<this.players[idx].p5_full_of_force_stacks; i++) {
+            this.increase_idx_x_by_c(idx, "max_force", 3);
+            this.increase_idx_x_by_c(idx, "force", 1);
+        }
+    }
+    do_mark_of_dark_heart(idx) {
+        for (var i=0; i<this.players[idx].p2_mark_of_dark_heart_stacks; i++) {
+            this.increase_idx_x_by_c(idx, "internal_injury", 1);
+            this.increase_idx_x_by_c(idx, "regen", 1);
+        }
+        for (var i=0; i<this.players[idx].p3_mark_of_dark_heart_stacks; i++) {
+            this.increase_idx_x_by_c(idx, "internal_injury", 2);
+            this.increase_idx_x_by_c(idx, "regen", 2);
+        }
+        for (var i=0; i<this.players[idx].p4_mark_of_dark_heart_stacks; i++) {
+            this.increase_idx_x_by_c(idx, "internal_injury", 2);
+            this.increase_idx_x_by_c(idx, "regen", 2);
+        }
+        for (var i=0; i<this.players[idx].p5_mark_of_dark_heart_stacks; i++) {
+            this.increase_idx_x_by_c(idx, "internal_injury", 3);
+            this.increase_idx_x_by_c(idx, "regen", 3);
+        }
+    }
     start_of_game_setup() {
         for (var idx = 0; idx < 2; idx++) {
             this.players[idx].post_deck_setup();
@@ -842,10 +913,13 @@ class GameState {
             this.do_mutual_growth_setup(idx);
             this.do_concentrated_element(idx);
             this.do_firmness_body(idx);
+            this.do_peach_branch_ruyi(idx);
+            this.do_full_of_force(idx);
         }
         for (var idx = 0; idx < 2; idx++) {
             this.do_innate_mark(idx);
             this.do_courage_to_fight(idx);
+            this.do_mark_of_dark_heart(idx);
         }
     }
     swap_players() {
@@ -1159,7 +1233,14 @@ class GameState {
             this.reduce_idx_max_hp(1, amt);
         }
     }
-    do_cycle_of_five_elements(card_id) {
+    do_cycle_of_five_elements_and_friends(card_id) {
+        if (this.players[0].p2_cycle_of_five_elements_stacks === 0 &&
+            this.players[0].p3_cycle_of_five_elements_stacks === 0 &&
+            this.players[0].p4_cycle_of_five_elements_stacks === 0 &&
+            this.players[0].p5_cycle_of_five_elements_stacks === 0 &&
+            this.players[0].blossom_dance_stacks === 0) {
+            return;
+        }
         if (!this.cards_have_generating_interaction(this.players[0].last_card_id, card_id)) {
             return;
         }
@@ -1179,6 +1260,23 @@ class GameState {
         }
         if (pen_amt > 0) {
             this.add_c_of_x(pen_amt, "penetrate");
+        }
+        if (this.players[0].blossom_dance_stacks > 0) {
+            this.qi(1);
+            this.add_c_of_x(1, "max_hp");
+            this.heal(1);
+            if (swogi[card_id].name === "Wood Spirit - Peach Blossom Seal") {
+                this.chase();
+            }
+        }
+    }
+    do_swift_burning_seal(card_id, idx) {
+        if (this.players[0].swift_burning_seal_stacks > 0) {
+            if (is_seal(card_id)) {
+                this.players[0].swift_burning_seal_stacks -= 1;
+                this.players[0].can_play[idx] = false;
+                this.chase();
+            }
         }
     }
     do_astral_divination_hexagram(card_id) {
@@ -1257,7 +1355,7 @@ class GameState {
         this.do_regenerating_body(idx);
         this.do_crash_citta_dharma(card_id);
         this.do_pre_crash_fist(card_id);
-        this.do_cycle_of_five_elements(card_id);
+        this.do_cycle_of_five_elements_and_friends(card_id);
         this.do_wood_spirit_formation(card_id);
         this.do_fire_spirit_formation(card_id);
         this.do_earth_spirit_formation(card_id);
@@ -1327,6 +1425,7 @@ class GameState {
         this.players[0].can_post_action[idx] = true;
     }
     play_card(card_id, idx) {
+        this.do_swift_burning_seal(card_id, idx);
         this.players[0].currently_playing_card_idx = idx;
         var plays = 1;
         if (this.players[0].unrestrained_sword_twin_dragons_stacks > 0) {
@@ -1449,6 +1548,12 @@ class GameState {
         const amt = this.players[0].ultimate_hexagram_base_stacks;
         if (amt > 0) {
             this.add_c_of_x(amt, "hexagram");
+        }
+    }
+    do_water_spirit_spring_rain() {
+        const amt = this.players[0].water_spirit_spring_rain_stacks;
+        if (amt > 0) {
+            this.add_c_of_x(amt, "force_of_water");
         }
     }
     do_illusion_tune() {
@@ -1706,6 +1811,7 @@ class GameState {
         this.do_cacopoisonous_formation();
         this.do_spiritage_formation();
         this.do_ultimate_hexagram_base();
+        this.do_water_spirit_spring_rain();
         if (this.check_idx_for_death(0)) {
             return;
         }
@@ -1783,7 +1889,11 @@ class GameState {
                     this.log("player 0 spent " + qi_cost + " qi to play " + format_card(card_id));
                 }
                 if (hp_cost > 0) {
-                    this.reduce_idx_hp(0, hp_cost, true);
+                    if (this.players[0].cracking_fist_stacks > 0) {
+                        this.reduce_idx_max_hp(0, hp_cost);
+                    } else {
+                        this.reduce_idx_hp(0, hp_cost, true);
+                    }
                     this.log("player 0 spent " + hp_cost + " hp to play " + format_card(card_id));
                     if (this.players[0].crash_fist_bounce_stacks > 0 && this.is_crash_fist(card_id)) {
                         this.heal(hp_cost);
@@ -1905,13 +2015,30 @@ class GameState {
         if (amt === 0) {
             return;
         }
-        this.players[idx].max_hp -= amt;
-        this.players[idx].max_hp_lost += amt;
+        const reduced_amt = Math.min(amt, this.players[idx].max_hp);
+        this.players[idx].max_hp -= reduced_amt;
+        this.players[idx].max_hp_lost += reduced_amt;
         if (this.players[idx].hp > this.players[idx].max_hp) {
             this.log("reducing hp to max_hp of " + this.players[idx].max_hp);
             this.players[idx].hp = this.players[idx].max_hp;
         }
         this.log("reduced player " + idx + " max_hp by " + amt + " to " + this.players[idx].max_hp);
+    }
+    reduce_idx_force(idx, amt) {
+        if (amt < 0) {
+            this.log("error: amt is negative: " + amt);
+            this.crash();
+        }
+        if (amt === 0) {
+            return;
+        }
+        const reduced_amt = Math.min(amt, this.players[idx].force);
+        this.players[idx].force -= reduced_amt;
+        if (this.players[idx].overwhelming_power_stacks > 0) {
+            const dmg = this.players[idx].overwhelming_power_stacks * reduced_amt;
+            this.deal_damage_inner(dmg, false, false, idx);
+        }
+        this.log("reduced player " + idx + " force by " + reduced_amt + " to " + this.players[idx].force);
     }
     increase_idx_hp(idx, amt) {
         if (amt === 0) {
@@ -2134,6 +2261,9 @@ class GameState {
         }
         if (x === "max_hp") {
             return this.reduce_idx_max_hp(idx, c);
+        }
+        if (x === "force") {
+            return this.reduce_idx_force(idx, c);
         }
         if (c < 0) {
             this.log("error: c is negative: " + c);
@@ -2617,6 +2747,10 @@ class GameState {
                 const heal_amt = amt - this.players[idx].hp;
                 this.increase_idx_x_by_c(idx, "max_hp", amt);
                 this.increase_idx_x_by_c(idx, "hp", heal_amt);
+            } else if (this.players[idx].flame_soul_rebirth_stacks > 0) {
+                this.reduce_idx_x_by_c(idx, "flame_soul_rebirth_stacks", 1);
+                this.set_idx_c_of_x(idx, 15, "max_hp");
+                this.set_idx_c_of_x(idx, 15, "hp");
             } else {
                 this.game_over = true;
                 this.log("player " + idx + " has died of hp loss");
@@ -2643,6 +2777,14 @@ class GameState {
             this.reduce_idx_x_by_c(0, x, current_value - c);
         } else if (current_value < c) {
             this.increase_idx_x_by_c(0, x, c - current_value);
+        }
+    }
+    set_idx_c_of_x(idx, c, x) {
+        const current_value = this.players[idx][x];
+        if (current_value > c) {
+            this.reduce_idx_x_by_c(idx, x, current_value - c);
+        } else if (current_value < c) {
+            this.increase_idx_x_by_c(idx, x, c - current_value);
         }
     }
     trigger_hexagram(idx) {

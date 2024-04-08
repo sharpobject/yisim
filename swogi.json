@@ -6800,6 +6800,28 @@
 			["do_fury_thunder", 3]
 		]
 	},
+	"632011": {
+		"name": "Wood Spirit - Peach Blossom Seal",
+		"actions": [
+			["rep", 2, ["atk", 1]],
+			["qi", 2],
+			["activate_wood_spirit"]
+		]
+	},
+	"632012": {
+		"actions": [
+			["rep", 3, ["atk", 1]],
+			["qi", 3],
+			["activate_wood_spirit"]
+		]
+	},
+	"632013": {
+		"actions": [
+			["rep", 4, ["atk", 1]],
+			["qi", 4],
+			["activate_wood_spirit"]
+		]
+	},
 	"633011": {
 		"name": "Kun Wu Metal Ring",
 		"actions": [
@@ -6897,6 +6919,32 @@
 			["do_overcome_with_each_other", 3, 7]
 		]
 	},
+	"634031": {
+		"name": "Water Spirit - Spring Rain",
+		"qi_cost": 1,
+		"actions": [
+			["add_c_of_x", 6, "max_hp"],
+			["heal", 6],
+			["continuous"],
+			["add_c_of_x", 1, "water_spirit_spring_rain_stacks"]
+		]
+	},
+	"634032": {
+		"actions": [
+			["add_c_of_x", 12, "max_hp"],
+			["heal", 12],
+			["continuous"],
+			["add_c_of_x", 1, "water_spirit_spring_rain_stacks"]
+		]
+	},
+	"634033": {
+		"actions": [
+			["add_c_of_x", 18, "max_hp"],
+			["heal", 18],
+			["continuous"],
+			["add_c_of_x", 1, "water_spirit_spring_rain_stacks"]
+		]
+	},
 	"635011": {
 		"name": "Earth Spirit - Landslide",
 		"actions": [
@@ -6911,6 +6959,51 @@
 	"635013": {
 		"actions": [
 			["do_earth_spirit_landslide", 15, 4]
+		]
+	},
+	"641011": {
+		"name": "Unceasing Exercising",
+		"actions": [
+			["atk", 4],
+			["add_c_of_x", 3, "physique"],
+			["heal", 3]
+		]
+	},
+	"641012": {
+		"actions": [
+			["atk", 6],
+			["add_c_of_x", 4, "physique"],
+			["heal", 4]
+		]
+	},
+	"641013": {
+		"actions": [
+			["atk", 8],
+			["add_c_of_x", 5, "physique"],
+			["heal", 5]
+		]
+	},
+	"641021": {
+		"name": "Overwhelming Power",
+		"hp_cost": 2,
+		"actions": [
+			["add_c_of_x", 2, "force"],
+			["continuous"],
+			["add_c_of_x", 2, "overwhelming_power_stacks"]
+		]
+	},
+	"641022": {
+		"actions": [
+			["add_c_of_x", 3, "force"],
+			["continuous"],
+			["add_c_of_x", 2, "overwhelming_power_stacks"]
+		]
+	},
+	"641023": {
+		"actions": [
+			["add_c_of_x", 4, "force"],
+			["continuous"],
+			["add_c_of_x", 2, "overwhelming_power_stacks"]
 		]
 	}
 }
