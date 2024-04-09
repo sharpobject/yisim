@@ -234,6 +234,14 @@ is_thunder = function(card_id) {
 is_seal = function(card_id) {
     return swogi[card_id].is_seal;
 }
+const CRASH_FIST_CARDS = [[],[],[],[]];
+for (var i=0; i<keys.length; i++) {
+    var card_id = keys[i];
+    if (is_crash_fist(card_id)) {
+        var level = parseInt(card_id.substring(card_id.length-1));
+        CRASH_FIST_CARDS[level].push(card_id);
+    }
+}
 const card_names = [];
 const card_name_to_id = {};
 for (var i=0; i<keys.length; i++) {
@@ -410,8 +418,9 @@ class Player {
         // duan xuan sect normal cards
         this.agility = 0;
         this.physique = 0;
-        this.max_force = 6;
+        this.max_physique = 0;
         this.force = 0;
+        this.max_force = 6;
         this.crash_fist_poke_stacks = 0;
         this.crash_fist_block_stacks = 0;
         this.crash_fist_bounce_stacks = 0;
@@ -2209,10 +2218,18 @@ class GameState {
         if (amt === 0) {
             return;
         }
+        const prev = this.players[idx].physique;
         this.players[idx].physique += amt;
         this.players[idx].physique_gained += amt;
-        this.increase_idx_x_by_c(idx, "max_hp", amt);
         this.log("gained " + amt + " physique. Now have " + this.players[idx].physique + " physique");
+        this.increase_idx_x_by_c(idx, "max_hp", amt);
+        if (this.players[idx].max_physique < this.players[idx].physique) {
+            var heal_amt = amt;
+            if (prev < this.players[idx].max_physique) {
+                heal_amt -= this.players[idx].max_physique - prev;
+            }
+            this.increase_idx_hp(idx, heal_amt);
+        }
     }
     increase_idx_hexagram(idx, amt) {
         if (amt === 0) {
@@ -2271,6 +2288,9 @@ class GameState {
         }
         if (x === "penetrate") {
             return this.increase_idx_penetrate(idx, c);
+        }
+        if (x === "physique") {
+            return this.increase_idx_physique(idx, c);
         }
         if (is_activate(x)) {
             return this.increase_idx_activate(idx, x, c);
@@ -2851,9 +2871,14 @@ class GameState {
         this.used_randomness = true;
         //TODO: this.
     }
-    do_endless_crash(upgrade_amt) {
+    do_endless_crash(upgrade_level) {
         this.used_randomness = true;
-        //TODO: this.
+        const arr = CRASH_FIST_CARDS[upgrade_level];
+        const playing_idx = this.players[0].currently_playing_card_idx;
+        for (var i=0; i<5; i++) {
+            const crash_idx = Math.floor(Math.random() * arr.length);
+            this.trigger_card(arr[crash_idx], playing_idx);
+        }
     }
     do_clear_heart() {
         const ult = this.players[0].quench_of_sword_heart_ultimate_stacks;

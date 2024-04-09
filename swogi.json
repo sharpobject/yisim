@@ -6040,19 +6040,19 @@
 		"name": "Divine Brush",
 		"actions": [
 			["def", 4],
-			["trigger_random_sect_card"]
+			["trigger_random_sect_card", 1]
 		]
 	},
 	"344012": {
 		"actions": [
 			["def", 6],
-			["trigger_random_sect_card"]
+			["trigger_random_sect_card", 2]
 		]
 	},
 	"344013": {
 		"actions": [
 			["def", 8],
-			["trigger_random_sect_card"]
+			["trigger_random_sect_card", 3]
 		]
 	},
 	"344021": {
