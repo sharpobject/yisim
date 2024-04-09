@@ -376,12 +376,7 @@ class Player {
         this.cannot_act_stacks = 0;
         this.reduce_qi_cost_on_star_point_stacks = 0;
         // five elements sect normal cards
-        this.last_card_id = undefined;
-        this.last_card_is_wood_spirit = false;
-        this.last_card_is_fire_spirit = false;
-        this.last_card_is_earth_spirit = false;
-        this.last_card_is_metal_spirit = false;
-        this.last_card_is_water_spirit = false;
+        this.last_card_id = "601011";
         this.activate_wood_spirit_stacks = 0;
         this.activate_fire_spirit_stacks = 0;
         this.activate_earth_spirit_stacks = 0;
@@ -436,8 +431,11 @@ class Player {
         this.crash_citta_dharma_stacks = 0;
         this.hp_lost = 0;
         this.physique_gained = 0;
+        this.exercise_bones_stacks = 0;
         this.majestic_qi_stacks = 0;
         // duan xuan sect secret enchantment cards
+        this.endless_force_stacks = 0;
+        this.toxin_immunity_stacks = 0;
         this.lying_drunk_stacks = 0;
         this.crash_fist_double_stacks = 0;
         this.return_to_simplicity_stacks = 0;
@@ -1024,11 +1022,6 @@ class GameState {
         }
     }
     do_elemental_spirit_stuff(card_id) {
-        this.players[0].last_card_is_wood_spirit = is_wood_spirit(card_id);
-        this.players[0].last_card_is_fire_spirit = is_fire_spirit(card_id);
-        this.players[0].last_card_is_earth_spirit = is_earth_spirit(card_id);
-        this.players[0].last_card_is_metal_spirit = is_metal_spirit(card_id);
-        this.players[0].last_card_is_water_spirit = is_water_spirit(card_id);
         this.players[0].last_card_id = card_id;
     }
     do_sword_formation_deck_count(card_id) {
@@ -1613,6 +1606,14 @@ class GameState {
         }
         return 0;
     }
+    do_exercise_bones() {
+        if (this.players[0].exercise_bones_stacks > 0) {
+            this.add_c_of_x(1, "physique");
+            this.reduce_c_of_x(1, "exercise_bones_stacks");
+            return 3;
+        }
+        return 0;
+    }
     do_flying_brush_chase() {
         if (this.players[0].flying_brush_stacks > 0) {
             this.chase();
@@ -1622,7 +1623,8 @@ class GameState {
     do_five_elements_heavenly_marrow_rhythm_chase() {
         const player = this.players[0];
         if (player.this_card_chases === 0 && player.chases < player.max_chases && player.five_elements_heavenly_marrow_rhythm_stacks > 0 && !player.this_card_attacked) {
-            if (player.last_card_is_wood_spirit || player.last_card_is_fire_spirit || player.last_card_is_earth_spirit || player.last_card_is_metal_spirit || player.last_card_is_water_spirit) {
+            const id = player.last_card_id;
+            if (is_wood_spirit(id) || is_fire_spirit(id) || is_earth_spirit(id) || is_metal_spirit(id) || is_water_spirit(id)) {
                 //this.log(JSON.stringify(card));
                 this.chase();
                 this.reduce_idx_x_by_c(0, "five_elements_heavenly_marrow_rhythm_stacks", 1);
@@ -1750,6 +1752,20 @@ class GameState {
             this.deal_damage(this.players[0].force_of_water);
         }
     }
+    do_toxin_immunity() {
+        const cap = this.players[0].toxin_immunity_stacks;
+        if (cap === 0) {
+            return;
+        }
+        const count = this.players[0].internal_injury +
+                        this.players[0].weaken +
+                        this.players[0].flaw +
+                        this.players[0].decrease_atk +
+                        this.players[0].entangle +
+                        this.players[0].wound;
+        const amt = Math.min(count, cap);
+        this.heal(amt);
+    }
     do_fire_flame_blade() {
         for (var i=0; i<this.players[0].fire_flame_blade_stacks; i++) {
             this.reduce_enemy_c_of_x(1, "max_hp");
@@ -1853,11 +1869,23 @@ class GameState {
             const base_qi_cost = qi_cost;
             if (card.decrease_qi_cost_by_x !== undefined) {
                 var x = card.decrease_qi_cost_by_x;
-                if (typeof this.players[0][x] !== "number") {
-                    this.log("error: " + x + " is not a number");
-                    this.crash();
+                var reduce_amt = 0;
+                if (x === "debuff") {
+                    reduce_amt = this.players[0].decrease_atk +
+                                this.players[0].internal_injury +
+                                this.players[0].wound +
+                                this.players[0].entangle +
+                                this.players[0].flaw +
+                                this.players[0].weaken;
+
+                } else {
+                    if (typeof this.players[0][x] !== "number") {
+                        this.log("error: " + x + " is not a number");
+                        this.crash();
+                    }
+                    reduce_amt = this.players[0][x];
                 }
-                qi_cost = Math.max(0, qi_cost - this.players[0][x]);
+                qi_cost = Math.max(0, qi_cost - reduce_amt);
             }
             if (card.water_spirit_cost_0_qi && this.if_water_spirit()) {
                 qi_cost = 0;
@@ -1867,6 +1895,12 @@ class GameState {
             }
             qi_cost = Math.max(0, qi_cost - this.players[0].inspiration_stacks);
             var hp_cost = card.hp_cost;
+            if (hp_cost > 0) {
+                if (card.name === "Mountain Cleaving Palms") {
+                    var reduce_amt = Math.floor(this.players[0].physique / 2);
+                    hp_cost = Math.max(0, hp_cost - reduce_amt);
+                }
+            }
             var physique_cost = 0;
             if (this.players[0].unbounded_qi_stacks > 0) {
                 if (this.players[0].qi < qi_cost) {
@@ -1938,6 +1972,7 @@ class GameState {
         this.do_thunderphilia_formation();
         this.do_hard_bamboo();
         this.do_force_of_water();
+        this.do_toxin_immunity();
         this.reduce_idx_x_by_c(0, "metal_spirit_chokehold_stacks", 1);
         if (this.check_idx_for_death(1)) {
             return;
@@ -2039,6 +2074,10 @@ class GameState {
             this.deal_damage_inner(dmg, false, false, idx);
         }
         this.log("reduced player " + idx + " force by " + reduced_amt + " to " + this.players[idx].force);
+        const endless_force_stacks = this.players[idx].endless_force_stacks;
+        if (endless_force_stacks > 0) {
+            this.increase_idx_x_by_c(idx, "force", endless_force_stacks);
+        }
     }
     increase_idx_hp(idx, amt) {
         if (amt === 0) {
@@ -2330,6 +2369,7 @@ class GameState {
             if (this.players[my_idx].this_card_crash_fist_blitz_stacks > 0) {
                 smash_def = true;
             }
+            dmg += this.do_exercise_bones();
             dmg += this.do_lonely_night_wolf();
             dmg += this.players[my_idx].bonus_atk_amt;
             dmg += this.players[my_idx].this_card_sword_intent * (1 + this.players[my_idx].bonus_sword_intent_multiplier);
@@ -2527,18 +2567,6 @@ class GameState {
         }
         const to_gain = Math.min(d, Math.floor(this.players[0][x] * c / 100));
         this.increase_idx_x_by_c(0, y, to_gain);
-    }
-    for_each_xy_add_c_pct_z(x, y, c, z) {
-        if (typeof this.players[0][x] !== "number") {
-            this.log("error: " + x + " is not a number");
-            this.crash();
-        }
-        if (typeof this.players[0][y] !== "number") {
-            this.log("error: " + y + " is not a number");
-            this.crash();
-        }
-        const to_gain = Math.floor(this.players[0][x] * this.players[0][y] * c / 100);
-        this.increase_idx_x_by_c(0, z, to_gain);
     }
     for_each_x_add_c_y(x, c, y) {
         this.for_each_x_add_c_pct_y(x, c*100, y);
@@ -2823,6 +2851,10 @@ class GameState {
         this.used_randomness = true;
         //TODO: this.
     }
+    do_endless_crash(upgrade_amt) {
+        this.used_randomness = true;
+        //TODO: this.
+    }
     do_clear_heart() {
         const ult = this.players[0].quench_of_sword_heart_ultimate_stacks;
         var first_atk_damage = 6 + Math.min(this.players[0].round_number, 16);
@@ -2901,7 +2933,7 @@ class GameState {
     }
     if_wood_spirit() {
         return this.players[0].activate_wood_spirit_stacks > 0 ||
-            this.players[0].last_card_is_wood_spirit ||
+            is_wood_spirit(this.players[0].last_card_id) ||
             this.cards_have_generating_interaction(this.last_card_id, "131011");
     }
     wood_spirit(arr) {
@@ -2911,7 +2943,7 @@ class GameState {
     }
     if_fire_spirit() {
         return this.players[0].activate_fire_spirit_stacks > 0 ||
-            this.players[0].last_card_is_fire_spirit ||
+            is_fire_spirit(this.players[0].last_card_id) ||
             this.cards_have_generating_interaction(this.last_card_id, "131031");
     }
     fire_spirit(arr) {
@@ -2921,7 +2953,7 @@ class GameState {
     }
     if_earth_spirit() {
         return this.players[0].activate_earth_spirit_stacks > 0 ||
-            this.players[0].last_card_is_earth_spirit ||
+            is_earth_spirit(this.players[0].last_card_id) ||
             this.cards_have_generating_interaction(this.last_card_id, "131051");
     }
     earth_spirit(arr) {
@@ -2931,7 +2963,7 @@ class GameState {
     }
     if_metal_spirit() {
         return this.players[0].activate_metal_spirit_stacks > 0 ||
-            this.players[0].last_card_is_metal_spirit ||
+            is_metal_spirit(this.players[0].last_card_id) ||
             this.cards_have_generating_interaction(this.last_card_id, "131071");
     }
     metal_spirit(arr) {
@@ -2941,7 +2973,7 @@ class GameState {
     }
     if_water_spirit() {
         return this.players[0].activate_water_spirit_stacks > 0 ||
-            this.players[0].last_card_is_water_spirit ||
+            is_water_spirit(this.players[0].last_card_id) ||
             this.cards_have_generating_interaction(this.last_card_id, "131091");
     }
     water_spirit(arr) {
@@ -7586,7 +7618,126 @@ riddles["103"] = () => {
     return;
 
 };
-riddles["103"]();
+//riddles["103"]();
+//riddles["102"]();
+riddles["104"] = () => {
+    const enemy_hp = 126;
+    const enemy_cultivation = 98;
+    const enemy_physique = 66;
+    const my_hp = 137;
+    const my_cultivation = 90;
+    const my_physique = 0;
+    const my_cards = [
+        //"five elements heavenly marrow rhythm",
+        "kun wu metal ring",
+        "metal spirit shuttle 2",
+        "flying brush 2",
+        "earth spirit formation 2",
+        "earth spirit combine world 3",
+        "flying brush 2",
+        "earth spirit cliff 3",
+        "earth spirit landslide",
+    ];
+    const enemy_cards = [
+        "cloud elixir 3",
+        "majestic qi 3",
+        "ice guard elixir 3",
+        "mighty force 3",
+        "vast universe 2",
+        "tiger pouncing 3",
+        "ghost howling 3",
+        "soul cleaving 3",
+    ];
+    fixup_deck(my_cards);
+    //for (var i=0; i<my_cards.length; i++) {
+    //    console.log(format_card(my_cards[i]));
+    //}
+    fixup_deck(enemy_cards);
+    //for (var i=0; i<enemy_cards.length; i++) {
+    //    console.log(format_card(enemy_cards[i]));
+    //}
+    //return;
+    var go = true;
+    var combo_idx = 0;
+    // my_basic_deck is just my_cards entries 0-7
+    var my_basic_deck = my_cards.slice(0, 8);
+    var max_turns_game = undefined;
+    var max_turns = 0;
+    var best_winning_margin = 0;
+    var tried_combos = {};
+    for (var combo of k_combinations(my_cards, 8)) {
+        combo_idx += 1;
+        console.log("combo_idx: " + combo_idx);
+        // sort the combo
+        combo.sort();
+        // append all the card ids together separated by commas
+        var combo_id = combo.join(",");
+        if (tried_combos[combo_id]) {
+            continue;
+        }
+        tried_combos[combo_id] = true;
+        // if this combo has 3 or more continuous/consumption cards, skip it
+
+        var normal_attack_count = 0;
+        var concon_count = 0;
+        for (var i=0; i<8; i++) {
+            if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
+                concon_count += 1;
+            }
+            if (swogi[combo[i]].name == "Normal Attack") {
+                normal_attack_count += 1;
+            }
+        }
+        if (concon_count >= 3) {
+            continue;
+        }
+        if (normal_attack_count < 1) {
+            //continue;
+        }
+        console.log("concon_count: " + concon_count);
+        var try_idx = 0;
+        do {
+            try_idx += 1;
+            var game = new GameState();
+            //for (var i=0; i<8; i++) {
+            //    temp_combo[i] = temp_combo[i].replace(".0", "");
+            //}
+            const my_idx = 1;
+            const enemy_idx = 1 - my_idx;
+            game.players[enemy_idx].cards = enemy_cards;
+            game.players[my_idx].cards = combo;
+            //game.players[0].cards = my_basic_deck;
+            game.players[enemy_idx].physique = enemy_physique;
+            game.players[enemy_idx].max_hp = enemy_hp + enemy_physique;
+            game.players[enemy_idx].hp = enemy_hp;
+            game.players[my_idx].physique = my_physique;
+            game.players[my_idx].max_hp = my_hp + my_physique;
+            game.players[my_idx].hp = my_hp;
+            game.players[enemy_idx].cultivation = enemy_cultivation;
+            game.players[my_idx].cultivation = my_cultivation;
+            game.players[enemy_idx].unbounded_qi_stacks = 1;
+            game.sim_n_turns(64);
+            if (game.winner == my_idx && !game.used_randomness) {
+                const winning_margin = game.players[my_idx].hp - game.players[enemy_idx].hp;
+                const p_combo = combo.slice();
+                if (winning_margin > best_winning_margin) {
+                    best_winning_margin = winning_margin;
+                    for (var i=0; i<8; i++) {
+                        p_combo[i] = format_card(p_combo[i]);
+                    }
+                    game.dump();
+                    console.log("winning deck: " + JSON.stringify(p_combo));
+                    console.log("winning margin: " + winning_margin);
+                }
+            } else {
+            }
+        } while (next_permutation(combo));
+        console.log("try_idx: " + try_idx);
+    }
+    return;
+
+};
+riddles["104"]();
 var fuzz = true;
 if (fuzz) {
     const start_time = process.hrtime();

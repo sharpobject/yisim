@@ -2758,6 +2758,209 @@
 			["add_c_of_x", 1, "crash_fist_bounce_stacks"]
 		]
 	},
+	"141041": {
+		"name": "Exercise Fist",
+		"actions": [
+			["atk", 6],
+			["physique", 1]
+		]
+	},
+	"141042": {
+		"actions": [
+			["atk", 9],
+			["physique", 1]
+		]
+	},
+	"141043": {
+		"actions": [
+			["atk", 12],
+			["physique", 1]
+		]
+	},
+	"141051": {
+		"name": "Mountain Cleaving Palms",
+		"hp_cost": 4,
+		"actions": [
+			["atk", 10]
+		]
+	},
+	"141052": {
+		"actions": [
+			["atk", 13]
+		]
+	},
+	"141053": {
+		"actions": [
+			["atk", 16]
+		]
+	},
+	"141061": {
+		"name": "Embracing Qi Technique",
+		"actions": [
+			["qi", 1],
+			["physique", 2],
+			["heal", 1]
+		]
+	},
+	"141062": {
+		"actions": [
+			["qi", 1],
+			["physique", 2],
+			["heal", 4]
+		]
+	},
+	"141063": {
+		"actions": [
+			["qi", 1],
+			["physique", 2],
+			["heal", 7]
+		]
+	},
+	"141071": {
+		"name": "Rakshasa Pouncing",
+		"actions": [
+			["atk", 8],
+			["qi", 1],
+			["add_c_of_x", 1, "wound"]
+		]
+	},
+	"141072": {
+		"actions": [
+			["atk", 11],
+			["qi", 1],
+			["add_c_of_x", 1, "wound"]
+		]
+	},
+	"141073": {
+		"actions": [
+			["atk", 14],
+			["qi", 1],
+			["add_c_of_x", 1, "wound"]
+		]
+	},
+	"141081": {
+		"name": "Sky-Piercing Claw",
+		"qi_cost": 1,
+		"actions": [
+			["atk", 12],
+			["add_c_of_x", 1, "internal_injury"]
+		]
+	},
+	"141082": {
+		"actions": [
+			["atk", 15],
+			["add_c_of_x", 1, "internal_injury"]
+		]
+	},
+	"141083": {
+		"actions": [
+			["atk", 18],
+			["add_c_of_x", 1, "internal_injury"]
+		]
+	},
+	"141091": {
+		"name": "Mountain Falling",
+		"actions": [
+			["atk", 6],
+			["reduce_random_debuff_by_c_n_times", 1, 1]
+		]
+	},
+	"141092": {
+		"actions": [
+			["atk", 9],
+			["reduce_random_debuff_by_c_n_times", 1, 1]
+		]
+	},
+	"141093": {
+		"actions": [
+			["atk", 12],
+			["reduce_random_debuff_by_c_n_times", 1, 1]
+		]
+	},
+	"141101": {
+		"name": "Gather Force",
+		"actions": [
+			["atk", 2],
+			["qi", 1],
+			["add_c_of_x", 2, "force"]
+		]
+	},
+	"141102": {
+		"actions": [
+			["atk", 5],
+			["qi", 1],
+			["add_c_of_x", 2, "force"]
+		]
+	},
+	"141103": {
+		"actions": [
+			["atk", 8],
+			["qi", 1],
+			["add_c_of_x", 2, "force"]
+		]
+	},
+	"141111": {
+		"name": "Vigorous Force",
+		"actions": [
+			["for_each_x_add_y", "force", "bonus_atk_amt"],
+			["atk", 6],
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["add_c_of_x", 2, "force"]
+			]]
+		]
+	},
+	"141112": {
+		"actions": [
+			["for_each_x_add_y", "force", "bonus_atk_amt"],
+			["atk", 9],
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["add_c_of_x", 2, "force"]
+			]]
+		]
+	},
+	"141113": {
+		"actions": [
+			["for_each_x_add_y", "force", "bonus_atk_amt"],
+			["atk", 12],
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["add_c_of_x", 2, "force"]
+			]]
+		]
+	},
+	"141121": {
+		"name": "Youthful Vigor",
+		"hp_cost": 2,
+		"actions": [
+			["atk", 8],
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["atk", 4]
+			]]
+		]
+	},
+	"141122": {
+		"hp_cost": 3,
+		"actions": [
+			["atk", 10],
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["atk", 6]
+			]]
+		]
+	},
+	"141123": {
+		"hp_cost": 4,
+		"actions": [
+			["atk", 12],
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["atk", 8]
+			]]
+		]
+	},
 	"142011": {
 		"name": "Crash Fist - Shake",
 		"hp_cost": 4,
@@ -2821,6 +3024,69 @@
 			["add_c_of_x", 1, "crash_fist_blitz_stacks"]
 		]
 	},
+	"142041": {
+		"name": "Exercise Tendons",
+		"actions": [
+			["atk", 5],
+			["physique", 2],
+			["if_x_at_least_c_do", "physique", 15, ["def", 4]]
+		]
+	},
+	"142042": {
+		"actions": [
+			["atk", 7],
+			["physique", 2],
+			["if_x_at_least_c_do", "physique", 15, ["def", 6]]
+		]
+	},
+	"142043": {
+		"actions": [
+			["atk", 9],
+			["physique", 2],
+			["if_x_at_least_c_do", "physique", 15, ["def", 8]]
+		]
+	},
+	"142051": {
+		"name": "Detect-Horse Palms",
+		"actions": [
+			["atk", 7],
+			["for_each_x_add_c_pct_y_up_to_d", "physique", 50, "def", 8]
+		]
+	},
+	"142052": {
+		"actions": [
+			["atk", 9],
+			["for_each_x_add_c_pct_y_up_to_d", "physique", 50, "def", 11]
+		]
+	},
+	"142053": {
+		"actions": [
+			["atk", 11],
+			["for_each_x_add_c_pct_y_up_to_d", "physique", 50, "def", 14]
+		]
+	},
+	"142061": {
+		"name": "Gale Shadow Claw",
+		"actions": [
+			["rep", 2, ["atk", 4]],
+			["qi", 2],
+			["add_c_of_x", 3, "flaw"]
+		]
+	},
+	"142062": {
+		"actions": [
+			["rep", 2, ["atk", 6]],
+			["qi", 2],
+			["add_c_of_x", 3, "flaw"]
+		]
+	},
+	"142063": {
+		"actions": [
+			["rep", 2, ["atk", 8]],
+			["qi", 2],
+			["add_c_of_x", 3, "flaw"]
+		]
+	},
 	"142071": {
 		"name": "Ghost Howling",
 		"qi_cost": 1,
@@ -2842,6 +3108,112 @@
 			["gain_ignore_def", 1],
 			["atk", 22],
 			["add_c_of_x", 3, "weaken"]
+		]
+	},
+	"142081": {
+		"name": "Standing Firm",
+		"actions": [
+			["def", 4],
+			["add_c_of_x", 2, "force"],
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["heal", 5]
+			]]
+		]
+	},
+	"142082": {
+		"actions": [
+			["def", 5],
+			["add_c_of_x", 3, "force"],
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["heal", 5]
+			]]
+		]
+	},
+	"142083": {
+		"actions": [
+			["def", 6],
+			["add_c_of_x", 4, "force"],
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["heal", 5]
+			]]
+		]
+	},
+	"142091": {
+		"name": "Strong Force",
+		"hp_cost": 2,
+		"actions": [
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["add_c_of_x", 1, "smash_def"],
+				["add_c_of_x", 4, "bonus_atk_amt"]
+			]],
+			["atk", 9]
+		]
+	},
+	"142092": {
+		"hp_cost": 2,
+		"actions": [
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["add_c_of_x", 1, "smash_def"],
+				["add_c_of_x", 5, "bonus_atk_amt"]
+			]],
+			["atk", 12]
+		]
+	},
+	"142093": {
+		"hp_cost": 2,
+		"actions": [
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["add_c_of_x", 1, "smash_def"],
+				["add_c_of_x", 6, "bonus_atk_amt"]
+			]],
+			["atk", 15]
+		]
+	},
+	"142101": {
+		"name": "Sinking Qi",
+		"actions": [
+			["qi", 2],
+			["heal", 2]
+		]
+	},
+	"142102": {
+		"actions": [
+			["qi", 2],
+			["heal", 6]
+		]
+	},
+	"142103": {
+		"actions": [
+			["qi", 2],
+			["heal", 10]
+		]
+	},
+	"142111": {
+		"name": "Magnaminous Righteousness",
+		"actions": [
+			["qi", 1],
+			["def", 4],
+			["add_c_of_x", 2, "hexproof"]
+		]
+	},
+	"142112": {
+		"actions": [
+			["qi", 1],
+			["def", 8],
+			["add_c_of_x", 3, "hexproof"]
+		]
+	},
+	"142113": {
+		"actions": [
+			["qi", 1],
+			["def", 12],
+			["add_c_of_x", 4, "hexproof"]
 		]
 	},
 	"143011": {
@@ -2915,6 +3287,53 @@
 			["add_c_of_x", 9, "crash_fist_block_stacks"]
 		]
 	},
+	"143041": {
+		"name": "Exercise Bones",
+		"actions": [
+			["physique", 1],
+			["heal", 3],
+			["add_c_of_x", 2, "exercise_bones_stacks"]
+		]
+	},
+	"143042": {
+		"actions": [
+			["physique", 1],
+			["heal", 4],
+			["add_c_of_x", 3, "exercise_bones_stacks"]
+		]
+	},
+	"143043": {
+		"actions": [
+			["physique", 1],
+			["heal", 5],
+			["add_c_of_x", 4, "exercise_bones_stacks"]
+		]
+	},
+	"143051": {
+		"name": "Bearing The Load",
+		"actions": [
+			["physique", 3],
+			["add_c_of_x", 2, "entangle"],
+			["for_each_x_add_c_pct_y", "debuff", 100, "bonus_def_amt"],
+			["def", 8]
+		]
+	},
+	"143052": {
+		"actions": [
+			["physique", 3],
+			["add_c_of_x", 3, "entangle"],
+			["for_each_x_add_c_pct_y", "debuff", 100, "bonus_def_amt"],
+			["def", 11]
+		]
+	},
+	"143053": {
+		"actions": [
+			["physique", 3],
+			["add_c_of_x", 4, "entangle"],
+			["for_each_x_add_c_pct_y", "debuff", 100, "bonus_def_amt"],
+			["def", 14]
+		]
+	},
 	"143061": {
 		"name": "Windward Palms",
 		"actions": [
@@ -2932,6 +3351,53 @@
 		"actions": [
 			["for_each_x_add_c_pct_y_up_to_d", "physique", 16.666667, "bonus_atk_amt", 7],
 			["rep", 2, ["atk", 6]]
+		]
+	},
+	"143071": {
+		"name": "Tiger Pouncing",
+		"qi_cost": 4,
+		"decrease_qi_cost_by_x": "debuff",
+		"actions": [
+			["atk", 20]
+		]
+	},
+	"143072": {
+		"actions": [
+			["atk", 24]
+		]
+	},
+	"143073": {
+		"actions": [
+			["atk", 28]
+		]
+	},
+	"143081": {
+		"name": "Double Trouble",
+		"qi_cost": 1,
+		"actions": [
+			["add_enemy_c_of_x", 1, "internal_injury"],
+			["add_enemy_c_of_x", 1, "wound"],
+			["add_c_of_x", 1, "internal_injury"],
+			["add_c_of_x", 1, "wound"],
+			["rep", 2, ["atk", 6]]
+		]
+	},
+	"143082": {
+		"actions": [
+			["add_enemy_c_of_x", 2, "internal_injury"],
+			["add_enemy_c_of_x", 1, "wound"],
+			["add_c_of_x", 2, "internal_injury"],
+			["add_c_of_x", 1, "wound"],
+			["rep", 2, ["atk", 7]]
+		]
+	},
+	"143083": {
+		"actions": [
+			["add_enemy_c_of_x", 2, "internal_injury"],
+			["add_enemy_c_of_x", 2, "wound"],
+			["add_c_of_x", 2, "internal_injury"],
+			["add_c_of_x", 2, "wound"],
+			["rep", 2, ["atk", 8]]
 		]
 	},
 	"143091": {
@@ -2954,6 +3420,55 @@
 			["qi", 4],
 			["add_c_of_x", 1, "force"],
 			["add_c_of_x", 4, "majestic_qi_stacks"]
+		]
+	},
+	"143101": {
+		"name": "Sailing Through Sky",
+		"qi_cost": 1,
+		"actions": [
+			["add_c_of_x", 3, "force"],
+			["add_c_of_x", 6, "agility"]
+		]
+	},
+	"143102": {
+		"actions": [
+			["add_c_of_x", 4, "force"],
+			["add_c_of_x", 6, "agility"]
+		]
+	},
+	"143103": {
+		"actions": [
+			["add_c_of_x", 5, "force"],
+			["add_c_of_x", 6, "agility"]
+		]
+	},
+	"143111": {
+		"name": "Mighty Force",
+		"hp_cost": 2,
+		"actions": [
+			["for_each_x_up_to_c_add_y", "qi", 2, "bonus_def_amt"],
+			["for_each_x_reduce_c_pct_y", "bonus_def_amt", 100, "qi"],
+			["for_each_x_add_y", "bonus_def_amt", "force"],
+			["for_each_x_add_c_y", "bonus_def_amt", 3, "bonus_atk_amt"],
+			["atk", 10]
+		]
+	},
+	"143112": {
+		"actions": [
+			["for_each_x_up_to_c_add_y", "qi", 3, "bonus_def_amt"],
+			["for_each_x_reduce_c_pct_y", "bonus_def_amt", 100, "qi"],
+			["for_each_x_add_y", "bonus_def_amt", "force"],
+			["for_each_x_add_c_y", "bonus_def_amt", 3, "bonus_atk_amt"],
+			["atk", 11]
+		]
+	},
+	"143113": {
+		"actions": [
+			["for_each_x_up_to_c_add_y", "qi", 4, "bonus_def_amt"],
+			["for_each_x_reduce_c_pct_y", "bonus_def_amt", 100, "qi"],
+			["for_each_x_add_y", "bonus_def_amt", "force"],
+			["for_each_x_add_c_y", "bonus_def_amt", 3, "bonus_atk_amt"],
+			["atk", 12]
 		]
 	},
 	"144011": {
@@ -3406,7 +3921,7 @@
 	},
 	"211011": {
 		"name": "Rhyme Spirit Sword",
-		"reduce_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
+		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
 		"actions": [["atk", 4], ["injured", ["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "qi"]]]
 	},
 	"211012": {
@@ -4338,6 +4853,314 @@
 			["trigger_card_by_id", "131093"],
 			["chase"],
 			["consumption"]
+		]
+	},
+	"241011": {
+		"name": "Endless Entanglement",
+		"actions": [
+			["physique", 2],
+			["reduce_c_of_x", 14, "max_hp"],
+			["reduce_enemy_c_of_x", 14, "max_hp"]
+		]
+	},
+	"241012": {
+		"actions": [
+			["physique", 2],
+			["reduce_c_of_x", 20, "max_hp"],
+			["reduce_enemy_c_of_x", 20, "max_hp"]
+		]
+	},
+	"241013": {
+		"actions": [
+			["physique", 2],
+			["reduce_c_of_x", 26, "max_hp"],
+			["reduce_enemy_c_of_x", 26, "max_hp"]
+		]
+	},
+	"241021": {
+		"name": "Endless Force",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "endless_force_stacks"],
+			["if_x_at_most_c_do", "force", 0,
+				["for_each_x_add_y", "endless_force_stacks", "force"]]
+		]
+	},
+	"241022": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 5, "endless_force_stacks"],
+			["if_x_at_most_c_do", "force", 0,
+				["for_each_x_add_y", "endless_force_stacks", "force"]]
+		]
+	},
+	"241023": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 6, "endless_force_stacks"],
+			["if_x_at_most_c_do", "force", 0,
+				["for_each_x_add_y", "endless_force_stacks", "force"]]
+		]
+	},
+	"242011": {
+		"name": "Toxin Immunity",
+		"actions": [
+			["add_c_of_x", 5, "max_hp"],
+			["heal", 5],
+			["continuous"],
+			["add_c_of_x", 6, "toxin_immunity_stacks"]
+		]
+	},
+	"242012": {
+		"actions": [
+			["add_c_of_x", 9, "max_hp"],
+			["heal", 9],
+			["continuous"],
+			["add_c_of_x", 9, "toxin_immunity_stacks"]
+		]
+	},
+	"242013": {
+		"actions": [
+			["add_c_of_x", 13, "max_hp"],
+			["heal", 13],
+			["continuous"],
+			["add_c_of_x", 12, "toxin_immunity_stacks"]
+		]
+	},
+	"242021": {
+		"name": "Lying Drunk",
+		"actions": [
+			["atk", 3],
+			["add_c_of_x", 8, "agility"],
+			["add_c_of_x", 2, "lying_drunk_stacks"]
+		]
+	},
+	"242022": {
+		"actions": [
+			["atk", 3],
+			["add_c_of_x", 10, "agility"],
+			["add_c_of_x", 3, "lying_drunk_stacks"]
+		]
+	},
+	"242023": {
+		"actions": [
+			["atk", 3],
+			["add_c_of_x", 12, "agility"],
+			["add_c_of_x", 4, "lying_drunk_stacks"]
+		]
+	},
+	"243021": {
+		"name": "Break Pots and Sink Boats",
+		"actions": [
+			["for_each_x_reduce_c_pct_y", "max_hp", 80, "max_hp"],
+			["add_c_of_x", 3, "force"],
+			["add_c_of_x", 3, "guard_up"],
+			["add_c_of_x", 3, "increase_atk"]
+		]
+	},
+	"243022": {
+		"actions": [
+			["for_each_x_reduce_c_pct_y", "max_hp", 80, "max_hp"],
+			["add_c_of_x", 4, "force"],
+			["add_c_of_x", 4, "guard_up"],
+			["add_c_of_x", 4, "increase_atk"]
+		]
+	},
+	"243023": {
+		"actions": [
+			["for_each_x_reduce_c_pct_y", "max_hp", 80, "max_hp"],
+			["add_c_of_x", 5, "force"],
+			["add_c_of_x", 5, "guard_up"],
+			["add_c_of_x", 5, "increase_atk"]
+		]
+	},
+	"244011": {
+		"name": "Strength Driven Mad",
+		"actions": [
+			["for_each_x_add_c_pct_y", "physique", 10, "increase_atk"],
+			["for_each_x_add_c_pct_y", "physique", 10, "internal_injury"]
+		]
+	},
+	"244012": {
+		"actions": [
+			["for_each_x_add_c_pct_y", "physique", 11.111112, "increase_atk"],
+			["for_each_x_add_c_pct_y", "physique", 11.111112, "internal_injury"]
+		]
+	},
+	"244013": {
+		"actions": [
+			["for_each_x_add_c_pct_y", "physique", 12.5, "increase_atk"],
+			["for_each_x_add_c_pct_y", "physique", 12.5, "internal_injury"]
+		]
+	},
+	"244021": {
+		"name": "Crash Fist - Double",
+		"hp_cost": 7,
+		"actions": [
+			["atk", 10],
+			["add_c_of_x", 1, "crash_fist_double_stacks"]
+		]
+	},
+	"244022": {
+		"actions": [
+			["atk", 15],
+			["add_c_of_x", 1, "crash_fist_double_stacks"]
+		]
+	},
+	"244023": {
+		"actions": [
+			["atk", 20],
+			["add_c_of_x", 1, "crash_fist_double_stacks"]
+		]
+	},
+	"244031": {
+		"name": "Styx Three Hit",
+		"actions": [
+			["for_each_x_add_c_pct_y", "max_hp", 3.333334, "bonus_atk_amt"],
+			["rep", 3, ["atk", 2]]
+		]
+	},
+	"244032": {
+		"actions": [
+			["for_each_x_add_c_pct_y", "max_hp", 4.545455, "bonus_atk_amt"],
+			["rep", 3, ["atk", 2]]
+		]
+	},
+	"244033": {
+		"actions": [
+			["for_each_x_add_c_pct_y", "max_hp", 6.25, "bonus_atk_amt"],
+			["rep", 3, ["atk", 2]]
+		]
+	},
+	"245011": {
+		"name": "Break Cocoon",
+		"actions": [
+			["add_c_of_x", 10, "agility"],
+			["for_each_x_add_c_pct_y", "debuff", 200, "bonus_def_amt"],
+			["for_each_x_reduce_c_pct_y", "internal_injury", 100, "internal_injury"],
+			["for_each_x_reduce_c_pct_y", "weaken", 100, "weaken"],
+			["for_each_x_reduce_c_pct_y", "flaw", 100, "flaw"],
+			["for_each_x_reduce_c_pct_y", "decrease_atk", 100, "decrease_atk"],
+			["for_each_x_reduce_c_pct_y", "entangle", 100, "entangle"],
+			["for_each_x_reduce_c_pct_y", "wound", 100, "wound"],
+			["for_each_x_add_y", "bonus_def_amt", "physique"],
+			["for_each_x_add_y", "bonus_def_amt", "hp"],
+			["physique", 0]
+		]
+	},
+	"245012": {
+		"actions": [
+			["add_c_of_x", 15, "agility"],
+			["for_each_x_add_c_pct_y", "debuff", 200, "bonus_def_amt"],
+			["for_each_x_reduce_c_pct_y", "internal_injury", 100, "internal_injury"],
+			["for_each_x_reduce_c_pct_y", "weaken", 100, "weaken"],
+			["for_each_x_reduce_c_pct_y", "flaw", 100, "flaw"],
+			["for_each_x_reduce_c_pct_y", "decrease_atk", 100, "decrease_atk"],
+			["for_each_x_reduce_c_pct_y", "entangle", 100, "entangle"],
+			["for_each_x_reduce_c_pct_y", "wound", 100, "wound"],
+			["for_each_x_add_y", "bonus_def_amt", "physique"],
+			["for_each_x_add_y", "bonus_def_amt", "hp"],
+			["physique", 0]
+		]
+	},
+	"245013": {
+		"actions": [
+			["add_c_of_x", 20, "agility"],
+			["for_each_x_add_c_pct_y", "debuff", 200, "bonus_def_amt"],
+			["for_each_x_reduce_c_pct_y", "internal_injury", 100, "internal_injury"],
+			["for_each_x_reduce_c_pct_y", "weaken", 100, "weaken"],
+			["for_each_x_reduce_c_pct_y", "flaw", 100, "flaw"],
+			["for_each_x_reduce_c_pct_y", "decrease_atk", 100, "decrease_atk"],
+			["for_each_x_reduce_c_pct_y", "entangle", 100, "entangle"],
+			["for_each_x_reduce_c_pct_y", "wound", 100, "wound"],
+			["for_each_x_add_y", "bonus_def_amt", "physique"],
+			["for_each_x_add_y", "bonus_def_amt", "hp"],
+			["physique", 0]
+		]
+	},
+	"245021": {
+		"name": "Eerie Melody Buries Soul",
+		"actions": [
+			["add_c_of_x", 3, "internal_injury"],
+			["add_enemy_c_of_x", 3, "internal_injury"],
+			["add_c_of_x", 3, "flaw"],
+			["add_enemy_c_of_x", 3, "flaw"],
+			["add_c_of_x", 3, "weaken"],
+			["add_enemy_c_of_x", 3, "weaken"],
+			["add_c_of_x", 3, "entangle"],
+			["add_enemy_c_of_x", 3, "entangle"],
+			["add_c_of_x", 3, "wound"],
+			["add_enemy_c_of_x", 3, "wound"]
+		]
+	},
+	"245022": {
+		"actions": [
+			["add_c_of_x", 4, "internal_injury"],
+			["add_enemy_c_of_x", 4, "internal_injury"],
+			["add_c_of_x", 4, "flaw"],
+			["add_enemy_c_of_x", 4, "flaw"],
+			["add_c_of_x", 4, "weaken"],
+			["add_enemy_c_of_x", 4, "weaken"],
+			["add_c_of_x", 4, "entangle"],
+			["add_enemy_c_of_x", 4, "entangle"],
+			["add_c_of_x", 4, "wound"],
+			["add_enemy_c_of_x", 4, "wound"]
+		]
+	},
+	"245023": {
+		"actions": [
+			["add_c_of_x", 5, "internal_injury"],
+			["add_enemy_c_of_x", 5, "internal_injury"],
+			["add_c_of_x", 5, "flaw"],
+			["add_enemy_c_of_x", 5, "flaw"],
+			["add_c_of_x", 5, "weaken"],
+			["add_enemy_c_of_x", 5, "weaken"],
+			["add_c_of_x", 5, "entangle"],
+			["add_enemy_c_of_x", 5, "entangle"],
+			["add_c_of_x", 5, "wound"],
+			["add_enemy_c_of_x", 5, "wound"]
+		]
+	},
+	"246011": {
+		"name": "Endless Crash",
+		"hp_cost": 9,
+		"actions": [
+			["do_endless_crash", 1],
+			["consumption"]
+		]
+	},
+	"246012": {
+		"actions": [
+			["do_endless_crash", 2],
+			["consumption"]
+		]
+	},
+	"246013": {
+		"actions": [
+			["do_endless_crash", 3],
+			["consumption"]
+		]
+	},
+	"246021": {
+		"name": "Return To Simplicity",
+		"actions": [
+			["physique", 5],
+			["continuous"],
+			["for_each_x_add_c_pct_y", "physique", 20, "return_to_simplicity_stacks"]
+		]
+	},
+	"246022": {
+		"actions": [
+			["physique", 10],
+			["continuous"],
+			["for_each_x_add_c_pct_y", "physique", 20, "return_to_simplicity_stacks"]
+		]
+	},
+	"246023": {
+		"actions": [
+			["physique", 15],
+			["continuous"],
+			["for_each_x_add_c_pct_y", "physique", 20, "return_to_simplicity_stacks"]
 		]
 	},
 	"311011": {
@@ -6368,8 +7191,8 @@
 			["for_each_x_add_y", "carefree_tune_stacks", "bonus_atk_amt"],
 			["for_each_x_add_y", "carefree_guqin_stacks", "bonus_atk_amt"],
 			["exhaust_x_to_add_y", "lying_drunk_stacks", "bonus_rep_amt"],
-			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "agility"],
-			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "bonus_atk_amt"],
+			["for_each_x_add_y", "return_to_simplicity_stacks", "agility"],
+			["for_each_x_add_y", "return_to_simplicity_stacks", "bonus_atk_amt"],
 			["rep", 1, ["atk", 3]],
 			["if_x_at_least_c_do", "carefree_guqin_stacks", 1, ["chase"]]
 		]
@@ -6379,8 +7202,8 @@
 			["for_each_x_add_y", "carefree_tune_stacks", "bonus_atk_amt"],
 			["for_each_x_add_y", "carefree_guqin_stacks", "bonus_atk_amt"],
 			["exhaust_x_to_add_y", "lying_drunk_stacks", "bonus_rep_amt"],
-			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "agility"],
-			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "bonus_atk_amt"],
+			["for_each_x_add_y", "return_to_simplicity_stacks", "agility"],
+			["for_each_x_add_y", "return_to_simplicity_stacks", "bonus_atk_amt"],
 			["rep", 1, ["atk", 6]],
 			["if_x_at_least_c_do", "carefree_guqin_stacks", 1, ["chase"]]
 		]
@@ -6390,8 +7213,8 @@
 			["for_each_x_add_y", "carefree_tune_stacks", "bonus_atk_amt"],
 			["for_each_x_add_y", "carefree_guqin_stacks", "bonus_atk_amt"],
 			["exhaust_x_to_add_y", "lying_drunk_stacks", "bonus_rep_amt"],
-			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "agility"],
-			["for_each_xy_add_c_pct_z", "return_to_simplicity_stacks", "physique", 20, "bonus_atk_amt"],
+			["for_each_x_add_y", "return_to_simplicity_stacks", "agility"],
+			["for_each_x_add_y", "return_to_simplicity_stacks", "bonus_atk_amt"],
 			["rep", 1, ["atk", 9]],
 			["if_x_at_least_c_do", "carefree_guqin_stacks", 1, ["chase"]]
 		]
