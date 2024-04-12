@@ -517,10 +517,10 @@
 		"actions": [["for_each_x_add_c_pct_y", "sword_intent", 80, "sword_intent"]]
 	},
 	"115052": {
-		"actions": [["for_each_x_add_c_pct_y", "sword_intent", 100, "sword_intent"]]
+		"actions": [["for_each_x_add_c_pct_y", "sword_intent", 110, "sword_intent"]]
 	},
 	"115053": {
-		"actions": [["for_each_x_add_c_pct_y", "sword_intent", 120, "sword_intent"]]
+		"actions": [["for_each_x_add_c_pct_y", "sword_intent", 140, "sword_intent"]]
 	},
 	"115061": {
 		"name": "Rule Sky Sword Formation",
@@ -3358,17 +3358,17 @@
 		"qi_cost": 4,
 		"decrease_qi_cost_by_x": "debuff",
 		"actions": [
-			["atk", 20]
+			["atk", 18]
 		]
 	},
 	"143072": {
 		"actions": [
-			["atk", 24]
+			["atk", 22]
 		]
 	},
 	"143073": {
 		"actions": [
-			["atk", 28]
+			["atk", 26]
 		]
 	},
 	"143081": {
@@ -5559,7 +5559,7 @@
 		]
 	},
 	"325031": {
-		"name": "Thousand Evil Incanation",
+		"name": "Thousand Evil Incantation",
 		"qi_cost": 2,
 		"actions": [
 			["add_enemy_c_of_x", 2, "internal_injury"],
@@ -7746,24 +7746,24 @@
 		"name": "Water Spirit - Spring Rain",
 		"qi_cost": 1,
 		"actions": [
-			["add_c_of_x", 6, "max_hp"],
-			["heal", 6],
+			["add_c_of_x", 4, "max_hp"],
+			["heal", 4],
 			["continuous"],
 			["add_c_of_x", 1, "water_spirit_spring_rain_stacks"]
 		]
 	},
 	"634032": {
 		"actions": [
-			["add_c_of_x", 12, "max_hp"],
-			["heal", 12],
+			["add_c_of_x", 10, "max_hp"],
+			["heal", 10],
 			["continuous"],
 			["add_c_of_x", 1, "water_spirit_spring_rain_stacks"]
 		]
 	},
 	"634033": {
 		"actions": [
-			["add_c_of_x", 18, "max_hp"],
-			["heal", 18],
+			["add_c_of_x", 16, "max_hp"],
+			["heal", 16],
 			["continuous"],
 			["add_c_of_x", 1, "water_spirit_spring_rain_stacks"]
 		]

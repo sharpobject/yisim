@@ -620,6 +620,8 @@ class Player {
         this.p3_mark_of_dark_heart_stacks = 0;
         this.p4_mark_of_dark_heart_stacks = 0;
         this.p5_mark_of_dark_heart_stacks = 0;
+        // life shop buffs
+        this.pack_of_adversity_reinforcement_stacks = 0;
     }
     reset_can_play() {
         this.cards = this.cards.slice();
@@ -702,6 +704,7 @@ class GameState {
         this.players[1] = new Player();
         this.output = [];
         this.used_randomness = false;
+        this.reviving = false;
     }
     crash() {
         this.dump();
@@ -903,9 +906,31 @@ class GameState {
             this.increase_idx_x_by_c(idx, "regen", 3);
         }
     }
+    try_upgrade_card(player_idx, card_idx) {
+        const card_id = this.players[player_idx].cards[card_idx];
+        const upgrade_level = card_id.substring(card_id.length - 1);
+        if (upgrade_level === "3") {
+            return false;
+        }
+        const new_level = parseInt(upgrade_level) + 1;
+        const new_card_id = card_id.substring(0, card_id.length - 1) + new_level;
+        this.players[player_idx].cards[card_idx] = new_card_id;
+        this.log("player " + player_idx + " upgrades " + format_card(card_id) + " to " + format_card(new_card_id));
+        return true;
+    }
+    do_pact_of_adversity_reinforcement(idx) {
+        for (var i=0; i<this.players[idx].pack_of_adversity_reinforcement_stacks; i++) {
+            for (var card_idx = 0; card_idx < this.players[idx].cards.length; card_idx++) {
+                if (this.try_upgrade_card(idx, card_idx)) {
+                    break;
+                }
+            }
+        }
+    }
     start_of_game_setup() {
         for (var idx = 0; idx < 2; idx++) {
             this.players[idx].post_deck_setup();
+            this.do_pact_of_adversity_reinforcement(idx);
         }
         for (var idx = 0; idx < 2; idx++) {
             this.do_coral_sword(idx);
@@ -2094,7 +2119,7 @@ class GameState {
             return 0;
         }
         const prev_hp = this.players[idx].hp;
-        if (prev_hp <= 0) {
+        if (prev_hp <= 0 && !this.reviving) {
             this.log("refusing to heal a dead player");
             return 0;
         }
@@ -2795,11 +2820,15 @@ class GameState {
                 this.reduce_idx_x_by_c(idx, "ashes_phoenix_stacks", amt);
                 const heal_amt = amt - this.players[idx].hp;
                 this.increase_idx_x_by_c(idx, "max_hp", amt);
+                this.reviving = true;
                 this.increase_idx_x_by_c(idx, "hp", heal_amt);
+                this.reviving = false;
             } else if (this.players[idx].flame_soul_rebirth_stacks > 0) {
                 this.reduce_idx_x_by_c(idx, "flame_soul_rebirth_stacks", 1);
                 this.set_idx_c_of_x(idx, 15, "max_hp");
+                this.reviving = true;
                 this.set_idx_c_of_x(idx, 15, "hp");
+                this.reviving = false;
             } else {
                 this.game_over = true;
                 this.log("player " + idx + " has died of hp loss");
