@@ -33,6 +33,7 @@ function handle_response(riddle, response) {
     const winning_decks = response.winning_decks;
     const winning_margins = response.winning_margins;
     const winning_logs = response.winning_logs;
+    console.log("got response with " + winning_decks.length + " winning decks");
     for (var i=0; i<winning_decks.length; i++) {
         if (winning_margins[i] > riddle.best_winning_margin) {
             riddle.best_winning_margin = winning_margins[i];
@@ -100,49 +101,57 @@ async function do_riddle(riddle) {
     riddle.try_idx = 0;
     fixup_deck(my_cards);
     fixup_deck(enemy_cards);
-    var combo_idx = 0;
-    const tried_combos = {};
-    for (var combo of k_combinations(my_cards, 8)) {
-        combo_idx += 1;
-        console.log("combo_idx: " + combo_idx);
-        // sort the combo
-        combo.sort();
-        var combo_id = combo.join(",");
-        if (tried_combos[combo_id]) {
-            continue;
-        }
-        tried_combos[combo_id] = true;
-        // if this combo has 3 or more continuous/consumption cards, skip it
-        var normal_attack_count = 0;
-        var concon_count = 0;
-        for (var i=0; i<8; i++) {
-            if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
-                concon_count += 1;
+    if (riddle.just_run) {
+        riddle.players[my_idx].cards = my_cards;
+        riddle.players[enemy_idx].cards = enemy_cards;
+        riddle.worker_idx = 0;
+        messages_outstanding[0] += 1;
+        workers[0].postMessage(riddle);
+    } else {
+        var combo_idx = 0;
+        const tried_combos = {};
+        for (var combo of k_combinations(my_cards, 8)) {
+            combo_idx += 1;
+            console.log("combo_idx: " + combo_idx);
+            // sort the combo
+            combo.sort();
+            var combo_id = combo.join(",");
+            if (tried_combos[combo_id]) {
+                continue;
             }
-        }
-        if (concon_count >= 3) {
-            continue;
-        }
-        console.log("concon_count: " + concon_count);
-        // if there is a ready worker, send the message
-        var worker_idx = -1;
-        for (var i=0; i<numCores; i++) {
-            if (messages_outstanding[i] == 0) {
-                worker_idx = i;
-                break;
+            tried_combos[combo_id] = true;
+            // if this combo has 3 or more continuous/consumption cards, skip it
+            var normal_attack_count = 0;
+            var concon_count = 0;
+            for (var i=0; i<8; i++) {
+                if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
+                    concon_count += 1;
+                }
             }
+            if (concon_count >= 3) {
+                continue;
+            }
+            console.log("concon_count: " + concon_count);
+            // if there is a ready worker, send the message
+            var worker_idx = -1;
+            for (var i=0; i<numCores; i++) {
+                if (messages_outstanding[i] == 0) {
+                    worker_idx = i;
+                    break;
+                }
+            }
+            if (worker_idx == -1) {
+                // wait for a message to come back
+                var response = await getMessage();
+                worker_idx = response.worker_idx;
+                handle_response(riddle, response);
+            }
+            riddle.players[my_idx].cards = combo;
+            riddle.worker_idx = worker_idx;
+            console.log("sending message to worker_idx: " + worker_idx);
+            messages_outstanding[worker_idx] += 1;
+            workers[worker_idx].postMessage(riddle);
         }
-        if (worker_idx == -1) {
-            // wait for a message to come back
-            var response = await getMessage();
-            worker_idx = response.worker_idx;
-            handle_response(riddle, response);
-        }
-        riddle.players[my_idx].cards = combo;
-        riddle.worker_idx = worker_idx;
-        console.log("sending message to worker_idx: " + worker_idx);
-        messages_outstanding[worker_idx] += 1;
-        workers[worker_idx].postMessage(riddle);
     }
     // wait for all messages to come back
     var total_messages_outstanding = 0;
@@ -540,7 +549,250 @@ riddles["208"] = async () => {
     players[my_idx].sword_in_sheathed_stacks = 1;
     return await do_riddle({players: players, my_idx: my_idx});
 };
-await riddles["208"]();
+//await riddles["208"]();
+riddles["209"] = async () => {
+    const players = [{},{}];
+    const my_idx = 1;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 119;
+    players[enemy_idx].cultivation = 74;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 107;
+    players[my_idx].cultivation = 80;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "rule sky sword 3",
+        "thousand evil incantation",
+        "dharma spirit sword",
+        "spiritage incantation 2",
+        "spiritage incantation 2",
+        "qi perfusion 2",
+        "spirit gather citta dharma 2",
+        "moon water sword 2",
+        "divine walk fulu",
+        "chain sword",
+    ];
+    players[enemy_idx].cards = [
+        "chord in tune",
+        "sky spirit tune 3",
+        "sky delicate bracelet",
+        "moon water 2",
+        "rule sky sword",
+        "raven spirit sword 2",
+        "chain sword",
+        "mirror flower sword",
+    ];
+    players[enemy_idx].coral_sword_stacks = 1;
+    players[my_idx].sword_in_sheathed_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["209"]();
+riddles["210"] = async () => {
+    const players = [{},{}];
+    const my_idx = 1;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 109;
+    players[enemy_idx].cultivation = 74;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 109;
+    players[my_idx].cultivation = 80;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "rule sky sword 3",
+        "thousand evil incantation",
+        "dharma spirit sword",
+        "spiritage incantation 3",
+        "spiritage incantation 2",
+        "qi perfusion 2",
+        "spirit gather citta dharma 2",
+        "moon water sword 2",
+        "divine walk fulu 2",
+        "chain sword 2",
+        "chain sword",
+        "raven spirit sword 2",
+    ];
+    players[enemy_idx].cards = [
+        "metal spirit shuttle 2",
+        "water spirit spring 2",
+        "wood spirit willow leaf 3",
+        "world smash 2",
+        "gourd of leisure",
+        "fire spirit flash fire 2",
+        "fire spirit blazing prairie 2",
+        "earth spirit dust 2",
+    ];
+    players[enemy_idx].mark_of_five_elements_stacks = 1;
+    players[my_idx].sword_in_sheathed_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+riddles["211"] = async () => {
+    const players = [{},{}];
+    const my_idx = 1;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 106;
+    players[enemy_idx].cultivation = 777;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 127;
+    players[my_idx].cultivation = 80;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "kun wu metal ring",
+        "five elements heavenly marrow rhythm 2",
+        "earth spirit combine world 2",
+        "flying brush 2",
+        "earth spirit cliff 3",
+        "earth spirit landslide",
+        "earth spirit steep 3",
+        "flying brush 2",
+        "earth spirit formation",
+        "metal spirit shuttle",
+        "finishing touch",
+        "earth spirit combine world"
+    ];
+    players[enemy_idx].cards = [
+        "ultimate hexagram base",
+        "heaven hexagram 3",
+        "astral cide",
+        "dance dragonfly 3",
+        "ice spirit guard elixir 3",
+        "starry moon 3",
+        "fury thunder",
+        "five thunders",
+    ];
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["211"]();
+riddles["212"] = async () => {
+    const players = [{},{}];
+    const my_idx = 1;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 107;
+    players[enemy_idx].cultivation = 72;
+    players[enemy_idx].physique = 59;
+    players[enemy_idx].max_physique = 81;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 105;
+    players[my_idx].cultivation = 61;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "spirit gather citta dharma 2",
+        "centibird spirit sword 2",
+        "moon water sword 2",
+        "moon water sword",
+        "giant kun spirit sword 2",
+        "mirror flower sword formation 2",
+        "mirror flower sword formation",
+        "chain sword",
+        "hard bamboo 3",
+        "dharma spirit sword",
+    ];
+    players[enemy_idx].cards = [
+        "styx agility",
+        "heartbroken tune 2",
+        "shura roar 2",
+        "predicament 2",
+        "ghost howling 3",
+        "soul cleaving 3",
+        "soul seizing",
+        "soul seizing",
+    ];
+    players[enemy_idx].p3_mark_of_dark_heart_stacks = 1;
+    players[enemy_idx].unwavering_soul_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["212"]();
+riddles["213"] = async () => {
+    const players = [{},{}];
+    const my_idx = 1;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 119;
+    players[enemy_idx].cultivation = 81;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 139;
+    players[my_idx].cultivation = 74;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "kun wu metal ring",
+        "flying brush",
+        "five elements heavenly marrow rhythm 3",
+        "earth spirit steep",
+        "earth spirit steep 2",
+        "earth spirit landslide",
+        "earth spirit dust 2",
+        "flying brush 2",
+        "metal spirit shuttle",
+        "earth spirit formation",
+        "earth spirit cliff",
+    ];
+    players[enemy_idx].cards = [
+        "polaris 3",
+        "star moon folding fan",
+        "astral cide 2",
+        "prop omen 2",
+        "astral fly",
+        "astral tiger 2",
+        "astral hit 2",
+        "astral hit 2",
+    ];
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+riddles["214"] = async () => {
+    const players = [{},{}];
+    const my_idx = 1;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 111;
+    players[enemy_idx].cultivation = 93;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 115;
+    players[my_idx].cultivation = 69;
+    players[my_idx].physique = 85;
+    players[my_idx].max_physique = 90;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "anthomania 2",
+        "crane footwork 2",
+        "exercise marrow 3",
+        "exercise soul 3",
+        "exercise soul 2",
+        "meru formation",
+        "exercise marrow",
+        "echo formation",
+    ];
+    players[enemy_idx].cards = [
+        "anthomania 2",
+        "unrestrained zero",
+        "unrestrained sword flame dance",
+        "echo formation",
+        "meru formation 2",
+        "unrestrained two",
+        "normal attack",
+        "unrestrained two 2",
+    ];
+    players[my_idx].stance_of_fierce_attack_stacks = 1;
+    players[enemy_idx].fire_flame_blade_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx, just_run: true});
+};
+await riddles["214"]();
 console.log("done");
 
 /*

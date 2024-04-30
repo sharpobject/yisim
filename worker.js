@@ -41,9 +41,8 @@ onmessage = (event) => {
     const winning_logs = [];
     var try_idx = 0;
     var best_winning_margin = -99999;
-    do {
-        try_idx += 1;
-        var game = new GameState();
+    if (event.data.just_run) {
+        var game = new GameStateWithLog();
         for (let key in players[my_idx]) {
             game.players[my_idx][key] = players[my_idx][key];
         }
@@ -52,27 +51,46 @@ onmessage = (event) => {
         }
         game.players[my_idx].cards = combo;
         game.sim_n_turns(64);
-        if (game.winner === my_idx && !game.used_randomness) {
-        //if (!game.used_randomness) {
-            const winning_margin = game.players[my_idx].hp - game.players[enemy_idx].hp - 1000 * game.turns_taken;
-            const p_combo = combo.slice();
-            if (winning_margin > best_winning_margin) {
-                best_winning_margin = winning_margin;
-                winning_decks.push(p_combo);
-                winning_margins.push(winning_margin);
-                var game_with_log = new GameStateWithLog();
-                for (let key in players[my_idx]) {
-                    game_with_log.players[my_idx][key] = players[my_idx][key];
-                }
-                for (let key in players[enemy_idx]) {
-                    game_with_log.players[enemy_idx][key] = players[enemy_idx][key];
-                }
-                game_with_log.players[my_idx].cards = combo;
-                game_with_log.sim_n_turns(64);
-                winning_logs.push(game_with_log.output);
+        const winning_margin = game.players[my_idx].hp - game.players[enemy_idx].hp - 1000 * game.turns_taken;
+        const p_combo = combo.slice();
+        winning_decks.push(p_combo);
+        winning_margins.push(winning_margin);
+        winning_logs.push(game.output);
+    } else {
+        do {
+            try_idx += 1;
+            var game = new GameState();
+            for (let key in players[my_idx]) {
+                game.players[my_idx][key] = players[my_idx][key];
             }
-        }
-    } while (next_permutation(combo));
+            for (let key in players[enemy_idx]) {
+                game.players[enemy_idx][key] = players[enemy_idx][key];
+            }
+            game.players[my_idx].cards = combo;
+            game.sim_n_turns(64);
+            if (game.winner === my_idx && !game.used_randomness) {
+            //if (combo[0] == "633011" && combo[2] == "135072") {
+            //if (!game.used_randomness) {
+                const winning_margin = game.players[my_idx].hp - game.players[enemy_idx].hp - 1000 * game.turns_taken;
+                const p_combo = combo.slice();
+                if (winning_margin > best_winning_margin) {
+                    best_winning_margin = winning_margin;
+                    winning_decks.push(p_combo);
+                    winning_margins.push(winning_margin);
+                    var game_with_log = new GameStateWithLog();
+                    for (let key in players[my_idx]) {
+                        game_with_log.players[my_idx][key] = players[my_idx][key];
+                    }
+                    for (let key in players[enemy_idx]) {
+                        game_with_log.players[enemy_idx][key] = players[enemy_idx][key];
+                    }
+                    game_with_log.players[my_idx].cards = combo;
+                    game_with_log.sim_n_turns(64);
+                    winning_logs.push(game_with_log.output);
+                }
+            }
+        } while (next_permutation(combo));
+    }
     ret.worker_idx = worker_idx;
     ret.combo = combo;
     ret.winning_decks = winning_decks;
