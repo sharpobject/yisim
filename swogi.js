@@ -754,6 +754,7 @@ riddles["213"] = async () => {
     ];
     return await do_riddle({players: players, my_idx: my_idx});
 };
+// gmagezxpd6
 riddles["214"] = async () => {
     const players = [{},{}];
     const my_idx = 1;
@@ -773,7 +774,7 @@ riddles["214"] = async () => {
         "crane footwork 2",
         "exercise marrow 3",
         "exercise soul 3",
-        "exercise soul 2",
+        "exercise marrow 2",
         "meru formation",
         "exercise marrow",
         "echo formation",
@@ -789,7 +790,7 @@ riddles["214"] = async () => {
         "unrestrained two 2",
     ];
     players[my_idx].stance_of_fierce_attack_stacks = 1;
-    players[enemy_idx].fire_flame_blade_stacks = 1;
+    //players[enemy_idx].fire_flame_blade_stacks = 1;
     return await do_riddle({players: players, my_idx: my_idx, just_run: true});
 };
 await riddles["214"]();

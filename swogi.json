@@ -7375,21 +7375,21 @@
 		"name": "Sky Delicate Bracelet",
 		"qi_cost": 1,
 		"actions": [
-			["def", 5],
+			["def", 9],
 			["add_c_of_x", 1, "guard_up"],
 			["chase"]
 		]
 	},
 	"615022": {
 		"actions": [
-			["def", 5],
+			["def", 9],
 			["add_c_of_x", 2, "guard_up"],
 			["chase"]
 		]
 	},
 	"615023": {
 		"actions": [
-			["def", 5],
+			["def", 9],
 			["add_c_of_x", 3, "guard_up"],
 			["chase"]
 		]
@@ -7430,13 +7430,15 @@
 	"622012": {
 		"actions": [
 			["qi", 3],
-			["chase"]
+			["chase"],
+			["post_action", ["heal", 1]]
 		]
 	},
 	"622013": {
 		"actions": [
 			["qi", 4],
-			["chase"]
+			["chase"],
+			["post_action", ["heal", 1]]
 		]
 	},
 	"623011": {

@@ -585,6 +585,7 @@ class Player {
         this.peach_branch_ruyi_stacks = 0;
         this.mark_of_water_spirit_stacks = 0;
         this.blossom_dance_stacks = 0;
+        this.the_body_of_fierce_tiger_stacks = 0;
         this.p2_cycle_of_five_elements_stacks = 0;
         this.p3_cycle_of_five_elements_stacks = 0;
         this.p4_cycle_of_five_elements_stacks = 0;
@@ -930,6 +931,29 @@ export class GameState {
             }
         }
     }
+    do_the_body_of_fierce_tiger(idx) {
+        for (var i=0; i<this.players[idx].the_body_of_fierce_tiger_stacks; i++) {
+            var upgrades = 1;
+            for (var card_idx = 0; card_idx < this.players[idx].cards.length && upgrades > 0; card_idx++) {
+                const card_id = this.players[idx].cards[card_idx];
+                const upgrade_level = card_id.substring(card_id.length - 1);
+                const card_name = swogi[card_id].name;
+                const is_innate = name == "Kun Wu Metal Ring" ||
+                                name == "Metal Spirit - Vigorous" ||
+                                name == "Earth Spirit - Landslide";
+                if (upgrade_level === "1" && is_innate && this.try_upgrade_card(idx, card_idx)) {
+                    upgrades -= 1;
+                }
+            }
+            for (var card_idx = 0; card_idx < this.players[idx].cards.length && upgrades > 0; card_idx++) {
+                const card_id = this.players[idx].cards[card_idx];
+                const upgrade_level = card_id.substring(card_id.length - 1);
+                if (upgrade_level === "1" && this.try_upgrade_card(idx, card_idx)) {
+                    upgrades -= 1;
+                }
+            }
+        }
+    }
     do_pact_of_adversity_reinforcement(idx) {
         for (var i=0; i<this.players[idx].pact_of_adversity_reinforcement_stacks; i++) {
             for (var card_idx = 0; card_idx < this.players[idx].cards.length; card_idx++) {
@@ -945,6 +969,7 @@ export class GameState {
         //}
         for (var idx = 0; idx < 2; idx++) {
             this.players[idx].post_deck_setup();
+            this.do_the_body_of_fierce_tiger(idx);
             this.do_pact_of_equilibrium(idx);
             this.do_pact_of_adversity_reinforcement(idx);
         }
