@@ -932,25 +932,26 @@ export class GameState {
         }
     }
     do_the_body_of_fierce_tiger(idx) {
-        for (var i=0; i<this.players[idx].the_body_of_fierce_tiger_stacks; i++) {
-            var upgrades = 1;
-            for (var card_idx = 0; card_idx < this.players[idx].cards.length && upgrades > 0; card_idx++) {
-                const card_id = this.players[idx].cards[card_idx];
-                const upgrade_level = card_id.substring(card_id.length - 1);
-                const card_name = swogi[card_id].name;
-                const is_innate = name == "Kun Wu Metal Ring" ||
-                                name == "Metal Spirit - Vigorous" ||
-                                name == "Earth Spirit - Landslide";
-                if (upgrade_level === "1" && is_innate && this.try_upgrade_card(idx, card_idx)) {
-                    upgrades -= 1;
-                }
+        if (this.players[idx].hp < 117) {
+            return;
+        }
+        var upgrades = this.players[idx].the_body_of_fierce_tiger_stacks;
+        for (var card_idx = 0; card_idx < this.players[idx].cards.length && upgrades > 0; card_idx++) {
+            const card_id = this.players[idx].cards[card_idx];
+            const upgrade_level = card_id.substring(card_id.length - 1);
+            const name = swogi[card_id].name;
+            const is_innate = name == "Kun Wu Metal Ring" ||
+                            name == "Metal Spirit - Vigorous" ||
+                            name == "Earth Spirit - Landslide";
+            if (upgrade_level === "1" && is_innate && this.try_upgrade_card(idx, card_idx)) {
+                upgrades -= 1;
             }
-            for (var card_idx = 0; card_idx < this.players[idx].cards.length && upgrades > 0; card_idx++) {
-                const card_id = this.players[idx].cards[card_idx];
-                const upgrade_level = card_id.substring(card_id.length - 1);
-                if (upgrade_level === "1" && this.try_upgrade_card(idx, card_idx)) {
-                    upgrades -= 1;
-                }
+        }
+        for (var card_idx = 0; card_idx < this.players[idx].cards.length && upgrades > 0; card_idx++) {
+            const card_id = this.players[idx].cards[card_idx];
+            const upgrade_level = card_id.substring(card_id.length - 1);
+            if (upgrade_level === "1" && this.try_upgrade_card(idx, card_idx)) {
+                upgrades -= 1;
             }
         }
     }
