@@ -3832,6 +3832,8 @@
 			["if_x_at_least_c_do", "wound", 1,
 				["add_enemy_c_of_x", 2, "wound"]],
 			["for_each_x_add_y", "debuff", "bonus_force_amt"],
+			["ignore_weaken"],
+			["ignore_decrease_atk"],
 			["atk", 8]
 		]
 	},
@@ -3850,6 +3852,8 @@
 			["if_x_at_least_c_do", "wound", 1,
 				["add_enemy_c_of_x", 2, "wound"]],
 			["for_each_x_add_y", "debuff", "bonus_force_amt"],
+			["ignore_weaken"],
+			["ignore_decrease_atk"],
 			["atk", 14]
 		]
 	},
@@ -3868,6 +3872,8 @@
 			["if_x_at_least_c_do", "wound", 1,
 				["add_enemy_c_of_x", 2, "wound"]],
 			["for_each_x_add_y", "debuff", "bonus_force_amt"],
+			["ignore_weaken"],
+			["ignore_decrease_atk"],
 			["atk", 20]
 		]
 	},

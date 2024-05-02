@@ -442,6 +442,7 @@ class Player {
         this.physique_gained = 0;
         this.exercise_bones_stacks = 0;
         this.majestic_qi_stacks = 0;
+        this.ignore_decrease_atk = false;
         // duan xuan sect secret enchantment cards
         this.endless_force_stacks = 0;
         this.toxin_immunity_stacks = 0;
@@ -2453,7 +2454,9 @@ export class GameState {
             dmg += this.players[my_idx].this_card_sword_intent * (1 + this.players[my_idx].bonus_sword_intent_multiplier);
             dmg += this.players[my_idx].increase_atk;
             dmg += this.players[my_idx].craze_dance_tune_stacks;
-            dmg -= this.players[my_idx].decrease_atk;
+            if (!this.players[my_idx].ignore_decrease_atk) {
+                dmg -= this.players[my_idx].decrease_atk;
+            }
             if (this.players[my_idx].majestic_qi_stacks > 0) {
                 this.reduce_idx_x_by_c(my_idx, "majestic_qi_stacks", 1);
                 this.increase_idx_force(my_idx, 1);
@@ -2476,6 +2479,7 @@ export class GameState {
                 pct_multiplier += this.players[0].thunder_citta_dharma_stacks;
             }
             this.players[my_idx].ignore_weaken = false;
+            this.players[my_idx].ignore_decrease_atk = false;
             this.players[my_idx].bonus_sword_intent_multiplier = 0;
             this.players[my_idx].bonus_star_power_multiplier = 0;
             this.players[my_idx].bonus_force_amt = 0;
@@ -2855,6 +2859,9 @@ export class GameState {
     }
     ignore_weaken() {
         this.players[0].ignore_weaken = true;
+    }
+    ignore_decrease_atk() {
+        this.players[0].ignore_decrease_atk = true;
     }
     do_thorns_spear_thing() {
         this.players[0].bonus_atk_amt += Math.floor(this.players[1].def / 2);
