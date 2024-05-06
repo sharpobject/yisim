@@ -3831,6 +3831,8 @@
 				["add_enemy_c_of_x", 2, "entangle"]],
 			["if_x_at_least_c_do", "wound", 1,
 				["add_enemy_c_of_x", 2, "wound"]],
+			["if_x_at_least_c_do", "underworld", 1,
+				["add_enemy_c_of_x", 2, "underworld"]],
 			["for_each_x_add_y", "debuff", "bonus_force_amt"],
 			["ignore_weaken"],
 			["ignore_decrease_atk"],
@@ -3851,6 +3853,8 @@
 				["add_enemy_c_of_x", 2, "entangle"]],
 			["if_x_at_least_c_do", "wound", 1,
 				["add_enemy_c_of_x", 2, "wound"]],
+			["if_x_at_least_c_do", "underworld", 1,
+				["add_enemy_c_of_x", 2, "underworld"]],
 			["for_each_x_add_y", "debuff", "bonus_force_amt"],
 			["ignore_weaken"],
 			["ignore_decrease_atk"],
@@ -3871,6 +3875,8 @@
 				["add_enemy_c_of_x", 2, "entangle"]],
 			["if_x_at_least_c_do", "wound", 1,
 				["add_enemy_c_of_x", 2, "wound"]],
+			["if_x_at_least_c_do", "underworld", 1,
+				["add_enemy_c_of_x", 2, "underworld"]],
 			["for_each_x_add_y", "debuff", "bonus_force_amt"],
 			["ignore_weaken"],
 			["ignore_decrease_atk"],
@@ -4287,6 +4293,7 @@
 			["for_each_enemy_x_add_y", "decrease_atk", "bonus_rep_amt"],
 			["for_each_enemy_x_add_y", "entangle", "bonus_rep_amt"],
 			["for_each_enemy_x_add_y", "wound", "bonus_rep_amt"],
+			["for_each_enemy_x_add_y", "underworld", "bonus_rep_amt"],
 			["rep", 0, ["atk", 1]]
 		]
 	},
@@ -4299,6 +4306,7 @@
 			["for_each_enemy_x_add_y", "decrease_atk", "bonus_rep_amt"],
 			["for_each_enemy_x_add_y", "entangle", "bonus_rep_amt"],
 			["for_each_enemy_x_add_y", "wound", "bonus_rep_amt"],
+			["for_each_enemy_x_add_y", "underworld", "bonus_rep_amt"],
 			["rep", 0, ["atk", 1]]
 		]
 	},
@@ -4311,6 +4319,7 @@
 			["for_each_enemy_x_add_y", "decrease_atk", "bonus_rep_amt"],
 			["for_each_enemy_x_add_y", "entangle", "bonus_rep_amt"],
 			["for_each_enemy_x_add_y", "wound", "bonus_rep_amt"],
+			["for_each_enemy_x_add_y", "underworld", "bonus_rep_amt"],
 			["rep", 0, ["atk", 1]]
 		]
 	},
@@ -5049,6 +5058,7 @@
 			["for_each_x_reduce_c_pct_y", "decrease_atk", 100, "decrease_atk"],
 			["for_each_x_reduce_c_pct_y", "entangle", 100, "entangle"],
 			["for_each_x_reduce_c_pct_y", "wound", 100, "wound"],
+			["for_each_x_reduce_c_pct_y", "underworld", 100, "underworld"],
 			["for_each_x_add_y", "bonus_def_amt", "physique"],
 			["for_each_x_add_y", "bonus_def_amt", "hp"],
 			["physique", 0]
@@ -5064,6 +5074,7 @@
 			["for_each_x_reduce_c_pct_y", "decrease_atk", 100, "decrease_atk"],
 			["for_each_x_reduce_c_pct_y", "entangle", 100, "entangle"],
 			["for_each_x_reduce_c_pct_y", "wound", 100, "wound"],
+			["for_each_x_reduce_c_pct_y", "underworld", 100, "underworld"],
 			["for_each_x_add_y", "bonus_def_amt", "physique"],
 			["for_each_x_add_y", "bonus_def_amt", "hp"],
 			["physique", 0]
@@ -5079,6 +5090,7 @@
 			["for_each_x_reduce_c_pct_y", "decrease_atk", 100, "decrease_atk"],
 			["for_each_x_reduce_c_pct_y", "entangle", 100, "entangle"],
 			["for_each_x_reduce_c_pct_y", "wound", 100, "wound"],
+			["for_each_x_reduce_c_pct_y", "underworld", 100, "underworld"],
 			["for_each_x_add_y", "bonus_def_amt", "physique"],
 			["for_each_x_add_y", "bonus_def_amt", "hp"],
 			["physique", 0]
@@ -5362,7 +5374,8 @@
 			["reduce_c_of_x", 2, "flaw"],
 			["reduce_c_of_x", 2, "decrease_atk"],
 			["reduce_c_of_x", 2, "entangle"],
-			["reduce_c_of_x", 2, "wound"]
+			["reduce_c_of_x", 2, "wound"],
+			["reduce_c_of_x", 2, "underworld"]
 		]
 	},
 	"322022": {
@@ -5373,7 +5386,8 @@
 			["reduce_c_of_x", 3, "flaw"],
 			["reduce_c_of_x", 3, "decrease_atk"],
 			["reduce_c_of_x", 3, "entangle"],
-			["reduce_c_of_x", 3, "wound"]
+			["reduce_c_of_x", 3, "wound"],
+			["reduce_c_of_x", 3, "underworld"]
 		]
 	},
 	"322023": {
@@ -5384,7 +5398,8 @@
 			["reduce_c_of_x", 4, "flaw"],
 			["reduce_c_of_x", 4, "decrease_atk"],
 			["reduce_c_of_x", 4, "entangle"],
-			["reduce_c_of_x", 4, "wound"]
+			["reduce_c_of_x", 4, "wound"],
+			["reduce_c_of_x", 4, "underworld"]
 		]
 	},
 	"322031": {
@@ -5805,7 +5820,8 @@
 			["add_my_x_to_enemy_y", "flaw", "flaw"],
 			["add_my_x_to_enemy_y", "decrease_atk", "decrease_atk"],
 			["add_my_x_to_enemy_y", "entangle", "entangle"],
-			["add_my_x_to_enemy_y", "wound", "wound"]
+			["add_my_x_to_enemy_y", "wound", "wound"],
+			["add_my_x_to_enemy_y", "underworld", "underworld"]
 		]
 	},
 	"334032": {
@@ -5816,7 +5832,8 @@
 			["add_my_x_to_enemy_y", "flaw", "flaw"],
 			["add_my_x_to_enemy_y", "decrease_atk", "decrease_atk"],
 			["add_my_x_to_enemy_y", "entangle", "entangle"],
-			["add_my_x_to_enemy_y", "wound", "wound"]
+			["add_my_x_to_enemy_y", "wound", "wound"],
+			["add_my_x_to_enemy_y", "underworld", "underworld"]
 		]
 	},
 	"334033": {
@@ -5827,7 +5844,8 @@
 			["add_my_x_to_enemy_y", "flaw", "flaw"],
 			["add_my_x_to_enemy_y", "decrease_atk", "decrease_atk"],
 			["add_my_x_to_enemy_y", "entangle", "entangle"],
-			["add_my_x_to_enemy_y", "wound", "wound"]
+			["add_my_x_to_enemy_y", "wound", "wound"],
+			["add_my_x_to_enemy_y", "underworld", "underworld"]
 		]
 	},
 	"335011": {
@@ -6000,7 +6018,8 @@
 			["add_enemy_c_of_x", 2, "flaw"],
 			["add_enemy_c_of_x", 2, "decrease_atk"],
 			["add_enemy_c_of_x", 2, "entangle"],
-			["add_enemy_c_of_x", 2, "wound"]
+			["add_enemy_c_of_x", 2, "wound"],
+			["add_enemy_c_of_x", 2, "underworld"]
 		]]
 	},
 	"343012": {
@@ -6010,7 +6029,8 @@
 			["add_enemy_c_of_x", 3, "flaw"],
 			["add_enemy_c_of_x", 3, "decrease_atk"],
 			["add_enemy_c_of_x", 3, "entangle"],
-			["add_enemy_c_of_x", 3, "wound"]
+			["add_enemy_c_of_x", 3, "wound"],
+			["add_enemy_c_of_x", 3, "underworld"]
 		]]
 	},
 	"343013": {
@@ -6020,7 +6040,8 @@
 			["add_enemy_c_of_x", 4, "flaw"],
 			["add_enemy_c_of_x", 4, "decrease_atk"],
 			["add_enemy_c_of_x", 4, "entangle"],
-			["add_enemy_c_of_x", 4, "wound"]
+			["add_enemy_c_of_x", 4, "wound"],
+			["add_enemy_c_of_x", 4, "underworld"]
 		]]
 	},
 	"343021": {

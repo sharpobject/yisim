@@ -267,7 +267,7 @@ export function card_name_to_id_fuzzy(name) {
     }
     return card_name_to_id[card_names[idxs[0]]];
 }
-const DEBUFF_NAMES = ["internal_injury", "decrease_atk", "weaken", "flaw", "entangle", "wound"];
+const DEBUFF_NAMES = ["internal_injury", "decrease_atk", "weaken", "flaw", "entangle", "wound", "underworld"];
 function is_debuff(attr_name) {
     return DEBUFF_NAMES.includes(attr_name);
 }
@@ -451,6 +451,7 @@ class Player {
         this.return_to_simplicity_stacks = 0;
         // duan xuan sect character-specific cards
         this.overwhelming_power_stacks = 0;
+        this.underworld = 0;
         // musician side job cards
         this.carefree_tune_stacks = 0;
         this.kindness_tune_stacks = 0;
@@ -1828,7 +1829,8 @@ export class GameState {
                         this.players[0].flaw +
                         this.players[0].decrease_atk +
                         this.players[0].entangle +
-                        this.players[0].wound;
+                        this.players[0].wound +
+                        this.players[0].underworld;
         const amt = Math.min(count, cap);
         this.heal(amt);
     }
@@ -1937,6 +1939,7 @@ export class GameState {
                     reduce_amt = this.players[0].decrease_atk +
                                 this.players[0].internal_injury +
                                 this.players[0].wound +
+                                this.players[0].underworld +
                                 this.players[0].entangle +
                                 this.players[0].flaw +
                                 this.players[0].weaken;
@@ -2631,7 +2634,8 @@ export class GameState {
                     this.players[idx_a].flaw +
                     this.players[idx_a].decrease_atk +
                     this.players[idx_a].entangle +
-                    this.players[idx_a].wound;
+                    this.players[idx_a].wound +
+                    this.players[idx_a].underworld;
         } else {
             if (typeof this.players[idx_a][x] !== "number") {
                 this.log("error: " + x + " is not a number");
@@ -2650,7 +2654,8 @@ export class GameState {
                     this.players[0].flaw +
                     this.players[0].decrease_atk +
                     this.players[0].entangle +
-                    this.players[0].wound;
+                    this.players[0].wound +
+                    this.players[0].underworld;
         } else {
             if (typeof this.players[0][x] !== "number") {
                 this.log("error: " + x + " is not a number");
@@ -3349,7 +3354,8 @@ export class GameState {
             this.players[idx].flaw > 0 ||
             this.players[idx].decrease_atk > 0 ||
             this.players[idx].entangle > 0 ||
-            this.players[idx].wound > 0;
+            this.players[idx].wound > 0 ||
+            this.players[idx].underworld > 0;
     }
     if_no_debuff_do(arr) {
         if (!this.idx_has_debuff(0)) {
@@ -3512,7 +3518,8 @@ export class GameState {
                     this.players[1].flaw +
                     this.players[1].decrease_atk +
                     this.players[1].entangle +
-                    this.players[1].wound;
+                    this.players[1].wound +
+                    this.players[1].underworld;
         } else {
             if (typeof this.players[1][x] !== "number") {
                 this.log("error: " + x + " is not a number");
