@@ -1920,8 +1920,10 @@ export class GameState {
             }
             action_idx += 1;
             if (!this.can_play_a_card()) {
-                this.log("can't play any card :( ending turn");
-                break;
+                this.log("can't play any card :( converting slot 0 to normal");
+                this.players[0].can_play[0] = true;
+                this.players[0].next_card_index = 0;
+                this.players[0].cards[0] = "601011";
             }
             this.do_skip_next_card();
             while (this.players[0].skip_one_play[this.players[0].next_card_index]) {
