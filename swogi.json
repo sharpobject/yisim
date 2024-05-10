@@ -6018,8 +6018,7 @@
 			["add_enemy_c_of_x", 2, "flaw"],
 			["add_enemy_c_of_x", 2, "decrease_atk"],
 			["add_enemy_c_of_x", 2, "entangle"],
-			["add_enemy_c_of_x", 2, "wound"],
-			["add_enemy_c_of_x", 2, "underworld"]
+			["add_enemy_c_of_x", 2, "wound"]
 		]]
 	},
 	"343012": {
@@ -6029,8 +6028,7 @@
 			["add_enemy_c_of_x", 3, "flaw"],
 			["add_enemy_c_of_x", 3, "decrease_atk"],
 			["add_enemy_c_of_x", 3, "entangle"],
-			["add_enemy_c_of_x", 3, "wound"],
-			["add_enemy_c_of_x", 3, "underworld"]
+			["add_enemy_c_of_x", 3, "wound"]
 		]]
 	},
 	"343013": {
@@ -6040,8 +6038,7 @@
 			["add_enemy_c_of_x", 4, "flaw"],
 			["add_enemy_c_of_x", 4, "decrease_atk"],
 			["add_enemy_c_of_x", 4, "entangle"],
-			["add_enemy_c_of_x", 4, "wound"],
-			["add_enemy_c_of_x", 4, "underworld"]
+			["add_enemy_c_of_x", 4, "wound"]
 		]]
 	},
 	"343021": {

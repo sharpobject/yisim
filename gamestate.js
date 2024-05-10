@@ -2243,8 +2243,10 @@ export class GameState {
         if (amt === 0) {
             return;
         }
-        if (idx == 0 && this.players[idx].ultimate_world_formation_stacks > 0 ) {
-            this.players[0].ultimate_world_formation_stacks -= 1;
+        if (idx == 0 && this.players[idx].ultimate_world_formation_stacks > 0
+            && this.players[idx].this_card_chases === 0
+            && this.players[0].chases < this.players[0].max_chases) {
+            this.reduce_idx_x_by_c(0, "ultimate_world_formation_stacks", 1);
             this.chase();
         }
         for (var i=0; i < this.players[idx].five_elements_explosion_stacks; i++) {
@@ -3144,7 +3146,7 @@ export class GameState {
         if (has_water_spirit_card) {
             chases++;
         }
-        this.players[0].ultimate_world_formation_stacks += chases;
+        this.increase_idx_x_by_c(0, "ultimate_world_formation_stacks", chases);
     }
     star_point(arr) {
         if (this.players[0].is_star_point[this.players[0].currently_playing_card_idx]) {
