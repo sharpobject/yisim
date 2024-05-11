@@ -6632,6 +6632,471 @@
 			["add_enemy_c_of_x", 6, "devouring_ancient_vine_stacks"]
 		]
 	},
+	"371011": {
+		"name": "God Saying - Attack",
+		"actions": [
+			["atk", 6],
+			["def", 3],
+			["consumption"]
+		]
+	},
+	"371012": {
+		"actions": [
+			["atk", 9],
+			["def", 4],
+			["consumption"]
+		]
+	},
+	"371013": {
+		"actions": [
+			["atk", 12],
+			["def", 5],
+			["consumption"]
+		]
+	},
+	"371021": {
+		"name": "God Saying - Defend",
+		"actions": [
+			["atk", 2],
+			["def", 9],
+			["consumption"]
+		]
+	},
+	"371022": {
+		"actions": [
+			["atk", 3],
+			["def", 12],
+			["consumption"]
+		]
+	},
+	"371023": {
+		"actions": [
+			["atk", 4],
+			["def", 15],
+			["consumption"]
+		]
+	},
+	"371031": {
+		"name": "Learn Fortune",
+		"actions": [
+			["reduce_enemy_c_of_x", 6, "hp"]
+		],
+		"opening": [
+			["reduce_enemy_c_of_x", 2, "hp"]
+		]
+	},
+	"371032": {
+		"actions": [
+			["reduce_enemy_c_of_x", 8, "hp"]
+		],
+		"opening": [
+			["reduce_enemy_c_of_x", 3, "hp"]
+		]
+	},
+	"371033": {
+		"actions": [
+			["reduce_enemy_c_of_x", 10, "hp"]
+		],
+		"opening": [
+			["reduce_enemy_c_of_x", 4, "hp"]
+		]
+	},
+	"371041": {
+		"name": "Observe Body",
+		"actions": [
+			["add_c_of_x", 5, "observe_body_stacks"]
+		],
+		"opening": [
+			["add_c_of_x", 1, "smash_def"]
+		]
+	},
+	"371042": {
+		"actions": [
+			["add_c_of_x", 8, "observe_body_stacks"]
+		],
+		"opening": [
+			["add_c_of_x", 1, "smash_def"]
+		]
+	},
+	"371043": {
+		"actions": [
+			["add_c_of_x", 11, "observe_body_stacks"]
+		],
+		"opening": [
+			["add_c_of_x", 1, "smash_def"]
+		]
+	},
+	"372011": {
+		"name": "God Luck - Approach",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "god_luck_approach_stacks"]
+		]
+	},
+	"372012": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "god_luck_approach_stacks"]
+		]
+	},
+	"372013": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "god_luck_approach_stacks"]
+		]
+	},
+	"372021": {
+		"name": "God Luck - Avoid",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "god_luck_avoid_stacks"]
+		]
+	},
+	"372022": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "god_luck_avoid_stacks"]
+		]
+	},
+	"372023": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "god_luck_avoid_stacks"]
+		]
+	},
+	"372031": {
+		"name": "Detect Qi",
+		"actions": [
+			["qi", 2]
+		],
+		"opening": [
+			["qi", 1]
+		]
+	},
+	"372032": {
+		"actions": [
+			["qi", 3]
+		],
+		"opening": [
+			["qi", 1]
+		]
+	},
+	"372033": {
+		"actions": [
+			["qi", 4]
+		],
+		"opening": [
+			["qi", 1]
+		]
+	},
+	"372041": {
+		"name": "Bad Omen",
+		"actions": [
+			["add_enemy_c_of_x", 1, "bad_omen_stacks"]
+		],
+		"opening": [
+			["reduce_enemy_c_of_x", 3, "hp"],
+			["reduce_c_of_x", 3, "hp"]
+		]
+	},
+	"372042": {
+		"actions": [
+			["add_enemy_c_of_x", 2, "bad_omen_stacks"]
+		],
+		"opening": [
+			["reduce_enemy_c_of_x", 4, "hp"],
+			["reduce_c_of_x", 4, "hp"]
+		]
+	},
+	"372043": {
+		"actions": [
+			["add_enemy_c_of_x", 3, "bad_omen_stacks"]
+		],
+		"opening": [
+			["reduce_enemy_c_of_x", 5, "hp"],
+			["reduce_c_of_x", 5, "hp"]
+		]
+	},
+	"373011": {
+		"name": "God Fate - Flies",
+		"actions": [
+			["def", 6],
+			["add_c_of_x", 2, "skip_next_card_stacks"],
+			["consumption"]
+		]
+	},
+	"373012": {
+		"actions": [
+			["def", 12],
+			["add_c_of_x", 2, "skip_next_card_stacks"],
+			["consumption"]
+		]
+	},
+	"373013": {
+		"actions": [
+			["def", 18],
+			["add_c_of_x", 2, "skip_next_card_stacks"],
+			["consumption"]
+		]
+	},
+	"373021": {
+		"name": "God Fate - Reborn",
+		"actions": [
+			["heal", 4],
+			["add_c_of_x", 1, "skip_to_previous_card_stacks"],
+			["consumption"]
+		]
+	},
+	"373022": {
+		"actions": [
+			["heal", 8],
+			["add_c_of_x", 1, "skip_to_previous_card_stacks"],
+			["consumption"]
+		]
+	},
+	"373023": {
+		"actions": [
+			["heal", 12],
+			["add_c_of_x", 1, "skip_to_previous_card_stacks"],
+			["consumption"]
+		]
+	},
+	"373031": {
+		"name": "Disaster of Bloodshed",
+		"actions": [
+			["add_enemy_c_of_x", 1, "internal_injury"]
+		],
+		"opening": [
+			["add_enemy_c_of_x", 1, "internal_injury"]
+		]
+	},
+	"373032": {
+		"actions": [
+			["add_enemy_c_of_x", 2, "internal_injury"]
+		],
+		"opening": [
+			["add_enemy_c_of_x", 1, "internal_injury"]
+		]
+	},
+	"373033": {
+		"actions": [
+			["add_enemy_c_of_x", 3, "internal_injury"]
+		],
+		"opening": [
+			["add_enemy_c_of_x", 1, "internal_injury"]
+		]
+	},
+	"373041": {
+		"name": "Good Omen",
+		"actions": [
+			["heal", 7]
+		],
+		"opening": [
+			["add_c_of_x", 4, "max_hp"],
+			["heal", 4]
+		]
+	},
+	"373042": {
+		"actions": [
+			["heal", 10]
+		],
+		"opening": [
+			["add_c_of_x", 5, "max_hp"],
+			["heal", 5]
+		]
+	},
+	"373043": {
+		"actions": [
+			["heal", 13]
+		],
+		"opening": [
+			["add_c_of_x", 6, "max_hp"],
+			["heal", 6]
+		]
+	},
+	"374011": {
+		"name": "Everything Goes Way",
+		"actions": [
+			["add_c_of_x", 3, "everything_goes_way_stacks"]
+		],
+		"opening": [
+			["add_c_of_x", 1, "hexproof"]
+		]
+	},
+	"374012": {
+		"actions": [
+			["add_c_of_x", 4, "everything_goes_way_stacks"]
+		],
+		"opening": [
+			["add_c_of_x", 2, "hexproof"]
+		]
+	},
+	"374013": {
+		"actions": [
+			["add_c_of_x", 5, "everything_goes_way_stacks"]
+		],
+		"opening": [
+			["add_c_of_x", 3, "hexproof"]
+		]
+	},
+	"374021": {
+		"name": "God Star - Promotion",
+		"actions": [
+			["def", 4],
+			["heal", 4],
+			["rep", 2, ["trigger_rightmost_opening"]]	
+		]
+	},
+	"374022": {
+		"actions": [
+			["def", 6],
+			["heal", 6],
+			["rep", 2, ["trigger_rightmost_opening"]]	
+		]
+	},
+	"374023": {
+		"actions": [
+			["def", 8],
+			["heal", 8],
+			["rep", 2, ["trigger_rightmost_opening"]]	
+		]
+	},
+	"374031": {
+		"name": "God Star - Traction",
+		"actions": [
+			["qi", 2],
+			["add_c_of_x", 2, "god_star_traction_stacks"]
+		]
+	},
+	"374032": {
+		"actions": [
+			["qi", 3],
+			["add_c_of_x", 2, "god_star_traction_stacks"]
+		]
+	},
+	"374033": {
+		"actions": [
+			["qi", 4],
+			["add_c_of_x", 2, "god_star_traction_stacks"]
+		]
+	},
+	"374041": {
+		"name": "Nothing Is Appropriate",
+		"actions": [
+			["def", 4],
+			["add_c_of_x", 2, "nothing_is_appropriate_stacks"]
+		],
+		"opening": [
+			["def", 4]
+		]
+	},
+	"374042": {
+		"actions": [
+			["def", 5],
+			["add_c_of_x", 3, "nothing_is_appropriate_stacks"]
+		],
+		"opening": [
+			["def", 5]
+		]
+	},
+	"374043": {
+		"actions": [
+			["def", 6],
+			["add_c_of_x", 4, "nothing_is_appropriate_stacks"]
+		],
+		"opening": [
+			["def", 6]
+		]
+	},
+	"375011": {
+		"name": "Calamity Plaguin",
+		"qi_cost": 1,
+		"actions": [
+			["add_enemy_c_of_x", 4, "internal_injury"]
+		],
+		"opening": [
+			["downgrade_enemy_card_or_deal_damage", 6]
+		]
+	},
+	"375012": {
+		"actions": [
+			["add_enemy_c_of_x", 5, "internal_injury"]
+		],
+		"opening": [
+			["downgrade_enemy_card_or_deal_damage", 9]
+		]
+	},
+	"375013": {
+		"actions": [
+			["add_enemy_c_of_x", 6, "internal_injury"]
+		],
+		"opening": [
+			["downgrade_enemy_card_or_deal_damage", 12]
+		]
+	},
+	"375021": {
+		"name": "Fate Reincarnates",
+		"actions": [
+			["add_c_of_x", 8, "max_hp"],
+			["heal", 8],
+			["continuous"],
+			["add_c_of_x", 4, "fate_reincarnates_stacks"]
+		]
+	},
+	"375022": {
+		"actions": [
+			["add_c_of_x", 12, "max_hp"],
+			["heal", 12],
+			["continuous"],
+			["add_c_of_x", 6, "fate_reincarnates_stacks"]
+		]
+	},
+	"375023": {
+		"actions": [
+			["add_c_of_x", 16, "max_hp"],
+			["heal", 16],
+			["continuous"],
+			["add_c_of_x", 8, "fate_reincarnates_stacks"]
+		]
+	},
+	"375031": {
+		"name": "God's Opportunity - Conform",
+		"actions": [
+			["qi", 2],
+			["add_c_of_x", 3, "god_opportunity_conform_stacks"]
+		]
+	},
+	"375032": {
+		"actions": [
+			["qi", 4],
+			["add_c_of_x", 3, "god_opportunity_conform_stacks"]
+		]
+	},
+	"375033": {
+		"actions": [
+			["qi", 6],
+			["add_c_of_x", 3, "god_opportunity_conform_stacks"]
+		]
+	},
+	"375041": {
+		"name": "God's Opportunity - Reversal",
+		"actions": [
+			["qi", 2],
+			["add_c_of_x", 3, "god_opportunity_reversal_stacks"]
+		]
+	},
+	"375042": {
+		"actions": [
+			["qi", 4],
+			["add_c_of_x", 3, "god_opportunity_reversal_stacks"]
+		]
+	},
+	"375043": {
+		"actions": [
+			["qi", 6],
+			["add_c_of_x", 3, "god_opportunity_reversal_stacks"]
+		]
+	},
 	"401011": {
 		"name": "Black Silver Armor",
 		"actions": [
@@ -7813,7 +8278,7 @@
 			["do_earth_spirit_landslide", 15, 4]
 		]
 	},
-	"641011": {
+	"642011": {
 		"name": "Unceasing Exercising",
 		"actions": [
 			["atk", 4],
@@ -7821,21 +8286,21 @@
 			["heal", 3]
 		]
 	},
-	"641012": {
+	"642012": {
 		"actions": [
 			["atk", 6],
 			["add_c_of_x", 4, "physique"],
 			["heal", 4]
 		]
 	},
-	"641013": {
+	"642013": {
 		"actions": [
 			["atk", 8],
 			["add_c_of_x", 5, "physique"],
 			["heal", 5]
 		]
 	},
-	"641021": {
+	"642021": {
 		"name": "Overwhelming Power",
 		"hp_cost": 2,
 		"actions": [
@@ -7844,18 +8309,106 @@
 			["add_c_of_x", 2, "overwhelming_power_stacks"]
 		]
 	},
-	"641022": {
+	"642022": {
 		"actions": [
 			["add_c_of_x", 3, "force"],
 			["continuous"],
 			["add_c_of_x", 2, "overwhelming_power_stacks"]
 		]
 	},
-	"641023": {
+	"642023": {
 		"actions": [
 			["add_c_of_x", 4, "force"],
 			["continuous"],
 			["add_c_of_x", 2, "overwhelming_power_stacks"]
+		]
+	},
+	"643011": {
+		"name": "Gone Crazy",
+		"actions": [
+			["add_c_of_x", 2, "underworld"],
+			["do_one_randomly", [
+				["add_c_of_x", 2, "internal_injury"],
+				["add_c_of_x", 2, "weaken"],
+				["add_c_of_x", 2, "flaw"],
+				["add_c_of_x", 2, "decrease_atk"],
+				["add_c_of_x", 2, "entangle"],
+				["add_c_of_x", 2, "wound"]
+			]],
+			["for_each_x_add_y", "debuff", "bonus_def_amt"],
+			["add_c_of_x", 2, "bonus_def_amt"],
+			["for_each_x_add_y", "bonus_def_amt", "physique"],
+			["physique", 0]
+		]
+	},
+	"643012": {
+		"actions": [
+			["add_c_of_x", 4, "underworld"],
+			["do_one_randomly", [
+				["add_c_of_x", 1, "internal_injury"],
+				["add_c_of_x", 1, "weaken"],
+				["add_c_of_x", 1, "flaw"],
+				["add_c_of_x", 1, "decrease_atk"],
+				["add_c_of_x", 1, "entangle"],
+				["add_c_of_x", 1, "wound"]
+			]],
+			["for_each_x_add_y", "debuff", "bonus_def_amt"],
+			["add_c_of_x", 2, "bonus_def_amt"],
+			["for_each_x_add_y", "bonus_def_amt", "physique"],
+			["physique", 0]
+		]
+	},
+	"643013": {
+		"actions": [
+			["add_c_of_x", 6, "underworld"],
+			["for_each_x_add_y", "debuff", "bonus_def_amt"],
+			["add_c_of_x", 2, "bonus_def_amt"],
+			["for_each_x_add_y", "bonus_def_amt", "physique"],
+			["physique", 0]
+		]
+	},
+	"644011": {
+		"name": "Crash Fist - Stygian Night",
+		"actions": [
+			["add_c_of_x", 2, "underworld"],
+			["continuous"],
+			["add_c_of_x", 6, "crash_fist_stygian_night_stacks"]
+		]
+	},
+	"644012": {
+		"actions": [
+			["add_c_of_x", 3, "underworld"],
+			["continuous"],
+			["add_c_of_x", 9, "crash_fist_stygian_night_stacks"]
+		]
+	},
+	"644013": {
+		"actions": [
+			["add_c_of_x", 4, "underworld"],
+			["continuous"],
+			["add_c_of_x", 12, "crash_fist_stygian_night_stacks"]
+		]
+	},
+	"645011": {
+		"name": "Stygian Moon's Changuang",
+		"actions": [
+			["physique", 2],
+			["add_c_of_x", 2, "underworld"],
+			["add_c_of_x", 10, "agility"]
+		]
+	},
+	"645012": {
+		"actions": [
+			["physique", 3],
+			["add_c_of_x", 3, "underworld"],
+			["add_c_of_x", 11, "agility"]
+		]
+	},
+	"645013": {
+		"actions": [
+			["physique", 4],
+			["add_c_of_x", 4, "underworld"],
+			["add_c_of_x", 12, "agility"]
 		]
 	}
 }

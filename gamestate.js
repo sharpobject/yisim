@@ -39,7 +39,28 @@ function id_is_consumption(card_id) {
 }
 const SECTS = ["sw", "he", "fe", "dx"];
 const SECTS_FOR_MARKING = ["no marking"] + SECTS;
-const JOBS_FOR_MARKING = ["no marking", "el", "fu", "mu", "pa", "fo", "pl"];
+const CHARACTER_ID_TO_NAME = {
+    "sw1": "Mu Yifeng",
+    "sw2": "Yan Xue",
+    "sw3": "Long Yao",
+    "sw4": "Yin Xiaoyue",
+    "sw5": "Lu Jianxin",
+    "he1": "Tan Shuyan",
+    "he2": "Yan Chen",
+    "he3": "Yao Ling",
+    "he4": "Jiang Ximing",
+    "he5": "Wu Ce",
+    "fe1": "Wu Xingzhi",
+    "fe2": "Du Lingyuan",
+    "fe3": "Hua Qinrui",
+    "fe4": "Mu Hu",
+    "fe5": "Nangong Sheng",
+    "dx1": "Xiao Bu",
+    "dx2": "Tu Kui",
+    "dx3": "Ye Mingming",
+    "dx4": "Ji Fangsheng",
+}
+const JOBS_FOR_MARKING = ["no marking", "el", "fu", "mu", "pa", "fm", "pm", "ft"];
 function get_marking(card_id) {
     const sect = parseInt(card_id.substring(1, 2));
     const class_ = parseInt(card_id.substring(0, 1));
@@ -452,6 +473,7 @@ class Player {
         // duan xuan sect character-specific cards
         this.overwhelming_power_stacks = 0;
         this.underworld = 0;
+        this.character = "sw1";
         // musician side job cards
         this.carefree_tune_stacks = 0;
         this.kindness_tune_stacks = 0;
@@ -967,6 +989,14 @@ export class GameState {
             }
         }
     }
+    do_opening(card_idx) {
+        const card_id = this.players[0].cards[card_idx];
+        const action = swogi[card_id].opening;
+        if (action === undefined) {
+            return;
+        }
+        this.do_action(action);
+    }
     start_of_game_setup() {
         //for (var idx = 0; idx < 2; idx++) {
         //    this.players[idx].max_hp += this.players[idx].physique;
@@ -998,6 +1028,14 @@ export class GameState {
             this.do_innate_mark(idx);
             this.do_courage_to_fight(idx);
             this.do_mark_of_dark_heart(idx);
+        }
+        for (var idx = 0; idx < 2; idx++) {
+            for (var card_idx = 0; card_idx < this.players[0].cards.length; card_idx++) {
+                this.do_opening(card_idx);
+            }
+            const tmp = this.players[0];
+            this.players[0] = this.players[1];
+            this.players[1] = tmp;
         }
     }
     swap_players() {
@@ -2327,6 +2365,13 @@ export class GameState {
         }
         for (var i=0; i<this.players[idx].unwavering_soul_stacks; i++) {
             this.increase_idx_hp(idx, amt);
+        }
+        if (x === "underworld") {
+            if (this.players[idx].character === "dx3") {
+                this.increase_idx_hp(idx, amt * 3);
+            } else {
+                this.reduce_idx_hp(idx, amt * 3, false);
+            }
         }
         this.players[idx][x] += amt;
         this.log("gained " + amt + " " + x + ". Now have " + this.players[idx][x] + " " + x);

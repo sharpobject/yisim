@@ -58,6 +58,10 @@ async function do_riddle(riddle) {
         const worker = new Worker('./worker.js');
         workers.push(worker);
         messages_outstanding.push(0);
+        // Add error event listener to each worker
+        worker.addEventListener('error', (event) => {
+            console.error(`Error in worker ${i}:`, event.message);
+        });
     }
 
     function createMessageHandler(workers) {
