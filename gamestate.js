@@ -2437,6 +2437,7 @@ export class GameState {
             if (this.players[my_idx].is_star_point[this.players[0].currently_playing_card_idx]) {
                 dmg += this.players[my_idx].star_power * (1 + this.players[my_idx].bonus_star_power_multiplier);
             }
+            // TODO: Iron Bone should work on DMG as well as ATK.
             if (this.players[enemy_idx].metal_spirit_iron_bone_stacks > 0) {
                 dmg -= 5;
             }

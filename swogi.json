@@ -2470,6 +2470,7 @@
 		"actions": [
 			["qi", 2],
 			["add_c_of_x", 2, "max_hp"],
+			["add_c_of_x", 2, "hp"],
 			["water_spirit", ["for_each_x_add_c_pct_y", "qi", 50, "force_of_water"]]
 		]
 	},
@@ -2477,6 +2478,7 @@
 		"actions": [
 			["qi", 3],
 			["add_c_of_x", 3, "max_hp"],
+			["add_c_of_x", 3, "hp"],
 			["water_spirit", ["for_each_x_add_c_pct_y", "qi", 50, "force_of_water"]]
 		]
 	},
@@ -2484,6 +2486,7 @@
 		"actions": [
 			["qi", 4],
 			["add_c_of_x", 4, "max_hp"],
+			["add_c_of_x", 4, "hp"],
 			["water_spirit", ["for_each_x_add_c_pct_y", "qi", 50, "force_of_water"]]
 		]
 	},
