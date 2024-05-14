@@ -6944,47 +6944,47 @@
 		"actions": [
 			["def", 4],
 			["heal", 4],
-			["rep", 2, ["trigger_rightmost_opening"]]	
+			["trigger_rightmost_opening", 2]
 		]
 	},
 	"374022": {
 		"actions": [
 			["def", 6],
 			["heal", 6],
-			["rep", 2, ["trigger_rightmost_opening"]]	
+			["trigger_rightmost_opening", 2]
 		]
 	},
 	"374023": {
 		"actions": [
 			["def", 8],
 			["heal", 8],
-			["rep", 2, ["trigger_rightmost_opening"]]	
+			["trigger_rightmost_opening", 2]
 		]
 	},
 	"374031": {
 		"name": "God Star - Traction",
 		"actions": [
 			["qi", 2],
-			["add_c_of_x", 2, "god_star_traction_stacks"]
+			["trigger_next_opening", 2]
 		]
 	},
 	"374032": {
 		"actions": [
 			["qi", 3],
-			["add_c_of_x", 2, "god_star_traction_stacks"]
+			["trigger_next_opening", 2]
 		]
 	},
 	"374033": {
 		"actions": [
 			["qi", 4],
-			["add_c_of_x", 2, "god_star_traction_stacks"]
+			["trigger_next_opening", 2]
 		]
 	},
 	"374041": {
 		"name": "Nothing Is Appropriate",
 		"actions": [
 			["def", 4],
-			["add_c_of_x", 2, "nothing_is_appropriate_stacks"]
+			["add_enemy_c_of_x", 2, "nothing_is_appropriate_stacks"]
 		],
 		"opening": [
 			["def", 4]
@@ -6993,7 +6993,7 @@
 	"374042": {
 		"actions": [
 			["def", 5],
-			["add_c_of_x", 3, "nothing_is_appropriate_stacks"]
+			["add_enemy_c_of_x", 3, "nothing_is_appropriate_stacks"]
 		],
 		"opening": [
 			["def", 5]
@@ -7002,7 +7002,7 @@
 	"374043": {
 		"actions": [
 			["def", 6],
-			["add_c_of_x", 4, "nothing_is_appropriate_stacks"]
+			["add_enemy_c_of_x", 4, "nothing_is_appropriate_stacks"]
 		],
 		"opening": [
 			["def", 6]
@@ -8327,14 +8327,16 @@
 		"name": "Gone Crazy",
 		"actions": [
 			["add_c_of_x", 2, "underworld"],
-			["do_one_randomly", [
-				["add_c_of_x", 2, "internal_injury"],
-				["add_c_of_x", 2, "weaken"],
-				["add_c_of_x", 2, "flaw"],
-				["add_c_of_x", 2, "decrease_atk"],
-				["add_c_of_x", 2, "entangle"],
-				["add_c_of_x", 2, "wound"]
-			]],
+			["rep", 2,
+				["do_one_randomly", [
+					["add_c_of_x", 1, "internal_injury"],
+					["add_c_of_x", 1, "weaken"],
+					["add_c_of_x", 1, "flaw"],
+					["add_c_of_x", 1, "decrease_atk"],
+					["add_c_of_x", 1, "entangle"],
+					["add_c_of_x", 1, "wound"]
+				]]
+			],
 			["for_each_x_add_y", "debuff", "bonus_def_amt"],
 			["add_c_of_x", 2, "bonus_def_amt"],
 			["for_each_x_add_y", "bonus_def_amt", "physique"],
