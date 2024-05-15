@@ -2440,6 +2440,7 @@ export class GameState {
                     this.increase_idx_x_by_c(idx, "increase_atk", 1);
                     break;
                 case "activate_fire_spirit_stacks":
+                    this.reduce_idx_hp(enemy_idx, 7, false);
                     this.reduce_idx_max_hp(enemy_idx, 7);
                     break;
                 case "activate_earth_spirit_stacks":

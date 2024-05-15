@@ -7788,19 +7788,19 @@
 		"name": "Cloud Sword - Avalanche",
 		"actions": [
 			["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 4, "bonus_atk_amt"]],
-			["atk", 2]
+			["atk", 4]
 		]
 	},
 	"614012": {
 		"actions": [
 			["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 5, "bonus_atk_amt"]],
-			["atk", 2]
+			["atk", 4]
 		]
 	},
 	"614013": {
 		"actions": [
 			["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 6, "bonus_atk_amt"]],
-			["atk", 2]
+			["atk", 4]
 		]
 	},
 	"614021": {
@@ -7808,21 +7808,21 @@
 		"actions": [
 			["rep", 3, ["atk", 3]],
 			["add_c_of_x", 2, "regen"],
-			["cloud_hit", ["qi", 1]]
+			["qi", 1]
 		]
 	},
 	"614022": {
 		"actions": [
 			["rep", 4, ["atk", 3]],
 			["add_c_of_x", 2, "regen"],
-			["cloud_hit", ["qi", 1]]
+			["qi", 1]
 		]
 	},
 	"614023": {
 		"actions": [
 			["rep", 5, ["atk", 3]],
 			["add_c_of_x", 2, "regen"],
-			["cloud_hit", ["qi", 1]]
+			["qi", 1]
 		]
 	},
 	"614031": {
@@ -7847,19 +7847,22 @@
 	"615011": {
 		"name": "Unrestrained Sword - Flame Dance",
 		"actions": [
-			["atk", 6],
+			["atk", 2],
+			["add_enemy_c_of_x", 1, "wound"],
 			["if_x_at_least_c_do", "unrestrained_sword_count", 1, ["chase"]]
 		]
 	},
 	"615012": {
 		"actions": [
-			["atk", 12],
+			["atk", 2],
+			["add_enemy_c_of_x", 2, "wound"],
 			["if_x_at_least_c_do", "unrestrained_sword_count", 1, ["chase"]]
 		]
 	},
 	"615013": {
 		"actions": [
-			["atk", 18],
+			["atk", 2],
+			["add_enemy_c_of_x", 3, "wound"],
 			["if_x_at_least_c_do", "unrestrained_sword_count", 1, ["chase"]]
 		]
 	},
