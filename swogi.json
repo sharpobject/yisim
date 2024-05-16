@@ -7848,21 +7848,21 @@
 		"name": "Unrestrained Sword - Flame Dance",
 		"actions": [
 			["atk", 2],
-			["add_enemy_c_of_x", 1, "wound"],
+			["injured", ["add_enemy_c_of_x", 1, "wound"]],
 			["if_x_at_least_c_do", "unrestrained_sword_count", 1, ["chase"]]
 		]
 	},
 	"615012": {
 		"actions": [
 			["atk", 2],
-			["add_enemy_c_of_x", 2, "wound"],
+			["injured", ["add_enemy_c_of_x", 2, "wound"]],
 			["if_x_at_least_c_do", "unrestrained_sword_count", 1, ["chase"]]
 		]
 	},
 	"615013": {
 		"actions": [
 			["atk", 2],
-			["add_enemy_c_of_x", 3, "wound"],
+			["injured", ["add_enemy_c_of_x", 3, "wound"]],
 			["if_x_at_least_c_do", "unrestrained_sword_count", 1, ["chase"]]
 		]
 	},
