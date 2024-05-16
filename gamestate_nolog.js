@@ -1047,38 +1047,6 @@ export class GameState {
         this.players[0].bonus_heal_amt = prev_bonus_heal_amt;
         this.players[0].this_trigger_directly_attacked = prev_this_trigger_directly_attacked;
     }
-    trigger_rightmost_opening(n) {
-        var idx = this.players[0].cards.length - 1;
-        while (idx >= 0) {
-            const card_id = this.players[0].cards[idx];
-            const action = swogi[card_id].opening;
-            if (action === undefined) {
-                idx -= 1;
-                continue;
-            }
-            for (var i=0; i<n; i++) {
-                do_opening(idx);
-            }
-            return;
-        }
-    }
-    trigger_next_opening(n) {
-        var idx = this.currently_playing_card_idx;
-        var n_triggered = 0;
-        for (var i=0; i<n*8; i++) {
-            idx = this.get_next_idx(idx);
-            const card_id = this.players[0].cards[idx];
-            const action = swogi[card_id].opening;
-            if (action === undefined) {
-                continue;
-            }
-            do_opening(idx);
-            n_triggered += 1;
-            if (n_triggered === n) {
-                return;
-            }
-        }
-    }
     start_of_game_setup() {
         //for (var idx = 0; idx < 2; idx++) {
         //    this.players[idx].max_hp += this.players[idx].physique;
@@ -2963,10 +2931,26 @@ export class GameState {
         const step = -this.players[0].card_play_direction;
         var idx = my_idx + step;
         while (idx >= 0 && idx < this.players[0].cards.length) {
-            var card_id = this.players[0].cards[idx];
+            const card_id = this.players[0].cards[idx];
             if (is_sword_formation(card_id)) {
                 this.trigger_card(card_id, idx);
                 return;
+            }
+            idx += step;
+        }
+    }
+    retrigger_next_opening(step_multiplier, n_cards, reps_per_card) {
+        const my_idx = this.players[0].currently_triggering_card_idx;
+        const step = this.players[0].card_play_direction * step_multiplier;
+        var idx = my_idx + step;
+        while (idx >= 0 && idx < this.players[0].cards.length && n_cards > 0) {
+            const card_id = this.players[0].cards[idx];
+            const opening = swogi[card_id].opening;
+            if (opening !== undefined) {
+                n_cards -= 1;
+                for (var i=0; i<reps_per_card; i++) {
+                    this.do_opening(idx);
+                }
             }
             idx += step;
         }

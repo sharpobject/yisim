@@ -6944,40 +6944,40 @@
 		"actions": [
 			["def", 4],
 			["heal", 4],
-			["trigger_rightmost_opening", 2]
+			["retrigger_next_opening",-1, 1, 2]
 		]
 	},
 	"374022": {
 		"actions": [
 			["def", 6],
 			["heal", 6],
-			["trigger_rightmost_opening", 2]
+			["retrigger_next_opening",-1, 1, 2]
 		]
 	},
 	"374023": {
 		"actions": [
 			["def", 8],
 			["heal", 8],
-			["trigger_rightmost_opening", 2]
+			["retrigger_next_opening",-1, 1, 2]
 		]
 	},
 	"374031": {
 		"name": "God Star - Traction",
 		"actions": [
 			["qi", 2],
-			["trigger_next_opening", 2]
+			["retrigger_next_opening", 1, 2, 1]
 		]
 	},
 	"374032": {
 		"actions": [
 			["qi", 3],
-			["trigger_next_opening", 2]
+			["retrigger_next_opening", 1, 2, 1]
 		]
 	},
 	"374033": {
 		"actions": [
 			["qi", 4],
-			["trigger_next_opening", 2]
+			["retrigger_next_opening", 1, 2, 1]
 		]
 	},
 	"374041": {
