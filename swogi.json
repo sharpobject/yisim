@@ -8397,21 +8397,21 @@
 	"645011": {
 		"name": "Stygian Moon's Changuang",
 		"actions": [
-			["physique", 2],
+			["physique", 1],
 			["add_c_of_x", 2, "underworld"],
 			["add_c_of_x", 10, "agility"]
 		]
 	},
 	"645012": {
 		"actions": [
-			["physique", 3],
+			["physique", 2],
 			["add_c_of_x", 3, "underworld"],
 			["add_c_of_x", 11, "agility"]
 		]
 	},
 	"645013": {
 		"actions": [
-			["physique", 4],
+			["physique", 3],
 			["add_c_of_x", 4, "underworld"],
 			["add_c_of_x", 12, "agility"]
 		]

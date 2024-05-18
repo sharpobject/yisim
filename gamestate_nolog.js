@@ -193,6 +193,7 @@ for (var i=0; i<keys.length; i++) {
         decrease_qi_cost_by_x: decrease_qi_cost_by_x,
         water_spirit_cost_0_qi: water_spirit_cost_0_qi,
         actions: swogi[card_id].actions,
+        opening: swogi[card_id].opening,
         is_continuous: id_is_continuous(card_id),
         is_consumption: id_is_consumption(card_id),
         is_unrestrained_sword: is_unrestrained_sword(card_id),
@@ -305,7 +306,7 @@ class Player {
         this.can_post_action = [];
         this.skip_one_play = [];
         this.exchange_card_chance = 0;
-        this.round_number = 20;
+        this.round_number = 15;
         this.destiny = 100;
         this.cultivation = 70;
         this.speed = 0;
@@ -658,6 +659,7 @@ class Player {
         this.p3_mark_of_dark_heart_stacks = 0;
         this.p4_mark_of_dark_heart_stacks = 0;
         this.p5_mark_of_dark_heart_stacks = 0;
+        this.entering_styx_stacks = 0;
         // life shop buffs
         this.pact_of_adversity_reinforcement_stacks = 0;
         this.pact_of_equilibrium_stacks = 0;
@@ -945,6 +947,9 @@ export class GameState {
             this.increase_idx_x_by_c(idx, "regen", 3);
         }
     }
+    do_entering_styx(idx) {
+        this.increase_idx_x_by_c(idx, "underworld", this.players[idx].entering_styx_stacks);
+    }
     try_upgrade_card(player_idx, card_idx) {
         const card_id = this.players[player_idx].cards[card_idx];
         const upgrade_level = card_id.substring(card_id.length - 1);
@@ -1028,7 +1033,7 @@ export class GameState {
         const prev_bonus_reduce_enemy_max_hp_amt = this.players[0].bonus_reduce_enemy_max_hp_amt;
         const prev_bonus_heal_amt = this.players[0].bonus_heal_amt;
         const prev_this_trigger_directly_attacked = this.players[0].this_trigger_directly_attacked;
-        this.players[0].currently_triggering_card_idx = idx;
+        this.players[0].currently_triggering_card_idx = card_idx;
         this.players[0].currently_triggering_card_id = card_id;
         this.players[0].bonus_atk_amt = 0;
         this.players[0].bonus_dmg_amt = 0;
@@ -1078,6 +1083,7 @@ export class GameState {
             this.do_innate_mark(idx);
             this.do_courage_to_fight(idx);
             this.do_mark_of_dark_heart(idx);
+            this.do_entering_styx(idx);
         }
         for (var idx = 0; idx < 2; idx++) {
             for (var card_idx = 0; card_idx < this.players[0].cards.length; card_idx++) {
@@ -2003,7 +2009,7 @@ export class GameState {
             this.advance_next_card_index();
         }
         while (this.players[0].fate_reincarnates_stacks > 0 &&
-                (this.players[0].next_card_index === 4 || this.players[0].next_card_index === 5)) {
+                (this.players[0].next_card_index === 3 || this.players[0].next_card_index === 4)) {
             this.reduce_idx_x_by_c(0, "fate_reincarnates_stacks", 1);
             this.do_opening(this.players[0].next_card_index);
             this.advance_next_card_index();
@@ -2666,16 +2672,18 @@ export class GameState {
         }
         this.reduce_idx_x_by_c(enemy_idx, "def", damage_to_def);
         if (is_atk) {
+            var can_wound = damage_to_hp > 0 && this.players[enemy_idx].guard_up === 0 && this.players[enemy_idx].covert_shift_stacks === 0;
+            can_wound = can_wound || this.players[my_idx].fire_flame_blade_stacks > 0;
             if (this.players[0].disable_penetrate_stacks > 0) {
                 this.players[0].disable_penetrate_stacks -= 1;
             } else if (this.players[my_idx].penetrate > 0) {
-                if (damage_to_hp > 0 && this.players[enemy_idx].guard_up === 0 && this.players[enemy_idx].covert_shift_stacks === 0) {
+                if (can_wound) {
                     damage_to_hp += this.players[my_idx].penetrate;
                     this.reduce_c_of_x(this.players[my_idx].penetrate, "penetrate");
                 }
             }
-            if (damage_to_hp > 0 && this.players[enemy_idx].guard_up === 0 && this.players[enemy_idx].covert_shift_stacks === 0) {
-                dmg += this.players[enemy_idx].wound;
+            if (can_wound) {
+                damage_to_hp += this.players[enemy_idx].wound;
             }
             if (this.players[0].metal_spirit_giant_tripod_stacks > 0) {
                 this.players[0].metal_spirit_giant_tripod_stacks -= 1;
