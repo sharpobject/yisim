@@ -171,6 +171,9 @@ let is_seal = function(card_id) {
     }
     return swogi[card_id].name.includes("Seal");
 }
+let is_spirit_sword = function(card_id) {
+    return swogi[card_id].name.includes("Spirit Sword");
+}
 function with_default(x, default_val) {
     if (x === undefined) {
         return default_val;
@@ -210,6 +213,7 @@ for (var i=0; i<keys.length; i++) {
         is_post_action: is_post_action(card_id),
         is_thunder: is_thunder(card_id),
         is_seal: is_seal(card_id),
+        is_spirit_sword: is_spirit_sword(card_id),
         marking: get_marking(card_id),
     };
     swogi[card_id] = card;
@@ -255,6 +259,9 @@ is_thunder = function(card_id) {
 }
 is_seal = function(card_id) {
     return swogi[card_id].is_seal;
+}
+is_spirit_sword = function(card_id) {
+    return swogi[card_id].is_spirit_sword;
 }
 const CRASH_FIST_CARDS = [[],[],[],[]];
 for (var i=0; i<keys.length; i++) {
@@ -385,6 +392,9 @@ class Player {
         this.hand_count = 17;
         this.unrestrained_sword_clear_heart_stacks = 0;
         this.cloud_sword_clear_heart_stacks = 0;
+        // cloud sword sect legendary cards
+        this.dragon_devours_clouds_stacks = 0;
+        this.beast_spirit_sword_formation_stacks = 0;
         // heptastar sect normal cards
         this.hexagram = 0;
         this.star_power = 0;
@@ -405,6 +415,9 @@ class Player {
         // heptastar sect character-specific cards
         this.cannot_act_stacks = 0;
         this.reduce_qi_cost_on_star_point_stacks = 0;
+        // heptastar sect legendary cards
+        this.spiritual_divination_stacks = 0;
+        this.throw_petals_stacks = 0;
         // five elements sect normal cards
         this.last_card_id = "601011";
         this.activate_wood_spirit_stacks = 0;
@@ -437,6 +450,9 @@ class Player {
         // five elements sect character-specific cards
         this.kun_wu_metal_ring_stacks = 0;
         this.water_spirit_spring_rain_stacks = 0;
+        // five elements sect legendary cards
+        this.wild_crossing_seal_stacks = 0;
+        this.played_card_count = 0;
         // duan xuan sect normal cards
         this.agility = 0;
         this.physique = 0;
@@ -1155,7 +1171,7 @@ export class GameState {
         return this[action_name](...args);
     }
     do_cloud_sword_softheart_and_friends(card_id) {
-        if (is_cloud_sword(card_id)) {
+        if (this.is_cloud_sword(card_id)) {
             this.heal(this.players[0].cloud_sword_softheart_stacks);
             for (var i=0; i<this.players[0].lithe_as_cat_stacks; i++) {
                 this.qi(1);
@@ -1180,7 +1196,7 @@ export class GameState {
     }
     do_unrestrained_sword_count(card_id) {
         // if this card has "Unrestrained Sword" in the name, increment unrestrained_sword_count
-        if (is_unrestrained_sword(card_id) || this.is_fake_unrestrained_sword()) {
+        if (this.is_unrestrained_sword(card_id)) {
             this.players[0].unrestrained_sword_count += 1;
             this.log("incremented unrestrained_sword_count to " + this.players[0].unrestrained_sword_count);
         }
@@ -1207,7 +1223,7 @@ export class GameState {
         }
     }
     do_step_moon_into_cloud(card_id) {
-        if (is_cloud_sword(card_id)) {
+        if (this.is_cloud_sword(card_id)) {
             this.for_each_x_add_y("step_moon_into_cloud_stacks", "increase_atk");
         }
     }
@@ -1220,6 +1236,19 @@ export class GameState {
             if (is_sword_formation(card_id)) {
                 this.log("Attacking for " + atk + " from emptiness sword formation.");
                 this.atk(atk);
+            }
+        }
+    }
+    do_beast_spirit_sword_formation(card_id) {
+        if (this.players[0].trigger_depth > 1) {
+            return;
+        }
+        const dmg = this.players[0].beast_spirit_sword_formation_stacks *
+                    this.players[0].qi;
+        if (dmg > 0) {
+            if (is_sword_formation(card_id) || is_spirit_sword(card_id)) {
+                this.log("Dealing " + dmg + " damage from beast spirit sword formation.");
+                this.deal_dmg(dmg);
             }
         }
     }
@@ -1591,6 +1620,7 @@ export class GameState {
         this.do_crash_fist_shocked(card_id);
         this.do_observe_body();
         // End of extra attacks zone
+        this.do_beast_spirit_sword_formation(card_id);
         this.do_unrestrained_sword_count(card_id);
         this.players[0].bonus_atk_amt = prev_bonus_atk_amt;
         this.players[0].bonus_dmg_amt = prev_bonus_dmg_amt;
@@ -1645,7 +1675,7 @@ export class GameState {
         this.players[0].currently_playing_card_idx = idx;
         var plays = 1;
         if (this.players[0].unrestrained_sword_twin_dragons_stacks > 0) {
-            if (is_unrestrained_sword(card_id) || this.is_fake_unrestrained_sword()) {
+            if (this.is_unrestrained_sword(card_id)) {
                 plays += 1;
                 this.reduce_idx_x_by_c(0, "unrestrained_sword_twin_dragons_stacks", 1);
             }
@@ -1666,6 +1696,7 @@ export class GameState {
             if (!this.game_over) {
                 this.play_card_inner(card_id, idx);
             }
+            this.players[0].played_card_count += 1;
         }
         this.players[0].currently_playing_card_idx = undefined;
     }
@@ -1784,7 +1815,8 @@ export class GameState {
     }
     do_unrestrained_sword_zero() {
         if (this.players[0].unrestrained_sword_zero_stacks > 0) {
-            if (is_unrestrained_sword(this.players[0].currently_triggering_card_id) || this.is_fake_unrestrained_sword()) {
+            const card_id = this.players[0].currently_triggering_card_id;
+            if (this.is_unrestrained_sword(card_id)) {
                 var healing_amt = Math.floor(this.players[0].damage_dealt_to_hp_by_atk * this.players[0].unrestrained_sword_zero_stacks / 100);
                 this.heal(healing_amt);
             }
@@ -1859,6 +1891,13 @@ export class GameState {
                 this.chase();
                 this.reduce_idx_x_by_c(0, "five_elements_heavenly_marrow_rhythm_stacks", 1);
             }
+        }
+    }
+    do_wild_crossing_seal_chase() {
+        const player = this.players[0];
+        if (player.this_card_chases === 0 && player.chases < player.max_chases && player.wild_crossing_seal_stacks > 0) {
+            this.chase();
+            this.reduce_idx_x_by_c(0, "wild_crossing_seal_stacks", 1);
         }
     }
     do_shadow_owl_rabbit_chase() {
@@ -2362,6 +2401,9 @@ export class GameState {
             const dmg_amt = Math.ceil(amt * 6 / 10);
             this.deal_damage_inner(dmg_amt, false, false, idx);
         }
+        if (idx === 0 && this.players[idx].wild_crossing_seal_stacks > 0) {
+            this.do_wild_crossing_seal_chase();
+        }
         this.players[idx].hp += amt;
         this.players[idx].hp_gained += amt;
         if (this.players[idx].hp > this.players[idx].max_hp) {
@@ -2425,6 +2467,13 @@ export class GameState {
         }
         if (this.players[idx].stillness_citta_dharma_stacks > 0) {
             this.increase_idx_hp(idx, amt * this.players[idx].stillness_citta_dharma_stacks);
+        }
+        if (this.players[idx].spiritual_divination_stacks > 0) {
+            const hexagram_amt = amt * this.players[idx].spiritual_divination_stacks;
+            this.increase_idx_hexagram(idx, hexagram_amt);
+        }
+        if (idx === 0 && this.players[idx].wild_crossing_seal_stacks > 0) {
+            this.do_wild_crossing_seal_chase();
         }
         this.players[idx].qi += amt;
         this.log("gained " + amt + " qi. Now have " + this.players[idx].qi + " qi");
@@ -2792,6 +2841,14 @@ export class GameState {
             ignore_def = true;
             this.log("ignoring def for this atk. " + this.players[0].ignore_def + " ignore def remaining");
         }
+        if (this.players[0].throw_petals_stacks > 0) {
+            const amt = this.players[0].throw_petals_stacks;
+            this.increase_idx_x_by_c(1, "internal_injury", amt);
+        }
+        if (this.players[1].throw_petals_stacks > 0) {
+            const amt = this.players[1].throw_petals_stacks;
+            this.increase_idx_x_by_c(0, "internal_injury", amt);
+        }
         this.do_fire_flame_blade();
         this.deal_damage_inner(dmg, ignore_def, true, 0);
         this.reduce_c_of_x(1, "force");
@@ -3097,9 +3154,15 @@ export class GameState {
         this.reduce_idx_x_by_c(0, debuff_name, 1);
         this.increase_idx_x_by_c(1, debuff_name, 1);
     }
-    is_fake_unrestrained_sword() {
+    is_fake_unrestrained_sword(card_id) {
         return (this.players[0].unrestrained_sword_clear_heart_stacks > 0 &&
-            this.players[0].trigger_depth <= 1);
+            this.players[0].trigger_depth <= 1) ||
+            (swogi[card_id].name === "Clear Heart Sword Embryo" &&
+            this.players[0].quench_of_sword_heart_unrestrained_stacks > 0);
+    }
+    is_fake_cloud_sword(card_id) {
+        return swogi[card_id].name === "Clear Heart Sword Embryo" &&
+            this.players[0].quench_of_sword_heart_cloud_stacks > 0;
     }
     ignore_weaken() {
         this.players[0].ignore_weaken = true;
@@ -3812,6 +3875,24 @@ export class GameState {
         if (!this.try_downgrade_card(1, idx)) {
             this.deal_damage(dmg_amt);
         }
+    }
+    is_unrestrained_sword_except_for_ddc(card_id) {
+        return is_unrestrained_sword(card_id) ||
+            this.is_fake_unrestrained_sword(card_id);
+    }
+    is_cloud_sword_except_for_ddc(card_id) {
+        return is_cloud_sword(card_id) ||
+            this.is_fake_cloud_sword(card_id);
+    }
+    is_unrestrained_sword(card_id) {
+        return this.is_unrestrained_sword_except_for_ddc(card_id) ||
+            (this.players[0].dragon_devours_clouds_stacks > 0 &&
+                this.is_cloud_sword_except_for_ddc(card_id));
+    }
+    is_cloud_sword(card_id) {
+        return this.is_cloud_sword_except_for_ddc(card_id) ||
+            (this.players[0].dragon_devours_clouds_stacks > 0 &&
+                this.is_unrestrained_sword_except_for_ddc(card_id));
     }
 }
 
