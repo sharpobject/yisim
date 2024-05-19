@@ -64,7 +64,7 @@ const JOBS_FOR_MARKING = ["no marking", "el", "fu", "mu", "pa", "fm", "pm", "ft"
 function get_marking(card_id) {
     const sect = parseInt(card_id.substring(1, 2));
     const class_ = parseInt(card_id.substring(0, 1));
-    if (class_ === 1 || class_ === 2) {
+    if (class_ === 1 || class_ === 2 || class_ === 7) {
         if (sect > 0 && sect < SECTS_FOR_MARKING.length) {
             return SECTS_FOR_MARKING[parseInt(sect)];
         }

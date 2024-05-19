@@ -8415,5 +8415,314 @@
 			["add_c_of_x", 4, "underworld"],
 			["add_c_of_x", 12, "agility"]
 		]
+	},
+	"714011": {
+		"name": "Azure Dragon Sword Formation",
+		"actions": [
+			["def", 8],
+			["for_each_x_add_c_pct_y", "def", 33.333334, "sword_intent"]
+		]
+	},
+	"714012": {
+		"actions": [
+			["def", 8],
+			["for_each_x_add_c_pct_y", "def", 33.333334, "sword_intent"]
+		]
+	},
+	"714013": {
+		"actions": [
+			["def", 8],
+			["for_each_x_add_c_pct_y", "def", 33.333334, "sword_intent"]
+		]
+	},
+	"714021": {
+		"name": "Cloud Sword - Sunset Glow",
+		"actions": [
+			["add_c_of_x", 2, "sword_intent"],
+			["cloud_hit",
+				["for_each_x_add_c_y", "cloud_sword_chain_count", 2, "sword_intent"]]
+		]
+	},
+	"714022": {
+		"actions": [
+			["add_c_of_x", 2, "sword_intent"],
+			["cloud_hit",
+				["for_each_x_add_c_y", "cloud_sword_chain_count", 2, "sword_intent"]]
+		]
+	},
+	"714023": {
+		"actions": [
+			["add_c_of_x", 2, "sword_intent"],
+			["cloud_hit",
+				["for_each_x_add_c_y", "cloud_sword_chain_count", 2, "sword_intent"]]
+		]
+	},
+	"715011": {
+		"name": "Dragon Devours Clouds",
+		"actions": [
+			["add_c_of_x", 1, "unrestrained_sword_count"],
+			["continuous"],
+			["add_c_of_x", 1, "dragon_devours_clouds_stacks"]
+		]
+	},
+	"715012": {
+		"actions": [
+			["add_c_of_x", 1, "unrestrained_sword_count"],
+			["continuous"],
+			["add_c_of_x", 1, "dragon_devours_clouds_stacks"]
+		]
+	},
+	"715013": {
+		"actions": [
+			["add_c_of_x", 1, "unrestrained_sword_count"],
+			["continuous"],
+			["add_c_of_x", 1, "dragon_devours_clouds_stacks"]
+		]
+	},
+	"715021": {
+		"name": "Beast Spirit Sword Formation",
+		"actions": [
+			["qi", 2],
+			["continuous"],
+			["add_c_of_x", 1, "beast_spirit_sword_formation_stacks"]
+		]
+	},
+	"715022": {
+		"actions": [
+			["qi", 2],
+			["continuous"],
+			["add_c_of_x", 1, "beast_spirit_sword_formation_stacks"]
+		]
+	},
+	"715023": {
+		"actions": [
+			["qi", 2],
+			["continuous"],
+			["add_c_of_x", 1, "beast_spirit_sword_formation_stacks"]
+		]
+	},
+	"724011": {
+		"name": "Spiritual Divination",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 1, "spiritual_divination_stacks"]
+		]
+	},
+	"724012": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 1, "spiritual_divination_stacks"]
+		]
+	},
+	"724013": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 1, "spiritual_divination_stacks"]
+		]
+	},
+	"724021": {
+		"name": "Throw Petals",
+		"actions": [
+			["qi", 1],
+			["continuous"],
+			["add_c_of_x", 1, "throw_petals_stacks"]
+		]
+	},
+	"724022": {
+		"actions": [
+			["qi", 1],
+			["continuous"],
+			["add_c_of_x", 1, "throw_petals_stacks"]
+		]
+	},
+	"724023": {
+		"actions": [
+			["qi", 1],
+			["continuous"],
+			["add_c_of_x", 1, "throw_petals_stacks"]
+		]
+	},
+	"725011": {
+		"name": "Astral Move - Twin Swallows",
+		"actions": [
+			["star_point", ["add_c_of_x", 4, "bonus_atk_amt"]],
+			["atk", 4],
+			["chase"],
+			["post_action", ["add_c_of_x", 1, "bonus_rep_amt"]],
+			["rep", 0, ["atk", 4]]
+		]
+	},
+	"725012": {
+		"actions": [
+			["star_point", ["add_c_of_x", 4, "bonus_atk_amt"]],
+			["atk", 4],
+			["chase"],
+			["post_action", ["add_c_of_x", 1, "bonus_rep_amt"]],
+			["rep", 0, ["atk", 4]]
+		]
+	},
+	"725013": {
+		"actions": [
+			["star_point", ["add_c_of_x", 4, "bonus_atk_amt"]],
+			["atk", 4],
+			["chase"],
+			["post_action", ["add_c_of_x", 1, "bonus_rep_amt"]],
+			["rep", 0, ["atk", 4]]
+		]
+	},
+	"725021": {
+		"name": "Water Drop Erosion",
+		"actions": [
+			["atk", 1],
+			["post_action", ["add_enemy_c_of_x", 7, "internal_injury"]],
+			["if_enemy_has_debuff_do", ["chase"]]
+		]
+	},
+	"725022": {
+		"actions": [
+			["atk", 1],
+			["post_action", ["add_enemy_c_of_x", 7, "internal_injury"]],
+			["if_enemy_has_debuff_do", ["chase"]]
+		]
+	},
+	"725023": {
+		"actions": [
+			["atk", 1],
+			["post_action", ["add_enemy_c_of_x", 7, "internal_injury"]],
+			["if_enemy_has_debuff_do", ["chase"]]
+		]
+	},
+	"734011": {
+		"name": "Wild Crossing Seal",
+		"actions": [
+			["qi", 2],
+			["add_c_of_x", 1, "wild_crossing_seal_stacks"]
+		],
+		"opening": [
+			["activate_water_spirit"],
+			["activate_wood_spirit"]
+		]
+	},
+	"734012": {
+		"actions": [
+			["qi", 2],
+			["add_c_of_x", 1, "wild_crossing_seal_stacks"]
+		],
+		"opening": [
+			["activate_water_spirit"],
+			["activate_wood_spirit"]
+		]
+	},
+	"734013": {
+		"actions": [
+			["qi", 2],
+			["add_c_of_x", 1, "wild_crossing_seal_stacks"]
+		],
+		"opening": [
+			["activate_water_spirit"],
+			["activate_wood_spirit"]
+		]
+	},
+	"734021": {
+		"name": "Lava Seal",
+		"actions": [
+			["add_c_of_x", 10, "bonus_def_amt"],
+			["for_each_x_add_y", "def", "bonus_def_amt"],
+			["for_each_x_reduce_enemy_c_y", "bonus_def_amt", 1, "max_hp"],
+			["for_each_x_reduce_enemy_c_y", "bonus_def_amt", 1, "hp"]
+		],
+		"opening": [
+			["activate_fire_spirit"],
+			["activate_earth_spirit"]
+		]
+	},
+	"734022": {
+		"actions": [
+			["add_c_of_x", 10, "bonus_def_amt"],
+			["for_each_x_add_y", "def", "bonus_def_amt"],
+			["for_each_x_reduce_enemy_c_y", "bonus_def_amt", 1, "max_hp"],
+			["for_each_x_reduce_enemy_c_y", "bonus_def_amt", 1, "hp"]
+		],
+		"opening": [
+			["activate_fire_spirit"],
+			["activate_earth_spirit"]
+		]
+	},
+	"734023": {
+		"actions": [
+			["add_c_of_x", 10, "bonus_def_amt"],
+			["for_each_x_add_y", "def", "bonus_def_amt"],
+			["for_each_x_reduce_enemy_c_y", "bonus_def_amt", 1, "max_hp"],
+			["for_each_x_reduce_enemy_c_y", "bonus_def_amt", 1, "hp"]
+		],
+		"opening": [
+			["activate_fire_spirit"],
+			["activate_earth_spirit"]
+		]
+	},
+	"735011": {
+		"name": "Boulder Seal",
+		"actions": [
+			["for_each_x_add_c_y", "played_card_count", 2, "bonus_def_amt"],
+			["def", 2],
+			["chase"]
+		],
+		"opening": [
+			["activate_earth_spirit"],
+			["activate_metal_spirit"]
+		]
+	},
+	"735012": {
+		"actions": [
+			["for_each_x_add_c_y", "played_card_count", 2, "bonus_def_amt"],
+			["def", 2],
+			["chase"]
+		],
+		"opening": [
+			["activate_earth_spirit"],
+			["activate_metal_spirit"]
+		]
+	},
+	"735013": {
+		"actions": [
+			["for_each_x_add_c_y", "played_card_count", 2, "bonus_def_amt"],
+			["def", 2],
+			["chase"]
+		],
+		"opening": [
+			["activate_earth_spirit"],
+			["activate_metal_spirit"]
+		]
+	},
+	"735021": {
+		"name": "Wave Cutter Seal",
+		"actions": [
+			["qi", 2],
+			["for_each_x_add_c_y", "qi", 3, "penetrate"]
+		],
+		"opening": [
+			["activate_metal_spirit"],
+			["activate_water_spirit"]
+		]
+	},
+	"735022": {
+		"actions": [
+			["qi", 2],
+			["for_each_x_add_c_y", "qi", 3, "penetrate"]
+		],
+		"opening": [
+			["activate_metal_spirit"],
+			["activate_water_spirit"]
+		]
+	},
+	"735023": {
+		"actions": [
+			["qi", 2],
+			["for_each_x_add_c_y", "qi", 3, "penetrate"]
+		],
+		"opening": [
+			["activate_metal_spirit"],
+			["activate_water_spirit"]
+		]
 	}
 }
