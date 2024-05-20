@@ -39,7 +39,7 @@ function id_is_consumption(card_id) {
 }
 const SECTS = ["sw", "he", "fe", "dx"];
 const SECTS_FOR_MARKING = ["no marking"] + SECTS;
-const CHARACTER_ID_TO_NAME = {
+export const CHARACTER_ID_TO_NAME = {
     "sw1": "Mu Yifeng",
     "sw2": "Yan Xue",
     "sw3": "Long Yao",
@@ -197,6 +197,7 @@ for (var i=0; i<keys.length; i++) {
         water_spirit_cost_0_qi: water_spirit_cost_0_qi,
         actions: swogi[card_id].actions,
         opening: swogi[card_id].opening,
+        character: swogi[card_id].character,
         is_continuous: id_is_continuous(card_id),
         is_consumption: id_is_consumption(card_id),
         is_unrestrained_sword: is_unrestrained_sword(card_id),
@@ -1035,11 +1036,14 @@ export class GameState {
             }
         }
     }
-    do_opening(card_idx) {
+    do_opening(card_idx, trigger_idx) {
         const card_id = this.players[0].cards[card_idx];
         const action = swogi[card_id].opening;
         if (action === undefined) {
             return;
+        }
+        if (trigger_idx === undefined) {
+            trigger_idx = card_idx;
         }
         const prev_triggering_idx = this.players[0].currently_triggering_card_idx;
         const prev_triggering_id = this.players[0].currently_triggering_card_id;
@@ -1051,7 +1055,7 @@ export class GameState {
         const prev_bonus_reduce_enemy_max_hp_amt = this.players[0].bonus_reduce_enemy_max_hp_amt;
         const prev_bonus_heal_amt = this.players[0].bonus_heal_amt;
         const prev_this_trigger_directly_attacked = this.players[0].this_trigger_directly_attacked;
-        this.players[0].currently_triggering_card_idx = card_idx;
+        this.players[0].currently_triggering_card_idx = trigger_idx;
         this.players[0].currently_triggering_card_id = card_id;
         this.players[0].bonus_atk_amt = 0;
         this.players[0].bonus_dmg_amt = 0;
@@ -3096,7 +3100,7 @@ export class GameState {
             if (opening !== undefined) {
                 n_cards -= 1;
                 for (var i=0; i<reps_per_card; i++) {
-                    this.do_opening(idx);
+                    this.do_opening(idx, my_idx);
                 }
             }
             idx += step;
@@ -3894,6 +3898,12 @@ export class GameState {
             (this.players[0].dragon_devours_clouds_stacks > 0 &&
                 this.is_unrestrained_sword_except_for_ddc(card_id));
     }
+}
+
+
+
+export function guess_character(player) {
+    
 }
 
 //module.exports = { GameState, card_name_to_id_fuzzy, swogi };
