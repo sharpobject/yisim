@@ -1,4 +1,4 @@
-import { GameState, card_name_to_id_fuzzy, swogi, format_card } from "./gamestate.js";
+import { GameState, card_name_to_id_fuzzy, swogi, format_card, CHARACTER_ID_TO_NAME } from "./gamestate.js";
 import os from 'os';
 
 // a generator that takes an array and k and generates all k-combinations of the array's elements
@@ -1093,7 +1093,47 @@ riddles["221"] = async () => {
     players[enemy_idx].quench_of_sword_heart_ultimate_stacks = 1;
     return await do_riddle({players: players, my_idx: my_idx});
 };
-await riddles["221"]();
+//await riddles["221"]();
+riddles["222"] = async () => {
+    const players = [{},{}];
+    const my_idx = 1;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 76;
+    players[enemy_idx].cultivation = 100;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 117;
+    players[my_idx].cultivation = 100;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "spiritage elixir 3",
+        "wood fragrant 3",
+        "wood forest guard 3",
+        "wood thorn 2",
+        "fire blazing prairie 2",
+        "wood willow leaf 3",
+        "wood thorn 3",
+        "wood forest guard",
+    ];
+    players[enemy_idx].cards = [
+        "earth spirit secret seal",
+        "five elements heavenly marrow rhythm 3",
+        "fate reincarnates 2",
+        "calamity plaguin 2",
+        "calamity plaguin",
+        "god opportunity reversal",
+        "earth spirit combine world 2",
+        "earth spirit steep 2",
+    ];
+    players[my_idx].mark_of_five_elements_stacks = 1;
+    players[enemy_idx].flame_soul_rebirth_stacks = 1;
+    players[enemy_idx].swift_burning_seal_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+await riddles["222"]();
 console.log("done");
 
 /*

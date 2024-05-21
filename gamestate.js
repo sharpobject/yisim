@@ -396,6 +396,7 @@ class Player {
         // cloud sword sect legendary cards
         this.dragon_devours_clouds_stacks = 0;
         this.beast_spirit_sword_formation_stacks = 0;
+        this.triggered_beast_spirit_sword_formation = false;
         // heptastar sect normal cards
         this.hexagram = 0;
         this.star_power = 0;
@@ -654,6 +655,7 @@ class Player {
         this.p3_concentrated_element_stacks = 0;
         this.p4_concentrated_element_stacks = 0;
         this.p5_concentrated_element_stacks = 0;
+        this.reviving = false;
         // duan xuan sect immortal fates
         this.unbounded_qi_stacks = 0;
         this.unwavering_soul_stacks = 0;
@@ -762,7 +764,6 @@ export class GameState {
         this.players[1] = new Player();
         this.output = [];
         this.used_randomness = false;
-        this.reviving = false;
     }
     crash() {
         this.dump();
@@ -1160,9 +1161,6 @@ export class GameState {
         if (Array.isArray(arr[0])) {
             for (var i=0; i<arr.length; i++) {
                 ret = this.do_action(arr[i]);
-                if (this.game_over) {
-                    return ret;
-                }
             }
             return ret;
         }
@@ -1207,7 +1205,7 @@ export class GameState {
     }
     do_cloud_sword_chain_count(card_id) {
         // if this card has "Cloud Sword" in the name, increment cloud_sword_chain_count
-        if (swogi[card_id].name.includes("Cloud Sword")) {
+        if (this.is_cloud_sword(card_id)) {
             this.players[0].cloud_sword_chain_count += 1;
             this.log("incremented cloud_sword_chain_count to " + this.players[0].cloud_sword_chain_count);
         } else {
@@ -1227,28 +1225,39 @@ export class GameState {
         }
     }
     do_step_moon_into_cloud(card_id) {
+        if (this.players[0].step_moon_into_cloud_stacks === 0) {
+            return;
+        }
         if (this.is_cloud_sword(card_id)) {
             this.for_each_x_add_y("step_moon_into_cloud_stacks", "increase_atk");
         }
     }
     do_emptiness_sword_formation(card_id) {
+        const atk = this.players[0].emptiness_sword_formation_stacks;
+        if (atk === 0) {
+            return;
+        }
         if (this.players[0].trigger_depth > 1) {
             return;
         }
-        const atk = this.players[0].emptiness_sword_formation_stacks;
-        if (atk > 0) {
-            if (is_sword_formation(card_id)) {
-                this.log("Attacking for " + atk + " from emptiness sword formation.");
-                this.atk(atk);
-            }
+        if (is_sword_formation(card_id)) {
+            this.log("Attacking for " + atk + " from emptiness sword formation.");
+            this.atk(atk);
         }
     }
     do_beast_spirit_sword_formation(card_id) {
+        const stacks = this.players[0].beast_spirit_sword_formation_stacks;
+        if (stacks === 0) {
+            return;
+        }
         if (this.players[0].trigger_depth > 1) {
             return;
         }
-        const dmg = this.players[0].beast_spirit_sword_formation_stacks *
-                    this.players[0].qi;
+        if (this.players[0].triggered_beast_spirit_sword_formation) {
+            return;
+        }
+        this.players[0].triggered_beast_spirit_sword_formation = true;
+        const dmg = stacks * this.players[0].qi;
         if (dmg > 0) {
             if (is_sword_formation(card_id) || is_spirit_sword(card_id)) {
                 this.log("Dealing " + dmg + " damage from beast spirit sword formation.");
@@ -1697,9 +1706,7 @@ export class GameState {
             }
         }
         for (var i=0; i<plays; i++) {
-            if (!this.game_over) {
-                this.play_card_inner(card_id, idx);
-            }
+            this.play_card_inner(card_id, idx);
             this.players[0].played_card_count += 1;
         }
         this.players[0].currently_playing_card_idx = undefined;
@@ -2083,6 +2090,7 @@ export class GameState {
         this.players[0].chases = 0;
         this.players[0].this_turn_attacked = false;
         this.players[0].elusive_footwork_triggered = false;
+        this.players[0].triggered_beast_spirit_sword_formation = false;
         this.do_def_decay();
         this.reduce_idx_x_by_c(0, "metal_spirit_iron_bone_stacks", 1);
         this.reduce_idx_x_by_c(0, "water_spirit_dive_stacks", 1);
@@ -2106,22 +2114,23 @@ export class GameState {
         this.do_spiritage_formation();
         this.do_ultimate_hexagram_base();
         this.do_water_spirit_spring_rain();
-        if (this.check_idx_for_death(0)) {
+        if (this.check_for_death()) {
             return;
         }
         var action_idx = 0;
+        var can_act = true;
         if (this.players[0].cannot_act_stacks > 0) {
             this.reduce_idx_x_by_c(0, "cannot_act_stacks", 1);
-            action_idx = 9999;
+            can_act = false;
         }
         if (this.players[0].predicament_for_immortals_stacks > 0) {
             this.players[0].max_chases = 0;
         }
-        while (action_idx <= this.players[0].chases && action_idx <= this.players[0].max_chases) {
+        while (action_idx <= this.players[0].chases && action_idx <= this.players[0].max_chases && can_act) {
             this.do_shadow_owl_rabbit_lose_hp(action_idx);
             this.do_octgates_lock_formation(action_idx);
             this.do_devouring_ancient_vine(action_idx);
-            if (this.check_idx_for_death(0) || this.check_idx_for_death(1)) {
+            if (this.check_for_death()) {
                 return;
             }
             const can_flying_brush_chase = this.players[0].flying_brush_stacks > 0;
@@ -2229,7 +2238,7 @@ export class GameState {
                 this.do_nether_void_canine(card_idx);
                 card_id = this.players[0].cards[card_idx];
                 this.play_card(card_id, card_idx);
-                if (this.game_over) {
+                if (this.check_for_death()) {
                     return;
                 }
                 this.log("player 0 finished playing " + card.name);
@@ -2242,7 +2251,7 @@ export class GameState {
                 this.process_this_card_chases();
             }
         }
-        if (this.check_idx_for_death(0)) {
+        if (this.check_for_death()) {
             return;
         }
         this.do_toxin_immunity();
@@ -2258,7 +2267,7 @@ export class GameState {
         this.reduce_idx_x_by_c(0, "flaw", 1);
         this.reduce_idx_x_by_c(0, "weaken", 1);
         this.reduce_idx_x_by_c(0, "metal_spirit_chokehold_stacks", 1);
-        if (this.check_idx_for_death(1)) {
+        if (this.check_for_death()) {
             return;
         }
     }
@@ -2386,7 +2395,7 @@ export class GameState {
             return 0;
         }
         const prev_hp = this.players[idx].hp;
-        if (prev_hp <= 0 && !this.reviving) {
+        if (prev_hp <= 0 && !this.players[idx].reviving) {
             this.log("refusing to heal a dead player");
             return 0;
         }
@@ -2831,9 +2840,6 @@ export class GameState {
     atk(dmg) {
         if (this.players[0].apparition_confusion_stacks > 0) {
             this.reduce_my_hp(this.players[0].apparition_confusion_stacks);
-            if (this.check_idx_for_death(0)) {
-                return;
-            }
         }
         if (this.players[1].repel_citta_dharma_stacks > 0) {
             const repel_dmg = this.players[1].repel_citta_dharma_stacks;
@@ -3177,6 +3183,19 @@ export class GameState {
     do_thorns_spear_thing() {
         this.players[0].bonus_atk_amt += Math.floor(this.players[1].def / 2);
     }
+    check_for_death() {
+        while (this.players[0].hp <= 0 ||
+            this.players[0].destiny <= 0 ||
+            this.players[1].hp <= 0 ||
+            this.players[1].destiny <= 0) {
+            this.check_idx_for_death(0);
+            this.check_idx_for_death(1);
+            if (this.game_over) {
+                return true;
+            }
+        }
+        return false;
+    }
     check_idx_for_death(idx) {
         if (this.players[idx].destiny <= 0) {
             this.players[idx].hp = 0;
@@ -3190,15 +3209,15 @@ export class GameState {
                 this.reduce_idx_x_by_c(idx, "ashes_phoenix_stacks", amt);
                 const heal_amt = amt - this.players[idx].hp;
                 this.increase_idx_x_by_c(idx, "max_hp", amt);
-                this.reviving = true;
+                this.players[idx].reviving = true;
                 this.increase_idx_x_by_c(idx, "hp", heal_amt);
-                this.reviving = false;
+                this.players[idx].reviving = false;
             } else if (this.players[idx].flame_soul_rebirth_stacks > 0) {
                 this.reduce_idx_x_by_c(idx, "flame_soul_rebirth_stacks", 1);
                 this.set_idx_c_of_x(idx, 15, "max_hp");
-                this.reviving = true;
+                this.players[idx].reviving = true;
                 this.set_idx_c_of_x(idx, 15, "hp");
-                this.reviving = false;
+                this.players[idx].reviving = false;
             } else {
                 this.game_over = true;
                 this.log("player " + idx + " has died of hp loss");

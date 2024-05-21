@@ -8520,14 +8520,14 @@
 	},
 	"715022": {
 		"actions": [
-			["qi", 2],
+			["qi", 3],
 			["continuous"],
 			["add_c_of_x", 1, "beast_spirit_sword_formation_stacks"]
 		]
 	},
 	"715023": {
 		"actions": [
-			["qi", 2],
+			["qi", 4],
 			["continuous"],
 			["add_c_of_x", 1, "beast_spirit_sword_formation_stacks"]
 		]
