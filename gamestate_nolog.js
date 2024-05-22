@@ -2045,7 +2045,7 @@ export class GameState {
         }
     }
     do_skip_next_card() {
-        if (this.players[0].skip_next_card_stacks > 0) {
+        if (this.players[0].skip_to_previous_card_stacks > 0) {
             this.players[0].card_play_direction *= -1;
             while (this.players[0].skip_to_previous_card_stacks > 0) {
                 this.players[0].skip_to_previous_card_stacks -= 1;

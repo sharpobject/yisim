@@ -1133,7 +1133,46 @@ riddles["222"] = async () => {
     players[enemy_idx].swift_burning_seal_stacks = 1;
     return await do_riddle({players: players, my_idx: my_idx});
 };
-await riddles["222"]();
+//await riddles["222"]();
+riddles["223"] = async () => {
+    const players = [{},{}];
+    const my_idx = 1;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 110;
+    players[enemy_idx].cultivation = 100;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 110;
+    players[my_idx].cultivation = 80;
+    players[my_idx].physique = 80;
+    players[my_idx].max_physique = 85;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "heavenly forceage 3",
+        "break pots and sink boats",
+        "meru formation 3",
+        "normal attack",
+        "normal attack",
+        "normal attack",
+        "exercise soul 3",
+        "exercise soul 2",
+    ];
+    players[enemy_idx].cards = [
+        "hunter hunting hunter 2",
+        "escape plan 3",
+        "great spirit 2",
+        "echo formation",
+        "normal attack",
+        "normal attack",
+        "echo formation 2",
+        "only traces 2",
+    ];
+    //players[my_idx].stance_of_fierce_attack_stacks = 1;
+    players[enemy_idx].birdie_wind_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx, just_run: true});
+};
+await riddles["223"]();
 console.log("done");
 
 /*
