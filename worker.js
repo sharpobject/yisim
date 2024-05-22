@@ -3,18 +3,18 @@ const { GameState: GameStateWithLog } = require("./gamestate.js");
 
 
 function next_permutation(arr) {
-    var i = arr.length - 1;
+    let i = arr.length - 1;
     while (i > 0 && arr[i-1] >= arr[i]) {
         i -= 1;
     }
     if (i === 0) {
         return false;
     }
-    var j = arr.length - 1;
+    let j = arr.length - 1;
     while (arr[j] <= arr[i-1]) {
         j -= 1;
     }
-    var temp = arr[i-1];
+    let temp = arr[i-1];
     arr[i-1] = arr[j];
     arr[j] = temp;
     j = arr.length - 1;
@@ -39,10 +39,10 @@ onmessage = (event) => {
     const winning_decks = [];
     const winning_margins = [];
     const winning_logs = [];
-    var try_idx = 0;
-    var best_winning_margin = -99999;
+    let try_idx = 0;
+    let best_winning_margin = -99999;
     if (event.data.just_run) {
-        var game = new GameStateWithLog();
+        let game = new GameStateWithLog();
         for (let key in players[my_idx]) {
             game.players[my_idx][key] = players[my_idx][key];
         }
@@ -59,7 +59,7 @@ onmessage = (event) => {
     } else {
         do {
             try_idx += 1;
-            var game = new GameState();
+            let game = new GameState();
             for (let key in players[my_idx]) {
                 game.players[my_idx][key] = players[my_idx][key];
             }
@@ -77,7 +77,7 @@ onmessage = (event) => {
                     best_winning_margin = winning_margin;
                     winning_decks.push(p_combo);
                     winning_margins.push(winning_margin);
-                    var game_with_log = new GameStateWithLog();
+                    let game_with_log = new GameStateWithLog();
                     for (let key in players[my_idx]) {
                         game_with_log.players[my_idx][key] = players[my_idx][key];
                     }

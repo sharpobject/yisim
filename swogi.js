@@ -10,19 +10,19 @@ function* k_combinations(arr, k) {
     if (arr.length < k) {
         return;
     }
-    var head = arr[0];
-    var tail = arr.slice(1);
-    for (var subcombo of k_combinations(tail, k-1)) {
+    let head = arr[0];
+    let tail = arr.slice(1);
+    for (let subcombo of k_combinations(tail, k-1)) {
         yield [head, ...subcombo];
     }
-    for (var subcombo of k_combinations(tail, k)) {
+    for (let subcombo of k_combinations(tail, k)) {
         yield subcombo;
     }
 }
 
-var riddles = {};
+let riddles = {};
 function fixup_deck(deck) {
-    for (var i=0; i<deck.length; i++) {
+    for (let i=0; i<deck.length; i++) {
         if (swogi[deck[i]] == undefined) {
             deck[i] = card_name_to_id_fuzzy(deck[i]);
         }
@@ -34,10 +34,10 @@ function handle_response(riddle, response) {
     const winning_margins = response.winning_margins;
     const winning_logs = response.winning_logs;
     console.log("got response with " + winning_decks.length + " winning decks");
-    for (var i=0; i<winning_decks.length; i++) {
+    for (let i=0; i<winning_decks.length; i++) {
         if (winning_margins[i] > riddle.best_winning_margin) {
             riddle.best_winning_margin = winning_margins[i];
-            for (var j=0; j<winning_decks[i].length; j++) {
+            for (let j=0; j<winning_decks[i].length; j++) {
                 winning_decks[i][j] = format_card(winning_decks[i][j]);
             }
             console.log(winning_logs[i].join("\n"));
@@ -112,22 +112,22 @@ async function do_riddle(riddle) {
         messages_outstanding[0] += 1;
         workers[0].postMessage(riddle);
     } else {
-        var combo_idx = 0;
+        let combo_idx = 0;
         const tried_combos = {};
-        for (var combo of k_combinations(my_cards, 8)) {
+        for (let combo of k_combinations(my_cards, 8)) {
             combo_idx += 1;
             console.log("combo_idx: " + combo_idx);
             // sort the combo
             combo.sort();
-            var combo_id = combo.join(",");
+            let combo_id = combo.join(",");
             if (tried_combos[combo_id]) {
                 continue;
             }
             tried_combos[combo_id] = true;
             // if this combo has 3 or more continuous/consumption cards, skip it
-            var normal_attack_count = 0;
-            var concon_count = 0;
-            for (var i=0; i<8; i++) {
+            let normal_attack_count = 0;
+            let concon_count = 0;
+            for (let i=0; i<8; i++) {
                 if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
                     concon_count += 1;
                 }
@@ -137,8 +137,8 @@ async function do_riddle(riddle) {
             }
             console.log("concon_count: " + concon_count);
             // if there is a ready worker, send the message
-            var worker_idx = -1;
-            for (var i=0; i<numCores; i++) {
+            let worker_idx = -1;
+            for (let i=0; i<numCores; i++) {
                 if (messages_outstanding[i] == 0) {
                     worker_idx = i;
                     break;
@@ -146,7 +146,7 @@ async function do_riddle(riddle) {
             }
             if (worker_idx == -1) {
                 // wait for a message to come back
-                var response = await getMessage();
+                let response = await getMessage();
                 worker_idx = response.worker_idx;
                 handle_response(riddle, response);
             }
@@ -158,13 +158,13 @@ async function do_riddle(riddle) {
         }
     }
     // wait for all messages to come back
-    var total_messages_outstanding = 0;
-    for (var i=0; i<numCores; i++) {
+    let total_messages_outstanding = 0;
+    for (let i=0; i<numCores; i++) {
         total_messages_outstanding += messages_outstanding[i];
     }
     console.log("total_messages_outstanding: " + total_messages_outstanding);
     while (total_messages_outstanding > 0) {
-        var response = await getMessage();
+        let response = await getMessage();
         handle_response(riddle, response);
         total_messages_outstanding -= 1;
     }
@@ -1207,38 +1207,38 @@ riddles["100"] = () => {
         "cloud sword avalanche",
     ];
     fixup_deck(my_cards);
-    //for (var i=0; i<my_cards.length; i++) {
+    //for (let i=0; i<my_cards.length; i++) {
     //    console.log(format_card(my_cards[i]));
     //}
     fixup_deck(enemy_cards);
-    //for (var i=0; i<enemy_cards.length; i++) {
+    //for (let i=0; i<enemy_cards.length; i++) {
     //    console.log(format_card(enemy_cards[i]));
     //}
     //return;
-    var go = true;
-    var combo_idx = 0;
+    let go = true;
+    let combo_idx = 0;
     // my_basic_deck is just my_cards entries 0-7
-    var my_basic_deck = my_cards.slice(0, 8);
-    var max_turns_game = undefined;
-    var max_turns = 0;
-    var best_winning_margin = 0;
-    var tried_combos = {};
-    for (var combo of k_combinations(my_cards, 8)) {
+    let my_basic_deck = my_cards.slice(0, 8);
+    let max_turns_game = undefined;
+    let max_turns = 0;
+    let best_winning_margin = 0;
+    let tried_combos = {};
+    for (let combo of k_combinations(my_cards, 8)) {
         combo_idx += 1;
         console.log("combo_idx: " + combo_idx);
         // sort the combo
         combo.sort();
         // append all the card ids together separated by commas
-        var combo_id = combo.join(",");
+        let combo_id = combo.join(",");
         if (tried_combos[combo_id]) {
             continue;
         }
         tried_combos[combo_id] = true;
         // if this combo has 3 or more continuous/consumption cards, skip it
 
-        var normal_attack_count = 0;
-        var concon_count = 0;
-        for (var i=0; i<8; i++) {
+        let normal_attack_count = 0;
+        let concon_count = 0;
+        for (let i=0; i<8; i++) {
             if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
                 concon_count += 1;
             }
@@ -1253,11 +1253,11 @@ riddles["100"] = () => {
             //continue;
         }
         console.log("concon_count: " + concon_count);
-        var try_idx = 0;
+        let try_idx = 0;
         do {
             try_idx += 1;
-            var game = new GameState();
-            //for (var i=0; i<8; i++) {
+            let game = new GameState();
+            //for (let i=0; i<8; i++) {
             //    temp_combo[i] = temp_combo[i].replace(".0", "");
             //}
             const my_idx = 1;
@@ -1280,7 +1280,7 @@ riddles["100"] = () => {
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
                     best_winning_margin = winning_margin;
-                    for (var i=0; i<8; i++) {
+                    for (let i=0; i<8; i++) {
                         p_combo[i] = format_card(p_combo[i]);
                     }
                     game.dump();
@@ -1324,38 +1324,38 @@ riddles["101"] = () => {
         "cloud sword avalanche",
     ];
     fixup_deck(my_cards);
-    //for (var i=0; i<my_cards.length; i++) {
+    //for (let i=0; i<my_cards.length; i++) {
     //    console.log(format_card(my_cards[i]));
     //}
     fixup_deck(enemy_cards);
-    //for (var i=0; i<enemy_cards.length; i++) {
+    //for (let i=0; i<enemy_cards.length; i++) {
     //    console.log(format_card(enemy_cards[i]));
     //}
     //return;
-    var go = true;
-    var combo_idx = 0;
+    let go = true;
+    let combo_idx = 0;
     // my_basic_deck is just my_cards entries 0-7
-    var my_basic_deck = my_cards.slice(0, 8);
-    var max_turns_game = undefined;
-    var max_turns = 0;
-    var best_winning_margin = 0;
-    var tried_combos = {};
-    for (var combo of k_combinations(my_cards, 8)) {
+    let my_basic_deck = my_cards.slice(0, 8);
+    let max_turns_game = undefined;
+    let max_turns = 0;
+    let best_winning_margin = 0;
+    let tried_combos = {};
+    for (let combo of k_combinations(my_cards, 8)) {
         combo_idx += 1;
         console.log("combo_idx: " + combo_idx);
         // sort the combo
         combo.sort();
         // append all the card ids together separated by commas
-        var combo_id = combo.join(",");
+        let combo_id = combo.join(",");
         if (tried_combos[combo_id]) {
             continue;
         }
         tried_combos[combo_id] = true;
         // if this combo has 3 or more continuous/consumption cards, skip it
 
-        var normal_attack_count = 0;
-        var concon_count = 0;
-        for (var i=0; i<8; i++) {
+        let normal_attack_count = 0;
+        let concon_count = 0;
+        for (let i=0; i<8; i++) {
             if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
                 concon_count += 1;
             }
@@ -1370,11 +1370,11 @@ riddles["101"] = () => {
             //continue;
         }
         console.log("concon_count: " + concon_count);
-        var try_idx = 0;
+        let try_idx = 0;
         do {
             try_idx += 1;
-            var game = new GameState();
-            //for (var i=0; i<8; i++) {
+            let game = new GameState();
+            //for (let i=0; i<8; i++) {
             //    temp_combo[i] = temp_combo[i].replace(".0", "");
             //}
             const my_idx = 1;
@@ -1397,7 +1397,7 @@ riddles["101"] = () => {
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
                     best_winning_margin = winning_margin;
-                    for (var i=0; i<8; i++) {
+                    for (let i=0; i<8; i++) {
                         p_combo[i] = format_card(p_combo[i]);
                     }
                     game.dump();
@@ -1448,38 +1448,38 @@ riddles["102"] = () => {
         "inspiration sword",
     ];
     fixup_deck(my_cards);
-    //for (var i=0; i<my_cards.length; i++) {
+    //for (let i=0; i<my_cards.length; i++) {
     //    console.log(format_card(my_cards[i]));
     //}
     fixup_deck(enemy_cards);
-    //for (var i=0; i<enemy_cards.length; i++) {
+    //for (let i=0; i<enemy_cards.length; i++) {
     //    console.log(format_card(enemy_cards[i]));
     //}
     //return;
-    var go = true;
-    var combo_idx = 0;
+    let go = true;
+    let combo_idx = 0;
     // my_basic_deck is just my_cards entries 0-7
-    var my_basic_deck = my_cards.slice(0, 8);
-    var max_turns_game = undefined;
-    var max_turns = 0;
-    var best_winning_margin = 0;
-    var tried_combos = {};
-    for (var combo of k_combinations(my_cards, 8)) {
+    let my_basic_deck = my_cards.slice(0, 8);
+    let max_turns_game = undefined;
+    let max_turns = 0;
+    let best_winning_margin = 0;
+    let tried_combos = {};
+    for (let combo of k_combinations(my_cards, 8)) {
         combo_idx += 1;
         console.log("combo_idx: " + combo_idx);
         // sort the combo
         combo.sort();
         // append all the card ids together separated by commas
-        var combo_id = combo.join(",");
+        let combo_id = combo.join(",");
         if (tried_combos[combo_id]) {
             continue;
         }
         tried_combos[combo_id] = true;
         // if this combo has 3 or more continuous/consumption cards, skip it
 
-        var normal_attack_count = 0;
-        var concon_count = 0;
-        for (var i=0; i<8; i++) {
+        let normal_attack_count = 0;
+        let concon_count = 0;
+        for (let i=0; i<8; i++) {
             if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
                 concon_count += 1;
             }
@@ -1494,11 +1494,11 @@ riddles["102"] = () => {
             //continue;
         }
         console.log("concon_count: " + concon_count);
-        var try_idx = 0;
+        let try_idx = 0;
         do {
             try_idx += 1;
-            var game = new GameState();
-            //for (var i=0; i<8; i++) {
+            let game = new GameState();
+            //for (let i=0; i<8; i++) {
             //    temp_combo[i] = temp_combo[i].replace(".0", "");
             //}
             const my_idx = 1;
@@ -1523,7 +1523,7 @@ riddles["102"] = () => {
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
                     best_winning_margin = winning_margin;
-                    for (var i=0; i<8; i++) {
+                    for (let i=0; i<8; i++) {
                         p_combo[i] = format_card(p_combo[i]);
                     }
                     game.dump();
@@ -1568,38 +1568,38 @@ riddles["103"] = () => {
         "astral fly",
     ];
     fixup_deck(my_cards);
-    //for (var i=0; i<my_cards.length; i++) {
+    //for (let i=0; i<my_cards.length; i++) {
     //    console.log(format_card(my_cards[i]));
     //}
     fixup_deck(enemy_cards);
-    //for (var i=0; i<enemy_cards.length; i++) {
+    //for (let i=0; i<enemy_cards.length; i++) {
     //    console.log(format_card(enemy_cards[i]));
     //}
     //return;
-    var go = true;
-    var combo_idx = 0;
+    let go = true;
+    let combo_idx = 0;
     // my_basic_deck is just my_cards entries 0-7
-    var my_basic_deck = my_cards.slice(0, 8);
-    var max_turns_game = undefined;
-    var max_turns = 0;
-    var best_winning_margin = 0;
-    var tried_combos = {};
-    for (var combo of k_combinations(my_cards, 8)) {
+    let my_basic_deck = my_cards.slice(0, 8);
+    let max_turns_game = undefined;
+    let max_turns = 0;
+    let best_winning_margin = 0;
+    let tried_combos = {};
+    for (let combo of k_combinations(my_cards, 8)) {
         combo_idx += 1;
         console.log("combo_idx: " + combo_idx);
         // sort the combo
         combo.sort();
         // append all the card ids together separated by commas
-        var combo_id = combo.join(",");
+        let combo_id = combo.join(",");
         if (tried_combos[combo_id]) {
             continue;
         }
         tried_combos[combo_id] = true;
         // if this combo has 3 or more continuous/consumption cards, skip it
 
-        var normal_attack_count = 0;
-        var concon_count = 0;
-        for (var i=0; i<8; i++) {
+        let normal_attack_count = 0;
+        let concon_count = 0;
+        for (let i=0; i<8; i++) {
             if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
                 concon_count += 1;
             }
@@ -1614,11 +1614,11 @@ riddles["103"] = () => {
             //continue;
         }
         console.log("concon_count: " + concon_count);
-        var try_idx = 0;
+        let try_idx = 0;
         do {
             try_idx += 1;
-            var game = new GameState();
-            //for (var i=0; i<8; i++) {
+            let game = new GameState();
+            //for (let i=0; i<8; i++) {
             //    temp_combo[i] = temp_combo[i].replace(".0", "");
             //}
             const my_idx = 1;
@@ -1641,7 +1641,7 @@ riddles["103"] = () => {
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
                     best_winning_margin = winning_margin;
-                    for (var i=0; i<8; i++) {
+                    for (let i=0; i<8; i++) {
                         p_combo[i] = format_card(p_combo[i]);
                     }
                     game.dump();
@@ -1687,38 +1687,38 @@ riddles["104"] = () => {
         "soul cleaving 3",
     ];
     fixup_deck(my_cards);
-    //for (var i=0; i<my_cards.length; i++) {
+    //for (let i=0; i<my_cards.length; i++) {
     //    console.log(format_card(my_cards[i]));
     //}
     fixup_deck(enemy_cards);
-    //for (var i=0; i<enemy_cards.length; i++) {
+    //for (let i=0; i<enemy_cards.length; i++) {
     //    console.log(format_card(enemy_cards[i]));
     //}
     //return;
-    var go = true;
-    var combo_idx = 0;
+    let go = true;
+    let combo_idx = 0;
     // my_basic_deck is just my_cards entries 0-7
-    var my_basic_deck = my_cards.slice(0, 8);
-    var max_turns_game = undefined;
-    var max_turns = 0;
-    var best_winning_margin = 0;
-    var tried_combos = {};
-    for (var combo of k_combinations(my_cards, 8)) {
+    let my_basic_deck = my_cards.slice(0, 8);
+    let max_turns_game = undefined;
+    let max_turns = 0;
+    let best_winning_margin = 0;
+    let tried_combos = {};
+    for (let combo of k_combinations(my_cards, 8)) {
         combo_idx += 1;
         console.log("combo_idx: " + combo_idx);
         // sort the combo
         combo.sort();
         // append all the card ids together separated by commas
-        var combo_id = combo.join(",");
+        let combo_id = combo.join(",");
         if (tried_combos[combo_id]) {
             continue;
         }
         tried_combos[combo_id] = true;
         // if this combo has 3 or more continuous/consumption cards, skip it
 
-        var normal_attack_count = 0;
-        var concon_count = 0;
-        for (var i=0; i<8; i++) {
+        let normal_attack_count = 0;
+        let concon_count = 0;
+        for (let i=0; i<8; i++) {
             if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
                 concon_count += 1;
             }
@@ -1733,11 +1733,11 @@ riddles["104"] = () => {
             //continue;
         }
         console.log("concon_count: " + concon_count);
-        var try_idx = 0;
+        let try_idx = 0;
         do {
             try_idx += 1;
-            var game = new GameState();
-            //for (var i=0; i<8; i++) {
+            let game = new GameState();
+            //for (let i=0; i<8; i++) {
             //    temp_combo[i] = temp_combo[i].replace(".0", "");
             //}
             const my_idx = 1;
@@ -1760,7 +1760,7 @@ riddles["104"] = () => {
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
                     best_winning_margin = winning_margin;
-                    for (var i=0; i<8; i++) {
+                    for (let i=0; i<8; i++) {
                         p_combo[i] = format_card(p_combo[i]);
                     }
                     game.dump();
@@ -1808,38 +1808,38 @@ riddles["105"] = () => {
         "chain sword formation 2",
     ];
     fixup_deck(my_cards);
-    //for (var i=0; i<my_cards.length; i++) {
+    //for (let i=0; i<my_cards.length; i++) {
     //    console.log(format_card(my_cards[i]));
     //}
     fixup_deck(enemy_cards);
-    //for (var i=0; i<enemy_cards.length; i++) {
+    //for (let i=0; i<enemy_cards.length; i++) {
     //    console.log(format_card(enemy_cards[i]));
     //}
     //return;
-    var go = true;
-    var combo_idx = 0;
+    let go = true;
+    let combo_idx = 0;
     // my_basic_deck is just my_cards entries 0-7
-    var my_basic_deck = my_cards.slice(0, 8);
-    var max_turns_game = undefined;
-    var max_turns = 0;
-    var best_winning_margin = 0;
-    var tried_combos = {};
-    for (var combo of k_combinations(my_cards, 8)) {
+    let my_basic_deck = my_cards.slice(0, 8);
+    let max_turns_game = undefined;
+    let max_turns = 0;
+    let best_winning_margin = 0;
+    let tried_combos = {};
+    for (let combo of k_combinations(my_cards, 8)) {
         combo_idx += 1;
         console.log("combo_idx: " + combo_idx);
         // sort the combo
         combo.sort();
         // append all the card ids together separated by commas
-        var combo_id = combo.join(",");
+        let combo_id = combo.join(",");
         if (tried_combos[combo_id]) {
             continue;
         }
         tried_combos[combo_id] = true;
         // if this combo has 3 or more continuous/consumption cards, skip it
 
-        var normal_attack_count = 0;
-        var concon_count = 0;
-        for (var i=0; i<8; i++) {
+        let normal_attack_count = 0;
+        let concon_count = 0;
+        for (let i=0; i<8; i++) {
             if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
                 concon_count += 1;
             }
@@ -1854,11 +1854,11 @@ riddles["105"] = () => {
             //continue;
         }
         console.log("concon_count: " + concon_count);
-        var try_idx = 0;
+        let try_idx = 0;
         do {
             try_idx += 1;
-            var game = new GameState();
-            //for (var i=0; i<8; i++) {
+            let game = new GameState();
+            //for (let i=0; i<8; i++) {
             //    temp_combo[i] = temp_combo[i].replace(".0", "");
             //}
             const my_idx = 0;
@@ -1882,7 +1882,7 @@ riddles["105"] = () => {
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
                     best_winning_margin = winning_margin;
-                    for (var i=0; i<8; i++) {
+                    for (let i=0; i<8; i++) {
                         p_combo[i] = format_card(p_combo[i]);
                     }
                     game.dump();
@@ -1930,38 +1930,38 @@ riddles["106"] = () => {
         "ice incantation 2",
     ];
     fixup_deck(my_cards);
-    //for (var i=0; i<my_cards.length; i++) {
+    //for (let i=0; i<my_cards.length; i++) {
     //    console.log(format_card(my_cards[i]));
     //}
     fixup_deck(enemy_cards);
-    //for (var i=0; i<enemy_cards.length; i++) {
+    //for (let i=0; i<enemy_cards.length; i++) {
     //    console.log(format_card(enemy_cards[i]));
     //}
     //return;
-    var go = true;
-    var combo_idx = 0;
+    let go = true;
+    let combo_idx = 0;
     // my_basic_deck is just my_cards entries 0-7
-    var my_basic_deck = my_cards.slice(0, 8);
-    var max_turns_game = undefined;
-    var max_turns = 0;
-    var best_winning_margin = 0;
-    var tried_combos = {};
-    for (var combo of k_combinations(my_cards, 8)) {
+    let my_basic_deck = my_cards.slice(0, 8);
+    let max_turns_game = undefined;
+    let max_turns = 0;
+    let best_winning_margin = 0;
+    let tried_combos = {};
+    for (let combo of k_combinations(my_cards, 8)) {
         combo_idx += 1;
         console.log("combo_idx: " + combo_idx);
         // sort the combo
         combo.sort();
         // append all the card ids together separated by commas
-        var combo_id = combo.join(",");
+        let combo_id = combo.join(",");
         if (tried_combos[combo_id]) {
             continue;
         }
         tried_combos[combo_id] = true;
         // if this combo has 3 or more continuous/consumption cards, skip it
 
-        var normal_attack_count = 0;
-        var concon_count = 0;
-        for (var i=0; i<8; i++) {
+        let normal_attack_count = 0;
+        let concon_count = 0;
+        for (let i=0; i<8; i++) {
             if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
                 concon_count += 1;
             }
@@ -1976,11 +1976,11 @@ riddles["106"] = () => {
             //continue;
         }
         console.log("concon_count: " + concon_count);
-        var try_idx = 0;
+        let try_idx = 0;
         do {
             try_idx += 1;
-            var game = new GameState();
-            //for (var i=0; i<8; i++) {
+            let game = new GameState();
+            //for (let i=0; i<8; i++) {
             //    temp_combo[i] = temp_combo[i].replace(".0", "");
             //}
             const my_idx = 0;
@@ -2004,7 +2004,7 @@ riddles["106"] = () => {
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
                     best_winning_margin = winning_margin;
-                    for (var i=0; i<8; i++) {
+                    for (let i=0; i<8; i++) {
                         p_combo[i] = format_card(p_combo[i]);
                     }
                     game.dump();
@@ -2048,38 +2048,38 @@ riddles["107"] = () => {
         "normal attack",
     ];
     fixup_deck(my_cards);
-    //for (var i=0; i<my_cards.length; i++) {
+    //for (let i=0; i<my_cards.length; i++) {
     //    console.log(format_card(my_cards[i]));
     //}
     fixup_deck(enemy_cards);
-    //for (var i=0; i<enemy_cards.length; i++) {
+    //for (let i=0; i<enemy_cards.length; i++) {
     //    console.log(format_card(enemy_cards[i]));
     //}
     //return;
-    var go = true;
-    var combo_idx = 0;
+    let go = true;
+    let combo_idx = 0;
     // my_basic_deck is just my_cards entries 0-7
-    var my_basic_deck = my_cards.slice(0, 8);
-    var max_turns_game = undefined;
-    var max_turns = 0;
-    var best_winning_margin = 0;
-    var tried_combos = {};
-    for (var combo of k_combinations(my_cards, 8)) {
+    let my_basic_deck = my_cards.slice(0, 8);
+    let max_turns_game = undefined;
+    let max_turns = 0;
+    let best_winning_margin = 0;
+    let tried_combos = {};
+    for (let combo of k_combinations(my_cards, 8)) {
         combo_idx += 1;
         console.log("combo_idx: " + combo_idx);
         // sort the combo
         combo.sort();
         // append all the card ids together separated by commas
-        var combo_id = combo.join(",");
+        let combo_id = combo.join(",");
         if (tried_combos[combo_id]) {
             continue;
         }
         tried_combos[combo_id] = true;
         // if this combo has 3 or more continuous/consumption cards, skip it
 
-        var normal_attack_count = 0;
-        var concon_count = 0;
-        for (var i=0; i<8; i++) {
+        let normal_attack_count = 0;
+        let concon_count = 0;
+        for (let i=0; i<8; i++) {
             if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
                 concon_count += 1;
             }
@@ -2094,11 +2094,11 @@ riddles["107"] = () => {
             //continue;
         }
         console.log("concon_count: " + concon_count);
-        var try_idx = 0;
+        let try_idx = 0;
         do {
             try_idx += 1;
-            var game = new GameState();
-            //for (var i=0; i<8; i++) {
+            let game = new GameState();
+            //for (let i=0; i<8; i++) {
             //    temp_combo[i] = temp_combo[i].replace(".0", "");
             //}
             const my_idx = 0;
@@ -2123,7 +2123,7 @@ riddles["107"] = () => {
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
                     best_winning_margin = winning_margin;
-                    for (var i=0; i<8; i++) {
+                    for (let i=0; i<8; i++) {
                         p_combo[i] = format_card(p_combo[i]);
                     }
                     game.dump();
@@ -2171,38 +2171,38 @@ riddles["108"] = () => {
         "soul cleaving 3",
     ];
     fixup_deck(my_cards);
-    //for (var i=0; i<my_cards.length; i++) {
+    //for (let i=0; i<my_cards.length; i++) {
     //    console.log(format_card(my_cards[i]));
     //}
     fixup_deck(enemy_cards);
-    //for (var i=0; i<enemy_cards.length; i++) {
+    //for (let i=0; i<enemy_cards.length; i++) {
     //    console.log(format_card(enemy_cards[i]));
     //}
     //return;
-    var go = true;
-    var combo_idx = 0;
+    let go = true;
+    let combo_idx = 0;
     // my_basic_deck is just my_cards entries 0-7
-    var my_basic_deck = my_cards.slice(0, 8);
-    var max_turns_game = undefined;
-    var max_turns = 0;
-    var best_winning_margin = 0;
-    var tried_combos = {};
-    for (var combo of k_combinations(my_cards, 8)) {
+    let my_basic_deck = my_cards.slice(0, 8);
+    let max_turns_game = undefined;
+    let max_turns = 0;
+    let best_winning_margin = 0;
+    let tried_combos = {};
+    for (let combo of k_combinations(my_cards, 8)) {
         combo_idx += 1;
         console.log("combo_idx: " + combo_idx);
         // sort the combo
         combo.sort();
         // append all the card ids together separated by commas
-        var combo_id = combo.join(",");
+        let combo_id = combo.join(",");
         if (tried_combos[combo_id]) {
             continue;
         }
         tried_combos[combo_id] = true;
         // if this combo has 3 or more continuous/consumption cards, skip it
 
-        var normal_attack_count = 0;
-        var concon_count = 0;
-        for (var i=0; i<8; i++) {
+        let normal_attack_count = 0;
+        let concon_count = 0;
+        for (let i=0; i<8; i++) {
             if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
                 concon_count += 1;
             }
@@ -2217,11 +2217,11 @@ riddles["108"] = () => {
             //continue;
         }
         console.log("concon_count: " + concon_count);
-        var try_idx = 0;
+        let try_idx = 0;
         do {
             try_idx += 1;
-            var game = new GameState();
-            //for (var i=0; i<8; i++) {
+            let game = new GameState();
+            //for (let i=0; i<8; i++) {
             //    temp_combo[i] = temp_combo[i].replace(".0", "");
             //}
             const my_idx = 0;
@@ -2247,7 +2247,7 @@ riddles["108"] = () => {
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
                     best_winning_margin = winning_margin;
-                    for (var i=0; i<8; i++) {
+                    for (let i=0; i<8; i++) {
                         p_combo[i] = format_card(p_combo[i]);
                     }
                     game.dump();
@@ -2296,38 +2296,38 @@ riddles["109"] = () => {
         "great spirit 2",
     ];
     fixup_deck(my_cards);
-    //for (var i=0; i<my_cards.length; i++) {
+    //for (let i=0; i<my_cards.length; i++) {
     //    console.log(format_card(my_cards[i]));
     //}
     fixup_deck(enemy_cards);
-    //for (var i=0; i<enemy_cards.length; i++) {
+    //for (let i=0; i<enemy_cards.length; i++) {
     //    console.log(format_card(enemy_cards[i]));
     //}
     //return;
-    var go = true;
-    var combo_idx = 0;
+    let go = true;
+    let combo_idx = 0;
     // my_basic_deck is just my_cards entries 0-7
-    var my_basic_deck = my_cards.slice(0, 8);
-    var max_turns_game = undefined;
-    var max_turns = 0;
-    var best_winning_margin = 0;
-    var tried_combos = {};
-    for (var combo of k_combinations(my_cards, 8)) {
+    let my_basic_deck = my_cards.slice(0, 8);
+    let max_turns_game = undefined;
+    let max_turns = 0;
+    let best_winning_margin = 0;
+    let tried_combos = {};
+    for (let combo of k_combinations(my_cards, 8)) {
         combo_idx += 1;
         console.log("combo_idx: " + combo_idx);
         // sort the combo
         combo.sort();
         // append all the card ids together separated by commas
-        var combo_id = combo.join(",");
+        let combo_id = combo.join(",");
         if (tried_combos[combo_id]) {
             continue;
         }
         tried_combos[combo_id] = true;
         // if this combo has 3 or more continuous/consumption cards, skip it
 
-        var normal_attack_count = 0;
-        var concon_count = 0;
-        for (var i=0; i<8; i++) {
+        let normal_attack_count = 0;
+        let concon_count = 0;
+        for (let i=0; i<8; i++) {
             if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
                 concon_count += 1;
             }
@@ -2342,11 +2342,11 @@ riddles["109"] = () => {
             //continue;
         }
         console.log("concon_count: " + concon_count);
-        var try_idx = 0;
+        let try_idx = 0;
         do {
             try_idx += 1;
-            var game = new GameState();
-            //for (var i=0; i<8; i++) {
+            let game = new GameState();
+            //for (let i=0; i<8; i++) {
             //    temp_combo[i] = temp_combo[i].replace(".0", "");
             //}
             const my_idx = 1;
@@ -2369,7 +2369,7 @@ riddles["109"] = () => {
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
                     best_winning_margin = winning_margin;
-                    for (var i=0; i<8; i++) {
+                    for (let i=0; i<8; i++) {
                         p_combo[i] = format_card(p_combo[i]);
                     }
                     game.dump();
@@ -2416,38 +2416,38 @@ riddles["110"] = () => {
         "great spirit 2",
     ];
     fixup_deck(my_cards);
-    //for (var i=0; i<my_cards.length; i++) {
+    //for (let i=0; i<my_cards.length; i++) {
     //    console.log(format_card(my_cards[i]));
     //}
     fixup_deck(enemy_cards);
-    //for (var i=0; i<enemy_cards.length; i++) {
+    //for (let i=0; i<enemy_cards.length; i++) {
     //    console.log(format_card(enemy_cards[i]));
     //}
     //return;
-    var go = true;
-    var combo_idx = 0;
+    let go = true;
+    let combo_idx = 0;
     // my_basic_deck is just my_cards entries 0-7
-    var my_basic_deck = my_cards.slice(0, 8);
-    var max_turns_game = undefined;
-    var max_turns = 0;
-    var best_winning_margin = 0;
-    var tried_combos = {};
-    for (var combo of k_combinations(my_cards, 8)) {
+    let my_basic_deck = my_cards.slice(0, 8);
+    let max_turns_game = undefined;
+    let max_turns = 0;
+    let best_winning_margin = 0;
+    let tried_combos = {};
+    for (let combo of k_combinations(my_cards, 8)) {
         combo_idx += 1;
         console.log("combo_idx: " + combo_idx);
         // sort the combo
         combo.sort();
         // append all the card ids together separated by commas
-        var combo_id = combo.join(",");
+        let combo_id = combo.join(",");
         if (tried_combos[combo_id]) {
             continue;
         }
         tried_combos[combo_id] = true;
         // if this combo has 3 or more continuous/consumption cards, skip it
 
-        var normal_attack_count = 0;
-        var concon_count = 0;
-        for (var i=0; i<8; i++) {
+        let normal_attack_count = 0;
+        let concon_count = 0;
+        for (let i=0; i<8; i++) {
             if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
                 concon_count += 1;
             }
@@ -2462,11 +2462,11 @@ riddles["110"] = () => {
             //continue;
         }
         console.log("concon_count: " + concon_count);
-        var try_idx = 0;
+        let try_idx = 0;
         do {
             try_idx += 1;
-            var game = new GameState();
-            //for (var i=0; i<8; i++) {
+            let game = new GameState();
+            //for (let i=0; i<8; i++) {
             //    temp_combo[i] = temp_combo[i].replace(".0", "");
             //}
             const my_idx = 1;
@@ -2489,7 +2489,7 @@ riddles["110"] = () => {
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
                     best_winning_margin = winning_margin;
-                    for (var i=0; i<8; i++) {
+                    for (let i=0; i<8; i++) {
                         p_combo[i] = format_card(p_combo[i]);
                     }
                     game.dump();
@@ -2537,38 +2537,38 @@ riddles["111"] = () => {
         "ice spirit guard 3",
     ];
     fixup_deck(my_cards);
-    //for (var i=0; i<my_cards.length; i++) {
+    //for (let i=0; i<my_cards.length; i++) {
     //    console.log(format_card(my_cards[i]));
     //}
     fixup_deck(enemy_cards);
-    //for (var i=0; i<enemy_cards.length; i++) {
+    //for (let i=0; i<enemy_cards.length; i++) {
     //    console.log(format_card(enemy_cards[i]));
     //}
     //return;
-    var go = true;
-    var combo_idx = 0;
+    let go = true;
+    let combo_idx = 0;
     // my_basic_deck is just my_cards entries 0-7
-    var my_basic_deck = my_cards.slice(0, 8);
-    var max_turns_game = undefined;
-    var max_turns = 0;
-    var best_winning_margin = 0;
-    var tried_combos = {};
-    for (var combo of k_combinations(my_cards, 8)) {
+    let my_basic_deck = my_cards.slice(0, 8);
+    let max_turns_game = undefined;
+    let max_turns = 0;
+    let best_winning_margin = 0;
+    let tried_combos = {};
+    for (let combo of k_combinations(my_cards, 8)) {
         combo_idx += 1;
         console.log("combo_idx: " + combo_idx);
         // sort the combo
         combo.sort();
         // append all the card ids together separated by commas
-        var combo_id = combo.join(",");
+        let combo_id = combo.join(",");
         if (tried_combos[combo_id]) {
             continue;
         }
         tried_combos[combo_id] = true;
         // if this combo has 3 or more continuous/consumption cards, skip it
 
-        var normal_attack_count = 0;
-        var concon_count = 0;
-        for (var i=0; i<8; i++) {
+        let normal_attack_count = 0;
+        let concon_count = 0;
+        for (let i=0; i<8; i++) {
             if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
                 concon_count += 1;
             }
@@ -2583,11 +2583,11 @@ riddles["111"] = () => {
             //continue;
         }
         console.log("concon_count: " + concon_count);
-        var try_idx = 0;
+        let try_idx = 0;
         do {
             try_idx += 1;
-            var game = new GameState();
-            //for (var i=0; i<8; i++) {
+            let game = new GameState();
+            //for (let i=0; i<8; i++) {
             //    temp_combo[i] = temp_combo[i].replace(".0", "");
             //}
             const my_idx = 1;
@@ -2613,7 +2613,7 @@ riddles["111"] = () => {
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
                     best_winning_margin = winning_margin;
-                    for (var i=0; i<8; i++) {
+                    for (let i=0; i<8; i++) {
                         p_combo[i] = format_card(p_combo[i]);
                     }
                     game.dump();
@@ -2661,38 +2661,38 @@ riddles["112"] = () => {
         "ice spirit guard elixir 2",
     ];
     fixup_deck(my_cards);
-    //for (var i=0; i<my_cards.length; i++) {
+    //for (let i=0; i<my_cards.length; i++) {
     //    console.log(format_card(my_cards[i]));
     //}
     fixup_deck(enemy_cards);
-    //for (var i=0; i<enemy_cards.length; i++) {
+    //for (let i=0; i<enemy_cards.length; i++) {
     //    console.log(format_card(enemy_cards[i]));
     //}
     //return;
-    var go = true;
-    var combo_idx = 0;
+    let go = true;
+    let combo_idx = 0;
     // my_basic_deck is just my_cards entries 0-7
-    var my_basic_deck = my_cards.slice(0, 8);
-    var max_turns_game = undefined;
-    var max_turns = 0;
-    var best_winning_margin = 0;
-    var tried_combos = {};
-    for (var combo of k_combinations(my_cards, 8)) {
+    let my_basic_deck = my_cards.slice(0, 8);
+    let max_turns_game = undefined;
+    let max_turns = 0;
+    let best_winning_margin = 0;
+    let tried_combos = {};
+    for (let combo of k_combinations(my_cards, 8)) {
         combo_idx += 1;
         console.log("combo_idx: " + combo_idx);
         // sort the combo
         combo.sort();
         // append all the card ids together separated by commas
-        var combo_id = combo.join(",");
+        let combo_id = combo.join(",");
         if (tried_combos[combo_id]) {
             continue;
         }
         tried_combos[combo_id] = true;
         // if this combo has 3 or more continuous/consumption cards, skip it
 
-        var normal_attack_count = 0;
-        var concon_count = 0;
-        for (var i=0; i<8; i++) {
+        let normal_attack_count = 0;
+        let concon_count = 0;
+        for (let i=0; i<8; i++) {
             if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
                 concon_count += 1;
             }
@@ -2707,11 +2707,11 @@ riddles["112"] = () => {
             //continue;
         }
         console.log("concon_count: " + concon_count);
-        var try_idx = 0;
+        let try_idx = 0;
         do {
             try_idx += 1;
-            var game = new GameState();
-            //for (var i=0; i<8; i++) {
+            let game = new GameState();
+            //for (let i=0; i<8; i++) {
             //    temp_combo[i] = temp_combo[i].replace(".0", "");
             //}
             const my_idx = 1;
@@ -2735,7 +2735,7 @@ riddles["112"] = () => {
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
                     best_winning_margin = winning_margin;
-                    for (var i=0; i<8; i++) {
+                    for (let i=0; i<8; i++) {
                         p_combo[i] = format_card(p_combo[i]);
                     }
                     game.dump();
@@ -2779,38 +2779,38 @@ riddles["113"] = () => {
         "cloud sword flash wind",
     ];
     fixup_deck(my_cards);
-    //for (var i=0; i<my_cards.length; i++) {
+    //for (let i=0; i<my_cards.length; i++) {
     //    console.log(format_card(my_cards[i]));
     //}
     fixup_deck(enemy_cards);
-    //for (var i=0; i<enemy_cards.length; i++) {
+    //for (let i=0; i<enemy_cards.length; i++) {
     //    console.log(format_card(enemy_cards[i]));
     //}
     //return;
-    var go = true;
-    var combo_idx = 0;
+    let go = true;
+    let combo_idx = 0;
     // my_basic_deck is just my_cards entries 0-7
-    var my_basic_deck = my_cards.slice(0, 8);
-    var max_turns_game = undefined;
-    var max_turns = 0;
-    var best_winning_margin = 0;
-    var tried_combos = {};
-    for (var combo of k_combinations(my_cards, 8)) {
+    let my_basic_deck = my_cards.slice(0, 8);
+    let max_turns_game = undefined;
+    let max_turns = 0;
+    let best_winning_margin = 0;
+    let tried_combos = {};
+    for (let combo of k_combinations(my_cards, 8)) {
         combo_idx += 1;
         console.log("combo_idx: " + combo_idx);
         // sort the combo
         combo.sort();
         // append all the card ids together separated by commas
-        var combo_id = combo.join(",");
+        let combo_id = combo.join(",");
         if (tried_combos[combo_id]) {
             continue;
         }
         tried_combos[combo_id] = true;
         // if this combo has 3 or more continuous/consumption cards, skip it
 
-        var normal_attack_count = 0;
-        var concon_count = 0;
-        for (var i=0; i<8; i++) {
+        let normal_attack_count = 0;
+        let concon_count = 0;
+        for (let i=0; i<8; i++) {
             if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
                 concon_count += 1;
             }
@@ -2825,11 +2825,11 @@ riddles["113"] = () => {
             //continue;
         }
         console.log("concon_count: " + concon_count);
-        var try_idx = 0;
+        let try_idx = 0;
         do {
             try_idx += 1;
-            var game = new GameState();
-            //for (var i=0; i<8; i++) {
+            let game = new GameState();
+            //for (let i=0; i<8; i++) {
             //    temp_combo[i] = temp_combo[i].replace(".0", "");
             //}
             const my_idx = 1;
@@ -2853,7 +2853,7 @@ riddles["113"] = () => {
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
                     best_winning_margin = winning_margin;
-                    for (var i=0; i<8; i++) {
+                    for (let i=0; i<8; i++) {
                         p_combo[i] = format_card(p_combo[i]);
                     }
                     game.dump();
@@ -2900,38 +2900,38 @@ riddles["114"] = () => {
         "flow cloud chaos sword 2",
     ];
     fixup_deck(my_cards);
-    //for (var i=0; i<my_cards.length; i++) {
+    //for (let i=0; i<my_cards.length; i++) {
     //    console.log(format_card(my_cards[i]));
     //}
     fixup_deck(enemy_cards);
-    //for (var i=0; i<enemy_cards.length; i++) {
+    //for (let i=0; i<enemy_cards.length; i++) {
     //    console.log(format_card(enemy_cards[i]));
     //}
     //return;
-    var go = true;
-    var combo_idx = 0;
+    let go = true;
+    let combo_idx = 0;
     // my_basic_deck is just my_cards entries 0-7
-    var my_basic_deck = my_cards.slice(0, 8);
-    var max_turns_game = undefined;
-    var max_turns = 0;
-    var best_winning_margin = 0;
-    var tried_combos = {};
-    for (var combo of k_combinations(my_cards, 8)) {
+    let my_basic_deck = my_cards.slice(0, 8);
+    let max_turns_game = undefined;
+    let max_turns = 0;
+    let best_winning_margin = 0;
+    let tried_combos = {};
+    for (let combo of k_combinations(my_cards, 8)) {
         combo_idx += 1;
         console.log("combo_idx: " + combo_idx);
         // sort the combo
         combo.sort();
         // append all the card ids together separated by commas
-        var combo_id = combo.join(",");
+        let combo_id = combo.join(",");
         if (tried_combos[combo_id]) {
             continue;
         }
         tried_combos[combo_id] = true;
         // if this combo has 3 or more continuous/consumption cards, skip it
 
-        var normal_attack_count = 0;
-        var concon_count = 0;
-        for (var i=0; i<8; i++) {
+        let normal_attack_count = 0;
+        let concon_count = 0;
+        for (let i=0; i<8; i++) {
             if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
                 concon_count += 1;
             }
@@ -2946,11 +2946,11 @@ riddles["114"] = () => {
             //continue;
         }
         console.log("concon_count: " + concon_count);
-        var try_idx = 0;
+        let try_idx = 0;
         do {
             try_idx += 1;
-            var game = new GameState();
-            //for (var i=0; i<8; i++) {
+            let game = new GameState();
+            //for (let i=0; i<8; i++) {
             //    temp_combo[i] = temp_combo[i].replace(".0", "");
             //}
             const my_idx = 1;
@@ -2974,7 +2974,7 @@ riddles["114"] = () => {
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
                     best_winning_margin = winning_margin;
-                    for (var i=0; i<8; i++) {
+                    for (let i=0; i<8; i++) {
                         p_combo[i] = format_card(p_combo[i]);
                     }
                     game.dump();
@@ -3019,38 +3019,38 @@ riddles["115"] = () => {
         "clear heart sword embryo 3",
     ];
     fixup_deck(my_cards);
-    //for (var i=0; i<my_cards.length; i++) {
+    //for (let i=0; i<my_cards.length; i++) {
     //    console.log(format_card(my_cards[i]));
     //}
     fixup_deck(enemy_cards);
-    //for (var i=0; i<enemy_cards.length; i++) {
+    //for (let i=0; i<enemy_cards.length; i++) {
     //    console.log(format_card(enemy_cards[i]));
     //}
     //return;
-    var go = true;
-    var combo_idx = 0;
+    let go = true;
+    let combo_idx = 0;
     // my_basic_deck is just my_cards entries 0-7
-    var my_basic_deck = my_cards.slice(0, 8);
-    var max_turns_game = undefined;
-    var max_turns = 0;
-    var best_winning_margin = 0;
-    var tried_combos = {};
-    for (var combo of k_combinations(my_cards, 8)) {
+    let my_basic_deck = my_cards.slice(0, 8);
+    let max_turns_game = undefined;
+    let max_turns = 0;
+    let best_winning_margin = 0;
+    let tried_combos = {};
+    for (let combo of k_combinations(my_cards, 8)) {
         combo_idx += 1;
         console.log("combo_idx: " + combo_idx);
         // sort the combo
         combo.sort();
         // append all the card ids together separated by commas
-        var combo_id = combo.join(",");
+        let combo_id = combo.join(",");
         if (tried_combos[combo_id]) {
             continue;
         }
         tried_combos[combo_id] = true;
         // if this combo has 3 or more continuous/consumption cards, skip it
 
-        var normal_attack_count = 0;
-        var concon_count = 0;
-        for (var i=0; i<8; i++) {
+        let normal_attack_count = 0;
+        let concon_count = 0;
+        for (let i=0; i<8; i++) {
             if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
                 concon_count += 1;
             }
@@ -3065,11 +3065,11 @@ riddles["115"] = () => {
             //continue;
         }
         console.log("concon_count: " + concon_count);
-        var try_idx = 0;
+        let try_idx = 0;
         do {
             try_idx += 1;
-            var game = new GameState();
-            //for (var i=0; i<8; i++) {
+            let game = new GameState();
+            //for (let i=0; i<8; i++) {
             //    temp_combo[i] = temp_combo[i].replace(".0", "");
             //}
             const my_idx = 0;
@@ -3097,7 +3097,7 @@ riddles["115"] = () => {
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
                     best_winning_margin = winning_margin;
-                    for (var i=0; i<8; i++) {
+                    for (let i=0; i<8; i++) {
                         p_combo[i] = format_card(p_combo[i]);
                     }
                     game.dump();
@@ -3142,38 +3142,38 @@ riddles["116"] = () => {
         "normal attack",
     ];
     fixup_deck(my_cards);
-    //for (var i=0; i<my_cards.length; i++) {
+    //for (let i=0; i<my_cards.length; i++) {
     //    console.log(format_card(my_cards[i]));
     //}
     fixup_deck(enemy_cards);
-    //for (var i=0; i<enemy_cards.length; i++) {
+    //for (let i=0; i<enemy_cards.length; i++) {
     //    console.log(format_card(enemy_cards[i]));
     //}
     //return;
-    var go = true;
-    var combo_idx = 0;
+    let go = true;
+    let combo_idx = 0;
     // my_basic_deck is just my_cards entries 0-7
-    var my_basic_deck = my_cards.slice(0, 8);
-    var max_turns_game = undefined;
-    var max_turns = 0;
-    var best_winning_margin = 0;
-    var tried_combos = {};
-    for (var combo of k_combinations(my_cards, 8)) {
+    let my_basic_deck = my_cards.slice(0, 8);
+    let max_turns_game = undefined;
+    let max_turns = 0;
+    let best_winning_margin = 0;
+    let tried_combos = {};
+    for (let combo of k_combinations(my_cards, 8)) {
         combo_idx += 1;
         console.log("combo_idx: " + combo_idx);
         // sort the combo
         combo.sort();
         // append all the card ids together separated by commas
-        var combo_id = combo.join(",");
+        let combo_id = combo.join(",");
         if (tried_combos[combo_id]) {
             continue;
         }
         tried_combos[combo_id] = true;
         // if this combo has 3 or more continuous/consumption cards, skip it
 
-        var normal_attack_count = 0;
-        var concon_count = 0;
-        for (var i=0; i<8; i++) {
+        let normal_attack_count = 0;
+        let concon_count = 0;
+        for (let i=0; i<8; i++) {
             if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
                 concon_count += 1;
             }
@@ -3188,11 +3188,11 @@ riddles["116"] = () => {
             //continue;
         }
         console.log("concon_count: " + concon_count);
-        var try_idx = 0;
+        let try_idx = 0;
         do {
             try_idx += 1;
-            var game = new GameState();
-            //for (var i=0; i<8; i++) {
+            let game = new GameState();
+            //for (let i=0; i<8; i++) {
             //    temp_combo[i] = temp_combo[i].replace(".0", "");
             //}
             const my_idx = 0;
@@ -3217,7 +3217,7 @@ riddles["116"] = () => {
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
                     best_winning_margin = winning_margin;
-                    for (var i=0; i<8; i++) {
+                    for (let i=0; i<8; i++) {
                         p_combo[i] = format_card(p_combo[i]);
                     }
                     game.dump();
@@ -3233,24 +3233,24 @@ riddles["116"] = () => {
 
 };
 riddles["116"]();
-var fuzz = true;
+let fuzz = true;
 if (fuzz) {
     const start_time = process.hrtime();
-    for (var i=0;; i++) {
+    for (let i=0;; i++) {
         // now generate a random deck of 8 cards from among these keys
-        var decks = [[],[]];
-        for (var j=0; j<2; j++) {
-            for (var k=0; k<8; k++) {
-                var index = Math.floor(Math.random() * keys.length);
+        let decks = [[],[]];
+        for (let j=0; j<2; j++) {
+            for (let k=0; k<8; k++) {
+                let index = Math.floor(Math.random() * keys.length);
                 decks[j].push(keys[index]);
             }
         }
-        var game = new GameState();
+        let game = new GameState();
         game.players[0].cards = decks[0];
         game.players[1].cards = decks[1];
-        var decks_formatted = [[],[]];
-        for (var j=0; j<2; j++) {
-            for (var k=0; k<8; k++) {
+        let decks_formatted = [[],[]];
+        for (let j=0; j<2; j++) {
+            for (let k=0; k<8; k++) {
                 decks_formatted[j].push(format_card(decks[j][k]));
             }
         }
@@ -3266,6 +3266,6 @@ if (fuzz) {
 } else {
 }
 /* print the deck
-for (var i=0; i<8; i++) {
+for (let i=0; i<8; i++) {
   console.log(format_card(deck[i]));
 }*/
