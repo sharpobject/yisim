@@ -8704,8 +8704,8 @@
 	},
 	"735012": {
 		"actions": [
-			["for_each_x_add_c_y", "played_card_count", 2, "bonus_def_amt"],
-			["def", 2],
+			["for_each_x_add_c_y", "played_card_count", 3, "bonus_def_amt"],
+			["def", 3],
 			["chase"]
 		],
 		"opening": [
@@ -8715,8 +8715,8 @@
 	},
 	"735013": {
 		"actions": [
-			["for_each_x_add_c_y", "played_card_count", 2, "bonus_def_amt"],
-			["def", 2],
+			["for_each_x_add_c_y", "played_card_count", 4, "bonus_def_amt"],
+			["def", 4],
 			["chase"]
 		],
 		"opening": [
