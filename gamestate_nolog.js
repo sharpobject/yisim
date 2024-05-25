@@ -621,11 +621,14 @@ class Player {
         this.p3_post_strike_stacks = 0;
         this.p4_post_strike_stacks = 0;
         this.p5_post_strike_stacks = 0;
+        // TODO: post strike should work separately for each phase
+        // so the below should not exist
         this.post_strike_stacks = 0;
         this.p2_rejuvenation_stacks = 0;
         this.p3_rejuvenation_stacks = 0;
         this.p4_rejuvenation_stacks = 0;
         this.p5_rejuvenation_stacks = 0;
+        // TODO: same as above
         this.rejuvenation_stacks = 0;
         // five elements sect immortal fates
         this.fire_spirit_generation_stacks = 0;
@@ -2346,7 +2349,6 @@ export class GameState {
             amt = Math.ceil(amt * 14 / 10);
         }
         this.players[idx].max_hp += amt;
-        this.players[idx].hp_gained += amt;
     }
     increase_idx_hp(idx, amt) {
         if (amt === 0) {
@@ -3833,10 +3835,176 @@ export class GameState {
     }
 }
 
-
+const FATE_TO_CHARACTER_OR_SECT = {
+    sword_in_sheathed_stacks: "sw1",
+    endurance_as_cloud_sea_stacks: "sw1",
+    fire_flame_blade_stacks: "sw2",
+    drift_ice_blade_stacks: "sw2",
+    coral_sword_stacks: "sw3",
+    lithe_as_cat_stacks: "sw4",
+    blade_forging_sharpness_stacks: "sw5",
+    blade_forging_stable_stacks: "sw5",
+    sword_pattern_carving_chain_attack_stacks: "sw5",
+    sword_pattern_carving_charge_stacks: "sw5",
+    sword_pattern_carving_intense_stacks: "sw5",
+    qi_forging_spiritage_stacks: "sw5",
+    qi_forging_spiritstat_stacks: "sw5",
+    qi_forging_spiritual_power_stacks: "sw5",
+    quench_of_sword_heart_unrestrained_stacks: "sw5",
+    quench_of_sword_heart_cloud_stacks: "sw5",
+    quench_of_sword_heart_ultimate_stacks: "sw5",
+    p4_mad_obsession_stacks: "sw",
+    p5_mad_obsession_stacks: "sw",
+    p2_rule_of_the_cloud_stacks: "sw",
+    p3_rule_of_the_cloud_stacks: "sw",
+    p4_rule_of_the_cloud_stacks: "sw",
+    p5_rule_of_the_cloud_stacks: "sw",
+    p2_sword_rhyme_cultivate_stacks: "sw",
+    p3_sword_rhyme_cultivate_stacks: "sw",
+    p4_sword_rhyme_cultivate_stacks: "sw",
+    p5_sword_rhyme_cultivate_stacks: "sw",
+    p2_sword_formation_guard_stacks: "sw",
+    p3_sword_formation_guard_stacks: "sw",
+    p4_sword_formation_guard_stacks: "sw",
+    p5_sword_formation_guard_stacks: "sw",
+    birdie_wind_stacks: "he1",
+    astrology_stacks: "he4",
+    heptastar_soulstat_stacks: "he4",
+    astral_divination_hexagram_stacks: "he4",
+    star_moon_folding_fan_stacks: "he5",
+    act_underhand_stacks: "he5",
+    rest_and_outwit_stacks: "he5",
+    p2_divination_stacks: "he",
+    p3_divination_stacks: "he",
+    p4_divination_stacks: "he",
+    p5_divination_stacks: "he",
+    p2_stargaze_stacks: "he",
+    p3_stargaze_stacks: "he",
+    p4_stargaze_stacks: "he",
+    p5_stargaze_stacks: "he",
+    p2_astral_eclipse_stacks: "he",
+    p3_astral_eclipse_stacks: "he",
+    p4_astral_eclipse_stacks: "he",
+    p5_astral_eclipse_stacks: "he",
+    p2_post_strike_stacks: "he",
+    p3_post_strike_stacks: "he",
+    p4_post_strike_stacks: "he",
+    p5_post_strike_stacks: "he",
+    p2_rejuvenation_stacks: "he",
+    p3_rejuvenation_stacks: "he",
+    p4_rejuvenation_stacks: "he",
+    p5_rejuvenation_stacks: "he",
+    fire_spirit_generation_stacks: "fe5",
+    flame_soul_rebirth_stacks: "fe5",
+    five_elements_explosion_stacks: "fe5",
+    swift_burning_seal_stacks: "fe5",
+    mark_of_five_elements_stacks: "fe1",
+    innate_wood_stacks: "fe2",
+    innate_fire_stacks: "fe2",
+    innate_earth_stacks: "fe2",
+    innate_metal_stacks: "fe2",
+    innate_water_stacks: "fe2",
+    innate_mark_stacks: "fe2",
+    five_elements_anima_stacks: "fe2",
+    peach_branch_ruyi_stacks: "fe3",
+    mark_of_water_spirit_stacks: "fe3",
+    blossom_dance_stacks: "fe3",
+    the_body_of_fierce_tiger_stacks: "fe4",
+    p2_cycle_of_five_elements_stacks: "fe",
+    p3_cycle_of_five_elements_stacks: "fe",
+    p4_cycle_of_five_elements_stacks: "fe",
+    p5_cycle_of_five_elements_stacks: "fe",
+    p2_mutual_growth_stacks: "fe",
+    p3_mutual_growth_stacks: "fe",
+    p4_mutual_growth_stacks: "fe",
+    p5_mutual_growth_stacks: "fe",
+    p2_concentrated_element_stacks: "fe",
+    p3_concentrated_element_stacks: "fe",
+    p4_concentrated_element_stacks: "fe",
+    p5_concentrated_element_stacks: "fe",
+    unbounded_qi_stacks: "dx1",
+    unwavering_soul_stacks: "dx1",
+    courage_to_fight_stacks: "dx2",
+    cracking_fist_stacks: "dx2",
+    stance_of_fierce_attack_stacks: "dx2",
+    entering_styx_stacks: "dx3",
+    p2_firmness_body_stacks: "dx",
+    p3_firmness_body_stacks: "dx",
+    p4_firmness_body_stacks: "dx",
+    p5_firmness_body_stacks: "dx",
+    p2_regenerating_body_stacks: "dx",
+    p3_regenerating_body_stacks: "dx",
+    p4_regenerating_body_stacks: "dx",
+    p5_regenerating_body_stacks: "dx",
+    p2_full_of_force_stacks: "dx",
+    p3_full_of_force_stacks: "dx",
+    p4_full_of_force_stacks: "dx",
+    p5_full_of_force_stacks: "dx",
+    p2_mark_of_dark_heart_stacks: "dx",
+    p3_mark_of_dark_heart_stacks: "dx",
+    p4_mark_of_dark_heart_stacks: "dx",
+    p5_mark_of_dark_heart_stacks: "dx",
+}
 
 export function guess_character(player) {
-    
+    const character_id_to_guess_count = {};
+    const sect_id_to_guess_count = {};
+    for (let id in CHARACTER_ID_TO_NAME) {
+        character_id_to_guess_count[id] = 0;
+    }
+    for (let i=0; i<SECTS.length; i++) {
+        sect_id_to_guess_count[SECTS[i]] = 0;
+    }
+    for (let i=0; i<player.cards.length; i++) {
+        const card_id = player.cards[i];
+        const character = swogi[card_id].character;
+        if (character) {
+            character_id_to_guess_count[character]++;
+            const sect = character.substring(0, 2);
+            sect_id_to_guess_count[sect]++;
+        } else {
+            const marking = swogi[card_id].marking;
+            if (sect_id_to_guess_count[marking] !== undefined) {
+                sect_id_to_guess_count[marking]++;
+            }
+        }
+    }
+    for (let id in FATE_TO_CHARACTER_OR_SECT) {
+        if (player[id] > 0) {
+            const character_or_sect = FATE_TO_CHARACTER_OR_SECT[id];
+            if (character_or_sect.length === 2) {
+                sect_id_to_guess_count[character_or_sect]++;
+            } else {
+                character_id_to_guess_count[character_or_sect]++;
+                const sect = character_or_sect.substring(0, 2);
+                sect_id_to_guess_count[sect]++;
+            }
+        }
+    }
+    // if any character has nonzero count, return the first such character
+    // with the highest count
+    let max_character_count = 0;
+    let max_character_id = "";
+    for (let id in character_id_to_guess_count) {
+        if (character_id_to_guess_count[id] > max_character_count) {
+            max_character_count = character_id_to_guess_count[id];
+            max_character_id = id;
+        }
+    }
+    if (max_character_count > 0) {
+        return max_character_id;
+    }
+    // return the first character belonging to
+    // the first sect with the highest count
+    let max_sect_count = -1;
+    let max_sect_id = "";
+    for (let id in sect_id_to_guess_count) {
+        if (sect_id_to_guess_count[id] > max_sect_count) {
+            max_sect_count = sect_id_to_guess_count[id];
+            max_sect_id = id;
+        }
+    }
+    return max_sect_id + "1";
 }
 
 //module.exports = { GameState, card_name_to_id_fuzzy, swogi };
