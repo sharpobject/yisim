@@ -8635,7 +8635,7 @@
 	},
 	"734012": {
 		"actions": [
-			["qi", 2],
+			["qi", 4],
 			["add_c_of_x", 1, "wild_crossing_seal_stacks"]
 		],
 		"opening": [
@@ -8645,7 +8645,7 @@
 	},
 	"734013": {
 		"actions": [
-			["qi", 2],
+			["qi", 6],
 			["add_c_of_x", 1, "wild_crossing_seal_stacks"]
 		],
 		"opening": [
@@ -8737,7 +8737,7 @@
 	},
 	"735022": {
 		"actions": [
-			["qi", 2],
+			["qi", 3],
 			["for_each_x_add_c_y", "qi", 3, "penetrate"]
 		],
 		"opening": [
@@ -8747,7 +8747,7 @@
 	},
 	"735023": {
 		"actions": [
-			["qi", 2],
+			["qi", 4],
 			["for_each_x_add_c_y", "qi", 3, "penetrate"]
 		],
 		"opening": [

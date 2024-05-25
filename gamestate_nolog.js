@@ -289,6 +289,7 @@ for (let i=0; i<keys.length; i++) {
         card_name_to_id[lvmax] = card_id;
     }
 }
+card_names.sort((a, b) => a.length - b.length);
 const fuzzy = new uf();
 export function card_name_to_id_fuzzy(name) {
     const [idxs, info, order] = fuzzy.search(card_names, name);
