@@ -8604,22 +8604,22 @@
 		"name": "Water Drop Erosion",
 		"actions": [
 			["atk", 1],
-			["post_action", ["add_enemy_c_of_x", 7, "internal_injury"]],
-			["if_enemy_has_debuff_do", ["chase"]]
+			["if_enemy_has_debuff_do", ["chase"]],
+			["post_action", ["add_enemy_c_of_x", 6, "internal_injury"]]
 		]
 	},
 	"725022": {
 		"actions": [
 			["atk", 1],
-			["post_action", ["add_enemy_c_of_x", 7, "internal_injury"]],
-			["if_enemy_has_debuff_do", ["chase"]]
+			["if_enemy_has_debuff_do", ["chase"]],
+			["post_action", ["add_enemy_c_of_x", 8, "internal_injury"]]
 		]
 	},
 	"725023": {
 		"actions": [
 			["atk", 1],
-			["post_action", ["add_enemy_c_of_x", 7, "internal_injury"]],
-			["if_enemy_has_debuff_do", ["chase"]]
+			["if_enemy_has_debuff_do", ["chase"]],
+			["post_action", ["add_enemy_c_of_x", 10, "internal_injury"]]
 		]
 	},
 	"734011": {
