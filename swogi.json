@@ -8540,12 +8540,14 @@
 	},
 	"724012": {
 		"actions": [
+			["add_c_of_x", 1, "hexagram"],
 			["continuous"],
 			["add_c_of_x", 1, "spiritual_divination_stacks"]
 		]
 	},
 	"724013": {
 		"actions": [
+			["add_c_of_x", 3, "hexagram"],
 			["continuous"],
 			["add_c_of_x", 1, "spiritual_divination_stacks"]
 		]
@@ -8584,20 +8586,20 @@
 	},
 	"725012": {
 		"actions": [
-			["star_point", ["add_c_of_x", 4, "bonus_atk_amt"]],
-			["atk", 4],
+			["star_point", ["add_c_of_x", 6, "bonus_atk_amt"]],
+			["atk", 5],
 			["chase"],
 			["post_action", ["add_c_of_x", 1, "bonus_rep_amt"]],
-			["rep", 0, ["atk", 4]]
+			["rep", 0, ["atk", 5]]
 		]
 	},
 	"725013": {
 		"actions": [
-			["star_point", ["add_c_of_x", 4, "bonus_atk_amt"]],
-			["atk", 4],
+			["star_point", ["add_c_of_x", 8, "bonus_atk_amt"]],
+			["atk", 6],
 			["chase"],
 			["post_action", ["add_c_of_x", 1, "bonus_rep_amt"]],
-			["rep", 0, ["atk", 4]]
+			["rep", 0, ["atk", 6]]
 		]
 	},
 	"725021": {
@@ -8657,7 +8659,7 @@
 		"name": "Lava Seal",
 		"actions": [
 			["add_c_of_x", 10, "bonus_def_amt"],
-			["for_each_x_add_y", "def", "bonus_def_amt"],
+			["for_each_x_add_c_pct_y", "def", 50, "bonus_def_amt"],
 			["for_each_x_reduce_enemy_c_y", "bonus_def_amt", 1, "max_hp"],
 			["for_each_x_reduce_enemy_c_y", "bonus_def_amt", 1, "hp"]
 		],
@@ -8668,8 +8670,8 @@
 	},
 	"734022": {
 		"actions": [
-			["add_c_of_x", 10, "bonus_def_amt"],
-			["for_each_x_add_y", "def", "bonus_def_amt"],
+			["add_c_of_x", 15, "bonus_def_amt"],
+			["for_each_x_add_c_pct_y", "def", 50, "bonus_def_amt"],
 			["for_each_x_reduce_enemy_c_y", "bonus_def_amt", 1, "max_hp"],
 			["for_each_x_reduce_enemy_c_y", "bonus_def_amt", 1, "hp"]
 		],
@@ -8680,8 +8682,8 @@
 	},
 	"734023": {
 		"actions": [
-			["add_c_of_x", 10, "bonus_def_amt"],
-			["for_each_x_add_y", "def", "bonus_def_amt"],
+			["add_c_of_x", 20, "bonus_def_amt"],
+			["for_each_x_add_c_pct_y", "def", 50, "bonus_def_amt"],
 			["for_each_x_reduce_enemy_c_y", "bonus_def_amt", 1, "max_hp"],
 			["for_each_x_reduce_enemy_c_y", "bonus_def_amt", 1, "hp"]
 		],
