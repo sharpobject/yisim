@@ -1148,6 +1148,8 @@ export class GameState {
         }
         this.winner = winner;
         this.turns_taken = i;
+        const winner_character_id = this.players[winner].character;
+        const winner_character = CHARACTER_ID_TO_NAME[winner_character_id];
     }
     do_action(arr) {
         // the actions list is like this: [["atk", 14], ["injured", ["regain_sword_intent"]]]
