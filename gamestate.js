@@ -539,7 +539,6 @@ class Player {
         this.everything_goes_way_stacks = 0;
         this.nothing_is_appropriate_stacks = 0;
         this.fate_reincarnates_stacks = 0;
-        // TODO: below here fortune teller effects are not implemented
         this.god_opportunity_conform_stacks = 0;
         this.god_opportunity_reversal_stacks = 0;
         // talisman cards
@@ -621,15 +620,12 @@ class Player {
         this.p3_post_strike_stacks = 0;
         this.p4_post_strike_stacks = 0;
         this.p5_post_strike_stacks = 0;
-        // TODO: post strike should work separately for each phase
-        // so the below should not exist
-        this.post_strike_stacks = 0;
+        this.has_post_strike = false;
         this.p2_rejuvenation_stacks = 0;
         this.p3_rejuvenation_stacks = 0;
         this.p4_rejuvenation_stacks = 0;
         this.p5_rejuvenation_stacks = 0;
-        // TODO: same as above
-        this.rejuvenation_stacks = 0;
+        this.has_rejuvenation = false;
         // five elements sect immortal fates
         this.fire_spirit_generation_stacks = 0;
         this.flame_soul_rebirth_stacks = 0;
@@ -861,16 +857,20 @@ export class GameState {
         this.players[enemy_idx].gain_extra_debuff += 3 * this.players[idx].p5_astral_eclipse_stacks;
     }
     do_post_strike_setup(idx) {
-        this.players[idx].post_strike_stacks += 2 * this.players[idx].p2_post_strike_stacks;
-        this.players[idx].post_strike_stacks += 3 * this.players[idx].p3_post_strike_stacks;
-        this.players[idx].post_strike_stacks += 4 * this.players[idx].p4_post_strike_stacks;
-        this.players[idx].post_strike_stacks += 5 * this.players[idx].p5_post_strike_stacks;
+        let has_post_strike = false;
+        has_post_strike = has_post_strike || this.players[idx].p2_post_strike_stacks > 0;
+        has_post_strike = has_post_strike || this.players[idx].p3_post_strike_stacks > 0;
+        has_post_strike = has_post_strike || this.players[idx].p4_post_strike_stacks > 0;
+        has_post_strike = has_post_strike || this.players[idx].p5_post_strike_stacks > 0;
+        this.players[idx].has_post_strike = has_post_strike;
     }
     do_rejuvenation_setup(idx) {
-        this.players[idx].rejuvenation_stacks += 3 * this.players[idx].p2_rejuvenation_stacks;
-        this.players[idx].rejuvenation_stacks += 4 * this.players[idx].p3_rejuvenation_stacks;
-        this.players[idx].rejuvenation_stacks += 5 * this.players[idx].p4_rejuvenation_stacks;
-        this.players[idx].rejuvenation_stacks += 6 * this.players[idx].p5_rejuvenation_stacks;
+        let has_rejuvenation = false;
+        has_rejuvenation = has_rejuvenation || this.players[idx].p2_rejuvenation_stacks > 0;
+        has_rejuvenation = has_rejuvenation || this.players[idx].p3_rejuvenation_stacks > 0;
+        has_rejuvenation = has_rejuvenation || this.players[idx].p4_rejuvenation_stacks > 0;
+        has_rejuvenation = has_rejuvenation || this.players[idx].p5_rejuvenation_stacks > 0;
+        this.players[idx].has_rejuvenation = has_rejuvenation;
     }
     do_mutual_growth_setup(idx) {
         this.players[idx].mutual_growth_stacks += this.players[idx].p2_mutual_growth_stacks;
@@ -1554,19 +1554,35 @@ export class GameState {
         }
     }
     do_post_strike(card_id, idx) {
-        const amt = this.players[0].post_strike_stacks;
-        if (amt === 0) {
-            return;
-        }
         if (!is_post_action(card_id)) {
             return;
         }
         if (this.players[0].can_post_action[idx]) {
             return;
         }
-        this.def(amt);
-        this.add_c_of_x(amt, "max_hp");
-        this.heal(amt);
+        if (!this.players[0].has_post_strike) {
+            return;
+        }
+        for (let i=0; i<this.players[0].p2_post_strike_stacks; i++) {
+            this.def(2);
+            this.add_c_of_x(2, "max_hp");
+            this.heal(2);
+        }
+        for (let i=0; i<this.players[0].p3_post_strike_stacks; i++) {
+            this.def(3);
+            this.add_c_of_x(3, "max_hp");
+            this.heal(3);
+        }
+        for (let i=0; i<this.players[0].p4_post_strike_stacks; i++) {
+            this.def(4);
+            this.add_c_of_x(4, "max_hp");
+            this.heal(4);
+        }
+        for (let i=0; i<this.players[0].p5_post_strike_stacks; i++) {
+            this.def(5);
+            this.add_c_of_x(5, "max_hp");
+            this.heal(5);
+        }
     }
     do_god_luck_approach(card_id) {
         if (this.players[0].god_luck_approach_stacks > 0) {
@@ -1642,6 +1658,7 @@ export class GameState {
         // End of extra attacks zone
         this.do_beast_spirit_sword_formation(card_id);
         this.do_unrestrained_sword_count(card_id);
+        this.reduce_idx_x_by_c(0, "unrestrained_sword_clear_heart_stacks", 1);
         this.players[0].bonus_atk_amt = prev_bonus_atk_amt;
         this.players[0].bonus_dmg_amt = prev_bonus_dmg_amt;
         this.players[0].bonus_rep_amt = prev_bonus_rep_amt;
@@ -1688,7 +1705,6 @@ export class GameState {
         this.do_elemental_spirit_stuff(card_id);
         this.do_record_musician_card_played_for_chord_in_tune(card_id);
         this.do_record_continuous_card_played_for_meru_formation(card_id);
-        this.reduce_idx_x_by_c(0, "unrestrained_sword_clear_heart_stacks", 1);
         this.players[0].can_post_action[idx] = true;
     }
     play_card(card_id, idx) {
@@ -2409,9 +2425,19 @@ export class GameState {
             this.log("refusing to heal a player with metal_spirit_chokehold_stacks");
             return 0;
         }
-        const rejuvenation_stacks = this.players[idx].rejuvenation_stacks;
-        if (rejuvenation_stacks > 0) {
-            this.increase_idx_x_by_c(idx, "max_hp", rejuvenation_stacks);
+        if (this.players[idx].has_rejuvenation) {
+            for (let i=0; i<this.players[idx].p2_rejuvenation_stacks; i++) {
+                this.increase_idx_x_by_c(idx, "max_hp", 3);
+            }
+            for (let i=0; i<this.players[idx].p3_rejuvenation_stacks; i++) {
+                this.increase_idx_x_by_c(idx, "max_hp", 4);
+            }
+            for (let i=0; i<this.players[idx].p4_rejuvenation_stacks; i++) {
+                this.increase_idx_x_by_c(idx, "max_hp", 5);
+            }
+            for (let i=0; i<this.players[idx].p5_rejuvenation_stacks; i++) {
+                this.increase_idx_x_by_c(idx, "max_hp", 6);
+            }
         }
         if (this.players[idx].god_opportunity_conform_stacks > 0) {
             amt = Math.ceil(amt * 14 / 10);
@@ -2690,6 +2716,9 @@ export class GameState {
         let pct_multiplier = 100;
         let smash_def = false;
         let min_dmg = 1;
+        if (this.players[enemy_idx].metal_spirit_iron_bone_stacks > 0) {
+            dmg -= 5;
+        }
         if (is_atk) {
             this.players[my_idx].this_atk_injured = false;
             if (this.players[my_idx].trigger_depth <= 1) {
@@ -2716,10 +2745,6 @@ export class GameState {
             }
             if (this.players[my_idx].is_star_point[this.players[0].currently_playing_card_idx]) {
                 dmg += this.players[my_idx].star_power * (1 + this.players[my_idx].bonus_star_power_multiplier);
-            }
-            // TODO: Iron Bone should work on DMG as well as ATK.
-            if (this.players[enemy_idx].metal_spirit_iron_bone_stacks > 0) {
-                dmg -= 5;
             }
             if (this.players[my_idx].smash_def > 0) {
                 this.reduce_idx_x_by_c(my_idx, "smash_def", 1);
@@ -3171,8 +3196,7 @@ export class GameState {
         this.increase_idx_x_by_c(1, debuff_name, 1);
     }
     is_fake_unrestrained_sword(card_id) {
-        return (this.players[0].unrestrained_sword_clear_heart_stacks > 0 &&
-            this.players[0].trigger_depth <= 1) ||
+        return (this.players[0].unrestrained_sword_clear_heart_stacks > 0) ||
             (swogi[card_id].name === "Clear Heart Sword Embryo" &&
             this.players[0].quench_of_sword_heart_unrestrained_stacks > 0);
     }
