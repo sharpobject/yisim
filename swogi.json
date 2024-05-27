@@ -2703,19 +2703,19 @@
 		"hp_cost": 3,
 		"actions": [
 			["atk", 9],
-			["add_c_of_x", 2, "crash_fist_poke_stacks"]
+			["add_c_of_x", 2, "later_crash_fist_poke_stacks"]
 		]
 	},
 	"141012": {
 		"actions": [
 			["atk", 11],
-			["add_c_of_x", 3, "crash_fist_poke_stacks"]
+			["add_c_of_x", 3, "later_crash_fist_poke_stacks"]
 		]
 	},
 	"141013": {
 		"actions": [
 			["atk", 13],
-			["add_c_of_x", 4, "crash_fist_poke_stacks"]
+			["add_c_of_x", 4, "later_crash_fist_poke_stacks"]
 		]
 	},
 	"141021": {
@@ -3272,21 +3272,21 @@
 		"hp_cost": 5,
 		"actions": [
 			["atk", 10],
-			["add_c_of_x", 5, "crash_fist_poke_stacks"],
+			["add_c_of_x", 5, "later_crash_fist_poke_stacks"],
 			["add_c_of_x", 5, "crash_fist_block_stacks"]
 		]
 	},
 	"143032": {
 		"actions": [
 			["atk", 12],
-			["add_c_of_x", 7, "crash_fist_poke_stacks"],
+			["add_c_of_x", 7, "later_crash_fist_poke_stacks"],
 			["add_c_of_x", 7, "crash_fist_block_stacks"]
 		]
 	},
 	"143033": {
 		"actions": [
 			["atk", 14],
-			["add_c_of_x", 9, "crash_fist_poke_stacks"],
+			["add_c_of_x", 9, "later_crash_fist_poke_stacks"],
 			["add_c_of_x", 9, "crash_fist_block_stacks"]
 		]
 	},

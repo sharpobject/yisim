@@ -463,6 +463,7 @@ class Player {
         this.max_physique = 0;
         this.force = 0;
         this.max_force = 6;
+        this.later_crash_fist_poke_stacks = 0;
         this.crash_fist_poke_stacks = 0;
         this.crash_fist_block_stacks = 0;
         this.crash_fist_bounce_stacks = 0;
@@ -1068,6 +1069,7 @@ export class GameState {
         this.players[0].bonus_rep_amt = 0;
         this.players[0].bonus_def_amt = 0;
         this.players[0].damage_dealt_to_hp_by_this_card_atk = 0;
+        this.players[0].this_trigger_directly_attacked = false;
         this.do_action(action);
         this.players[0].currently_triggering_card_idx = prev_triggering_idx;
         this.players[0].currently_triggering_card_id = prev_triggering_id;
@@ -1433,6 +1435,8 @@ export class GameState {
         if (this.players[0].this_trigger_directly_attacked && swogi[card_id].name !== "Crash Fist - Continue") {
             this.players[0].crash_fist_poke_stacks = 0;
         }
+        this.players[0].crash_fist_poke_stacks += this.players[0].later_crash_fist_poke_stacks;
+        this.players[0].later_crash_fist_poke_stacks = 0;
     }
     do_crash_fist_shocked(card_id) {
         if (!this.is_crash_fist(card_id)) {
@@ -1627,6 +1631,7 @@ export class GameState {
         this.players[0].bonus_rep_amt = 0;
         this.players[0].bonus_def_amt = 0;
         this.players[0].damage_dealt_to_hp_by_this_card_atk = 0;
+        this.players[0].this_trigger_directly_attacked = false;
         this.do_cloud_sword_softheart_and_friends(card_id);
         this.do_astral_divination_hexagram(card_id);
         this.do_sword_formation_guard(idx);
