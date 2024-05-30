@@ -2233,7 +2233,6 @@ export class GameState {
                 this.log("player 0 gained qi instead of playing " + format_card(card_id) + ". They now have " + this.players[0].qi + "/" + qi_cost + " qi");
             } else {
                 this.players[0].inspiration_stacks = 0;
-                let hp_cost = card.hp_cost;
                 if (qi_cost > 0) {
                     this.reduce_idx_x_by_c(0, "qi", qi_cost);
                     this.log("player 0 spent " + qi_cost + " qi to play " + format_card(card_id));

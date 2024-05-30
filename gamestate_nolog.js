@@ -2207,7 +2207,6 @@ export class GameState {
                 this.gain_qi_to_afford_card();
             } else {
                 this.players[0].inspiration_stacks = 0;
-                let hp_cost = card.hp_cost;
                 if (qi_cost > 0) {
                     this.reduce_idx_x_by_c(0, "qi", qi_cost);
                 }

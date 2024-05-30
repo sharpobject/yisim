@@ -5722,18 +5722,21 @@
 	"333011": {
 		"name": "Heartbroken Tune",
 		"actions": [
+			["continuous"],
 			["add_c_of_x", 1, "heartbroken_tune_stacks"],
 			["add_enemy_c_of_x", 1, "heartbroken_tune_stacks"]
 		]
 	},
 	"333012": {
 		"actions": [
+			["continuous"],
 			["add_c_of_x", 2, "heartbroken_tune_stacks"],
 			["add_enemy_c_of_x", 2, "heartbroken_tune_stacks"]
 		]
 	},
 	"333013": {
 		"actions": [
+			["continuous"],
 			["add_c_of_x", 3, "heartbroken_tune_stacks"],
 			["add_enemy_c_of_x", 3, "heartbroken_tune_stacks"]
 		]
