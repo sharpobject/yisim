@@ -5277,13 +5277,22 @@
 	"315011": {
 		"name": "Ice Spirit Guard Elixir",
 		"qi_cost": 1,
-		"actions": [["add_c_of_x", 2, "guard_up"], ["consumption"]]
+		"actions": [
+			["add_c_of_x", 2, "guard_up"],
+			["consumption"]
+		]
 	},
 	"315012": {
-		"actions": [["add_c_of_x", 3, "guard_up"], ["consumption"]]
+		"actions": [
+			["add_c_of_x", 3, "guard_up"],
+			["consumption"]
+		]
 	},
 	"315013": {
-		"actions": [["add_c_of_x", 4, "guard_up"], ["consumption"]]
+		"actions": [
+			["add_c_of_x", 4, "guard_up"],
+			["consumption"]
+		]
 	},
 	"321011": {
 		"name": "Thunder Fulu",
@@ -5468,17 +5477,20 @@
 	"323031": {
 		"name": "Miasma Fulu",
 		"actions": [
-			["add_enemy_c_of_x", 2, "internal_injury"]
+			["add_enemy_c_of_x", 2, "internal_injury"],
+			["consumption"]
 		]
 	},
 	"323032": {
 		"actions": [
-			["add_enemy_c_of_x", 3, "internal_injury"]
+			["add_enemy_c_of_x", 3, "internal_injury"],
+			["consumption"]
 		]
 	},
 	"323033": {
 		"actions": [
-			["add_enemy_c_of_x", 4, "internal_injury"]
+			["add_enemy_c_of_x", 4, "internal_injury"],
+			["consumption"]
 		]
 	},
 	"324011": {
@@ -5646,18 +5658,21 @@
 	"331031": {
 		"name": "Carefree Tune",
 		"actions": [
+			["continuous"],
 			["add_c_of_x", 4, "carefree_tune_stacks"],
 			["add_enemy_c_of_x", 4, "carefree_tune_stacks"]
 		]
 	},
 	"331032": {
 		"actions": [
+			["continuous"],
 			["add_c_of_x", 6, "carefree_tune_stacks"],
 			["add_enemy_c_of_x", 6, "carefree_tune_stacks"]
 		]
 	},
 	"331033": {
 		"actions": [
+			["continuous"],
 			["add_c_of_x", 9, "carefree_tune_stacks"],
 			["add_enemy_c_of_x", 9, "carefree_tune_stacks"]
 		]
@@ -5665,18 +5680,21 @@
 	"332011": {
 		"name": "Kindness Tune",
 		"actions": [
+			["continuous"],
 			["set_c_up_to_x", 4, "kindness_tune_stacks"],
 			["set_enemy_c_up_to_x", 4, "kindness_tune_stacks"]
 		]
 	},
 	"332012": {
 		"actions": [
+			["continuous"],
 			["set_c_up_to_x", 6, "kindness_tune_stacks"],
 			["set_enemy_c_up_to_x", 6, "kindness_tune_stacks"]
 		]
 	},
 	"332013": {
 		"actions": [
+			["continuous"],
 			["set_c_up_to_x", 8, "kindness_tune_stacks"],
 			["set_enemy_c_up_to_x", 8, "kindness_tune_stacks"]
 		]
@@ -5684,18 +5702,21 @@
 	"332021": {
 		"name": "Illusion Tune",
 		"actions": [
+			["continuous"],
 			["add_c_of_x", 3, "illusion_tune_stacks"],
 			["add_enemy_c_of_x", 3, "illusion_tune_stacks"]
 		]
 	},
 	"332022": {
 		"actions": [
+			["continuous"],
 			["add_c_of_x", 5, "illusion_tune_stacks"],
 			["add_enemy_c_of_x", 5, "illusion_tune_stacks"]
 		]
 	},
 	"332023": {
 		"actions": [
+			["continuous"],
 			["add_c_of_x", 7, "illusion_tune_stacks"],
 			["add_enemy_c_of_x", 7, "illusion_tune_stacks"]
 		]
@@ -5744,18 +5765,21 @@
 	"333021": {
 		"name": "Craze Dance Tune",
 		"actions": [
+			["continuous"],
 			["add_c_of_x", 2, "craze_dance_tune_stacks"],
 			["add_enemy_c_of_x", 2, "craze_dance_tune_stacks"]
 		]
 	},
 	"333022": {
 		"actions": [
+			["continuous"],
 			["add_c_of_x", 4, "craze_dance_tune_stacks"],
 			["add_enemy_c_of_x", 4, "craze_dance_tune_stacks"]
 		]
 	},
 	"333023": {
 		"actions": [
+			["continuous"],
 			["add_c_of_x", 6, "craze_dance_tune_stacks"],
 			["add_enemy_c_of_x", 6, "craze_dance_tune_stacks"]
 		]
@@ -5782,18 +5806,21 @@
 	"334011": {
 		"name": "Regen Tune",
 		"actions": [
+			["continuous"],
 			["add_c_of_x", 3, "regen_tune_stacks"],
 			["add_enemy_c_of_x", 3, "regen_tune_stacks"]
 		]
 	},
 	"334012": {
 		"actions": [
+			["continuous"],
 			["add_c_of_x", 5, "regen_tune_stacks"],
 			["add_enemy_c_of_x", 5, "regen_tune_stacks"]
 		]
 	},
 	"334013": {
 		"actions": [
+			["continuous"],
 			["add_c_of_x", 7, "regen_tune_stacks"],
 			["add_enemy_c_of_x", 7, "regen_tune_stacks"]
 		]
