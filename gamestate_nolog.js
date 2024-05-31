@@ -38,7 +38,7 @@ function id_is_consumption(card_id) {
     return actions_contains_str(swogi[card_id].actions, "consumption");
 }
 const SECTS = ["sw", "he", "fe", "dx"];
-const SECTS_FOR_MARKING = ["no marking"] + SECTS;
+const SECTS_FOR_MARKING = ["no marking", ...SECTS];
 export const CHARACTER_ID_TO_NAME = {
     "sw1": "Mu Yifeng",
     "sw2": "Yan Xue",
@@ -1507,6 +1507,9 @@ export class GameState {
         }
     }
     do_astral_divination_hexagram(card_id) {
+        if (this.players[0].astral_divination_hexagram_stacks === 0) {
+            return;
+        }
         if (is_astral_move(card_id)) {
             this.increase_idx_x_by_c(0, "hexagram", 1);
         }
@@ -3995,7 +3998,7 @@ export function guess_character(player) {
         } else {
             const marking = swogi[card_id].marking;
             if (sect_id_to_guess_count[marking] !== undefined) {
-                sect_id_to_guess_count[marking]++;
+                sect_id_to_guess_count[marking] += 0.01
             }
         }
     }
