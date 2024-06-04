@@ -1217,6 +1217,7 @@ export class GameState {
         if (this.is_cloud_sword(card_id)) {
             this.players[0].cloud_sword_chain_count += 1;
             this.log("incremented cloud_sword_chain_count to " + this.players[0].cloud_sword_chain_count);
+            this.do_step_moon_into_cloud(card_id);
         } else {
             if (this.players[0].cloud_sword_chain_count > 0 && this.players[0].endurance_as_cloud_sea_stacks === 0) {
                 this.players[0].cloud_sword_chain_count = 0;

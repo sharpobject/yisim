@@ -1208,6 +1208,7 @@ export class GameState {
         // if this card has "Cloud Sword" in the name, increment cloud_sword_chain_count
         if (this.is_cloud_sword(card_id)) {
             this.players[0].cloud_sword_chain_count += 1;
+            this.do_step_moon_into_cloud(card_id);
         } else {
             if (this.players[0].cloud_sword_chain_count > 0 && this.players[0].endurance_as_cloud_sea_stacks === 0) {
                 this.players[0].cloud_sword_chain_count = 0;
