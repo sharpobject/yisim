@@ -3157,7 +3157,6 @@
 		]
 	},
 	"142092": {
-		"hp_cost": 2,
 		"actions": [
 			["if_x_at_least_c_do", "qi", 1, [
 				["reduce_c_of_x", 1, "qi"],
@@ -3168,7 +3167,6 @@
 		]
 	},
 	"142093": {
-		"hp_cost": 2,
 		"actions": [
 			["if_x_at_least_c_do", "qi", 1, [
 				["reduce_c_of_x", 1, "qi"],

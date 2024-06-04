@@ -186,7 +186,7 @@ for (let i=0; i<keys.length; i++) {
     const name = with_default(swogi[card_id].name, swogi[base_id].name);
     swogi[card_id].name = name;
     const qi_cost = with_default(swogi[card_id].qi_cost, with_default(swogi[base_id].qi_cost, 0));
-    const hp_cost = with_default(swogi[card_id].hp_cost, with_default(swogi[base_id].hp_cost, 0));
+    const hp_cost = with_default(swogi[card_id].hp_cost, with_default(swogi[base_id].hp_cost, undefined));
     const character = with_default(swogi[card_id].character, with_default(swogi[base_id].character, undefined));
     const decrease_qi_cost_by_x = with_default(swogi[card_id].decrease_qi_cost_by_x, with_default(swogi[base_id].decrease_qi_cost_by_x, undefined));
     const water_spirit_cost_0_qi = with_default(swogi[card_id].water_spirit_cost_0_qi, with_default(swogi[base_id].water_spirit_cost_0_qi, undefined));
@@ -2215,7 +2215,7 @@ export class GameState {
             }
             qi_cost = Math.max(0, qi_cost - this.players[0].inspiration_stacks);
             let hp_cost = card.hp_cost;
-            if (hp_cost > 0) {
+            if (hp_cost === 4) {
                 if (card.name === "Mountain Cleaving Palms") {
                     let reduce_amt = Math.floor(this.players[0].physique / 2);
                     hp_cost = Math.max(0, hp_cost - reduce_amt);
@@ -2227,6 +2227,9 @@ export class GameState {
                     const excess_qi = qi_cost - this.players[0].qi;
                     if (this.players[0].physique >= excess_qi && this.players[0].hp >= 3 * excess_qi) {
                         qi_cost -= excess_qi;
+                        if (hp_cost === undefined) {
+                            hp_cost = 0;
+                        }
                         hp_cost += 3 * excess_qi;
                         physique_cost += excess_qi;
                     }
@@ -2241,11 +2244,13 @@ export class GameState {
                     this.reduce_idx_x_by_c(0, "qi", qi_cost);
                     this.log("player 0 spent " + qi_cost + " qi to play " + format_card(card_id));
                 }
-                if (hp_cost > 0) {
-                    if (this.players[0].cracking_fist_stacks > 0) {
-                        this.reduce_idx_max_hp(0, hp_cost);
-                    } else {
-                        this.reduce_idx_hp(0, hp_cost, true);
+                if (hp_cost !== undefined) {
+                    if (hp_cost > 0) {
+                        if (this.players[0].cracking_fist_stacks > 0) {
+                            this.reduce_idx_max_hp(0, hp_cost);
+                        } else {
+                            this.reduce_idx_hp(0, hp_cost, true);
+                        }
                     }
                     this.log("player 0 spent " + hp_cost + " hp to play " + format_card(card_id));
                     if (this.players[0].crash_fist_bounce_stacks > 0 && this.is_crash_fist(card_id)) {
@@ -2260,7 +2265,7 @@ export class GameState {
                     this.reduce_idx_x_by_c(0, "physique", physique_cost);
                     this.log("player 0 spent " + physique_cost + " physique to play " + format_card(card_id));
                 }
-                if (hp_cost === 0 && qi_cost === 0 && physique_cost === 0) {
+                if (hp_cost === undefined && qi_cost === 0 && physique_cost === 0) {
                     this.log("player 0 is playing " + format_card(card_id));
                 }
                 const card_idx = this.players[0].next_card_index;
