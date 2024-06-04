@@ -2190,6 +2190,7 @@ export class GameState {
             }
             qi_cost = Math.max(0, qi_cost - this.players[0].inspiration_stacks);
             let hp_cost = card.hp_cost;
+            const orig_hp_cost = hp_cost;
             if (hp_cost === 4) {
                 if (card.name === "Mountain Cleaving Palms") {
                     let reduce_amt = Math.floor(this.players[0].physique / 2);
@@ -2225,17 +2226,21 @@ export class GameState {
                             this.reduce_idx_hp(0, hp_cost, true);
                         }
                     }
-                    if (this.players[0].crash_fist_bounce_stacks > 0 && this.is_crash_fist(card_id)) {
+                    // bounce is consumed by spending 0 hp to play mountain cleaving palms
+                    // but it is not used when paying hp via unbounded qi
+                    if (orig_hp_cost !== undefined && this.players[0].crash_fist_bounce_stacks > 0&& this.is_crash_fist(card_id)) {
                         this.heal(hp_cost);
                         if (swogi[card_id].name !== "Crash Fist - Continue") {
                             this.players[0].crash_fist_bounce_stacks = 0;
                         }
                     }
+                    // it happens that physique cost only comes from unbounded qi
+                    // which also creates hp cost
+                    if (physique_cost > 0) {
+                        this.reduce_idx_x_by_c(0, "physique", physique_cost);
+                    }
                 }
-                if (physique_cost > 0) {
-                    this.reduce_idx_x_by_c(0, "physique", physique_cost);
-                }
-                if (hp_cost === undefined && qi_cost === 0 && physique_cost === 0) {
+                if (hp_cost === undefined && qi_cost === 0) {
                 }
                 const card_idx = this.players[0].next_card_index;
                 this.do_finishing_touch(card_idx);
