@@ -5051,7 +5051,7 @@
 	"245011": {
 		"name": "Break Cocoon",
 		"actions": [
-			["add_c_of_x", 10, "agility"],
+			["add_c_of_x", 5, "agility"],
 			["for_each_x_add_c_pct_y", "debuff", 200, "bonus_def_amt"],
 			["for_each_x_reduce_c_pct_y", "internal_injury", 100, "internal_injury"],
 			["for_each_x_reduce_c_pct_y", "weaken", 100, "weaken"],
@@ -5067,7 +5067,7 @@
 	},
 	"245012": {
 		"actions": [
-			["add_c_of_x", 15, "agility"],
+			["add_c_of_x", 10, "agility"],
 			["for_each_x_add_c_pct_y", "debuff", 200, "bonus_def_amt"],
 			["for_each_x_reduce_c_pct_y", "internal_injury", 100, "internal_injury"],
 			["for_each_x_reduce_c_pct_y", "weaken", 100, "weaken"],
@@ -5083,7 +5083,7 @@
 	},
 	"245013": {
 		"actions": [
-			["add_c_of_x", 20, "agility"],
+			["add_c_of_x", 15, "agility"],
 			["for_each_x_add_c_pct_y", "debuff", 200, "bonus_def_amt"],
 			["for_each_x_reduce_c_pct_y", "internal_injury", 100, "internal_injury"],
 			["for_each_x_reduce_c_pct_y", "weaken", 100, "weaken"],
@@ -8452,6 +8452,29 @@
 			["add_c_of_x", 12, "crash_fist_stygian_night_stacks"]
 		]
 	},
+	"644021": {
+		"name": "Meditation of Xuan",
+		"actions": [
+			["physique", 2],
+			["continuous"],
+			["add_c_of_x", 2, "meditation_of_xuan_stacks"]
+		],
+		"character": "dx4"
+	},
+	"644022": {
+		"actions": [
+			["physique", 3],
+			["continuous"],
+			["add_c_of_x", 3, "meditation_of_xuan_stacks"]
+		]
+	},
+	"644023": {
+		"actions": [
+			["physique", 4],
+			["continuous"],
+			["add_c_of_x", 4, "meditation_of_xuan_stacks"]
+		]
+	},
 	"645011": {
 		"name": "Stygian Moon's Changuang",
 		"actions": [
@@ -8473,6 +8496,29 @@
 			["physique", 3],
 			["add_c_of_x", 4, "underworld"],
 			["add_c_of_x", 12, "agility"]
+		]
+	},
+	"652011": {
+		"name": "Wan Xuan Demon Breaking Palm",
+		"actions": [
+			["physique", 2],
+			["for_each_x_convert_c_pct_debuff_to_y", "physique", 5, "increase_atk"],
+			["rep", 3, ["atk", 3]]
+		],
+		"character": "dx4"
+	},
+	"652012": {
+		"actions": [
+			["physique", 3],
+			["for_each_x_convert_c_pct_debuff_to_y", "physique", 6.666667, "increase_atk"],
+			["rep", 3, ["atk", 3]]
+		]
+	},
+	"652013": {
+		"actions": [
+			["physique", 4],
+			["for_each_x_convert_c_pct_debuff_to_y", "physique", 10, "increase_atk"],
+			["rep", 3, ["atk", 3]]
 		]
 	},
 	"714011": {

@@ -497,6 +497,7 @@ class Player {
         this.underworld = 0;
         this.character = "sw1";
         this.crash_fist_stygian_night_stacks = 0;
+        this.meditation_of_xuan_stacks = 0;
         // musician side job cards
         this.carefree_tune_stacks = 0;
         this.kindness_tune_stacks = 0;
@@ -681,6 +682,8 @@ class Player {
         this.p4_mark_of_dark_heart_stacks = 0;
         this.p5_mark_of_dark_heart_stacks = 0;
         this.entering_styx_stacks = 0;
+        this.zen_mind_forging_body_stacks = 0;
+        this.mind_body_resonance_stacks = 0;
         // life shop buffs
         this.pact_of_adversity_reinforcement_stacks = 0;
         this.pact_of_equilibrium_stacks = 0;
@@ -974,6 +977,9 @@ export class GameState {
     do_entering_styx(idx) {
         this.increase_idx_x_by_c(idx, "underworld", this.players[idx].entering_styx_stacks);
     }
+    do_zen_mind_forging_body(idx) {
+        this.increase_idx_x_by_c(idx, "physique", this.players[idx].zen_mind_forging_body_stacks);
+    }
     try_upgrade_card(player_idx, card_idx) {
         const card_id = this.players[player_idx].cards[card_idx];
         const upgrade_level = card_id.substring(card_id.length - 1);
@@ -1112,6 +1118,7 @@ export class GameState {
             this.do_courage_to_fight(idx);
             this.do_mark_of_dark_heart(idx);
             this.do_entering_styx(idx);
+            this.do_zen_mind_forging_body(idx);
         }
         for (let idx = 0; idx < 2; idx++) {
             for (let card_idx = 0; card_idx < this.players[0].cards.length; card_idx++) {
@@ -1373,18 +1380,21 @@ export class GameState {
     is_crash_fist(card_id) {
         return this.players[0].crash_footwork_stacks > 0 || is_crash_fist(card_id);
     }
+    get_debuff_count(idx) {
+        return this.players[idx].decrease_atk +
+            this.players[idx].internal_injury +
+            this.players[idx].wound +
+            this.players[idx].underworld +
+            this.players[idx].entangle +
+            this.players[idx].flaw +
+            this.players[idx].weaken;
+    }
     do_pre_crash_fist(card_id) {
         if (!this.is_crash_fist(card_id)) {
             return;
         }
         if (this.players[0].crash_fist_stygian_night_stacks > 0) {
-            const debuff_amt = this.players[0].decrease_atk +
-                this.players[0].internal_injury +
-                this.players[0].wound +
-                this.players[0].underworld +
-                this.players[0].entangle +
-                this.players[0].flaw +
-                this.players[0].weaken;
+            const debuff_amt = this.get_debuff_count(0);
             const bonus_atk = Math.min(debuff_amt, this.players[0].crash_fist_stygian_night_stacks);
             this.increase_idx_x_by_c(0, "bonus_atk_amt", bonus_atk);
         }
@@ -1836,6 +1846,13 @@ export class GameState {
     do_heartbroken_tune() {
         this.for_each_x_add_y("heartbroken_tune_stacks", "internal_injury");
     }
+    do_meditation_of_xuan() {
+        if (this.players[0].meditation_of_xuan_stacks === 0) {
+            return;
+        }
+        this.for_each_x_add_y("meditation_of_xuan_stacks", "internal_injury");
+        this.for_each_x_add_y("meditation_of_xuan_stacks", "regen");
+    }
     do_unrestrained_sword_zero() {
         if (this.players[0].unrestrained_sword_zero_stacks > 0) {
             const card_id = this.players[0].currently_triggering_card_id;
@@ -2034,13 +2051,7 @@ export class GameState {
         if (cap === 0) {
             return;
         }
-        const count = this.players[0].internal_injury +
-                        this.players[0].weaken +
-                        this.players[0].flaw +
-                        this.players[0].decrease_atk +
-                        this.players[0].entangle +
-                        this.players[0].wound +
-                        this.players[0].underworld;
+        const count = this.get_debuff_count(0);
         const amt = Math.min(count, cap);
         this.heal(amt);
     }
@@ -2166,14 +2177,7 @@ export class GameState {
                 let x = card.decrease_qi_cost_by_x;
                 let reduce_amt = 0;
                 if (x === "debuff") {
-                    reduce_amt = this.players[0].decrease_atk +
-                                this.players[0].internal_injury +
-                                this.players[0].wound +
-                                this.players[0].underworld +
-                                this.players[0].entangle +
-                                this.players[0].flaw +
-                                this.players[0].weaken;
-
+                    reduce_amt = this.get_debuff_count(0);
                 } else {
                     if (typeof this.players[0][x] !== "number") {
                         this.crash();
@@ -2197,17 +2201,15 @@ export class GameState {
                     hp_cost = Math.max(0, hp_cost - reduce_amt);
                 }
             }
-            let physique_cost = 0;
             if (this.players[0].unbounded_qi_stacks > 0) {
                 if (this.players[0].qi < qi_cost) {
                     const excess_qi = qi_cost - this.players[0].qi;
                     if (this.players[0].physique >= excess_qi && this.players[0].hp >= 3 * excess_qi) {
                         qi_cost -= excess_qi;
-                        if (hp_cost === undefined) {
-                            hp_cost = 0;
-                        }
-                        hp_cost += 3 * excess_qi;
-                        physique_cost += excess_qi;
+                        let unbounded_qi_hp_cost = 3 * excess_qi;
+                        let unbounded_qi_physique_cost = excess_qi;
+                        this.reduce_idx_hp(0, unbounded_qi_hp_cost, true);
+                        this.reduce_idx_x_by_c(0, "physique", unbounded_qi_physique_cost);
                     }
                 }
             }
@@ -2228,16 +2230,12 @@ export class GameState {
                     }
                     // bounce is consumed by spending 0 hp to play mountain cleaving palms
                     // but it is not used when paying hp via unbounded qi
-                    if (orig_hp_cost !== undefined && this.players[0].crash_fist_bounce_stacks > 0&& this.is_crash_fist(card_id)) {
+                    if (this.players[0].crash_fist_bounce_stacks > 0 &&
+                        this.is_crash_fist(card_id)) {
                         this.heal(hp_cost);
                         if (swogi[card_id].name !== "Crash Fist - Continue") {
                             this.players[0].crash_fist_bounce_stacks = 0;
                         }
-                    }
-                    // it happens that physique cost only comes from unbounded qi
-                    // which also creates hp cost
-                    if (physique_cost > 0) {
-                        this.reduce_idx_x_by_c(0, "physique", physique_cost);
                     }
                 }
                 if (hp_cost === undefined && qi_cost === 0) {
@@ -2549,6 +2547,9 @@ export class GameState {
         this.players[idx].physique += amt;
         this.players[idx].physique_gained += amt;
         this.increase_idx_x_by_c(idx, "max_hp", amt);
+        if (this.players[idx].mind_body_resonance_stacks > 0) {
+            this.increase_idx_def(idx, amt);
+        }
         if (this.players[idx].max_physique < this.players[idx].physique) {
             let heal_amt = amt;
             if (prev < this.players[idx].max_physique) {
@@ -2899,13 +2900,7 @@ export class GameState {
     for_each_idx_x_add_idx_c_pct_y(idx_a, x, idx_b, c, y) {
         let amt_x = 0;
         if (x === "debuff") {
-            amt_x = this.players[idx_a].internal_injury +
-                    this.players[idx_a].weaken +
-                    this.players[idx_a].flaw +
-                    this.players[idx_a].decrease_atk +
-                    this.players[idx_a].entangle +
-                    this.players[idx_a].wound +
-                    this.players[idx_a].underworld;
+            amt_x = this.get_debuff_count(idx_a);
         } else {
             if (typeof this.players[idx_a][x] !== "number") {
                 this.crash();
@@ -2918,13 +2913,7 @@ export class GameState {
     for_each_x_add_c_pct_y(x, c, y) {
         let amt_x = 0;
         if (x === "debuff") {
-            amt_x = this.players[0].internal_injury +
-                    this.players[0].weaken +
-                    this.players[0].flaw +
-                    this.players[0].decrease_atk +
-                    this.players[0].entangle +
-                    this.players[0].wound +
-                    this.players[0].underworld;
+            amt_x = this.get_debuff_count(0);
         } else {
             if (typeof this.players[0][x] !== "number") {
                 this.crash();
@@ -3799,13 +3788,7 @@ export class GameState {
     for_each_enemy_x_add_y(x, y) {
         let amt_x = 0;
         if (x === "debuff") {
-            amt_x = this.players[1].internal_injury +
-                    this.players[1].weaken +
-                    this.players[1].flaw +
-                    this.players[1].decrease_atk +
-                    this.players[1].entangle +
-                    this.players[1].wound +
-                    this.players[1].underworld;
+            amt_x = this.get_debuff_count(1);
         } else {
             if (typeof this.players[1][x] !== "number") {
                 this.crash();
@@ -3876,6 +3859,13 @@ export class GameState {
         return this.is_cloud_sword_except_for_ddc(card_id) ||
             (this.players[0].dragon_devours_clouds_stacks > 0 &&
                 this.is_unrestrained_sword_except_for_ddc(card_id));
+    }
+    for_each_x_convert_c_pct_debuff_to_y(x, c, y) {
+        let debuff_amt = this.get_debuff_count(0);
+        let c_pct_x = Math.floor(this.players[0][x] * c / 100);
+        let convert_amt = Math.min(debuff_amt, c_pct_x);
+        this.reduce_random_debuff_by_c_n_times(1, convert_amt);
+        this.add_c_of_x(convert_amt, y);
     }
 }
 
@@ -3972,6 +3962,8 @@ const FATE_TO_CHARACTER_OR_SECT = {
     cracking_fist_stacks: "dx2",
     stance_of_fierce_attack_stacks: "dx2",
     entering_styx_stacks: "dx3",
+    zen_mind_forging_body_stacks: "dx4",
+    mind_body_resonance_stacks: "dx4",
     p2_firmness_body_stacks: "dx",
     p3_firmness_body_stacks: "dx",
     p4_firmness_body_stacks: "dx",
