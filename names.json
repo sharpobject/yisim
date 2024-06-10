@@ -2,17 +2,17 @@
     {
         "id": 111011,
         "name": "Cloud Sword - Touch Sky",
-        "namecn": "云剑·探云"
+        "namecn": "云剑•探云"
     },
     {
         "id": 111021,
         "name": "Cloud Sword - Fleche",
-        "namecn": "云剑·飞刺"
+        "namecn": "云剑•飞刺"
     },
     {
         "id": 111031,
         "name": "Cloud Sword - Touch Earth",
-        "namecn": "云剑·厚土"
+        "namecn": "云剑•厚土"
     },
     {
         "id": 111041,
@@ -62,17 +62,17 @@
     {
         "id": 112011,
         "name": "Cloud Sword - Reguard",
-        "namecn": "云剑·回守"
+        "namecn": "云剑•回守"
     },
     {
         "id": 112021,
         "name": "Cloud Sword - Riddle",
-        "namecn": "云剑·极意"
+        "namecn": "云剑•极意"
     },
     {
         "id": 112031,
         "name": "Cloud Sword - Conceal",
-        "namecn": "云剑·无锋"
+        "namecn": "云剑•无锋"
     },
     {
         "id": 112041,
@@ -112,12 +112,13 @@
     {
         "id": 112111,
         "name": "Unrestrained Sword - One",
-        "namecn": "狂剑·一式"
+        "namecn": "狂剑•一式"
     },
     {
         "id": 113011,
         "name": "Cloud Sword - Softheart",
-        "namecn": "柔云心法"
+        "namecn": "云剑•柔心",
+        "namealta": "柔云心法"
     },
     {
         "id": 113021,
@@ -1092,7 +1093,7 @@
     {
         "id": 215031,
         "name": "Unrestrained Sword - Twin Dragons",
-        "namecn": "狂剑·双龙"
+        "namecn": "狂剑•双龙"
     },
     {
         "id": 216011,
@@ -1720,13 +1721,13 @@
     {
         "id": 371011,
         "name": "Heavenly Decree - Attack",
-        "namecn": "天谕·攻",
+        "namecn": "天谕•攻",
         "namealta": "God Saying - Attack"
     },
     {
         "id": 371021,
         "name": "Heavenly Decree - Defend",
-        "namecn": "天谕·守",
+        "namecn": "天谕•守",
         "namealta": "God Saying - Defend"
     },
     {
@@ -1744,13 +1745,13 @@
     {
         "id": 372011,
         "name": "Heavenly Fortune - Seek Fortune",
-        "namecn": "天运·趋吉",
+        "namecn": "天运•趋吉",
         "namealta": "God Luck - Approach"
     },
     {
         "id": 372021,
         "name": "Heavenly Fortune - Shun Misfortune",
-        "namecn": "天运·避凶",
+        "namecn": "天运•避凶",
         "namealta": "God Luck - Avoid"
     },
     {
@@ -1766,13 +1767,13 @@
     {
         "id": 373011,
         "name": "Heavenly Time - Fleeting",
-        "namecn": "天命·飞逝",
+        "namecn": "天命•飞逝",
         "namealta": "God Fate - Flies"
     },
     {
         "id": 373021,
         "name": "Heavenly Time - Recurring",
-        "namecn": "天命·重现",
+        "namecn": "天命•重现",
         "namealta": "God Fate - Reborn"
     },
     {
@@ -1795,13 +1796,13 @@
     {
         "id": 374021,
         "name": "Heavenly Star - Guard",
-        "namecn": "天星·御心",
+        "namecn": "天星•御心",
         "namealta": "God Star - Promotion"
     },
     {
         "id": 374031,
         "name": "Heavenly Star - Pull",
-        "namecn": "天星·牵引",
+        "namecn": "天星•牵引",
         "namealta": "God Star - Traction"
     },
     {
@@ -1825,13 +1826,13 @@
     {
         "id": 375031,
         "name": "Heavenly Will - Comply",
-        "namecn": "天机·顺应",
+        "namecn": "天机•顺应",
         "namealta": "God's Opportunity - Conform"
     },
     {
         "id": 375041,
         "name": "Heavenly Will - Defy",
-        "namecn": "天机·逆施",
+        "namecn": "天机•逆施",
         "namealta": "God's Opportunity - Reversal"
     },
     {
@@ -1997,7 +1998,7 @@
     {
         "id": 612011,
         "name": "Cloud Sword - Cat Paw",
-        "namecn": "云剑·猫爪"
+        "namecn": "云剑•猫爪"
     },
     {
         "id": 614011,
@@ -2017,7 +2018,7 @@
     {
         "id": 615011,
         "name": "Unrestrained Sword - Flame Dance",
-        "namecn": "狂剑·炎舞"
+        "namecn": "狂剑•炎舞"
     },
     {
         "id": 615021,
@@ -2077,7 +2078,7 @@
     {
         "id": 632011,
         "name": "Wood Spirit - Peach Blossom Seal",
-        "namecn": "木灵·桃花印"
+        "namecn": "木灵•桃花印"
     },
     {
         "id": 633011,
@@ -2092,7 +2093,7 @@
     {
         "id": 634011,
         "name": "Metal Spirit - Vigorous",
-        "namecn": "金灵·刚劲"
+        "namecn": "金灵•刚劲"
     },
     {
         "id": 634021,
@@ -2102,12 +2103,12 @@
     {
         "id": 634031,
         "name": "Water Spirit - Spring Rain",
-        "namecn": "水灵·春雨"
+        "namecn": "水灵•春雨"
     },
     {
         "id": 635011,
         "name": "Earth Spirit - Landslide",
-        "namecn": "土灵·山崩"
+        "namecn": "土灵•山崩"
     },
     {
         "id": 642011,
@@ -2127,7 +2128,7 @@
     {
         "id": 644011,
         "name": "Crash Fist - Styx Night",
-        "namecn": "崩拳·冥夜",
+        "namecn": "崩拳•冥夜",
         "namealta": "Crash Fist - Stygian Night"
     },
     {
@@ -2155,7 +2156,7 @@
     {
         "id": 714021,
         "name": "Cloud Sword - Sunset Glow",
-        "namecn": "云剑·晚霞"
+        "namecn": "云剑•晚霞"
     },
     {
         "id": 715011,
@@ -2180,7 +2181,7 @@
     {
         "id": 725011,
         "name": "Astral Move - Twin Swallows",
-        "namecn": "星弈·双飞燕"
+        "namecn": "星弈•双飞燕"
     },
     {
         "id": 725021,
