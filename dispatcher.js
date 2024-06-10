@@ -121,7 +121,7 @@ const initDB = (db) => {
 // Function to merge a temporary database file into the main database
 // Assumption: Temporary database contains exactly one batch
 const mergeTempDB = (db, tempFilePath) => {
-  const tempDBAlias = `tempDB_${Date.now()}`;
+  const tempDBAlias = `tempDB_${Date.now()}_${Math.floor(Math.random() * 10000)}`;
   db.serialize(() => {
     db.run(`ATTACH DATABASE '${tempFilePath}' AS ${tempDBAlias};`, (err) => {
       if (err) {

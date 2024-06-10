@@ -3,111 +3,84 @@
 } = require("./gamestate_nolog.js"));
 
 function next_permutation(arr) {
-  let i = arr.length - 1;
-  while (i > 0 && arr[i - 1] >= arr[i]) {
-    i -= 1;
-  }
-  if (i === 0) {
-    return false;
-  }
-  let j = arr.length - 1;
-  while (arr[j] <= arr[i - 1]) {
-    j -= 1;
-  }
-  let temp = arr[i - 1];
-  arr[i - 1] = arr[j];
-  arr[j] = temp;
-  j = arr.length - 1;
-  while (i < j) {
-    temp = arr[i];
-    arr[i] = arr[j];
+    let i = arr.length - 1;
+    while (i > 0 && arr[i-1] >= arr[i]) {
+        i -= 1;
+    }
+    if (i === 0) {
+        return false;
+    }
+    let j = arr.length - 1;
+    while (arr[j] <= arr[i-1]) {
+        j -= 1;
+    }
+    let temp = arr[i-1];
+    arr[i-1] = arr[j];
     arr[j] = temp;
-    i += 1;
-    j -= 1;
-  }
-  return true;
+    j = arr.length - 1;
+    while (i < j) {
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        i += 1;
+        j -= 1;
+    }
+    return true;
 }
 
-onmessage = (event) => {
-  const batch = event.data.batch;
-  const job = event.data.job;
-  const results = [];
-  if (batch.OPTIONS.permute_a) {
+function simulateGame(batch, job, aFirst) {
+  const players = aFirst ? [batch.PLAYER_A, batch.PLAYER_B] : [batch.PLAYER_B, batch.PLAYER_A];
 
-  } else if (batch.OPTIONS.permute_b) {
+  const game = new GameState();
 
-  } else {
-    if (batch.OPTIONS.a_first === false) {
-      const players = [batch.PLAYER_B, batch.PLAYER_A];
-      const game = new GameState();
-      for (let i = 0; i < 2; i++) {
-        for (let key in players[i]) {
-          game.players[i][key] = players[i][key];
-        }
-      }
-      game.players[0].cards = job.CARDS.b;
-      game.players[1].cards = job.CARDS.a;
-      for (let p of game.players) {
-        for (let i = 0; i < 8; i++) {
-          p.cards[i] = p.cards[i].toString();
-        }
-      }
-      game.sim_n_turns(64);
-      let margin = game.players[0].hp < game.players[1].hp ?
-        game.players[1].hp - game.players[0].hp - 1000 * game.turns_taken :
-        game.players[0].hp - game.players[1].hp - 1000 * game.turns_taken;
-      margin = 2 - 2 / (1 + 2 ** (margin / 4096)); // monotonic transformation to non-negative
-      if (!(game.players[0].hp < game.players[1].hp)) {
-        margin = -margin;
-      }
-      // results.push({
-      //   BATCH_ID: job.BATCH_ID, JOB_ID: job.ID,
-      //   A1: +game.players[1].cards[0], A2: +game.players[1].cards[1], A3: +game.players[1].cards[2], A4: +game.players[1].cards[3], A5: +game.players[1].cards[4], A6: +game.players[1].cards[5], A7: +game.players[1].cards[6], A8: +game.players[1].cards[7],
-      //   B1: +game.players[0].cards[0], B2: +game.players[0].cards[1], B3: +game.players[0].cards[2], B4: +game.players[0].cards[3], B5: +game.players[0].cards[4], B6: +game.players[0].cards[5], B7: +game.players[0].cards[6], B8: +game.players[0].cards[7],
-      //   USED_RANDOM: game.used_randomness ? 1 : 0, A_FIRST: 0, TURNS: game.turns_taken, HP_A: game.players[1].hp, HP_B: game.players[0].hp, T_SIGMOID: margin,
-      // });
-      results.push([
-        batch.ID, job.ID,
-        +game.players[1].cards[0], +game.players[1].cards[1], +game.players[1].cards[2], +game.players[1].cards[3], +game.players[1].cards[4], +game.players[1].cards[5], +game.players[1].cards[6], +game.players[1].cards[7],
-        +game.players[0].cards[0], +game.players[0].cards[1], +game.players[0].cards[2], +game.players[0].cards[3], +game.players[0].cards[4], +game.players[0].cards[5], +game.players[0].cards[6], +game.players[0].cards[7],
-        game.used_randomness ? 1 : 0, 0, game.turns_taken, game.players[1].hp, game.players[0].hp, margin
-      ]);
-    } else {
-      const players = [batch.PLAYER_A, batch.PLAYER_B];
-      const game = new GameState();
-      for (let i = 0; i < 2; i++) {
-        for (let key in players[i]) {
-          game.players[i][key] = players[i][key];
-        }
-      }
-      game.players[0].cards = job.CARDS.a;
-      game.players[1].cards = job.CARDS.b;
-      for (let p of game.players) {
-        for (let i = 0; i < 8; i++) {
-          p.cards[i] = p.cards[i].toString();
-        }
-      }
-      game.sim_n_turns(64);
-      let margin = game.players[0].hp < game.players[1].hp ?
-        game.players[1].hp - game.players[0].hp - 1000 * game.turns_taken :
-        game.players[0].hp - game.players[1].hp - 1000 * game.turns_taken;
-      margin = 2 - 2 / (1 + 2 ** (margin / 4096)); // monotonic transformation to non-negative
-      if (game.players[0].hp < game.players[1].hp) {
-        margin = -margin;
-      }
-      // results.push({
-      //   BATCH_ID: job.BATCH_ID, JOB_ID: job.ID,
-      //   A1: +game.players[0].cards[0], A2: +game.players[0].cards[1], A3: +game.players[0].cards[2], A4: +game.players[0].cards[3], A5: +game.players[0].cards[4], A6: +game.players[0].cards[5], A7: +game.players[0].cards[6], A8: +game.players[0].cards[7],
-      //   B1: +game.players[1].cards[0], B2: +game.players[1].cards[1], B3: +game.players[1].cards[2], B4: +game.players[1].cards[3], B5: +game.players[1].cards[4], B6: +game.players[1].cards[5], B7: +game.players[1].cards[6], B8: +game.players[1].cards[7],
-      //   USED_RANDOM: game.used_randomness ? 1 : 0, A_FIRST: 1, TURNS: game.turns_taken, HP_A: game.players[0].hp, HP_B: game.players[1].hp, T_SIGMOID: margin,
-      // });
-      results.push([
-        batch.ID, job.ID,
-        +game.players[0].cards[0], +game.players[0].cards[1], +game.players[0].cards[2], +game.players[0].cards[3], +game.players[0].cards[4], +game.players[0].cards[5], +game.players[0].cards[6], +game.players[0].cards[7],
-        +game.players[1].cards[0], +game.players[1].cards[1], +game.players[1].cards[2], +game.players[1].cards[3], +game.players[1].cards[4], +game.players[1].cards[5], +game.players[1].cards[6], +game.players[1].cards[7],
-        game.used_randomness ? 1 : 0, 1, game.turns_taken, game.players[0].hp, game.players[1].hp, margin,
-      ]);
-    }
+  for (let i = 0; i < 2; i++) {
+    Object.assign(game.players[i], players[i]);
   }
-  postMessage(({ results }));
+  game.players[0].cards = aFirst ? job.CARDS.a : job.CARDS.b;
+  game.players[1].cards = aFirst ? job.CARDS.b : job.CARDS.a;
+
+  game.sim_n_turns(64);
+
+  return formatResult(batch, job, aFirst, game);
+}
+
+function calculateMargin(aFirst, game) {
+  const hpDifference = game.players[1].hp - game.players[0].hp;
+  const baseMargin = Math.abs(hpDifference) - 1000 * game.turns_taken;
+  const transformedMargin = 2 - 2 / (1 + 2 ** (baseMargin / 4096));
+  return (hpDifference > 0) === aFirst ? -transformedMargin : transformedMargin;
+}
+
+function formatResult(batch, job, aFirst, game) {
+  const cardsA = game.players[aFirst ? 0 : 1].cards.map(Number);
+  const cardsB = game.players[aFirst ? 1 : 0].cards.map(Number);
+  const margin = calculateMargin(aFirst, game);
+
+  return [
+    batch.ID, job.ID,
+    ...cardsA, ...cardsB,
+    game.used_randomness ? 1 : 0, aFirst ? 1 : 0,
+    game.turns_taken, game.players[aFirst ? 0 : 1].hp, game.players[aFirst ? 1 : 0].hp, margin
+  ];
+}
+
+// Message handler
+onmessage = (event) => {
+  const { batch, job } = event.data;
+  const aFirst = batch.OPTIONS.a_first !== false;
+  const results = [];
+
+  if (batch.OPTIONS.permute_a) {
+    do {
+      results.push(simulateGame(batch, job, aFirst));
+    } while (next_permutation(job.CARDS.a));
+  } else if (batch.OPTIONS.permute_b) {
+    do {
+      results.push(simulateGame(batch, job, aFirst));
+    } while (next_permutation(job.CARDS.b));
+  } else {
+    results.push(simulateGame(batch, job, aFirst));
+  }
+
+  postMessage({ results });
 };
