@@ -503,13 +503,22 @@
 	"115041": {
 		"name": "Dharma Spirit Sword",
 		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
-		"actions": [["exhaust_x_to_add_c_y", "qi", 5, "bonus_atk_amt"], ["atk", 5]]
+		"actions": [
+			["exhaust_x_to_add_c_y", "qi", 5, "bonus_atk_amt"],
+			["atk", 5]
+		]
 	},
 	"115042": {
-		"actions": [["exhaust_x_to_add_c_y", "qi", 6, "bonus_atk_amt"], ["atk", 5]]
+		"actions": [
+			["exhaust_x_to_add_c_y", "qi", 6, "bonus_atk_amt"],
+			["atk", 5]
+		]
 	},
 	"115043": {
-		"actions": [["exhaust_x_to_add_c_y", "qi", 7, "bonus_atk_amt"], ["atk", 5]]
+		"actions": [
+			["exhaust_x_to_add_c_y", "qi", 7, "bonus_atk_amt"],
+			["atk", 5]
+		]
 	},
 	"115051": {
 		"name": "Sword Intent Surge",
@@ -8510,15 +8519,15 @@
 	"652012": {
 		"actions": [
 			["physique", 3],
-			["for_each_x_convert_c_pct_debuff_to_y", "physique", 6.666667, "increase_atk"],
-			["rep", 3, ["atk", 3]]
+			["for_each_x_convert_c_pct_debuff_to_y", "physique", 5, "increase_atk"],
+			["rep", 4, ["atk", 3]]
 		]
 	},
 	"652013": {
 		"actions": [
 			["physique", 4],
-			["for_each_x_convert_c_pct_debuff_to_y", "physique", 10, "increase_atk"],
-			["rep", 3, ["atk", 3]]
+			["for_each_x_convert_c_pct_debuff_to_y", "physique", 5, "increase_atk"],
+			["rep", 5, ["atk", 3]]
 		]
 	},
 	"714011": {
@@ -8829,6 +8838,720 @@
 		"opening": [
 			["activate_metal_spirit"],
 			["activate_water_spirit"]
+		]
+	},
+	"801011": {
+		"name": "Mushroom Zongzi",
+		"is_salty": true,
+		"actions": [
+			["heal", 6],
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["heal", 3]]]
+		]
+	},
+	"801012": {
+		"actions": [
+			["heal", 9],
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["heal", 3]]]
+		]
+	},
+	"801013": {
+		"actions": [
+			["heal", 12],
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["heal", 3]]]
+		]
+	},
+	"801021": {
+		"name": "Honey Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["heal", 3],
+			["add_c_of_x", 1, "regen"]
+		]
+	},
+	"801022": {
+		"actions": [
+			["heal", 6],
+			["add_c_of_x", 1, "regen"]
+		]
+	},
+	"801023": {
+		"actions": [
+			["heal", 9],
+			["add_c_of_x", 1, "regen"]
+		]
+	},
+	"801031": {
+		"name": "Salted Meat Zongzi",
+		"is_salty": true,
+		"actions": [
+			["qi", 1],
+			["heal", 6],
+			["add_c_of_x", 1, "internal_injury"]
+		]
+	},
+	"801032": {
+		"actions": [
+			["qi", 1],
+			["heal", 9],
+			["add_c_of_x", 1, "internal_injury"]
+		]
+	},
+	"801033": {
+		"actions": [
+			["qi", 1],
+			["heal", 12],
+			["add_c_of_x", 1, "internal_injury"]
+		]
+	},
+	"801041": {
+		"name": "Red Bean Zongzi",
+		"is_sweet": true,
+		"qi_cost": 1,
+		"actions": [
+			["heal", 10]
+		]
+	},
+	"801042": {
+		"actions": [
+			["heal", 13]
+		]
+	},
+	"801043": {
+		"actions": [
+			["heal", 16]
+		]
+	},
+	"801051": {
+		"name": "Jujube Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["qi", 1],
+			["heal", 4]
+		]
+	},
+	"801052": {
+		"actions": [
+			["qi", 1],
+			["heal", 7]
+		]
+	},
+	"801053": {
+		"actions": [
+			["qi", 1],
+			["heal", 10]
+		]
+	},
+	"801061": {
+		"name": "Fresh Meat Zongzi",
+		"is_salty": true,
+		"actions": [
+			["heal", 6],
+			["reduce_random_debuff_by_c_n_times", 1, 1]
+		]
+	},
+	"801062": {
+		"actions": [
+			["heal", 9],
+			["reduce_random_debuff_by_c_n_times", 1, 1]
+		]
+	},
+	"801063": {
+		"actions": [
+			["heal", 12],
+			["reduce_random_debuff_by_c_n_times", 1, 1]
+		]
+	},
+	"802011": {
+		"name": "Candied Jujube Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["qi", 2],
+			["for_each_x_add_y", "qi", "hp"]
+		]
+	},
+	"802012": {
+		"actions": [
+			["qi", 3],
+			["for_each_x_add_y", "qi", "hp"]
+		]
+	},
+	"802013": {
+		"actions": [
+			["qi", 4],
+			["for_each_x_add_y", "qi", "hp"]
+		]
+	},
+	"802021": {
+		"name": "Spicy Zongzi",
+		"is_salty": true,
+		"actions": [
+			["add_c_of_x", 1, "internal_injury"],
+			["rep", 2, ["heal", 5]],
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["heal", 4]]]
+		]
+	},
+	"802022": {
+		"actions": [
+			["add_c_of_x", 1, "internal_injury"],
+			["rep", 2, ["heal", 7]],
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["heal", 4]]]
+		]
+	},
+	"802023": {
+		"actions": [
+			["add_c_of_x", 1, "internal_injury"],
+			["rep", 2, ["heal", 9]],
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["heal", 4]]]
+		]
+	},
+	"802031": {
+		"name": "Roasted Meat Zongzi",
+		"is_salty": true,
+		"actions": [
+			["add_c_of_x", 1, "appetite"],
+			["heal", 2]
+		]
+	},
+	"802032": {
+		"actions": [
+			["add_c_of_x", 1, "appetite"],
+			["heal", 6]
+		]
+	},
+	"802033": {
+		"actions": [
+			["add_c_of_x", 1, "appetite"],
+			["heal", 10]
+		]
+	},
+	"802041": {
+		"name": "Mung Bean Zongzi",
+		"is_sweet": true,
+		"qi_cost": 1,
+		"actions": [
+			["for_each_x_add_y", "sweet_zongzi_count", "bonus_heal_amt"],
+			["heal", 8]
+		]
+	},
+	"802042": {
+		"actions": [
+			["for_each_x_add_y", "sweet_zongzi_count", "bonus_heal_amt"],
+			["heal", 12]
+		]
+	},
+	"802043": {
+		"actions": [
+			["for_each_x_add_y", "sweet_zongzi_count", "bonus_heal_amt"],
+			["heal", 16]
+		]
+	},
+	"802051": {
+		"name": "Preserved Meat Zongzi",
+		"is_salty": true,
+		"actions": [
+			["qi", 1],
+			["heal", 3],
+			["add_c_of_x", 1, "hexproof"]
+		]
+	},
+	"802052": {
+		"actions": [
+			["qi", 1],
+			["heal", 6],
+			["add_c_of_x", 2, "hexproof"]
+		]
+	},
+	"802053": {
+		"actions": [
+			["qi", 1],
+			["heal", 9],
+			["add_c_of_x", 3, "hexproof"]
+		]
+	},
+	"802061": {
+		"name": "Jujube Paste Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["qi", 1],
+			["for_each_x_add_c_y", "qi", 2, "bonus_heal_amt"],
+			["heal", 6],
+			["add_c_of_x", 2, "indigestion"]
+		]
+	},
+	"802062": {
+		"actions": [
+			["qi", 1],
+			["for_each_x_add_c_y", "qi", 2, "bonus_heal_amt"],
+			["heal", 10],
+			["add_c_of_x", 2, "indigestion"]
+		]
+	},
+	"802063": {
+		"actions": [
+			["qi", 1],
+			["for_each_x_add_c_y", "qi", 2, "bonus_heal_amt"],
+			["heal", 14],
+			["add_c_of_x", 2, "indigestion"]
+		]
+	},
+	"803011": {
+		"name": "Alkaline Water Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["heal", 2],
+			["continuous"],
+			["add_c_of_x", 1, "alkaline_water_zongzi_stacks"]
+		]
+	},
+	"803012": {
+		"actions": [
+			["heal", 6],
+			["continuous"],
+			["add_c_of_x", 1, "alkaline_water_zongzi_stacks"]
+		]
+	},
+	"803013": {
+		"actions": [
+			["heal", 10],
+			["continuous"],
+			["add_c_of_x", 1, "alkaline_water_zongzi_stacks"]
+		]
+	},
+	"803021": {
+		"name": "Lotus Seeds Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["for_each_x_add_y", "qi", "bonus_heal_amt"],
+			["for_each_x_add_y", "internal_injury", "bonus_heal_amt"],
+			["for_each_x_add_y", "regen", "bonus_heal_amt"],
+			["for_each_x_add_y", "appetite", "bonus_heal_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_heal_amt"],
+			["for_each_x_add_c_y", "bonus_heal_amt", 1, "bonus_heal_amt"],
+			["heal", 4]
+		]
+	},
+	"803022": {
+		"actions": [
+			["for_each_x_add_y", "qi", "bonus_heal_amt"],
+			["for_each_x_add_y", "internal_injury", "bonus_heal_amt"],
+			["for_each_x_add_y", "regen", "bonus_heal_amt"],
+			["for_each_x_add_y", "appetite", "bonus_heal_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_heal_amt"],
+			["for_each_x_add_c_y", "bonus_heal_amt", 1, "bonus_heal_amt"],
+			["heal", 8]
+		]
+	},
+	"803023": {
+		"actions": [
+			["for_each_x_add_y", "qi", "bonus_heal_amt"],
+			["for_each_x_add_y", "internal_injury", "bonus_heal_amt"],
+			["for_each_x_add_y", "regen", "bonus_heal_amt"],
+			["for_each_x_add_y", "appetite", "bonus_heal_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_heal_amt"],
+			["for_each_x_add_c_y", "bonus_heal_amt", 2, "bonus_heal_amt"],
+			["heal", 8]
+		]
+	},
+	"803031": {
+		"name": "Bean Paste Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["for_each_x_add_y", "internal_injury", "bonus_heal_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_heal_amt"],
+			["for_each_x_reduce_c_pct_y", "internal_injury", 100, "internal_injury"],
+			["for_each_x_reduce_c_pct_y", "indigestion", 100, "indigestion"],
+			["for_each_x_add_c_y", "bonus_heal_amt", 1, "bonus_heal_amt"],
+			["heal", 7]
+		]
+	},
+	"803032": {
+		"actions": [
+			["for_each_x_add_y", "internal_injury", "bonus_heal_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_heal_amt"],
+			["for_each_x_reduce_c_pct_y", "internal_injury", 100, "internal_injury"],
+			["for_each_x_reduce_c_pct_y", "indigestion", 100, "indigestion"],
+			["for_each_x_add_c_y", "bonus_heal_amt", 2, "bonus_heal_amt"],
+			["heal", 7]
+		]
+	},
+	"803033": {
+		"actions": [
+			["for_each_x_add_y", "internal_injury", "bonus_heal_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_heal_amt"],
+			["for_each_x_reduce_c_pct_y", "internal_injury", 100, "internal_injury"],
+			["for_each_x_reduce_c_pct_y", "indigestion", 100, "indigestion"],
+			["for_each_x_add_c_y", "bonus_heal_amt", 3, "bonus_heal_amt"],
+			["heal", 7]
+		]
+	},
+	"803041": {
+		"name": "Sour Bamboo Shoots Zongzi",
+		"is_salty": true,
+		"actions": [
+			["heal", 2],
+			["add_c_of_x", 2, "internal_injury"],
+			["chase"]
+		]
+	},
+	"803042": {
+		"actions": [
+			["heal", 6],
+			["add_c_of_x", 2, "internal_injury"],
+			["chase"]
+		]
+	},
+	"803043": {
+		"actions": [
+			["heal", 10],
+			["add_c_of_x", 2, "internal_injury"],
+			["chase"]
+		]
+	},
+	"803051": {
+		"name": "Chestnut Zongzi",
+		"is_salty": true,
+		"actions": [
+			["if_x_at_least_c_do", "qi", 1,
+				["reduce_c_of_x", 1, "qi"],
+				["for_each_x_add_y", "internal_injury", "bonus_def_amt"],
+				["for_each_x_add_y", "indigestion", "bonus_def_amt"],
+				["if_x_at_least_c_do", "bonus_def_amt", 1,
+					["reduce_random_debuff_by_c_n_times", 1, 1],
+					["add_c_of_x", 1, "appetite"]]],
+			["rep", 3, ["heal", 3]]
+		]
+	},
+	"803052": {
+		"actions": [
+			["if_x_at_least_c_do", "qi", 1, 
+				["for_each_x_add_y", "internal_injury", "bonus_def_amt"],
+				["for_each_x_add_y", "indigestion", "bonus_def_amt"],
+				["if_x_at_least_c_do", "bonus_def_amt", 1,
+					["reduce_random_debuff_by_c_n_times", 1, 1],
+					["add_c_of_x", 1, "appetite"]]],
+			["rep", 3, ["heal", 4]]
+		]
+	},
+	"803053": {
+		"actions": [
+			["if_x_at_least_c_do", "qi", 1, 
+				["for_each_x_add_y", "internal_injury", "bonus_def_amt"],
+				["for_each_x_add_y", "indigestion", "bonus_def_amt"],
+				["if_x_at_least_c_do", "bonus_def_amt", 1,
+					["reduce_random_debuff_by_c_n_times", 1, 1],
+					["add_c_of_x", 1, "appetite"]]],
+			["rep", 3, ["heal", 5]]
+		]
+	},
+	"803061": {
+		"name": "Pungent Zongzi",
+		"is_salty": true,
+		"actions": [
+			["qi", 1],
+			["heal", 6],
+			["add_c_of_x", 1, "appetite"],
+			["add_c_of_x", 1, "internal_injury"]
+		]
+	},
+	"803062": {
+		"actions": [
+			["qi", 1],
+			["heal", 9],
+			["add_c_of_x", 2, "appetite"],
+			["add_c_of_x", 2, "internal_injury"]
+		]
+	},
+	"803063": {
+		"actions": [
+			["qi", 1],
+			["heal", 12],
+			["add_c_of_x", 3, "appetite"],
+			["add_c_of_x", 3, "internal_injury"]
+		]
+	},
+	"804011": {
+		"name": "Preserved Fruit Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["for_each_x_add_c_y", "sweet_zongzi_count", 2, "bonus_heal_amt"],
+			["for_each_x_add_c_y", "sweet_zongzi_count", 1, "qi"],
+			["heal", 2]
+		]
+	},
+	"804012": {
+		"actions": [
+			["for_each_x_add_c_y", "sweet_zongzi_count", 3, "bonus_heal_amt"],
+			["for_each_x_add_c_y", "sweet_zongzi_count", 1, "qi"],
+			["heal", 3]
+		]
+	},
+	"804013": {
+		"actions": [
+			["for_each_x_add_c_y", "sweet_zongzi_count", 3, "bonus_heal_amt"],
+			["for_each_x_add_c_y", "sweet_zongzi_count", 2, "qi"],
+			["heal", 4]
+		]
+	},
+	"804021": {
+		"name": "Crystal Ice Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["qi", 2],
+			["add_c_of_x", 1, "indigestion"],
+			["chase"]
+		]
+	},
+	"804022": {
+		"actions": [
+			["qi", 4],
+			["add_c_of_x", 2, "indigestion"],
+			["chase"]
+		]
+	},
+	"804023": {
+		"actions": [
+			["qi", 6],
+			["add_c_of_x", 3, "indigestion"],
+			["chase"]
+		]
+	},
+	"804031": {
+		"name": "Fresh Fruit Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["heal", 8],
+			["add_c_of_x", 1, "fresh_fruit_zongzi_stacks"]
+		]
+	},
+	"804032": {
+		"actions": [
+			["heal", 11],
+			["add_c_of_x", 2, "fresh_fruit_zongzi_stacks"]
+		]
+	},
+	"804033": {
+		"actions": [
+			["heal", 14],
+			["add_c_of_x", 3, "fresh_fruit_zongzi_stacks"]
+		]
+	},
+	"804041": {
+		"name": "Salted Egg Yolk Zongzi",
+		"is_salty": true,
+		"actions": [
+			["heal", 6],
+			["add_c_of_x", 2, "salted_egg_yolk_zongzi_stacks"]
+		]
+	},
+	"804042": {
+		"actions": [
+			["heal", 8],
+			["add_c_of_x", 3, "salted_egg_yolk_zongzi_stacks"]
+		]
+	},
+	"804043": {
+		"actions": [
+			["heal", 10],
+			["add_c_of_x", 4, "salted_egg_yolk_zongzi_stacks"]
+		]
+	},
+	"804051": {
+		"name": "Seafood Zongzi",
+		"is_salty": true,
+		"decrease_qi_cost_by_x": "food",
+		"qi_cost": 4,
+		"actions": [
+			["rep", 4, ["heal", 5]]
+		]
+	},
+	"804052": {
+		"actions": [
+			["rep", 4, ["heal", 6]]
+		]
+	},
+	"804053": {
+		"actions": [
+			["rep", 5, ["heal", 6]]
+		]
+	},
+	"804061": {
+		"name": "Pickled Mustard Zongzi",
+		"is_salty": true,
+		"actions": [
+			["heal", 2],
+			["add_c_of_x", 2, "appetite"],
+			["add_c_of_x", 1, "skip_next_card_stacks"]
+		]
+	},
+	"804062": {
+		"actions": [
+			["heal", 3],
+			["add_c_of_x", 3, "appetite"],
+			["add_c_of_x", 2, "skip_next_card_stacks"]
+		]
+	},
+	"804063": {
+		"actions": [
+			["heal", 4],
+			["add_c_of_x", 4, "appetite"],
+			["add_c_of_x", 3, "skip_next_card_stacks"]
+		]
+	},
+	"805011": {
+		"name": "Mixed Grain Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["qi", 2],
+			["continuous"],
+			["add_c_of_x", 2, "mixed_grain_zongzi_stacks"]
+		]
+	},
+	"805012": {
+		"actions": [
+			["qi", 3],
+			["continuous"],
+			["add_c_of_x", 4, "mixed_grain_zongzi_stacks"]
+		]
+	},
+	"805013": {
+		"actions": [
+			["qi", 4],
+			["continuous"],
+			["add_c_of_x", 6, "mixed_grain_zongzi_stacks"]
+		]
+	},
+	"805021": {
+		"name": "Spirit Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["exhaust_x_to_add_c_y", "qi", 5, "bonus_heal_amt"],
+			["heal", 5]
+		]
+	},
+	"805022": {
+		"actions": [
+			["exhaust_x_to_add_c_y", "qi", 6, "bonus_heal_amt"],
+			["heal", 6]
+		]
+	},
+	"805023": {
+		"actions": [
+			["exhaust_x_to_add_c_y", "qi", 7, "bonus_heal_amt"],
+			["heal", 7]
+		]
+	},
+	"805031": {
+		"name": "Water Combined Zongzi",
+		"qi_cost": 1,
+		"is_sweet": true,
+		"actions": [
+			["add_c_of_x", 2, "regen"],
+			["for_each_x_add_c_y", "regen", 5, "bonus_heal_amt"],
+			["for_each_x_add_c_y", "appetite", 5, "bonus_heal_amt"],
+			["heal", 5]
+		]
+	},
+	"805032": {
+		"actions": [
+			["add_c_of_x", 3, "regen"],
+			["for_each_x_add_c_y", "regen", 6, "bonus_heal_amt"],
+			["for_each_x_add_c_y", "appetite", 6, "bonus_heal_amt"],
+			["heal", 6]
+		]
+	},
+	"805033": {
+		"actions": [
+			["add_c_of_x", 4, "regen"],
+			["for_each_x_add_c_y", "regen", 7, "bonus_heal_amt"],
+			["for_each_x_add_c_y", "appetite", 7, "bonus_heal_amt"],
+			["heal", 7]
+		]
+	},
+	"805041": {
+		"name": "Assorted Meat Zongzi",
+		"is_salty": true,
+		"actions": [
+			["for_each_x_add_y", "internal_injury", "bonus_heal_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_heal_amt"],
+			["for_each_x_add_y", "appetite", "bonus_heal_amt"],
+			["rep", 5, ["heal", 2]]
+		]
+	},
+	"805042": {
+		"actions": [
+			["for_each_x_add_y", "internal_injury", "bonus_heal_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_heal_amt"],
+			["for_each_x_add_y", "appetite", "bonus_heal_amt"],
+			["rep", 6, ["heal", 2]]
+		]
+	},
+	"805043": {
+		"actions": [
+			["for_each_x_add_y", "internal_injury", "bonus_heal_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_heal_amt"],
+			["for_each_x_add_y", "appetite", "bonus_heal_amt"],
+			["rep", 7, ["heal", 2]]
+		]
+	},
+	"805051": {
+		"name": "Double Plum Zongzi",
+		"is_salty": true,
+		"actions": [
+			["heal", 2],
+			["add_c_of_x", 1, "strike_twice_stacks"]
+		]
+	},
+	"805052": {
+		"actions": [
+			["heal", 8],
+			["add_c_of_x", 1, "strike_twice_stacks"]
+		]
+	},
+	"805053": {
+		"actions": [
+			["heal", 14],
+			["add_c_of_x", 1, "strike_twice_stacks"]
+		]
+	},
+	"805061": {
+		"name": "Shura Zongzi",
+		"is_salty": true,
+		"actions": [
+			["add_c_of_x", 2, "internal_injury"],
+			["for_each_x_add_y", "internal_injury", "bonus_def_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_def_amt"],
+			["for_each_x_add_y", "bonus_def_amt", "qi"],
+			["for_each_x_add_c_y", "bonus_def_amt", 3, "hp"]
+		]
+	},
+	"805062": {
+		"actions": [
+			["add_c_of_x", 3, "internal_injury"],
+			["for_each_x_add_y", "internal_injury", "bonus_def_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_def_amt"],
+			["for_each_x_add_y", "bonus_def_amt", "qi"],
+			["for_each_x_add_c_y", "bonus_def_amt", 4, "hp"]
+		]
+	},
+	"805063": {
+		"actions": [
+			["add_c_of_x", 4, "internal_injury"],
+			["for_each_x_add_y", "internal_injury", "bonus_def_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_def_amt"],
+			["for_each_x_add_y", "bonus_def_amt", "qi"],
+			["for_each_x_add_c_y", "bonus_def_amt", 5, "hp"]
 		]
 	}
 }

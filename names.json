@@ -1,0 +1,2330 @@
+[
+    {
+        "id": 111011,
+        "name": "Cloud Sword - Touch Sky",
+        "namecn": "云剑·探云"
+    },
+    {
+        "id": 111021,
+        "name": "Cloud Sword - Fleche",
+        "namecn": "云剑·飞刺"
+    },
+    {
+        "id": 111031,
+        "name": "Cloud Sword - Touch Earth",
+        "namecn": "云剑·厚土"
+    },
+    {
+        "id": 111041,
+        "name": "Light Sword",
+        "namecn": "轻剑"
+    },
+    {
+        "id": 111051,
+        "name": "Guard Qi",
+        "namecn": "护身灵气"
+    },
+    {
+        "id": 111061,
+        "name": "Qi Perfusion",
+        "namecn": "灵气灌注"
+    },
+    {
+        "id": 111071,
+        "name": "Giant Tiger Spirit Sword",
+        "namecn": "巨虎灵剑"
+    },
+    {
+        "id": 111081,
+        "name": "Thunder Sword",
+        "namecn": "震雷剑"
+    },
+    {
+        "id": 111091,
+        "name": "Sword Slash",
+        "namecn": "剑劈"
+    },
+    {
+        "id": 111101,
+        "name": "Sword Defence",
+        "namecn": "剑挡"
+    },
+    {
+        "id": 111111,
+        "name": "Flying Fang Sword",
+        "namecn": "飞牙剑"
+    },
+    {
+        "id": 111121,
+        "name": "Wind Sword",
+        "namecn": "骤风剑"
+    },
+    {
+        "id": 112011,
+        "name": "Cloud Sword - Reguard",
+        "namecn": "云剑·回守"
+    },
+    {
+        "id": 112021,
+        "name": "Cloud Sword - Riddle",
+        "namecn": "云剑·极意"
+    },
+    {
+        "id": 112031,
+        "name": "Cloud Sword - Conceal",
+        "namecn": "云剑·无锋"
+    },
+    {
+        "id": 112041,
+        "name": "Transforming Spirits Rhythm",
+        "namecn": "化灵诀"
+    },
+    {
+        "id": 112051,
+        "name": "Spiritage Sword",
+        "namecn": "引气剑"
+    },
+    {
+        "id": 112061,
+        "name": "Giant Whale Spirit Sword",
+        "namecn": "巨鲸灵剑"
+    },
+    {
+        "id": 112071,
+        "name": "Contemplate Spirits Rhythm",
+        "namecn": "凝意诀"
+    },
+    {
+        "id": 112081,
+        "name": "Consonance Sword Formation",
+        "namecn": "灵犀剑阵"
+    },
+    {
+        "id": 112091,
+        "name": "Earth Evil Sword",
+        "namecn": "地煞剑"
+    },
+    {
+        "id": 112101,
+        "name": "Form-Intention Sword",
+        "namecn": "形意剑"
+    },
+    {
+        "id": 112111,
+        "name": "Unrestrained Sword - One",
+        "namecn": "狂剑·一式"
+    },
+    {
+        "id": 113011,
+        "name": "Cloud Sword - Softheart",
+        "namecn": "柔云心法"
+    },
+    {
+        "id": 113021,
+        "name": "Cloud Sword - Necessity",
+        "namecn": "云剑•无妄"
+    },
+    {
+        "id": 113031,
+        "name": "Cloud Sword - Pierce the Star",
+        "namecn": "云剑•点星"
+    },
+    {
+        "id": 113041,
+        "name": "Cloud Sword - Spirit Coercion",
+        "namecn": "云剑•汇灵"
+    },
+    {
+        "id": 113051,
+        "name": "Cloud Dance Rhythm",
+        "namecn": "云舞诀"
+    },
+    {
+        "id": 113061,
+        "name": "Raven Spirit Sword",
+        "namecn": "暗鸦灵剑"
+    },
+    {
+        "id": 113071,
+        "name": "Burst Sword",
+        "namecn": "破气剑"
+    },
+    {
+        "id": 113081,
+        "name": "Giant Roc Spirit Sword",
+        "namecn": "巨鹏灵剑"
+    },
+    {
+        "id": 113091,
+        "name": "Reflexive Sword",
+        "namecn": "反身剑"
+    },
+    {
+        "id": 113101,
+        "name": "Mirror Flower Sword Formation",
+        "namecn": "镜花剑阵"
+    },
+    {
+        "id": 113111,
+        "name": "Tri-Peak Sword",
+        "namecn": "三峰剑"
+    },
+    {
+        "id": 114011,
+        "name": "Cloud Sword - Flash Wind",
+        "namecn": "云剑•闪风"
+    },
+    {
+        "id": 114021,
+        "name": "Cloud Sword - Moon Shade",
+        "namecn": "云剑•月影"
+    },
+    {
+        "id": 114031,
+        "name": "Spirit Gather Citta-Dharma",
+        "namecn": "聚灵心法"
+    },
+    {
+        "id": 114041,
+        "name": "CentiBird Spirit Sword Rhythm",
+        "namecn": "白鸟灵剑诀"
+    },
+    {
+        "id": 114051,
+        "name": "Egret Spirit Sword",
+        "namecn": "白鹭灵剑"
+    },
+    {
+        "id": 114061,
+        "name": "Giant Kun Spirit Sword",
+        "namecn": "巨鲲灵剑"
+    },
+    {
+        "id": 114071,
+        "name": "Inspiration Sword",
+        "namecn": "灵感剑"
+    },
+    {
+        "id": 114081,
+        "name": "Flow Cloud Chaos Sword",
+        "namecn": "流云乱剑"
+    },
+    {
+        "id": 114091,
+        "name": "Moon Water Sword Formation",
+        "namecn": "水月剑阵"
+    },
+    {
+        "id": 114101,
+        "name": "Unrestrained Sword - Two",
+        "namecn": "狂剑•二式"
+    },
+    {
+        "id": 115011,
+        "name": "Cloud Sword - Dragon Roam",
+        "namecn": "云剑•游龙"
+    },
+    {
+        "id": 115021,
+        "name": "Cloud Sword - Step Lightly",
+        "namecn": "云剑•凌波"
+    },
+    {
+        "id": 115031,
+        "name": "Flying Spirit Shade Sword",
+        "namecn": "飞灵闪影剑"
+    },
+    {
+        "id": 115041,
+        "name": "Dharma Spirit Sword",
+        "namecn": "万法归灵剑"
+    },
+    {
+        "id": 115051,
+        "name": "Sword Intent Surge",
+        "namecn": "剑意激荡"
+    },
+    {
+        "id": 115061,
+        "name": "Rule Sky Sword Formation",
+        "namecn": "御空剑阵"
+    },
+    {
+        "id": 115071,
+        "name": "Chain Sword Formation",
+        "namecn": "连环剑阵"
+    },
+    {
+        "id": 115081,
+        "name": "Unrestrained Sword - Zero",
+        "namecn": "狂剑•零式"
+    },
+    {
+        "id": 121011,
+        "name": "Shifting Stars",
+        "namecn": "斗转星移"
+    },
+    {
+        "id": 121021,
+        "name": "Dotted Around",
+        "namecn": "星罗棋布"
+    },
+    {
+        "id": 121031,
+        "name": "Astral Move - Block",
+        "namecn": "星弈•挡"
+    },
+    {
+        "id": 121041,
+        "name": "Astral Move - Flank",
+        "namecn": "星弈•夹"
+    },
+    {
+        "id": 121051,
+        "name": "Zhen Hexagram",
+        "namecn": "震卦"
+    },
+    {
+        "id": 121061,
+        "name": "Earth Hexagram",
+        "namecn": "坤卦"
+    },
+    {
+        "id": 121071,
+        "name": "Wind Hexagram",
+        "namecn": "巽卦"
+    },
+    {
+        "id": 121081,
+        "name": "Palm Thunder",
+        "namecn": "掌心雷"
+    },
+    {
+        "id": 121091,
+        "name": "White Crane Bright Wings",
+        "namecn": "白鹤亮翅"
+    },
+    {
+        "id": 121101,
+        "name": "Sparrow's Tail",
+        "namecn": "揽雀尾"
+    },
+    {
+        "id": 121111,
+        "name": "Striding Into the Wind",
+        "namecn": "野马分鬃"
+    },
+    {
+        "id": 121121,
+        "name": "Incessant",
+        "namecn": "藕断丝连"
+    },
+    {
+        "id": 122011,
+        "name": "Astral Fleche",
+        "namecn": "飞星刺"
+    },
+    {
+        "id": 122021,
+        "name": "Astral Move - Point",
+        "namecn": "星弈•点"
+    },
+    {
+        "id": 122031,
+        "name": "Astral Move - Stand",
+        "namecn": "星弈•立"
+    },
+    {
+        "id": 122041,
+        "name": "Mountain Hexagram",
+        "namecn": "艮卦"
+    },
+    {
+        "id": 122051,
+        "name": "Water Hexagram",
+        "namecn": "坎卦"
+    },
+    {
+        "id": 122061,
+        "name": "Falling Thunder",
+        "namecn": "落雷术"
+    },
+    {
+        "id": 122071,
+        "name": "Cutting Weeds",
+        "namecn": "斩草除根"
+    },
+    {
+        "id": 122081,
+        "name": "Golden Rooster Independence",
+        "namecn": "金鸡独立"
+    },
+    {
+        "id": 122091,
+        "name": "Stillness Citta-Dharma",
+        "namecn": "静气心法"
+    },
+    {
+        "id": 122101,
+        "name": "Flower Sentient",
+        "namecn": "落花有意"
+    },
+    {
+        "id": 122111,
+        "name": "Imposing",
+        "namecn": "气贯长虹"
+    },
+    {
+        "id": 123011,
+        "name": "Starry Moon",
+        "namecn": "众星拱月"
+    },
+    {
+        "id": 123021,
+        "name": "Astral Move - Hit",
+        "namecn": "星弈•打"
+    },
+    {
+        "id": 123031,
+        "name": "Lake Hexagram",
+        "namecn": "兑卦"
+    },
+    {
+        "id": 123041,
+        "name": "White Snake",
+        "namecn": "白蛇吐信"
+    },
+    {
+        "id": 123051,
+        "name": "Thunder Hexagram Rhythm",
+        "namecn": "御雷卦诀"
+    },
+    {
+        "id": 123061,
+        "name": "Yin Yang Formation",
+        "namecn": "两仪阵"
+    },
+    {
+        "id": 123071,
+        "name": "Ruthless Water",
+        "namecn": "流水无情"
+    },
+    {
+        "id": 123081,
+        "name": "Qi Therapy",
+        "namecn": "气疗术"
+    },
+    {
+        "id": 123091,
+        "name": "Revitalized",
+        "namecn": "枯木逢春"
+    },
+    {
+        "id": 123101,
+        "name": "Hunter Becomes Preyer",
+        "namecn": "螳螂捕蝉"
+    },
+    {
+        "id": 123111,
+        "name": "Drag Moon In Sea",
+        "namecn": "海底捞月"
+    },
+    {
+        "id": 124011,
+        "name": "Astral Move - Fly",
+        "namecn": "星弈•飞"
+    },
+    {
+        "id": 124021,
+        "name": "Astral Move - Tiger",
+        "namecn": "星弈•虎"
+    },
+    {
+        "id": 124031,
+        "name": "Hexagram Formacide",
+        "namecn": "六爻绝阵"
+    },
+    {
+        "id": 124041,
+        "name": "Flame Hexagram",
+        "namecn": "离卦"
+    },
+    {
+        "id": 124051,
+        "name": "Star Trail Divination",
+        "namecn": "星轨推衍"
+    },
+    {
+        "id": 124061,
+        "name": "Dance Of The Dragonfly",
+        "namecn": "蜻蜓点水"
+    },
+    {
+        "id": 124071,
+        "name": "Thunder And Lightning",
+        "namecn": "轰雷掣电"
+    },
+    {
+        "id": 124081,
+        "name": "Repel Citta-Dharma",
+        "namecn": "反震心法"
+    },
+    {
+        "id": 124091,
+        "name": "Escape Plan",
+        "namecn": "金蝉脱壳"
+    },
+    {
+        "id": 124101,
+        "name": "Extremely Suspicious",
+        "namecn": "杯弓蛇影"
+    },
+    {
+        "id": 125011,
+        "name": "Polaris Citta-Dharma",
+        "namecn": "天元心法"
+    },
+    {
+        "id": 125021,
+        "name": "Astral Move - Cide",
+        "namecn": "星弈•断"
+    },
+    {
+        "id": 125031,
+        "name": "Heaven Hexagram",
+        "namecn": "乾卦"
+    },
+    {
+        "id": 125041,
+        "name": "Five Thunders",
+        "namecn": "五雷轰顶"
+    },
+    {
+        "id": 125051,
+        "name": "Strike Twice",
+        "namecn": "梅开二度"
+    },
+    {
+        "id": 125061,
+        "name": "Great Spirit",
+        "namecn": "气吞山河"
+    },
+    {
+        "id": 125071,
+        "name": "Hunter Hunting Hunter",
+        "namecn": "黄雀在后"
+    },
+    {
+        "id": 125081,
+        "name": "Propitious Omen",
+        "namecn": "紫气东来"
+    },
+    {
+        "id": 131011,
+        "name": "Wood Spirit Seal",
+        "namecn": "木灵印"
+    },
+    {
+        "id": 131021,
+        "name": "Wood Spirit - Bud",
+        "namecn": "木灵•芽"
+    },
+    {
+        "id": 131031,
+        "name": "Fire Spirit Seal",
+        "namecn": "火灵印"
+    },
+    {
+        "id": 131041,
+        "name": "Fire Spirit - Rush",
+        "namecn": "火灵•窜"
+    },
+    {
+        "id": 131051,
+        "name": "Earth Spirit Seal",
+        "namecn": "土灵印"
+    },
+    {
+        "id": 131061,
+        "name": "Earth Spirit - Smash",
+        "namecn": "土灵•碎"
+    },
+    {
+        "id": 131071,
+        "name": "Metal Spirit Seal",
+        "namecn": "金灵印"
+    },
+    {
+        "id": 131081,
+        "name": "Metal Spirit - Needle",
+        "namecn": "金灵•针"
+    },
+    {
+        "id": 131091,
+        "name": "Water Spirit Seal",
+        "namecn": "水灵印"
+    },
+    {
+        "id": 131101,
+        "name": "Water Spirit - Waves",
+        "namecn": "水灵•涛"
+    },
+    {
+        "id": 131111,
+        "name": "Five Elements Fleche",
+        "namecn": "五行刺"
+    },
+    {
+        "id": 132011,
+        "name": "Wood Spirit - Recovery",
+        "namecn": "木灵•复苏"
+    },
+    {
+        "id": 132021,
+        "name": "Wood Spirit - Sparse Shadow",
+        "namecn": "木灵•疏影"
+    },
+    {
+        "id": 132031,
+        "name": "Fire Spirit - Flame Eater",
+        "namecn": "火灵•聚炎"
+    },
+    {
+        "id": 132041,
+        "name": "Fire Spirit - Scarlet Flame",
+        "namecn": "火灵•赤焰"
+    },
+    {
+        "id": 132051,
+        "name": "Earth Spirit Formation",
+        "namecn": "土灵阵"
+    },
+    {
+        "id": 132061,
+        "name": "Earth Spirit - Mountains",
+        "namecn": "土灵•群山"
+    },
+    {
+        "id": 132071,
+        "name": "Metal Spirit Formation",
+        "namecn": "金灵阵"
+    },
+    {
+        "id": 132081,
+        "name": "Metal Spirit - Heart Pierce",
+        "namecn": "金灵•穿心"
+    },
+    {
+        "id": 132091,
+        "name": "Water Spirit - Billows",
+        "namecn": "水灵•波澜"
+    },
+    {
+        "id": 132101,
+        "name": "Water Spirit - Turbulent",
+        "namecn": "水灵•汹涌"
+    },
+    {
+        "id": 132111,
+        "name": "Cosmos Seal",
+        "namecn": "浑天印"
+    },
+    {
+        "id": 133011,
+        "name": "Wood Spirit Formation",
+        "namecn": "木灵阵"
+    },
+    {
+        "id": 133021,
+        "name": "Wood Spirit - Forest Guard",
+        "namecn": "木灵•巡林"
+    },
+    {
+        "id": 133031,
+        "name": "Fire Spirit Formation",
+        "namecn": "火灵阵"
+    },
+    {
+        "id": 133041,
+        "name": "Fire Spirit - Blast",
+        "namecn": "火灵•轰爆"
+    },
+    {
+        "id": 133051,
+        "name": "Earth Spirit - Dust",
+        "namecn": "土灵•扬尘"
+    },
+    {
+        "id": 133061,
+        "name": "Earth Spirit - Cliff",
+        "namecn": "土灵•断崖"
+    },
+    {
+        "id": 133071,
+        "name": "Metal Spirit - Charge",
+        "namecn": "金灵•蓄锐"
+    },
+    {
+        "id": 133081,
+        "name": "Metal Spirit - Sharp",
+        "namecn": "金灵•锋芒"
+    },
+    {
+        "id": 133091,
+        "name": "Water Spirit Formation",
+        "namecn": "水灵阵"
+    },
+    {
+        "id": 133101,
+        "name": "Water Spirit - Spring",
+        "namecn": "水灵•泉涌"
+    },
+    {
+        "id": 133111,
+        "name": "Five Elements Circulation",
+        "namecn": "五行流转"
+    },
+    {
+        "id": 134011,
+        "name": "Wood Spirit - Fragrant",
+        "namecn": "木灵•暗香"
+    },
+    {
+        "id": 134021,
+        "name": "Wood Spirit - Thorn",
+        "namecn": "木灵•玫刺"
+    },
+    {
+        "id": 134031,
+        "name": "Fire Spirit - Flash Fire",
+        "namecn": "火灵•瞬燃"
+    },
+    {
+        "id": 134041,
+        "name": "Fire Spirit - Heart Fire",
+        "namecn": "火灵•灼心"
+    },
+    {
+        "id": 134051,
+        "name": "Earth Spirit - Steep",
+        "namecn": "土灵•绝壁"
+    },
+    {
+        "id": 134061,
+        "name": "Earth Spirit - Quicksand",
+        "namecn": "土灵•流沙"
+    },
+    {
+        "id": 134071,
+        "name": "Metal Spirit - Shuttle",
+        "namecn": "金灵•飞梭"
+    },
+    {
+        "id": 134081,
+        "name": "Metal Spirit - Iron Bone",
+        "namecn": "金灵•铁骨"
+    },
+    {
+        "id": 134091,
+        "name": "Water Spirit - Great Waves",
+        "namecn": "水灵•腾浪"
+    },
+    {
+        "id": 134101,
+        "name": "Water Spirit - Dive",
+        "namecn": "水灵•潜遁"
+    },
+    {
+        "id": 134111,
+        "name": "World Smash",
+        "namecn": "混元碎击"
+    },
+    {
+        "id": 135011,
+        "name": "Wood Spirit - Willow Leaf",
+        "namecn": "木灵•柳纷飞"
+    },
+    {
+        "id": 135021,
+        "name": "Fire Spirit - Blazing Prairie",
+        "namecn": "火灵•烈燎原"
+    },
+    {
+        "id": 135031,
+        "name": "Earth Spirit - Combine World",
+        "namecn": "土灵•合八荒"
+    },
+    {
+        "id": 135041,
+        "name": "Metal Spirit - Giant Tripod",
+        "namecn": "金灵•巨鼎落"
+    },
+    {
+        "id": 135051,
+        "name": "Water Spirit - Combine Rivers",
+        "namecn": "水灵•纳百川"
+    },
+    {
+        "id": 135061,
+        "name": "Ultimate World Formation",
+        "namecn": "混元无极阵"
+    },
+    {
+        "id": 135071,
+        "name": "Five Elements Heavenly Marrow Rhythm",
+        "namecn": "五行天髓诀"
+    },
+    {
+        "id": 141011,
+        "name": "Crash Fist - Poke",
+        "namecn": "崩拳•戳"
+    },
+    {
+        "id": 141021,
+        "name": "Crash Fist - Block",
+        "namecn": "崩拳•封"
+    },
+    {
+        "id": 141031,
+        "name": "Crash Fist - Bounce",
+        "namecn": "崩拳•弹"
+    },
+    {
+        "id": 141041,
+        "name": "Exercise Fist",
+        "namecn": "锻拳"
+    },
+    {
+        "id": 141051,
+        "name": "Mountain Cleaving Palms",
+        "namecn": "劈山掌"
+    },
+    {
+        "id": 141061,
+        "name": "Embracing Qi Technique",
+        "namecn": "抱气法"
+    },
+    {
+        "id": 141071,
+        "name": "Rakshasa Pouncing",
+        "namecn": "罗刹扑"
+    },
+    {
+        "id": 141081,
+        "name": "Sky-Piercing Claw",
+        "namecn": "破空爪"
+    },
+    {
+        "id": 141091,
+        "name": "Mountain Falling",
+        "namecn": "千斤坠"
+    },
+    {
+        "id": 141101,
+        "name": "Gather Force",
+        "namecn": "起势"
+    },
+    {
+        "id": 141111,
+        "name": "Vigorous Force",
+        "namecn": "朝气蓬勃"
+    },
+    {
+        "id": 141121,
+        "name": "Youthful Vigor",
+        "namecn": "血气方刚"
+    },
+    {
+        "id": 142011,
+        "name": "Crash Fist - Shake",
+        "namecn": "崩拳•撼"
+    },
+    {
+        "id": 142021,
+        "name": "Crash Fist - Entangle",
+        "namecn": "崩拳•缠"
+    },
+    {
+        "id": 142031,
+        "name": "Crash Fist - Blitz",
+        "namecn": "崩拳•突"
+    },
+    {
+        "id": 142041,
+        "name": "Exercise Tendons",
+        "namecn": "锻筋"
+    },
+    {
+        "id": 142051,
+        "name": "Detect-Horse Palms",
+        "namecn": "探马掌"
+    },
+    {
+        "id": 142061,
+        "name": "Gale Shadow Claw",
+        "namecn": "风冥爪"
+    },
+    {
+        "id": 142071,
+        "name": "Ghost Howling",
+        "namecn": "夜鬼啸"
+    },
+    {
+        "id": 142081,
+        "name": "Standing Firm",
+        "namecn": "岿然不动"
+    },
+    {
+        "id": 142091,
+        "name": "Strong Force",
+        "namecn": "势大力沉"
+    },
+    {
+        "id": 142101,
+        "name": "Sinking Qi",
+        "namecn": "气沉丹田"
+    },
+    {
+        "id": 142111,
+        "name": "Magnaminous Righteousness",
+        "namecn": "浩然正气"
+    },
+    {
+        "id": 143011,
+        "name": "Crash Footwork",
+        "namecn": "崩天步"
+    },
+    {
+        "id": 143021,
+        "name": "Crash Fist - Truncate",
+        "namecn": "崩拳•截脉"
+    },
+    {
+        "id": 143031,
+        "name": "Crash Fist - Subdue Dragon",
+        "namecn": "崩拳•降龙"
+    },
+    {
+        "id": 143041,
+        "name": "Exercise Bones",
+        "namecn": "锻骨"
+    },
+    {
+        "id": 143051,
+        "name": "Bearing The Load",
+        "namecn": "荷重前行"
+    },
+    {
+        "id": 143061,
+        "name": "Windward Palms",
+        "namecn": "迎风掌"
+    },
+    {
+        "id": 143071,
+        "name": "Tiger Pouncing",
+        "namecn": "饿虎扑食"
+    },
+    {
+        "id": 143081,
+        "name": "Double Trouble",
+        "namecn": "双鬼拍门"
+    },
+    {
+        "id": 143091,
+        "name": "Majestic Qi",
+        "namecn": "气若悬河"
+    },
+    {
+        "id": 143101,
+        "name": "Sailing Through Sky",
+        "namecn": "踏破九霄"
+    },
+    {
+        "id": 143111,
+        "name": "Mighty Force",
+        "namecn": "势如破竹"
+    },
+    {
+        "id": 144011,
+        "name": "Crash Citta-Dharma",
+        "namecn": "崩灭心法"
+    },
+    {
+        "id": 144021,
+        "name": "Crash Fist - Inch Force",
+        "namecn": "崩拳•寸劲"
+    },
+    {
+        "id": 144031,
+        "name": "Crash Fist - Continue",
+        "namecn": "崩拳•连崩"
+    },
+    {
+        "id": 144041,
+        "name": "Exercise Marrow",
+        "namecn": "锻髓"
+    },
+    {
+        "id": 144051,
+        "name": "Crane Footwork",
+        "namecn": "鹤步"
+    },
+    {
+        "id": 144061,
+        "name": "Elusive Footwork",
+        "namecn": "灵玄迷踪步"
+    },
+    {
+        "id": 144071,
+        "name": "Styx Agility",
+        "namecn": "冥影身法"
+    },
+    {
+        "id": 144081,
+        "name": "Soul Seizing",
+        "namecn": "玄手夺魂"
+    },
+    {
+        "id": 144091,
+        "name": "Surging Waves",
+        "namecn": "冲霄破浪"
+    },
+    {
+        "id": 144101,
+        "name": "Overwhelming Force",
+        "namecn": "磅礴之势"
+    },
+    {
+        "id": 145011,
+        "name": "Crash Fist - Blink",
+        "namecn": "崩拳•闪击"
+    },
+    {
+        "id": 145021,
+        "name": "Crash Fist - Shocked",
+        "namecn": "崩拳•惊触"
+    },
+    {
+        "id": 145031,
+        "name": "Exercise Soul",
+        "namecn": "锻神开海"
+    },
+    {
+        "id": 145041,
+        "name": "Realm-Killing Palms",
+        "namecn": "百杀破境掌"
+    },
+    {
+        "id": 145051,
+        "name": "Shura Roar",
+        "namecn": "修罗吼"
+    },
+    {
+        "id": 145061,
+        "name": "Soul Cleaving",
+        "namecn": "玄心斩魄"
+    },
+    {
+        "id": 145071,
+        "name": "Gather Intense Force",
+        "namecn": "威震四方"
+    },
+    {
+        "id": 145081,
+        "name": "Vast Universe",
+        "namecn": "天地浩荡"
+    },
+    {
+        "id": 211011,
+        "name": "Rhyme Spirit Sword",
+        "namecn": "韵灵剑"
+    },
+    {
+        "id": 211021,
+        "name": "Diligent Sword",
+        "namecn": "勤拙剑"
+    },
+    {
+        "id": 212011,
+        "name": "Cloud Sword - Dawn",
+        "namecn": "云剑•拂晓"
+    },
+    {
+        "id": 212021,
+        "name": "Giant Ape Spirit Sword",
+        "namecn": "巨猿灵剑"
+    },
+    {
+        "id": 213011,
+        "name": "Unrestrained Sword - Dragon Coiled",
+        "namecn": "狂剑•盘龙"
+    },
+    {
+        "id": 213021,
+        "name": "One Heart One Sword",
+        "namecn": "一心一剑"
+    },
+    {
+        "id": 213031,
+        "name": "Synergy Sword Formation",
+        "namecn": "合势剑阵"
+    },
+    {
+        "id": 214011,
+        "name": "Sword Intent Flow",
+        "namecn": "剑意流转"
+    },
+    {
+        "id": 214021,
+        "name": "Emptiness Sword Formation",
+        "namecn": "溟空剑阵诀"
+    },
+    {
+        "id": 215011,
+        "name": "Apex Sword Citta-Dharma",
+        "namecn": "凌剑心法"
+    },
+    {
+        "id": 215021,
+        "name": "Step Moon Into Cloud",
+        "namecn": "步月登云"
+    },
+    {
+        "id": 215031,
+        "name": "Unrestrained Sword - Twin Dragons",
+        "namecn": "狂剑·双龙"
+    },
+    {
+        "id": 216011,
+        "name": "Remnant Cloud Phocosky Sword",
+        "namecn": "残云封天剑"
+    },
+    {
+        "id": 216021,
+        "name": "Secret Sword - Spirit Cloud",
+        "namecn": "秘剑•灵云"
+    },
+    {
+        "id": 221011,
+        "name": "Hexagrams Spirit Resurrection",
+        "namecn": "卦灵返生"
+    },
+    {
+        "id": 221021,
+        "name": "Throwing Stones For Directions",
+        "namecn": "投石问路"
+    },
+    {
+        "id": 222011,
+        "name": "Vitality Blossom",
+        "namecn": "生机绽放"
+    },
+    {
+        "id": 222021,
+        "name": "Star Born Rhythm",
+        "namecn": "星衍诀"
+    },
+    {
+        "id": 223011,
+        "name": "Sun And Moon For Glory",
+        "namecn": "日月争辉"
+    },
+    {
+        "id": 223021,
+        "name": "All-Or-Nothing",
+        "namecn": "一掷乾坤"
+    },
+    {
+        "id": 224011,
+        "name": "Flowers And Water",
+        "namecn": "落花流水"
+    },
+    {
+        "id": 224021,
+        "name": "Astral Move - Dragon Slay",
+        "namecn": "星弈•屠龙"
+    },
+    {
+        "id": 224031,
+        "name": "Thunder Citta-Dharma",
+        "namecn": "雷霆心法"
+    },
+    {
+        "id": 225011,
+        "name": "Thin On The Ground",
+        "namecn": "铁树开花"
+    },
+    {
+        "id": 225021,
+        "name": "Preemptive Strike",
+        "namecn": "先发制人"
+    },
+    {
+        "id": 225031,
+        "name": "Meteorite Meteor",
+        "namecn": "流星天陨"
+    },
+    {
+        "id": 226011,
+        "name": "Destiny Catastrophe",
+        "namecn": "天命劫"
+    },
+    {
+        "id": 226021,
+        "name": "Covert Shift",
+        "namecn": "移花接木"
+    },
+    {
+        "id": 231011,
+        "name": "Wood Spirit Secret Seal",
+        "namecn": "木灵秘印"
+    },
+    {
+        "id": 231021,
+        "name": "Fire Spirit Secret Seal",
+        "namecn": "火灵秘印"
+    },
+    {
+        "id": 231031,
+        "name": "Earth Spirit Secret Seal",
+        "namecn": "土灵秘印"
+    },
+    {
+        "id": 231041,
+        "name": "Metal Spirit Secret Seal",
+        "namecn": "金灵秘印"
+    },
+    {
+        "id": 231051,
+        "name": "Water Spirit Secret Seal",
+        "namecn": "水灵秘印"
+    },
+    {
+        "id": 232011,
+        "name": "Metal Spirit - Chokehold",
+        "namecn": "金灵•封喉"
+    },
+    {
+        "id": 232021,
+        "name": "Water Spirit - Rhythm Wood",
+        "namecn": "水灵•润木"
+    },
+    {
+        "id": 232031,
+        "name": "Fire Spirit - Rhythm Earth",
+        "namecn": "火灵•窑土"
+    },
+    {
+        "id": 233011,
+        "name": "Wood Spirit - Vine",
+        "namecn": "木灵•藤蔓"
+    },
+    {
+        "id": 233021,
+        "name": "Metal Spirit - Rhythm Water",
+        "namecn": "金灵•凝水"
+    },
+    {
+        "id": 233031,
+        "name": "Five Elements Escape",
+        "namecn": "五行遁术"
+    },
+    {
+        "id": 234011,
+        "name": "Earth Spirit - Earthquake",
+        "namecn": "土灵•撼地"
+    },
+    {
+        "id": 234021,
+        "name": "Wood Spirit - Rhythm Fire",
+        "namecn": "木灵•燃火"
+    },
+    {
+        "id": 234031,
+        "name": "Earth Spirit - Rhythm Metal",
+        "namecn": "土灵•韵金"
+    },
+    {
+        "id": 235011,
+        "name": "Fire Spirit - Burning Sky",
+        "namecn": "火灵•焚天焱"
+    },
+    {
+        "id": 235021,
+        "name": "Water Spirit - Tsunami",
+        "namecn": "水灵•海龙啸"
+    },
+    {
+        "id": 236011,
+        "name": "Five Elements Spirit Blast",
+        "namecn": "五行灵爆术"
+    },
+    {
+        "id": 236021,
+        "name": "Five Elements Blossom",
+        "namecn": "五行绽放"
+    },
+    {
+        "id": 241011,
+        "name": "Endless Entanglement",
+        "namecn": "死缠烂打"
+    },
+    {
+        "id": 241021,
+        "name": "Endless Force",
+        "namecn": "气势不绝"
+    },
+    {
+        "id": 242011,
+        "name": "Toxin Immunity",
+        "namecn": "百毒不侵"
+    },
+    {
+        "id": 242021,
+        "name": "Lying Drunk",
+        "namecn": "醉卧逍遥"
+    },
+    {
+        "id": 243021,
+        "name": "Break Pots and Sink Boats",
+        "namecn": "破釜沉舟"
+    },
+    {
+        "id": 244011,
+        "name": "Strength Driven Mad",
+        "namecn": "类别"
+    },
+    {
+        "id": 244021,
+        "name": "Crash Fist - Double",
+        "namecn": "崩拳•双影"
+    },
+    {
+        "id": 244031,
+        "name": "Styx Three Hit",
+        "namecn": "幽冥三点手"
+    },
+    {
+        "id": 245011,
+        "name": "Break Cocoon",
+        "namecn": "破茧化蝶"
+    },
+    {
+        "id": 245021,
+        "name": "Eerie Melody Buries Soul",
+        "namecn": "鬼音葬魂"
+    },
+    {
+        "id": 246011,
+        "name": "Endless Crash",
+        "namecn": "无尽崩绝"
+    },
+    {
+        "id": 246021,
+        "name": "Return To Simplicity",
+        "namecn": "返璞归真"
+    },
+    {
+        "id": 311011,
+        "name": "Earth Spirit Elixir",
+        "namecn": "地灵丹"
+    },
+    {
+        "id": 311021,
+        "name": "Fundamental Elixir",
+        "namecn": "培元丹"
+    },
+    {
+        "id": 311031,
+        "name": "Small Recover Elixir",
+        "namecn": "小还丹"
+    },
+    {
+        "id": 312011,
+        "name": "Cloud Elixir",
+        "namecn": "飞云丹"
+    },
+    {
+        "id": 312021,
+        "name": "Exorcism Elixir",
+        "namecn": "驱邪丹"
+    },
+    {
+        "id": 313011,
+        "name": "Healing Elixir",
+        "namecn": "疗伤丹"
+    },
+    {
+        "id": 313021,
+        "name": "Divine Power Elixir",
+        "namecn": "神力丹"
+    },
+    {
+        "id": 314011,
+        "name": "Great Recover Elixir",
+        "namecn": "大还丹"
+    },
+    {
+        "id": 314021,
+        "name": "Spiritage Elixir",
+        "namecn": "聚灵丹"
+    },
+    {
+        "id": 315011,
+        "name": "Ice Spirit Guard Elixir",
+        "namecn": "冰灵护体丹"
+    },
+    {
+        "id": 321011,
+        "name": "Thunder Fulu",
+        "namecn": "奔雷符"
+    },
+    {
+        "id": 321021,
+        "name": "Guard Spirit Fulu",
+        "namecn": "护灵符"
+    },
+    {
+        "id": 321031,
+        "name": "Sharp Metal Fulu",
+        "namecn": "锐金符"
+    },
+    {
+        "id": 322011,
+        "name": "Fire Cloud Fulu",
+        "namecn": "火云符"
+    },
+    {
+        "id": 322021,
+        "name": "Calm Incantation",
+        "namecn": "清心咒"
+    },
+    {
+        "id": 322031,
+        "name": "Mist Fulu",
+        "namecn": "水气符"
+    },
+    {
+        "id": 323011,
+        "name": "Ice Incantation",
+        "namecn": "寒冰咒"
+    },
+    {
+        "id": 323021,
+        "name": "Spirit Absorb Fulu",
+        "namecn": "吸灵符"
+    },
+    {
+        "id": 323031,
+        "name": "Miasma Fulu",
+        "namecn": "瘴气符"
+    },
+    {
+        "id": 324011,
+        "name": "Spiritage Incantation",
+        "namecn": "聚气咒"
+    },
+    {
+        "id": 324021,
+        "name": "Distubing Fulu",
+        "namecn": "扰心符",
+        "namealta": "Disturbing Fulu"
+    },
+    {
+        "id": 324031,
+        "name": "Weaken Fulu",
+        "namecn": "弱体符"
+    },
+    {
+        "id": 325011,
+        "name": "Soul Requiem Fulu",
+        "namecn": "镇魂封元符"
+    },
+    {
+        "id": 325021,
+        "name": "Divine Walk Fulu",
+        "namecn": "千里神行符"
+    },
+    {
+        "id": 325031,
+        "name": "Thousand Evil Incantation",
+        "namecn": "万邪入体咒",
+        "namealta": "Thousand Evils Incantation"
+    },
+    {
+        "id": 331011,
+        "name": "Cracking Voice",
+        "namecn": "破音"
+    },
+    {
+        "id": 331021,
+        "name": "Earth Tune",
+        "namecn": "土行曲"
+    },
+    {
+        "id": 331031,
+        "name": "Carefree Tune",
+        "namecn": "逍遥曲"
+    },
+    {
+        "id": 332011,
+        "name": "Kindness Tune",
+        "namecn": "慈念曲"
+    },
+    {
+        "id": 332021,
+        "name": "Illusion Tune",
+        "namecn": "幻音曲"
+    },
+    {
+        "id": 332031,
+        "name": "Sky Spirit Tune",
+        "namecn": "天灵曲"
+    },
+    {
+        "id": 333011,
+        "name": "Heartbroken Tune",
+        "namecn": "断肠曲"
+    },
+    {
+        "id": 333021,
+        "name": "Craze Dance Tune",
+        "namecn": "狂舞曲"
+    },
+    {
+        "id": 333031,
+        "name": "Tremolo",
+        "namecn": "轮指连音"
+    },
+    {
+        "id": 334011,
+        "name": "Regen Tune",
+        "namecn": "回春曲"
+    },
+    {
+        "id": 334021,
+        "name": "Nine Evil Ruptsprite",
+        "namecn": "九煞破灵曲",
+        "namealta": "Nine Evils Ruptsprite"
+    },
+    {
+        "id": 334031,
+        "name": "Concentric Tune",
+        "namecn": "同心曲"
+    },
+    {
+        "id": 335011,
+        "name": "Predicament for Immortals",
+        "namecn": "天音困仙曲"
+    },
+    {
+        "id": 335021,
+        "name": "Apparition Confusion",
+        "namecn": "幽绪乱心曲"
+    },
+    {
+        "id": 335031,
+        "name": "Chord In Tune",
+        "namecn": "转弦合调"
+    },
+    {
+        "id": 341011,
+        "name": "Toning",
+        "namecn": "调色"
+    },
+    {
+        "id": 341021,
+        "name": "Grinding Ink",
+        "namecn": "研墨"
+    },
+    {
+        "id": 342011,
+        "name": "Pen Walks Dragon Snake",
+        "namecn": "笔走龙蛇"
+    },
+    {
+        "id": 342021,
+        "name": "Feed on Illusions",
+        "namecn": "画饼充饥"
+    },
+    {
+        "id": 342031,
+        "name": "Gild The Lily",
+        "namecn": "画蛇添足"
+    },
+    {
+        "id": 343011,
+        "name": "Splash Ink",
+        "namecn": "挥毫泼墨"
+    },
+    {
+        "id": 343021,
+        "name": "Inspiration",
+        "namecn": "灵感迸发"
+    },
+    {
+        "id": 344011,
+        "name": "Divine Brush",
+        "namecn": "神来之笔"
+    },
+    {
+        "id": 344021,
+        "name": "Falling Paper Clouds",
+        "namecn": "落纸云烟"
+    },
+    {
+        "id": 345011,
+        "name": "Flying Brush",
+        "namecn": "运笔如飞"
+    },
+    {
+        "id": 345021,
+        "name": "Finishing Touch",
+        "namecn": "画龙点睛"
+    },
+    {
+        "id": 351011,
+        "name": "Thunderphilia Formation",
+        "namecn": "引雷阵"
+    },
+    {
+        "id": 351021,
+        "name": "Fraccide Formation",
+        "namecn": "碎杀阵"
+    },
+    {
+        "id": 351031,
+        "name": "Impact Formation",
+        "namecn": "冲击阵纹"
+    },
+    {
+        "id": 352011,
+        "name": "Scutturtle Formation",
+        "namecn": "龟甲阵"
+    },
+    {
+        "id": 352021,
+        "name": "Cacopoisonous Formation",
+        "namecn": "邪蛊阵"
+    },
+    {
+        "id": 352031,
+        "name": "Cure Formation",
+        "namecn": "疗愈阵纹"
+    },
+    {
+        "id": 353011,
+        "name": "Spiritage Formation",
+        "namecn": "聚灵阵"
+    },
+    {
+        "id": 353021,
+        "name": "Endless Sword Formation",
+        "namecn": "周天剑阵"
+    },
+    {
+        "id": 353031,
+        "name": "Hexproof Formation",
+        "namecn": "辟邪阵纹"
+    },
+    {
+        "id": 354011,
+        "name": "Heavenly Spirit Forceage Formation",
+        "namecn": "天罡聚力阵"
+    },
+    {
+        "id": 354021,
+        "name": "Octgates Lock Formation",
+        "namecn": "八门金锁阵"
+    },
+    {
+        "id": 354031,
+        "name": "Motionless Tutelary Formation",
+        "namecn": "不动金刚阵"
+    },
+    {
+        "id": 355011,
+        "name": "Anthomania Formation",
+        "namecn": "万花迷魂阵"
+    },
+    {
+        "id": 355021,
+        "name": "Echo Formation",
+        "namecn": "回响阵纹"
+    },
+    {
+        "id": 355031,
+        "name": "Meru Formation",
+        "namecn": "须弥阵纹"
+    },
+    {
+        "id": 361011,
+        "name": "Sword Bamboo",
+        "namecn": "剑枝竹"
+    },
+    {
+        "id": 361021,
+        "name": "Hard Bamboo",
+        "namecn": "硬枝竹"
+    },
+    {
+        "id": 362031,
+        "name": "Leaf Shield Flower",
+        "namecn": "叶盾花"
+    },
+    {
+        "id": 362041,
+        "name": "Leaf Blade Flower",
+        "namecn": "叶刃花"
+    },
+    {
+        "id": 363011,
+        "name": "Qi-seeking Sunflower",
+        "namecn": "向灵葵"
+    },
+    {
+        "id": 363021,
+        "name": "Qi-corrupting Sunflower",
+        "namecn": "邪灵葵"
+    },
+    {
+        "id": 364011,
+        "name": "Frozen Snow Lotus",
+        "namecn": "冰封雪莲"
+    },
+    {
+        "id": 364021,
+        "name": "Detoxific Purple Fern",
+        "namecn": "清肠紫蕨"
+    },
+    {
+        "id": 364031,
+        "name": "Frozen Blood Lotus",
+        "namecn": "冰封血莲"
+    },
+    {
+        "id": 365021,
+        "name": "Space Spiritual Field",
+        "namecn": "空间灵田"
+    },
+    {
+        "id": 365031,
+        "name": "Entangling Ancient Vine",
+        "namecn": "缚仙古藤"
+    },
+    {
+        "id": 365041,
+        "name": "Devouring Ancient Vine",
+        "namecn": "噬仙古藤"
+    },
+    {
+        "id": 371011,
+        "name": "Heavenly Decree - Attack",
+        "namecn": "天谕·攻",
+        "namealta": "God Saying - Attack"
+    },
+    {
+        "id": 371021,
+        "name": "Heavenly Decree - Defend",
+        "namecn": "天谕·守",
+        "namealta": "God Saying - Defend"
+    },
+    {
+        "id": 371031,
+        "name": "Foretell Fate",
+        "namecn": "卜命",
+        "namealta": "Learn Fortune"
+    },
+    {
+        "id": 371041,
+        "name": "Examine Body",
+        "namecn": "察体",
+        "namealta": "Observe Body"
+    },
+    {
+        "id": 372011,
+        "name": "Heavenly Fortune - Seek Fortune",
+        "namecn": "天运·趋吉",
+        "namealta": "God Luck - Approach"
+    },
+    {
+        "id": 372021,
+        "name": "Heavenly Fortune - Shun Misfortune",
+        "namecn": "天运·避凶",
+        "namealta": "God Luck - Avoid"
+    },
+    {
+        "id": 372031,
+        "name": "Detect Qi",
+        "namecn": "探灵"
+    },
+    {
+        "id": 372041,
+        "name": "Bad Omen",
+        "namecn": "凶象"
+    },
+    {
+        "id": 373011,
+        "name": "Heavenly Time - Fleeting",
+        "namecn": "天命·飞逝",
+        "namealta": "God Fate - Flies"
+    },
+    {
+        "id": 373021,
+        "name": "Heavenly Time - Recurring",
+        "namecn": "天命·重现",
+        "namealta": "God Fate - Reborn"
+    },
+    {
+        "id": 373031,
+        "name": "Disaster of Bloodshed",
+        "namecn": "血光之灾"
+    },
+    {
+        "id": 373041,
+        "name": "Lucky Start",
+        "namecn": "吉运初显",
+        "namealta": "Good Omen"
+    },
+    {
+        "id": 374011,
+        "name": "Everything Goes Your Way",
+        "namecn": "万事如意",
+        "namealta": "Everything Goes Way"
+    },
+    {
+        "id": 374021,
+        "name": "Heavenly Star - Guard",
+        "namecn": "天星·御心",
+        "namealta": "God Star - Promotion"
+    },
+    {
+        "id": 374031,
+        "name": "Heavenly Star - Pull",
+        "namecn": "天星·牵引",
+        "namealta": "God Star - Traction"
+    },
+    {
+        "id": 374041,
+        "name": "Everything is Unadvisable",
+        "namecn": "诸事不宜",
+        "namealta": "Nothing Is Appropriate"
+    },
+    {
+        "id": 375011,
+        "name": "Envelop In Disaster",
+        "namecn": "厄劫缠身",
+        "namealta": "Calamity Plaguin"
+    },
+    {
+        "id": 375021,
+        "name": "Cycle of Fate",
+        "namecn": "命运轮回",
+        "namealta": "Fate Reincarnates"
+    },
+    {
+        "id": 375031,
+        "name": "Heavenly Will - Comply",
+        "namecn": "天机·顺应",
+        "namealta": "God's Opportunity - Conform"
+    },
+    {
+        "id": 375041,
+        "name": "Heavenly Will - Defy",
+        "namecn": "天机·逆施",
+        "namealta": "God's Opportunity - Reversal"
+    },
+    {
+        "id": 401011,
+        "name": "Black Silver Armor",
+        "namecn": "玄银甲"
+    },
+    {
+        "id": 401021,
+        "name": "Thorns Spear",
+        "namecn": "刺尖枪"
+    },
+    {
+        "id": 402011,
+        "name": "Dew Jade Vase",
+        "namecn": "玉露瓶"
+    },
+    {
+        "id": 402021,
+        "name": "Nameless Ancient Sword",
+        "namecn": "无名古剑"
+    },
+    {
+        "id": 403011,
+        "name": "Fire Soul Refinement Flag",
+        "namecn": "天火炼魂旗"
+    },
+    {
+        "id": 403021,
+        "name": "Requiem Jade Lotus",
+        "namecn": "养魂玉莲"
+    },
+    {
+        "id": 403031,
+        "name": "Blood Crystal of Wolf King",
+        "namecn": "狼皇血晶"
+    },
+    {
+        "id": 404011,
+        "name": "Cosmos Seal Divine Orb",
+        "namecn": "混元封神珠"
+    },
+    {
+        "id": 404021,
+        "name": "Metal Tri-Thorn Spear",
+        "namecn": "金元三尖枪"
+    },
+    {
+        "id": 404031,
+        "name": "Carefree Guqin",
+        "namecn": "逍遥古琴"
+    },
+    {
+        "id": 405011,
+        "name": "Nether Seal Evil Signet",
+        "namecn": "九冥镇魔印"
+    },
+    {
+        "id": 405021,
+        "name": "Dark Crystal Heart Shield",
+        "namecn": "玄晶护心镜"
+    },
+    {
+        "id": 405031,
+        "name": "Bow of Hunting Owl",
+        "namecn": "猎枭古弓"
+    },
+    {
+        "id": 406011,
+        "name": "Void Split Spear",
+        "namecn": "裂虚界元枪"
+    },
+    {
+        "id": 406021,
+        "name": "Mysterious Gates Devil Seal Tower",
+        "namecn": "奇门锁妖塔"
+    },
+    {
+        "id": 501011,
+        "name": "Break Sky Eagle",
+        "namecn": "破空雕"
+    },
+    {
+        "id": 501021,
+        "name": "Fat Immortal Raccoon",
+        "namecn": "胖仙狸"
+    },
+    {
+        "id": 502011,
+        "name": "Dark Star Bat",
+        "namecn": "暗星蝙蝠"
+    },
+    {
+        "id": 502021,
+        "name": "Lonely Night Wolf",
+        "namecn": "孤夜狼"
+    },
+    {
+        "id": 503011,
+        "name": "Black Earth Turtle",
+        "namecn": "地玄龟"
+    },
+    {
+        "id": 503021,
+        "name": "Brocade Rat",
+        "namecn": "锦毛鼠"
+    },
+    {
+        "id": 504011,
+        "name": "Scarlet-Eye The Sky Consumer",
+        "namecn": "吞天赤眼兽"
+    },
+    {
+        "id": 504021,
+        "name": "Ashes Phoenix",
+        "namecn": "浴火凤凰"
+    },
+    {
+        "id": 504031,
+        "name": "Three Tailed Cat",
+        "namecn": "三尾讙"
+    },
+    {
+        "id": 505011,
+        "name": "Colorful Spirit Crane",
+        "namecn": "七彩灵鹤"
+    },
+    {
+        "id": 505021,
+        "name": "Shadow Owl Rabbit",
+        "namecn": "影枭兔"
+    },
+    {
+        "id": 506011,
+        "name": "Void The Spirit Consumer",
+        "namecn": "噬灵虚兽"
+    },
+    {
+        "id": 506021,
+        "name": "Nether Void Canine",
+        "namecn": "幽冥虚魂犬"
+    },
+    {
+        "id": 601011,
+        "name": "Normal Attack",
+        "namecn": "普通攻击"
+    },
+    {
+        "id": 611011,
+        "name": "Cloud Sword - Flying Sand",
+        "namecn": "云剑•飞砂"
+    },
+    {
+        "id": 611021,
+        "name": "Bronze Cat",
+        "namecn": "青铜猫"
+    },
+    {
+        "id": 611031,
+        "name": "Clear Heart Sword Embryo",
+        "namecn": "澄心剑胚"
+    },
+    {
+        "id": 612011,
+        "name": "Cloud Sword - Cat Paw",
+        "namecn": "云剑·猫爪"
+    },
+    {
+        "id": 614011,
+        "name": "Cloud Sword - Avalanche",
+        "namecn": "云剑•崩雪"
+    },
+    {
+        "id": 614021,
+        "name": "Cloud Sword - Pray Rain",
+        "namecn": "云剑•唤雨"
+    },
+    {
+        "id": 614031,
+        "name": "Spirit Cat Chaos Sword",
+        "namecn": "灵猫乱剑"
+    },
+    {
+        "id": 615011,
+        "name": "Unrestrained Sword - Flame Dance",
+        "namecn": "狂剑·炎舞"
+    },
+    {
+        "id": 615021,
+        "name": "Sky Delicate Bracelet",
+        "namecn": "九霄玲珑镯"
+    },
+    {
+        "id": 621011,
+        "name": "Perfectly Planned",
+        "namecn": "算无遗策"
+    },
+    {
+        "id": 622011,
+        "name": "Only Traces",
+        "namecn": "飞鸿踏雪"
+    },
+    {
+        "id": 623011,
+        "name": "Ultimate Hexagram Base",
+        "namecn": "无极卦盘"
+    },
+    {
+        "id": 623021,
+        "name": "Starburst",
+        "namecn": "星爆术"
+    },
+    {
+        "id": 623031,
+        "name": "Flame Flutter",
+        "namecn": "灯焰飞舞"
+    },
+    {
+        "id": 624011,
+        "name": "Heptastar Soulstat",
+        "namecn": "七星定魂"
+    },
+    {
+        "id": 624021,
+        "name": "Within Reach",
+        "namecn": "瓮中捉鳖"
+    },
+    {
+        "id": 624031,
+        "name": "Rotary Divination Hexagram",
+        "namecn": "旋灯占卦"
+    },
+    {
+        "id": 625011,
+        "name": "Star Moon Folding Fan",
+        "namecn": "星月折扇"
+    },
+    {
+        "id": 625021,
+        "name": "Fury Thunder",
+        "namecn": "狂雷电闪"
+    },
+    {
+        "id": 632011,
+        "name": "Wood Spirit - Peach Blossom Seal",
+        "namecn": "木灵·桃花印"
+    },
+    {
+        "id": 633011,
+        "name": "Kun Wu Metal Ring",
+        "namecn": "锟铻金环"
+    },
+    {
+        "id": 633021,
+        "name": "Gourd Of Leisurely",
+        "namecn": "悠然葫芦"
+    },
+    {
+        "id": 634011,
+        "name": "Metal Spirit - Vigorous",
+        "namecn": "金灵·刚劲"
+    },
+    {
+        "id": 634021,
+        "name": "Overcome With Each Other",
+        "namecn": "双鸳逆克"
+    },
+    {
+        "id": 634031,
+        "name": "Water Spirit - Spring Rain",
+        "namecn": "水灵·春雨"
+    },
+    {
+        "id": 635011,
+        "name": "Earth Spirit - Landslide",
+        "namecn": "土灵·山崩"
+    },
+    {
+        "id": 642011,
+        "name": "Unceasing Exercising",
+        "namecn": "锻体不息"
+    },
+    {
+        "id": 642021,
+        "name": "Overwhelming Power",
+        "namecn": "盛气凌人"
+    },
+    {
+        "id": 643011,
+        "name": "Gone Crazy",
+        "namecn": "疯魔"
+    },
+    {
+        "id": 644011,
+        "name": "Crash Fist - Styx Night",
+        "namecn": "崩拳·冥夜",
+        "namealta": "Crash Fist - Stygian Night"
+    },
+    {
+        "id": 644021,
+        "name": "Meditation of Xuan",
+        "namecn": "冥心入玄"
+    },
+    {
+        "id": 645011,
+        "name": "Styx Moon's Glow",
+        "namecn": "冥月蟾光",
+        "namealta": "Stygian Moon's Changuang",
+        "namealtb": "Stygian Moon's Glow"
+    },
+    {
+        "id": 652011,
+        "name": "Wan Xuan Demon Breaking Palm",
+        "namecn": "万玄破魔掌"
+    },
+    {
+        "id": 714011,
+        "name": "Azure Dragon Sword Formation",
+        "namecn": "青龙剑阵"
+    },
+    {
+        "id": 714021,
+        "name": "Cloud Sword - Sunset Glow",
+        "namecn": "云剑·晚霞"
+    },
+    {
+        "id": 715011,
+        "name": "Dragon Devours Clouds",
+        "namecn": "狂龙吞云"
+    },
+    {
+        "id": 715021,
+        "name": "Beast Spirit Sword Formation",
+        "namecn": "百兽灵剑阵"
+    },
+    {
+        "id": 724011,
+        "name": "Spiritual Divination",
+        "namecn": "灵卦术"
+    },
+    {
+        "id": 724021,
+        "name": "Throw Petals",
+        "namecn": "摘花飞叶"
+    },
+    {
+        "id": 725011,
+        "name": "Astral Move - Twin Swallows",
+        "namecn": "星弈·双飞燕"
+    },
+    {
+        "id": 725021,
+        "name": "Water Drop Erosion",
+        "namecn": "滴水穿石"
+    },
+    {
+        "id": 734011,
+        "name": "Wild Crossing Seal",
+        "namecn": "野渡之印"
+    },
+    {
+        "id": 734021,
+        "name": "Lava Seal",
+        "namecn": "熔岩之印"
+    },
+    {
+        "id": 735011,
+        "name": "Boulder Seal",
+        "namecn": "滚石之印"
+    },
+    {
+        "id": 735021,
+        "name": "Wave Cutter Seal",
+        "namecn": "斩浪之印"
+    },
+    {
+        "id": 801011,
+        "name": "Mushroom Zongzi"
+    },
+    {
+        "id": 801021,
+        "name": "Honey Zongzi"
+    },
+    {
+        "id": 801031,
+        "name": "Salted Meat Zongzi"
+    },
+    {
+        "id": 801041,
+        "name": "Red Bean Zongzi"
+    },
+    {
+        "id": 801051,
+        "name": "Jujube Zongzi"
+    },
+    {
+        "id": 801061,
+        "name": "Fresh Meat Zongzi"
+    },
+    {
+        "id": 802011,
+        "name": "Candied Jujube Zongzi"
+    },
+    {
+        "id": 802021,
+        "name": "Spicy Zongzi"
+    },
+    {
+        "id": 802031,
+        "name": "Roasted Meat Zongzi"
+    },
+    {
+        "id": 802041,
+        "name": "Mung Bean Zongzi"
+    },
+    {
+        "id": 802051,
+        "name": "Preserved Meat Zongzi"
+    },
+    {
+        "id": 802061,
+        "name": "Jujube Paste Zongzi"
+    },
+    {
+        "id": 803011,
+        "name": "Alkaline Water Zongzi"
+    },
+    {
+        "id": 803021,
+        "name": "Lotus Seeds Zongzi"
+    },
+    {
+        "id": 803031,
+        "name": "Bean Paste Zongzi"
+    },
+    {
+        "id": 803041,
+        "name": "Sour Bamboo Shoots Zongzi"
+    },
+    {
+        "id": 803051,
+        "name": "Chestnut Zongzi"
+    },
+    {
+        "id": 803061,
+        "name": "Pungent Zongzi"
+    },
+    {
+        "id": 804011,
+        "name": "Preserved Fruit Zongzi"
+    },
+    {
+        "id": 804021,
+        "name": "Crystal Ice Zongzi"
+    },
+    {
+        "id": 804031,
+        "name": "Fresh Fruit Zongzi"
+    },
+    {
+        "id": 804041,
+        "name": "Salted Egg Yolk Zongzi"
+    },
+    {
+        "id": 804051,
+        "name": "Seafood Zongzi"
+    },
+    {
+        "id": 804061,
+        "name": "Pickled Mustard Zongzi"
+    },
+    {
+        "id": 805011,
+        "name": "Mixed Grain Zongzi"
+    },
+    {
+        "id": 805021,
+        "name": "Spirit Zongzi"
+    },
+    {
+        "id": 805031,
+        "name": "Water Combined Zongzi"
+    },
+    {
+        "id": 805041,
+        "name": "Assorted Meat Zongzi"
+    },
+    {
+        "id": 805051,
+        "name": "Double Plum Zongzi"
+    },
+    {
+        "id": 805061,
+        "name": "Shura Zongzi"
+    }
+]
