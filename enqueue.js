@@ -14,6 +14,10 @@ const jsonFilePath = process.argv[2];
 
 // Read the JSON file
 const jsonData = JSON.parse(fs.readFileSync(jsonFilePath, 'utf8'));
+if (jsonData.permute_a && jsonData.permute_b) {
+  console.error('Permuting both players not supported.');
+  process.exit(1);
+}
 if (jsonData.players) {
   jsonData.a = jsonData.players[0];
   jsonData.b = jsonData.players[1];
@@ -62,32 +66,6 @@ function* k_combinations(arr, k) {
   }
 }
 
-function next_permutation(arr) {
-  let i = arr.length - 1;
-  while (i > 0 && arr[i - 1] >= arr[i]) {
-    i -= 1;
-  }
-  if (i === 0) {
-    return false;
-  }
-  let j = arr.length - 1;
-  while (arr[j] <= arr[i - 1]) {
-    j -= 1;
-  }
-  let temp = arr[i - 1];
-  arr[i - 1] = arr[j];
-  arr[j] = temp;
-  j = arr.length - 1;
-  while (i < j) {
-    temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
-    i += 1;
-    j -= 1;
-  }
-  return true;
-}
-
 const getCombos = (character, options, permute) => {
   if (!permute) {
     return [character.cards.slice(0, 8)];
@@ -118,22 +96,7 @@ const getCombos = (character, options, permute) => {
       combos.push(combo);
     }
   }
-  const permutations = [];
-  const tried_permutations = {};
-  for (let combo of combos) {
-    do {
-      const p_id = combo.join(',');
-      if (!tried_permutations[p_id]) {
-        tried_permutations[p_id] = true;
-        const p = [];
-        for (let i = 0; i < 8; i++) {
-          p[i] = combo[i];
-        }
-        permutations.push(p);
-      }
-    } while (next_permutation(combo));
-  }
-  return permutations;
+  return combos;
 };
 
 const combos = [getCombos(jsonData.a, jsonData, jsonData.permute_a), getCombos(jsonData.b, jsonData, jsonData.permute_b)];
@@ -153,8 +116,8 @@ function promptUser(message) {
 }
 
 (async function() {
-  if (combos[0].length * combos[1].length >= 100000000) {
-    const continueExecution = await promptUser(`Warning: ${combos[0].length} * ${combos[1].length} = ${(combos[0].length * combos[1].length).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} jobs! Continue? [y/N] `);
+  if (combos[0].length * (jsonData.permute_a ? 40320 : 1) * combos[1].length * (jsonData.permute_b ? 40320 : 1) >= 100000000) {
+    const continueExecution = await promptUser(`Warning: ${combos[0].length} * ${jsonData.permute_a ? 40320 : 1} * ${combos[1].length} * ${jsonData.permute_b ? 40320 : 1} = ${(combos[0].length * (jsonData.permute_a ? 40320 : 1) * combos[1].length * (jsonData.permute_b ? 40320 : 1)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} jobs! Continue? [y/N] `);
     if (!continueExecution) {
       console.log('Exiting...');
       process.exit(0);
@@ -216,22 +179,7 @@ function promptUser(message) {
     const createJobTableQuery = `
     CREATE TABLE IF NOT EXISTS JOB (
       ID INTEGER PRIMARY KEY AUTOINCREMENT,
-      A1 INTEGER,
-      A2 INTEGER,
-      A3 INTEGER,
-      A4 INTEGER,
-      A5 INTEGER,
-      A6 INTEGER,
-      A7 INTEGER,
-      A8 INTEGER,
-      B1 INTEGER,
-      B2 INTEGER,
-      B3 INTEGER,
-      B4 INTEGER,
-      B5 INTEGER,
-      B6 INTEGER,
-      B7 INTEGER,
-      B8 INTEGER
+      CARDS TEXT NOT NULL
     );
   `;
 
@@ -272,10 +220,10 @@ function promptUser(message) {
       insertBatch.run(JSON.stringify(jsonData), JSON.stringify(player_a), JSON.stringify(player_b));
       insertBatch.finalize();
 
-      const insertJob = db.prepare('INSERT INTO JOB (A1, A2, A3, A4, A5, A6, A7, A8, B1, B2, B3, B4, B5, B6, B7, B8) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+      const insertJob = db.prepare('INSERT INTO JOB (CARDS) VALUES (json(?));');
       for (let x of combos[0]) {
         for (let y of combos[1]) {
-          insertJob.run(...x, ...y);
+          insertJob.run(JSON.stringify({ a: x, b: y }));
         }
       }
       insertJob.finalize();

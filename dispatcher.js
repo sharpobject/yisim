@@ -64,6 +64,17 @@ const initDB = (db) => {
       BATCH_ID INTEGER NOT NULL,
       DISPATCHED DATETIME,
       PROCESSED DATETIME,
+      CARDS TEXT NOT NULL,
+      FOREIGN KEY(BATCH_ID) REFERENCES BATCH(ID)
+    );
+  `;
+
+  const createBattleTableQuery = `
+    CREATE TABLE IF NOT EXISTS BATTLE (
+      ID INTEGER PRIMARY KEY AUTOINCREMENT,
+      BATCH_ID INTEGER NOT NULL,
+      JOB_ID INTEGER,
+      PROCESSED DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
       A1 INTEGER,
       A2 INTEGER,
       A3 INTEGER,
@@ -102,7 +113,8 @@ const initDB = (db) => {
   // Create tables and log their status
   return Promise.all([
     createTable('BATCH', createBatchTableQuery),
-    createTable('JOB', createJobTableQuery)
+    createTable('JOB', createJobTableQuery),
+    createTable('BATTLE', createBattleTableQuery),
   ]);
 };
 
@@ -133,8 +145,8 @@ const mergeTempDB = (db, tempFilePath) => {
 
           // Insert data from the temporary JOB table into the main JOB table
           db.run(`
-            INSERT INTO JOB (BATCH_ID, A1, A2, A3, A4, A5, A6, A7, A8, B1, B2, B3, B4, B5, B6, B7, B8)
-            SELECT ${lastBatchID}, A1, A2, A3, A4, A5, A6, A7, A8, B1, B2, B3, B4, B5, B6, B7, B8 FROM ${tempDBAlias}.JOB;
+            INSERT INTO JOB (BATCH_ID, CARDS)
+            SELECT ${lastBatchID}, CARDS FROM ${tempDBAlias}.JOB;
           `, (err) => {
             if (err) {
               console.error(`Error merging JOB table from '${tempFilePath}'`, err);
@@ -170,9 +182,7 @@ const fetchUnprocessedJobs = (db, limit) => {
   return new Promise((resolve, reject) => {
     db.all(`
       SELECT
-        ID, BATCH_ID,
-        A1, A2, A3, A4, A5, A6, A7, A8,
-        B1, B2, B3, B4, B5, B6, B7, B8
+        ID, BATCH_ID, CARDS
       FROM JOB
       WHERE JOB.DISPATCHED IS NULL
       LIMIT ${limit}
@@ -293,11 +303,15 @@ const markJobsDispatched = (db, jobIds) => {
     });
     worker.addEventListener('message', (event) => {
       messages_outstanding[i]--;
+      const jobId = event.data.results[0][1];
       db.serialize(() => {
-        const updateJob = db.prepare('UPDATE JOB SET PROCESSED = CURRENT_TIMESTAMP, USED_RANDOM = ?, A_FIRST = ?, TURNS = ?, HP_A = ?, HP_B = ?, T_SIGMOID = ? WHERE ID = ?');
-        for (let j of event.data.jobs) {
-          updateJob.run(j.USED_RANDOM, j.A_FIRST, j.TURNS, j.HP_A, j.HP_B, j.T_SIGMOID, j.ID);
+        const insertBattle = db.prepare('INSERT INTO BATTLE (BATCH_ID, JOB_ID, A1, A2, A3, A4, A5, A6, A7, A8, B1, B2, B3, B4, B5, B6, B7, B8, USED_RANDOM, A_FIRST, TURNS, HP_A, HP_B, T_SIGMOID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);')
+        for (let r of event.data.results) {
+          insertBattle.run(...r);
         }
+        insertBattle.finalize();
+        const updateJob = db.prepare('UPDATE JOB SET PROCESSED = CURRENT_TIMESTAMP WHERE ID = ?');
+        updateJob.run(jobId);
         updateJob.finalize();
       });
     });
@@ -311,8 +325,10 @@ const markJobsDispatched = (db, jobIds) => {
           idleWorkers++;
         }
       }
-      if (idleWorkers !== 0) {
-        const jobs = await fetchUnprocessedJobs(db, idleWorkers * 40320);
+      if (idleWorkers === 0) {
+        setTimeout(main, 100); // no idle workers
+      } else {
+        const jobs = await fetchUnprocessedJobs(db, idleWorkers);
         if (jobs.length) {
           // console.log(jobs[0]);
           // console.log(JSON.stringify(jobs[0]));
@@ -343,15 +359,11 @@ const markJobsDispatched = (db, jobIds) => {
             if (messages_outstanding[i] === 0) {
               messages_outstanding[i]++;
               const b = batchDict[batchIds.at(-1)];
-              const myJobs = b.jobs.splice(-40320, 40320).map((j) => ({
-                ID: j.ID,
-                A1: j.A1, A2: j.A2, A3: j.A3, A4: j.A4, A5: j.A5, A6: j.A6, A7: j.A7, A8: j.A8,
-                B1: j.B1, B2: j.B2, B3: j.B3, B4: j.B4, B5: j.B5, B6: j.B6, B7: j.B7, B8: j.B8,
-              }));
-              promises.push(markJobsDispatched(db, myJobs.map((j) => j.ID)));
+              const j = b.jobs.pop();
+              promises.push(markJobsDispatched(db, [j.ID]));
               workers[i].postMessage({
                 batch: b.batch,
-                jobs: myJobs
+                job: { ID: j.ID, CARDS: JSON.parse(j.CARDS) }
               });
               if (!b.jobs.length) {
                 batchIds.pop();
@@ -362,9 +374,11 @@ const markJobsDispatched = (db, jobIds) => {
             }
           }
           await Promise.all(promises);
+          setTimeout(main, 100); // jobs dispatched
+        } else {
+          setTimeout(main, 1000); // no jobs
         }
       }
-      setTimeout(main, 100);
     } catch (error) {
       console.error('Error in main loop:', error);
       // Don't continue the main loop, but let the fs.watch (and merge) and workers continue until ctrl-C
