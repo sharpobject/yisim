@@ -2181,5 +2181,97 @@ riddles["241"] = async () => {
     players[enemy_idx].fire_flame_blade_stacks = 1;
     return await do_riddle({players: players, my_idx: my_idx});
 };
-await riddles["241"]();
+//await riddles["241"]();
+riddles["242"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 101;
+    players[enemy_idx].cultivation = 54;
+    players[enemy_idx].physique = 70;
+    players[enemy_idx].max_physique = 75;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 101;
+    players[my_idx].cultivation = 80;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "spiritage incantation 2",
+        "spiritage incantation",
+        "thousand evil incantation",
+        "rule sky sword formation",
+        "rule sky sword formation 2",
+        "chain sword 2",
+        "chain sword",
+        "raven spirit sword 3",
+        "moon water sword 3",
+        "mirror flower sword formation 2",
+        "mirror flower sword formation",
+        "dharma spirit sword 2",
+        "cloud sword pierce the star 3",
+    ];
+    players[enemy_idx].cards = [
+        "crane footwork",
+        "exercise soul",
+        "exercise soul",
+        "ashes phoenix",
+        "frozen blood lotus 3",
+        "crane footwork",
+        "realm-killing palms",
+        "realm-killing palms",
+    ];
+    players[my_idx].sword_in_sheathed_stacks = 1;
+    players[enemy_idx].p2_regenerating_body_stacks = 1;
+    players[enemy_idx].p3_regenerating_body_stacks = 1;
+    players[enemy_idx].stance_of_fierce_attack_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["242"]();
+riddles["243"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 104;
+    players[enemy_idx].cultivation = 62;
+    players[enemy_idx].physique = 56;
+    players[enemy_idx].max_physique = 71;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 104;
+    players[my_idx].cultivation = 60;
+    players[my_idx].physique = 59;
+    players[my_idx].max_physique = 71;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "stygian moon's changuang",
+        "crash footwork",
+        "crane footwork 3",
+        "crash fist - stygian night",
+        "crash fist - blink",
+        "crash fist - subdue dragon 2",
+        "realm-killing palms 2",
+        "ghost howling",
+        "styx agility",
+        "soul cleaving 2",
+        "shura roar 2",
+        "crash fist - shocked",
+        "crash fist - inch force",
+        "soul seizing",
+    ];
+    players[enemy_idx].cards = [
+        "crane footwork 2",
+        "elusive footwork 3",
+        "surging waves",
+        "gather intense force 2",
+        "vast universe",
+        "mighty force 2",
+        "crash fist shocked 2",
+        "crash fist continue 2",
+    ];
+    players[my_idx].entering_styx_stacks = 1;
+    players[enemy_idx].p3_full_of_force_stacks = 1;
+    players[enemy_idx].p5_full_of_force_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+await riddles["243"]();
 console.log("done");
