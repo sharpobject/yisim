@@ -104,10 +104,12 @@ const mergeDb = (newDbPath) => {
 const insertBattles = (rows) => {
   const jobId = rows[0][1];
 
-  const q = db.query('INSERT INTO BATTLE (BATCH_ID, JOB_ID, A1, A2, A3, A4, A5, A6, A7, A8, B1, B2, B3, B4, B5, B6, B7, B8, USED_RANDOM, A_FIRST, TURNS, HP_A, HP_B, T_SIGMOID) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16, ?17, ?18, ?19, ?20, ?21, ?22, ?23, ?24);');
-  for (let r of rows) {
-    q.run(...r);
-  }
+  const q = db.prepare('INSERT INTO BATTLE (BATCH_ID, JOB_ID, A1, A2, A3, A4, A5, A6, A7, A8, B1, B2, B3, B4, B5, B6, B7, B8, USED_RANDOM, A_FIRST, TURNS, HP_A, HP_B, T_SIGMOID) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16, ?17, ?18, ?19, ?20, ?21, ?22, ?23, ?24);');
+  db.transaction(() => {
+    for (let r of rows) {
+      q.run(...r);
+    }
+  })();
 
   db.query('UPDATE JOB SET PROCESSED = CURRENT_TIMESTAMP WHERE ID = ?1').run(jobId);
 };
