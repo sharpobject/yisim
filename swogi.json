@@ -3944,65 +3944,128 @@
 	"211011": {
 		"name": "Rhyme Spirit Sword",
 		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
-		"actions": [["atk", 4], ["injured", ["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "qi"]]]
+		"actions": [
+			["atk", 4],
+			["injured",
+				["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "qi"]]
+		]
 	},
 	"211012": {
-		"actions": [["atk", 5], ["injured", ["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "qi"]]]
+		"actions": [
+			["atk", 5],
+			["injured",
+				["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "qi"]]
+		]
 	},
 	"211013": {
-		"actions": [["atk", 6], ["injured", ["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "qi"]]]
+		"actions": [
+			["atk", 6],
+			["injured",
+				["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "qi"]]
+		]
 	},
 	"211021": {
 		"name": "Diligent Sword",
-		"actions": [["for_each_x_add_c_pct_y", "cultivation", 20, "bonus_atk_amt"], ["atk", 6]]
+		"actions": [
+			["for_each_x_add_c_pct_y", "cultivation", 20, "bonus_atk_amt"],
+			["atk", 6]
+		]
 	},
 	"211022": {
-		"actions": [["for_each_x_add_c_pct_y", "cultivation", 25, "bonus_atk_amt"], ["atk", 6]]
+		"actions": [
+			["for_each_x_add_c_pct_y", "cultivation", 25, "bonus_atk_amt"],
+			["atk", 6]
+		]
 	},
 	"211023": {
-		"actions": [["for_each_x_add_c_pct_y", "cultivation", 33.333334, "bonus_atk_amt"], ["atk", 6]]
+		"actions": [
+			["for_each_x_add_c_pct_y", "cultivation", 33.333334, "bonus_atk_amt"],
+			["atk", 6]
+		]
 	},
 	"212011": {
 		"name": "Cloud Sword - Dawn",
-		"actions": [["def", 4], ["cloud_hit", ["rep", 3, ["atk", 2]]]]
+		"actions": [
+			["def", 4],
+			["cloud_hit",
+				["rep", 3, ["atk", 2]]]
+		]
 	},
 	"212012": {
-		"actions": [["def", 6], ["cloud_hit", ["rep", 3, ["atk", 3]]]]
+		"actions": [
+			["def", 6],
+			["cloud_hit",
+				["rep", 3, ["atk", 3]]]
+		]
 	},
 	"212013": {
-		"actions": [["def", 8], ["cloud_hit", ["rep", 3, ["atk", 4]]]]
+		"actions": [
+			["def", 8],
+			["cloud_hit",
+				["rep", 3, ["atk", 4]]]
+		]
 	},
 	"212021": {
 		"name": "Giant Ape Spirit Sword",
 		"qi_cost": 2,
 		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
-		"actions": [["atk", 8], ["add_c_of_x", 2, "increase_atk"]]
+		"actions": [
+			["atk", 8],
+			["add_c_of_x", 2, "increase_atk"]
+		]
 	},
 	"212022": {
-		"actions": [["atk", 8], ["add_c_of_x", 3, "increase_atk"]]
+		"actions": [
+			["atk", 8],
+			["add_c_of_x", 3, "increase_atk"]
+		]
 	},
 	"212023": {
-		"actions": [["atk", 8], ["add_c_of_x", 4, "increase_atk"]]
+		"actions": [
+			["atk", 8],
+			["add_c_of_x", 4, "increase_atk"]
+		]
 	},
 	"213011": {
 		"name": "Unrestrained Sword - Dragon Coiled",
-		"actions": [["for_each_x_add_c_y", "unrestrained_sword_count", 6, "bonus_def_amt"], ["def", 6]]
+		"actions": [
+			["for_each_x_add_c_y", "unrestrained_sword_count", 6, "bonus_def_amt"],
+			["def", 6]
+		]
 	},
 	"213012": {
-		"actions": [["for_each_x_add_c_y", "unrestrained_sword_count", 8, "bonus_def_amt"], ["def", 8]]
+		"actions": [
+			["for_each_x_add_c_y", "unrestrained_sword_count", 8, "bonus_def_amt"],
+			["def", 8]
+		]
 	},
 	"213013": {
-		"actions": [["for_each_x_add_c_y", "unrestrained_sword_count", 10, "bonus_def_amt"], ["def", 10]]
+		"actions": [
+			["for_each_x_add_c_y", "unrestrained_sword_count", 10, "bonus_def_amt"],
+			["def", 10]
+		]
 	},
 	"213021": {
 		"name": "One Heart One Sword",
-		"actions": [["add_c_of_x", 3, "bonus_sword_intent_multiplier"], ["ignore_weaken"], ["atk", 6]]
+		"actions": [
+			["add_c_of_x", 3, "bonus_sword_intent_multiplier"],
+			["ignore_weaken"],
+			["atk", 6]
+		]
 	},
 	"213022": {
-		"actions": [["add_c_of_x", 4, "bonus_sword_intent_multiplier"], ["ignore_weaken"], ["atk", 6]]
+		"actions": [
+			["add_c_of_x", 4, "bonus_sword_intent_multiplier"],
+			["ignore_weaken"],
+			["atk", 6]
+		]
 	},
 	"213023": {
-		"actions": [["add_c_of_x", 5, "bonus_sword_intent_multiplier"], ["ignore_weaken"], ["atk", 6]]
+		"actions": [
+			["add_c_of_x", 5, "bonus_sword_intent_multiplier"],
+			["ignore_weaken"],
+			["atk", 6]
+		]
 	},
 	"213031": {
 		"name": "Synergy Sword Formation",
@@ -5239,47 +5302,93 @@
 		"actions": [["def", 12], ["reduce_random_debuff_by_c_n_times", 3, 3], ["consumption"]]
 	},
 	"312023": {
-		"actions": [["def", 16], ["reduce_random_debuff_by_c_n_times", 3, 4], ["consumption"]]
+		"actions": [
+			["def", 16],
+			["reduce_random_debuff_by_c_n_times", 3, 4],
+			["consumption"]
+		]
 	},
 	"313011": {
 		"name": "Healing Elixir",
-		"actions": [["heal", 7], ["for_each_x_add_c_y", "qi", 2, "hp"], ["consumption"]]
+		"actions": [
+			["heal", 7],
+			["for_each_x_add_c_y", "qi", 2, "hp"],
+			["consumption"]
+		]
 	},
 	"313012": {
-		"actions": [["heal", 12], ["for_each_x_add_c_y", "qi", 2, "hp"], ["consumption"]]
+		"actions": [
+			["heal", 12],
+			["for_each_x_add_c_y", "qi", 2, "hp"],
+			["consumption"]
+		]
 	},
 	"313013": {
-		"actions": [["heal", 17], ["for_each_x_add_c_y", "qi", 2, "hp"], ["consumption"]]
+		"actions": [
+			["heal", 17],
+			["for_each_x_add_c_y", "qi", 2, "hp"],
+			["consumption"]
+		]
 	},
 	"313021": {
 		"name": "Divine Power Elixir",
-		"actions": [["add_c_of_x", 1, "increase_atk"], ["consumption"]]
+		"actions": [
+			["add_c_of_x", 1, "increase_atk"],
+			["consumption"]
+		]
 	},
 	"313022": {
-		"actions": [["add_c_of_x", 2, "increase_atk"], ["consumption"]]
+		"actions": [
+			["add_c_of_x", 2, "increase_atk"],
+			["consumption"]
+		]
 	},
 	"313023": {
-		"actions": [["add_c_of_x", 3, "increase_atk"], ["consumption"]]
+		"actions": [
+			["add_c_of_x", 3, "increase_atk"],
+			["consumption"]
+		]
 	},
 	"314011": {
 		"name": "Great Recover Elixir",
-		"actions": [["add_c_of_x", 13, "max_hp"], ["heal", 13], ["consumption"]]
+		"actions": [
+			["add_c_of_x", 13, "max_hp"],
+			["heal", 13],
+			["consumption"]
+		]
 	},
 	"314012": {
-		"actions": [["add_c_of_x", 19, "max_hp"], ["heal", 19], ["consumption"]]
+		"actions": [
+			["add_c_of_x", 19, "max_hp"],
+			["heal", 19],
+			["consumption"]
+		]
 	},
 	"314013": {
-		"actions": [["add_c_of_x", 25, "max_hp"], ["heal", 25], ["consumption"]]
+		"actions": [
+			["add_c_of_x", 25, "max_hp"],
+			["heal", 25],
+			["consumption"]
+		]
 	},
 	"314021": {
 		"name": "Spiritage Elixir",
-		"actions": [["qi", 4], ["consumption"]]
+		"actions": [
+			["qi", 4],
+			["consumption"]
+		]
 	},
 	"314022": {
-		"actions": [["qi", 6], ["consumption"]]
+		"actions": [
+			["qi", 6],
+			["consumption"]
+		]
 	},
 	"314023": {
-		"actions": [["qi", 8], ["consumption"]]
+		"actions": [
+			["qi", 8],
+			["consumption"]
+		]
 	},
 	"315011": {
 		"name": "Ice Spirit Guard Elixir",
