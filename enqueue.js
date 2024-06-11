@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import readline from 'readline';
-import sqlite3 from 'sqlite3';
-import { card_name_to_id_fuzzy, guess_character, swogi } from "./gamestate_nolog.js";
+import { Database } from 'bun:sqlite';
+import { card_name_to_id_fuzzy, guess_character, swogi } from './gamestate_nolog.js';
 
 // Check if a command-line argument is provided
 if (process.argv.length < 3) {
@@ -117,7 +117,7 @@ function promptUser(message) {
 
 (async function() {
   if (combos[0].length * (jsonData.permute_a ? 40320 : 1) * combos[1].length * (jsonData.permute_b ? 40320 : 1) >= 100000000) {
-    const continueExecution = await promptUser(`Warning: ${combos[0].length} * ${jsonData.permute_a ? 40320 : 1} * ${combos[1].length} * ${jsonData.permute_b ? 40320 : 1} = ${(combos[0].length * (jsonData.permute_a ? 40320 : 1) * combos[1].length * (jsonData.permute_b ? 40320 : 1)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} jobs! Continue? [y/N] `);
+    const continueExecution = await promptUser(`Warning: ${combos[0].length} * ${jsonData.permute_a ? 40320 : 1} * ${combos[1].length} * ${jsonData.permute_b ? 40320 : 1} = ${(combos[0].length * (jsonData.permute_a ? 40320 : 1) * combos[1].length * (jsonData.permute_b ? 40320 : 1)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} jobs! Continue? [y/N] `);
     if (!continueExecution) {
       console.log('Exiting...');
       process.exit(0);
@@ -131,81 +131,22 @@ function promptUser(message) {
   const tmpPath = path.join(__dirname, 'db', 'tmp', tmpFile);
   const newPath = path.join(__dirname, 'db', 'new', tmpFile);
 
-  const initDB = (db) => {
-    const checkTableExists = (tableName) => {
-      return new Promise((resolve, reject) => {
-        db.get(`SELECT name FROM sqlite_master WHERE type='table' AND name='${tableName}';`, (err, row) => {
-          if (err) {
-            reject(err);
-          } else {
-            resolve(!!row); // Resolve with true if the table exists, otherwise false
-          }
-        });
-      });
-    };
+  fs.mkdirSync(tmpDirPath, { recursive: true });
+  fs.mkdirSync(newDirPath, { recursive: true });
 
-    const createTable = (tableName, createQuery) => {
-      return new Promise(async (resolve, reject) => {
-        try {
-          const exists = await checkTableExists(tableName);
-          db.run(createQuery, (err) => {
-            if (err) {
-              reject(err);
-            } else {
-              if (exists) {
-                console.log(`${tableName} table already existed.`);
-              } else {
-                console.log(`${tableName} table created.`);
-              }
-              resolve();
-            }
-          });
-        } catch (error) {
-          reject(error);
-        }
-      });
-    };
+  const db = new Database(tmpPath, { create: true });
+  db.exec('PRAGMA journal_mode = OFF;')
 
-    // Queries for creating the tables
-    const createBatchTableQuery = `
-    CREATE TABLE IF NOT EXISTS BATCH (
-      ID INTEGER PRIMARY KEY AUTOINCREMENT,
-      OPTIONS TEXT NOT NULL,
-      PLAYER_A TEXT NOT NULL,
-      PLAYER_B TEXT NOT NULL
-    );
-  `;
-
-    const createJobTableQuery = `
-    CREATE TABLE IF NOT EXISTS JOB (
-      ID INTEGER PRIMARY KEY AUTOINCREMENT,
-      CARDS TEXT NOT NULL
-    );
-  `;
-
-    // Create tables and log their status
-    return Promise.all([
-      createTable('BATCH', createBatchTableQuery),
-      createTable('JOB', createJobTableQuery)
-    ]);
-  };
-
-  fs.mkdirSync(tmpDirPath, {
-    recursive: true
-  });
-  fs.mkdirSync(newDirPath, {
-    recursive: true
-  });
-
-  // Create database
-  const db = new sqlite3.Database(tmpPath, (err) => {
-    if (err) {
-      console.error('Could not connect to the database', err);
-    } else {
-      console.log('Connected to the database');
-    }
-  });
-  await initDB(db);
+  db.query(`CREATE TABLE BATCH (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    OPTIONS TEXT NOT NULL,
+    PLAYER_A TEXT NOT NULL,
+    PLAYER_B TEXT NOT NULL
+  )`).run();
+  db.query(`CREATE TABLE IF NOT EXISTS JOB (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    CARDS TEXT NOT NULL
+  )`).run();
 
   const player_a = jsonData.a;
   const player_b = jsonData.b;
@@ -214,45 +155,29 @@ function promptUser(message) {
   delete player_a.cards;
   delete player_b.cards;
 
-  await new Promise((resolve, reject) => {
-    db.serialize(() => {
-      const insertBatch = db.prepare('INSERT INTO BATCH (OPTIONS, PLAYER_A, PLAYER_B) VALUES (json(?), json(?), json(?));');
-      insertBatch.run(JSON.stringify(jsonData), JSON.stringify(player_a), JSON.stringify(player_b));
-      insertBatch.finalize();
+  db.query('INSERT INTO BATCH (OPTIONS, PLAYER_A, PLAYER_B) VALUES (json(?1), json(?2), json(?3))').run(JSON.stringify(jsonData), JSON.stringify(player_a), JSON.stringify(player_b));
 
-      const insertJob = db.prepare('INSERT INTO JOB (CARDS) VALUES (json(?));');
-      for (let x of combos[0]) {
-        for (let y of combos[1]) {
-          insertJob.run(JSON.stringify({ a: x, b: y }));
-        }
-      }
-      insertJob.finalize();
-
-      resolve();
-    });
-  });
-
-  // Close the database connection
-  db.close((err) => {
-    if (err) {
-      console.error('Error closing the database', err);
-      return;
+  const insertJob = db.query('INSERT INTO JOB (CARDS) VALUES (json(?1))');
+  for (let x of combos[0]) {
+    for (let y of combos[1]) {
+      insertJob.run(JSON.stringify({ a: x, b: y }));
     }
-    console.log('Database connection closed');
+  }
 
-    // Move the database file to the new directory
-    fs.rename(
-      tmpPath,
-      newPath,
-      (err) => {
-        if (err) {
-          console.error('Error moving the database file', err);
-          process.exit();
-        } else {
-          console.log(`Database file moved to ${newPath}`);
-          process.exit();
-        }
-      },
-    );
-  });
+  db.close(false);
+  db.close(true);
+
+  fs.rename(
+    tmpPath,
+    newPath,
+    (err) => {
+      if (err) {
+        console.error('Error moving the database file', err);
+        process.exit();
+      } else {
+        console.log(`Database file moved to ${newPath}`);
+        process.exit();
+      }
+    },
+  );
 }());
