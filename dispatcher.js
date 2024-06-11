@@ -14,6 +14,8 @@ const messages_outstanding = [];
 
 fs.mkdirSync(newDirPath, { recursive: true });
 
+const writer = new Worker('./writer.js');
+
 const main = () => {
   try {
     let idleWorkers = 0;
@@ -67,8 +69,7 @@ const main = () => {
             }
           }
         }
-        db.query(`UPDATE JOB SET DISPATCHED = CURRENT_TIMESTAMP WHERE ID IN (${dispatchedJobIds.join(',')})`).run();
-        setTimeout(main, 100); // jobs dispatched
+        writer.postMessage({ command: 'dispatch', dispatchedJobIds: dispatchedJobIds }); // setTimeout after reply
       } else {
         setTimeout(main, 1000); // no jobs
       }
@@ -78,8 +79,6 @@ const main = () => {
     // Don't continue the main loop, but let the fs.watch (and merge) and workers continue until ctrl-C
   }
 };
-
-const writer = new Worker('./writer.js');
 
 writer.addEventListener('error', (event) => {
   console.error(`Error in writer worker:`, event.message);
@@ -110,6 +109,8 @@ writer.addEventListener('message', (event) => {
 
     main();
 
+  } else if (event.data === 'dispatched') {
+    setTimeout(main, 100); // jobs dispatched
   } else if (event.data === 'closed') {
     db.close(false);
     db.close(true);

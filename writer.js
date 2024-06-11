@@ -114,6 +114,11 @@ const insertBattles = (rows) => {
   db.query('UPDATE JOB SET PROCESSED = CURRENT_TIMESTAMP WHERE ID = ?1').run(jobId);
 };
 
+const dispatch = (dispatchedJobIds) => {
+  db.query(`UPDATE JOB SET DISPATCHED = CURRENT_TIMESTAMP WHERE ID IN (${dispatchedJobIds.join(',')})`).run();
+  postMessage('dispatched');
+};
+
 onmessage = (event) => {
   switch (event.data.command) {
     case 'init':
@@ -127,6 +132,9 @@ onmessage = (event) => {
       break;
     case 'insert':
       insertBattles(event.data.rows);
+      break;
+    case 'dispatch':
+      dispatch(event.data.dispatchedJobIds);
       break;
     default:
       console.error('Writer worker received unknown command:');
