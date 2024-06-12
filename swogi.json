@@ -460,13 +460,31 @@
 	},
 	"115011": {
 		"name": "Cloud Sword - Dragon Roam",
-		"actions": [["rep", 2, [["atk", 2], ["injured", ["chase"]]]], ["cloud_hit", ["def", 3]]]
+		"actions": [
+			["rep", 2, [
+				["atk", 2],
+				["injured", ["chase"]]
+			]],
+			["cloud_hit", ["def", 3]]
+		]
 	},
 	"115012": {
-		"actions": [["rep", 3, [["atk", 2], ["injured", ["chase"]]]], ["cloud_hit", ["def", 5]]]
+		"actions": [
+			["rep", 3, [
+				["atk", 2],
+				["injured", ["chase"]]
+			]],
+			["cloud_hit", ["def", 5]]
+		]
 	},
 	"115013": {
-		"actions": [["rep", 4, [["atk", 2], ["injured", ["chase"]]]], ["cloud_hit", ["def", 7]]]
+		"actions": [
+			["rep", 4, [
+				["atk", 2],
+				["injured", ["chase"]]
+			]],
+			["cloud_hit", ["def", 7]]
+		]
 	},
 	"115021": {
 		"name": "Cloud Sword - Step Lightly",
@@ -492,13 +510,28 @@
 	},
 	"115031": {
 		"name": "Flying Spirit Shade Sword",
-		"actions": [["rep", 4, [["atk", 1], ["injured", ["qi", 1]]]]]
+		"actions": [
+			["rep", 4, [
+				["atk", 1],
+				["injured", ["qi", 1]]
+			]]
+		]
 	},
 	"115032": {
-		"actions": [["rep", 5, [["atk", 1], ["injured", ["qi", 1]]]]]
+		"actions": [
+			["rep", 5, [
+				["atk", 1],
+				["injured", ["qi", 1]]
+			]]
+		]
 	},
 	"115033": {
-		"actions": [["rep", 6, [["atk", 1], ["injured", ["qi", 1]]]]]
+		"actions": [
+			["rep", 6, [
+				["atk", 1],
+				["injured", ["qi", 1]]
+			]]
+		]
 	},
 	"115041": {
 		"name": "Dharma Spirit Sword",
@@ -523,45 +556,78 @@
 	"115051": {
 		"name": "Sword Intent Surge",
 		"qi_cost": 1,
-		"actions": [["for_each_x_add_c_pct_y", "sword_intent", 80, "sword_intent"]]
+		"actions": [
+			["for_each_x_add_c_pct_y", "sword_intent", 80, "sword_intent"]
+		]
 	},
 	"115052": {
-		"actions": [["for_each_x_add_c_pct_y", "sword_intent", 110, "sword_intent"]]
+		"actions": [
+			["for_each_x_add_c_pct_y", "sword_intent", 110, "sword_intent"]
+		]
 	},
 	"115053": {
-		"actions": [["for_each_x_add_c_pct_y", "sword_intent", 140, "sword_intent"]]
+		"actions": [
+			["for_each_x_add_c_pct_y", "sword_intent", 140, "sword_intent"]
+		]
 	},
 	"115061": {
 		"name": "Rule Sky Sword Formation",
 		"qi_cost": 1,
 		"decrease_qi_cost_by_x": "def",
-		"actions": [["def", 8], ["chase"]]
+		"actions": [
+			["def", 8],
+			["chase"]
+		]
 	},
 	"115062": {
-		"actions": [["def", 14], ["chase"]]
+		"actions": [
+			["def", 14],
+			["chase"]
+		]
 	},
 	"115063": {
-		"actions": [["def", 20], ["chase"]]
+		"actions": [
+			["def", 20],
+			["chase"]
+		]
 	},
 	"115071": {
 		"name": "Chain Sword Formation",
-		"actions": [["def", 1], ["retrigger_previous_sword_formation"]]
+		"actions": [
+			["def", 1],
+			["retrigger_previous_sword_formation"]
+		]
 	},
 	"115072": {
-		"actions": [["def", 5], ["retrigger_previous_sword_formation"]]
+		"actions": [
+			["def", 5],
+			["retrigger_previous_sword_formation"]
+		]
 	},
 	"115073": {
-		"actions": [["def", 10], ["retrigger_previous_sword_formation"]]
+		"actions": [
+			["def", 10],
+			["retrigger_previous_sword_formation"]
+		]
 	},
 	"115081": {
 		"name": "Unrestrained Sword - Zero",
-		"actions": [["continuous"], ["add_c_of_x", 30, "unrestrained_sword_zero_stacks"]]
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 30, "unrestrained_sword_zero_stacks"]
+		]
 	},
 	"115082": {
-		"actions": [["continuous"], ["add_c_of_x", 50, "unrestrained_sword_zero_stacks"]]
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 50, "unrestrained_sword_zero_stacks"]
+		]
 	},
 	"115083": {
-		"actions": [["continuous"], ["add_c_of_x", 70, "unrestrained_sword_zero_stacks"]]
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 70, "unrestrained_sword_zero_stacks"]
+		]
 	},
 	"121011": {
 		"name": "Shifting Stars",
@@ -5256,50 +5322,100 @@
 	},
 	"311011": {
 		"name": "Earth Spirit Elixir",
-		"actions": [["def", 11], ["consumption"]]
+		"actions": [
+			["def", 11],
+			["consumption"]
+		]
 	},
 	"311012": {
-		"actions": [["def", 16], ["consumption"]]
+		"actions": [
+			["def", 16],
+			["consumption"]
+		]
 	},
 	"311013": {
-		"actions": [["def", 21], ["consumption"]]
+		"actions": [
+			["def", 21],
+			["consumption"]
+		]
 	},
 	"311021": {
 		"name": "Fundamental Elixir",
-		"actions": [["qi", 2], ["def", 3], ["consumption"]]
+		"actions": [
+			["qi", 2],
+			["def", 3],
+			["consumption"]
+		]
 	},
 	"311022": {
-		"actions": [["qi", 3], ["def", 5], ["consumption"]]
+		"actions": [
+			["qi", 3],
+			["def", 5],
+			["consumption"]
+		]
 	},
 	"311023": {
-		"actions": [["qi", 4], ["def", 7], ["consumption"]]
+		"actions": [
+			["qi", 4],
+			["def", 7],
+			["consumption"]
+		]
 	},
 	"311031": {
 		"name": "Small Recover Elixir",
-		"actions": [["heal", 8], ["consumption"]]
+		"actions": [
+			["heal", 8],
+			["consumption"]
+		]
 	},
 	"311032": {
-		"actions": [["heal", 12], ["consumption"]]
+		"actions": [
+			["heal", 12],
+			["consumption"]
+		]
 	},
 	"311033": {
-		"actions": [["heal", 16], ["consumption"]]
+		"actions": [
+			["heal", 16],
+			["consumption"]
+		]
 	},
 	"312011": {
 		"name": "Cloud Elixir",
-		"actions": [["qi", 2], ["gain_ignore_def", 2], ["consumption"]]
+		"actions": [
+			["qi", 2],
+			["gain_ignore_def", 2],
+			["consumption"]
+		]
 	},
 	"312012": {
-		"actions": [["qi", 3], ["gain_ignore_def", 3], ["consumption"]]
+		"actions": [
+			["qi", 3],
+			["gain_ignore_def", 3],
+			["consumption"]
+		]
 	},
 	"312013": {
-		"actions": [["qi", 4], ["gain_ignore_def", 4], ["consumption"]]
+		"actions": [
+			["qi", 4],
+			["gain_ignore_def", 4],
+			["consumption"]
+		]
 	},
 	"312021": {
 		"name": "Exorcism Elixir",
-		"actions": [["def", 8], ["reduce_random_debuff_by_c_n_times", 3, 2], ["consumption"]]
+		"actions": [
+			["def", 8],
+			["reduce_random_debuff_by_c_n_times", 3, 2],
+			["consumption"]
+		]
 	},
 	"312022": {
-		"actions": [["def", 12], ["reduce_random_debuff_by_c_n_times", 3, 3], ["consumption"]]
+		"actions": [
+			["def", 12],
+			["reduce_random_debuff_by_c_n_times", 3, 3],
+			["consumption"]
+		]
 	},
 	"312023": {
 		"actions": [
