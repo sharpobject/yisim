@@ -1729,11 +1729,11 @@ export class GameState {
         this.do_metal_spirit_formation(card_id);
         this.do_water_spirit_formation(card_id);
         this.do_post_strike(card_id, idx);
-        this.do_god_luck_approach(card_id);
         this.do_god_luck_avoid(card_id);
         this.do_alkaline_water_zongzi(card_id);
         this.do_action(card.actions);
         this.players[0].bonus_atk_amt = 0;
+        this.do_god_luck_approach(card_id);
         // expire crash fist buffs - they don't apply to extra attacks
         this.do_post_crash_fist(card_id);
         // Extra attacks zone
