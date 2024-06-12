@@ -2273,5 +2273,83 @@ riddles["243"] = async () => {
     players[enemy_idx].p5_full_of_force_stacks = 1;
     return await do_riddle({players: players, my_idx: my_idx});
 };
-await riddles["243"]();
+//await riddles["243"]();
+riddles["244"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 1;
+    players[enemy_idx].cultivation = 0;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = 10000;
+    players[my_idx].hp = 1;
+    players[my_idx].cultivation = 0;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = 10000;
+    players[my_idx].cards = [
+        // "salted egg yolk zongzi 3",
+        // "salted egg yolk zongzi 3",
+        // "pungent zongzi 3",
+        // "sour bamboo shoot zongzi 3",
+        // "double plum zongzi 3",
+        // "assorted meat zongzi 3",
+        // "sour bamboo shoot zongzi 3",
+        // "pickled mustard zongzi 3",
+
+        // "crystal ice zongzi 3",
+        // "shura zongzi 3",
+        // "crystal ice zongzi 3",
+        // "shura zongzi 3",
+        // "sour bamboo shoot zongzi 3",
+        // "shura zongzi 3",
+        // "sour bamboo shoot zongzi 3",
+        // "spirit zongzi 3",
+
+        // "crystal ice zongzi 3",
+        // "shura zongzi 3",
+        // "crystal ice zongzi 3",
+        // "shura zongzi 3",
+        // "sour bamboo shoot zongzi 3",
+        // "spirit zongzi 3",
+        // "double plum zongzi 3",
+        // "double plum zongzi 3",
+
+        // "crystal ice zongzi 3",
+        // "double plum zongzi 3",
+        // "shura zongzi 3",
+        // "crystal ice zongzi 3",
+        // "spirit zongzi 3",
+        // "sour bamboo shoot zongzi 3",
+        // "sour bamboo shoot zongzi 3",
+        // "double plum zongzi 2",
+        // "shura zongzi 2",
+        // "water combined zongzi 3",
+        // "water combined zongzi 2",
+        // "fresh fruit zongzi 3",
+        // "fresh fruit zongzi 3",
+
+        "803042",
+        "803042",
+        "803043",
+        "803063",
+        "804043",
+        "805033",
+        "805043",
+        "805053"
+    ];
+    players[enemy_idx].cards = [
+        "meditation of xuan",
+        "elusive footwork",
+        "ghost howling 2",
+        "soul cleaving",
+        "bearing the load 2",
+        "bearing the load",
+        "soul seizing",
+        "soul seizing",
+    ];
+    return await do_riddle({players: players, my_idx: my_idx, zongzi: true});
+};
+await riddles["244"]();
 console.log("done");
