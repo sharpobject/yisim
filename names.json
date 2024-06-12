@@ -2,17 +2,17 @@
     {
         "id": 111011,
         "name": "Cloud Sword - Touch Sky",
-        "namecn": "云剑•探云"
+        "namecn": "云剑·探云"
     },
     {
         "id": 111021,
         "name": "Cloud Sword - Fleche",
-        "namecn": "云剑•飞刺"
+        "namecn": "云剑·飞刺"
     },
     {
         "id": 111031,
         "name": "Cloud Sword - Touch Earth",
-        "namecn": "云剑•厚土"
+        "namecn": "云剑·厚土"
     },
     {
         "id": 111041,
@@ -62,17 +62,17 @@
     {
         "id": 112011,
         "name": "Cloud Sword - Reguard",
-        "namecn": "云剑•回守"
+        "namecn": "云剑·回守"
     },
     {
         "id": 112021,
         "name": "Cloud Sword - Riddle",
-        "namecn": "云剑•极意"
+        "namecn": "云剑·极意"
     },
     {
         "id": 112031,
         "name": "Cloud Sword - Conceal",
-        "namecn": "云剑•无锋"
+        "namecn": "云剑·无锋"
     },
     {
         "id": 112041,
@@ -112,28 +112,28 @@
     {
         "id": 112111,
         "name": "Unrestrained Sword - One",
-        "namecn": "狂剑•一式"
+        "namecn": "狂剑·一式"
     },
     {
         "id": 113011,
         "name": "Cloud Sword - Softheart",
-        "namecn": "云剑•柔心",
+        "namecn": "云剑·柔心",
         "namealta": "柔云心法"
     },
     {
         "id": 113021,
         "name": "Cloud Sword - Necessity",
-        "namecn": "云剑•无妄"
+        "namecn": "云剑·无妄"
     },
     {
         "id": 113031,
         "name": "Cloud Sword - Pierce the Star",
-        "namecn": "云剑•点星"
+        "namecn": "云剑·点星"
     },
     {
         "id": 113041,
         "name": "Cloud Sword - Spirit Coercion",
-        "namecn": "云剑•汇灵"
+        "namecn": "云剑·汇灵"
     },
     {
         "id": 113051,
@@ -173,12 +173,12 @@
     {
         "id": 114011,
         "name": "Cloud Sword - Flash Wind",
-        "namecn": "云剑•闪风"
+        "namecn": "云剑·闪风"
     },
     {
         "id": 114021,
         "name": "Cloud Sword - Moon Shade",
-        "namecn": "云剑•月影"
+        "namecn": "云剑·月影"
     },
     {
         "id": 114031,
@@ -218,17 +218,17 @@
     {
         "id": 114101,
         "name": "Unrestrained Sword - Two",
-        "namecn": "狂剑•二式"
+        "namecn": "狂剑·二式"
     },
     {
         "id": 115011,
         "name": "Cloud Sword - Dragon Roam",
-        "namecn": "云剑•游龙"
+        "namecn": "云剑·游龙"
     },
     {
         "id": 115021,
         "name": "Cloud Sword - Step Lightly",
-        "namecn": "云剑•凌波"
+        "namecn": "云剑·凌波"
     },
     {
         "id": 115031,
@@ -258,7 +258,7 @@
     {
         "id": 115081,
         "name": "Unrestrained Sword - Zero",
-        "namecn": "狂剑•零式"
+        "namecn": "狂剑·零式"
     },
     {
         "id": 121011,
@@ -273,27 +273,30 @@
     {
         "id": 121031,
         "name": "Astral Move - Block",
-        "namecn": "星弈•挡"
+        "namecn": "星弈·挡"
     },
     {
         "id": 121041,
         "name": "Astral Move - Flank",
-        "namecn": "星弈•夹"
+        "namecn": "星弈·夹"
     },
     {
         "id": 121051,
         "name": "Zhen Hexagram",
-        "namecn": "震卦"
+        "namecn": "震卦",
+        "namealta": "☳"
     },
     {
         "id": 121061,
         "name": "Earth Hexagram",
-        "namecn": "坤卦"
+        "namecn": "坤卦",
+        "namealta": "☷"
     },
     {
         "id": 121071,
         "name": "Wind Hexagram",
-        "namecn": "巽卦"
+        "namecn": "巽卦",
+        "namealta": "☴"
     },
     {
         "id": 121081,
@@ -328,22 +331,24 @@
     {
         "id": 122021,
         "name": "Astral Move - Point",
-        "namecn": "星弈•点"
+        "namecn": "星弈·点"
     },
     {
         "id": 122031,
         "name": "Astral Move - Stand",
-        "namecn": "星弈•立"
+        "namecn": "星弈·立"
     },
     {
         "id": 122041,
         "name": "Mountain Hexagram",
-        "namecn": "艮卦"
+        "namecn": "艮卦",
+        "namealta": "☶"
     },
     {
         "id": 122051,
         "name": "Water Hexagram",
-        "namecn": "坎卦"
+        "namecn": "坎卦",
+        "namealta": "☵"
     },
     {
         "id": 122061,
@@ -383,12 +388,13 @@
     {
         "id": 123021,
         "name": "Astral Move - Hit",
-        "namecn": "星弈•打"
+        "namecn": "星弈·打"
     },
     {
         "id": 123031,
         "name": "Lake Hexagram",
-        "namecn": "兑卦"
+        "namecn": "兑卦",
+        "namealta": "☱"
     },
     {
         "id": 123041,
@@ -433,12 +439,12 @@
     {
         "id": 124011,
         "name": "Astral Move - Fly",
-        "namecn": "星弈•飞"
+        "namecn": "星弈·飞"
     },
     {
         "id": 124021,
         "name": "Astral Move - Tiger",
-        "namecn": "星弈•虎"
+        "namecn": "星弈·虎"
     },
     {
         "id": 124031,
@@ -448,7 +454,8 @@
     {
         "id": 124041,
         "name": "Flame Hexagram",
-        "namecn": "离卦"
+        "namecn": "离卦",
+        "namealta": "☲"
     },
     {
         "id": 124051,
@@ -488,12 +495,13 @@
     {
         "id": 125021,
         "name": "Astral Move - Cide",
-        "namecn": "星弈•断"
+        "namecn": "星弈·断"
     },
     {
         "id": 125031,
         "name": "Heaven Hexagram",
-        "namecn": "乾卦"
+        "namecn": "乾卦",
+        "namealta": "☰"
     },
     {
         "id": 125041,
@@ -528,7 +536,7 @@
     {
         "id": 131021,
         "name": "Wood Spirit - Bud",
-        "namecn": "木灵•芽"
+        "namecn": "木灵·芽"
     },
     {
         "id": 131031,
@@ -538,7 +546,7 @@
     {
         "id": 131041,
         "name": "Fire Spirit - Rush",
-        "namecn": "火灵•窜"
+        "namecn": "火灵·窜"
     },
     {
         "id": 131051,
@@ -548,7 +556,7 @@
     {
         "id": 131061,
         "name": "Earth Spirit - Smash",
-        "namecn": "土灵•碎"
+        "namecn": "土灵·碎"
     },
     {
         "id": 131071,
@@ -558,7 +566,7 @@
     {
         "id": 131081,
         "name": "Metal Spirit - Needle",
-        "namecn": "金灵•针"
+        "namecn": "金灵·针"
     },
     {
         "id": 131091,
@@ -568,7 +576,7 @@
     {
         "id": 131101,
         "name": "Water Spirit - Waves",
-        "namecn": "水灵•涛"
+        "namecn": "水灵·涛"
     },
     {
         "id": 131111,
@@ -578,22 +586,22 @@
     {
         "id": 132011,
         "name": "Wood Spirit - Recovery",
-        "namecn": "木灵•复苏"
+        "namecn": "木灵·复苏"
     },
     {
         "id": 132021,
         "name": "Wood Spirit - Sparse Shadow",
-        "namecn": "木灵•疏影"
+        "namecn": "木灵·疏影"
     },
     {
         "id": 132031,
         "name": "Fire Spirit - Flame Eater",
-        "namecn": "火灵•聚炎"
+        "namecn": "火灵·聚炎"
     },
     {
         "id": 132041,
         "name": "Fire Spirit - Scarlet Flame",
-        "namecn": "火灵•赤焰"
+        "namecn": "火灵·赤焰"
     },
     {
         "id": 132051,
@@ -603,7 +611,7 @@
     {
         "id": 132061,
         "name": "Earth Spirit - Mountains",
-        "namecn": "土灵•群山"
+        "namecn": "土灵·群山"
     },
     {
         "id": 132071,
@@ -613,17 +621,17 @@
     {
         "id": 132081,
         "name": "Metal Spirit - Heart Pierce",
-        "namecn": "金灵•穿心"
+        "namecn": "金灵·穿心"
     },
     {
         "id": 132091,
         "name": "Water Spirit - Billows",
-        "namecn": "水灵•波澜"
+        "namecn": "水灵·波澜"
     },
     {
         "id": 132101,
         "name": "Water Spirit - Turbulent",
-        "namecn": "水灵•汹涌"
+        "namecn": "水灵·汹涌"
     },
     {
         "id": 132111,
@@ -638,7 +646,7 @@
     {
         "id": 133021,
         "name": "Wood Spirit - Forest Guard",
-        "namecn": "木灵•巡林"
+        "namecn": "木灵·巡林"
     },
     {
         "id": 133031,
@@ -648,27 +656,27 @@
     {
         "id": 133041,
         "name": "Fire Spirit - Blast",
-        "namecn": "火灵•轰爆"
+        "namecn": "火灵·轰爆"
     },
     {
         "id": 133051,
         "name": "Earth Spirit - Dust",
-        "namecn": "土灵•扬尘"
+        "namecn": "土灵·扬尘"
     },
     {
         "id": 133061,
         "name": "Earth Spirit - Cliff",
-        "namecn": "土灵•断崖"
+        "namecn": "土灵·断崖"
     },
     {
         "id": 133071,
         "name": "Metal Spirit - Charge",
-        "namecn": "金灵•蓄锐"
+        "namecn": "金灵·蓄锐"
     },
     {
         "id": 133081,
         "name": "Metal Spirit - Sharp",
-        "namecn": "金灵•锋芒"
+        "namecn": "金灵·锋芒"
     },
     {
         "id": 133091,
@@ -678,7 +686,7 @@
     {
         "id": 133101,
         "name": "Water Spirit - Spring",
-        "namecn": "水灵•泉涌"
+        "namecn": "水灵·泉涌"
     },
     {
         "id": 133111,
@@ -688,52 +696,52 @@
     {
         "id": 134011,
         "name": "Wood Spirit - Fragrant",
-        "namecn": "木灵•暗香"
+        "namecn": "木灵·暗香"
     },
     {
         "id": 134021,
         "name": "Wood Spirit - Thorn",
-        "namecn": "木灵•玫刺"
+        "namecn": "木灵·玫刺"
     },
     {
         "id": 134031,
         "name": "Fire Spirit - Flash Fire",
-        "namecn": "火灵•瞬燃"
+        "namecn": "火灵·瞬燃"
     },
     {
         "id": 134041,
         "name": "Fire Spirit - Heart Fire",
-        "namecn": "火灵•灼心"
+        "namecn": "火灵·灼心"
     },
     {
         "id": 134051,
         "name": "Earth Spirit - Steep",
-        "namecn": "土灵•绝壁"
+        "namecn": "土灵·绝壁"
     },
     {
         "id": 134061,
         "name": "Earth Spirit - Quicksand",
-        "namecn": "土灵•流沙"
+        "namecn": "土灵·流沙"
     },
     {
         "id": 134071,
         "name": "Metal Spirit - Shuttle",
-        "namecn": "金灵•飞梭"
+        "namecn": "金灵·飞梭"
     },
     {
         "id": 134081,
         "name": "Metal Spirit - Iron Bone",
-        "namecn": "金灵•铁骨"
+        "namecn": "金灵·铁骨"
     },
     {
         "id": 134091,
         "name": "Water Spirit - Great Waves",
-        "namecn": "水灵•腾浪"
+        "namecn": "水灵·腾浪"
     },
     {
         "id": 134101,
         "name": "Water Spirit - Dive",
-        "namecn": "水灵•潜遁"
+        "namecn": "水灵·潜遁"
     },
     {
         "id": 134111,
@@ -743,27 +751,27 @@
     {
         "id": 135011,
         "name": "Wood Spirit - Willow Leaf",
-        "namecn": "木灵•柳纷飞"
+        "namecn": "木灵·柳纷飞"
     },
     {
         "id": 135021,
         "name": "Fire Spirit - Blazing Prairie",
-        "namecn": "火灵•烈燎原"
+        "namecn": "火灵·烈燎原"
     },
     {
         "id": 135031,
         "name": "Earth Spirit - Combine World",
-        "namecn": "土灵•合八荒"
+        "namecn": "土灵·合八荒"
     },
     {
         "id": 135041,
         "name": "Metal Spirit - Giant Tripod",
-        "namecn": "金灵•巨鼎落"
+        "namecn": "金灵·巨鼎落"
     },
     {
         "id": 135051,
         "name": "Water Spirit - Combine Rivers",
-        "namecn": "水灵•纳百川"
+        "namecn": "水灵·纳百川"
     },
     {
         "id": 135061,
@@ -778,17 +786,17 @@
     {
         "id": 141011,
         "name": "Crash Fist - Poke",
-        "namecn": "崩拳•戳"
+        "namecn": "崩拳·戳"
     },
     {
         "id": 141021,
         "name": "Crash Fist - Block",
-        "namecn": "崩拳•封"
+        "namecn": "崩拳·封"
     },
     {
         "id": 141031,
         "name": "Crash Fist - Bounce",
-        "namecn": "崩拳•弹"
+        "namecn": "崩拳·弹"
     },
     {
         "id": 141041,
@@ -838,17 +846,17 @@
     {
         "id": 142011,
         "name": "Crash Fist - Shake",
-        "namecn": "崩拳•撼"
+        "namecn": "崩拳·撼"
     },
     {
         "id": 142021,
         "name": "Crash Fist - Entangle",
-        "namecn": "崩拳•缠"
+        "namecn": "崩拳·缠"
     },
     {
         "id": 142031,
         "name": "Crash Fist - Blitz",
-        "namecn": "崩拳•突"
+        "namecn": "崩拳·突"
     },
     {
         "id": 142041,
@@ -898,12 +906,12 @@
     {
         "id": 143021,
         "name": "Crash Fist - Truncate",
-        "namecn": "崩拳•截脉"
+        "namecn": "崩拳·截脉"
     },
     {
         "id": 143031,
         "name": "Crash Fist - Subdue Dragon",
-        "namecn": "崩拳•降龙"
+        "namecn": "崩拳·降龙"
     },
     {
         "id": 143041,
@@ -953,12 +961,12 @@
     {
         "id": 144021,
         "name": "Crash Fist - Inch Force",
-        "namecn": "崩拳•寸劲"
+        "namecn": "崩拳·寸劲"
     },
     {
         "id": 144031,
         "name": "Crash Fist - Continue",
-        "namecn": "崩拳•连崩"
+        "namecn": "崩拳·连崩"
     },
     {
         "id": 144041,
@@ -998,12 +1006,12 @@
     {
         "id": 145011,
         "name": "Crash Fist - Blink",
-        "namecn": "崩拳•闪击"
+        "namecn": "崩拳·闪击"
     },
     {
         "id": 145021,
         "name": "Crash Fist - Shocked",
-        "namecn": "崩拳•惊触"
+        "namecn": "崩拳·惊触"
     },
     {
         "id": 145031,
@@ -1048,7 +1056,7 @@
     {
         "id": 212011,
         "name": "Cloud Sword - Dawn",
-        "namecn": "云剑•拂晓"
+        "namecn": "云剑·拂晓"
     },
     {
         "id": 212021,
@@ -1058,7 +1066,7 @@
     {
         "id": 213011,
         "name": "Unrestrained Sword - Dragon Coiled",
-        "namecn": "狂剑•盘龙"
+        "namecn": "狂剑·盘龙"
     },
     {
         "id": 213021,
@@ -1093,7 +1101,7 @@
     {
         "id": 215031,
         "name": "Unrestrained Sword - Twin Dragons",
-        "namecn": "狂剑•双龙"
+        "namecn": "狂剑·双龙"
     },
     {
         "id": 216011,
@@ -1103,7 +1111,7 @@
     {
         "id": 216021,
         "name": "Secret Sword - Spirit Cloud",
-        "namecn": "秘剑•灵云"
+        "namecn": "秘剑·灵云"
     },
     {
         "id": 221011,
@@ -1143,7 +1151,7 @@
     {
         "id": 224021,
         "name": "Astral Move - Dragon Slay",
-        "namecn": "星弈•屠龙"
+        "namecn": "星弈·屠龙"
     },
     {
         "id": 224031,
@@ -1203,27 +1211,27 @@
     {
         "id": 232011,
         "name": "Metal Spirit - Chokehold",
-        "namecn": "金灵•封喉"
+        "namecn": "金灵·封喉"
     },
     {
         "id": 232021,
         "name": "Water Spirit - Rhythm Wood",
-        "namecn": "水灵•润木"
+        "namecn": "水灵·润木"
     },
     {
         "id": 232031,
         "name": "Fire Spirit - Rhythm Earth",
-        "namecn": "火灵•窑土"
+        "namecn": "火灵·窑土"
     },
     {
         "id": 233011,
         "name": "Wood Spirit - Vine",
-        "namecn": "木灵•藤蔓"
+        "namecn": "木灵·藤蔓"
     },
     {
         "id": 233021,
         "name": "Metal Spirit - Rhythm Water",
-        "namecn": "金灵•凝水"
+        "namecn": "金灵·凝水"
     },
     {
         "id": 233031,
@@ -1233,27 +1241,27 @@
     {
         "id": 234011,
         "name": "Earth Spirit - Earthquake",
-        "namecn": "土灵•撼地"
+        "namecn": "土灵·撼地"
     },
     {
         "id": 234021,
         "name": "Wood Spirit - Rhythm Fire",
-        "namecn": "木灵•燃火"
+        "namecn": "木灵·燃火"
     },
     {
         "id": 234031,
         "name": "Earth Spirit - Rhythm Metal",
-        "namecn": "土灵•韵金"
+        "namecn": "土灵·韵金"
     },
     {
         "id": 235011,
         "name": "Fire Spirit - Burning Sky",
-        "namecn": "火灵•焚天焱"
+        "namecn": "火灵·焚天焱"
     },
     {
         "id": 235021,
         "name": "Water Spirit - Tsunami",
-        "namecn": "水灵•海龙啸"
+        "namecn": "水灵·海龙啸"
     },
     {
         "id": 236011,
@@ -1298,7 +1306,7 @@
     {
         "id": 244021,
         "name": "Crash Fist - Double",
-        "namecn": "崩拳•双影"
+        "namecn": "崩拳·双影"
     },
     {
         "id": 244031,
@@ -1721,13 +1729,13 @@
     {
         "id": 371011,
         "name": "Heavenly Decree - Attack",
-        "namecn": "天谕•攻",
+        "namecn": "天谕·攻",
         "namealta": "God Saying - Attack"
     },
     {
         "id": 371021,
         "name": "Heavenly Decree - Defend",
-        "namecn": "天谕•守",
+        "namecn": "天谕·守",
         "namealta": "God Saying - Defend"
     },
     {
@@ -1745,13 +1753,13 @@
     {
         "id": 372011,
         "name": "Heavenly Fortune - Seek Fortune",
-        "namecn": "天运•趋吉",
+        "namecn": "天运·趋吉",
         "namealta": "God Luck - Approach"
     },
     {
         "id": 372021,
         "name": "Heavenly Fortune - Shun Misfortune",
-        "namecn": "天运•避凶",
+        "namecn": "天运·避凶",
         "namealta": "God Luck - Avoid"
     },
     {
@@ -1767,13 +1775,13 @@
     {
         "id": 373011,
         "name": "Heavenly Time - Fleeting",
-        "namecn": "天命•飞逝",
+        "namecn": "天命·飞逝",
         "namealta": "God Fate - Flies"
     },
     {
         "id": 373021,
         "name": "Heavenly Time - Recurring",
-        "namecn": "天命•重现",
+        "namecn": "天命·重现",
         "namealta": "God Fate - Reborn"
     },
     {
@@ -1796,13 +1804,13 @@
     {
         "id": 374021,
         "name": "Heavenly Star - Guard",
-        "namecn": "天星•御心",
+        "namecn": "天星·御心",
         "namealta": "God Star - Promotion"
     },
     {
         "id": 374031,
         "name": "Heavenly Star - Pull",
-        "namecn": "天星•牵引",
+        "namecn": "天星·牵引",
         "namealta": "God Star - Traction"
     },
     {
@@ -1826,13 +1834,13 @@
     {
         "id": 375031,
         "name": "Heavenly Will - Comply",
-        "namecn": "天机•顺应",
+        "namecn": "天机·顺应",
         "namealta": "God's Opportunity - Conform"
     },
     {
         "id": 375041,
         "name": "Heavenly Will - Defy",
-        "namecn": "天机•逆施",
+        "namecn": "天机·逆施",
         "namealta": "God's Opportunity - Reversal"
     },
     {
@@ -1983,7 +1991,7 @@
     {
         "id": 611011,
         "name": "Cloud Sword - Flying Sand",
-        "namecn": "云剑•飞砂"
+        "namecn": "云剑·飞砂"
     },
     {
         "id": 611021,
@@ -1998,17 +2006,17 @@
     {
         "id": 612011,
         "name": "Cloud Sword - Cat Paw",
-        "namecn": "云剑•猫爪"
+        "namecn": "云剑·猫爪"
     },
     {
         "id": 614011,
         "name": "Cloud Sword - Avalanche",
-        "namecn": "云剑•崩雪"
+        "namecn": "云剑·崩雪"
     },
     {
         "id": 614021,
         "name": "Cloud Sword - Pray Rain",
-        "namecn": "云剑•唤雨"
+        "namecn": "云剑·唤雨"
     },
     {
         "id": 614031,
@@ -2018,7 +2026,7 @@
     {
         "id": 615011,
         "name": "Unrestrained Sword - Flame Dance",
-        "namecn": "狂剑•炎舞"
+        "namecn": "狂剑·炎舞"
     },
     {
         "id": 615021,
@@ -2078,7 +2086,7 @@
     {
         "id": 632011,
         "name": "Wood Spirit - Peach Blossom Seal",
-        "namecn": "木灵•桃花印"
+        "namecn": "木灵·桃花印"
     },
     {
         "id": 633011,
@@ -2093,7 +2101,7 @@
     {
         "id": 634011,
         "name": "Metal Spirit - Vigorous",
-        "namecn": "金灵•刚劲"
+        "namecn": "金灵·刚劲"
     },
     {
         "id": 634021,
@@ -2103,12 +2111,12 @@
     {
         "id": 634031,
         "name": "Water Spirit - Spring Rain",
-        "namecn": "水灵•春雨"
+        "namecn": "水灵·春雨"
     },
     {
         "id": 635011,
         "name": "Earth Spirit - Landslide",
-        "namecn": "土灵•山崩"
+        "namecn": "土灵·山崩"
     },
     {
         "id": 642011,
@@ -2128,7 +2136,7 @@
     {
         "id": 644011,
         "name": "Crash Fist - Styx Night",
-        "namecn": "崩拳•冥夜",
+        "namecn": "崩拳·冥夜",
         "namealta": "Crash Fist - Stygian Night"
     },
     {
@@ -2156,7 +2164,7 @@
     {
         "id": 714021,
         "name": "Cloud Sword - Sunset Glow",
-        "namecn": "云剑•晚霞"
+        "namecn": "云剑·晚霞"
     },
     {
         "id": 715011,
@@ -2181,7 +2189,7 @@
     {
         "id": 725011,
         "name": "Astral Move - Twin Swallows",
-        "namecn": "星弈•双飞燕"
+        "namecn": "星弈·双飞燕"
     },
     {
         "id": 725021,
