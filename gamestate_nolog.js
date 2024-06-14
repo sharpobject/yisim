@@ -80,7 +80,7 @@ function get_marking(card_id) {
     if (class_ === 5) {
         return "spiritual_pet";
     }
-    if (class_ === 6) {
+    if (class_ === 6 || class_ === 8) {
         return "no marking";
     }
     throw new Error("suspicious card id " + card_id);
@@ -169,6 +169,9 @@ let is_seal = function(card_id) {
     if (swogi[card_id].name === "Mysterious Gates Devil Seal Tower") {
         return false;
     }
+    if (swogi[card_id].name === "Cosmos Seal Divine Orb") {
+        return false;
+    }
     return swogi[card_id].name.includes("Seal");
 }
 let is_spirit_sword = function(card_id) {
@@ -190,6 +193,8 @@ for (let i=0; i<keys.length; i++) {
     const character = with_default(swogi[card_id].character, with_default(swogi[base_id].character, undefined));
     const decrease_qi_cost_by_x = with_default(swogi[card_id].decrease_qi_cost_by_x, with_default(swogi[base_id].decrease_qi_cost_by_x, undefined));
     const water_spirit_cost_0_qi = with_default(swogi[card_id].water_spirit_cost_0_qi, with_default(swogi[base_id].water_spirit_cost_0_qi, undefined));
+    const is_salty = with_default(swogi[card_id].is_salty, with_default(swogi[base_id].is_salty, undefined));
+    const is_sweet = with_default(swogi[card_id].is_sweet, with_default(swogi[base_id].is_sweet, undefined));
     const card = {
         name: name,
         qi_cost: qi_cost,
@@ -217,6 +222,8 @@ for (let i=0; i<keys.length; i++) {
         is_seal: is_seal(card_id),
         is_spirit_sword: is_spirit_sword(card_id),
         marking: get_marking(card_id),
+        is_salty: is_salty,
+        is_sweet: is_sweet,
     };
     swogi[card_id] = card;
 }
@@ -292,6 +299,9 @@ for (let i=0; i<keys.length; i++) {
 card_names.sort((a, b) => a.length - b.length);
 const fuzzy = new uf();
 export function card_name_to_id_fuzzy(name) {
+    if (swogi[name] !== undefined) {
+        return name;
+    }
     const [idxs, info, order] = fuzzy.search(card_names, name);
     if (idxs.length === 0) {
         console.log("could not find card with name " + name);
@@ -299,7 +309,16 @@ export function card_name_to_id_fuzzy(name) {
     }
     return card_name_to_id[card_names[idxs[0]]];
 }
-const DEBUFF_NAMES = ["internal_injury", "decrease_atk", "weaken", "flaw", "entangle", "wound", "underworld"];
+const DEBUFF_NAMES = [
+    "internal_injury",
+    "decrease_atk",
+    "weaken",
+    "flaw",
+    "entangle",
+    "wound",
+    "underworld",
+    "indigestion",
+];
 function is_debuff(attr_name) {
     return DEBUFF_NAMES.includes(attr_name);
 }
@@ -510,6 +529,7 @@ class Player {
         this.has_played_musician_card = false;
         // painter side job cards
         this.inspiration_stacks = 0;
+        this.later_flying_brush_stacks = 0;
         this.flying_brush_stacks = 0;
         this.finishing_touch_stacks = 0;
         // formation master side job cards
@@ -687,6 +707,14 @@ class Player {
         // life shop buffs
         this.pact_of_adversity_reinforcement_stacks = 0;
         this.pact_of_equilibrium_stacks = 0;
+        // super serious event buffs
+        this.alkaline_water_zongzi_stacks = 0;
+        this.fresh_fruit_zongzi_stacks = 0;
+        this.salted_egg_yolk_zongzi_stacks = 0;
+        this.mixed_grain_zongzi_stacks = 0;
+        this.sweet_zongzi_count = 0;
+        this.appetite = 0;
+        this.indigestion = 0;
     }
     reset_can_play() {
         this.cards = this.cards.slice();
@@ -1160,6 +1188,26 @@ export class GameState {
         const winner_character_id = this.players[winner].character;
         const winner_character = CHARACTER_ID_TO_NAME[winner_character_id];
     }
+    sim_n_turns_zongzi(n) {
+        this.start_of_game_setup();
+        let i = 0;
+        for (; i<n; i++) {
+            this.indent();
+            this.sim_turn();
+            this.unindent();
+            if (this.game_over) {
+                break;
+            }
+        }
+        let winner = 0;
+        if (this.players[0].hp < this.players[1].hp) {
+            winner = 1;
+        }
+        this.winner = winner;
+        this.turns_taken = i;
+        const winner_character_id = this.players[winner].character;
+        const winner_character = CHARACTER_ID_TO_NAME[winner_character_id];
+    }
     do_action(arr) {
         // the actions list is like this: [["atk", 14], ["injured", ["regain_sword_intent"]]]
         // so we need to call this[arr[0]] passing in the rest of the array as arguments
@@ -1209,6 +1257,24 @@ export class GameState {
         // if this card has "Unrestrained Sword" in the name, increment unrestrained_sword_count
         if (this.is_unrestrained_sword(card_id)) {
             this.players[0].unrestrained_sword_count += 1;
+        }
+    }
+    do_sweet_zongzi_count(card_id) {
+        const card = swogi[card_id];
+        if (card.is_sweet) {
+            this.players[0].sweet_zongzi_count += 1;
+        }
+    }
+    do_alkaline_water_zongzi(card_id) {
+        if (this.players[0].alkaline_water_zongzi_stacks === 0) {
+            return;
+        }
+        const card = swogi[card_id];
+        if (card.is_sweet) {
+            this.qi(this.players[0].alkaline_water_zongzi_stacks);
+        }
+        if (card.is_salty) {
+            this.heal(this.players[0].alkaline_water_zongzi_stacks * 2);
         }
     }
     do_cloud_sword_chain_count(card_id) {
@@ -1642,10 +1708,11 @@ export class GameState {
         this.do_metal_spirit_formation(card_id);
         this.do_water_spirit_formation(card_id);
         this.do_post_strike(card_id, idx);
-        this.do_god_luck_approach(card_id);
         this.do_god_luck_avoid(card_id);
+        this.do_alkaline_water_zongzi(card_id);
         this.do_action(card.actions);
         this.players[0].bonus_atk_amt = 0;
+        this.do_god_luck_approach(card_id);
         // expire crash fist buffs - they don't apply to extra attacks
         this.do_post_crash_fist(card_id);
         // Extra attacks zone
@@ -1660,6 +1727,7 @@ export class GameState {
         // End of extra attacks zone
         this.do_beast_spirit_sword_formation(card_id);
         this.do_unrestrained_sword_count(card_id);
+        this.do_sweet_zongzi_count(card_id);
         this.reduce_idx_x_by_c(0, "unrestrained_sword_clear_heart_stacks", 1);
         this.players[0].bonus_atk_amt = prev_bonus_atk_amt;
         this.players[0].bonus_dmg_amt = prev_bonus_dmg_amt;
@@ -1701,6 +1769,7 @@ export class GameState {
         this.do_sword_formation_deck_count(card_id);
         this.do_cosmos_seal(card_id);
         this.trigger_card(card_id, idx);
+        this.do_flying_brush_chase();
         this.do_cloud_sword_chain_count(card_id);
         this.do_elemental_spirit_stuff(card_id);
         this.do_record_musician_card_played_for_chord_in_tune(card_id);
@@ -1920,6 +1989,8 @@ export class GameState {
             this.chase();
             this.reduce_idx_x_by_c(0, "flying_brush_stacks", 1);
         }
+        this.players[0].flying_brush_stacks += this.players[0].later_flying_brush_stacks;
+        this.players[0].later_flying_brush_stacks = 0;
     }
     do_five_elements_heavenly_marrow_rhythm_chase() {
         const player = this.players[0];
@@ -1972,6 +2043,14 @@ export class GameState {
         if (this.players[0].finishing_touch_stacks > 0) {
             if (this.try_upgrade_card(0, card_idx)) {
                 this.reduce_idx_x_by_c(0, "finishing_touch_stacks", 1);
+            }
+        }
+    }
+    do_salted_egg_yolk_zongzi(card_idx) {
+        if (this.players[0].salted_egg_yolk_zongzi_stacks > 0) {
+            this.reduce_idx_x_by_c(0, "salted_egg_yolk_zongzi_stacks", 1);
+            if (!this.try_upgrade_card(0, card_idx)) {
+                this.add_c_of_x(2, "appetite");
             }
         }
     }
@@ -2125,6 +2204,7 @@ export class GameState {
         this.do_spirit_gather_citta_dharma();
         this.do_apex_sword_citta_dharma();
         this.do_next_turn_def();
+        this.do_meditation_of_xuan();
         this.do_regen();
         this.do_regen_tune();
         this.do_heartbroken_tune();
@@ -2154,7 +2234,6 @@ export class GameState {
             if (this.check_for_death()) {
                 return;
             }
-            const can_flying_brush_chase = this.players[0].flying_brush_stacks > 0;
             if (action_idx > 0) {
             }
             action_idx += 1;
@@ -2176,6 +2255,12 @@ export class GameState {
             if (card.decrease_qi_cost_by_x !== undefined) {
                 let x = card.decrease_qi_cost_by_x;
                 let reduce_amt = 0;
+                if (x === "food") {
+                    reduce_amt = this.players[0].internal_injury +
+                                this.players[0].indigestion +
+                                this.players[0].appetite +
+                                this.players[0].regen;
+                } else
                 if (x === "debuff") {
                     reduce_amt = this.get_debuff_count(0);
                 } else {
@@ -2242,6 +2327,7 @@ export class GameState {
                 }
                 const card_idx = this.players[0].next_card_index;
                 this.do_finishing_touch(card_idx);
+                this.do_salted_egg_yolk_zongzi(card_idx);
                 this.do_mutual_growth(card_idx);
                 this.do_nether_void_canine(card_idx);
                 card_id = this.players[0].cards[card_idx];
@@ -2250,9 +2336,6 @@ export class GameState {
                     return;
                 }
                 this.advance_next_card_index();
-                if (can_flying_brush_chase) {
-                    this.do_flying_brush_chase();
-                }
                 this.do_shadow_owl_rabbit_chase();
                 this.do_five_elements_heavenly_marrow_rhythm_chase();
                 this.process_this_card_chases();
@@ -2388,6 +2471,11 @@ export class GameState {
         if (amt === 0) {
             return 0;
         }
+        amt = amt - this.players[0].indigestion;
+        amt = amt + this.players[0].appetite;
+        if (amt <= 0) {
+            amt = 1;
+        }
         const prev_hp = this.players[idx].hp;
         if (prev_hp <= 0 && !this.players[idx].reviving) {
             return 0;
@@ -2473,6 +2561,10 @@ export class GameState {
     increase_idx_qi(idx, amt) {
         if (amt === 0) {
             return;
+        }
+        if (this.players[idx].mixed_grain_zongzi_stacks > 0) {
+            amt += 1;
+            this.increase_idx_hp(idx, this.players[idx].mixed_grain_zongzi_stacks);
         }
         if (this.players[idx].colorful_spirit_crane_stacks > 0) {
             amt *= 2;
@@ -2575,8 +2667,16 @@ export class GameState {
         if (amt === 0) {
             return;
         }
-        amt += this.players[idx].gain_extra_debuff;
-        this.players[idx].gain_extra_debuff = 0;
+        if (this.players[idx].fresh_fruit_zongzi_stacks > 0 &&
+            (x === "internal_injury" || x === "indigestion")) {
+            this.reduce_idx_x_by_c(idx, "fresh_fruit_zongzi_stacks", 1);
+            this.increase_idx_x_by_c(idx, "regen", amt);
+            return;
+        }
+        if (x !== "underworld") {
+            amt += this.players[idx].gain_extra_debuff;
+            this.players[idx].gain_extra_debuff = 0;
+        }
         const to_sub = Math.min(amt, this.players[idx].hexproof);
         if (to_sub > 0) {
             this.reduce_idx_x_by_c(idx, "hexproof", to_sub);

@@ -41,6 +41,8 @@ onmessage = (event) => {
     const winning_logs = [];
     let try_idx = 0;
     let best_winning_margin = -99999;
+    let best_winrate = 0.0001;
+    let best_hp = -99999;
     if (event.data.just_run) {
         let game = new GameStateWithLog();
         for (let key in players[my_idx]) {
@@ -50,7 +52,11 @@ onmessage = (event) => {
             game.players[enemy_idx][key] = players[enemy_idx][key];
         }
         game.players[my_idx].cards = combo;
-        game.sim_n_turns(64);
+        if (event.data.zongzi) {
+            game.sim_n_turns_zongzi(8);
+        } else {
+            game.sim_n_turns(64);
+        }
         const winning_margin = game.players[my_idx].hp - game.players[enemy_idx].hp - 1000 * game.turns_taken;
         const p_combo = combo.slice();
         winning_decks.push(p_combo);
@@ -58,6 +64,7 @@ onmessage = (event) => {
         winning_logs.push(game.output);
     } else {
         do {
+            var winrate = 0;
             try_idx += 1;
             let game = new GameState();
             for (let key in players[my_idx]) {
@@ -67,13 +74,52 @@ onmessage = (event) => {
                 game.players[enemy_idx][key] = players[enemy_idx][key];
             }
             game.players[my_idx].cards = combo;
-            game.sim_n_turns(64);
+            if (event.data.zongzi) {
+                game.sim_n_turns_zongzi(8);
+            } else {
+                game.sim_n_turns(64);
+            }
+            /*
+            if (game.used_randomness) {
+                var win_count = game.winner === my_idx ? 1 : 0;
+                var total_count = 1;
+                for(var qq=0; qq<20; qq++) {
+                    let game = new GameState();
+                    for (let key in players[my_idx]) {
+                        game.players[my_idx][key] = players[my_idx][key];
+                    }
+                    for (let key in players[enemy_idx]) {
+                        game.players[enemy_idx][key] = players[enemy_idx][key];
+                    }
+                    game.players[my_idx].cards = combo;
+                    game.sim_n_turns(64);
+                    total_count += 1;
+                    if (game.winner === my_idx) {
+                        win_count += 1;
+                    }
+                }
+                winrate = win_count / total_count;
+            } else {
+                winrate = game.winner === my_idx ? 1 : 0;
+            }
+            */
             if (game.winner === my_idx && !game.used_randomness) {
             //if (combo[0] == "633011" && combo[2] == "135072") {
             //if (!game.used_randomness) {
-                const winning_margin = game.players[my_idx].hp - game.players[enemy_idx].hp - 1000 * game.turns_taken;
+            //if (winrate >= best_winrate) {
+                const hp = game.players[my_idx].hp;
+                //if (hp > best_hp) {
+                //    winning_decks.length = 0;
+                //    winning_margins.length = 0;
+                //    winning_logs.length = 0;
+                //}
+                //best_hp = hp;
+                const winning_margin = hp;//game.players[my_idx].hp - game.players[enemy_idx].hp - 1000 * game.turns_taken;
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
+                    winning_decks.length = 0;
+                    winning_margins.length = 0;
+                    winning_logs.length = 0;
                     best_winning_margin = winning_margin;
                     winning_decks.push(p_combo);
                     winning_margins.push(winning_margin);
@@ -85,7 +131,11 @@ onmessage = (event) => {
                         game_with_log.players[enemy_idx][key] = players[enemy_idx][key];
                     }
                     game_with_log.players[my_idx].cards = combo;
-                    game_with_log.sim_n_turns(64);
+                    if (event.data.zongzi) {
+                        game_with_log.sim_n_turns_zongzi(8);
+                    } else {
+                        game_with_log.sim_n_turns(64);
+                    }
                     winning_logs.push(game_with_log.output);
                 }
             }

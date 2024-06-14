@@ -27,6 +27,160 @@ function* k_combinations(arr, k) {
     }
 }
 
+const copies_to_levels = [
+    [],
+    [[3]],
+    [[3,3]],
+    [[3,2,2]],
+    [[3,2,1,1],[2,2,2,2]],
+];
+const p5_copies_to_levels = [
+    [],
+    [[3]],
+    [[3,2]],
+    [[3,1,1],[2,2,2]],
+    [[2,2,1,1]],
+];
+const meru_copies_to_levels = [
+    [],
+    [[3],[2],[1]],
+    [[3,3],[3,2],[3,1],[2,2],[2,1],[1,1]],
+    [[3,2,2],[3,2,1],[3,1,1],[2,2,2],[2,2,1],[2,1,1],[1,1,1]],
+];
+const zongzi_ids = [];
+// for each key in swogi, if it starts with 8 and ends with 3, add it to zongzi_ids
+for (let key in swogi) {
+    if (key.startsWith("8") && key.endsWith("3") && ((0+key[2])>1)) {
+        zongzi_ids.push(key);
+    }
+}
+console.log("zongzi_ids: " + zongzi_ids);
+
+function upgradedd(deck) {
+    let ret = [];
+    for (let card_id of deck) {
+        let new_card_id = card_id.slice(0, -1) + "3";
+        ret.push(new_card_id);
+    }
+    // sort the deck
+    ret.sort();
+    return ret;
+}
+
+function sortedd(deck) {
+    let ret = [];
+    for (let card_id of deck) {
+        let new_card_id = card_id;
+        ret.push(new_card_id);
+    }
+    // sort the deck
+    ret.sort();
+    return ret;
+}
+
+function upgradestringifiedd(deck) {
+    const ret = upgradedd(deck);
+    return ret.join();
+}
+
+function stringifiedd(deck) {
+    const ret = sortedd(deck);
+    return ret.join();
+}
+
+function str_to_arr(str) {
+    return str.split(",");
+}
+
+// read the contents of blah.json
+//const fs = require('fs');
+//const data = fs.readFileSync('blah.json');
+//const blah = JSON.parse(data);
+const blah = {};
+
+// a generator that takes a deck of max level cards and downgrades some cards if needed
+function* downgraded(max_level_deck) {
+    let cards = [];
+    let copies = [];
+    let idx = 0;
+    let sofar = [];
+    for (let card_id of max_level_deck) {
+        // if it's in cards, increment copies
+        if (cards.includes(card_id)) {
+            copies[cards.indexOf(card_id)] += 1;
+        } else {
+            // if it's not in cards, add it to cards and set copies to 1
+            cards.push(card_id);
+            copies.push(1);
+        }
+    }
+    for (let result of downgrade_inner(cards, copies, sofar, idx)) {
+        yield result;
+    }
+}
+
+function* downgrade_inner(cards, copies, sofar, idx) {
+    if (idx === cards.length) {
+        yield sofar;
+        return;
+    }
+    let card_id = cards[idx];
+    //console.log("cards: " + cards);
+    //console.log("copies: " + copies);
+    //console.log("sofar: " + sofar);
+    //console.log("idx: " + idx);
+    let copy = copies[idx];
+    let my_copies_to_levels = copies_to_levels;
+    if (card_id === "804063") {
+        my_copies_to_levels = meru_copies_to_levels;
+    } else if (card_id[2] === "5") {
+        my_copies_to_levels = p5_copies_to_levels;
+    }
+    if (copy >= my_copies_to_levels.length) {
+        return;
+    }
+    for (let levels_arr of my_copies_to_levels[copy]) {
+        let new_sofar = sofar.slice();
+        for (let level of levels_arr) {
+            // trim the last digit of the card_id and replace it with the level
+            const new_card_id = card_id.slice(0, -1) + level;
+            new_sofar.push(new_card_id);
+        }
+        for (let result of downgrade_inner(cards, copies, new_sofar, idx+1)) {
+            yield result;
+        }
+    }
+}
+
+// a generator that takes a deck of zongzi and generates all adjacent decks of zongzi
+function* adjacent_decks(deck, small_radius) {
+    // for each zongzi_id, make a bigger deck containing deck + zongzi_id
+    for (let zongzi_id of zongzi_ids) {
+        const bigger_deck = deck.slice();
+        bigger_deck.push(zongzi_id);
+        for (let subcombo of k_combinations(bigger_deck, 8)) {
+            for (let downgraded_subcombo of downgraded(subcombo)) {
+                yield downgraded_subcombo;
+            }
+        }
+    }
+    // for each two zongzi_id's, make a bigger deck containing deck + zongzi_id_a + zongzi_id_b
+    if (!small_radius) {
+    for (let zongzi_id_a of zongzi_ids) {
+        for (let zongzi_id_b of zongzi_ids) {
+            const bigger_deck = deck.slice();
+            bigger_deck.push(zongzi_id_a);
+            bigger_deck.push(zongzi_id_b);
+            for (let subcombo of k_combinations(bigger_deck, 8)) {
+                for (let downgraded_subcombo of downgraded(subcombo)) {
+                    yield downgraded_subcombo;
+                }
+            }
+        }
+    }
+    }
+}
+
 let riddles = {};
 function fixup_deck(deck) {
     for (let i=0; i<deck.length; i++) {
@@ -35,6 +189,9 @@ function fixup_deck(deck) {
         }
     }
 }
+
+const deck_to_hp = blah;
+const searched_from_deck = {};
 
 function handle_response(riddle, response) {
     const winning_decks = response.winning_decks;
@@ -48,6 +205,9 @@ function handle_response(riddle, response) {
                 winning_decks[i][j] = format_card(winning_decks[i][j]);
             }
             console.log(winning_logs[i].join("\n"));
+            //const deck_str = stringifiedd(winning_decks[i]);
+            //console.log("\"" + deck_str + "\": "+winning_margins[i]+",");
+            //deck_to_hp[deck_str] = winning_margins[i];
             console.log("winning deck: " + JSON.stringify(winning_decks[i]));
             console.log("winning margin: " + winning_margins[i]);
         }
@@ -128,11 +288,15 @@ async function do_riddle(riddle) {
         let combo_idx = 0;
         const tried_combos = {};
         for (let combo of k_combinations(my_cards, 8)) {
+        //for (let combo of adjacent_decks(my_cards, riddle.small_radius)) {
             combo_idx += 1;
             console.log("combo_idx: " + combo_idx);
             // sort the combo
             combo.sort();
             let combo_id = combo.join(",");
+            //if (deck_to_hp[combo_id] !== undefined) {
+            //   continue;
+            //}
             if (tried_combos[combo_id]) {
                 continue;
             }
@@ -140,14 +304,20 @@ async function do_riddle(riddle) {
             // if this combo has 3 or more continuous/consumption cards, skip it
             let normal_attack_count = 0;
             let concon_count = 0;
-            for (let i=0; i<8; i++) {
+            for (let i=0; i<combo.length; i++) {
                 if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
                     concon_count += 1;
+                }
+                if (swogi[combo[i]].name === "Normal Attack") {
+                    normal_attack_count += 1;
                 }
             }
             if (concon_count >= 3) {
                 continue;
             }
+            //if (normal_attack_count !== 1) {
+            //    continue;
+            //}
             console.log("concon_count: " + concon_count);
             // if there is a ready worker, send the message
             let worker_idx = -1;
@@ -1526,5 +1696,660 @@ riddles["231"] = async () => {
     players[enemy_idx].sword_in_sheathed_stacks = 1;
     return await do_riddle({players: players, my_idx: my_idx});
 };
-await riddles["231"]();
+//await riddles["231"]();
+riddles["232"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 99;
+    players[enemy_idx].cultivation = 64;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 99;
+    players[my_idx].cultivation = 61;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "centibird spirit sword 2",
+        "spiritage elixir 2",
+        "clear heart sword embryo 3",
+        "rule sky sword formation",
+        "egret spirit sword 2",
+        "cloud sword pierce the star",
+        "raven spirit sword",
+        "normal attack",
+        "giant kun spirit sword 2",
+        "dharma spirit sword",
+    ];
+    players[enemy_idx].cards = [
+        "spirit gather citta dharma 2",
+        "spirit gather citta dharma 2",
+        "rule sky sword formation 2",
+        "spiritage incantation 2",
+        "giant roc spirit sword",
+        "raven spirit sword 2",
+        "giant kun spirit sword",
+        "mirror flower sword formation",
+    ];
+    players[enemy_idx].sword_in_sheathed_stacks = 1;
+    players[my_idx].qi_forging_spiritstat_stacks = 1;
+    players[my_idx].quench_of_sword_heart_cloud_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["232"]();
+riddles["233"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 107;
+    players[enemy_idx].cultivation = 78;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 99;
+    players[my_idx].cultivation = 61;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "Fate Reincarnates",
+        "unrestrained zero 2",
+        "unrestrained flame dance",
+        "calamity plaguin 2",
+        "good omen",
+        "unrestrained two 2",
+        "cloud sword dragon roam 2",
+        "unrestrained two 2",
+        "everything goes way 2",
+        "unrestrained one",
+    ];
+    players[enemy_idx].cards = [
+        "divine walk fulu 2",
+        "spirit gather citta dharma 2",
+        "transforming spirits rhythm 3",
+        "rule sky sword formation 3",
+        "spiritage incantation 2",
+        "chain sword formation",
+        "thousand evil incantation 2",
+        "dharma spirit sword 2",
+    ];
+    players[enemy_idx].sword_in_sheathed_stacks = 1;
+    players[my_idx].fire_flame_blade_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["233"]();
+riddles["234"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 109;
+    players[enemy_idx].cultivation = 69;
+    players[enemy_idx].physique = 76;
+    players[enemy_idx].max_physique = 81;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 108;
+    players[my_idx].cultivation = 80;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "fire spirit formation 2",
+        "earth spirit formation 2",
+        "fire spirit flash fire",
+        "fire spirit rhythm earth 3",
+        "five elements circulation 2",
+        "earth spirit combine world",
+        "lava seal 2",
+        "lava seal",
+        "fire spirit formation",
+    ];
+    players[enemy_idx].cards = [
+        "stygian moon's changuang",
+        "shura roar",
+        "styx agility",
+        "gone crazy",
+        "crane footwork 2",
+        "strength driven mad",
+        "soul cleaving 3",
+        "soul seizing",
+    ];
+    players[enemy_idx].entering_styx_stacks = 1;
+    players[my_idx].p3_mutual_growth_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["234"]();
+riddles["235"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 111;
+    players[enemy_idx].cultivation = 69;
+    players[enemy_idx].physique = 76;
+    players[enemy_idx].max_physique = 81;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 117;
+    players[my_idx].cultivation = 99;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "step moon into cloud 2",
+        "cloud sword softheart 2",
+        "cloud sword flash wind 2",
+        "cloud sword sunset glow",
+        "cloud sword dragon roam 2",
+        "cloud sword dawn 2",
+        "cloud sword dragon roam",
+        "cloud sword step lightly",
+        "cloud sword moon shade 2",
+    ];
+    players[enemy_idx].cards = [
+        "heavenly forceage 3",
+        "unrestrained zero 3",
+        "unrestrained flame dance",
+        "unrestrained two 3",
+        "meru formation 2",
+        "normal attack",
+        "normal attack",
+        "unrestrained two 2",
+    ];
+    players[enemy_idx].fire_flame_blade_stacks = 1;
+    players[enemy_idx].drift_ice_blade_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["235"]();
+riddles["236"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 107;
+    players[enemy_idx].cultivation = 85;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 107;
+    players[my_idx].cultivation = 76;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "spirit gather citta dharma 2",
+        "dharma spirit sword 2",
+        "rule sky sword formation 2",
+        "chain sword 2",
+        "spiritage incantation 2",
+        "spiritage incantation 2",
+        "moon water sword 3",
+        "thousand evil incantation",
+        "giant kun spirit sword 3",
+        "giant kun spirit sword 2",
+        "emptiness sword formation",
+        "mirror flower sword formation 3",
+        "mirror flower sword formation",
+        "rule sky sword formation",
+        "normal attack",
+    ];
+    players[enemy_idx].cards = [
+        "finishing touch 2",
+        "heaven hexagram",
+        "astral cide 2",
+        "drag moon in sea 2",
+        "hunter hunting hunter 2",
+        "hunter becomes preyer",
+        "drag moon in sea",
+        "escape plan 2",
+    ];
+    players[enemy_idx].p2_divination_stacks = 1;
+    players[enemy_idx].act_underhand_stacks = 1;
+    players[my_idx].sword_in_sheathed_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["236"]();
+riddles["237"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 101;
+    players[enemy_idx].cultivation = 59;
+    players[enemy_idx].physique = 67;
+    players[enemy_idx].max_physique = 72;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 103;
+    players[my_idx].cultivation = 65;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "perfectly planned 3",
+        "star moon folding fan",
+        "starry moon 2",
+        "astral tiger 2",
+        "astral hit",
+        "starry moon",
+        "astral hit",
+        "astral hit",
+        "normal attack",
+    ];
+    players[enemy_idx].cards = [
+        "meditation of xuan",
+        "elusive footwork",
+        "ghost howling 2",
+        "soul cleaving",
+        "bearing the load 2",
+        "bearing the load",
+        "soul seizing",
+        "soul seizing",
+    ];
+    players[enemy_idx].zen_mind_forging_body_stacks = 1;
+    players[my_idx].rest_and_outwit_stacks = 1;
+    players[my_idx].p3_stargaze_stacks = 1;
+    players[my_idx].star_moon_folding_fan_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["237"]();
+riddles["238"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 1;
+    players[enemy_idx].cultivation = 0;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = 10000;
+    players[my_idx].hp = 1;
+    players[my_idx].cultivation = 0;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = 10000;
+    players[my_idx].cards = [
+        // "salted egg yolk zongzi 3",
+        // "salted egg yolk zongzi 3",
+        // "pungent zongzi 3",
+        // "sour bamboo shoot zongzi 3",
+        // "double plum zongzi 3",
+        // "assorted meat zongzi 3",
+        // "sour bamboo shoot zongzi 3",
+        // "pickled mustard zongzi 3",
+
+        // "crystal ice zongzi 3",
+        // "shura zongzi 3",
+        // "crystal ice zongzi 3",
+        // "shura zongzi 3",
+        // "sour bamboo shoot zongzi 3",
+        // "shura zongzi 3",
+        // "sour bamboo shoot zongzi 3",
+        // "spirit zongzi 3",
+
+        // "crystal ice zongzi 3",
+        // "shura zongzi 3",
+        // "crystal ice zongzi 3",
+        // "shura zongzi 3",
+        // "sour bamboo shoot zongzi 3",
+        // "spirit zongzi 3",
+        // "double plum zongzi 3",
+        // "double plum zongzi 3",
+
+        // "crystal ice zongzi 3",
+        // "double plum zongzi 3",
+        // "shura zongzi 3",
+        // "crystal ice zongzi 3",
+        // "spirit zongzi 3",
+        // "sour bamboo shoot zongzi 3",
+        // "sour bamboo shoot zongzi 3",
+        // "double plum zongzi 2",
+        // "shura zongzi 2",
+        // "water combined zongzi 3",
+        // "water combined zongzi 2",
+        // "fresh fruit zongzi 3",
+        // "fresh fruit zongzi 3",
+
+        "crystal ice zongzi",
+        "crystal ice zongzi",
+        "sour bamboo shoot zongzi",
+        "sour bamboo shoot zongzi",
+        "shura zongzi",
+        "pungent zongzi",
+        "spirit zongzi",
+        "alkaline water zongzi",
+        "double plum zongzi",
+        "shura zongzi",
+    ];
+    players[enemy_idx].cards = [
+        "meditation of xuan",
+        "elusive footwork",
+        "ghost howling 2",
+        "soul cleaving",
+        "bearing the load 2",
+        "bearing the load",
+        "soul seizing",
+        "soul seizing",
+    ];
+    return await do_riddle({players: players, my_idx: my_idx, zongzi: true});
+};
+//await riddles["238"]();
+riddles["239"] = async () => {
+    let try_idx = 0;
+    while (true) {
+        // find the highest value deck in deck_to_hp
+        // that is not also in seached_from_deck
+        let deck = null;
+        let best_value = 0;
+        let deck_up_str = null;
+        let deck_contains_meru = false;
+        try_idx = try_idx + 1;
+        const meru_ok = (try_idx % 5) === 0;
+        for (const [key, value] of Object.entries(deck_to_hp)) {
+            if (value <= best_value) {
+                continue;
+            }
+            const deck_arr = upgradedd(str_to_arr(key));
+            deck_contains_meru = false;
+            for (const card of deck_arr) {
+                if (card === "804063") {
+                    deck_contains_meru = true;
+                }
+            }
+            if (deck_contains_meru && value <= 1301 && !meru_ok) {
+                continue;
+            }
+            const up_str = stringifiedd(deck_arr);
+            if (searched_from_deck[up_str]) {
+                continue;
+            }
+            deck = deck_arr;
+            best_value = value;
+            deck_up_str = up_str;
+        }
+        deck_contains_meru = false;
+        // search the deck for meru ("804063")
+        for (const card of deck) {
+            if (card === "804063") {
+                deck_contains_meru = true;
+            }
+        }
+        searched_from_deck[deck_up_str] = true;
+        const players = [{},{}];
+        const my_idx = 0;
+        const enemy_idx = 1 - my_idx;
+        players[enemy_idx].hp = 1;
+        players[enemy_idx].cultivation = 0;
+        players[enemy_idx].physique = 0;
+        players[enemy_idx].max_physique = 0;
+        players[enemy_idx].max_hp = 10000;
+        players[my_idx].hp = 1;
+        players[my_idx].cultivation = 0;
+        players[my_idx].physique = 0;
+        players[my_idx].max_physique = 0;
+        players[my_idx].max_hp = 10000;
+        players[my_idx].cards = deck;
+        players[enemy_idx].cards = [
+            "meditation of xuan",
+            "elusive footwork",
+            "ghost howling 2",
+            "soul cleaving",
+            "bearing the load 2",
+            "bearing the load",
+            "soul seizing",
+            "soul seizing",
+        ];
+        await do_riddle({players: players, my_idx: my_idx, zongzi: true, small_radius: false});
+    }
+};
+//await riddles["239"]();
+riddles["240"] = async () => {
+    const players = [{},{}];
+    const my_idx = 1;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 107;
+    players[enemy_idx].cultivation = 90;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 107;
+    players[my_idx].cultivation = 80;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "divine walk fulu",
+        "spirit gather citta dharma 3",
+        "spirit gather citta dharma",
+        "rule sky sword formation 3",
+        "chain sword 2",
+        "chain sword",
+        "mirror flower sword formation 3",
+        "giant kun spirit sword",
+        "moon water sword 3",
+        "thousand evil incantation 2",
+        "cloud sword dragon roam",
+    ];
+    players[enemy_idx].cards = [
+        "hunter hunting hunter 3",
+        "escape plan 2",
+        "great spirit",
+        "echo formation 2",
+        "normal attack",
+        "normal attack",
+        "echo formation 2",
+        "only traces 2",
+    ];
+    players[my_idx].sword_in_sheathed_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["240"]();
+riddles["241"] = async () => {
+    const players = [{},{}];
+    const my_idx = 1;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 106;
+    players[enemy_idx].cultivation = 90;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 103;
+    players[my_idx].cultivation = 80;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "divine walk fulu 2",
+        "spirit gather citta dharma 2",
+        "spirit gather citta dharma",
+        "rule sky sword formation",
+        "chain sword 2",
+        "chain sword",
+        "mirror flower sword formation 3",
+        "raven spirit sword 2",
+        "giant kun spirit sword 2",
+        "moon water sword 2",
+        "spiritage incantation 2",
+        "dharma spirit sword",
+    ];
+    players[enemy_idx].cards = [
+        "divine power elixir 2",
+        "cloud sword softheart 2",
+        "cloud sword dragon roam",
+        "cloud sword step lightly",
+        "cloud sword dragon roam",
+        "cloud sword step lightly",
+        "cloud sword flash wind",
+        "cloud sword avalanche",
+    ];
+    players[my_idx].sword_in_sheathed_stacks = 1;
+    players[enemy_idx].fire_flame_blade_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["241"]();
+riddles["242"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 101;
+    players[enemy_idx].cultivation = 54;
+    players[enemy_idx].physique = 70;
+    players[enemy_idx].max_physique = 75;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 101;
+    players[my_idx].cultivation = 80;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "spiritage incantation 2",
+        "spiritage incantation",
+        "thousand evil incantation",
+        "rule sky sword formation",
+        "rule sky sword formation 2",
+        "chain sword 2",
+        "chain sword",
+        "raven spirit sword 3",
+        "moon water sword 3",
+        "mirror flower sword formation 2",
+        "mirror flower sword formation",
+        "dharma spirit sword 2",
+        "cloud sword pierce the star 3",
+    ];
+    players[enemy_idx].cards = [
+        "crane footwork",
+        "exercise soul",
+        "exercise soul",
+        "ashes phoenix",
+        "frozen blood lotus 3",
+        "crane footwork",
+        "realm-killing palms",
+        "realm-killing palms",
+    ];
+    players[my_idx].sword_in_sheathed_stacks = 1;
+    players[enemy_idx].p2_regenerating_body_stacks = 1;
+    players[enemy_idx].p3_regenerating_body_stacks = 1;
+    players[enemy_idx].stance_of_fierce_attack_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["242"]();
+riddles["243"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 104;
+    players[enemy_idx].cultivation = 62;
+    players[enemy_idx].physique = 56;
+    players[enemy_idx].max_physique = 71;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 104;
+    players[my_idx].cultivation = 60;
+    players[my_idx].physique = 59;
+    players[my_idx].max_physique = 71;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "stygian moon's changuang",
+        "crash footwork",
+        "crane footwork 3",
+        "crash fist - stygian night",
+        "crash fist - blink",
+        "crash fist - subdue dragon 2",
+        "realm-killing palms 2",
+        "ghost howling",
+        "styx agility",
+        "soul cleaving 2",
+        "shura roar 2",
+        "crash fist - shocked",
+        "crash fist - inch force",
+        "soul seizing",
+    ];
+    players[enemy_idx].cards = [
+        "crane footwork 2",
+        "elusive footwork 3",
+        "surging waves",
+        "gather intense force 2",
+        "vast universe",
+        "mighty force 2",
+        "crash fist shocked 2",
+        "crash fist continue 2",
+    ];
+    players[my_idx].entering_styx_stacks = 1;
+    players[enemy_idx].p3_full_of_force_stacks = 1;
+    players[enemy_idx].p5_full_of_force_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["243"]();
+riddles["244"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 1;
+    players[enemy_idx].cultivation = 0;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = 10000;
+    players[my_idx].hp = 1;
+    players[my_idx].cultivation = 0;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = 10000;
+    players[my_idx].cards = [
+        // "salted egg yolk zongzi 3",
+        // "salted egg yolk zongzi 3",
+        // "pungent zongzi 3",
+        // "sour bamboo shoot zongzi 3",
+        // "double plum zongzi 3",
+        // "assorted meat zongzi 3",
+        // "sour bamboo shoot zongzi 3",
+        // "pickled mustard zongzi 3",
+
+        // "crystal ice zongzi 3",
+        // "shura zongzi 3",
+        // "crystal ice zongzi 3",
+        // "shura zongzi 3",
+        // "sour bamboo shoot zongzi 3",
+        // "shura zongzi 3",
+        // "sour bamboo shoot zongzi 3",
+        // "spirit zongzi 3",
+
+        // "crystal ice zongzi 3",
+        // "shura zongzi 3",
+        // "crystal ice zongzi 3",
+        // "shura zongzi 3",
+        // "sour bamboo shoot zongzi 3",
+        // "spirit zongzi 3",
+        // "double plum zongzi 3",
+        // "double plum zongzi 3",
+
+        // "crystal ice zongzi 3",
+        // "double plum zongzi 3",
+        // "shura zongzi 3",
+        // "crystal ice zongzi 3",
+        // "spirit zongzi 3",
+        // "sour bamboo shoot zongzi 3",
+        // "sour bamboo shoot zongzi 3",
+        // "double plum zongzi 2",
+        // "shura zongzi 2",
+        // "water combined zongzi 3",
+        // "water combined zongzi 2",
+        // "fresh fruit zongzi 3",
+        // "fresh fruit zongzi 3",
+
+        "803042",
+        "803042",
+        "803043",
+        "803063",
+        "804043",
+        "805033",
+        "805043",
+        "805053"
+    ];
+    players[enemy_idx].cards = [
+        "meditation of xuan",
+        "elusive footwork",
+        "ghost howling 2",
+        "soul cleaving",
+        "bearing the load 2",
+        "bearing the load",
+        "soul seizing",
+        "soul seizing",
+    ];
+    return await do_riddle({players: players, my_idx: my_idx, zongzi: true});
+};
+await riddles["244"]();
 console.log("done");

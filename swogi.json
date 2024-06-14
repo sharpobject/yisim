@@ -1,472 +1,889 @@
 {
 	"111011": {
 		"name": "Cloud Sword - Touch Sky",
-		"actions": [["atk", 6]]
+		"actions": [
+			["atk", 6]
+		]
 	},
 	"111012": {
-		"actions": [["atk", 9]]
+		"actions": [
+			["atk", 9]
+		]
 	},
 	"111013": {
-		"actions": [["atk", 12]]
+		"actions": [
+			["atk", 12]
+		]
 	},
 	"111021": {
 		"name": "Cloud Sword - Fleche",
-		"actions": [["atk", 5], ["cloud_hit", ["atk", 3]]]
+		"actions": [
+			["atk", 5],
+			["cloud_hit", ["atk", 3]]
+		]
 	},
 	"111022": {
-		"actions": [["atk", 6], ["cloud_hit", ["atk", 5]]]
+		"actions": [
+			["atk", 6],
+			["cloud_hit", ["atk", 5]]
+		]
 	},
 	"111023": {
-		"actions": [["atk", 7], ["cloud_hit", ["atk", 7]]]
+		"actions": [
+			["atk", 7],
+			["cloud_hit", ["atk", 7]]
+		]
 	},
 	"111031": {
 		"name": "Cloud Sword - Touch Earth",
-		"actions": [["atk", 4], ["cloud_hit", ["def", 4]]]
+		"actions": [
+			["atk", 4],
+			["cloud_hit", ["def", 4]]
+		]
 	},
 	"111032": {
-		"actions": [["atk", 6], ["cloud_hit", ["def", 6]]]
+		"actions": [
+			["atk", 6],
+			["cloud_hit", ["def", 6]]
+		]
 	},
 	"111033": {
-		"actions": [["atk", 8], ["cloud_hit", ["def", 8]]]
+		"actions": [
+			["atk", 8],
+			["cloud_hit", ["def", 8]]
+		]
 	},
 	"111041": {
 		"name": "Light Sword",
-		"actions": [["atk", 4], ["qi", 1]]
+		"actions": [
+			["atk", 4],
+			["qi", 1]
+		]
 	},
 	"111042": {
-		"actions": [["atk", 4], ["qi", 2]]
+		"actions": [
+			["atk", 4],
+			["qi", 2]
+		]
 	},
 	"111043": {
-		"actions": [["atk", 4], ["qi", 3]]
+		"actions": [
+			["atk", 4],
+			["qi", 3]
+		]
 	},
 	"111051": {
 		"name": "Guard Qi",
-		"actions": [["qi", 1], ["def", 5]]
+		"actions": [
+			["qi", 1],
+			["def", 5]
+		]
 	},
 	"111052": {
-		"actions": [["qi", 2], ["def", 5]]
+		"actions": [
+			["qi", 2],
+			["def", 5]
+		]
 	},
 	"111053": {
-		"actions": [["qi", 3], ["def", 5]]
+		"actions": [
+			["qi", 3],
+			["def", 5]
+		]
 	},
 	"111061": {
 		"name": "Qi Perfusion",
-		"actions": [["qi", 2], ["gain_ignore_def", 1]]
+		"actions": [
+			["qi", 2],
+			["gain_ignore_def", 1]
+		]
 	},
 	"111062": {
-		"actions": [["qi", 3], ["gain_ignore_def", 1]]
+		"actions": [
+			["qi", 3],
+			["gain_ignore_def", 1]
+		]
 	},
 	"111063": {
-		"actions": [["qi", 4], ["gain_ignore_def", 1]]
+		"actions": [
+			["qi", 4],
+			["gain_ignore_def", 1]
+		]
 	},
 	"111071": {
 		"name": "Giant Tiger Spirit Sword",
 		"qi_cost": 1,
 		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
-		"actions": [["atk", 10]]
+		"actions": [
+			["atk", 10]
+		]
 	},
 	"111072": {
-		"actions": [["atk", 13]]
+		"actions": [
+			["atk", 13]
+		]
 	},
 	"111073": {
-		"actions": [["atk", 16]]
+		"actions": [
+			["atk", 16]
+		]
 	},
 	"111081": {
 		"name": "Thunder Sword",
 		"qi_cost": 1,
-		"actions": [["atk", 5], ["injured", ["atk", 6]]]
+		"actions": [
+			["atk", 5],
+			["injured", ["atk", 6]]
+		]
 	},
 	"111082": {
-		"actions": [["atk", 6], ["injured", ["atk", 8]]]
+		"actions": [
+			["atk", 6],
+			["injured", ["atk", 8]]
+		]
 	},
 	"111083": {
-		"actions": [["atk", 7], ["injured", ["atk", 10]]]
+		"actions": [
+			["atk", 7],
+			["injured", ["atk", 10]]
+		]
 	},
 	"111091": {
 		"name": "Sword Slash",
-		"actions": [["atk", 4], ["sword_intent", 2]]
+		"actions": [
+			["atk", 4],
+			["sword_intent", 2]
+		]
 	},
 	"111092": {
-		"actions": [["atk", 5], ["sword_intent", 3]]
+		"actions": [
+			["atk", 5],
+			["sword_intent", 3]
+		]
 	},
 	"111093": {
-		"actions": [["atk", 6], ["sword_intent", 4]]
+		"actions": [
+			["atk", 6],
+			["sword_intent", 4]
+		]
 	},
 	"111101": {
 		"name": "Sword Defence",
-		"actions": [["def", 4], ["sword_intent", 2]]
+		"actions": [
+			["def", 4],
+			["sword_intent", 2]
+		]
 	},
 	"111102": {
-		"actions": [["def", 5], ["sword_intent", 3]]
+		"actions": [
+			["def", 5],
+			["sword_intent", 3]
+		]
 	},
 	"111103": {
-		"actions": [["def", 6], ["sword_intent", 4]]
+		"actions": [
+			["def", 6],
+			["sword_intent", 4]
+		]
 	},
 	"111111": {
 		"name": "Flying Fang Sword",
 		"qi_cost": 1,
-		"actions": [["atk", 8], ["injured", ["regain_sword_intent"]]]
+		"actions": [
+			["atk", 8],
+			["injured", ["regain_sword_intent"]]
+		]
 	},
 	"111112": {
-		"actions": [["atk", 11], ["injured", ["regain_sword_intent"]]]
+		"actions": [
+			["atk", 11],
+			["injured", ["regain_sword_intent"]]
+		]
 	},
 	"111113": {
-		"actions": [["atk", 14], ["injured", ["regain_sword_intent"]]]
+		"actions": [
+			["atk", 14],
+			["injured", ["regain_sword_intent"]]
+		]
 	},
 	"111121": {
 		"name": "Wind Sword",
-		"actions": [["rep", 2, ["atk", 3]]]
+		"actions": [
+			["rep", 2, ["atk", 3]]
+		]
 	},
 	"111122": {
-		"actions": [["rep", 2, ["atk", 4]]]
+		"actions": [
+			["rep", 2, ["atk", 4]]
+		]
 	},
 	"111123": {
-		"actions": [["rep", 2, ["atk", 6]]]
+		"actions": [
+			["rep", 2, ["atk", 6]]
+		]
 	},
 	"112011": {
 		"name": "Cloud Sword - Reguard",
-		"actions": [["def", 8], ["cloud_hit", ["heal", 3]]]
+		"actions": [
+			["def", 8],
+			["cloud_hit", ["heal", 3]]
+		]
 	},
 	"112012": {
-		"actions": [["def", 11], ["cloud_hit", ["heal", 5]]]
+		"actions": [
+			["def", 11],
+			["cloud_hit", ["heal", 5]]
+		]
 	},
 	"112013": {
-		"actions": [["def", 14], ["cloud_hit", ["heal", 7]]]
+		"actions": [
+			["def", 14],
+			["cloud_hit", ["heal", 7]]
+		]
 	},
 	"112021": {
 		"name": "Cloud Sword - Riddle",
-		"actions": [["atk", 6], ["cloud_hit", ["sword_intent", 2]]]
+		"actions": [
+			["atk", 6],
+			["cloud_hit", ["sword_intent", 2]]
+		]
 	},
 	"112022": {
-		"actions": [["atk", 8], ["cloud_hit", ["sword_intent", 3]]]
+		"actions": [
+			["atk", 8],
+			["cloud_hit", ["sword_intent", 3]]
+		]
 	},
 	"112023": {
-		"actions": [["atk", 10], ["cloud_hit", ["sword_intent", 4]]]
+		"actions": [
+			["atk", 10],
+			["cloud_hit", ["sword_intent", 4]]
+		]
 	},
 	"112031": {
 		"name": "Cloud Sword - Conceal",
-		"actions": [["cloud_hit", ["atk", 9]]]
+		"actions": [
+			["cloud_hit", ["atk", 9]]
+		]
 	},
 	"112032": {
-		"actions": [["cloud_hit", ["atk", 13]]]
+		"actions": [
+			["cloud_hit", ["atk", 13]]
+		]
 	},
 	"112033": {
-		"actions": [["cloud_hit", ["atk", 17]]]
+		"actions": [
+			["cloud_hit", ["atk", 17]]
+		]
 	},
 	"112041": {
 		"name": "Transforming Spirits Rhythm",
-		"actions": [["qi", 3]]
+		"actions": [
+			["qi", 3]
+		]
 	},
 	"112042": {
-		"actions": [["qi", 4]]
+		"actions": [
+			["qi", 4]
+		]
 	},
 	"112043": {
-		"actions": [["qi", 5]]
+		"actions": [
+			["qi", 5]
+		]
 	},
 	"112051": {
 		"name": "Spiritage Sword",
-		"actions": [["qi", 2], ["if_x_at_least_c_do", "qi", 3, ["rep", 2, ["atk", 3]]]]
+		"actions": [
+			["qi", 2],
+			["if_x_at_least_c_do", "qi", 3,
+				["rep", 2, ["atk", 3]]]
+		]
 	},
 	"112052": {
-		"actions": [["qi", 3], ["if_x_at_least_c_do", "qi", 4, ["rep", 2, ["atk", 3]]]]
+		"actions": [
+			["qi", 3],
+			["if_x_at_least_c_do", "qi", 4,
+				["rep", 2, ["atk", 3]]]
+		]
 	},
 	"112053": {
-		"actions": [["qi", 4], ["if_x_at_least_c_do", "qi", 5, ["rep", 2, ["atk", 3]]]]
+		"actions": [
+			["qi", 4],
+			["if_x_at_least_c_do", "qi", 5,
+				["rep", 2, ["atk", 3]]]
+		]
 	},
 	"112061": {
 		"name": "Giant Whale Spirit Sword",
 		"qi_cost": 2,
 		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
-		"actions": [["atk", 16]]
+		"actions": [
+			["atk", 16]
+		]
 	},
 	"112062": {
-		"actions": [["atk", 20]]
+		"actions": [
+			["atk", 20]
+		]
 	},
 	"112063": {
-		"actions": [["atk", 24]]
+		"actions": [
+			["atk", 24]
+		]
 	},
 	"112071": {
 		"name": "Contemplate Spirits Rhythm",
-		"actions": [["qi", 1], ["sword_intent", 3]]
+		"actions": [
+			["qi", 1],
+			["sword_intent", 3]
+		]
 	},
 	"112072": {
-		"actions": [["qi", 1], ["sword_intent", 4]]
+		"actions": [
+			["qi", 1],
+			["sword_intent", 4]
+		]
 	},
 	"112073": {
-		"actions": [["qi", 1], ["sword_intent", 5]]
+		"actions": [
+			["qi", 1],
+			["sword_intent", 5]
+		]
 	},
 	"112081": {
 		"name": "Consonance Sword Formation",
-		"actions": [["def", 9], ["exhaust_x_to_add_y", "sword_intent", "qi"]]
+		"actions": [
+			["def", 9],
+			["exhaust_x_to_add_y", "sword_intent", "qi"]
+		]
 	},
 	"112082": {
-		"actions": [["def", 14], ["exhaust_x_to_add_y", "sword_intent", "qi"]]
+		"actions": [
+			["def", 14],
+			["exhaust_x_to_add_y", "sword_intent", "qi"]
+		]
 	},
 	"112083": {
-		"actions": [["def", 19], ["exhaust_x_to_add_y", "sword_intent", "qi"]]
+		"actions": [
+			["def", 19],
+			["exhaust_x_to_add_y", "sword_intent", "qi"]
+		]
 	},
 	"112091": {
 		"name": "Earth Evil Sword",
 		"qi_cost": 1,
-		"actions": [["atk", 8], ["injured", ["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "def"]]]
+		"actions": [
+			["atk", 8],
+			["injured",
+				["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "def"]]
+		]
 	},
 	"112092": {
-		"actions": [["atk", 11], ["injured", ["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "def"]]]
+		"actions": [
+			["atk", 11],
+			["injured",
+				["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "def"]]
+		]
 	},
 	"112093": {
-		"actions": [["atk", 14], ["injured", ["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "def"]]]
+		"actions": [
+			["atk", 14],
+			["injured",
+				["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "def"]]
+		]
 	},
 	"112101": {
 		"name": "Form-Intention Sword",
 		"qi_cost": 1,
-		"actions": [["atk", 8], ["injured", ["sword_intent", 3]]]
+		"actions": [
+			["atk", 8],
+			["injured", ["sword_intent", 3]]
+		]
 	},
 	"112102": {
-		"actions": [["atk", 11], ["injured", ["sword_intent", 4]]]
+		"actions": [
+			["atk", 11],
+			["injured", ["sword_intent", 4]]
+		]
 	},
 	"112103": {
-		"actions": [["atk", 14], ["injured", ["sword_intent", 5]]]
+		"actions": [
+			["atk", 14],
+			["injured", ["sword_intent", 5]]
+		]
 	},
 	"112111": {
 		"name": "Unrestrained Sword - One",
-		"actions": [["for_each_x_add_c_y", "unrestrained_sword_count", 2, "bonus_atk_amt"], ["atk", 5]]
+		"actions": [
+			["for_each_x_add_c_y", "unrestrained_sword_count", 2, "bonus_atk_amt"],
+			["atk", 5]
+		]
 	},
 	"112112": {
-		"actions": [["for_each_x_add_c_y", "unrestrained_sword_count", 3, "bonus_atk_amt"], ["atk", 8]]
+		"actions": [
+			["for_each_x_add_c_y", "unrestrained_sword_count", 3, "bonus_atk_amt"],
+			["atk", 8]
+		]
 	},
 	"112113": {
-		"actions": [["for_each_x_add_c_y", "unrestrained_sword_count", 5, "bonus_atk_amt"], ["atk", 10]]
+		"actions": [
+			["for_each_x_add_c_y", "unrestrained_sword_count", 5, "bonus_atk_amt"],
+			["atk", 10]
+		]
 	},
 	"113011": {
 		"name": "Cloud Sword - Softheart",
-		"actions": [["continuous"], ["add_c_of_x", 2, "cloud_sword_softheart_stacks"]]
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "cloud_sword_softheart_stacks"]
+		]
 	},
 	"113012": {
-		"actions": [["continuous"], ["add_c_of_x", 3, "cloud_sword_softheart_stacks"]]
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "cloud_sword_softheart_stacks"]
+		]
 	},
 	"113013": {
-		"actions": [["continuous"], ["add_c_of_x", 4, "cloud_sword_softheart_stacks"]]
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "cloud_sword_softheart_stacks"]
+		]
 	},
 	"113021": {
 		"name": "Cloud Sword - Necessity",
-		"actions": [["rep", 2, ["atk", 4]], ["cloud_hit", ["gain_ignore_def", 1]]]
+		"actions": [
+			["rep", 2, ["atk", 4]],
+			["cloud_hit", ["gain_ignore_def", 1]]
+		]
 	},
 	"113022": {
-		"actions": [["rep", 2, ["atk", 6]], ["cloud_hit", ["gain_ignore_def", 1]]]
+		"actions": [
+			["rep", 2, ["atk", 6]],
+			["cloud_hit", ["gain_ignore_def", 1]]
+		]
 	},
 	"113023": {
-		"actions": [["rep", 2, ["atk", 8]], ["cloud_hit", ["gain_ignore_def", 2]]]
+		"actions": [
+			["rep", 2, ["atk", 8]],
+			["cloud_hit", ["gain_ignore_def", 2]]
+		]
 	},
 	"113031": {
 		"name": "Cloud Sword - Pierce the Star",
-		"actions": [["qi", 2], ["for_each_x_add_y", "qi", "bonus_atk_amt"], ["atk", 0]]
+		"actions": [
+			["qi", 2],
+			["for_each_x_add_y", "qi", "bonus_atk_amt"],
+			["atk", 0]
+		]
 	},
 	"113032": {
-		"actions": [["qi", 3], ["for_each_x_add_y", "qi", "bonus_atk_amt"], ["atk", 0]]
+		"actions": [
+			["qi", 3],
+			["for_each_x_add_y", "qi", "bonus_atk_amt"],
+			["atk", 0]
+		]
 	},
 	"113033": {
-		"actions": [["qi", 4], ["for_each_x_add_y", "qi", "bonus_atk_amt"], ["atk", 0]]
+		"actions": [
+			["qi", 4],
+			["for_each_x_add_y", "qi", "bonus_atk_amt"],
+			["atk", 0]
+		]
 	},
 	"113041": {
 		"name": "Cloud Sword - Spirit Coercion",
-		"actions": [["atk", 7], ["cloud_hit", ["for_each_x_add_y", "cloud_sword_chain_count", "qi"]]]
+		"actions": [
+			["atk", 7],
+			["cloud_hit",
+				["for_each_x_add_y", "cloud_sword_chain_count", "qi"]]
+		]
 	},
 	"113042": {
-		"actions": [["atk", 11], ["cloud_hit", ["for_each_x_add_y", "cloud_sword_chain_count", "qi"]]]
+		"actions": [
+			["atk", 11],
+			["cloud_hit",
+				["for_each_x_add_y", "cloud_sword_chain_count", "qi"]]
+		]
 	},
 	"113043": {
-		"actions": [["atk", 15], ["cloud_hit", ["for_each_x_add_y", "cloud_sword_chain_count", "qi"]]]
+		"actions": [
+			["atk", 15],
+			["cloud_hit",
+				["for_each_x_add_y", "cloud_sword_chain_count", "qi"]]
+		]
 	},
 	"113051": {
 		"name": "Cloud Dance Rhythm",
-		"actions": [["qi", 2], ["def", 2], ["sword_intent", 2]]
+		"actions": [
+			["qi", 2],
+			["def", 2],
+			["sword_intent", 2]
+		]
 	},
 	"113052": {
-		"actions": [["qi", 3], ["def", 3], ["sword_intent", 3]]
+		"actions": [
+			["qi", 3],
+			["def", 3],
+			["sword_intent", 3]
+		]
 	},
 	"113053": {
-		"actions": [["qi", 4], ["def", 4], ["sword_intent", 4]]
+		"actions": [
+			["qi", 4],
+			["def", 4],
+			["sword_intent", 4]
+		]
 	},
 	"113061": {
 		"name": "Raven Spirit Sword",
 		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
-		"actions": [["atk", 6], ["for_each_x_add_c_y", "qi", 2, "def"]]
+		"actions": [
+			["atk", 6],
+			["for_each_x_add_c_y", "qi", 2, "def"]
+		]
 	},
 	"113062": {
-		"actions": [["atk", 6], ["for_each_x_add_c_y", "qi", 3, "def"]]
+		"actions": [
+			["atk", 6],
+			["for_each_x_add_c_y", "qi", 3, "def"]
+		]
 	},
 	"113063": {
-		"actions": [["atk", 6], ["for_each_x_add_c_y", "qi", 4, "def"]]
+		"actions": [
+			["atk", 6],
+			["for_each_x_add_c_y", "qi", 4, "def"]
+		]
 	},
 	"113071": {
 		"name": "Burst Sword",
 		"qi_cost": 1,
-		"actions": [["atk", 11], ["injured", ["reduce_enemy_c_of_x", 1, "qi"]]]
+		"actions": [
+			["atk", 11],
+			["injured", ["reduce_enemy_c_of_x", 1, "qi"]]
+		]
 	},
 	"113072": {
-		"actions": [["atk", 13], ["injured", ["reduce_enemy_c_of_x", 2, "qi"]]]
+		"actions": [
+			["atk", 13],
+			["injured", ["reduce_enemy_c_of_x", 2, "qi"]]
+		]
 	},
 	"113073": {
-		"actions": [["atk", 15], ["injured", ["reduce_enemy_c_of_x", 3, "qi"]]]
+		"actions": [
+			["atk", 15],
+			["injured", ["reduce_enemy_c_of_x", 3, "qi"]]
+		]
 	},
 	"113081": {
 		"name": "Giant Roc Spirit Sword",
 		"qi_cost": 2,
 		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
-		"actions": [["atk", 9], ["if_x_at_least_c_do", "qi", 1, ["chase"]]]
+		"actions": [
+			["atk", 9],
+			["if_x_at_least_c_do", "qi", 1, ["chase"]]
+		]
 	},
 	"113082": {
-		"actions": [["atk", 12], ["if_x_at_least_c_do", "qi", 1, ["chase"]]]
+		"actions": [
+			["atk", 12],
+			["if_x_at_least_c_do", "qi", 1, ["chase"]]
+		]
 	},
 	"113083": {
-		"actions": [["atk", 15], ["if_x_at_least_c_do", "qi", 1, ["chase"]]]
+		"actions": [
+			["atk", 15],
+			["if_x_at_least_c_do", "qi", 1, ["chase"]]
+		]
 	},
 	"113091": {
 		"name": "Reflexive Sword",
 		"qi_cost": 1,
-		"actions": [["atk", 11], ["injured", ["next_turn_def", 7]]]
+		"actions": [
+			["atk", 11],
+			["injured", ["next_turn_def", 7]]
+		]
 	},
 	"113092": {
-		"actions": [["atk", 14], ["injured", ["next_turn_def", 10]]]
+		"actions": [
+			["atk", 14],
+			["injured", ["next_turn_def", 10]]
+		]
 	},
 	"113093": {
-		"actions": [["atk", 17], ["injured", ["next_turn_def", 13]]]
+		"actions": [
+			["atk", 17],
+			["injured", ["next_turn_def", 13]]
+		]
 	},
 	"113101": {
 		"name": "Mirror Flower Sword Formation",
-		"actions": [["def", 3], ["for_each_x_add_y", "def", "bonus_atk_amt"], ["atk", 0]]
+		"actions": [
+			["def", 3],
+			["for_each_x_add_y", "def", "bonus_atk_amt"],
+			["atk", 0]
+		]
 	},
 	"113102": {
-		"actions": [["def", 5], ["for_each_x_add_y", "def", "bonus_atk_amt"], ["atk", 0]]
+		"actions": [
+			["def", 5],
+			["for_each_x_add_y", "def", "bonus_atk_amt"],
+			["atk", 0]
+		]
 	},
 	"113103": {
-		"actions": [["def", 8], ["for_each_x_add_y", "def", "bonus_atk_amt"], ["atk", 0]]
+		"actions": [
+			["def", 8],
+			["for_each_x_add_y", "def", "bonus_atk_amt"],
+			["atk", 0]
+		]
 	},
 	"113111": {
 		"name": "Tri-Peak Sword",
-		"actions": [["rep", 3, ["atk", 3]]]
+		"actions": [
+			["rep", 3, ["atk", 3]]
+		]
 	},
 	"113112": {
-		"actions": [["rep", 3, ["atk", 4]]]
+		"actions": [
+			["rep", 3, ["atk", 4]]
+		]
 	},
 	"113113": {
-		"actions": [["rep", 3, ["atk", 5]]]
+		"actions": [
+			["rep", 3, ["atk", 5]]
+		]
 	},
 	"114011": {
 		"name": "Cloud Sword - Flash Wind",
-		"actions": [["atk", 4], ["cloud_hit", ["chase"]]]
+		"actions": [
+			["atk", 4],
+			["cloud_hit", ["chase"]]
+		]
 	},
 	"114012": {
-		"actions": [["atk", 8], ["cloud_hit", ["chase"]]]
+		"actions": [
+			["atk", 8],
+			["cloud_hit", ["chase"]]
+		]
 	},
 	"114013": {
-		"actions": [["atk", 12], ["cloud_hit", ["chase"]]]
+		"actions": [
+			["atk", 12],
+			["cloud_hit", ["chase"]]
+		]
 	},
 	"114021": {
 		"name": "Cloud Sword - Moon Shade",
-		"actions": [["def", 1], ["cloud_hit", ["add_c_of_x", 2, "increase_atk"]]]
+		"actions": [
+			["def", 1],
+			["cloud_hit", ["add_c_of_x", 2, "increase_atk"]]
+		]
 	},
 	"114022": {
-		"actions": [["def", 2], ["cloud_hit", ["add_c_of_x", 3, "increase_atk"]]]
+		"actions": [
+			["def", 2],
+			["cloud_hit", ["add_c_of_x", 3, "increase_atk"]]
+		]
 	},
 	"114023": {
-		"actions": [["def", 3], ["cloud_hit", ["add_c_of_x", 4, "increase_atk"]]]
+		"actions": [
+			["def", 3],
+			["cloud_hit", ["add_c_of_x", 4, "increase_atk"]]
+		]
 	},
 	"114031": {
 		"name": "Spirit Gather Citta-Dharma",
-		"actions": [["qi", 1], ["continuous"], ["add_c_of_x", 1, "spirit_gather_citta_dharma_stacks"]]
+		"actions": [
+			["qi", 1],
+			["continuous"],
+			["add_c_of_x", 1, "spirit_gather_citta_dharma_stacks"]
+		]
 	},
 	"114032": {
-		"actions": [["qi", 1], ["continuous"], ["add_c_of_x", 2, "spirit_gather_citta_dharma_stacks"]]
+		"actions": [
+			["qi", 1],
+			["continuous"],
+			["add_c_of_x", 2, "spirit_gather_citta_dharma_stacks"]
+		]
 	},
 	"114033": {
-		"actions": [["qi", 3], ["continuous"], ["add_c_of_x", 2, "spirit_gather_citta_dharma_stacks"]]
+		"actions": [
+			["qi", 3],
+			["continuous"],
+			["add_c_of_x", 2, "spirit_gather_citta_dharma_stacks"]
+		]
 	},
 	"114041": {
 		"name": "CentiBird Spirit Sword Rhythm",
 		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
-		"actions": [["qi", 1], ["continuous"], ["add_c_of_x", 1, "centibird_spirit_sword_rhythm_stacks"]]
+		"actions": [
+			["qi", 1],
+			["continuous"],
+			["add_c_of_x", 1, "centibird_spirit_sword_rhythm_stacks"]
+		]
 	},
 	"114042": {
-		"actions": [["qi", 3], ["continuous"], ["add_c_of_x", 1, "centibird_spirit_sword_rhythm_stacks"]]
+		"actions": [
+			["qi", 3],
+			["continuous"],
+			["add_c_of_x", 1, "centibird_spirit_sword_rhythm_stacks"]
+		]
 	},
 	"114043": {
-		"actions": [["qi", 3], ["continuous"], ["add_c_of_x", 2, "centibird_spirit_sword_rhythm_stacks"]]
+		"actions": [
+			["qi", 3],
+			["continuous"],
+			["add_c_of_x", 2, "centibird_spirit_sword_rhythm_stacks"]
+		]
 	},
 	"114051": {
 		"name": "Egret Spirit Sword",
 		"qi_cost": 1,
 		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
-		"actions": [["for_each_x_add_c_y", "qi", 2, "bonus_atk_amt"], ["atk", 5]]
+		"actions": [
+			["for_each_x_add_c_y", "qi", 2, "bonus_atk_amt"],
+			["atk", 5]
+		]
 	},
 	"114052": {
-		"actions": [["for_each_x_add_c_y", "qi", 3, "bonus_atk_amt"], ["atk", 5]]
+		"actions": [
+			["for_each_x_add_c_y", "qi", 3, "bonus_atk_amt"],
+			["atk", 5]
+		]
 	},
 	"114053": {
-		"actions": [["for_each_x_add_c_y", "qi", 4, "bonus_atk_amt"], ["atk", 5]]
+		"actions": [
+			["for_each_x_add_c_y", "qi", 4, "bonus_atk_amt"],
+			["atk", 5]
+		]
 	},
 	"114061": {
 		"name": "Giant Kun Spirit Sword",
 		"qi_cost": 3,
 		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
-		"actions": [["atk", 10], ["def", 10], ["chase"]]
+		"actions": [
+			["atk", 10],
+			["def", 10],
+			["chase"]
+		]
 	},
 	"114062": {
-		"actions": [["atk", 13], ["def", 13], ["chase"]]
+		"actions": [
+			["atk", 13],
+			["def", 13],
+			["chase"]
+		]
 	},
 	"114063": {
-		"actions": [["atk", 16], ["def", 16], ["chase"]]
+		"actions": [
+			["atk", 16],
+			["def", 16],
+			["chase"]
+		]
 	},
 	"114071": {
 		"name": "Inspiration Sword",
-		"actions": [["atk", 8], ["injured", ["for_each_x_up_to_c_add_y", "qi", 6, "sword_intent"]]]
+		"actions": [
+			["atk", 8],
+			["injured", ["for_each_x_up_to_c_add_y", "qi", 6, "sword_intent"]]
+		]
 	},
 	"114072": {
-		"actions": [["atk", 12], ["injured", ["for_each_x_up_to_c_add_y", "qi", 9, "sword_intent"]]]
+		"actions": [
+			["atk", 12],
+			["injured", ["for_each_x_up_to_c_add_y", "qi", 9, "sword_intent"]]
+		]
 	},
 	"114073": {
-		"actions": [["atk", 16], ["injured", ["for_each_x_up_to_c_add_y", "qi", 12, "sword_intent"]]]
+		"actions": [
+			["atk", 16],
+			["injured", ["for_each_x_up_to_c_add_y", "qi", 12, "sword_intent"]]
+		]
 	},
 	"114081": {
 		"name": "Flow Cloud Chaos Sword",
 		"qi_cost": 1,
-		"actions": [["rep", 4, ["atk", 2]]]
+		"actions": [
+			["rep", 4, ["atk", 2]]
+		]
 	},
 	"114082": {
-		"actions": [["rep", 5, ["atk", 2]]]
+		"actions": [
+			["rep", 5, ["atk", 2]]
+		]
 	},
 	"114083": {
-		"actions": [["rep", 6, ["atk", 2]]]
+		"actions": [
+			["rep", 6, ["atk", 2]]
+		]
 	},
 	"114091": {
 		"name": "Moon Water Sword Formation",
-		"actions": [["def", 10], ["add_c_of_x", 3, "moon_water_sword_formation_stacks"]]
+		"actions": [
+			["def", 10],
+			["add_c_of_x", 3, "moon_water_sword_formation_stacks"]
+		]
 	},
 	"114092": {
-		"actions": [["def", 14], ["add_c_of_x", 4, "moon_water_sword_formation_stacks"]]
+		"actions": [
+			["def", 14],
+			["add_c_of_x", 4, "moon_water_sword_formation_stacks"]
+		]
 	},
 	"114093": {
-		"actions": [["def", 18], ["add_c_of_x", 5, "moon_water_sword_formation_stacks"]]
+		"actions": [
+			["def", 18],
+			["add_c_of_x", 5, "moon_water_sword_formation_stacks"]
+		]
 	},
 	"114101": {
 		"name": "Unrestrained Sword - Two",
-		"actions": [["for_each_x_add_y", "unrestrained_sword_count", "bonus_rep_amt"], ["rep", 1, ["atk", 4]]]
+		"actions": [
+			["for_each_x_add_y", "unrestrained_sword_count", "bonus_rep_amt"],
+			["rep", 1, ["atk", 4]]
+		]
 	},
 	"114102": {
-		"actions": [["for_each_x_add_y", "unrestrained_sword_count", "bonus_rep_amt"], ["rep", 1, ["atk", 6]]]
+		"actions": [
+			["for_each_x_add_y", "unrestrained_sword_count", "bonus_rep_amt"],
+			["rep", 1, ["atk", 6]]
+		]
 	},
 	"114103": {
-		"actions": [["for_each_x_add_y", "unrestrained_sword_count", "bonus_rep_amt"], ["rep", 1, ["atk", 9]]]
+		"actions": [
+			["for_each_x_add_y", "unrestrained_sword_count", "bonus_rep_amt"],
+			["rep", 1, ["atk", 9]]
+		]
 	},
 	"115011": {
 		"name": "Cloud Sword - Dragon Roam",
-		"actions": [["rep", 2, [["atk", 2], ["injured", ["chase"]]]], ["cloud_hit", ["def", 3]]]
+		"actions": [
+			["rep", 2, [
+				["atk", 2],
+				["injured", ["chase"]]
+			]],
+			["cloud_hit", ["def", 3]]
+		]
 	},
 	"115012": {
-		"actions": [["rep", 3, [["atk", 2], ["injured", ["chase"]]]], ["cloud_hit", ["def", 5]]]
+		"actions": [
+			["rep", 3, [
+				["atk", 2],
+				["injured", ["chase"]]
+			]],
+			["cloud_hit", ["def", 5]]
+		]
 	},
 	"115013": {
-		"actions": [["rep", 4, [["atk", 2], ["injured", ["chase"]]]], ["cloud_hit", ["def", 7]]]
+		"actions": [
+			["rep", 4, [
+				["atk", 2],
+				["injured", ["chase"]]
+			]],
+			["cloud_hit", ["def", 7]]
+		]
 	},
 	"115021": {
 		"name": "Cloud Sword - Step Lightly",
@@ -492,67 +909,124 @@
 	},
 	"115031": {
 		"name": "Flying Spirit Shade Sword",
-		"actions": [["rep", 4, [["atk", 1], ["injured", ["qi", 1]]]]]
+		"actions": [
+			["rep", 4, [
+				["atk", 1],
+				["injured", ["qi", 1]]
+			]]
+		]
 	},
 	"115032": {
-		"actions": [["rep", 5, [["atk", 1], ["injured", ["qi", 1]]]]]
+		"actions": [
+			["rep", 5, [
+				["atk", 1],
+				["injured", ["qi", 1]]
+			]]
+		]
 	},
 	"115033": {
-		"actions": [["rep", 6, [["atk", 1], ["injured", ["qi", 1]]]]]
+		"actions": [
+			["rep", 6, [
+				["atk", 1],
+				["injured", ["qi", 1]]
+			]]
+		]
 	},
 	"115041": {
 		"name": "Dharma Spirit Sword",
 		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
-		"actions": [["exhaust_x_to_add_c_y", "qi", 5, "bonus_atk_amt"], ["atk", 5]]
+		"actions": [
+			["exhaust_x_to_add_c_y", "qi", 5, "bonus_atk_amt"],
+			["atk", 5]
+		]
 	},
 	"115042": {
-		"actions": [["exhaust_x_to_add_c_y", "qi", 6, "bonus_atk_amt"], ["atk", 5]]
+		"actions": [
+			["exhaust_x_to_add_c_y", "qi", 6, "bonus_atk_amt"],
+			["atk", 5]
+		]
 	},
 	"115043": {
-		"actions": [["exhaust_x_to_add_c_y", "qi", 7, "bonus_atk_amt"], ["atk", 5]]
+		"actions": [
+			["exhaust_x_to_add_c_y", "qi", 7, "bonus_atk_amt"],
+			["atk", 5]
+		]
 	},
 	"115051": {
 		"name": "Sword Intent Surge",
 		"qi_cost": 1,
-		"actions": [["for_each_x_add_c_pct_y", "sword_intent", 80, "sword_intent"]]
+		"actions": [
+			["for_each_x_add_c_pct_y", "sword_intent", 80, "sword_intent"]
+		]
 	},
 	"115052": {
-		"actions": [["for_each_x_add_c_pct_y", "sword_intent", 110, "sword_intent"]]
+		"actions": [
+			["for_each_x_add_c_pct_y", "sword_intent", 110, "sword_intent"]
+		]
 	},
 	"115053": {
-		"actions": [["for_each_x_add_c_pct_y", "sword_intent", 140, "sword_intent"]]
+		"actions": [
+			["for_each_x_add_c_pct_y", "sword_intent", 140, "sword_intent"]
+		]
 	},
 	"115061": {
 		"name": "Rule Sky Sword Formation",
 		"qi_cost": 1,
 		"decrease_qi_cost_by_x": "def",
-		"actions": [["def", 8], ["chase"]]
+		"actions": [
+			["def", 8],
+			["chase"]
+		]
 	},
 	"115062": {
-		"actions": [["def", 14], ["chase"]]
+		"actions": [
+			["def", 14],
+			["chase"]
+		]
 	},
 	"115063": {
-		"actions": [["def", 20], ["chase"]]
+		"actions": [
+			["def", 20],
+			["chase"]
+		]
 	},
 	"115071": {
 		"name": "Chain Sword Formation",
-		"actions": [["def", 1], ["retrigger_previous_sword_formation"]]
+		"actions": [
+			["def", 1],
+			["retrigger_previous_sword_formation"]
+		]
 	},
 	"115072": {
-		"actions": [["def", 5], ["retrigger_previous_sword_formation"]]
+		"actions": [
+			["def", 5],
+			["retrigger_previous_sword_formation"]
+		]
 	},
 	"115073": {
-		"actions": [["def", 10], ["retrigger_previous_sword_formation"]]
+		"actions": [
+			["def", 10],
+			["retrigger_previous_sword_formation"]
+		]
 	},
 	"115081": {
 		"name": "Unrestrained Sword - Zero",
-		"actions": [["continuous"], ["add_c_of_x", 30, "unrestrained_sword_zero_stacks"]]
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 30, "unrestrained_sword_zero_stacks"]
+		]
 	},
 	"115082": {
-		"actions": [["continuous"], ["add_c_of_x", 50, "unrestrained_sword_zero_stacks"]]
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 50, "unrestrained_sword_zero_stacks"]
+		]
 	},
 	"115083": {
-		"actions": [["continuous"], ["add_c_of_x", 70, "unrestrained_sword_zero_stacks"]]
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 70, "unrestrained_sword_zero_stacks"]
+		]
 	},
 	"121011": {
 		"name": "Shifting Stars",
@@ -3935,65 +4409,128 @@
 	"211011": {
 		"name": "Rhyme Spirit Sword",
 		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
-		"actions": [["atk", 4], ["injured", ["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "qi"]]]
+		"actions": [
+			["atk", 4],
+			["injured",
+				["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "qi"]]
+		]
 	},
 	"211012": {
-		"actions": [["atk", 5], ["injured", ["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "qi"]]]
+		"actions": [
+			["atk", 5],
+			["injured",
+				["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "qi"]]
+		]
 	},
 	"211013": {
-		"actions": [["atk", 6], ["injured", ["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "qi"]]]
+		"actions": [
+			["atk", 6],
+			["injured",
+				["for_each_x_add_y", "damage_dealt_to_hp_by_atk", "qi"]]
+		]
 	},
 	"211021": {
 		"name": "Diligent Sword",
-		"actions": [["for_each_x_add_c_pct_y", "cultivation", 20, "bonus_atk_amt"], ["atk", 6]]
+		"actions": [
+			["for_each_x_add_c_pct_y", "cultivation", 20, "bonus_atk_amt"],
+			["atk", 6]
+		]
 	},
 	"211022": {
-		"actions": [["for_each_x_add_c_pct_y", "cultivation", 25, "bonus_atk_amt"], ["atk", 6]]
+		"actions": [
+			["for_each_x_add_c_pct_y", "cultivation", 25, "bonus_atk_amt"],
+			["atk", 6]
+		]
 	},
 	"211023": {
-		"actions": [["for_each_x_add_c_pct_y", "cultivation", 33.333334, "bonus_atk_amt"], ["atk", 6]]
+		"actions": [
+			["for_each_x_add_c_pct_y", "cultivation", 33.333334, "bonus_atk_amt"],
+			["atk", 6]
+		]
 	},
 	"212011": {
 		"name": "Cloud Sword - Dawn",
-		"actions": [["def", 4], ["cloud_hit", ["rep", 3, ["atk", 2]]]]
+		"actions": [
+			["def", 4],
+			["cloud_hit",
+				["rep", 3, ["atk", 2]]]
+		]
 	},
 	"212012": {
-		"actions": [["def", 6], ["cloud_hit", ["rep", 3, ["atk", 3]]]]
+		"actions": [
+			["def", 6],
+			["cloud_hit",
+				["rep", 3, ["atk", 3]]]
+		]
 	},
 	"212013": {
-		"actions": [["def", 8], ["cloud_hit", ["rep", 3, ["atk", 4]]]]
+		"actions": [
+			["def", 8],
+			["cloud_hit",
+				["rep", 3, ["atk", 4]]]
+		]
 	},
 	"212021": {
 		"name": "Giant Ape Spirit Sword",
 		"qi_cost": 2,
 		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
-		"actions": [["atk", 8], ["add_c_of_x", 2, "increase_atk"]]
+		"actions": [
+			["atk", 8],
+			["add_c_of_x", 2, "increase_atk"]
+		]
 	},
 	"212022": {
-		"actions": [["atk", 8], ["add_c_of_x", 3, "increase_atk"]]
+		"actions": [
+			["atk", 8],
+			["add_c_of_x", 3, "increase_atk"]
+		]
 	},
 	"212023": {
-		"actions": [["atk", 8], ["add_c_of_x", 4, "increase_atk"]]
+		"actions": [
+			["atk", 8],
+			["add_c_of_x", 4, "increase_atk"]
+		]
 	},
 	"213011": {
 		"name": "Unrestrained Sword - Dragon Coiled",
-		"actions": [["for_each_x_add_c_y", "unrestrained_sword_count", 6, "bonus_def_amt"], ["def", 6]]
+		"actions": [
+			["for_each_x_add_c_y", "unrestrained_sword_count", 6, "bonus_def_amt"],
+			["def", 6]
+		]
 	},
 	"213012": {
-		"actions": [["for_each_x_add_c_y", "unrestrained_sword_count", 8, "bonus_def_amt"], ["def", 8]]
+		"actions": [
+			["for_each_x_add_c_y", "unrestrained_sword_count", 8, "bonus_def_amt"],
+			["def", 8]
+		]
 	},
 	"213013": {
-		"actions": [["for_each_x_add_c_y", "unrestrained_sword_count", 10, "bonus_def_amt"], ["def", 10]]
+		"actions": [
+			["for_each_x_add_c_y", "unrestrained_sword_count", 10, "bonus_def_amt"],
+			["def", 10]
+		]
 	},
 	"213021": {
 		"name": "One Heart One Sword",
-		"actions": [["add_c_of_x", 3, "bonus_sword_intent_multiplier"], ["ignore_weaken"], ["atk", 6]]
+		"actions": [
+			["add_c_of_x", 3, "bonus_sword_intent_multiplier"],
+			["ignore_weaken"],
+			["atk", 6]
+		]
 	},
 	"213022": {
-		"actions": [["add_c_of_x", 4, "bonus_sword_intent_multiplier"], ["ignore_weaken"], ["atk", 6]]
+		"actions": [
+			["add_c_of_x", 4, "bonus_sword_intent_multiplier"],
+			["ignore_weaken"],
+			["atk", 6]
+		]
 	},
 	"213023": {
-		"actions": [["add_c_of_x", 5, "bonus_sword_intent_multiplier"], ["ignore_weaken"], ["atk", 6]]
+		"actions": [
+			["add_c_of_x", 5, "bonus_sword_intent_multiplier"],
+			["ignore_weaken"],
+			["atk", 6]
+		]
 	},
 	"213031": {
 		"name": "Synergy Sword Formation",
@@ -5184,93 +5721,189 @@
 	},
 	"311011": {
 		"name": "Earth Spirit Elixir",
-		"actions": [["def", 11], ["consumption"]]
+		"actions": [
+			["def", 11],
+			["consumption"]
+		]
 	},
 	"311012": {
-		"actions": [["def", 16], ["consumption"]]
+		"actions": [
+			["def", 16],
+			["consumption"]
+		]
 	},
 	"311013": {
-		"actions": [["def", 21], ["consumption"]]
+		"actions": [
+			["def", 21],
+			["consumption"]
+		]
 	},
 	"311021": {
 		"name": "Fundamental Elixir",
-		"actions": [["qi", 2], ["def", 3], ["consumption"]]
+		"actions": [
+			["qi", 2],
+			["def", 3],
+			["consumption"]
+		]
 	},
 	"311022": {
-		"actions": [["qi", 3], ["def", 5], ["consumption"]]
+		"actions": [
+			["qi", 3],
+			["def", 5],
+			["consumption"]
+		]
 	},
 	"311023": {
-		"actions": [["qi", 4], ["def", 7], ["consumption"]]
+		"actions": [
+			["qi", 4],
+			["def", 7],
+			["consumption"]
+		]
 	},
 	"311031": {
 		"name": "Small Recover Elixir",
-		"actions": [["heal", 8], ["consumption"]]
+		"actions": [
+			["heal", 8],
+			["consumption"]
+		]
 	},
 	"311032": {
-		"actions": [["heal", 12], ["consumption"]]
+		"actions": [
+			["heal", 12],
+			["consumption"]
+		]
 	},
 	"311033": {
-		"actions": [["heal", 16], ["consumption"]]
+		"actions": [
+			["heal", 16],
+			["consumption"]
+		]
 	},
 	"312011": {
 		"name": "Cloud Elixir",
-		"actions": [["qi", 2], ["gain_ignore_def", 2], ["consumption"]]
+		"actions": [
+			["qi", 2],
+			["gain_ignore_def", 2],
+			["consumption"]
+		]
 	},
 	"312012": {
-		"actions": [["qi", 3], ["gain_ignore_def", 3], ["consumption"]]
+		"actions": [
+			["qi", 3],
+			["gain_ignore_def", 3],
+			["consumption"]
+		]
 	},
 	"312013": {
-		"actions": [["qi", 4], ["gain_ignore_def", 4], ["consumption"]]
+		"actions": [
+			["qi", 4],
+			["gain_ignore_def", 4],
+			["consumption"]
+		]
 	},
 	"312021": {
 		"name": "Exorcism Elixir",
-		"actions": [["def", 8], ["reduce_random_debuff_by_c_n_times", 3, 2], ["consumption"]]
+		"actions": [
+			["def", 8],
+			["reduce_random_debuff_by_c_n_times", 3, 2],
+			["consumption"]
+		]
 	},
 	"312022": {
-		"actions": [["def", 12], ["reduce_random_debuff_by_c_n_times", 3, 3], ["consumption"]]
+		"actions": [
+			["def", 12],
+			["reduce_random_debuff_by_c_n_times", 3, 3],
+			["consumption"]
+		]
 	},
 	"312023": {
-		"actions": [["def", 16], ["reduce_random_debuff_by_c_n_times", 3, 4], ["consumption"]]
+		"actions": [
+			["def", 16],
+			["reduce_random_debuff_by_c_n_times", 3, 4],
+			["consumption"]
+		]
 	},
 	"313011": {
 		"name": "Healing Elixir",
-		"actions": [["heal", 7], ["for_each_x_add_c_y", "qi", 2, "hp"], ["consumption"]]
+		"actions": [
+			["heal", 7],
+			["for_each_x_add_c_y", "qi", 2, "hp"],
+			["consumption"]
+		]
 	},
 	"313012": {
-		"actions": [["heal", 12], ["for_each_x_add_c_y", "qi", 2, "hp"], ["consumption"]]
+		"actions": [
+			["heal", 12],
+			["for_each_x_add_c_y", "qi", 2, "hp"],
+			["consumption"]
+		]
 	},
 	"313013": {
-		"actions": [["heal", 17], ["for_each_x_add_c_y", "qi", 2, "hp"], ["consumption"]]
+		"actions": [
+			["heal", 17],
+			["for_each_x_add_c_y", "qi", 2, "hp"],
+			["consumption"]
+		]
 	},
 	"313021": {
 		"name": "Divine Power Elixir",
-		"actions": [["add_c_of_x", 1, "increase_atk"], ["consumption"]]
+		"actions": [
+			["add_c_of_x", 1, "increase_atk"],
+			["consumption"]
+		]
 	},
 	"313022": {
-		"actions": [["add_c_of_x", 2, "increase_atk"], ["consumption"]]
+		"actions": [
+			["add_c_of_x", 2, "increase_atk"],
+			["consumption"]
+		]
 	},
 	"313023": {
-		"actions": [["add_c_of_x", 3, "increase_atk"], ["consumption"]]
+		"actions": [
+			["add_c_of_x", 3, "increase_atk"],
+			["consumption"]
+		]
 	},
 	"314011": {
 		"name": "Great Recover Elixir",
-		"actions": [["add_c_of_x", 13, "max_hp"], ["heal", 13], ["consumption"]]
+		"actions": [
+			["add_c_of_x", 13, "max_hp"],
+			["heal", 13],
+			["consumption"]
+		]
 	},
 	"314012": {
-		"actions": [["add_c_of_x", 19, "max_hp"], ["heal", 19], ["consumption"]]
+		"actions": [
+			["add_c_of_x", 19, "max_hp"],
+			["heal", 19],
+			["consumption"]
+		]
 	},
 	"314013": {
-		"actions": [["add_c_of_x", 25, "max_hp"], ["heal", 25], ["consumption"]]
+		"actions": [
+			["add_c_of_x", 25, "max_hp"],
+			["heal", 25],
+			["consumption"]
+		]
 	},
 	"314021": {
 		"name": "Spiritage Elixir",
-		"actions": [["qi", 4], ["consumption"]]
+		"actions": [
+			["qi", 4],
+			["consumption"]
+		]
 	},
 	"314022": {
-		"actions": [["qi", 6], ["consumption"]]
+		"actions": [
+			["qi", 6],
+			["consumption"]
+		]
 	},
 	"314023": {
-		"actions": [["qi", 8], ["consumption"]]
+		"actions": [
+			["qi", 8],
+			["consumption"]
+		]
 	},
 	"315011": {
 		"name": "Ice Spirit Guard Elixir",
@@ -6136,19 +6769,19 @@
 		"name": "Flying Brush",
 		"actions": [
 			["def", 6],
-			["add_c_of_x", 1, "flying_brush_stacks"]
+			["add_c_of_x", 1, "later_flying_brush_stacks"]
 		]
 	},
 	"345012": {
 		"actions": [
 			["def", 12],
-			["add_c_of_x", 1, "flying_brush_stacks"]
+			["add_c_of_x", 1, "later_flying_brush_stacks"]
 		]
 	},
 	"345013": {
 		"actions": [
 			["def", 18],
-			["add_c_of_x", 1, "flying_brush_stacks"]
+			["add_c_of_x", 1, "later_flying_brush_stacks"]
 		]
 	},
 	"345021": {
@@ -8510,15 +9143,15 @@
 	"652012": {
 		"actions": [
 			["physique", 3],
-			["for_each_x_convert_c_pct_debuff_to_y", "physique", 6.666667, "increase_atk"],
-			["rep", 3, ["atk", 3]]
+			["for_each_x_convert_c_pct_debuff_to_y", "physique", 5, "increase_atk"],
+			["rep", 4, ["atk", 3]]
 		]
 	},
 	"652013": {
 		"actions": [
 			["physique", 4],
-			["for_each_x_convert_c_pct_debuff_to_y", "physique", 10, "increase_atk"],
-			["rep", 3, ["atk", 3]]
+			["for_each_x_convert_c_pct_debuff_to_y", "physique", 5, "increase_atk"],
+			["rep", 5, ["atk", 3]]
 		]
 	},
 	"714011": {
@@ -8829,6 +9462,720 @@
 		"opening": [
 			["activate_metal_spirit"],
 			["activate_water_spirit"]
+		]
+	},
+	"801011": {
+		"name": "Mushroom Zongzi",
+		"is_salty": true,
+		"actions": [
+			["heal", 6],
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["heal", 3]]]
+		]
+	},
+	"801012": {
+		"actions": [
+			["heal", 9],
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["heal", 3]]]
+		]
+	},
+	"801013": {
+		"actions": [
+			["heal", 12],
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["heal", 3]]]
+		]
+	},
+	"801021": {
+		"name": "Honey Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["heal", 3],
+			["add_c_of_x", 1, "regen"]
+		]
+	},
+	"801022": {
+		"actions": [
+			["heal", 6],
+			["add_c_of_x", 1, "regen"]
+		]
+	},
+	"801023": {
+		"actions": [
+			["heal", 9],
+			["add_c_of_x", 1, "regen"]
+		]
+	},
+	"801031": {
+		"name": "Salted Meat Zongzi",
+		"is_salty": true,
+		"actions": [
+			["qi", 1],
+			["heal", 6],
+			["add_c_of_x", 1, "internal_injury"]
+		]
+	},
+	"801032": {
+		"actions": [
+			["qi", 1],
+			["heal", 9],
+			["add_c_of_x", 1, "internal_injury"]
+		]
+	},
+	"801033": {
+		"actions": [
+			["qi", 1],
+			["heal", 12],
+			["add_c_of_x", 1, "internal_injury"]
+		]
+	},
+	"801041": {
+		"name": "Red Bean Zongzi",
+		"is_sweet": true,
+		"qi_cost": 1,
+		"actions": [
+			["heal", 10]
+		]
+	},
+	"801042": {
+		"actions": [
+			["heal", 13]
+		]
+	},
+	"801043": {
+		"actions": [
+			["heal", 16]
+		]
+	},
+	"801051": {
+		"name": "Jujube Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["qi", 1],
+			["heal", 4]
+		]
+	},
+	"801052": {
+		"actions": [
+			["qi", 1],
+			["heal", 7]
+		]
+	},
+	"801053": {
+		"actions": [
+			["qi", 1],
+			["heal", 10]
+		]
+	},
+	"801061": {
+		"name": "Fresh Meat Zongzi",
+		"is_salty": true,
+		"actions": [
+			["heal", 6],
+			["reduce_random_debuff_by_c_n_times", 1, 1]
+		]
+	},
+	"801062": {
+		"actions": [
+			["heal", 9],
+			["reduce_random_debuff_by_c_n_times", 1, 1]
+		]
+	},
+	"801063": {
+		"actions": [
+			["heal", 12],
+			["reduce_random_debuff_by_c_n_times", 1, 1]
+		]
+	},
+	"802011": {
+		"name": "Candied Jujube Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["qi", 2],
+			["for_each_x_add_y", "qi", "hp"]
+		]
+	},
+	"802012": {
+		"actions": [
+			["qi", 3],
+			["for_each_x_add_y", "qi", "hp"]
+		]
+	},
+	"802013": {
+		"actions": [
+			["qi", 4],
+			["for_each_x_add_y", "qi", "hp"]
+		]
+	},
+	"802021": {
+		"name": "Spicy Zongzi",
+		"is_salty": true,
+		"actions": [
+			["add_c_of_x", 1, "internal_injury"],
+			["rep", 2, ["heal", 5]],
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["heal", 4]]]
+		]
+	},
+	"802022": {
+		"actions": [
+			["add_c_of_x", 1, "internal_injury"],
+			["rep", 2, ["heal", 7]],
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["heal", 4]]]
+		]
+	},
+	"802023": {
+		"actions": [
+			["add_c_of_x", 1, "internal_injury"],
+			["rep", 2, ["heal", 9]],
+			["if_x_at_least_c_do", "qi", 1, [
+				["reduce_c_of_x", 1, "qi"],
+				["heal", 4]]]
+		]
+	},
+	"802031": {
+		"name": "Roasted Meat Zongzi",
+		"is_salty": true,
+		"actions": [
+			["add_c_of_x", 1, "appetite"],
+			["heal", 2]
+		]
+	},
+	"802032": {
+		"actions": [
+			["add_c_of_x", 1, "appetite"],
+			["heal", 6]
+		]
+	},
+	"802033": {
+		"actions": [
+			["add_c_of_x", 1, "appetite"],
+			["heal", 10]
+		]
+	},
+	"802041": {
+		"name": "Mung Bean Zongzi",
+		"is_sweet": true,
+		"qi_cost": 1,
+		"actions": [
+			["for_each_x_add_y", "sweet_zongzi_count", "bonus_heal_amt"],
+			["heal", 8]
+		]
+	},
+	"802042": {
+		"actions": [
+			["for_each_x_add_y", "sweet_zongzi_count", "bonus_heal_amt"],
+			["heal", 12]
+		]
+	},
+	"802043": {
+		"actions": [
+			["for_each_x_add_y", "sweet_zongzi_count", "bonus_heal_amt"],
+			["heal", 16]
+		]
+	},
+	"802051": {
+		"name": "Preserved Meat Zongzi",
+		"is_salty": true,
+		"actions": [
+			["qi", 1],
+			["heal", 3],
+			["add_c_of_x", 1, "hexproof"]
+		]
+	},
+	"802052": {
+		"actions": [
+			["qi", 1],
+			["heal", 6],
+			["add_c_of_x", 2, "hexproof"]
+		]
+	},
+	"802053": {
+		"actions": [
+			["qi", 1],
+			["heal", 9],
+			["add_c_of_x", 3, "hexproof"]
+		]
+	},
+	"802061": {
+		"name": "Jujube Paste Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["qi", 1],
+			["for_each_x_add_c_y", "qi", 2, "bonus_heal_amt"],
+			["heal", 6],
+			["add_c_of_x", 2, "indigestion"]
+		]
+	},
+	"802062": {
+		"actions": [
+			["qi", 1],
+			["for_each_x_add_c_y", "qi", 2, "bonus_heal_amt"],
+			["heal", 10],
+			["add_c_of_x", 2, "indigestion"]
+		]
+	},
+	"802063": {
+		"actions": [
+			["qi", 1],
+			["for_each_x_add_c_y", "qi", 2, "bonus_heal_amt"],
+			["heal", 14],
+			["add_c_of_x", 2, "indigestion"]
+		]
+	},
+	"803011": {
+		"name": "Alkaline Water Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["heal", 2],
+			["continuous"],
+			["add_c_of_x", 1, "alkaline_water_zongzi_stacks"]
+		]
+	},
+	"803012": {
+		"actions": [
+			["heal", 6],
+			["continuous"],
+			["add_c_of_x", 1, "alkaline_water_zongzi_stacks"]
+		]
+	},
+	"803013": {
+		"actions": [
+			["heal", 10],
+			["continuous"],
+			["add_c_of_x", 1, "alkaline_water_zongzi_stacks"]
+		]
+	},
+	"803021": {
+		"name": "Lotus Seeds Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["for_each_x_add_y", "qi", "bonus_heal_amt"],
+			["for_each_x_add_y", "internal_injury", "bonus_heal_amt"],
+			["for_each_x_add_y", "regen", "bonus_heal_amt"],
+			["for_each_x_add_y", "appetite", "bonus_heal_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_heal_amt"],
+			["for_each_x_add_c_y", "bonus_heal_amt", 1, "bonus_heal_amt"],
+			["heal", 4]
+		]
+	},
+	"803022": {
+		"actions": [
+			["for_each_x_add_y", "qi", "bonus_heal_amt"],
+			["for_each_x_add_y", "internal_injury", "bonus_heal_amt"],
+			["for_each_x_add_y", "regen", "bonus_heal_amt"],
+			["for_each_x_add_y", "appetite", "bonus_heal_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_heal_amt"],
+			["for_each_x_add_c_y", "bonus_heal_amt", 1, "bonus_heal_amt"],
+			["heal", 8]
+		]
+	},
+	"803023": {
+		"actions": [
+			["for_each_x_add_y", "qi", "bonus_heal_amt"],
+			["for_each_x_add_y", "internal_injury", "bonus_heal_amt"],
+			["for_each_x_add_y", "regen", "bonus_heal_amt"],
+			["for_each_x_add_y", "appetite", "bonus_heal_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_heal_amt"],
+			["for_each_x_add_c_y", "bonus_heal_amt", 2, "bonus_heal_amt"],
+			["heal", 8]
+		]
+	},
+	"803031": {
+		"name": "Bean Paste Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["for_each_x_add_y", "internal_injury", "bonus_heal_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_heal_amt"],
+			["for_each_x_reduce_c_pct_y", "internal_injury", 100, "internal_injury"],
+			["for_each_x_reduce_c_pct_y", "indigestion", 100, "indigestion"],
+			["for_each_x_add_c_y", "bonus_heal_amt", 1, "bonus_heal_amt"],
+			["heal", 7]
+		]
+	},
+	"803032": {
+		"actions": [
+			["for_each_x_add_y", "internal_injury", "bonus_heal_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_heal_amt"],
+			["for_each_x_reduce_c_pct_y", "internal_injury", 100, "internal_injury"],
+			["for_each_x_reduce_c_pct_y", "indigestion", 100, "indigestion"],
+			["for_each_x_add_c_y", "bonus_heal_amt", 2, "bonus_heal_amt"],
+			["heal", 7]
+		]
+	},
+	"803033": {
+		"actions": [
+			["for_each_x_add_y", "internal_injury", "bonus_heal_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_heal_amt"],
+			["for_each_x_reduce_c_pct_y", "internal_injury", 100, "internal_injury"],
+			["for_each_x_reduce_c_pct_y", "indigestion", 100, "indigestion"],
+			["for_each_x_add_c_y", "bonus_heal_amt", 3, "bonus_heal_amt"],
+			["heal", 7]
+		]
+	},
+	"803041": {
+		"name": "Sour Bamboo Shoots Zongzi",
+		"is_salty": true,
+		"actions": [
+			["heal", 2],
+			["add_c_of_x", 2, "internal_injury"],
+			["chase"]
+		]
+	},
+	"803042": {
+		"actions": [
+			["heal", 6],
+			["add_c_of_x", 2, "internal_injury"],
+			["chase"]
+		]
+	},
+	"803043": {
+		"actions": [
+			["heal", 10],
+			["add_c_of_x", 2, "internal_injury"],
+			["chase"]
+		]
+	},
+	"803051": {
+		"name": "Chestnut Zongzi",
+		"is_salty": true,
+		"actions": [
+			["if_x_at_least_c_do", "qi", 1,
+				["reduce_c_of_x", 1, "qi"],
+				["for_each_x_add_y", "internal_injury", "bonus_def_amt"],
+				["for_each_x_add_y", "indigestion", "bonus_def_amt"],
+				["if_x_at_least_c_do", "bonus_def_amt", 1,
+					["reduce_random_debuff_by_c_n_times", 1, 1],
+					["add_c_of_x", 1, "appetite"]]],
+			["rep", 3, ["heal", 3]]
+		]
+	},
+	"803052": {
+		"actions": [
+			["if_x_at_least_c_do", "qi", 1, 
+				["for_each_x_add_y", "internal_injury", "bonus_def_amt"],
+				["for_each_x_add_y", "indigestion", "bonus_def_amt"],
+				["if_x_at_least_c_do", "bonus_def_amt", 1,
+					["reduce_random_debuff_by_c_n_times", 1, 1],
+					["add_c_of_x", 1, "appetite"]]],
+			["rep", 3, ["heal", 4]]
+		]
+	},
+	"803053": {
+		"actions": [
+			["if_x_at_least_c_do", "qi", 1, 
+				["for_each_x_add_y", "internal_injury", "bonus_def_amt"],
+				["for_each_x_add_y", "indigestion", "bonus_def_amt"],
+				["if_x_at_least_c_do", "bonus_def_amt", 1,
+					["reduce_random_debuff_by_c_n_times", 1, 1],
+					["add_c_of_x", 1, "appetite"]]],
+			["rep", 3, ["heal", 5]]
+		]
+	},
+	"803061": {
+		"name": "Pungent Zongzi",
+		"is_salty": true,
+		"actions": [
+			["qi", 1],
+			["heal", 6],
+			["add_c_of_x", 1, "appetite"],
+			["add_c_of_x", 1, "internal_injury"]
+		]
+	},
+	"803062": {
+		"actions": [
+			["qi", 1],
+			["heal", 9],
+			["add_c_of_x", 2, "appetite"],
+			["add_c_of_x", 2, "internal_injury"]
+		]
+	},
+	"803063": {
+		"actions": [
+			["qi", 1],
+			["heal", 12],
+			["add_c_of_x", 3, "appetite"],
+			["add_c_of_x", 3, "internal_injury"]
+		]
+	},
+	"804011": {
+		"name": "Preserved Fruit Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["for_each_x_add_c_y", "sweet_zongzi_count", 2, "bonus_heal_amt"],
+			["for_each_x_add_c_y", "sweet_zongzi_count", 1, "qi"],
+			["heal", 2]
+		]
+	},
+	"804012": {
+		"actions": [
+			["for_each_x_add_c_y", "sweet_zongzi_count", 3, "bonus_heal_amt"],
+			["for_each_x_add_c_y", "sweet_zongzi_count", 1, "qi"],
+			["heal", 3]
+		]
+	},
+	"804013": {
+		"actions": [
+			["for_each_x_add_c_y", "sweet_zongzi_count", 3, "bonus_heal_amt"],
+			["for_each_x_add_c_y", "sweet_zongzi_count", 2, "qi"],
+			["heal", 4]
+		]
+	},
+	"804021": {
+		"name": "Crystal Ice Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["qi", 2],
+			["add_c_of_x", 1, "indigestion"],
+			["chase"]
+		]
+	},
+	"804022": {
+		"actions": [
+			["qi", 4],
+			["add_c_of_x", 2, "indigestion"],
+			["chase"]
+		]
+	},
+	"804023": {
+		"actions": [
+			["qi", 6],
+			["add_c_of_x", 3, "indigestion"],
+			["chase"]
+		]
+	},
+	"804031": {
+		"name": "Fresh Fruit Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["heal", 8],
+			["add_c_of_x", 1, "fresh_fruit_zongzi_stacks"]
+		]
+	},
+	"804032": {
+		"actions": [
+			["heal", 11],
+			["add_c_of_x", 2, "fresh_fruit_zongzi_stacks"]
+		]
+	},
+	"804033": {
+		"actions": [
+			["heal", 14],
+			["add_c_of_x", 3, "fresh_fruit_zongzi_stacks"]
+		]
+	},
+	"804041": {
+		"name": "Salted Egg Yolk Zongzi",
+		"is_salty": true,
+		"actions": [
+			["heal", 6],
+			["add_c_of_x", 2, "salted_egg_yolk_zongzi_stacks"]
+		]
+	},
+	"804042": {
+		"actions": [
+			["heal", 8],
+			["add_c_of_x", 3, "salted_egg_yolk_zongzi_stacks"]
+		]
+	},
+	"804043": {
+		"actions": [
+			["heal", 10],
+			["add_c_of_x", 4, "salted_egg_yolk_zongzi_stacks"]
+		]
+	},
+	"804051": {
+		"name": "Seafood Zongzi",
+		"is_salty": true,
+		"decrease_qi_cost_by_x": "food",
+		"qi_cost": 4,
+		"actions": [
+			["rep", 4, ["heal", 5]]
+		]
+	},
+	"804052": {
+		"actions": [
+			["rep", 4, ["heal", 6]]
+		]
+	},
+	"804053": {
+		"actions": [
+			["rep", 5, ["heal", 6]]
+		]
+	},
+	"804061": {
+		"name": "Pickled Mustard Zongzi",
+		"is_salty": true,
+		"actions": [
+			["heal", 2],
+			["add_c_of_x", 2, "appetite"],
+			["add_c_of_x", 1, "skip_next_card_stacks"]
+		]
+	},
+	"804062": {
+		"actions": [
+			["heal", 3],
+			["add_c_of_x", 3, "appetite"],
+			["add_c_of_x", 2, "skip_next_card_stacks"]
+		]
+	},
+	"804063": {
+		"actions": [
+			["heal", 4],
+			["add_c_of_x", 4, "appetite"],
+			["add_c_of_x", 3, "skip_next_card_stacks"]
+		]
+	},
+	"805011": {
+		"name": "Mixed Grain Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["qi", 2],
+			["continuous"],
+			["add_c_of_x", 2, "mixed_grain_zongzi_stacks"]
+		]
+	},
+	"805012": {
+		"actions": [
+			["qi", 3],
+			["continuous"],
+			["add_c_of_x", 4, "mixed_grain_zongzi_stacks"]
+		]
+	},
+	"805013": {
+		"actions": [
+			["qi", 4],
+			["continuous"],
+			["add_c_of_x", 6, "mixed_grain_zongzi_stacks"]
+		]
+	},
+	"805021": {
+		"name": "Spirit Zongzi",
+		"is_sweet": true,
+		"actions": [
+			["exhaust_x_to_add_c_y", "qi", 5, "bonus_heal_amt"],
+			["heal", 5]
+		]
+	},
+	"805022": {
+		"actions": [
+			["exhaust_x_to_add_c_y", "qi", 6, "bonus_heal_amt"],
+			["heal", 6]
+		]
+	},
+	"805023": {
+		"actions": [
+			["exhaust_x_to_add_c_y", "qi", 7, "bonus_heal_amt"],
+			["heal", 7]
+		]
+	},
+	"805031": {
+		"name": "Water Combined Zongzi",
+		"qi_cost": 1,
+		"is_sweet": true,
+		"actions": [
+			["add_c_of_x", 2, "regen"],
+			["for_each_x_add_c_y", "regen", 5, "bonus_heal_amt"],
+			["for_each_x_add_c_y", "appetite", 5, "bonus_heal_amt"],
+			["heal", 5]
+		]
+	},
+	"805032": {
+		"actions": [
+			["add_c_of_x", 3, "regen"],
+			["for_each_x_add_c_y", "regen", 6, "bonus_heal_amt"],
+			["for_each_x_add_c_y", "appetite", 6, "bonus_heal_amt"],
+			["heal", 6]
+		]
+	},
+	"805033": {
+		"actions": [
+			["add_c_of_x", 4, "regen"],
+			["for_each_x_add_c_y", "regen", 7, "bonus_heal_amt"],
+			["for_each_x_add_c_y", "appetite", 7, "bonus_heal_amt"],
+			["heal", 7]
+		]
+	},
+	"805041": {
+		"name": "Assorted Meat Zongzi",
+		"is_salty": true,
+		"actions": [
+			["for_each_x_add_y", "internal_injury", "bonus_heal_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_heal_amt"],
+			["for_each_x_add_y", "appetite", "bonus_heal_amt"],
+			["rep", 5, ["heal", 2]]
+		]
+	},
+	"805042": {
+		"actions": [
+			["for_each_x_add_y", "internal_injury", "bonus_heal_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_heal_amt"],
+			["for_each_x_add_y", "appetite", "bonus_heal_amt"],
+			["rep", 6, ["heal", 2]]
+		]
+	},
+	"805043": {
+		"actions": [
+			["for_each_x_add_y", "internal_injury", "bonus_heal_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_heal_amt"],
+			["for_each_x_add_y", "appetite", "bonus_heal_amt"],
+			["rep", 7, ["heal", 2]]
+		]
+	},
+	"805051": {
+		"name": "Double Plum Zongzi",
+		"is_salty": true,
+		"actions": [
+			["heal", 2],
+			["add_c_of_x", 1, "strike_twice_stacks"]
+		]
+	},
+	"805052": {
+		"actions": [
+			["heal", 8],
+			["add_c_of_x", 1, "strike_twice_stacks"]
+		]
+	},
+	"805053": {
+		"actions": [
+			["heal", 14],
+			["add_c_of_x", 1, "strike_twice_stacks"]
+		]
+	},
+	"805061": {
+		"name": "Shura Zongzi",
+		"is_salty": true,
+		"actions": [
+			["add_c_of_x", 2, "internal_injury"],
+			["for_each_x_add_y", "internal_injury", "bonus_def_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_def_amt"],
+			["for_each_x_add_y", "bonus_def_amt", "qi"],
+			["for_each_x_add_c_y", "bonus_def_amt", 3, "hp"]
+		]
+	},
+	"805062": {
+		"actions": [
+			["add_c_of_x", 3, "internal_injury"],
+			["for_each_x_add_y", "internal_injury", "bonus_def_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_def_amt"],
+			["for_each_x_add_y", "bonus_def_amt", "qi"],
+			["for_each_x_add_c_y", "bonus_def_amt", 4, "hp"]
+		]
+	},
+	"805063": {
+		"actions": [
+			["add_c_of_x", 4, "internal_injury"],
+			["for_each_x_add_y", "internal_injury", "bonus_def_amt"],
+			["for_each_x_add_y", "indigestion", "bonus_def_amt"],
+			["for_each_x_add_y", "bonus_def_amt", "qi"],
+			["for_each_x_add_c_y", "bonus_def_amt", 5, "hp"]
 		]
 	}
 }
