@@ -3,29 +3,29 @@
 } = require("./gamestate_nolog.js"));
 
 function next_permutation(arr) {
-    let i = arr.length - 1;
-    while (i > 0 && arr[i-1] >= arr[i]) {
-        i -= 1;
-    }
-    if (i === 0) {
-        return false;
-    }
-    let j = arr.length - 1;
-    while (arr[j] <= arr[i-1]) {
-        j -= 1;
-    }
-    let temp = arr[i-1];
-    arr[i-1] = arr[j];
+  let i = arr.length - 1;
+  while (i > 0 && arr[i-1] >= arr[i]) {
+    i -= 1;
+  }
+  if (i === 0) {
+    return false;
+  }
+  let j = arr.length - 1;
+  while (arr[j] <= arr[i-1]) {
+    j -= 1;
+  }
+  let temp = arr[i-1];
+  arr[i-1] = arr[j];
+  arr[j] = temp;
+  j = arr.length - 1;
+  while (i < j) {
+    temp = arr[i];
+    arr[i] = arr[j];
     arr[j] = temp;
-    j = arr.length - 1;
-    while (i < j) {
-        temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-        i += 1;
-        j -= 1;
-    }
-    return true;
+    i += 1;
+    j -= 1;
+  }
+  return true;
 }
 
 function simulateGame(batch, job, aFirst) {
@@ -36,8 +36,8 @@ function simulateGame(batch, job, aFirst) {
   for (let i = 0; i < 2; i++) {
     Object.assign(game.players[i], players[i]);
   }
-  game.players[0].cards = aFirst ? job.CARDS.a : job.CARDS.b;
-  game.players[1].cards = aFirst ? job.CARDS.b : job.CARDS.a;
+  game.players[0].cards = aFirst ? job.CARDS_A : job.CARDS_B;
+  game.players[1].cards = aFirst ? job.CARDS_B : job.CARDS_A;
 
   game.sim_n_turns(64);
 
@@ -73,11 +73,11 @@ onmessage = (event) => {
   if (batch.OPTIONS.permute_a) {
     do {
       results.push(simulateGame(batch, job, aFirst));
-    } while (next_permutation(job.CARDS.a));
+    } while (next_permutation(job.CARDS_A));
   } else if (batch.OPTIONS.permute_b) {
     do {
       results.push(simulateGame(batch, job, aFirst));
-    } while (next_permutation(job.CARDS.b));
+    } while (next_permutation(job.CARDS_B));
   } else {
     results.push(simulateGame(batch, job, aFirst));
   }

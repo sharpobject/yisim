@@ -1,20 +1,36 @@
 import os from 'os';
 import fs from 'fs';
 import path from 'path';
-import { Database } from 'bun:sqlite';
+import db from './db_sqlite';
 
 const numSimWorkers = (os.cpus().length - 1) || 1;
 
-const dbPath = path.join(__dirname, 'db', 'yisim.sqlite');
-const newDirPath = path.join(__dirname, 'db', 'new');
-
-let db = null;
 const workers = [];
-const messages_outstanding = [];
-
-fs.mkdirSync(newDirPath, { recursive: true });
+const messages_outstanding = []; // currently always 0 or 1
 
 const writer = new Worker('./writer.js');
+
+const dispatchJobs = (batches) => {
+  const jobIds = [];
+  let i = 0;
+  for (const { batch, jobs } of batches) {
+    for (const j of jobs) {
+      while (i < numSimWorkers && messages_outstanding[i] !== 0) {
+        i++;
+      }
+      if (i === numSimWorkers) {
+        return jobIds;
+      }
+      messages_outstanding[i]++;
+      jobIds.push(j.ID);
+      workers[i].postMessage({
+        batch,
+        job: { ID: j.ID, CARDS_A: JSON.parse(j.CARDS_A), CARDS_B: JSON.parse(j.CARDS_B) }
+      });
+    }
+  }
+  return jobIds;
+};
 
 const main = () => {
   try {
@@ -24,56 +40,19 @@ const main = () => {
         idleWorkers++;
       }
     }
+
     if (idleWorkers === 0) {
       setTimeout(main, 100); // no idle workers
     } else {
-      const jobs = db.query(`SELECT ID, BATCH_ID, CARDS FROM JOB WHERE JOB.DISPATCHED IS NULL LIMIT ?1`).all(idleWorkers);
-      if (jobs.length) {
-        const batchIds = [];
-        const batchDict = {};
-        for (let j of jobs) {
-          if (!batchDict[j.BATCH_ID]) {
-            batchIds.push(j.BATCH_ID);
-            batchDict[j.BATCH_ID] = {
-              jobs: [j],
-            };
-          } else {
-            batchDict[j.BATCH_ID].jobs.push(j);
-          }
-        }
-        const batches = db.query(`SELECT ID, OPTIONS, PLAYER_A, PLAYER_B FROM BATCH WHERE ID IN (${batchIds.join(',')})`).all();
-        for (let b of batches) {
-          batchDict[b.ID].batch = {
-            ID: b.ID,
-            OPTIONS: JSON.parse(b.OPTIONS),
-            PLAYER_A: JSON.parse(b.PLAYER_A),
-            PLAYER_B: JSON.parse(b.PLAYER_B),
-          };
-        }
-        const dispatchedJobIds = [];
-        for (let i = 0; i < numSimWorkers; i++) {
-          if (messages_outstanding[i] === 0) {
-            messages_outstanding[i]++;
-            const b = batchDict[batchIds.at(-1)];
-            const j = b.jobs.pop();
-            dispatchedJobIds.push(j.ID);
-            workers[i].postMessage({
-              batch: b.batch,
-              job: { ID: j.ID, CARDS: JSON.parse(j.CARDS) }
-            });
-            if (!b.jobs.length) {
-              batchIds.pop();
-              if (!batchIds.length) {
-                break;
-              }
-            }
-          }
-        }
-        writer.postMessage({ command: 'dispatch', dispatchedJobIds: dispatchedJobIds }); // setTimeout after reply
+      const batches = Object.values(db.getUndispatched(idleWorkers));
+      if (batches.length) {
+        const jobIds = dispatchJobs(batches);
+        writer.postMessage({ command: 'dispatch', jobIds }); // setTimeout(main, 100) after reply
       } else {
         setTimeout(main, 1000); // no jobs
       }
     }
+
   } catch (error) {
     console.error('Error in main loop:', error);
     // Don't continue the main loop, but let the fs.watch (and merge) and workers continue until ctrl-C
@@ -83,14 +62,22 @@ const main = () => {
 writer.addEventListener('error', (event) => {
   console.error(`Error in writer worker:`, event.message);
 });
+
+let alreadyReceivedSIGINT = false;
+
 writer.addEventListener('message', (event) => {
   if (event.data === 'ready') {
-    db = new Database(dbPath);
+    db.connectForRead();
 
     // Handle SIGINT (Ctrl-C) gracefully?
     process.on('SIGINT', () => {
-      console.log('SIGINT signal received: closing database connection...');
-      writer.postMessage({ command: 'close' });
+      if (alreadyReceivedSIGINT) {
+        process.exit(0);
+      } else {
+        alreadyReceivedSIGINT = true;
+        console.log('\nSIGINT signal received: closing database connection...');
+        writer.postMessage({ command: 'close' }); // exit after reply
+      }
     });
 
     for (let i = 0; i < numSimWorkers; i++) {
@@ -112,8 +99,7 @@ writer.addEventListener('message', (event) => {
   } else if (event.data === 'dispatched') {
     setTimeout(main, 100); // jobs dispatched
   } else if (event.data === 'closed') {
-    db.close(false);
-    db.close(true);
+    db.close();
     process.exit(0);
   } else {
     console.error('Received unknown message from writer worker:');
@@ -122,30 +108,32 @@ writer.addEventListener('message', (event) => {
   }
 });
 
+fs.mkdirSync(db.DIR_NEW, { recursive: true });
+
 writer.postMessage({ command: 'init' });
 
 // Process existing files on startup
-fs.readdir(newDirPath, (err, files) => {
+fs.readdir(db.DIR_NEW, (err, files) => {
   if (err) {
-    console.error('Error reading new directory:', err);
+    console.error(`Error reading directory ${db.DIR_NEW}:`, err);
     return;
   }
-  files.forEach((file) => {
-    if (file.endsWith('.sqlite')) {
-      const newDbPath = path.join(newDirPath, file);
-      console.log(`Found existing file: ${newDbPath}`);
-      writer.postMessage({ command: 'merge', newDbPath: newDbPath });
+  for (const f of files) {
+    if (f.endsWith('.sqlite')) {
+      const newDbFile = path.join(db.DIR_NEW, f);
+      console.log(`Found existing file: ${newDbFile}`);
+      writer.postMessage({ command: 'merge', newDbFile });
     }
-  });
+  }
 });
 // Watch db/new for new files
-fs.watch(newDirPath, (eventType, filename) => {
+fs.watch(db.DIR_NEW, (eventType, filename) => {
   if (eventType === 'rename' && filename.endsWith('.sqlite')) {
-    const newDbPath = path.join(newDirPath, filename);
-    // Ensure the file exists (it might have been deleted already)
-    if (fs.existsSync(newDbPath)) {
-      console.log(`Found new file: ${newDbPath}`);
-      writer.postMessage({ command: 'merge', newDbPath: newDbPath });
+    const newDbFile = path.join(db.DIR_NEW, filename);
+    // Ensure the file exists (it might have been deleted already?)
+    if (fs.existsSync(newDbFile)) {
+      console.log(`Found new file: ${newDbFile}`);
+      writer.postMessage({ command: 'merge', newDbFile });
     }
   }
 });

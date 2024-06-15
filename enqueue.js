@@ -1,8 +1,7 @@
 import fs from 'fs';
-import path from 'path';
 import readline from 'readline';
-import { Database } from 'bun:sqlite';
 import { card_name_to_id_fuzzy, guess_character, swogi } from './gamestate_nolog.js';
+import db from './db_sqlite';
 
 // Check if a command-line argument is provided
 if (process.argv.length < 3) {
@@ -167,83 +166,18 @@ const getCombos = (character, options, permute) => {
 
 const combos = [getCombos(jsonData.a, jsonData, jsonData.permute_a), getCombos(jsonData.b, jsonData, jsonData.permute_b)];
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-
-function promptUser(message) {
-  return new Promise((resolve, reject) => {
-    rl.question(message, (answer) => {
-      rl.close();
-      resolve(answer.toLowerCase() === 'y');
-    });
-  });
-}
-
-(async function() {
-  if (combos[0].length * (jsonData.permute_a ? 40320 : 1) * combos[1].length * (jsonData.permute_b ? 40320 : 1) >= 100000000) {
-    const continueExecution = await promptUser(`Warning: ${combos[0].length} * ${jsonData.permute_a ? 40320 : 1} * ${combos[1].length} * ${jsonData.permute_b ? 40320 : 1} = ${(combos[0].length * (jsonData.permute_a ? 40320 : 1) * combos[1].length * (jsonData.permute_b ? 40320 : 1)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} jobs! Continue? [y/N] `);
-    if (!continueExecution) {
+if (combos[0].length * (jsonData.permute_a ? 40320 : 1) * combos[1].length * (jsonData.permute_b ? 40320 : 1) >= 100000000) {
+  const message = `Warning: ${combos[0].length} * ${jsonData.permute_a ? 40320 : 1} * ${combos[1].length} * ${jsonData.permute_b ? 40320 : 1} = ${(combos[0].length * (jsonData.permute_a ? 40320 : 1) * combos[1].length * (jsonData.permute_b ? 40320 : 1)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} jobs! Continue? [y/N] `;
+  const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+  rl.question(message, (answer) => {
+    rl.close();
+    if (answer[0].toLowerCase() === 'y') {
+      db.enqueueAndExit(jsonData, combos);
+    } else {
       console.log('Exiting...');
-      process.exit(0);
+      process.exit(1);
     }
-  }
-
-  // Specify the database file
-  const tmpFile = `${Date.now()}.sqlite`;
-  const tmpDirPath = path.join(__dirname, 'db', 'tmp');
-  const newDirPath = path.join(__dirname, 'db', 'new');
-  const tmpPath = path.join(__dirname, 'db', 'tmp', tmpFile);
-  const newPath = path.join(__dirname, 'db', 'new', tmpFile);
-
-  fs.mkdirSync(tmpDirPath, { recursive: true });
-  fs.mkdirSync(newDirPath, { recursive: true });
-
-  const db = new Database(tmpPath, { create: true });
-  db.exec('PRAGMA journal_mode = OFF;')
-
-  db.query(`CREATE TABLE BATCH (
-    ID INTEGER PRIMARY KEY AUTOINCREMENT,
-    OPTIONS TEXT NOT NULL,
-    PLAYER_A TEXT NOT NULL,
-    PLAYER_B TEXT NOT NULL
-  )`).run();
-  db.query(`CREATE TABLE IF NOT EXISTS JOB (
-    ID INTEGER PRIMARY KEY AUTOINCREMENT,
-    CARDS TEXT NOT NULL
-  )`).run();
-
-  const player_a = jsonData.a;
-  const player_b = jsonData.b;
-  delete jsonData.a;
-  delete jsonData.b;
-  delete player_a.cards;
-  delete player_b.cards;
-
-  db.query('INSERT INTO BATCH (OPTIONS, PLAYER_A, PLAYER_B) VALUES (json(?1), json(?2), json(?3))').run(JSON.stringify(jsonData), JSON.stringify(player_a), JSON.stringify(player_b));
-
-  const insertJob = db.query('INSERT INTO JOB (CARDS) VALUES (json(?1))');
-  for (let x of combos[0]) {
-    for (let y of combos[1]) {
-      insertJob.run(JSON.stringify({ a: x, b: y }));
-    }
-  }
-
-  db.close(false);
-  db.close(true);
-
-  fs.rename(
-    tmpPath,
-    newPath,
-    (err) => {
-      if (err) {
-        console.error('Error moving the database file', err);
-        process.exit();
-      } else {
-        console.log(`Database file moved to ${newPath}`);
-        process.exit();
-      }
-    },
-  );
-}());
+  });
+} else {
+  db.enqueueAndExit(jsonData, combos);
+}
