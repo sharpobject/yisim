@@ -6,10 +6,6 @@ export default function(dataString) {
     jsonData = JSON.parse(dataString);
   } else {
     jsonData = {
-      permute_a: false,
-      permute_b: false,
-      a_first: true,
-      limit_consumption: true,
       a: { physique: 0, max_physique: 0, cards: [] },
       b: { physique: 0, max_physique: 0, cards: [] },
     };
@@ -72,28 +68,27 @@ export default function(dataString) {
     console.error('Permuting both players not supported.');
     process.exit(1);
   }
+
   if (jsonData.players) {
     jsonData.a = jsonData.players[0];
     jsonData.b = jsonData.players[1];
     delete jsonData.players;
   }
+
   jsonData.a.max_hp = jsonData.a.hp + jsonData.a.physique;
   jsonData.b.max_hp = jsonData.b.hp + jsonData.b.physique;
-  // I really want this feature, but JSON doesn't support newlines
-  // if (typeof jsonData.a.cards === 'string') {
-  //   jsonData.a.cards = jsonData.a.cards.split(/\r\n|\r|\n/).filter((s) => s.length);
-  // }
-  // if (typeof jsonData.b.cards === 'string') {
-  //   jsonData.b.cards = jsonData.b.cards.split(/\r\n|\r|\n/).filter((s) => s.length);
-  // }
-  while (jsonData.a.cards.length < 8) {
+
+  const deck_slots = jsonData.deck_slots || 8;
+  while (jsonData.a.cards.length < deck_slots) {
     jsonData.a.cards.push('normal attack');
   }
-  while (jsonData.b.cards.length < 8) {
+  while (jsonData.b.cards.length < deck_slots) {
     jsonData.b.cards.push('normal attack');
   }
+
   jsonData.a.cards = jsonData.a.cards.map(card_name_to_id_fuzzy);
   jsonData.b.cards = jsonData.b.cards.map(card_name_to_id_fuzzy);
+
   if (!jsonData.a.character) {
     jsonData.a.character = guess_character(jsonData.a);
   }

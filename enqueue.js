@@ -33,14 +33,16 @@ function* k_combinations(arr, k) {
   }
 }
 
+const deck_slots = jsonData.deck_slots || 8;
+
 const getCombos = (character, options, permute) => {
   if (!permute) {
-    return [character.cards.slice(0, 8)];
+    return [character.cards.slice(0, deck_slots)];
   }
-  const limit_consumption = options.limit_consumption;
+  const limit_consumption = options.limit_consumption !== false;
   const combos = [];
   const tried_combos = {};
-  for (let combo of k_combinations(character.cards, 8)) {
+  for (let combo of k_combinations(character.cards, deck_slots)) {
     combo.sort();
     let combo_id = combo.join(',');
     if (tried_combos[combo_id]) {
@@ -68,8 +70,13 @@ const getCombos = (character, options, permute) => {
 
 const combos = [getCombos(jsonData.a, jsonData, jsonData.permute_a), getCombos(jsonData.b, jsonData, jsonData.permute_b)];
 
-if (combos[0].length * (jsonData.permute_a ? 40320 : 1) * combos[1].length * (jsonData.permute_b ? 40320 : 1) >= 100000000) {
-  const message = `Warning: ${combos[0].length} * ${jsonData.permute_a ? 40320 : 1} * ${combos[1].length} * ${jsonData.permute_b ? 40320 : 1} = ${(combos[0].length * (jsonData.permute_a ? 40320 : 1) * combos[1].length * (jsonData.permute_b ? 40320 : 1)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} jobs! Continue? [y/N] `;
+let factorial = 1;
+for (let i = 2; i <= deck_slots; i++) {
+  factorial *= i;
+}
+
+if (combos[0].length * (jsonData.permute_a ? factorial : 1) * combos[1].length * (jsonData.permute_b ? factorial : 1) >= 100000000) {
+  const message = `Warning: ${combos[0].length} * ${jsonData.permute_a ? factorial : 1} * ${combos[1].length} * ${jsonData.permute_b ? factorial : 1} = ${(combos[0].length * (jsonData.permute_a ? factorial : 1) * combos[1].length * (jsonData.permute_b ? factorial : 1)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} jobs! Continue? [y/N] `;
   const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
   rl.question(message, (answer) => {
     rl.close();

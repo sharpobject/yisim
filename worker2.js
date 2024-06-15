@@ -27,6 +27,7 @@ function next_permutation(arr) {
 }
 
 function simulateGame(batch, job, aFirst) {
+  const deck_slots = batch.OPTIONS.deck_slots || 8;
   const players = aFirst ? [batch.PLAYER_A, batch.PLAYER_B] : [batch.PLAYER_B, batch.PLAYER_A];
 
   const game = new GameState();
@@ -34,8 +35,8 @@ function simulateGame(batch, job, aFirst) {
   for (let i = 0; i < 2; i++) {
     Object.assign(game.players[i], players[i]);
   }
-  game.players[0].cards = (aFirst ? job.CARDS_A : job.CARDS_B).slice(0, 8);
-  game.players[1].cards = (aFirst ? job.CARDS_B : job.CARDS_A).slice(0, 8);
+  game.players[0].cards = (aFirst ? job.CARDS_A : job.CARDS_B).slice(0, deck_slots);
+  game.players[1].cards = (aFirst ? job.CARDS_B : job.CARDS_A).slice(0, deck_slots);
 
   game.sim_n_turns(64);
 
@@ -53,6 +54,12 @@ function formatResult(batch, job, aFirst, game) {
   const cardsA = game.players[aFirst ? 0 : 1].cards.map(Number);
   const cardsB = game.players[aFirst ? 1 : 0].cards.map(Number);
   const margin = calculateMargin(aFirst, game);
+  while (cardsA.length < 8) {
+    cardsA.push(null);
+  }
+  while (cardsB.length < 8) {
+    cardsB.push(null);
+  }
 
   return [
     batch.ID, job.ID,

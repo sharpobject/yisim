@@ -5,6 +5,7 @@
 comment: blah, blah # optional; text following # will be discarded, but converted json will have "comment":"blah, blah"
 permute: no # optional, values other than a or b will be ignored
 a first: yes # optional, default is yes, TODO implement speed comparison
+deck slots: 8 # optional, default is 8, which is also the maximum
 limit consumption: yes # optional, default is yes, limit two consumption cards
 
 a:
