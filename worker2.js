@@ -1,6 +1,4 @@
-({
-  GameState
-} = require("./gamestate_nolog.js"));
+import { GameState } from './gamestate_nolog';
 
 function next_permutation(arr) {
   let i = arr.length - 1;
@@ -36,8 +34,8 @@ function simulateGame(batch, job, aFirst) {
   for (let i = 0; i < 2; i++) {
     Object.assign(game.players[i], players[i]);
   }
-  game.players[0].cards = aFirst ? job.CARDS_A : job.CARDS_B;
-  game.players[1].cards = aFirst ? job.CARDS_B : job.CARDS_A;
+  game.players[0].cards = (aFirst ? job.CARDS_A : job.CARDS_B).slice(0, 8);
+  game.players[1].cards = (aFirst ? job.CARDS_B : job.CARDS_A).slice(0, 8);
 
   game.sim_n_turns(64);
 

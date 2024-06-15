@@ -1,116 +1,18 @@
 import fs from 'fs';
 import readline from 'readline';
-import { card_name_to_id_fuzzy, guess_character, swogi } from './gamestate_nolog.js';
+import { swogi } from './gamestate_nolog';
+import parse_input from './parse_input';
 import db from './db_sqlite';
 
 // Check if a command-line argument is provided
 if (process.argv.length < 3) {
-  console.error('Usage: bun enqueue.js <json_file>');
+  console.error('Usage: bun enqueue.js <path to JSON or pseudo-YAML>');
   process.exit(1);
 }
-
 const dataFilePath = process.argv[2];
 const dataString = fs.readFileSync(dataFilePath, 'utf8');
 
-let jsonData = null;
-if (dataFilePath.endsWith('.json')) {
-  jsonData = JSON.parse(dataString);
-} else {
-  jsonData = {
-    permute_a: false,
-    permute_b: false,
-    a_first: true,
-    limit_consumption: true,
-    a: { physique: 0, max_physique: 0, cards: [] },
-    b: { physique: 0, max_physique: 0, cards: [] },
-  };
-  const lines = dataString.split(/\r\n|\r|\n/).map((s) => s.trim()).filter((s) => s.length);
-  let section = 0;
-  for (let line of lines) {
-    const comment = line.indexOf('#');
-    if (comment !== -1) {
-      line = line.substring(0, comment).trimEnd();
-      if (!line.length) {
-        continue;
-      }
-    }
-    if (line === 'a:') {
-      section = 1;
-      continue;
-    }
-    if (line === 'b:') {
-      section = 2;
-      continue;
-    }
-    const colon = line.indexOf(':');
-    if (colon === -1) {
-      (section === 1 ? jsonData.a : jsonData.b).cards.push(line);
-    } else {
-      const leftSide = line.substring(0, colon).trimEnd().replaceAll(' ', '_');
-      let rightSide = line.substring(colon + 1).trimStart();
-      switch (rightSide) {
-        case 'true':
-        case 'yes':
-          rightSide = true;
-          break;
-        case 'false':
-        case 'no':
-          rightSide = false;
-          break;
-        default:
-          if (!isNaN(rightSide)) {
-            rightSide = +rightSide;
-          }
-      }
-      if (section === 0) {
-        if (leftSide === 'permute') {
-          if (rightSide === 'a') {
-            jsonData.permute_a = true;
-          } else if (rightSide === 'b') {
-            jsonData.permute_b = true;
-          }
-        } else {
-          jsonData[leftSide] = rightSide;
-        }
-      } else {
-        (section === 1 ? jsonData.a : jsonData.b)[leftSide] = rightSide;
-      }
-    }
-  }
-}
-
-if (jsonData.permute_a && jsonData.permute_b) {
-  console.error('Permuting both players not supported.');
-  process.exit(1);
-}
-if (jsonData.players) {
-  jsonData.a = jsonData.players[0];
-  jsonData.b = jsonData.players[1];
-  delete jsonData.players;
-}
-jsonData.a.max_hp = jsonData.a.hp + jsonData.a.physique;
-jsonData.b.max_hp = jsonData.b.hp + jsonData.b.physique;
-// I really want this feature, but JSON doesn't support newlines
-// if (typeof jsonData.a.cards === 'string') {
-//   jsonData.a.cards = jsonData.a.cards.split(/\r\n|\r|\n/).filter((s) => s.length);
-// }
-// if (typeof jsonData.b.cards === 'string') {
-//   jsonData.b.cards = jsonData.b.cards.split(/\r\n|\r|\n/).filter((s) => s.length);
-// }
-while (jsonData.a.cards.length < 8) {
-  jsonData.a.cards.push('normal attack');
-}
-while (jsonData.b.cards.length < 8) {
-  jsonData.b.cards.push('normal attack');
-}
-jsonData.a.cards = jsonData.a.cards.map(card_name_to_id_fuzzy);
-jsonData.b.cards = jsonData.b.cards.map(card_name_to_id_fuzzy);
-if (!jsonData.a.character) {
-  jsonData.a.character = guess_character(jsonData.a);
-}
-if (!jsonData.b.character) {
-  jsonData.b.character = guess_character(jsonData.b);
-}
+const jsonData = parse_input(dataString);
 
 // a generator that takes an array and k and generates all k-combinations of the array's elements
 function* k_combinations(arr, k) {

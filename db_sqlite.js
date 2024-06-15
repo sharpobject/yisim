@@ -30,7 +30,6 @@ const enqueueAndExit = (jsonData, combos) => {
   tmpDb.run('PRAGMA journal_mode = OFF;');
 
   tmpDb.run(`CREATE TABLE BATCH (
-    ID INTEGER PRIMARY KEY AUTOINCREMENT,
     OPTIONS TEXT NOT NULL,
     PLAYER_A TEXT NOT NULL,
     PLAYER_B TEXT NOT NULL,
@@ -38,7 +37,6 @@ const enqueueAndExit = (jsonData, combos) => {
     CARDS_B TEXT NOT NULL
   );
   CREATE TABLE JOB (
-    ID INTEGER PRIMARY KEY AUTOINCREMENT,
     CARDS_A TEXT NOT NULL,
     CARDS_B TEXT NOT NULL
   );`);
@@ -100,7 +98,7 @@ const init = () => {
     CARDS_B TEXT NOT NULL
   );
   CREATE TABLE IF NOT EXISTS JOB (
-    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    ID INTEGER PRIMARY KEY,
     BATCH_ID INTEGER NOT NULL,
     DISPATCHED DATETIME,
     PROCESSED DATETIME,
@@ -109,7 +107,7 @@ const init = () => {
     FOREIGN KEY(BATCH_ID) REFERENCES BATCH(ID)
   );
   CREATE TABLE IF NOT EXISTS BATTLE (
-    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    ID INTEGER PRIMARY KEY,
     BATCH_ID INTEGER NOT NULL,
     JOB_ID INTEGER,
     PROCESSED DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -226,4 +224,8 @@ const insertBattles = (rows) => {
   return _insertBattles(rows);
 };
 
-export default { DIR_NEW, enqueueAndExit, connectForRead, init, close, merge, getUndispatched, markDispatched, insertBattles };
+const getBattle = (id) => {
+  return db.query('SELECT PLAYER_A, PLAYER_B, A1, A2, A3, A4, A5, A6, A7, A8, B1, B2, B3, B4, B5, B6, B7, B8, A_FIRST FROM BATCH, BATTLE WHERE BATCH.ID = BATCH_ID AND BATTLE.ID = ?1').get(id);
+};
+
+export default { DIR_NEW, enqueueAndExit, connectForRead, init, close, merge, getUndispatched, markDispatched, insertBattles, getBattle };
