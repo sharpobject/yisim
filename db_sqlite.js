@@ -228,4 +228,15 @@ const getBattle = (id) => {
   return db.query('SELECT PLAYER_A, PLAYER_B, A1, A2, A3, A4, A5, A6, A7, A8, B1, B2, B3, B4, B5, B6, B7, B8, A_FIRST FROM BATCH, BATTLE WHERE BATCH.ID = BATCH_ID AND BATTLE.ID = ?1').get(id);
 };
 
-export default { DIR_NEW, enqueueAndExit, connectForRead, init, close, merge, getUndispatched, markDispatched, insertBattles, getBattle };
+const getBattles = (minBatchId, maxBatchId) => {
+  const options = JSON.parse(db.query('SELECT OPTIONS FROM BATCH WHERE ID BETWEEN ?1 AND ?2 LIMIT 1').get(minBatchId, maxBatchId).OPTIONS);
+  const permute_a = !!options.permute_a;
+  if (permute_a === !!options.permute_b) {
+    console.error(`Error: permute_a == permute_b\npermute_a: ${options.permute_a}\npermute_b: ${options.permute_b}`);
+    process.exit(1);
+  }
+  const s = permute_a ? 'SELECT BATCH_ID, A1, A2, A3, A4, A5, A6, A7, A8, -T_SIGMOID FROM BATTLE WHERE BATCH_ID BETWEEN ?1 AND ?2' : 'SELECT BATCH_ID, B1, B2, B3, B4, B5, B6, B7, B8, T_SIGMOID FROM BATTLE WHERE BATCH_ID BETWEEN ?1 AND ?2';
+  return db.query(s).values(minBatchId, maxBatchId);
+};
+
+export default { DIR_NEW, enqueueAndExit, connectForRead, init, close, merge, getUndispatched, markDispatched, insertBattles, getBattle, getBattles };
