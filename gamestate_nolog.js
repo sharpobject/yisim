@@ -560,6 +560,8 @@ class Player {
         this.skip_to_previous_card_stacks = 0;
         this.everything_goes_way_stacks = 0;
         this.nothing_is_appropriate_stacks = 0;
+        // TODO: i've heard that after you play fate reincarnates
+        // skipping an Opening card for any reason will trigger its opening effect
         this.fate_reincarnates_stacks = 0;
         this.god_opportunity_conform_stacks = 0;
         this.god_opportunity_reversal_stacks = 0;
@@ -2191,12 +2193,12 @@ export class GameState {
         this.players[0].this_turn_attacked = false;
         this.players[0].elusive_footwork_triggered = false;
         this.players[0].triggered_beast_spirit_sword_formation = false;
-        this.do_def_decay();
         this.reduce_idx_x_by_c(0, "metal_spirit_iron_bone_stacks", 1);
         this.reduce_idx_x_by_c(0, "water_spirit_dive_stacks", 1);
         this.reduce_idx_x_by_c(0, "everything_goes_way_stacks", 1);
         this.reduce_idx_x_by_c(0, "god_opportunity_conform_stacks", 1);
         this.reduce_idx_x_by_c(0, "god_opportunity_reversal_stacks", 1);
+        this.do_def_decay();
         this.do_fat_immortal_raccoon();
         this.do_scarlet_eye_the_sky_consumer();
         this.do_break_sky_eagle();
