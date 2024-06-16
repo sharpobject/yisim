@@ -6769,19 +6769,19 @@
 		"name": "Flying Brush",
 		"actions": [
 			["def", 6],
-			["add_c_of_x", 1, "later_flying_brush_stacks"]
+			["add_c_of_x", 1, "flying_brush_stacks"]
 		]
 	},
 	"345012": {
 		"actions": [
 			["def", 12],
-			["add_c_of_x", 1, "later_flying_brush_stacks"]
+			["add_c_of_x", 1, "flying_brush_stacks"]
 		]
 	},
 	"345013": {
 		"actions": [
 			["def", 18],
-			["add_c_of_x", 1, "later_flying_brush_stacks"]
+			["add_c_of_x", 1, "flying_brush_stacks"]
 		]
 	},
 	"345021": {

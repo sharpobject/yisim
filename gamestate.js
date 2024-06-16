@@ -529,7 +529,6 @@ class Player {
         this.has_played_musician_card = false;
         // painter side job cards
         this.inspiration_stacks = 0;
-        this.later_flying_brush_stacks = 0;
         this.flying_brush_stacks = 0;
         this.finishing_touch_stacks = 0;
         // formation master side job cards
@@ -1793,8 +1792,8 @@ export class GameState {
         this.do_swift_burning_seal(card_id, idx);
         this.do_sword_formation_deck_count(card_id);
         this.do_cosmos_seal(card_id);
-        this.trigger_card(card_id, idx);
         this.do_flying_brush_chase();
+        this.trigger_card(card_id, idx);
         this.do_cloud_sword_chain_count(card_id);
         this.do_elemental_spirit_stuff(card_id);
         this.do_record_musician_card_played_for_chord_in_tune(card_id);
@@ -2016,8 +2015,6 @@ export class GameState {
             this.chase();
             this.reduce_idx_x_by_c(0, "flying_brush_stacks", 1);
         }
-        this.players[0].flying_brush_stacks += this.players[0].later_flying_brush_stacks;
-        this.players[0].later_flying_brush_stacks = 0;
     }
     do_five_elements_heavenly_marrow_rhythm_chase() {
         const player = this.players[0];
