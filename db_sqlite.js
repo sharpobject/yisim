@@ -143,7 +143,10 @@ const init = () => {
     HP_DIFF INTEGER GENERATED ALWAYS AS (HP_A - HP_B),
     T_SIGMOID REAL,
     FOREIGN KEY(BATCH_ID) REFERENCES BATCH(ID)
-  );`); // Xom: I think it might be good if USED_RANDOM didn't count randomizing who goes first
+  );
+  CREATE INDEX IF NOT EXISTS idx_battle_batch_id ON BATTLE (BATCH_ID);
+  CREATE INDEX IF NOT EXISTS idx_job_dispatched ON JOB (DISPATCHED);`);
+  // Xom: I think it might be good if USED_RANDOM didn't count randomizing who goes first
 };
 
 const close = () => {
@@ -228,6 +231,10 @@ const getBattle = (id) => {
   return db.query('SELECT PLAYER_A, PLAYER_B, A1, A2, A3, A4, A5, A6, A7, A8, B1, B2, B3, B4, B5, B6, B7, B8, A_FIRST FROM BATCH, BATTLE WHERE BATCH.ID = BATCH_ID AND BATTLE.ID = ?1').get(id);
 };
 
+const getBattleByBatchId = (batchId) => {
+  return db.query('SELECT PLAYER_A, PLAYER_B, A1, A2, A3, A4, A5, A6, A7, A8, B1, B2, B3, B4, B5, B6, B7, B8, OPTIONS FROM BATCH, BATTLE WHERE BATCH.ID = BATCH_ID AND BATCH.ID = ?1 LIMIT 1').get(batchId);
+};
+
 const getBattles = (minBatchId, maxBatchId) => {
   const options = JSON.parse(db.query('SELECT OPTIONS FROM BATCH WHERE ID BETWEEN ?1 AND ?2 LIMIT 1').get(minBatchId, maxBatchId).OPTIONS);
   const permute_a = !!options.permute_a;
@@ -239,4 +246,4 @@ const getBattles = (minBatchId, maxBatchId) => {
   return db.query(s).values(minBatchId, maxBatchId);
 };
 
-export default { DIR_NEW, enqueueAndExit, connectForRead, init, close, merge, getUndispatched, markDispatched, insertBattles, getBattle, getBattles };
+export default { DIR_NEW, enqueueAndExit, connectForRead, init, close, merge, getUndispatched, markDispatched, insertBattles, getBattle, getBattleByBatchId, getBattles };
