@@ -114,7 +114,7 @@ onmessage = (event) => {
                 //    winning_logs.length = 0;
                 //}
                 //best_hp = hp;
-                const winning_margin = hp;//game.players[my_idx].hp - game.players[enemy_idx].hp - 1000 * game.turns_taken;
+                const winning_margin = game.players[my_idx].hp - game.players[enemy_idx].hp - 1000 * game.turns_taken;
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
                     winning_decks.length = 0;

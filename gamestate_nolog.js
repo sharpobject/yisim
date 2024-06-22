@@ -1886,6 +1886,7 @@ export class GameState {
     }
     do_regen_tune() {
         if (this.players[0].regen_tune_stacks > 0) {
+            this.increase_idx_max_hp(0, this.players[0].regen_tune_stacks);
             this.heal(this.players[0].regen_tune_stacks);
         }
     }
@@ -2205,7 +2206,6 @@ export class GameState {
         this.do_next_turn_def();
         this.do_meditation_of_xuan();
         this.do_regen();
-        this.do_regen_tune();
         this.do_heartbroken_tune();
         this.do_internal_injury(0);
         this.do_illusion_tune();
@@ -2343,6 +2343,7 @@ export class GameState {
         if (this.check_for_death()) {
             return;
         }
+        this.do_regen_tune();
         this.do_toxin_immunity();
         this.do_three_tailed_cat();
         this.do_sword_in_sheathed();
