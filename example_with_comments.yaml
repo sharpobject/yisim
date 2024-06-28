@@ -1,0 +1,40 @@
+# this is yaml-like, except indentation is ignored (a: and b: are the dividing lines)
+# spaces to the left of colons (after trim() is applied) will be converted to underscores
+# true, false, yes, no, and numbers will be detected; other values will be converted to string
+
+comment: blah, blah # optional; text following # will be discarded, but converted json will have "comment":"blah, blah"
+permute: no # optional, values other than a or b will be ignored
+a first: yes # optional, default is yes, TODO implement speed comparison
+deck slots: 8 # optional, default is 8, which is also the maximum
+limit consumption: yes # optional, default is yes, limit two consumption cards
+
+a:
+cultivation: 100
+hp: 110 # max hp will be calculated from hp and physique
+physique: 0 # optional, defaults to 0
+max physique: 0 # optional, defaults to 0
+birdie wind stacks: 1
+
+hunter hunting hunter 2 # lines with no colon are cardnames
+escape plan 3
+great spirit 2
+echo formation
+normal attack
+normal attack
+echo formation 2
+only traces 2
+
+b:
+cultivation: 80
+hp: 110
+physique: 80
+max physique: 85
+
+heavenly forceage 3
+break pots and sink boats
+meru formation 3
+normal attack
+normal attack
+normal attack
+exercise soul 3
+exercise soul 2
