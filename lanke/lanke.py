@@ -2,15 +2,16 @@ from mss import mss
 import pywinctl as gw
 import pyautogui
 import cv2
-import pytesseract
 import numpy as np
 import argparse
 import os
-from typing import Dict, Tuple
+from typing import Dict, Tuple, List
 import json
 from time import sleep
+import easyocr
 
 window = None
+reader = easyocr.Reader(['en'])  # Initialize EasyOCR
 
 def capture_window(window_title, idx=0):
     global window
@@ -23,7 +24,7 @@ def capture_window(window_title, idx=0):
     if idx == 1:
         # click at 720, 155 within the window
         pyautogui.click(left + 720/2, top + 155/2)
-        sleep(0.1)
+        sleep(0.3)
     
     with mss() as sct:
         monitor = {"top": top, "left": left, "width": width, "height": height}
@@ -31,7 +32,7 @@ def capture_window(window_title, idx=0):
     
     return cv2.cvtColor(screenshot, cv2.COLOR_BGRA2BGR)
 
-def extract_text(image, x, y, width, height, label, lang='eng'):
+def extaaaract_text(image, x, y, width, height, label, lang='eng'):
     roi = image[y:y+height, x:x+width]
     cv2.imwrite(f'{label}_roi.png', roi)
     gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
@@ -43,9 +44,25 @@ def extract_text(image, x, y, width, height, label, lang='eng'):
     else:
         whitelist = 'Round Info'
 
-    config = f'--psm 7 -c "tessedit_char_whitelist={whitelist}"'
+    config = f'--psm 7 --oem 1 -c "tessedit_char_whitelist={whitelist}"'
     text = pytesseract.image_to_string(thresh, lang=lang, config=config)
     return text.strip()
+
+def extract_text(image, x, y, width, height, label, lang='en'):
+    roi = image[y:y+height, x:x+width]
+    cv2.imwrite(f'{label}_roi.png', roi)
+    
+    # Use EasyOCR to recognize text
+    result = reader.readtext(roi)
+    
+    if result:
+        text = result[0][1]  # Get the text from the first result
+        if label in ['round', 'speed', 'health', 'physique']:
+            # Keep only digits and '/' and '-'
+            text = ''.join(filter(lambda x: x.isdigit() or x == '/' or x == '-', text))
+        return text.strip()
+    else:
+        return ""
 
 def preprocess_card_image(roi):
     hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
@@ -76,8 +93,26 @@ def load_upgrade_templates(template_dir: str):
             image = cv2.GaussianBlur(image, (5, 5), 0)
             image = cv2.Canny(image, 50, 150)
             upgrade_templates[level] = image
-
     return upgrade_templates
+
+talent_templates = []
+def load_talent_templates(base_dir: str):
+    global talent_templates
+    talent_templates = []
+    for i in range(1, 6):  # Assuming 5 talent positions
+        position_dir = os.path.join(base_dir, f'position_{i}')
+        position_templates = {}
+        if os.path.exists(position_dir):
+            for filename in os.listdir(position_dir):
+                if filename.endswith('.png'):
+                    talent_name = os.path.splitext(filename)[0]
+                    image_path = os.path.join(position_dir, filename)
+                    #read the image in full color
+                    #image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+                    image = cv2.imread(image_path)
+                    if image is not None:
+                        position_templates[talent_name] = image
+        talent_templates.append(position_templates)
 
 def find_best_match(card_image: np.ndarray, templates: Dict[str, np.ndarray]) -> Tuple[str, float]:
     best_match = None
@@ -132,6 +167,71 @@ def detect_upgrade_level(card_roi: np.ndarray, upgrade_templates: Dict[int, np.n
     
     return best_match
 
+def detect_talents(image: np.ndarray, talent_templates: List[Dict[str, np.ndarray]], filename: str) -> List[str]:
+    role = os.path.basename(filename).split('.')[0]
+    if role == 'hero':
+        talent_positions = [
+            (318, 1560, 83, 83),
+            (173, 1533, 91, 91),
+            (56, 1440, 98, 98),
+            (44, 1300, 106, 106),
+            (105, 1168, 114, 111)
+        ]
+    else:
+        talent_positions = [
+            (783, 1352, 140, 140),
+            (1033, 1352, 140, 140),
+            (1284, 1352, 140, 140),
+            (1534, 1352, 140, 140),
+            (1785, 1352, 140, 140)
+        ]
+    
+    detected_talents = []
+    
+    for i, ((x, y, w, h), position_templates) in enumerate(zip(talent_positions, talent_templates), 1):
+        roi = image[y:y+h, x:x+w]
+        #roi_gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
+        
+        best_match = None
+        best_score = float('-inf')
+        
+        for talent_name, template in position_templates.items():
+            # If template and roi differ in size, resize the smaller one to match the other
+            template_resized = template
+            roi_resized = roi
+            if template.shape != roi.shape:
+                if template.shape[0] > roi.shape[0] or template.shape[1] > roi.shape[1]:
+                    roi_resized = cv2.resize(roi, (template.shape[1], template.shape[0]))
+                else:
+                    template_resized = cv2.resize(template, (roi.shape[1], roi.shape[0]))
+            # crop the template to the middle 70% of the image
+            my_h = template_resized.shape[0]
+            my_w = template_resized.shape[1]
+            template_cropped = template_resized[int(0.15*my_h):int(0.85*my_h), int(0.15*my_w):int(0.85*my_w)]
+            # crop the roi to the middle 70% of the image
+            roi_cropped = roi_resized[int(0.15*my_h):int(0.85*my_h), int(0.15*my_w):int(0.85*my_w)]
+            
+            result = cv2.matchTemplate(roi_cropped, template_cropped, cv2.TM_CCOEFF_NORMED)
+            _, max_val, _, _ = cv2.minMaxLoc(result)
+            
+            if max_val > best_score:
+                best_score = max_val
+                best_match = talent_name
+        
+        if best_match and best_score > 0.693:  # You may need to adjust this threshold
+            detected_talents.append(best_match)
+        else:
+            detected_talents.append(None)
+            # Save unmatched talent image
+            unmatched_dir = os.path.join(os.path.dirname(filename), 'talent_templates', f'position_{i}')
+            os.makedirs(unmatched_dir, exist_ok=True)
+            unmatched_filename = f'unmatched_talent_position_{i}_{os.path.basename(filename)}'
+            cv2.imwrite(os.path.join(unmatched_dir, unmatched_filename), roi)
+            print(f"Saved unmatched talent image: {unmatched_filename}")
+    
+    return detected_talents
+
+
 def get_info(filename):
     global templates
     speed_region = (92, 187, 70, 50)
@@ -169,6 +269,8 @@ def get_info(filename):
     
     filename_trimmed = os.path.splitext(filename)[0]
 
+    talents = detect_talents(image, talent_templates, filename)
+
     deck = []
     for i in range(8):
         x = card_x + i * card_horizontal_interval
@@ -189,13 +291,17 @@ def get_info(filename):
         upgrade_level = detect_upgrade_level(card_roi, upgrade_templates)
         deck.append(best_match + " " + str(upgrade_level))
         print(f"Card {i+1}: {best_match} (Score: {score:.2f}, Level: {upgrade_level})")
+    health = intt(health)
+    speed = intt(speed)
     return {
-        'cultivation': intt(speed),
-        'hp': intt(health),
+        'cultivation': speed,
+        'hp': health,
         'physique': physique_n,
         'max_physique': max_physique_n,
+        'max_hp': health + physique_n,
         'round': intt(round),
-        'cards': deck
+        'cards': deck,
+        'talents': talents,
     }
 
 def main(use_previous_screenshot=False, card_template_dir='card_templates'):
@@ -203,6 +309,7 @@ def main(use_previous_screenshot=False, card_template_dir='card_templates'):
     global upgrade_templates
     templates = load_card_templates(card_template_dir)
     upgrade_templates = load_upgrade_templates('upgrade_templates')
+    load_talent_templates('talent_templates')
 
     for x in range(2):
         if os.path.exists('hero.png') and os.path.exists('villain.png'):
@@ -215,7 +322,7 @@ def main(use_previous_screenshot=False, card_template_dir='card_templates'):
         round_info_region = (76, 298, 320, 72)
         round_info = extract_text(image, *round_info_region, "round_info")
         print(f"Round Info: {round_info}")
-        if round_info == "Round Info":
+        if "".join(round_info.split()) == "RoundInfo":
             cv2.imwrite('villain.png', image)
         if round_info == "":
             cv2.imwrite('hero.png', image)
