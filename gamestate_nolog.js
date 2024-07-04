@@ -1026,6 +1026,9 @@ export class GameState {
         if (upgrade_level === "1") {
             return false;
         }
+        if (card_id === "611033") {
+            return false;
+        }
         const new_level = parseInt(upgrade_level) - 1;
         const new_card_id = card_id.substring(0, card_id.length - 1) + new_level;
         this.players[player_idx].cards[card_idx] = new_card_id;
