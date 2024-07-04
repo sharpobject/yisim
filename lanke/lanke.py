@@ -8,12 +8,22 @@ import argparse
 import os
 from typing import Dict, Tuple
 import json
+from time import sleep
 
-def capture_window(window_title):
-    window = gw.getWindowsWithTitle(window_title)[0]
-    window.activate()
+window = None
+
+def capture_window(window_title, idx=0):
+    global window
+    if window is None:
+        window = gw.getWindowsWithTitle(window_title)[0]
+        window.activate()
     left, top = window.left, window.top
     width, height = window.width, window.height
+
+    if idx == 1:
+        # click at 720, 155 within the window
+        pyautogui.click(left + 720/2, top + 155/2)
+        sleep(0.1)
     
     with mss() as sct:
         monitor = {"top": top, "left": left, "width": width, "height": height}
@@ -194,15 +204,11 @@ def main(use_previous_screenshot=False, card_template_dir='card_templates'):
     templates = load_card_templates(card_template_dir)
     upgrade_templates = load_upgrade_templates('upgrade_templates')
 
-    if not (os.path.exists('hero.png') and os.path.exists('villain.png')):
+    for x in range(2):
+        if os.path.exists('hero.png') and os.path.exists('villain.png'):
+            break
         window_title = "YiXianPai"
-        if use_previous_screenshot:
-            image = cv2.imread('full_window.png')
-            if image is None:
-                print("Error: Could not read previous screenshot. Capturing new screenshot.")
-                image = capture_window(window_title)
-        else:
-            image = capture_window(window_title)
+        image = capture_window(window_title, x)
         
         cv2.imwrite('full_window.png', image)
 
