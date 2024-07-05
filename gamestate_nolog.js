@@ -2540,10 +2540,10 @@ export class GameState {
         return this.increase_idx_hp(1, amt);
     }
     increase_idx_def(idx, amt) {
+        amt += this.players[idx].bonus_def_amt;
         if (amt === 0) {
             return;
         }
-        amt += this.players[idx].bonus_def_amt;
         amt += this.players[idx].kun_wu_metal_ring_stacks;
         if (this.players[idx].god_opportunity_conform_stacks > 0) {
             amt = Math.ceil(amt * 14 / 10);
