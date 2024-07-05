@@ -131,7 +131,7 @@ function* downgrade_inner(cards, copies, sofar, idx) {
     //console.log("idx: " + idx);
     let copy = copies[idx];
     let my_copies_to_levels = copies_to_levels;
-    if (card_id === "804063") {
+    if ((card_id === "804063") || (card_id === "355033") || (card_id === "375023")) {
         my_copies_to_levels = meru_copies_to_levels;
     } else if (card_id[2] === "5") {
         my_copies_to_levels = p5_copies_to_levels;
@@ -2743,5 +2743,3752 @@ riddles["253"] = async () => {
     players[enemy_idx].p3_rejuvenation_stacks = 1;
     return await do_riddle({players: players, my_idx: my_idx});
 };
-await riddles["253"]();
+//await riddles["253"]();
+riddles["254"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 109;
+    players[enemy_idx].cultivation = 74;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 105;
+    players[my_idx].cultivation = 95;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "anthomania formation 3",
+        "echo formation",
+        "hexagram formacide 3",
+        "rotary divination hexagram",
+        "heaven hexagram",
+        "five thunders 2",
+        "meru formation 3",
+        "dance dragonfly 2",
+        "thunder hexagram rhythm 2",
+    ];
+    players[enemy_idx].cards = [
+        "divine walk fulu 2",
+        "ultimate world formation 2",
+        "wood spirit - peach blossom",
+        "water spirit - great waves",
+        "five elements circulation",
+        "wood spirit - fragrant",
+        "five elements circulation 2",
+        "fire spirit - blazing prairie 2",
+    ];
+    players[enemy_idx].peach_branch_ruyi_stacks = 1;
+    players[enemy_idx].mark_of_water_spirit_stacks = 1;
+    players[enemy_idx].blossom_dance_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["254"]();
+riddles["255"] = async () => {
+    let yxb_decks = [
+        {
+            "pool": "hepm",
+            "sect": "he",
+            "cards": [
+                "Devouring ancient vine 3",
+                "Heaven Hexagram 3",
+                "Frozen Blood Lotus 3",
+                "Dance of the Dragonfly 3",
+                "Qi-corrupting sunflower 3",
+                "Dance of the Dragonfly 3",
+                "Escape Plan 3",
+                "Devouring Ancient vine 3",
+            ],
+        },
+        {
+            "pool": "hepm",
+            "sect": "he",
+            "cards": [
+                "Heaven Hexagram 3",
+                "Entangling Ancient Vine 3",
+                "Astral Move - Cide 3",
+                "Heaven Hexagram 2",
+                "Five Thunders 3",
+                "Astral Move - Fly 3",
+                "Frozen Blood Lotus 3",
+                "Space Spiritual Field 3",
+            ],
+        },
+        {
+            "pool": "dxel",
+            "sect": "dx",
+            "cards": [
+                "crane footwork 3",
+                "styx agility 3",
+                "shura roar 3",
+                "ghost howling 3",
+                "soul cleaving 3",
+                "soul cleaving 2",
+                "crane footwork 3",
+                "soul seizing 3",
+            ],
+        },
+        {
+            "pool": "dxmu",
+            "sect": "dx",
+            "cards": [
+                "Apparition confusion 3",
+                "Crane footwork 3",
+                "Ruptsprite 3",
+                "Crane footwork 3",
+                "Ruptsprite 2",
+                "Exercise marrow 3",
+                "Ruptsprite 2",
+                "Apparition confusion 2",
+            ],
+        },
+        {
+            "pool": "swmu",
+            "sect": "sw",
+            "cards": [
+                "Chord In Tune 3",
+                "Sky Spirit Tune (Level 3)",
+                "Chord In Tune (Level 2)",
+                "Inspiration Sword (Level 3)",
+                "Cloud Sword - Dragon Roam (Level 3)",
+                "Dharma Spirit Sword (Level 3)",
+                "Normal Attack",
+                "Normal Attack",
+            ],
+        },
+        {
+            "pool": "swfu",
+            "sect": "sw",
+            "cards": [
+                "Divine Walk Fulu 3",
+                "Flying Spirit Shade Sword 3",
+                "Divine Walk Fulu 2",
+                "Dharma Spirit Sword 3",
+                "Cloud Dance Rhythm 3",
+                "Burst Sword 3",
+                "Burst Sword 2",
+                "Burst Sword 2",
+            ],
+        },
+        {
+            "pool": "heft",
+            "sect": "he",
+            "cards": [
+                "God Star - Traction 3",
+                "Plaguin 3",
+                "Plaguin 2",
+                "Extremely Suspicious 3",
+                "Extremely Suspicious 3",
+                "Disaster of Bloodshed 3",
+                "Disaster of Bloodshed 2",
+                "Disaster of Bloodshed 2",
+            ],
+        },
+        {
+            "pool": "fefm",
+            "sect": "fe",
+            "cards": [
+                "Heavenly Marrow Rhythm 3",
+                "Water Spirit Formation 3",
+                "Water Spirit Great Waves 3",
+                "Water Spirit Dive 3",
+                "Echo Formation 3",
+                "Water Spirit Great Waves 3",
+                "Water Spirit Combine Rivers 3",
+                "Water Spirit Combine Rivers 2",
+            ],
+        },
+        {
+            "pool": "swmu",
+            "sect": "sw",
+            "cards": [
+                "Chord in Tune 3",
+                "Sky Spirit Tune 3",
+                "Chord in Tune 2",
+                "Dharma Spirit Sword 3",
+                "Cloud Sword - Dragon Roam 3",
+                "Sky Spirit Tune 3",
+                "Rule Sky Sword Formation 3",
+                "Dharma Spirit Sword 2",
+            ],
+        },
+        {
+            "pool": "swpm",
+            "sect": "sw",
+            "cards": [
+                "Mirror Flower Sword Formation 3",
+                "Rule Sky Sword Formation 3",
+                "Hard Bamboo 3",
+                "Chain Sword Formation 3",
+                "Hard Bamboo 3",
+                "Chain Sword Formation 2",
+                "Space Spiritual Field",
+                "Space Spiritual Field",
+            ],
+        },
+        {
+            "pool": "heel",
+            "sect": "he",
+            "cards": [
+                "Heaven Hexagram 3",
+                "Strike Twice 3",
+                "Ice Spirit Guard Elixir 3",
+                "Hunter Hunting Hunter 3",
+                "Five Thunders 3",
+                "Great Spirit 3",
+                "Starry Moon 3",
+                "Hunter Becomes Preyer 3",
+            ],
+        }
+    ];
+    let decks = [
+        {
+            "pool": "swfu",
+            "sect": "sw",
+            "cards": [
+                "divine walk fulu 3",
+                "spirit gather citta dharma 3",
+                "rule sky sword formation 3",
+                "thousand evil incantation 3",
+                "chain sword 3",
+                "mirror flower sword formation 3",
+                "giant kun spirit sword 3",
+                "chain sword 3",
+            ],
+        },
+        {
+            "pool": "swmu",
+            "sect": "sw",
+            "cards": [
+                "chord in tune 3",
+                "sky spirit tune 3",
+                "chord in tune 3",
+                "dharma spirit sword 3",
+                "predicament 3",
+                "sky spirit tune 3",
+                "nine evil ruptsprite 3",
+                "nine evil ruptsprite 3",
+            ]
+        },
+    ];
+    // fixup decks
+    for (let deck of decks) {
+        fixup_deck(deck.cards);
+    }
+    // fixup yxb_decks
+    for (let deck of yxb_decks) {
+        fixup_deck(deck.cards);
+    }
+    let sect_list = ["sw", "he", "fe", "dx"];
+    let sects = {
+        "sw": [
+            "cloud sword dragon roam 3",
+            "cloud sword step lightly 3",
+            "flying spirit shade sword 3",
+            "dharma spirit sword 3",
+            "sword intent surge 3",
+            "rule sky sword formation 3",
+            "chain sword 3",
+            "unrestrained sword zero 3",
+            "cloud sword flash wind 3",
+            "cloud sword moon shade 3",
+            "spirit gather citta dharma 3",
+            "centibird spirit sword rhythm 3",
+            "giant kun spirit sword 3",
+            "inspiration sword 3",
+            "flow cloud chaos sword 3",
+            "moon water sword 3",
+            "unrestrained sword two 3",
+            "unrestrained sword one 3",
+            "mirror flower sword formation 3",
+            "raven spirit sword 3",
+            "burst sword 3",
+            "cloud dance rhythm 3",
+            "contemplate spirits rhythm 3",
+            "qi perfusion 3",
+        ],
+        "he": [
+            "polaris citta-dharma 3",
+            "astral cide 3",
+            "heaven hexagram 3",
+            "five thunders 3",
+            "strike twice 3",
+            "great spirit 3",
+            "hunter hunting hunter 3",
+            "propitious omen 3",
+            "astral fly 3",
+            "astral tiger 3",
+            "hexagram formacide 3",
+            "flame hexagram 3",
+            "star trail divination 3",
+            "dance dragonfly 3",
+            "thunder and lightning 3",
+            "repel citta-dharma 3",
+            "escape plan 3",
+            "extremely suspicious 3",
+            "starry moon 3",
+            "lake hexagram 3",
+            "thunder hexagram rhythm 3",
+            "hunter becomes preyer 3",
+            "revitalized 3",
+            "astral move point 3",
+        ],
+        "fe": [
+            "wood spirit - willow leaf 3",
+            "wood spirit fragrant 3",
+            "wood spirit thorn 3",
+            "wood spirit forest guard 3",
+            "wood spirit seal 3",
+            "fire spirit blazing prairie 3",
+            "fire spirit flash fire 3",
+            "fire spirit heart fire 3",
+            "fire spirit blast 3",
+            "fire spirit seal 3",
+            "earth spirit combine world 3",
+            "earth spirit steep 3",
+            "earth spirit quicksand 3",
+            "earth spirit cliff 3",
+            "earth spirit seal 3",
+            "metal spirit shuttle 3",
+            "metal spirit seal 3",
+            "metal spirit iron bone 3",
+            "metal spirit giant tripod 3",
+            "metal spirit charge 3",
+            "metal spirit sharp 3",
+            "metal spirit heart pierce 3",
+            "water spirit - great waves 3",
+            "water spirit - combine river 3",
+            "water spirit dive 3",
+            "water spirit formation 3",
+            "earth spirit formation 3",
+            "metal spirit formation 3",
+            "water spirit spring 3",
+            "water spirit turbulent 3",
+            "ultimate world formation 3",
+            "five elements heavenly marrow rhythm 3",
+            "world smash 3",
+            "five elements circulation 3",
+        ],
+        "dx": [
+            "crash fist blink 3",
+            "crash fist shocked 3",
+            "crash fist subdue dragon 3",
+            "crash fist continue 3",
+            "crash fist inch force 3",
+            "exercise soul 3",
+            "exercise marrow 3",
+            "realm-killing palms 3",
+            "shura roar 3",
+            "soul cleaving 3",
+            "gather intense force 3",
+            "vast universe 3",
+            "crash citta-dharma 3",
+            "crane footwork 3",
+            "elusive footwork 3",
+            "styx agility 3",
+            "soul seizing 3",
+            "surging waves 3",
+            "overwhelming force 3",
+            "crash footwork 3",
+            "crash fist truncate 3",
+            "bearing the load 3",
+            "ghost howling 3",
+        ],
+    };
+    let side_job_list = ["el", "fu", "mu", "pa", "fm", "pm", "ft"];
+    let side_jobs = {
+        "el": [
+            "cloud elixir 3",
+            "exorcism elixir 3",
+            "spiritage elixir 3",
+            "ice spirit guard elixir 3",
+        ],
+        "fu": [
+            "soul requiem fulu 3",
+            "divine walk fulu 3",
+            "thousand evil incantation 3",
+            "spiritage incantation 3",
+            "distubing fulu 3",
+            "weaken fulu 3",
+            "spirit absorb fulu 3",
+            "ice incantation 3",
+        ],
+        "mu": [
+            "predicament 3",
+            "chord in tune 3",
+            "apparition confusion 3",
+            "nine evil ruptsprite 3",
+            "concentric tune 3",
+            "craze dance tune 3",
+            "heartbroken tune 3",
+            "sky spirit tune 3",
+            "earth tune 3",
+        ],
+        "pa": [
+            "flying brush 3",
+            "inspiration 3",
+        ],
+        "fm": [
+            "anthomania formation 3",
+            "echo formation 3",
+            "meru formation 3",
+            "octgates formation 3",
+            "motionless formation 3",
+            "heavenly forceage formation 3",
+            "spiritage formation 3",
+            "hexproof formation 3",
+        ],
+        "pm": [
+            "space spiritual field 3",
+            "entangling ancient vine 3",
+            "devouring ancient vine 3",
+            "frozen blood lotus 3",
+            "frozen snow lotus 3",
+            "qi-seeking sunflower 3",
+            "hard bamboo 3",
+        ],
+        "ft": [
+            "observe body 3",
+            "disaster of bloodshed 3",
+            "Good Omen 3",
+            "detect qi 3",
+            "everything goes way 3",
+            "God Fate - Reborn 3",
+            "God Fate - Flies 3",
+            "God Star - Traction 3",
+            "Calamity Plaguin 3",
+            "Fate Reincarnates 3",
+            "God's Opportunity - Reversal 3",
+        ],
+    }
+    let pools = {};
+    let pools_list = [];
+    for (const sect in sects) {
+        fixup_deck(sects[sect]);
+        for (const side_job in side_jobs) {
+            fixup_deck(side_jobs[side_job]);
+            pools[sect + side_job] = sects[sect].concat(side_jobs[side_job]);
+            pools_list.push(sect + side_job);
+        }
+    }
+    function score_deck(hero_deck, villain_deck) {
+        let ret = 0;
+        for (let my_idx = 0; my_idx < 2; my_idx++) {
+            const players = [{},{}];
+            const enemy_idx = 1 - my_idx;
+
+            players[enemy_idx].hp = 99;
+            players[enemy_idx].cultivation = 55;
+            players[enemy_idx].physique = 0;
+            players[enemy_idx].max_physique = 0;
+            if (villain_deck.sect == "dx") {
+                players[enemy_idx].physique = 61;
+                players[enemy_idx].max_physique = 66;
+            }
+            players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+            players[my_idx].hp = 99;
+            players[my_idx].cultivation = 55;
+            players[my_idx].physique = 0;
+            players[my_idx].max_physique = 0;
+            if (hero_deck.sect == "dx") {
+                players[my_idx].physique = 61;
+                players[my_idx].max_physique = 66;
+            }
+            players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+            players[my_idx].cards = [
+                ...hero_deck.cards,
+            ];
+            players[enemy_idx].cards = [
+                ...villain_deck.cards,
+            ];
+            let game = new GameState();
+            for (let key in players[my_idx]) {
+                game.players[my_idx][key] = players[my_idx][key];
+            }
+            for (let key in players[enemy_idx]) {
+                game.players[enemy_idx][key] = players[enemy_idx][key];
+            }
+            game.sim_n_turns(64);
+            if (game.winner === my_idx && !game.used_randomness) {
+                ret += 1;
+            }
+        }
+        return ret;
+    }
+    function score(decks, deck) {
+        let ret = 0;
+        for (let i = 0; i < decks.length; i++) {
+            ret += score_deck(deck, decks[i]);
+        }
+        return ret;
+    }
+    function score_short(decks, deck) {
+        let ret = 0;
+        for (let i = 0; i < decks.length; i++) {
+            ret += score_deck(deck, decks[i]);
+            if (i < 4 && ret < (i+1)) {
+                return ret;
+            }
+        }
+        return ret;
+    }
+    function shuffle(array) {
+        let currentIndex = array.length;
+      
+        // While there remain elements to shuffle...
+        while (currentIndex != 0) {
+      
+          // Pick a remaining element...
+          let randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+      
+          // And swap it with the current element.
+          [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+      }
+    function mutate(decks, deck) {
+        let orig_deck = deck;
+        let best_score = score(decks, deck);
+        let best_cards = null;
+        deck = {...deck};
+        deck.cards = [...upgradedd(deck.cards)];
+        // add a random card from the pool
+        let pool = pools[deck.pool];
+        let cards = [...deck.cards];
+        let card = pool[Math.floor(Math.random() * pool.length)];
+        cards.push(card);
+        for (let i = 0; i < 100; i++) {
+            let new_deck = {...deck};
+            // shuffle the cards and pick the first 8
+            shuffle(cards);
+            let sub_cards = cards.slice(0, 8);
+            new_deck.cards = sub_cards;
+            // downgrade randomly
+            let downgradings = [...downgraded(sub_cards)];
+            if (downgradings.length == 0) {
+                continue;
+            }
+            sub_cards = downgradings[Math.floor(Math.random() * downgradings.length)];
+            let concon_count = 0;
+            for (let i=0; i<sub_cards.length; i++) {
+                if (swogi[sub_cards[i]].is_continuous || swogi[sub_cards[i]].is_consumption) {
+                    concon_count += 1;
+                }
+            }
+            if (concon_count > 2) {
+                continue;
+            }
+            new_deck.cards = sub_cards;
+            let this_score = score(decks, new_deck);
+            if (this_score > best_score) {
+                best_score = this_score;
+                best_cards = sub_cards;
+            }
+        }
+        if (best_cards != null) {
+            console.log("mutated deck", deck, "to", best_cards);
+            orig_deck.cards = best_cards;
+        }
+    }
+    let n_junk_to_add = 10;
+    while (true) {
+        let new_junk = [];
+        for (let qq = 0; qq < n_junk_to_add; qq++) {
+            let best_score = 0;
+            let best_deck = null;
+            for (let i = 0; i < 100; i++) {
+                // pick a random pool
+                let pool = pools_list[Math.floor(Math.random() * pools_list.length)];
+                let sect = pool.substring(0, 2);
+                // pick 8 cards from the pool
+                let cards = [];
+                for (let j = 0; j < 8; j++) {
+                    let card = pools[pool][Math.floor(Math.random() * pools[pool].length)];
+                    cards.push(card);
+                }
+                cards = upgradedd(cards);
+                // pick a random way of downgrading the deck
+                let downgradings = [...downgraded(cards)];
+                if (downgradings.length == 0) {
+                    continue;
+                }
+                cards = downgradings[Math.floor(Math.random() * downgradings.length)];
+                // if this deck has more than 2 continuous or consumption cards, skip it
+                let concon_count = 0;
+                for (let i=0; i<cards.length; i++) {
+                    if (swogi[cards[i]].is_continuous || swogi[cards[i]].is_consumption) {
+                        concon_count += 1;
+                    }
+                }
+                if (concon_count > 2) {
+                    continue;
+                }
+                // score the deck against the existing decks
+                let hero_deck = {
+                    "pool": pool,
+                    "sect": sect,
+                    "cards": cards,
+                };
+                let this_score = score(yxb_decks, hero_deck);
+                if (this_score > best_score) {
+                    best_score = this_score;
+                    best_deck = hero_deck;
+                }
+            }
+            if (best_deck != null) {
+                new_junk.push(best_deck);
+                console.log("added deck", best_deck);
+            }
+        }
+        n_junk_to_add = 2;
+        // append the new junk to the decks
+        decks = decks.concat(new_junk);
+        {
+            for (let i = 0; i < decks.length; i++) {
+                let this_score = score(yxb_decks, decks[i]);
+                decks[i].score = this_score;
+            }
+            // sort the decks by score in descending order
+            shuffle(decks);
+            decks.sort((a, b) => b.score - a.score);
+            console.log("best deck", decks[0]);
+        }
+        while (decks.length >= 20) {
+            let best_score = 0;
+            let best_idx = null;
+            // remove the worst deck
+            let worst_score = 1e99;
+            let worst_idx = -1;
+            for (let i = 0; i < decks.length; i++) {
+                let this_score = score(yxb_decks, decks[i]);
+                decks[i].score = this_score;
+                if (this_score < worst_score) {
+                    worst_score = this_score;
+                    worst_idx = i;
+                }
+                if (this_score > best_score) {
+                    best_score = this_score;
+                    best_idx = i;
+                }
+            }
+            console.log("best deck", decks[best_idx]);
+            console.log("removing deck", decks[worst_idx]);
+            if (worst_idx != -1) {
+                decks.splice(worst_idx, 1);
+            }
+            // sort the decks by score in descending order
+            decks.sort((a, b) => b.score - a.score);
+        }
+        // mutate a random deck
+        let deck_idx = Math.floor(Math.random() * decks.length);
+        let deck = decks[deck_idx];
+        mutate(yxb_decks, deck);
+    }
+
+
+
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 109;
+    players[enemy_idx].cultivation = 74;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 105;
+    players[my_idx].cultivation = 95;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "anthomania formation 3",
+        "echo formation",
+        "hexagram formacide 3",
+        "rotary divination hexagram",
+        "heaven hexagram",
+        "five thunders 2",
+        "meru formation 3",
+        "dance dragonfly 2",
+        "thunder hexagram rhythm 2",
+    ];
+    players[enemy_idx].cards = [
+        "divine walk fulu 2",
+        "ultimate world formation 2",
+        "wood spirit - peach blossom",
+        "water spirit - great waves",
+        "five elements circulation",
+        "wood spirit - fragrant",
+        "five elements circulation 2",
+        "fire spirit - blazing prairie 2",
+    ];
+    players[enemy_idx].peach_branch_ruyi_stacks = 1;
+    players[enemy_idx].mark_of_water_spirit_stacks = 1;
+    players[enemy_idx].blossom_dance_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["255"]();
+riddles["256"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 99;
+    players[enemy_idx].cultivation = 74;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 99;
+    players[my_idx].cultivation = 95;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "heaven hexagram 3",
+        "strike twice 3",
+        "ice spirit guard elixir 3",
+        "hunter hunting hunter 3",
+        "five thunders 3",
+        "great spirit 3",
+        "starry moon 3",
+        "hunter becomes preyer 3",
+    ];
+    players[enemy_idx].cards = [
+        "Heaven Hexagram 3",
+        "Entangling Ancient Vine 3",
+        "Astral Move - Cide 3",
+        "Heaven Hexagram 2",
+        "Five Thunders 3",
+        "Astral Move - Fly 3",
+        "Frozen Blood Lotus 3",
+        "Space Spiritual Field 3",
+    ];
+    return await do_riddle({players: players, my_idx: my_idx, just_run: true});
+};
+//await riddles["256"]();
+riddles["257"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 109;
+    players[enemy_idx].cultivation = 88;
+    players[enemy_idx].physique = 63;
+    players[enemy_idx].max_physique = 91;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 115;
+    players[my_idx].cultivation = 95;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "divine power elixir 3",
+        "unrestrained sword zero 2",
+        "unrestrained sword one 1",
+        "unrestrained sword one 3",
+        "unrestrained sword two 3",
+        "unrestrained sword two 2",
+        "unrestrained sword two 1",
+        "normal attack",
+    ];
+    players[enemy_idx].cards = [
+        "styx agility 1",
+        "styx agility 1",
+        "styx agility 1",
+        "shura roar 2",
+        "concentric tune 2",
+        "concentric tune 2",
+        "soul cleaving 2",
+        "soul seizing 2",
+    ];
+    players[my_idx].p5_mad_obsession_stacks = 1;
+    players[enemy_idx].p5_mark_of_dark_heart_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["257"]();
+riddles["258"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 112;
+    players[enemy_idx].cultivation = 82;
+    players[enemy_idx].physique = 66;
+    players[enemy_idx].max_physique = 86;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 113;
+    players[my_idx].cultivation = 80;
+    players[my_idx].physique = 56;
+    players[my_idx].max_physique = 90;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "chord in tune 2",
+        "predicament 1",
+        "heartbroken tune 2",
+        "shura roar",
+        "soul seizing 2",
+        "soul seizing 2",
+        "concentric tune 2",
+        "soul cleaving 2",
+    ];
+    players[enemy_idx].cards = [
+        "changuang",
+        "crash fist night",
+        "crash citta-dharma 3",
+        "crash fist inch force 3",
+        "crash fist continue 2",
+        "crash fist shocked 2",
+        "crash fist continue",
+        "crash fist shocked",
+    ];
+    players[my_idx].p3_mark_of_dark_heart_stacks = 1;
+    players[my_idx].unwavering_soul_stacks = 1;
+    players[enemy_idx].entering_styx_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["258"]();
+riddles["259"] = async () => {
+    const players = [{},{}];
+    const my_idx = 1;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 111;
+    players[enemy_idx].cultivation = 89;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 121;
+    players[my_idx].cultivation = 71;
+    players[my_idx].physique = 47;
+    players[my_idx].max_physique = 85;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "chord in tune",
+        "apparition confusion 2",
+        "crane footwork 2",
+        "heartbroken tune 2",
+        "styx agility 2",
+        "shura roar",
+        "concentric tune 3",
+        "soul seizing",
+        "ghost howling 2",
+        "ghost howling",
+    ];
+    players[enemy_idx].cards = [
+        "divine power elixir 2",
+        "cloud sword softheart 2",
+        "cloud sword flash wind 2",
+        "cloud sword moon shade 2",
+        "cloud sword flash wind",
+        "cloud sword step lightly 2",
+        "cloud sword flash wind",
+        "cloud sword avalanche",
+    ];
+    players[my_idx].unwavering_soul_stacks = 1;
+    players[enemy_idx].drift_ice_blade_stacks = 1;
+    players[enemy_idx].p5_rule_of_the_cloud_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["259"]();
+riddles["260"] = async () => {
+    const players = [{},{}];
+    const my_idx = 1;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 105;
+    players[enemy_idx].cultivation = 75;
+    players[enemy_idx].physique = 75;
+    players[enemy_idx].max_physique = 85;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 111;
+    players[my_idx].cultivation = 73;
+    players[my_idx].physique = 66;
+    players[my_idx].max_physique = 85;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "crane footwork 2",
+        "heartbroken tune 2",
+        "styx agility",
+        "shura roar",
+        "crane footwork",
+        "soul cleaving 2",
+        "concentric tune",
+        "soul seizing 3",
+    ];
+    players[enemy_idx].cards = [
+        "exercise soul 2",
+        "crash fist blink 2",
+        "meditation of xuan",
+        "crash fist shocked 3",
+        "wan xuan demon breaking palm",
+        "crash fist subdue dragon 3",
+        "exercise marrow 2",
+        "realm-killing palms 2",
+    ];
+    players[my_idx].p2_regenerating_body_stacks = 1;
+    players[my_idx].unwavering_soul_stacks = 1;
+    players[enemy_idx].zen_mind_forging_body_stacks = 1;
+    players[enemy_idx].mind_body_resonance_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["260"]();
+riddles["261"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 121;
+    players[enemy_idx].cultivation = 91;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 126;
+    players[my_idx].cultivation = 94;
+    players[my_idx].physique = 65;
+    players[my_idx].max_physique = 104;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "crane footwork 2",
+        "elusive footwork 2",
+        "surging waves 2",
+        "gather intense force 2",
+        "vast universe 2",
+        "crash fist shocked 2",
+        "crash fist inch force 2",
+        "crash fist continue 3",
+    ];
+    players[enemy_idx].cards = [
+        "polaris citta-dharma 2",
+        "star moon folding fan 2",
+        "astral cide 2",
+        "astral fly 2",
+        "starry moon 3",
+        "astral fly 2",
+        "astral tiger 3",
+        "astral fly",
+    ];
+    players[enemy_idx].star_moon_folding_fan_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["261"]();
+riddles["262"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 107;
+    players[enemy_idx].cultivation = 77;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 111;
+    players[my_idx].cultivation = 76;
+    players[my_idx].physique = 74;
+    players[my_idx].max_physique = 85;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "chord in tune 2",
+        "heartbroken tune 2",
+        "predicament 2",
+        "shura roar 2",
+        "styx agility",
+        "soul cleaving",
+        "styx agility",
+        "concentric tune 2",
+        "soul seizing",
+        "normal attack",
+    ];
+    players[enemy_idx].cards = [
+        "drag moon in sea 2",
+        "hunter hunting hunter",
+        "lake hexagram 2",
+        "great spirit 2",
+        "escape plan",
+        "hunter becomes preyer 2",
+        "normal attack",
+        "hunter hunting hunter",
+    ];
+    players[my_idx].unwavering_soul_stacks = 1;
+    players[enemy_idx].p2_divination_stacks = 1;
+    players[enemy_idx].p5_divination_stacks = 1;
+    players[enemy_idx].act_underhand_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["262"]();
+riddles["263"] = async () => {
+    const players = [{},{}];
+    const my_idx = 1;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 115;
+    players[enemy_idx].cultivation = 84;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 116;
+    players[my_idx].cultivation = 81;
+    players[my_idx].physique = 64;
+    players[my_idx].max_physique = 94;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "crane footwork 2",
+        "elusive footwork 2",
+        "crash citta-dharma 3",
+        "surging waves",
+        "crash fist inch force 3",
+        "crash fist continue 2",
+        "crash fist shocked 3",
+        "mysterious gates devil seal tower 2",
+        "gather intense force",
+    ];
+    players[enemy_idx].cards = [
+        "five elements heavenly marrow rhythm 2",
+        "water spirit formation 2",
+        "water spirit spring 3",
+        "water spirit great waves 2",
+        "water spirit great waves 3",
+        "water spirit combine rivers 2",
+        "water spirit combine rivers",
+        "water spirit waves",
+    ];
+    players[enemy_idx].mark_of_five_elements_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["263"]();
+riddles["264"] = async () => {
+    const players = [{},{}];
+    const my_idx = 1;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 114;
+    players[enemy_idx].cultivation = 91;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 115;
+    players[my_idx].cultivation = 87;
+    players[my_idx].physique = 67;
+    players[my_idx].max_physique = 95;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "styx agility 3",
+        "heartbroken tune 3",
+        "crane footwork 3",
+        "shura roar 3",
+        "ghost howling 3",
+        "soul cleaving 2",
+        "concentric tune 2",
+        "soul seizing 2",
+        "soul seizing",
+    ];
+    players[enemy_idx].cards = [
+        "metal spirit shuttle 2",
+        "water spirit spring 3",
+        "wood spirit - willow leaf 2",
+        "world smash 3",
+        "ice spirit guard elixir 2",
+        "wood spirit thorn 3",
+        "fire spirit flash fire 2",
+        "earth spirit dust 3",
+    ];
+    players[my_idx].unwavering_soul_stacks = 1;
+    players[enemy_idx].mark_of_five_elements_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["264"]();
+riddles["265"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 114;
+    players[enemy_idx].cultivation = 99;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 111;
+    players[my_idx].cultivation = 94;
+    players[my_idx].physique = 83;
+    players[my_idx].max_physique = 100;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "spiritage elixir 3",
+        "wood spirit fragrant 2",
+        "wood spirit willow leaf 3",
+        "fire spirit blast 3",
+        "wood spirit forest guard 2",
+        "wood spirit thorn 3",
+        "wood spirit forest guard 2",
+        "fire spirit blazing prairie 2",
+    ];
+    players[enemy_idx].cards = [
+        "crane footwork 3",
+        "meditation of xuan",
+        "styx agility 3",
+        "elusive footwork 3",
+        "ghost howling 2",
+        "soul cleaving 3",
+        "soul cleaving 3",
+        "wan xuan demon breaking palm",
+    ];
+    players[my_idx].mark_of_five_elements_stacks = 1;
+    players[enemy_idx].zen_mind_forging_body_stacks = 1;
+    players[enemy_idx].p2_regenerating_body_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["265"]();
+riddles["266"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 107;
+    players[enemy_idx].cultivation = 99;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 130;
+    players[my_idx].cultivation = 94;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "spiritage elixir",
+        "wood spirit fragrant 2",
+        "wood spirit willow leaf 2",
+        "five elements circulation 2",
+        "fire spirit heart fire 2",
+        "wood spirit forest guard 2",
+        "fire spirit blazing prairie 2",
+        "wood spirit thorn 3",
+        "wood spirit willow leaf",
+        "ice spirit guard elixir 2",
+    ];
+    players[enemy_idx].cards = [
+        "anthomania 2",
+        "unrestrained zero 1",
+        "clear heart sword 3",
+        "meru formation 1",
+        "normal attack",
+        "echo formation 2",
+        "unrestrained two 2",
+        "unrestrained two 2",
+    ];
+    players[my_idx].mark_of_five_elements_stacks = 1;
+    players[enemy_idx].blade_forging_stable_stacks = 1;
+    players[enemy_idx].sword_pattern_carving_intense_stacks = 1;
+    players[enemy_idx].quench_of_sword_heart_unrestrained_stacks = 1;
+    players[enemy_idx].p4_mad_obsession_stacks = 1;
+    players[enemy_idx].round_number = 17;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["266"]();
+riddles["267"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 107;
+    players[enemy_idx].cultivation = 99;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 105;
+    players[my_idx].cultivation = 999;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "unrestrained sword zero",
+        "heavenly forceage formation 2",
+        "motionless formation 2",
+        "motionless formation",
+        "unrestrained sword flame dance",
+        "unrestrained sword one 3",
+        "unrestrained sword two 2",
+        "unrestrained sword two",
+        "meru formation",
+        "normal attack",
+    ];
+    players[enemy_idx].cards = [
+        "spiritage elixir 3",
+        "five elements heavenly marrow rhythm",
+        "wood spirit fragrant 3",
+        "wood spirit fragrant",
+        "wood spirit forest guard 2",
+        "wood spirit thorn 3",
+        "wood spirit forest guard 2",
+        "wood spirit bud 2",
+    ];
+    players[my_idx].p4_mad_obsession_stacks = 1;
+    players[enemy_idx].mark_of_five_elements_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["267"]();
+riddles["268"] = async () => {
+    const players = [{},{}];
+    const my_idx = 0;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 111;
+    players[enemy_idx].cultivation = 99;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 120;
+    players[my_idx].cultivation = 999;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "five elements heavenly marrow rhythm 2",
+        "earth spirit formation 2",
+        "earth spirit cliff 2",
+        "earth spirit combine world 2",
+        "earth spirit steep 3",
+        "boulder seal 2",
+        "earth spirit rhythm metal 2",
+        "earth spirit quicksand 3",
+        "earth spirit combine world",
+    ];
+    players[enemy_idx].cards = [
+        "divine walk fulu 2",
+        "qi perfusion 2",
+        "divine walk fulu",
+        "spiritage incantation 2",
+        "spiritage incantation 2",
+        "thousand evil incantation 2",
+        "dharma spirit sword 2",
+        "normal attack",
+    ];
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["268"]();
+riddles["269"] = async () => {
+    const players = [{},{}];
+    const my_idx = 1;
+    const enemy_idx = 1 - my_idx;
+    players[enemy_idx].hp = 100;
+    players[enemy_idx].cultivation = 99;
+    players[enemy_idx].physique = 0;
+    players[enemy_idx].max_physique = 0;
+    players[enemy_idx].max_hp = players[enemy_idx].hp + players[enemy_idx].physique;
+    players[my_idx].hp = 133;
+    players[my_idx].cultivation = 9;
+    players[my_idx].physique = 0;
+    players[my_idx].max_physique = 0;
+    players[my_idx].max_hp = players[my_idx].hp + players[my_idx].physique;
+    players[my_idx].cards = [
+        "kun wu metal ring",
+        "earth spirit formation",
+        "metal spirit shuttle",
+        "earth spirit combine world",
+        "earth spirit dust",
+        "flying brush",
+        "earth spirit steep",
+        "earth spirit landslide",
+        "earth spirit quicksand 2",
+        "earth spirit cliff",
+    ];
+    players[enemy_idx].cards = [
+        "metal spirit shuttle",
+        "water spirit spring 2",
+        "wood spirit willow leaf 2",
+        "world smash 3",
+        "wood spirit thorn 2",
+        "fire spirit flash fire 2",
+        "earth spirit dust 2",
+        "normal attack",
+    ];
+    players[my_idx].the_body_of_fierce_tiger_stacks = 1;
+    players[enemy_idx].mark_of_five_elements_stacks = 1;
+    return await do_riddle({players: players, my_idx: my_idx});
+};
+//await riddles["269"]();
+riddles["270"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 82,
+            "hp": 104,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 16,
+            "cards": [
+                "Divine Walk Fulu",
+                "Wood Spirit Secret Seal 2",
+                "Wood Spirit Willow Leaf 2",
+                "Fire Spirit Heart Fire 3",
+                "Five Elements Circulation 2",
+                "Earth Spirit Combine World 2",
+                "Wood Spirit Secret Seal",
+                "Wood Spirit Bud 3"
+            ]
+        },
+        "villain": {
+            "cultivation": 91,
+            "hp": 111,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 16,
+            "cards": [
+                "Ultimate Hexagram Base",
+                "Hexagram Formacide 3",
+                "Heaven Hexagram 2",
+                "Starry Moon",
+                "Fury Thunder 2",
+                "Five Thunders 2",
+                "Dance Of The Dragonfly 2",
+                "Thunder Hexagram Rhythm 2"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["270"]();
+riddles["271"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 93,
+            "hp": 110,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 18,
+            "cards": [
+                "Only Traces 2",
+                "Hunter Hunting Hunter 2",
+                "Strike Twice",
+                "Drag Moon In Sea 3",
+                "Hunter Becomes Preyer 2",
+                "Hunter Hunting Hunter",
+                "Great Spirit 2",
+                "Escape Plan 3"
+            ]
+        },
+        "villain": {
+            "cultivation": 95,
+            "hp": 109,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 18,
+            "cards": [
+                "God Star Traction 2",
+                "Strike Twice 2",
+                "Astral Move Cide 3",
+                "Extremely Suspicious 3",
+                "Strike Twice 3",
+                "Within Reach",
+                "Disaster of Bloodshed 2",
+                "Disaster of Bloodshed"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["271"]();
+riddles["272"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 92,
+            "hp": 109,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 18,
+            "cards": [
+                "Heartbroken Tune 3",
+                "Polaris Citta-Dharma",
+                "Chord In Tune 3",
+                "Extremely Suspicious",
+                "Astral Move Cide",
+                "Strike Twice",
+                "Within Reach",
+                "Astral Move Fly",
+                "Ruthless Water 2",
+                "Repel Citta-Dharma"
+            ]
+        },
+        "villain": {
+            "cultivation": 95,
+            "hp": 109,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 18,
+            "cards": [
+                "Divine Walk Fulu",
+                "Sword Defence 3",
+                "Cloud Dance Rhythm 3",
+                "Sword Intent Surge",
+                "Flow Cloud Chaos Sword 3",
+                "Flow Cloud Chaos Sword",
+                "Dharma Spirit Sword 2",
+                "Contemplate Spirits Rhythm 2"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.p2_astral_eclipse_stacks = 1;
+    hero.p3_astral_eclipse_stacks = 1;
+    villain.p3_sword_rhyme_cultivate_stacks = 1;
+    villain.p5_sword_rhyme_cultivate_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["272"]();
+riddles["273"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 94,
+            "hp": 126,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 18,
+            "cards": [
+                "God Star Traction 3",
+                "Extremely Suspicious 2",
+                "Fate Reincarnates",
+                "Disaster of Bloodshed 2",
+                "Disaster of Bloodshed 2",
+                "Extremely Suspicious",
+                "Strike Twice 2",
+                "Within Reach"
+            ]
+        },
+        "villain": {
+            "cultivation": 88,
+            "hp": 116,
+            "physique": 80,
+            "max_physique": 91,
+            "round": 18,
+            "cards": [
+                "Stygian Moon's Changuang",
+                "Shura Roar 3",
+                "Styx Agility 2",
+                "Ghost Howling 2",
+                "Soul Cleaving 2",
+                "Soul Cleaving",
+                "Ice Spirit Guard Elixir",
+                "Soul Seizing 2"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.p2_astral_eclipse_stacks = 1;
+    villain.entering_styx_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["273"]();
+riddles["274"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 93,
+            "hp": 115,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 19,
+            "cards": [
+                "Cloud Sword Flash Wind 2",
+                "Cloud Sword Moon Shade 3",
+                "Cloud Sword Dragon Roam 2",
+                "Flying Spirit Shade Sword",
+                "Cloud Sword Flash Wind 2",
+                "Cloud Sword Step Lightly",
+                "Cloud Sword Flash Wind 2",
+                "Cloud Sword Step Lightly"
+            ]
+        },
+        "villain": {
+            "cultivation": 104,
+            "hp": 114,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 19,
+            "cards": [
+                "Ultimate Hexagram Base",
+                "Heaven Hexagram 2",
+                "Bow Of Hunting Owl",
+                "Heaven Hexagram",
+                "Starry Moon 3",
+                "Fury Thunder",
+                "Five Thunders",
+                "Hexagram Formacide 3"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.endurance_as_cloud_sea_stacks = 1;
+    hero.p4_rule_of_the_cloud_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["274"]();
+riddles["275"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 93,
+            "hp": 107,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 17,
+            "cards": [
+                "God Star Traction 2",
+                "Calamity Plaguin 2",
+                "Fate Reincarnates",
+                "Disaster of Bloodshed 2",
+                "Disaster of Bloodshed 2",
+                "Strike Twice",
+                "Extremely Suspicious 2",
+                "Within Reach"
+            ]
+        },
+        "villain": {
+            "cultivation": 86,
+            "hp": 107,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 17,
+            "cards": [
+                "Fate Reincarnates",
+                "Unrestrained Sword Flame Dance",
+                "Unrestrained Sword Two 2",
+                "Calamity Plaguin 2",
+                "Calamity Plaguin",
+                "Unrestrained Sword Two 2",
+                "Cloud Sword Dragon Roam 2",
+                "Unrestrained Sword Two 2"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    villain.p4_mad_obsession_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["275"]();
+riddles["276"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 91,
+            "hp": 111,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 19,
+            "cards": [
+                "Moon Water Sword Formation 2",
+                "Rule Sky Sword Formation 2",
+                "Nine Evil Ruptsprite",
+                "Chain Sword Formation 2",
+                "Earth Tune 3",
+                "Chord In Tune 2",
+                "Mirror Flower Sword Formation 3",
+                "Chain Sword Formation"
+            ]
+        },
+        "villain": {
+            "cultivation": 101,
+            "hp": 111,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 19,
+            "cards": [
+                "God Star Traction 2",
+                "Calamity Plaguin 2",
+                "Extremely Suspicious 2",
+                "Within Reach",
+                "Strike Twice 2",
+                "Astral Move Cide",
+                "Disaster of Bloodshed 3",
+                "Disaster of Bloodshed"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.p3_sword_formation_guard_stacks = 1;
+    hero.p5_sword_formation_guard_stacks = 1;
+    villain.p3_astral_eclipse_stacks = 1;
+    villain.p5_astral_eclipse_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["276"]();
+riddles["277"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 85,
+            "hp": 105,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 16,
+            "cards": [
+                "God Star Traction",
+                "Calamity Plaguin 2",
+                "Extremely Suspicious 3",
+                "Within Reach",
+                "Strike Twice",
+                "Disaster of Bloodshed 2",
+                "Disaster of Bloodshed 2",
+                "normal attack"
+            ]
+        },
+        "villain": {
+            "cultivation": 84,
+            "hp": 124,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 16,
+            "cards": [
+                "Hexagram Formacide 3",
+                "Dance Of The Dragonfly 3",
+                "Flame Hexagram 2",
+                "Heaven Hexagram 3",
+                "Five Thunders",
+                "Thunder Hexagram Rhythm",
+                "Fury Thunder",
+                "Thunder And Lightning 3"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    villain.p3_divination_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["277"]();
+riddles["278"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 98,
+            "hp": 111,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 18,
+            "cards": [
+                "Polaris Citta-Dharma 2",
+                "Propitious Omen 2",
+                "Star Moon Folding Fan 1",
+                "Astral Move Hit 3",
+                "Astral Move Hit 2",
+                "Astral Move Cide 1",
+                "normal attack",
+                "normal attack"
+            ]
+        },
+        "villain": {
+            "cultivation": 98,
+            "hp": 109,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 18,
+            "cards": [
+                "Heartbroken Tune 2",
+                "Chord In Tune 1",
+                "Predicament for Immortals 2",
+                "Strike Twice 2",
+                "Concentric Tune 3",
+                "Within Reach 1",
+                "Extremely Suspicious 2",
+                "Normal Attack 1"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.star_moon_folding_fan_stacks = 1;
+    villain.p5_astral_eclipse_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["278"]();
+riddles["279"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 85,
+            "hp": 107,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 17,
+            "cards": [
+                "God Star Traction 2",
+                "Calamity Plaguin 1",
+                "Calamity Plaguin 1",
+                "Extremely Suspicious 2",
+                "Within Reach 1",
+                "Astral Move Cide 2",
+                "God Fate Reborn 2",
+                "Disaster of Bloodshed 1",
+                "Astral Tiger 2",
+                "Heaven Hexagram 2",
+                "Astral Cide",
+                "Strike Twice",
+            ]
+        },
+        "villain": {
+            "cultivation": 7,
+            "hp": 127,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 17,
+            "cards": [
+                "Kun Wu Metal Ring 1",
+                "Metal Spirit Formation 2",
+                "Metal Spirit Shuttle 1",
+                "Metal Spirit Charge 2",
+                "Metal Spirit Shuttle 1",
+                "Metal Spirit Vigorous 1",
+                "Metal Spirit Shuttle 1",
+                "Metal Spirit Giant Tripod 2"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.p5_astral_eclipse_stacks = 1;
+    villain.the_body_of_fierce_tiger_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["279"]();
+riddles["280"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 92,
+            "hp": 107,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 17,
+            "cards": [
+                "Chord In Tune 2",
+                "Heartbroken Tune 3",
+                "Predicament for Immortals 2",
+                "Ruthless Water 2",
+                "Concentric Tune 2",
+                "Astral Move Cide 1",
+                "Within Reach 1",
+                "Flowers And Water 1"
+            ]
+        },
+        "villain": {
+            "cultivation": 90,
+            "hp": 110,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 17,
+            "cards": [
+                "Heaven Hexagram 3",
+                "Ultimate Hexagram Base 1",
+                "Astral Move Cide 1",
+                "Thunder And Lightning 3",
+                "Ice Spirit Guard Elixir 3",
+                "Five Thunders 2",
+                "Thunder Hexagram Rhythm 2",
+                "Dance Of The Dragonfly 1"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.p5_astral_eclipse_stacks = 1;
+    villain.the_body_of_fierce_tiger_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["280"]();
+riddles["281"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 97,
+            "hp": 109,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 8,
+            "cards": [
+                "God Star Traction 2",
+                "Calamity Plaguin 2",
+                "Fate Reincarnates 2",
+                "Calamity Plaguin 1",
+                "Nothing Is Appropriate 2",
+                "Within Reach 1",
+                "Disaster of Bloodshed 2",
+                "Disaster of Bloodshed 2"
+            ]
+        },
+        "villain": {
+            "cultivation": 96,
+            "hp": 125,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 18,
+            "cards": [
+                "Hexagram Formacide 2",
+                "Flame Hexagram 3",
+                "Heaven Hexagram 2",
+                "Ice Spirit Guard Elixir 1",
+                "Fury Thunder 2",
+                "Five Thunders 2",
+                "Thunder Hexagram Rhythm 3",
+                "Heaven Hexagram 1"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.p3_astral_eclipse_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["281"]();
+riddles["282"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 86,
+            "hp": 107,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 17,
+            "cards": [
+                "God Star Traction 3",
+                "Calamity Plaguin 1",
+                "Calamity Plaguin 1",
+                "Strike Twice 1",
+                "Within Reach 1",
+                "Calamity Plaguin 1",
+                "Disaster of Bloodshed 1",
+                "Disaster of Bloodshed 1",
+                "Everything Goes Way 2",
+                "Everything Goes Way 1",
+            ]
+        },
+        "villain": {
+            "cultivation": 92,
+            "hp": 107,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 17,
+            "cards": [
+                "Fate Reincarnates 2",
+                "Unrestrained Sword Zero 1",
+                "Unrestrained Sword Flame Dance 1",
+                "Good Omen 2",
+                "Good Omen 1",
+                "Unrestrained Sword Two 2",
+                "Cloud Sword Dragon Roam 2",
+                "Unrestrained Sword Two 1"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.p3_astral_eclipse_stacks = 1;
+    hero.p5_astral_eclipse_stacks = 1;
+    villain.fire_flame_blade_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["282"]();
+riddles["283"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 87,
+            "hp": 107,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 17,
+            "cards": [
+                "Chord In Tune 1",
+                "Predicament for Immortals 1",
+                "Heartbroken Tune 3",
+                "Flower Sentient 2",
+                "Extremely Suspicious 2",
+                "Strike Twice 1",
+                "Within Reach 1",
+                "Ruthless Water 3",
+                "Astral Cide 2",
+            ]
+        },
+        "villain": {
+            "cultivation": 87,
+            "hp": 111,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 17,
+            "cards": [
+                "Drag Moon In Sea 2",
+                "Hunter Hunting Hunter 3",
+                "Normal Attack 1",
+                "Escape Plan 2",
+                "Extremely Suspicious 1",
+                "Heaven Hexagram 2",
+                "Hunter Becomes Preyer 3",
+                "Exorcism Elixir 2"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.p5_astral_eclipse_stacks = 1;
+    villain.p2_divination_stacks = 1;
+    villain.p5_divination_stacks = 1;
+    villain.act_underhand_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["283"]();
+riddles["284"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 73,
+            "hp": 109,
+            "physique": 75,
+            "max_physique": 85,
+            "round": 16,
+            "cards": [
+                "Crane Footwork 2",
+                "Realm-Killing Palms 1",
+                "Wan Xuan Demon Breaking Palm 1",
+                "Meditation of Xuan 1",
+                "Exercise Marrow 3",
+                "Soul Cleaving 2",
+                "Toxin Immunity 2",
+                "Soul Seizing 3",
+                "styx agility",
+                "shura roar",
+                "crane footwork",
+            ]
+        },
+        "villain": {
+            "cultivation": 79,
+            "hp": 113,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 16,
+            "cards": [
+                "Hexagram Formacide 2",
+                "Flame Hexagram 2",
+                "Heaven Hexagram 1",
+                "Starry Moon 3",
+                "Fury Thunder 1",
+                "Five Thunders 2",
+                "Flame Hexagram 1",
+                "Dance Of The Dragonfly 2"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.zen_mind_forging_body_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["284"]();
+riddles["285"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 72,
+            "hp": 106,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 16,
+            "cards": [
+                "Sword Slash 3",
+                "Disaster of Bloodshed 1",
+                "Sword Defence 3",
+                "Cloud Dance Rhythm 1",
+                "Thousand Evil Incantation 1",
+                "Spirit Cat Chaos Sword 2",
+                "Learn Fortune 3",
+                "Ice Incantation 2",
+                "rule sky 2",
+                "weaken fulu",
+                "contemplate spirits rhythm 2",
+                "sword intent surge",
+            ]
+        },
+        "villain": {
+            "cultivation": 82,
+            "hp": 111,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 16,
+            "cards": [
+                "Ultimate Hexagram Base 1",
+                "Heaven Hexagram 2",
+                "Thunder Hexagram Rhythm 1",
+                "Fury Thunder 1",
+                "Five Thunders 1",
+                "Dance Of The Dragonfly 2",
+                "Thunder And Lightning 1",
+                "Ice Spirit Guard Elixir 2"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["285"]();
+riddles["286"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 94,
+            "hp": 109,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 18,
+            "cards": [
+                "Calamity Plaguin 1",
+                "Extremely Suspicious 1",
+                "Disaster of Bloodshed 2",
+                "Disaster of Bloodshed 1",
+                "Extremely Suspicious 1",
+                "Within Reach 1",
+                "God Fate Flies 2",
+                "Detect Qi 2"
+            ]
+        },
+        "villain": {
+            "cultivation": 82,
+            "hp": 114,
+            "physique": 86,
+            "max_physique": 91,
+            "round": 18,
+            "cards": [
+                "Stygian Moon's Changuang 1",
+                "Shura Roar 1",
+                "Crane Footwork 1",
+                "Ice Spirit Guard Elixir 2",
+                "Styx Agility 2",
+                "Soul Cleaving 2",
+                "Soul Seizing 2",
+                "Soul Seizing 1"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.p3_astral_eclipse_stacks = 1;
+    hero.p5_astral_eclipse_stacks = 1;
+    villain.entering_styx_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["286"]();
+riddles["287"] = async () => {
+    const data ={
+        "hero": {
+            "cultivation": 90,
+            "hp": 108,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 17,
+            "cards": [
+                "Ultimate Hexagram Base 1",
+                "Heaven Hexagram 2",
+                "Astral Move Cide 2",
+                "Starry Moon 1",
+                "Fury Thunder 1",
+                "Five Thunders 3",
+                "Dance Of The Dragonfly 1",
+                "Ice Spirit Guard Elixir 2"
+            ]
+        },
+        "villain": {
+            "cultivation": 97,
+            "hp": 107,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 17,
+            "cards": [
+                "God Star Traction 2",
+                "Calamity Plaguin 1",
+                "Fate Reincarnates 2",
+                "Disaster of Bloodshed 2",
+                "Disaster of Bloodshed 1",
+                "Calamity Plaguin 1",
+                "Strike Twice 1",
+                "Within Reach 1"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    villain.p5_astral_eclipse_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["287"]();
+riddles["288"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 79,
+            "hp": 105,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 15,
+            "cards": [
+                "Hexagram Formacide 2",
+                "Hexagram Formacide 1",
+                "Flame Hexagram 3",
+                "Heaven Hexagram 1",
+                "Starry Moon 1",
+                "Fury Thunder 1",
+                "Thunder And Lightning 1",
+                "Thunder Hexagram Rhythm 2",
+                "Astral Cide 2",
+                "Ultimate Hexagram Base",
+                "Ice Spirit Guard Elixir 3",
+                "Polaris 2",
+                "Astral Hit 2",
+            ]
+        },
+        "villain": {
+            "cultivation": 14,
+            "hp": 103,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 15,
+            "cards": [
+                "Chord In Tune 1",
+                "Illusion Tune 3",
+                "Moon Water Sword Formation 3",
+                "Rule Sky Sword Formation 1",
+                "Earth Tune 2",
+                "Chain Sword Formation 1",
+                "Mirror Flower Sword Formation 2",
+                "Mirror Flower Sword Formation 2"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    villain.coral_sword_stacks = 1;
+    villain.p5_store_qi_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["288"]();
+riddles["289"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 84,
+            "hp": 107,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 17,
+            "cards": [
+                "Hexagram Formacide 2",
+                "Thunder Citta Dharma 1",
+                "Flame Hexagram 2",
+                "Fury Thunder 1",
+                "Thunder And Lightning 2",
+                "Strike Twice 1",
+                "Five Thunders 1",
+                "Dance Of The Dragonfly 3",
+                "Hexagram Formacide",
+                "Thunder Hexagram Rhythm 2",
+            ]
+        },
+        "villain": {
+            "cultivation": 81,
+            "hp": 127,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 17,
+            "cards": [
+                "Earth Spirit Formation 1",
+                "Earth Spirit Formation 1",
+                "Earth Spirit Combine World 1",
+                "Earth Spirit Steep 2",
+                "Earth Spirit Landslide 1",
+                "Earth Spirit Cliff 2",
+                "Earth Spirit Quicksand 2",
+                "Earth Spirit Quicksand 2"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    villain.the_body_of_fierce_tiger_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["289"]();
+riddles["290"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 83,
+            "hp": 114,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 18,
+            "cards": [
+                "Lake Hexagram 2",
+                "Drag Moon In Sea 3",
+                "Hunter Hunting Hunter 2",
+                "Hunter Hunting Hunter 1",
+                "Drag Moon In Sea 1",
+                "Astral Move Cide 1",
+                "Great Spirit 3",
+                "Strike Twice 2",
+                "Heaven Hexagram",
+                "Escape Plan",
+                "Five Thunders",
+            ]
+        },
+        "villain": {
+            "cultivation": 97,
+            "hp": 116,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 18,
+            "cards": [
+                "Ultimate Hexagram Base 2",
+                "Hexagram Formacide 3",
+                "Heaven Hexagram 1",
+                "Flame Hexagram 3",
+                "Fury Thunder 2",
+                "Five Thunders 2",
+                "Dance Of The Dragonfly 3",
+                "Thunder Hexagram Rhythm 2"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.act_underhand_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["290"]();
+riddles["291"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 79,
+            "hp": 105,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 16,
+            "cards": [
+                "Polaris Citta-Dharma 2",
+                "Propitious Omen 3",
+                "Star Moon Folding Fan 1",
+                "Astral Move Tiger 2",
+                "Metal Tri-Thorn Spear 1",
+                "Astral Move Hit 2",
+                "Flying Brush 1",
+                "Astral Move Cide 1"
+            ]
+        },
+        "villain": {
+            "cultivation": 83,
+            "hp": 108,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 16,
+            "cards": [
+                "Ultimate Hexagram Base 1",
+                "Hexagram Formacide 3",
+                "Heaven Hexagram 1",
+                "Flame Hexagram 3",
+                "Fury Thunder 1",
+                "Five Thunders 2",
+                "Thunder Hexagram Rhythm 2",
+                "Thunder And Lightning 3"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.star_moon_folding_fan_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["291"]();
+riddles["292"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 96,
+            "hp": 109,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 18,
+            "cards": [
+                "Chord In Tune 2",
+                "Predicament for Immortals 3",
+                "Heartbroken Tune 3",
+                "Extremely Suspicious 1",
+                "Concentric Tune 2",
+                "Strike Twice 2",
+                "Within Reach 1",
+                "Astral Move Cide 1"
+            ]
+        },
+        "villain": {
+            "cultivation": 71,
+            "hp": 123,
+            "physique": 90,
+            "max_physique": 95,
+            "round": 18,
+            "cards": [
+                "Exercise Soul 2",
+                "Exercise Soul 2",
+                "Exercise Soul 2",
+                "Exercise Marrow 3",
+                "Realm-Killing Palms 2",
+                "Shura Roar 3",
+                "Soul Cleaving 2",
+                "Space Spiritual Field 2"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.p3_store_qi_stacks = 1;
+    villain.p4_regenerating_body_stacks = 1;
+    villain.stance_of_fierce_attack_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["292"]();
+riddles["293"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 106,
+            "hp": 120,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 20,
+            "cards": [
+                "Fate Reincarnates 2",
+                "Calamity Plaguin 2",
+                "Extremely Suspicious 2",
+                "Detect Qi 2",
+                "Disaster of Bloodshed 1",
+                "Within Reach 1",
+                "Nothing Is Appropriate 3",
+                "Great Spirit 3"
+            ]
+        },
+        "villain": {
+            "cultivation": 99,
+            "hp": 90,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 20,
+            "cards": [
+                "Water Spirit Seal 3",
+                "Ultimate World Formation 1",
+                "Wood Spirit Secret Seal 2",
+                "Wood Spirit Fragrant 3",
+                "Five Elements Circulation 3",
+                "Fire Spirit Blazing Prairie 3",
+                "Wood Spirit Willow Leaf 1",
+                "Fire Spirit Heart Fire 3"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.p2_astral_eclipse_stacks = 1;
+    villain.five_elements_explosion_stacks = 1;
+    villain.swift_burning_seal_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["293"]();
+riddles["294"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 101,
+            "hp": 119,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 20,
+            "cards": [
+                "Dragon Devours Clouds 2",
+                "Cloud Sword Dragon Roam 2",
+                "Unrestrained Sword Two 1",
+                "Cloud Sword Flash Wind 2",
+                "Unrestrained Sword Dragon Coiled 1",
+                "Cloud Sword Flash Wind 1",
+                "Unrestrained Sword Twin Dragons 1",
+                "Unrestrained Sword Two 2"
+            ]
+        },
+        "villain": {
+            "cultivation": 109,
+            "hp": 113,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 20,
+            "cards": [
+                "God Star Traction 3",
+                "Calamity Plaguin 3",
+                "Fate Reincarnates 2",
+                "Disaster of Bloodshed 3",
+                "Disaster of Bloodshed 1",
+                "Strike Twice 3",
+                "Within Reach 1",
+                "God Fate Flies 3"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.p5_rule_of_the_cloud_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["294"]();
+riddles["295"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 60,
+            "hp": 102,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 13,
+            "cards": [
+                "Spirit Gather Citta Dharma 1",
+                "Spiritage Elixir 3",
+                "Clear Heart Sword Embryo 3",
+                "Cloud Sword Pierce The Star 2",
+                "Raven Spirit Sword 1",
+                "Giant Kun Spirit Sword 2",
+                "Mirror Flower Sword Formation 1",
+                "Rule Sky Sword Formation 1",
+                "Spiritage Elixir",
+                "Dharma Spirit Sword",
+                "Cloud Sword Pierce The Star",
+                "Moon Water Sword",
+            ]
+        },
+        "villain": {
+            "cultivation": 64,
+            "hp": 99,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 13,
+            "cards": [
+                "God Star Traction 1",
+                "Calamity Plaguin 1",
+                "Ruthless Water 2",
+                "Extremely Suspicious 1",
+                "Within Reach 1",
+                "God Fate Reborn 1",
+                "Disaster of Bloodshed 1",
+                "Normal Attack 1"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.quench_of_sword_heart_cloud_stacks = 1;
+    hero.qi_forging_spiritstat_stacks = 1;
+    villain.p3_astral_eclipse_stacks = 1;
+    villain.p5_astral_eclipse_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["295"]();
+riddles["296"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 80,
+            "hp": 103,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 15,
+            "cards": [
+                "God Star Traction 2",
+                "Calamity Plaguin 1",
+                "Calamity Plaguin 1",
+                "Extremely Suspicious 1",
+                "Within Reach 1",
+                "Disaster of Bloodshed 2",
+                "Disaster of Bloodshed 1",
+                "Disaster of Bloodshed 1"
+            ]
+        },
+        "villain": {
+            "cultivation": 82,
+            "hp": 106,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 15,
+            "cards": [
+                "Polaris Citta-Dharma 2",
+                "Propitious Omen 2",
+                "Astral Move Fly 3",
+                "Astral Move Tiger 3",
+                "Astral Move Fly 2",
+                "Starry Moon 3",
+                "Astral Move Fly 2",
+                "Astral Move Hit 1"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["296"]();
+riddles["297"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 78,
+            "hp": 105,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 16,
+            "cards": [
+                "Flame Hexagram 2",
+                "Heaven Hexagram 2",
+                "Fury Thunder 1",
+                "Five Thunders 1",
+                "Dance Of The Dragonfly 3",
+                "Astral Move Cide 1",
+                "Propitious Omen 2",
+                "Strike Twice 2",
+                "Polaris Citta Dharma",
+                "Thunder Hexagram Rhythm 2",
+                "Thunder Hexagram Rhythm",
+                "Ultimate Hexagram Base",
+            ]
+        },
+        "villain": {
+            "cultivation": 75,
+            "hp": 107,
+            "physique": 53,
+            "max_physique": 81,
+            "round": 16,
+            "cards": [
+                "Stygian Moon's Changuang 1",
+                "Crash Citta Dharma 2",
+                "Styx Agility 2",
+                "Crash Fist Stygian Night 1",
+                "Gather Intense Force 2",
+                "Crash Fist Subdue Dragon 2",
+                "Crash Fist Inch Force 2",
+                "Crash Fist Continue 3"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.p4_stargaze_stacks = 1;
+    villain.entering_styx_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["297"]();
+riddles["298"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 85,
+            "hp": 124,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 17,
+            "cards": [
+                "Cloud Sword Dragon Roam 1",
+                "Cloud Sword Moon Shade 2",
+                "Cloud Sword Flash Wind 2",
+                "Cloud Sword Fleche 3",
+                "Cloud Sword Flash Wind 1",
+                "Cloud Sword Necessity 2",
+                "Cloud Sword Flash Wind 1",
+                "Cloud Sword Avalanche 1"
+            ]
+        },
+        "villain": {
+            "cultivation": 93,
+            "hp": 107,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 17,
+            "cards": [
+                "God Star Traction 3",
+                "Calamity Plaguin 2",
+                "Calamity Plaguin 1",
+                "Extremely Suspicious 2",
+                "Within Reach 1",
+                "Disaster of Bloodshed 2",
+                "Disaster of Bloodshed 1",
+                "Disaster of Bloodshed 1"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.fire_flame_blade_stacks = 1;
+    hero.drift_ice_blade_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["298"]();
+riddles["299"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 88,
+            "hp": 123,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 17,
+            "cards": [
+                "God Star Traction 2",
+                "Calamity Plaguin 2",
+                "Calamity Plaguin 1",
+                "Extremely Suspicious 2",
+                "Within Reach 1",
+                "God Fate Reborn 2",
+                "Disaster of Bloodshed 2",
+                "Disaster of Bloodshed 1"
+            ]
+        },
+        "villain": {
+            "cultivation": 83,
+            "hp": 110,
+            "physique": 80,
+            "max_physique": 86,
+            "round": 17,
+            "cards": [
+                "Crane Footwork 2",
+                "Stygian Moon's Changuang 1",
+                "Crash Footwork 2",
+                "Crash Fist Stygian Night 1",
+                "Exercise Soul 2",
+                "Crash Fist Blink 2",
+                "Crash Fist Subdue Dragon 3",
+                "Realm-Killing Palms 2"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.p3_rejuvenation_stacks = 1;
+    villain.entering_styx_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["299"]();
+riddles["300"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 82,
+            "hp": 108,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 16,
+            "cards": [
+                "Ultimate Hexagram Base 1",
+                "Hexagram Formacide 2",
+                "Heaven Hexagram 2",
+                "Starry Moon 1",
+                "Fury Thunder 1",
+                "Five Thunders 2",
+                "Dance Of The Dragonfly 2",
+                "Thunder Hexagram Rhythm 1"
+            ]
+        },
+        "villain": {
+            "cultivation": 81,
+            "hp": 109,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 16,
+            "cards": [
+                "Five Elements Heavenly Marrow Rhythm 2",
+                "Fire Spirit Formation 3",
+                "Fire Spirit Flame Eater 2",
+                "Fire Spirit Blast 3",
+                "Fire Spirit Heart Fire 3",
+                "Fire Spirit Blazing Prairie 2",
+                "Fire Spirit Heart Fire 2",
+                "Fire Spirit Scarlet Flame 2"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.p3_rejuvenation_stacks = 1;
+    villain.entering_styx_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["300"]();
+riddles["301"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 91,
+            "hp": 109,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 18,
+            "cards": [
+                "God Star Traction 3",
+                "Fate Reincarnates 3",
+                "Great Spirit 2",
+                "Calamity Plaguin 1",
+                "Calamity Plaguin 1",
+                "Disaster of Bloodshed 2",
+                "Extremely Suspicious 2",
+                "Within Reach 1"
+            ]
+        },
+        "villain": {
+            "cultivation": 94,
+            "hp": 109,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 18,
+            "cards": [
+                "Polaris Citta-Dharma 3",
+                "Propitious Omen 3",
+                "Astral Move Fly 2",
+                "Astral Move Cide 3",
+                "Heaven Hexagram 3",
+                "Five Thunders 1",
+                "Normal Attack 1",
+                "Normal Attack 1"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.p3_astral_eclipse_stacks = 1;
+    hero.p5_astral_eclipse_stacks = 1;
+    villain.astral_divination_hexagram_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = 0;//data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+riddles["302"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 79,
+            "hp": 103,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 15,
+            "cards": [
+                "Heartbroken Tune 2",
+                "Chord In Tune 1",
+                "Extremely Suspicious 1",
+                "Concentric Tune 1",
+                "Within Reach 1",
+                "Extremely Suspicious 1",
+                "Heartbroken Tune 1",
+                "Propitious Omen 2"
+            ]
+        },
+        "villain": {
+            "cultivation": 60,
+            "hp": 120,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 15,
+            "cards": [
+                "Cloud Dance Rhythm 2",
+                "Sword Defence 3",
+                "Contemplate Spirits Rhythm 2",
+                "Spirit Cat Chaos Sword 1",
+                "Cloud Sword Touch Sky 2",
+                "Cloud Sword Necessity 2",
+                "Cloud Sword Conceal 2",
+                "Unrestrained Sword One 3"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["302"]();
+riddles["303"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 95,
+            "hp": 120,
+            "physique": 99,
+            "max_physique": 104,
+            "round": 20,
+            "cards": [
+                "Crash Footwork 2",
+                "Exercise Soul 3",
+                "Stygian Moon's Changuang 1",
+                "Exercise Marrow 3",
+                "Crash Fist Subdue Dragon 2",
+                "Realm-Killing Palms 2",
+                "Crash Fist Blink 3",
+                "Crane Footwork 2",
+                "Crane Footwork",
+                "Realm-Killing Palms",
+            ]
+        },
+        "villain": {
+            "cultivation": 112,
+            "hp": 115,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 20,
+            "cards": [
+                "Heartbroken Tune 3",
+                "Chord In Tune 1",
+                "Predicament for Immortals 3",
+                "Concentric Tune 3",
+                "Strike Twice 1",
+                "Extremely Suspicious 3",
+                "Within Reach 1",
+                "Normal Attack 1"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.p2_regenerating_body_stacks = 1;
+    hero.p3_regenerating_body_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["303"]();
+riddles["304"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 102,
+            "hp": 116,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 19,
+            "cards": [
+                "Hexagram Formacide 3",
+                "Flame Hexagram 2",
+                "Heaven Hexagram 1",
+                "Propitious Omen 2",
+                "Ice Spirit Guard Elixir 1",
+                "Fury Thunder 1",
+                "Five Thunders 2",
+                "Dance Of The Dragonfly 3"
+            ]
+        },
+        "villain": {
+            "cultivation": 91,
+            "hp": 115,
+            "physique": 64,
+            "max_physique": 96,
+            "round": 19,
+            "cards": [
+                "Stygian Moon's Changuang 1",
+                "Crash Citta Dharma 2",
+                "Styx Agility 2",
+                "Crash Fist Stygian Night 2",
+                "Crash Fist Blink 2",
+                "Crash Fist Double 2",
+                "Crash Fist Shocked 2",
+                "Crash Fist Inch Force 3"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.p2_regenerating_body_stacks = 1;
+    hero.p3_regenerating_body_stacks = 1;
+    villain.entering_styx_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["304"]();
+riddles["305"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 102,
+            "hp": 116,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 19,
+            "cards": [
+                "Hexagram Formacide 3",
+                "Flame Hexagram 2",
+                "Heaven Hexagram 1",
+                "Propitious Omen 2",
+                "Ice Spirit Guard Elixir 1",
+                "Fury Thunder 1",
+                "Five Thunders 2",
+                "Dance Of The Dragonfly 3"
+            ]
+        },
+        "villain": {
+            "cultivation": 91,
+            "hp": 115,
+            "physique": 64,
+            "max_physique": 96,
+            "round": 19,
+            "cards": [
+                "Stygian Moon's Changuang 1",
+                "Crash Citta Dharma 2",
+                "Styx Agility 2",
+                "Crash Fist Stygian Night 2",
+                "Crash Fist Blink 2",
+                "Crash Fist Double 2",
+                "Crash Fist Shocked 2",
+                "Crash Fist Inch Force 3"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.p2_regenerating_body_stacks = 1;
+    hero.p3_regenerating_body_stacks = 1;
+    villain.p3_astral_eclipse_stacks = 1;
+    villain.p5_astral_eclipse_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["305"]();
+riddles["306"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 78,
+            "hp": 105,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 16,
+            "cards": [
+                "Only Traces 1",
+                "Strike Twice 1",
+                "Stillness Citta Dharma 2",
+                "Great Spirit 2",
+                "God's Opportunity - Conform 2",
+                "Astral Move Cide 3",
+                "Great Spirit 1",
+                "Revitalized 1",
+                "Stillness Citta Dharma",
+                "Fate Reincarnates 3",
+                "Calamity Plaguin 2",
+            ]
+        },
+        "villain": {
+            "cultivation": 81,
+            "hp": 105,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 16,
+            "cards": [
+                "Divine Walk Fulu 1",
+                "Miasma Fulu 3",
+                "Flower Sentient 1",
+                "Extremely Suspicious 1",
+                "Extremely Suspicious 1",
+                "Strike Twice 1",
+                "Thousand Evil Incantation 2",
+                "Within Reach 1"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    villain.p3_astral_eclipse_stacks = 1;
+    villain.p5_astral_eclipse_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["306"]();
+riddles["307"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 88,
+            "hp": 107,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 17,
+            "cards": [
+                "God Star Traction 3",
+                "Extremely Suspicious 2",
+                "Astral Move Cide 2",
+                "Disaster of Bloodshed 3",
+                "Disaster of Bloodshed 1",
+                "Great Spirit 2",
+                "Extremely Suspicious 1",
+                "Within Reach 1"
+            ]
+        },
+        "villain": {
+            "cultivation": 90,
+            "hp": 114,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 17,
+            "cards": [
+                "Polaris Citta-Dharma 1",
+                "Starry Moon 3",
+                "Astral Move Fly 2",
+                "Propitious Omen 2",
+                "Astral Move Fly 1",
+                "Ice Spirit Guard Elixir 2",
+                "Astral Move Hit 3",
+                "Astral Move Tiger 3"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = 0;//data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["307"]();
+riddles["308"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 95,
+            "hp": 109,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 18,
+            "cards": [
+                "God's Opportunity Conform 2",
+                "Extremely Suspicious 3",
+                "Fate Reincarnates 2",
+                "Disaster of Bloodshed 2",
+                "Disaster of Bloodshed 2",
+                "Strike Twice 2",
+                "Thousand Evil Incantation 1",
+                "Divine Walk Fulu 1"
+            ]
+        },
+        "villain": {
+            "cultivation": 86,
+            "hp": 131,
+            "physique": 0,
+            "max_physique": 0,
+            "round": 18,
+            "cards": [
+                "Kun Wu Metal Ring 1",
+                "Metal Spirit Shuttle 1",
+                "Finishing Touch 3",
+                "Flying Brush 1",
+                "Earth Spirit Combine World 2",
+                "Flying Brush 1",
+                "Earth Spirit Steep 2",
+                "Earth Spirit Landslide 1"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    villain.the_body_of_fierce_tiger_stacks = 1;
+    hero.max_hp = hero.hp + hero.physique;
+    villain.max_hp = villain.hp + villain.physique;
+    const my_idx = 0;//data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["308"]();
+riddles["309"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 90,
+            "hp": 112,
+            "physique": 0,
+            "max_physique": 0,
+            "max_hp": 112,
+            "round": 17,
+            "cards": [
+                "Hexagram Formacide 2",
+                "Hexagram Formacide 1",
+                "Flame Hexagram 3",
+                "Heaven Hexagram 2",
+                "Starry Moon 2",
+                "Fury Thunder 1",
+                "Five Thunders 2",
+                "Dance Of The Dragonfly 2"
+            ],
+            "talents": [
+                "Bloodline Power",
+                "Flame of life",
+                "Ultimate Hexagram Base",
+                "Tool Governor",
+                "Fury Thunder"
+            ]
+        },
+        "villain": {
+            "cultivation": 88,
+            "hp": 110,
+            "physique": 0,
+            "max_physique": 0,
+            "max_hp": 110,
+            "round": 17,
+            "cards": [
+                "Hexagram Formacide 3",
+                "Hexagram Formacide 2",
+                "Rotary Divination Hexagram 2",
+                "Heaven Hexagram 2",
+                "Five Thunders 2",
+                "Dance Of The Dragonfly 2",
+                "Thunder Hexagram Rhythm 2",
+                "Normal Attack 1"
+            ],
+            "talents": [
+                "Innate Spirit Body",
+                "The Way of Adaptation",
+                "Flame Flutter",
+                "Rotary Divination Hexagram",
+                "Fortunes and Luck"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["309"]();
+riddles["310"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 76,
+            "hp": 105,
+            "physique": 0,
+            "max_physique": 0,
+            "max_hp": 105,
+            "round": 16,
+            "cards": [
+                "Heavenly Spirit Forceage Formation 2",
+                "Clear Heart Sword Embryo  3",
+                "Echo Formation 1",
+                "Unrestrained Sword Two 1",
+                "Unrestrained Sword Two 3",
+                "Anthomania Formation 2",
+                "Cloud Sword Dragon Roam 1",
+                "Meru Formation 2"
+            ],
+            "talents": [
+                "Swordsmith",
+                "Sharp Blade",
+                "Charge Sword Pattern",
+                "Mad Obsession",
+                "Unrestrained Sword Heart"
+            ]
+        },
+        "villain": {
+            "cultivation": 83,
+            "hp": 105,
+            "physique": 0,
+            "max_physique": 0,
+            "max_hp": 105,
+            "round": 16,
+            "cards": [
+                "Heartbroken Tune 2",
+                "Chord In Tune 2",
+                "Predicament for Immortals 1",
+                "Strike Twice 1",
+                "Concentric Tune 2",
+                "Within Reach 1",
+                "Extremely Suspicious 2",
+                "Extremely Suspicious 2"
+            ],
+            "talents": [
+                "Bloodline Power",
+                "Flame of life",
+                "Ultimate Hexagram Base",
+                "Within Reach",
+                "Astral Eclipse"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    villain.p5_astral_eclipse_stacks = 1;
+    hero.blade_forging_sharpness_stacks = 1;
+    hero.sword_pattern_carving_charge_stacks = 1;
+    hero.p4_mad_obsession_stacks = 1;
+    hero.quench_of_sword_heart_unrestrained_stacks = 1;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["310"]();
+riddles["311"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 92,
+            "hp": 121,
+            "physique": 0,
+            "max_physique": 0,
+            "max_hp": 121,
+            "round": 20,
+            "cards": [
+                "Spirit Gather Citta Dharma 3",
+                "Spiritage Elixir 2",
+                "Rule Sky Sword Formation 2",
+                "Moon Water Sword Formation 3",
+                "Rule Sky Sword Formation 2",
+                "Raven Spirit Sword 3",
+                "Chain Sword Formation 3",
+                "Mirror Flower Sword Formation 2"
+            ],
+            "talents": [
+                "Shift As Cloud",
+                "Sword In Sheathed",
+                "Endurance As Cloud Sea",
+                "Shade Of Cloud",
+                "The Way of Adaptation"
+            ]
+        },
+        "villain": {
+            "cultivation": 102,
+            "hp": 119,
+            "physique": 0,
+            "max_physique": 0,
+            "max_hp": 119,
+            "round": 20,
+            "cards": [
+                "Contemplate Spirits Rhythm 3",
+                "Cloud Dance Rhythm 3",
+                "Sword Intent Surge 3",
+                "Sword Intent Surge 3",
+                "Flying Spirit Shade Sword 3",
+                "Dharma Spirit Sword 3",
+                "Normal Attack 1",
+                "Normal Attack 1"
+            ],
+            "talents": [
+                "Shift As Cloud",
+                "Fortunes and Luck",
+                "Shattered Dao",
+                "Thunder Tribulation",
+                "Spring Course Tea"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.sword_in_sheathed_stacks = 1;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["311"]();
+riddles["312"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 87,
+            "hp": 109,
+            "physique": 0,
+            "max_physique": 0,
+            "max_hp": 109,
+            "round": 18,
+            "cards": [
+                "Colorful Spirit Crane 1",
+                "Spirit Gather Citta Dharma 3",
+                "Rule Sky Sword Formation 2",
+                "Spiritage Incantation 3",
+                "Rule Sky Sword Formation 1",
+                "Thousand Evil Incantation 2",
+                "Chain Sword Formation 1",
+                "Egret Spirit Sword 2"
+            ],
+            "talents": [
+                "Shift As Cloud",
+                "Sword In Sheathed",
+                "Inheritance of Sword Formation",
+                "Mental Perception",
+                "Fortunes and Luck"
+            ]
+        },
+        "villain": {
+            "cultivation": 94,
+            "hp": 115,
+            "physique": 0,
+            "max_physique": 0,
+            "max_hp": 115,
+            "round": 18,
+            "cards": [
+                "Unrestrained Sword Zero 2",
+                "Cloud Sword Dragon Roam 1",
+                "Cloud Sword Moon Shade 2",
+                "Cloud Sword Dragon Roam 1",
+                "Unrestrained Sword One 3",
+                "Exorcism Elixir 1",
+                "Unrestrained Sword Flame Dance 1",
+                "Unrestrained Sword Two 1"
+            ],
+            "talents": [
+                "Bloodline Potential",
+                "Fire Flame Blade",
+                "Drift Ice Blade",
+                "Mad Obsession",
+                "Flame Dance"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.sword_in_sheathed_stacks = 1;
+    villain.fire_flame_blade_stacks = 1;
+    villain.drift_ice_blade_stacks = 1;
+    villain.p4_mad_obsession_stacks = 1;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["312"]();
+riddles["313"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 87,
+            "hp": 109,
+            "physique": 0,
+            "max_physique": 0,
+            "max_hp": 109,
+            "round": 18,
+            "cards": [
+                "Step Moon Into Cloud 1",
+                "Cloud Sword Dragon Roam 1",
+                "Cloud Sword Step Lightly 2",
+                "Cloud Sword Flash Wind 3",
+                "Cloud Sword Necessity 3",
+                "Cloud Sword Dragon Roam 1",
+                "Cloud Sword Sunset Glow 2",
+                "Flying Spirit Shade Sword 3"
+            ],
+            "talents": [
+                "Shift As Cloud",
+                "Inheritance of Cloud Sword",
+                "Epiphany",
+                "Shade Of Cloud",
+                "Spring Course Tea"
+            ]
+        },
+        "villain": {
+            "cultivation": 89,
+            "hp": 132,
+            "physique": 0,
+            "max_physique": 0,
+            "max_hp": 132,
+            "round": 18,
+            "cards": [
+                "Kun Wu Metal Ring 2",
+                "Metal Spirit Formation 3",
+                "Metal Spirit Shuttle 1",
+                "Metal Spirit Charge 1",
+                "Metal Spirit Shuttle 1",
+                "Metal Spirit Vigorous 1",
+                "Metal Spirit Shuttle 1",
+                "Metal Spirit Giant Tripod 2"
+            ],
+            "talents": [
+                "The Body of Fierce Tiger",
+                "Quench of Wood Spirit",
+                "Kun Wu Metal Ring",
+                "Vigorous",
+                "Concentrated Element"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    villain.the_body_of_fierce_tiger_stacks = 1;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["313"]();
+riddles["314"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 86,
+            "hp": 115,
+            "physique": 0,
+            "max_physique": 0,
+            "max_hp": 115,
+            "round": 18,
+            "cards": [
+                "Apex Sword Citta Dharma 2",
+                "Cloud Dance Rhythm 3",
+                "Ice Spirit Guard Elixir 3",
+                "Rule Sky Sword Formation 2",
+                "Sword Intent Flow 2",
+                "Sword Intent Surge 2",
+                "Flow Cloud Chaos Sword 3",
+                "Flying Spirit Shade Sword 2"
+            ],
+            "talents": [
+                "Shift As Cloud",
+                "Sword In Sheathed",
+                "Endurance As Cloud Sea",
+                "Shade Of Cloud",
+                "Spring Course Tea"
+            ]
+        },
+        "villain": {
+            "cultivation": 92,
+            "hp": 91,
+            "physique": 0,
+            "max_physique": 0,
+            "max_hp": 91,
+            "round": 18,
+            "cards": [
+                "Water Spirit Secret Seal 1",
+                "Ultimate World Formation 3",
+                "Wood Spirit Secret Seal 2",
+                "Wood Spirit Fragrant 2",
+                "Five Elements Circulation 1",
+                "Fire Spirit Blazing Prairie 3",
+                "Five Elements Circulation 1",
+                "Earth Spirit Combine World 2"
+            ],
+            "talents": [
+                "Secret Seal Affinity",
+                null,
+                "Five Elements Explosion",
+                "Mental Perception",
+                "Swift Burning Seal"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.sword_in_sheathed_stacks = 1;
+    villain.five_elements_explosion_stacks = 1;
+    villain.swift_burning_seal_stacks = 1;
+    const my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["314"]();
+riddles["315"] = async () => {
+    const data = {
+        "hero": {
+            "cultivation": 60,
+            "hp": 99,
+            "physique": 0,
+            "max_physique": 0,
+            "max_hp": 99,
+            "round": 13,
+            "cards": [
+                "Spirit Gather Citta Dharma 2",
+                "Centibird Spirit Sword Rhythm 3",
+                "Inspiration Sword 1",
+                "Cloud Dance Rhythm 2",
+                "Contemplate Spirits Rhythm 2",
+                "Flow Cloud Chaos Sword 1",
+                "Giant Kun Spirit Sword 2",
+                "Dharma Spirit Sword 1",
+                "Giant Kun Spirit Sword 1",
+                "Giant Roc Spirit Sword 2",
+                "Raven Spirit Sword 1",
+                "Egret Spirit Sword 2",
+            ],
+            "talents": [
+                "Shift As Cloud",
+                "Epiphany",
+                "Mental Perception",
+                "Shade Of Cloud",
+                "Sword Rhyme Cultivate"
+            ]
+        },
+        "villain": {
+            "cultivation": 62,
+            "hp": 121,
+            "physique": 0,
+            "max_physique": 0,
+            "max_hp": 121,
+            "round": 13,
+            "cards": [
+                "Kun Wu Metal Ring 1",
+                "Metal Spirit Formation 3",
+                "Metal Spirit Iron Bone 2",
+                "Metal Spirit Charge 2",
+                "Metal Spirit Shuttle 1",
+                "Metal Spirit Vigorous 1",
+                "Metal Spirit Heart Pierce 1",
+                "Metal Spirit Sharp 1"
+            ],
+            "talents": [
+                "The Body of Fierce Tiger",
+                "Quench of Wood Spirit",
+                "Kun Wu Metal Ring",
+                "Vigorous",
+                "Additional Fuluist"
+            ]
+        }
+    };
+    const hero = data.hero;
+    const villain = data.villain;
+    hero.p5_sword_rhyme_cultivate_stacks = 1;
+    villain.the_body_of_fierce_tiger_stacks = 1;
+    const my_idx = 0;//data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+//await riddles["315"]();
+riddles["420"] = async () => {
+    // load the data from riddle_data.json
+    // open a file and read its contents
+    const fs = require('fs');
+    const data = JSON.parse(fs.readFileSync('riddle_data.json', 'utf8'));
+    const hero = data.hero;
+    const villain = data.villain;
+    let my_idx = data.hero.cultivation >= data.villain.cultivation ? 0 : 1;
+    //my_idx = 0;
+    let players = [hero, villain];
+    if (my_idx == 1) {
+        players = [villain, hero];
+    }
+    return await do_riddle({players: players, my_idx: my_idx});
+}
+await riddles["420"]();
 console.log("done");

@@ -12,6 +12,7 @@ import easyocr
 
 window = None
 reader = easyocr.Reader(['en'])  # Initialize EasyOCR
+talent_name_to_attr = json.load(open('talents.json'))
 
 def capture_window(window_title, idx=0):
     global window
@@ -216,9 +217,10 @@ def detect_talents(image: np.ndarray, talent_templates: List[Dict[str, np.ndarra
             
             if max_val > best_score:
                 best_score = max_val
-                best_match = talent_name
+                best_match = talent_name.strip()
         
         if best_match and best_score > 0.693:  # You may need to adjust this threshold
+        #if best_match and best_score > 0.98:  # You may need to adjust this threshold
             detected_talents.append(best_match)
         else:
             detected_talents.append(None)
@@ -234,7 +236,7 @@ def detect_talents(image: np.ndarray, talent_templates: List[Dict[str, np.ndarra
 
 def get_info(filename):
     global templates
-    speed_region = (92, 187, 70, 50)
+    speed_region = (82, 187, 70, 50)
     health_region = (230, 187, 70, 50)
     physique_region = (368, 187, 70, 50)
     round_region = (1210, 90, 30, 23)
@@ -272,6 +274,7 @@ def get_info(filename):
     talents = detect_talents(image, talent_templates, filename)
 
     deck = []
+    problems = 0
     for i in range(8):
         x = card_x + i * card_horizontal_interval
         this_x = x * 2
@@ -289,11 +292,19 @@ def get_info(filename):
         
         best_match, score = find_best_match(card_preprocessed, templates)
         upgrade_level = detect_upgrade_level(card_roi, upgrade_templates)
+        if score < 0.3:
+            best_match = "Normal Attack"
+            upgrade_level = 1
+            problems -= 1
         deck.append(best_match + " " + str(upgrade_level))
+        if score < 0.83:
+            problems += 1
         print(f"Card {i+1}: {best_match} (Score: {score:.2f}, Level: {upgrade_level})")
     health = intt(health)
+    if "/" in speed:
+        speed = speed.split("/")[0]
     speed = intt(speed)
-    return {
+    ret = {
         'cultivation': speed,
         'hp': health,
         'physique': physique_n,
@@ -303,6 +314,23 @@ def get_info(filename):
         'cards': deck,
         'talents': talents,
     }
+    for i, talent in enumerate(talents, 1):
+        if talent:
+            if talent not in talent_name_to_attr:
+                print(f"Unknown talent: {talent}")
+                problems += 1
+                continue
+            if not talent_name_to_attr[talent]:
+                continue
+            talent_attr = talent_name_to_attr[talent]
+            if "{n}" in talent_attr:
+                talent_attr = talent_attr.format(n=i)
+            ret[talent_attr] = 1
+        else:
+            problems += 1
+    if problems > 0:
+        ret['problems'] = True
+    return ret
 
 def main(use_previous_screenshot=False, card_template_dir='card_templates'):
     global templates
@@ -336,6 +364,15 @@ def main(use_previous_screenshot=False, card_template_dir='card_templates'):
             'hero': hero_info,
             'villain': villain_info
         }, indent=4))
+        # write the json to ../riddle_data.json
+        with open('../riddle_data.json', 'w') as f:
+            json.dump({
+                'hero': hero_info,
+                'villain': villain_info
+            }, f, indent=4)
+        if ('problems' not in hero_info) and ('problems' not in villain_info):
+            # run the riddle solver
+            os.system('cd ../; bun swogi.js')
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Extract text from game screenshot")
