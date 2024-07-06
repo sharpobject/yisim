@@ -1339,7 +1339,7 @@ export class GameState {
         const dmg = stacks * this.players[0].qi;
         if (dmg > 0) {
             if (is_sword_formation(card_id) || is_spirit_sword(card_id)) {
-                this.deal_dmg(dmg);
+                this.deal_damage(dmg);
             }
         }
     }

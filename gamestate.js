@@ -1355,7 +1355,7 @@ export class GameState {
         if (dmg > 0) {
             if (is_sword_formation(card_id) || is_spirit_sword(card_id)) {
                 this.log("Dealing " + dmg + " damage from beast spirit sword formation.");
-                this.deal_dmg(dmg);
+                this.deal_damage(dmg);
             }
         }
     }
