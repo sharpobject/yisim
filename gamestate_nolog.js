@@ -1264,6 +1264,9 @@ export class GameState {
         // if this card has "Unrestrained Sword" in the name, increment unrestrained_sword_count
         if (this.is_unrestrained_sword(card_id)) {
             this.players[0].unrestrained_sword_count += 1;
+            if (card_id !== "611033") {
+                this.reduce_idx_x_by_c(0, "unrestrained_sword_clear_heart_stacks", 1);
+            }
         }
     }
     do_sweet_zongzi_count(card_id) {
@@ -1806,9 +1809,6 @@ export class GameState {
         for (let i=0; i<plays; i++) {
             this.play_card_inner(card_id, idx);
             this.players[0].played_card_count += 1;
-        }
-        if (swogi[card_id].name !== "Clear Heart Sword Embryo") {
-            this.reduce_idx_x_by_c(0, "unrestrained_sword_clear_heart_stacks", 1);
         }
         this.players[0].currently_playing_card_idx = undefined;
     }
