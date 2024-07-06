@@ -921,6 +921,9 @@ export class GameState {
         this.players[idx].speed += 6 * this.players[idx].p5_concentrated_element_stacks;
     }
     do_innate_mark(idx) {
+        if (this.players[idx].innate_mark_stacks === 0) {
+            return;
+        }
         if (this.players[idx].innate_wood_stacks > 0) {
             this.increase_idx_x_by_c(idx, "activate_wood_spirit_stacks", 1);
         }
