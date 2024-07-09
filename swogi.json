@@ -9163,13 +9163,13 @@
 	},
 	"714012": {
 		"actions": [
-			["def", 8],
+			["def", 12],
 			["for_each_x_add_c_pct_y", "def", 33.333334, "sword_intent"]
 		]
 	},
 	"714013": {
 		"actions": [
-			["def", 8],
+			["def", 16],
 			["for_each_x_add_c_pct_y", "def", 33.333334, "sword_intent"]
 		]
 	},
@@ -9261,13 +9261,14 @@
 	},
 	"724021": {
 		"name": "Throw Petals",
+		"qi_cost": 1,
 		"actions": [
-			["qi", 1],
 			["continuous"],
 			["add_c_of_x", 1, "throw_petals_stacks"]
 		]
 	},
 	"724022": {
+		"qi_cost": 0,
 		"actions": [
 			["qi", 1],
 			["continuous"],
@@ -9275,8 +9276,9 @@
 		]
 	},
 	"724023": {
+		"qi_cost": 0,
 		"actions": [
-			["qi", 1],
+			["qi", 3],
 			["continuous"],
 			["add_c_of_x", 1, "throw_petals_stacks"]
 		]
