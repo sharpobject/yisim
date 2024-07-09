@@ -2333,8 +2333,8 @@
 		"actions": [
 			["qi", 2],
 			["fire_spirit", [
-				["reduce_c_of_x", 3, "hp"],
-				["reduce_c_of_x", 3, "max_hp"]
+				["reduce_enemy_c_of_x", 3, "hp"],
+				["reduce_enemy_c_of_x", 3, "max_hp"]
 			]]
 		]
 	},
@@ -2342,8 +2342,8 @@
 		"actions": [
 			["qi", 3],
 			["fire_spirit", [
-				["reduce_c_of_x", 4, "hp"],
-				["reduce_c_of_x", 4, "max_hp"]
+				["reduce_enemy_c_of_x", 4, "hp"],
+				["reduce_enemy_c_of_x", 4, "max_hp"]
 			]]
 		]
 	},
@@ -2351,8 +2351,8 @@
 		"actions": [
 			["qi", 4],
 			["fire_spirit", [
-				["reduce_c_of_x", 6, "hp"],
-				["reduce_c_of_x", 6, "max_hp"]
+				["reduce_enemy_c_of_x", 6, "hp"],
+				["reduce_enemy_c_of_x", 6, "max_hp"]
 			]]
 		]
 	},
