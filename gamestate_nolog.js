@@ -2039,11 +2039,16 @@ export class GameState {
         }
     }
     do_void_the_spirit_consumer() {
-        const amt = this.players[0].void_the_spirit_consumer_stacks;
-        if (amt > 0) {
-            this.reduce_idx_x_by_c(1, "qi", amt);
-            this.increase_idx_x_by_c(0, "qi", amt);
+        let amt = this.players[0].void_the_spirit_consumer_stacks;
+        if (amt === 0) {
+            return;
         }
+        amt = Math.min(amt, this.players[1].qi);
+        if (amt === 0) {
+            return;
+        }
+        this.reduce_idx_x_by_c(1, "qi", amt);
+        this.increase_idx_x_by_c(0, "qi", amt);
     }
     do_finishing_touch(card_idx) {
         if (this.players[0].finishing_touch_stacks > 0) {
