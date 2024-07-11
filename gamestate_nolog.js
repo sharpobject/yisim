@@ -3376,7 +3376,7 @@ export class GameState {
         const charge_increase_atk = 1 + ult;
         const intense_sword_intent = 4 + ult;
         const spiritage_qi = 2 + ult;
-        const spiritstat_def = 0;
+        const spiritstat_def = 3 + ult;
         const spiritual_power_qi_cost = 1 + ult;
         const spiritual_power_rep = 2 + ult;
         const spiritual_power_atk = 4 + ult;
@@ -3404,7 +3404,6 @@ export class GameState {
         }
         // gain def from spiritstat
         for (let i=0; i<this.players[0].qi_forging_spiritstat_stacks; i++) {
-            this.def(spiritstat_def);
             this.for_each_x_add_c_y("qi", spiritstat_def, "def");
         }
         // pay qi to make attacks from spiritual_power
