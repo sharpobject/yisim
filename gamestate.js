@@ -2448,7 +2448,7 @@ export class GameState {
             this.increase_idx_hp(idx, dmg);
             return 0;
         } else {
-            if (this.players[idx].leaf_shield_flower_stacks > 0) {
+            if (this.players[idx].leaf_shield_flower_stacks > 0 && !is_cost) {
                 let dmg_to_def = Math.floor(dmg / 2);
                 dmg_to_def = Math.min(dmg_to_def, this.players[idx].def);
                 this.reduce_idx_def(idx, dmg_to_def);
