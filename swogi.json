@@ -5989,22 +5989,22 @@
 		"name": "Fire Cloud Fulu",
 		"qi_cost": 1,
 		"actions": [
-			["reduce_enemy_c_of_x", 11, "hp"],
-			["reduce_enemy_c_of_x", 11, "max_hp"],
+			["reduce_enemy_c_of_x", 12, "hp"],
+			["reduce_enemy_c_of_x", 12, "max_hp"],
 			["consumption"]
 		]
 	},
 	"322012": {
 		"actions": [
-			["reduce_enemy_c_of_x", 15, "hp"],
-			["reduce_enemy_c_of_x", 15, "max_hp"],
+			["reduce_enemy_c_of_x", 16, "hp"],
+			["reduce_enemy_c_of_x", 16, "max_hp"],
 			["consumption"]
 		]
 	},
 	"322013": {
 		"actions": [
-			["reduce_enemy_c_of_x", 19, "hp"],
-			["reduce_enemy_c_of_x", 19, "max_hp"],
+			["reduce_enemy_c_of_x", 20, "hp"],
+			["reduce_enemy_c_of_x", 20, "max_hp"],
 			["consumption"]
 		]
 	},
@@ -6049,21 +6049,21 @@
 		"name": "Mist Fulu",
 		"actions": [
 			["qi", 1],
-			["deal_damage", 6],
+			["deal_damage", 7],
 			["consumption"]
 		]
 	},
 	"322032": {
 		"actions": [
 			["qi", 1],
-			["deal_damage", 10],
+			["deal_damage", 11],
 			["consumption"]
 		]
 	},
 	"322033": {
 		"actions": [
 			["qi", 1],
-			["deal_damage", 14],
+			["deal_damage", 15],
 			["consumption"]
 		]
 	},
@@ -6185,6 +6185,7 @@
 		"name": "Soul Requiem Fulu",
 		"actions": [
 			["reduce_enemy_x_by_c_pct_enemy_y", "hp", 15, "hp"],
+			["reduce_enemy_x_by_c_pct_enemy_y", "max_hp", 15, "max_hp"],
 			["reduce_enemy_c_of_x", 2, "qi"],
 			["consumption"]
 		]
@@ -6192,6 +6193,7 @@
 	"325012": {
 		"actions": [
 			["reduce_enemy_x_by_c_pct_enemy_y", "hp", 20, "hp"],
+			["reduce_enemy_x_by_c_pct_enemy_y", "max_hp", 20, "max_hp"],
 			["reduce_enemy_c_of_x", 3, "qi"],
 			["consumption"]
 		]
@@ -6199,6 +6201,7 @@
 	"325013": {
 		"actions": [
 			["reduce_enemy_x_by_c_pct_enemy_y", "hp", 25, "hp"],
+			["reduce_enemy_x_by_c_pct_enemy_y", "max_hp", 25, "max_hp"],
 			["reduce_enemy_c_of_x", 4, "qi"],
 			["consumption"]
 		]
@@ -6252,18 +6255,24 @@
 		"name": "Cracking Voice",
 		"actions": [
 			["gain_ignore_def", 1],
+			["if_x_at_least_c_do", "has_played_musician_card", 1,
+				["add_c_of_x", 1, "bonus_atk_amt"]],
 			["atk", 6]
 		]
 	},
 	"331012": {
 		"actions": [
 			["gain_ignore_def", 1],
+			["if_x_at_least_c_do", "has_played_musician_card", 1,
+				["add_c_of_x", 1, "bonus_atk_amt"]],
 			["atk", 9]
 		]
 	},
 	"331013": {
 		"actions": [
 			["gain_ignore_def", 1],
+			["if_x_at_least_c_do", "has_played_musician_card", 1,
+				["add_c_of_x", 1, "bonus_atk_amt"]],
 			["atk", 12]
 		]
 	},
@@ -6417,43 +6426,52 @@
 	},
 	"333031": {
 		"name": "Tremolo",
-		"actions": ["rep", 3, [
-			["gain_ignore_def", 1],
-			["atk", 2]
-		]]
+		"actions": [
+			["if_x_at_least_c_do", "has_played_musician_card", 1,
+				["add_c_of_x", 1, "bonus_atk_amt"]],
+			["rep", 3, [
+				["gain_ignore_def", 1],
+				["atk", 2]]]
+		]
 	},
 	"333032": {
-		"actions": ["rep", 3, [
-			["gain_ignore_def", 1],
-			["atk", 3]
-		]]
+		"actions": [
+			["if_x_at_least_c_do", "has_played_musician_card", 1,
+				["add_c_of_x", 1, "bonus_atk_amt"]],
+			["rep", 3, [
+				["gain_ignore_def", 1],
+				["atk", 3]]]
+		]
 	},
 	"333033": {
-		"actions": ["rep", 3, [
-			["gain_ignore_def", 1],
-			["atk", 4]
-		]]
+		"actions": [
+			["if_x_at_least_c_do", "has_played_musician_card", 1,
+				["add_c_of_x", 1, "bonus_atk_amt"]],
+			["rep", 3, [
+				["gain_ignore_def", 1],
+				["atk", 4]]]
+		]
 	},
 	"334011": {
 		"name": "Regen Tune",
 		"actions": [
 			["continuous"],
-			["add_c_of_x", 3, "regen_tune_stacks"],
-			["add_enemy_c_of_x", 3, "regen_tune_stacks"]
+			["add_c_of_x", 4, "regen_tune_stacks"],
+			["add_enemy_c_of_x", 4, "regen_tune_stacks"]
 		]
 	},
 	"334012": {
 		"actions": [
 			["continuous"],
-			["add_c_of_x", 5, "regen_tune_stacks"],
-			["add_enemy_c_of_x", 5, "regen_tune_stacks"]
+			["add_c_of_x", 6, "regen_tune_stacks"],
+			["add_enemy_c_of_x", 6, "regen_tune_stacks"]
 		]
 	},
 	"334013": {
 		"actions": [
 			["continuous"],
-			["add_c_of_x", 7, "regen_tune_stacks"],
-			["add_enemy_c_of_x", 7, "regen_tune_stacks"]
+			["add_c_of_x", 8, "regen_tune_stacks"],
+			["add_enemy_c_of_x", 8, "regen_tune_stacks"]
 		]
 	},
 	"334021": {
@@ -6746,22 +6764,22 @@
 	"344021": {
 		"name": "Falling Paper Clouds",
 		"actions": ["do_one_randomly", [
-			["def", 16],
-			["heal", 12],
+			["def", 18],
+			["heal", 14],
 			["add_c_of_x", 1, "guard_up"]
 		]]
 	},
 	"344022": {
 		"actions": ["do_one_randomly", [
-			["def", 24],
-			["heal", 18],
+			["def", 26],
+			["heal", 20],
 			["add_c_of_x", 2, "guard_up"]
 		]]
 	},
 	"344023": {
 		"actions": ["do_one_randomly", [
-			["def", 32],
-			["heal", 24],
+			["def", 34],
+			["heal", 26],
 			["add_c_of_x", 3, "guard_up"]
 		]]
 	},
@@ -6996,18 +7014,21 @@
 	"354021": {
 		"name": "Octgates Lock Formation",
 		"actions": [
+			["deal_damage", 8],
 			["continuous"],
 			["add_enemy_c_of_x", 2, "octgates_lock_formation_stacks"]
 		]
 	},
 	"354022": {
 		"actions": [
+			["deal_damage", 12],
 			["continuous"],
 			["add_enemy_c_of_x", 3, "octgates_lock_formation_stacks"]
 		]
 	},
 	"354023": {
 		"actions": [
+			["deal_damage", 16],
 			["continuous"],
 			["add_enemy_c_of_x", 4, "octgates_lock_formation_stacks"]
 		]
@@ -7269,11 +7290,12 @@
 		"actions": [
 			["add_enemy_c_of_x", 3, "entangle"],
 			["continuous"],
-			["add_enemy_c_of_x", 1, "entangling_ancient_vine_stacks"]
+			["add_enemy_c_of_x", 2, "entangling_ancient_vine_stacks"]
 		]
 	},
 	"365041": {
 		"name": "Devouring Ancient Vine",
+		"qi_cost": 1,
 		"actions": [
 			["reduce_enemy_c_of_x", 5, "hp"],
 			["heal", 5]
@@ -8889,7 +8911,7 @@
 		"actions": [
 			["add_c_of_x", 1, "disable_penetrate_stacks"],
 			["for_each_x_add_y", "penetrate", "bonus_atk_amt"],
-			["atk", 6]
+			["atk", 5]
 		],
 		"character": "fe4"
 	},
@@ -8897,14 +8919,14 @@
 		"actions": [
 			["add_c_of_x", 1, "disable_penetrate_stacks"],
 			["for_each_x_add_y", "penetrate", "bonus_atk_amt"],
-			["atk", 12]
+			["atk", 10]
 		]
 	},
 	"634013": {
 		"actions": [
 			["add_c_of_x", 1, "disable_penetrate_stacks"],
 			["for_each_x_add_y", "penetrate", "bonus_atk_amt"],
-			["atk", 18]
+			["atk", 15]
 		]
 	},
 	"634021": {
@@ -9030,15 +9052,15 @@
 				]]
 			],
 			["for_each_x_add_y", "debuff", "bonus_def_amt"],
-			["add_c_of_x", 2, "bonus_def_amt"],
-			["for_each_x_add_y", "bonus_def_amt", "physique"],
+			["add_c_of_x", 1, "bonus_def_amt"],
+			["for_each_x_up_to_c_add_y", "bonus_def_amt", 10, "physique"],
 			["physique", 0]
 		],
 		"character": "dx3"
 	},
 	"643012": {
 		"actions": [
-			["add_c_of_x", 4, "underworld"],
+			["add_c_of_x", 3, "underworld"],
 			["do_one_randomly", [
 				["add_c_of_x", 1, "internal_injury"],
 				["add_c_of_x", 1, "weaken"],
@@ -9048,17 +9070,17 @@
 				["add_c_of_x", 1, "wound"]
 			]],
 			["for_each_x_add_y", "debuff", "bonus_def_amt"],
-			["add_c_of_x", 2, "bonus_def_amt"],
-			["for_each_x_add_y", "bonus_def_amt", "physique"],
+			["add_c_of_x", 1, "bonus_def_amt"],
+			["for_each_x_up_to_c_add_y", "bonus_def_amt", 15, "physique"],
 			["physique", 0]
 		]
 	},
 	"643013": {
 		"actions": [
-			["add_c_of_x", 6, "underworld"],
+			["add_c_of_x", 4, "underworld"],
 			["for_each_x_add_y", "debuff", "bonus_def_amt"],
-			["add_c_of_x", 2, "bonus_def_amt"],
-			["for_each_x_add_y", "bonus_def_amt", "physique"],
+			["add_c_of_x", 1, "bonus_def_amt"],
+			["for_each_x_up_to_c_add_y", "bonus_def_amt", 20, "physique"],
 			["physique", 0]
 		]
 	},

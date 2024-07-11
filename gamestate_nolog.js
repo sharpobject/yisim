@@ -526,7 +526,7 @@ class Player {
         this.regen_tune_stacks = 0;
         this.predicament_for_immortals_stacks = 0;
         this.apparition_confusion_stacks = 0;
-        this.has_played_musician_card = false;
+        this.has_played_musician_card = 0;
         // painter side job cards
         this.inspiration_stacks = 0;
         this.flying_brush_stacks = 0;
@@ -1050,7 +1050,7 @@ export class GameState {
         }
     }
     do_the_body_of_fierce_tiger(idx) {
-        if (this.players[idx].hp < 117) {
+        if (this.players[idx].hp < 120) {
             return;
         }
         let upgrades = this.players[idx].the_body_of_fierce_tiger_stacks;
@@ -1438,7 +1438,7 @@ export class GameState {
     }
     do_record_musician_card_played_for_chord_in_tune(card_id) {
         if (swogi[card_id].marking === "mu") {
-            this.players[0].has_played_musician_card = true;
+            this.players[0].has_played_musician_card = 1;
         }
     }
     do_record_continuous_card_played_for_meru_formation(card_id) {
@@ -2028,7 +2028,7 @@ export class GameState {
     }
     do_octgates_lock_formation(action_idx) {
         if (action_idx > 0 && this.players[0].octgates_lock_formation_stacks > 0) {
-            this.deal_damage_inner(12, false, false, 1);
+            this.deal_damage_inner(8, false, false, 1);
             this.reduce_idx_x_by_c(0, "octgates_lock_formation_stacks", 1);
         }
     }
@@ -3334,7 +3334,7 @@ export class GameState {
         this.do_action(arr[idx]);
     }
     do_chord_in_tune_thing() {
-        if (this.players[0].has_played_musician_card) {
+        if (this.players[0].has_played_musician_card > 0) {
             this.chase();
             return;
         }
@@ -3359,19 +3359,19 @@ export class GameState {
     }
     do_clear_heart() {
         const ult = this.players[0].quench_of_sword_heart_ultimate_stacks;
-        let first_atk_damage = 6 + Math.min(this.players[0].round_number, 16);
+        let first_atk_damage = 6 + Math.min(this.players[0].round_number, 19);
         first_atk_damage += 3 * this.players[0].blade_forging_sharpness_stacks;
         first_atk_damage -= 3 * this.players[0].blade_forging_stable_stacks;
-        first_atk_damage -= 2 * this.players[0].sword_pattern_carving_intense_stacks;
+        first_atk_damage -= 1 * this.players[0].sword_pattern_carving_intense_stacks;
         first_atk_damage += 3 * this.players[0].quench_of_sword_heart_unrestrained_stacks;
-        first_atk_damage -= 6 * this.players[0].quench_of_sword_heart_cloud_stacks;
+        first_atk_damage -= 8 * this.players[0].quench_of_sword_heart_cloud_stacks;
         first_atk_damage += ult;
         const blade_forging_stable_def = 8 + ult;
-        const chain_attack_atk = 4 + ult;
+        const chain_attack_atk = 5 + ult;
         const charge_increase_atk = 1 + ult;
         const intense_sword_intent = 4 + ult;
         const spiritage_qi = 2 + ult;
-        const spiritstat_def = 3 + ult;
+        const spiritstat_def = 0;
         const spiritual_power_qi_cost = 1 + ult;
         const spiritual_power_rep = 2 + ult;
         const spiritual_power_atk = 4 + ult;
