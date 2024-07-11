@@ -6862,20 +6862,20 @@
 	"351031": {
 		"name": "Impact Formation",
 		"actions": [
-			["if_played_continuous", ["add_c_of_x", 2, "bonus_atk_amt"]],
-			["atk", 6]
+			["atk", 6],
+			["if_played_continuous", ["atk", 2]]
 		]
 	},
 	"351032": {
 		"actions": [
-			["if_played_continuous", ["add_c_of_x", 3, "bonus_atk_amt"]],
-			["atk", 8]
+			["atk", 8],
+			["if_played_continuous", ["atk", 3]]
 		]
 	},
 	"351033": {
 		"actions": [
-			["if_played_continuous", ["add_c_of_x", 4, "bonus_atk_amt"]],
-			["atk", 10]
+			["atk", 10],
+			["if_played_continuous", ["atk", 4]]
 		]
 	},
 	"352011": {
