@@ -293,7 +293,7 @@ def get_info(filename, n_hand_cards):
         except:
             pass
 
-    card_x, card_y = 42, 270
+    card_x, card_y = 42, 266.5
     card_width, card_height = 20, 110
     card_horizontal_interval = 154
 
@@ -306,7 +306,7 @@ def get_info(filename, n_hand_cards):
     for i in range(8):
         x = card_x + i * card_horizontal_interval
         this_x = x * 2
-        this_y = card_y * 2
+        this_y = int(card_y * 2)
         this_width = card_width * 2
         this_height = card_height * 2
         best_match, score, upgrade_level = detect_card(image, this_x, this_y, this_width, this_height, templates, upgrade_templates, "deck"+str(i+1), filename_trimmed)
@@ -315,7 +315,7 @@ def get_info(filename, n_hand_cards):
             upgrade_level = 1
             problems -= 1
         deck.append(best_match + " " + str(upgrade_level))
-        if score < 0.83:
+        if score < 0.79:
             problems += 1
         print(f"Card {i+1}: {best_match} (Score: {score:.2f}, Level: {upgrade_level})")
     hand_cards = detect_hand_cards(image, n_hand_cards, templates)
