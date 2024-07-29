@@ -2416,20 +2416,20 @@ export class GameState {
             this.players[idx].hp_lost += dmg;
             this.players[idx].hp -= dmg;
             if (idx === 0 && this.players[idx].elusive_footwork_stacks > 0 && !this.players[idx].elusive_footwork_triggered) {
+                this.elusive_footwork_triggered = true;
                 this.add_c_of_x(1, "qi");
                 this.add_c_of_x(1, "agility");
-                this.elusive_footwork_triggered = true;
             }
             if (this.players[idx].bad_omen_stacks > 0) {
-                this.increase_idx_x_by_c(idx, "wound", 1);
                 this.reduce_idx_x_by_c(idx, "bad_omen_stacks", 1);
+                this.increase_idx_x_by_c(idx, "wound", 1);
             }
             for (let i=0; i<this.players[idx].birdie_wind_stacks; i++) {
                 this.increase_idx_def(idx, 1);
             }
             if (this.players[idx].frozen_snow_lotus_stacks > 0) {
-                this.increase_idx_def(idx, dmg);
                 this.reduce_idx_x_by_c(idx, "frozen_snow_lotus_stacks", 1);
+                this.increase_idx_def(idx, dmg);
             }
             return dmg;
         }
@@ -2651,7 +2651,10 @@ export class GameState {
         this.players[idx].physique_gained += amt;
         this.increase_idx_x_by_c(idx, "max_hp", amt);
         if (this.players[idx].mind_body_resonance_stacks > 0) {
+            const prev_bonus_def_amt = this.players[idx].bonus_def_amt;
+            this.players[idx].bonus_def_amt = 0;
             this.increase_idx_def(idx, amt);
+            this.players[idx].bonus_def_amt = prev_bonus_def_amt;
         }
         if (this.players[idx].max_physique < this.players[idx].physique) {
             let heal_amt = amt;
