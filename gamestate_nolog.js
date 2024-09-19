@@ -80,7 +80,7 @@ function get_marking(card_id) {
     if (class_ === 5) {
         return "spiritual_pet";
     }
-    if (class_ === 6 || class_ === 8) {
+    if (class_ === 6 || class_ === 8 || class_ === 9) {
         return "no marking";
     }
     throw new Error("suspicious card id " + card_id);
@@ -716,6 +716,10 @@ class Player {
         this.sweet_zongzi_count = 0;
         this.appetite = 0;
         this.indigestion = 0;
+        // immortal relics fusion cards
+        this.ultimate_polaris_hexagram_base_stacks = 0;
+        this.star_moon_hexagram_fan_stacks = 0;
+        this.heavenly_marrow_gourd_stacks = 0;
     }
     reset_can_play() {
         this.cards = this.cards.slice();
@@ -1906,6 +1910,13 @@ export class GameState {
             this.add_c_of_x(amt, "hexagram");
         }
     }
+    do_ultimate_polaris_hexagram_base() {
+        const amt = this.players[0].ultimate_polaris_hexagram_base_stacks;
+        if (amt > 0) {
+            this.add_c_of_x(amt, "hexagram");
+            this.add_c_of_x(amt, "star_power");
+        }
+    }
     do_water_spirit_spring_rain() {
         const amt = this.players[0].water_spirit_spring_rain_stacks;
         if (amt > 0) {
@@ -2005,6 +2016,20 @@ export class GameState {
                 //this.log(JSON.stringify(card));
                 this.chase();
                 this.reduce_idx_x_by_c(0, "five_elements_heavenly_marrow_rhythm_stacks", 1);
+            }
+        }
+    }
+    do_heavenly_marrow_gourd_chase() {
+        const player = this.players[0];
+        if (player.this_card_chases === 0 && player.chases < player.max_chases && player.heavenly_marrow_gourd_stacks > 0) {
+            const id = player.last_card_id;
+            if ((is_wood_spirit(id) && this.players[0].activate_wood_spirit_stacks > 0) ||
+                (is_fire_spirit(id) && this.players[0].activate_fire_spirit_stacks > 0) ||
+                (is_earth_spirit(id) && this.players[0].activate_earth_spirit_stacks > 0) ||
+                (is_metal_spirit(id) && this.players[0].activate_metal_spirit_stacks > 0) ||
+                (is_water_spirit(id) && this.players[0].activate_water_spirit_stacks > 0)) {
+                this.chase();
+                this.reduce_idx_x_by_c(0, "heavenly_marrow_gourd_stacks", 1);
             }
         }
     }
@@ -2223,6 +2248,7 @@ export class GameState {
         this.do_cacopoisonous_formation();
         this.do_spiritage_formation();
         this.do_ultimate_hexagram_base();
+        this.do_ultimate_polaris_hexagram_base();
         this.do_water_spirit_spring_rain();
         if (this.check_for_death()) {
             return;
@@ -2347,6 +2373,7 @@ export class GameState {
                 this.advance_next_card_index();
                 this.do_shadow_owl_rabbit_chase();
                 this.do_five_elements_heavenly_marrow_rhythm_chase();
+                this.do_heavenly_marrow_gourd_chase();
                 this.process_this_card_chases();
             }
         }
@@ -2589,6 +2616,10 @@ export class GameState {
         if (idx === 0 && this.players[idx].wild_crossing_seal_stacks > 0) {
             this.do_wild_crossing_seal_chase();
         }
+        if (this.players[idx].star_moon_hexagram_fan_stacks > 0) {
+            const dmg = amt * this.players[idx].star_moon_hexagram_fan_stacks;
+            this.deal_damage_inner(dmg, false, idx);
+        }
         this.players[idx].qi += amt;
     }
     increase_idx_force(idx, amt) {
@@ -2675,6 +2706,20 @@ export class GameState {
             const dmg = amt * this.players[idx].hexagram_formacide_stacks;
             this.deal_damage_inner(dmg, false, idx);
         }
+        if (this.players[idx].star_moon_hexagram_fan_stacks > 0) {
+            const dmg = amt * this.players[idx].star_moon_hexagram_fan_stacks;
+            this.deal_damage_inner(dmg, false, idx);
+        }
+    }
+    increase_idx_star_power(idx, amt) {
+        if (amt === 0) {
+            return;
+        }
+        this.players[idx].star_power += amt;
+        if (this.players[idx].star_moon_hexagram_fan_stacks > 0) {
+            const dmg = amt * this.players[idx].star_moon_hexagram_fan_stacks;
+            this.deal_damage_inner(dmg, false, idx);
+        }
     }
     increase_idx_debuff(idx, x, amt) {
         if (amt === 0) {
@@ -2743,6 +2788,9 @@ export class GameState {
         }
         if (x === "hexagram") {
             return this.increase_idx_hexagram(idx, c);
+        }
+        if (x === "star_power") {
+            return this.increase_idx_star_power(idx, c);
         }
         if (is_debuff(x)) {
             return this.increase_idx_debuff(idx, x, c);
@@ -2960,16 +3008,22 @@ export class GameState {
         this.deal_damage_inner(dmg, true, 0);
         this.reduce_c_of_x(1, "force");
     }
+    if_cloud_hit() {
+        return this.players[0].cloud_sword_chain_count > 0 || this.players[0].endurance_as_cloud_sea_stacks > 0;
+    }
     cloud_hit(arr) {
-        if (this.players[0].cloud_sword_chain_count > 0 || this.players[0].endurance_as_cloud_sea_stacks > 0) {
+        if (this.if_cloud_hit()) {
             this.do_action(arr);
         }
     }
-    injured(arr) {
+    injured(arr, arr2) {
         // injured means "if the immediately preceding atk has done damage to the enemy hp, do an action"
         if (this.players[0].this_atk_injured) {
             this.do_action(arr);
         } else {
+            if (arr2 !== undefined) {
+                this.do_action(arr2);
+            }
         }
     }
     def(amt) {
@@ -3423,6 +3477,57 @@ export class GameState {
         // next cloud sword chases if we picked cloud
         this.players[0].cloud_sword_clear_heart_stacks += this.players[0].quench_of_sword_heart_cloud_stacks;
     }
+    do_clear_heart_sword_formation(first_atk_damage) {
+        const first_def_amt = first_atk_damage;
+        first_atk_damage += 3 * this.players[0].blade_forging_sharpness_stacks;
+        first_atk_damage -= 3 * this.players[0].blade_forging_stable_stacks;
+        first_atk_damage -= 1 * this.players[0].sword_pattern_carving_intense_stacks;
+        const blade_forging_stable_def = 8;
+        const chain_attack_atk = 5;
+        const charge_increase_atk = 1;
+        const intense_sword_intent = 4;
+        const spiritage_qi = 2;
+        const spiritstat_def = 3;
+        const spiritual_power_qi_cost = 1;
+        const spiritual_power_rep = 2;
+        const spiritual_power_atk = 4;
+        // do the first atk
+        this.atk(first_atk_damage);
+        this.def(first_def_amt);
+        // gain def from blade_forging_stable
+        for (let i=0; i<this.players[0].blade_forging_stable_stacks; i++) {
+            this.def(blade_forging_stable_def);
+        }
+        // attack for chain_attack
+        for (let i=0; i<this.players[0].sword_pattern_carving_chain_attack_stacks; i++) {
+            this.atk(chain_attack_atk);
+        }
+        // gain increase_atk from charge
+        for (let i=0; i<this.players[0].sword_pattern_carving_charge_stacks; i++) {
+            this.increase_idx_x_by_c(0, "increase_atk", charge_increase_atk);
+        }
+        // gain sword_intent from intense
+        for (let i=0; i<this.players[0].sword_pattern_carving_intense_stacks; i++) {
+            this.sword_intent(intense_sword_intent);
+        }
+        // gain qi from spiritage
+        for (let i=0; i<this.players[0].qi_forging_spiritage_stacks; i++) {
+            this.qi(spiritage_qi);
+        }
+        // gain def from spiritstat
+        for (let i=0; i<this.players[0].qi_forging_spiritstat_stacks; i++) {
+            this.for_each_x_add_c_y("qi", spiritstat_def, "def");
+        }
+        // pay qi to make attacks from spiritual_power
+        for (let i=0; i<this.players[0].qi_forging_spiritual_power_stacks; i++) {
+            if (this.players[0].qi >= spiritual_power_qi_cost) {
+                this.reduce_c_of_x(spiritual_power_qi_cost, "qi");
+                for (let j=0; j<spiritual_power_rep; j++) {
+                    this.atk(spiritual_power_atk);
+                }
+            }
+        }
+    }
     activate_wood_spirit() {
         this.add_c_of_x(1, "activate_wood_spirit_stacks");
     }
@@ -3561,6 +3666,14 @@ export class GameState {
         if (this.trigger_hexagram(0)) {
             return true;
         }
+        /*
+        if (c === 0) {
+            return false;
+        }
+        if (c === 100) {
+            return true;
+        }
+        */
         this.used_randomness = true;
         return Math.random() < c / 100;
     }
@@ -3976,7 +4089,36 @@ export class GameState {
         let c_pct_x = Math.floor(this.players[0][x] * c / 100);
         let convert_amt = Math.min(debuff_amt, c_pct_x);
         this.reduce_random_debuff_by_c_n_times(1, convert_amt);
+        /*
+        // first reduce weaken
+        let weaken_amt = Math.min(this.players[0].weaken, convert_amt);
+        let other_amt = convert_amt - weaken_amt;
+        this.reduce_c_of_x(weaken_amt, "weaken");
+        // then reduce decrease_atk
+        let decrease_atk_amt = Math.min(this.players[0].decrease_atk, other_amt);
+        other_amt -= decrease_atk_amt;
+        this.reduce_c_of_x(decrease_atk_amt, "decrease_atk");
+        // then reduce random debuff
+        this.reduce_random_debuff_by_c_n_times(1, other_amt);
+        */
         this.add_c_of_x(convert_amt, y);
+    }
+    do_cloud_sword_dragon_spring(finishing_touch_amt) {
+        for (let i=0; i<2; i++) {
+            this.atk(2);
+            if (this.this_atk_injured) {
+                this.add_c_of_x(finishing_touch_amt, "finishing_touch_stacks");
+                finishing_touch_amt = 0;
+            }
+        }
+        if (this.if_cloud_hit()) {
+            this.chase();
+        }
+    }
+    do_thousand_star_explosion(atk_per_star_power) {
+        this.atk(4 + atk_per_star_power * this.players[0].star_power);
+        const star_power_to_reduce = Math.ceil(this.players[0].star_power / 2);
+        this.reduce_idx_x_by_c(0, "star_power", star_power_to_reduce);
     }
 }
 

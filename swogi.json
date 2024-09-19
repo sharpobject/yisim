@@ -787,19 +787,25 @@
 		"name": "Inspiration Sword",
 		"actions": [
 			["atk", 8],
-			["injured", ["for_each_x_up_to_c_add_y", "qi", 6, "sword_intent"]]
+			["injured",
+				["for_each_x_up_to_c_add_y", "qi", 7, "sword_intent"],
+				["for_each_x_up_to_c_add_y", "qi", 4, "sword_intent"]]
 		]
 	},
 	"114072": {
 		"actions": [
 			["atk", 12],
-			["injured", ["for_each_x_up_to_c_add_y", "qi", 9, "sword_intent"]]
+			["injured",
+				["for_each_x_up_to_c_add_y", "qi", 10, "sword_intent"],
+				["for_each_x_up_to_c_add_y", "qi", 5, "sword_intent"]]
 		]
 	},
 	"114073": {
 		"actions": [
 			["atk", 16],
-			["injured", ["for_each_x_up_to_c_add_y", "qi", 12, "sword_intent"]]
+			["injured",
+				["for_each_x_up_to_c_add_y", "qi", 13, "sword_intent"],
+				["for_each_x_up_to_c_add_y", "qi", 6, "sword_intent"]]
 		]
 	},
 	"114081": {
@@ -6128,19 +6134,19 @@
 		"name": "Spiritage Incantation",
 		"actions": [
 			["qi", 3],
-			["for_each_x_up_to_c_add_y", "qi", 5, "def"]
+			["for_each_x_up_to_c_add_y", "qi", 7, "def"]
 		]
 	},
 	"324012": {
 		"actions": [
 			["qi", 4],
-			["for_each_x_up_to_c_add_y", "qi", 11, "def"]
+			["for_each_x_up_to_c_add_y", "qi", 13, "def"]
 		]
 	},
 	"324013": {
 		"actions": [
 			["qi", 5],
-			["for_each_x_up_to_c_add_y", "qi", 17, "def"]
+			["for_each_x_up_to_c_add_y", "qi", 19, "def"]
 		]
 	},
 	"324021": {
@@ -9883,7 +9889,7 @@
 	},
 	"803052": {
 		"actions": [
-			["if_x_at_least_c_do", "qi", 1, 
+			["if_x_at_least_c_do", "qi", 1,
 				["for_each_x_add_y", "internal_injury", "bonus_def_amt"],
 				["for_each_x_add_y", "indigestion", "bonus_def_amt"],
 				["if_x_at_least_c_do", "bonus_def_amt", 1,
@@ -9894,7 +9900,7 @@
 	},
 	"803053": {
 		"actions": [
-			["if_x_at_least_c_do", "qi", 1, 
+			["if_x_at_least_c_do", "qi", 1,
 				["for_each_x_add_y", "internal_injury", "bonus_def_amt"],
 				["for_each_x_add_y", "indigestion", "bonus_def_amt"],
 				["if_x_at_least_c_do", "bonus_def_amt", 1,
@@ -10200,6 +10206,221 @@
 			["for_each_x_add_y", "indigestion", "bonus_def_amt"],
 			["for_each_x_add_y", "bonus_def_amt", "qi"],
 			["for_each_x_add_c_y", "bonus_def_amt", 5, "hp"]
+		]
+	},
+	"914011": {
+		"name": "Unrestrained Sword - Cat Claw",
+		"actions": [
+			["for_each_x_add_y", "unrestrained_sword_count", "bonus_rep_amt"],
+			["add_c_of_x", 1, "unrestrained_sword_count"],
+			["rep", 2, [
+				["gain_ignore_def", 1],
+				["atk", 4]]]
+		]
+	},
+	"914012": {
+		"actions": [
+			["for_each_x_add_y", "unrestrained_sword_count", "bonus_rep_amt"],
+			["add_c_of_x", 1, "unrestrained_sword_count"],
+			["rep", 2, [
+				["gain_ignore_def", 1],
+				["atk", 6]]]
+		]
+	},
+	"914013": {
+		"actions": [
+			["for_each_x_add_y", "unrestrained_sword_count", "bonus_rep_amt"],
+			["add_c_of_x", 1, "unrestrained_sword_count"],
+			["rep", 2, [
+				["gain_ignore_def", 1],
+				["atk", 8]]]
+		]
+	},
+	"915011": {
+		"name": "Cloud Sword - Dragon Spring",
+		"actions": ["do_cloud_sword_dragon_spring", 2]
+	},
+	"915012": {
+		"actions": ["do_cloud_sword_dragon_spring", 3]
+	},
+	"915013": {
+		"actions": ["do_cloud_sword_dragon_spring", 4]
+	},
+	"915021": {
+		"name": "Cloud Sword - Flying Snow Shade",
+		"actions": [
+			["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 1, "bonus_rep_amt"]],
+			["rep", 1, ["atk", 2]],
+			["cloud_hit", ["for_each_x_add_y", "cloud_sword_chain_count", "qi"]]
+		]
+	},
+	"915022": {
+		"actions": [
+			["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 1, "bonus_rep_amt"]],
+			["rep", 1, ["atk", 3]],
+			["cloud_hit", ["for_each_x_add_y", "cloud_sword_chain_count", "qi"]]
+		]
+	},
+	"915023": {
+		"actions": [
+			["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 1, "bonus_rep_amt"]],
+			["rep", 1, ["atk", 4]],
+			["cloud_hit", ["for_each_x_add_y", "cloud_sword_chain_count", "qi"]]
+		]
+	},
+	"915031": {
+		"name": "CentiBird Delicate Bracelet",
+		"actions": [
+			["add_c_of_x", 1, "guard_up"],
+			["add_c_of_x", 1, "centibird_spirit_sword_rhythm_stacks"],
+			["chase"]
+		]
+	},
+	"915032": {
+		"actions": [
+			["qi", 2],
+			["add_c_of_x", 1, "guard_up"],
+			["add_c_of_x", 1, "centibird_spirit_sword_rhythm_stacks"],
+			["chase"]
+		]
+	},
+	"915033": {
+		"actions": [
+			["qi", 4],
+			["add_c_of_x", 1, "guard_up"],
+			["add_c_of_x", 1, "centibird_spirit_sword_rhythm_stacks"],
+			["chase"]
+		]
+	},
+	"915041": {
+		"name": "Clear Heart Sword Formation",
+		"actions": ["do_clear_heart_sword_formation", 6]
+	},
+	"915042": {
+		"actions": ["do_clear_heart_sword_formation", 9]
+	},
+	"915043": {
+		"actions": ["do_clear_heart_sword_formation", 12]
+	},
+	"923011": {
+		"name": "Traces Revitalized",
+		"actions": [
+			["for_each_x_add_c_pct_y", "hp_gained", 25, "bonus_atk_amt"],
+			["atk", 2],
+			["qi", 1],
+			["poast_action", ["chase"]]
+		]
+	},
+	"923012": {
+		"actions": [
+			["for_each_x_add_c_pct_y", "hp_gained", 25, "bonus_atk_amt"],
+			["atk", 2],
+			["qi", 1],
+			["chase"],
+			["post_action", ["heal", 1]]
+		]
+	},
+	"923013": {
+		"actions": [
+			["for_each_x_add_c_pct_y", "hp_gained", 33.333334, "bonus_atk_amt"],
+			["atk", 2],
+			["qi", 1],
+			["chase"],
+			["post_action", ["heal", 3]]
+		]
+	},
+	"924011": {
+		"name": "Suspicious Flame Flutter",
+		"actions": [
+			["add_enemy_c_of_x", 4, "internal_injury"],
+			["rep", 3, ["if_c_pct_do", 30, ["do_internal_injury", 1]]]
+		]
+	},
+	"924012": {
+		"actions": [
+			["add_enemy_c_of_x", 5, "internal_injury"],
+			["rep", 3, ["if_c_pct_do", 30, ["do_internal_injury", 1]]]
+		]
+	},
+	"924013": {
+		"actions": [
+			["add_enemy_c_of_x", 6, "internal_injury"],
+			["rep", 3, ["if_c_pct_do", 30, ["do_internal_injury", 1]]]
+		]
+	},
+	"924021": {
+		"name": "Thousand Star Explosion",
+		"actions": ["do_thousand_star_explosion", 4]
+	},
+	"924022": {
+		"actions": ["do_thousand_star_explosion", 5]
+	},
+	"924023": {
+		"actions": ["do_thousand_star_explosion", 6]
+	},
+	"925011": {
+		"name": "Ultimate Polaris Hexagram Base",
+		"actions": [
+			["become_star_point", 0],
+			["continuous"],
+			["add_c_of_x", 1, "ultimate_polaris_hexagram_base_stacks"]
+		]
+	},
+	"925012": {
+		"actions": [
+			["become_star_point", 2],
+			["continuous"],
+			["add_c_of_x", 1, "ultimate_polaris_hexagram_base_stacks"]
+		]
+	},
+	"925013": {
+		"actions": [
+			["become_star_point", 4],
+			["continuous"],
+			["add_c_of_x", 1, "ultimate_polaris_hexagram_base_stacks"]
+		]
+	},
+	"925021": {
+		"name": "Star Moon Hexagram Fan",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "star_moon_hexagram_fan_stacks"]
+		]
+	},
+	"925022": {
+		"actions": [
+			["add_c_of_x", 1, "star_power"],
+			["continuous"],
+			["add_c_of_x", 3, "star_moon_hexagram_fan_stacks"]
+		]
+	},
+	"925023": {
+		"actions": [
+			["add_c_of_x", 2, "star_power"],
+			["continuous"],
+			["add_c_of_x", 3, "star_moon_hexagram_fan_stacks"]
+		]
+	},
+	"935011": {
+		"name": "Heavenly Marrow Gourd",
+		"actions": [
+			["qi", 1],
+			["heal", 1],
+			["add_c_of_x", 2, "heavenly_marrow_gourd_stacks"]
+		]
+	},
+	"935012": {
+		"actions": [
+			["qi", 2],
+			["heal", 2],
+			["add_c_of_x", 2, "heavenly_marrow_gourd_stacks"]
+		]
+	},
+	"935013": {
+		"actions": [
+			["qi", 3],
+			["heal", 3],
+			["add_c_of_x", 2, "heavenly_marrow_gourd_stacks"]
 		]
 	}
 }
