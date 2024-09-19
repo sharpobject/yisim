@@ -10401,6 +10401,56 @@
 			["add_c_of_x", 3, "star_moon_hexagram_fan_stacks"]
 		]
 	},
+	"933011": {
+		"name": "Kun Wu Molten Ring",
+		"actions": [
+			["activate_fire_spirit"],
+			["activate_earth_spirit"],
+			["continuous"],
+			["add_c_of_x", 2, "kun_wu_molten_ring_stacks"]
+		]
+	},
+	"933012": {
+		"actions": [
+			["activate_fire_spirit"],
+			["activate_earth_spirit"],
+			["continuous"],
+			["add_c_of_x", 3, "kun_wu_molten_ring_stacks"]
+		]
+	},
+	"933013": {
+		"actions": [
+			["activate_fire_spirit"],
+			["activate_earth_spirit"],
+			["continuous"],
+			["add_c_of_x", 4, "kun_wu_molten_ring_stacks"]
+		]
+	},
+	"934011": {
+		"name": "Harmony of Water and Fire",
+		"actions": [
+			["add_c_of_x", "force_of_water", 1],
+			["activate_water_spirit"],
+			["activate_fire_spirit"],
+			["chase"]
+		]
+	},
+	"934012": {
+		"actions": [
+			["add_c_of_x", "force_of_water", 2],
+			["activate_water_spirit"],
+			["activate_fire_spirit"],
+			["chase"]
+		]
+	},
+	"934013": {
+		"actions": [
+			["add_c_of_x", "force_of_water", 3],
+			["activate_water_spirit"],
+			["activate_fire_spirit"],
+			["chase"]
+		]
+	},
 	"935011": {
 		"name": "Heavenly Marrow Gourd",
 		"actions": [
@@ -10422,5 +10472,143 @@
 			["heal", 3],
 			["add_c_of_x", 2, "heavenly_marrow_gourd_stacks"]
 		]
+	},
+	"935021": {
+		"name": "Ultimate Overcome Formation",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "ultimate_overcome_formation_stacks"]
+		]
+	},
+	"935022": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "ultimate_overcome_formation_stacks"]
+		]
+	},
+	"935023": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "ultimate_overcome_formation_stacks"]
+		]
+	},
+	"935031": {
+		"name": "Wood Spirit - All Things Grow",
+		"actions": [
+			["add_c_of_x", "max_hp", 3],
+			["heal", 3],
+			["continuous"],
+			["add_c_of_x", 1, "wood_spirit_all_things_grow_stacks"]
+		]
+	},
+	"935032": {
+		"actions": [
+			["add_c_of_x", "max_hp", 9],
+			["heal", 9],
+			["continuous"],
+			["add_c_of_x", 1, "wood_spirit_all_things_grow_stacks"]
+		]
+	},
+	"935033": {
+		"actions": [
+			["add_c_of_x", "max_hp", 15],
+			["heal", 15],
+			["continuous"],
+			["add_c_of_x", 1, "wood_spirit_all_things_grow_stacks"]
+		]
+	},
+	"944011": {
+		"name": "Styx Night Footwork",
+		"actions": [
+			["add_c_of_x", 3, "underworld"],
+			["add_c_of_x", 3, "agility"],
+			["continuous"],
+			["add_c_of_x", 1, "styx_night_footwork_stacks"]
+		]
+	},
+	"944012": {
+		"actions": [
+			["add_c_of_x", 4, "underworld"],
+			["add_c_of_x", 4, "agility"],
+			["continuous"],
+			["add_c_of_x", 1, "styx_night_footwork_stacks"]
+		]
+	},
+	"944013": {
+		"actions": [
+			["add_c_of_x", 5, "underworld"],
+			["add_c_of_x", 5, "agility"],
+			["continuous"],
+			["add_c_of_x", 1, "styx_night_footwork_stacks"]
+		]
+	},
+	"944021": {
+		"name": "Crash Fist - Return to Xuan",
+		"hp_cost": 6,
+		"actions": [
+			["heal", 15],
+			["add_c_of_x", 4, "internal_injury"],
+			["add_c_of_x", 4, "regen"],
+			["continuous"],
+			["add_c_of_x", 1, "crash_fist_return_to_xuan_stacks"]
+		]
+	},
+	"944022": {
+		"actions": [
+			["heal", 20],
+			["add_c_of_x", 6, "internal_injury"],
+			["add_c_of_x", 6, "regen"],
+			["continuous"],
+			["add_c_of_x", 1, "crash_fist_return_to_xuan_stacks"]
+		]
+	},
+	"944023": {
+		"actions": [
+			["heal", 25],
+			["add_c_of_x", 8, "internal_injury"],
+			["add_c_of_x", 8, "regen"],
+			["continuous"],
+			["add_c_of_x", 1, "crash_fist_return_to_xuan_stacks"]
+		]
+	},
+	"945011": {
+		"name": "Unceasing Universe",
+		"qi_cost": 3,
+		"actions": [
+			["atk", 6],
+			["physique", 3],
+			["heal", 3],
+			["add_c_of_x", 3, "force"],
+			["add_c_of_x", 10, "agility"]
+		]
+	},
+	"945012": {
+		"actions": [
+			["atk", 6],
+			["physique", 4],
+			["heal", 4],
+			["add_c_of_x", 4, "force"],
+			["add_c_of_x", 10, "agility"]
+		]
+	},
+	"945013": {
+		"actions": [
+			["atk", 6],
+			["physique", 5],
+			["heal", 5],
+			["add_c_of_x", 5, "force"],
+			["add_c_of_x", 10, "agility"]
+		]
+	},
+	"945021": {
+		"name": "Soul Overwhelming Palm",
+		"hp_cost": 2,
+		"actions": ["do_soul_overwhelming_palm", 2, 8, 2]
+	},
+	"945022": {
+		"actions": ["do_soul_overwhelming_palm", 3, 10, 2]
+	},
+	"945023": {
+		"actions": ["do_soul_overwhelming_palm", 4, 12, 2]
 	}
 }
