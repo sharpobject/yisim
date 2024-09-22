@@ -2994,6 +2994,7 @@ export class GameState {
                 this.increase_idx_force(my_idx, 1);
             }
             const force = this.players[my_idx].force + this.players[my_idx].bonus_force_amt;
+            this.reduce_c_of_x(1, "force");
             pct_multiplier += 10 * force;
             if (this.players[my_idx].this_card_crash_fist_inch_force_stacks > 0) {
                 pct_multiplier += 10 * force;
@@ -3104,7 +3105,6 @@ export class GameState {
         }
         this.do_fire_flame_blade();
         this.deal_damage_inner(dmg, true, 0);
-        this.reduce_c_of_x(1, "force");
     }
     if_cloud_hit() {
         return this.players[0].cloud_sword_chain_count > 0 || this.players[0].endurance_as_cloud_sea_stacks > 0;
