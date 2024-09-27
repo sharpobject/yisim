@@ -4191,7 +4191,7 @@ export class GameState {
         if (this.cards_have_overcoming_interaction(card_id, next_id)) {
             this.activate_element_of_card(next_id);
             this.qi(amt);
-            this.def(amt * 2);
+            this.def(amt * 2 + 2);
         }
     }
     downgrade_enemy_card_or_deal_damage(dmg_amt) {

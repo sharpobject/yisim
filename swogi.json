@@ -10215,7 +10215,7 @@
 			["add_c_of_x", 1, "unrestrained_sword_count"],
 			["rep", 2, [
 				["gain_ignore_def", 1],
-				["atk", 4]]]
+				["atk", 5]]]
 		]
 	},
 	"914012": {
@@ -10224,7 +10224,7 @@
 			["add_c_of_x", 1, "unrestrained_sword_count"],
 			["rep", 2, [
 				["gain_ignore_def", 1],
-				["atk", 6]]]
+				["atk", 7]]]
 		]
 	},
 	"914013": {
@@ -10233,7 +10233,7 @@
 			["add_c_of_x", 1, "unrestrained_sword_count"],
 			["rep", 2, [
 				["gain_ignore_def", 1],
-				["atk", 8]]]
+				["atk", 9]]]
 		]
 	},
 	"915011": {
@@ -10294,19 +10294,19 @@
 	},
 	"915041": {
 		"name": "Clear Heart Sword Formation",
-		"actions": ["do_clear_heart_sword_formation", 6]
+		"actions": ["do_clear_heart_sword_formation", 8]
 	},
 	"915042": {
-		"actions": ["do_clear_heart_sword_formation", 9]
+		"actions": ["do_clear_heart_sword_formation", 11]
 	},
 	"915043": {
-		"actions": ["do_clear_heart_sword_formation", 12]
+		"actions": ["do_clear_heart_sword_formation", 14]
 	},
 	"923011": {
 		"name": "Traces Revitalized",
 		"actions": [
 			["for_each_x_add_c_pct_y", "hp_gained", 25, "bonus_atk_amt"],
-			["atk", 2],
+			["atk", 4],
 			["qi", 1],
 			["poast_action", ["chase"]]
 		]
@@ -10314,7 +10314,7 @@
 	"923012": {
 		"actions": [
 			["for_each_x_add_c_pct_y", "hp_gained", 25, "bonus_atk_amt"],
-			["atk", 2],
+			["atk", 4],
 			["qi", 1],
 			["chase"],
 			["post_action", ["heal", 1]]
@@ -10323,7 +10323,7 @@
 	"923013": {
 		"actions": [
 			["for_each_x_add_c_pct_y", "hp_gained", 33.333334, "bonus_atk_amt"],
-			["atk", 2],
+			["atk", 4],
 			["qi", 1],
 			["chase"],
 			["post_action", ["heal", 3]]
@@ -10455,21 +10455,21 @@
 		"name": "Heavenly Marrow Gourd",
 		"actions": [
 			["qi", 1],
-			["heal", 1],
+			["heal", 3],
 			["add_c_of_x", 2, "heavenly_marrow_gourd_stacks"]
 		]
 	},
 	"935012": {
 		"actions": [
 			["qi", 2],
-			["heal", 2],
+			["heal", 5],
 			["add_c_of_x", 2, "heavenly_marrow_gourd_stacks"]
 		]
 	},
 	"935013": {
 		"actions": [
 			["qi", 3],
-			["heal", 3],
+			["heal", 7],
 			["add_c_of_x", 2, "heavenly_marrow_gourd_stacks"]
 		]
 	},
@@ -10573,7 +10573,7 @@
 	},
 	"945011": {
 		"name": "Unceasing Universe",
-		"qi_cost": 3,
+		"qi_cost": 2,
 		"actions": [
 			["atk", 6],
 			["physique", 3],
