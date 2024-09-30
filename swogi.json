@@ -10216,7 +10216,8 @@
 			["rep", 2, [
 				["gain_ignore_def", 1],
 				["atk", 5]]]
-		]
+		],
+		"character": "sw4"
 	},
 	"914012": {
 		"actions": [
@@ -10238,7 +10239,8 @@
 	},
 	"915011": {
 		"name": "Cloud Sword - Dragon Spring",
-		"actions": ["do_cloud_sword_dragon_spring", 2]
+		"actions": ["do_cloud_sword_dragon_spring", 2],
+		"character": "sw1"
 	},
 	"915012": {
 		"actions": ["do_cloud_sword_dragon_spring", 3]
@@ -10252,7 +10254,8 @@
 			["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 1, "bonus_rep_amt"]],
 			["rep", 1, ["atk", 2]],
 			["cloud_hit", ["for_each_x_add_y", "cloud_sword_chain_count", "qi"]]
-		]
+		],
+		"character": "sw2"
 	},
 	"915022": {
 		"actions": [
@@ -10274,7 +10277,8 @@
 			["add_c_of_x", 1, "guard_up"],
 			["add_c_of_x", 1, "centibird_spirit_sword_rhythm_stacks"],
 			["chase"]
-		]
+		],
+		"character": "sw3"
 	},
 	"915032": {
 		"actions": [
@@ -10294,7 +10298,8 @@
 	},
 	"915041": {
 		"name": "Clear Heart Sword Formation",
-		"actions": ["do_clear_heart_sword_formation", 8]
+		"actions": ["do_clear_heart_sword_formation", 8],
+		"character": "sw5"
 	},
 	"915042": {
 		"actions": ["do_clear_heart_sword_formation", 11]
@@ -10309,7 +10314,8 @@
 			["atk", 4],
 			["qi", 1],
 			["poast_action", ["chase"]]
-		]
+		],
+		"character": "he1"
 	},
 	"923012": {
 		"actions": [
@@ -10334,7 +10340,8 @@
 		"actions": [
 			["add_enemy_c_of_x", 4, "internal_injury"],
 			["rep", 3, ["if_c_pct_do", 30, ["do_internal_injury", 1]]]
-		]
+		],
+		"character": "he3"
 	},
 	"924012": {
 		"actions": [
@@ -10350,7 +10357,8 @@
 	},
 	"924021": {
 		"name": "Thousand Star Explosion",
-		"actions": ["do_thousand_star_explosion", 4]
+		"actions": ["do_thousand_star_explosion", 4],
+		"character": "he4"
 	},
 	"924022": {
 		"actions": ["do_thousand_star_explosion", 5]
@@ -10364,7 +10372,8 @@
 			["become_star_point", 0],
 			["continuous"],
 			["add_c_of_x", 1, "ultimate_polaris_hexagram_base_stacks"]
-		]
+		],
+		"character": "he2"
 	},
 	"925012": {
 		"actions": [
@@ -10385,7 +10394,8 @@
 		"actions": [
 			["continuous"],
 			["add_c_of_x", 3, "star_moon_hexagram_fan_stacks"]
-		]
+		],
+		"character": "he5"
 	},
 	"925022": {
 		"actions": [
@@ -10408,7 +10418,8 @@
 			["activate_earth_spirit"],
 			["continuous"],
 			["add_c_of_x", 2, "kun_wu_molten_ring_stacks"]
-		]
+		],
+		"character": "fe4"
 	},
 	"933012": {
 		"actions": [
@@ -10433,7 +10444,8 @@
 			["activate_water_spirit"],
 			["activate_fire_spirit"],
 			["chase"]
-		]
+		],
+		"character": "fe5"
 	},
 	"934012": {
 		"actions": [
@@ -10457,7 +10469,8 @@
 			["qi", 1],
 			["heal", 3],
 			["add_c_of_x", 2, "heavenly_marrow_gourd_stacks"]
-		]
+		],
+		"character": "fe1"
 	},
 	"935012": {
 		"actions": [
@@ -10478,7 +10491,8 @@
 		"actions": [
 			["continuous"],
 			["add_c_of_x", 2, "ultimate_overcome_formation_stacks"]
-		]
+		],
+		"character": "fe2"
 	},
 	"935022": {
 		"actions": [
@@ -10494,25 +10508,30 @@
 	},
 	"935031": {
 		"name": "Wood Spirit - All Things Grow",
+		"qi_cost": 1,
 		"actions": [
-			["add_c_of_x", "max_hp", 3],
+			["add_c_of_x", 3, "max_hp"],
 			["heal", 3],
+			["wood_spirit", ["chase"]],
 			["continuous"],
 			["add_c_of_x", 1, "wood_spirit_all_things_grow_stacks"]
-		]
+		],
+		"character": "fe3"
 	},
 	"935032": {
 		"actions": [
-			["add_c_of_x", "max_hp", 9],
+			["add_c_of_x", 9, "max_hp"],
 			["heal", 9],
+			["wood_spirit", ["chase"]],
 			["continuous"],
 			["add_c_of_x", 1, "wood_spirit_all_things_grow_stacks"]
 		]
 	},
 	"935033": {
 		"actions": [
-			["add_c_of_x", "max_hp", 15],
+			["add_c_of_x", 15, "max_hp"],
 			["heal", 15],
+			["wood_spirit", ["chase"]],
 			["continuous"],
 			["add_c_of_x", 1, "wood_spirit_all_things_grow_stacks"]
 		]
@@ -10524,7 +10543,8 @@
 			["add_c_of_x", 3, "agility"],
 			["continuous"],
 			["add_c_of_x", 1, "styx_night_footwork_stacks"]
-		]
+		],
+		"character": "dx3"
 	},
 	"944012": {
 		"actions": [
@@ -10551,7 +10571,8 @@
 			["add_c_of_x", 4, "regen"],
 			["continuous"],
 			["add_c_of_x", 1, "crash_fist_return_to_xuan_stacks"]
-		]
+		],
+		"character": "dx4"
 	},
 	"944022": {
 		"actions": [
@@ -10580,7 +10601,8 @@
 			["heal", 3],
 			["add_c_of_x", 3, "force"],
 			["add_c_of_x", 10, "agility"]
-		]
+		],
+		"character": "dx1"
 	},
 	"945012": {
 		"actions": [
@@ -10603,7 +10625,8 @@
 	"945021": {
 		"name": "Soul Overwhelming Palm",
 		"hp_cost": 2,
-		"actions": ["do_soul_overwhelming_palm", 2, 8, 2]
+		"actions": ["do_soul_overwhelming_palm", 2, 8, 2],
+		"character": "dx2"
 	},
 	"945022": {
 		"actions": ["do_soul_overwhelming_palm", 3, 10, 2]
