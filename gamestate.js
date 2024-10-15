@@ -4331,7 +4331,7 @@ export class GameState {
     do_cloud_sword_dragon_spring(finishing_touch_amt) {
         for (let i=0; i<2; i++) {
             this.atk(2);
-            if (this.this_atk_injured) {
+            if (this.players[0].this_atk_injured) {
                 this.add_c_of_x(finishing_touch_amt, "finishing_touch_stacks");
                 finishing_touch_amt = 0;
             }
