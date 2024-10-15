@@ -2060,6 +2060,13 @@ export class GameState {
         }
         return 0;
     }
+    do_star_sky_forge_bone() {
+        const amt = this.players[0].star_sky_forge_bone_stacks;
+        if (amt > 0) {
+            this.reduce_c_of_x(amt, "star_sky_forge_bone_stacks");
+        }
+        return amt;
+    }
     do_flying_brush_chase() {
         if (this.players[0].flying_brush_stacks > 0) {
             this.chase();
@@ -3000,6 +3007,7 @@ export class GameState {
                 ignore_def = true;
             }
             dmg += this.do_exercise_bones();
+            dmg += this.do_star_sky_forge_bone();
             dmg += this.do_lonely_night_wolf();
             dmg += this.do_nothing_is_appropriate();
             dmg += this.players[my_idx].bonus_atk_amt;
