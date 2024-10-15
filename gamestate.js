@@ -2,6 +2,7 @@ const fs = require('fs');
 const process = require('process');
 const uf = require('@leeoniya/ufuzzy');
 export const swogi = JSON.parse(fs.readFileSync('swogi.json', 'utf8'));
+const names_json = JSON.parse(fs.readFileSync('names.json', 'utf8'));
 //import { readFileSync } from 'fs';
 //let swogi = JSON.parse(readFileSync('swogi.json', 'utf8'));
 //import { readFileSync } from 'fs';
@@ -12,11 +13,14 @@ keys.sort();
 function get_base_id(card_id) {
     return card_id.substring(0, card_id.length-1) + "1";
 }
+function format_name_level(name, level) {
+    return name + " (level " + level + ")";
+}
 export function format_card(card_id) {
     //console.log(card_id);
     let card_name = swogi[card_id].name;
     let card_level = card_id.substring(card_id.length-1);
-    return card_name + " (level " + card_level + ")";
+    return format_name_level(card_name, card_level);
 }
 function actions_contains_str(actions, str) {
     if (actions.length > 0 && actions[0] === str) {
@@ -43,7 +47,7 @@ export const CHARACTER_ID_TO_NAME = {
     "sw1": "Mu Yifeng",
     "sw2": "Yan Xue",
     "sw3": "Long Yao",
-    "sw4": "Yin Xiaoyue",
+    "sw4": "Lin Xiaoyue",
     "sw5": "Lu Jianxin",
     "he1": "Tan Shuyan",
     "he2": "Yan Chen",
@@ -183,11 +187,41 @@ function with_default(x, default_val) {
     }
     return x;
 }
+const id_to_names_ = {};
+const id_to_name_ = {};
+for (let i=0; i<names_json.length; i++) {
+    const id = names_json[i].id + "";
+    const names = [];
+    for (const prop in names_json[i]) {
+        // if it starts with "name", add it to the names array
+        if (prop.startsWith("name")) {
+            names.push(names_json[i][prop]);
+        }
+    }
+    id_to_names_[id] = names;
+    if (names_json[i].name !== undefined) {
+        id_to_name_[id] = names_json[i].name;
+    }
+}
+for (let i=0; i<keys.length; i++) {
+    const card_id = keys[i];
+    if (id_to_names_[card_id] !== undefined) {
+        swogi[card_id].names = id_to_names_[card_id];
+    }
+    if (id_to_name_[card_id] !== undefined) {
+        swogi[card_id].name = id_to_name_[card_id];
+    }
+}
+
 for (let i=0; i<keys.length; i++) {
     const card_id = keys[i];
     const base_id = get_base_id(card_id);
     const name = with_default(swogi[card_id].name, swogi[base_id].name);
     swogi[card_id].name = name;
+    let names = with_default(swogi[card_id].names, swogi[base_id].names);
+    if (swogi[card_id].names === undefined && swogi[card_id].name !== undefined) {
+        names = [swogi[card_id].name];
+    }
     const qi_cost = with_default(swogi[card_id].qi_cost, with_default(swogi[base_id].qi_cost, 0));
     const hp_cost = with_default(swogi[card_id].hp_cost, with_default(swogi[base_id].hp_cost, undefined));
     const character = with_default(swogi[card_id].character, with_default(swogi[base_id].character, undefined));
@@ -197,6 +231,7 @@ for (let i=0; i<keys.length; i++) {
     const is_sweet = with_default(swogi[card_id].is_sweet, with_default(swogi[base_id].is_sweet, undefined));
     const card = {
         name: name,
+        names: names,
         qi_cost: qi_cost,
         hp_cost: hp_cost,
         decrease_qi_cost_by_x: decrease_qi_cost_by_x,
@@ -284,16 +319,21 @@ const card_names = [];
 const card_name_to_id = {};
 for (let i=0; i<keys.length; i++) {
     const card_id = keys[i];
-    if (card_id.endsWith("1")) {
-        card_names.push(swogi[card_id].name);
-        card_name_to_id[swogi[card_id].name] = card_id;
-    }
-    card_names.push(format_card(card_id));
-    card_name_to_id[format_card(card_id)] = card_id;
-    if (card_id.endsWith("3")) {
-        const lvmax = swogi[card_id].name + " (level max)";
-        card_names.push(lvmax);
-        card_name_to_id[lvmax] = card_id;
+    //console.log(swogi[card_id].name, swogi[card_id].names);
+    for (const name of [swogi[card_id].name, ...swogi[card_id].names]) {
+        if (card_id.endsWith("1")) {
+            card_names.push(name);
+            card_name_to_id[name] = card_id;
+        }
+        const level = card_id.substring(card_id.length-1);
+        const another_name = format_name_level(name, level);
+        card_names.push(another_name);
+        card_name_to_id[another_name] = card_id;
+        if (card_id.endsWith("3")) {
+            const lvmax = name + " (level max)";
+            card_names.push(lvmax);
+            card_name_to_id[lvmax] = card_id;
+        }
     }
 }
 card_names.sort((a, b) => a.length - b.length);
