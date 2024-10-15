@@ -2561,7 +2561,7 @@
 				["atk", 1]
 			]],
 			["wood_spirit",
-				["if_x_at_least_c_do", "hp_gained", 1, ["chase"]]
+				["add_c_of_x", 1, "chase_if_hp_gained"]
 			]
 		]
 	},
@@ -2572,7 +2572,7 @@
 				["atk", 2]
 			]],
 			["wood_spirit",
-				["if_x_at_least_c_do", "hp_gained", 1, ["chase"]]
+				["add_c_of_x", 1, "chase_if_hp_gained"]
 			]
 		]
 	},
@@ -2583,7 +2583,7 @@
 				["atk", 3]
 			]],
 			["wood_spirit",
-				["if_x_at_least_c_do", "hp_gained", 1, ["chase"]]
+				["add_c_of_x", 1, "chase_if_hp_gained"]
 			]
 		]
 	},
@@ -10208,6 +10208,31 @@
 			["for_each_x_add_c_y", "bonus_def_amt", 5, "hp"]
 		]
 	},
+	"913011": {
+		"name": "Unrestrained Sword - Nebula Cloud",
+		"actions": [
+			["atk", 6],
+			["for_each_x_add_y", "unrestrained_sword_count", "qi"],
+			["for_each_x_add_c_y", "unrestrained_sword_count", 1, "def"],
+			["for_each_x_add_y", "unrestrained_sword_count", "sword_intent"]
+		]
+	},
+	"913012": {
+		"actions": [
+			["atk", 7],
+			["for_each_x_add_y", "unrestrained_sword_count", "qi"],
+			["for_each_x_add_c_y", "unrestrained_sword_count", 2, "def"],
+			["for_each_x_add_y", "unrestrained_sword_count", "sword_intent"]
+		]
+	},
+	"913013": {
+		"actions": [
+			["atk", 8],
+			["for_each_x_add_y", "unrestrained_sword_count", "qi"],
+			["for_each_x_add_c_y", "unrestrained_sword_count", 3, "def"],
+			["for_each_x_add_y", "unrestrained_sword_count", "sword_intent"]
+		]
+	},
 	"914011": {
 		"name": "Unrestrained Sword - Cat Claw",
 		"actions": [
@@ -10306,6 +10331,50 @@
 	},
 	"915043": {
 		"actions": ["do_clear_heart_sword_formation", 14]
+	},
+	"915051": {
+		"name": "Cloud Sword - Starry Sky",
+		"actions": [
+			["def", 4],
+			["chase"],
+			["cloud_hit", ["for_each_x_add_c_y", "qi", 1, "def"]]
+		]
+	},
+	"915052": {
+		"actions": [
+			["def", 10],
+			["chase"],
+			["cloud_hit", ["for_each_x_add_c_y", "qi", 1, "def"]]
+		]
+	},
+	"915053": {
+		"actions": [
+			["def", 16],
+			["chase"],
+			["cloud_hit", ["for_each_x_add_c_y", "qi", 1, "def"]]
+		]
+	},
+	"922011": {
+		"name": "Astral Move - Extend",
+		"actions": [
+			["atk", 4],
+			["qi", 1],
+			["become_star_point", 3]
+		]
+	},
+	"922012": {
+		"actions": [
+			["atk", 6],
+			["qi", 1],
+			["become_star_point", 4]
+		]
+	},
+	"922013": {
+		"actions": [
+			["atk", 8],
+			["qi", 1],
+			["become_star_point", 5]
+		]
 	},
 	"923011": {
 		"name": "Traces Revitalized",
@@ -10411,6 +10480,56 @@
 			["add_c_of_x", 3, "star_moon_hexagram_fan_stacks"]
 		]
 	},
+	"925031": {
+		"name": "Great Galaxy",
+		"actions": [
+			["exhaust_x_to_add_c_y", "qi", 2, "bonus_rep_amt"],
+			["exhaust_x_to_add_c_y", "star_power", 4, "bonus_rep_amt"],
+			["for_each_x_add_y", "bonus_rep_amt", "max_hp"],
+			["for_each_x_add_y", "bonus_rep_amt", "hp"],
+			["add_c_of_x", 1, "chase_if_hp_gained"],
+			["post_action", ["qi", 2]]
+		]
+	},
+	"925032": {
+		"actions": [
+			["exhaust_x_to_add_c_y", "qi", 2, "bonus_rep_amt"],
+			["exhaust_x_to_add_c_y", "star_power", 4, "bonus_rep_amt"],
+			["for_each_x_add_y", "bonus_rep_amt", "max_hp"],
+			["for_each_x_add_y", "bonus_rep_amt", "hp"],
+			["add_c_of_x", 1, "chase_if_hp_gained"],
+			["post_action", ["qi", 4]]
+		]
+	},
+	"925033": {
+		"actions": [
+			["exhaust_x_to_add_c_y", "qi", 2, "bonus_rep_amt"],
+			["exhaust_x_to_add_c_y", "star_power", 4, "bonus_rep_amt"],
+			["for_each_x_add_y", "bonus_rep_amt", "max_hp"],
+			["for_each_x_add_y", "bonus_rep_amt", "hp"],
+			["add_c_of_x", 1, "chase_if_hp_gained"],
+			["post_action", ["qi", 6]]
+		]
+	},
+	"932011": {
+		"name": "Cosmos Fleche",
+		"actions": [
+			["atk", 7],
+			["activate_next_slots", 2]
+		]
+	},
+	"932012": {
+		"actions": [
+			["atk", 11],
+			["activate_next_slots", 2]
+		]
+	},
+	"932013": {
+		"actions": [
+			["atk", 15],
+			["activate_next_slots", 2]
+		]
+	},
 	"933011": {
 		"name": "Kun Wu Molten Ring",
 		"actions": [
@@ -10461,6 +10580,28 @@
 			["activate_water_spirit"],
 			["activate_fire_spirit"],
 			["chase"]
+		]
+	},
+	"934021": {
+		"name": "Metal Spirit - Meteor",
+		"actions": [
+			["for_each_x_add_c_pct_y", "def_lost", 12.5, "bonus_atk_amt"],
+			["atk", 4],
+			["metal_spirit", ["chase"]]
+		]
+	},
+	"934022": {
+		"actions": [
+			["for_each_x_add_c_pct_y", "def_lost", 14.285715, "bonus_atk_amt"],
+			["atk", 6],
+			["metal_spirit", ["chase"]]
+		]
+	},
+	"934023": {
+		"actions": [
+			["for_each_x_add_c_pct_y", "def_lost", 16.666667, "bonus_atk_amt"],
+			["atk", 8],
+			["metal_spirit", ["chase"]]
 		]
 	},
 	"935011": {
@@ -10536,6 +10677,28 @@
 			["add_c_of_x", 1, "wood_spirit_all_things_grow_stacks"]
 		]
 	},
+	"943011": {
+		"name": "Star Sky Forge Bone",
+		"actions": [
+			["physique", 3],
+			["add_c_of_x", 2, "force"],
+			["for_each_x_add_c_pct_y_up_to_d", "physique", 16.666667, "star_sky_forge_bone_stacks", 5]
+		]
+	},
+	"943012": {
+		"actions": [
+			["physique", 4],
+			["add_c_of_x", 2, "force"],
+			["for_each_x_add_c_pct_y_up_to_d", "physique", 16.666667, "star_sky_forge_bone_stacks", 8]
+		]
+	},
+	"943013": {
+		"actions": [
+			["physique", 5],
+			["add_c_of_x", 2, "force"],
+			["for_each_x_add_c_pct_y_up_to_d", "physique", 16.666667, "star_sky_forge_bone_stacks", 11]
+		]
+	},
 	"944011": {
 		"name": "Styx Night Footwork",
 		"actions": [
@@ -10590,6 +10753,29 @@
 			["add_c_of_x", 8, "regen"],
 			["continuous"],
 			["add_c_of_x", 1, "crash_fist_return_to_xuan_stacks"]
+		]
+	},
+	"944031": {
+		"name": "Crash Fist - Star Seizing",
+		"hp_cost": 6,
+		"actions": [
+			["add_c_of_x", 1, "this_card_crash_fist_star_seizing_stacks"],
+			["add_c_of_x", 1, "crash_fist_star_seizing_stacks"],
+			["atk", 12]
+		]
+	},
+	"944032": {
+		"actions": [
+			["add_c_of_x", 1, "this_card_crash_fist_star_seizing_stacks"],
+			["add_c_of_x", 1, "crash_fist_star_seizing_stacks"],
+			["atk", 16]
+		]
+	},
+	"944033": {
+		"actions": [
+			["add_c_of_x", 1, "this_card_crash_fist_star_seizing_stacks"],
+			["add_c_of_x", 1, "crash_fist_star_seizing_stacks"],
+			["atk", 20]
 		]
 	},
 	"945011": {

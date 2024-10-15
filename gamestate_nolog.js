@@ -551,6 +551,7 @@ class Player {
         this.frozen_snow_lotus_stacks = 0;
         this.entangling_ancient_vine_stacks = 0;
         this.devouring_ancient_vine_stacks = 0;
+        this.shadow_owl_reishi_stacks = 0;
         // fortune teller side job cards
         this.observe_body_stacks = 0;
         this.god_luck_approach_stacks = 0;
@@ -726,6 +727,10 @@ class Player {
         this.styx_night_footwork_triggered = false;
         this.styx_night_footwork_stacks = 0;
         this.crash_fist_return_to_xuan_stacks = 0;
+        this.star_sky_forge_bone_stacks = 0;
+        this.crash_fist_star_seizing_stacks = 0;
+        this.this_card_crash_fist_star_seizing_stacks = 0;
+        this.chase_if_hp_gained = 0;
     }
     reset_can_play() {
         this.cards = this.cards.slice();
@@ -1156,6 +1161,7 @@ export class GameState {
             this.do_firmness_body(idx);
             this.do_peach_branch_ruyi(idx);
             this.do_mark_of_water_spirit(idx);
+            this.do_shadow_owl_reishi(idx);
             this.do_full_of_force(idx);
             this.do_innate_mark(idx);
             this.do_courage_to_fight(idx);
@@ -1491,6 +1497,7 @@ export class GameState {
             this.transfer_random_debuff();
         }
         this.for_each_x_add_y("crash_fist_inch_force_stacks", "this_card_crash_fist_inch_force_stacks");
+        this.for_each_x_add_y("crash_fist_star_seizing_stacks", "this_card_crash_fist_star_seizing_stacks");
         this.for_each_x_add_y("crash_fist_blink_stacks", "agility");
         this.for_each_x_add_y("crash_fist_shocked_stacks", "this_card_crash_fist_shocked_stacks");
         if (swogi[card_id].name !== "Crash Fist - Continue") {
@@ -1502,6 +1509,7 @@ export class GameState {
             this.players[0].crash_fist_inch_force_stacks = 0;
             this.players[0].crash_fist_blink_stacks = 0;
             this.players[0].crash_fist_shocked_stacks = 0;
+            this.players[0].crash_fist_star_seizing_stacks = 0;
         }
     }
     do_post_crash_fist(card_id) {
@@ -1510,6 +1518,10 @@ export class GameState {
         }
         this.players[0].this_card_crash_fist_blitz_stacks = 0;
         this.players[0].this_card_crash_fist_inch_force_stacks = 0;
+        if (this.players[0].this_card_crash_fist_star_seizing_stacks > 0) {
+            this.players[0].this_card_crash_fist_star_seizing_stacks = 0;
+            this.for_each_x_add_c_pct_y("damage_dealt_to_hp_by_this_card_atk", 60, "hp");
+        }
         if (this.players[0].this_trigger_directly_attacked && swogi[card_id].name !== "Crash Fist - Continue") {
             this.players[0].crash_fist_poke_stacks = 0;
         }
@@ -1724,10 +1736,12 @@ export class GameState {
         this.do_earth_spirit_formation(card_id);
         this.do_metal_spirit_formation(card_id);
         this.do_water_spirit_formation(card_id);
-        this.do_post_strike(card_id, idx);
         this.do_god_luck_avoid(card_id);
         this.do_alkaline_water_zongzi(card_id);
         this.do_action(card.actions);
+        this.do_post_strike(card_id, idx);
+        this.players[0].bonus_def_amt = 0;
+        this.players[0].bonus_heal_amt = 0;
         this.players[0].bonus_atk_amt = 0;
         this.do_god_luck_approach(card_id);
         // expire crash fist buffs - they don't apply to extra attacks
@@ -1745,6 +1759,12 @@ export class GameState {
         this.do_beast_spirit_sword_formation(card_id);
         this.do_unrestrained_sword_count(card_id);
         this.do_sweet_zongzi_count(card_id);
+        if (this.players[0].chase_if_hp_gained > 0) {
+            if (this.players[0].hp_gained > 0) {
+                this.chase();
+            }
+            this.players[0].chase_if_hp_gained = 0;
+        }
         this.players[0].bonus_atk_amt = prev_bonus_atk_amt;
         this.players[0].bonus_dmg_amt = prev_bonus_dmg_amt;
         this.players[0].bonus_rep_amt = prev_bonus_rep_amt;
@@ -3265,6 +3285,9 @@ export class GameState {
     // in cases where the player has 2 debuffs and this effect clears
     // both, it's not really random - the order doesn't matter.
     reduce_random_debuff_by_c_n_times(c,n) {
+        if (n === 0) {
+            return;
+        }
         let my_debuff_names = [];
         let my_debuff_stack_counts = [];
         let necessary_times = 0;
@@ -3358,12 +3381,14 @@ export class GameState {
                 this.players[idx].reviving = true;
                 this.increase_idx_x_by_c(idx, "hp", heal_amt);
                 this.players[idx].reviving = false;
+                this.players[idx].chases = 9999;
             } else if (this.players[idx].flame_soul_rebirth_stacks > 0) {
                 this.reduce_idx_x_by_c(idx, "flame_soul_rebirth_stacks", 1);
                 this.set_idx_c_of_x(idx, 15, "max_hp");
                 this.players[idx].reviving = true;
                 this.set_idx_c_of_x(idx, 15, "hp");
                 this.players[idx].reviving = false;
+                this.players[idx].chases = 9999;
             } else {
                 this.game_over = true;
                 return true;
@@ -4101,6 +4126,14 @@ export class GameState {
             this.def(amt * 2 + 2);
         }
     }
+    activate_next_slots(n) {
+        var idx = this.players[0].currently_triggering_card_idx;
+        for (let i=0; i<n; i++) {
+            idx = this.get_next_idx(idx);
+            const id = this.players[0].cards[idx];
+            this.activate_element_of_card(id);
+        }
+    }
     downgrade_enemy_card_or_deal_damage(dmg_amt) {
         const idx = this.players[0].currently_triggering_card_idx;
         if (!this.try_downgrade_card(1, idx)) {
@@ -4136,12 +4169,17 @@ export class GameState {
         let other_amt = convert_amt - weaken_amt;
         this.reduce_c_of_x(weaken_amt, "weaken");
         // then reduce decrease_atk
-        let decrease_atk_amt = Math.min(this.players[0].decrease_atk, other_amt);
+        const keep_decrease_atk_amt = 1;
+        const max_decrease_atk_reduction = Math.max(this.players[0].decrease_atk - keep_decrease_atk_amt, 0);
+        let decrease_atk_amt = Math.min(max_decrease_atk_reduction, other_amt);
         other_amt -= decrease_atk_amt;
         this.reduce_c_of_x(decrease_atk_amt, "decrease_atk");
-        // then reduce random debuff
+        // then reduce internal injury
+        let internal_injury_amt = Math.min(this.players[0].internal_injury, other_amt);
+        other_amt -= internal_injury_amt;
+        this.reduce_c_of_x(internal_injury_amt, "internal_injury");
         this.reduce_random_debuff_by_c_n_times(1, other_amt);
-        */
+        /**/
         this.add_c_of_x(convert_amt, y);
     }
     do_cloud_sword_dragon_spring(finishing_touch_amt) {
@@ -4170,6 +4208,12 @@ export class GameState {
         }
         this.add_c_of_x(my_distinct_debuffs * force_per_debuff, "force");
         this.atk(base_atk + atk_per_force * this.players[0].force);
+    }
+    do_shadow_owl_reishi(idx) {
+        if (this.players[idx].shadow_owl_reishi_stacks > 0) {
+            this.reduce_idx_x_by_c(idx, "hp", this.players[0].shadow_owl_reishi_stacks);
+            this.increase_idx_x_by_c(idx, "flying_brush_stacks", 1);
+        }
     }
 }
 
