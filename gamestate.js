@@ -219,8 +219,8 @@ for (let i=0; i<keys.length; i++) {
     const name = with_default(swogi[card_id].name, swogi[base_id].name);
     swogi[card_id].name = name;
     let names = with_default(swogi[card_id].names, swogi[base_id].names);
-    if (swogi[card_id].names === undefined && swogi[card_id].name !== undefined) {
-        names = [swogi[card_id].name];
+    if (names === undefined && name !== undefined) {
+        names = [name];
     }
     const qi_cost = with_default(swogi[card_id].qi_cost, with_default(swogi[base_id].qi_cost, 0));
     const hp_cost = with_default(swogi[card_id].hp_cost, with_default(swogi[base_id].hp_cost, undefined));
@@ -319,7 +319,7 @@ const card_names = [];
 const card_name_to_id = {};
 for (let i=0; i<keys.length; i++) {
     const card_id = keys[i];
-    //console.log(swogi[card_id].name, swogi[card_id].names);
+    //console.log(card_id, swogi[card_id].name, swogi[card_id].names);
     for (const name of [swogi[card_id].name, ...swogi[card_id].names]) {
         if (card_id.endsWith("1")) {
             card_names.push(name);
@@ -721,6 +721,7 @@ class Player {
         this.p4_concentrated_element_stacks = 0;
         this.p5_concentrated_element_stacks = 0;
         this.reviving = false;
+        this.just_revived = false;
         // duan xuan sect immortal fates
         this.unbounded_qi_stacks = 0;
         this.unwavering_soul_stacks = 0;
@@ -1840,6 +1841,9 @@ export class GameState {
         this.unindent();
     }
     process_this_card_chases() {
+        if (this.players[0].just_revived) {
+            return;
+        }
         // if we chased 1 or more times during this card, let's regard that as 1 chase for now...
         if (this.players[0].this_card_chases <= 0) {
             if (this.players[0].agility >= 10 && this.players[0].chases < this.players[0].max_chases) {
@@ -1862,7 +1866,6 @@ export class GameState {
         this.players[0].this_card_attacked = false;
         this.players[0].this_card_directly_attacked = false;
         this.players[0].sword_intent_flow_mode = false;
-        this.players[0].this_card_chases = 0;
         this.players[0].this_card_sword_intent = 0;
         this.do_swift_burning_seal(card_id, idx);
         this.do_sword_formation_deck_count(card_id);
@@ -1877,6 +1880,7 @@ export class GameState {
         this.players[0].can_post_action[idx] = true;
     }
     play_card(card_id, idx) {
+        this.players[0].this_card_chases = 0;
         this.players[0].currently_playing_card_idx = idx;
         let plays = 1;
         if (this.players[0].unrestrained_sword_twin_dragons_stacks > 0) {
@@ -2372,6 +2376,7 @@ export class GameState {
             this.players[0].max_chases = 0;
         }
         while (action_idx <= this.players[0].chases && action_idx <= this.players[0].max_chases && can_act) {
+            this.players[0].just_revived = false;
             this.do_shadow_owl_rabbit_lose_hp(action_idx);
             this.do_octgates_lock_formation(action_idx);
             this.do_devouring_ancient_vine(action_idx);
@@ -3518,14 +3523,14 @@ export class GameState {
                 this.players[idx].reviving = true;
                 this.increase_idx_x_by_c(idx, "hp", heal_amt);
                 this.players[idx].reviving = false;
-                this.players[idx].chases = 9999;
+                this.players[idx].just_revived = true;
             } else if (this.players[idx].flame_soul_rebirth_stacks > 0) {
                 this.reduce_idx_x_by_c(idx, "flame_soul_rebirth_stacks", 1);
                 this.set_idx_c_of_x(idx, 15, "max_hp");
                 this.players[idx].reviving = true;
                 this.set_idx_c_of_x(idx, 15, "hp");
                 this.players[idx].reviving = false;
-                this.players[idx].chases = 9999;
+                this.players[idx].just_revived = true;
             } else {
                 this.game_over = true;
                 this.log("player " + idx + " has died of hp loss");
