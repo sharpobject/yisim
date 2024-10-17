@@ -4481,20 +4481,20 @@
 		"qi_cost": 2,
 		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
 		"actions": [
-			["atk", 8],
-			["add_c_of_x", 2, "increase_atk"]
+			["atk", 6],
+			["add_c_of_x", 3, "increase_atk"]
 		]
 	},
 	"212022": {
 		"actions": [
-			["atk", 8],
-			["add_c_of_x", 3, "increase_atk"]
+			["atk", 6],
+			["add_c_of_x", 4, "increase_atk"]
 		]
 	},
 	"212023": {
 		"actions": [
-			["atk", 8],
-			["add_c_of_x", 4, "increase_atk"]
+			["atk", 6],
+			["add_c_of_x", 5, "increase_atk"]
 		]
 	},
 	"213011": {
@@ -5022,7 +5022,6 @@
 	},
 	"226021": {
 		"name": "Covert Shift",
-		"qi_cost": 1,
 		"actions": [
 			["add_c_of_x", 2, "covert_shift_stacks"]
 		]
@@ -5279,7 +5278,6 @@
 	},
 	"234021": {
 		"name": "Wood Spirit - Rhythm Fire",
-		"qi_cost": 1,
 		"actions": [
 			["do_wood_spirit_rhythm_fire", 16]
 		]
@@ -5491,21 +5489,21 @@
 		"actions": [
 			["atk", 3],
 			["add_c_of_x", 8, "agility"],
-			["add_c_of_x", 2, "lying_drunk_stacks"]
+			["add_c_of_x", 3, "lying_drunk_stacks"]
 		]
 	},
 	"242022": {
 		"actions": [
 			["atk", 3],
 			["add_c_of_x", 10, "agility"],
-			["add_c_of_x", 3, "lying_drunk_stacks"]
+			["add_c_of_x", 4, "lying_drunk_stacks"]
 		]
 	},
 	"242023": {
 		"actions": [
 			["atk", 3],
 			["add_c_of_x", 12, "agility"],
-			["add_c_of_x", 4, "lying_drunk_stacks"]
+			["add_c_of_x", 5, "lying_drunk_stacks"]
 		]
 	},
 	"243021": {
@@ -9396,7 +9394,7 @@
 		"name": "Lava Seal",
 		"actions": [
 			["add_c_of_x", 10, "bonus_def_amt"],
-			["for_each_x_add_c_pct_y", "def", 50, "bonus_def_amt"],
+			["for_each_x_add_c_pct_y", "def", 100, "bonus_def_amt"],
 			["for_each_x_reduce_enemy_c_y", "bonus_def_amt", 1, "max_hp"],
 			["for_each_x_reduce_enemy_c_y", "bonus_def_amt", 1, "hp"]
 		],
@@ -9408,7 +9406,7 @@
 	"734022": {
 		"actions": [
 			["add_c_of_x", 15, "bonus_def_amt"],
-			["for_each_x_add_c_pct_y", "def", 50, "bonus_def_amt"],
+			["for_each_x_add_c_pct_y", "def", 100, "bonus_def_amt"],
 			["for_each_x_reduce_enemy_c_y", "bonus_def_amt", 1, "max_hp"],
 			["for_each_x_reduce_enemy_c_y", "bonus_def_amt", 1, "hp"]
 		],
@@ -9420,7 +9418,7 @@
 	"734023": {
 		"actions": [
 			["add_c_of_x", 20, "bonus_def_amt"],
-			["for_each_x_add_c_pct_y", "def", 50, "bonus_def_amt"],
+			["for_each_x_add_c_pct_y", "def", 100, "bonus_def_amt"],
 			["for_each_x_reduce_enemy_c_y", "bonus_def_amt", 1, "max_hp"],
 			["for_each_x_reduce_enemy_c_y", "bonus_def_amt", 1, "hp"]
 		],
