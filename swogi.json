@@ -2852,21 +2852,24 @@
 		"actions": [
 			["rep", 2, ["atk", 4]],
 			["fire_spirit",
-				["for_each_x_reduce_enemy_c_y", "damage_dealt_to_hp_by_this_card_atk", 2, "max_hp"]]
+				["if_x_at_least_c_do", "damage_dealt_to_hp_by_this_card_atk", 1,
+					["for_each_x_reduce_enemy_c_y", "damage_dealt_to_hp_by_this_card_atk", 2, "max_hp"]]]
 		]
 	},
 	"134042": {
 		"actions": [
 			["rep", 2, ["atk", 5]],
 			["fire_spirit",
-				["for_each_x_reduce_enemy_c_y", "damage_dealt_to_hp_by_this_card_atk", 2, "max_hp"]]
+				["if_x_at_least_c_do", "damage_dealt_to_hp_by_this_card_atk", 1,
+					["for_each_x_reduce_enemy_c_y", "damage_dealt_to_hp_by_this_card_atk", 2, "max_hp"]]]
 		]
 	},
 	"134043": {
 		"actions": [
 			["rep", 2, ["atk", 7]],
 			["fire_spirit",
-				["for_each_x_reduce_enemy_c_y", "damage_dealt_to_hp_by_this_card_atk", 2, "max_hp"]]
+				["if_x_at_least_c_do", "damage_dealt_to_hp_by_this_card_atk", 1,
+					["for_each_x_reduce_enemy_c_y", "damage_dealt_to_hp_by_this_card_atk", 2, "max_hp"]]]
 		]
 	},
 	"134051": {
@@ -8398,6 +8401,56 @@
 			["if_x_at_least_c_do", "carefree_guqin_stacks", 1, ["chase"]]
 		]
 	},
+	"603011": {
+		"name": "Demonic Qi Haunt",
+		"actions": []
+	},
+	"603012": {
+		"actions": []
+	},
+	"603013": {
+		"actions": []
+	},
+	"603021": {
+		"name": "Magic Dragon's Paw",
+		"actions": []
+	},
+	"603022": {
+		"actions": []
+	},
+	"603023": {
+		"actions": []
+	},
+	"605011": {
+		"name": "Sneak Merpeople Pearl",
+		"actions": []
+	},
+	"605012": {
+		"actions": []
+	},
+	"605013": {
+		"actions": []
+	},
+	"606011": {
+		"name": "Demonic Qi Burst",
+		"actions": []
+	},
+	"606012": {
+		"actions": []
+	},
+	"606013": {
+		"actions": []
+	},
+	"606021": {
+		"name": "Demonic Dragon's Chaotic Dance",
+		"actions": []
+	},
+	"606022": {
+		"actions": []
+	},
+	"606023": {
+		"actions": []
+	},
 	"611011": {
 		"name": "Cloud Sword - Flying Sand",
 		"actions": [
@@ -8440,15 +8493,13 @@
 	},
 	"611031": {
 		"name": "Clear Heart Sword Embryo",
-		"actions": [
-			["do_clear_heart"]
-		],
+		"does_not_exist": true,
+		"actions": [],
 		"character": "sw5"
 	},
 	"611032": {
-		"actions": [
-			["do_clear_heart"]
-		]
+		"does_not_exist": true,
+		"actions": []
 	},
 	"611033": {
 		"actions": [
@@ -9157,7 +9208,7 @@
 			["add_c_of_x", 12, "agility"]
 		]
 	},
-	"652011": {
+	"645021": {
 		"name": "Wan Xuan Demon Breaking Palm",
 		"actions": [
 			["physique", 2],
@@ -9166,14 +9217,14 @@
 		],
 		"character": "dx4"
 	},
-	"652012": {
+	"645022": {
 		"actions": [
 			["physique", 3],
 			["for_each_x_convert_c_pct_debuff_to_y", "physique", 5, "increase_atk"],
 			["rep", 4, ["atk", 3]]
 		]
 	},
-	"652013": {
+	"645023": {
 		"actions": [
 			["physique", 4],
 			["for_each_x_convert_c_pct_debuff_to_y", "physique", 5, "increase_atk"],
@@ -10206,6 +10257,185 @@
 			["for_each_x_add_c_y", "bonus_def_amt", 5, "hp"]
 		]
 	},
+	"903011": {
+		"name": "Xuanming Recurring",
+		"qi_cost": 1,
+		"actions": [],
+		"marking": "ft"
+	},
+	"903012": {
+		"actions": []
+	},
+	"903013": {
+		"actions": []
+	},
+	"904011": {
+		"name": "Xuanming Recover Elixir",
+		"hp_cost": 8,
+		"actions": [],
+		"marking": "el"
+	},
+	"904012": {
+		"actions": []
+	},
+	"904013": {
+		"actions": []
+	},
+	"904021": {
+		"name": "Xuanming Regen Tune",
+		"actions": [],
+		"marking": "mu"
+	},
+	"904022": {
+		"actions": []
+	},
+	"904023": {
+		"actions": []
+	},
+	"904031": {
+		"name": "Xuanming Clouds",
+		"hp_cost": 3,
+		"actions": [],
+		"marking": "pa"
+	},
+	"904032": {
+		"hp_cost": 6,
+		"actions": []
+	},
+	"904033": {
+		"hp_cost": 9,
+		"actions": []
+	},
+	"904041": {
+		"name": "Xuanming Forceage Formation",
+		"hp_cost": 12,
+		"actions": [],
+		"marking": "fm"
+	},
+	"904042": {
+		"actions": []
+	},
+	"904043": {
+		"actions": []
+	},
+	"904051": {
+		"name": "Xuanming Snowdrop",
+		"hp_cost": 9,
+		"actions": [],
+		"marking": "pm"
+	},
+	"904052": {
+		"actions": []
+	},
+	"904053": {
+		"actions": []
+	},
+	"905011": {
+		"name": "Xuanming Requiem Fulu",
+		"actions": [],
+		"marking": "fu"
+	},
+	"905012": {
+		"actions": []
+	},
+	"905013": {
+		"actions": []
+	},
+	"906011": {
+		"name": "Nüwa Stone",
+		"qi_cost": 7,
+		"actions": [],
+		"marking": "el"
+	},
+	"906012": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"906013": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"906021": {
+		"name": "Haotian Pagoda",
+		"qi_cost": 5,
+		"actions": [],
+		"marking": "fu"
+	},
+	"906022": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"906023": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"906031": {
+		"name": "Fuxi Guqin",
+		"actions": [],
+		"marking": "mu"
+	},
+	"906032": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"906033": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"906041": {
+		"name": "Kongtong Seal",
+		"actions": [],
+		"marking": "pa"
+	},
+	"906042": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"906043": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"906051": {
+		"name": "Donghuang Zhong",
+		"qi_cost": 6,
+		"actions": [],
+		"marking": "fm"
+	},
+	"906052": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"906053": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"906061": {
+		"name": "Shennong Ding",
+		"actions": [],
+		"marking": "pm"
+	},
+	"906062": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"906063": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"906071": {
+		"name": "Spirit Fusion Pot",
+		"qi_cost": 1,
+		"actions": [],
+		"marking": "ft"
+	},
+	"906072": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"906073": {
+		"does_not_exist": true,
+		"actions": []
+	},
 	"913011": {
 		"name": "Unrestrained Sword - Nebula Cloud",
 		"actions": [
@@ -10351,6 +10581,42 @@
 			["chase"],
 			["cloud_hit", ["for_each_x_add_c_y", "qi", 1, "def"]]
 		]
+	},
+	"915061": {
+		"name": "Xuanming Sword Intent Mantra",
+		"hp_cost": 6,
+		"actions": []
+	},
+	"915062": {
+		"actions": []
+	},
+	"915063": {
+		"actions": []
+	},
+	"915071": {
+		"name": "Shen Jian Ao Zhou",
+		"actions": []
+	},
+	"915072": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"915073": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"916011": {
+		"name": "Xuan-Yuan Sword",
+		"qi_cost": 10,
+		"actions": []
+	},
+	"916012": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"916013": {
+		"does_not_exist": true,
+		"actions": []
 	},
 	"922011": {
 		"name": "Astral Move - Extend",
@@ -10509,6 +10775,42 @@
 			["post_action", ["qi", 6]]
 		]
 	},
+	"925041": {
+		"name": "Xuanming Thundercloud Tribulation",
+		"hp_cost": 7,
+		"actions": []
+	},
+	"925042": {
+		"actions": []
+	},
+	"925043": {
+		"actions": []
+	},
+	"925051": {
+		"name": "Die Ling Shen Ying",
+		"actions": []
+	},
+	"925052": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"925053": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"926011": {
+		"name": "Heavenly Maiden White Jade Ring",
+		"qi_cost": 4,
+		"actions": []
+	},
+	"926012": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"926013": {
+		"does_not_exist": true,
+		"actions": []
+	},
 	"932011": {
 		"name": "Cosmos Fleche",
 		"actions": [
@@ -10557,7 +10859,7 @@
 	"934011": {
 		"name": "Harmony of Water and Fire",
 		"actions": [
-			["add_c_of_x", "force_of_water", 1],
+			["add_c_of_x", 1, "force_of_water"],
 			["activate_water_spirit"],
 			["activate_fire_spirit"],
 			["chase"]
@@ -10566,7 +10868,7 @@
 	},
 	"934012": {
 		"actions": [
-			["add_c_of_x", "force_of_water", 2],
+			["add_c_of_x", 2, "force_of_water"],
 			["activate_water_spirit"],
 			["activate_fire_spirit"],
 			["chase"]
@@ -10574,7 +10876,7 @@
 	},
 	"934013": {
 		"actions": [
-			["add_c_of_x", "force_of_water", 3],
+			["add_c_of_x", 3, "force_of_water"],
 			["activate_water_spirit"],
 			["activate_fire_spirit"],
 			["chase"]
@@ -10674,6 +10976,42 @@
 			["continuous"],
 			["add_c_of_x", 1, "wood_spirit_all_things_grow_stacks"]
 		]
+	},
+	"935041": {
+		"name": "Xuanming Heavenly Essence Destruction",
+		"hp_cost": 5,
+		"actions": []
+	},
+	"935042": {
+		"actions": []
+	},
+	"935043": {
+		"actions": []
+	},
+	"935051": {
+		"name": "Pi Yun Zhui Yue",
+		"actions": []
+	},
+	"935052": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"935053": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"936011": {
+		"name": "Kunlun Mirror",
+		"qi_cost": 5,
+		"actions": []
+	},
+	"936012": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"936013": {
+		"does_not_exist": true,
+		"actions": []
 	},
 	"943011": {
 		"name": "Star Sky Forge Bone",
@@ -10817,5 +11155,41 @@
 	},
 	"945023": {
 		"actions": ["do_soul_overwhelming_palm", 4, 12, 2]
+	},
+	"945031": {
+		"name": "Xuanming Boundary-Breaking Palms",
+		"hp_cost": 4,
+		"actions": []
+	},
+	"945032": {
+		"actions": []
+	},
+	"945033": {
+		"actions": []
+	},
+	"945041": {
+		"name": "Jiu Qi Po Xiao",
+		"actions": []
+	},
+	"945042": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"945043": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"946011": {
+		"name": "Pangu Axe",
+		"qi_cost": 10,
+		"actions": []
+	},
+	"946012": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"946013": {
+		"does_not_exist": true,
+		"actions": []
 	}
 }

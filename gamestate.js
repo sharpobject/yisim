@@ -42,7 +42,6 @@ function id_is_consumption(card_id) {
     return actions_contains_str(swogi[card_id].actions, "consumption");
 }
 const SECTS = ["sw", "he", "fe", "dx"];
-const SECTS_FOR_MARKING = ["no marking", ...SECTS];
 export const CHARACTER_ID_TO_NAME = {
     "sw1": "Mu Yifeng",
     "sw2": "Yan Xue",
@@ -64,30 +63,62 @@ export const CHARACTER_ID_TO_NAME = {
     "dx3": "Ye Mingming",
     "dx4": "Ji Fangsheng",
 }
-const JOBS_FOR_MARKING = ["no marking", "el", "fu", "mu", "pa", "fm", "pm", "ft"];
+const PREFIX_TO_MARKING = {
+    ["11"]: "sw", // regular sect cards - cloud spirit sword sect
+    ["12"]: "he", // regular sect cards - heptastar
+    ["13"]: "fe", // regular sect cards - five elements
+    ["14"]: "dx", // regular sect cards - duan xuan
+    ["21"]: "sw", // secret enchantment cards - cloud spirit sword sect
+    ["22"]: "he", // secret enchantment cards - heptastar
+    ["23"]: "fe", // secret enchantment cards - five elements
+    ["24"]: "dx", // secret enchantment cards - duan xuan
+    ["31"]: "el", // side job cards - elixirist
+    ["32"]: "fu", // side job cards - fuluist
+    ["33"]: "mu", // side job cards - musician
+    ["34"]: "pa", // side job cards - painter
+    ["35"]: "fm", // side job cards - formation master
+    ["36"]: "pm", // side job cards - plant master
+    ["37"]: "ft", // side job cards - fortune teller
+    ["40"]: "talisman", // talisman cards
+    ["50"]: "spiritual_pet", // spiritual pet cards
+    ["60"]: "no_marking", // normal attack, event cards
+    ["61"]: "no_marking", // character-specific cards - cloud spirit sword sect
+    ["62"]: "no_marking", // character-specific cards - heptastar
+    ["63"]: "no_marking", // character-specific cards - five elements
+    ["64"]: "no_marking", // character-specific cards - duan xuan
+    ["71"]: "sw", // legendary cards - cloud spirit sword sect
+    ["72"]: "he", // legendary cards - heptastar
+    ["73"]: "fe", // legendary cards - five elements
+    ["74"]: "dx", // legendary cards - duan xuan
+    ["80"]: "no_marking", // zongzi cards
+    ["90"]: "check", // fusion cards - side jobs
+    ["91"]: "check", // fusion cards - cloud spirit sword sect
+    ["92"]: "check", // fusion cards - heptastar
+    ["93"]: "check", // fusion cards - five elements
+    ["94"]: "check", // fusion cards - duan xuan
+};
+const valid_markings_list = ["no_marking","el", "fu", "mu", "pa", "fm", "pm", "ft", "sw", "he", "fe", "dx", "talisman", "spiritual_pet"];
+const valid_markings = new Set(valid_markings_list);
 function get_marking(card_id) {
-    const sect = parseInt(card_id.substring(1, 2));
-    const class_ = parseInt(card_id.substring(0, 1));
-    if (class_ === 1 || class_ === 2 || class_ === 7) {
-        if (sect > 0 && sect < SECTS_FOR_MARKING.length) {
-            return SECTS_FOR_MARKING[parseInt(sect)];
+    const prefix = card_id.substring(0, 2);
+    var marking = PREFIX_TO_MARKING[prefix];
+    if (marking === "check") {
+        const card = swogi[card_id];
+        if (card.character !== undefined) {
+            return "no_marking";
+        }
+        const sect = parseInt(card_id.substring(1, 2)) - 1;
+        if (sect === -1) {
+            marking = card.marking;
+        }
+        if (sect >= 0 && sect < SECTS.length) {
+            marking = SECTS[sect];
         }
     }
-    if (class_ === 3) {
-        if (sect > 0 && sect < JOBS_FOR_MARKING.length) {
-            return JOBS_FOR_MARKING[parseInt(sect)];
-        }
+    if (!valid_markings.has(marking)) {
+        throw new Error("suspicious card id " + card_id);
     }
-    if (class_ === 4) {
-        return "talisman";
-    }
-    if (class_ === 5) {
-        return "spiritual_pet";
-    }
-    if (class_ === 6 || class_ === 8 || class_ === 9) {
-        return "no marking";
-    }
-    throw new Error("suspicious card id " + card_id);
+    return marking;
 }
 // for the purpose of our little sim, a player of a certain sect
 // has access to these cards:
@@ -121,7 +152,7 @@ function get_available_divine_brush_cards_for_sect(sect_num) {
 }
 const SECT_TO_DIVINE_BRUSH_CARDS = {};
 const SECT_TO_AVAILABLE_DECK_CARDS = {};
-for (let i=1; i<SECTS_FOR_MARKING.length; i++) {
+for (let i=0; i<SECTS.length; i++) {
     const sect_num = i;
     const sect = SECTS[i];
     SECT_TO_AVAILABLE_DECK_CARDS[sect] = get_available_deck_cards_for_sect(sect_num);
@@ -229,6 +260,7 @@ for (let i=0; i<keys.length; i++) {
     const water_spirit_cost_0_qi = with_default(swogi[card_id].water_spirit_cost_0_qi, with_default(swogi[base_id].water_spirit_cost_0_qi, undefined));
     const is_salty = with_default(swogi[card_id].is_salty, with_default(swogi[base_id].is_salty, undefined));
     const is_sweet = with_default(swogi[card_id].is_sweet, with_default(swogi[base_id].is_sweet, undefined));
+    const marking = with_default(swogi[card_id].marking, with_default(swogi[base_id].marking, undefined));
     const card = {
         name: name,
         names: names,
@@ -256,11 +288,12 @@ for (let i=0; i<keys.length; i++) {
         is_thunder: is_thunder(card_id),
         is_seal: is_seal(card_id),
         is_spirit_sword: is_spirit_sword(card_id),
-        marking: get_marking(card_id),
+        marking: marking,
         is_salty: is_salty,
         is_sweet: is_sweet,
     };
     swogi[card_id] = card;
+    card.marking = get_marking(card_id);
 }
 is_unrestrained_sword = function(card_id) {
     return swogi[card_id].is_unrestrained_sword;
@@ -721,6 +754,7 @@ class Player {
         this.p4_concentrated_element_stacks = 0;
         this.p5_concentrated_element_stacks = 0;
         this.reviving = false;
+        this.flame_soul_rebirth_reviving = false;
         this.just_revived = false;
         // duan xuan sect immortal fates
         this.unbounded_qi_stacks = 0;
@@ -2517,8 +2551,8 @@ export class GameState {
         this.do_motionless_tutelary_formation(action_idx);
         this.do_scutturtle_formation();
         this.do_thunderphilia_formation();
-        this.do_hard_bamboo();
         this.do_force_of_water();
+        this.do_hard_bamboo();
         this.reduce_idx_x_by_c(0, "entangle", 1);
         this.reduce_idx_x_by_c(0, "flaw", 1);
         this.reduce_idx_x_by_c(0, "weaken", 1);
@@ -2608,7 +2642,9 @@ export class GameState {
         if (amt === 0) {
             return;
         }
-        amt += this.players[1-idx].kun_wu_molten_ring_stacks;
+        if (!this.players[idx].flame_soul_rebirth_reviving) {
+            amt += this.players[1-idx].kun_wu_molten_ring_stacks;
+        }
         const reduced_amt = Math.min(amt, this.players[idx].max_hp);
         this.players[idx].max_hp -= reduced_amt;
         this.players[idx].max_hp_lost += reduced_amt;
@@ -2645,8 +2681,10 @@ export class GameState {
         if (amt === 0) {
             return 0;
         }
-        if (this.players[idx].god_opportunity_conform_stacks > 0) {
-            amt = Math.ceil(amt * 14 / 10);
+        if (!this.players[idx].flame_soul_rebirth_reviving) {
+            if (this.players[idx].god_opportunity_conform_stacks > 0) {
+                amt = Math.ceil(amt * 14 / 10);
+            }
         }
         this.players[idx].max_hp += amt;
         this.log("increased player " + idx + " max_hp by " + amt + " to " + this.players[idx].max_hp);
@@ -2683,8 +2721,10 @@ export class GameState {
                 this.increase_idx_x_by_c(idx, "max_hp", 6);
             }
         }
-        if (this.players[idx].god_opportunity_conform_stacks > 0) {
-            amt = Math.ceil(amt * 14 / 10);
+        if (!this.players[idx].flame_soul_rebirth_reviving) {
+            if (this.players[idx].god_opportunity_conform_stacks > 0) {
+                amt = Math.ceil(amt * 14 / 10);
+            }
         }
         if (this.players[idx].god_opportunity_reversal_stacks > 0) {
             const dmg_amt = Math.ceil(amt * 6 / 10);
@@ -3449,6 +3489,30 @@ export class GameState {
             if (my_debuff_names.length === 0) {
                 break;
             }
+            /*
+            // if internal injury is active, reduce it by c
+            if (this.players[0].internal_injury > 0) {
+                this.reduce_idx_x_by_c(0, "internal_injury", c);
+                // get the index of internal injury
+                const debuff_idx = my_debuff_names.indexOf("internal_injury");
+                if (this.players[0].internal_injury === 0) {
+                    my_debuff_names.splice(debuff_idx, 1);
+                    my_debuff_stack_counts.splice(debuff_idx, 1);
+                }
+                continue;
+            }
+            // if flaw is active, reduce it by c
+            if (this.players[0].flaw > 0) {
+                this.reduce_idx_x_by_c(0, "flaw", c);
+                // get the index of flaw
+                const debuff_idx = my_debuff_names.indexOf("flaw");
+                if (this.players[0].flaw === 0) {
+                    my_debuff_names.splice(debuff_idx, 1);
+                    my_debuff_stack_counts.splice(debuff_idx, 1);
+                }
+                continue;
+            }
+            */
             let debuff_idx = Math.floor(Math.random() * my_debuff_names.length);
             let debuff_name = my_debuff_names[debuff_idx];
             this.reduce_idx_x_by_c(0, debuff_name, c);
@@ -3526,10 +3590,12 @@ export class GameState {
                 this.players[idx].just_revived = true;
             } else if (this.players[idx].flame_soul_rebirth_stacks > 0) {
                 this.reduce_idx_x_by_c(idx, "flame_soul_rebirth_stacks", 1);
+                this.players[idx].flame_soul_rebirth_reviving = true;
                 this.set_idx_c_of_x(idx, 15, "max_hp");
                 this.players[idx].reviving = true;
                 this.set_idx_c_of_x(idx, 15, "hp");
                 this.players[idx].reviving = false;
+                this.players[idx].flame_soul_rebirth_reviving = false;
                 this.players[idx].just_revived = true;
             } else {
                 this.game_over = true;
