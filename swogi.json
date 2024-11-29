@@ -7147,6 +7147,16 @@
 			["add_c_of_x", 1, "hard_bamboo_stacks"]
 		]
 	},
+	"362021": {
+		"name": "Mystery Seed",
+		"actions": [[]]
+	},
+	"362022": {
+		"actions": [[]]
+	},
+	"362023": {
+		"actions": [[]]
+	},
 	"362031": {
 		"name": "Leaf Shield Flower",
 		"actions": [
@@ -8422,13 +8432,103 @@
 		"actions": []
 	},
 	"605011": {
-		"name": "Sneak Merpeople Pearl",
+		"name": "Mirroring Merpeople Pearl",
 		"actions": []
 	},
 	"605012": {
 		"actions": []
 	},
 	"605013": {
+		"actions": []
+	},
+	"605021": {
+		"name": "Qi-gathering Merpeople Pearl",
+		"actions": []
+	},
+	"605022": {
+		"actions": []
+	},
+	"605023": {
+		"actions": []
+	},
+	"605031": {
+		"name": "Frenzied Merpeople Pearl",
+		"actions": []
+	},
+	"605032": {
+		"actions": []
+	},
+	"605033": {
+		"actions": []
+	},
+	"605041": {
+		"name": "Bewildering Merpeople Pearl",
+		"actions": []
+	},
+	"605042": {
+		"actions": []
+	},
+	"605043": {
+		"actions": []
+	},
+	"605051": {
+		"name": "Crystallized Merpeople Pearl",
+		"actions": []
+	},
+	"605052": {
+		"actions": []
+	},
+	"605053": {
+		"actions": []
+	},
+	"605061": {
+		"name": "Cursed Merpeople Pearl",
+		"actions": []
+	},
+	"605062": {
+		"actions": []
+	},
+	"605063": {
+		"actions": []
+	},
+	"605071": {
+		"name": "Abyssal Merpeople Pearl",
+		"actions": []
+	},
+	"605072": {
+		"actions": []
+	},
+	"605073": {
+		"actions": []
+	},
+	"605081": {
+		"name": "Multicolored Merpeople Pearl",
+		"actions": []
+	},
+	"605082": {
+		"actions": []
+	},
+	"605083": {
+		"actions": []
+	},
+	"605091": {
+		"name": "Sneak Merpeople Pearl",
+		"actions": []
+	},
+	"605092": {
+		"actions": []
+	},
+	"605093": {
+		"actions": []
+	},
+	"605101": {
+		"name": "Blood-cultivated Merpeople Pearl",
+		"actions": []
+	},
+	"605102": {
+		"actions": []
+	},
+	"605103": {
 		"actions": []
 	},
 	"606011": {
