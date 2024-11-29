@@ -1,0 +1,15 @@
+the following cards and effects have been patched in the game but not in yisim:
+Clear Heart Sword Formation
+Heavenly Marrow Gourd
+Star Moon Hexagram Fan
+Styx Night Footwork
+Crash Fist - Return to Xuan
+Thousand Star Explosion
+Unceasing Universe
+
+· Ultimate Overcome Formation（Du Lingyuan）：The trigger timing has been changed from "after use" to "upon use". This will allow Wood Spirit - Fragrant and Water Spirit - Great Waves to receive a Qi bonus when triggered.
+
+Some of these have been patched multiple times, so it's best to check the effect in game instead of copying it from the patch notes.
+
+implementation note: Xuanming Recover Elixir and snowdrop can bring you back to life if you have hp < 0
+
