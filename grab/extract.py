@@ -41,33 +41,33 @@ def apply_magic_kernel_sharp(img, scale_factor, offset_x=0, offset_y=0):
     """Apply Magic Kernel Sharp 2021 for 4/3 upscaling with subpixel offset."""
     # Convert PIL Image to numpy array
     img_array = np.array(img)
-    
+
     # Calculate dimensions
     height, width = img_array.shape[:2]
     new_width = int(width * scale_factor)
     new_height = int(height * scale_factor)
-    
+
     # Do upscaling in float32 for precision
     result = np.zeros((new_height, new_width, img_array.shape[2]), dtype=np.float32)
-    
+
     # Create coordinate grids with subpixel offsets
     x_coords = (np.arange(new_width) - offset_x) / scale_factor
     y_coords = (np.arange(new_height) - offset_y) / scale_factor
-    
+
     # Use OpenCV's remap for efficient resampling
     map_x, map_y = np.meshgrid(x_coords, y_coords)
-    result = cv2.remap(img_array.astype(np.float32), 
+    result = cv2.remap(img_array.astype(np.float32),
                       map_x.astype(np.float32),
                       map_y.astype(np.float32),
                       cv2.INTER_CUBIC)
-    
+
     # Apply Sharp 2021 kernel
     sharp_kernel = np.array([-1, 6, -35, 204, -35, 6, -1]) / 144
-    
+
     # Apply separably in x and y directions
     result = convolve1d(result, sharp_kernel, axis=0, mode='reflect')
     result = convolve1d(result, sharp_kernel, axis=1, mode='reflect')
-    
+
     result = np.clip(result, 0, 255).astype(np.uint8)
     return Image.fromarray(result)
 
@@ -90,13 +90,13 @@ def get_regions(img_type):
 def extract(img, region):
     # Extract the region
     region_img = img.crop(region)
-    
+
     # Create a new image with an alpha channel
     result = Image.new('RGBA', region_img.size, (0, 0, 0, 0))
-    
+
     # Paste the extracted region onto the new image
     result.paste(region_img, (0, 0))
-    
+
     return result
 
 def flood_fill_from_top(img_array, top_row_idx,
@@ -110,7 +110,7 @@ def flood_fill_from_top(img_array, top_row_idx,
     mask = np.zeros((height, width), dtype=np.uint8)
     visited = set()
     queue = deque()
-    
+
     # Check top row pixels and add bright ones to queue
     top_row = img_array[top_row_idx]
     for x in range(top_row_idx+83, width-top_row_idx-28):
@@ -120,18 +120,18 @@ def flood_fill_from_top(img_array, top_row_idx,
             brightness = (int(pixel[0]) + int(pixel[1]) + int(pixel[2])) / 3
         else:  # RGB
             brightness = (int(pixel[0]) + int(pixel[1]) + int(pixel[2])) / 3
-            
+
         if brightness >= initial_brightness_threshold:
             queue.append((top_row_idx, x))
             visited.add((top_row_idx, x))
             mask[top_row_idx, x] = 255
-    
+
     # Perform flood fill
     jump_up_direction = (-5, 0)
     directions = [(-1,-1), (-1,0), (-1,1), (0,-1), (0,1), (1,-1), (1,0), (1,1)]
     while queue:
         y, x = queue.popleft()
-        
+
         new_y, new_x = y + jump_up_direction[0], x + jump_up_direction[1]
         if 0 <= new_y < height and 0 <= new_x < width:
             pixel = img_array[new_y, new_x]
@@ -143,10 +143,10 @@ def flood_fill_from_top(img_array, top_row_idx,
 
         for dy, dx in directions:
             new_y, new_x = y + dy, x + dx
-            
+
             if (new_y, new_x) in visited:
                 continue
-                
+
             if 0 <= new_y < height and 0 <= new_x < width:
                 mask[new_y, new_x] = 255
                 for dy2, dx2 in directions:
@@ -162,10 +162,10 @@ def flood_fill_from_top(img_array, top_row_idx,
                     brightness = (int(pixel[0]) + int(pixel[1]) + int(pixel[2])) / 3
                 else:  # RGB
                     brightness = (int(pixel[0]) + int(pixel[1]) + int(pixel[2])) / 3
-                
+
                 if brightness >= brightness_threshold:
                     queue.append((new_y, new_x))
-    
+
     return mask
 
 def extract_and_round_corners(img, region, corner_radius, padding, masks):
@@ -173,66 +173,66 @@ def extract_and_round_corners(img, region, corner_radius, padding, masks):
     extra_height = padding*2  # Add 50 pixels above for potential text
     extended_region = (region[0]-extra_height, region[1]-extra_height, region[2]+extra_height, region[3]+extra_height)
     result = extract(img, extended_region)
-    
+
     # Convert to numpy array for flood fill
     img_array = np.array(result)
-    
+
     # Get mask of text pixels to keep
     text_mask = flood_fill_from_top(img_array, extra_height)
-    
+
     # Create base mask for rounded corners
     corner_mask = Image.new('L', result.size, 0)
     draw = ImageDraw.Draw(corner_mask)
-    
+
     # Draw rounded corners
     draw.pieslice((extra_height, extra_height, extra_height +corner_radius * 2, extra_height + corner_radius * 2), 180, 270, fill=255)
     draw.pieslice((extra_height, result.height - extra_height - corner_radius * 2-1, extra_height + corner_radius * 2, result.height - extra_height - 1), 90, 180, fill=255)
     draw.pieslice((result.width - extra_height - corner_radius * 2-1, extra_height, result.width - extra_height - 1, extra_height + corner_radius * 2), 270, 360, fill=255)
     draw.pieslice((result.width - extra_height - corner_radius * 2-1, result.height - extra_height - corner_radius * 2-1, result.width - extra_height - 1, result.height - extra_height - 1), 0, 90, fill=255)
-    
+
     # Draw rectangles to fill the rest
     draw.rectangle((extra_height + corner_radius, extra_height, result.width - extra_height - corner_radius-1, result.height - extra_height-1), fill=255)
     draw.rectangle((extra_height, extra_height + corner_radius, result.width - extra_height-1, result.height - extra_height - corner_radius-1), fill=255)
-    
+
     # Convert corner mask to numpy array
     corner_mask_array = np.array(corner_mask)
-    
+
     # Combine corner mask with text mask
     final_mask = np.maximum(corner_mask_array, text_mask)
     for mask in masks:
         final_mask = np.maximum(final_mask, mask)
     final_mask = final_mask.astype(np.uint8)
-    
+
     # Convert mask back to PIL image
     final_mask_img = Image.fromarray(final_mask, mode='L')
-    
+
     # Apply the mask
     result.putalpha(final_mask_img)
-    
-    return result    
+
+    return result
     # Create a mask for rounded corners
     mask = Image.new('L', result.size, 0)
     draw = ImageDraw.Draw(mask)
-    
+
     # Draw four filled circles for corners
     draw.pieslice((0, 0, corner_radius * 2, corner_radius * 2), 180, 270, fill=255)
     draw.pieslice((0, result.height - corner_radius * 2, corner_radius * 2, result.height), 90, 180, fill=255)
     draw.pieslice((result.width - corner_radius * 2, 0, result.width, corner_radius * 2), 270, 360, fill=255)
     draw.pieslice((result.width - corner_radius * 2, result.height - corner_radius * 2, result.width, result.height), 0, 90, fill=255)
-    
+
     # Draw rectangles to fill the rest
     draw.rectangle((corner_radius, 0, result.width - corner_radius, result.height), fill=255)
     draw.rectangle((0, corner_radius, result.width, result.height - corner_radius), fill=255)
-    
+
     # Apply the mask
     result.putalpha(mask)
-    
+
     return result
 
 def classify_image(img, padding, output_dir, k_threecards=0.7):
     # Convert image to grayscale
     gray = cv2.cvtColor(np.array(img), cv2.COLOR_RGB2GRAY)
-    
+
     # Load and convert templates to grayscale
     templates = []
     for i in range(1, 4):
@@ -241,73 +241,73 @@ def classify_image(img, padding, output_dir, k_threecards=0.7):
             raise FileNotFoundError(f'Could not find template{i}.png in working directory')
         template_gray = cv2.cvtColor(template, cv2.COLOR_BGR2GRAY)
         templates.append(template_gray)
-    
+
     TEMPLATE_REGION = tuple(x-padding for x in TEMPLATE_REGION_)
-    
+
     # First stage: Try three-card layouts (types 1 and 2)
     best_three_card_score = -1
     best_three_card_type = None
-    
+
     for img_type in [1, 2, 5]:  # Three-card layouts
         regions = get_regions(img_type)
         scores = []
-        
+
         # Match each region against its corresponding level template
         for i, region in enumerate(regions):
             roi = gray[region[1]:region[3], region[0]:region[2]]
             template_area = roi[TEMPLATE_REGION[1]:TEMPLATE_REGION[3],
                               TEMPLATE_REGION[0]:TEMPLATE_REGION[2]]
-            
+
             debug_path = os.path.join(output_dir, f'debug_type{img_type}_region{i+1}_template_area.png')
             cv2.imwrite(debug_path, template_area)
-            
+
             result = cv2.matchTemplate(templates[i], template_area, cv2.TM_CCOEFF_NORMED)
             match_score = np.max(result)
             scores.append(match_score)
             print(f"Type {img_type}, Region {i+1}: Score = {match_score} (against template {i+1})")
-        
+
         min_score = min(scores)
         print(f"Type {img_type} minimum score: {min_score}")
-        
+
         if min_score > best_three_card_score:
             best_three_card_score = min_score
             best_three_card_type = img_type
-    
+
     # If we found a good three-card match, return it
     if best_three_card_score >= k_threecards:
         print(f"Found three-card layout type {best_three_card_type} with minimum score {best_three_card_score}")
         return (best_three_card_type, None)
-    
+
     # Second stage: Try single-card layouts (types 3 and 4)
     best_single_card_score = -1
     best_single_card_result = None
-    
+
     for img_type in [3, 4]:  # Single-card layouts
         regions = get_regions(img_type)
         region = regions[0]  # Only one region for single-card layouts
-        
+
         roi = gray[region[1]:region[3], region[0]:region[2]]
         template_area = roi[TEMPLATE_REGION[1]:TEMPLATE_REGION[3],
                           TEMPLATE_REGION[0]:TEMPLATE_REGION[2]]
-        
+
         # Try both level 1 and level 3 templates
         for template_idx in [0, 2]:  # Templates 1 and 3
             result = cv2.matchTemplate(templates[template_idx], template_area, cv2.TM_CCOEFF_NORMED)
             match_score = np.max(result)
             level = template_idx + 1
             print(f"Type {img_type}, Template {level}: Score = {match_score}")
-            
+
             if match_score > best_single_card_score:
                 best_single_card_score = match_score
                 best_single_card_result = (img_type, level)
-    
+
     if best_single_card_result is None:
         raise RuntimeError("Failed to find any matching layout")
-    
+
     if best_single_card_score < best_three_card_score:
         print(f"Found three-card layout type {best_three_card_type} with minimum score {best_three_card_score}")
         return (best_three_card_type, None)
-        
+
     print(f"Found single-card layout type {best_single_card_result[0]} with template {best_single_card_result[1]} (score {best_single_card_score})")
     return best_single_card_result
 
@@ -334,7 +334,7 @@ def process_image(input_path, output_base, corner_radius, padding):
             img = new_img
         img_type, level = classify_image(img, padding, os.path.dirname(output_base))
         regions = get_regions(img_type)
-        
+
         results = []
         bigger_results = []
         for idx,region in enumerate(regions, 1):
@@ -370,23 +370,55 @@ def process_image(input_path, output_base, corner_radius, padding):
             padded_region = (region[0] - padding*2, region[1] - padding*2, region[2] + padding*2, region[3] + padding*2)
             bigger = extract(img, padded_region)
             bigger_results.append(bigger)
-        
+
         if img_type in [1, 2, 5]:  # Three-card layouts
             for i, result in enumerate(results, 1):
                 output_path = f"{output_base}{i}.png"
                 result.save(output_path)
                 bigger_path = f"{output_base}{i}_nocrop.png"
-                bigger_results[i-1].save(bigger_path)
+                save(bigger_results[i-1], bigger_path)
         else:  # Single-card layout
             output_path = f"{output_base}{level}.png"
             results[0].save(output_path)
             bigger_path = f"{output_base}{level}_nocrop.png"
-            bigger_results[0].save(bigger_path)
+            save(bigger_results[0], bigger_path)
+
+def save(img, path):
+    # If file doesn't exist, save directly
+    if not os.path.exists(path):
+        img.save(path)
+        return
+
+    try:
+        # Open existing file
+        with Image.open(path) as existing:
+            # Check if dimensions match
+            if existing.size != img.size:
+                img.save(path)
+                return
+
+            # Convert both images to RGBA if they aren't already
+            if existing.mode != 'RGBA':
+                existing = existing.convert('RGBA')
+            if img.mode != 'RGBA':
+                img = img.convert('RGBA')
+
+            # Convert to numpy arrays for efficient comparison
+            existing_array = np.array(existing)
+            new_array = np.array(img)
+
+            # Compare arrays
+            if not np.array_equal(existing_array, new_array):
+                img.save(path)
+    except Exception as e:
+        # If there's any error reading the existing file, save the new one
+        print(f"Warning: Error comparing images ({str(e)}), overwriting {path}")
+        img.save(path)
 
 def extract_template(input_path, output_path, img_type, padding):
     with Image.open(input_path) as img:
         regions = get_regions(img_type)
-        
+
         for i, region in enumerate(regions, 1):
             # Calculate the absolute coordinates of the template within the image
             abs_template_region = (
@@ -395,15 +427,15 @@ def extract_template(input_path, output_path, img_type, padding):
                 region[0] + TEMPLATE_REGION[2] - padding,
                 region[1] + TEMPLATE_REGION[3] - padding
             )
-            
+
             template = img.crop(abs_template_region)
-            
+
             # Modify the output filename to include the region number
             base, ext = os.path.splitext(output_path)
             region_output_path = f"{base}{i}{ext}"
-            
+
             template.save(region_output_path)
-            
+
         if img_type != 1:
             print(f"Note: Only one template was extracted for image type {img_type}")
 
@@ -415,9 +447,9 @@ if __name__ == "__main__":
     parser.add_argument("--padding", type=int, default=21, help="Padding in pixels")
     parser.add_argument("--extract_template", action="store_true", help="Extract template instead of processing")
     parser.add_argument("--image_type", type=int, choices=[1, 2, 3, 4], help="Image type for template extraction")
-    
+
     args = parser.parse_args()
-    
+
     if args.extract_template:
         if args.image_type is None:
             parser.error("--image_type is required when using --extract_template")
