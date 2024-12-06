@@ -2617,28 +2617,31 @@
 		"qi_cost": 1,
 		"actions": [
 			["add_c_of_x", 1, "increase_atk"],
-			["for_each_x_add_y", "increase_atk", "bonus_reduce_enemy_hp_amt"],
-			["for_each_x_add_y", "increase_atk", "bonus_reduce_enemy_max_hp_amt"],
-			["reduce_enemy_c_of_x", 7, "hp"],
-			["reduce_enemy_c_of_x", 7, "max_hp"]
+			["fire_spirit", [
+				["for_each_x_add_y", "increase_atk", "bonus_reduce_enemy_hp_amt"],
+				["for_each_x_add_y", "increase_atk", "bonus_reduce_enemy_max_hp_amt"],
+				["reduce_enemy_c_of_x", 7, "hp"],
+				["reduce_enemy_c_of_x", 7, "max_hp"]]]
 		]
 	},
 	"133042": {
 		"actions": [
 			["add_c_of_x", 2, "increase_atk"],
-			["for_each_x_add_y", "increase_atk", "bonus_reduce_enemy_hp_amt"],
-			["for_each_x_add_y", "increase_atk", "bonus_reduce_enemy_max_hp_amt"],
-			["reduce_enemy_c_of_x", 7, "hp"],
-			["reduce_enemy_c_of_x", 7, "max_hp"]
+			["fire_spirit", [
+				["for_each_x_add_y", "increase_atk", "bonus_reduce_enemy_hp_amt"],
+				["for_each_x_add_y", "increase_atk", "bonus_reduce_enemy_max_hp_amt"],
+				["reduce_enemy_c_of_x", 7, "hp"],
+				["reduce_enemy_c_of_x", 7, "max_hp"]]]
 		]
 	},
 	"133043": {
 		"actions": [
 			["add_c_of_x", 3, "increase_atk"],
-			["for_each_x_add_y", "increase_atk", "bonus_reduce_enemy_hp_amt"],
-			["for_each_x_add_y", "increase_atk", "bonus_reduce_enemy_max_hp_amt"],
-			["reduce_enemy_c_of_x", 7, "hp"],
-			["reduce_enemy_c_of_x", 7, "max_hp"]
+			["fire_spirit", [
+				["for_each_x_add_y", "increase_atk", "bonus_reduce_enemy_hp_amt"],
+				["for_each_x_add_y", "increase_atk", "bonus_reduce_enemy_max_hp_amt"],
+				["reduce_enemy_c_of_x", 7, "hp"],
+				["reduce_enemy_c_of_x", 7, "max_hp"]]]
 		]
 	},
 	"133051": {
@@ -8443,13 +8446,25 @@
 	},
 	"605021": {
 		"name": "Qi-gathering Merpeople Pearl",
-		"actions": []
+		"actions": [
+			["qi", 1],
+			["continuous"],
+			["add_c_of_x", 1, "qi_gathering_merpeople_pearl_stacks"]
+		]
 	},
 	"605022": {
-		"actions": []
+		"actions": [
+			["qi", 1],
+			["continuous"],
+			["add_c_of_x", 2, "qi_gathering_merpeople_pearl_stacks"]
+		]
 	},
 	"605023": {
-		"actions": []
+		"actions": [
+			["qi", 1],
+			["continuous"],
+			["add_c_of_x", 3, "qi_gathering_merpeople_pearl_stacks"]
+		]
 	},
 	"605031": {
 		"name": "Frenzied Merpeople Pearl",
@@ -10360,91 +10375,195 @@
 	"903011": {
 		"name": "Xuanming Recurring",
 		"qi_cost": 1,
-		"actions": [],
+		"actions": [
+			["do_xuanming_recurring", 0],
+			["add_c_of_x", 1, "skip_to_previous_card_stacks"],
+			["consumption"]
+		],
 		"marking": "ft"
 	},
 	"903012": {
-		"actions": []
+		"actions": [
+			["do_xuanming_recurring", 5],
+			["add_c_of_x", 1, "skip_to_previous_card_stacks"],
+			["consumption"]
+		]
 	},
 	"903013": {
-		"actions": []
+		"actions": [
+			["do_xuanming_recurring", 10],
+			["add_c_of_x", 1, "skip_to_previous_card_stacks"],
+			["consumption"]
+		]
 	},
 	"904011": {
 		"name": "Xuanming Recover Elixir",
 		"hp_cost": 8,
-		"actions": [],
+		"actions": [
+			["for_each_x_add_c_pct_y", "hp_lost", 25, "bonus_max_hp_amt"],
+			["for_each_x_add_c_pct_y", "hp_lost", 25, "bonus_heal_amt"],
+			["add_c_of_x", 20, "max_hp"],
+			["increase_idx_hp", 0, 20, true],
+			["consumption"]
+		],
 		"marking": "el"
 	},
 	"904012": {
-		"actions": []
+		"actions": [
+			["for_each_x_add_c_pct_y", "hp_lost", 25, "bonus_max_hp_amt"],
+			["for_each_x_add_c_pct_y", "hp_lost", 25, "bonus_heal_amt"],
+			["add_c_of_x", 25, "max_hp"],
+			["increase_idx_hp", 0, 25, true],
+			["consumption"]
+		]
 	},
 	"904013": {
-		"actions": []
+		"actions": [
+			["for_each_x_add_c_pct_y", "hp_lost", 25, "bonus_max_hp_amt"],
+			["for_each_x_add_c_pct_y", "hp_lost", 25, "bonus_heal_amt"],
+			["add_c_of_x", 30, "max_hp"],
+			["increase_idx_hp", 0, 30, true],
+			["consumption"]
+		]
 	},
 	"904021": {
 		"name": "Xuanming Regen Tune",
-		"actions": [],
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 11, "xuanming_regen_tune_heal_stacks"],
+			["add_enemy_c_of_x", 11, "xuanming_regen_tune_heal_stacks"],
+			["add_c_of_x", 6, "xuanming_regen_tune_hurt_stacks"],
+			["add_enemy_c_of_x", 6, "xuanming_regen_tune_hurt_stacks"]
+		],
 		"marking": "mu"
 	},
 	"904022": {
-		"actions": []
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 14, "xuanming_regen_tune_heal_stacks"],
+			["add_enemy_c_of_x", 14, "xuanming_regen_tune_heal_stacks"],
+			["add_c_of_x", 7, "xuanming_regen_tune_hurt_stacks"],
+			["add_enemy_c_of_x", 7, "xuanming_regen_tune_hurt_stacks"]
+		]
 	},
 	"904023": {
-		"actions": []
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 17, "xuanming_regen_tune_heal_stacks"],
+			["add_enemy_c_of_x", 17, "xuanming_regen_tune_heal_stacks"],
+			["add_c_of_x", 8, "xuanming_regen_tune_hurt_stacks"],
+			["add_enemy_c_of_x", 8, "xuanming_regen_tune_hurt_stacks"]
+		]
 	},
 	"904031": {
 		"name": "Xuanming Clouds",
 		"hp_cost": 3,
-		"actions": [],
+		"actions": [
+			["rep", 2, ["do_one_randomly", [
+				[["reduce_enemy_c_of_x", 6, "hp"], ["heal", 6]],
+				["add_enemy_c_of_x", 2, "weaken"],
+				["add_c_of_x", 1, "guard_up"]
+			]]]
+		],
 		"marking": "pa"
 	},
 	"904032": {
 		"hp_cost": 6,
-		"actions": []
+		"actions": [
+			["rep", 3, ["do_one_randomly", [
+				[["reduce_enemy_c_of_x", 6, "hp"], ["heal", 6]],
+				["add_enemy_c_of_x", 2, "weaken"],
+				["add_c_of_x", 1, "guard_up"]
+			]]]
+		]
 	},
 	"904033": {
 		"hp_cost": 9,
-		"actions": []
+		"actions": [
+			["rep", 4, ["do_one_randomly", [
+				[["reduce_enemy_c_of_x", 6, "hp"], ["heal", 6]],
+				["add_enemy_c_of_x", 2, "weaken"],
+				["add_c_of_x", 1, "guard_up"]
+			]]]
+		]
 	},
 	"904041": {
 		"name": "Xuanming Forceage Formation",
 		"hp_cost": 12,
-		"actions": [],
+		"actions": [
+			["add_c_of_x", 3, "increase_atk"],
+			["continuous"],
+			["add_c_of_x", 2, "xuanming_forceage_formation_stacks"]
+		],
 		"marking": "fm"
 	},
 	"904042": {
-		"actions": []
+		"actions": [
+			["add_c_of_x", 3, "increase_atk"],
+			["continuous"],
+			["add_c_of_x", 3, "xuanming_forceage_formation_stacks"]
+		]
 	},
 	"904043": {
-		"actions": []
+		"actions": [
+			["add_c_of_x", 3, "increase_atk"],
+			["continuous"],
+			["add_c_of_x", 4, "xuanming_forceage_formation_stacks"]
+		]
 	},
 	"904051": {
 		"name": "Xuanming Snowdrop",
 		"hp_cost": 9,
-		"actions": [],
+		"actions": [
+			["increase_idx_hp", 0, 9, true],
+			["def", 12],
+			["for_each_x_add_c_pct_y", "hp_lost", 33.333334, "next_turn_def"]
+		],
 		"marking": "pm"
 	},
 	"904052": {
-		"actions": []
+		"actions": [
+			["increase_idx_hp", 0, 9, true],
+			["def", 17],
+			["for_each_x_add_c_pct_y", "hp_lost", 33.333334, "next_turn_def"]
+		]
 	},
 	"904053": {
-		"actions": []
+		"actions": [
+			["increase_idx_hp", 0, 9, true],
+			["def", 22],
+			["for_each_x_add_c_pct_y", "hp_lost", 33.333334, "next_turn_def"]
+		]
 	},
 	"905011": {
 		"name": "Xuanming Requiem Fulu",
-		"actions": [],
+		"actions": [
+			["do_xuanming_requiem_fulu", 20, 15],
+			["consumption"]
+		],
 		"marking": "fu"
 	},
 	"905012": {
-		"actions": []
+		"actions": [
+			["do_xuanming_requiem_fulu", 25, 20],
+			["consumption"]
+		]
 	},
 	"905013": {
-		"actions": []
+		"actions": [
+			["do_xuanming_requiem_fulu", 30, 25],
+			["consumption"]
+		]
 	},
 	"906011": {
 		"name": "Nüwa Stone",
+		"gather_qi": 7,
 		"qi_cost": 7,
-		"actions": [],
+		"actions": [
+			["add_c_of_x", 64, "max_hp"],
+			["add_c_of_x", 64, "hp"],
+			["add_c_of_x", 1, "nuwa_stone_stacks"]
+		],
 		"marking": "el"
 	},
 	"906012": {
@@ -10457,8 +10576,14 @@
 	},
 	"906021": {
 		"name": "Haotian Pagoda",
+		"gather_qi": 4,
 		"qi_cost": 5,
-		"actions": [],
+		"actions": [
+			["reduce_enemy_x_by_c_pct_enemy_y", "qi", 50, "qi"],
+			["reduce_enemy_x_by_c_pct_enemy_y", "hp", 50, "hp"],
+			["reduce_enemy_x_by_c_pct_enemy_y", "max_hp", 50, "max_hp"],
+			["add_enemy_c_of_x", 4, "entangle"]
+		],
 		"marking": "fu"
 	},
 	"906022": {
@@ -10471,7 +10596,10 @@
 	},
 	"906031": {
 		"name": "Fuxi Guqin",
-		"actions": [],
+		"actions": [
+			["trigger_next_enemy_card"],
+			["add_enemy_c_of_x", 1, "skip_next_card_stacks"]
+		],
 		"marking": "mu"
 	},
 	"906032": {
@@ -10484,7 +10612,13 @@
 	},
 	"906041": {
 		"name": "Kongtong Seal",
-		"actions": [],
+		"actions": [
+			["add_c_of_x", 5, "max_hp"],
+			["add_c_of_x", 5, "hp"],
+			["add_c_of_x", 2, "kongtong_seal_stacks"],
+			["chase"],
+			["consumption"]
+		],
 		"marking": "pa"
 	},
 	"906042": {
@@ -10497,8 +10631,11 @@
 	},
 	"906051": {
 		"name": "Donghuang Zhong",
+		"gather_qi": 6,
 		"qi_cost": 6,
-		"actions": [],
+		"actions": [
+			"do_donghuang_zhong"
+		],
 		"marking": "fm"
 	},
 	"906052": {
@@ -10511,7 +10648,11 @@
 	},
 	"906061": {
 		"name": "Shennong Ding",
-		"actions": [],
+		"actions": [
+			["qi", 4],
+			["add_c_of_x", "max_hp", 16],
+			["add_c_of_x", "hp", 16]
+		],
 		"marking": "pm"
 	},
 	"906062": {
@@ -10524,8 +10665,14 @@
 	},
 	"906071": {
 		"name": "Spirit Fusion Pot",
+		"gather_qi": 4,
 		"qi_cost": 1,
-		"actions": [],
+		"actions": [
+			["add_enemy_c_of_x", 4, "spirit_fusion_pot_stacks"]
+		],
+		"opening": [
+			["add_enemy_c_of_x", 1, "spirit_fusion_pot_stacks"]
+		],
 		"marking": "ft"
 	},
 	"906072": {
@@ -10685,17 +10832,31 @@
 	"915061": {
 		"name": "Xuanming Sword Intent Mantra",
 		"hp_cost": 6,
-		"actions": []
+		"actions": [
+			["sword_intent", 6],
+			["for_each_x_add_c_pct_y", "hp_lost", 16.666667, "sword_intent"]
+		]
 	},
 	"915062": {
-		"actions": []
+		"actions": [
+			["sword_intent", 8],
+			["for_each_x_add_c_pct_y", "hp_lost", 16.666667, "sword_intent"]
+		]
 	},
 	"915063": {
-		"actions": []
+		"actions": [
+			["sword_intent", 10],
+			["for_each_x_add_c_pct_y", "hp_lost", 16.666667, "sword_intent"]
+		]
 	},
 	"915071": {
 		"name": "Shen Jian Ao Zhou",
-		"actions": []
+		"actions": [
+			["add_c_of_x", 5, "bonus_sword_intent_multiplier"],
+			["for_each_x_add_c_y", "increase_atk", 3, "bonus_atk_amt"],
+			["smash_def"],
+			["atk", 12]
+		]
 	},
 	"915072": {
 		"does_not_exist": true,
@@ -10707,8 +10868,13 @@
 	},
 	"916011": {
 		"name": "Xuan-Yuan Sword",
+		"gather_qi": 5,
 		"qi_cost": 10,
-		"actions": []
+		"actions": [
+			["gain_ignore_def", 1],
+			["add_c_of_x", 1, "ignore_guard_up"],
+			["atk", 120]
+		]
 	},
 	"916012": {
 		"does_not_exist": true,
@@ -10746,7 +10912,7 @@
 			["for_each_x_add_c_pct_y", "hp_gained", 25, "bonus_atk_amt"],
 			["atk", 4],
 			["qi", 1],
-			["poast_action", ["chase"]]
+			["post_action", ["chase"]]
 		],
 		"character": "he1"
 	},
@@ -10878,17 +11044,27 @@
 	"925041": {
 		"name": "Xuanming Thundercloud Tribulation",
 		"hp_cost": 7,
-		"actions": []
+		"actions": [
+			["do_xuanming_thundercloud_tribulation", 9]
+		]
 	},
 	"925042": {
-		"actions": []
+		"actions": [
+			["do_xuanming_thundercloud_tribulation", 10]
+		]
 	},
 	"925043": {
-		"actions": []
+		"actions": [
+			["do_xuanming_thundercloud_tribulation", 11]
+		]
 	},
 	"925051": {
 		"name": "Die Ling Shen Ying",
-		"actions": []
+		"actions": [
+			["rep", 2, ["atk", 5]],
+			["reverse_card_play_direction"],
+			["if_c_pct_do", 10, ["chase"]]
+		]
 	},
 	"925052": {
 		"does_not_exist": true,
@@ -10900,8 +11076,11 @@
 	},
 	"926011": {
 		"name": "Heavenly Maiden White Jade Ring",
+		"gather_qi": 6,
 		"qi_cost": 4,
-		"actions": []
+		"actions": [
+			["add_c_of_x", 1, "heavenly_maiden_white_jade_ring_stacks"]
+		]
 	},
 	"926012": {
 		"does_not_exist": true,
@@ -11080,17 +11259,38 @@
 	"935041": {
 		"name": "Xuanming Heavenly Essence Destruction",
 		"hp_cost": 5,
-		"actions": []
+		"actions": [
+			["for_each_x_add_c_pct_y", "hp_lost", 20, "bonus_atk_amt"],
+			["atk", 10],
+			["if_x_at_least_c_do", "different_five_elements", 1,
+				["if_x_at_most_c_do", "different_five_elements", 1,
+					["chase"]]]
+		]
 	},
 	"935042": {
-		"actions": []
+		"actions": [
+			["for_each_x_add_c_pct_y", "hp_lost", 20, "bonus_atk_amt"],
+			["atk", 15],
+			["if_x_at_least_c_do", "different_five_elements", 1,
+				["if_x_at_most_c_do", "different_five_elements", 1,
+					["chase"]]]
+		]
 	},
 	"935043": {
-		"actions": []
+		"actions": [
+			["for_each_x_add_c_pct_y", "hp_lost", 20, "bonus_atk_amt"],
+			["atk", 20],
+			["if_x_at_least_c_do", "different_five_elements", 1,
+				["if_x_at_most_c_do", "different_five_elements", 1,
+					["chase"]]]
+		]
 	},
 	"935051": {
 		"name": "Pi Yun Zhui Yue",
-		"actions": []
+		"actions": [
+			["for_each_x_add_c_y", "different_five_elements", 2, "bonus_atk_amt"],
+			["rep", 3, ["atk", 2]]
+		]
 	},
 	"935052": {
 		"does_not_exist": true,
@@ -11102,8 +11302,18 @@
 	},
 	"936011": {
 		"name": "Kunlun Mirror",
+		"gather_qi": 9,
 		"qi_cost": 5,
-		"actions": []
+		"actions": [
+			["activate_wood_spirit"],
+			["activate_fire_spirit"],
+			["activate_earth_spirit"],
+			["activate_metal_spirit"],
+			["activate_water_spirit"],
+			["trigger_next_card"],
+			["prevent_anti_chase"],
+			["chase"]
+		]
 	},
 	"936012": {
 		"does_not_exist": true,
@@ -11259,17 +11469,31 @@
 	"945031": {
 		"name": "Xuanming Boundary-Breaking Palms",
 		"hp_cost": 4,
-		"actions": []
+		"actions": [
+			["for_each_x_add_c_pct_y", "hp_lost", 3.333334, "bonus_rep_amt"],
+			["rep", 2, ["atk", 4]]
+		]
 	},
 	"945032": {
-		"actions": []
+		"actions": [
+			["for_each_x_add_c_pct_y", "hp_lost", 3.703704, "bonus_rep_amt"],
+			["rep", 2, ["atk", 5]]
+		]
 	},
 	"945033": {
-		"actions": []
+		"actions": [
+			["for_each_x_add_c_pct_y", "hp_lost", 4, "bonus_rep_amt"],
+			["rep", 2, ["atk", 6]]
+		]
 	},
 	"945041": {
 		"name": "Jiu Qi Po Xiao",
-		"actions": []
+		"actions": [
+			["exhaust_x_to_add_c_y", "force", 4, "bonus_atk_amt"],
+			["exhaust_x_to_add_c_y", "qi", 3, "bonus_atk_amt"],
+			["exhaust_x_to_add_c_y", "agility", 2, "bonus_atk_amt"],
+			["atk", 10]
+		]
 	},
 	"945042": {
 		"does_not_exist": true,
@@ -11281,8 +11505,10 @@
 	},
 	"946011": {
 		"name": "Pangu Axe",
-		"qi_cost": 10,
-		"actions": []
+		"actions": [
+			["atk", 30],
+			["add_enemy_c_of_x", 20, "pangu_axe_stacks"]
+		]
 	},
 	"946012": {
 		"does_not_exist": true,

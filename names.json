@@ -2336,5 +2336,10 @@
     {
         "id": 805061,
         "name": "Shura Zongzi"
+    },
+    {
+        "id": 906011,
+        "name": "Nüwa Stone",
+        "namealta": "Nuwa Stone"
     }
 ]

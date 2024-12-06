@@ -261,6 +261,7 @@ for (let i=0; i<keys.length; i++) {
     const is_salty = with_default(swogi[card_id].is_salty, with_default(swogi[base_id].is_salty, undefined));
     const is_sweet = with_default(swogi[card_id].is_sweet, with_default(swogi[base_id].is_sweet, undefined));
     const marking = with_default(swogi[card_id].marking, with_default(swogi[base_id].marking, undefined));
+    const gather_qi = with_default(swogi[card_id].gather_qi, with_default(swogi[base_id].gather_qi, undefined));
     const card = {
         name: name,
         names: names,
@@ -268,6 +269,7 @@ for (let i=0; i<keys.length; i++) {
         hp_cost: hp_cost,
         decrease_qi_cost_by_x: decrease_qi_cost_by_x,
         water_spirit_cost_0_qi: water_spirit_cost_0_qi,
+        gather_qi: gather_qi,
         actions: swogi[card_id].actions,
         opening: swogi[card_id].opening,
         character: character,
@@ -753,7 +755,6 @@ class Player {
         this.p3_concentrated_element_stacks = 0;
         this.p4_concentrated_element_stacks = 0;
         this.p5_concentrated_element_stacks = 0;
-        this.reviving = false;
         this.flame_soul_rebirth_reviving = false;
         this.just_revived = false;
         // duan xuan sect immortal fates
@@ -806,6 +807,20 @@ class Player {
         this.crash_fist_star_seizing_stacks = 0;
         this.this_card_crash_fist_star_seizing_stacks = 0;
         this.chase_if_hp_gained = 0;
+        this.nuwa_stone_stacks = 0;
+        this.is_triggering_donghuang_zhong = 0;
+        this.pangu_axe_stacks = 0;
+        this.kongtong_seal_stacks = 0;
+        this.spirit_fusion_pot_stacks = 0;
+        this.ignore_guard_up = 0;
+        this.heavenly_maiden_white_jade_ring_stacks = 0;
+        this.prevent_anti_chase = 0;
+        this.xuanming_forceage_formation_stacks = 0;
+        this.xuanming_regen_tune_heal_stacks = 0;
+        this.xuanming_regen_tune_hurt_stacks = 0;
+        this.xuanming_recurring_hp = undefined;
+        // merpeople pearls
+        this.qi_gathering_merpeople_pearl_stacks = 0;
     }
     reset_can_play() {
         this.cards = this.cards.slice();
@@ -1110,6 +1125,9 @@ export class GameState {
         }
         const new_level = parseInt(upgrade_level) + 1;
         const new_card_id = card_id.substring(0, card_id.length - 1) + new_level;
+        if (swogi[new_card_id].does_not_exist) {
+            return false;
+        }
         this.players[player_idx].cards[card_idx] = new_card_id;
         this.log("player " + player_idx + " upgrades " + format_card(card_id) + " to " + format_card(new_card_id));
         return true;
@@ -1120,11 +1138,11 @@ export class GameState {
         if (upgrade_level === "1") {
             return false;
         }
-        if (card_id === "611033") {
-            return false;
-        }
         const new_level = parseInt(upgrade_level) - 1;
         const new_card_id = card_id.substring(0, card_id.length - 1) + new_level;
+        if (swogi[new_card_id].does_not_exist) {
+            return false;
+        }
         this.players[player_idx].cards[card_idx] = new_card_id;
         this.log("player " + player_idx + " downgrades " + format_card(card_id) + " to " + format_card(new_card_id));
         return true;
@@ -1875,6 +1893,10 @@ export class GameState {
         this.unindent();
     }
     process_this_card_chases() {
+        const prevent_anti_chase = this.players[0].prevent_anti_chase > 0;
+        if (this.players[0].prevent_anti_chase > 0) {
+            this.players[0].prevent_anti_chase -= 1;
+        }
         if (this.players[0].just_revived) {
             return;
         }
@@ -1887,7 +1909,7 @@ export class GameState {
             }
         }
         if (this.players[0].this_card_chases > 0 && this.players[0].chases < this.players[0].max_chases) {
-            if (this.players[0].entangle > 0) {
+            if (this.players[0].entangle > 0 && !prevent_anti_chase) {
                 this.reduce_idx_x_by_c(0, "entangle", 1);
                 this.for_each_x_add_y("entangling_ancient_vine_stacks", "wound");
             } else {
@@ -1969,7 +1991,10 @@ export class GameState {
     can_play_a_card() {
         return this.players[0].next_card_index < this.players[0].cards.length && this.players[0].can_play[this.players[0].next_card_index];
     }
-    gain_qi_to_afford_card() {
+    gain_qi_to_afford_card(gather_qi) {
+        if (gather_qi !== undefined) {
+            this.qi(gather_qi);
+        }
         if (this.players[0].rest_and_outwit_stacks > 0) {
             this.qi(3);
             this.add_c_of_x(3, "hexagram");
@@ -1989,6 +2014,11 @@ export class GameState {
             }
             this.qi(qi_gain);
             this.log("gained " + qi_gain + " qi from spirit_gather_citta_dharma_stacks");
+        }
+    }
+    do_qi_gathering_merpeople_pearl() {
+        if (this.players[0].qi_gathering_merpeople_pearl_stacks > 0) {
+            this.qi(this.players[0].qi_gathering_merpeople_pearl_stacks);
         }
     }
     do_apex_sword_citta_dharma() {
@@ -2028,6 +2058,15 @@ export class GameState {
             this.heal(this.players[0].regen_tune_stacks);
         }
     }
+    do_xuanming_regen_tune() {
+        if (this.players[0].xuanming_regen_tune_heal_stacks > 0) {
+            this.increase_idx_max_hp(this.players[0].xuanming_regen_tune_heal_stacks);
+            this.heal(this.players[0].xuanming_regen_tune_heal_stacks);
+        }
+        if (this.players[0].xuanming_regen_tune_hurt_stacks > 0) {
+            this.reduce_idx_hp(0, this.players[0].xuanming_regen_tune_hurt_stacks);
+        }
+    }
     do_internal_injury(idx) {
         if (this.players[idx].internal_injury > 0) {
             this.reduce_idx_hp(idx, this.players[idx].internal_injury);
@@ -2056,6 +2095,13 @@ export class GameState {
         const amt = this.players[0].wood_spirit_all_things_grow_stacks;
         if (amt > 0) {
             this.add_c_of_x(amt, "increase_atk");
+        }
+    }
+    do_nuwa_stone() {
+        const amt = this.players[0].nuwa_stone_stacks;
+        if (amt > 0) {
+            this.reduce_c_of_x(1, "nuwa_stone_stacks");
+            this.heal(this.players[0].hp);
         }
     }
     do_illusion_tune() {
@@ -2224,6 +2270,24 @@ export class GameState {
             }
         }
     }
+    do_kongtong_seal(card_idx) {
+        if (this.players[0].kongtong_seal_stacks > 0) {
+            if (this.try_upgrade_card(0, card_idx)) {
+                this.reduce_idx_x_by_c(0, "kongtong_seal_stacks", 1);
+            }
+        }
+    }
+    do_spirit_fusion_pot(card_idx) {
+        if (this.players[0].spirit_fusion_pot_stacks > 0) {
+            this.reduce_idx_x_by_c(0, "spirit_fusion_pot_stacks", 1);
+            if (!this.try_downgrade_card(0, card_idx)) {
+                this.add_enemy_c_of_x(9, "max_hp");
+                this.add_enemy_c_of_x(9, "hp");
+                this.reduce_c_of_x(9, "hp");
+                this.reduce_c_of_x(9, "max_hp");
+            }
+        }
+    }
     do_salted_egg_yolk_zongzi(card_idx) {
         if (this.players[0].salted_egg_yolk_zongzi_stacks > 0) {
             this.reduce_idx_x_by_c(0, "salted_egg_yolk_zongzi_stacks", 1);
@@ -2377,6 +2441,7 @@ export class GameState {
         this.reduce_idx_x_by_c(0, "everything_goes_way_stacks", 1);
         this.reduce_idx_x_by_c(0, "god_opportunity_conform_stacks", 1);
         this.reduce_idx_x_by_c(0, "god_opportunity_reversal_stacks", 1);
+        this.players[0].xuanming_recurring_hp = this.players[0].hp;
         this.do_def_decay();
         this.do_fat_immortal_raccoon();
         this.do_scarlet_eye_the_sky_consumer();
@@ -2394,9 +2459,11 @@ export class GameState {
         this.do_cacopoisonous_formation();
         this.do_spiritage_formation();
         this.do_ultimate_hexagram_base();
+        this.do_qi_gathering_merpeople_pearl();
         this.do_ultimate_polaris_hexagram_base();
         this.do_water_spirit_spring_rain();
         this.do_wood_spirit_all_things_grow();
+        this.do_nuwa_stone();
         if (this.check_for_death()) {
             return;
         }
@@ -2406,6 +2473,7 @@ export class GameState {
             this.reduce_idx_x_by_c(0, "cannot_act_stacks", 1);
             can_act = false;
         }
+        let old_max_chases = this.players[0].max_chases;
         if (this.players[0].predicament_for_immortals_stacks > 0) {
             this.players[0].max_chases = 0;
         }
@@ -2415,6 +2483,7 @@ export class GameState {
             this.do_octgates_lock_formation(action_idx);
             this.do_devouring_ancient_vine(action_idx);
             if (this.check_for_death()) {
+                this.players[0].max_chases = old_max_chases;
                 return;
             }
             if (action_idx > 0) {
@@ -2486,7 +2555,7 @@ export class GameState {
                 }
             }
             if (this.players[0].qi < qi_cost) {
-                this.gain_qi_to_afford_card();
+                this.gain_qi_to_afford_card(card.gather_qi);
                 this.log("player 0 gained qi instead of playing " + format_card(card_id) + ". They now have " + this.players[0].qi + "/" + qi_cost + " qi");
             } else {
                 this.players[0].inspiration_stacks = 0;
@@ -2527,10 +2596,16 @@ export class GameState {
                 this.do_salted_egg_yolk_zongzi(card_idx);
                 this.do_mutual_growth(card_idx);
                 this.do_nether_void_canine(card_idx);
+                this.do_kongtong_seal(card_idx);
+                this.do_spirit_fusion_pot(card_idx);
                 card_id = this.players[0].cards[card_idx];
                 this.play_card(card_id, card_idx);
                 if (this.check_for_death()) {
+                    this.players[0].max_chases = old_max_chases;
                     return;
+                }
+                if (this.players[0].prevent_anti_chase > 0) {
+                    this.players[0].max_chases = old_max_chases;
                 }
                 this.log("player 0 finished playing " + card.name);
                 this.advance_next_card_index();
@@ -2540,6 +2615,7 @@ export class GameState {
                 this.process_this_card_chases();
             }
         }
+        this.players[0].max_chases = old_max_chases;
         if (this.check_for_death()) {
             return;
         }
@@ -2553,6 +2629,7 @@ export class GameState {
         this.do_thunderphilia_formation();
         this.do_force_of_water();
         this.do_hard_bamboo();
+        this.do_xuanming_regen_tune();
         this.reduce_idx_x_by_c(0, "entangle", 1);
         this.reduce_idx_x_by_c(0, "flaw", 1);
         this.reduce_idx_x_by_c(0, "weaken", 1);
@@ -2583,7 +2660,7 @@ export class GameState {
             this.deal_damage_inner(reduced_amt, false, idx);
         }
     }
-    reduce_idx_hp(idx, dmg, is_cost) {
+    reduce_idx_hp(idx, dmg, is_cost, ignore_guard_up) {
         if (dmg < 0) {
             this.log("error: dmg is negative: " + dmg);
             this.crash();
@@ -2591,7 +2668,7 @@ export class GameState {
         if (dmg === 0) {
             return 0;
         }
-        if (this.players[idx].guard_up > 0 && !is_cost) {
+        if (this.players[idx].guard_up > 0 && !is_cost && !ignore_guard_up) {
             this.players[idx].guard_up -= 1;
             this.log("prevented " + dmg + " damage to hp with guard up. " + this.players[idx].guard_up + " guard up remaining");
             return 0;
@@ -2610,6 +2687,11 @@ export class GameState {
             this.players[idx].hp_lost += dmg;
             this.players[idx].hp -= dmg;
             this.log("reduced player " + idx +" hp by " + dmg + " to " + this.players[idx].hp);
+            if (this.players[idx].hp <= 0 && this.players[idx].pangu_axe_stacks > 0) {
+                this.log("pangu axe: reduced player " + idx + " destiny by " + this.players[idx].pangu_axe_stacks + " to " + this.players[idx].destiny);
+                this.players[idx].destiny -= this.players[idx].pangu_axe_stacks;
+                this.players[idx].pangu_axe_stacks = 0;
+            }
             if (idx === 0 && this.players[idx].elusive_footwork_stacks > 0 && !this.players[idx].elusive_footwork_triggered) {
                 this.players[idx].elusive_footwork_triggered = true;
                 this.add_c_of_x(1, "qi");
@@ -2631,6 +2713,10 @@ export class GameState {
                 this.reduce_idx_x_by_c(idx, "frozen_snow_lotus_stacks", 1);
                 this.increase_idx_def(idx, dmg);
             }
+            if (this.players[idx].xuanming_forceage_formation_stacks > 0) {
+                this.reduce_idx_x_by_c(idx, "xuanming_forceage_formation_stacks", 1);
+                this.increase_idx_x_by_c(idx, "increase_atk", 1);
+            }
             return dmg;
         }
     }
@@ -2651,6 +2737,11 @@ export class GameState {
         if (this.players[idx].hp > this.players[idx].max_hp) {
             this.log("reducing hp to max_hp of " + this.players[idx].max_hp);
             this.players[idx].hp = this.players[idx].max_hp;
+        }
+        if (this.players[idx].hp <= 0 && this.players[idx].pangu_axe_stacks > 0) {
+            this.log("pangu axe: reduced player " + idx + " destiny by " + this.players[idx].pangu_axe_stacks + " to " + this.players[idx].destiny);
+            this.players[idx].destiny -= this.players[idx].pangu_axe_stacks;
+            this.players[idx].pangu_axe_stacks = 0;
         }
         this.log("reduced player " + idx + " max_hp by " + amt + " to " + this.players[idx].max_hp);
     }
@@ -2689,7 +2780,10 @@ export class GameState {
         this.players[idx].max_hp += amt;
         this.log("increased player " + idx + " max_hp by " + amt + " to " + this.players[idx].max_hp);
     }
-    increase_idx_hp(idx, amt) {
+    increase_idx_hp(idx, amt, heal_while_dead) {
+        if (idx === 0) {
+            amt += this.players[0].bonus_heal_amt;
+        }
         if (amt === 0) {
             return 0;
         }
@@ -2699,7 +2793,7 @@ export class GameState {
             amt = 1;
         }
         const prev_hp = this.players[idx].hp;
-        if (prev_hp <= 0 && !this.players[idx].reviving) {
+        if (prev_hp <= 0 && !heal_while_dead) {
             this.log("refusing to heal a dead player");
             return 0;
         }
@@ -3159,8 +3253,15 @@ export class GameState {
             damage_to_hp = dmg - damage_to_def;
         }
         this.reduce_idx_x_by_c(enemy_idx, "def", damage_to_def);
+        var ignore_guard_up = false;
         if (is_atk) {
-            let can_wound = damage_to_hp > 0 && this.players[enemy_idx].guard_up === 0 && this.players[enemy_idx].covert_shift_stacks === 0;
+            var usable_guard_up = this.players[enemy_idx].guard_up;
+            if (this.players[0].ignore_guard_up > 0) {
+                ignore_guard_up = true;
+                this.players[0].ignore_guard_up -= 1;
+                usable_guard_up = 0;
+            }
+            let can_wound = damage_to_hp > 0 && usable_guard_up === 0 && this.players[enemy_idx].covert_shift_stacks === 0;
             can_wound = can_wound || this.players[my_idx].fire_flame_blade_stacks > 0;
             if (this.players[0].disable_penetrate_stacks > 0) {
                 this.players[0].disable_penetrate_stacks -= 1;
@@ -3181,7 +3282,7 @@ export class GameState {
                 }
             }
         }
-        let damage_actually_dealt_to_hp = this.reduce_idx_hp(enemy_idx, damage_to_hp, false);
+        let damage_actually_dealt_to_hp = this.reduce_idx_hp(enemy_idx, damage_to_hp, false, ignore_guard_up);
         if (is_atk) {
             this.players[my_idx].damage_dealt_to_hp_by_atk = damage_actually_dealt_to_hp;
             this.players[my_idx].damage_dealt_to_hp_by_this_card_atk += damage_actually_dealt_to_hp;
@@ -3227,9 +3328,12 @@ export class GameState {
             this.do_action(arr);
         }
     }
+    if_injured() {
+        return this.players[0].this_atk_injured;
+    }
     injured(arr, arr2) {
         // injured means "if the immediately preceding atk has done damage to the enemy hp, do an action"
-        if (this.players[0].this_atk_injured) {
+        if (this.if_injured()) {
             this.do_action(arr);
         } else {
             this.log("no injured because the most recent atk has not dealt damage to the enemy hp");
@@ -3365,7 +3469,6 @@ export class GameState {
         }
     }
     heal(amt) {
-        amt += this.players[0].bonus_heal_amt;
         this.increase_my_hp(amt);
     }
     next_turn_def(amt) {
@@ -3584,18 +3687,20 @@ export class GameState {
                 this.reduce_idx_x_by_c(idx, "ashes_phoenix_stacks", amt);
                 const heal_amt = amt - this.players[idx].hp;
                 this.increase_idx_x_by_c(idx, "max_hp", amt);
-                this.players[idx].reviving = true;
-                this.increase_idx_x_by_c(idx, "hp", heal_amt);
-                this.players[idx].reviving = false;
+                this.increase_idx_hp(idx, heal_amt, true);
                 this.players[idx].just_revived = true;
             } else if (this.players[idx].flame_soul_rebirth_stacks > 0) {
                 this.reduce_idx_x_by_c(idx, "flame_soul_rebirth_stacks", 1);
                 this.players[idx].flame_soul_rebirth_reviving = true;
                 this.set_idx_c_of_x(idx, 15, "max_hp");
-                this.players[idx].reviving = true;
-                this.set_idx_c_of_x(idx, 15, "hp");
-                this.players[idx].reviving = false;
+                const heal_amt = 15 - this.players[idx].hp;
+                this.increase_idx_hp(idx, heal_amt, true);
                 this.players[idx].flame_soul_rebirth_reviving = false;
+                this.players[idx].just_revived = true;
+            } else if (this.players[idx].heavenly_maiden_white_jade_ring_stacks > 0) {
+                this.reduce_idx_x_by_c(idx, "heavenly_maiden_white_jade_ring_stacks", 1);
+                const heal_amt = 64 - this.players[idx].hp;
+                this.increase_idx_hp(idx, heal_amt, true);
                 this.players[idx].just_revived = true;
             } else {
                 this.game_over = true;
@@ -3900,8 +4005,11 @@ export class GameState {
         }
         this.increase_idx_x_by_c(0, "ultimate_world_formation_stacks", chases);
     }
+    if_star_point() {
+        return this.players[0].is_star_point[this.players[0].currently_playing_card_idx];
+    }
     star_point(arr) {
-        if (this.players[0].is_star_point[this.players[0].currently_playing_card_idx]) {
+        if (this.if_star_point()) {
             this.do_action(arr);
         }
     }
@@ -3964,7 +4072,7 @@ export class GameState {
         let to_lose = this.players[0][x] * c;
         this.reduce_enemy_c_of_x(to_lose, y);
     }
-    post_action(arr) {
+    if_post_action() {
         let can_post_action = false;
         if (this.players[0].can_post_action[this.players[0].currently_playing_card_idx]) {
             can_post_action = true;
@@ -3973,7 +4081,10 @@ export class GameState {
         } else if (this.players[0].act_underhand_stacks > 0) {
             can_post_action = this.if_c_pct(1);
         }
-        if (can_post_action) {
+        return can_post_action;
+    }
+    post_action(arr) {
+        if (this.if_post_action()) {
             this.do_action(arr);
         }
     }
@@ -4190,12 +4301,15 @@ export class GameState {
             this.do_action(arr);
         }
     }
-    if_any_element_activated_do(arr) {
-        if (this.players[0].activate_wood_spirit_stacks > 0 ||
+    if_any_element_activated() {
+        return this.players[0].activate_wood_spirit_stacks > 0 ||
             this.players[0].activate_fire_spirit_stacks > 0 ||
             this.players[0].activate_earth_spirit_stacks > 0 ||
             this.players[0].activate_metal_spirit_stacks > 0 ||
-            this.players[0].activate_water_spirit_stacks > 0) {
+            this.players[0].activate_water_spirit_stacks > 0;
+    }
+    if_any_element_activated_do(arr) {
+        if (this.if_any_element_activated()) {
             this.do_action(arr);
         }
     }
@@ -4425,6 +4539,55 @@ export class GameState {
         if (this.players[idx].shadow_owl_reishi_stacks > 0) {
             this.reduce_idx_x_by_c(idx, "hp", this.players[0].shadow_owl_reishi_stacks);
             this.increase_idx_x_by_c(idx, "flying_brush_stacks", 1);
+        }
+    }
+    do_donghuang_zhong() {
+        if (this.players[0].is_triggering_donghuang_zhong > 0) {
+            return;
+        }
+        this.players[0].is_triggering_donghuang_zhong += 1;
+        const lim = this.players[0].currently_triggering_card_idx;
+        for (let idx = 0; idx < lim; idx++) {
+            const card_id = this.players[0].cards[idx];
+            if (this.players[0].can_post_action[idx]) {
+                this.log("retriggering " + format_card(card_id));
+                this.trigger_card(card_id, idx);
+            }
+        }
+        this.players[0].is_triggering_donghuang_zhong -= 1;
+    }
+    trigger_next_enemy_card() {
+        const idx = this.players[1].next_card_index;
+        const card_id = this.players[1].cards[idx];
+        this.log("triggering enemy card: " + format_card(card_id));
+        this.trigger_card(card_id, this.players[0].currently_triggering_card_idx);
+    }
+    trigger_next_card() {
+        let idx = this.players[0].currently_playing_card_idx;
+        const next_idx = this.get_next_idx(idx);
+        const next_id = this.players[0].cards[next_idx];
+        this.trigger_card(next_id, idx);
+    }
+    prevent_anti_chase() {
+        this.players[0].prevent_anti_chase += 1;
+    }
+    do_xuanming_thundercloud_tribulation(dmg) {
+        for (let i=0; i<5; i++) {
+            if (!this.if_c_pct(10)) {
+                this.deal_damage_inner(7, false, 1);
+            }
+            this.deal_damage(dmg);
+        }
+    }
+    do_xuanming_requiem_fulu(my_hp_loss_pct, fixed_hp_loss) {
+        const my_hp_loss = Math.ceil(this.players[0].hp * my_hp_loss_pct / 100);
+        this.reduce_idx_hp(0, my_hp_loss);
+        this.reduce_enemy_hp(my_hp_loss + fixed_hp_loss);
+        this.reduce_enemy_max_hp(my_hp_loss + fixed_hp_loss);
+    }
+    do_xuanming_recurring(amt) {
+        if (this.players[0].xuanming_recurring_hp !== undefined) {
+            this.set_idx_c_of_x(0, "hp", this.players[0].xuanming_recurring_hp + amt);
         }
     }
 }
