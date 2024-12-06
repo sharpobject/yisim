@@ -809,6 +809,7 @@ class Player {
         this.chase_if_hp_gained = 0;
         this.nuwa_stone_stacks = 0;
         this.is_triggering_donghuang_zhong = 0;
+        this.is_triggering_kunlun_mirror = 0;
         this.pangu_axe_stacks = 0;
         this.kongtong_seal_stacks = 0;
         this.spirit_fusion_pot_stacks = 0;
@@ -818,9 +819,10 @@ class Player {
         this.xuanming_forceage_formation_stacks = 0;
         this.xuanming_regen_tune_heal_stacks = 0;
         this.xuanming_regen_tune_hurt_stacks = 0;
-        this.xuanming_recurring_hp = undefined;
+        this.xuanming_recurring_hp = 0;
         // merpeople pearls
         this.qi_gathering_merpeople_pearl_stacks = 0;
+        this.crystallized_merpeople_pearl_stacks = 0;
     }
     reset_can_play() {
         this.cards = this.cards.slice();
@@ -891,6 +893,7 @@ class Player {
         }
     }
     post_deck_setup() {
+        this.xuanming_recurring_hp = this.hp;
         this.reset_can_play();
         this.reset_deck_counts();
     }
@@ -4470,6 +4473,12 @@ export class GameState {
         const next_idx = this.get_next_idx(idx);
         const next_id = this.players[0].cards[next_idx];
         this.trigger_card(next_id, idx);
+    }
+    trigger_previous_card() {
+        let idx = this.players[0].currently_playing_card_idx;
+        const prev_idx = this.get_prev_idx(idx);
+        const prev_id = this.players[0].cards[prev_idx];
+        this.trigger_card(prev_id, idx);
     }
     prevent_anti_chase() {
         this.players[0].prevent_anti_chase += 1;

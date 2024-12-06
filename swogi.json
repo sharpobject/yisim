@@ -8416,33 +8416,67 @@
 	},
 	"603011": {
 		"name": "Demonic Qi Haunt",
-		"actions": []
+		"actions": [
+			["atk", 4],
+			["add_enemy_c_of_x", 2, "internal_injury"]
+		]
 	},
 	"603012": {
-		"actions": []
+		"actions": [
+			["atk", 4],
+			["add_enemy_c_of_x", 3, "internal_injury"]
+		]
 	},
 	"603013": {
-		"actions": []
+		"actions": [
+			["atk", 4],
+			["add_enemy_c_of_x", 4, "internal_injury"]
+		]
 	},
 	"603021": {
 		"name": "Magic Dragon's Paw",
-		"actions": []
+		"actions": [
+			["rep", 2, [
+				["atk", 2],
+				["add_enemy_c_of_x", 1, "wound"]]]
+		]
 	},
 	"603022": {
-		"actions": []
+		"actions": [
+			["rep", 3, [
+				["atk", 2],
+				["add_enemy_c_of_x", 1, "wound"]]]
+		]
 	},
 	"603023": {
-		"actions": []
+		"actions": [
+			["rep", 4, [
+				["atk", 2],
+				["add_enemy_c_of_x", 1, "wound"]]]
+		]
 	},
 	"605011": {
 		"name": "Mirroring Merpeople Pearl",
-		"actions": []
+		"actions": [
+			["add_c_of_x", "hand_count", 1],
+			["reduce_c_of_x", "cultivation", 1],
+			["consumption"]
+		]
 	},
 	"605012": {
-		"actions": []
+		"actions": [
+			["add_c_of_x", "hand_count", 1],
+			["reduce_c_of_x", "cultivation", 1],
+			["consumption"]
+		]
 	},
 	"605013": {
-		"actions": []
+		"actions": [
+			["add_c_of_x", "hand_count", 1],
+			["reduce_c_of_x", "cultivation", 1],
+			["consumption"],
+			["chase"]
+		]
 	},
 	"605021": {
 		"name": "Qi-gathering Merpeople Pearl",
@@ -8468,103 +8502,208 @@
 	},
 	"605031": {
 		"name": "Frenzied Merpeople Pearl",
-		"actions": []
+		"actions": [
+			["add_c_of_x", 2, "increase_atk"],
+			["add_c_of_x", 1, "wound"],
+			["chase"]
+		]
 	},
 	"605032": {
-		"actions": []
+		"actions": [
+			["add_c_of_x", 3, "increase_atk"],
+			["add_c_of_x", 2, "wound"],
+			["chase"]
+		]
 	},
 	"605033": {
-		"actions": []
+		"actions": [
+			["reduce_c_of_x", 1, "destiny"],
+			["add_c_of_x", 4, "increase_atk"],
+			["add_c_of_x", 3, "wound"],
+			["chase"]
+		]
 	},
 	"605041": {
 		"name": "Bewildering Merpeople Pearl",
-		"actions": []
+		"actions": [
+			["add_c_of_x", 8, "max_hp"],
+			["heal", 8],
+			["add_enemy_c_of_x", 1, "weaken"]
+		]
 	},
 	"605042": {
-		"actions": []
+		"actions": [
+			["add_c_of_x", 13, "max_hp"],
+			["heal", 13],
+			["add_enemy_c_of_x", 2, "weaken"]
+		]
 	},
 	"605043": {
-		"actions": []
+		"actions": [
+			["add_c_of_x", 18, "max_hp"],
+			["heal", 18],
+			["add_enemy_c_of_x", 3, "weaken"]
+		]
 	},
 	"605051": {
 		"name": "Crystallized Merpeople Pearl",
-		"actions": []
+		"actions": [
+			["def", 6],
+			["continuous"],
+			["add_c_of_x", 50, "crystallized_merpeople_pearl_stacks"]
+		]
 	},
 	"605052": {
-		"actions": []
+		"actions": [
+			["def", 18],
+			["continuous"],
+			["add_c_of_x", 50, "crystallized_merpeople_pearl_stacks"]
+		]
 	},
 	"605053": {
-		"actions": []
+		"actions": [
+			["def", 30],
+			["continuous"],
+			["add_c_of_x", 50, "crystallized_merpeople_pearl_stacks"]
+		]
 	},
 	"605061": {
 		"name": "Cursed Merpeople Pearl",
-		"actions": []
+		"actions": [
+			["reduce_c_of_x", 1, "destiny"],
+			["trigger_previous_card"]
+		]
 	},
 	"605062": {
-		"actions": []
+		"actions": [
+			["reduce_c_of_x", 5, "destiny"],
+			["rep", 2, ["trigger_previous_card"]]
+		]
 	},
 	"605063": {
-		"actions": []
+		"actions": [
+			["reduce_c_of_x", 9, "destiny"],
+			["rep", 3, ["trigger_previous_card"]]
+		]
 	},
 	"605071": {
 		"name": "Abyssal Merpeople Pearl",
-		"actions": []
+		"actions": [
+			["add_enemy_c_of_x", 2, "internal_injury"],
+			["add_enemy_c_of_x", 1, "entangle"]
+		]
 	},
 	"605072": {
-		"actions": []
+		"actions": [
+			["reduce_c_of_x", 1, "destiny"],
+			["add_enemy_c_of_x", 3, "internal_injury"],
+			["add_enemy_c_of_x", 2, "entangle"]
+		]
 	},
 	"605073": {
-		"actions": []
+		"actions": [
+			["reduce_c_of_x", 3, "destiny"],
+			["add_enemy_c_of_x", 4, "internal_injury"],
+			["add_enemy_c_of_x", 3, "entangle"]
+		]
 	},
 	"605081": {
 		"name": "Multicolored Merpeople Pearl",
-		"actions": []
+		"actions": [
+			["trigger_random_sect_card", 1]
+		]
 	},
 	"605082": {
-		"actions": []
+		"actions": [
+			["rep", 2, ["trigger_random_sect_card", 2]]
+		]
 	},
 	"605083": {
-		"actions": []
+		"actions": [
+			["rep", 3, ["trigger_random_sect_card", 3]]
+		]
 	},
 	"605091": {
 		"name": "Sneak Merpeople Pearl",
-		"actions": []
+		"actions": [
+			["add_c_of_x", 1, "guard_up"],
+			["add_enemy_c_of_x", 2, "flaw"]
+		]
 	},
 	"605092": {
-		"actions": []
+		"actions": [
+			["add_c_of_x", 1, "guard_up"],
+			["add_enemy_c_of_x", 4, "flaw"]
+		]
 	},
 	"605093": {
-		"actions": []
+		"actions": [
+			["add_c_of_x", 2, "guard_up"],
+			["add_enemy_c_of_x", 4, "flaw"]
+		]
 	},
 	"605101": {
 		"name": "Blood-cultivated Merpeople Pearl",
-		"actions": []
+		"actions": [
+			["reduce_c_of_x", 1, "destiny"],
+			["add_c_of_x", 1, "cultivation"],
+			["consumption"]
+		]
 	},
 	"605102": {
-		"actions": []
+		"actions": [
+			["reduce_c_of_x", 2, "destiny"],
+			["add_c_of_x", 1, "cultivation"],
+			["consumption"]
+		]
 	},
 	"605103": {
-		"actions": []
+		"actions": [
+			["reduce_c_of_x", 3, "destiny"],
+			["add_c_of_x", 2, "cultivation"],
+			["consumption"]
+		]
 	},
 	"606011": {
 		"name": "Demonic Qi Burst",
-		"actions": []
+		"actions": [
+			["for_each_enemy_x_add_y", "internal_injury", "bonus_atk_amt"],
+			["for_each_x_add_c_y", "bonus_atk_amt", 3, "bonus_atk_amt"],
+			["atk", 20]
+		]
 	},
 	"606012": {
-		"actions": []
+		"actions": [
+			["for_each_enemy_x_add_y", "internal_injury", "bonus_atk_amt"],
+			["for_each_x_add_c_y", "bonus_atk_amt", 5, "bonus_atk_amt"],
+			["atk", 25]
+		]
 	},
 	"606013": {
-		"actions": []
+		"actions": [
+			["for_each_enemy_x_add_y", "internal_injury", "bonus_atk_amt"],
+			["for_each_x_add_c_y", "bonus_atk_amt", 7, "bonus_atk_amt"],
+			["atk", 30]
+		]
 	},
 	"606021": {
 		"name": "Demonic Dragon's Chaotic Dance",
-		"actions": []
+		"actions": [
+			["for_each_enemy_x_add_y", "wound", "bonus_rep_amt"],
+			["rep", 3, ["atk", 3]]
+		]
 	},
 	"606022": {
-		"actions": []
+		"actions": [
+			["for_each_enemy_x_add_y", "wound", "bonus_rep_amt"],
+			["rep", 4, ["atk", 4]]
+		]
 	},
 	"606023": {
-		"actions": []
+		"actions": [
+			["for_each_enemy_x_add_y", "wound", "bonus_rep_amt"],
+			["rep", 5, ["atk", 5]]
+		]
 	},
 	"611011": {
 		"name": "Cloud Sword - Flying Sand",
@@ -10555,6 +10694,18 @@
 			["consumption"]
 		]
 	},
+	"906001": {
+		"name": "Crimson Star",
+		"actions": [[]]
+	},
+	"906002": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"906003": {
+		"does_not_exist": true,
+		"actions": []
+	},
 	"906011": {
 		"name": "Nüwa Stone",
 		"gather_qi": 7,
@@ -11305,14 +11456,18 @@
 		"gather_qi": 9,
 		"qi_cost": 5,
 		"actions": [
-			["activate_wood_spirit"],
-			["activate_fire_spirit"],
-			["activate_earth_spirit"],
-			["activate_metal_spirit"],
-			["activate_water_spirit"],
-			["trigger_next_card"],
-			["prevent_anti_chase"],
-			["chase"]
+			["if_x_at_most_c_do", "is_triggering_kunlun_mirror", 0, [
+				["add_c_of_x", 1, "is_triggering_kunlun_mirror"],
+				["activate_wood_spirit"],
+				["activate_fire_spirit"],
+				["activate_earth_spirit"],
+				["activate_metal_spirit"],
+				["activate_water_spirit"],
+				["trigger_next_card"],
+				["prevent_anti_chase"],
+				["chase"],
+				["reduce_c_of_x", 1, "is_triggering_kunlun_mirror"]
+			]]
 		]
 	},
 	"936012": {
