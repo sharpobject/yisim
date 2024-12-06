@@ -374,12 +374,12 @@ def process_image(input_path, output_base, corner_radius, padding):
         if img_type in [1, 2, 5]:  # Three-card layouts
             for i, result in enumerate(results, 1):
                 output_path = f"{output_base}{i}.png"
-                result.save(output_path)
+                save(result, output_path)
                 bigger_path = f"{output_base}{i}_nocrop.png"
                 save(bigger_results[i-1], bigger_path)
         else:  # Single-card layout
             output_path = f"{output_base}{level}.png"
-            results[0].save(output_path)
+            save(results[0], output_path)
             bigger_path = f"{output_base}{level}_nocrop.png"
             save(bigger_results[0], bigger_path)
 
@@ -407,9 +407,27 @@ def save(img, path):
             existing_array = np.array(existing)
             new_array = np.array(img)
 
-            # Compare arrays
-            if not np.array_equal(existing_array, new_array):
+            # Get alpha channels
+            existing_alpha = existing_array[:, :, 3]
+            new_alpha = new_array[:, :, 3]
+
+            # First check if alpha channels are different
+            if not np.array_equal(existing_alpha, new_alpha):
                 img.save(path)
+                return
+
+            # Create masks for non-transparent pixels
+            non_transparent = (new_alpha != 0)
+
+            # Compare RGB values only where alpha is non-zero
+            for channel in range(3):  # RGB channels
+                if not np.array_equal(
+                    existing_array[:, :, channel][non_transparent],
+                    new_array[:, :, channel][non_transparent]
+                ):
+                    img.save(path)
+                    return
+
     except Exception as e:
         # If there's any error reading the existing file, save the new one
         print(f"Warning: Error comparing images ({str(e)}), overwriting {path}")
