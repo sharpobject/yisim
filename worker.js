@@ -1,5 +1,8 @@
-({ GameState, card_name_to_id_fuzzy } = require("./gamestate_nolog.js"));
-const { GameState: GameStateWithLog } = require("./gamestate.js");
+//({ GameState, card_name_to_id_fuzzy } = require("./gamestate_nolog.js"));
+import { GameState as GameStateWithLog, Player as PlayerWithLog } from "./gamestate.js";
+
+import { GameState, Player, card_name_to_id_fuzzy } from "./gamestate_nolog.js";
+//const { GameState: GameStateWithLog } = require("./gamestate.js"); 
 
 
 function next_permutation(arr) {
@@ -41,10 +44,14 @@ onmessage = (event) => {
     const winning_logs = [];
     let try_idx = 0;
     let best_winning_margin = -99999;
-    let best_winrate = 0.0001;
+    let best_winrate = 0.8;
     let best_hp = -99999;
+    const a = new Player();
+    const b = new Player();
+    const alog = new PlayerWithLog();
+    const blog = new PlayerWithLog();
     if (event.data.just_run) {
-        let game = new GameStateWithLog();
+        let game = new GameStateWithLog(alog, blog);
         for (let key in players[my_idx]) {
             game.players[my_idx][key] = players[my_idx][key];
         }
@@ -66,7 +73,9 @@ onmessage = (event) => {
         do {
             var winrate = 0;
             try_idx += 1;
-            let game = new GameState();
+            //console.log("try_idx: " + try_idx);
+            //os.exit(1);
+            let game = new GameState(a, b);
             for (let key in players[my_idx]) {
                 game.players[my_idx][key] = players[my_idx][key];
             }
@@ -79,12 +88,12 @@ onmessage = (event) => {
             } else {
                 game.sim_n_turns(64);
             }
-            /*
-            if (game.used_randomness) {
+            
+            if (game.used_randomness && game.winner === my_idx && false) {
                 var win_count = game.winner === my_idx ? 1 : 0;
                 var total_count = 1;
                 for(var qq=0; qq<20; qq++) {
-                    let game = new GameState();
+                    let game = new GameState(a, b);
                     for (let key in players[my_idx]) {
                         game.players[my_idx][key] = players[my_idx][key];
                     }
@@ -102,11 +111,13 @@ onmessage = (event) => {
             } else {
                 winrate = game.winner === my_idx ? 1 : 0;
             }
-            */
-            if (game.winner === my_idx && !game.used_randomness) {
+            
+            if (game.winner === my_idx) {
+            //if (game.winner === my_idx && !game.used_randomness) {
             //if (combo[0] == "633011" && combo[2] == "135072") {
             //if (!game.used_randomness) {
             //if (winrate >= best_winrate) {
+                best_winrate = winrate;
                 const hp = game.players[my_idx].hp;
                 //if (hp > best_hp) {
                 //    winning_decks.length = 0;
@@ -114,7 +125,7 @@ onmessage = (event) => {
                 //    winning_logs.length = 0;
                 //}
                 //best_hp = hp;
-                const winning_margin = game.players[my_idx].hp - game.players[enemy_idx].hp - 1000 * game.turns_taken;
+                const winning_margin = game.players[my_idx].hp - game.players[enemy_idx].hp - 10 * game.turns_taken;
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
                     winning_decks.length = 0;
@@ -123,7 +134,7 @@ onmessage = (event) => {
                     best_winning_margin = winning_margin;
                     winning_decks.push(p_combo);
                     winning_margins.push(winning_margin);
-                    let game_with_log = new GameStateWithLog();
+                    let game_with_log = new GameStateWithLog(alog, blog);
                     for (let key in players[my_idx]) {
                         game_with_log.players[my_idx][key] = players[my_idx][key];
                     }

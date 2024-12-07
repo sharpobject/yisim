@@ -6873,19 +6873,19 @@
 		"name": "Impact Formation",
 		"actions": [
 			["atk", 6],
-			["if_played_continuous", ["atk", 2]]
+			["if_played_continuous_do", ["atk", 2]]
 		]
 	},
 	"351032": {
 		"actions": [
 			["atk", 8],
-			["if_played_continuous", ["atk", 3]]
+			["if_played_continuous_do", ["atk", 3]]
 		]
 	},
 	"351033": {
 		"actions": [
 			["atk", 10],
-			["if_played_continuous", ["atk", 4]]
+			["if_played_continuous_do", ["atk", 4]]
 		]
 	},
 	"352011": {
@@ -6929,19 +6929,19 @@
 	"352031": {
 		"name": "Cure Formation",
 		"actions": [
-			["if_played_continuous", ["add_c_of_x", 6, "max_hp"]],
+			["if_played_continuous_do", ["add_c_of_x", 6, "max_hp"]],
 			["heal", 7]
 		]
 	},
 	"352032": {
 		"actions": [
-			["if_played_continuous", ["add_c_of_x", 9, "max_hp"]],
+			["if_played_continuous_do", ["add_c_of_x", 9, "max_hp"]],
 			["heal", 11]
 		]
 	},
 	"352033": {
 		"actions": [
-			["if_played_continuous", ["add_c_of_x", 12, "max_hp"]],
+			["if_played_continuous_do", ["add_c_of_x", 12, "max_hp"]],
 			["heal", 15]
 		]
 	},
@@ -6987,19 +6987,19 @@
 		"name": "Hexproof Formation",
 		"actions": [
 			["add_c_of_x", 3, "hexproof"],
-			["if_played_continuous", ["def", 10]]
+			["if_played_continuous_do", ["def", 10]]
 		]
 	},
 	"353032": {
 		"actions": [
 			["add_c_of_x", 4, "hexproof"],
-			["if_played_continuous", ["def", 14]]
+			["if_played_continuous_do", ["def", 14]]
 		]
 	},
 	"353033": {
 		"actions": [
 			["add_c_of_x", 5, "hexproof"],
-			["if_played_continuous", ["def", 18]]
+			["if_played_continuous_do", ["def", 18]]
 		]
 	},
 	"354011": {
@@ -7101,19 +7101,19 @@
 		"name": "Meru Formation",
 		"actions": [
 			["add_c_of_x", 1, "skip_next_card_stacks"],
-			["if_played_continuous", ["chase"]]
+			["if_played_continuous_do", ["chase"]]
 		]
 	},
 	"355032": {
 		"actions": [
 			["add_c_of_x", 2, "skip_next_card_stacks"],
-			["if_played_continuous", ["chase"]]
+			["if_played_continuous_do", ["chase"]]
 		]
 	},
 	"355033": {
 		"actions": [
 			["add_c_of_x", 3, "skip_next_card_stacks"],
-			["if_played_continuous", ["chase"]]
+			["if_played_continuous_do", ["chase"]]
 		]
 	},
 	"361011": {

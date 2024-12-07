@@ -54,7 +54,7 @@ for (let key in swogi) {
         zongzi_ids.push(key);
     }
 }
-console.log("zongzi_ids: " + zongzi_ids);
+// console.log("zongzi_ids: " + zongzi_ids); 
 
 function upgradedd(deck) {
     let ret = [];
@@ -131,7 +131,8 @@ function* downgrade_inner(cards, copies, sofar, idx) {
     //console.log("idx: " + idx);
     let copy = copies[idx];
     let my_copies_to_levels = copies_to_levels;
-    if ((card_id === "804063") || (card_id === "355033") || (card_id === "375023")) {
+    if ((card_id === "804063") || (card_id === "355033") || 
+        (card_id === "375023") || (card_id === "245023")) {
         my_copies_to_levels = meru_copies_to_levels;
     } else if (card_id[2] === "5") {
         my_copies_to_levels = p5_copies_to_levels;
@@ -290,7 +291,6 @@ async function do_riddle(riddle) {
         for (let combo of k_combinations(my_cards, 8)) {
         //for (let combo of adjacent_decks(my_cards, riddle.small_radius)) {
             combo_idx += 1;
-            console.log("combo_idx: " + combo_idx);
             // sort the combo
             combo.sort();
             let combo_id = combo.join(",");
@@ -315,9 +315,7 @@ async function do_riddle(riddle) {
             if (concon_count >= 3) {
                 continue;
             }
-            //if (normal_attack_count !== 1) {
-            //    continue;
-            //}
+            console.log("combo_idx: " + combo_idx);
             console.log("concon_count: " + concon_count);
             // if there is a ready worker, send the message
             let worker_idx = -1;
@@ -357,6 +355,84 @@ async function do_riddle(riddle) {
     }
     console.log("try_idx: " + riddle.try_idx);
 }
+
+async function doo_riddle(riddle) {
+    const my_idx = riddle.my_idx;
+    const enemy_idx = 1 - my_idx;
+    const my_cards = riddle.players[my_idx].cards;
+    const enemy_cards = riddle.players[enemy_idx].cards;
+    riddle.best_winning_margin = -99999;
+    riddle.try_idx = 0;
+    fixup_deck(my_cards);
+    fixup_deck(enemy_cards);
+    
+    if (riddle.players[my_idx].character === undefined) {
+        riddle.players[my_idx].character = guess_character(riddle.players[my_idx]);
+    }
+    if (riddle.players[enemy_idx].character === undefined) {
+        riddle.players[enemy_idx].character = guess_character(riddle.players[enemy_idx]);
+    }
+
+    if (riddle.just_run) {
+        riddle.players[my_idx].cards = my_cards;
+        riddle.players[enemy_idx].cards = enemy_cards;
+        riddle.worker_idx = 0;
+        
+        // Create fake event object
+        const fakeEvent = { data: riddle };
+        onmessage(fakeEvent);
+    } else {
+        let combo_idx = 0;
+        const tried_combos = {};
+        
+        for (let combo of k_combinations(my_cards, 8)) {
+            combo_idx += 1;
+            combo.sort();
+            let combo_id = combo.join(",");
+            
+            if (tried_combos[combo_id]) {
+                continue;
+            }
+            tried_combos[combo_id] = true;
+
+            let normal_attack_count = 0;
+            let concon_count = 0;
+            for (let i = 0; i < combo.length; i++) {
+                if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
+                    concon_count += 1;
+                }
+                if (swogi[combo[i]].name === "Normal Attack") {
+                    normal_attack_count += 1;
+                }
+                if (swogi[combo[i]].name === "Space Spiritual Field" && i > 5) {
+                    concon_count += 99;
+                }
+            }
+            
+            if (concon_count >= 3) {
+                continue;
+            }
+            
+            console.log("combo_idx: " + combo_idx);
+            console.log("concon_count: " + concon_count);
+
+            riddle.players[my_idx].cards = combo;
+            riddle.worker_idx = 0;
+            
+            // Create fake event object
+            const fakeEvent = { data: riddle };
+            //await new Promise(resolve => setTimeout(resolve, 0)) 
+            onmessage(fakeEvent);
+        }
+    }
+    
+    console.log("try_idx: " + riddle.try_idx);
+
+    // while(true) {
+    //     await new Promise(resolve => setTimeout(resolve, 1));
+    // }
+}
+
 riddles["99"] = async () => {
     const players = [{},{}];
     const my_idx = 1;
