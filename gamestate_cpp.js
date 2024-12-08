@@ -1,3 +1,10 @@
+# 1 "gamestate.js"
+# 1 "<built-in>" 1
+# 1 "<built-in>" 3
+# 417 "<built-in>" 3
+# 1 "<command line>" 1
+# 1 "<built-in>" 2
+# 1 "gamestate.js" 2
 const fs = require('fs');
 const process = require('process');
 const uf = require('@leeoniya/ufuzzy');
@@ -401,15 +408,14 @@ const DEBUFF_NAMES = [
     "indigestion",
 ];
 function is_debuff(attr_name) {
-    if (attr_name === "internal_injury") return true;
-    if (attr_name === "decrease_atk") return true;
-    if (attr_name === "weaken") return true;
-    if (attr_name === "flaw") return true;
-    if (attr_name === "entangle") return true;
-    if (attr_name === "wound") return true;
-    if (attr_name === "underworld") return true;
-    if (attr_name === "indigestion") return true;
-    return false;
+    return attr_name == "internal_injury" ||
+        attr_name == "decrease_atk" ||
+        attr_name == "weaken" ||
+        attr_name == "flaw" ||
+        attr_name == "entangle" ||
+        attr_name == "wound" ||
+        attr_name == "underworld" ||
+        attr_name == "indigestion";
 }
 const ACTIVATE_NAMES = ["activate_wood_spirit_stacks", "activate_fire_spirit_stacks", "activate_earth_spirit_stacks", "activate_metal_spirit_stacks", "activate_water_spirit_stacks"];
 function is_activate(attr_name) {
@@ -454,7 +460,9 @@ export class Player {
         this.damage_dealt_to_hp_by_this_card_atk = 0; // for stuff that keys off how much damage went through to hp for all attacks by this card
         this.ignore_def = 0;
         this.smash_def = 0;
-        this.guard_up = 0;
+
+
+
         this.bonus_atk_amt = 0; // card-specific bonus atk
         this.bonus_dmg_amt = 0; // card-specific bonus dmg
         this.bonus_rep_amt = 0; // card-specific bonus rep
@@ -550,7 +558,6 @@ export class Player {
         this.activate_metal_spirit_stacks = 0;
         this.activate_water_spirit_stacks = 0;
         this.penetrate = 0;
-        this.disable_penetrate_stacks = 0;
         this.force_of_water = 0;
         this.cosmos_seal_stacks = 0;
         this.wood_spirit_formation_stacks = 0;
@@ -564,6 +571,7 @@ export class Player {
         this.earth_spirit_combine_world_stacks = 0;
         this.def_lost = 0;
         this.metal_spirit_giant_tripod_stacks = 0;
+        this.disable_penetrate_stacks = 0;
         this.ultimate_world_formation_stacks = 0;
         this.five_elements_heavenly_marrow_rhythm_stacks = 0;
         this.different_five_elements = 0;
@@ -839,7 +847,9 @@ export class Player {
         this.pangu_axe_stacks = 0;
         this.kongtong_seal_stacks = 0;
         this.spirit_fusion_pot_stacks = 0;
-        this.ignore_guard_up = 0;
+
+
+
         this.heavenly_maiden_white_jade_ring_stacks = 0;
         this.prevent_anti_chase = 0;
         this.xuanming_forceage_formation_stacks = 0;
@@ -1195,6 +1205,7 @@ export class GameState {
             return false;
         }
         this.players[player_idx].cards[card_idx] = new_card_id;
+        this.log("player " + player_idx + " upgrades " + format_card(card_id) + " to " + format_card(new_card_id));
         return true;
     }
     try_downgrade_card(player_idx, card_idx) {
@@ -1209,6 +1220,7 @@ export class GameState {
             return false;
         }
         this.players[player_idx].cards[card_idx] = new_card_id;
+        this.log("player " + player_idx + " downgrades " + format_card(card_id) + " to " + format_card(new_card_id));
         return true;
     }
     do_pact_of_equilibrium(idx) {
@@ -1356,6 +1368,7 @@ export class GameState {
         this.start_of_game_setup();
         let i = 0;
         for (; i<n; i++) {
+            this.log("turn " + i + " begins");
             this.indent();
             if (i % 2 === 1) {
                 this.swap_players();
@@ -1365,6 +1378,7 @@ export class GameState {
                 this.swap_players();
             }
             this.unindent();
+            this.log("turn " + i + " ends");
             if (this.game_over) {
                 break;
             }
@@ -1377,14 +1391,17 @@ export class GameState {
         this.turns_taken = i;
         const winner_character_id = this.players[winner].character;
         const winner_character = CHARACTER_ID_TO_NAME[winner_character_id];
+        this.log("player " + winner + " (" + winner_character + ") wins");
     }
     sim_n_turns_zongzi(n) {
         this.start_of_game_setup();
         let i = 0;
         for (; i<n; i++) {
+            this.log("turn " + i + " begins");
             this.indent();
             this.sim_turn();
             this.unindent();
+            this.log("turn " + i + " ends");
             if (this.game_over) {
                 break;
             }
@@ -1397,12 +1414,14 @@ export class GameState {
         this.turns_taken = i;
         const winner_character_id = this.players[winner].character;
         const winner_character = CHARACTER_ID_TO_NAME[winner_character_id];
+        this.log("player " + winner + " (" + winner_character + ") wins");
     }
     do_action(arr) {
         // the actions list is like this: [["atk", 14], ["injured", ["regain_sword_intent"]]]
         // so we need to call this[arr[0]] passing in the rest of the array as arguments
         let ret = undefined;
         if (arr.length === 0) {
+            this.log("empty action list");
             return ret;
         }
         // if arr[0] is actually an array, then try calling do_action on all the elements of arr
@@ -1415,6 +1434,7 @@ export class GameState {
         let action_name = arr[0];
         let args = arr.slice(1);
         if (this[action_name] === undefined) {
+            this.log("action " + action_name + " is not defined");
             this.crash();
         }
         return this[action_name](...args);
@@ -1451,16 +1471,19 @@ export class GameState {
         const me = this.players[0];
         if (me.unrestrained_sword_clear_heart_stacks > 0) {
             this.players[0].unrestrained_sword_count += 1;
+            this.log("incremented unrestrained_sword_count to " + this.players[0].unrestrained_sword_count);
             this.reduce_idx_x_by_c(0, "unrestrained_sword_clear_heart_stacks", 1);
         }
         if (this.is_unrestrained_sword(card_id)) {
             this.players[0].unrestrained_sword_count += 1;
+            this.log("incremented unrestrained_sword_count to " + this.players[0].unrestrained_sword_count);
         }
     }
     do_sweet_zongzi_count(card_id) {
         const card = swogi[card_id];
         if (card.is_sweet) {
             this.players[0].sweet_zongzi_count += 1;
+            this.log("incremented sweet_zongzi_count to " + this.players[0].sweet_zongzi_count);
         }
     }
     do_alkaline_water_zongzi(card_id) {
@@ -1480,10 +1503,12 @@ export class GameState {
         // if this card has "Cloud Sword" in the name, increment cloud_sword_chain_count
         if (this.is_cloud_sword(card_id)) {
             me.cloud_sword_chain_count += 1;
+            this.log("incremented cloud_sword_chain_count to " + me.cloud_sword_chain_count);
             this.do_step_moon_into_cloud(card_id);
         } else {
             if (me.cloud_sword_chain_count > 0 && me.endurance_as_cloud_sea_stacks === 0) {
                 me.cloud_sword_chain_count = 0;
+                this.log("reset cloud_sword_chain_count to 0");
             }
         }
     }
@@ -1514,6 +1539,7 @@ export class GameState {
             return;
         }
         if (is_sword_formation(card_id)) {
+            this.log("Attacking for " + atk + " from emptiness sword formation.");
             this.atk(atk);
         }
     }
@@ -1532,6 +1558,7 @@ export class GameState {
         const dmg = stacks * this.players[0].qi;
         if (dmg > 0) {
             if (is_sword_formation(card_id) || is_spirit_sword(card_id)) {
+                this.log("Dealing " + dmg + " damage from beast spirit sword formation.");
                 this.deal_damage(dmg);
             }
         }
@@ -1546,6 +1573,7 @@ export class GameState {
             const atk = 3;
             if (is_add_physique(card_id)) {
                 for (let i=0; i<reps; i++) {
+                    this.log("Attacking for " + atk + " from stance of fierce attack.");
                     this.atk(atk);
                 }
             }
@@ -1559,6 +1587,7 @@ export class GameState {
                 return;
             }
             if (is_post_action(card_id)) {
+                this.log("Attacking for " + atk + " from hunter hunting hunter.");
                 this.atk(atk);
             }
         }
@@ -1570,6 +1599,7 @@ export class GameState {
                 return;
             }
             this.reduce_idx_x_by_c(0, "endless_sword_formation_stacks", 1);
+            this.log("Attacking for 5 from endless sword formation.");
             this.atk(5);
         }
     }
@@ -1581,6 +1611,7 @@ export class GameState {
             }
             const amt = me.observe_body_stacks;
             this.reduce_idx_x_by_c(0, "endless_sword_formation_stacks", amt);
+            this.log("Attacking for " + amt + " from observe body.");
             this.atk(amt);
         }
     }
@@ -1649,15 +1680,13 @@ export class GameState {
     }
     get_debuff_count(idx) {
         const me = this.players[idx];
-        let ret = 0;
-        ret += me.decrease_atk;
-        ret += me.internal_injury;
-        ret += me.wound;
-        ret += me.underworld;
-        ret += me.entangle;
-        ret += me.flaw;
-        ret += me.weaken;
-        return ret;
+        return me.decrease_atk +
+            me.internal_injury +
+            me.wound +
+            me.underworld +
+            me.entangle +
+            me.flaw +
+            me.weaken;
     }
     do_pre_crash_fist(card_id) {
         if (!this.is_crash_fist(card_id)) {
@@ -1722,6 +1751,7 @@ export class GameState {
         if (this.players[0].this_card_crash_fist_shocked_stacks > 0) {
             let atk_amt = 1;
             atk_amt += Math.floor(0.2 * this.players[0].hp_lost);
+            this.log("Attacking for " + atk_amt + " from crash fist - shocked effect.");
             this.atk(atk_amt);
         }
         this.players[0].this_card_crash_fist_shocked_stacks = 0;
@@ -1993,6 +2023,7 @@ export class GameState {
             if (me.agility >= 10 && me.chases < me.max_chases) {
                 me.this_card_chases += 1;
                 me.agility -= 10;
+                this.log("Spent 10 agility to chase. Agility is now " + me.agility);
             }
         }
         if (me.this_card_chases > 0 && me.chases < me.max_chases) {
@@ -2001,6 +2032,7 @@ export class GameState {
                 this.for_each_x_add_y("entangling_ancient_vine_stacks", "wound");
             } else {
                 me.chases += 1;
+                this.log("incremented chases to " + me.chases);
             }
         }
     }
@@ -2106,6 +2138,7 @@ export class GameState {
                 me.spirit_gather_citta_dharma_odd_gives_qi = !odd_gives_qi;
             }
             this.qi(qi_gain);
+            this.log("gained " + qi_gain + " qi from spirit_gather_citta_dharma_stacks");
         }
     }
     do_qi_gathering_merpeople_pearl() {
@@ -2234,6 +2267,7 @@ export class GameState {
     do_dark_star_bat() {
         if (this.players[0].dark_star_bat_stacks > 0) {
             if (this.players[0].damage_dealt_to_hp_by_atk > 0 && this.players[0].damage_dealt_to_hp_by_atk <= this.players[0].dark_star_bat_stacks) {
+                this.log("dark star bat triggers!!");
                 this.heal(this.players[0].damage_dealt_to_hp_by_atk);
             }
         }
@@ -2425,6 +2459,7 @@ export class GameState {
             const exising_id = this.players[0].cards[card_idx];
             const existing_upgrade_level = exising_id.substring(exising_id.length-1);
             const new_id = "60101" + existing_upgrade_level;
+            this.log("Nether Void Canine is replacing " + format_card(exising_id) + " with " + format_card(new_id));
             this.players[0].cards[card_idx] = new_id;
             this.reduce_idx_x_by_c(0, "nether_void_canine_stacks", 1);
         }
@@ -2603,9 +2638,11 @@ export class GameState {
                 return;
             }
             if (action_idx > 0) {
+                this.log("chase!!");
             }
             action_idx += 1;
             if (!this.can_play_a_card()) {
+                this.log("can't play any card :( converting slot 0 to normal");
                 me.can_play[0] = true;
                 me.next_card_index = 0;
                 me.cards[0] = "601011";
@@ -2658,6 +2695,7 @@ export class GameState {
                         qi_cost -= excess_qi;
                         let unbounded_qi_hp_cost = 3 * excess_qi;
                         let unbounded_qi_physique_cost = excess_qi;
+                        this.log("player 0 is spending " + unbounded_qi_hp_cost + " hp and " + unbounded_qi_physique_cost + " physique to play " + format_card(card_id));
                         this.reduce_idx_hp(0, unbounded_qi_hp_cost, true);
                         this.reduce_idx_x_by_c(0, "physique", unbounded_qi_physique_cost);
                     }
@@ -2665,10 +2703,12 @@ export class GameState {
             }
             if (me.qi < qi_cost) {
                 this.gain_qi_to_afford_card(card.gather_qi);
+                this.log("player 0 gained qi instead of playing " + format_card(card_id) + ". They now have " + me.qi + "/" + qi_cost + " qi");
             } else {
                 me.inspiration_stacks = 0;
                 if (qi_cost > 0) {
                     this.reduce_idx_x_by_c(0, "qi", qi_cost);
+                    this.log("player 0 spent " + qi_cost + " qi to play " + format_card(card_id));
                 }
                 if (hp_cost !== undefined) {
                     if (hp_cost > 0) {
@@ -2678,23 +2718,27 @@ export class GameState {
                             this.reduce_idx_hp(0, hp_cost, true);
                         }
                     }
+                    this.log("player 0 spent " + hp_cost + " hp to play " + format_card(card_id));
                     // bounce is consumed by spending 0 hp to play mountain cleaving palms
                     // but it is not used when paying hp via unbounded qi
                     if (me.crash_fist_bounce_stacks > 0 || me.crash_fist_return_to_xuan_stacks > 0) {
                         if (this.is_crash_fist(card_id)) {
                             if (me.crash_fist_bounce_stacks > 0) {
                                 this.heal(hp_cost);
+                                this.log("player 0 healed " + hp_cost + " hp from crash fist bounce");
                                 if (swogi[card_id].name !== "Crash Fist - Continue") {
                                     me.crash_fist_bounce_stacks = 0;
                                 }
                             }
                             if (me.crash_fist_return_to_xuan_stacks > 0) {
                                 this.heal(hp_cost);
+                                this.log("player 0 healed " + hp_cost + " hp from crash fist return to xuan");
                             }
                         }
                     }
                 }
                 if (hp_cost === undefined && qi_cost === 0) {
+                    this.log("player 0 is playing " + format_card(card_id));
                 }
                 const card_idx = me.next_card_index;
                 this.do_finishing_touch(card_idx);
@@ -2712,6 +2756,7 @@ export class GameState {
                 if (me.prevent_anti_chase > 0) {
                     me.max_chases = old_max_chases;
                 }
+                this.log("player 0 finished playing " + card.name);
                 this.advance_next_card_index();
                 this.do_shadow_owl_rabbit_chase();
                 this.do_five_elements_heavenly_marrow_rhythm_chase();
@@ -2744,6 +2789,7 @@ export class GameState {
     }
     reduce_idx_def(idx, amt) {
         if (amt < 0) {
+            this.log("error: amt is negative: " + amt);
             this.crash();
         }
         if (amt === 0) {
@@ -2753,6 +2799,7 @@ export class GameState {
         const reduced_amt = Math.min(amt, me.def);
         me.def_lost += reduced_amt;
         me.def -= reduced_amt;
+        this.log("reduced player " + idx + " def by " + reduced_amt + " to " + me.def);
         if (me.earth_spirit_combine_world_stacks > 0) {
             me.earth_spirit_combine_world_stacks -= 1;
             //me.def += reduced_amt;
@@ -2765,21 +2812,15 @@ export class GameState {
     }
     reduce_idx_hp(idx, dmg, is_cost, ignore_guard_up) {
         if (dmg < 0) {
+            this.log("error: dmg is negative: " + dmg);
             this.crash();
         }
         if (dmg === 0) {
             return 0;
         }
         const me = this.players[idx];
-        if (me.guard_up > 0 && !is_cost && !ignore_guard_up) {
-            me.guard_up -= 1;
-            return 0;
-        }
-        if (me.covert_shift_stacks > 0 && !is_cost) {
-            me.covert_shift_stacks -= 1;
-            this.increase_idx_hp(idx, dmg);
-            return 0;
-        }
+
+# 2830 "gamestate.js"
         if (me.leaf_shield_flower_stacks > 0 && !is_cost) {
             let dmg_to_def = Math.floor(dmg / 2);
             dmg_to_def = Math.min(dmg_to_def, me.def);
@@ -2788,11 +2829,13 @@ export class GameState {
         }
         me.hp_lost += dmg;
         me.hp -= dmg;
+        this.log("reduced player " + idx +" hp by " + dmg + " to " + me.hp);
         if (me.hp <= 0 && me.pangu_axe_stacks > 0) {
+            this.log("pangu axe: reduced player " + idx + " destiny by " + me.pangu_axe_stacks + " to " + me.destiny);
             me.destiny -= me.pangu_axe_stacks;
             me.pangu_axe_stacks = 0;
         }
-        if (me.elusive_footwork_stacks > 0 && idx === 0 && !me.elusive_footwork_triggered) {
+        if (idx === 0 && me.elusive_footwork_stacks > 0 && !me.elusive_footwork_triggered) {
             me.elusive_footwork_triggered = true;
             this.add_c_of_x(1, "qi");
             this.add_c_of_x(1, "agility");
@@ -2821,6 +2864,7 @@ export class GameState {
     }
     reduce_idx_max_hp(idx, amt) {
         if (amt < 0) {
+            this.log("error: amt is negative: " + amt);
             this.crash();
         }
         if (amt === 0) {
@@ -2834,15 +2878,19 @@ export class GameState {
         me.max_hp -= reduced_amt;
         me.max_hp_lost += reduced_amt;
         if (me.hp > me.max_hp) {
+            this.log("reducing hp to max_hp of " + me.max_hp);
             me.hp = me.max_hp;
         }
         if (me.hp <= 0 && me.pangu_axe_stacks > 0) {
+            this.log("pangu axe: reduced player " + idx + " destiny by " + me.pangu_axe_stacks + " to " + me.destiny);
             me.destiny -= me.pangu_axe_stacks;
             me.pangu_axe_stacks = 0;
         }
+        this.log("reduced player " + idx + " max_hp by " + amt + " to " + me.max_hp);
     }
     reduce_idx_force(idx, amt) {
         if (amt < 0) {
+            this.log("error: amt is negative: " + amt);
             this.crash();
         }
         if (amt === 0) {
@@ -2858,6 +2906,7 @@ export class GameState {
             const dmg = me.overwhelming_power_stacks * reduced_amt;
             this.deal_damage_inner(dmg, false, idx);
         }
+        this.log("reduced player " + idx + " force by " + reduced_amt + " to " + me.force);
         const endless_force_stacks = me.endless_force_stacks;
         if (endless_force_stacks > 0) {
             this.increase_idx_x_by_c(idx, "force", endless_force_stacks);
@@ -2874,6 +2923,7 @@ export class GameState {
             }
         }
         me.max_hp += amt;
+        this.log("increased player " + idx + " max_hp by " + amt + " to " + me.max_hp);
     }
     increase_idx_hp(idx, amt, heal_while_dead) {
         const p0 = this.players[0]
@@ -2891,9 +2941,11 @@ export class GameState {
         const me = this.players[idx];
         const prev_hp = me.hp;
         if (prev_hp <= 0 && !heal_while_dead) {
+            this.log("refusing to heal a dead player");
             return 0;
         }
         if (me.metal_spirit_chokehold_stacks > 0) {
+            this.log("refusing to heal a player with metal_spirit_chokehold_stacks");
             return 0;
         }
         if (me.has_rejuvenation) {
@@ -2938,6 +2990,7 @@ export class GameState {
                 this.increase_idx_def(idx, 1);
             }
         }
+        this.log("healed " + amt + " hp. Went from " + prev_hp + " to " + me.hp);
     }
     reduce_my_hp(dmg) {
         return this.reduce_idx_hp(0, dmg, false);
@@ -2967,6 +3020,7 @@ export class GameState {
             this.deal_damage_inner(dmg_amt, false, idx);
         }
         me.def += amt;
+        this.log("gained " + amt + " def. Now have " + me.def + " def");
     }
     increase_idx_penetrate(idx, amt) {
         if (amt === 0) {
@@ -2975,6 +3029,7 @@ export class GameState {
         const me = this.players[idx];
         amt += me.kun_wu_metal_ring_stacks;
         me.penetrate += amt;
+        this.log("gained " + amt + " penetrate. Now have " + me.penetrate + " penetrate");
     }
     increase_idx_qi(idx, amt) {
         if (amt === 0) {
@@ -3003,6 +3058,7 @@ export class GameState {
             this.deal_damage_inner(dmg, false, idx);
         }
         me.qi += amt;
+        this.log("gained " + amt + " qi. Now have " + me.qi + " qi");
     }
     increase_idx_force(idx, amt) {
         if (amt === 0) {
@@ -3015,6 +3071,7 @@ export class GameState {
             me.force = me.max_force;
             this.increase_idx_def(idx, excess_amt);
         }
+        this.log("gained " + amt + " force. Now have " + me.force + " force");
     }
     increase_idx_activate(idx, x, amt) {
         if (amt === 0) {
@@ -3055,6 +3112,7 @@ export class GameState {
             }
         }
         me[x] += amt;
+        this.log("gained " + amt + " " + x + ". Now have " + me[x] + " " + x);
     }
     increase_idx_physique(idx, amt) {
         if (amt === 0) {
@@ -3064,6 +3122,7 @@ export class GameState {
         const prev = me.physique;
         me.physique += amt;
         me.physique_gained += amt;
+        this.log("gained " + amt + " physique. Now have " + me.physique + " physique");
         this.increase_idx_x_by_c(idx, "max_hp", amt);
         if (me.mind_body_resonance_stacks > 0) {
             const prev_bonus_def_amt = me.bonus_def_amt;
@@ -3096,6 +3155,7 @@ export class GameState {
             const dmg = amt * me.star_moon_hexagram_fan_stacks;
             this.deal_damage_inner(dmg, false, idx);
         }
+        this.log("gained " + amt + " hexagram. Now have " + me.hexagram + " hexagram");
     }
     increase_idx_star_power(idx, amt) {
         if (amt === 0) {
@@ -3107,6 +3167,7 @@ export class GameState {
             const dmg = amt * me.star_moon_hexagram_fan_stacks;
             this.deal_damage_inner(dmg, false, idx);
         }
+        this.log("gained " + amt + " star power. Now have " + me.star_power + " star power");
     }
     increase_idx_debuff(idx, x, amt) {
         if (amt === 0) {
@@ -3142,6 +3203,7 @@ export class GameState {
             }
         }
         me[x] += amt;
+        this.log("gained " + amt + " " + x + ". Now have " + me[x] + " " + x);
     }
     increase_idx_x_by_c(idx, x, c) {
         // TODO: I had this near the bottom.
@@ -3151,6 +3213,7 @@ export class GameState {
         }
         const me = this.players[idx];
         if (c < 0) {
+            this.log("error: c is negative: " + c);
             this.crash();
         }
         if (x === "hp") {
@@ -3187,6 +3250,7 @@ export class GameState {
             return this.increase_idx_debuff(idx, x, c);
         }
         me[x] += c;
+        this.log("gained " + c + " " + x + ". Now have " + me[x] + " " + x);
     }
     reduce_idx_x_by_c(idx, x, c) {
         // TODO: I had this near the bottom.
@@ -3208,6 +3272,7 @@ export class GameState {
             return this.reduce_idx_force(idx, c);
         }
         if (c < 0) {
+            this.log("error: c is negative: " + c);
             this.crash();
         }
         const prev_x = me[x];
@@ -3216,6 +3281,7 @@ export class GameState {
             me[x] = 0;
         }
         if (prev_x !== me[x] || c !== 1) {
+            this.log("lost " + c + " " + x + ". Now have " + me[x] + " " + x);
         }
     }
     deal_damage_inner(dmg, is_atk, my_idx) {
@@ -3244,9 +3310,11 @@ export class GameState {
             if (me.sword_intent > 0) {
                 if (me.sword_intent_flow_mode) {
                     if (me.this_card_sword_intent < me.sword_intent) {
+                        this.log("in sword intent flow mode, using " + me.sword_intent + " sword intent without consuming");
                         me.this_card_sword_intent = me.sword_intent;
                     }
                 } else {
+                    this.log("consuming " + me.sword_intent + " sword intent");
                     me.this_card_sword_intent += me.sword_intent;
                     this.reduce_idx_x_by_c(my_idx, "sword_intent", me.sword_intent);
                 }
@@ -3320,6 +3388,7 @@ export class GameState {
         dmg = Math.floor(dmg * pct_multiplier / 100);
         dmg = Math.max(min_dmg, dmg);
         if (enemy.def < 0) {
+            this.log("error: def is negative: " + enemy.def);
             this.crash();
         }
         let damage_to_def = 0;
@@ -3342,20 +3411,22 @@ export class GameState {
         this.reduce_idx_x_by_c(enemy_idx, "def", damage_to_def);
         let ignore_guard_up = false;
         if (is_atk) {
-            let can_wound = damage_to_hp > 0;
-            let usable_guard_up = enemy.guard_up;
-            if (me.ignore_guard_up > 0) {
-                ignore_guard_up = true;
-                me.ignore_guard_up -= 1;
-                usable_guard_up = 0;
-            }
-            can_wound = can_wound && usable_guard_up === 0;
-            can_wound = can_wound && enemy.covert_shift_stacks === 0;
+
+            let usable_guard_up = 0;
+
+# 3432 "gamestate.js"
+            let can_wound = damage_to_hp > 0
+
+
+
+                && enemy.covert_shift_stacks === 0
+                ;
             can_wound = can_wound || me.fire_flame_blade_stacks > 0;
             if (me.disable_penetrate_stacks > 0) {
                 me.disable_penetrate_stacks -= 1;
             } else if (me.penetrate > 0) {
                 if (can_wound) {
+                    this.log("penetrating " + me.penetrate + " damage");
                     damage_to_hp += me.penetrate;
                     this.reduce_c_of_x(me.penetrate, "penetrate");
                 }
@@ -3560,6 +3631,7 @@ export class GameState {
         while (idx >= 0 && idx < this.players[0].cards.length) {
             const card_id = this.players[0].cards[idx];
             if (is_sword_formation(card_id)) {
+                this.log("retriggering " + format_card(card_id));
                 this.trigger_card(card_id, idx);
                 return;
             }
@@ -3610,30 +3682,9 @@ export class GameState {
             if (my_debuff_names.length === 0) {
                 break;
             }
-            /*
-            // if internal injury is active, reduce it by c
-            if (this.players[0].internal_injury > 0) {
-                this.reduce_idx_x_by_c(0, "internal_injury", c);
-                // get the index of internal injury
-                const debuff_idx = my_debuff_names.indexOf("internal_injury");
-                if (this.players[0].internal_injury === 0) {
-                    my_debuff_names.splice(debuff_idx, 1);
-                    my_debuff_stack_counts.splice(debuff_idx, 1);
-                }
-                continue;
-            }
-            // if flaw is active, reduce it by c
-            if (this.players[0].flaw > 0) {
-                this.reduce_idx_x_by_c(0, "flaw", c);
-                // get the index of flaw
-                const debuff_idx = my_debuff_names.indexOf("flaw");
-                if (this.players[0].flaw === 0) {
-                    my_debuff_names.splice(debuff_idx, 1);
-                    my_debuff_stack_counts.splice(debuff_idx, 1);
-                }
-                continue;
-            }
-            */
+            
+# 3722 "gamestate.js"
+              
             let debuff_idx = Math.floor(Math.random() * my_debuff_names.length);
             let debuff_name = my_debuff_names[debuff_idx];
             this.reduce_idx_x_by_c(0, debuff_name, c);
@@ -3700,6 +3751,7 @@ export class GameState {
         if (me.destiny <= 0) {
             me.hp = 0;
             this.game_over = true;
+            this.log("player " + idx + " has died of destiny loss");
             return true;
         }
         while (me.hp <= 0) {
@@ -3725,6 +3777,7 @@ export class GameState {
                 me.just_revived = true;
             } else {
                 this.game_over = true;
+                this.log("player " + idx + " has died of hp loss");
                 return true;
             }
         }
@@ -3974,6 +4027,7 @@ export class GameState {
         if (this.if_earth_spirit()) {
             const def_reduction = Math.ceil(this.players[0].def * 0.5);
             atk += def_reduction * def_multiplier;
+            this.log("landslide: " + def_reduction + " def reduction");
             this.reduce_c_of_x(def_reduction, "def");
         }
         this.atk(atk);
@@ -4202,13 +4256,13 @@ export class GameState {
     }
     idx_has_debuff(idx) {
         const me = this.players[idx];
-        if (me.internal_injury > 0) return true;
-        if (me.weaken > 0) return true;
-        if (me.flaw > 0) return true;
-        if (me.decrease_atk > 0) return true;
-        if (me.entangle > 0) return true;
-        if (me.wound > 0) return true;
-        if (me.underworld > 0) return true;
+        return me.internal_injury > 0 ||
+            me.weaken > 0 ||
+            me.flaw > 0 ||
+            me.decrease_atk > 0 ||
+            me.entangle > 0 ||
+            me.wound > 0 ||
+            me.underworld > 0;
     }
     if_no_debuff() {
         return !this.idx_has_debuff(0);
@@ -4477,23 +4531,9 @@ export class GameState {
         let c_pct_x = Math.floor(this.players[0][x] * c / 100);
         let convert_amt = Math.min(debuff_amt, c_pct_x);
         this.reduce_random_debuff_by_c_n_times(1, convert_amt);
-        /*
-        // first reduce weaken
-        let weaken_amt = Math.min(this.players[0].weaken, convert_amt);
-        let other_amt = convert_amt - weaken_amt;
-        this.reduce_c_of_x(weaken_amt, "weaken");
-        // then reduce decrease_atk
-        const keep_decrease_atk_amt = 1;
-        const max_decrease_atk_reduction = Math.max(this.players[0].decrease_atk - keep_decrease_atk_amt, 0);
-        let decrease_atk_amt = Math.min(max_decrease_atk_reduction, other_amt);
-        other_amt -= decrease_atk_amt;
-        this.reduce_c_of_x(decrease_atk_amt, "decrease_atk");
-        // then reduce internal injury
-        let internal_injury_amt = Math.min(this.players[0].internal_injury, other_amt);
-        other_amt -= internal_injury_amt;
-        this.reduce_c_of_x(internal_injury_amt, "internal_injury");
-        this.reduce_random_debuff_by_c_n_times(1, other_amt);
-        /**/
+        
+# 4585 "gamestate.js"
+            
         this.add_c_of_x(convert_amt, y);
     }
     do_cloud_sword_dragon_spring(finishing_touch_amt) {
@@ -4538,6 +4578,7 @@ export class GameState {
         for (let idx = 0; idx < lim; idx++) {
             const card_id = this.players[0].cards[idx];
             if (this.players[0].can_post_action[idx]) {
+                this.log("retriggering " + format_card(card_id));
                 this.trigger_card(card_id, idx);
             }
         }
@@ -4546,6 +4587,7 @@ export class GameState {
     trigger_next_enemy_card() {
         const idx = this.players[1].next_card_index;
         const card_id = this.players[1].cards[idx];
+        this.log("triggering enemy card: " + format_card(card_id));
         this.trigger_card(card_id, this.players[0].currently_triggering_card_idx);
     }
     trigger_next_card() {
@@ -4759,3 +4801,4 @@ export function guess_character(player) {
 }
 
 //module.exports = { GameState, card_name_to_id_fuzzy, swogi };
+

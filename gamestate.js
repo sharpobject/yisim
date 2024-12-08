@@ -102,7 +102,7 @@ const valid_markings_list = ["no_marking","el", "fu", "mu", "pa", "fm", "pm", "f
 const valid_markings = new Set(valid_markings_list);
 function get_marking(card_id) {
     const prefix = card_id.substring(0, 2);
-    var marking = PREFIX_TO_MARKING[prefix];
+    let marking = PREFIX_TO_MARKING[prefix];
     if (marking === "check") {
         const card = swogi[card_id];
         if (card.character !== undefined) {
@@ -401,14 +401,15 @@ const DEBUFF_NAMES = [
     "indigestion",
 ];
 function is_debuff(attr_name) {
-    return attr_name == "internal_injury" ||
-        attr_name == "decrease_atk" ||
-        attr_name == "weaken" ||
-        attr_name == "flaw" ||
-        attr_name == "entangle" ||
-        attr_name == "wound" ||
-        attr_name == "underworld" ||
-        attr_name == "indigestion";
+    if (attr_name === "internal_injury") return true;
+    if (attr_name === "decrease_atk") return true;
+    if (attr_name === "weaken") return true;
+    if (attr_name === "flaw") return true;
+    if (attr_name === "entangle") return true;
+    if (attr_name === "wound") return true;
+    if (attr_name === "underworld") return true;
+    if (attr_name === "indigestion") return true;
+    return false;
 }
 const ACTIVATE_NAMES = ["activate_wood_spirit_stacks", "activate_fire_spirit_stacks", "activate_earth_spirit_stacks", "activate_metal_spirit_stacks", "activate_water_spirit_stacks"];
 function is_activate(attr_name) {
@@ -549,6 +550,7 @@ export class Player {
         this.activate_metal_spirit_stacks = 0;
         this.activate_water_spirit_stacks = 0;
         this.penetrate = 0;
+        this.disable_penetrate_stacks = 0;
         this.force_of_water = 0;
         this.cosmos_seal_stacks = 0;
         this.wood_spirit_formation_stacks = 0;
@@ -562,7 +564,6 @@ export class Player {
         this.earth_spirit_combine_world_stacks = 0;
         this.def_lost = 0;
         this.metal_spirit_giant_tripod_stacks = 0;
-        this.disable_penetrate_stacks = 0;
         this.ultimate_world_formation_stacks = 0;
         this.five_elements_heavenly_marrow_rhythm_stacks = 0;
         this.different_five_elements = 0;
@@ -1669,13 +1670,15 @@ export class GameState {
     }
     get_debuff_count(idx) {
         const me = this.players[idx];
-        return me.decrease_atk +
-            me.internal_injury +
-            me.wound +
-            me.underworld +
-            me.entangle +
-            me.flaw +
-            me.weaken;
+        let ret = 0;
+        ret += me.decrease_atk;
+        ret += me.internal_injury;
+        ret += me.wound;
+        ret += me.underworld;
+        ret += me.entangle;
+        ret += me.flaw;
+        ret += me.weaken;
+        return ret;
     }
     do_pre_crash_fist(card_id) {
         if (!this.is_crash_fist(card_id)) {
@@ -2812,53 +2815,53 @@ export class GameState {
             me.guard_up -= 1;
             this.log("prevented " + dmg + " damage to hp with guard up. " + me.guard_up + " guard up remaining");
             return 0;
-        } else if (me.covert_shift_stacks > 0 && !is_cost) {
+        }
+        if (me.covert_shift_stacks > 0 && !is_cost) {
             me.covert_shift_stacks -= 1;
             this.log("reversed " + dmg + " damage to hp with covert shift. " + me.covert_shift_stacks + " covert shift remaining");
             this.increase_idx_hp(idx, dmg);
             return 0;
-        } else {
-            if (me.leaf_shield_flower_stacks > 0 && !is_cost) {
-                let dmg_to_def = Math.floor(dmg / 2);
-                dmg_to_def = Math.min(dmg_to_def, me.def);
-                this.reduce_idx_def(idx, dmg_to_def);
-                dmg -= dmg_to_def;
-            }
-            me.hp_lost += dmg;
-            me.hp -= dmg;
-            this.log("reduced player " + idx +" hp by " + dmg + " to " + me.hp);
-            if (me.hp <= 0 && me.pangu_axe_stacks > 0) {
-                this.log("pangu axe: reduced player " + idx + " destiny by " + me.pangu_axe_stacks + " to " + me.destiny);
-                me.destiny -= me.pangu_axe_stacks;
-                me.pangu_axe_stacks = 0;
-            }
-            if (idx === 0 && me.elusive_footwork_stacks > 0 && !me.elusive_footwork_triggered) {
-                me.elusive_footwork_triggered = true;
-                this.add_c_of_x(1, "qi");
-                this.add_c_of_x(1, "agility");
-            }
-            if (me.styx_night_footwork_stacks > 0 && !me.styx_night_footwork_triggered) {
-                me.styx_night_footwork_triggered = true;
-                this.increase_idx_x_by_c(idx, "qi", 1);
-                this.increase_idx_x_by_c(idx, "agility", 1);
-            }
-            if (me.bad_omen_stacks > 0) {
-                this.reduce_idx_x_by_c(idx, "bad_omen_stacks", 1);
-                this.increase_idx_x_by_c(idx, "wound", 1);
-            }
-            for (let i=0; i<me.birdie_wind_stacks; i++) {
-                this.increase_idx_def(idx, 1);
-            }
-            if (me.frozen_snow_lotus_stacks > 0) {
-                this.reduce_idx_x_by_c(idx, "frozen_snow_lotus_stacks", 1);
-                this.increase_idx_def(idx, dmg);
-            }
-            if (me.xuanming_forceage_formation_stacks > 0) {
-                this.reduce_idx_x_by_c(idx, "xuanming_forceage_formation_stacks", 1);
-                this.increase_idx_x_by_c(idx, "increase_atk", 1);
-            }
-            return dmg;
         }
+        if (me.leaf_shield_flower_stacks > 0 && !is_cost) {
+            let dmg_to_def = Math.floor(dmg / 2);
+            dmg_to_def = Math.min(dmg_to_def, me.def);
+            this.reduce_idx_def(idx, dmg_to_def);
+            dmg -= dmg_to_def;
+        }
+        me.hp_lost += dmg;
+        me.hp -= dmg;
+        this.log("reduced player " + idx +" hp by " + dmg + " to " + me.hp);
+        if (me.hp <= 0 && me.pangu_axe_stacks > 0) {
+            this.log("pangu axe: reduced player " + idx + " destiny by " + me.pangu_axe_stacks + " to " + me.destiny);
+            me.destiny -= me.pangu_axe_stacks;
+            me.pangu_axe_stacks = 0;
+        }
+        if (me.elusive_footwork_stacks > 0 && idx === 0 && !me.elusive_footwork_triggered) {
+            me.elusive_footwork_triggered = true;
+            this.add_c_of_x(1, "qi");
+            this.add_c_of_x(1, "agility");
+        }
+        if (me.styx_night_footwork_stacks > 0 && !me.styx_night_footwork_triggered) {
+            me.styx_night_footwork_triggered = true;
+            this.increase_idx_x_by_c(idx, "qi", 1);
+            this.increase_idx_x_by_c(idx, "agility", 1);
+        }
+        if (me.bad_omen_stacks > 0) {
+            this.reduce_idx_x_by_c(idx, "bad_omen_stacks", 1);
+            this.increase_idx_x_by_c(idx, "wound", 1);
+        }
+        for (let i=0; i<me.birdie_wind_stacks; i++) {
+            this.increase_idx_def(idx, 1);
+        }
+        if (me.frozen_snow_lotus_stacks > 0) {
+            this.reduce_idx_x_by_c(idx, "frozen_snow_lotus_stacks", 1);
+            this.increase_idx_def(idx, dmg);
+        }
+        if (me.xuanming_forceage_formation_stacks > 0) {
+            this.reduce_idx_x_by_c(idx, "xuanming_forceage_formation_stacks", 1);
+            this.increase_idx_x_by_c(idx, "increase_atk", 1);
+        }
+        return dmg;
     }
     reduce_idx_max_hp(idx, amt) {
         if (amt < 0) {
@@ -3407,15 +3410,17 @@ export class GameState {
             damage_to_hp = dmg - damage_to_def;
         }
         this.reduce_idx_x_by_c(enemy_idx, "def", damage_to_def);
-        var ignore_guard_up = false;
+        let ignore_guard_up = false;
         if (is_atk) {
-            var usable_guard_up = enemy.guard_up;
+            let can_wound = damage_to_hp > 0;
+            let usable_guard_up = enemy.guard_up;
             if (me.ignore_guard_up > 0) {
                 ignore_guard_up = true;
                 me.ignore_guard_up -= 1;
                 usable_guard_up = 0;
             }
-            let can_wound = damage_to_hp > 0 && usable_guard_up === 0 && enemy.covert_shift_stacks === 0;
+            can_wound = can_wound && usable_guard_up === 0;
+            can_wound = can_wound && enemy.covert_shift_stacks === 0;
             can_wound = can_wound || me.fire_flame_blade_stacks > 0;
             if (me.disable_penetrate_stacks > 0) {
                 me.disable_penetrate_stacks -= 1;
@@ -4272,13 +4277,13 @@ export class GameState {
     }
     idx_has_debuff(idx) {
         const me = this.players[idx];
-        return me.internal_injury > 0 ||
-            me.weaken > 0 ||
-            me.flaw > 0 ||
-            me.decrease_atk > 0 ||
-            me.entangle > 0 ||
-            me.wound > 0 ||
-            me.underworld > 0;
+        if (me.internal_injury > 0) return true;
+        if (me.weaken > 0) return true;
+        if (me.flaw > 0) return true;
+        if (me.decrease_atk > 0) return true;
+        if (me.entangle > 0) return true;
+        if (me.wound > 0) return true;
+        if (me.underworld > 0) return true;
     }
     if_no_debuff() {
         return !this.idx_has_debuff(0);
@@ -4493,7 +4498,7 @@ export class GameState {
         }
     }
     activate_next_slots(n) {
-        var idx = this.players[0].currently_triggering_card_idx;
+        let idx = this.players[0].currently_triggering_card_idx;
         for (let i=0; i<n; i++) {
             idx = this.get_next_idx(idx);
             const id = this.players[0].cards[idx];
