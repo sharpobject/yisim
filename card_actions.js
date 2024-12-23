@@ -11112,6 +11112,27 @@ card_actions["914013"] = (game) => {
     }
 }
 
+// Contemplate Spirits Vitality Rhythm
+card_actions["914021"] = (game) => {
+    game.sword_intent(3);
+    game.add_c_of_x(18, "max_hp");
+    game.for_each_x_add_c_y("sword_intent", 2, "hp");
+}
+
+// 914022
+card_actions["914022"] = (game) => {
+    game.sword_intent(4);
+    game.add_c_of_x(24, "max_hp");
+    game.for_each_x_add_c_y("sword_intent", 2, "hp");
+}
+
+// 914023
+card_actions["914023"] = (game) => {
+    game.sword_intent(5);
+    game.add_c_of_x(30, "max_hp");
+    game.for_each_x_add_c_y("sword_intent", 2, "hp");
+}
+
 // Cloud Sword - Dragon Spring
 card_actions["915011"] = (game) => {
     game.do_cloud_sword_dragon_spring(2);
@@ -11382,6 +11403,33 @@ card_actions["924023"] = (game) => {
     game.do_thousand_star_explosion(6);
 }
 
+// Thunderbolt Tune
+card_actions["924031"] = (game) => {
+    game.add_c_of_x(10, "max_hp");
+    game.heal(10);
+    game.continuous();
+    game.add_c_of_x(10, "thunderbolt_tune_stacks");
+    game.add_enemy_c_of_x(10, "thunderbolt_tune_stacks");
+}
+
+// 924032
+card_actions["924032"] = (game) => {
+    game.add_c_of_x(15, "max_hp");
+    game.heal(15);
+    game.continuous();
+    game.add_c_of_x(12, "thunderbolt_tune_stacks");
+    game.add_enemy_c_of_x(12, "thunderbolt_tune_stacks");
+}
+
+// 924033
+card_actions["924033"] = (game) => {
+    game.add_c_of_x(20, "max_hp");
+    game.heal(20);
+    game.continuous();
+    game.add_c_of_x(14, "thunderbolt_tune_stacks");
+    game.add_enemy_c_of_x(14, "thunderbolt_tune_stacks");
+}
+
 // Ultimate Polaris Hexagram Base
 card_actions["925011"] = (game) => {
     game.become_star_point(0);
@@ -11493,6 +11541,84 @@ card_actions["925052"] = (game) => {
 // 925053
 card_actions["925053"] = (game) => {
 
+}
+
+// Spiritual Hunter
+card_actions["925061"] = (game) => {
+
+}
+
+// 925062
+card_actions["925062"] = (game) => {
+
+}
+
+// 925063
+card_actions["925063"] = (game) => {
+
+}
+
+// Hexagrams Generating Evils
+card_actions["925071"] = (game) => {
+
+}
+
+// 925072
+card_actions["925072"] = (game) => {
+
+}
+
+// 925073
+card_actions["925073"] = (game) => {
+
+}
+
+// Entangling Thornbush
+card_actions["925081"] = (game) => {
+
+}
+
+// 925082
+card_actions["925082"] = (game) => {
+
+}
+
+// 925083
+card_actions["925083"] = (game) => {
+
+}
+
+// Astral Move - Jump
+card_actions["925091"] = (game) => {
+    for (let i = 0; i < 2; i++) {
+        game.atk(2);
+    }
+    game.chase();
+    if (game.if_star_point()) {
+        game.add_c_of_x(2, "astral_move_jump_stacks");
+    }
+}
+
+// 925092
+card_actions["925092"] = (game) => {
+    for (let i = 0; i < 2; i++) {
+        game.atk(2);
+    }
+    game.chase();
+    if (game.if_star_point()) {
+        game.add_c_of_x(3, "astral_move_jump_stacks");
+    }
+}
+
+// 925093
+card_actions["925093"] = (game) => {
+    for (let i = 0; i < 2; i++) {
+        game.atk(3);
+    }
+    game.chase();
+    if (game.if_star_point()) {
+        game.add_c_of_x(4, "astral_move_jump_stacks");
+    }
 }
 
 // Heavenly Maiden White Jade Ring

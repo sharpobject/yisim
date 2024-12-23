@@ -300,7 +300,9 @@ for (let i=0; i<keys.length; i++) {
         is_sweet: is_sweet,
     };
     swogi[card_id] = card;
-    card.marking = get_marking(card_id);
+    if (card.marking === undefined) {
+        card.marking = get_marking(card_id);
+    }
     Object.freeze(card);
 }
 is_unrestrained_sword = function(card_id) {
@@ -846,6 +848,8 @@ export class Player {
         this.xuanming_regen_tune_heal_stacks = 0;
         this.xuanming_regen_tune_hurt_stacks = 0;
         this.xuanming_recurring_hp = 0;
+        this.thunderbolt_tune_stacks = 0;
+        this.astral_move_jump_stacks = 0;
         // merpeople pearls
         this.qi_gathering_merpeople_pearl_stacks = 0;
         this.crystallized_merpeople_pearl_stacks = 0;
@@ -2164,6 +2168,14 @@ export class GameState {
             this.reduce_idx_hp(0, me.xuanming_regen_tune_hurt_stacks);
         }
     }
+    do_thunderbolt_tune() {
+        const amt = this.players[0].thunderbolt_tune_stacks;
+        if (amt > 0) {
+            if (this.if_c_pct(10)) {
+                this.deal_damage(amt);
+            }
+        }
+    }
     do_internal_injury(idx) {
         const me = this.players[idx];
         if (me.internal_injury > 0) {
@@ -2542,6 +2554,26 @@ export class GameState {
             this.do_opening(me.next_card_index);
             this.advance_next_card_index();
         }
+        const jump_amt = me.astral_move_jump_stacks;
+        if (jump_amt > 0) {
+            this.reduce_idx_x_by_c(0, "astral_move_jump_stacks", jump_amt);
+            let idx_to_which_to_skip = me.next_card_index;
+            let found = false;
+            for (let i=0; i < jump_amt; i++) {
+                const card_id = me.cards[idx_to_which_to_skip];
+                if (is_astral_move(card_id)) {
+                    found = true;
+                    break;
+                }
+                idx_to_which_to_skip = this.get_next_playable_idx(idx_to_which_to_skip);
+            }
+            if (found) {
+                while (me.next_card_index != idx_to_which_to_skip) {
+                    this.do_opening(me.next_card_index);
+                    this.advance_next_card_index();
+                }
+            }
+        };
     }
     sim_turn() {
         const me = this.players[0];
@@ -2734,6 +2766,7 @@ export class GameState {
         this.do_force_of_water();
         this.do_hard_bamboo();
         this.do_xuanming_regen_tune();
+        this.do_thunderbolt_tune();
         this.reduce_idx_x_by_c(0, "entangle", 1);
         this.reduce_idx_x_by_c(0, "flaw", 1);
         this.reduce_idx_x_by_c(0, "weaken", 1);

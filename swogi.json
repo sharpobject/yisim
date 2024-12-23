@@ -10888,6 +10888,28 @@
 				["atk", 9]]]
 		]
 	},
+	"914021": {
+		"name": "Contemplate Spirits Vitality Rhythm",
+		"actions": [
+			["sword_intent", 3],
+			["add_c_of_x", 18, "max_hp"],
+			["for_each_x_add_c_y", "sword_intent", 2, "hp"]
+		]
+	},
+	"914022": {
+		"actions": [
+			["sword_intent", 4],
+			["add_c_of_x", 24, "max_hp"],
+			["for_each_x_add_c_y", "sword_intent", 2, "hp"]
+		]
+	},
+	"914023": {
+		"actions": [
+			["sword_intent", 5],
+			["add_c_of_x", 30, "max_hp"],
+			["for_each_x_add_c_y", "sword_intent", 2, "hp"]
+		]
+	},
 	"915011": {
 		"name": "Cloud Sword - Dragon Spring",
 		"actions": ["do_cloud_sword_dragon_spring", 2],
@@ -11116,6 +11138,35 @@
 	"924023": {
 		"actions": ["do_thousand_star_explosion", 6]
 	},
+	"924031": {
+		"name": "Thunderbolt Tune",
+		"actions": [
+			["add_c_of_x", 10, "max_hp"],
+			["heal", 10],
+			["continuous"],
+			["add_c_of_x", 10, "thunderbolt_tune_stacks"],
+			["add_enemy_c_of_x", 10, "thunderbolt_tune_stacks"]
+		],
+		"marking": "mu"
+	},
+	"924032": {
+		"actions": [
+			["add_c_of_x", 15, "max_hp"],
+			["heal", 15],
+			["continuous"],
+			["add_c_of_x", 12, "thunderbolt_tune_stacks"],
+			["add_enemy_c_of_x", 12, "thunderbolt_tune_stacks"]
+		]
+	},
+	"924033": {
+		"actions": [
+			["add_c_of_x", 20, "max_hp"],
+			["heal", 20],
+			["continuous"],
+			["add_c_of_x", 14, "thunderbolt_tune_stacks"],
+			["add_enemy_c_of_x", 14, "thunderbolt_tune_stacks"]
+		]
+	},
 	"925011": {
 		"name": "Ultimate Polaris Hexagram Base",
 		"actions": [
@@ -11224,6 +11275,62 @@
 	"925053": {
 		"does_not_exist": true,
 		"actions": []
+	},
+	"925061": {
+		"name": "Spiritual Hunter",
+		"actions": [],
+		"marking": "el"
+	},
+	"925062": {
+		"actions": []
+	},
+	"925063": {
+		"actions": []
+	},
+	"925071": {
+		"name": "Hexagrams Generating Evils",
+		"actions": [],
+		"marking": "fu"
+	},
+	"925072": {
+		"actions": []
+	},
+	"925073": {
+		"actions": []
+	},
+	"925081": {
+		"name": "Entangling Thornbush",
+		"actions": [],
+		"marking": "pm"
+	},
+	"925082": {
+		"actions": []
+	},
+	"925083": {
+		"actions": []
+	},
+	"925091": {
+		"name": "Astral Move - Jump",
+		"actions": [
+			["rep", 2, ["atk", 2]],
+			["chase"],
+			["star_point", ["add_c_of_x", 2, "astral_move_jump_stacks"]]
+		],
+		"marking": "ft"
+	},
+	"925092": {
+		"actions": [
+			["rep", 2, ["atk", 2]],
+			["chase"],
+			["star_point", ["add_c_of_x", 3, "astral_move_jump_stacks"]]
+		]
+	},
+	"925093": {
+		"actions": [
+			["rep", 2, ["atk", 3]],
+			["chase"],
+			["star_point", ["add_c_of_x", 4, "astral_move_jump_stacks"]]
+		]
 	},
 	"926011": {
 		"name": "Heavenly Maiden White Jade Ring",
