@@ -424,14 +424,24 @@ function is_debuff(attr_name) {
 #ifdef HAS_INTERNAL_INJURY
     if (attr_name === "internal_injury") return true;
 #endif // HAS_INTERNAL_INJURY
+#ifdef HAS_DECREASE_ATK
     if (attr_name === "decrease_atk") return true;
+#endif // HAS_DECREASE_ATK
+#ifdef HAS_WEAKEN
     if (attr_name === "weaken") return true;
+#endif // HAS_WEAKEN
+#ifdef HAS_FLAW
     if (attr_name === "flaw") return true;
+#endif // HAS_FLAW
+#ifdef HAS_ENTANGLE
     if (attr_name === "entangle") return true;
+#endif // HAS_ENTANGLE
 #ifdef HAS_WOUND
     if (attr_name === "wound") return true;
 #endif // HAS_WOUND
+#ifdef HAS_STYX
     if (attr_name === "styx") return true;
+#endif // HAS_STYX
 #ifdef HAS_ZONGZI_MODE
     if (attr_name === "indigestion") return true;
 #endif // HAS_ZONGZI_MODE
@@ -513,10 +523,18 @@ export class Player {
 #ifdef HAS_INTERNAL_INJURY
         this.internal_injury = 0;
 #endif // HAS_INTERNAL_INJURY
+#ifdef HAS_DECREASE_ATK
         this.decrease_atk = 0;
+#endif // HAS_DECREASE_ATK
+#ifdef HAS_WEAKEN
         this.weaken = 0;
+#endif // HAS_WEAKEN
+#ifdef HAS_FLAW
         this.flaw = 0;
+#endif // HAS_FLAW
+#ifdef HAS_ENTANGLE
         this.entangle = 0;
+#endif // HAS_ENTANGLE
 #ifdef HAS_WOUND
         this.wound = 0;
 #endif // HAS_WOUND
@@ -534,7 +552,9 @@ export class Player {
         this.unrestrained_sword_zero_stacks = 0;
         // cloud sword sect secret enchantment cards
         this.bonus_sword_intent_multiplier = 0;
+#ifdef HAS_IGNORE_WEAKEN
         this.ignore_weaken = false;
+#endif // HAS_IGNORE_WEAKEN
         this.sword_formation_deck_count = 0;
         this.other_sword_formation_deck_count = 0;
         this.sword_intent_flow_stacks = 0;
@@ -647,7 +667,9 @@ export class Player {
         this.physique_gained = 0;
         this.exercise_bones_stacks = 0;
         this.majestic_qi_stacks = 0;
+#ifdef HAS_IGNORE_DECREASE_ATK
         this.ignore_decrease_atk = false;
+#endif // HAS_IGNORE_DECREASE_ATK
         // duan xuan sect secret enchantment cards
         this.endless_force_stacks = 0;
         this.toxin_immunity_stacks = 0;
@@ -656,7 +678,9 @@ export class Player {
         this.return_to_simplicity_stacks = 0;
         // duan xuan sect character-specific cards
         this.overwhelming_power_stacks = 0;
+#ifdef HAS_STYX
         this.styx = 0;
+#endif // HAS_STYX
         this.character = "sw1";
         this.crash_fist_stygian_night_stacks = 0;
         this.meditation_of_xuan_stacks = 0;
@@ -879,7 +903,9 @@ export class Player {
         this.p3_mark_of_dark_heart_stacks = 0;
         this.p4_mark_of_dark_heart_stacks = 0;
         this.p5_mark_of_dark_heart_stacks = 0;
+#ifdef HAS_ENTERING_STYX
         this.entering_styx_stacks = 0;
+#endif // HAS_ENTERING_STYX
         this.zen_mind_forging_body_stacks = 0;
         this.mind_body_resonance_stacks = 0;
         // life shop buffs
@@ -919,7 +945,9 @@ export class Player {
         this.ignore_guard_up = 0;
 #endif
         this.heavenly_maiden_white_jade_ring_stacks = 0;
+#ifdef HAS_PREVENT_ANTI_CHASE
         this.prevent_anti_chase = 0;
+#endif //HAS_PREVENT_ANTI_CHASE
         this.xuanming_forceage_formation_stacks = 0;
         this.xuanming_regen_tune_heal_stacks = 0;
         this.xuanming_regen_tune_hurt_stacks = 0;
@@ -1251,6 +1279,7 @@ export class GameState {
             this.increase_idx_x_by_c(idx, "regen", 3);
         }
     }
+#ifdef HAS_ENTERING_STYX
     do_entering_styx(idx) {
         const me = this.players[idx];
         if (me.entering_styx_stacks === 0) {
@@ -1258,6 +1287,7 @@ export class GameState {
         }
         this.increase_idx_x_by_c(idx, "styx", me.entering_styx_stacks);
     }
+#endif //HAS_ENTRING_STYX
     do_zen_mind_forging_body(idx) {
         const me = this.players[idx];
         if (me.zen_mind_forging_body_stacks === 0) {
@@ -1418,7 +1448,9 @@ export class GameState {
             this.do_courage_to_fight(idx);
 #endif // HAS_COURAGE_TO_FIGHT
             this.do_mark_of_dark_heart(idx);
+#ifdef HAS_ENTERING_STYX
             this.do_entering_styx(idx);
+#endif // HAS_ENTERING_STYX
             this.do_zen_mind_forging_body(idx);
             if (idx === 1) {
                 this.swap_players();
@@ -1765,17 +1797,27 @@ export class GameState {
     get_debuff_count(idx) {
         const me = this.players[idx];
         let ret = 0;
+#ifdef HAS_DECREASE_ATK
         ret += me.decrease_atk;
+#endif // HAS_DECREASE_ATK
 #ifdef HAS_INTERNAL_INJURY
         ret += me.internal_injury;
 #endif // HAS_INTERNAL_INJURY
 #ifdef HAS_WOUND
         ret += me.wound;
 #endif // HAS_WOUND
+#ifdef HAS_STYX
         ret += me.styx;
+#endif // HAS_STYX
+#ifdef HAS_ENTANGLE
         ret += me.entangle;
+#endif // HAS_ENTANGLE
+#ifdef HAS_FLAW
         ret += me.flaw;
+#endif // HAS_FLAW
+#ifdef HAS_WEAKEN
         ret += me.weaken;
+#endif // HAS_WEAKEN
         return ret;
     }
     do_pre_crash_fist(card_id) {
@@ -2135,10 +2177,12 @@ export class GameState {
     }
     process_this_card_chases() {
         const me = this.players[0];
+#ifdef HAS_PREVENT_ANTI_CHASE
         const prevent_anti_chase = me.prevent_anti_chase > 0;
         if (me.prevent_anti_chase > 0) {
             me.prevent_anti_chase -= 1;
         }
+#endif // HAS_PREVENT_ANTI_CHASE
         if (me.just_revived) {
             return;
         }
@@ -2151,15 +2195,24 @@ export class GameState {
             }
         }
         if (me.this_card_chases > 0 && me.chases < me.max_chases) {
-            if (me.entangle > 0 && !prevent_anti_chase) {
+#ifdef HAS_ENTANGLE
+#ifdef HAS_PREVENT_ANTI_CHASE
+            const do_entangle = me.entangle > 0 && !prevent_anti_chase;
+#else // HAS_PREVENT_ANTI_CHASE
+            const do_entangle = me.entangle > 0;
+#endif // HAS_PREVENT_ANTI_CHASE
+            if (do_entangle) {
                 this.reduce_idx_x_by_c(0, "entangle", 1);
 #ifdef HAS_ENTANGLING_ANCIENT_VINE
                 this.for_each_x_add_y("entangling_ancient_vine_stacks", "wound");
 #endif // HAS_ENTANGLING_ANCIENT_VINE
             } else {
+#endif // HAS_ENTANGLE
                 me.chases += 1;
                 this.log("incremented chases to " + me.chases);
+#ifdef HAS_ENTANGLE
             }
+#endif //HAS_ENTANGLE
         }
     }
     play_card_inner(card_id, idx) {
@@ -2911,9 +2964,11 @@ export class GameState {
                     me.max_chases = old_max_chases;
                     return;
                 }
+#ifdef HAS_PREVENT_ANTI_CHASE
                 if (me.prevent_anti_chase > 0) {
                     me.max_chases = old_max_chases;
                 }
+#endif // HAS_PREVENT_ANTI_CHASE
                 this.log("player 0 finished playing " + card.name);
                 this.advance_next_card_index();
                 this.do_shadow_owl_rabbit_chase();
@@ -2938,9 +2993,15 @@ export class GameState {
         this.do_hard_bamboo();
         this.do_xuanming_regen_tune();
         this.do_thunderbolt_tune();
+#ifdef HAS_ENTANGLE
         this.reduce_idx_x_by_c(0, "entangle", 1);
+#endif // HAS_ENTANGLE
+#ifdef HAS_FLAW
         this.reduce_idx_x_by_c(0, "flaw", 1);
+#endif // HAS_FLAW
+#ifdef HAS_WEAKEN
         this.reduce_idx_x_by_c(0, "weaken", 1);
+#endif // HAS_WEAKEN
         this.reduce_idx_x_by_c(0, "metal_spirit_chokehold_stacks", 1);
         if (this.check_for_death()) {
             return;
@@ -3365,10 +3426,14 @@ export class GameState {
             return;
         }
 #endif // HAS_ZONGZI_MODE
+#ifdef HAS_STYX
         if (x !== "styx") {
+#endif // HAS_STYX
             amt += me.gain_extra_debuff;
             me.gain_extra_debuff = 0;
+#ifdef HAS_STYX
         }
+#endif // HAS_STYX
         const to_sub = Math.min(amt, me.hexproof);
         if (to_sub > 0) {
             this.reduce_idx_x_by_c(idx, "hexproof", to_sub);
@@ -3380,6 +3445,7 @@ export class GameState {
         for (let i=0; i<me.unwavering_soul_stacks; i++) {
             this.increase_idx_hp(idx, amt);
         }
+#ifdef HAS_STYX
         if (x === "styx") {
             if (me.character === "dx3") {
                 this.increase_idx_hp(idx, amt * 3);
@@ -3387,6 +3453,7 @@ export class GameState {
                 this.reduce_idx_hp(idx, amt * 3, false);
             }
         }
+#endif // HAS_STYX
         me[x] += amt;
         this.log("gained " + amt + " " + x + ". Now have " + me[x] + " " + x);
     }
@@ -3536,9 +3603,16 @@ export class GameState {
             dmg += me.this_card_sword_intent * (1 + me.bonus_sword_intent_multiplier);
             dmg += me.increase_atk;
             dmg += me.craze_dance_tune_stacks;
+#ifdef HAS_DECREASE_ATK
+#ifdef HAS_IGNORE_DECREASE_ATK
             if (!me.ignore_decrease_atk) {
                 dmg -= me.decrease_atk;
             }
+            me.ignore_decrease_atk = false;
+#else //HAS_IGNORE_DECREASE_ATK
+            dmg -= me.decrease_atk;
+#endif //HAS_IGNORE_DECREASE_ATK
+#endif //HAS_DECREASE_ATK
             if (me.majestic_qi_stacks > 0) {
                 this.reduce_idx_x_by_c(my_idx, "majestic_qi_stacks", 1);
                 this.increase_idx_force(my_idx, 1);
@@ -3552,17 +3626,26 @@ export class GameState {
             if (enemy.water_spirit_dive_stacks > 0) {
                 pct_multiplier -= 40;
             }
+#ifdef HAS_WEAKEN
+#ifdef HAS_IGNORE_WEAKEN
             if (me.weaken > 0 && !me.ignore_weaken) {
                 pct_multiplier -= 40;
             }
+            me.ignore_weaken = false;
+#else //HAS_IGNORE_WEAKEN
+            if (me.weaken > 0) {
+                pct_multiplier -= 40;
+            }
+#endif //HAS_IGNORE_WEAKEN
+#endif //HAS_WEAKEN
+#ifdef HAS_FLAW
             if (enemy.flaw > 0) {
                 pct_multiplier += 40;
             }
+#endif // HAS_FLAW
             if (is_thunder(me.currently_triggering_card_id)) {
                 pct_multiplier += me.thunder_citta_dharma_stacks;
             }
-            me.ignore_weaken = false;
-            me.ignore_decrease_atk = false;
             me.bonus_sword_intent_multiplier = 0;
             me.bonus_star_power_multiplier = 0;
             me.bonus_force_amt = 0;
@@ -3956,12 +4039,16 @@ export class GameState {
         return swogi[card_id].name === "Clear Heart Sword Embryo" &&
             this.players[0].quench_of_sword_heart_cloud_stacks > 0;
     }
+#ifdef HAS_IGNORE_WEAKEN
     ignore_weaken() {
         this.players[0].ignore_weaken = true;
     }
+#endif // HAS_IGNORE_WEAKEN
+#ifdef HAS_IGNORE_DECREASE_ATK
     ignore_decrease_atk() {
         this.players[0].ignore_decrease_atk = true;
     }
+#endif // HAS_IGNORE_DECREASE_ATK
     do_thorns_spear_thing() {
         this.players[0].bonus_atk_amt += Math.floor(this.players[1].def / 2);
     }
@@ -4495,14 +4582,24 @@ export class GameState {
 #ifdef HAS_INTERNAL_INJURY
         if (me.internal_injury > 0) return true;
 #endif // HAS_INTERNAL_INJURY
+#ifdef HAS_WEAKEN
         if (me.weaken > 0) return true;
+#endif // HAS_WEAKEN
+#ifdef HAS_FLAW
         if (me.flaw > 0) return true;
+#endif // HAS_FLAW
+#ifdef HAS_DECREASE_ATK
         if (me.decrease_atk > 0) return true;
+#endif // HAS_DECREASE_ATK
+#ifdef HAS_ENTANGLE
         if (me.entangle > 0) return true;
+#endif // HAS_ENTANGLE
 #ifdef HAS_WOUND
         if (me.wound > 0) return true;
 #endif // HAS_WOUND
+#ifdef HAS_STYX
         if (me.styx > 0) return true;
+#endif // HAS_STYX
     }
     if_no_debuff() {
         return !this.idx_has_debuff(0);
@@ -4861,9 +4958,11 @@ export class GameState {
         const prev_id = this.players[0].cards[prev_idx];
         this.trigger_card(prev_id, idx);
     }
+#ifdef HAS_PREVENT_ANTI_CHASE
     prevent_anti_chase() {
         this.players[0].prevent_anti_chase += 1;
     }
+#endif // HAS_PREVENT_ANTI_CHASE
     do_xuanming_thundercloud_tribulation(dmg) {
         for (let i=0; i<5; i++) {
             if (!this.if_c_pct(10)) {

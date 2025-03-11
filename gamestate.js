@@ -401,7 +401,7 @@ const DEBUFF_NAMES = [
     "flaw",
     "entangle",
     "wound",
-    "underworld",
+    "styx",
     "indigestion",
 ];
 function is_debuff(attr_name) {
@@ -411,7 +411,7 @@ function is_debuff(attr_name) {
     if (attr_name === "flaw") return true;
     if (attr_name === "entangle") return true;
     if (attr_name === "wound") return true;
-    if (attr_name === "underworld") return true;
+    if (attr_name === "styx") return true;
     if (attr_name === "indigestion") return true;
     return false;
 }
@@ -618,7 +618,7 @@ export class Player {
         this.return_to_simplicity_stacks = 0;
         // duan xuan sect character-specific cards
         this.overwhelming_power_stacks = 0;
-        this.underworld = 0;
+        this.styx = 0;
         this.character = "sw1";
         this.crash_fist_stygian_night_stacks = 0;
         this.meditation_of_xuan_stacks = 0;
@@ -1194,7 +1194,7 @@ export class GameState {
         if (me.entering_styx_stacks === 0) {
             return;
         }
-        this.increase_idx_x_by_c(idx, "underworld", me.entering_styx_stacks);
+        this.increase_idx_x_by_c(idx, "styx", me.entering_styx_stacks);
     }
     do_zen_mind_forging_body(idx) {
         const me = this.players[idx];
@@ -1702,7 +1702,7 @@ export class GameState {
         ret += me.decrease_atk;
         ret += me.internal_injury;
         ret += me.wound;
-        ret += me.underworld;
+        ret += me.styx;
         ret += me.entangle;
         ret += me.flaw;
         ret += me.weaken;
@@ -2047,7 +2047,8 @@ export class GameState {
             }
         }
         if (me.this_card_chases > 0 && me.chases < me.max_chases) {
-            if (me.entangle > 0 && !prevent_anti_chase) {
+            const do_entangle = me.entangle > 0 && !prevent_anti_chase;
+            if (do_entangle) {
                 this.reduce_idx_x_by_c(0, "entangle", 1);
                 this.for_each_x_add_y("entangling_ancient_vine_stacks", "wound");
             } else {
@@ -3231,7 +3232,7 @@ export class GameState {
             this.increase_idx_x_by_c(idx, "regen", amt);
             return;
         }
-        if (x !== "underworld") {
+        if (x !== "styx") {
             amt += me.gain_extra_debuff;
             me.gain_extra_debuff = 0;
         }
@@ -3246,7 +3247,7 @@ export class GameState {
         for (let i=0; i<me.unwavering_soul_stacks; i++) {
             this.increase_idx_hp(idx, amt);
         }
-        if (x === "underworld") {
+        if (x === "styx") {
             if (me.character === "dx3") {
                 this.increase_idx_hp(idx, amt * 3);
             } else {
@@ -3403,6 +3404,7 @@ export class GameState {
             if (!me.ignore_decrease_atk) {
                 dmg -= me.decrease_atk;
             }
+            me.ignore_decrease_atk = false;
             if (me.majestic_qi_stacks > 0) {
                 this.reduce_idx_x_by_c(my_idx, "majestic_qi_stacks", 1);
                 this.increase_idx_force(my_idx, 1);
@@ -3419,14 +3421,13 @@ export class GameState {
             if (me.weaken > 0 && !me.ignore_weaken) {
                 pct_multiplier -= 40;
             }
+            me.ignore_weaken = false;
             if (enemy.flaw > 0) {
                 pct_multiplier += 40;
             }
             if (is_thunder(me.currently_triggering_card_id)) {
                 pct_multiplier += me.thunder_citta_dharma_stacks;
             }
-            me.ignore_weaken = false;
-            me.ignore_decrease_atk = false;
             me.bonus_sword_intent_multiplier = 0;
             me.bonus_star_power_multiplier = 0;
             me.bonus_force_amt = 0;
@@ -4336,7 +4337,7 @@ export class GameState {
         if (me.decrease_atk > 0) return true;
         if (me.entangle > 0) return true;
         if (me.wound > 0) return true;
-        if (me.underworld > 0) return true;
+        if (me.styx > 0) return true;
     }
     if_no_debuff() {
         return !this.idx_has_debuff(0);
