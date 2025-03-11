@@ -415,13 +415,19 @@ function is_debuff(attr_name) {
     if (attr_name === "indigestion") return true;
     return false;
 }
-const ACTIVATE_NAMES = ["activate_wood_spirit_stacks", "activate_fire_spirit_stacks", "activate_earth_spirit_stacks", "activate_metal_spirit_stacks", "activate_water_spirit_stacks"];
+const ACTIVATE_NAMES = [
+    "activate_wood_spirit_stacks",
+    "activate_fire_spirit_stacks",
+    "activate_earth_spirit_stacks",
+    "activate_metal_spirit_stacks",
+    "activate_water_spirit_stacks",
+];
 function is_activate(attr_name) {
-    return attr_name == "activate_wood_spirit_stacks" ||
-        attr_name == "activate_fire_spirit_stacks" ||
-        attr_name == "activate_earth_spirit_stacks" ||
-        attr_name == "activate_metal_spirit_stacks" ||
-        attr_name == "activate_water_spirit_stacks";
+    if (attr_name === "activate_wood_spirit_stacks") return true;
+    if (attr_name === "activate_fire_spirit_stacks") return true;
+    if (attr_name === "activate_earth_spirit_stacks") return true;
+    if (attr_name === "activate_metal_spirit_stacks") return true;
+    if (attr_name === "activate_water_spirit_stacks") return true;
 }
 export class Player {
     constructor() {
@@ -2384,11 +2390,13 @@ export class GameState {
             if (player.this_card_chases === 0 && player.chases < player.max_chases) {
                 const id = player.last_card_id;
                 const card = swogi[id];
-                if ((card.is_wood_spirit && player.activate_wood_spirit_stacks > 0) ||
-                    (card.is_fire_spirit && player.activate_fire_spirit_stacks > 0) ||
-                    (card.is_earth_spirit && player.activate_earth_spirit_stacks > 0) ||
-                    (card.is_metal_spirit && player.activate_metal_spirit_stacks > 0) ||
-                    (card.is_water_spirit && player.activate_water_spirit_stacks > 0)) {
+                let played_activated_element = false;
+                played_activated_element ||= card.is_wood_spirit && player.activate_wood_spirit_stacks > 0;
+                played_activated_element ||= card.is_fire_spirit && player.activate_fire_spirit_stacks > 0;
+                played_activated_element ||= card.is_earth_spirit && player.activate_earth_spirit_stacks > 0;
+                played_activated_element ||= card.is_metal_spirit && player.activate_metal_spirit_stacks > 0;
+                played_activated_element ||= card.is_water_spirit && player.activate_water_spirit_stacks > 0;
+                if (played_activated_element) {
                     this.chase();
                     this.reduce_idx_x_by_c(0, "heavenly_marrow_gourd_stacks", 1);
                 }
@@ -4406,11 +4414,11 @@ export class GameState {
     }
     if_any_element_activated() {
         const me = this.players[0];
-        return me.activate_wood_spirit_stacks > 0 ||
-            me.activate_fire_spirit_stacks > 0 ||
-            me.activate_earth_spirit_stacks > 0 ||
-            me.activate_metal_spirit_stacks > 0 ||
-            me.activate_water_spirit_stacks > 0;
+        if (me.activate_wood_spirit_stacks > 0) return true;
+        if (me.activate_fire_spirit_stacks > 0) return true;
+        if (me.activate_earth_spirit_stacks > 0) return true;
+        if (me.activate_metal_spirit_stacks > 0) return true;
+        if (me.activate_water_spirit_stacks > 0) return true;
     }
     do_metal_spirit_rhythm_water(pen_gain_amt) {
         if (this.if_metal_spirit()) {
