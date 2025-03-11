@@ -49,6 +49,7 @@ export const CHARACTER_ID_TO_NAME = {
     "sw3": "Long Yao",
     "sw4": "Lin Xiaoyue",
     "sw5": "Lu Jianxin",
+    "sw6": "Li Chengyun",
     "he1": "Tan Shuyan",
     "he2": "Yan Chen",
     "he3": "Yao Ling",
@@ -63,6 +64,7 @@ export const CHARACTER_ID_TO_NAME = {
     "dx2": "Tu Kui",
     "dx3": "Ye Mingming",
     "dx4": "Ji Fangsheng",
+    "dx5": "Li Man",
 }
 const PREFIX_TO_MARKING = {
     ["11"]: "sw", // regular sect cards - cloud spirit sword sect
@@ -300,7 +302,9 @@ for (let i=0; i<keys.length; i++) {
         is_sweet: is_sweet,
     };
     swogi[card_id] = card;
-    card.marking = get_marking(card_id);
+    if (card.marking === undefined) {
+        card.marking = get_marking(card_id);
+    }
     Object.freeze(card);
 }
 is_unrestrained_sword = function(card_id) {
@@ -391,19 +395,35 @@ export function card_name_to_id_fuzzy(name) {
     return card_name_to_id[card_names[idxs[0]]];
 }
 const DEBUFF_NAMES = [
+#ifdef HAS_INTERNAL_INJURY
     "internal_injury",
+#endif // HAS_INTERNAL_INJURY
+#ifdef HAS_DECREASE_ATK
     "decrease_atk",
+#endif //HAS_DECREASE_ATK
+#ifdef HAS_WEAKEN
     "weaken",
+#endif // HAS_WEAKEN
+#ifdef HAS_FLAW
     "flaw",
+#endif // HAS_FLAW
+#ifdef HAS_ENTANGLE
     "entangle",
+#endif // HAS_ENTANGLE
 #ifdef HAS_WOUND
     "wound",
 #endif // HAS_WOUND
-    "underworld",
+#ifdef HAS_STYX
+    "styx",
+#endif // HAS_STYX
+#ifdef HAS_ZONGZI_MODE
     "indigestion",
+#endif // HAS_ZONGZI_MODE
 ];
 function is_debuff(attr_name) {
+#ifdef HAS_INTERNAL_INJURY
     if (attr_name === "internal_injury") return true;
+#endif // HAS_INTERNAL_INJURY
     if (attr_name === "decrease_atk") return true;
     if (attr_name === "weaken") return true;
     if (attr_name === "flaw") return true;
@@ -411,8 +431,10 @@ function is_debuff(attr_name) {
 #ifdef HAS_WOUND
     if (attr_name === "wound") return true;
 #endif // HAS_WOUND
-    if (attr_name === "underworld") return true;
+    if (attr_name === "styx") return true;
+#ifdef HAS_ZONGZI_MODE
     if (attr_name === "indigestion") return true;
+#endif // HAS_ZONGZI_MODE
     return false;
 }
 const ACTIVATE_NAMES = ["activate_wood_spirit_stacks", "activate_fire_spirit_stacks", "activate_earth_spirit_stacks", "activate_metal_spirit_stacks", "activate_water_spirit_stacks"];
@@ -488,7 +510,9 @@ export class Player {
         this.regen = 0;
         this.hexproof = 0;
         // debuffs
+#ifdef HAS_INTERNAL_INJURY
         this.internal_injury = 0;
+#endif // HAS_INTERNAL_INJURY
         this.decrease_atk = 0;
         this.weaken = 0;
         this.flaw = 0;
@@ -575,7 +599,9 @@ export class Player {
         this.water_spirit_dive_stacks = 0;
         this.earth_spirit_combine_world_stacks = 0;
         this.def_lost = 0;
+#ifdef HAS_METAL_SPIRIT_GIANT_TRIPOD
         this.metal_spirit_giant_tripod_stacks = 0;
+#endif // HAS_METAL_SPIRIT_GIANT_TRIPOD
         this.ultimate_world_formation_stacks = 0;
         this.five_elements_heavenly_marrow_rhythm_stacks = 0;
         this.different_five_elements = 0;
@@ -602,7 +628,9 @@ export class Player {
         this.crash_fist_block_stacks = 0;
         this.crash_fist_bounce_stacks = 0;
         this.crash_fist_shake_stacks = 0;
+#ifdef HAS_CRASH_FIST_ENTANGLE
         this.crash_fist_entangle_stacks = 0;
+#endif
         this.crash_fist_blitz_stacks = 0;
         this.this_card_crash_fist_blitz_stacks = 0;
         this.crash_footwork_stacks = 0;
@@ -628,7 +656,7 @@ export class Player {
         this.return_to_simplicity_stacks = 0;
         // duan xuan sect character-specific cards
         this.overwhelming_power_stacks = 0;
-        this.underworld = 0;
+        this.styx = 0;
         this.character = "sw1";
         this.crash_fist_stygian_night_stacks = 0;
         this.meditation_of_xuan_stacks = 0;
@@ -664,14 +692,34 @@ export class Player {
         this.leaf_blade_flower_stacks = 0;
         this.leaf_shield_flower_stacks = 0;
         this.frozen_snow_lotus_stacks = 0;
+#ifdef HAS_ENTANGLING_ANCIENT_VINE
         this.entangling_ancient_vine_stacks = 0;
+#endif // HAS_ENTANGLING_ANCIENT_VINE
         this.devouring_ancient_vine_stacks = 0;
+        // TODO: implement most of the below plants
+        // divine_power_grass_stacks -> increase_atk
+        // lose_power_grass_stacks -> decrease_atk
+        // healing_chamomile_stacks -> regen
+        // clear_chamomile_stacks -> hexproof
+        // flying_owl_reishi_stacks -> speed
+        // shadow_owl_reishi_stacks -> flying_brush_stacks
+        // toxic_purple_fern_stacks -> internal_injury
+        this.divine_power_grass_stacks = 0;;
+        this.lose_power_grass_stacks = 0;
+        this.healing_chamomile_stacks = 0;
+        this.clear_chamomile_stacks = 0;
+        this.flying_owl_reishi_stacks = 0;
         this.shadow_owl_reishi_stacks = 0;
+#ifdef HAS_TOXIC_PURPLE_FERN
+        this.toxic_purple_fern_stacks = 0;
+#endif // HAS_TOXIC_PURPLE_FERN
         // fortune teller side job cards
         this.observe_body_stacks = 0;
         this.god_luck_approach_stacks = 0;
         this.god_luck_avoid_stacks = 0;
+#ifdef HAS_BAD_OMEN
         this.bad_omen_stacks = 0;
+#endif // HAS_BAD_OMEN
         this.skip_to_previous_card_stacks = 0;
         this.everything_goes_way_stacks = 0;
         this.nothing_is_appropriate_stacks = 0;
@@ -784,10 +832,18 @@ export class Player {
         this.mark_of_water_spirit_stacks = 0;
         this.blossom_dance_stacks = 0;
         this.the_body_of_fierce_tiger_stacks = 0;
+#ifdef HAS_P2_CYCLE_OF_FIVE_ELEMENTS
         this.p2_cycle_of_five_elements_stacks = 0;
+#endif // HAS_P2_CYCLE_OF_FIVE_ELEMENTS
+#ifdef HAS_P3_CYCLE_OF_FIVE_ELEMENTS
         this.p3_cycle_of_five_elements_stacks = 0;
+#endif // HAS_P3_CYCLE_OF_FIVE_ELEMENTS
+#ifdef HAS_P4_CYCLE_OF_FIVE_ELEMENTS
         this.p4_cycle_of_five_elements_stacks = 0;
+#endif // HAS_P4_CYCLE_OF_FIVE_ELEMENTS
+#ifdef HAS_P5_CYCLE_OF_FIVE_ELEMENTS
         this.p5_cycle_of_five_elements_stacks = 0;
+#endif // HAS_P5_CYCLE_OF_FIVE_ELEMENTS
         this.p2_mutual_growth_stacks = 0;
         this.p3_mutual_growth_stacks = 0;
         this.p4_mutual_growth_stacks = 0;
@@ -802,7 +858,9 @@ export class Player {
         // duan xuan sect immortal fates
         this.unbounded_qi_stacks = 0;
         this.unwavering_soul_stacks = 0;
+#ifdef HAS_COURAGE_TO_FIGHT
         this.courage_to_fight_stacks = 0;
+#endif // HAS_COURAGE_TO_FIGHT
         this.cracking_fist_stacks = 0;
         this.stance_of_fierce_attack_stacks = 0;
         this.p2_firmness_body_stacks = 0;
@@ -828,6 +886,7 @@ export class Player {
         this.pact_of_adversity_reinforcement_stacks = 0;
         this.pact_of_equilibrium_stacks = 0;
         // super serious event buffs
+#ifdef HAS_ZONGZI_MODE
         this.alkaline_water_zongzi_stacks = 0;
         this.fresh_fruit_zongzi_stacks = 0;
         this.salted_egg_yolk_zongzi_stacks = 0;
@@ -835,6 +894,7 @@ export class Player {
         this.sweet_zongzi_count = 0;
         this.appetite = 0;
         this.indigestion = 0;
+#endif // HAS_ZONGZI_MODE
         // immortal relics fusion cards
         this.ultimate_polaris_hexagram_base_stacks = 0;
         this.star_moon_hexagram_fan_stacks = 0;
@@ -855,13 +915,17 @@ export class Player {
         this.pangu_axe_stacks = 0;
         this.kongtong_seal_stacks = 0;
         this.spirit_fusion_pot_stacks = 0;
+#ifdef HAS_IGNORE_GUARD_UP
         this.ignore_guard_up = 0;
+#endif
         this.heavenly_maiden_white_jade_ring_stacks = 0;
         this.prevent_anti_chase = 0;
         this.xuanming_forceage_formation_stacks = 0;
         this.xuanming_regen_tune_heal_stacks = 0;
         this.xuanming_regen_tune_hurt_stacks = 0;
         this.xuanming_recurring_hp = 0;
+        this.thunderbolt_tune_stacks = 0;
+        this.astral_move_jump_stacks = 0;
         // merpeople pearls
         this.qi_gathering_merpeople_pearl_stacks = 0;
         this.crystallized_merpeople_pearl_stacks = 0;
@@ -1127,12 +1191,14 @@ export class GameState {
             this.increase_idx_x_by_c(idx, "qi", 1);
         }
     }
+#ifdef HAS_COURAGE_TO_FIGHT
     do_courage_to_fight(idx) {
         for (let i=0; i<this.players[idx].courage_to_fight_stacks; i++) {
             this.increase_idx_x_by_c(idx, "increase_atk", 1);
             this.increase_idx_x_by_c(idx, "wound", 1);
         }
     }
+#endif // HAS_COURAGE_TO_FIGHT
     do_firmness_body(idx) {
         const me = this.players[idx];
         for (let i=0; i<me.p2_firmness_body_stacks; i++) {
@@ -1190,7 +1256,7 @@ export class GameState {
         if (me.entering_styx_stacks === 0) {
             return;
         }
-        this.increase_idx_x_by_c(idx, "underworld", me.entering_styx_stacks);
+        this.increase_idx_x_by_c(idx, "styx", me.entering_styx_stacks);
     }
     do_zen_mind_forging_body(idx) {
         const me = this.players[idx];
@@ -1348,7 +1414,9 @@ export class GameState {
             this.do_shadow_owl_reishi(idx);
             this.do_full_of_force(idx);
             this.do_innate_mark(idx);
+#ifdef HAS_COURAGE_TO_FIGHT
             this.do_courage_to_fight(idx);
+#endif // HAS_COURAGE_TO_FIGHT
             this.do_mark_of_dark_heart(idx);
             this.do_entering_styx(idx);
             this.do_zen_mind_forging_body(idx);
@@ -1485,6 +1553,7 @@ export class GameState {
             this.log("incremented unrestrained_sword_count to " + this.players[0].unrestrained_sword_count);
         }
     }
+#ifdef HAS_ZONGZI_MODE
     do_sweet_zongzi_count(card_id) {
         const card = swogi[card_id];
         if (card.is_sweet) {
@@ -1504,6 +1573,15 @@ export class GameState {
             this.heal(this.players[0].alkaline_water_zongzi_stacks * 2);
         }
     }
+    do_salted_egg_yolk_zongzi(card_idx) {
+        if (this.players[0].salted_egg_yolk_zongzi_stacks > 0) {
+            this.reduce_idx_x_by_c(0, "salted_egg_yolk_zongzi_stacks", 1);
+            if (!this.try_upgrade_card(0, card_idx)) {
+                this.add_c_of_x(2, "appetite");
+            }
+        }
+    }
+#endif // HAS_ZONGZI_MODE
     do_cloud_sword_chain_count(card_id) {
         const me = this.players[0];
         // if this card has "Cloud Sword" in the name, increment cloud_sword_chain_count
@@ -1688,11 +1766,13 @@ export class GameState {
         const me = this.players[idx];
         let ret = 0;
         ret += me.decrease_atk;
+#ifdef HAS_INTERNAL_INJURY
         ret += me.internal_injury;
+#endif // HAS_INTERNAL_INJURY
 #ifdef HAS_WOUND
         ret += me.wound;
 #endif // HAS_WOUND
-        ret += me.underworld;
+        ret += me.styx;
         ret += me.entangle;
         ret += me.flaw;
         ret += me.weaken;
@@ -1711,8 +1791,10 @@ export class GameState {
         this.for_each_x_add_y("crash_fist_poke_stacks", "bonus_atk_amt");
         this.for_each_x_add_y("crash_fist_block_stacks", "def");
         this.for_each_x_add_y("crash_fist_shake_stacks", "force");
+#ifdef HAS_CRASH_FIST_ENTANGLE
         const wound_amt = me.crash_fist_entangle_stacks;
         this.increase_idx_x_by_c(1, "wound", wound_amt);
+#endif // HAS_CRASH_FIST_ENTANGLE
         this.for_each_x_add_y("crash_fist_blitz_stacks", "this_card_crash_fist_blitz_stacks");
         if (me.crash_fist_truncate_stacks > 0) {
             this.transfer_random_debuff();
@@ -1724,7 +1806,9 @@ export class GameState {
         if (swogi[card_id].name !== "Crash Fist - Continue") {
             me.crash_fist_block_stacks = 0;
             me.crash_fist_shake_stacks = 0;
+#ifdef HAS_CRASH_FIST_ENTANGLE
             me.crash_fist_entangle_stacks = 0;
+#endif // HAS_CRASH_FIST_ENTANGLE
             me.crash_fist_blitz_stacks = 0;
             me.crash_fist_truncate_stacks = 0;
             me.crash_fist_inch_force_stacks = 0;
@@ -1778,12 +1862,14 @@ export class GameState {
             this.for_each_x_add_y("earth_spirit_formation_stacks", "def");
         }
     }
+#ifdef HAS_PENETRATE
     do_metal_spirit_formation(card_id) {
         const card = swogi[card_id];
         if (card.is_metal_spirit) {
             this.for_each_x_add_y("metal_spirit_formation_stacks", "penetrate");
         }
     }
+#endif // HAS_PENETRATE
     do_water_spirit_formation(card_id) {
         const card = swogi[card_id];
         if (card.is_water_spirit) {
@@ -1798,35 +1884,55 @@ export class GameState {
             this.reduce_idx_max_hp(1, amt);
         }
     }
+#ifdef HAS_CYCLE_OF_FIVE_ELEMENTS_AND_FRIENDS
     do_cycle_of_five_elements_and_friends(card_id) {
         const me = this.players[0];
-        if (me.p2_cycle_of_five_elements_stacks === 0 &&
-            me.p3_cycle_of_five_elements_stacks === 0 &&
-            me.p4_cycle_of_five_elements_stacks === 0 &&
-            me.p5_cycle_of_five_elements_stacks === 0 &&
-            me.blossom_dance_stacks === 0) {
-            return;
-        }
+        let bail = true;
+#ifdef HAS_P2_CYCLE_OF_FIVE_ELEMENTS
+        if (me.p2_cycle_of_five_elements_stacks > 0) bail = false;
+#endif // HAS_P2_CYCLE_OF_FIVE_ELEMENTS
+#ifdef HAS_P3_CYCLE_OF_FIVE_ELEMENTS
+        if (me.p3_cycle_of_five_elements_stacks > 0) bail = false;
+#endif // HAS_P3_CYCLE_OF_FIVE_ELEMENTS
+#ifdef HAS_P4_CYCLE_OF_FIVE_ELEMENTS
+        if (me.p4_cycle_of_five_elements_stacks > 0) bail = false;
+#endif // HAS_P4_CYCLE_OF_FIVE_ELEMENTS
+#ifdef HAS_P5_CYCLE_OF_FIVE_ELEMENTS
+        if (me.p5_cycle_of_five_elements_stacks > 0) bail = false;
+#endif // HAS_P5_CYCLE_OF_FIVE_ELEMENTS
+#ifdef HAS_BLOSSOM_DANCE
+        if (me.blossom_dance_stacks > 0) bail = false;
+#endif // HAS_BLOSSOM_DANCE
+        if (bail) return;
         if (!this.cards_have_generating_interaction(me.last_card_id, card_id)) {
             return;
         }
+#ifdef HAS_P2_CYCLE_OF_FIVE_ELEMENTS
         const def_amt = 3 * me.p2_cycle_of_five_elements_stacks;
-        const qi_amt = me.p3_cycle_of_five_elements_stacks;
-        const hp_amt = 4 * me.p4_cycle_of_five_elements_stacks;
-        const pen_amt = 4 * me.p5_cycle_of_five_elements_stacks;
         if (def_amt > 0) {
             this.def(def_amt);
         }
+#endif // HAS_P2_CYCLE_OF_FIVE_ELEMENTS
+#ifdef HAS_P3_CYCLE_OF_FIVE_ELEMENTS
+        const qi_amt = me.p3_cycle_of_five_elements_stacks;
         if (qi_amt > 0) {
             this.qi(qi_amt);
         }
+#endif // HAS_P3_CYCLE_OF_FIVE_ELEMENTS
+#ifdef HAS_P4_CYCLE_OF_FIVE_ELEMENTS
+        const hp_amt = 4 * me.p4_cycle_of_five_elements_stacks;
         if (hp_amt > 0) {
             this.add_c_of_x(hp_amt, "max_hp");
             this.heal(hp_amt);
         }
+#endif // HAS_P4_CYCLE_OF_FIVE_ELEMENTS
+#ifdef HAS_P5_CYCLE_OF_FIVE_ELEMENTS
+        const pen_amt = 4 * me.p5_cycle_of_five_elements_stacks;
         if (pen_amt > 0) {
             this.add_c_of_x(pen_amt, "penetrate");
         }
+#endif // HAS_P5_CYCLE_OF_FIVE_ELEMENTS
+#ifdef HAS_BLOSSOM_DANCE
         if (me.blossom_dance_stacks > 0) {
             this.qi(1);
             this.add_c_of_x(1, "max_hp");
@@ -1835,7 +1941,9 @@ export class GameState {
                 this.chase();
             }
         }
+#endif // HAS_BLOSSOM_DANCE
     }
+#endif // HAS_CYCLE_OF_FIVE_ELEMENTS_AND_FRIENDS
     do_swift_burning_seal(card_id, idx) {
         if (this.players[0].swift_burning_seal_stacks > 0) {
             if (is_seal(card_id)) {
@@ -1969,14 +2077,18 @@ export class GameState {
         this.do_regenerating_body(idx);
         this.do_crash_citta_dharma(card_id);
         this.do_pre_crash_fist(card_id);
+#ifdef HAS_CYCLE_OF_FIVE_ELEMENTS_AND_FRIENDS
         this.do_cycle_of_five_elements_and_friends(card_id);
+#endif // HAS_CYCLE_OF_FIVE_ELEMENTS_AND_FRIENDS
         this.do_wood_spirit_formation(card_id);
         this.do_fire_spirit_formation(card_id);
         this.do_earth_spirit_formation(card_id);
         this.do_metal_spirit_formation(card_id);
         this.do_water_spirit_formation(card_id);
         this.do_god_luck_avoid(card_id);
+#ifdef HAS_ZONGZI_MODE
         this.do_alkaline_water_zongzi(card_id);
+#endif // HAS_ZONGZI_MODE
         this.just_do_the_card_and_nothing_else(card);
         //card_actions[card_id](this);
         //this.do_action(card.actions);
@@ -1999,7 +2111,9 @@ export class GameState {
         // End of extra attacks zone
         this.do_beast_spirit_sword_formation(card_id);
         this.do_unrestrained_sword_count(card_id);
+#ifdef HAS_ZONGZI_MODE
         this.do_sweet_zongzi_count(card_id);
+#endif // HAS_ZONGZI_MODE
         if (p0.chase_if_hp_gained > 0) {
             if (p0.hp_gained > 0) {
                 this.chase();
@@ -2039,7 +2153,9 @@ export class GameState {
         if (me.this_card_chases > 0 && me.chases < me.max_chases) {
             if (me.entangle > 0 && !prevent_anti_chase) {
                 this.reduce_idx_x_by_c(0, "entangle", 1);
+#ifdef HAS_ENTANGLING_ANCIENT_VINE
                 this.for_each_x_add_y("entangling_ancient_vine_stacks", "wound");
+#endif // HAS_ENTANGLING_ANCIENT_VINE
             } else {
                 me.chases += 1;
                 this.log("incremented chases to " + me.chases);
@@ -2207,12 +2323,22 @@ export class GameState {
             this.reduce_idx_hp(0, me.xuanming_regen_tune_hurt_stacks);
         }
     }
+    do_thunderbolt_tune() {
+        const amt = this.players[0].thunderbolt_tune_stacks;
+        if (amt > 0) {
+            if (this.if_c_pct(10)) {
+                this.deal_damage(amt);
+            }
+        }
+    }
+#ifdef HAS_INTERNAL_INJURY
     do_internal_injury(idx) {
         const me = this.players[idx];
         if (me.internal_injury > 0) {
             this.reduce_idx_hp(idx, me.internal_injury);
         }
     }
+#endif HAS_INTERNAL_INJURY
     do_ultimate_hexagram_base() {
         const amt = this.players[0].ultimate_hexagram_base_stacks;
         if (amt > 0) {
@@ -2282,12 +2408,14 @@ export class GameState {
             }
         }
     }
+#ifdef HAS_WATER_SPIRIT_SPRING
     do_water_spirit_spring() {
         if (this.players[0].water_spirit_spring_stacks > 0) {
             this.for_each_x_add_c_pct_y("damage_dealt_to_hp_by_atk", 20, "force_of_water");
             this.players[0].water_spirit_spring_stacks -= 1;
         }
     }
+#endif // HAS_WATER_SPIRIT_SPRING
     do_fat_immortal_raccoon() {
         if (this.players[0].fat_immortal_raccoon_stacks > 0) {
             this.heal(this.players[0].fat_immortal_raccoon_stacks);
@@ -2444,14 +2572,6 @@ export class GameState {
             }
         }
     }
-    do_salted_egg_yolk_zongzi(card_idx) {
-        if (this.players[0].salted_egg_yolk_zongzi_stacks > 0) {
-            this.reduce_idx_x_by_c(0, "salted_egg_yolk_zongzi_stacks", 1);
-            if (!this.try_upgrade_card(0, card_idx)) {
-                this.add_c_of_x(2, "appetite");
-            }
-        }
-    }
     do_mutual_growth(card_idx) {
         if (this.players[0].mutual_growth_stacks === 0) {
             return;
@@ -2535,11 +2655,13 @@ export class GameState {
         const amt = Math.min(count, cap);
         this.heal(amt);
     }
+#ifdef HAS_FIRE_FLAME_BLADE
     do_fire_flame_blade() {
         for (let i=0; i<this.players[0].fire_flame_blade_stacks; i++) {
             this.reduce_enemy_c_of_x(1, "max_hp");
         }
     }
+#endif // HAS_FIRE_FLAME_BLADE
     do_drift_ice_blade() {
         for (let i = 0; i<this.players[0].drift_ice_blade_stacks; i++) {
             let amt = 1;
@@ -2587,6 +2709,26 @@ export class GameState {
             this.do_opening(me.next_card_index);
             this.advance_next_card_index();
         }
+        const jump_amt = me.astral_move_jump_stacks;
+        if (jump_amt > 0) {
+            this.reduce_idx_x_by_c(0, "astral_move_jump_stacks", jump_amt);
+            let idx_to_which_to_skip = me.next_card_index;
+            let found = false;
+            for (let i=0; i < jump_amt; i++) {
+                const card_id = me.cards[idx_to_which_to_skip];
+                if (is_astral_move(card_id)) {
+                    found = true;
+                    break;
+                }
+                idx_to_which_to_skip = this.get_next_playable_idx(idx_to_which_to_skip);
+            }
+            if (found) {
+                while (me.next_card_index != idx_to_which_to_skip) {
+                    this.do_opening(me.next_card_index);
+                    this.advance_next_card_index();
+                }
+            }
+        };
     }
     sim_turn() {
         const me = this.players[0];
@@ -2614,7 +2756,9 @@ export class GameState {
         this.do_meditation_of_xuan();
         this.do_regen();
         this.do_heartbroken_tune();
+#ifdef HAS_INTERNAL_INJURY
         this.do_internal_injury(0);
+#endif // HAS_INTERNAL_INJURY
         this.do_illusion_tune();
         this.do_heavenly_spirit_forceage_formation();
         this.do_cacopoisonous_formation();
@@ -2670,12 +2814,14 @@ export class GameState {
             if (card.decrease_qi_cost_by_x !== undefined) {
                 let x = card.decrease_qi_cost_by_x;
                 let reduce_amt = 0;
+#ifdef HAS_ZONGZI_MODE
                 if (x === "food") {
                     reduce_amt = me.internal_injury +
                                 me.indigestion +
                                 me.appetite +
                                 me.regen;
                 } else
+#endif // HAS_ZONGZI_MODE
                 if (x === "debuff") {
                     reduce_amt = this.get_debuff_count(0);
                 } else {
@@ -2752,7 +2898,9 @@ export class GameState {
                 }
                 const card_idx = me.next_card_index;
                 this.do_finishing_touch(card_idx);
+#ifdef HAS_ZONGZI_MODE
                 this.do_salted_egg_yolk_zongzi(card_idx);
+#endif // HAS_ZONGZI_MODE
                 this.do_mutual_growth(card_idx);
                 this.do_nether_void_canine(card_idx);
                 this.do_kongtong_seal(card_idx);
@@ -2789,6 +2937,7 @@ export class GameState {
         this.do_force_of_water();
         this.do_hard_bamboo();
         this.do_xuanming_regen_tune();
+        this.do_thunderbolt_tune();
         this.reduce_idx_x_by_c(0, "entangle", 1);
         this.reduce_idx_x_by_c(0, "flaw", 1);
         this.reduce_idx_x_by_c(0, "weaken", 1);
@@ -2830,7 +2979,12 @@ export class GameState {
         }
         const me = this.players[idx];
 #ifdef HAS_GUARD_UP
-        if (me.guard_up > 0 && !is_cost && !ignore_guard_up) {
+#ifdef HAS_IGNORE_GUARD_UP
+        const use_guard_up = me.guard_up > 0 && !is_cost && !ignore_guard_up;
+#else  // HAS_IGNORE_GUARD_UP
+        const use_guard_up = me.guard_up > 0 && !is_cost;
+#endif // HAS_IGNORE_GUARD_UP
+        if (use_guard_up) {
             me.guard_up -= 1;
             this.log("prevented " + dmg + " damage to hp with guard up. " + me.guard_up + " guard up remaining");
             return 0;
@@ -2868,10 +3022,12 @@ export class GameState {
             this.increase_idx_x_by_c(idx, "qi", 1);
             this.increase_idx_x_by_c(idx, "agility", 1);
         }
+#ifdef HAS_BAD_OMEN
         if (me.bad_omen_stacks > 0) {
             this.reduce_idx_x_by_c(idx, "bad_omen_stacks", 1);
             this.increase_idx_x_by_c(idx, "wound", 1);
         }
+#endif // HAS_BAD_OMEN
         for (let i=0; i<me.birdie_wind_stacks; i++) {
             this.increase_idx_def(idx, 1);
         }
@@ -2956,11 +3112,13 @@ export class GameState {
         if (amt === 0) {
             return 0;
         }
+#ifdef HAS_ZONGZI_MODE
         amt = amt - p0.indigestion;
         amt = amt + p0.appetite;
         if (amt <= 0) {
             amt = 1;
         }
+#endif // HAS_ZONGZI_MODE
         const me = this.players[idx];
         const prev_hp = me.hp;
         if (prev_hp <= 0 && !heal_while_dead) {
@@ -3059,10 +3217,12 @@ export class GameState {
             return;
         }
         const me = this.players[idx];
+#ifdef HAS_ZONGZI_MODE
         if (me.mixed_grain_zongzi_stacks > 0) {
             amt += 1;
             this.increase_idx_hp(idx, me.mixed_grain_zongzi_stacks);
         }
+#endif // HAS_ZONGZI_MODE
         if (me.colorful_spirit_crane_stacks > 0) {
             amt *= 2;
         }
@@ -3197,13 +3357,15 @@ export class GameState {
             return;
         }
         const me = this.players[idx];
+#ifdef HAS_ZONGZI_MODE
         if (me.fresh_fruit_zongzi_stacks > 0 &&
             (x === "internal_injury" || x === "indigestion")) {
             this.reduce_idx_x_by_c(idx, "fresh_fruit_zongzi_stacks", 1);
             this.increase_idx_x_by_c(idx, "regen", amt);
             return;
         }
-        if (x !== "underworld") {
+#endif // HAS_ZONGZI_MODE
+        if (x !== "styx") {
             amt += me.gain_extra_debuff;
             me.gain_extra_debuff = 0;
         }
@@ -3218,7 +3380,7 @@ export class GameState {
         for (let i=0; i<me.unwavering_soul_stacks; i++) {
             this.increase_idx_hp(idx, amt);
         }
-        if (x === "underworld") {
+        if (x === "styx") {
             if (me.character === "dx3") {
                 this.increase_idx_hp(idx, amt * 3);
             } else {
@@ -3439,11 +3601,13 @@ export class GameState {
             let can_wound = damage_to_hp > 0;
 #ifdef HAS_GUARD_UP
             let usable_guard_up = enemy.guard_up;
+#ifdef HAS_IGNORE_GUARD_UP
             if (me.ignore_guard_up > 0) {
                 ignore_guard_up = true;
                 me.ignore_guard_up -= 1;
                 usable_guard_up = 0;
             }
+#endif // HAS_IGNORE_GUARD_UP
             can_wound = can_wound && usable_guard_up === 0;
 #endif // HAS_GUARD_UP
 #ifdef HAS_COVERT_SHIFT
@@ -3481,7 +3645,8 @@ export class GameState {
             }
 #endif // HAS_METAL_SPIRIT_GIANT_TRIPOD
         }
-        let damage_actually_dealt_to_hp = this.reduce_idx_hp(enemy_idx, damage_to_hp, false, ignore_guard_up);
+        let damage_actually_dealt_to_hp = this.reduce_idx_hp(
+            enemy_idx, damage_to_hp, false, ignore_guard_up);
         if (is_atk) {
             me.damage_dealt_to_hp_by_atk = damage_actually_dealt_to_hp;
             me.damage_dealt_to_hp_by_this_card_atk += damage_actually_dealt_to_hp;
@@ -3711,11 +3876,12 @@ export class GameState {
         let my_debuff_names = [];
         let my_debuff_stack_counts = [];
         let necessary_times = 0;
+        const me = this.players[0];
         for (let i=0; i<DEBUFF_NAMES.length; i++) {
-            if (this.players[0][DEBUFF_NAMES[i]] > 0) {
+            if (me[DEBUFF_NAMES[i]] > 0) {
                 my_debuff_names.push(DEBUFF_NAMES[i]);
-                my_debuff_stack_counts.push(this.players[0][DEBUFF_NAMES[i]]);
-                necessary_times += Math.ceil(this.players[0][DEBUFF_NAMES[i]] / c);
+                my_debuff_stack_counts.push(me[DEBUFF_NAMES[i]]);
+                necessary_times += Math.ceil(me[DEBUFF_NAMES[i]] / c);
             }
         }
         if (necessary_times > n && my_debuff_names.length > 1) {
@@ -3730,22 +3896,22 @@ export class GameState {
             }
             /*
             // if internal injury is active, reduce it by c
-            if (this.players[0].internal_injury > 0) {
+            if (me.internal_injury > 0) {
                 this.reduce_idx_x_by_c(0, "internal_injury", c);
                 // get the index of internal injury
                 const debuff_idx = my_debuff_names.indexOf("internal_injury");
-                if (this.players[0].internal_injury === 0) {
+                if (me.internal_injury === 0) {
                     my_debuff_names.splice(debuff_idx, 1);
                     my_debuff_stack_counts.splice(debuff_idx, 1);
                 }
                 continue;
             }
             // if flaw is active, reduce it by c
-            if (this.players[0].flaw > 0) {
+            if (me.flaw > 0) {
                 this.reduce_idx_x_by_c(0, "flaw", c);
                 // get the index of flaw
                 const debuff_idx = my_debuff_names.indexOf("flaw");
-                if (this.players[0].flaw === 0) {
+                if (me.flaw === 0) {
                     my_debuff_names.splice(debuff_idx, 1);
                     my_debuff_stack_counts.splice(debuff_idx, 1);
                 }
@@ -3755,7 +3921,7 @@ export class GameState {
             let debuff_idx = Math.floor(Math.random() * my_debuff_names.length);
             let debuff_name = my_debuff_names[debuff_idx];
             this.reduce_idx_x_by_c(0, debuff_name, c);
-            if (this.players[0][debuff_name] === 0) {
+            if (me[debuff_name] === 0) {
                 my_debuff_names.splice(debuff_idx, 1);
                 my_debuff_stack_counts.splice(debuff_idx, 1);
             }
@@ -3763,8 +3929,9 @@ export class GameState {
     }
     transfer_random_debuff() {
         let my_debuff_names = [];
+        const me = this.players[0];
         for (let i=0; i<DEBUFF_NAMES.length; i++) {
-            if (this.players[0][DEBUFF_NAMES[i]] > 0) {
+            if (me[DEBUFF_NAMES[i]] > 0) {
                 my_debuff_names.push(DEBUFF_NAMES[i]);
             }
         }
@@ -4315,15 +4482,19 @@ export class GameState {
     reverse_card_play_direction() {
         this.players[0].card_play_direction *= -1;
     }
+#ifdef HAS_PENETRATE
     do_metal_spirit_charge(amt) {
         if (this.if_metal_spirit()) {
             amt += Math.floor(this.players[0].def / 4);
         }
         this.increase_idx_x_by_c(0, "penetrate", amt);
     }
+#endif // HAS_PENETRATE
     idx_has_debuff(idx) {
         const me = this.players[idx];
+#ifdef HAS_INTERNAL_INJURY
         if (me.internal_injury > 0) return true;
+#endif // HAS_INTERNAL_INJURY
         if (me.weaken > 0) return true;
         if (me.flaw > 0) return true;
         if (me.decrease_atk > 0) return true;
@@ -4331,7 +4502,7 @@ export class GameState {
 #ifdef HAS_WOUND
         if (me.wound > 0) return true;
 #endif // HAS_WOUND
-        if (me.underworld > 0) return true;
+        if (me.styx > 0) return true;
     }
     if_no_debuff() {
         return !this.idx_has_debuff(0);
@@ -4406,6 +4577,7 @@ export class GameState {
             me.activate_metal_spirit_stacks > 0 ||
             me.activate_water_spirit_stacks > 0;
     }
+#ifdef HAS_PENETRATE
     do_metal_spirit_rhythm_water(pen_gain_amt) {
         if (this.if_metal_spirit()) {
             this.increase_idx_x_by_c(0, "penetrate", pen_gain_amt);
@@ -4416,6 +4588,7 @@ export class GameState {
             this.add_c_of_x(amt, "force_of_water");
         }
     }
+#endif // HAS_PENETRATE
     trigger_card_by_id(id) {
         this.trigger_card(id, this.players[0].currently_playing_card_idx);
     }
@@ -4429,6 +4602,7 @@ export class GameState {
             this.increase_idx_x_by_c(0, "def", def_amt);
         }
     }
+#ifdef HAS_PENETRATE
     do_earth_spirit_rhythm_metal(def_amt) {
         if (this.if_earth_spirit()) {
             this.def(def_amt);
@@ -4441,6 +4615,7 @@ export class GameState {
             this.add_c_of_x(pen_amt, "penetrate");
         }
     }
+#endif // HAS_PENETRATE
     do_fire_spirit_burning_sky(atk_amt) {
         atk_amt += Math.floor(this.players[1].max_hp_lost / 3);
         for (let i=0; i<3; i++) {
@@ -4638,8 +4813,9 @@ export class GameState {
     }
     do_soul_overwhelming_palm(force_per_debuff, base_atk, atk_per_force) {
         let my_distinct_debuffs = 0;
+        const me = this.players[0];
         for (let i=0; i<DEBUFF_NAMES.length; i++) {
-            if (this.players[0][DEBUFF_NAMES[i]] > 0) {
+            if (me[DEBUFF_NAMES[i]] > 0) {
                 my_distinct_debuffs++;
             }
         }

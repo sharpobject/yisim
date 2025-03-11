@@ -4616,7 +4616,7 @@ card_actions["145061"] = (game) => {
         game.add_enemy_c_of_x(2, "wound");
     }
     if (game.players[0].underworld >= 1) {
-        game.add_enemy_c_of_x(2, "underworld");
+        game.add_enemy_c_of_x(2, "styx");
     }
     game.for_each_x_add_y("debuff", "bonus_force_amt");
     game.ignore_weaken();
@@ -4645,7 +4645,7 @@ card_actions["145062"] = (game) => {
         game.add_enemy_c_of_x(2, "wound");
     }
     if (game.players[0].underworld >= 1) {
-        game.add_enemy_c_of_x(2, "underworld");
+        game.add_enemy_c_of_x(2, "styx");
     }
     game.for_each_x_add_y("debuff", "bonus_force_amt");
     game.ignore_weaken();
@@ -4674,7 +4674,7 @@ card_actions["145063"] = (game) => {
         game.add_enemy_c_of_x(2, "wound");
     }
     if (game.players[0].underworld >= 1) {
-        game.add_enemy_c_of_x(2, "underworld");
+        game.add_enemy_c_of_x(2, "styx");
     }
     game.for_each_x_add_y("debuff", "bonus_force_amt");
     game.ignore_weaken();
@@ -5161,7 +5161,7 @@ card_actions["224011"] = (game) => {
     game.for_each_enemy_x_add_y("decrease_atk", "bonus_rep_amt");
     game.for_each_enemy_x_add_y("entangle", "bonus_rep_amt");
     game.for_each_enemy_x_add_y("wound", "bonus_rep_amt");
-    game.for_each_enemy_x_add_y("underworld", "bonus_rep_amt");
+    game.for_each_enemy_x_add_y("styx", "bonus_rep_amt");
     for (let i = 0; i < 0 + game.players[0].bonus_rep_amt; i++) {
         game.atk(1);
     }
@@ -5176,7 +5176,7 @@ card_actions["224012"] = (game) => {
     game.for_each_enemy_x_add_y("decrease_atk", "bonus_rep_amt");
     game.for_each_enemy_x_add_y("entangle", "bonus_rep_amt");
     game.for_each_enemy_x_add_y("wound", "bonus_rep_amt");
-    game.for_each_enemy_x_add_y("underworld", "bonus_rep_amt");
+    game.for_each_enemy_x_add_y("styx", "bonus_rep_amt");
     for (let i = 0; i < 0 + game.players[0].bonus_rep_amt; i++) {
         game.atk(1);
     }
@@ -5191,7 +5191,7 @@ card_actions["224013"] = (game) => {
     game.for_each_enemy_x_add_y("decrease_atk", "bonus_rep_amt");
     game.for_each_enemy_x_add_y("entangle", "bonus_rep_amt");
     game.for_each_enemy_x_add_y("wound", "bonus_rep_amt");
-    game.for_each_enemy_x_add_y("underworld", "bonus_rep_amt");
+    game.for_each_enemy_x_add_y("styx", "bonus_rep_amt");
     for (let i = 0; i < 0 + game.players[0].bonus_rep_amt; i++) {
         game.atk(1);
     }
@@ -5951,7 +5951,7 @@ card_actions["245011"] = (game) => {
     game.for_each_x_reduce_c_pct_y("decrease_atk", 100, "decrease_atk");
     game.for_each_x_reduce_c_pct_y("entangle", 100, "entangle");
     game.for_each_x_reduce_c_pct_y("wound", 100, "wound");
-    game.for_each_x_reduce_c_pct_y("underworld", 100, "underworld");
+    game.for_each_x_reduce_c_pct_y("styx", 100, "styx");
     game.for_each_x_add_y("bonus_def_amt", "physique");
     game.for_each_x_add_y("bonus_def_amt", "hp");
     game.physique(0);
@@ -5967,7 +5967,7 @@ card_actions["245012"] = (game) => {
     game.for_each_x_reduce_c_pct_y("decrease_atk", 100, "decrease_atk");
     game.for_each_x_reduce_c_pct_y("entangle", 100, "entangle");
     game.for_each_x_reduce_c_pct_y("wound", 100, "wound");
-    game.for_each_x_reduce_c_pct_y("underworld", 100, "underworld");
+    game.for_each_x_reduce_c_pct_y("styx", 100, "styx");
     game.for_each_x_add_y("bonus_def_amt", "physique");
     game.for_each_x_add_y("bonus_def_amt", "hp");
     game.physique(0);
@@ -5983,7 +5983,7 @@ card_actions["245013"] = (game) => {
     game.for_each_x_reduce_c_pct_y("decrease_atk", 100, "decrease_atk");
     game.for_each_x_reduce_c_pct_y("entangle", 100, "entangle");
     game.for_each_x_reduce_c_pct_y("wound", 100, "wound");
-    game.for_each_x_reduce_c_pct_y("underworld", 100, "underworld");
+    game.for_each_x_reduce_c_pct_y("styx", 100, "styx");
     game.for_each_x_add_y("bonus_def_amt", "physique");
     game.for_each_x_add_y("bonus_def_amt", "hp");
     game.physique(0);
@@ -6352,7 +6352,7 @@ card_actions["322021"] = (game) => {
     game.reduce_c_of_x(2, "decrease_atk");
     game.reduce_c_of_x(2, "entangle");
     game.reduce_c_of_x(2, "wound");
-    game.reduce_c_of_x(2, "underworld");
+    game.reduce_c_of_x(2, "styx");
 }
 
 // 322022
@@ -6364,7 +6364,7 @@ card_actions["322022"] = (game) => {
     game.reduce_c_of_x(3, "decrease_atk");
     game.reduce_c_of_x(3, "entangle");
     game.reduce_c_of_x(3, "wound");
-    game.reduce_c_of_x(3, "underworld");
+    game.reduce_c_of_x(3, "styx");
 }
 
 // 322023
@@ -6376,7 +6376,7 @@ card_actions["322023"] = (game) => {
     game.reduce_c_of_x(4, "decrease_atk");
     game.reduce_c_of_x(4, "entangle");
     game.reduce_c_of_x(4, "wound");
-    game.reduce_c_of_x(4, "underworld");
+    game.reduce_c_of_x(4, "styx");
 }
 
 // Mist Fulu
@@ -6828,7 +6828,7 @@ card_actions["334031"] = (game) => {
     game.add_my_x_to_enemy_y("decrease_atk", "decrease_atk");
     game.add_my_x_to_enemy_y("entangle", "entangle");
     game.add_my_x_to_enemy_y("wound", "wound");
-    game.add_my_x_to_enemy_y("underworld", "underworld");
+    game.add_my_x_to_enemy_y("styx", "styx");
 }
 
 // 334032
@@ -6839,7 +6839,7 @@ card_actions["334032"] = (game) => {
     game.add_my_x_to_enemy_y("decrease_atk", "decrease_atk");
     game.add_my_x_to_enemy_y("entangle", "entangle");
     game.add_my_x_to_enemy_y("wound", "wound");
-    game.add_my_x_to_enemy_y("underworld", "underworld");
+    game.add_my_x_to_enemy_y("styx", "styx");
 }
 
 // 334033
@@ -6850,7 +6850,7 @@ card_actions["334033"] = (game) => {
     game.add_my_x_to_enemy_y("decrease_atk", "decrease_atk");
     game.add_my_x_to_enemy_y("entangle", "entangle");
     game.add_my_x_to_enemy_y("wound", "wound");
-    game.add_my_x_to_enemy_y("underworld", "underworld");
+    game.add_my_x_to_enemy_y("styx", "styx");
 }
 
 // Predicament for Immortals
@@ -9629,7 +9629,7 @@ card_actions["642023"] = (game) => {
 
 // Gone Crazy
 card_actions["643011"] = (game) => {
-    game.add_c_of_x(2, "underworld");
+    game.add_c_of_x(2, "styx");
     for (let i = 0; i < 2; i++) {
         switch (game.random_int(6)) {
             case 0:
@@ -9660,7 +9660,7 @@ card_actions["643011"] = (game) => {
 
 // 643012
 card_actions["643012"] = (game) => {
-    game.add_c_of_x(3, "underworld");
+    game.add_c_of_x(3, "styx");
     switch (game.random_int(6)) {
         case 0:
             game.add_c_of_x(1, "internal_injury");
@@ -9689,7 +9689,7 @@ card_actions["643012"] = (game) => {
 
 // 643013
 card_actions["643013"] = (game) => {
-    game.add_c_of_x(4, "underworld");
+    game.add_c_of_x(4, "styx");
     game.for_each_x_add_y("debuff", "bonus_def_amt");
     game.add_c_of_x(1, "bonus_def_amt");
     game.for_each_x_up_to_c_add_y("bonus_def_amt", 20, "physique");
@@ -9698,21 +9698,21 @@ card_actions["643013"] = (game) => {
 
 // Crash Fist - Stygian Night
 card_actions["644011"] = (game) => {
-    game.add_c_of_x(2, "underworld");
+    game.add_c_of_x(2, "styx");
     game.continuous();
     game.add_c_of_x(6, "crash_fist_stygian_night_stacks");
 }
 
 // 644012
 card_actions["644012"] = (game) => {
-    game.add_c_of_x(3, "underworld");
+    game.add_c_of_x(3, "styx");
     game.continuous();
     game.add_c_of_x(9, "crash_fist_stygian_night_stacks");
 }
 
 // 644013
 card_actions["644013"] = (game) => {
-    game.add_c_of_x(4, "underworld");
+    game.add_c_of_x(4, "styx");
     game.continuous();
     game.add_c_of_x(12, "crash_fist_stygian_night_stacks");
 }
@@ -9741,21 +9741,21 @@ card_actions["644023"] = (game) => {
 // Stygian Moon's Changuang
 card_actions["645011"] = (game) => {
     game.physique(1);
-    game.add_c_of_x(2, "underworld");
+    game.add_c_of_x(2, "styx");
     game.add_c_of_x(10, "agility");
 }
 
 // 645012
 card_actions["645012"] = (game) => {
     game.physique(2);
-    game.add_c_of_x(3, "underworld");
+    game.add_c_of_x(3, "styx");
     game.add_c_of_x(11, "agility");
 }
 
 // 645013
 card_actions["645013"] = (game) => {
     game.physique(3);
-    game.add_c_of_x(4, "underworld");
+    game.add_c_of_x(4, "styx");
     game.add_c_of_x(12, "agility");
 }
 
@@ -11901,7 +11901,7 @@ card_actions["943013"] = (game) => {
 
 // Styx Night Footwork
 card_actions["944011"] = (game) => {
-    game.add_c_of_x(3, "underworld");
+    game.add_c_of_x(3, "styx");
     game.add_c_of_x(3, "agility");
     game.continuous();
     game.add_c_of_x(1, "styx_night_footwork_stacks");
@@ -11909,7 +11909,7 @@ card_actions["944011"] = (game) => {
 
 // 944012
 card_actions["944012"] = (game) => {
-    game.add_c_of_x(4, "underworld");
+    game.add_c_of_x(4, "styx");
     game.add_c_of_x(4, "agility");
     game.continuous();
     game.add_c_of_x(1, "styx_night_footwork_stacks");
@@ -11917,7 +11917,7 @@ card_actions["944012"] = (game) => {
 
 // 944013
 card_actions["944013"] = (game) => {
-    game.add_c_of_x(5, "underworld");
+    game.add_c_of_x(5, "styx");
     game.add_c_of_x(5, "agility");
     game.continuous();
     game.add_c_of_x(1, "styx_night_footwork_stacks");

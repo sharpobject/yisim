@@ -4318,8 +4318,8 @@
 				["add_enemy_c_of_x", 2, "entangle"]],
 			["if_x_at_least_c_do", "wound", 1,
 				["add_enemy_c_of_x", 2, "wound"]],
-			["if_x_at_least_c_do", "underworld", 1,
-				["add_enemy_c_of_x", 2, "underworld"]],
+			["if_x_at_least_c_do", "styx", 1,
+				["add_enemy_c_of_x", 2, "styx"]],
 			["for_each_x_add_y", "debuff", "bonus_force_amt"],
 			["ignore_weaken"],
 			["ignore_decrease_atk"],
@@ -4340,8 +4340,8 @@
 				["add_enemy_c_of_x", 2, "entangle"]],
 			["if_x_at_least_c_do", "wound", 1,
 				["add_enemy_c_of_x", 2, "wound"]],
-			["if_x_at_least_c_do", "underworld", 1,
-				["add_enemy_c_of_x", 2, "underworld"]],
+			["if_x_at_least_c_do", "styx", 1,
+				["add_enemy_c_of_x", 2, "styx"]],
 			["for_each_x_add_y", "debuff", "bonus_force_amt"],
 			["ignore_weaken"],
 			["ignore_decrease_atk"],
@@ -4362,8 +4362,8 @@
 				["add_enemy_c_of_x", 2, "entangle"]],
 			["if_x_at_least_c_do", "wound", 1,
 				["add_enemy_c_of_x", 2, "wound"]],
-			["if_x_at_least_c_do", "underworld", 1,
-				["add_enemy_c_of_x", 2, "underworld"]],
+			["if_x_at_least_c_do", "styx", 1,
+				["add_enemy_c_of_x", 2, "styx"]],
 			["for_each_x_add_y", "debuff", "bonus_force_amt"],
 			["ignore_weaken"],
 			["ignore_decrease_atk"],
@@ -4843,7 +4843,7 @@
 			["for_each_enemy_x_add_y", "decrease_atk", "bonus_rep_amt"],
 			["for_each_enemy_x_add_y", "entangle", "bonus_rep_amt"],
 			["for_each_enemy_x_add_y", "wound", "bonus_rep_amt"],
-			["for_each_enemy_x_add_y", "underworld", "bonus_rep_amt"],
+			["for_each_enemy_x_add_y", "styx", "bonus_rep_amt"],
 			["rep", 0, ["atk", 1]]
 		]
 	},
@@ -4856,7 +4856,7 @@
 			["for_each_enemy_x_add_y", "decrease_atk", "bonus_rep_amt"],
 			["for_each_enemy_x_add_y", "entangle", "bonus_rep_amt"],
 			["for_each_enemy_x_add_y", "wound", "bonus_rep_amt"],
-			["for_each_enemy_x_add_y", "underworld", "bonus_rep_amt"],
+			["for_each_enemy_x_add_y", "styx", "bonus_rep_amt"],
 			["rep", 0, ["atk", 1]]
 		]
 	},
@@ -4869,7 +4869,7 @@
 			["for_each_enemy_x_add_y", "decrease_atk", "bonus_rep_amt"],
 			["for_each_enemy_x_add_y", "entangle", "bonus_rep_amt"],
 			["for_each_enemy_x_add_y", "wound", "bonus_rep_amt"],
-			["for_each_enemy_x_add_y", "underworld", "bonus_rep_amt"],
+			["for_each_enemy_x_add_y", "styx", "bonus_rep_amt"],
 			["rep", 0, ["atk", 1]]
 		]
 	},
@@ -5606,7 +5606,7 @@
 			["for_each_x_reduce_c_pct_y", "decrease_atk", 100, "decrease_atk"],
 			["for_each_x_reduce_c_pct_y", "entangle", 100, "entangle"],
 			["for_each_x_reduce_c_pct_y", "wound", 100, "wound"],
-			["for_each_x_reduce_c_pct_y", "underworld", 100, "underworld"],
+			["for_each_x_reduce_c_pct_y", "styx", 100, "styx"],
 			["for_each_x_add_y", "bonus_def_amt", "physique"],
 			["for_each_x_add_y", "bonus_def_amt", "hp"],
 			["physique", 0]
@@ -5622,7 +5622,7 @@
 			["for_each_x_reduce_c_pct_y", "decrease_atk", 100, "decrease_atk"],
 			["for_each_x_reduce_c_pct_y", "entangle", 100, "entangle"],
 			["for_each_x_reduce_c_pct_y", "wound", 100, "wound"],
-			["for_each_x_reduce_c_pct_y", "underworld", 100, "underworld"],
+			["for_each_x_reduce_c_pct_y", "styx", 100, "styx"],
 			["for_each_x_add_y", "bonus_def_amt", "physique"],
 			["for_each_x_add_y", "bonus_def_amt", "hp"],
 			["physique", 0]
@@ -5638,7 +5638,7 @@
 			["for_each_x_reduce_c_pct_y", "decrease_atk", 100, "decrease_atk"],
 			["for_each_x_reduce_c_pct_y", "entangle", 100, "entangle"],
 			["for_each_x_reduce_c_pct_y", "wound", 100, "wound"],
-			["for_each_x_reduce_c_pct_y", "underworld", 100, "underworld"],
+			["for_each_x_reduce_c_pct_y", "styx", 100, "styx"],
 			["for_each_x_add_y", "bonus_def_amt", "physique"],
 			["for_each_x_add_y", "bonus_def_amt", "hp"],
 			["physique", 0]
@@ -6028,7 +6028,7 @@
 			["reduce_c_of_x", 2, "decrease_atk"],
 			["reduce_c_of_x", 2, "entangle"],
 			["reduce_c_of_x", 2, "wound"],
-			["reduce_c_of_x", 2, "underworld"]
+			["reduce_c_of_x", 2, "styx"]
 		]
 	},
 	"322022": {
@@ -6040,7 +6040,7 @@
 			["reduce_c_of_x", 3, "decrease_atk"],
 			["reduce_c_of_x", 3, "entangle"],
 			["reduce_c_of_x", 3, "wound"],
-			["reduce_c_of_x", 3, "underworld"]
+			["reduce_c_of_x", 3, "styx"]
 		]
 	},
 	"322023": {
@@ -6052,7 +6052,7 @@
 			["reduce_c_of_x", 4, "decrease_atk"],
 			["reduce_c_of_x", 4, "entangle"],
 			["reduce_c_of_x", 4, "wound"],
-			["reduce_c_of_x", 4, "underworld"]
+			["reduce_c_of_x", 4, "styx"]
 		]
 	},
 	"322031": {
@@ -6513,7 +6513,7 @@
 			["add_my_x_to_enemy_y", "decrease_atk", "decrease_atk"],
 			["add_my_x_to_enemy_y", "entangle", "entangle"],
 			["add_my_x_to_enemy_y", "wound", "wound"],
-			["add_my_x_to_enemy_y", "underworld", "underworld"]
+			["add_my_x_to_enemy_y", "styx", "styx"]
 		]
 	},
 	"334032": {
@@ -6525,7 +6525,7 @@
 			["add_my_x_to_enemy_y", "decrease_atk", "decrease_atk"],
 			["add_my_x_to_enemy_y", "entangle", "entangle"],
 			["add_my_x_to_enemy_y", "wound", "wound"],
-			["add_my_x_to_enemy_y", "underworld", "underworld"]
+			["add_my_x_to_enemy_y", "styx", "styx"]
 		]
 	},
 	"334033": {
@@ -6537,7 +6537,7 @@
 			["add_my_x_to_enemy_y", "decrease_atk", "decrease_atk"],
 			["add_my_x_to_enemy_y", "entangle", "entangle"],
 			["add_my_x_to_enemy_y", "wound", "wound"],
-			["add_my_x_to_enemy_y", "underworld", "underworld"]
+			["add_my_x_to_enemy_y", "styx", "styx"]
 		]
 	},
 	"335011": {
@@ -9349,7 +9349,7 @@
 	"643011": {
 		"name": "Gone Crazy",
 		"actions": [
-			["add_c_of_x", 2, "underworld"],
+			["add_c_of_x", 2, "styx"],
 			["rep", 2,
 				["do_one_randomly", [
 					["add_c_of_x", 1, "internal_injury"],
@@ -9369,7 +9369,7 @@
 	},
 	"643012": {
 		"actions": [
-			["add_c_of_x", 3, "underworld"],
+			["add_c_of_x", 3, "styx"],
 			["do_one_randomly", [
 				["add_c_of_x", 1, "internal_injury"],
 				["add_c_of_x", 1, "weaken"],
@@ -9386,7 +9386,7 @@
 	},
 	"643013": {
 		"actions": [
-			["add_c_of_x", 4, "underworld"],
+			["add_c_of_x", 4, "styx"],
 			["for_each_x_add_y", "debuff", "bonus_def_amt"],
 			["add_c_of_x", 1, "bonus_def_amt"],
 			["for_each_x_up_to_c_add_y", "bonus_def_amt", 20, "physique"],
@@ -9396,7 +9396,7 @@
 	"644011": {
 		"name": "Crash Fist - Stygian Night",
 		"actions": [
-			["add_c_of_x", 2, "underworld"],
+			["add_c_of_x", 2, "styx"],
 			["continuous"],
 			["add_c_of_x", 6, "crash_fist_stygian_night_stacks"]
 		],
@@ -9404,14 +9404,14 @@
 	},
 	"644012": {
 		"actions": [
-			["add_c_of_x", 3, "underworld"],
+			["add_c_of_x", 3, "styx"],
 			["continuous"],
 			["add_c_of_x", 9, "crash_fist_stygian_night_stacks"]
 		]
 	},
 	"644013": {
 		"actions": [
-			["add_c_of_x", 4, "underworld"],
+			["add_c_of_x", 4, "styx"],
 			["continuous"],
 			["add_c_of_x", 12, "crash_fist_stygian_night_stacks"]
 		]
@@ -9443,7 +9443,7 @@
 		"name": "Stygian Moon's Changuang",
 		"actions": [
 			["physique", 1],
-			["add_c_of_x", 2, "underworld"],
+			["add_c_of_x", 2, "styx"],
 			["add_c_of_x", 10, "agility"]
 		],
 		"character": "dx3"
@@ -9451,14 +9451,14 @@
 	"645012": {
 		"actions": [
 			["physique", 2],
-			["add_c_of_x", 3, "underworld"],
+			["add_c_of_x", 3, "styx"],
 			["add_c_of_x", 11, "agility"]
 		]
 	},
 	"645013": {
 		"actions": [
 			["physique", 3],
-			["add_c_of_x", 4, "underworld"],
+			["add_c_of_x", 4, "styx"],
 			["add_c_of_x", 12, "agility"]
 		]
 	},
@@ -10859,6 +10859,28 @@
 			["for_each_x_add_y", "unrestrained_sword_count", "sword_intent"]
 		]
 	},
+	"913021": {
+		"name": "Spiritstat Tune",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "spiritstat_tune_stacks"]
+		],
+		"marking": "mu"
+	},
+	"913022": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "spiritstat_tune_stacks"]
+		],
+		"marking": "mu"
+	},
+	"913023": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 5, "spiritstat_tune_stacks"]
+		],
+		"marking": "mu"
+	},
 	"914011": {
 		"name": "Unrestrained Sword - Cat Claw",
 		"actions": [
@@ -10894,21 +10916,46 @@
 			["sword_intent", 3],
 			["add_c_of_x", 18, "max_hp"],
 			["for_each_x_add_c_y", "sword_intent", 2, "hp"]
-		]
+		],
+		"marking": "el"
 	},
 	"914022": {
 		"actions": [
 			["sword_intent", 4],
 			["add_c_of_x", 24, "max_hp"],
 			["for_each_x_add_c_y", "sword_intent", 2, "hp"]
-		]
+		],
+		"marking": "el"
 	},
 	"914023": {
 		"actions": [
 			["sword_intent", 5],
 			["add_c_of_x", 30, "max_hp"],
 			["for_each_x_add_c_y", "sword_intent", 2, "hp"]
-		]
+		],
+		"marking": "el"
+	},
+	"914031": {
+		"name": "Cloud Sword - Clarity",
+		"actions": [
+			["rep", 2, ["atk", 4]],
+			["cloud_hit", ["add_enemy_c_of_x", 2, "weaken"]]
+		],
+		"marking": "fu"
+	},
+	"914032": {
+		"actions": [
+			["rep", 3, ["atk", 4]],
+			["cloud_hit", ["add_enemy_c_of_x", 2, "weaken"]]
+		],
+		"marking": "fu"
+	},
+	"914033": {
+		"actions": [
+			["rep", 4, ["atk", 4]],
+			["cloud_hit", ["add_enemy_c_of_x", 2, "weaken"]]
+		],
+		"marking": "fu"
 	},
 	"915011": {
 		"name": "Cloud Sword - Dragon Spring",
@@ -11610,7 +11657,7 @@
 	"944011": {
 		"name": "Styx Night Footwork",
 		"actions": [
-			["add_c_of_x", 3, "underworld"],
+			["add_c_of_x", 3, "styx"],
 			["add_c_of_x", 3, "agility"],
 			["continuous"],
 			["add_c_of_x", 1, "styx_night_footwork_stacks"]
@@ -11619,7 +11666,7 @@
 	},
 	"944012": {
 		"actions": [
-			["add_c_of_x", 4, "underworld"],
+			["add_c_of_x", 4, "styx"],
 			["add_c_of_x", 4, "agility"],
 			["continuous"],
 			["add_c_of_x", 1, "styx_night_footwork_stacks"]
@@ -11627,7 +11674,7 @@
 	},
 	"944013": {
 		"actions": [
-			["add_c_of_x", 5, "underworld"],
+			["add_c_of_x", 5, "styx"],
 			["add_c_of_x", 5, "agility"],
 			["continuous"],
 			["add_c_of_x", 1, "styx_night_footwork_stacks"]

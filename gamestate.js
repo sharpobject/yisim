@@ -49,6 +49,7 @@ export const CHARACTER_ID_TO_NAME = {
     "sw3": "Long Yao",
     "sw4": "Lin Xiaoyue",
     "sw5": "Lu Jianxin",
+    "sw6": "Li Chengyun",
     "he1": "Tan Shuyan",
     "he2": "Yan Chen",
     "he3": "Yao Ling",
@@ -63,6 +64,7 @@ export const CHARACTER_ID_TO_NAME = {
     "dx2": "Tu Kui",
     "dx3": "Ye Mingming",
     "dx4": "Ji Fangsheng",
+    "dx5": "Li Man",
 }
 const PREFIX_TO_MARKING = {
     ["11"]: "sw", // regular sect cards - cloud spirit sword sect
@@ -654,7 +656,21 @@ export class Player {
         this.frozen_snow_lotus_stacks = 0;
         this.entangling_ancient_vine_stacks = 0;
         this.devouring_ancient_vine_stacks = 0;
+        // TODO: implement most of the below plants
+        // divine_power_grass_stacks -> increase_atk
+        // lose_power_grass_stacks -> decrease_atk
+        // healing_chamomile_stacks -> regen
+        // clear_chamomile_stacks -> hexproof
+        // flying_owl_reishi_stacks -> speed
+        // shadow_owl_reishi_stacks -> flying_brush_stacks
+        // toxic_purple_fern_stacks -> internal_injury
+        this.divine_power_grass_stacks = 0;;
+        this.lose_power_grass_stacks = 0;
+        this.healing_chamomile_stacks = 0;
+        this.clear_chamomile_stacks = 0;
+        this.flying_owl_reishi_stacks = 0;
         this.shadow_owl_reishi_stacks = 0;
+        this.toxic_purple_fern_stacks = 0;
         // fortune teller side job cards
         this.observe_body_stacks = 0;
         this.god_luck_approach_stacks = 0;
@@ -1492,6 +1508,14 @@ export class GameState {
             this.heal(this.players[0].alkaline_water_zongzi_stacks * 2);
         }
     }
+    do_salted_egg_yolk_zongzi(card_idx) {
+        if (this.players[0].salted_egg_yolk_zongzi_stacks > 0) {
+            this.reduce_idx_x_by_c(0, "salted_egg_yolk_zongzi_stacks", 1);
+            if (!this.try_upgrade_card(0, card_idx)) {
+                this.add_c_of_x(2, "appetite");
+            }
+        }
+    }
     do_cloud_sword_chain_count(card_id) {
         const me = this.players[0];
         // if this card has "Cloud Sword" in the name, increment cloud_sword_chain_count
@@ -1786,30 +1810,30 @@ export class GameState {
     }
     do_cycle_of_five_elements_and_friends(card_id) {
         const me = this.players[0];
-        if (me.p2_cycle_of_five_elements_stacks === 0 &&
-            me.p3_cycle_of_five_elements_stacks === 0 &&
-            me.p4_cycle_of_five_elements_stacks === 0 &&
-            me.p5_cycle_of_five_elements_stacks === 0 &&
-            me.blossom_dance_stacks === 0) {
-            return;
-        }
+        let bail = true;
+        if (me.p2_cycle_of_five_elements_stacks > 0) bail = false;
+        if (me.p3_cycle_of_five_elements_stacks > 0) bail = false;
+        if (me.p4_cycle_of_five_elements_stacks > 0) bail = false;
+        if (me.p5_cycle_of_five_elements_stacks > 0) bail = false;
+        if (me.blossom_dance_stacks > 0) bail = false;
+        if (bail) return;
         if (!this.cards_have_generating_interaction(me.last_card_id, card_id)) {
             return;
         }
         const def_amt = 3 * me.p2_cycle_of_five_elements_stacks;
-        const qi_amt = me.p3_cycle_of_five_elements_stacks;
-        const hp_amt = 4 * me.p4_cycle_of_five_elements_stacks;
-        const pen_amt = 4 * me.p5_cycle_of_five_elements_stacks;
         if (def_amt > 0) {
             this.def(def_amt);
         }
+        const qi_amt = me.p3_cycle_of_five_elements_stacks;
         if (qi_amt > 0) {
             this.qi(qi_amt);
         }
+        const hp_amt = 4 * me.p4_cycle_of_five_elements_stacks;
         if (hp_amt > 0) {
             this.add_c_of_x(hp_amt, "max_hp");
             this.heal(hp_amt);
         }
+        const pen_amt = 4 * me.p5_cycle_of_five_elements_stacks;
         if (pen_amt > 0) {
             this.add_c_of_x(pen_amt, "penetrate");
         }
@@ -2438,14 +2462,6 @@ export class GameState {
             }
         }
     }
-    do_salted_egg_yolk_zongzi(card_idx) {
-        if (this.players[0].salted_egg_yolk_zongzi_stacks > 0) {
-            this.reduce_idx_x_by_c(0, "salted_egg_yolk_zongzi_stacks", 1);
-            if (!this.try_upgrade_card(0, card_idx)) {
-                this.add_c_of_x(2, "appetite");
-            }
-        }
-    }
     do_mutual_growth(card_idx) {
         if (this.players[0].mutual_growth_stacks === 0) {
             return;
@@ -2844,7 +2860,8 @@ export class GameState {
             return 0;
         }
         const me = this.players[idx];
-        if (me.guard_up > 0 && !is_cost && !ignore_guard_up) {
+        const use_guard_up = me.guard_up > 0 && !is_cost && !ignore_guard_up;
+        if (use_guard_up) {
             me.guard_up -= 1;
             this.log("prevented " + dmg + " damage to hp with guard up. " + me.guard_up + " guard up remaining");
             return 0;
@@ -3474,7 +3491,8 @@ export class GameState {
                 }
             }
         }
-        let damage_actually_dealt_to_hp = this.reduce_idx_hp(enemy_idx, damage_to_hp, false, ignore_guard_up);
+        let damage_actually_dealt_to_hp = this.reduce_idx_hp(
+            enemy_idx, damage_to_hp, false, ignore_guard_up);
         if (is_atk) {
             me.damage_dealt_to_hp_by_atk = damage_actually_dealt_to_hp;
             me.damage_dealt_to_hp_by_this_card_atk += damage_actually_dealt_to_hp;
@@ -3698,11 +3716,12 @@ export class GameState {
         let my_debuff_names = [];
         let my_debuff_stack_counts = [];
         let necessary_times = 0;
+        const me = this.players[0];
         for (let i=0; i<DEBUFF_NAMES.length; i++) {
-            if (this.players[0][DEBUFF_NAMES[i]] > 0) {
+            if (me[DEBUFF_NAMES[i]] > 0) {
                 my_debuff_names.push(DEBUFF_NAMES[i]);
-                my_debuff_stack_counts.push(this.players[0][DEBUFF_NAMES[i]]);
-                necessary_times += Math.ceil(this.players[0][DEBUFF_NAMES[i]] / c);
+                my_debuff_stack_counts.push(me[DEBUFF_NAMES[i]]);
+                necessary_times += Math.ceil(me[DEBUFF_NAMES[i]] / c);
             }
         }
         if (necessary_times > n && my_debuff_names.length > 1) {
@@ -3717,22 +3736,22 @@ export class GameState {
             }
             /*
             // if internal injury is active, reduce it by c
-            if (this.players[0].internal_injury > 0) {
+            if (me.internal_injury > 0) {
                 this.reduce_idx_x_by_c(0, "internal_injury", c);
                 // get the index of internal injury
                 const debuff_idx = my_debuff_names.indexOf("internal_injury");
-                if (this.players[0].internal_injury === 0) {
+                if (me.internal_injury === 0) {
                     my_debuff_names.splice(debuff_idx, 1);
                     my_debuff_stack_counts.splice(debuff_idx, 1);
                 }
                 continue;
             }
             // if flaw is active, reduce it by c
-            if (this.players[0].flaw > 0) {
+            if (me.flaw > 0) {
                 this.reduce_idx_x_by_c(0, "flaw", c);
                 // get the index of flaw
                 const debuff_idx = my_debuff_names.indexOf("flaw");
-                if (this.players[0].flaw === 0) {
+                if (me.flaw === 0) {
                     my_debuff_names.splice(debuff_idx, 1);
                     my_debuff_stack_counts.splice(debuff_idx, 1);
                 }
@@ -3742,7 +3761,7 @@ export class GameState {
             let debuff_idx = Math.floor(Math.random() * my_debuff_names.length);
             let debuff_name = my_debuff_names[debuff_idx];
             this.reduce_idx_x_by_c(0, debuff_name, c);
-            if (this.players[0][debuff_name] === 0) {
+            if (me[debuff_name] === 0) {
                 my_debuff_names.splice(debuff_idx, 1);
                 my_debuff_stack_counts.splice(debuff_idx, 1);
             }
@@ -3750,8 +3769,9 @@ export class GameState {
     }
     transfer_random_debuff() {
         let my_debuff_names = [];
+        const me = this.players[0];
         for (let i=0; i<DEBUFF_NAMES.length; i++) {
-            if (this.players[0][DEBUFF_NAMES[i]] > 0) {
+            if (me[DEBUFF_NAMES[i]] > 0) {
                 my_debuff_names.push(DEBUFF_NAMES[i]);
             }
         }
@@ -4623,8 +4643,9 @@ export class GameState {
     }
     do_soul_overwhelming_palm(force_per_debuff, base_atk, atk_per_force) {
         let my_distinct_debuffs = 0;
+        const me = this.players[0];
         for (let i=0; i<DEBUFF_NAMES.length; i++) {
-            if (this.players[0][DEBUFF_NAMES[i]] > 0) {
+            if (me[DEBUFF_NAMES[i]] > 0) {
                 my_distinct_debuffs++;
             }
         }
