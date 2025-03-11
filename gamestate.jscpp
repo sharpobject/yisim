@@ -447,13 +447,39 @@ function is_debuff(attr_name) {
 #endif // HAS_ZONGZI_MODE
     return false;
 }
-const ACTIVATE_NAMES = ["activate_wood_spirit_stacks", "activate_fire_spirit_stacks", "activate_earth_spirit_stacks", "activate_metal_spirit_stacks", "activate_water_spirit_stacks"];
+const ACTIVATE_NAMES = [
+#ifdef HAS_ACTIVATE_WOOD
+    "activate_wood_spirit_stacks",
+#endif // HAS_ACTIVATE_WOOD
+#ifdef HAS_ACTIVATE_FIRE
+    "activate_fire_spirit_stacks",
+#endif // HAS_ACTIVATE_FIRE
+#ifdef HAS_ACTIVATE_EARTH
+    "activate_earth_spirit_stacks",
+#endif //HAS_ACTIVATE_EARTH
+#ifdef HAS_ACTIVATE_METAL
+    "activate_metal_spirit_stacks",
+#endif // HAS_ACTIVATE_METAL
+#ifdef HAS_ACTIVATE_WATER
+    "activate_water_spirit_stacks",
+#endif // HAS_ACTIVATE_WATER
+];
 function is_activate(attr_name) {
-    return attr_name == "activate_wood_spirit_stacks" ||
-        attr_name == "activate_fire_spirit_stacks" ||
-        attr_name == "activate_earth_spirit_stacks" ||
-        attr_name == "activate_metal_spirit_stacks" ||
-        attr_name == "activate_water_spirit_stacks";
+#ifdef HAS_ACTIVATE_WOOD
+    if (attr_name === "activate_wood_spirit_stacks") return true;
+#endif // HAS_ACTIVATE_WOOD
+#ifdef HAS_ACTIVATE_FIRE
+    if (attr_name === "activate_fire_spirit_stacks") return true;
+#endif // HAS_ACTIVATE_FIRE
+#ifdef HAS_ACTIVATE_EARTH
+    if (attr_name === "activate_earth_spirit_stacks") return true;
+#endif //HAS_ACTIVATE_EARTH
+#ifdef HAS_ACTIVATE_METAL
+    if (attr_name === "activate_metal_spirit_stacks") return true;
+#endif // HAS_ACTIVATE_METAL
+#ifdef HAS_ACTIVATE_WATER
+    if (attr_name === "activate_water_spirit_stacks") return true;
+#endif // HAS_ACTIVATE_WATER
 }
 export class Player {
     constructor() {
@@ -598,17 +624,29 @@ export class Player {
         this.throw_petals_stacks = 0;
         // five elements sect normal cards
         this.last_card_id = "601011";
+#ifdef HAS_ACTIVATE_WOOD
         this.activate_wood_spirit_stacks = 0;
+#endif // HAS_ACTIVATE_WOOD
+#ifdef HAS_ACTIVATE_FIRE
         this.activate_fire_spirit_stacks = 0;
+#endif // HAS_ACTIVATE_FIRE
+#ifdef HAS_ACTIVATE_EARTH
         this.activate_earth_spirit_stacks = 0;
+#endif // HAS_ACTIVATE_EARTH
+#ifdef HAS_ACTIVATE_METAL
         this.activate_metal_spirit_stacks = 0;
+#endif // HAS_ACTIVATE_METAL
+#ifdef HAS_ACTIVATE_WATER
         this.activate_water_spirit_stacks = 0;
+#endif // HAS_ACTIVATE_WATER
 #ifdef HAS_PENETRATE
         this.penetrate = 0;
         this.disable_penetrate_stacks = 0;
 #endif // HAS_PENETRATE
         this.force_of_water = 0;
+#ifdef HAS_COSMOS_SEAL
         this.cosmos_seal_stacks = 0;
+#endif // HAS_COSMOS_SEAL
         this.wood_spirit_formation_stacks = 0;
         this.fire_spirit_formation_stacks = 0;
         this.earth_spirit_formation_stacks = 0;
@@ -844,7 +882,9 @@ export class Player {
         this.flame_soul_rebirth_stacks = 0;
         this.five_elements_explosion_stacks = 0;
         this.swift_burning_seal_stacks = 0;
+#ifdef HAS_MARK_OF_FIVE_ELEMENTS
         this.mark_of_five_elements_stacks = 0;
+#endif // HAS_MARK_OF_FIVE_ELEMENTS
         this.innate_wood_stacks = 0;
         this.innate_fire_stacks = 0;
         this.innate_earth_stacks = 0;
@@ -1020,7 +1060,9 @@ export class Player {
             }
         }
         this.different_five_elements = different_elements;
+#ifdef HAS_MARK_OF_FIVE_ELEMENTS
         this.cosmos_seal_stacks = this.mark_of_five_elements_stacks;
+#endif // HAS_MARK_OF_FIVE_ELEMENTS
     }
     reset_deck_counts() {
         const n_cards = this.cards.length;
@@ -2003,6 +2045,7 @@ export class GameState {
             this.increase_idx_x_by_c(0, "hexagram", 1);
         }
     }
+#ifdef HAS_COSMOS_SEAL
     do_cosmos_seal(card_id) {
         if (this.players[0].cosmos_seal_stacks > 0) {
             const card = swogi[card_id];
@@ -2033,6 +2076,7 @@ export class GameState {
             }
         }
     }
+#endif // HAS_COSMOS_SEAL
     do_post_strike(card_id, idx) {
         const me = this.players[0];
         if (!me.has_post_strike) {
@@ -2546,11 +2590,23 @@ export class GameState {
             if (player.this_card_chases === 0 && player.chases < player.max_chases) {
                 const id = player.last_card_id;
                 const card = swogi[id];
-                if ((card.is_wood_spirit && player.activate_wood_spirit_stacks > 0) ||
-                    (card.is_fire_spirit && player.activate_fire_spirit_stacks > 0) ||
-                    (card.is_earth_spirit && player.activate_earth_spirit_stacks > 0) ||
-                    (card.is_metal_spirit && player.activate_metal_spirit_stacks > 0) ||
-                    (card.is_water_spirit && player.activate_water_spirit_stacks > 0)) {
+                let played_activated_element = false;
+#ifdef HAS_ACTIVATE_WOOD
+                played_activated_element ||= card.is_wood_spirit && player.activate_wood_spirit_stacks > 0;
+#endif // HAS_ACTIVATE_WOOD
+#ifdef HAS_ACTIVATE_FIRE
+                played_activated_element ||= card.is_fire_spirit && player.activate_fire_spirit_stacks > 0;
+#endif // HAS_ACTIVATE_FIRE
+#ifdef HAS_ACTIVATE_EARTH
+                played_activated_element ||= card.is_earth_spirit && player.activate_earth_spirit_stacks > 0;
+#endif // HAS_ACTIVATE_EARTH
+#ifdef HAS_ACTIVATE_METAL
+                played_activated_element ||= card.is_metal_spirit && player.activate_metal_spirit_stacks > 0;
+#endif // HAS_ACTIVATE_METAL
+#ifdef HAS_ACTIVATE_WATER
+                played_activated_element ||= card.is_water_spirit && player.activate_water_spirit_stacks > 0;
+#endif // HAS_ACTIVATE_WATER
+                if (played_activated_element) {
                     this.chase();
                     this.reduce_idx_x_by_c(0, "heavenly_marrow_gourd_stacks", 1);
                 }
@@ -3337,22 +3393,32 @@ export class GameState {
         if (prev_amt === 0 && me.five_elements_anima_stacks > 0) {
             const enemy_idx = 1 - idx;
             switch (x) {
+#ifdef HAS_ACTIVATE_WOOD
                 case "activate_wood_spirit_stacks":
                     this.increase_idx_x_by_c(idx, "increase_atk", 1);
                     break;
+#endif // HAS_ACTIVATE_WOOD
+#ifdef HAS_ACTIVATE_FIRE
                 case "activate_fire_spirit_stacks":
                     this.reduce_idx_hp(enemy_idx, 7, false);
                     this.reduce_idx_max_hp(enemy_idx, 7);
                     break;
+#endif // HAS_ACTIVATE_FIRE
+#ifdef HAS_ACTIVATE_EARTH
                 case "activate_earth_spirit_stacks":
                     this.increase_idx_x_by_c(idx, "def", 12);
                     break;
+#endif // HAS_ACTIVATE_EARTH
+#ifdef HAS_ACTIVATE_METAL
                 case "activate_metal_spirit_stacks":
                     this.increase_idx_x_by_c(idx, "penetrate", 4);
                     break;
+#endif // HAS_ACTIVATE_METAL
+#ifdef HAS_ACTIVATE_WATER
                 case "activate_water_spirit_stacks":
                     this.increase_idx_x_by_c(idx, "force_of_water", 2);
                     break;
+#endif // HAS_ACTIVATE_WATER
             }
         }
         me[x] += amt;
@@ -4283,62 +4349,82 @@ export class GameState {
             }
         }
     }
+#ifdef HAS_ACTIVATE_WOOD
     activate_wood_spirit() {
         this.add_c_of_x(1, "activate_wood_spirit_stacks");
     }
+#endif // HAS_ACTIVATE_WOOD
+#ifdef HAS_ACTIVATE_FIRE
     activate_fire_spirit() {
         this.add_c_of_x(1, "activate_fire_spirit_stacks");
     }
+#endif // HAS_ACTIVATE_FIRE
+#ifdef HAS_ACTIVATE_EARTH
     activate_earth_spirit() {
         this.add_c_of_x(1, "activate_earth_spirit_stacks");
     }
+#endif // HAS_ACTIVATE_EARTH
+#ifdef HAS_ACTIVATE_METAL
     activate_metal_spirit() {
         this.add_c_of_x(1, "activate_metal_spirit_stacks");
     }
+#endif // HAS_ACTIVATE_METAL
+#ifdef HAS_ACTIVATE_WATER
     activate_water_spirit() {
         this.add_c_of_x(1, "activate_water_spirit_stacks");
     }
+#endif // HAS_ACTIVATE_WATER
     if_wood_spirit() {
         const me = this.players[0];
+#ifdef HAS_ACTIVATE_WOOD
         if (me.activate_wood_spirit_stacks > 0) {
             return true;
         }
+#endif // HAS_ACTIVATE_WOOD
         const card_id = me.last_card_id;
         const card = swogi[card_id];
         return card.is_wood_spirit || this.cards_have_generating_interaction(card_id, "131011");
     }
     if_fire_spirit() {
         const me = this.players[0];
+#ifdef HAS_ACTIVATE_FIRE
         if (me.activate_fire_spirit_stacks > 0) {
             return true;
         }
+#endif // HAS_ACTIVATE_FIRE
         const card_id = me.last_card_id;
         const card = swogi[card_id];
         return card.is_fire_spirit || this.cards_have_generating_interaction(card_id, "131031");
     }
     if_earth_spirit() {
         const me = this.players[0];
+#ifdef HAS_ACTIVATE_EARTH
         if (me.activate_earth_spirit_stacks > 0) {
             return true;
         }
+#endif // HAS_ACTIVATE_EARTH
         const card_id = me.last_card_id;
         const card = swogi[card_id];
         return card.is_earth_spirit || this.cards_have_generating_interaction(card_id, "131051");
     }
     if_metal_spirit() {
         const me = this.players[0];
+#ifdef HAS_ACTIVATE_METAL
         if (me.activate_metal_spirit_stacks > 0) {
             return true;
         }
+#endif // HAS_ACTIVATE_METAL
         const card_id = me.last_card_id;
         const card = swogi[card_id];
         return card.is_metal_spirit || this.cards_have_generating_interaction(card_id, "131071");
     }
     if_water_spirit() {
         const me = this.players[0];
+#ifdef HAS_ACTIVATE_WATER
         if (me.activate_water_spirit_stacks > 0) {
             return true;
         }
+#endif // HAS_ACTIVATE_WATER
         const card_id = me.last_card_id;
         const card = swogi[card_id];
         return card.is_water_spirit || this.cards_have_generating_interaction(card_id, "131091");
@@ -4668,11 +4754,21 @@ export class GameState {
     }
     if_any_element_activated() {
         const me = this.players[0];
-        return me.activate_wood_spirit_stacks > 0 ||
-            me.activate_fire_spirit_stacks > 0 ||
-            me.activate_earth_spirit_stacks > 0 ||
-            me.activate_metal_spirit_stacks > 0 ||
-            me.activate_water_spirit_stacks > 0;
+#ifdef HAS_ACTIVATE_WOOD
+        if (me.activate_wood_spirit_stacks > 0) return true;
+#endif // HAS_ACTIVATE_WOOD
+#ifdef HAS_ACTIVATE_FIRE
+        if (me.activate_fire_spirit_stacks > 0) return true;
+#endif // HAS_ACTIVATE_FIRE
+#ifdef HAS_ACTIVATE_EARTH
+        if (me.activate_earth_spirit_stacks > 0) return true;
+#endif // HAS_ACTIVATE_EARTH
+#ifdef HAS_ACTIVATE_METAL
+        if (me.activate_metal_spirit_stacks > 0) return true;
+#endif // HAS_ACTIVATE_METAL
+#ifdef HAS_ACTIVATE_WATER
+        if (me.activate_water_spirit_stacks > 0) return true;
+#endif // HAS_ACTIVATE_WATER
     }
 #ifdef HAS_PENETRATE
     do_metal_spirit_rhythm_water(pen_gain_amt) {
@@ -4733,21 +4829,31 @@ export class GameState {
         this.def(def);
         let activated = 0;
         const me = this.players[0];
+#ifdef HAS_ACTIVATE_WOOD
         if (me.activate_wood_spirit_stacks > 0) {
             activated += 1;
         }
+#endif // HAS_ACTIVATE_WOOD
+#ifdef HAS_ACTIVATE_FIRE
         if (me.activate_fire_spirit_stacks > 0) {
             activated += 1;
         }
+#endif // HAS_ACTIVATE_FIRE
+#ifdef HAS_ACTIVATE_EARTH
         if (me.activate_earth_spirit_stacks > 0) {
             activated += 1;
         }
+#endif // HAS_ACTIVATE_EARTH
+#ifdef HAS_ACTIVATE_METAL
         if (me.activate_metal_spirit_stacks > 0) {
             activated += 1;
         }
+#endif // HAS_ACTIVATE_METAL
+#ifdef HAS_ACTIVATE_WATER
         if (me.activate_water_spirit_stacks > 0) {
             activated += 1;
         }
+#endif // HAS_ACTIVATE_WATER
         if (activated >= 2) {
             this.chase();
         }
@@ -4817,6 +4923,7 @@ export class GameState {
             this.def(amt * 2 + 2);
         }
     }
+#ifdef HAS_ACTIVATE_NEXT
     activate_next_slots(n) {
         let idx = this.players[0].currently_triggering_card_idx;
         for (let i=0; i<n; i++) {
@@ -4825,6 +4932,7 @@ export class GameState {
             this.activate_element_of_card(id);
         }
     }
+#endif // HAS_ACTIVATE_NEXT
     downgrade_enemy_card_or_deal_damage(dmg_amt) {
         const idx = this.players[0].currently_triggering_card_idx;
         if (!this.try_downgrade_card(1, idx)) {
