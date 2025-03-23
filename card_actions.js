@@ -4615,7 +4615,7 @@ card_actions["145061"] = (game) => {
     if (game.players[0].wound >= 1) {
         game.add_enemy_c_of_x(2, "wound");
     }
-    if (game.players[0].underworld >= 1) {
+    if (game.players[0].styx >= 1) {
         game.add_enemy_c_of_x(2, "styx");
     }
     game.for_each_x_add_y("debuff", "bonus_force_amt");
@@ -4644,7 +4644,7 @@ card_actions["145062"] = (game) => {
     if (game.players[0].wound >= 1) {
         game.add_enemy_c_of_x(2, "wound");
     }
-    if (game.players[0].underworld >= 1) {
+    if (game.players[0].styx >= 1) {
         game.add_enemy_c_of_x(2, "styx");
     }
     game.for_each_x_add_y("debuff", "bonus_force_amt");
@@ -4673,7 +4673,7 @@ card_actions["145063"] = (game) => {
     if (game.players[0].wound >= 1) {
         game.add_enemy_c_of_x(2, "wound");
     }
-    if (game.players[0].underworld >= 1) {
+    if (game.players[0].styx >= 1) {
         game.add_enemy_c_of_x(2, "styx");
     }
     game.for_each_x_add_y("debuff", "bonus_force_amt");
@@ -8962,6 +8962,30 @@ card_actions["606023"] = (game) => {
     }
 }
 
+// Loong
+card_actions["606031"] = (game) => {
+    game.add_c_of_x(2, "increase_atk");
+    game.add_c_of_x(2, "guard_up");
+    game.continuous();
+    game.add_c_of_x(1, "max_chases");
+}
+
+// 606032
+card_actions["606032"] = (game) => {
+    game.add_c_of_x(3, "increase_atk");
+    game.add_c_of_x(3, "guard_up");
+    game.continuous();
+    game.add_c_of_x(2, "max_chases");
+}
+
+// 606033
+card_actions["606033"] = (game) => {
+    game.add_c_of_x(4, "increase_atk");
+    game.add_c_of_x(4, "guard_up");
+    game.continuous();
+    game.add_c_of_x(3, "max_chases");
+}
+
 // Cloud Sword - Flying Sand
 card_actions["611011"] = (game) => {
     game.atk(5);
@@ -11082,6 +11106,24 @@ card_actions["913013"] = (game) => {
     game.for_each_x_add_y("unrestrained_sword_count", "sword_intent");
 }
 
+// Spiritstat Tune
+card_actions["913021"] = (game) => {
+    game.continuous();
+    game.add_c_of_x(3, "spiritstat_tune_stacks");
+}
+
+// 913022
+card_actions["913022"] = (game) => {
+    game.continuous();
+    game.add_c_of_x(4, "spiritstat_tune_stacks");
+}
+
+// 913023
+card_actions["913023"] = (game) => {
+    game.continuous();
+    game.add_c_of_x(5, "spiritstat_tune_stacks");
+}
+
 // Unrestrained Sword - Cat Claw
 card_actions["914011"] = (game) => {
     game.for_each_x_add_y("unrestrained_sword_count", "bonus_rep_amt");
@@ -11131,6 +11173,36 @@ card_actions["914023"] = (game) => {
     game.sword_intent(5);
     game.add_c_of_x(30, "max_hp");
     game.for_each_x_add_c_y("sword_intent", 2, "hp");
+}
+
+// Cloud Sword - Clarity
+card_actions["914031"] = (game) => {
+    for (let i = 0; i < 2; i++) {
+        game.atk(4);
+    }
+    if (game.if_cloud_hit()) {
+        game.add_enemy_c_of_x(2, "weaken");
+    }
+}
+
+// 914032
+card_actions["914032"] = (game) => {
+    for (let i = 0; i < 3; i++) {
+        game.atk(4);
+    }
+    if (game.if_cloud_hit()) {
+        game.add_enemy_c_of_x(2, "weaken");
+    }
+}
+
+// 914033
+card_actions["914033"] = (game) => {
+    for (let i = 0; i < 4; i++) {
+        game.atk(4);
+    }
+    if (game.if_cloud_hit()) {
+        game.add_enemy_c_of_x(2, "weaken");
+    }
 }
 
 // Cloud Sword - Dragon Spring

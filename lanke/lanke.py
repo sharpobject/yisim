@@ -414,7 +414,7 @@ def main(hand_size, use_previous_screenshot=False, card_template_dir='card_templ
 
         cv2.imwrite('full_window.png', image)
 
-        round_info_region = (76, 290, 320, 72)
+        round_info_region = (76, 310, 320, 72)
         round_info = extract_text(image, *round_info_region, "round_info")
         print(f"Round Info: {round_info}")
         if "".join(round_info.split()) == "RoundInfo":

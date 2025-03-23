@@ -8705,6 +8705,31 @@
 			["rep", 5, ["atk", 5]]
 		]
 	},
+	"606031": {
+		"name": "Loong",
+		"actions": [
+			["add_c_of_x", 2, "increase_atk"],
+			["add_c_of_x", 2, "guard_up"],
+			["continuous"],
+			["add_c_of_x", 1, "max_chases"]
+		]
+	},
+	"606032": {
+		"actions": [
+			["add_c_of_x", 3, "increase_atk"],
+			["add_c_of_x", 3, "guard_up"],
+			["continuous"],
+			["add_c_of_x", 2, "max_chases"]
+		]
+	},
+	"606033": {
+		"actions": [
+			["add_c_of_x", 4, "increase_atk"],
+			["add_c_of_x", 4, "guard_up"],
+			["continuous"],
+			["add_c_of_x", 3, "max_chases"]
+		]
+	},
 	"611011": {
 		"name": "Cloud Sword - Flying Sand",
 		"actions": [

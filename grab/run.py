@@ -3,7 +3,7 @@ import subprocess
 from pathlib import Path
 
 def process_all_screenshots():
-    whitelist = ["1130", "1450"]
+    whitelist = ["60603"]
     # Create output directories if they don't exist
     os.makedirs('en', exist_ok=True)
     
@@ -13,8 +13,8 @@ def process_all_screenshots():
         raise FileNotFoundError("en_in directory not found")
     
     for input_file in sorted(input_dir.glob('*.png')):
-        #if not input_file.stem.startswith(tuple(whitelist)):
-        #    continue
+        if not input_file.stem.startswith(tuple(whitelist)):
+            continue
         # Get the base filename without extension
         base_name = input_file.stem
         
