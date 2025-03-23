@@ -1655,19 +1655,19 @@ export class GameState {
             return;
         }
         for (let i=0; i<me.p2_sword_formation_guard_stacks; i++) {
-            this.def(4);
+            this.def(1);
             this.add_c_of_x(1, "moon_water_sword_formation_stacks");
         }
         for (let i=0; i<me.p3_sword_formation_guard_stacks; i++) {
-            this.def(6);
+            this.def(3);
             this.add_c_of_x(1, "moon_water_sword_formation_stacks");
         }
         for (let i=0; i<me.p4_sword_formation_guard_stacks; i++) {
-            this.def(8);
+            this.def(6);
             this.add_c_of_x(1, "moon_water_sword_formation_stacks");
         }
         for (let i=0; i<me.p5_sword_formation_guard_stacks; i++) {
-            this.def(10);
+            this.def(9);
             this.add_c_of_x(1, "moon_water_sword_formation_stacks");
         }
     }
@@ -2044,6 +2044,11 @@ export class GameState {
     }
     process_this_card_chases() {
         const me = this.players[0];
+        if (me.predicament_for_immortals_stacks > 0) {
+            if (me.prevent_anti_chase == 0) {
+                return;
+            }
+        }
         const prevent_anti_chase = me.prevent_anti_chase > 0;
         if (me.prevent_anti_chase > 0) {
             me.prevent_anti_chase -= 1;
