@@ -778,6 +778,7 @@ export class Player {
         // five elements sect immortal fates
         this.fire_spirit_generation_stacks = 0;
         this.flame_soul_rebirth_stacks = 0;
+        this.flame_soul_rebirth_reviving = false;
         this.five_elements_explosion_stacks = 0;
         this.swift_burning_seal_stacks = 0;
         this.mark_of_five_elements_stacks = 0;
@@ -805,7 +806,6 @@ export class Player {
         this.p3_concentrated_element_stacks = 0;
         this.p4_concentrated_element_stacks = 0;
         this.p5_concentrated_element_stacks = 0;
-        this.flame_soul_rebirth_reviving = false;
         this.just_revived = false;
         // duan xuan sect immortal fates
         this.unbounded_qi_stacks = 0;
@@ -2903,7 +2903,8 @@ export class GameState {
             return;
         }
         const me = this.players[idx];
-        if (!me.flame_soul_rebirth_reviving) {
+        if (!me.flame_soul_rebirth_reviving)
+        {
             amt += this.players[1-idx].kun_wu_molten_ring_stacks;
         }
         const reduced_amt = Math.min(amt, me.max_hp);
@@ -2944,7 +2945,8 @@ export class GameState {
             return 0;
         }
         const me = this.players[idx];
-        if (!me.flame_soul_rebirth_reviving) {
+        if (!me.flame_soul_rebirth_reviving)
+        {
             if (me.god_opportunity_conform_stacks > 0) {
                 amt = Math.ceil(amt * 14 / 10);
             }
@@ -2986,7 +2988,8 @@ export class GameState {
                 this.increase_idx_x_by_c(idx, "max_hp", 6);
             }
         }
-        if (!me.flame_soul_rebirth_reviving) {
+        if (!me.flame_soul_rebirth_reviving)
+        {
             if (me.god_opportunity_conform_stacks > 0) {
                 amt = Math.ceil(amt * 14 / 10);
             }
@@ -3797,7 +3800,8 @@ export class GameState {
                 this.increase_idx_x_by_c(idx, "max_hp", amt);
                 this.increase_idx_hp(idx, heal_amt, true);
                 me.just_revived = true;
-            } else if (me.flame_soul_rebirth_stacks > 0) {
+            } else
+            if (me.flame_soul_rebirth_stacks > 0) {
                 this.reduce_idx_x_by_c(idx, "flame_soul_rebirth_stacks", 1);
                 me.flame_soul_rebirth_reviving = true;
                 this.set_idx_c_of_x(idx, 15, "max_hp");
@@ -3805,12 +3809,14 @@ export class GameState {
                 this.increase_idx_hp(idx, heal_amt, true);
                 me.flame_soul_rebirth_reviving = false;
                 me.just_revived = true;
-            } else if (me.heavenly_maiden_white_jade_ring_stacks > 0) {
+            } else
+            if (me.heavenly_maiden_white_jade_ring_stacks > 0) {
                 this.reduce_idx_x_by_c(idx, "heavenly_maiden_white_jade_ring_stacks", 1);
                 const heal_amt = 64 - me.hp;
                 this.increase_idx_hp(idx, heal_amt, true);
                 me.just_revived = true;
-            } else {
+            } else
+            {
                 this.game_over = true;
                 return true;
             }

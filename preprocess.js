@@ -149,9 +149,59 @@ const deps = {
         "40302", "61402", "80102", "80302", "80503", "94402"],
     HAS_MEDITATION_OF_XUAN: ["meditation_of_xuan_stacks", "64402"],
     HAS_RESONANCE_LANDSLIDE: ["resonance_landslide_stacks"],
-    // TODO
-    HAS_HEXPROOF: [],
+    HAS_THREE_TAILED_CAT: ["three_tailed_cat_stacks", "50403"],
+    HAS_HEXPROOF: ["hexproof", "HAS_THREE_TAILED_CAT",
+        "14211", "35303", "37401", "80205"],
+    HAS_ELUSIVE_FOOTWORK: ["elusive_footwork_stacks", "14406"],
+    HAS_STYX_NIGHT_FOOTWORK: ["styx_night_footwork_stacks", "94401"],
+    HAS_BEAST_SPIRIT_SWORD_FORMATION: [
+        "beast_spirit_sword_formation_stacks", "71502"],
+    HAS_METAL_SPIRIT_IRON_BONE: ["metal_spirit_iron_bone_stacks",
+        "13408"],
+    HAS_WATER_SPIRIT_DIVE: ["water_spirit_dive_stacks", "13410"],
+    HAS_EVERYTHING_GOES_WAY: ["everything_goes_way_stacks", "37401"],
+    HAS_HEAVENLY_WILL_COMPLY: ["god_opportunity_conform_stacks",
+        "37503"],
+    HAS_HEAVENLY_WILL_DEFY: ["god_opportunity_reversal_stacks",
+        "37504"],
+    HAS_FLAME_SOUL_REBIRTH: ["flame_soul_rebirth_stacks"],
+    HAS_XUANMING_RECURRING: ["90301"],
+    HAS_BLACK_EARTH_TURTLE: ["black_earth_turtle_stacks", "50301"],
+    HAS_MOON_WATER_SWORD_FORMATION: ["moon_water_sword_formation_stacks",
+        "11409", "HAS_SWORD_FORMATION_GUARD"],
+    HAS_FAT_IMMORTAL_RACCOON: ["fat_immortal_raccoon_stacks", "50102"],
+    HAS_SCARLET_EYE_THE_SKY_CONSUMER: [
+        "scarlet_eye_the_sky_consumer_stacks", "50401"],
+    HAS_BREAK_SKY_EAGLE: ["break_sky_eagle_stacks", "50101"],
+    HAS_VOID_THE_SPIRIT_CONSUMER: ["void_the_spirit_consumer_stacks",
+        "50601"],
+    HAS_SPIRIT_GATHER_CITTA_DHARMA: ["spirit_gather_citta_dharma_stacks",
+        "11403"],
+    HAS_APEX_SWORD_CITTA_DHARMA: ["apex_sword_citta_dharma_stacks",
+        "21501"],
+    HAS_HEARTBROKEN_TUNE: ["heartbroken_tune_stacks", "33301"],
+    HAS_ILLUSION_TUNE: ["illusion_tune_stacks", "33202"],
+    HAS_CACOPOISONOUS_FORMATION: ["cacopoisonous_formation_stacks",
+        "35202"],
+    HAS_SPIRITAGE_FORMATION: ["spiritage_formation_stacks", "35301"],
+    
+    
 
+    
+    
+    
+    
+
+
+    
+    
+
+
+    
+
+
+
+    
 
 
 

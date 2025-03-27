@@ -8969,7 +8969,7 @@ card_actions["606031"] = (game) => {
     game.continuous();
     game.add_c_of_x(1, "max_chases");
     game.set_x_down_to_c("max_chases", 8);
-    game.add_c_of_x(1000000, "prevent_anti_chase");
+    game.add_c_of_x(1000, "prevent_anti_chase");
 }
 
 // 606032
@@ -8979,7 +8979,7 @@ card_actions["606032"] = (game) => {
     game.continuous();
     game.add_c_of_x(2, "max_chases");
     game.set_x_down_to_c("max_chases", 8);
-    game.add_c_of_x(1000000, "prevent_anti_chase");
+    game.add_c_of_x(1000, "prevent_anti_chase");
 }
 
 // 606033
@@ -8989,7 +8989,7 @@ card_actions["606033"] = (game) => {
     game.continuous();
     game.add_c_of_x(3, "max_chases");
     game.set_x_down_to_c("max_chases", 8);
-    game.add_c_of_x(1000000, "prevent_anti_chase");
+    game.add_c_of_x(1000, "prevent_anti_chase");
 }
 
 // Cloud Sword - Flying Sand
