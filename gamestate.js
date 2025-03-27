@@ -685,8 +685,6 @@ export class Player {
         this.skip_to_previous_card_stacks = 0;
         this.everything_goes_way_stacks = 0;
         this.nothing_is_appropriate_stacks = 0;
-        // TODO: i've heard that after you play fate reincarnates
-        // skipping an Opening card for any reason will trigger its opening effect
         this.fate_reincarnates_stacks = 0;
         this.god_opportunity_conform_stacks = 0;
         this.god_opportunity_reversal_stacks = 0;
@@ -1537,7 +1535,9 @@ export class GameState {
             this.log("incremented cloud_sword_chain_count to " + me.cloud_sword_chain_count);
             this.do_step_moon_into_cloud(card_id);
         } else {
-            if (me.cloud_sword_chain_count > 0 && me.endurance_as_cloud_sea_stacks === 0) {
+            if (me.cloud_sword_chain_count > 0
+                && me.endurance_as_cloud_sea_stacks === 0
+            ) {
                 me.cloud_sword_chain_count = 0;
                 this.log("reset cloud_sword_chain_count to 0");
             }
@@ -2161,7 +2161,8 @@ export class GameState {
         if (this.players[0].rest_and_outwit_stacks > 0) {
             this.qi(3);
             this.add_c_of_x(3, "hexagram");
-        } else {
+        } else
+        {
             this.qi(1);
         }
     }
@@ -2728,7 +2729,7 @@ export class GameState {
             let card_id = me.cards[me.next_card_index];
             let card = swogi[card_id];
             let qi_cost = card.qi_cost;
-            const base_qi_cost = qi_cost;
+            // TODO: ths has to get reworked for chengyun's fusion style.
             if (card.decrease_qi_cost_by_x !== undefined) {
                 let x = card.decrease_qi_cost_by_x;
                 let reduce_amt = 0;
@@ -2786,7 +2787,8 @@ export class GameState {
                     if (hp_cost > 0) {
                         if (me.cracking_fist_stacks > 0) {
                             this.reduce_idx_max_hp(0, hp_cost);
-                        } else {
+                        } else
+                        {
                             this.reduce_idx_hp(0, hp_cost, true);
                         }
                     }
@@ -3570,7 +3572,9 @@ export class GameState {
         this.deal_damage_inner(dmg, true, 0);
     }
     if_cloud_hit() {
-        return this.players[0].cloud_sword_chain_count > 0 || this.players[0].endurance_as_cloud_sea_stacks > 0;
+        return (this.players[0].cloud_sword_chain_count > 0
+            || this.players[0].endurance_as_cloud_sea_stacks > 0
+        );
     }
     if_injured() {
         return this.players[0].this_atk_injured;
@@ -4224,9 +4228,11 @@ export class GameState {
         let can_post_action = false;
         if (this.players[0].can_post_action[this.players[0].currently_playing_card_idx]) {
             can_post_action = true;
-        } else if (this.players[0].preemptive_strike_stacks > 0) {
+        } else
+        if (this.players[0].preemptive_strike_stacks > 0) {
             can_post_action = true;
-        } else if (this.players[0].act_underhand_stacks > 0) {
+        } else
+        if (this.players[0].act_underhand_stacks > 0) {
             can_post_action = this.if_c_pct(1);
         }
         return can_post_action;

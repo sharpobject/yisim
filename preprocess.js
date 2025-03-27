@@ -53,6 +53,7 @@ const deps = {
         "13308", "13407", "23104", "63401", "73502", "13307",
         "p5_cycle_of_five_elements_stacks",
         "five_elements_anima_stacks",
+        "HAS_METAL_SPIRIT_RHYTHM_WATER",
         "penetrate"],
     HAS_TOXIC_PURPLE_FERN: ["toxic_purple_fern_stacks"],
     HAS_WATER_SPIRIT_SPRING: ["13310", "water_spirit_spring_stacks"],
@@ -184,26 +185,122 @@ const deps = {
     HAS_CACOPOISONOUS_FORMATION: ["cacopoisonous_formation_stacks",
         "35202"],
     HAS_SPIRITAGE_FORMATION: ["spiritage_formation_stacks", "35301"],
-    
-    
-
-    
-    
-    
-    
-
-
-    
-    
-
-
-    
-
-
-
-    
-
-
+    HAS_ULTIMATE_HEXAGRAM_BASE: ["ultimate_hexagram_base_stacks",
+        "62301"],
+    HAS_QI_GATHERING_MERPEOPLE_PEARL: [
+        "qi_gathering_merpeople_pearl_stacks", "60502"],
+    HAS_ULTIMATE_POLARIS_HEXAGRAM_BASE: [
+        "ultimate_polaris_hexagram_base_stacks", "92501"],
+    HAS_WATER_SPIRIT_SPRING_RAIN: [
+        "water_spirit_spring_rain_stacks", "63403"],
+    HAS_NUWA_STONE: ["nuwa_stone_stacks", "90601"],
+    HAS_ASHES_PHOENIX: ["ashes_phoenix_stacks", "50402"],
+    HAS_HEAVENLY_MAIDEN_WHITE_JADE_RING: [
+        "heavenly_maiden_white_jade_ring_stacks", "92601"],
+    HAS_CANNOT_ACT: ["cannot_act_stacks", "heptastar_soulstat_stacks",
+        "23502", "40602", "62401"],
+    HAS_REVIVE: ["HAS_ASHES_PHOENIX", "HAS_FLAME_SOUL_REBIRTH",
+        "HAS_HEAVENLY_MAIDEN_WHITE_JADE_RING"],
+    HAS_SHADOW_OWL_RABBIT: ["shadow_owl_rabbit_stacks", "50502"],
+    HAS_OCTGATES_LOCK_FORMATION: [
+        "octgates_lock_formation_stacks", "35402"],
+    HAS_DEVOURING_ANCIENT_VINE: [
+        "devouring_ancient_vine_stacks", "36504"],
+    HAS_SKIP_TO_PREVIOUS_CARD: ["skip_to_previous_card_stacks",
+        "37302", "90301"],
+    HAS_SKIP_NEXT_CARD: ["skip_next_card_stacks",
+        "12502", "35503", "37301", "80406", "90603"],
+    HAS_CYCLE_OF_FATE: ["fate_reincarnates_stacks", "37502"],
+    HAS_ASTRAL_MOVE_JUMP: ["astral_move_jump_stacks", "92509"],
+    HAS_SKIP_ONE_PLAY: ["36502"],
+    HAS_WATER_SPIRIT_COST_0_QI: ["13209"],
+    HAS_REDUCE_QI_COST_ON_STAR_POINT: [
+        "reduce_qi_cost_on_star_point_stacks", "62501"],
+    HAS_INSPIRATION: ["inspiration_stacks", "34302"],
+    HAS_MOUNTAIN_CLEAVING_PALMS: ["14105"],
+    HAS_UNBOUNDED_QI: ["unbounded_qi_stacks"],
+    HAS_GATHER_QI: ["90601", "90602", "90605", "90607", "91601",
+        "92601", "93601"],
+    HAS_REST_AND_OUTWIT: ["rest_and_outwit_stacks"],
+    HAS_CRACKING_FIST: ["cracking_fist_stacks"],
+    HAS_CRASH_FIST_BOUNCE: ["crash_fist_bounce_stacks", "14103"],
+    HAS_CRASH_FIST_RETURN_TO_XUAN: [
+        "crash_fist_return_to_xuan_stacks", "94402"],
+    HAS_REFUND_HP_COST: ["HAS_CRASH_FIST_BOUNCE",
+        "HAS_CRASH_FIST_RETURN_TO_XUAN"],
+    HAS_FINISHING_TOUCH: [
+        "finishing_touch_stacks", "34502", "91501"],
+    HAS_CLOUD_SWORD_DRAGON_SPRING: ["91501"],
+    HAS_P2_MUTUAL_GROWTH: ["p2_mutual_growth_stacks"],
+    HAS_P3_MUTUAL_GROWTH: ["p3_mutual_growth_stacks"],
+    HAS_P4_MUTUAL_GROWTH: ["p4_mutual_growth_stacks"],
+    HAS_P5_MUTUAL_GROWTH: ["p5_mutual_growth_stacks"],
+    HAS_MUTUAL_GROWTH: [
+        "HAS_P2_MUTUAL_GROWTH", "HAS_P3_MUTUAL_GROWTH",
+        "HAS_P4_MUTUAL_GROWTH", "HAS_P5_MUTUAL_GROWTH"],
+    HAS_NETHER_VOID_CANINE: ["nether_void_canine_stacks", "50602"],
+    HAS_KONGTONG_SEAL: ["kongtong_seal_stacks", "90604"],
+    HAS_SPIRIT_FUSION_POT: ["spirit_fusion_pot_stacks", "90607"],
+    HAS_FIVE_ELEMENTS_HEAVENLY_MARROW_RHYTHM: [
+        "five_elements_heavenly_marrow_rhythm_stacks", "13507"],
+    HAS_HEAVENLY_MARROW_GOURD: [
+        "heavenly_marrow_gourd_stacks", "93501"],
+    HAS_REGEN_TUNE: ["regen_tune_stacks", "33401"],
+    HAS_TOXIN_IMMUNITY: ["toxin_immunity_stacks", "24201"],
+    HAS_SWORD_IN_SHEATHED: ["sword_in_sheathed_stacks"],
+    HAS_ANTHOMANIA_FORMATION: [
+        "anthomania_formation_stacks", "35501"],
+    HAS_MOTIONLESS_TUTELARY_FORMATION: [
+        "motionless_tutelary_formation_stacks", "35403"],
+    HAS_SCUTTURTLE_FORMATION: [
+        "scutturtle_formation_stacks", "35201"],
+    HAS_THUNDERPHILIA_FORMATION: [
+        "thunderphilia_formation_stacks", "35101"],
+    HAS_FORCE_OF_WATER: ["force_of_water",
+        "HAS_WATER_SPIRIT_SPRING_RAIN",
+        "HAS_WATER_SPIRIT_SPRING",
+        "HAS_FIVE_ELEMENTS_ANIMA",
+        "HAS_METAL_SPIRIT_RHYTHM_WATER",
+        "13110", "13209", "13210", "13409", "13505", "23105",
+        "23502", "93401"],
+    HAS_METAL_SPIRIT_RHYTHM_WATER: ["23302"],
+    HAS_HARD_BAMBOO: ["hard_bamboo_stacks", "36102"],
+    HAS_XUANMING_REGEN_TUNE: [
+        "xuanming_regen_tune_heal_stacks",
+        "xuanming_regen_tune_hurt_stacks", "90402"],
+    HAS_THUNDERBOLT_TUNE: ["thunderbolt_tune_stacks", "92403"],
+    HAS_METAL_SPIRIT_CHOKEHOLD: [
+        "metal_spirit_chokehold_stacks", "23201"],
+    HAS_IF_PLAYED_CONTINUOUS: [
+        "35103", "35203", "35303", "35503"],
+    HAS_UNRESTRAINED_SWORD_TWIN_DRAGONS: [
+        "unrestrained_sword_twin_dragons_stacks", "21503"],
+    HAS_STRIKE_TWICE: ["strike_twice_stacks", "12505", "80505"],
+    HAS_CRASH_FIST_DOUBLE: ["crash_fist_double_stacks", "24402"],
+    HAS_SWIFT_BURNING_SEAL: ["swift_burning_seal_stacks"],
+    HAS_OTHER_SWORD_FORMATION_DECK_COUNT: ["21303"],
+    HAS_SWORD_FORMATION_DECK_COUNT: [
+        "HAS_OTHER_SWORD_FORMATION_DECK_COUNT"],
+    HAS_FLYING_BRUSH: ["flying_brush_stacks",
+        "HAS_SHADOW_OWL_REISHI", "34501"],
+    HAS_SHADOW_OWL_REISHI: ["shadow_owl_reishi_stacks"],
+    HAS_CLOUD_SWORD_CHAIN_COUNT: [
+        "HAS_STEP_MOON_INTO_CLOUD",
+        "11102", "11103", "11201", "11202", "11203", "11302",
+        "11304", "11401", "11402", "11501", "11502", "21201",
+        "21602", "61101", "61401", "71402", "91403", "91502",
+        "91505"],
+    HAS_ENDURANCE_AS_CLOUD_SEA: ["endurance_as_cloud_sea_stacks"],
+    HAS_ULTIMATE_OVERCOME_FORMATION: [
+        "ultimate_overcome_formation_stacks", "93502"],
+    HAS_HAS_PLAYED_MUSICIAN_CARD: ["33101", "33303", "33503"],
+    HAS_CHORD_IN_TUNE: ["33503"],
+    HAS_PREEMPTIVE_STRIKE: ["preemptive_strike_stacks", "22502"],
+    HAS_ACT_UNDERHAND: ["act_underhand_stacks"],
+    HAS_POST_ACTION: [
+        "12112", "12211", "12310", "12311", "12409", "12506",
+        "22202", "62201", "72501", "72502", "92301", "92503",
+        "90605"],
 
 };
 
