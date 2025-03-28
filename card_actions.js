@@ -2857,10 +2857,9 @@ card_actions["133033"] = (game) => {
 card_actions["133041"] = (game) => {
     game.add_c_of_x(1, "increase_atk");
     if (game.if_fire_spirit()) {
-        game.for_each_x_add_y("increase_atk", "bonus_reduce_enemy_hp_amt");
-        game.for_each_x_add_y("increase_atk", "bonus_reduce_enemy_max_hp_amt");
-        game.reduce_enemy_c_of_x(7, "hp");
-        game.reduce_enemy_c_of_x(7, "max_hp");
+        let reduce_amt = 7 + game.players[0].increase_atk;
+        game.reduce_enemy_c_of_x(reduce_amt, "hp");
+        game.reduce_enemy_c_of_x(reduce_amt, "max_hp");
     }
 }
 
@@ -2868,10 +2867,9 @@ card_actions["133041"] = (game) => {
 card_actions["133042"] = (game) => {
     game.add_c_of_x(2, "increase_atk");
     if (game.if_fire_spirit()) {
-        game.for_each_x_add_y("increase_atk", "bonus_reduce_enemy_hp_amt");
-        game.for_each_x_add_y("increase_atk", "bonus_reduce_enemy_max_hp_amt");
-        game.reduce_enemy_c_of_x(7, "hp");
-        game.reduce_enemy_c_of_x(7, "max_hp");
+        let reduce_amt = 7 + game.players[0].increase_atk;
+        game.reduce_enemy_c_of_x(reduce_amt, "hp");
+        game.reduce_enemy_c_of_x(reduce_amt, "max_hp");
     }
 }
 
@@ -2879,10 +2877,9 @@ card_actions["133042"] = (game) => {
 card_actions["133043"] = (game) => {
     game.add_c_of_x(3, "increase_atk");
     if (game.if_fire_spirit()) {
-        game.for_each_x_add_y("increase_atk", "bonus_reduce_enemy_hp_amt");
-        game.for_each_x_add_y("increase_atk", "bonus_reduce_enemy_max_hp_amt");
-        game.reduce_enemy_c_of_x(7, "hp");
-        game.reduce_enemy_c_of_x(7, "max_hp");
+        let reduce_amt = 7 + game.players[0].increase_atk;
+        game.reduce_enemy_c_of_x(reduce_amt, "hp");
+        game.reduce_enemy_c_of_x(reduce_amt, "max_hp");
     }
 }
 
@@ -3439,10 +3436,9 @@ card_actions["135043"] = (game) => {
 card_actions["135051"] = (game) => {
     game.add_c_of_x(3, "force_of_water");
     if (game.if_water_spirit()) {
-        game.for_each_x_add_y("force_of_water", "bonus_max_hp_amt");
-        game.for_each_x_add_y("force_of_water", "bonus_heal_amt");
-        game.add_c_of_x(6, "max_hp");
-        game.heal(6);
+        const amt = game.players[0].force_of_water + 6;
+        game.add_c_of_x(amt, "max_hp");
+        game.heal(amt);
     }
 }
 
@@ -3450,10 +3446,9 @@ card_actions["135051"] = (game) => {
 card_actions["135052"] = (game) => {
     game.add_c_of_x(4, "force_of_water");
     if (game.if_water_spirit()) {
-        game.for_each_x_add_y("force_of_water", "bonus_max_hp_amt");
-        game.for_each_x_add_y("force_of_water", "bonus_heal_amt");
-        game.add_c_of_x(8, "max_hp");
-        game.heal(8);
+        const amt = game.players[0].force_of_water + 8;
+        game.add_c_of_x(amt, "max_hp");
+        game.heal(amt);
     }
 }
 
@@ -3461,10 +3456,9 @@ card_actions["135052"] = (game) => {
 card_actions["135053"] = (game) => {
     game.add_c_of_x(5, "force_of_water");
     if (game.if_water_spirit()) {
-        game.for_each_x_add_y("force_of_water", "bonus_max_hp_amt");
-        game.for_each_x_add_y("force_of_water", "bonus_heal_amt");
-        game.add_c_of_x(10, "max_hp");
-        game.heal(10);
+        const amt = game.players[0].force_of_water + 10;
+        game.add_c_of_x(amt, "max_hp");
+        game.heal(amt);
     }
 }
 
@@ -4393,29 +4387,23 @@ card_actions["144073"] = (game) => {
 
 // Soul Seizing
 card_actions["144081"] = (game) => {
-    game.for_each_x_add_y("debuff", "bonus_reduce_enemy_hp_amt");
-    game.set_x_down_to_c("bonus_reduce_enemy_hp_amt", 7);
-    game.for_each_x_add_y("bonus_reduce_enemy_hp_amt", "bonus_heal_amt");
-    game.reduce_enemy_c_of_x(7, "hp");
-    game.heal(7);
+    const amt = Math.min(this.get_debuff_count(0) + 7, 14);
+    game.reduce_enemy_c_of_x(amt, "hp");
+    game.heal(amt);
 }
 
 // 144082
 card_actions["144082"] = (game) => {
-    game.for_each_x_add_y("debuff", "bonus_reduce_enemy_hp_amt");
-    game.set_x_down_to_c("bonus_reduce_enemy_hp_amt", 10);
-    game.for_each_x_add_y("bonus_reduce_enemy_hp_amt", "bonus_heal_amt");
-    game.reduce_enemy_c_of_x(10, "hp");
-    game.heal(10);
+    const amt = Math.min(this.get_debuff_count(0) + 10, 20);
+    game.reduce_enemy_c_of_x(amt, "hp");
+    game.heal(amt);
 }
 
 // 144083
 card_actions["144083"] = (game) => {
-    game.for_each_x_add_y("debuff", "bonus_reduce_enemy_hp_amt");
-    game.set_x_down_to_c("bonus_reduce_enemy_hp_amt", 13);
-    game.for_each_x_add_y("bonus_reduce_enemy_hp_amt", "bonus_heal_amt");
-    game.reduce_enemy_c_of_x(13, "hp");
-    game.heal(13);
+    const amt = Math.min(this.get_debuff_count(0) + 13, 26);
+    game.reduce_enemy_c_of_x(amt, "hp");
+    game.heal(amt);
 }
 
 // Surging Waves
@@ -4441,31 +4429,34 @@ card_actions["144093"] = (game) => {
 
 // Overwhelming Force
 card_actions["144101"] = (game) => {
-    game.for_each_x_add_c_y("force", 4, "bonus_def_amt");
-    game.for_each_x_add_c_y("force", 3, "bonus_dmg_amt");
-    game.exhaust_x_to_add_y("force", "bonus_rep_amt");
-    game.def(0);
-    game.deal_damage(0);
+    const me = game.players[0];
+    let def_amt = me.force * 4;
+    let dmg_amt = me.force * 3;
+    game.reduce_c_of_x(me.force, "force");
+    game.def(def_amt);
+    game.deal_damage(dmg_amt);
     game.add_c_of_x(5, "agility");
 }
 
 // 144102
 card_actions["144102"] = (game) => {
-    game.for_each_x_add_c_y("force", 4, "bonus_def_amt");
-    game.for_each_x_add_c_y("force", 4, "bonus_dmg_amt");
-    game.exhaust_x_to_add_y("force", "bonus_rep_amt");
-    game.def(0);
-    game.deal_damage(0);
+    const me = game.players[0];
+    let def_amt = me.force * 4;
+    let dmg_amt = me.force * 4;
+    game.reduce_c_of_x(me.force, "force");
+    game.def(def_amt);
+    game.deal_damage(dmg_amt);
     game.add_c_of_x(6, "agility");
 }
 
 // 144103
 card_actions["144103"] = (game) => {
-    game.for_each_x_add_c_y("force", 4, "bonus_def_amt");
-    game.for_each_x_add_c_y("force", 5, "bonus_dmg_amt");
-    game.exhaust_x_to_add_y("force", "bonus_rep_amt");
-    game.def(0);
-    game.deal_damage(0);
+    const me = game.players[0];
+    let def_amt = me.force * 4;
+    let dmg_amt = me.force * 5;
+    game.reduce_c_of_x(me.force, "force");
+    game.def(def_amt);
+    game.deal_damage(dmg_amt);
     game.add_c_of_x(7, "agility");
 }
 
@@ -10790,28 +10781,25 @@ card_actions["903013"] = (game) => {
 
 // Xuanming Recover Elixir
 card_actions["904011"] = (game) => {
-    game.for_each_x_add_c_pct_y("hp_lost", 25, "bonus_max_hp_amt");
-    game.for_each_x_add_c_pct_y("hp_lost", 25, "bonus_heal_amt");
-    game.add_c_of_x(20, "max_hp");
-    game.increase_idx_hp(0, 20, true);
+    const amt =  Math.floor(this.players[0].hp_lost/4) + 20;
+    game.add_c_of_x(amt, "max_hp");
+    game.increase_idx_hp(0, amt, true);
     game.consumption();
 }
 
 // 904012
 card_actions["904012"] = (game) => {
-    game.for_each_x_add_c_pct_y("hp_lost", 25, "bonus_max_hp_amt");
-    game.for_each_x_add_c_pct_y("hp_lost", 25, "bonus_heal_amt");
-    game.add_c_of_x(25, "max_hp");
-    game.increase_idx_hp(0, 25, true);
+    const amt =  Math.floor(this.players[0].hp_lost/4) + 25;
+    game.add_c_of_x(amt, "max_hp");
+    game.increase_idx_hp(0, amt, true);
     game.consumption();
 }
 
 // 904013
 card_actions["904013"] = (game) => {
-    game.for_each_x_add_c_pct_y("hp_lost", 25, "bonus_max_hp_amt");
-    game.for_each_x_add_c_pct_y("hp_lost", 25, "bonus_heal_amt");
-    game.add_c_of_x(30, "max_hp");
-    game.increase_idx_hp(0, 30, true);
+    const amt =  Math.floor(this.players[0].hp_lost/4) + 30;
+    game.add_c_of_x(amt, "max_hp");
+    game.increase_idx_hp(0, amt, true);
     game.consumption();
 }
 

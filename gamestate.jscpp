@@ -505,7 +505,9 @@ export class Player {
 #ifdef HAS_SKIP_ONE_PLAY
         this.skip_one_play.length = 0;
 #endif // HAS_SKIP_ONE_PLAY
+#ifdef HAS_EXCHANGE_CARD_CHANCE
         this.exchange_card_chance = 0;
+#endif // HAS_EXCHANGE_CARD_CHANCE
         this.round_number = 15;
         this.destiny = 100;
         this.cultivation = 70;
@@ -532,14 +534,12 @@ export class Player {
         this.guard_up = 0;
 #endif // HAS_GUARD_UP
         this.bonus_atk_amt = 0; // card-specific bonus atk
-        this.bonus_dmg_amt = 0; // card-specific bonus dmg
         this.bonus_rep_amt = 0; // card-specific bonus rep
         this.bonus_def_amt = 0; // card-specific bonus def
-        this.bonus_reduce_enemy_hp_amt = 0; // this is getting to be a bit much
-        this.bonus_reduce_enemy_max_hp_amt = 0;
         this.bonus_heal_amt = 0;
-        this.bonus_max_hp_amt = 0;
+#ifdef HAS_BONUS_FORCE
         this.bonus_force_amt = 0;
+#endif // HAS_BONUS_FORCE
 #ifdef HAS_NEXT_TURN_DEF
         this.next_turn_def = 0;
 #endif // HAS_NEXT_TURN_DEF
@@ -628,7 +628,9 @@ export class Player {
         // cloud sword sect character-specific cards
         this.hand_count = 17;
         this.unrestrained_sword_clear_heart_stacks = 0;
+#ifdef HAS_CLOUD_SWORD_CLEAR_HEART
         this.cloud_sword_clear_heart_stacks = 0;
+#endif // HAS_CLOUD_SWORD_CLEAR_HEART
         // cloud sword sect legendary cards
         this.dragon_devours_clouds_stacks = 0;
 #ifdef HAS_BEAST_SPIRIT_SWORD_FORMATION
@@ -706,7 +708,7 @@ export class Player {
 #endif // HAS_METAL_SPIRIT_IRON_BONE
 #ifdef HAS_WATER_SPIRIT_DIVE
         this.water_spirit_dive_stacks = 0;
-#endif // HAS_METAL_SPIRIT_IRON_BONE
+#endif // HAS_WATER_SPIRIT_DIVE
         this.earth_spirit_combine_world_stacks = 0;
         this.def_lost = 0;
 #ifdef HAS_METAL_SPIRIT_GIANT_TRIPOD
@@ -971,7 +973,9 @@ export class Player {
         this.qi_forging_spiritstat_stacks = 0;
         this.qi_forging_spiritual_power_stacks = 0;
         this.quench_of_sword_heart_unrestrained_stacks = 0;
+#ifdef HAS_CLOUD_SWORD_CLEAR_HEART
         this.quench_of_sword_heart_cloud_stacks = 0;
+#endif // HAS_CLOUD_SWORD_CLEAR_HEART
         this.quench_of_sword_heart_ultimate_stacks = 0;
         this.p4_mad_obsession_stacks = 0;
         this.p5_mad_obsession_stacks = 0;
@@ -983,15 +987,25 @@ export class Player {
         this.p3_sword_rhyme_cultivate_stacks = 0;
         this.p4_sword_rhyme_cultivate_stacks = 0;
         this.p5_sword_rhyme_cultivate_stacks = 0;
+#ifdef HAS_P2_SWORD_FORMATION_GUARD
         this.p2_sword_formation_guard_stacks = 0;
+#endif // HAS_P2_SWORD_FORMATION_GUARD
+#ifdef HAS_P3_SWORD_FORMATION_GUARD
         this.p3_sword_formation_guard_stacks = 0;
+#endif // HAS_P3_SWORD_FORMATION_GUARD
+#ifdef HAS_P4_SWORD_FORMATION_GUARD
         this.p4_sword_formation_guard_stacks = 0;
+#endif // HAS_P4_SWORD_FORMATION_GUARD
+#ifdef HAS_P5_SWORD_FORMATION_GUARD
         this.p5_sword_formation_guard_stacks = 0;
+#endif // HAS_P5_SWORD_FORMATION_GUARD
         // heptastar sect immortal fates
         this.birdie_wind_stacks = 0;
         this.astrology_stacks = 0;
         this.heptastar_soulstat_stacks = 0;
+#ifdef HAS_ASTRAL_DIVINATION_HEXAGRAM
         this.astral_divination_hexagram_stacks = 0;
+#endif // HAS_ASTRAL_DIVINATION_HEXAGRAM
         this.star_moon_folding_fan_stacks = 0;
 #ifdef HAS_ACT_UNDERHAND
         this.act_underhand_stacks = 0;
@@ -1201,9 +1215,6 @@ export class Player {
         this.crystallized_merpeople_pearl_stacks = 0;
         // general resonance immortal fates
         // cloud sword sect resonance immortal fates
-#ifdef HAS_LOONG
-        this.loong_stacks = 0;
-#endif // HAS_LOONG
         // heptastar sect resonance immortal fates
         // five elements sect resonance immortal fates
 #ifdef HAS_RESONANCE_LANDSLIDE
@@ -1674,17 +1685,13 @@ export class GameState {
         const prev_triggering_idx = me.currently_triggering_card_idx;
         const prev_triggering_id = me.currently_triggering_card_id;
         const prev_bonus_atk_amt = me.bonus_atk_amt;
-        const prev_bonus_dmg_amt = me.bonus_dmg_amt;
         const prev_bonus_rep_amt = me.bonus_rep_amt;
         const prev_bonus_def_amt = me.bonus_def_amt;
-        const prev_bonus_reduce_enemy_hp_amt = me.bonus_reduce_enemy_hp_amt;
-        const prev_bonus_reduce_enemy_max_hp_amt = me.bonus_reduce_enemy_max_hp_amt;
         const prev_bonus_heal_amt = me.bonus_heal_amt;
         const prev_this_trigger_directly_attacked = me.this_trigger_directly_attacked;
         me.currently_triggering_card_idx = trigger_idx;
         me.currently_triggering_card_id = card_id;
         me.bonus_atk_amt = 0;
-        me.bonus_dmg_amt = 0;
         me.bonus_rep_amt = 0;
         me.bonus_def_amt = 0;
         me.damage_dealt_to_hp_by_this_card_atk = 0;
@@ -1693,11 +1700,8 @@ export class GameState {
         me.currently_triggering_card_idx = prev_triggering_idx;
         me.currently_triggering_card_id = prev_triggering_id;
         me.bonus_atk_amt = prev_bonus_atk_amt;
-        me.bonus_dmg_amt = prev_bonus_dmg_amt;
         me.bonus_rep_amt = prev_bonus_rep_amt;
         me.bonus_def_amt = prev_bonus_def_amt;
-        me.bonus_reduce_enemy_hp_amt = prev_bonus_reduce_enemy_hp_amt;
-        me.bonus_reduce_enemy_max_hp_amt = prev_bonus_reduce_enemy_max_hp_amt;
         me.bonus_heal_amt = prev_bonus_heal_amt;
         me.this_trigger_directly_attacked = prev_this_trigger_directly_attacked;
     }
@@ -1839,33 +1843,49 @@ export class GameState {
         }
         return this[action_name](...args);
     }
+#ifdef HAS_CLOUD_SWORD_SOFTHEART_AND_FRIENDS
     do_cloud_sword_softheart_and_friends(card_id) {
         if (this.is_cloud_sword(card_id)) {
             const me = this.players[0];
+#ifdef HAS_CLOUD_SWORD_SOFTHEART
             if (me.cloud_sword_softheart_stacks > 0) {
                 this.heal(me.cloud_sword_softheart_stacks);
             }
+#endif // HAS_CLOUD_SWORD_SOFTHEART
+#ifdef HAS_LITHE_AS_CAT
             for (let i=0; i<me.lithe_as_cat_stacks; i++) {
                 this.qi(1);
             }
+#endif // HAS_LITHE_AS_CAT
+#ifdef HAS_P2_RULE_OF_THE_CLOUD
             for (let i=0; i<me.p2_rule_of_the_cloud_stacks; i++) {
                 this.def(1);
             }
+#endif // HAS_P2_RULE_OF_THE_CLOUD
+#ifdef HAS_P3_RULE_OF_THE_CLOUD
             for (let i=0; i<me.p3_rule_of_the_cloud_stacks; i++) {
                 this.def(2);
             }
+#endif // HAS_P3_RULE_OF_THE_CLOUD
+#ifdef HAS_P4_RULE_OF_THE_CLOUD
             for (let i=0; i<me.p4_rule_of_the_cloud_stacks; i++) {
                 this.def(2);
             }
+#endif // HAS_P4_RULE_OF_THE_CLOUD
+#ifdef HAS_P5_RULE_OF_THE_CLOUD
             for (let i=0; i<me.p5_rule_of_the_cloud_stacks; i++) {
                 this.def(3);
             }
+#endif // HAS_P5_RULE_OF_THE_CLOUD
+#ifdef HAS_CLOUD_SWORD_CLEAR_HEART
             if (me.cloud_sword_clear_heart_stacks > 0) {
                 this.chase();
                 me.cloud_sword_clear_heart_stacks -= 1;
             }
+#endif // HAS_CLOUD_SWORD_CLEAR_HEART
         }
     }
+#endif // HAS_CLOUD_SWORD_SOFTHEART_AND_FRIENDS
     do_unrestrained_sword_count(card_id) {
         // if this card has "Unrestrained Sword" in the name, increment unrestrained_sword_count
         const me = this.players[0];
@@ -2039,6 +2059,7 @@ export class GameState {
             this.atk(amt);
         }
     }
+#ifdef HAS_SWORD_FORMATION_GUARD
     do_sword_formation_guard(idx) {
         const me = this.players[0];
         if (me.trigger_depth > 1) {
@@ -2047,23 +2068,32 @@ export class GameState {
         if (idx !== 0) {
             return;
         }
+#ifdef HAS_P2_SWORD_FORMATION_GUARD
         for (let i=0; i<me.p2_sword_formation_guard_stacks; i++) {
             this.def(1);
             this.add_c_of_x(1, "moon_water_sword_formation_stacks");
         }
+#endif // HAS_P2_SWORD_FORMATION_GUARD
+#ifdef HAS_P3_SWORD_FORMATION_GUARD
         for (let i=0; i<me.p3_sword_formation_guard_stacks; i++) {
             this.def(3);
             this.add_c_of_x(1, "moon_water_sword_formation_stacks");
         }
+#endif // HAS_P3_SWORD_FORMATION_GUARD
+#ifdef HAS_P4_SWORD_FORMATION_GUARD
         for (let i=0; i<me.p4_sword_formation_guard_stacks; i++) {
             this.def(6);
             this.add_c_of_x(1, "moon_water_sword_formation_stacks");
         }
+#endif // HAS_P4_SWORD_FORMATION_GUARD
+#ifdef HAS_P5_SWORD_FORMATION_GUARD
         for (let i=0; i<me.p5_sword_formation_guard_stacks; i++) {
             this.def(9);
             this.add_c_of_x(1, "moon_water_sword_formation_stacks");
         }
+#endif // HAS_P5_SWORD_FORMATION_GUARD
     }
+#endif // HAS_SWORD_FORMATION_GUARD
     do_regenerating_body(idx) {
         if (idx !== 0) {
             return;
@@ -2307,6 +2337,7 @@ export class GameState {
         }
     }
 #endif // HAS_SWIFT_BURNING_SEAL
+#ifdef HAS_ASTRAL_DIVINATION_HEXAGRAM
     do_astral_divination_hexagram(card_id) {
         if (this.players[0].astral_divination_hexagram_stacks === 0) {
             return;
@@ -2315,6 +2346,7 @@ export class GameState {
             this.increase_idx_x_by_c(0, "hexagram", 1);
         }
     }
+#endif // HAS_ASTRAL_DIVINATION_HEXAGRAM
 #ifdef HAS_COSMOS_SEAL
     do_cosmos_seal(card_id) {
         if (this.players[0].cosmos_seal_stacks > 0) {
@@ -2413,25 +2445,27 @@ export class GameState {
         const prev_triggering_idx = p0.currently_triggering_card_idx;
         const prev_triggering_id = p0.currently_triggering_card_id;
         const prev_bonus_atk_amt = p0.bonus_atk_amt;
-        const prev_bonus_dmg_amt = p0.bonus_dmg_amt;
         const prev_bonus_rep_amt = p0.bonus_rep_amt;
         const prev_bonus_def_amt = p0.bonus_def_amt;
-        const prev_bonus_reduce_enemy_hp_amt = p0.bonus_reduce_enemy_hp_amt;
-        const prev_bonus_reduce_enemy_max_hp_amt = p0.bonus_reduce_enemy_max_hp_amt;
         const prev_bonus_heal_amt = p0.bonus_heal_amt;
         const prev_this_trigger_directly_attacked = p0.this_trigger_directly_attacked;
         let card = swogi[card_id];
         p0.currently_triggering_card_idx = idx;
         p0.currently_triggering_card_id = card_id;
         p0.bonus_atk_amt = 0;
-        p0.bonus_dmg_amt = 0;
         p0.bonus_rep_amt = 0;
         p0.bonus_def_amt = 0;
         p0.damage_dealt_to_hp_by_this_card_atk = 0;
         p0.this_trigger_directly_attacked = false;
+#ifdef HAS_CLOUD_SWORD_SOFTHEART_AND_FRIENDS
         this.do_cloud_sword_softheart_and_friends(card_id);
+#endif // HAS_CLOUD_SWORD_SOFTHEART_AND_FRIENDS
+#ifdef HAS_ASTRAL_DIVINATION_HEXAGRAM
         this.do_astral_divination_hexagram(card_id);
+#endif // HAS_ASTRAL_DIVINATION_HEXAGRAM
+#ifdef HAS_SWORD_FORMATION_GUARD
         this.do_sword_formation_guard(idx);
+#endif // HAS_SWORD_FORMATION_GUARD
         this.do_regenerating_body(idx);
         this.do_crash_citta_dharma(card_id);
         this.do_pre_crash_fist(card_id);
@@ -2481,11 +2515,8 @@ export class GameState {
             p0.chase_if_hp_gained = 0;
         }
         p0.bonus_atk_amt = prev_bonus_atk_amt;
-        p0.bonus_dmg_amt = prev_bonus_dmg_amt;
         p0.bonus_rep_amt = prev_bonus_rep_amt;
         p0.bonus_def_amt = prev_bonus_def_amt;
-        p0.bonus_reduce_enemy_hp_amt = prev_bonus_reduce_enemy_hp_amt;
-        p0.bonus_reduce_enemy_max_hp_amt = prev_bonus_reduce_enemy_max_hp_amt;
         p0.bonus_heal_amt = prev_bonus_heal_amt;
         p0.this_trigger_directly_attacked = prev_this_trigger_directly_attacked;
         p0.currently_triggering_card_idx = prev_triggering_idx;
@@ -4225,9 +4256,11 @@ export class GameState {
         let min_dmg = 1;
         const me = this.players[my_idx];
         const enemy = this.players[enemy_idx];
+#ifdef HAS_METAL_SPIRIT_IRON_BONE
         if (enemy.metal_spirit_iron_bone_stacks > 0) {
             dmg -= 5;
         }
+#endif // HAS_METAL_SPIRIT_IRON_BONE
         if (is_atk) {
             me.this_atk_injured = false;
             if (me.trigger_depth <= 1) {
@@ -4308,7 +4341,10 @@ export class GameState {
                 this.reduce_idx_x_by_c(my_idx, "majestic_qi_stacks", 1);
                 this.increase_idx_force(my_idx, 1);
             }
-            const force = me.force + me.bonus_force_amt;
+            let force = me.force;
+#ifdef HAS_BONUS_FORCE
+            force += me.bonus_force_amt;
+#endif // HAS_BONUS_FORCE
             this.reduce_c_of_x(1, "force");
             pct_multiplier += 10 * force;
             if (me.this_card_crash_fist_inch_force_stacks > 0) {
@@ -4320,17 +4356,17 @@ export class GameState {
             }
 #endif // HAS_WATER_SPIRIT_DIVE
 #ifdef HAS_WEAKEN
+            if (me.weaken > 0
 #ifdef HAS_IGNORE_WEAKEN
-            if (me.weaken > 0 && !me.ignore_weaken) {
-                pct_multiplier -= 40;
-            }
-            me.ignore_weaken = false;
-#else //HAS_IGNORE_WEAKEN
-            if (me.weaken > 0) {
-                pct_multiplier -= 40;
-            }
+                && !me.ignore_weaken
 #endif //HAS_IGNORE_WEAKEN
+            ) {
+                pct_multiplier -= 40;
+            }
 #endif //HAS_WEAKEN
+#ifdef HAS_IGNORE_WEAKEN
+            me.ignore_weaken = false;
+#endif //HAS_IGNORE_WEAKEN
 #ifdef HAS_FLAW
             if (enemy.flaw > 0) {
                 pct_multiplier += 40;
@@ -4341,14 +4377,14 @@ export class GameState {
             }
             me.bonus_sword_intent_multiplier = 0;
             me.bonus_star_power_multiplier = 0;
+#ifdef HAS_BONUS_FORCE
             me.bonus_force_amt = 0;
+#endif // HAS_BONUS_FORCE
 #ifdef HAS_EVERYTHING_GOES_WAY
             if (me.everything_goes_way_stacks > 0) {
                 min_dmg = 6;
             }
 #endif // HAS_EVERYTHING_GOES_WAY
-        } else {
-            dmg += me.bonus_dmg_amt;
         }
         dmg = Math.floor(dmg * pct_multiplier / 100);
         dmg = Math.max(min_dmg, dmg);
@@ -4585,12 +4621,6 @@ export class GameState {
         this.increase_idx_x_by_c(0, "this_card_chases", 1);
     }
     reduce_enemy_c_of_x(c, x) {
-        if (x === "hp") {
-            c += this.players[0].bonus_reduce_enemy_hp_amt;
-        }
-        if (x === "max_hp") {
-            c += this.players[0].bonus_reduce_enemy_max_hp_amt;
-        }
         this.reduce_idx_x_by_c(1, x, c);
     }
     reduce_enemy_x_by_c_pct_enemy_y(x, c, y) {
@@ -4617,11 +4647,6 @@ export class GameState {
         }
     }
     add_c_of_x(c, x) {
-        if (x === "max_hp") {
-            const me = this.players[0];
-            c += me.bonus_max_hp_amt;
-            me.bonus_max_hp_amt = 0;
-        }
         this.increase_idx_x_by_c(0, x, c);
     }
     reduce_c_of_x(c, x) {
@@ -4749,8 +4774,12 @@ export class GameState {
             swogi[card_id].name === "Clear Heart Sword Embryo");
     }
     is_fake_cloud_sword(card_id) {
+#ifdef HAS_CLOUD_SWORD_CLEAR_HEART
         return swogi[card_id].name === "Clear Heart Sword Embryo" &&
             this.players[0].quench_of_sword_heart_cloud_stacks > 0;
+#else
+        return false;
+#endif
     }
 #ifdef HAS_IGNORE_WEAKEN
     ignore_weaken() {
@@ -4903,7 +4932,9 @@ export class GameState {
         first_atk_damage -= 3 * this.players[0].blade_forging_stable_stacks;
         first_atk_damage -= 1 * this.players[0].sword_pattern_carving_intense_stacks;
         first_atk_damage += 3 * this.players[0].quench_of_sword_heart_unrestrained_stacks;
+#ifdef HAS_CLOUD_SWORD_CLEAR_HEART
         first_atk_damage -= 8 * this.players[0].quench_of_sword_heart_cloud_stacks;
+#endif // HAS_CLOUD_SWORD_CLEAR_HEART
         first_atk_damage += ult;
         const blade_forging_stable_def = 8 + ult;
         const chain_attack_atk = 5 + ult;
@@ -4954,7 +4985,9 @@ export class GameState {
             this.players[0].unrestrained_sword_clear_heart_stacks += this.players[0].quench_of_sword_heart_unrestrained_stacks + 1;
         }
         // next cloud sword chases if we picked cloud
+#ifdef HAS_CLOUD_SWORD_CLEAR_HEART
         this.players[0].cloud_sword_clear_heart_stacks += this.players[0].quench_of_sword_heart_cloud_stacks;
+#endif // HAS_CLOUD_SWORD_CLEAR_HEART
     }
     do_clear_heart_sword_formation(first_atk_damage) {
         const first_def_amt = first_atk_damage;

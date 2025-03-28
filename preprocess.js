@@ -301,6 +301,36 @@ const deps = {
         "12112", "12211", "12310", "12311", "12409", "12506",
         "22202", "62201", "72501", "72502", "92301", "92503",
         "90605"],
+    HAS_EXCHANGE_CARD_CHANCE: ["HAS_THREE_TAILED_CAT"],
+    HAS_CLOUD_SWORD_SOFTHEART_AND_FRIENDS: [
+        "HAS_CLOUD_SWORD_SOFTHEART",
+        "HAS_LITHE_AS_CAT",
+        "HAS_P2_RULE_OF_THE_CLOUD",
+        "HAS_P3_RULE_OF_THE_CLOUD",
+        "HAS_P4_RULE_OF_THE_CLOUD",
+        "HAS_P5_RULE_OF_THE_CLOUD",
+        "HAS_CLOUD_SWORD_CLEAR_HEART"],
+    HAS_CLOUD_SWORD_SOFTHEART: [
+        "cloud_sword_softheart_stacks", "11301"],
+    HAS_LITHE_AS_CAT: ["lithe_as_cat_stacks"],
+    HAS_P2_RULE_OF_THE_CLOUD: ["p2_rule_of_the_cloud_stacks"],
+    HAS_P3_RULE_OF_THE_CLOUD: ["p3_rule_of_the_cloud_stacks"],
+    HAS_P4_RULE_OF_THE_CLOUD: ["p4_rule_of_the_cloud_stacks"],
+    HAS_P5_RULE_OF_THE_CLOUD: ["p5_rule_of_the_cloud_stacks"],
+    HAS_CLOUD_SWORD_CLEAR_HEART: ["cloud_sword_clear_heart_stacks",
+        "quench_of_sword_heart_cloud_stacks"],
+    HAS_ASTRAL_DIVINATION_HEXAGRAM: ["astral_divination_hexagram_stacks"],
+    HAS_SWORD_FORMATION_GUARD: [
+        "HAS_P2_SWORD_FORMATION_GUARD",
+        "HAS_P3_SWORD_FORMATION_GUARD",
+        "HAS_P4_SWORD_FORMATION_GUARD",
+        "HAS_P5_SWORD_FORMATION_GUARD"],
+    HAS_P2_SWORD_FORMATION_GUARD: ["p2_sword_formation_guard_stacks"],
+    HAS_P3_SWORD_FORMATION_GUARD: ["p3_sword_formation_guard_stacks"],
+    HAS_P4_SWORD_FORMATION_GUARD: ["p4_sword_formation_guard_stacks"],
+    HAS_P5_SWORD_FORMATION_GUARD: ["p5_sword_formation_guard_stacks"],
+    HAS_BONUS_FORCE: ["14506"],
+
 
 };
 

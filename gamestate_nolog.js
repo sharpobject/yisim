@@ -466,13 +466,9 @@ export class Player {
         this.smash_def = 0;
         this.guard_up = 0;
         this.bonus_atk_amt = 0; // card-specific bonus atk
-        this.bonus_dmg_amt = 0; // card-specific bonus dmg
         this.bonus_rep_amt = 0; // card-specific bonus rep
         this.bonus_def_amt = 0; // card-specific bonus def
-        this.bonus_reduce_enemy_hp_amt = 0; // this is getting to be a bit much
-        this.bonus_reduce_enemy_max_hp_amt = 0;
         this.bonus_heal_amt = 0;
-        this.bonus_max_hp_amt = 0;
         this.bonus_force_amt = 0;
         this.next_turn_def = 0;
         // for situations where multiple chases are allowed (Loong),
@@ -1305,17 +1301,13 @@ export class GameState {
         const prev_triggering_idx = me.currently_triggering_card_idx;
         const prev_triggering_id = me.currently_triggering_card_id;
         const prev_bonus_atk_amt = me.bonus_atk_amt;
-        const prev_bonus_dmg_amt = me.bonus_dmg_amt;
         const prev_bonus_rep_amt = me.bonus_rep_amt;
         const prev_bonus_def_amt = me.bonus_def_amt;
-        const prev_bonus_reduce_enemy_hp_amt = me.bonus_reduce_enemy_hp_amt;
-        const prev_bonus_reduce_enemy_max_hp_amt = me.bonus_reduce_enemy_max_hp_amt;
         const prev_bonus_heal_amt = me.bonus_heal_amt;
         const prev_this_trigger_directly_attacked = me.this_trigger_directly_attacked;
         me.currently_triggering_card_idx = trigger_idx;
         me.currently_triggering_card_id = card_id;
         me.bonus_atk_amt = 0;
-        me.bonus_dmg_amt = 0;
         me.bonus_rep_amt = 0;
         me.bonus_def_amt = 0;
         me.damage_dealt_to_hp_by_this_card_atk = 0;
@@ -1324,11 +1316,8 @@ export class GameState {
         me.currently_triggering_card_idx = prev_triggering_idx;
         me.currently_triggering_card_id = prev_triggering_id;
         me.bonus_atk_amt = prev_bonus_atk_amt;
-        me.bonus_dmg_amt = prev_bonus_dmg_amt;
         me.bonus_rep_amt = prev_bonus_rep_amt;
         me.bonus_def_amt = prev_bonus_def_amt;
-        me.bonus_reduce_enemy_hp_amt = prev_bonus_reduce_enemy_hp_amt;
-        me.bonus_reduce_enemy_max_hp_amt = prev_bonus_reduce_enemy_max_hp_amt;
         me.bonus_heal_amt = prev_bonus_heal_amt;
         me.this_trigger_directly_attacked = prev_this_trigger_directly_attacked;
     }
@@ -1948,18 +1937,14 @@ export class GameState {
         const prev_triggering_idx = p0.currently_triggering_card_idx;
         const prev_triggering_id = p0.currently_triggering_card_id;
         const prev_bonus_atk_amt = p0.bonus_atk_amt;
-        const prev_bonus_dmg_amt = p0.bonus_dmg_amt;
         const prev_bonus_rep_amt = p0.bonus_rep_amt;
         const prev_bonus_def_amt = p0.bonus_def_amt;
-        const prev_bonus_reduce_enemy_hp_amt = p0.bonus_reduce_enemy_hp_amt;
-        const prev_bonus_reduce_enemy_max_hp_amt = p0.bonus_reduce_enemy_max_hp_amt;
         const prev_bonus_heal_amt = p0.bonus_heal_amt;
         const prev_this_trigger_directly_attacked = p0.this_trigger_directly_attacked;
         let card = swogi[card_id];
         p0.currently_triggering_card_idx = idx;
         p0.currently_triggering_card_id = card_id;
         p0.bonus_atk_amt = 0;
-        p0.bonus_dmg_amt = 0;
         p0.bonus_rep_amt = 0;
         p0.bonus_def_amt = 0;
         p0.damage_dealt_to_hp_by_this_card_atk = 0;
@@ -2008,11 +1993,8 @@ export class GameState {
             p0.chase_if_hp_gained = 0;
         }
         p0.bonus_atk_amt = prev_bonus_atk_amt;
-        p0.bonus_dmg_amt = prev_bonus_dmg_amt;
         p0.bonus_rep_amt = prev_bonus_rep_amt;
         p0.bonus_def_amt = prev_bonus_def_amt;
-        p0.bonus_reduce_enemy_hp_amt = prev_bonus_reduce_enemy_hp_amt;
-        p0.bonus_reduce_enemy_max_hp_amt = prev_bonus_reduce_enemy_max_hp_amt;
         p0.bonus_heal_amt = prev_bonus_heal_amt;
         p0.this_trigger_directly_attacked = prev_this_trigger_directly_attacked;
         p0.currently_triggering_card_idx = prev_triggering_idx;
@@ -3376,7 +3358,8 @@ export class GameState {
                 this.reduce_idx_x_by_c(my_idx, "majestic_qi_stacks", 1);
                 this.increase_idx_force(my_idx, 1);
             }
-            const force = me.force + me.bonus_force_amt;
+            let force = me.force;
+            force += me.bonus_force_amt;
             this.reduce_c_of_x(1, "force");
             pct_multiplier += 10 * force;
             if (me.this_card_crash_fist_inch_force_stacks > 0) {
@@ -3385,7 +3368,9 @@ export class GameState {
             if (enemy.water_spirit_dive_stacks > 0) {
                 pct_multiplier -= 40;
             }
-            if (me.weaken > 0 && !me.ignore_weaken) {
+            if (me.weaken > 0
+                && !me.ignore_weaken
+            ) {
                 pct_multiplier -= 40;
             }
             me.ignore_weaken = false;
@@ -3401,8 +3386,6 @@ export class GameState {
             if (me.everything_goes_way_stacks > 0) {
                 min_dmg = 6;
             }
-        } else {
-            dmg += me.bonus_dmg_amt;
         }
         dmg = Math.floor(dmg * pct_multiplier / 100);
         dmg = Math.max(min_dmg, dmg);
@@ -3601,12 +3584,6 @@ export class GameState {
         this.increase_idx_x_by_c(0, "this_card_chases", 1);
     }
     reduce_enemy_c_of_x(c, x) {
-        if (x === "hp") {
-            c += this.players[0].bonus_reduce_enemy_hp_amt;
-        }
-        if (x === "max_hp") {
-            c += this.players[0].bonus_reduce_enemy_max_hp_amt;
-        }
         this.reduce_idx_x_by_c(1, x, c);
     }
     reduce_enemy_x_by_c_pct_enemy_y(x, c, y) {
@@ -3631,11 +3608,6 @@ export class GameState {
         }
     }
     add_c_of_x(c, x) {
-        if (x === "max_hp") {
-            const me = this.players[0];
-            c += me.bonus_max_hp_amt;
-            me.bonus_max_hp_amt = 0;
-        }
         this.increase_idx_x_by_c(0, x, c);
     }
     reduce_c_of_x(c, x) {
