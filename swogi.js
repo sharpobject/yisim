@@ -5,8 +5,10 @@ import {
     format_card,
     CHARACTER_ID_TO_NAME,
     guess_character
-} from "./gamestate.js";
+} from "./gamestate_full.js";
+import { preprocess_plz } from './preprocess.js';
 import os from 'os';
+// import { onmessage } from './worker.js';
 
 // a generator that takes an array and k and generates all k-combinations of the array's elements
 function* k_combinations(arr, k) {
@@ -273,6 +275,16 @@ async function do_riddle(riddle) {
     riddle.try_idx = 0;
     fixup_deck(my_cards);
     fixup_deck(enemy_cards);
+    const preprocessor_config = {};
+    for (let player of riddle.players) {
+        for (let key in player) {
+            preprocessor_config[key] = true;
+        }
+        for (let card_id of player.cards) {
+            preprocessor_config[card_id.slice(0, 5)] = true;
+        }
+    }
+    preprocess_plz(preprocessor_config);
     if (riddle.players[my_idx].character === undefined) {
         riddle.players[my_idx].character = guess_character(riddle.players[my_idx]);
     }

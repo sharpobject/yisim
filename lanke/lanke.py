@@ -333,6 +333,9 @@ def get_info(filename, n_hand_cards):
         'cards': deck + hand_cards,
         'talents': talents,
     }
+    if physique_n > 0 or max_physique_n > 0:
+        ret['physique'] = physique_n
+        ret['max_physique'] = max_physique_n
     for i, talent in enumerate(talents, 1):
         if talent:
             if talent not in talent_name_to_attr:

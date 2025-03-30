@@ -3308,23 +3308,26 @@ card_actions["134103"] = (game) => {
 
 // World Smash
 card_actions["134111"] = (game) => {
-    game.for_each_x_add_c_y("different_five_elements", 4, "bonus_atk_amt");
+    let atk_amt = 4;
+    atk_amt += game.get_n_different_five_elements(0) * 4;
     game.add_c_of_x(1, "smash_def");
-    game.atk(4);
+    game.atk(atk_amt);
 }
 
 // 134112
 card_actions["134112"] = (game) => {
-    game.for_each_x_add_c_y("different_five_elements", 5, "bonus_atk_amt");
+    let atk_amt = 7;
+    atk_amt += game.get_n_different_five_elements(0) * 5;
     game.add_c_of_x(1, "smash_def");
-    game.atk(7);
+    game.atk(atk_amt);
 }
 
 // 134113
 card_actions["134113"] = (game) => {
-    game.for_each_x_add_c_y("different_five_elements", 6, "bonus_atk_amt");
+    let atk_amt = 10;
+    atk_amt += game.get_n_different_five_elements(0) * 6;
     game.add_c_of_x(1, "smash_def");
-    game.atk(10);
+    game.atk(atk_amt);
 }
 
 // Wood Spirit - Willow Leaf
@@ -3483,7 +3486,7 @@ card_actions["135063"] = (game) => {
 // Five Elements Heavenly Marrow Rhythm
 card_actions["135071"] = (game) => {
     game.continuous();
-    if (game.players[0].different_five_elements <= 1) {
+    if (game.get_n_different_five_elements(0) <= 1) {
         game.add_c_of_x(2, "five_elements_heavenly_marrow_rhythm_stacks");
     }
 }
@@ -3492,7 +3495,7 @@ card_actions["135071"] = (game) => {
 card_actions["135072"] = (game) => {
     game.qi(2);
     game.continuous();
-    if (game.players[0].different_five_elements <= 1) {
+    if (game.get_n_different_five_elements(0) <= 1) {
         game.add_c_of_x(2, "five_elements_heavenly_marrow_rhythm_stacks");
     }
 }
@@ -3501,7 +3504,7 @@ card_actions["135072"] = (game) => {
 card_actions["135073"] = (game) => {
     game.qi(2);
     game.continuous();
-    if (game.players[0].different_five_elements <= 1) {
+    if (game.get_n_different_five_elements(0) <= 1) {
         game.add_c_of_x(3, "five_elements_heavenly_marrow_rhythm_stacks");
     }
 }
@@ -8616,47 +8619,17 @@ card_actions["506023"] = (game) => {
 
 // Normal Attack
 card_actions["601011"] = (game) => {
-    game.for_each_x_add_y("carefree_tune_stacks", "bonus_atk_amt");
-    game.for_each_x_add_y("carefree_guqin_stacks", "bonus_atk_amt");
-    game.exhaust_x_to_add_y("lying_drunk_stacks", "bonus_rep_amt");
-    game.for_each_x_add_y("return_to_simplicity_stacks", "agility");
-    game.for_each_x_add_y("return_to_simplicity_stacks", "bonus_atk_amt");
-    for (let i = 0; i < 1 + game.players[0].bonus_rep_amt; i++) {
-        game.atk(3);
-    }
-    if (game.players[0].carefree_guqin_stacks >= 1) {
-        game.chase();
-    }
+    game.do_normal_attack(3);
 }
 
 // 601012
 card_actions["601012"] = (game) => {
-    game.for_each_x_add_y("carefree_tune_stacks", "bonus_atk_amt");
-    game.for_each_x_add_y("carefree_guqin_stacks", "bonus_atk_amt");
-    game.exhaust_x_to_add_y("lying_drunk_stacks", "bonus_rep_amt");
-    game.for_each_x_add_y("return_to_simplicity_stacks", "agility");
-    game.for_each_x_add_y("return_to_simplicity_stacks", "bonus_atk_amt");
-    for (let i = 0; i < 1 + game.players[0].bonus_rep_amt; i++) {
-        game.atk(6);
-    }
-    if (game.players[0].carefree_guqin_stacks >= 1) {
-        game.chase();
-    }
+    game.do_normal_attack(6);
 }
 
 // 601013
 card_actions["601013"] = (game) => {
-    game.for_each_x_add_y("carefree_tune_stacks", "bonus_atk_amt");
-    game.for_each_x_add_y("carefree_guqin_stacks", "bonus_atk_amt");
-    game.exhaust_x_to_add_y("lying_drunk_stacks", "bonus_rep_amt");
-    game.for_each_x_add_y("return_to_simplicity_stacks", "agility");
-    game.for_each_x_add_y("return_to_simplicity_stacks", "bonus_atk_amt");
-    for (let i = 0; i < 1 + game.players[0].bonus_rep_amt; i++) {
-        game.atk(9);
-    }
-    if (game.players[0].carefree_guqin_stacks >= 1) {
-        game.chase();
-    }
+    game.do_normal_attack(9);
 }
 
 // Demonic Qi Haunt
@@ -11871,10 +11844,8 @@ card_actions["935033"] = (game) => {
 card_actions["935041"] = (game) => {
     game.for_each_x_add_c_pct_y("hp_lost", 20, "bonus_atk_amt");
     game.atk(10);
-    if (game.players[0].different_five_elements >= 1) {
-        if (game.players[0].different_five_elements <= 1) {
-            game.chase();
-        }
+    if (game.get_n_different_five_elements(0) == 1) {
+        game.chase();
     }
 }
 
@@ -11882,10 +11853,8 @@ card_actions["935041"] = (game) => {
 card_actions["935042"] = (game) => {
     game.for_each_x_add_c_pct_y("hp_lost", 20, "bonus_atk_amt");
     game.atk(15);
-    if (game.players[0].different_five_elements >= 1) {
-        if (game.players[0].different_five_elements <= 1) {
-            game.chase();
-        }
+    if (game.get_n_different_five_elements(0) == 1) {
+        game.chase();
     }
 }
 
@@ -11893,18 +11862,17 @@ card_actions["935042"] = (game) => {
 card_actions["935043"] = (game) => {
     game.for_each_x_add_c_pct_y("hp_lost", 20, "bonus_atk_amt");
     game.atk(20);
-    if (game.players[0].different_five_elements >= 1) {
-        if (game.players[0].different_five_elements <= 1) {
-            game.chase();
-        }
+    if (game.get_n_different_five_elements(0) == 1) {
+        game.chase();
     }
 }
 
 // Pi Yun Zhui Yue
 card_actions["935051"] = (game) => {
-    game.for_each_x_add_c_y("different_five_elements", 2, "bonus_atk_amt");
+    let atk_amt = 2;
+    atk_amt += game.get_n_different_five_elements(0) * 2;
     for (let i = 0; i < 3; i++) {
-        game.atk(2);
+        game.atk(atk_amt);
     }
 }
 
