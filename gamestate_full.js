@@ -276,7 +276,7 @@ for (let i=0; i<keys.length; i++) {
         decrease_qi_cost_by_x: decrease_qi_cost_by_x,
         water_spirit_cost_0_qi: water_spirit_cost_0_qi,
         gather_qi: gather_qi,
-        actions: swogi[card_id].actions,
+//        actions: swogi[card_id].actions,
         card_actions: card_actions[card_id],
         opening: swogi[card_id].opening,
         character: character,
@@ -466,8 +466,6 @@ export class Player {
         this.guard_up = 0;
         this.bonus_atk_amt = 0; // card-specific bonus atk
         this.bonus_rep_amt = 0; // card-specific bonus rep
-        this.bonus_def_amt = 0; // card-specific bonus def
-        this.bonus_heal_amt = 0;
         this.bonus_force_amt = 0;
         this.next_turn_def = 0;
         // for situations where multiple chases are allowed (Loong),
@@ -1345,15 +1343,12 @@ export class GameState {
         const prev_triggering_idx = me.currently_triggering_card_idx;
         const prev_triggering_id = me.currently_triggering_card_id;
         const prev_bonus_atk_amt = me.bonus_atk_amt;
+        me.bonus_atk_amt = 0;
         const prev_bonus_rep_amt = me.bonus_rep_amt;
-        const prev_bonus_def_amt = me.bonus_def_amt;
-        const prev_bonus_heal_amt = me.bonus_heal_amt;
         const prev_this_trigger_directly_attacked = me.this_trigger_directly_attacked;
         me.currently_triggering_card_idx = trigger_idx;
         me.currently_triggering_card_id = card_id;
-        me.bonus_atk_amt = 0;
         me.bonus_rep_amt = 0;
-        me.bonus_def_amt = 0;
         me.damage_dealt_to_hp_by_this_card_atk = 0;
         me.this_trigger_directly_attacked = false;
         this.do_action(action);
@@ -1361,8 +1356,6 @@ export class GameState {
         me.currently_triggering_card_id = prev_triggering_id;
         me.bonus_atk_amt = prev_bonus_atk_amt;
         me.bonus_rep_amt = prev_bonus_rep_amt;
-        me.bonus_def_amt = prev_bonus_def_amt;
-        me.bonus_heal_amt = prev_bonus_heal_amt;
         me.this_trigger_directly_attacked = prev_this_trigger_directly_attacked;
     }
     start_of_game_setup() {
@@ -2001,16 +1994,13 @@ export class GameState {
         const prev_triggering_idx = p0.currently_triggering_card_idx;
         const prev_triggering_id = p0.currently_triggering_card_id;
         const prev_bonus_atk_amt = p0.bonus_atk_amt;
+        p0.bonus_atk_amt = 0;
         const prev_bonus_rep_amt = p0.bonus_rep_amt;
-        const prev_bonus_def_amt = p0.bonus_def_amt;
-        const prev_bonus_heal_amt = p0.bonus_heal_amt;
         const prev_this_trigger_directly_attacked = p0.this_trigger_directly_attacked;
         let card = swogi[card_id];
         p0.currently_triggering_card_idx = idx;
         p0.currently_triggering_card_id = card_id;
-        p0.bonus_atk_amt = 0;
         p0.bonus_rep_amt = 0;
-        p0.bonus_def_amt = 0;
         p0.damage_dealt_to_hp_by_this_card_atk = 0;
         p0.this_trigger_directly_attacked = false;
         this.do_cloud_sword_softheart_and_friends(card_id);
@@ -2031,8 +2021,6 @@ export class GameState {
         //card_actions[card_id](this);
         //this.do_action(card.actions);
         this.do_post_strike(card_id, idx);
-        p0.bonus_def_amt = 0;
-        p0.bonus_heal_amt = 0;
         p0.bonus_atk_amt = 0;
         this.do_god_luck_approach(card_id);
         // expire crash fist buffs - they don't apply to extra attacks
@@ -2042,7 +2030,7 @@ export class GameState {
         // Extra attacks zone
         this.do_emptiness_sword_formation(card_id);
         this.do_endless_sword_formation();
-        // Engless sword formation seems to not trigger for cards that only attacked
+        // Endless sword formation seems to not trigger for cards that only attacked
         // because of hhh, Shocked, or Stance of Fierce Attack.
         this.do_hunter_hunting_hunter(card_id);
         this.do_stance_of_fierce_attack(card_id);
@@ -2062,8 +2050,6 @@ export class GameState {
         }
         p0.bonus_atk_amt = prev_bonus_atk_amt;
         p0.bonus_rep_amt = prev_bonus_rep_amt;
-        p0.bonus_def_amt = prev_bonus_def_amt;
-        p0.bonus_heal_amt = prev_bonus_heal_amt;
         p0.this_trigger_directly_attacked = prev_this_trigger_directly_attacked;
         p0.currently_triggering_card_idx = prev_triggering_idx;
         p0.currently_triggering_card_id = prev_triggering_id;
@@ -3047,9 +3033,6 @@ export class GameState {
     }
     increase_idx_hp(idx, amt, heal_while_dead) {
         const me = this.players[idx];
-        if (idx === 0) {
-            amt += me.bonus_heal_amt;
-        }
         if (amt === 0) {
             return 0;
         }
@@ -3125,7 +3108,6 @@ export class GameState {
     }
     increase_idx_def(idx, amt) {
         const me = this.players[idx];
-        amt += me.bonus_def_amt;
         if (amt === 0) {
             return;
         }
@@ -3250,10 +3232,7 @@ export class GameState {
         this.log("gained " + amt + " physique. Now have " + me.physique + " physique");
         this.increase_idx_x_by_c(idx, "max_hp", amt);
         if (me.mind_body_resonance_stacks > 0) {
-            const prev_bonus_def_amt = me.bonus_def_amt;
-            me.bonus_def_amt = 0;
             this.increase_idx_def(idx, amt);
-            me.bonus_def_amt = prev_bonus_def_amt;
         }
         if (me.max_physique < me.physique) {
             let heal_amt = amt;
@@ -3470,7 +3449,6 @@ export class GameState {
             dmg += this.do_star_sky_forge_bone();
             dmg += this.do_lonely_night_wolf();
             dmg += this.do_nothing_is_appropriate();
-            dmg += me.bonus_atk_amt;
             dmg += (me.this_card_sword_intent
                 * (1 + me.bonus_sword_intent_multiplier)
             );
@@ -3686,6 +3664,11 @@ export class GameState {
     add_my_x_to_enemy_y(x, y) {
         this.increase_idx_x_by_c(1, y, this.players[0][x]);
     }
+    exhaust_x(x) {
+        const reduce_amt = this.players[0][x];
+        this.reduce_idx_x_by_c(0, x, reduce_amt);
+        return reduce_amt;
+    }
     exhaust_x_to_add_y(x, y) {
         const reduce_amt = this.players[0][x];
         const gain_amt = reduce_amt;
@@ -3871,9 +3854,6 @@ export class GameState {
     }
     ignore_decrease_atk() {
         this.players[0].ignore_decrease_atk = true;
-    }
-    do_thorns_spear_thing() {
-        this.players[0].bonus_atk_amt += Math.floor(this.players[1].def / 2);
     }
     check_for_death() {
         const me = this.players[0];

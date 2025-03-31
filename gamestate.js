@@ -274,9 +274,7 @@ for (let i=0; i<keys.length; i++) {
         qi_cost: qi_cost,
         hp_cost: hp_cost,
         decrease_qi_cost_by_x: decrease_qi_cost_by_x,
-        water_spirit_cost_0_qi: water_spirit_cost_0_qi,
-        gather_qi: gather_qi,
-        actions: swogi[card_id].actions,
+//        actions: swogi[card_id].actions,
         card_actions: card_actions[card_id],
         opening: swogi[card_id].opening,
         character: character,
@@ -298,8 +296,6 @@ for (let i=0; i<keys.length; i++) {
         is_seal: is_seal(card_id),
         is_spirit_sword: is_spirit_sword(card_id),
         marking: marking,
-        is_salty: is_salty,
-        is_sweet: is_sweet,
     };
     swogi[card_id] = card;
     if (card.marking === undefined) {
@@ -430,10 +426,7 @@ export class Player {
         this.this_atk_injured = false; // whether the enemy hp has been injured by this atk
         this.damage_dealt_to_hp_by_atk = 0; // for stuff that keys off how much damage went through to hp
         this.ignore_def = 0;
-        this.bonus_atk_amt = 0; // card-specific bonus atk
         this.bonus_rep_amt = 0; // card-specific bonus rep
-        this.bonus_def_amt = 0; // card-specific bonus def
-        this.bonus_heal_amt = 0;
         // for situations where multiple chases are allowed (Loong),
         // I'm not sure whether a single card chasing two times works the same as two cards chasing once.
         // So cards record their chases in `this_card_chases`, and then we can change how we apply that to
@@ -696,24 +689,16 @@ export class GameState {
         }
         const prev_triggering_idx = me.currently_triggering_card_idx;
         const prev_triggering_id = me.currently_triggering_card_id;
-        const prev_bonus_atk_amt = me.bonus_atk_amt;
         const prev_bonus_rep_amt = me.bonus_rep_amt;
-        const prev_bonus_def_amt = me.bonus_def_amt;
-        const prev_bonus_heal_amt = me.bonus_heal_amt;
         const prev_this_trigger_directly_attacked = me.this_trigger_directly_attacked;
         me.currently_triggering_card_idx = trigger_idx;
         me.currently_triggering_card_id = card_id;
-        me.bonus_atk_amt = 0;
         me.bonus_rep_amt = 0;
-        me.bonus_def_amt = 0;
         me.this_trigger_directly_attacked = false;
         this.do_action(action);
         me.currently_triggering_card_idx = prev_triggering_idx;
         me.currently_triggering_card_id = prev_triggering_id;
-        me.bonus_atk_amt = prev_bonus_atk_amt;
         me.bonus_rep_amt = prev_bonus_rep_amt;
-        me.bonus_def_amt = prev_bonus_def_amt;
-        me.bonus_heal_amt = prev_bonus_heal_amt;
         me.this_trigger_directly_attacked = prev_this_trigger_directly_attacked;
     }
     start_of_game_setup() {
@@ -883,40 +868,29 @@ export class GameState {
         p0.trigger_depth += 1;
         const prev_triggering_idx = p0.currently_triggering_card_idx;
         const prev_triggering_id = p0.currently_triggering_card_id;
-        const prev_bonus_atk_amt = p0.bonus_atk_amt;
         const prev_bonus_rep_amt = p0.bonus_rep_amt;
-        const prev_bonus_def_amt = p0.bonus_def_amt;
-        const prev_bonus_heal_amt = p0.bonus_heal_amt;
         const prev_this_trigger_directly_attacked = p0.this_trigger_directly_attacked;
         let card = swogi[card_id];
         p0.currently_triggering_card_idx = idx;
         p0.currently_triggering_card_id = card_id;
-        p0.bonus_atk_amt = 0;
         p0.bonus_rep_amt = 0;
-        p0.bonus_def_amt = 0;
         p0.this_trigger_directly_attacked = false;
         this.do_sword_formation_guard(idx);
         this.do_pre_crash_fist(card_id);
         this.just_do_the_card_and_nothing_else(card);
         //card_actions[card_id](this);
         //this.do_action(card.actions);
-        p0.bonus_def_amt = 0;
-        p0.bonus_heal_amt = 0;
-        p0.bonus_atk_amt = 0;
         // expire crash fist buffs - they don't apply to extra attacks
         this.do_post_crash_fist(card_id);
 
 
         // Extra attacks zone
-        // Engless sword formation seems to not trigger for cards that only attacked
+        // Endless sword formation seems to not trigger for cards that only attacked
         // because of hhh, Shocked, or Stance of Fierce Attack.
         // End of extra attacks zone
 
 
-        p0.bonus_atk_amt = prev_bonus_atk_amt;
         p0.bonus_rep_amt = prev_bonus_rep_amt;
-        p0.bonus_def_amt = prev_bonus_def_amt;
-        p0.bonus_heal_amt = prev_bonus_heal_amt;
         p0.this_trigger_directly_attacked = prev_this_trigger_directly_attacked;
         p0.currently_triggering_card_idx = prev_triggering_idx;
         p0.currently_triggering_card_id = prev_triggering_id;
@@ -1188,9 +1162,6 @@ export class GameState {
     }
     increase_idx_hp(idx, amt, heal_while_dead) {
         const me = this.players[idx];
-        if (idx === 0) {
-            amt += me.bonus_heal_amt;
-        }
         if (amt === 0) {
             return 0;
         }
@@ -1225,7 +1196,6 @@ export class GameState {
     }
     increase_idx_def(idx, amt) {
         const me = this.players[idx];
-        amt += me.bonus_def_amt;
         if (amt === 0) {
             return;
         }
@@ -1375,7 +1345,6 @@ export class GameState {
                 ignore_def = true;
             }
             dmg += this.do_nothing_is_appropriate();
-            dmg += me.bonus_atk_amt;
         }
         dmg = Math.max(min_dmg, dmg);
         let damage_to_def = 0;
@@ -1476,6 +1445,11 @@ export class GameState {
     }
     add_my_x_to_enemy_y(x, y) {
         this.increase_idx_x_by_c(1, y, this.players[0][x]);
+    }
+    exhaust_x(x) {
+        const reduce_amt = this.players[0][x];
+        this.reduce_idx_x_by_c(0, x, reduce_amt);
+        return reduce_amt;
     }
     exhaust_x_to_add_y(x, y) {
         const reduce_amt = this.players[0][x];
@@ -1638,9 +1612,6 @@ export class GameState {
         let debuff_name = my_debuff_names[debuff_idx];
         this.reduce_idx_x_by_c(0, debuff_name, 1);
         this.increase_idx_x_by_c(1, debuff_name, 1);
-    }
-    do_thorns_spear_thing() {
-        this.players[0].bonus_atk_amt += Math.floor(this.players[1].def / 2);
     }
     check_for_death() {
         const me = this.players[0];

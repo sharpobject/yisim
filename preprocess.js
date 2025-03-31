@@ -806,40 +806,9 @@ const deps = {
     REDUCE_IDX_FORCE_DISPATCH: [
         "HAS_OVERWHELMING_POWER",
         "HAS_ENDLESS_FORCE"],
-    
-    
-
-
-    
-
-
-    
-    
-    
-    
-    
-    
-
-    
-
-
-    
-    
-
-
-    
-
-
-
-
-        
-
-
-
-    
-
-
-
+    HAS_BONUS_ATK_AMT: [
+        "HAS_CRASH_FIST_STYX_NIGHT",
+        "HAS_CRAS_FIST_POKE"],
 
 };
 
