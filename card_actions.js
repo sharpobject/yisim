@@ -1,4 +1,5 @@
 export const card_actions = {};
+export const card_opening = {};
 
 // Cloud Sword - Touch Sky
 card_actions["111011"] = (game) => {
@@ -43,7 +44,7 @@ card_actions["111023"] = (game) => {
 card_actions["111031"] = (game) => {
     game.atk(4);
     if (game.if_cloud_hit()) {
-        game.def(4);
+        game.increase_idx_def(0, 4);
     }
 }
 
@@ -51,7 +52,7 @@ card_actions["111031"] = (game) => {
 card_actions["111032"] = (game) => {
     game.atk(6);
     if (game.if_cloud_hit()) {
-        game.def(6);
+        game.increase_idx_def(0, 6);
     }
 }
 
@@ -59,62 +60,62 @@ card_actions["111032"] = (game) => {
 card_actions["111033"] = (game) => {
     game.atk(8);
     if (game.if_cloud_hit()) {
-        game.def(8);
+        game.increase_idx_def(0, 8);
     }
 }
 
 // Light Sword
 card_actions["111041"] = (game) => {
     game.atk(4);
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
 }
 
 // 111042
 card_actions["111042"] = (game) => {
     game.atk(4);
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
 }
 
 // 111043
 card_actions["111043"] = (game) => {
     game.atk(4);
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
 }
 
 // Guard Qi
 card_actions["111051"] = (game) => {
-    game.qi(1);
-    game.def(5);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_def(0, 5);
 }
 
 // 111052
 card_actions["111052"] = (game) => {
-    game.qi(2);
-    game.def(5);
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_def(0, 5);
 }
 
 // 111053
 card_actions["111053"] = (game) => {
-    game.qi(3);
-    game.def(5);
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_def(0, 5);
 }
 
 // Qi Perfusion
 card_actions["111061"] = (game) => {
-    game.qi(2);
-    game.gain_ignore_def(1);
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_x_by_c(0, "ignore_def", 1);
 }
 
 // 111062
 card_actions["111062"] = (game) => {
-    game.qi(3);
-    game.gain_ignore_def(1);
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_x_by_c(0, "ignore_def", 1);
 }
 
 // 111063
 card_actions["111063"] = (game) => {
-    game.qi(4);
-    game.gain_ignore_def(1);
+    game.increase_idx_qi(0, 4);
+    game.increase_idx_x_by_c(0, "ignore_def", 1);
 }
 
 // Giant Tiger Spirit Sword
@@ -159,37 +160,37 @@ card_actions["111083"] = (game) => {
 // Sword Slash
 card_actions["111091"] = (game) => {
     game.atk(4);
-    game.sword_intent(2);
+    game.increase_idx_x_by_c(0, "sword_intent", 2);
 }
 
 // 111092
 card_actions["111092"] = (game) => {
     game.atk(5);
-    game.sword_intent(3);
+    game.increase_idx_x_by_c(0, "sword_intent", 3);
 }
 
 // 111093
 card_actions["111093"] = (game) => {
     game.atk(6);
-    game.sword_intent(4);
+    game.increase_idx_x_by_c(0, "sword_intent", 4);
 }
 
 // Sword Defence
 card_actions["111101"] = (game) => {
-    game.def(4);
-    game.sword_intent(2);
+    game.increase_idx_def(0, 4);
+    game.increase_idx_x_by_c(0, "sword_intent", 2);
 }
 
 // 111102
 card_actions["111102"] = (game) => {
-    game.def(5);
-    game.sword_intent(3);
+    game.increase_idx_def(0, 5);
+    game.increase_idx_x_by_c(0, "sword_intent", 3);
 }
 
 // 111103
 card_actions["111103"] = (game) => {
-    game.def(6);
-    game.sword_intent(4);
+    game.increase_idx_def(0, 6);
+    game.increase_idx_x_by_c(0, "sword_intent", 4);
 }
 
 // Flying Fang Sword
@@ -239,25 +240,25 @@ card_actions["111123"] = (game) => {
 
 // Cloud Sword - Reguard
 card_actions["112011"] = (game) => {
-    game.def(8);
+    game.increase_idx_def(0, 8);
     if (game.if_cloud_hit()) {
-        game.heal(3);
+        game.increase_idx_hp(0, 3);
     }
 }
 
 // 112012
 card_actions["112012"] = (game) => {
-    game.def(11);
+    game.increase_idx_def(0, 11);
     if (game.if_cloud_hit()) {
-        game.heal(5);
+        game.increase_idx_hp(0, 5);
     }
 }
 
 // 112013
 card_actions["112013"] = (game) => {
-    game.def(14);
+    game.increase_idx_def(0, 14);
     if (game.if_cloud_hit()) {
-        game.heal(7);
+        game.increase_idx_hp(0, 7);
     }
 }
 
@@ -265,7 +266,7 @@ card_actions["112013"] = (game) => {
 card_actions["112021"] = (game) => {
     game.atk(6);
     if (game.if_cloud_hit()) {
-        game.sword_intent(2);
+        game.increase_idx_x_by_c(0, "sword_intent", 2);
     }
 }
 
@@ -273,7 +274,7 @@ card_actions["112021"] = (game) => {
 card_actions["112022"] = (game) => {
     game.atk(8);
     if (game.if_cloud_hit()) {
-        game.sword_intent(3);
+        game.increase_idx_x_by_c(0, "sword_intent", 3);
     }
 }
 
@@ -281,7 +282,7 @@ card_actions["112022"] = (game) => {
 card_actions["112023"] = (game) => {
     game.atk(10);
     if (game.if_cloud_hit()) {
-        game.sword_intent(4);
+        game.increase_idx_x_by_c(0, "sword_intent", 4);
     }
 }
 
@@ -308,22 +309,22 @@ card_actions["112033"] = (game) => {
 
 // Transforming Spirits Rhythm
 card_actions["112041"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
 }
 
 // 112042
 card_actions["112042"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
 }
 
 // 112043
 card_actions["112043"] = (game) => {
-    game.qi(5);
+    game.increase_idx_qi(0, 5);
 }
 
 // Spiritage Sword
 card_actions["112051"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     if (game.players[0].qi >= 3) {
         for (let i = 0; i < 2; i++) {
             game.atk(3);
@@ -333,7 +334,7 @@ card_actions["112051"] = (game) => {
 
 // 112052
 card_actions["112052"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     if (game.players[0].qi >= 4) {
         for (let i = 0; i < 2; i++) {
             game.atk(3);
@@ -343,7 +344,7 @@ card_actions["112052"] = (game) => {
 
 // 112053
 card_actions["112053"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     if (game.players[0].qi >= 5) {
         for (let i = 0; i < 2; i++) {
             game.atk(3);
@@ -368,37 +369,37 @@ card_actions["112063"] = (game) => {
 
 // Contemplate Spirits Rhythm
 card_actions["112071"] = (game) => {
-    game.qi(1);
-    game.sword_intent(3);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_x_by_c(0, "sword_intent", 3);
 }
 
 // 112072
 card_actions["112072"] = (game) => {
-    game.qi(1);
-    game.sword_intent(4);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_x_by_c(0, "sword_intent", 4);
 }
 
 // 112073
 card_actions["112073"] = (game) => {
-    game.qi(1);
-    game.sword_intent(5);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_x_by_c(0, "sword_intent", 5);
 }
 
 // Consonance Sword Formation
 card_actions["112081"] = (game) => {
-    game.def(9);
+    game.increase_idx_def(0, 9);
     game.exhaust_x_to_add_y("sword_intent", "qi");
 }
 
 // 112082
 card_actions["112082"] = (game) => {
-    game.def(14);
+    game.increase_idx_def(0, 14);
     game.exhaust_x_to_add_y("sword_intent", "qi");
 }
 
 // 112083
 card_actions["112083"] = (game) => {
-    game.def(19);
+    game.increase_idx_def(0, 19);
     game.exhaust_x_to_add_y("sword_intent", "qi");
 }
 
@@ -430,7 +431,7 @@ card_actions["112093"] = (game) => {
 card_actions["112101"] = (game) => {
     game.atk(8);
     if (game.if_injured()) {
-        game.sword_intent(3);
+        game.increase_idx_x_by_c(0, "sword_intent", 3);
     }
 }
 
@@ -438,7 +439,7 @@ card_actions["112101"] = (game) => {
 card_actions["112102"] = (game) => {
     game.atk(11);
     if (game.if_injured()) {
-        game.sword_intent(4);
+        game.increase_idx_x_by_c(0, "sword_intent", 4);
     }
 }
 
@@ -446,7 +447,7 @@ card_actions["112102"] = (game) => {
 card_actions["112103"] = (game) => {
     game.atk(14);
     if (game.if_injured()) {
-        game.sword_intent(5);
+        game.increase_idx_x_by_c(0, "sword_intent", 5);
     }
 }
 
@@ -489,7 +490,7 @@ card_actions["113021"] = (game) => {
         game.atk(4);
     }
     if (game.if_cloud_hit()) {
-        game.gain_ignore_def(1);
+        game.increase_idx_x_by_c(0, "ignore_def", 1);
     }
 }
 
@@ -499,7 +500,7 @@ card_actions["113022"] = (game) => {
         game.atk(6);
     }
     if (game.if_cloud_hit()) {
-        game.gain_ignore_def(1);
+        game.increase_idx_x_by_c(0, "ignore_def", 1);
     }
 }
 
@@ -509,25 +510,25 @@ card_actions["113023"] = (game) => {
         game.atk(8);
     }
     if (game.if_cloud_hit()) {
-        game.gain_ignore_def(2);
+        game.increase_idx_x_by_c(0, "ignore_def", 2);
     }
 }
 
 // Cloud Sword - Pierce the Star
 card_actions["113031"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.atk(game.players[0].qi);
 }
 
 // 113032
 card_actions["113032"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.atk(game.players[0].qi);
 }
 
 // 113033
 card_actions["113033"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.atk(game.players[0].qi);
 }
 
@@ -557,23 +558,23 @@ card_actions["113043"] = (game) => {
 
 // Cloud Dance Rhythm
 card_actions["113051"] = (game) => {
-    game.qi(2);
-    game.def(2);
-    game.sword_intent(2);
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_def(0, 2);
+    game.increase_idx_x_by_c(0, "sword_intent", 2);
 }
 
 // 113052
 card_actions["113052"] = (game) => {
-    game.qi(3);
-    game.def(3);
-    game.sword_intent(3);
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_def(0, 3);
+    game.increase_idx_x_by_c(0, "sword_intent", 3);
 }
 
 // 113053
 card_actions["113053"] = (game) => {
-    game.qi(4);
-    game.def(4);
-    game.sword_intent(4);
+    game.increase_idx_qi(0, 4);
+    game.increase_idx_def(0, 4);
+    game.increase_idx_x_by_c(0, "sword_intent", 4);
 }
 
 // Raven Spirit Sword
@@ -668,19 +669,19 @@ card_actions["113093"] = (game) => {
 
 // Mirror Flower Sword Formation
 card_actions["113101"] = (game) => {
-    game.def(3);
+    game.increase_idx_def(0, 3);
     game.atk(game.players[0].def);
 }
 
 // 113102
 card_actions["113102"] = (game) => {
-    game.def(5);
+    game.increase_idx_def(0, 5);
     game.atk(game.players[0].def);
 }
 
 // 113103
 card_actions["113103"] = (game) => {
-    game.def(8);
+    game.increase_idx_def(0, 8);
     game.atk(game.players[0].def);
 }
 
@@ -731,7 +732,7 @@ card_actions["114013"] = (game) => {
 
 // Cloud Sword - Moon Shade
 card_actions["114021"] = (game) => {
-    game.def(1);
+    game.increase_idx_def(0, 1);
     if (game.if_cloud_hit()) {
         game.add_c_of_x(2, "increase_atk");
     }
@@ -739,7 +740,7 @@ card_actions["114021"] = (game) => {
 
 // 114022
 card_actions["114022"] = (game) => {
-    game.def(2);
+    game.increase_idx_def(0, 2);
     if (game.if_cloud_hit()) {
         game.add_c_of_x(3, "increase_atk");
     }
@@ -747,7 +748,7 @@ card_actions["114022"] = (game) => {
 
 // 114023
 card_actions["114023"] = (game) => {
-    game.def(3);
+    game.increase_idx_def(0, 3);
     if (game.if_cloud_hit()) {
         game.add_c_of_x(4, "increase_atk");
     }
@@ -755,42 +756,42 @@ card_actions["114023"] = (game) => {
 
 // Spirit Gather Citta-Dharma
 card_actions["114031"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.continuous();
     game.add_c_of_x(1, "spirit_gather_citta_dharma_stacks");
 }
 
 // 114032
 card_actions["114032"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.continuous();
     game.add_c_of_x(2, "spirit_gather_citta_dharma_stacks");
 }
 
 // 114033
 card_actions["114033"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.continuous();
     game.add_c_of_x(2, "spirit_gather_citta_dharma_stacks");
 }
 
 // CentiBird Spirit Sword Rhythm
 card_actions["114041"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.continuous();
     game.add_c_of_x(1, "centibird_spirit_sword_rhythm_stacks");
 }
 
 // 114042
 card_actions["114042"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.continuous();
     game.add_c_of_x(1, "centibird_spirit_sword_rhythm_stacks");
 }
 
 // 114043
 card_actions["114043"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.continuous();
     game.add_c_of_x(2, "centibird_spirit_sword_rhythm_stacks");
 }
@@ -813,21 +814,21 @@ card_actions["114053"] = (game) => {
 // Giant Kun Spirit Sword
 card_actions["114061"] = (game) => {
     game.atk(10);
-    game.def(10);
+    game.increase_idx_def(0, 10);
     game.chase();
 }
 
 // 114062
 card_actions["114062"] = (game) => {
     game.atk(13);
-    game.def(13);
+    game.increase_idx_def(0, 13);
     game.chase();
 }
 
 // 114063
 card_actions["114063"] = (game) => {
     game.atk(16);
-    game.def(16);
+    game.increase_idx_def(0, 16);
     game.chase();
 }
 
@@ -884,19 +885,19 @@ card_actions["114083"] = (game) => {
 
 // Moon Water Sword Formation
 card_actions["114091"] = (game) => {
-    game.def(10);
+    game.increase_idx_def(0, 10);
     game.add_c_of_x(3, "moon_water_sword_formation_stacks");
 }
 
 // 114092
 card_actions["114092"] = (game) => {
-    game.def(14);
+    game.increase_idx_def(0, 14);
     game.add_c_of_x(4, "moon_water_sword_formation_stacks");
 }
 
 // 114093
 card_actions["114093"] = (game) => {
-    game.def(18);
+    game.increase_idx_def(0, 18);
     game.add_c_of_x(5, "moon_water_sword_formation_stacks");
 }
 
@@ -933,7 +934,7 @@ card_actions["115011"] = (game) => {
         }
     }
     if (game.if_cloud_hit()) {
-        game.def(3);
+        game.increase_idx_def(0, 3);
     }
 }
 
@@ -946,7 +947,7 @@ card_actions["115012"] = (game) => {
         }
     }
     if (game.if_cloud_hit()) {
-        game.def(5);
+        game.increase_idx_def(0, 5);
     }
 }
 
@@ -959,7 +960,7 @@ card_actions["115013"] = (game) => {
         }
     }
     if (game.if_cloud_hit()) {
-        game.def(7);
+        game.increase_idx_def(0, 7);
     }
 }
 
@@ -968,7 +969,7 @@ card_actions["115021"] = (game) => {
     for (let i = 0; i < 2; i++) {
         game.atk(3);
     }
-    game.def(3);
+    game.increase_idx_def(0, 3);
     if (game.if_cloud_hit()) {
         game.for_each_x_add_c_y("cloud_sword_chain_count", 3, "def");
     }
@@ -979,7 +980,7 @@ card_actions["115022"] = (game) => {
     for (let i = 0; i < 3; i++) {
         game.atk(3);
     }
-    game.def(4);
+    game.increase_idx_def(0, 4);
     if (game.if_cloud_hit()) {
         game.for_each_x_add_c_y("cloud_sword_chain_count", 4, "def");
     }
@@ -990,7 +991,7 @@ card_actions["115023"] = (game) => {
     for (let i = 0; i < 4; i++) {
         game.atk(3);
     }
-    game.def(5);
+    game.increase_idx_def(0, 5);
     if (game.if_cloud_hit()) {
         game.for_each_x_add_c_y("cloud_sword_chain_count", 5, "def");
     }
@@ -1001,7 +1002,7 @@ card_actions["115031"] = (game) => {
     for (let i = 0; i < 4; i++) {
         game.atk(1);
         if (game.if_injured()) {
-            game.qi(1);
+            game.increase_idx_qi(0, 1);
         }
     }
 }
@@ -1011,7 +1012,7 @@ card_actions["115032"] = (game) => {
     for (let i = 0; i < 5; i++) {
         game.atk(1);
         if (game.if_injured()) {
-            game.qi(1);
+            game.increase_idx_qi(0, 1);
         }
     }
 }
@@ -1021,7 +1022,7 @@ card_actions["115033"] = (game) => {
     for (let i = 0; i < 6; i++) {
         game.atk(1);
         if (game.if_injured()) {
-            game.qi(1);
+            game.increase_idx_qi(0, 1);
         }
     }
 }
@@ -1067,37 +1068,37 @@ card_actions["115053"] = (game) => {
 
 // Rule Sky Sword Formation
 card_actions["115061"] = (game) => {
-    game.def(8);
+    game.increase_idx_def(0, 8);
     game.chase();
 }
 
 // 115062
 card_actions["115062"] = (game) => {
-    game.def(14);
+    game.increase_idx_def(0, 14);
     game.chase();
 }
 
 // 115063
 card_actions["115063"] = (game) => {
-    game.def(20);
+    game.increase_idx_def(0, 20);
     game.chase();
 }
 
 // Chain Sword Formation
 card_actions["115071"] = (game) => {
-    game.def(1);
+    game.increase_idx_def(0, 1);
     game.retrigger_previous_sword_formation();
 }
 
 // 115072
 card_actions["115072"] = (game) => {
-    game.def(5);
+    game.increase_idx_def(0, 5);
     game.retrigger_previous_sword_formation();
 }
 
 // 115073
 card_actions["115073"] = (game) => {
-    game.def(10);
+    game.increase_idx_def(0, 10);
     game.retrigger_previous_sword_formation();
 }
 
@@ -1139,22 +1140,22 @@ card_actions["121013"] = (game) => {
 
 // Dotted Around
 card_actions["121021"] = (game) => {
-    game.qi(1);
-    game.def(2);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_def(0, 2);
     game.add_c_of_x(1, "star_power");
 }
 
 // 121022
 card_actions["121022"] = (game) => {
-    game.qi(2);
-    game.def(3);
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_def(0, 3);
     game.add_c_of_x(1, "star_power");
 }
 
 // 121023
 card_actions["121023"] = (game) => {
-    game.qi(2);
-    game.def(4);
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_def(0, 4);
     game.add_c_of_x(2, "star_power");
 }
 
@@ -1162,7 +1163,7 @@ card_actions["121023"] = (game) => {
 card_actions["121031"] = (game) => {
     game.atk(6);
     if (game.if_star_point()) {
-        game.def(2);
+        game.increase_idx_def(0, 2);
     }
 }
 
@@ -1170,7 +1171,7 @@ card_actions["121031"] = (game) => {
 card_actions["121032"] = (game) => {
     game.atk(8);
     if (game.if_star_point()) {
-        game.def(4);
+        game.increase_idx_def(0, 4);
     }
 }
 
@@ -1178,7 +1179,7 @@ card_actions["121032"] = (game) => {
 card_actions["121033"] = (game) => {
     game.atk(10);
     if (game.if_star_point()) {
-        game.def(6);
+        game.increase_idx_def(0, 6);
     }
 }
 
@@ -1226,37 +1227,37 @@ card_actions["121053"] = (game) => {
 
 // Earth Hexagram
 card_actions["121061"] = (game) => {
-    game.def(2);
+    game.increase_idx_def(0, 2);
     game.add_c_of_x(2, "hexagram");
 }
 
 // 121062
 card_actions["121062"] = (game) => {
-    game.def(2);
+    game.increase_idx_def(0, 2);
     game.add_c_of_x(3, "hexagram");
 }
 
 // 121063
 card_actions["121063"] = (game) => {
-    game.def(2);
+    game.increase_idx_def(0, 2);
     game.add_c_of_x(4, "hexagram");
 }
 
 // Wind Hexagram
 card_actions["121071"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.add_c_of_x(1, "hexagram");
 }
 
 // 121072
 card_actions["121072"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.add_c_of_x(1, "hexagram");
 }
 
 // 121073
 card_actions["121073"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.add_c_of_x(2, "hexagram");
 }
 
@@ -1278,19 +1279,19 @@ card_actions["121083"] = (game) => {
 // White Crane Bright Wings
 card_actions["121091"] = (game) => {
     game.atk_rand_range(1, 8);
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
 }
 
 // 121092
 card_actions["121092"] = (game) => {
     game.atk_rand_range(1, 8);
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
 }
 
 // 121093
 card_actions["121093"] = (game) => {
     game.atk_rand_range(1, 8);
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
 }
 
 // Sparrow's Tail
@@ -1345,7 +1346,7 @@ card_actions["121113"] = (game) => {
 card_actions["121121"] = (game) => {
     game.atk(6);
     if (game.if_post_action()) {
-        game.heal(2);
+        game.increase_idx_hp(0, 2);
     }
 }
 
@@ -1353,7 +1354,7 @@ card_actions["121121"] = (game) => {
 card_actions["121122"] = (game) => {
     game.atk(9);
     if (game.if_post_action()) {
-        game.heal(4);
+        game.increase_idx_hp(0, 4);
     }
 }
 
@@ -1361,7 +1362,7 @@ card_actions["121122"] = (game) => {
 card_actions["121123"] = (game) => {
     game.atk(12);
     if (game.if_post_action()) {
-        game.heal(6);
+        game.increase_idx_hp(0, 6);
     }
 }
 
@@ -1411,7 +1412,7 @@ card_actions["122023"] = (game) => {
 card_actions["122031"] = (game) => {
     game.atk(7);
     if (game.if_star_point()) {
-        game.qi(1);
+        game.increase_idx_qi(0, 1);
     }
 }
 
@@ -1419,7 +1420,7 @@ card_actions["122031"] = (game) => {
 card_actions["122032"] = (game) => {
     game.atk(8);
     if (game.if_star_point()) {
-        game.qi(2);
+        game.increase_idx_qi(0, 2);
     }
 }
 
@@ -1427,7 +1428,7 @@ card_actions["122032"] = (game) => {
 card_actions["122033"] = (game) => {
     game.atk(9);
     if (game.if_star_point()) {
-        game.qi(3);
+        game.increase_idx_qi(0, 3);
     }
 }
 
@@ -1435,21 +1436,21 @@ card_actions["122033"] = (game) => {
 card_actions["122041"] = (game) => {
     game.add_c_of_x(2, "hexagram");
     game.add_c_of_x(2, "max_hp");
-    game.heal(2);
+    game.increase_idx_hp(0, 2);
 }
 
 // 122042
 card_actions["122042"] = (game) => {
     game.add_c_of_x(3, "hexagram");
     game.add_c_of_x(3, "max_hp");
-    game.heal(3);
+    game.increase_idx_hp(0, 3);
 }
 
 // 122043
 card_actions["122043"] = (game) => {
     game.add_c_of_x(4, "hexagram");
     game.add_c_of_x(4, "max_hp");
-    game.heal(4);
+    game.increase_idx_hp(0, 4);
 }
 
 // Water Hexagram
@@ -1553,46 +1554,46 @@ card_actions["122093"] = (game) => {
 
 // Flower Sentient
 card_actions["122101"] = (game) => {
-    game.qi(1);
-    game.def(1);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_def(0, 1);
     game.add_enemy_c_of_x(1, "internal_injury");
 }
 
 // 122102
 card_actions["122102"] = (game) => {
-    game.qi(2);
-    game.def(2);
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_def(0, 2);
     game.add_enemy_c_of_x(1, "internal_injury");
 }
 
 // 122103
 card_actions["122103"] = (game) => {
-    game.qi(3);
-    game.def(3);
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_def(0, 3);
     game.add_enemy_c_of_x(1, "internal_injury");
 }
 
 // Imposing
 card_actions["122111"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     if (game.if_post_action()) {
-        game.heal(6);
+        game.increase_idx_hp(0, 6);
     }
 }
 
 // 122112
 card_actions["122112"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     if (game.if_post_action()) {
-        game.heal(9);
+        game.increase_idx_hp(0, 9);
     }
 }
 
 // 122113
 card_actions["122113"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     if (game.if_post_action()) {
-        game.heal(12);
+        game.increase_idx_hp(0, 12);
     }
 }
 
@@ -1647,21 +1648,21 @@ card_actions["123023"] = (game) => {
 // Lake Hexagram
 card_actions["123031"] = (game) => {
     game.add_c_of_x(2, "hexagram");
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.add_enemy_c_of_x(2, "qi");
 }
 
 // 123032
 card_actions["123032"] = (game) => {
     game.add_c_of_x(3, "hexagram");
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.add_enemy_c_of_x(3, "qi");
 }
 
 // 123033
 card_actions["123033"] = (game) => {
     game.add_c_of_x(4, "hexagram");
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.add_enemy_c_of_x(4, "qi");
 }
 
@@ -1709,21 +1710,21 @@ card_actions["123053"] = (game) => {
 
 // Yin Yang Formation
 card_actions["123061"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.for_each_x_add_c_y("hexagram", 1, "def");
     game.for_each_x_add_c_y("hexagram", 1, "hp");
 }
 
 // 123062
 card_actions["123062"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.for_each_x_add_c_y("hexagram", 2, "def");
     game.for_each_x_add_c_y("hexagram", 1, "hp");
 }
 
 // 123063
 card_actions["123063"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.for_each_x_add_c_y("hexagram", 2, "def");
     game.for_each_x_add_c_y("hexagram", 2, "hp");
 }
@@ -1793,7 +1794,7 @@ card_actions["123101"] = (game) => {
     for (let i = 0; i < 2; i++) {
         game.atk(2);
     }
-    game.heal(4);
+    game.increase_idx_hp(0, 4);
     if (game.if_post_action()) {
         game.atk(7);
     }
@@ -1804,7 +1805,7 @@ card_actions["123102"] = (game) => {
     for (let i = 0; i < 2; i++) {
         game.atk(3);
     }
-    game.heal(6);
+    game.increase_idx_hp(0, 6);
     if (game.if_post_action()) {
         game.atk(10);
     }
@@ -1815,7 +1816,7 @@ card_actions["123103"] = (game) => {
     for (let i = 0; i < 2; i++) {
         game.atk(4);
     }
-    game.heal(8);
+    game.increase_idx_hp(0, 8);
     if (game.if_post_action()) {
         game.atk(13);
     }
@@ -1998,7 +1999,7 @@ card_actions["124073"] = (game) => {
 // Repel Citta-Dharma
 card_actions["124081"] = (game) => {
     game.add_c_of_x(4, "max_hp");
-    game.heal(4);
+    game.increase_idx_hp(0, 4);
     game.continuous();
     game.add_c_of_x(2, "repel_citta_dharma_stacks");
 }
@@ -2006,7 +2007,7 @@ card_actions["124081"] = (game) => {
 // 124082
 card_actions["124082"] = (game) => {
     game.add_c_of_x(6, "max_hp");
-    game.heal(6);
+    game.increase_idx_hp(0, 6);
     game.continuous();
     game.add_c_of_x(3, "repel_citta_dharma_stacks");
 }
@@ -2014,15 +2015,15 @@ card_actions["124082"] = (game) => {
 // 124083
 card_actions["124083"] = (game) => {
     game.add_c_of_x(8, "max_hp");
-    game.heal(8);
+    game.increase_idx_hp(0, 8);
     game.continuous();
     game.add_c_of_x(4, "repel_citta_dharma_stacks");
 }
 
 // Escape Plan
 card_actions["124091"] = (game) => {
-    game.def(9);
-    game.heal(9);
+    game.increase_idx_def(0, 9);
+    game.increase_idx_hp(0, 9);
     if (game.if_post_action()) {
         game.add_c_of_x(1, "guard_up");
     }
@@ -2030,8 +2031,8 @@ card_actions["124091"] = (game) => {
 
 // 124092
 card_actions["124092"] = (game) => {
-    game.def(12);
-    game.heal(12);
+    game.increase_idx_def(0, 12);
+    game.increase_idx_hp(0, 12);
     if (game.if_post_action()) {
         game.add_c_of_x(1, "guard_up");
     }
@@ -2039,8 +2040,8 @@ card_actions["124092"] = (game) => {
 
 // 124093
 card_actions["124093"] = (game) => {
-    game.def(15);
-    game.heal(15);
+    game.increase_idx_def(0, 15);
+    game.increase_idx_hp(0, 15);
     if (game.if_post_action()) {
         game.add_c_of_x(1, "guard_up");
     }
@@ -2108,7 +2109,7 @@ card_actions["125023"] = (game) => {
 
 // Heaven Hexagram
 card_actions["125031"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.add_c_of_x(1, "hexagram");
     if (game.players[0].hexagram >= 3) {
         game.chase();
@@ -2117,7 +2118,7 @@ card_actions["125031"] = (game) => {
 
 // 125032
 card_actions["125032"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.add_c_of_x(2, "hexagram");
     if (game.players[0].hexagram >= 3) {
         game.chase();
@@ -2126,7 +2127,7 @@ card_actions["125032"] = (game) => {
 
 // 125033
 card_actions["125033"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.add_c_of_x(3, "hexagram");
     if (game.players[0].hexagram >= 3) {
         game.chase();
@@ -2162,19 +2163,19 @@ card_actions["125043"] = (game) => {
 
 // Strike Twice
 card_actions["125051"] = (game) => {
-    game.heal(2);
+    game.increase_idx_hp(0, 2);
     game.add_c_of_x(1, "strike_twice_stacks");
 }
 
 // 125052
 card_actions["125052"] = (game) => {
-    game.heal(8);
+    game.increase_idx_hp(0, 8);
     game.add_c_of_x(1, "strike_twice_stacks");
 }
 
 // 125053
 card_actions["125053"] = (game) => {
-    game.heal(14);
+    game.increase_idx_hp(0, 14);
     game.add_c_of_x(1, "strike_twice_stacks");
 }
 
@@ -2183,7 +2184,7 @@ card_actions["125061"] = (game) => {
     game.add_c_of_x(12, "max_hp");
     game.chase();
     if (game.if_post_action()) {
-        game.heal(24);
+        game.increase_idx_hp(0, 24);
     }
 }
 
@@ -2192,7 +2193,7 @@ card_actions["125062"] = (game) => {
     game.add_c_of_x(16, "max_hp");
     game.chase();
     if (game.if_post_action()) {
-        game.heal(31);
+        game.increase_idx_hp(0, 31);
     }
 }
 
@@ -2201,7 +2202,7 @@ card_actions["125063"] = (game) => {
     game.add_c_of_x(20, "max_hp");
     game.chase();
     if (game.if_post_action()) {
-        game.heal(38);
+        game.increase_idx_hp(0, 38);
     }
 }
 
@@ -2228,40 +2229,40 @@ card_actions["125073"] = (game) => {
 
 // Propitious Omen
 card_actions["125081"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.do_propitious_omen(3);
 }
 
 // 125082
 card_actions["125082"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.do_propitious_omen(5);
 }
 
 // 125083
 card_actions["125083"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.do_propitious_omen(7);
 }
 
 // Wood Spirit Seal
 card_actions["131011"] = (game) => {
-    game.qi(1);
-    game.heal(4);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_hp(0, 4);
     game.activate_wood_spirit();
 }
 
 // 131012
 card_actions["131012"] = (game) => {
-    game.qi(2);
-    game.heal(4);
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_hp(0, 4);
     game.activate_wood_spirit();
 }
 
 // 131013
 card_actions["131013"] = (game) => {
-    game.qi(3);
-    game.heal(4);
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_hp(0, 4);
     game.activate_wood_spirit();
 }
 
@@ -2271,7 +2272,7 @@ card_actions["131021"] = (game) => {
         game.atk(3);
     }
     if (game.if_wood_spirit()) {
-        game.heal(5);
+        game.increase_idx_hp(0, 5);
     }
 }
 
@@ -2281,7 +2282,7 @@ card_actions["131022"] = (game) => {
         game.atk(3);
     }
     if (game.if_wood_spirit()) {
-        game.heal(5);
+        game.increase_idx_hp(0, 5);
     }
 }
 
@@ -2291,7 +2292,7 @@ card_actions["131023"] = (game) => {
         game.atk(3);
     }
     if (game.if_wood_spirit()) {
-        game.heal(5);
+        game.increase_idx_hp(0, 5);
     }
 }
 
@@ -2299,7 +2300,7 @@ card_actions["131023"] = (game) => {
 card_actions["131031"] = (game) => {
     game.reduce_enemy_c_of_x(3, "hp");
     game.reduce_enemy_c_of_x(3, "max_hp");
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.activate_fire_spirit();
 }
 
@@ -2307,7 +2308,7 @@ card_actions["131031"] = (game) => {
 card_actions["131032"] = (game) => {
     game.reduce_enemy_c_of_x(3, "hp");
     game.reduce_enemy_c_of_x(3, "max_hp");
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.activate_fire_spirit();
 }
 
@@ -2315,7 +2316,7 @@ card_actions["131032"] = (game) => {
 card_actions["131033"] = (game) => {
     game.reduce_enemy_c_of_x(3, "hp");
     game.reduce_enemy_c_of_x(3, "max_hp");
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.activate_fire_spirit();
 }
 
@@ -2346,21 +2347,21 @@ card_actions["131043"] = (game) => {
 // Earth Spirit Seal
 card_actions["131051"] = (game) => {
     game.atk(3);
-    game.def(4);
+    game.increase_idx_def(0, 4);
     game.activate_earth_spirit();
 }
 
 // 131052
 card_actions["131052"] = (game) => {
     game.atk(5);
-    game.def(6);
+    game.increase_idx_def(0, 6);
     game.activate_earth_spirit();
 }
 
 // 131053
 card_actions["131053"] = (game) => {
     game.atk(7);
-    game.def(8);
+    game.increase_idx_def(0, 8);
     game.activate_earth_spirit();
 }
 
@@ -2441,19 +2442,19 @@ card_actions["131083"] = (game) => {
 
 // Water Spirit Seal
 card_actions["131091"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.activate_water_spirit();
 }
 
 // 131092
 card_actions["131092"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.activate_water_spirit();
 }
 
 // 131093
 card_actions["131093"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.activate_water_spirit();
 }
 
@@ -2510,28 +2511,28 @@ card_actions["131113"] = (game) => {
 
 // Wood Spirit - Recovery
 card_actions["132011"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     if (game.if_wood_spirit()) {
         const heal_amt = 3 + game.players[0].increase_atk;
-        game.heal(heal_amt);
+        game.increase_idx_hp(0, heal_amt);
     }
 }
 
 // 132012
 card_actions["132012"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     if (game.if_wood_spirit()) {
         const heal_amt = 4 + game.players[0].increase_atk;
-        game.heal(heal_amt);
+        game.increase_idx_hp(0, heal_amt);
     }
 }
 
 // 132013
 card_actions["132013"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     if (game.if_wood_spirit()) {
         const heal_amt = 6 + game.players[0].increase_atk;
-        game.heal(heal_amt);
+        game.increase_idx_hp(0, heal_amt);
     }
 }
 
@@ -2567,7 +2568,7 @@ card_actions["132023"] = (game) => {
 
 // Fire Spirit - Flame Eater
 card_actions["132031"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     if (game.if_fire_spirit()) {
         game.reduce_enemy_c_of_x(3, "hp");
         game.reduce_enemy_c_of_x(3, "max_hp");
@@ -2576,7 +2577,7 @@ card_actions["132031"] = (game) => {
 
 // 132032
 card_actions["132032"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     if (game.if_fire_spirit()) {
         game.reduce_enemy_c_of_x(4, "hp");
         game.reduce_enemy_c_of_x(4, "max_hp");
@@ -2585,7 +2586,7 @@ card_actions["132032"] = (game) => {
 
 // 132033
 card_actions["132033"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     if (game.if_fire_spirit()) {
         game.reduce_enemy_c_of_x(6, "hp");
         game.reduce_enemy_c_of_x(6, "max_hp");
@@ -2624,21 +2625,21 @@ card_actions["132043"] = (game) => {
 
 // Earth Spirit Formation
 card_actions["132051"] = (game) => {
-    game.def(4);
+    game.increase_idx_def(0, 4);
     game.continuous();
     game.add_c_of_x(2, "earth_spirit_formation_stacks");
 }
 
 // 132052
 card_actions["132052"] = (game) => {
-    game.def(6);
+    game.increase_idx_def(0, 6);
     game.continuous();
     game.add_c_of_x(3, "earth_spirit_formation_stacks");
 }
 
 // 132053
 card_actions["132053"] = (game) => {
-    game.def(8);
+    game.increase_idx_def(0, 8);
     game.continuous();
     game.add_c_of_x(4, "earth_spirit_formation_stacks");
 }
@@ -2646,7 +2647,7 @@ card_actions["132053"] = (game) => {
 // Earth Spirit - Mountains
 card_actions["132061"] = (game) => {
     game.atk(5);
-    game.def(2);
+    game.increase_idx_def(0, 2);
     if (game.if_earth_spirit()) {
         game.add_c_of_x(3, "next_turn_def");
     }
@@ -2655,7 +2656,7 @@ card_actions["132061"] = (game) => {
 // 132062
 card_actions["132062"] = (game) => {
     game.atk(6);
-    game.def(3);
+    game.increase_idx_def(0, 3);
     if (game.if_earth_spirit()) {
         game.add_c_of_x(6, "next_turn_def");
     }
@@ -2664,7 +2665,7 @@ card_actions["132062"] = (game) => {
 // 132063
 card_actions["132063"] = (game) => {
     game.atk(7);
-    game.def(4);
+    game.increase_idx_def(0, 4);
     if (game.if_earth_spirit()) {
         game.add_c_of_x(9, "next_turn_def");
     }
@@ -2760,21 +2761,21 @@ card_actions["132103"] = (game) => {
 // Cosmos Seal
 card_actions["132111"] = (game) => {
     game.atk(5);
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.add_c_of_x(1, "cosmos_seal_stacks");
 }
 
 // 132112
 card_actions["132112"] = (game) => {
     game.atk(9);
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.add_c_of_x(1, "cosmos_seal_stacks");
 }
 
 // 132113
 card_actions["132113"] = (game) => {
     game.atk(13);
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.add_c_of_x(1, "cosmos_seal_stacks");
 }
 
@@ -2912,7 +2913,7 @@ card_actions["133053"] = (game) => {
 
 // Earth Spirit - Cliff
 card_actions["133061"] = (game) => {
-    game.def(10);
+    game.increase_idx_def(0, 10);
     if (game.if_earth_spirit()) {
         game.add_c_of_x(1, "earth_spirit_cliff_stacks");
     }
@@ -2920,7 +2921,7 @@ card_actions["133061"] = (game) => {
 
 // 133062
 card_actions["133062"] = (game) => {
-    game.def(15);
+    game.increase_idx_def(0, 15);
     if (game.if_earth_spirit()) {
         game.add_c_of_x(1, "earth_spirit_cliff_stacks");
     }
@@ -2928,7 +2929,7 @@ card_actions["133062"] = (game) => {
 
 // 133063
 card_actions["133063"] = (game) => {
-    game.def(20);
+    game.increase_idx_def(0, 20);
     if (game.if_earth_spirit()) {
         game.add_c_of_x(1, "earth_spirit_cliff_stacks");
     }
@@ -2936,19 +2937,19 @@ card_actions["133063"] = (game) => {
 
 // Metal Spirit - Charge
 card_actions["133071"] = (game) => {
-    game.def(4);
+    game.increase_idx_def(0, 4);
     game.do_metal_spirit_charge(4);
 }
 
 // 133072
 card_actions["133072"] = (game) => {
-    game.def(6);
+    game.increase_idx_def(0, 6);
     game.do_metal_spirit_charge(6);
 }
 
 // 133073
 card_actions["133073"] = (game) => {
-    game.def(8);
+    game.increase_idx_def(0, 8);
     game.do_metal_spirit_charge(8);
 }
 
@@ -2978,28 +2979,28 @@ card_actions["133083"] = (game) => {
 
 // Water Spirit Formation
 card_actions["133091"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.continuous();
     game.add_c_of_x(1, "water_spirit_formation_stacks");
 }
 
 // 133092
 card_actions["133092"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.continuous();
     game.add_c_of_x(1, "water_spirit_formation_stacks");
 }
 
 // 133093
 card_actions["133093"] = (game) => {
-    game.qi(5);
+    game.increase_idx_qi(0, 5);
     game.continuous();
     game.add_c_of_x(1, "water_spirit_formation_stacks");
 }
 
 // Water Spirit - Spring
 card_actions["133101"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     if (game.if_water_spirit()) {
         game.add_c_of_x(1, "water_spirit_spring_stacks");
     }
@@ -3007,7 +3008,7 @@ card_actions["133101"] = (game) => {
 
 // 133102
 card_actions["133102"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     if (game.if_water_spirit()) {
         game.add_c_of_x(1, "water_spirit_spring_stacks");
     }
@@ -3015,7 +3016,7 @@ card_actions["133102"] = (game) => {
 
 // 133103
 card_actions["133103"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     if (game.if_water_spirit()) {
         game.add_c_of_x(1, "water_spirit_spring_stacks");
     }
@@ -3038,8 +3039,8 @@ card_actions["133113"] = (game) => {
 
 // Wood Spirit - Fragrant
 card_actions["134011"] = (game) => {
-    game.qi(2);
-    game.heal(2);
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_hp(0, 2);
     if (game.if_wood_spirit()) {
         game.for_each_x_add_c_pct_y("qi", 33.333334, "increase_atk");
     }
@@ -3047,8 +3048,8 @@ card_actions["134011"] = (game) => {
 
 // 134012
 card_actions["134012"] = (game) => {
-    game.qi(3);
-    game.heal(3);
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_hp(0, 3);
     if (game.if_wood_spirit()) {
         game.for_each_x_add_c_pct_y("qi", 33.333334, "increase_atk");
     }
@@ -3056,8 +3057,8 @@ card_actions["134012"] = (game) => {
 
 // 134013
 card_actions["134013"] = (game) => {
-    game.qi(4);
-    game.heal(4);
+    game.increase_idx_qi(0, 4);
+    game.increase_idx_hp(0, 4);
     if (game.if_wood_spirit()) {
         game.for_each_x_add_c_pct_y("qi", 33.333334, "increase_atk");
     }
@@ -3071,7 +3072,7 @@ card_actions["134021"] = (game) => {
     if (game.if_wood_spirit()) {
         const heal_amt = Math.floor(
             game.players[0].damage_dealt_to_hp_by_this_card_atk * 33.333334 / 100);
-        game.heal(heal_amt);
+        game.increase_idx_hp(0, heal_amt);
     }
 }
 
@@ -3083,7 +3084,7 @@ card_actions["134022"] = (game) => {
     if (game.if_wood_spirit()) {
         const heal_amt = Math.floor(
             game.players[0].damage_dealt_to_hp_by_this_card_atk * 33.333334 / 100);
-        game.heal(heal_amt);
+        game.increase_idx_hp(0, heal_amt);
     }
 }
 
@@ -3095,7 +3096,7 @@ card_actions["134023"] = (game) => {
     if (game.if_wood_spirit()) {
         const heal_amt = Math.floor(
             game.players[0].damage_dealt_to_hp_by_this_card_atk * 33.333334 / 100);
-        game.heal(heal_amt);
+        game.increase_idx_hp(0, heal_amt);
     }
 }
 
@@ -3166,7 +3167,7 @@ card_actions["134051"] = (game) => {
     if (game.if_earth_spirit()) {
         def_amt += Math.floor(me.def_lost * 16.666667 / 100);
     }
-    game.def(def_amt);
+    game.increase_idx_def(0, def_amt);
 }
 
 // 134052
@@ -3176,7 +3177,7 @@ card_actions["134052"] = (game) => {
     if (game.if_earth_spirit()) {
         def_amt += Math.floor(me.def_lost * 20 / 100);
     }
-    game.def(def_amt);
+    game.increase_idx_def(0, def_amt);
 }
 
 // 134053
@@ -3186,7 +3187,7 @@ card_actions["134053"] = (game) => {
     if (game.if_earth_spirit()) {
         def_amt += Math.floor(me.def_lost * 25 / 100);
     }
-    game.def(def_amt);
+    game.increase_idx_def(0, def_amt);
 }
 
 // Earth Spirit - Quicksand
@@ -3266,7 +3267,7 @@ card_actions["134083"] = (game) => {
 
 // Water Spirit - Great Waves
 card_actions["134091"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.add_c_of_x(2, "max_hp");
     game.add_c_of_x(2, "hp");
     if (game.if_water_spirit()) {
@@ -3276,7 +3277,7 @@ card_actions["134091"] = (game) => {
 
 // 134092
 card_actions["134092"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.add_c_of_x(3, "max_hp");
     game.add_c_of_x(3, "hp");
     if (game.if_water_spirit()) {
@@ -3286,7 +3287,7 @@ card_actions["134092"] = (game) => {
 
 // 134093
 card_actions["134093"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.add_c_of_x(4, "max_hp");
     game.add_c_of_x(4, "hp");
     if (game.if_water_spirit()) {
@@ -3297,7 +3298,7 @@ card_actions["134093"] = (game) => {
 // Water Spirit - Dive
 card_actions["134101"] = (game) => {
     game.add_c_of_x(2, "max_hp");
-    game.heal(2);
+    game.increase_idx_hp(0, 2);
     if (game.if_water_spirit()) {
         game.add_c_of_x(2, "water_spirit_dive_stacks");
     }
@@ -3306,7 +3307,7 @@ card_actions["134101"] = (game) => {
 // 134102
 card_actions["134102"] = (game) => {
     game.add_c_of_x(7, "max_hp");
-    game.heal(7);
+    game.increase_idx_hp(0, 7);
     if (game.if_water_spirit()) {
         game.add_c_of_x(2, "water_spirit_dive_stacks");
     }
@@ -3315,7 +3316,7 @@ card_actions["134102"] = (game) => {
 // 134103
 card_actions["134103"] = (game) => {
     game.add_c_of_x(12, "max_hp");
-    game.heal(12);
+    game.increase_idx_hp(0, 12);
     if (game.if_water_spirit()) {
         game.add_c_of_x(2, "water_spirit_dive_stacks");
     }
@@ -3348,7 +3349,7 @@ card_actions["134113"] = (game) => {
 // Wood Spirit - Willow Leaf
 card_actions["135011"] = (game) => {
     game.add_c_of_x(1, "increase_atk");
-    game.heal(3);
+    game.increase_idx_hp(0, 3);
     if (game.if_wood_spirit()) {
         game.chase();
     }
@@ -3357,7 +3358,7 @@ card_actions["135011"] = (game) => {
 // 135012
 card_actions["135012"] = (game) => {
     game.add_c_of_x(2, "increase_atk");
-    game.heal(3);
+    game.increase_idx_hp(0, 3);
     if (game.if_wood_spirit()) {
         game.chase();
     }
@@ -3366,7 +3367,7 @@ card_actions["135012"] = (game) => {
 // 135013
 card_actions["135013"] = (game) => {
     game.add_c_of_x(3, "increase_atk");
-    game.heal(3);
+    game.increase_idx_hp(0, 3);
     if (game.if_wood_spirit()) {
         game.chase();
     }
@@ -3404,7 +3405,7 @@ card_actions["135023"] = (game) => {
 
 // Earth Spirit - Combine World
 card_actions["135031"] = (game) => {
-    game.def(12);
+    game.increase_idx_def(0, 12);
     if (game.if_earth_spirit()) {
         game.add_c_of_x(2, "earth_spirit_combine_world_stacks");
     }
@@ -3412,7 +3413,7 @@ card_actions["135031"] = (game) => {
 
 // 135032
 card_actions["135032"] = (game) => {
-    game.def(12);
+    game.increase_idx_def(0, 12);
     if (game.if_earth_spirit()) {
         game.add_c_of_x(3, "earth_spirit_combine_world_stacks");
     }
@@ -3420,7 +3421,7 @@ card_actions["135032"] = (game) => {
 
 // 135033
 card_actions["135033"] = (game) => {
-    game.def(12);
+    game.increase_idx_def(0, 12);
     if (game.if_earth_spirit()) {
         game.add_c_of_x(4, "earth_spirit_combine_world_stacks");
     }
@@ -3456,7 +3457,7 @@ card_actions["135051"] = (game) => {
     if (game.if_water_spirit()) {
         const amt = game.players[0].force_of_water + 6;
         game.add_c_of_x(amt, "max_hp");
-        game.heal(amt);
+        game.increase_idx_hp(0, amt);
     }
 }
 
@@ -3466,7 +3467,7 @@ card_actions["135052"] = (game) => {
     if (game.if_water_spirit()) {
         const amt = game.players[0].force_of_water + 8;
         game.add_c_of_x(amt, "max_hp");
-        game.heal(amt);
+        game.increase_idx_hp(0, amt);
     }
 }
 
@@ -3476,7 +3477,7 @@ card_actions["135053"] = (game) => {
     if (game.if_water_spirit()) {
         const amt = game.players[0].force_of_water + 10;
         game.add_c_of_x(amt, "max_hp");
-        game.heal(amt);
+        game.increase_idx_hp(0, amt);
     }
 }
 
@@ -3508,7 +3509,7 @@ card_actions["135071"] = (game) => {
 
 // 135072
 card_actions["135072"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.continuous();
     if (game.get_n_different_five_elements(0) <= 1) {
         game.add_c_of_x(2, "five_elements_heavenly_marrow_rhythm_stacks");
@@ -3517,7 +3518,7 @@ card_actions["135072"] = (game) => {
 
 // 135073
 card_actions["135073"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.continuous();
     if (game.get_n_different_five_elements(0) <= 1) {
         game.add_c_of_x(3, "five_elements_heavenly_marrow_rhythm_stacks");
@@ -3545,21 +3546,21 @@ card_actions["141013"] = (game) => {
 // Crash Fist - Block
 card_actions["141021"] = (game) => {
     game.atk(7);
-    game.def(2);
+    game.increase_idx_def(0, 2);
     game.add_c_of_x(2, "crash_fist_block_stacks");
 }
 
 // 141022
 card_actions["141022"] = (game) => {
     game.atk(9);
-    game.def(3);
+    game.increase_idx_def(0, 3);
     game.add_c_of_x(3, "crash_fist_block_stacks");
 }
 
 // 141023
 card_actions["141023"] = (game) => {
     game.atk(11);
-    game.def(4);
+    game.increase_idx_def(0, 4);
     game.add_c_of_x(4, "crash_fist_block_stacks");
 }
 
@@ -3616,43 +3617,43 @@ card_actions["141053"] = (game) => {
 
 // Embracing Qi Technique
 card_actions["141061"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.physique(2);
-    game.heal(1);
+    game.increase_idx_hp(0, 1);
 }
 
 // 141062
 card_actions["141062"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.physique(2);
-    game.heal(4);
+    game.increase_idx_hp(0, 4);
 }
 
 // 141063
 card_actions["141063"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.physique(2);
-    game.heal(7);
+    game.increase_idx_hp(0, 7);
 }
 
 // Rakshasa Pouncing
 card_actions["141071"] = (game) => {
     game.atk(8);
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.add_c_of_x(1, "wound");
 }
 
 // 141072
 card_actions["141072"] = (game) => {
     game.atk(11);
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.add_c_of_x(1, "wound");
 }
 
 // 141073
 card_actions["141073"] = (game) => {
     game.atk(14);
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.add_c_of_x(1, "wound");
 }
 
@@ -3695,21 +3696,21 @@ card_actions["141093"] = (game) => {
 // Gather Force
 card_actions["141101"] = (game) => {
     game.atk(2);
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.add_c_of_x(2, "force");
 }
 
 // 141102
 card_actions["141102"] = (game) => {
     game.atk(5);
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.add_c_of_x(2, "force");
 }
 
 // 141103
 card_actions["141103"] = (game) => {
     game.atk(8);
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.add_c_of_x(2, "force");
 }
 
@@ -3829,7 +3830,7 @@ card_actions["142041"] = (game) => {
     game.atk(5);
     game.physique(2);
     if (game.players[0].physique >= 15) {
-        game.def(4);
+        game.increase_idx_def(0, 4);
     }
 }
 
@@ -3838,7 +3839,7 @@ card_actions["142042"] = (game) => {
     game.atk(7);
     game.physique(2);
     if (game.players[0].physique >= 15) {
-        game.def(6);
+        game.increase_idx_def(0, 6);
     }
 }
 
@@ -3847,7 +3848,7 @@ card_actions["142043"] = (game) => {
     game.atk(9);
     game.physique(2);
     if (game.players[0].physique >= 15) {
-        game.def(8);
+        game.increase_idx_def(0, 8);
     }
 }
 
@@ -3874,7 +3875,7 @@ card_actions["142061"] = (game) => {
     for (let i = 0; i < 2; i++) {
         game.atk(4);
     }
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.add_c_of_x(3, "flaw");
 }
 
@@ -3883,7 +3884,7 @@ card_actions["142062"] = (game) => {
     for (let i = 0; i < 2; i++) {
         game.atk(6);
     }
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.add_c_of_x(3, "flaw");
 }
 
@@ -3892,58 +3893,58 @@ card_actions["142063"] = (game) => {
     for (let i = 0; i < 2; i++) {
         game.atk(8);
     }
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.add_c_of_x(3, "flaw");
 }
 
 // Ghost Howling
 card_actions["142071"] = (game) => {
-    game.gain_ignore_def(1);
+    game.increase_idx_x_by_c(0, "ignore_def", 1);
     game.atk(14);
     game.add_c_of_x(3, "weaken");
 }
 
 // 142072
 card_actions["142072"] = (game) => {
-    game.gain_ignore_def(1);
+    game.increase_idx_x_by_c(0, "ignore_def", 1);
     game.atk(18);
     game.add_c_of_x(3, "weaken");
 }
 
 // 142073
 card_actions["142073"] = (game) => {
-    game.gain_ignore_def(1);
+    game.increase_idx_x_by_c(0, "ignore_def", 1);
     game.atk(22);
     game.add_c_of_x(3, "weaken");
 }
 
 // Standing Firm
 card_actions["142081"] = (game) => {
-    game.def(4);
+    game.increase_idx_def(0, 4);
     game.add_c_of_x(2, "force");
     if (game.players[0].qi >= 1) {
         game.reduce_c_of_x(1, "qi");
-        game.heal(5);
+        game.increase_idx_hp(0, 5);
     }
 }
 
 // 142082
 card_actions["142082"] = (game) => {
-    game.def(5);
+    game.increase_idx_def(0, 5);
     game.add_c_of_x(3, "force");
     if (game.players[0].qi >= 1) {
         game.reduce_c_of_x(1, "qi");
-        game.heal(5);
+        game.increase_idx_hp(0, 5);
     }
 }
 
 // 142083
 card_actions["142083"] = (game) => {
-    game.def(6);
+    game.increase_idx_def(0, 6);
     game.add_c_of_x(4, "force");
     if (game.players[0].qi >= 1) {
         game.reduce_c_of_x(1, "qi");
-        game.heal(5);
+        game.increase_idx_hp(0, 5);
     }
 }
 
@@ -3982,46 +3983,46 @@ card_actions["142093"] = (game) => {
 
 // Sinking Qi
 card_actions["142101"] = (game) => {
-    game.qi(2);
-    game.heal(2);
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_hp(0, 2);
 }
 
 // 142102
 card_actions["142102"] = (game) => {
-    game.qi(2);
-    game.heal(6);
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_hp(0, 6);
 }
 
 // 142103
 card_actions["142103"] = (game) => {
-    game.qi(2);
-    game.heal(10);
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_hp(0, 10);
 }
 
 // Magnaminous Righteousness
 card_actions["142111"] = (game) => {
-    game.qi(1);
-    game.def(4);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_def(0, 4);
     game.add_c_of_x(2, "hexproof");
 }
 
 // 142112
 card_actions["142112"] = (game) => {
-    game.qi(1);
-    game.def(8);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_def(0, 8);
     game.add_c_of_x(3, "hexproof");
 }
 
 // 142113
 card_actions["142113"] = (game) => {
-    game.qi(1);
-    game.def(12);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_def(0, 12);
     game.add_c_of_x(4, "hexproof");
 }
 
 // Crash Footwork
 card_actions["143011"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.add_c_of_x(4, "agility");
     game.continuous();
     game.add_c_of_x(1, "crash_footwork_stacks");
@@ -4029,7 +4030,7 @@ card_actions["143011"] = (game) => {
 
 // 143012
 card_actions["143012"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.add_c_of_x(4, "agility");
     game.continuous();
     game.add_c_of_x(1, "crash_footwork_stacks");
@@ -4037,7 +4038,7 @@ card_actions["143012"] = (game) => {
 
 // 143013
 card_actions["143013"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.add_c_of_x(4, "agility");
     game.continuous();
     game.add_c_of_x(1, "crash_footwork_stacks");
@@ -4088,21 +4089,21 @@ card_actions["143033"] = (game) => {
 // Exercise Bones
 card_actions["143041"] = (game) => {
     game.physique(1);
-    game.heal(3);
+    game.increase_idx_hp(0, 3);
     game.add_c_of_x(2, "exercise_bones_stacks");
 }
 
 // 143042
 card_actions["143042"] = (game) => {
     game.physique(1);
-    game.heal(4);
+    game.increase_idx_hp(0, 4);
     game.add_c_of_x(3, "exercise_bones_stacks");
 }
 
 // 143043
 card_actions["143043"] = (game) => {
     game.physique(1);
-    game.heal(5);
+    game.increase_idx_hp(0, 5);
     game.add_c_of_x(4, "exercise_bones_stacks");
 }
 
@@ -4111,7 +4112,7 @@ card_actions["143051"] = (game) => {
     game.physique(3);
     game.add_c_of_x(2, "entangle");
     const def_amt = 8 + game.get_debuff_count(0);
-    game.def(def_amt);
+    game.increase_idx_def(0, def_amt);
 }
 
 // 143052
@@ -4119,7 +4120,7 @@ card_actions["143052"] = (game) => {
     game.physique(3);
     game.add_c_of_x(3, "entangle");
     const def_amt = 11 + game.get_debuff_count(0);
-    game.def(def_amt);
+    game.increase_idx_def(0, def_amt);
 }
 
 // 143053
@@ -4127,7 +4128,7 @@ card_actions["143053"] = (game) => {
     game.physique(3);
     game.add_c_of_x(4, "entangle");
     const def_amt = 14 + game.get_debuff_count(0);
-    game.def(def_amt);
+    game.increase_idx_def(0, def_amt);
 }
 
 // Windward Palms
@@ -4204,21 +4205,21 @@ card_actions["143083"] = (game) => {
 
 // Majestic Qi
 card_actions["143091"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.add_c_of_x(1, "force");
     game.add_c_of_x(2, "majestic_qi_stacks");
 }
 
 // 143092
 card_actions["143092"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.add_c_of_x(1, "force");
     game.add_c_of_x(3, "majestic_qi_stacks");
 }
 
 // 143093
 card_actions["143093"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.add_c_of_x(1, "force");
     game.add_c_of_x(4, "majestic_qi_stacks");
 }
@@ -4246,7 +4247,7 @@ card_actions["143111"] = (game) => {
     const me = game.players[0];
     const qi_amt = Math.min(me.qi, 2);
     game.reduce_idx_x_by_c(0, "qi", qi_amt);
-    game.increase_idx_x_by_c(0, "force", qi_amt);
+    game.increase_idx_force(0, qi_amt);
     const atk_amt = 10 + qi_amt * 3;
     game.atk(atk_amt);
 }
@@ -4256,7 +4257,7 @@ card_actions["143112"] = (game) => {
     const me = game.players[0];
     const qi_amt = Math.min(me.qi, 3);
     game.reduce_idx_x_by_c(0, "qi", qi_amt);
-    game.increase_idx_x_by_c(0, "force", qi_amt);
+    game.increase_idx_force(0, qi_amt);
     const atk_amt = 11 + qi_amt * 3;
     game.atk(atk_amt);
 }
@@ -4266,7 +4267,7 @@ card_actions["143113"] = (game) => {
     const me = game.players[0];
     const qi_amt = Math.min(me.qi, 4);
     game.reduce_idx_x_by_c(0, "qi", qi_amt);
-    game.increase_idx_x_by_c(0, "force", qi_amt);
+    game.increase_idx_force(0, qi_amt);
     const atk_amt = 12 + qi_amt * 3;
     game.atk(atk_amt);
 }
@@ -4348,25 +4349,25 @@ card_actions["144043"] = (game) => {
 
 // Crane Footwork
 card_actions["144051"] = (game) => {
-    game.heal(4);
+    game.increase_idx_hp(0, 4);
     game.for_each_x_add_c_pct_y_up_to_d("physique", 25, "agility", 10);
 }
 
 // 144052
 card_actions["144052"] = (game) => {
-    game.heal(5);
+    game.increase_idx_hp(0, 5);
     game.for_each_x_add_c_pct_y_up_to_d("physique", 25, "agility", 13);
 }
 
 // 144053
 card_actions["144053"] = (game) => {
-    game.heal(6);
+    game.increase_idx_hp(0, 6);
     game.for_each_x_add_c_pct_y_up_to_d("physique", 25, "agility", 16);
 }
 
 // Elusive Footwork
 card_actions["144061"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.add_c_of_x(2, "agility");
     game.continuous();
     game.add_c_of_x(1, "elusive_footwork_stacks");
@@ -4374,7 +4375,7 @@ card_actions["144061"] = (game) => {
 
 // 144062
 card_actions["144062"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.add_c_of_x(3, "agility");
     game.continuous();
     game.add_c_of_x(1, "elusive_footwork_stacks");
@@ -4382,7 +4383,7 @@ card_actions["144062"] = (game) => {
 
 // 144063
 card_actions["144063"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.add_c_of_x(4, "agility");
     game.continuous();
     game.add_c_of_x(1, "elusive_footwork_stacks");
@@ -4408,42 +4409,42 @@ card_actions["144073"] = (game) => {
 
 // Soul Seizing
 card_actions["144081"] = (game) => {
-    const amt = Math.min(this.get_debuff_count(0) + 7, 14);
+    const amt = Math.min(game.get_debuff_count(0) + 7, 14);
     game.reduce_enemy_c_of_x(amt, "hp");
-    game.heal(amt);
+    game.increase_idx_hp(0, amt);
 }
 
 // 144082
 card_actions["144082"] = (game) => {
-    const amt = Math.min(this.get_debuff_count(0) + 10, 20);
+    const amt = Math.min(game.get_debuff_count(0) + 10, 20);
     game.reduce_enemy_c_of_x(amt, "hp");
-    game.heal(amt);
+    game.increase_idx_hp(0, amt);
 }
 
 // 144083
 card_actions["144083"] = (game) => {
-    const amt = Math.min(this.get_debuff_count(0) + 13, 26);
+    const amt = Math.min(game.get_debuff_count(0) + 13, 26);
     game.reduce_enemy_c_of_x(amt, "hp");
-    game.heal(amt);
+    game.increase_idx_hp(0, amt);
 }
 
 // Surging Waves
 card_actions["144091"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.for_each_x_add_y("qi", "force");
     game.add_c_of_x(5, "agility");
 }
 
 // 144092
 card_actions["144092"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.for_each_x_add_y("qi", "force");
     game.add_c_of_x(5, "agility");
 }
 
 // 144093
 card_actions["144093"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.for_each_x_add_y("qi", "force");
     game.add_c_of_x(5, "agility");
 }
@@ -4454,7 +4455,7 @@ card_actions["144101"] = (game) => {
     let def_amt = me.force * 4;
     let dmg_amt = me.force * 3;
     game.reduce_c_of_x(me.force, "force");
-    game.def(def_amt);
+    game.increase_idx_def(0, def_amt);
     game.deal_damage(dmg_amt);
     game.add_c_of_x(5, "agility");
 }
@@ -4465,7 +4466,7 @@ card_actions["144102"] = (game) => {
     let def_amt = me.force * 4;
     let dmg_amt = me.force * 4;
     game.reduce_c_of_x(me.force, "force");
-    game.def(def_amt);
+    game.increase_idx_def(0, def_amt);
     game.deal_damage(dmg_amt);
     game.add_c_of_x(6, "agility");
 }
@@ -4476,7 +4477,7 @@ card_actions["144103"] = (game) => {
     let def_amt = me.force * 4;
     let dmg_amt = me.force * 5;
     game.reduce_c_of_x(me.force, "force");
-    game.def(def_amt);
+    game.increase_idx_def(0, def_amt);
     game.deal_damage(dmg_amt);
     game.add_c_of_x(7, "agility");
 }
@@ -4696,21 +4697,21 @@ card_actions["145063"] = (game) => {
 
 // Gather Intense Force
 card_actions["145071"] = (game) => {
-    game.def(8);
+    game.increase_idx_def(0, 8);
     game.add_c_of_x(3, "max_force");
     game.add_c_of_x(3, "force");
 }
 
 // 145072
 card_actions["145072"] = (game) => {
-    game.def(10);
+    game.increase_idx_def(0, 10);
     game.add_c_of_x(4, "max_force");
     game.add_c_of_x(4, "force");
 }
 
 // 145073
 card_actions["145073"] = (game) => {
-    game.def(12);
+    game.increase_idx_def(0, 12);
     game.add_c_of_x(5, "max_force");
     game.add_c_of_x(5, "force");
 }
@@ -4718,7 +4719,7 @@ card_actions["145073"] = (game) => {
 // Vast Universe
 card_actions["145081"] = (game) => {
     game.atk(10);
-    game.heal(4);
+    game.increase_idx_hp(0, 4);
     game.add_c_of_x(4, "agility");
     game.for_each_x_add_c_y("force", 2, "agility");
 }
@@ -4726,7 +4727,7 @@ card_actions["145081"] = (game) => {
 // 145082
 card_actions["145082"] = (game) => {
     game.atk(12);
-    game.heal(6);
+    game.increase_idx_hp(0, 6);
     game.add_c_of_x(5, "agility");
     game.for_each_x_add_c_y("force", 2, "agility");
 }
@@ -4734,7 +4735,7 @@ card_actions["145082"] = (game) => {
 // 145083
 card_actions["145083"] = (game) => {
     game.atk(14);
-    game.heal(8);
+    game.increase_idx_hp(0, 8);
     game.add_c_of_x(6, "agility");
     game.for_each_x_add_c_y("force", 2, "agility");
 }
@@ -4780,7 +4781,7 @@ card_actions["211023"] = (game) => {
 
 // Cloud Sword - Dawn
 card_actions["212011"] = (game) => {
-    game.def(4);
+    game.increase_idx_def(0, 4);
     if (game.if_cloud_hit()) {
         for (let i = 0; i < 3; i++) {
             game.atk(2);
@@ -4790,7 +4791,7 @@ card_actions["212011"] = (game) => {
 
 // 212012
 card_actions["212012"] = (game) => {
-    game.def(6);
+    game.increase_idx_def(0, 6);
     if (game.if_cloud_hit()) {
         for (let i = 0; i < 3; i++) {
             game.atk(3);
@@ -4800,7 +4801,7 @@ card_actions["212012"] = (game) => {
 
 // 212013
 card_actions["212013"] = (game) => {
-    game.def(8);
+    game.increase_idx_def(0, 8);
     if (game.if_cloud_hit()) {
         for (let i = 0; i < 3; i++) {
             game.atk(4);
@@ -4829,19 +4830,19 @@ card_actions["212023"] = (game) => {
 // Unrestrained Sword - Dragon Coiled
 card_actions["213011"] = (game) => {
     const def_amt = 6 * (1 + game.players[0].unrestrained_sword_count);
-    game.def(def_amt);
+    game.increase_idx_def(0, def_amt);
 }
 
 // 213012
 card_actions["213012"] = (game) => {
     const def_amt = 8 * (1 + game.players[0].unrestrained_sword_count);
-    game.def(def_amt);
+    game.increase_idx_def(0, def_amt);
 }
 
 // 213013
 card_actions["213013"] = (game) => {
     const def_amt = 10 * (1 + game.players[0].unrestrained_sword_count);
-    game.def(def_amt);
+    game.increase_idx_def(0, def_amt);
 }
 
 // One Heart One Sword
@@ -4869,38 +4870,38 @@ card_actions["213023"] = (game) => {
 card_actions["213031"] = (game) => {
     const sdfc = game.players[0].other_sword_formation_deck_count;
     game.atk(4 + 3 * sdfc);
-    game.def(4 + 3 * sdfc);
+    game.increase_idx_def(0, 4 + 3 * sdfc);
 }
 
 // 213032
 card_actions["213032"] = (game) => {
     const sdfc = game.players[0].other_sword_formation_deck_count;
     game.atk(4 + 4 * sdfc);
-    game.def(4 + 4 * sdfc);
+    game.increase_idx_def(0, 4 + 4 * sdfc);
 }
 
 // 213033
 card_actions["213033"] = (game) => {
     const sdfc = game.players[0].other_sword_formation_deck_count;
     game.atk(4 + 5 * sdfc);
-    game.def(4 + 5 * sdfc);
+    game.increase_idx_def(0, 4 + 5 * sdfc);
 }
 
 // Sword Intent Flow
 card_actions["214011"] = (game) => {
-    game.sword_intent(2);
+    game.increase_idx_x_by_c(0, "sword_intent", 2);
     game.add_c_of_x(1, "sword_intent_flow_stacks");
 }
 
 // 214012
 card_actions["214012"] = (game) => {
-    game.sword_intent(3);
+    game.increase_idx_x_by_c(0, "sword_intent", 3);
     game.add_c_of_x(1, "sword_intent_flow_stacks");
 }
 
 // 214013
 card_actions["214013"] = (game) => {
-    game.sword_intent(4);
+    game.increase_idx_x_by_c(0, "sword_intent", 4);
     game.add_c_of_x(1, "sword_intent_flow_stacks");
 }
 
@@ -5034,7 +5035,7 @@ card_actions["221011"] = (game) => {
     const hexagram_amt = game.exhaust_x("hexagram");
     const qi_amt = game.exhaust_x("qi");
     const heal_amt = (hexagram_amt + qi_amt) * 4;
-    game.heal(heal_amt);
+    game.increase_idx_hp(0, heal_amt);
 }
 
 // 221012
@@ -5042,7 +5043,7 @@ card_actions["221012"] = (game) => {
     const hexagram_amt = game.exhaust_x("hexagram");
     const qi_amt = game.exhaust_x("qi");
     const heal_amt = (hexagram_amt + qi_amt) * 5;
-    game.heal(heal_amt);
+    game.increase_idx_hp(0, heal_amt);
 }
 
 // 221013
@@ -5050,7 +5051,7 @@ card_actions["221013"] = (game) => {
     const hexagram_amt = game.exhaust_x("hexagram");
     const qi_amt = game.exhaust_x("qi");
     const heal_amt = (hexagram_amt + qi_amt) * 6;
-    game.heal(heal_amt);
+    game.increase_idx_hp(0, heal_amt);
 }
 
 // Throwing Stones For Directions
@@ -5077,7 +5078,7 @@ card_actions["221023"] = (game) => {
 // Vitality Blossom
 card_actions["222011"] = (game) => {
     game.add_c_of_x(7, "max_hp");
-    game.heal(7);
+    game.increase_idx_hp(0, 7);
     game.continuous();
     game.add_c_of_x(1, "vitality_blossom_stacks");
 }
@@ -5085,7 +5086,7 @@ card_actions["222011"] = (game) => {
 // 222012
 card_actions["222012"] = (game) => {
     game.add_c_of_x(11, "max_hp");
-    game.heal(11);
+    game.increase_idx_hp(0, 11);
     game.continuous();
     game.add_c_of_x(1, "vitality_blossom_stacks");
 }
@@ -5093,7 +5094,7 @@ card_actions["222012"] = (game) => {
 // 222013
 card_actions["222013"] = (game) => {
     game.add_c_of_x(15, "max_hp");
-    game.heal(15);
+    game.increase_idx_hp(0, 15);
     game.continuous();
     game.add_c_of_x(1, "vitality_blossom_stacks");
 }
@@ -5243,7 +5244,7 @@ card_actions["224033"] = (game) => {
 card_actions["225011"] = (game) => {
     if (game.if_c_pct(1)) {
         game.add_c_of_x(4, "max_hp");
-        game.heal(30);
+        game.increase_idx_hp(0, 30);
     }
     game.consumption();
 }
@@ -5252,7 +5253,7 @@ card_actions["225011"] = (game) => {
 card_actions["225012"] = (game) => {
     if (game.if_c_pct(1)) {
         game.add_c_of_x(6, "max_hp");
-        game.heal(40);
+        game.increase_idx_hp(0, 40);
     }
     game.consumption();
 }
@@ -5261,7 +5262,7 @@ card_actions["225012"] = (game) => {
 card_actions["225013"] = (game) => {
     if (game.if_c_pct(1)) {
         game.add_c_of_x(8, "max_hp");
-        game.heal(50);
+        game.increase_idx_hp(0, 50);
     }
     game.consumption();
 }
@@ -5394,21 +5395,21 @@ card_actions["231023"] = (game) => {
 
 // Earth Spirit Secret Seal
 card_actions["231031"] = (game) => {
-    game.def(6);
+    game.increase_idx_def(0, 6);
     game.next_turn_def(6);
     game.activate_earth_spirit();
 }
 
 // 231032
 card_actions["231032"] = (game) => {
-    game.def(9);
+    game.increase_idx_def(0, 9);
     game.next_turn_def(9);
     game.activate_earth_spirit();
 }
 
 // 231033
 card_actions["231033"] = (game) => {
-    game.def(12);
+    game.increase_idx_def(0, 12);
     game.next_turn_def(12);
     game.activate_earth_spirit();
 }
@@ -5476,7 +5477,7 @@ card_actions["232013"] = (game) => {
 // Water Spirit - Rhythm Wood
 card_actions["232021"] = (game) => {
     if (game.if_water_spirit()) {
-        game.qi(2);
+        game.increase_idx_qi(0, 2);
     }
     if (game.if_wood_spirit()) {
         game.for_each_x_add_c_y("qi", 2, "hp");
@@ -5486,7 +5487,7 @@ card_actions["232021"] = (game) => {
 // 232022
 card_actions["232022"] = (game) => {
     if (game.if_water_spirit()) {
-        game.qi(3);
+        game.increase_idx_qi(0, 3);
     }
     if (game.if_wood_spirit()) {
         game.for_each_x_add_c_y("qi", 2, "hp");
@@ -5496,7 +5497,7 @@ card_actions["232022"] = (game) => {
 // 232023
 card_actions["232023"] = (game) => {
     if (game.if_water_spirit()) {
-        game.qi(4);
+        game.increase_idx_qi(0, 4);
     }
     if (game.if_wood_spirit()) {
         game.for_each_x_add_c_y("qi", 2, "hp");
@@ -5581,7 +5582,7 @@ card_actions["233033"] = (game) => {
 // Earth Spirit - Earthquake
 card_actions["234011"] = (game) => {
     game.atk(6);
-    game.def(6);
+    game.increase_idx_def(0, 6);
     if (game.if_earth_spirit()) {
         game.reduce_enemy_x_by_c_pct_enemy_y("qi", 50, "qi");
         game.reduce_enemy_x_by_c_pct_enemy_y("def", 50, "def");
@@ -5591,7 +5592,7 @@ card_actions["234011"] = (game) => {
 // 234012
 card_actions["234012"] = (game) => {
     game.atk(9);
-    game.def(9);
+    game.increase_idx_def(0, 9);
     if (game.if_earth_spirit()) {
         game.reduce_enemy_x_by_c_pct_enemy_y("qi", 50, "qi");
         game.reduce_enemy_x_by_c_pct_enemy_y("def", 50, "def");
@@ -5601,7 +5602,7 @@ card_actions["234012"] = (game) => {
 // 234013
 card_actions["234013"] = (game) => {
     game.atk(12);
-    game.def(12);
+    game.increase_idx_def(0, 12);
     if (game.if_earth_spirit()) {
         game.reduce_enemy_x_by_c_pct_enemy_y("qi", 50, "qi");
         game.reduce_enemy_x_by_c_pct_enemy_y("def", 50, "def");
@@ -5818,7 +5819,7 @@ card_actions["241023"] = (game) => {
 // Toxin Immunity
 card_actions["242011"] = (game) => {
     game.add_c_of_x(5, "max_hp");
-    game.heal(5);
+    game.increase_idx_hp(0, 5);
     game.continuous();
     game.add_c_of_x(6, "toxin_immunity_stacks");
 }
@@ -5826,7 +5827,7 @@ card_actions["242011"] = (game) => {
 // 242012
 card_actions["242012"] = (game) => {
     game.add_c_of_x(9, "max_hp");
-    game.heal(9);
+    game.increase_idx_hp(0, 9);
     game.continuous();
     game.add_c_of_x(9, "toxin_immunity_stacks");
 }
@@ -5834,7 +5835,7 @@ card_actions["242012"] = (game) => {
 // 242013
 card_actions["242013"] = (game) => {
     game.add_c_of_x(13, "max_hp");
-    game.heal(13);
+    game.increase_idx_hp(0, 13);
     game.continuous();
     game.add_c_of_x(12, "toxin_immunity_stacks");
 }
@@ -6072,120 +6073,120 @@ card_actions["246023"] = (game) => {
 
 // Earth Spirit Elixir
 card_actions["311011"] = (game) => {
-    game.def(11);
+    game.increase_idx_def(0, 11);
     game.consumption();
 }
 
 // 311012
 card_actions["311012"] = (game) => {
-    game.def(16);
+    game.increase_idx_def(0, 16);
     game.consumption();
 }
 
 // 311013
 card_actions["311013"] = (game) => {
-    game.def(21);
+    game.increase_idx_def(0, 21);
     game.consumption();
 }
 
 // Fundamental Elixir
 card_actions["311021"] = (game) => {
-    game.qi(2);
-    game.def(3);
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_def(0, 3);
     game.consumption();
 }
 
 // 311022
 card_actions["311022"] = (game) => {
-    game.qi(3);
-    game.def(5);
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_def(0, 5);
     game.consumption();
 }
 
 // 311023
 card_actions["311023"] = (game) => {
-    game.qi(4);
-    game.def(7);
+    game.increase_idx_qi(0, 4);
+    game.increase_idx_def(0, 7);
     game.consumption();
 }
 
 // Small Recover Elixir
 card_actions["311031"] = (game) => {
-    game.heal(8);
+    game.increase_idx_hp(0, 8);
     game.consumption();
 }
 
 // 311032
 card_actions["311032"] = (game) => {
-    game.heal(12);
+    game.increase_idx_hp(0, 12);
     game.consumption();
 }
 
 // 311033
 card_actions["311033"] = (game) => {
-    game.heal(16);
+    game.increase_idx_hp(0, 16);
     game.consumption();
 }
 
 // Cloud Elixir
 card_actions["312011"] = (game) => {
-    game.qi(2);
-    game.gain_ignore_def(2);
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_x_by_c(0, "ignore_def", 2);
     game.consumption();
 }
 
 // 312012
 card_actions["312012"] = (game) => {
-    game.qi(3);
-    game.gain_ignore_def(3);
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_x_by_c(0, "ignore_def", 3);
     game.consumption();
 }
 
 // 312013
 card_actions["312013"] = (game) => {
-    game.qi(4);
-    game.gain_ignore_def(4);
+    game.increase_idx_qi(0, 4);
+    game.increase_idx_x_by_c(0, "ignore_def", 4);
     game.consumption();
 }
 
 // Exorcism Elixir
 card_actions["312021"] = (game) => {
-    game.def(8);
+    game.increase_idx_def(0, 8);
     game.reduce_random_debuff_by_c_n_times(3, 2);
     game.consumption();
 }
 
 // 312022
 card_actions["312022"] = (game) => {
-    game.def(12);
+    game.increase_idx_def(0, 12);
     game.reduce_random_debuff_by_c_n_times(3, 3);
     game.consumption();
 }
 
 // 312023
 card_actions["312023"] = (game) => {
-    game.def(16);
+    game.increase_idx_def(0, 16);
     game.reduce_random_debuff_by_c_n_times(3, 4);
     game.consumption();
 }
 
 // Healing Elixir
 card_actions["313011"] = (game) => {
-    game.heal(7);
+    game.increase_idx_hp(0, 7);
     game.for_each_x_add_c_y("qi", 2, "hp");
     game.consumption();
 }
 
 // 313012
 card_actions["313012"] = (game) => {
-    game.heal(12);
+    game.increase_idx_hp(0, 12);
     game.for_each_x_add_c_y("qi", 2, "hp");
     game.consumption();
 }
 
 // 313013
 card_actions["313013"] = (game) => {
-    game.heal(17);
+    game.increase_idx_hp(0, 17);
     game.for_each_x_add_c_y("qi", 2, "hp");
     game.consumption();
 }
@@ -6211,39 +6212,39 @@ card_actions["313023"] = (game) => {
 // Great Recover Elixir
 card_actions["314011"] = (game) => {
     game.add_c_of_x(13, "max_hp");
-    game.heal(13);
+    game.increase_idx_hp(0, 13);
     game.consumption();
 }
 
 // 314012
 card_actions["314012"] = (game) => {
     game.add_c_of_x(19, "max_hp");
-    game.heal(19);
+    game.increase_idx_hp(0, 19);
     game.consumption();
 }
 
 // 314013
 card_actions["314013"] = (game) => {
     game.add_c_of_x(25, "max_hp");
-    game.heal(25);
+    game.increase_idx_hp(0, 25);
     game.consumption();
 }
 
 // Spiritage Elixir
 card_actions["314021"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.consumption();
 }
 
 // 314022
 card_actions["314022"] = (game) => {
-    game.qi(6);
+    game.increase_idx_qi(0, 6);
     game.consumption();
 }
 
 // 314023
 card_actions["314023"] = (game) => {
-    game.qi(8);
+    game.increase_idx_qi(0, 8);
     game.consumption();
 }
 
@@ -6285,22 +6286,22 @@ card_actions["321013"] = (game) => {
 
 // Guard Spirit Fulu
 card_actions["321021"] = (game) => {
-    game.qi(1);
-    game.def(7);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_def(0, 7);
     game.consumption();
 }
 
 // 321022
 card_actions["321022"] = (game) => {
-    game.qi(1);
-    game.def(11);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_def(0, 11);
     game.consumption();
 }
 
 // 321023
 card_actions["321023"] = (game) => {
-    game.qi(1);
-    game.def(15);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_def(0, 15);
     game.consumption();
 }
 
@@ -6345,7 +6346,7 @@ card_actions["322013"] = (game) => {
 
 // Calm Incantation
 card_actions["322021"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.reduce_c_of_x(2, "internal_injury");
     game.reduce_c_of_x(2, "weaken");
     game.reduce_c_of_x(2, "flaw");
@@ -6357,7 +6358,7 @@ card_actions["322021"] = (game) => {
 
 // 322022
 card_actions["322022"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.reduce_c_of_x(3, "internal_injury");
     game.reduce_c_of_x(3, "weaken");
     game.reduce_c_of_x(3, "flaw");
@@ -6369,7 +6370,7 @@ card_actions["322022"] = (game) => {
 
 // 322023
 card_actions["322023"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.reduce_c_of_x(4, "internal_injury");
     game.reduce_c_of_x(4, "weaken");
     game.reduce_c_of_x(4, "flaw");
@@ -6381,21 +6382,21 @@ card_actions["322023"] = (game) => {
 
 // Mist Fulu
 card_actions["322031"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.deal_damage(7);
     game.consumption();
 }
 
 // 322032
 card_actions["322032"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.deal_damage(11);
     game.consumption();
 }
 
 // 322033
 card_actions["322033"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.deal_damage(15);
     game.consumption();
 }
@@ -6423,21 +6424,21 @@ card_actions["323013"] = (game) => {
 
 // Spirit Absorb Fulu
 card_actions["323021"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.reduce_enemy_c_of_x(1, "qi");
     game.consumption();
 }
 
 // 323022
 card_actions["323022"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.reduce_enemy_c_of_x(2, "qi");
     game.consumption();
 }
 
 // 323023
 card_actions["323023"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.reduce_enemy_c_of_x(3, "qi");
     game.consumption();
 }
@@ -6462,19 +6463,19 @@ card_actions["323033"] = (game) => {
 
 // Spiritage Incantation
 card_actions["324011"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.for_each_x_up_to_c_add_y("qi", 7, "def");
 }
 
 // 324012
 card_actions["324012"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.for_each_x_up_to_c_add_y("qi", 13, "def");
 }
 
 // 324013
 card_actions["324013"] = (game) => {
-    game.qi(5);
+    game.increase_idx_qi(0, 5);
     game.for_each_x_up_to_c_add_y("qi", 19, "def");
 }
 
@@ -6540,21 +6541,21 @@ card_actions["325013"] = (game) => {
 
 // Divine Walk Fulu
 card_actions["325021"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.consumption();
     game.chase();
 }
 
 // 325022
 card_actions["325022"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.consumption();
     game.chase();
 }
 
 // 325023
 card_actions["325023"] = (game) => {
-    game.qi(6);
+    game.increase_idx_qi(0, 6);
     game.consumption();
     game.chase();
 }
@@ -6582,7 +6583,7 @@ card_actions["325033"] = (game) => {
 
 // Cracking Voice
 card_actions["331011"] = (game) => {
-    game.gain_ignore_def(1);
+    game.increase_idx_x_by_c(0, "ignore_def", 1);
     let atk_amt = 6;
     if (game.players[0].has_played_musician_card >= 1) {
         atk_amt += 1;
@@ -6592,7 +6593,7 @@ card_actions["331011"] = (game) => {
 
 // 331012
 card_actions["331012"] = (game) => {
-    game.gain_ignore_def(1);
+    game.increase_idx_x_by_c(0, "ignore_def", 1);
     let atk_amt = 9;
     if (game.players[0].has_played_musician_card >= 1) {
         atk_amt += 1;
@@ -6602,7 +6603,7 @@ card_actions["331012"] = (game) => {
 
 // 331013
 card_actions["331013"] = (game) => {
-    game.gain_ignore_def(1);
+    game.increase_idx_x_by_c(0, "ignore_def", 1);
     let atk_amt = 12;
     if (game.players[0].has_played_musician_card >= 1) {
         atk_amt += 1;
@@ -6693,19 +6694,19 @@ card_actions["332023"] = (game) => {
 
 // Sky Spirit Tune
 card_actions["332031"] = (game) => {
-    game.add_c_of_x(3, "qi");
+    game.increase_idx_qi(0, 3);
     game.add_enemy_c_of_x(3, "qi");
 }
 
 // 332032
 card_actions["332032"] = (game) => {
-    game.add_c_of_x(5, "qi");
+    game.increase_idx_qi(0, 5);
     game.add_enemy_c_of_x(5, "qi");
 }
 
 // 332033
 card_actions["332033"] = (game) => {
-    game.add_c_of_x(7, "qi");
+    game.increase_idx_qi(0, 7);
     game.add_enemy_c_of_x(7, "qi");
 }
 
@@ -6758,7 +6759,7 @@ card_actions["333031"] = (game) => {
         atk_amt += 1;
     }
     for (let i = 0; i < 3; i++) {
-        game.gain_ignore_def(1);
+        game.increase_idx_x_by_c(0, "ignore_def", 1);
         game.atk(atk_amt);
     }
 }
@@ -6770,7 +6771,7 @@ card_actions["333032"] = (game) => {
         atk_amt += 1;
     }
     for (let i = 0; i < 3; i++) {
-        game.gain_ignore_def(1);
+        game.increase_idx_x_by_c(0, "ignore_def", 1);
         game.atk(atk_amt);
     }
 }
@@ -6782,7 +6783,7 @@ card_actions["333033"] = (game) => {
         atk_amt += 1;
     }
     for (let i = 0; i < 3; i++) {
-        game.gain_ignore_def(1);
+        game.increase_idx_x_by_c(0, "ignore_def", 1);
         game.atk(atk_amt);
     }
 }
@@ -6903,59 +6904,59 @@ card_actions["335023"] = (game) => {
 
 // Chord In Tune
 card_actions["335031"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.do_chord_in_tune_thing();
 }
 
 // 335032
 card_actions["335032"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.do_chord_in_tune_thing();
 }
 
 // 335033
 card_actions["335033"] = (game) => {
-    game.qi(6);
+    game.increase_idx_qi(0, 6);
     game.do_chord_in_tune_thing();
 }
 
 // Toning
 card_actions["341011"] = (game) => {
     game.atk(3);
-    game.qi(1);
-    game.def(3);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_def(0, 3);
 }
 
 // 341012
 card_actions["341012"] = (game) => {
     game.atk(3);
-    game.qi(2);
-    game.def(3);
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_def(0, 3);
 }
 
 // 341013
 card_actions["341013"] = (game) => {
     game.atk(4);
-    game.qi(3);
-    game.def(3);
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_def(0, 3);
 }
 
 // Grinding Ink
 card_actions["341021"] = (game) => {
     game.atk(8);
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
 }
 
 // 341022
 card_actions["341022"] = (game) => {
     game.atk(11);
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
 }
 
 // 341023
 card_actions["341023"] = (game) => {
     game.atk(14);
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
 }
 
 // Pen Walks Dragon Snake
@@ -6976,19 +6977,19 @@ card_actions["342013"] = (game) => {
 // Feed on Illusions
 card_actions["342021"] = (game) => {
     game.add_c_of_x(10, "max_hp");
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
 }
 
 // 342022
 card_actions["342022"] = (game) => {
     game.add_c_of_x(15, "max_hp");
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
 }
 
 // 342023
 card_actions["342023"] = (game) => {
     game.add_c_of_x(20, "max_hp");
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
 }
 
 // Gild The Lily
@@ -7089,37 +7090,37 @@ card_actions["343013"] = (game) => {
 
 // Inspiration
 card_actions["343021"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.add_c_of_x(2, "inspiration_stacks");
 }
 
 // 343022
 card_actions["343022"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.add_c_of_x(3, "inspiration_stacks");
 }
 
 // 343023
 card_actions["343023"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.add_c_of_x(4, "inspiration_stacks");
 }
 
 // Divine Brush
 card_actions["344011"] = (game) => {
-    game.def(4);
+    game.increase_idx_def(0, 4);
     game.trigger_random_sect_card(1);
 }
 
 // 344012
 card_actions["344012"] = (game) => {
-    game.def(6);
+    game.increase_idx_def(0, 6);
     game.trigger_random_sect_card(2);
 }
 
 // 344013
 card_actions["344013"] = (game) => {
-    game.def(8);
+    game.increase_idx_def(0, 8);
     game.trigger_random_sect_card(3);
 }
 
@@ -7127,10 +7128,10 @@ card_actions["344013"] = (game) => {
 card_actions["344021"] = (game) => {
     switch (game.random_int(3)) {
         case 0:
-            game.def(18);
+            game.increase_idx_def(0, 18);
             break;
         case 1:
-            game.heal(14);
+            game.increase_idx_hp(0, 14);
             break;
         case 2:
             game.add_c_of_x(1, "guard_up");
@@ -7142,10 +7143,10 @@ card_actions["344021"] = (game) => {
 card_actions["344022"] = (game) => {
     switch (game.random_int(3)) {
         case 0:
-            game.def(26);
+            game.increase_idx_def(0, 26);
             break;
         case 1:
-            game.heal(20);
+            game.increase_idx_hp(0, 20);
             break;
         case 2:
             game.add_c_of_x(2, "guard_up");
@@ -7157,10 +7158,10 @@ card_actions["344022"] = (game) => {
 card_actions["344023"] = (game) => {
     switch (game.random_int(3)) {
         case 0:
-            game.def(34);
+            game.increase_idx_def(0, 34);
             break;
         case 1:
-            game.heal(26);
+            game.increase_idx_hp(0, 26);
             break;
         case 2:
             game.add_c_of_x(3, "guard_up");
@@ -7170,19 +7171,19 @@ card_actions["344023"] = (game) => {
 
 // Flying Brush
 card_actions["345011"] = (game) => {
-    game.def(6);
+    game.increase_idx_def(0, 6);
     game.add_c_of_x(1, "flying_brush_stacks");
 }
 
 // 345012
 card_actions["345012"] = (game) => {
-    game.def(12);
+    game.increase_idx_def(0, 12);
     game.add_c_of_x(1, "flying_brush_stacks");
 }
 
 // 345013
 card_actions["345013"] = (game) => {
-    game.def(18);
+    game.increase_idx_def(0, 18);
     game.add_c_of_x(1, "flying_brush_stacks");
 }
 
@@ -7305,7 +7306,7 @@ card_actions["352031"] = (game) => {
     if (game.if_played_continuous()) {
         game.add_c_of_x(6, "max_hp");
     }
-    game.heal(7);
+    game.increase_idx_hp(0, 7);
 }
 
 // 352032
@@ -7313,7 +7314,7 @@ card_actions["352032"] = (game) => {
     if (game.if_played_continuous()) {
         game.add_c_of_x(9, "max_hp");
     }
-    game.heal(11);
+    game.increase_idx_hp(0, 11);
 }
 
 // 352033
@@ -7321,7 +7322,7 @@ card_actions["352033"] = (game) => {
     if (game.if_played_continuous()) {
         game.add_c_of_x(12, "max_hp");
     }
-    game.heal(15);
+    game.increase_idx_hp(0, 15);
 }
 
 // Spiritage Formation
@@ -7364,7 +7365,7 @@ card_actions["353023"] = (game) => {
 card_actions["353031"] = (game) => {
     game.add_c_of_x(3, "hexproof");
     if (game.if_played_continuous()) {
-        game.def(10);
+        game.increase_idx_def(0, 10);
     }
 }
 
@@ -7372,7 +7373,7 @@ card_actions["353031"] = (game) => {
 card_actions["353032"] = (game) => {
     game.add_c_of_x(4, "hexproof");
     if (game.if_played_continuous()) {
-        game.def(14);
+        game.increase_idx_def(0, 14);
     }
 }
 
@@ -7380,7 +7381,7 @@ card_actions["353032"] = (game) => {
 card_actions["353033"] = (game) => {
     game.add_c_of_x(5, "hexproof");
     if (game.if_played_continuous()) {
-        game.def(18);
+        game.increase_idx_def(0, 18);
     }
 }
 
@@ -7519,17 +7520,17 @@ card_actions["361013"] = (game) => {
 
 // Hard Bamboo
 card_actions["361021"] = (game) => {
-    game.def(4);
+    game.increase_idx_def(0, 4);
 }
 
 // 361022
 card_actions["361022"] = (game) => {
-    game.def(6);
+    game.increase_idx_def(0, 6);
 }
 
 // 361023
 card_actions["361023"] = (game) => {
-    game.def(8);
+    game.increase_idx_def(0, 8);
     game.continuous();
     game.add_c_of_x(1, "hard_bamboo_stacks");
 }
@@ -7551,17 +7552,17 @@ card_actions["362023"] = (game) => {
 
 // Leaf Shield Flower
 card_actions["362031"] = (game) => {
-    game.def(8);
+    game.increase_idx_def(0, 8);
 }
 
 // 362032
 card_actions["362032"] = (game) => {
-    game.def(14);
+    game.increase_idx_def(0, 14);
 }
 
 // 362033
 card_actions["362033"] = (game) => {
-    game.def(20);
+    game.increase_idx_def(0, 20);
     game.continuous();
     game.add_c_of_x(1, "leaf_shield_flower_stacks");
 }
@@ -7589,12 +7590,12 @@ card_actions["362043"] = (game) => {
 
 // Qi-seeking Sunflower
 card_actions["363011"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
 }
 
 // 363012
 card_actions["363012"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
 }
 
 // 363013
@@ -7619,17 +7620,17 @@ card_actions["363023"] = (game) => {
 
 // Frozen Snow Lotus
 card_actions["364011"] = (game) => {
-    game.heal(5);
+    game.increase_idx_hp(0, 5);
 }
 
 // 364012
 card_actions["364012"] = (game) => {
-    game.heal(10);
+    game.increase_idx_hp(0, 10);
 }
 
 // 364013
 card_actions["364013"] = (game) => {
-    game.heal(10);
+    game.increase_idx_hp(0, 10);
     game.add_c_of_x(3, "frozen_snow_lotus_stacks");
 }
 
@@ -7668,17 +7669,17 @@ card_actions["364033"] = (game) => {
 
 // Space Spiritual Field
 card_actions["365021"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
 }
 
 // 365022
 card_actions["365022"] = (game) => {
-    game.qi(5);
+    game.increase_idx_qi(0, 5);
 }
 
 // 365023
 card_actions["365023"] = (game) => {
-    game.qi(6);
+    game.increase_idx_qi(0, 6);
 }
 
 // Entangling Ancient Vine
@@ -7701,19 +7702,19 @@ card_actions["365033"] = (game) => {
 // Devouring Ancient Vine
 card_actions["365041"] = (game) => {
     game.reduce_enemy_c_of_x(5, "hp");
-    game.heal(5);
+    game.increase_idx_hp(0, 5);
 }
 
 // 365042
 card_actions["365042"] = (game) => {
     game.reduce_enemy_c_of_x(10, "hp");
-    game.heal(10);
+    game.increase_idx_hp(0, 10);
 }
 
 // 365043
 card_actions["365043"] = (game) => {
     game.reduce_enemy_c_of_x(10, "hp");
-    game.heal(10);
+    game.increase_idx_hp(0, 10);
     game.continuous();
     game.add_enemy_c_of_x(6, "devouring_ancient_vine_stacks");
 }
@@ -7721,42 +7722,42 @@ card_actions["365043"] = (game) => {
 // God Saying - Attack
 card_actions["371011"] = (game) => {
     game.atk(6);
-    game.def(3);
+    game.increase_idx_def(0, 3);
     game.consumption();
 }
 
 // 371012
 card_actions["371012"] = (game) => {
     game.atk(9);
-    game.def(4);
+    game.increase_idx_def(0, 4);
     game.consumption();
 }
 
 // 371013
 card_actions["371013"] = (game) => {
     game.atk(12);
-    game.def(5);
+    game.increase_idx_def(0, 5);
     game.consumption();
 }
 
 // God Saying - Defend
 card_actions["371021"] = (game) => {
     game.atk(2);
-    game.def(9);
+    game.increase_idx_def(0, 9);
     game.consumption();
 }
 
 // 371022
 card_actions["371022"] = (game) => {
     game.atk(3);
-    game.def(12);
+    game.increase_idx_def(0, 12);
     game.consumption();
 }
 
 // 371023
 card_actions["371023"] = (game) => {
     game.atk(4);
-    game.def(15);
+    game.increase_idx_def(0, 15);
     game.consumption();
 }
 
@@ -7828,17 +7829,17 @@ card_actions["372023"] = (game) => {
 
 // Detect Qi
 card_actions["372031"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
 }
 
 // 372032
 card_actions["372032"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
 }
 
 // 372033
 card_actions["372033"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
 }
 
 // Bad Omen
@@ -7858,42 +7859,42 @@ card_actions["372043"] = (game) => {
 
 // God Fate - Flies
 card_actions["373011"] = (game) => {
-    game.def(6);
+    game.increase_idx_def(0, 6);
     game.add_c_of_x(2, "skip_next_card_stacks");
     game.consumption();
 }
 
 // 373012
 card_actions["373012"] = (game) => {
-    game.def(12);
+    game.increase_idx_def(0, 12);
     game.add_c_of_x(2, "skip_next_card_stacks");
     game.consumption();
 }
 
 // 373013
 card_actions["373013"] = (game) => {
-    game.def(18);
+    game.increase_idx_def(0, 18);
     game.add_c_of_x(2, "skip_next_card_stacks");
     game.consumption();
 }
 
 // God Fate - Reborn
 card_actions["373021"] = (game) => {
-    game.heal(4);
+    game.increase_idx_hp(0, 4);
     game.add_c_of_x(1, "skip_to_previous_card_stacks");
     game.consumption();
 }
 
 // 373022
 card_actions["373022"] = (game) => {
-    game.heal(8);
+    game.increase_idx_hp(0, 8);
     game.add_c_of_x(1, "skip_to_previous_card_stacks");
     game.consumption();
 }
 
 // 373023
 card_actions["373023"] = (game) => {
-    game.heal(12);
+    game.increase_idx_hp(0, 12);
     game.add_c_of_x(1, "skip_to_previous_card_stacks");
     game.consumption();
 }
@@ -7915,17 +7916,17 @@ card_actions["373033"] = (game) => {
 
 // Good Omen
 card_actions["373041"] = (game) => {
-    game.heal(7);
+    game.increase_idx_hp(0, 7);
 }
 
 // 373042
 card_actions["373042"] = (game) => {
-    game.heal(10);
+    game.increase_idx_hp(0, 10);
 }
 
 // 373043
 card_actions["373043"] = (game) => {
-    game.heal(13);
+    game.increase_idx_hp(0, 13);
 }
 
 // Everything Goes Way
@@ -7945,58 +7946,58 @@ card_actions["374013"] = (game) => {
 
 // God Star - Promotion
 card_actions["374021"] = (game) => {
-    game.def(4);
-    game.heal(4);
+    game.increase_idx_def(0, 4);
+    game.increase_idx_hp(0, 4);
     game.retrigger_next_opening(-1, 1, 2);
 }
 
 // 374022
 card_actions["374022"] = (game) => {
-    game.def(6);
-    game.heal(6);
+    game.increase_idx_def(0, 6);
+    game.increase_idx_hp(0, 6);
     game.retrigger_next_opening(-1, 1, 2);
 }
 
 // 374023
 card_actions["374023"] = (game) => {
-    game.def(8);
-    game.heal(8);
+    game.increase_idx_def(0, 8);
+    game.increase_idx_hp(0, 8);
     game.retrigger_next_opening(-1, 1, 2);
 }
 
 // God Star - Traction
 card_actions["374031"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.retrigger_next_opening(1, 2, 1);
 }
 
 // 374032
 card_actions["374032"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.retrigger_next_opening(1, 2, 1);
 }
 
 // 374033
 card_actions["374033"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.retrigger_next_opening(1, 2, 1);
 }
 
 // Nothing Is Appropriate
 card_actions["374041"] = (game) => {
-    game.def(4);
+    game.increase_idx_def(0, 4);
     game.add_enemy_c_of_x(2, "nothing_is_appropriate_stacks");
 }
 
 // 374042
 card_actions["374042"] = (game) => {
-    game.def(5);
+    game.increase_idx_def(0, 5);
     game.add_enemy_c_of_x(3, "nothing_is_appropriate_stacks");
 }
 
 // 374043
 card_actions["374043"] = (game) => {
-    game.def(6);
+    game.increase_idx_def(0, 6);
     game.add_enemy_c_of_x(4, "nothing_is_appropriate_stacks");
 }
 
@@ -8018,7 +8019,7 @@ card_actions["375013"] = (game) => {
 // Fate Reincarnates
 card_actions["375021"] = (game) => {
     game.add_c_of_x(8, "max_hp");
-    game.heal(8);
+    game.increase_idx_hp(0, 8);
     game.continuous();
     game.add_c_of_x(4, "fate_reincarnates_stacks");
 }
@@ -8026,7 +8027,7 @@ card_actions["375021"] = (game) => {
 // 375022
 card_actions["375022"] = (game) => {
     game.add_c_of_x(12, "max_hp");
-    game.heal(12);
+    game.increase_idx_hp(0, 12);
     game.continuous();
     game.add_c_of_x(6, "fate_reincarnates_stacks");
 }
@@ -8034,95 +8035,95 @@ card_actions["375022"] = (game) => {
 // 375023
 card_actions["375023"] = (game) => {
     game.add_c_of_x(16, "max_hp");
-    game.heal(16);
+    game.increase_idx_hp(0, 16);
     game.continuous();
     game.add_c_of_x(8, "fate_reincarnates_stacks");
 }
 
 // God's Opportunity - Conform
 card_actions["375031"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.add_c_of_x(3, "god_opportunity_conform_stacks");
 }
 
 // 375032
 card_actions["375032"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.add_c_of_x(3, "god_opportunity_conform_stacks");
 }
 
 // 375033
 card_actions["375033"] = (game) => {
-    game.qi(6);
+    game.increase_idx_qi(0, 6);
     game.add_c_of_x(3, "god_opportunity_conform_stacks");
 }
 
 // God's Opportunity - Reversal
 card_actions["375041"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.add_c_of_x(3, "god_opportunity_reversal_stacks");
 }
 
 // 375042
 card_actions["375042"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.add_c_of_x(3, "god_opportunity_reversal_stacks");
 }
 
 // 375043
 card_actions["375043"] = (game) => {
-    game.qi(6);
+    game.increase_idx_qi(0, 6);
     game.add_c_of_x(3, "god_opportunity_reversal_stacks");
 }
 
 // Black Silver Armor
 card_actions["401011"] = (game) => {
-    game.def(5);
+    game.increase_idx_def(0, 5);
     game.for_each_x_add_y("def", "def");
 }
 
 // 401012
 card_actions["401012"] = (game) => {
-    game.def(8);
+    game.increase_idx_def(0, 8);
     game.for_each_x_add_y("def", "def");
 }
 
 // 401013
 card_actions["401013"] = (game) => {
-    game.def(11);
+    game.increase_idx_def(0, 11);
     game.for_each_x_add_y("def", "def");
 }
 
 // Thorns Spear
 card_actions["401021"] = (game) => {
-    game.atk(12 + Math.floor(this.players[1].def / 2));
+    game.atk(12 + Math.floor(game.players[1].def / 2));
 }
 
 // 401022
 card_actions["401022"] = (game) => {
-    game.atk(16 + Math.floor(this.players[1].def / 2));
+    game.atk(16 + Math.floor(game.players[1].def / 2));
 }
 
 // 401023
 card_actions["401023"] = (game) => {
-    game.atk(20 + Math.floor(this.players[1].def / 2));
+    game.atk(20 + Math.floor(game.players[1].def / 2));
 }
 
 // Dew Jade Vase
 card_actions["402011"] = (game) => {
-    game.heal(11);
+    game.increase_idx_hp(0, 11);
     game.add_c_of_x(2, "destiny");
 }
 
 // 402012
 card_actions["402012"] = (game) => {
-    game.heal(14);
+    game.increase_idx_hp(0, 14);
     game.add_c_of_x(3, "destiny");
 }
 
 // 402013
 card_actions["402013"] = (game) => {
-    game.heal(17);
+    game.increase_idx_hp(0, 17);
     game.add_c_of_x(4, "destiny");
 }
 
@@ -8177,21 +8178,21 @@ card_actions["403013"] = (game) => {
 // Requiem Jade Lotus
 card_actions["403021"] = (game) => {
     game.add_c_of_x(15, "max_hp");
-    game.heal(15);
+    game.increase_idx_hp(0, 15);
     game.add_c_of_x(1, "regen");
 }
 
 // 403022
 card_actions["403022"] = (game) => {
     game.add_c_of_x(15, "max_hp");
-    game.heal(15);
+    game.increase_idx_hp(0, 15);
     game.add_c_of_x(2, "regen");
 }
 
 // 403023
 card_actions["403023"] = (game) => {
     game.add_c_of_x(15, "max_hp");
-    game.heal(15);
+    game.increase_idx_hp(0, 15);
     game.add_c_of_x(3, "regen");
 }
 
@@ -8299,19 +8300,19 @@ card_actions["405013"] = (game) => {
 
 // Dark Crystal Heart Shield
 card_actions["405021"] = (game) => {
-    game.def(20);
+    game.increase_idx_def(0, 20);
     game.add_c_of_x(2, "guard_up");
 }
 
 // 405022
 card_actions["405022"] = (game) => {
-    game.def(20);
+    game.increase_idx_def(0, 20);
     game.add_c_of_x(3, "guard_up");
 }
 
 // 405023
 card_actions["405023"] = (game) => {
-    game.def(20);
+    game.increase_idx_def(0, 20);
     game.add_c_of_x(4, "guard_up");
 }
 
@@ -8398,21 +8399,21 @@ card_actions["501013"] = (game) => {
 
 // Fat Immortal Raccoon
 card_actions["501021"] = (game) => {
-    game.heal(4);
+    game.increase_idx_hp(0, 4);
     game.continuous();
     game.add_c_of_x(1, "fat_immortal_raccoon_stacks");
 }
 
 // 501022
 card_actions["501022"] = (game) => {
-    game.heal(4);
+    game.increase_idx_hp(0, 4);
     game.continuous();
     game.add_c_of_x(2, "fat_immortal_raccoon_stacks");
 }
 
 // 501023
 card_actions["501023"] = (game) => {
-    game.heal(4);
+    game.increase_idx_hp(0, 4);
     game.continuous();
     game.add_c_of_x(3, "fat_immortal_raccoon_stacks");
 }
@@ -8455,21 +8456,21 @@ card_actions["502023"] = (game) => {
 
 // Black Earth Turtle
 card_actions["503011"] = (game) => {
-    game.def(4);
+    game.increase_idx_def(0, 4);
     game.continuous();
     game.add_c_of_x(2, "black_earth_turtle_stacks");
 }
 
 // 503012
 card_actions["503012"] = (game) => {
-    game.def(8);
+    game.increase_idx_def(0, 8);
     game.continuous();
     game.add_c_of_x(3, "black_earth_turtle_stacks");
 }
 
 // 503013
 card_actions["503013"] = (game) => {
-    game.def(12);
+    game.increase_idx_def(0, 12);
     game.continuous();
     game.add_c_of_x(4, "black_earth_turtle_stacks");
 }
@@ -8560,14 +8561,14 @@ card_actions["505011"] = (game) => {
 
 // 505012
 card_actions["505012"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.continuous();
     game.set_c_of_x(2, "colorful_spirit_crane_stacks");
 }
 
 // 505013
 card_actions["505013"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.continuous();
     game.set_c_of_x(2, "colorful_spirit_crane_stacks");
 }
@@ -8710,21 +8711,21 @@ card_actions["605013"] = (game) => {
 
 // Qi-gathering Merpeople Pearl
 card_actions["605021"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.continuous();
     game.add_c_of_x(1, "qi_gathering_merpeople_pearl_stacks");
 }
 
 // 605022
 card_actions["605022"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.continuous();
     game.add_c_of_x(2, "qi_gathering_merpeople_pearl_stacks");
 }
 
 // 605023
 card_actions["605023"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.continuous();
     game.add_c_of_x(3, "qi_gathering_merpeople_pearl_stacks");
 }
@@ -8754,41 +8755,41 @@ card_actions["605033"] = (game) => {
 // Bewildering Merpeople Pearl
 card_actions["605041"] = (game) => {
     game.add_c_of_x(8, "max_hp");
-    game.heal(8);
+    game.increase_idx_hp(0, 8);
     game.add_enemy_c_of_x(1, "weaken");
 }
 
 // 605042
 card_actions["605042"] = (game) => {
     game.add_c_of_x(13, "max_hp");
-    game.heal(13);
+    game.increase_idx_hp(0, 13);
     game.add_enemy_c_of_x(2, "weaken");
 }
 
 // 605043
 card_actions["605043"] = (game) => {
     game.add_c_of_x(18, "max_hp");
-    game.heal(18);
+    game.increase_idx_hp(0, 18);
     game.add_enemy_c_of_x(3, "weaken");
 }
 
 // Crystallized Merpeople Pearl
 card_actions["605051"] = (game) => {
-    game.def(6);
+    game.increase_idx_def(0, 6);
     game.continuous();
     game.add_c_of_x(50, "crystallized_merpeople_pearl_stacks");
 }
 
 // 605052
 card_actions["605052"] = (game) => {
-    game.def(18);
+    game.increase_idx_def(0, 18);
     game.continuous();
     game.add_c_of_x(50, "crystallized_merpeople_pearl_stacks");
 }
 
 // 605053
 card_actions["605053"] = (game) => {
-    game.def(30);
+    game.increase_idx_def(0, 30);
     game.continuous();
     game.add_c_of_x(50, "crystallized_merpeople_pearl_stacks");
 }
@@ -8988,20 +8989,20 @@ card_actions["611013"] = (game) => {
 
 // Bronze Cat
 card_actions["611021"] = (game) => {
-    const def_amt = 5 + 2 * game.players[0].sword_intent; 
-    game.def(def_amt);
+    const def_amt = 5 + 2 * game.players[0].sword_intent;
+    game.increase_idx_def(0, def_amt);
 }
 
 // 611022
 card_actions["611022"] = (game) => {
-    const def_amt = 5 + 3 * game.players[0].sword_intent; 
-    game.def(def_amt);
+    const def_amt = 5 + 3 * game.players[0].sword_intent;
+    game.increase_idx_def(0, def_amt);
 }
 
 // 611023
 card_actions["611023"] = (game) => {
-    const def_amt = 5 + 4 * game.players[0].sword_intent; 
-    game.def(def_amt);
+    const def_amt = 5 + 4 * game.players[0].sword_intent;
+    game.increase_idx_def(0, def_amt);
 }
 
 // Clear Heart Sword Embryo
@@ -9022,7 +9023,7 @@ card_actions["611033"] = (game) => {
 // Cloud Sword - Cat Paw
 card_actions["612011"] = (game) => {
     for (let i = 0; i < 2; i++) {
-        game.gain_ignore_def(1);
+        game.increase_idx_x_by_c(0, "ignore_def", 1);
         game.atk(4);
     }
 }
@@ -9030,7 +9031,7 @@ card_actions["612011"] = (game) => {
 // 612012
 card_actions["612012"] = (game) => {
     for (let i = 0; i < 2; i++) {
-        game.gain_ignore_def(1);
+        game.increase_idx_x_by_c(0, "ignore_def", 1);
         game.atk(6);
     }
 }
@@ -9038,7 +9039,7 @@ card_actions["612012"] = (game) => {
 // 612013
 card_actions["612013"] = (game) => {
     for (let i = 0; i < 2; i++) {
-        game.gain_ignore_def(1);
+        game.increase_idx_x_by_c(0, "ignore_def", 1);
         game.atk(8);
     }
 }
@@ -9076,7 +9077,7 @@ card_actions["614021"] = (game) => {
         game.atk(3);
     }
     game.add_c_of_x(2, "regen");
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
 }
 
 // 614022
@@ -9085,7 +9086,7 @@ card_actions["614022"] = (game) => {
         game.atk(3);
     }
     game.add_c_of_x(2, "regen");
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
 }
 
 // 614023
@@ -9094,7 +9095,7 @@ card_actions["614023"] = (game) => {
         game.atk(3);
     }
     game.add_c_of_x(2, "regen");
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
 }
 
 // Spirit Cat Chaos Sword
@@ -9156,35 +9157,35 @@ card_actions["615013"] = (game) => {
 
 // Sky Delicate Bracelet
 card_actions["615021"] = (game) => {
-    game.def(9);
+    game.increase_idx_def(0, 9);
     game.add_c_of_x(1, "guard_up");
     game.chase();
 }
 
 // 615022
 card_actions["615022"] = (game) => {
-    game.def(9);
+    game.increase_idx_def(0, 9);
     game.add_c_of_x(2, "guard_up");
     game.chase();
 }
 
 // 615023
 card_actions["615023"] = (game) => {
-    game.def(9);
+    game.increase_idx_def(0, 9);
     game.add_c_of_x(3, "guard_up");
     game.chase();
 }
 
 // Perfectly Planned
 card_actions["621011"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.add_c_of_x(1, "hexagram");
     game.become_star_point(1);
 }
 
 // 621012
 card_actions["621012"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.add_c_of_x(1, "hexagram");
     game.become_star_point(1);
     game.add_c_of_x(1, "star_power");
@@ -9192,17 +9193,17 @@ card_actions["621012"] = (game) => {
 
 // 621013
 card_actions["621013"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.add_c_of_x(1, "hexagram");
     game.become_star_point(1);
     game.add_c_of_x(1, "star_power");
     game.add_c_of_x(4, "max_hp");
-    game.heal(4);
+    game.increase_idx_hp(0, 4);
 }
 
 // Only Traces
 card_actions["622011"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     if (game.if_post_action()) {
         game.chase();
     }
@@ -9210,19 +9211,19 @@ card_actions["622011"] = (game) => {
 
 // 622012
 card_actions["622012"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.chase();
     if (game.if_post_action()) {
-        game.heal(1);
+        game.increase_idx_hp(0, 1);
     }
 }
 
 // 622013
 card_actions["622013"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.chase();
     if (game.if_post_action()) {
-        game.heal(1);
+        game.increase_idx_hp(0, 1);
     }
 }
 
@@ -9308,16 +9309,31 @@ card_actions["624013"] = (game) => {
 
 // Within Reach
 card_actions["624021"] = (game) => {
+    const me = game.players[0];
+    if (me.resonance_within_reach_stacks !== undefined && me.resonance_within_reach_stacks > 0) {
+        game.increase_idx_debuff(1, "internal_injury", 1);
+        game.increase_idx_debuff(1, "entangle", 1);
+    }
     game.atk(9 + game.get_debuff_count(1) * 2);
 }
 
 // 624022
 card_actions["624022"] = (game) => {
+    const me = game.players[0];
+    if (me.resonance_within_reach_stacks !== undefined && me.resonance_within_reach_stacks > 0) {
+        game.increase_idx_debuff(1, "internal_injury", 1);
+        game.increase_idx_debuff(1, "entangle", 1);
+    }
     game.atk(9 + game.get_debuff_count(1) * 3);
 }
 
 // 624023
 card_actions["624023"] = (game) => {
+    const me = game.players[0];
+    if (me.resonance_within_reach_stacks !== undefined && me.resonance_within_reach_stacks > 0) {
+        game.increase_idx_debuff(1, "internal_injury", 1);
+        game.increase_idx_debuff(1, "entangle", 1);
+    }
     game.atk(9 + game.get_debuff_count(1) * 4);
 }
 
@@ -9398,7 +9414,7 @@ card_actions["632011"] = (game) => {
     for (let i = 0; i < 2; i++) {
         game.atk(2);
     }
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.activate_wood_spirit();
 }
 
@@ -9407,7 +9423,7 @@ card_actions["632012"] = (game) => {
     for (let i = 0; i < 3; i++) {
         game.atk(2);
     }
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.activate_wood_spirit();
 }
 
@@ -9416,7 +9432,7 @@ card_actions["632013"] = (game) => {
     for (let i = 0; i < 4; i++) {
         game.atk(2);
     }
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.activate_wood_spirit();
 }
 
@@ -9446,8 +9462,8 @@ card_actions["633013"] = (game) => {
 
 // Gourd Of Leisurely
 card_actions["633021"] = (game) => {
-    game.qi(1);
-    game.heal(3);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_hp(0, 3);
     if (game.players[0].activate_wood_spirit_stacks >= 1) {
         game.chase();
     }
@@ -9467,8 +9483,8 @@ card_actions["633021"] = (game) => {
 
 // 633022
 card_actions["633022"] = (game) => {
-    game.qi(2);
-    game.heal(5);
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_hp(0, 5);
     if (game.players[0].activate_wood_spirit_stacks >= 1) {
         game.chase();
     }
@@ -9488,8 +9504,74 @@ card_actions["633022"] = (game) => {
 
 // 633023
 card_actions["633023"] = (game) => {
-    game.qi(3);
-    game.heal(7);
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_hp(0, 7);
+    if (game.players[0].activate_wood_spirit_stacks >= 1) {
+        game.chase();
+    }
+    if (game.players[0].activate_fire_spirit_stacks >= 1) {
+        game.chase();
+    }
+    if (game.players[0].activate_earth_spirit_stacks >= 1) {
+        game.chase();
+    }
+    if (game.players[0].activate_metal_spirit_stacks >= 1) {
+        game.chase();
+    }
+    if (game.players[0].activate_water_spirit_stacks >= 1) {
+        game.chase();
+    }
+}
+
+// Water Spirit - Leisurely
+card_actions["633031"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_max_hp(0, 3);
+    game.increase_idx_hp(0, 3);
+    if (game.players[0].activate_wood_spirit_stacks >= 1) {
+        game.chase();
+    }
+    if (game.players[0].activate_fire_spirit_stacks >= 1) {
+        game.chase();
+    }
+    if (game.players[0].activate_earth_spirit_stacks >= 1) {
+        game.chase();
+    }
+    if (game.players[0].activate_metal_spirit_stacks >= 1) {
+        game.chase();
+    }
+    if (game.players[0].activate_water_spirit_stacks >= 1) {
+        game.chase();
+    }
+}
+
+// 633032
+card_actions["633032"] = (game) => {
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_max_hp(0, 6);
+    game.increase_idx_hp(0, 6);
+    if (game.players[0].activate_wood_spirit_stacks >= 1) {
+        game.chase();
+    }
+    if (game.players[0].activate_fire_spirit_stacks >= 1) {
+        game.chase();
+    }
+    if (game.players[0].activate_earth_spirit_stacks >= 1) {
+        game.chase();
+    }
+    if (game.players[0].activate_metal_spirit_stacks >= 1) {
+        game.chase();
+    }
+    if (game.players[0].activate_water_spirit_stacks >= 1) {
+        game.chase();
+    }
+}
+
+// 633033
+card_actions["633033"] = (game) => {
+    game.increase_idx_qi(0, 4);
+    game.increase_idx_max_hp(0, 9);
+    game.increase_idx_hp(0, 9);
     if (game.players[0].activate_wood_spirit_stacks >= 1) {
         game.chase();
     }
@@ -9543,7 +9625,7 @@ card_actions["634023"] = (game) => {
 // Water Spirit - Spring Rain
 card_actions["634031"] = (game) => {
     game.add_c_of_x(4, "max_hp");
-    game.heal(4);
+    game.increase_idx_hp(0, 4);
     game.continuous();
     game.add_c_of_x(1, "water_spirit_spring_rain_stacks");
 }
@@ -9551,7 +9633,7 @@ card_actions["634031"] = (game) => {
 // 634032
 card_actions["634032"] = (game) => {
     game.add_c_of_x(10, "max_hp");
-    game.heal(10);
+    game.increase_idx_hp(0, 10);
     game.continuous();
     game.add_c_of_x(1, "water_spirit_spring_rain_stacks");
 }
@@ -9559,7 +9641,7 @@ card_actions["634032"] = (game) => {
 // 634033
 card_actions["634033"] = (game) => {
     game.add_c_of_x(16, "max_hp");
-    game.heal(16);
+    game.increase_idx_hp(0, 16);
     game.continuous();
     game.add_c_of_x(1, "water_spirit_spring_rain_stacks");
 }
@@ -9583,21 +9665,21 @@ card_actions["635013"] = (game) => {
 card_actions["642011"] = (game) => {
     game.atk(4);
     game.add_c_of_x(3, "physique");
-    game.heal(3);
+    game.increase_idx_hp(0, 3);
 }
 
 // 642012
 card_actions["642012"] = (game) => {
     game.atk(6);
     game.add_c_of_x(4, "physique");
-    game.heal(4);
+    game.increase_idx_hp(0, 4);
 }
 
 // 642013
 card_actions["642013"] = (game) => {
     game.atk(8);
     game.add_c_of_x(5, "physique");
-    game.heal(5);
+    game.increase_idx_hp(0, 5);
 }
 
 // Overwhelming Power
@@ -9726,6 +9808,39 @@ card_actions["644023"] = (game) => {
     game.add_c_of_x(4, "meditation_of_xuan_stacks");
 }
 
+// Shift Stance
+card_actions["644031"] = (game) => {
+    game.add_c_of_x(8, "agility");
+    if (game.if_fist_stance()) {
+        game.add_c_of_x(4, "agility");
+    } else {
+        game.atk(8);
+    }
+    game.switch_stance();
+}
+
+// 644032
+card_actions["644032"] = (game) => {
+    game.add_c_of_x(8, "agility");
+    if (game.if_fist_stance()) {
+        game.add_c_of_x(6, "agility");
+    } else {
+        game.atk(12);
+    }
+    game.switch_stance();
+}
+
+// 644033
+card_actions["644033"] = (game) => {
+    game.add_c_of_x(8, "agility");
+    if (game.if_fist_stance()) {
+        game.add_c_of_x(8, "agility");
+    } else {
+        game.atk(16);
+    }
+    game.switch_stance();
+}
+
 // Stygian Moon's Changuang
 card_actions["645011"] = (game) => {
     game.physique(1);
@@ -9774,21 +9889,66 @@ card_actions["645023"] = (game) => {
     }
 }
 
+// Red Gold Dragon Stick
+card_actions["645031"] = (game) => {
+    const me = game.players[0];
+    if (game.if_fist_stance()) {
+        game.add_c_of_x(4, "force");
+        game.for_each_x_add_c_pct_y("physique", 20, "hp");
+    } else {
+        const atk_amt = 4 + Math.floor(me.physique * 11.111112 / 100);
+        for (let i = 0; i < 2; i++) {
+            game.atk(atk_amt);
+        }
+    }
+    game.switch_stance();
+}
+
+// 645032
+card_actions["645032"] = (game) => {
+    const me = game.players[0];
+    if (game.if_fist_stance()) {
+        game.add_c_of_x(5, "force");
+        game.for_each_x_add_c_pct_y("physique", 20, "hp");
+    } else {
+        const atk_amt = 7 + Math.floor(me.physique * 11.111112 / 100);
+        for (let i = 0; i < 2; i++) {
+            game.atk(atk_amt);
+        }
+    }
+    game.switch_stance();
+}
+
+// 645033
+card_actions["645033"] = (game) => {
+    const me = game.players[0];
+    if (game.if_fist_stance()) {
+        game.add_c_of_x(6, "force");
+        game.for_each_x_add_c_pct_y("physique", 20, "hp");
+    } else {
+        const atk_amt = 10 + Math.floor(me.physique * 11.111112 / 100);
+        for (let i = 0; i < 2; i++) {
+            game.atk(atk_amt);
+        }
+    }
+    game.switch_stance();
+}
+
 // Azure Dragon Sword Formation
 card_actions["714011"] = (game) => {
-    game.def(8);
+    game.increase_idx_def(0, 8);
     game.for_each_x_add_c_pct_y("def", 33.333334, "sword_intent");
 }
 
 // 714012
 card_actions["714012"] = (game) => {
-    game.def(12);
+    game.increase_idx_def(0, 12);
     game.for_each_x_add_c_pct_y("def", 33.333334, "sword_intent");
 }
 
 // 714013
 card_actions["714013"] = (game) => {
-    game.def(16);
+    game.increase_idx_def(0, 16);
     game.for_each_x_add_c_pct_y("def", 33.333334, "sword_intent");
 }
 
@@ -9838,21 +9998,21 @@ card_actions["715013"] = (game) => {
 
 // Beast Spirit Sword Formation
 card_actions["715021"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.continuous();
     game.add_c_of_x(1, "beast_spirit_sword_formation_stacks");
 }
 
 // 715022
 card_actions["715022"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.continuous();
     game.add_c_of_x(1, "beast_spirit_sword_formation_stacks");
 }
 
 // 715023
 card_actions["715023"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.continuous();
     game.add_c_of_x(1, "beast_spirit_sword_formation_stacks");
 }
@@ -9885,14 +10045,14 @@ card_actions["724021"] = (game) => {
 
 // 724022
 card_actions["724022"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.continuous();
     game.add_c_of_x(1, "throw_petals_stacks");
 }
 
 // 724023
 card_actions["724023"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.continuous();
     game.add_c_of_x(1, "throw_petals_stacks");
 }
@@ -9971,19 +10131,19 @@ card_actions["725023"] = (game) => {
 
 // Wild Crossing Seal
 card_actions["734011"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.add_c_of_x(1, "wild_crossing_seal_stacks");
 }
 
 // 734012
 card_actions["734012"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.add_c_of_x(1, "wild_crossing_seal_stacks");
 }
 
 // 734013
 card_actions["734013"] = (game) => {
-    game.qi(6);
+    game.increase_idx_qi(0, 6);
     game.add_c_of_x(1, "wild_crossing_seal_stacks");
 }
 
@@ -10011,174 +10171,174 @@ card_actions["734023"] = (game) => {
 // Boulder Seal
 card_actions["735011"] = (game) => {
     const def_amt = 2 + 2 * game.players[0].played_card_count;
-    game.def(def_amt);
+    game.increase_idx_def(0, def_amt);
     game.chase();
 }
 
 // 735012
 card_actions["735012"] = (game) => {
     const def_amt = 3 + 3 * game.players[0].played_card_count;
-    game.def(def_amt);
+    game.increase_idx_def(0, def_amt);
     game.chase();
 }
 
 // 735013
 card_actions["735013"] = (game) => {
     const def_amt = 4 + 4 * game.players[0].played_card_count;
-    game.def(def_amt);
+    game.increase_idx_def(0, def_amt);
     game.chase();
 }
 
 // Wave Cutter Seal
 card_actions["735021"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.for_each_x_add_c_y("qi", 3, "penetrate");
 }
 
 // 735022
 card_actions["735022"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.for_each_x_add_c_y("qi", 3, "penetrate");
 }
 
 // 735023
 card_actions["735023"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.for_each_x_add_c_y("qi", 3, "penetrate");
 }
 
 // Mushroom Zongzi
 card_actions["801011"] = (game) => {
-    game.heal(6);
+    game.increase_idx_hp(0, 6);
     if (game.players[0].qi >= 1) {
         game.reduce_c_of_x(1, "qi");
-        game.heal(3);
+        game.increase_idx_hp(0, 3);
     }
 }
 
 // 801012
 card_actions["801012"] = (game) => {
-    game.heal(9);
+    game.increase_idx_hp(0, 9);
     if (game.players[0].qi >= 1) {
         game.reduce_c_of_x(1, "qi");
-        game.heal(3);
+        game.increase_idx_hp(0, 3);
     }
 }
 
 // 801013
 card_actions["801013"] = (game) => {
-    game.heal(12);
+    game.increase_idx_hp(0, 12);
     if (game.players[0].qi >= 1) {
         game.reduce_c_of_x(1, "qi");
-        game.heal(3);
+        game.increase_idx_hp(0, 3);
     }
 }
 
 // Honey Zongzi
 card_actions["801021"] = (game) => {
-    game.heal(3);
+    game.increase_idx_hp(0, 3);
     game.add_c_of_x(1, "regen");
 }
 
 // 801022
 card_actions["801022"] = (game) => {
-    game.heal(6);
+    game.increase_idx_hp(0, 6);
     game.add_c_of_x(1, "regen");
 }
 
 // 801023
 card_actions["801023"] = (game) => {
-    game.heal(9);
+    game.increase_idx_hp(0, 9);
     game.add_c_of_x(1, "regen");
 }
 
 // Salted Meat Zongzi
 card_actions["801031"] = (game) => {
-    game.qi(1);
-    game.heal(6);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_hp(0, 6);
     game.add_c_of_x(1, "internal_injury");
 }
 
 // 801032
 card_actions["801032"] = (game) => {
-    game.qi(1);
-    game.heal(9);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_hp(0, 9);
     game.add_c_of_x(1, "internal_injury");
 }
 
 // 801033
 card_actions["801033"] = (game) => {
-    game.qi(1);
-    game.heal(12);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_hp(0, 12);
     game.add_c_of_x(1, "internal_injury");
 }
 
 // Red Bean Zongzi
 card_actions["801041"] = (game) => {
-    game.heal(10);
+    game.increase_idx_hp(0, 10);
 }
 
 // 801042
 card_actions["801042"] = (game) => {
-    game.heal(13);
+    game.increase_idx_hp(0, 13);
 }
 
 // 801043
 card_actions["801043"] = (game) => {
-    game.heal(16);
+    game.increase_idx_hp(0, 16);
 }
 
 // Jujube Zongzi
 card_actions["801051"] = (game) => {
-    game.qi(1);
-    game.heal(4);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_hp(0, 4);
 }
 
 // 801052
 card_actions["801052"] = (game) => {
-    game.qi(1);
-    game.heal(7);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_hp(0, 7);
 }
 
 // 801053
 card_actions["801053"] = (game) => {
-    game.qi(1);
-    game.heal(10);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_hp(0, 10);
 }
 
 // Fresh Meat Zongzi
 card_actions["801061"] = (game) => {
-    game.heal(6);
+    game.increase_idx_hp(0, 6);
     game.reduce_random_debuff_by_c_n_times(1, 1);
 }
 
 // 801062
 card_actions["801062"] = (game) => {
-    game.heal(9);
+    game.increase_idx_hp(0, 9);
     game.reduce_random_debuff_by_c_n_times(1, 1);
 }
 
 // 801063
 card_actions["801063"] = (game) => {
-    game.heal(12);
+    game.increase_idx_hp(0, 12);
     game.reduce_random_debuff_by_c_n_times(1, 1);
 }
 
 // Candied Jujube Zongzi
 card_actions["802011"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.for_each_x_add_y("qi", "hp");
 }
 
 // 802012
 card_actions["802012"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.for_each_x_add_y("qi", "hp");
 }
 
 // 802013
 card_actions["802013"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.for_each_x_add_y("qi", "hp");
 }
 
@@ -10186,11 +10346,11 @@ card_actions["802013"] = (game) => {
 card_actions["802021"] = (game) => {
     game.add_c_of_x(1, "internal_injury");
     for (let i = 0; i < 2; i++) {
-        game.heal(5);
+        game.increase_idx_hp(0, 5);
     }
     if (game.players[0].qi >= 1) {
         game.reduce_c_of_x(1, "qi");
-        game.heal(4);
+        game.increase_idx_hp(0, 4);
     }
 }
 
@@ -10198,11 +10358,11 @@ card_actions["802021"] = (game) => {
 card_actions["802022"] = (game) => {
     game.add_c_of_x(1, "internal_injury");
     for (let i = 0; i < 2; i++) {
-        game.heal(7);
+        game.increase_idx_hp(0, 7);
     }
     if (game.players[0].qi >= 1) {
         game.reduce_c_of_x(1, "qi");
-        game.heal(4);
+        game.increase_idx_hp(0, 4);
     }
 }
 
@@ -10210,112 +10370,112 @@ card_actions["802022"] = (game) => {
 card_actions["802023"] = (game) => {
     game.add_c_of_x(1, "internal_injury");
     for (let i = 0; i < 2; i++) {
-        game.heal(9);
+        game.increase_idx_hp(0, 9);
     }
     if (game.players[0].qi >= 1) {
         game.reduce_c_of_x(1, "qi");
-        game.heal(4);
+        game.increase_idx_hp(0, 4);
     }
 }
 
 // Roasted Meat Zongzi
 card_actions["802031"] = (game) => {
     game.add_c_of_x(1, "appetite");
-    game.heal(2);
+    game.increase_idx_hp(0, 2);
 }
 
 // 802032
 card_actions["802032"] = (game) => {
     game.add_c_of_x(1, "appetite");
-    game.heal(6);
+    game.increase_idx_hp(0, 6);
 }
 
 // 802033
 card_actions["802033"] = (game) => {
     game.add_c_of_x(1, "appetite");
-    game.heal(10);
+    game.increase_idx_hp(0, 10);
 }
 
 // Mung Bean Zongzi
 card_actions["802041"] = (game) => {
     game.for_each_x_add_y("sweet_zongzi_count", "bonus_heal_amt");
-    game.heal(8);
+    game.increase_idx_hp(0, 8);
 }
 
 // 802042
 card_actions["802042"] = (game) => {
     game.for_each_x_add_y("sweet_zongzi_count", "bonus_heal_amt");
-    game.heal(12);
+    game.increase_idx_hp(0, 12);
 }
 
 // 802043
 card_actions["802043"] = (game) => {
     game.for_each_x_add_y("sweet_zongzi_count", "bonus_heal_amt");
-    game.heal(16);
+    game.increase_idx_hp(0, 16);
 }
 
 // Preserved Meat Zongzi
 card_actions["802051"] = (game) => {
-    game.qi(1);
-    game.heal(3);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_hp(0, 3);
     game.add_c_of_x(1, "hexproof");
 }
 
 // 802052
 card_actions["802052"] = (game) => {
-    game.qi(1);
-    game.heal(6);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_hp(0, 6);
     game.add_c_of_x(2, "hexproof");
 }
 
 // 802053
 card_actions["802053"] = (game) => {
-    game.qi(1);
-    game.heal(9);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_hp(0, 9);
     game.add_c_of_x(3, "hexproof");
 }
 
 // Jujube Paste Zongzi
 card_actions["802061"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.for_each_x_add_c_y("qi", 2, "bonus_heal_amt");
-    game.heal(6);
+    game.increase_idx_hp(0, 6);
     game.add_c_of_x(2, "indigestion");
 }
 
 // 802062
 card_actions["802062"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.for_each_x_add_c_y("qi", 2, "bonus_heal_amt");
-    game.heal(10);
+    game.increase_idx_hp(0, 10);
     game.add_c_of_x(2, "indigestion");
 }
 
 // 802063
 card_actions["802063"] = (game) => {
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.for_each_x_add_c_y("qi", 2, "bonus_heal_amt");
-    game.heal(14);
+    game.increase_idx_hp(0, 14);
     game.add_c_of_x(2, "indigestion");
 }
 
 // Alkaline Water Zongzi
 card_actions["803011"] = (game) => {
-    game.heal(2);
+    game.increase_idx_hp(0, 2);
     game.continuous();
     game.add_c_of_x(1, "alkaline_water_zongzi_stacks");
 }
 
 // 803012
 card_actions["803012"] = (game) => {
-    game.heal(6);
+    game.increase_idx_hp(0, 6);
     game.continuous();
     game.add_c_of_x(1, "alkaline_water_zongzi_stacks");
 }
 
 // 803013
 card_actions["803013"] = (game) => {
-    game.heal(10);
+    game.increase_idx_hp(0, 10);
     game.continuous();
     game.add_c_of_x(1, "alkaline_water_zongzi_stacks");
 }
@@ -10328,7 +10488,7 @@ card_actions["803021"] = (game) => {
     game.for_each_x_add_y("appetite", "bonus_heal_amt");
     game.for_each_x_add_y("indigestion", "bonus_heal_amt");
     game.for_each_x_add_c_y("bonus_heal_amt", 1, "bonus_heal_amt");
-    game.heal(4);
+    game.increase_idx_hp(0, 4);
 }
 
 // 803022
@@ -10339,7 +10499,7 @@ card_actions["803022"] = (game) => {
     game.for_each_x_add_y("appetite", "bonus_heal_amt");
     game.for_each_x_add_y("indigestion", "bonus_heal_amt");
     game.for_each_x_add_c_y("bonus_heal_amt", 1, "bonus_heal_amt");
-    game.heal(8);
+    game.increase_idx_hp(0, 8);
 }
 
 // 803023
@@ -10350,7 +10510,7 @@ card_actions["803023"] = (game) => {
     game.for_each_x_add_y("appetite", "bonus_heal_amt");
     game.for_each_x_add_y("indigestion", "bonus_heal_amt");
     game.for_each_x_add_c_y("bonus_heal_amt", 2, "bonus_heal_amt");
-    game.heal(8);
+    game.increase_idx_hp(0, 8);
 }
 
 // Bean Paste Zongzi
@@ -10360,7 +10520,7 @@ card_actions["803031"] = (game) => {
     game.for_each_x_reduce_c_pct_y("internal_injury", 100, "internal_injury");
     game.for_each_x_reduce_c_pct_y("indigestion", 100, "indigestion");
     game.for_each_x_add_c_y("bonus_heal_amt", 1, "bonus_heal_amt");
-    game.heal(7);
+    game.increase_idx_hp(0, 7);
 }
 
 // 803032
@@ -10370,7 +10530,7 @@ card_actions["803032"] = (game) => {
     game.for_each_x_reduce_c_pct_y("internal_injury", 100, "internal_injury");
     game.for_each_x_reduce_c_pct_y("indigestion", 100, "indigestion");
     game.for_each_x_add_c_y("bonus_heal_amt", 2, "bonus_heal_amt");
-    game.heal(7);
+    game.increase_idx_hp(0, 7);
 }
 
 // 803033
@@ -10380,26 +10540,26 @@ card_actions["803033"] = (game) => {
     game.for_each_x_reduce_c_pct_y("internal_injury", 100, "internal_injury");
     game.for_each_x_reduce_c_pct_y("indigestion", 100, "indigestion");
     game.for_each_x_add_c_y("bonus_heal_amt", 3, "bonus_heal_amt");
-    game.heal(7);
+    game.increase_idx_hp(0, 7);
 }
 
 // Sour Bamboo Shoots Zongzi
 card_actions["803041"] = (game) => {
-    game.heal(2);
+    game.increase_idx_hp(0, 2);
     game.add_c_of_x(2, "internal_injury");
     game.chase();
 }
 
 // 803042
 card_actions["803042"] = (game) => {
-    game.heal(6);
+    game.increase_idx_hp(0, 6);
     game.add_c_of_x(2, "internal_injury");
     game.chase();
 }
 
 // 803043
 card_actions["803043"] = (game) => {
-    game.heal(10);
+    game.increase_idx_hp(0, 10);
     game.add_c_of_x(2, "internal_injury");
     game.chase();
 }
@@ -10410,7 +10570,7 @@ card_actions["803051"] = (game) => {
         game.reduce_c_of_x(1, "qi");
     }
     for (let i = 0; i < 3; i++) {
-        game.heal(3);
+        game.increase_idx_hp(0, 3);
     }
 }
 
@@ -10421,40 +10581,41 @@ card_actions["803052"] = (game) => {
         //game.for_each_x_add_y("internal_injury", "bonus_def_amt");
     }
     for (let i = 0; i < 3; i++) {
-        game.heal(4);
+        game.increase_idx_hp(0, 4);
     }
 }
 
 // 803053
 card_actions["803053"] = (game) => {
     if (game.players[0].qi >= 1) {
+        // TODO: what was this supposed to do?
         //game.for_each_x_add_y("internal_injury", "bonus_def_amt");
     }
     for (let i = 0; i < 3; i++) {
-        game.heal(5);
+        game.increase_idx_hp(0, 5);
     }
 }
 
 // Pungent Zongzi
 card_actions["803061"] = (game) => {
-    game.qi(1);
-    game.heal(6);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_hp(0, 6);
     game.add_c_of_x(1, "appetite");
     game.add_c_of_x(1, "internal_injury");
 }
 
 // 803062
 card_actions["803062"] = (game) => {
-    game.qi(1);
-    game.heal(9);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_hp(0, 9);
     game.add_c_of_x(2, "appetite");
     game.add_c_of_x(2, "internal_injury");
 }
 
 // 803063
 card_actions["803063"] = (game) => {
-    game.qi(1);
-    game.heal(12);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_hp(0, 12);
     game.add_c_of_x(3, "appetite");
     game.add_c_of_x(3, "internal_injury");
 }
@@ -10463,139 +10624,139 @@ card_actions["803063"] = (game) => {
 card_actions["804011"] = (game) => {
     game.for_each_x_add_c_y("sweet_zongzi_count", 2, "bonus_heal_amt");
     game.for_each_x_add_c_y("sweet_zongzi_count", 1, "qi");
-    game.heal(2);
+    game.increase_idx_hp(0, 2);
 }
 
 // 804012
 card_actions["804012"] = (game) => {
     game.for_each_x_add_c_y("sweet_zongzi_count", 3, "bonus_heal_amt");
     game.for_each_x_add_c_y("sweet_zongzi_count", 1, "qi");
-    game.heal(3);
+    game.increase_idx_hp(0, 3);
 }
 
 // 804013
 card_actions["804013"] = (game) => {
     game.for_each_x_add_c_y("sweet_zongzi_count", 3, "bonus_heal_amt");
     game.for_each_x_add_c_y("sweet_zongzi_count", 2, "qi");
-    game.heal(4);
+    game.increase_idx_hp(0, 4);
 }
 
 // Crystal Ice Zongzi
 card_actions["804021"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.add_c_of_x(1, "indigestion");
     game.chase();
 }
 
 // 804022
 card_actions["804022"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.add_c_of_x(2, "indigestion");
     game.chase();
 }
 
 // 804023
 card_actions["804023"] = (game) => {
-    game.qi(6);
+    game.increase_idx_qi(0, 6);
     game.add_c_of_x(3, "indigestion");
     game.chase();
 }
 
 // Fresh Fruit Zongzi
 card_actions["804031"] = (game) => {
-    game.heal(8);
+    game.increase_idx_hp(0, 8);
     game.add_c_of_x(1, "fresh_fruit_zongzi_stacks");
 }
 
 // 804032
 card_actions["804032"] = (game) => {
-    game.heal(11);
+    game.increase_idx_hp(0, 11);
     game.add_c_of_x(2, "fresh_fruit_zongzi_stacks");
 }
 
 // 804033
 card_actions["804033"] = (game) => {
-    game.heal(14);
+    game.increase_idx_hp(0, 14);
     game.add_c_of_x(3, "fresh_fruit_zongzi_stacks");
 }
 
 // Salted Egg Yolk Zongzi
 card_actions["804041"] = (game) => {
-    game.heal(6);
+    game.increase_idx_hp(0, 6);
     game.add_c_of_x(2, "salted_egg_yolk_zongzi_stacks");
 }
 
 // 804042
 card_actions["804042"] = (game) => {
-    game.heal(8);
+    game.increase_idx_hp(0, 8);
     game.add_c_of_x(3, "salted_egg_yolk_zongzi_stacks");
 }
 
 // 804043
 card_actions["804043"] = (game) => {
-    game.heal(10);
+    game.increase_idx_hp(0, 10);
     game.add_c_of_x(4, "salted_egg_yolk_zongzi_stacks");
 }
 
 // Seafood Zongzi
 card_actions["804051"] = (game) => {
     for (let i = 0; i < 4; i++) {
-        game.heal(5);
+        game.increase_idx_hp(0, 5);
     }
 }
 
 // 804052
 card_actions["804052"] = (game) => {
     for (let i = 0; i < 4; i++) {
-        game.heal(6);
+        game.increase_idx_hp(0, 6);
     }
 }
 
 // 804053
 card_actions["804053"] = (game) => {
     for (let i = 0; i < 5; i++) {
-        game.heal(6);
+        game.increase_idx_hp(0, 6);
     }
 }
 
 // Pickled Mustard Zongzi
 card_actions["804061"] = (game) => {
-    game.heal(2);
+    game.increase_idx_hp(0, 2);
     game.add_c_of_x(2, "appetite");
     game.add_c_of_x(1, "skip_next_card_stacks");
 }
 
 // 804062
 card_actions["804062"] = (game) => {
-    game.heal(3);
+    game.increase_idx_hp(0, 3);
     game.add_c_of_x(3, "appetite");
     game.add_c_of_x(2, "skip_next_card_stacks");
 }
 
 // 804063
 card_actions["804063"] = (game) => {
-    game.heal(4);
+    game.increase_idx_hp(0, 4);
     game.add_c_of_x(4, "appetite");
     game.add_c_of_x(3, "skip_next_card_stacks");
 }
 
 // Mixed Grain Zongzi
 card_actions["805011"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.continuous();
     game.add_c_of_x(2, "mixed_grain_zongzi_stacks");
 }
 
 // 805012
 card_actions["805012"] = (game) => {
-    game.qi(3);
+    game.increase_idx_qi(0, 3);
     game.continuous();
     game.add_c_of_x(4, "mixed_grain_zongzi_stacks");
 }
 
 // 805013
 card_actions["805013"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.continuous();
     game.add_c_of_x(6, "mixed_grain_zongzi_stacks");
 }
@@ -10603,19 +10764,19 @@ card_actions["805013"] = (game) => {
 // Spirit Zongzi
 card_actions["805021"] = (game) => {
     game.exhaust_x_to_add_c_y("qi", 5, "bonus_heal_amt");
-    game.heal(5);
+    game.increase_idx_hp(0, 5);
 }
 
 // 805022
 card_actions["805022"] = (game) => {
     game.exhaust_x_to_add_c_y("qi", 6, "bonus_heal_amt");
-    game.heal(6);
+    game.increase_idx_hp(0, 6);
 }
 
 // 805023
 card_actions["805023"] = (game) => {
     game.exhaust_x_to_add_c_y("qi", 7, "bonus_heal_amt");
-    game.heal(7);
+    game.increase_idx_hp(0, 7);
 }
 
 // Water Combined Zongzi
@@ -10623,7 +10784,7 @@ card_actions["805031"] = (game) => {
     game.add_c_of_x(2, "regen");
     game.for_each_x_add_c_y("regen", 5, "bonus_heal_amt");
     game.for_each_x_add_c_y("appetite", 5, "bonus_heal_amt");
-    game.heal(5);
+    game.increase_idx_hp(0, 5);
 }
 
 // 805032
@@ -10631,7 +10792,7 @@ card_actions["805032"] = (game) => {
     game.add_c_of_x(3, "regen");
     game.for_each_x_add_c_y("regen", 6, "bonus_heal_amt");
     game.for_each_x_add_c_y("appetite", 6, "bonus_heal_amt");
-    game.heal(6);
+    game.increase_idx_hp(0, 6);
 }
 
 // 805033
@@ -10639,7 +10800,7 @@ card_actions["805033"] = (game) => {
     game.add_c_of_x(4, "regen");
     game.for_each_x_add_c_y("regen", 7, "bonus_heal_amt");
     game.for_each_x_add_c_y("appetite", 7, "bonus_heal_amt");
-    game.heal(7);
+    game.increase_idx_hp(0, 7);
 }
 
 // Assorted Meat Zongzi
@@ -10648,7 +10809,7 @@ card_actions["805041"] = (game) => {
     game.for_each_x_add_y("indigestion", "bonus_heal_amt");
     game.for_each_x_add_y("appetite", "bonus_heal_amt");
     for (let i = 0; i < 5; i++) {
-        game.heal(2);
+        game.increase_idx_hp(0, 2);
     }
 }
 
@@ -10658,7 +10819,7 @@ card_actions["805042"] = (game) => {
     game.for_each_x_add_y("indigestion", "bonus_heal_amt");
     game.for_each_x_add_y("appetite", "bonus_heal_amt");
     for (let i = 0; i < 6; i++) {
-        game.heal(2);
+        game.increase_idx_hp(0, 2);
     }
 }
 
@@ -10668,25 +10829,25 @@ card_actions["805043"] = (game) => {
     game.for_each_x_add_y("indigestion", "bonus_heal_amt");
     game.for_each_x_add_y("appetite", "bonus_heal_amt");
     for (let i = 0; i < 7; i++) {
-        game.heal(2);
+        game.increase_idx_hp(0, 2);
     }
 }
 
 // Double Plum Zongzi
 card_actions["805051"] = (game) => {
-    game.heal(2);
+    game.increase_idx_hp(0, 2);
     game.add_c_of_x(1, "strike_twice_stacks");
 }
 
 // 805052
 card_actions["805052"] = (game) => {
-    game.heal(8);
+    game.increase_idx_hp(0, 8);
     game.add_c_of_x(1, "strike_twice_stacks");
 }
 
 // 805053
 card_actions["805053"] = (game) => {
-    game.heal(14);
+    game.increase_idx_hp(0, 14);
     game.add_c_of_x(1, "strike_twice_stacks");
 }
 
@@ -10740,7 +10901,7 @@ card_actions["903013"] = (game) => {
 
 // Xuanming Recover Elixir
 card_actions["904011"] = (game) => {
-    const amt =  Math.floor(this.players[0].hp_lost/4) + 20;
+    const amt =  Math.floor(game.players[0].hp_lost/4) + 20;
     game.add_c_of_x(amt, "max_hp");
     game.increase_idx_hp(0, amt, true);
     game.consumption();
@@ -10748,7 +10909,7 @@ card_actions["904011"] = (game) => {
 
 // 904012
 card_actions["904012"] = (game) => {
-    const amt =  Math.floor(this.players[0].hp_lost/4) + 25;
+    const amt =  Math.floor(game.players[0].hp_lost/4) + 25;
     game.add_c_of_x(amt, "max_hp");
     game.increase_idx_hp(0, amt, true);
     game.consumption();
@@ -10756,7 +10917,7 @@ card_actions["904012"] = (game) => {
 
 // 904013
 card_actions["904013"] = (game) => {
-    const amt =  Math.floor(this.players[0].hp_lost/4) + 30;
+    const amt =  Math.floor(game.players[0].hp_lost/4) + 30;
     game.add_c_of_x(amt, "max_hp");
     game.increase_idx_hp(0, amt, true);
     game.consumption();
@@ -10795,7 +10956,7 @@ card_actions["904031"] = (game) => {
         switch (game.random_int(3)) {
             case 0:
                 game.reduce_enemy_c_of_x(6, "hp");
-                game.heal(6);
+                game.increase_idx_hp(0, 6);
                 break;
             case 1:
                 game.add_enemy_c_of_x(2, "weaken");
@@ -10813,7 +10974,7 @@ card_actions["904032"] = (game) => {
         switch (game.random_int(3)) {
             case 0:
                 game.reduce_enemy_c_of_x(6, "hp");
-                game.heal(6);
+                game.increase_idx_hp(0, 6);
                 break;
             case 1:
                 game.add_enemy_c_of_x(2, "weaken");
@@ -10831,7 +10992,7 @@ card_actions["904033"] = (game) => {
         switch (game.random_int(3)) {
             case 0:
                 game.reduce_enemy_c_of_x(6, "hp");
-                game.heal(6);
+                game.increase_idx_hp(0, 6);
                 break;
             case 1:
                 game.add_enemy_c_of_x(2, "weaken");
@@ -10867,21 +11028,21 @@ card_actions["904043"] = (game) => {
 // Xuanming Snowdrop
 card_actions["904051"] = (game) => {
     game.increase_idx_hp(0, 9, true);
-    game.def(12);
+    game.increase_idx_def(0, 12);
     game.for_each_x_add_c_pct_y("hp_lost", 33.333334, "next_turn_def");
 }
 
 // 904052
 card_actions["904052"] = (game) => {
     game.increase_idx_hp(0, 9, true);
-    game.def(17);
+    game.increase_idx_def(0, 17);
     game.for_each_x_add_c_pct_y("hp_lost", 33.333334, "next_turn_def");
 }
 
 // 904053
 card_actions["904053"] = (game) => {
     game.increase_idx_hp(0, 9, true);
-    game.def(22);
+    game.increase_idx_def(0, 22);
     game.for_each_x_add_c_pct_y("hp_lost", 33.333334, "next_turn_def");
 }
 
@@ -11005,7 +11166,7 @@ card_actions["906053"] = (game) => {
 
 // Shennong Ding
 card_actions["906061"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.add_c_of_x("max_hp", 16);
     game.add_c_of_x("hp", 16);
 }
@@ -11082,7 +11243,7 @@ card_actions["914011"] = (game) => {
     game.for_each_x_add_y("unrestrained_sword_count", "bonus_rep_amt");
     game.add_c_of_x(1, "unrestrained_sword_count");
     for (let i = 0; i < 2 + game.players[0].bonus_rep_amt; i++) {
-        game.gain_ignore_def(1);
+        game.increase_idx_x_by_c(0, "ignore_def", 1);
         game.atk(5);
     }
 }
@@ -11092,7 +11253,7 @@ card_actions["914012"] = (game) => {
     game.for_each_x_add_y("unrestrained_sword_count", "bonus_rep_amt");
     game.add_c_of_x(1, "unrestrained_sword_count");
     for (let i = 0; i < 2 + game.players[0].bonus_rep_amt; i++) {
-        game.gain_ignore_def(1);
+        game.increase_idx_x_by_c(0, "ignore_def", 1);
         game.atk(7);
     }
 }
@@ -11102,28 +11263,28 @@ card_actions["914013"] = (game) => {
     game.for_each_x_add_y("unrestrained_sword_count", "bonus_rep_amt");
     game.add_c_of_x(1, "unrestrained_sword_count");
     for (let i = 0; i < 2 + game.players[0].bonus_rep_amt; i++) {
-        game.gain_ignore_def(1);
+        game.increase_idx_x_by_c(0, "ignore_def", 1);
         game.atk(9);
     }
 }
 
 // Contemplate Spirits Vitality Rhythm
 card_actions["914021"] = (game) => {
-    game.sword_intent(3);
+    game.increase_idx_x_by_c(0, "sword_intent", 3);
     game.add_c_of_x(18, "max_hp");
     game.for_each_x_add_c_y("sword_intent", 2, "hp");
 }
 
 // 914022
 card_actions["914022"] = (game) => {
-    game.sword_intent(4);
+    game.increase_idx_x_by_c(0, "sword_intent", 4);
     game.add_c_of_x(24, "max_hp");
     game.for_each_x_add_c_y("sword_intent", 2, "hp");
 }
 
 // 914023
 card_actions["914023"] = (game) => {
-    game.sword_intent(5);
+    game.increase_idx_x_by_c(0, "sword_intent", 5);
     game.add_c_of_x(30, "max_hp");
     game.for_each_x_add_c_y("sword_intent", 2, "hp");
 }
@@ -11221,7 +11382,7 @@ card_actions["915031"] = (game) => {
 
 // 915032
 card_actions["915032"] = (game) => {
-    game.qi(2);
+    game.increase_idx_qi(0, 2);
     game.add_c_of_x(1, "guard_up");
     game.add_c_of_x(1, "centibird_spirit_sword_rhythm_stacks");
     game.chase();
@@ -11229,7 +11390,7 @@ card_actions["915032"] = (game) => {
 
 // 915033
 card_actions["915033"] = (game) => {
-    game.qi(4);
+    game.increase_idx_qi(0, 4);
     game.add_c_of_x(1, "guard_up");
     game.add_c_of_x(1, "centibird_spirit_sword_rhythm_stacks");
     game.chase();
@@ -11252,7 +11413,7 @@ card_actions["915043"] = (game) => {
 
 // Cloud Sword - Starry Sky
 card_actions["915051"] = (game) => {
-    game.def(4);
+    game.increase_idx_def(0, 4);
     game.chase();
     if (game.if_cloud_hit()) {
         game.for_each_x_add_c_y("qi", 1, "def");
@@ -11261,7 +11422,7 @@ card_actions["915051"] = (game) => {
 
 // 915052
 card_actions["915052"] = (game) => {
-    game.def(10);
+    game.increase_idx_def(0, 10);
     game.chase();
     if (game.if_cloud_hit()) {
         game.for_each_x_add_c_y("qi", 1, "def");
@@ -11270,7 +11431,7 @@ card_actions["915052"] = (game) => {
 
 // 915053
 card_actions["915053"] = (game) => {
-    game.def(16);
+    game.increase_idx_def(0, 16);
     game.chase();
     if (game.if_cloud_hit()) {
         game.for_each_x_add_c_y("qi", 1, "def");
@@ -11279,19 +11440,19 @@ card_actions["915053"] = (game) => {
 
 // Xuanming Sword Intent Mantra
 card_actions["915061"] = (game) => {
-    game.sword_intent(6);
+    game.increase_idx_x_by_c(0, "sword_intent", 6);
     game.for_each_x_add_c_pct_y("hp_lost", 16.666667, "sword_intent");
 }
 
 // 915062
 card_actions["915062"] = (game) => {
-    game.sword_intent(8);
+    game.increase_idx_x_by_c(0, "sword_intent", 8);
     game.for_each_x_add_c_pct_y("hp_lost", 16.666667, "sword_intent");
 }
 
 // 915063
 card_actions["915063"] = (game) => {
-    game.sword_intent(10);
+    game.increase_idx_x_by_c(0, "sword_intent", 10);
     game.for_each_x_add_c_pct_y("hp_lost", 16.666667, "sword_intent");
 }
 
@@ -11316,7 +11477,7 @@ card_actions["915073"] = (game) => {
 
 // Xuan-Yuan Sword
 card_actions["916011"] = (game) => {
-    game.gain_ignore_def(1);
+    game.increase_idx_x_by_c(0, "ignore_def", 1);
     game.add_c_of_x(1, "ignore_guard_up");
     game.atk(120);
 }
@@ -11334,28 +11495,28 @@ card_actions["916013"] = (game) => {
 // Astral Move - Extend
 card_actions["922011"] = (game) => {
     game.atk(4);
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.become_star_point(3);
 }
 
 // 922012
 card_actions["922012"] = (game) => {
     game.atk(6);
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.become_star_point(4);
 }
 
 // 922013
 card_actions["922013"] = (game) => {
     game.atk(8);
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.become_star_point(5);
 }
 
 // Traces Revitalized
 card_actions["923011"] = (game) => {
     game.atk(4 + Math.floor(game.players[0].hp_gained * 25 / 100));
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     if (game.if_post_action()) {
         game.chase();
     }
@@ -11364,20 +11525,20 @@ card_actions["923011"] = (game) => {
 // 923012
 card_actions["923012"] = (game) => {
     game.atk(4 + Math.floor(game.players[0].hp_gained * 25 / 100));
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.chase();
     if (game.if_post_action()) {
-        game.heal(1);
+        game.increase_idx_hp(0, 1);
     }
 }
 
 // 923013
 card_actions["923013"] = (game) => {
     game.atk(4 + Math.floor(game.players[0].hp_gained * 33.333334 / 100));
-    game.qi(1);
+    game.increase_idx_qi(0, 1);
     game.chase();
     if (game.if_post_action()) {
-        game.heal(3);
+        game.increase_idx_hp(0, 3);
     }
 }
 
@@ -11429,7 +11590,7 @@ card_actions["924023"] = (game) => {
 // Thunderbolt Tune
 card_actions["924031"] = (game) => {
     game.add_c_of_x(10, "max_hp");
-    game.heal(10);
+    game.increase_idx_hp(0, 10);
     game.continuous();
     game.add_c_of_x(10, "thunderbolt_tune_stacks");
     game.add_enemy_c_of_x(10, "thunderbolt_tune_stacks");
@@ -11438,7 +11599,7 @@ card_actions["924031"] = (game) => {
 // 924032
 card_actions["924032"] = (game) => {
     game.add_c_of_x(15, "max_hp");
-    game.heal(15);
+    game.increase_idx_hp(0, 15);
     game.continuous();
     game.add_c_of_x(12, "thunderbolt_tune_stacks");
     game.add_enemy_c_of_x(12, "thunderbolt_tune_stacks");
@@ -11447,7 +11608,7 @@ card_actions["924032"] = (game) => {
 // 924033
 card_actions["924033"] = (game) => {
     game.add_c_of_x(20, "max_hp");
-    game.heal(20);
+    game.increase_idx_hp(0, 20);
     game.continuous();
     game.add_c_of_x(14, "thunderbolt_tune_stacks");
     game.add_enemy_c_of_x(14, "thunderbolt_tune_stacks");
@@ -11502,7 +11663,7 @@ card_actions["925031"] = (game) => {
     game.for_each_x_add_y("bonus_rep_amt", "hp");
     game.add_c_of_x(1, "chase_if_hp_gained");
     if (game.if_post_action()) {
-        game.qi(2);
+        game.increase_idx_qi(0, 2);
     }
 }
 
@@ -11514,7 +11675,7 @@ card_actions["925032"] = (game) => {
     game.for_each_x_add_y("bonus_rep_amt", "hp");
     game.add_c_of_x(1, "chase_if_hp_gained");
     if (game.if_post_action()) {
-        game.qi(4);
+        game.increase_idx_qi(0, 4);
     }
 }
 
@@ -11526,7 +11687,7 @@ card_actions["925033"] = (game) => {
     game.for_each_x_add_y("bonus_rep_amt", "hp");
     game.add_c_of_x(1, "chase_if_hp_gained");
     if (game.if_post_action()) {
-        game.qi(6);
+        game.increase_idx_qi(0, 6);
     }
 }
 
@@ -11751,22 +11912,22 @@ card_actions["934023"] = (game) => {
 
 // Heavenly Marrow Gourd
 card_actions["935011"] = (game) => {
-    game.qi(1);
-    game.heal(3);
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_hp(0, 3);
     game.add_c_of_x(2, "heavenly_marrow_gourd_stacks");
 }
 
 // 935012
 card_actions["935012"] = (game) => {
-    game.qi(2);
-    game.heal(5);
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_hp(0, 5);
     game.add_c_of_x(2, "heavenly_marrow_gourd_stacks");
 }
 
 // 935013
 card_actions["935013"] = (game) => {
-    game.qi(3);
-    game.heal(7);
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_hp(0, 7);
     game.add_c_of_x(2, "heavenly_marrow_gourd_stacks");
 }
 
@@ -11791,7 +11952,7 @@ card_actions["935023"] = (game) => {
 // Wood Spirit - All Things Grow
 card_actions["935031"] = (game) => {
     game.add_c_of_x(3, "max_hp");
-    game.heal(3);
+    game.increase_idx_hp(0, 3);
     if (game.if_wood_spirit()) {
         game.chase();
     }
@@ -11802,7 +11963,7 @@ card_actions["935031"] = (game) => {
 // 935032
 card_actions["935032"] = (game) => {
     game.add_c_of_x(9, "max_hp");
-    game.heal(9);
+    game.increase_idx_hp(0, 9);
     if (game.if_wood_spirit()) {
         game.chase();
     }
@@ -11813,7 +11974,7 @@ card_actions["935032"] = (game) => {
 // 935033
 card_actions["935033"] = (game) => {
     game.add_c_of_x(15, "max_hp");
-    game.heal(15);
+    game.increase_idx_hp(0, 15);
     if (game.if_wood_spirit()) {
         game.chase();
     }
@@ -11824,7 +11985,7 @@ card_actions["935033"] = (game) => {
 // Xuanming Heavenly Essence Destruction
 card_actions["935041"] = (game) => {
     game.atk(10 + Math.floor(game.players[0].hp_lost * 20 / 100));
-    if (game.get_n_different_five_elements(0) == 1) {
+    if (game.get_n_different_five_elements(0) === 1) {
         game.chase();
     }
 }
@@ -11832,7 +11993,7 @@ card_actions["935041"] = (game) => {
 // 935042
 card_actions["935042"] = (game) => {
     game.atk(15 + Math.floor(game.players[0].hp_lost * 20 / 100));
-    if (game.get_n_different_five_elements(0) == 1) {
+    if (game.get_n_different_five_elements(0) === 1) {
         game.chase();
     }
 }
@@ -11840,7 +12001,7 @@ card_actions["935042"] = (game) => {
 // 935043
 card_actions["935043"] = (game) => {
     game.atk(20 + Math.floor(game.players[0].hp_lost * 20 / 100));
-    if (game.get_n_different_five_elements(0) == 1) {
+    if (game.get_n_different_five_elements(0) === 1) {
         game.chase();
     }
 }
@@ -11937,7 +12098,7 @@ card_actions["944013"] = (game) => {
 
 // Crash Fist - Return to Xuan
 card_actions["944021"] = (game) => {
-    game.heal(15);
+    game.increase_idx_hp(0, 15);
     game.add_c_of_x(4, "internal_injury");
     game.add_c_of_x(4, "regen");
     game.continuous();
@@ -11946,7 +12107,7 @@ card_actions["944021"] = (game) => {
 
 // 944022
 card_actions["944022"] = (game) => {
-    game.heal(20);
+    game.increase_idx_hp(0, 20);
     game.add_c_of_x(6, "internal_injury");
     game.add_c_of_x(6, "regen");
     game.continuous();
@@ -11955,7 +12116,7 @@ card_actions["944022"] = (game) => {
 
 // 944023
 card_actions["944023"] = (game) => {
-    game.heal(25);
+    game.increase_idx_hp(0, 25);
     game.add_c_of_x(8, "internal_injury");
     game.add_c_of_x(8, "regen");
     game.continuous();
@@ -11987,7 +12148,7 @@ card_actions["944033"] = (game) => {
 card_actions["945011"] = (game) => {
     game.atk(6);
     game.physique(3);
-    game.heal(3);
+    game.increase_idx_hp(0, 3);
     game.add_c_of_x(3, "force");
     game.add_c_of_x(10, "agility");
 }
@@ -11996,7 +12157,7 @@ card_actions["945011"] = (game) => {
 card_actions["945012"] = (game) => {
     game.atk(6);
     game.physique(4);
-    game.heal(4);
+    game.increase_idx_hp(0, 4);
     game.add_c_of_x(4, "force");
     game.add_c_of_x(10, "agility");
 }
@@ -12005,7 +12166,7 @@ card_actions["945012"] = (game) => {
 card_actions["945013"] = (game) => {
     game.atk(6);
     game.physique(5);
-    game.heal(5);
+    game.increase_idx_hp(0, 5);
     game.add_c_of_x(5, "force");
     game.add_c_of_x(10, "agility");
 }

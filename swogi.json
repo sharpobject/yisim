@@ -9246,6 +9246,44 @@
 			["if_x_at_least_c_do", "activate_water_spirit_stacks", 1, ["chase"]]
 		]
 	},
+	"633031": {
+		"name": "Water Spirit - Leisurely",
+		"actions": [
+			["qi", 2],
+			["add_c_of_x", 3, "max_hp"],
+			["heal", 3],
+			["if_x_at_least_c_do", "activate_wood_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_fire_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_earth_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_metal_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_water_spirit_stacks", 1, ["chase"]]
+		],
+		"character": "fe1"
+	},
+	"633032": {
+		"actions": [
+			["qi", 3],
+			["add_c_of_x", 6, "max_hp"],
+			["heal", 6],
+			["if_x_at_least_c_do", "activate_wood_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_fire_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_earth_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_metal_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_water_spirit_stacks", 1, ["chase"]]
+		]
+	},
+	"633033": {
+		"actions": [
+			["qi", 4],
+			["add_c_of_x", 9, "max_hp"],
+			["heal", 9],
+			["if_x_at_least_c_do", "activate_wood_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_fire_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_earth_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_metal_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_water_spirit_stacks", 1, ["chase"]]
+		]
+	},
 	"634011": {
 		"name": "Metal Spirit - Vigorous",
 		"actions": [
@@ -9470,6 +9508,32 @@
 			["add_c_of_x", 4, "meditation_of_xuan_stacks"]
 		]
 	},
+	"644031": {
+		"name": "Shift Stance",
+		"actions": [
+			["add_c_of_x", 8, "agility"],
+			["if_fist_stance", ["add_c_of_x", 4, "agility"]],
+			["if_stick_stance", ["atk", 8]],
+			["switch_stance"]
+		],
+		"character": "dx5"
+	},
+	"644032": {
+		"actions": [
+			["add_c_of_x", 8, "agility"],
+			["if_fist_stance", ["add_c_of_x", 6, "agility"]],
+			["if_stick_stance", ["atk", 12]],
+			["switch_stance"]
+		]
+	},
+	"644033": {
+		"actions": [
+			["add_c_of_x", 8, "agility"],
+			["if_fist_stance", ["add_c_of_x", 8, "agility"]],
+			["if_stick_stance", ["atk", 16]],
+			["switch_stance"]
+		]
+	},
 	"645011": {
 		"name": "Stygian Moon's Changuang",
 		"actions": [
@@ -9514,6 +9578,35 @@
 			["physique", 4],
 			["for_each_x_convert_c_pct_debuff_to_y", "physique", 5, "increase_atk"],
 			["rep", 5, ["atk", 3]]
+		]
+	},
+	"645031": {
+		"name": "Red Gold Dragon Stick",
+		"actions": [
+			["if_fist_stance", [
+				["add_c_of_x", 4, "force"],
+				["for_each_x_add_c_pct_y", "physique", 20, "hp"]]],
+			["if_stick_stance", ["rep", 2, ["atk", 4]]],
+			["switch_stance"]
+		],
+		"character": "dx5"
+	},
+	"645032": {
+		"actions": [
+			["if_fist_stance", [
+				["add_c_of_x", 5, "force"],
+				["for_each_x_add_c_pct_y", "physique", 20, "hp"]]],
+			["if_stick_stance", ["rep", 2, ["atk", 7]]],
+			["switch_stance"]
+		]
+	},
+	"645033": {
+		"actions": [
+			["if_fist_stance", [
+				["add_c_of_x", 6, "force"],
+				["for_each_x_add_c_pct_y", "physique", 20, "hp"]]],
+			["if_stick_stance", ["rep", 2, ["atk", 10]]],
+			["switch_stance"]
 		]
 	},
 	"714011": {

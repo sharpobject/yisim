@@ -82,6 +82,7 @@ const deps = {
         "24502", "32202", "32402", "32503", "33403", "34301",
         "40402", "60509", "61101", "64301"],
     HAS_ENTANGLE: ["entangle",
+        "HAS_RESONANCE_WITHIN_REACH",
         "14305", "14506", "22401", "24501", "24502", "32202",
         "33403", "34301", "36503", "40503", "60507", "64301",
         "90602"],
@@ -808,7 +809,29 @@ const deps = {
         "HAS_ENDLESS_FORCE"],
     HAS_BONUS_ATK_AMT: [
         "HAS_CRASH_FIST_STYX_NIGHT",
-        "HAS_CRAS_FIST_POKE"],
+        "HAS_CRASH_FIST_POKE"],
+    HAS_POST_CRASH_FIST: [
+        "HAS_CRASH_FIST_BLITZ",
+        "HAS_CRASH_FIST_INCH_FORCE",
+        "HAS_CRASH_FIST_STAR_SEIZING",
+        "HAS_CRASH_FIST_POKE"],
+    HAS_PRE_CRASH_FIST: [
+        "HAS_CRASH_FIST_STYX_NIGHT",
+        "HAS_CRASH_FIST_POKE",
+        "HAS_CRASH_FIST_BLOCK",
+        "HAS_CRASH_FIST_SHAKE",
+        "HAS_CRASH_FIST_ENTANGLE",
+        "HAS_CRASH_FIST_BLITZ",
+        "HAS_CRASH_FIST_TRUNCATE",
+        "HAS_CRASH_FIST_INCH_FORCE",
+        "HAS_CRASH_FIST_STAR_SEIZING",
+        "HAS_CRASH_FIST_BLINK",
+        "HAS_CRASH_FIST_SHOCKED"],
+    HAS_RESONANCE_WITHIN_REACH: ["resonance_within_reach_stacks"],
+    
+
+    
+
 
 };
 
