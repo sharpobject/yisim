@@ -303,21 +303,40 @@ def get_info(filename, n_hand_cards):
 
     deck = []
     problems = 0
-    for i in range(8):
-        x = card_x + i * card_horizontal_interval
-        this_x = x * 2
-        this_y = int(card_y * 2)
-        this_width = card_width * 2
-        this_height = card_height * 2
-        best_match, score, upgrade_level = detect_card(image, this_x, this_y, this_width, this_height, templates, upgrade_templates, "deck"+str(i+1), filename_trimmed)
-        if score < 0.3:
-            best_match = "Normal Attack"
-            upgrade_level = 1
-            problems -= 1
-        deck.append(best_match + " " + str(upgrade_level))
-        if score < 0.79:
-            problems += 1
-        print(f"Card {i+1}: {best_match} (Score: {score:.2f}, Level: {upgrade_level})")
+    total_score = 0
+    best_total_score = 0
+    best_deck = []
+    best_problems = 0
+    best_dy = 0
+    for dy in [6, 0]:
+        deck = []
+        total_score = 0
+        problems = 0
+        for i in range(8):
+            x = card_x + i * card_horizontal_interval
+            this_x = x * 2
+            this_y = int(card_y * 2) + dy * 2
+            this_width = card_width * 2
+            this_height = card_height * 2
+            best_match, score, upgrade_level = detect_card(image, this_x, this_y, this_width, this_height, templates, upgrade_templates, "deck"+str(i+1), filename_trimmed)
+            if score < 0.3:
+                best_match = "Normal Attack"
+                upgrade_level = 1
+                problems -= 1
+            deck.append(best_match + " " + str(upgrade_level))
+            if score < 0.79:
+                problems += 1
+            total_score += score
+            print(f"Card {i+1}: {best_match} (Score: {score:.2f}, Level: {upgrade_level})")
+        if total_score > best_total_score:
+            best_total_score = total_score
+            best_deck = deck
+            best_problems = problems
+            best_dy = dy
+    problems = best_problems
+    deck = best_deck
+    print("best dy was " + str(best_dy))
+    print(f"Total score: {best_total_score}")
     hand_cards = detect_hand_cards(image, n_hand_cards, templates)
     health = intt(health)
     if "/" in speed:
