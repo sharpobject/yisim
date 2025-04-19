@@ -12025,6 +12025,57 @@ card_actions["935053"] = (game) => {
 
 }
 
+// Heavenly Marrow Dance Tune
+card_actions["935061"] = (game) => {
+    game.continuous();
+    game.add_c_of_x(2, "increase_atk");
+    game.add_enemy_c_of_x(2, "increase_atk");
+    game.add_c_of_x(1, "heavenly_marrow_dance_tune_stacks");
+    game.add_enemy_c_of_x(1, "heavenly_marrow_dance_tune_stacks");
+}
+
+// 935052
+card_actions["935062"] = (game) => {
+    game.continuous();
+    game.add_c_of_x(3, "increase_atk");
+    game.add_enemy_c_of_x(3, "increase_atk");
+    game.add_c_of_x(1, "heavenly_marrow_dance_tune_stacks");
+    game.add_enemy_c_of_x(1, "heavenly_marrow_dance_tune_stacks");
+}
+
+// 935053
+card_actions["935063"] = (game) => {
+    game.continuous();
+    game.add_c_of_x(4, "increase_atk");
+    game.add_enemy_c_of_x(4, "increase_atk");
+    game.add_c_of_x(1, "heavenly_marrow_dance_tune_stacks");
+    game.add_enemy_c_of_x(1, "heavenly_marrow_dance_tune_stacks");
+}
+
+// Cosmos Brush
+card_actions["935071"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_def(0, 2);
+    game.activate_next_slots(1);
+    game.chase();
+}
+
+// 935062
+card_actions["935072"] = (game) => {
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_def(0, 4);
+    game.activate_next_slots(1);
+    game.chase();
+}
+
+// 935063
+card_actions["935073"] = (game) => {
+    game.increase_idx_qi(0, 4);
+    game.increase_idx_def(0, 6);
+    game.activate_next_slots(1);
+    game.chase();
+}
+
 // Kunlun Mirror
 card_actions["936011"] = (game) => {
     if (game.players[0].is_triggering_kunlun_mirror <= 0) {

@@ -11729,6 +11729,59 @@
 		"does_not_exist": true,
 		"actions": []
 	},
+	"935061": {
+		"name": "Heavenly Marrow Dance Tune",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "increase_atk"],
+			["add_enemy_c_of_x", 2, "increase_atk"],
+			["add_c_of_x", 1, "heavenly_marrow_dance_tune_stacks"],
+			["add_enemy_c_of_x", 1, "heavenly_marrow_dance_tune_stacks"]
+		]
+	},
+	"935062": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "increase_atk"],
+			["add_enemy_c_of_x", 3, "increase_atk"],
+			["add_c_of_x", 1, "heavenly_marrow_dance_tune_stacks"],
+			["add_enemy_c_of_x", 1, "heavenly_marrow_dance_tune_stacks"]
+		]
+	},
+	"935063": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "increase_atk"],
+			["add_enemy_c_of_x", 4, "increase_atk"],
+			["add_c_of_x", 1, "heavenly_marrow_dance_tune_stacks"],
+			["add_enemy_c_of_x", 1, "heavenly_marrow_dance_tune_stacks"]
+		]
+	},
+	"935071": {
+		"name": "Cosmos Brush",
+		"actions": [
+			["increase_idx_qi", 0, 2],
+			["increase_idx_def", 0, 2],
+			["activate_next_slots", 1],
+			["chase"]
+		]
+	},
+	"935072": {
+		"actions": [
+			["increase_idx_qi", 0, 3],
+			["increase_idx_def", 0, 4],
+			["activate_next_slots", 1],
+			["chase"]
+		]
+	},
+	"935073": {
+		"actions": [
+			["increase_idx_qi", 0, 4],
+			["increase_idx_def", 0, 6],
+			["activate_next_slots", 1],
+			["chase"]
+		]
+	},
 	"936011": {
 		"name": "Kunlun Mirror",
 		"gather_qi": 9,
