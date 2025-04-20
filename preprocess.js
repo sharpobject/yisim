@@ -134,6 +134,7 @@ const deps = {
     HAS_ZONGZI_MODE: [],
     HAS_CORAL_SWORD: ["coral_sword_stacks"],
     HAS_IGNORE_DEF: ["ignore_def", "HAS_CORAL_SWORD",
+        "HAS_RESONANCE_CORAL_SWORD",
         "11106", "11302", "13208", "14207", "31201", "33101",
         "33303", "61201", "91401", "91601"],
     HAS_SMASH_DEF: ["smash_def",
@@ -835,7 +836,10 @@ const deps = {
     HAS_RESONANCE_WITHIN_REACH: ["resonance_within_reach_stacks"],
     HAS_HEAVENLY_MARROW_DANCE_TUNE: [
         "heavenly_marrow_dance_tune_stacks", "93506"],
-    
+    HAS_RESONANCE_CORAL_SWORD: ["resonance_coral_sword_stacks"],
+    HAS_RESONANCE_FIRMNESS_BODY: ["resonance_firmness_body_stacks"],
+    HAS_RESONANCE_REJUVENATION: ["resonance_rejuvenation_stacks"],
+    HAS_RESONANCE_SWIFT_BURNING_SEAL: ["resonance_swift_burning_seal_stacks"],
 
     
 

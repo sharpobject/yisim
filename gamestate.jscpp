@@ -1678,7 +1678,10 @@ export class Player {
         // this.resonance_endurance_as_cloud_sea_stacks = 0;
         // this.resonance_fire_flame_blade_stacks = 0;
         // this.resonance_drift_ice_blade_stacks = 0;
-        // this.resonance_coral_sword_stacks = 0;
+#ifdef HAS_RESONANCE_CORAL_SWORD
+        this.gain_ignore_def_on_chase_stacks = 0;
+        this.resonance_coral_sword_stacks = 0;
+#endif // HAS_RESONANCE_CORAL_SWORD
         // this.resonance_dragon_scale_stacks = 0;
         // this.resonance_pray_rain_stacks = 0;
         // this.resonance_sky_delicate_bracelet_stacks = 0;
@@ -1700,7 +1703,9 @@ export class Player {
         // this.resonance_post_strike_stacks = 0;
         // this.resonance_astral_eclipse_stacks = 0;
         // this.resonance_inheritance_of_thunder_stacks = 0;
-        // this.resonance_rejuvenation_stacks = 0;
+#ifdef HAS_RESONANCE_REJUVENATION
+        this.resonance_rejuvenation_stacks = 0;
+#endif // HAS_RESONANCE_REJUVENATION
         // this.resonance_birdie_wind_stacks = 0;
         // this.resonance_avatar_of_bird_shade_stacks = 0;
         // this.resonance_bloodline_power_stacks = 0;
@@ -1723,11 +1728,17 @@ export class Player {
 #ifdef HAS_RESONANCE_LANDSLIDE
         this.resonance_landslide_stacks = 0;
 #endif // HAS_RESONANCE_LANDSLIDE
+#ifdef HAS_RESONANCE_SWIFT_BURNING_SEAL
+        this.resonance_swift_burning_seal_stacks = 0;
+#endif // HAS_RESONANCE_SWIFT_BURNING_SEAL
 
 
         // duan xuan sect resonance immortal fates
         // this.resonance_indomitable_will_stacks = 0;
         // this.resonance_full_of_force_stacks = 0;
+#ifdef HAS_RESONANCE_FIRMNESS_BODY
+        this.resonance_firmness_body_stacks = 0;
+#endif // HAS_RESONANCE_FIRMNESS_BODY
     }
     reset_can_play() {
         this.cards = this.cards.slice();
@@ -3402,6 +3413,11 @@ export class GameState {
                 if (me.surge_of_qi_stacks > 0 && !me.stance_is_fist) {
                     this.increase_idx_qi(0, 1);
                 }
+#ifdef HAS_RESONANCE_CORAL_SWORD
+                if (me.gain_ignore_def_on_chase_stacks > 0) {
+                    this.increase_idx_x_by_c(0, "ignore_def", 1);
+                }
+#endif // HAS_RESONANCE_CORAL_SWORD
 #ifdef HAS_ENTANGLE
             }
 #endif //HAS_ENTANGLE
@@ -3700,6 +3716,18 @@ export class GameState {
         }
     }
 #endif // HAS_NUWA_STONE
+#ifdef HAS_RESONANCE_REJUVENATION
+    do_resonance_rejuvenation() {
+        const me = this.players[0];
+        if (me.resonance_rejuvenation_stacks === 0) {
+            return;
+        }
+        if (me.hp < 0.5 * me.max_hp) {
+            this.increase_idx_hp(0, Math.floor(me.max_hp * 0.25));
+            this.reduce_idx_x_by_c(0, "resonance_rejuvenation_stacks", 1);
+        }
+    }
+#endif // HAS_RESONANCE_REJUVENATION
 #ifdef HAS_ILLUSION_TUNE
     do_illusion_tune() {
         const amt = this.players[0].illusion_tune_stacks;
@@ -4243,6 +4271,9 @@ export class GameState {
 #ifdef HAS_HEAVENLY_WILL_DEFY
         this.reduce_idx_x_by_c(0, "god_opportunity_reversal_stacks", 1);
 #endif // HAS_HEAVENLY_WILL_DEFY
+#ifdef HAS_RESONANCE_REJUVENATION
+        this.do_resonance_rejuvenation();
+#endif // HAS_RESONANCE_REJUVENATION
 #ifdef HAS_XUANMING_RECURRING
         me.xuanming_recurring_hp = me.hp;
 #endif // HAS_XUANMING_RECURRING
@@ -5060,6 +5091,11 @@ export class GameState {
             if (prev < me.max_physique) {
                 heal_amt -= me.max_physique - prev;
             }
+#ifdef HAS_RESONANCE_FIRMNESS_BODY
+            if (me.resonance_firmness_body_stacks > 0) {
+                heal_amt *= 2;
+            }
+#endif // HAS_RESONANCE_FIRMNESS_BODY
             this.increase_idx_hp(idx, heal_amt);
         }
     }
@@ -5357,6 +5393,11 @@ export class GameState {
             if (me.ignore_def > 0) {
                 this.reduce_idx_x_by_c(my_idx, "ignore_def", 1);
                 ignore_def = true;
+#ifdef HAS_RESONANCE_CORAL_SWORD
+                if (me.resonance_coral_sword_stacks > 0) {
+                    dmg += 1;
+                }
+#endif // HAS_RESONANCE_CORAL_SWORD
             }
 #endif // HAS_IGNORE_DEF
 #ifdef HAS_EXERCISE_BONES
@@ -7046,6 +7087,13 @@ export class GameState {
         if (!(round_number >= 11 && me.resonance_within_reach_stacks > 0)) {
             me.resonance_within_reach_stacks = 0;
         }
+#ifdef HAS_RESONANCE_SWIFT_BURNING_SEAL
+        if (round_number >= 12 &&
+            me.resonance_swift_burning_seal_stacks > 0 &&
+            me.swift_burning_seal_stacks > 0) {
+            me.swift_burning_seal_stacks += 1;
+        }
+#endif // HAS_RESONANCE_SWIFT_BURNING_SEAL
         if (!(round_number >= 13 && me.resonance_sword_formation_guard_stacks > 0)) {
             me.resonance_sword_formation_guard_stacks = 0;
         }
@@ -7057,6 +7105,21 @@ export class GameState {
         if (round_number >= 13 && me.resonance_cat_paw_stacks > 0) {
             me.resonance_cat_paw_stacks += 1;
         }
+#ifdef HAS_RESONANCE_CORAL_SWORD
+        if (round_number >= 13 && me.resonance_coral_sword_stacks > 0) {
+            me.gain_ignore_def_on_chase_stacks = 1;
+        }
+#endif // HAS_RESONANCE_CORAL_SWORD
+#ifdef HAS_RESONANCE_FIRMNESS_BODY
+        if (!(round_number >= 13 && me.resonance_firmness_body_stacks > 0)) {
+            me.resonance_firmness_body_stacks = 0;
+        }
+#endif // HAS_RESONANCE_FIRMNESS_BODY
+#ifdef HAS_RESONANCE_REJUVENATION
+        if (!(round_number >= 13 && me.resonance_rejuvenation_stacks > 0)) {
+            me.resonance_rejuvenation_stacks = 0;
+        }
+#endif // HAS_RESONANCE_REJUVENATION
         if (round_number >= 14 && me.resonance_sky_delicate_bracelet_stacks > 0) {
             let n_upgraded = 0;
             const max_n_upgraded = 2;
@@ -7105,6 +7168,10 @@ export class GameState {
             this.chase();
         }
 #endif // HAS_CAREFREE_GUQIN
+    }
+    random_int(n) {
+        this.used_randomness = true;
+        return Math.floor(Math.random() * n);
     }
 }
 
