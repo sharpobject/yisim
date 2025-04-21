@@ -1681,7 +1681,9 @@ export class Player {
 
         // cloud sword sect resonance immortal fates
         // this.resonance_sword_rhyme_cultivate_stacks = 0;
-        // this.resonance_inheritance_of_spirit_sword_stacks = 0;
+#ifdef HAS_RESONANCE_INHERITANCE_OF_SPIRIT_SWORD
+        this.resonance_inheritance_of_spirit_sword_stacks = 0;
+#endif // HAS_RESONANCE_INHERITANCE_OF_SPIRIT_SWORD
 #ifdef HAS_RESONANCE_SWORD_FORMATION_GUARD
         this.resonance_sword_formation_guard_stacks = 0;
 #endif // HAS_RESONANCE_SWORD_FORMATION_GUARD
@@ -2843,6 +2845,19 @@ export class GameState {
         }
     }
 #endif // HAS_RESONANCE_STORE_QI
+#ifdef HAS_RESONANCE_INHERITANCE_OF_SPIRIT_SWORD
+    do_resonance_inheritance_of_spirit_sword(card_id) {
+        const me = this.players[0];
+        if (me.resonance_inheritance_of_spirit_sword_stacks === 0) {
+            return;
+        }
+        if (!is_spirit_sword(card_id)) {
+            return;
+        }
+        this.increase_idx_qi(0, 2);
+        me.resonance_inheritance_of_spirit_sword_stacks = 0;
+    }
+#endif // HAS_RESONANCE_INHERITANCE_OF_SPIRIT_SWORD
 #ifdef HAS_HAS_PLAYED_MUSICIAN_CARD
     do_record_musician_card_played_for_chord_in_tune(card_id) {
         if (swogi[card_id].marking === "mu") {
@@ -3309,6 +3324,9 @@ export class GameState {
 #ifdef HAS_RESONANCE_STORE_QI
         this.do_resonance_store_qi(idx);
 #endif // HAS_RESONANCE_STORE_QI
+#ifdef HAS_RESONANCE_INHERITANCE_OF_SPIRIT_SWORD
+        this.do_resonance_inheritance_of_spirit_sword(card_id);
+#endif // HAS_RESONANCE_INHERITANCE_OF_SPIRIT_SWORD
         this.just_do_the_card_and_nothing_else(card);
         //card_actions[card_id](this);
         //this.do_action(card.actions);
@@ -7153,6 +7171,11 @@ export class GameState {
             me.resonance_within_reach_stacks = 0;
         }
 #endif // HAS_RESONANCE_WITHIN_REACH
+#ifdef HAS_RESONANCE_INHERITANCE_OF_SPIRIT_SWORD
+        if (!(round_number >= 11 && me.resonance_inheritance_of_spirit_sword_stacks > 0)) {
+            me.resonance_inheritance_of_spirit_sword_stacks = 0;
+        }
+#endif // HAS_RESONANCE_INHERITANCE_OF_SPIRIT_SWORD
 #ifdef HAS_RESONANCE_SWIFT_BURNING_SEAL
         if (round_number >= 12 &&
             me.resonance_swift_burning_seal_stacks > 0 &&

@@ -855,6 +855,8 @@ const deps = {
     HAS_RESONANCE_CAT_PAW: ["resonance_cat_paw_stacks"],
     HAS_RESONANCE_SKY_DELICATE_BRACELET: [
         "resonance_sky_delicate_bracelet_stacks"],
+    HAS_RESONANCE_INHERITANCE_OF_SPIRIT_SWORD: [
+        "resonance_inheritance_of_spirit_sword_stacks"],
 
     
 
