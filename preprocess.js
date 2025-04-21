@@ -840,6 +840,21 @@ const deps = {
     HAS_RESONANCE_FIRMNESS_BODY: ["resonance_firmness_body_stacks"],
     HAS_RESONANCE_REJUVENATION: ["resonance_rejuvenation_stacks"],
     HAS_RESONANCE_SWIFT_BURNING_SEAL: ["resonance_swift_burning_seal_stacks"],
+    HAS_RESONANCE_STORE_QI: ["resonance_store_qi_stacks"],
+    HAS_RESONANCE_SWORD_FORMATION_GUARD: [
+        "resonance_sword_formation_guard_stacks"],
+    HAS_STANCE_IS_FIST: ["stance_is_fist",
+        "HAS_SURGE_OF_QI", "HAS_MORTAL_BODY",
+        "HAS_RESONANCE_INDOMITABLE_WILL",
+        "HAS_INDOMITABLE_WILL"],
+    HAS_SURGE_OF_QI: ["surge_of_qi_stacks"],
+    HAS_MORTAL_BODY: ["mortal_body_stacks"],
+    HAS_RESONANCE_INDOMITABLE_WILL: ["resonance_indomitable_will_stacks"],
+    HAS_INDOMITABLE_WILL: ["indomitable_will_stacks"],
+    HAS_RESONANCE_FULL_OF_FORCE: ["resonance_full_of_force_stacks"],
+    HAS_RESONANCE_CAT_PAW: ["resonance_cat_paw_stacks"],
+    HAS_RESONANCE_SKY_DELICATE_BRACELET: [
+        "resonance_sky_delicate_bracelet_stacks"],
 
     
 
