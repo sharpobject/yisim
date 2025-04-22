@@ -883,6 +883,7 @@ export class Player {
         this.mind_body_resonance_stacks = 0;
         this.surge_of_qi_stacks = 0;
         this.stance_is_fist = true;
+        this.mortal_body_stacks = 0;
         this.indomitable_will_stacks = 0;
 
 
@@ -930,6 +931,7 @@ export class Player {
         this.xuanming_recurring_hp = 0;
         this.thunderbolt_tune_stacks = 0;
         this.astral_move_jump_stacks = 0;
+        this.heavenly_marrow_dance_tune_stacks = 0;
 
 
         // merpeople pearls
@@ -942,63 +944,66 @@ export class Player {
 
 
         // cloud sword sect resonance immortal fates
-        this.resonance_sword_rhyme_cultivate_stacks = 0;
+        // this.resonance_sword_rhyme_cultivate_stacks = 0;
         this.resonance_inheritance_of_spirit_sword_stacks = 0;
         this.resonance_sword_formation_guard_stacks = 0;
-        this.resonance_rule_of_the_cloud_stacks = 0;
-        this.resonance_sword_pool_the_heart_ask_stacks = 0;
-        this.resonance_sword_in_sheathed_stacks = 0;
-        this.resonance_endurance_as_cloud_sea_stacks = 0;
-        this.resonance_fire_flame_blade_stacks = 0;
-        this.resonance_drift_ice_blade_stacks = 0;
+        // this.resonance_rule_of_the_cloud_stacks = 0;
+        // this.resonance_sword_pool_the_heart_ask_stacks = 0;
+        // this.resonance_sword_in_sheathed_stacks = 0;
+        // this.resonance_endurance_as_cloud_sea_stacks = 0;
+        // this.resonance_fire_flame_blade_stacks = 0;
+        // this.resonance_drift_ice_blade_stacks = 0;
+        this.gain_ignore_def_on_chase_stacks = 0;
         this.resonance_coral_sword_stacks = 0;
-        this.resonance_dragon_scale_stacks = 0;
-        this.resonance_pray_rain_stacks = 0;
+        // this.resonance_dragon_scale_stacks = 0;
+        // this.resonance_pray_rain_stacks = 0;
         this.resonance_sky_delicate_bracelet_stacks = 0;
         this.resonance_cat_paw_stacks = 0;
         this.can_trigger_resonance_cat_paw = true;
-        this.resonance_spirit_cat_chaos_sword_stacks = 0;
-        this.resonance_lithe_as_cat_stacks = 0;
-        this.resonance_blade_forging_stacks = 0;
-        this.resonance_sword_pattern_carving_stacks = 0;
-        this.resonance_qi_forging_stacks = 0;
-        this.resonance_wind_rose_stacks = 0;
-        this.resonance_yeying_sword_formation_stacks = 0;
-        this.can_trigger_resonance_yeying_sword_formation = true;
+        // this.resonance_spirit_cat_chaos_sword_stacks = 0;
+        // this.resonance_lithe_as_cat_stacks = 0;
+        // this.resonance_blade_forging_stacks = 0;
+        // this.resonance_sword_pattern_carving_stacks = 0;
+        // this.resonance_qi_forging_stacks = 0;
+        // this.resonance_wind_rose_stacks = 0;
+        // this.resonance_yeying_sword_formation_stacks = 0;
+        // this.can_trigger_resonance_yeying_sword_formation = true;
 
 
         // heptastar sect resonance immortal fates
-        this.resonance_divination_stacks = 0;
-        this.resonance_stargaze_stacks = 0;
-        this.resonance_post_strike_stacks = 0;
-        this.resonance_astral_eclipse_stacks = 0;
-        this.resonance_inheritance_of_thunder_stacks = 0;
+        // this.resonance_divination_stacks = 0;
+        // this.resonance_stargaze_stacks = 0;
+        // this.resonance_post_strike_stacks = 0;
+        // this.resonance_astral_eclipse_stacks = 0;
+        // this.resonance_inheritance_of_thunder_stacks = 0;
         this.resonance_rejuvenation_stacks = 0;
-        this.resonance_birdie_wind_stacks = 0;
-        this.resonance_avatar_of_bird_shade_stacks = 0;
-        this.resonance_bloodline_power_stacks = 0;
+        // this.resonance_birdie_wind_stacks = 0;
+        // this.resonance_avatar_of_bird_shade_stacks = 0;
+        // this.resonance_bloodline_power_stacks = 0;
         this.resonance_within_reach_stacks = 0;
-        this.resonance_fury_thunder_stacks = 0;
-        this.resonance_innate_spirit_body_stacks = 0;
-        this.resonance_flame_flutter_stacks = 0;
-        this.resonance_rotary_divination_hexagram_stacks = 0;
-        this.resonance_astrology_stacks = 0;
-        this.resonance_starburst_stacks = 0;
-        this.resonance_heptastar_soulstat_stacks = 0;
-        this.resonance_astral_divination_hexagram_stacks = 0;
-        this.resonance_perfectly_planned_stacks = 0;
-        this.resonance_rest_and_outwit_stacks = 0;
-        this.resonance_act_underhand_stacks = 0;
-        this.resonance_star_moon_folding_fan_stacks = 0;
+        // this.resonance_fury_thunder_stacks = 0;
+        // this.resonance_innate_spirit_body_stacks = 0;
+        // this.resonance_flame_flutter_stacks = 0;
+        // this.resonance_rotary_divination_hexagram_stacks = 0;
+        // this.resonance_astrology_stacks = 0;
+        // this.resonance_starburst_stacks = 0;
+        // this.resonance_heptastar_soulstat_stacks = 0;
+        // this.resonance_astral_divination_hexagram_stacks = 0;
+        // this.resonance_perfectly_planned_stacks = 0;
+        // this.resonance_rest_and_outwit_stacks = 0;
+        // this.resonance_act_underhand_stacks = 0;
+        // this.resonance_star_moon_folding_fan_stacks = 0;
 
 
         // five elements sect resonance immortal fates
         this.resonance_landslide_stacks = 0;
+        this.resonance_swift_burning_seal_stacks = 0;
 
 
         // duan xuan sect resonance immortal fates
         this.resonance_indomitable_will_stacks = 0;
         this.resonance_full_of_force_stacks = 0;
+        this.resonance_firmness_body_stacks = 0;
     }
     reset_can_play() {
         this.cards = this.cards.slice();
@@ -1796,6 +1801,17 @@ export class GameState {
             this.increase_idx_qi(0, 1);
         }
     }
+    do_resonance_inheritance_of_spirit_sword(card_id) {
+        const me = this.players[0];
+        if (me.resonance_inheritance_of_spirit_sword_stacks === 0) {
+            return;
+        }
+        if (!is_spirit_sword(card_id)) {
+            return;
+        }
+        this.increase_idx_qi(0, 2);
+        me.resonance_inheritance_of_spirit_sword_stacks = 0;
+    }
     do_record_musician_card_played_for_chord_in_tune(card_id) {
         if (swogi[card_id].marking === "mu") {
             this.players[0].has_played_musician_card = 1;
@@ -2096,6 +2112,7 @@ export class GameState {
         this.do_god_luck_avoid(card_id);
         this.do_alkaline_water_zongzi(card_id);
         this.do_resonance_store_qi(idx);
+        this.do_resonance_inheritance_of_spirit_sword(card_id);
         this.just_do_the_card_and_nothing_else(card);
         //card_actions[card_id](this);
         //this.do_action(card.actions);
@@ -2176,6 +2193,9 @@ export class GameState {
                 this.log("incremented chases to " + me.chases);
                 if (me.surge_of_qi_stacks > 0 && !me.stance_is_fist) {
                     this.increase_idx_qi(0, 1);
+                }
+                if (me.gain_ignore_def_on_chase_stacks > 0) {
+                    this.increase_idx_x_by_c(0, "ignore_def", 1);
                 }
             }
         }
@@ -2403,6 +2423,16 @@ export class GameState {
             this.heal(this.players[0].hp);
         }
     }
+    do_resonance_rejuvenation() {
+        const me = this.players[0];
+        if (me.resonance_rejuvenation_stacks === 0) {
+            return;
+        }
+        if (me.hp < 0.5 * me.max_hp) {
+            this.increase_idx_hp(0, Math.floor(me.max_hp * 0.25));
+            this.reduce_idx_x_by_c(0, "resonance_rejuvenation_stacks", 1);
+        }
+    }
     do_illusion_tune() {
         const amt = this.players[0].illusion_tune_stacks;
         if (amt > 0) {
@@ -2565,6 +2595,17 @@ export class GameState {
                 this.chase();
                 this.reduce_idx_x_by_c(0, "wild_crossing_seal_stacks", 1);
             }
+        }
+    }
+    do_heavenly_marrow_dance_tune_chase() {
+        const me = this.players[0];
+        if (me.predicament_for_immortals_stacks > 0
+            && me.prevent_anti_chase === 0
+        ) {
+            return;
+        }
+        if (me.heavenly_marrow_dance_tune_stacks > 0) {
+            this.chase();
         }
     }
     do_shadow_owl_rabbit_chase() {
@@ -2803,6 +2844,7 @@ export class GameState {
         this.reduce_idx_x_by_c(0, "everything_goes_way_stacks", 1);
         this.reduce_idx_x_by_c(0, "god_opportunity_conform_stacks", 1);
         this.reduce_idx_x_by_c(0, "god_opportunity_reversal_stacks", 1);
+        this.do_resonance_rejuvenation();
         me.xuanming_recurring_hp = me.hp;
         this.do_def_decay();
         this.do_fat_immortal_raccoon();
@@ -2967,6 +3009,7 @@ export class GameState {
                 }
                 this.log("player 0 finished playing " + card.name);
                 this.advance_next_card_index();
+                this.do_heavenly_marrow_dance_tune_chase();
                 this.do_shadow_owl_rabbit_chase();
                 this.do_five_elements_heavenly_marrow_rhythm_chase();
                 this.do_heavenly_marrow_gourd_chase();
@@ -3256,6 +3299,10 @@ export class GameState {
             return;
         }
         const me = this.players[idx];
+        if (me.mortal_body_stacks > 0) {
+            this.increase_idx_physique(idx, amt);
+            return;
+        }
         if (me.mixed_grain_zongzi_stacks > 0) {
             amt += 1;
             this.increase_idx_hp(idx, me.mixed_grain_zongzi_stacks);
@@ -3364,6 +3411,9 @@ export class GameState {
             let heal_amt = amt;
             if (prev < me.max_physique) {
                 heal_amt -= me.max_physique - prev;
+            }
+            if (me.resonance_firmness_body_stacks > 0) {
+                heal_amt *= 2;
             }
             this.increase_idx_hp(idx, heal_amt);
         }
@@ -3581,6 +3631,9 @@ export class GameState {
             if (me.ignore_def > 0) {
                 this.reduce_idx_x_by_c(my_idx, "ignore_def", 1);
                 ignore_def = true;
+                if (me.resonance_coral_sword_stacks > 0) {
+                    dmg += 1;
+                }
             }
             dmg += this.do_exercise_bones();
             dmg += this.do_star_sky_forge_bone();
@@ -4401,11 +4454,11 @@ export class GameState {
         let can_post_action = false;
         if (this.players[0].can_post_action[this.players[0].currently_playing_card_idx]) {
             can_post_action = true;
-        } else
-        if (this.players[0].preemptive_strike_stacks > 0) {
+        }
+        else if (this.players[0].preemptive_strike_stacks > 0) {
             can_post_action = true;
-        } else
-        if (this.players[0].act_underhand_stacks > 0) {
+        }
+        else if (this.players[0].act_underhand_stacks > 0) {
             can_post_action = this.if_c_pct(1);
         }
         return can_post_action;
@@ -4937,7 +4990,8 @@ export class GameState {
     do_resonance_setup(idx) {
         const me = this.players[idx];
         const round_number = me.round_number;
-        if (!(round_number >= 6 && me.indomitable_will_stacks > 0)) {
+        if (!(round_number >= 6 && me.indomitable_will_stacks > 0 &&
+            me.resonance_indomitable_will_stacks > 0)) {
             me.resonance_indomitable_will_stacks = 0;
         }
         if (!(round_number >= 8 && me.resonance_full_of_force_stacks > 0)) {
@@ -4949,6 +5003,14 @@ export class GameState {
         if (!(round_number >= 11 && me.resonance_within_reach_stacks > 0)) {
             me.resonance_within_reach_stacks = 0;
         }
+        if (!(round_number >= 11 && me.resonance_inheritance_of_spirit_sword_stacks > 0)) {
+            me.resonance_inheritance_of_spirit_sword_stacks = 0;
+        }
+        if (round_number >= 12 &&
+            me.resonance_swift_burning_seal_stacks > 0 &&
+            me.swift_burning_seal_stacks > 0) {
+            me.swift_burning_seal_stacks += 1;
+        }
         if (!(round_number >= 13 && me.resonance_sword_formation_guard_stacks > 0)) {
             me.resonance_sword_formation_guard_stacks = 0;
         }
@@ -4957,6 +5019,15 @@ export class GameState {
         }
         if (round_number >= 13 && me.resonance_cat_paw_stacks > 0) {
             me.resonance_cat_paw_stacks += 1;
+        }
+        if (round_number >= 13 && me.resonance_coral_sword_stacks > 0) {
+            me.gain_ignore_def_on_chase_stacks = 1;
+        }
+        if (!(round_number >= 13 && me.resonance_firmness_body_stacks > 0)) {
+            me.resonance_firmness_body_stacks = 0;
+        }
+        if (!(round_number >= 13 && me.resonance_rejuvenation_stacks > 0)) {
+            me.resonance_rejuvenation_stacks = 0;
         }
         if (round_number >= 14 && me.resonance_sky_delicate_bracelet_stacks > 0) {
             let n_upgraded = 0;
@@ -4991,11 +5062,15 @@ export class GameState {
         atk_amt += me.return_to_simplicity_stacks;
         this.increase_idx_x_by_c(0, "agility", me.return_to_simplicity_stacks);
         for (let i = 0; i < rep_amt; i++) {
-            game.atk(atk_amt);
+            this.atk(atk_amt);
         }
-        if (game.players[0].carefree_guqin_stacks >= 1) {
-            game.chase();
+        if (this.players[0].carefree_guqin_stacks >= 1) {
+            this.chase();
         }
+    }
+    random_int(n) {
+        this.used_randomness = true;
+        return Math.floor(Math.random() * n);
     }
 }
 

@@ -877,10 +877,10 @@ for (let x in deps) {
 
 
 // Define the features we want to enable
-const defines = {};
-for (let x in deps) {
-    defines[x] = true;
-}
+// const defines = {};
+// for (let x in deps) {
+//     defines[x] = true;
+// }
 
 // Get the input file from command line arguments
 // const args = process.argv.slice(2);
@@ -929,6 +929,7 @@ export function preprocess_plz(config) {
 }
 
 export function make_full_gamestate() {
+    const defines = {};
     for (let key in deps) {
         defines[key] = true;
     }

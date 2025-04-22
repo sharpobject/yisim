@@ -6519,14 +6519,14 @@ export class GameState {
         let can_post_action = false;
         if (this.players[0].can_post_action[this.players[0].currently_playing_card_idx]) {
             can_post_action = true;
-        } else
+        }
 #ifdef HAS_PREEMPTIVE_STRIKE
-        if (this.players[0].preemptive_strike_stacks > 0) {
+        else if (this.players[0].preemptive_strike_stacks > 0) {
             can_post_action = true;
-        } else
+        }
 #endif // HAS_PREEMPTIVE_STRIKE
 #ifdef HAS_ACT_UNDERHAND
-        if (this.players[0].act_underhand_stacks > 0) {
+        else if (this.players[0].act_underhand_stacks > 0) {
             can_post_action = this.if_c_pct(1);
         }
 #endif // HAS_ACT_UNDERHAND
