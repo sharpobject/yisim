@@ -1,4 +1,4 @@
-import { GameState } from './gamestate_nolog';
+import { GameState } from './gamestate_full_nolog';
 
 function next_permutation(arr) {
   let i = arr.length - 1;
