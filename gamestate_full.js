@@ -932,6 +932,9 @@ export class Player {
         this.thunderbolt_tune_stacks = 0;
         this.astral_move_jump_stacks = 0;
         this.heavenly_marrow_dance_tune_stacks = 0;
+        this.spiritstat_tune_stacks = 0;
+        this.cloud_sword_endless_stacks = 0;
+        this.heavenly_will_earth_evil_stacks = 0;
 
 
         // merpeople pearls
@@ -1742,6 +1745,19 @@ export class GameState {
             this.atk(amt, true);
         }
     }
+    do_cloud_sword_endless(card_id) {
+        const me = this.players[0];
+        if (this.is_cloud_sword(card_id) &&
+            me.cloud_sword_endless_stacks > 0 &&
+            me.this_card_directly_attacked) {
+            if (me.trigger_depth > 1) {
+                return;
+            }
+            const amt = me.cloud_sword_endless_stacks;
+            this.log("Attacking for " + amt + " from cloud sword - endless.");
+            this.atk(amt, true);
+        }
+    }
     do_sword_formation_guard(idx) {
         const me = this.players[0];
         if (me.trigger_depth > 1) {
@@ -2132,6 +2148,7 @@ export class GameState {
         this.do_stance_of_fierce_attack(card_id);
         this.do_crash_fist_shocked(card_id);
         this.do_observe_body();
+        this.do_cloud_sword_endless(card_id);
         // End of extra attacks zone
 
 
@@ -3324,6 +3341,9 @@ export class GameState {
             const dmg = amt * me.star_moon_hexagram_fan_stacks;
             this.deal_damage_inner(dmg, false, idx);
         }
+        if (me.spiritstat_tune_stacks > 0) {
+            this.increade_idx_x_by_c(idx, "def", amt * me.spiritstat_tune_stacks);
+        }
         me.qi += amt;
         this.log("gained " + amt + " qi. Now have " + me.qi + " qi");
     }
@@ -3763,6 +3783,10 @@ export class GameState {
                 this.do_dark_star_bat();
                 this.do_resonance_cat_paw();
             }
+            if (me.heavenly_will_earth_evil_stacks > 0) {
+                this.reduce_idx_x_by_c(0, "heavenly_will_earth_evil_stacks", 1);
+                this.increase_idx_def(0, damage_actually_dealt_to_hp);
+            }
         }
     }
     deal_damage(dmg) {
@@ -4061,6 +4085,8 @@ export class GameState {
         let ret = false;
         ret ||= (swogi[card_id].name === "Clear Heart Sword Embryo" &&
             this.players[0].quench_of_sword_heart_cloud_stacks > 0)
+        ret ||= (swogi[card_id].marking === "fm" &&
+            this.players[0].cloud_sword_endless_stacks > 0);
         return ret;
     }
     ignore_weaken() {
@@ -4070,6 +4096,7 @@ export class GameState {
         this.players[0].ignore_decrease_atk = true;
     }
     check_for_death() {
+        //return false;
         const me = this.players[0];
         const enemy = this.players[1];
         while (me.hp <= 0 ||
@@ -4180,6 +4207,10 @@ export class GameState {
         }
     }
     trigger_random_sect_card() {
+        this.used_randomness = true;
+        //TODO: this.
+    }
+    trigger_random_unrestrained_card() {
         this.used_randomness = true;
         //TODO: this.
     }
@@ -5071,6 +5102,16 @@ export class GameState {
     random_int(n) {
         this.used_randomness = true;
         return Math.floor(Math.random() * n);
+    }
+    spirit_sword_deck_cound(max_n) {
+        const me = this.players[0];
+        let n = 0;
+        for (let i=0; i<me.cards.length; i++) {
+            if (is_spirit_sword(me.cards[i])) {
+                n += 1;
+            }
+        }
+        return Math.min(n, max_n);
     }
 }
 

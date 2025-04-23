@@ -726,7 +726,8 @@ const deps = {
     HAS_FAKE_UNRESTRAINED_SWORD: [
         "HAS_UNRESTRAINED_SWORD_CLEAR_HEART"],
     HAS_FAKE_CLOUD_SWORD: [
-        "HAS_CLOUD_SWORD_CLEAR_HEART"],
+        "HAS_CLOUD_SWORD_CLEAR_HEART",
+        "HAS_CLOUD_SWORD_ENDLESS"],
     HAS_PHYSIQUE: ["physique", "max_physique",
         "HAS_FIRMNESS_BODY",
         "HAS_ZEN_MIND_FORGING_BODY",
@@ -782,12 +783,14 @@ const deps = {
         "HAS_HEAVENLY_WILL_COMPLY",
         "HAS_HEAVENLY_WILL_DEFY"],
     INCREASE_IDX_QI_DISPATCH: [
+        "HAS_MORTAL_BODY",
         "HAS_ZONGZI_MODE",
         "HAS_COLORFUL_SPIRIT_CRANE",
         "HAS_STILLNESS_CITTA_DHARMA",
         "HAS_SPIRITUAL_DIVINATION",
         "HAS_WILD_CROSSING_SEAL",
-        "HAS_STAR_MOON_HEXAGRAM_FAN"],
+        "HAS_STAR_MOON_HEXAGRAM_FAN",
+        "HAS_SPIRITSTAT_TUNE"],
     INCREASE_IDX_DEBUFF_DISPATCH: [
         "HAS_ZONGZI_MODE",
         "HAS_GAIN_EXTRA_DEBUFF",
@@ -857,7 +860,9 @@ const deps = {
         "resonance_sky_delicate_bracelet_stacks"],
     HAS_RESONANCE_INHERITANCE_OF_SPIRIT_SWORD: [
         "resonance_inheritance_of_spirit_sword_stacks"],
-
+    HAS_SPIRITSTAT_TUNE: ["spiritstat_tune_stacks", "91302"],
+    HAS_CLOUD_SWORD_ENDLESS: ["cloud_sword_endless_stacks", "91404"],
+    HAS_HEAVENLY_WILL_EARTH_EVIL: ["heavenly_will_earth_evil_stacks", "91509"],
     
 
 

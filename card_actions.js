@@ -11319,6 +11319,39 @@ card_actions["914033"] = (game) => {
     }
 }
 
+// Cloud Sword - Endless
+card_actions["914041"] = (game) => {
+    game.continuous();
+    game.add_c_of_x(2, "cloud_sword_endless_stacks");
+}
+
+// 914042
+card_actions["914042"] = (game) => {
+    game.continuous();
+    game.add_c_of_x(3, "cloud_sword_endless_stacks");
+}
+
+// 914043
+card_actions["914043"] = (game) => {
+    game.continuous();
+    game.add_c_of_x(4, "cloud_sword_endless_stacks");
+}
+
+// Sword Spirit Sunflower
+card_actions["914051"] = (game) => {
+    game.qi(2 + game.spirit_sword_deck_cound(3));
+}
+
+// 914052
+card_actions["914052"] = (game) => {
+    game.qi(3 + game.spirit_sword_deck_cound(3));
+}
+
+// 914053
+card_actions["914053"] = (game) => {
+    game.qi(4 + game.spirit_sword_deck_cound(3));
+}
+
 // Cloud Sword - Dragon Spring
 card_actions["915011"] = (game) => {
     game.do_cloud_sword_dragon_spring(2);
@@ -11473,6 +11506,45 @@ card_actions["915072"] = (game) => {
 // 915073
 card_actions["915073"] = (game) => {
 
+}
+
+// Unrestrained Sword - Divine
+card_actions["915081"] = (game) => {
+    game.increase_idx_def(0, 4);
+    game.increase_idx_hp(0, 4);
+    game.trigger_random_unrestrained_card(1);
+}
+
+// 915082
+card_actions["915082"] = (game) => {
+    game.increase_idx_def(0, 6);
+    game.increase_idx_hp(0, 6);
+    game.trigger_random_unrestrained_card(2);
+}
+
+// 915083
+card_actions["915083"] = (game) => {
+    game.increase_idx_def(0, 8);
+    game.increase_idx_hp(0, 8);
+    game.trigger_random_unrestrained_card(3);
+}
+
+// Heavenly Will - Earth Evil
+card_actions["915091"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.add_c_of_x(1, "heavenly_will_earth_evil_stacks");
+}
+
+// 915092
+card_actions["915092"] = (game) => {
+    game.increase_idx_qi(0, 4);
+    game.add_c_of_x(1, "heavenly_will_earth_evil_stacks");
+}
+
+// 915093
+card_actions["915093"] = (game) => {
+    game.increase_idx_qi(0, 6);
+    game.add_c_of_x(1, "heavenly_will_earth_evil_stacks");
 }
 
 // Xuan-Yuan Sword
@@ -12193,6 +12265,48 @@ card_actions["944033"] = (game) => {
     game.add_c_of_x(1, "this_card_crash_fist_star_seizing_stacks");
     game.add_c_of_x(1, "crash_fist_star_seizing_stacks");
     game.atk(20);
+}
+
+// Cloud Footwork
+card_actions["944041"] = (game) => {
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_x_by_c(0, "agility", 10);
+    game.increase_idx_x_by_c(0, "ignore_def", 1);
+}
+
+// 944042
+card_actions["944042"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_x_by_c(0, "agility", 10);
+    game.increase_idx_x_by_c(0, "ignore_def", 2);
+}
+
+// 944043
+card_actions["944043"] = (game) => {
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_x_by_c(0, "agility", 10);
+    game.increase_idx_x_by_c(0, "ignore_def", 3);
+}
+
+// Spiritage And Exercise
+card_actions["944051"] = (game) => {
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_hp(0, 3);
+    game.for_each_x_up_to_c_add_y("qi", 10, "physique");
+}
+
+// 944052
+card_actions["944052"] = (game) => {
+    game.increase_idx_qi(0, 4);
+    game.increase_idx_hp(0, 4);
+    game.for_each_x_up_to_c_add_y("qi", 15, "physique");
+}
+
+// 944053
+card_actions["944053"] = (game) => {
+    game.increase_idx_qi(0, 5);
+    game.increase_idx_hp(0, 5);
+    game.for_each_x_up_to_c_add_y("qi", 20, "physique");
 }
 
 // Unceasing Universe

@@ -11081,6 +11081,47 @@
 		],
 		"marking": "fu"
 	},
+	"914041": {
+		"name": "Cloud Sword - Endless",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "cloud_sword_endless_stacks"]
+		],
+		"marking": "fm"
+	},
+	"914042": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "cloud_sword_endless_stacks"]
+		],
+		"marking": "fm"
+	},
+	"914043": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 4, "cloud_sword_endless_stacks"]
+		],
+		"marking": "fm"
+	},
+	"914051": {
+		"name": "Sword Spirit Sunflower",
+		"actions": [
+			["qi", 2]
+		],
+		"marking": "pm"
+	},
+	"914052": {
+		"actions": [
+			["qi", 3]
+		],
+		"marking": "pm"
+	},
+	"914053": {
+		"actions": [
+			["qi", 4]
+		],
+		"marking": "pm"
+	},
 	"915011": {
 		"name": "Cloud Sword - Dragon Spring",
 		"actions": ["do_cloud_sword_dragon_spring", 2],
@@ -11209,6 +11250,53 @@
 	"915073": {
 		"does_not_exist": true,
 		"actions": []
+	},
+	"915081": {
+		"name": "Unrestrained Sword - Divine",
+		"actions": [
+			["def", 4],
+			["heal", 4],
+			["trigger_random_unrestrained_card", 1]
+		],
+		"marking": "pa"
+	},
+	"915082": {
+		"actions": [
+			["def", 6],
+			["heal", 6],
+			["trigger_random_unrestrained_card", 2]
+		],
+		"marking": "pa"
+	},
+	"915083": {
+		"actions": [
+			["def", 8],
+			["heal", 8],
+			["trigger_random_unrestrained_card", 3]
+		],
+		"marking": "pa"
+	},
+	"915091": {
+		"name": "Heavenly Will - Earth Evil",
+		"actions": [
+			["qi", 2],
+			["add_c_of_x", 1, "heavenly_will_earth_evil_stacks"]
+		],
+		"marking": "ft"
+	},
+	"915092": {
+		"actions": [
+			["qi", 4],
+			["add_c_of_x", 1, "heavenly_will_earth_evil_stacks"]
+		],
+		"marking": "ft"
+	},
+	"915093": {
+		"actions": [
+			["qi", 6],
+			["add_c_of_x", 1, "heavenly_will_earth_evil_stacks"]
+		],
+		"marking": "ft"
 	},
 	"916011": {
 		"name": "Xuan-Yuan Sword",
@@ -11909,6 +11997,56 @@
 			["add_c_of_x", 1, "crash_fist_star_seizing_stacks"],
 			["atk", 20]
 		]
+	},
+	"944041": {
+		"name": "Cloud Footwork",
+		"actions": [
+			["qi", 1],
+			["agility", 10],
+			["gain_ignore_def", 1]
+		],
+		"marking": "el"
+	},
+	"944042": {
+		"actions": [
+			["qi", 2],
+			["agility", 10],
+			["gain_ignore_def", 2]
+		],
+		"marking": "el"
+	},
+	"944043": {
+		"actions": [
+			["qi", 3],
+			["agility", 10],
+			["gain_ignore_def", 3]
+		],
+		"marking": "el"
+	},
+	"944051": {
+		"name": "Spiritage And Exercise",
+		"actions": [
+			["qi", 3],
+			["heal", 3],
+			["for_each_x_up_to_c_add_y", "qi", 10, "physique"]
+		],
+		"marking": "fu"
+	},
+	"944052": {
+		"actions": [
+			["qi", 4],
+			["heal", 4],
+			["for_each_x_up_to_c_add_y", "qi", 15, "physique"]
+		],
+		"marking": "fu"
+	},
+	"944053": {
+		"actions": [
+			["qi", 5],
+			["heal", 5],
+			["for_each_x_up_to_c_add_y", "qi", 20, "physique"]
+		],
+		"marking": "fu"
 	},
 	"945011": {
 		"name": "Unceasing Universe",
