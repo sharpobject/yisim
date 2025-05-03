@@ -1815,7 +1815,7 @@
 		]
 	},
 	"124071": {
-		"name": "Thunder And Lightning",
+		"name": "Thunder And Lighting",
 		"actions": [
 			["do_thunder_and_lightning", 10]
 		]
@@ -4667,7 +4667,7 @@
 		]
 	},
 	"216011": {
-		"name": "Remnant Cloud Phocosky Sword",
+		"name": "Remnant Cloud Sky Sealing Sword",
 		"qi_cost": 1,
 		"actions": [
 			["for_each_x_add_c_y", "cloud_sword_hand_count", 8, "bonus_atk_amt"],

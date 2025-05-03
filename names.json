@@ -469,8 +469,9 @@
     },
     {
         "id": 124071,
-        "name": "Thunder And Lightning",
-        "namecn": "轰雷掣电"
+        "name": "Thunder And Lighting",
+        "namecn": "轰雷掣电",
+        "namealta": "Thunder And Lightning"
     },
     {
         "id": 124081,
@@ -1105,8 +1106,9 @@
     },
     {
         "id": 216011,
-        "name": "Remnant Cloud Phocosky Sword",
-        "namecn": "残云封天剑"
+        "name": "Remnant Cloud Sky Sealing Sword",
+        "namecn": "残云封天剑",
+        "namealta": "Remnant Cloud Phocosky Sword"
     },
     {
         "id": 216021,
