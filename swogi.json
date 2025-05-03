@@ -11426,6 +11426,28 @@
 			["add_enemy_c_of_x", 14, "thunderbolt_tune_stacks"]
 		]
 	},
+	"924041": {
+		"name": "Fleeting Glimpse",
+		"actions": [],
+		"marking": "pa"
+	},
+	"924042": {
+		"actions": []
+	},
+	"924043": {
+		"actions": []
+	},
+	"924051": {
+		"name": "Yin Yang Tutelary Formation",
+		"actions": [],
+		"marking": "fm"
+	},
+	"924052": {
+		"actions": []
+	},
+	"924053": {
+		"actions": []
+	},
 	"925011": {
 		"name": "Ultimate Polaris Hexagram Base",
 		"actions": [
@@ -11652,6 +11674,17 @@
 			["add_c_of_x", 4, "kun_wu_molten_ring_stacks"]
 		]
 	},
+	"933021": {
+		"name": "Fire Spirit - Blazing Flame",
+		"actions": [],
+		"marking": "fu"
+	},
+	"933022": {
+		"actions": []
+	},
+	"933023": {
+		"actions": []
+	},
 	"934011": {
 		"name": "Harmony of Water and Fire",
 		"actions": [
@@ -11699,6 +11732,28 @@
 			["atk", 8],
 			["metal_spirit", ["chase"]]
 		]
+	},
+	"934031": {
+		"name": "Wood Spirit Forceage Formation",
+		"actions": [],
+		"marking": "fm"
+	},
+	"934032": {
+		"actions": []
+	},
+	"934033": {
+		"actions": []
+	},
+	"934041": {
+		"name": "Water Spirit - Continuous Flow",
+		"actions": [],
+		"marking": "ft"
+	},
+	"934042": {
+		"actions": []
+	},
+	"934043": {
+		"actions": []
 	},
 	"935011": {
 		"name": "Heavenly Marrow Gourd",
@@ -11818,6 +11873,17 @@
 		"actions": []
 	},
 	"935061": {
+		"name": "Five Elements Guard",
+		"actions": [],
+		"marking": "el"
+	},
+	"935062": {
+		"actions": []
+	},
+	"935063": {
+		"actions": []
+	},
+	"935071": {
 		"name": "Heavenly Marrow Dance Tune",
 		"actions": [
 			["continuous"],
@@ -11825,9 +11891,10 @@
 			["add_enemy_c_of_x", 2, "increase_atk"],
 			["add_c_of_x", 1, "heavenly_marrow_dance_tune_stacks"],
 			["add_enemy_c_of_x", 1, "heavenly_marrow_dance_tune_stacks"]
-		]
+		],
+		"marking": "mu"
 	},
-	"935062": {
+	"935072": {
 		"actions": [
 			["continuous"],
 			["add_c_of_x", 3, "increase_atk"],
@@ -11836,7 +11903,7 @@
 			["add_enemy_c_of_x", 1, "heavenly_marrow_dance_tune_stacks"]
 		]
 	},
-	"935063": {
+	"935073": {
 		"actions": [
 			["continuous"],
 			["add_c_of_x", 4, "increase_atk"],
@@ -11845,16 +11912,17 @@
 			["add_enemy_c_of_x", 1, "heavenly_marrow_dance_tune_stacks"]
 		]
 	},
-	"935071": {
+	"935081": {
 		"name": "Cosmos Brush",
 		"actions": [
 			["increase_idx_qi", 0, 2],
 			["increase_idx_def", 0, 2],
 			["activate_next_slots", 1],
 			["chase"]
-		]
+		],
+		"marking": "pa"
 	},
-	"935072": {
+	"935082": {
 		"actions": [
 			["increase_idx_qi", 0, 3],
 			["increase_idx_def", 0, 4],
@@ -11862,13 +11930,24 @@
 			["chase"]
 		]
 	},
-	"935073": {
+	"935083": {
 		"actions": [
 			["increase_idx_qi", 0, 4],
 			["increase_idx_def", 0, 6],
 			["activate_next_slots", 1],
 			["chase"]
 		]
+	},
+	"935091": {
+		"name": "Five Elements Spiritual Field",
+		"actions": [],
+		"marking": "pm"
+	},
+	"935092": {
+		"actions": []
+	},
+	"935093": {
+		"actions": []
 	},
 	"936011": {
 		"name": "Kunlun Mirror",
@@ -12048,6 +12127,28 @@
 		],
 		"marking": "fu"
 	},
+	"944061": {
+		"name": "Continuous Tune",
+		"actions": [],
+		"marking": "mu"
+	},
+	"944062": {
+		"actions": []
+	},
+	"944063": {
+		"actions": []
+	},
+	"944071": {
+		"name": "Mystic Snowdrop",
+		"actions": [],
+		"marking": "pm"
+	},
+	"944072": {
+		"actions": []
+	},
+	"944073": {
+		"actions": []
+	},
 	"945011": {
 		"name": "Unceasing Universe",
 		"qi_cost": 2,
@@ -12125,6 +12226,39 @@
 	},
 	"945043": {
 		"does_not_exist": true,
+		"actions": []
+	},
+	"945051": {
+		"name": "Exercise To The Utmost",
+		"actions": [],
+		"marking": "pa"
+	},
+	"945052": {
+		"actions": []
+	},
+	"945053": {
+		"actions": []
+	},
+	"945061": {
+		"name": "Force Spiritage Formation",
+		"actions": [],
+		"marking": "fm"
+	},
+	"945062": {
+		"actions": []
+	},
+	"945063": {
+		"actions": []
+	},
+	"945071": {
+		"name": "Heavenly Will - Seizing",
+		"actions": [],
+		"marking": "ft"
+	},
+	"945072": {
+		"actions": []
+	},
+	"945073": {
 		"actions": []
 	},
 	"946011": {
