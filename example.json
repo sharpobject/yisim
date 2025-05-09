@@ -1,41 +1,42 @@
 {
-"permute_a": false,
-"permute_b": false,
-"a_first": true,
-"limit_consumption": true,
-
-"a": {
-"cultivation": 100,
-"hp": 110,
-"physique": 0,
-"max_physique": 0,
-"birdie_wind_stacks": 1,
-"cards": [
-"hunter hunting hunter 2",
-"escape plan 3",
-"great spirit 2",
-"echo formation",
-"normal attack",
-"normal attack",
-"echo formation 2",
-"only traces 2"
-]},
-
-"b": {
-"cultivation": 80,
-"hp": 110,
-"physique": 80,
-"max_physique": 85,
-"cards": [
-"heavenly forceage 3",
-"break pots and sink boats",
-"meru formation 3",
-"normal attack",
-"normal attack",
-"normal attack",
-"exercise soul 3",
-"exercise soul 2"
-]},
-
-"comment": "TODO implement speed comparison and let a_first be null"
-}
+    "permute_a": false,
+    "permute_b": false,
+    "a_first": true,
+    "limit_consumption": true,
+    
+    "a": {
+    "cultivation": 100,
+    "hp": 110,
+    "physique": 0,
+    "max_physique": 0,
+    "birdie_wind_stacks": 1,
+    "cards": [
+    "hunter hunting hunter 2",
+    "escape plan 3",
+    "great spirit 2",
+    "echo formation",
+    "normal attack",
+    "normal attack",
+    "echo formation 2",
+    "only traces 2"
+    ]},
+    
+    "b": {
+    "cultivation": 80,
+    "hp": 110,
+    "physique": 80,
+    "max_physique": 85,
+    "cards": [
+    "heavenly forceage 3",
+    "break pots and sink boats",
+    "meru formation 3",
+    "normal attack",
+    "normal attack",
+    "normal attack",
+    "exercise soul 3",
+    "exercise soul 2"
+    ]},
+    
+    "comment": "TODO implement speed comparison and let a_first be null"
+    }
+    

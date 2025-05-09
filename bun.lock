@@ -1,0 +1,14 @@
+{
+  "lockfileVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "sword-girls-anime-online-card-game",
+      "dependencies": {
+        "@leeoniya/ufuzzy": "1.0.14",
+      },
+    },
+  },
+  "packages": {
+    "@leeoniya/ufuzzy": ["@leeoniya/ufuzzy@1.0.14", "", {}, "sha512-/xF4baYuCQMo+L/fMSUrZnibcu0BquEGnbxfVPiZhs/NbJeKj4c/UmFpQzW9Us0w45ui/yYW3vyaqawhNYsTzA=="],
+  }
+}
