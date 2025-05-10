@@ -1679,6 +1679,11 @@
         "namecn": "硬枝竹"
     },
     {
+        "id": 362021,
+        "name": "Mystery Seed",
+        "namecn": "神秘种子"
+    },
+    {
         "id": 362031,
         "name": "Leaf Shield Flower",
         "namecn": "叶盾花"
@@ -1992,6 +1997,81 @@
         "namecn": "普通攻击"
     },
     {
+        "id": 603011,
+        "name": "Demonic Qi Haunt",
+        "namecn": "魔气缠身"
+    },
+    {
+        "id": 603021,
+        "name": "Magic Dragon's Paw",
+        "namecn": "魔龙之爪"
+    },
+    {
+        "id": 605011,
+        "name": "Mirroring Merpeople Pearl",
+        "namecn": "镜像鲛珠"
+    },
+    {
+        "id": 605021,
+        "name": "Qi-gathering Merpeople Pearl",
+        "namecn": "聚灵鲛珠"
+    },
+    {
+        "id": 605031,
+        "name": "Frenzied Merpeople Pearl",
+        "namecn": "狂化鲛珠"
+    },
+    {
+        "id": 605041,
+        "name": "Bewildering Merpeople Pearl",
+        "namecn": "迷惘鲛珠"
+    },
+    {
+        "id": 605051,
+        "name": "Crystallized Merpeople Pearl",
+        "namecn": "结晶鲛珠"
+    },
+    {
+        "id": 605061,
+        "name": "Cursed Merpeople Pearl",
+        "namecn": "魔化鲛珠"
+    },
+    {
+        "id": 605071,
+        "name": "Abyssal Merpeople Pearl",
+        "namecn": "深渊鲛珠"
+    },
+    {
+        "id": 605081,
+        "name": "Multicolored Merpeople Pearl",
+        "namecn": "五彩鲛珠"
+    },
+    {
+        "id": 605091,
+        "name": "Sneak Merpeople Pearl",
+        "namecn": "潜袭鲛珠"
+    },
+    {
+        "id": 605101,
+        "name": "Blood-cultivated Merpeople Pearl",
+        "namecn": "血修鲛珠"
+    },
+    {
+        "id": 606011,
+        "name": "Demonic Qi Burst",
+        "namecn": "魔气爆发"
+    },
+    {
+        "id": 606021,
+        "name": "Demonic Dragon's Chaotic Dance",
+        "namecn": "魔龙乱舞"
+    },
+    {
+        "id": 606031,
+        "name": "Loong",
+        "namecn": "龙"
+    },
+    {
         "id": 611011,
         "name": "Cloud Sword - Flying Sand",
         "namecn": "云剑·飞砂"
@@ -2035,6 +2115,11 @@
         "id": 615021,
         "name": "Sky Delicate Bracelet",
         "namecn": "九霄玲珑镯"
+    },
+    {
+        "id": 615031,
+        "name": "Yeying Sword Formation",
+        "namecn": "曳影剑阵"
     },
     {
         "id": 621011,
@@ -2122,6 +2207,11 @@
         "namecn": "土灵·山崩"
     },
     {
+        "id": 641011,
+        "name": "Double Stick",
+        "namecn": "双截棍"
+    },
+    {
         "id": 642011,
         "name": "Unceasing Exercising",
         "namecn": "锻体不息"
@@ -2130,6 +2220,11 @@
         "id": 642021,
         "name": "Overwhelming Power",
         "namecn": "盛气凌人"
+    },
+    {
+        "id": 642031,
+        "name": "Counter Move",
+        "namecn": "拆招"
     },
     {
         "id": 643011,
@@ -2148,11 +2243,26 @@
         "namecn": "冥心入玄"
     },
     {
+        "id": 644031,
+        "name": "Shift Stance",
+        "namecn": "转势"
+    },
+    {
         "id": 645011,
         "name": "Styx Moon's Glow",
         "namecn": "冥月蟾光",
         "namealta": "Stygian Moon's Changuang",
         "namealtb": "Stygian Moon's Glow"
+    },
+    {
+        "id": 645021,
+        "name": "Wan Xuan Demon Breaking Palm",
+        "namecn": "万玄破魔掌"
+    },
+    {
+        "id": 645031,
+        "name": "Red Gold Dragon Stick",
+        "namecn": "赤金盘龙棍"
     },
     {
         "id": 652011,
@@ -2198,6 +2308,11 @@
         "id": 725021,
         "name": "Water Drop Erosion",
         "namecn": "滴水穿石"
+    },
+    {
+        "id": 733011,
+        "name": "Water Spirit - Leisurely",
+        "namecn": "水灵·悠然"
     },
     {
         "id": 734011,
@@ -2340,8 +2455,414 @@
         "name": "Shura Zongzi"
     },
     {
+        "id": 903011,
+        "name": "Xuanming Recurring",
+        "namecn": "玄冥重现"
+    },
+    {
+        "id": 904011,
+        "name": "Xuanming Recover Elixir",
+        "namecn": "玄冥大还丹"
+    },
+    {
+        "id": 904021,
+        "name": "Xuanming Regen Tune",
+        "namecn": "玄冥回春曲"
+    },
+    {
+        "id": 904031,
+        "name": "Xuanming Clouds",
+        "namecn": "玄冥云烟"
+    },
+    {
+        "id": 904041,
+        "name": "Xuanming Forceage Formation",
+        "namecn": "玄冥聚力阵"
+    },
+    {
+        "id": 904051,
+        "name": "Xuanming Snowdrop",
+        "namecn": "玄冥雪莲"
+    },
+    {
+        "id": 905011,
+        "name": "Xuanming Requiem Fulu",
+        "namecn": "玄冥镇魂符"
+    },
+    {
+        "id": 906001,
+        "name": "Crimson Star",
+        "namecn": "赤贯星"
+    },
+    {
         "id": 906011,
         "name": "Nüwa Stone",
+        "namecn": "女娲石",
         "namealta": "Nuwa Stone"
+    },
+    {
+        "id": 906021,
+        "name": "Haotian Pagoda",
+        "namecn": "昊天塔"
+    },
+    {
+        "id": 906031,
+        "name": "Fuxi Guqin",
+        "namecn": "伏羲琴"
+    },
+    {
+        "id": 906041,
+        "name": "Kongtong Seal",
+        "namecn": "崆峒印"
+    },
+    {
+        "id": 906051,
+        "name": "Donghuang Zhong",
+        "namecn": "东皇钟"
+    },
+    {
+        "id": 906061,
+        "name": "Shennong Ding",
+        "namecn": "神农鼎"
+    },
+    {
+        "id": 906071,
+        "name": "Spirit Fusion Pot",
+        "namecn": "炼妖壶"
+    },
+    {
+        "id": 913011,
+        "name": "Unrestrained Sword - Nebula Cloud",
+        "namecn": "狂剑·星云"
+    },
+    {
+        "id": 913021,
+        "name": "Spiritstat Tune",
+        "namecn": "御灵曲"
+    },
+    {
+        "id": 914011,
+        "name": "Unrestrained Sword - Cat Claw",
+        "namecn": "狂剑·猫爪"
+    },
+    {
+        "id": 914021,
+        "name": "Contemplate Spirits Vitality Rhythm",
+        "namecn": "凝意生机诀"
+    },
+    {
+        "id": 914031,
+        "name": "Cloud Sword - Clarity",
+        "namecn": "云剑·空明"
+    },
+    {
+        "id": 914041,
+        "name": "Cloud Sword - Endless",
+        "namecn": "云剑·周天"
+    },
+    {
+        "id": 914051,
+        "name": "Sword Spirit Sunflower",
+        "namecn": "剑灵葵"
+    },
+    {
+        "id": 915011,
+        "name": "Cloud Sword - Dragon Spring",
+        "namecn": "云剑·龙泉"
+    },
+    {
+        "id": 915021,
+        "name": "Cloud Sword - Flying Snow Shade",
+        "namecn": "云剑·雪影飞"
+    },
+    {
+        "id": 915031,
+        "name": "CentiBird Delicate Bracelet",
+        "namecn": "百鸟玲珑镯"
+    },
+    {
+        "id": 915041,
+        "name": "Clear Heart Sword Formation",
+        "namecn": "澄心剑阵"
+    },
+    {
+        "id": 915051,
+        "name": "Cloud Sword - Starry Sky",
+        "namecn": "云剑·星空"
+    },
+    {
+        "id": 915061,
+        "name": "Xuanming Sword Intent Mantra",
+        "namecn": "玄冥剑意诀"
+    },
+    {
+        "id": 915071,
+        "name": "Shen Jian Ao Zhou",
+        "namecn": "神剑傲州"
+    },
+    {
+        "id": 915081,
+        "name": "Unrestrained Sword - Divine",
+        "namecn": "狂剑·降神"
+    },
+    {
+        "id": 915091,
+        "name": "Heavenly Will - Earth Evil",
+        "namecn": "天机·地煞"
+    },
+    {
+        "id": 916011,
+        "name": "Xuan-Yuan Sword",
+        "namecn": "轩辕剑"
+    },
+    {
+        "id": 922011,
+        "name": "Astral Move - Extend",
+        "namecn": "星弈·拆"
+    },
+    {
+        "id": 923011,
+        "name": "Traces Revitalized",
+        "namecn": "瑞雪迎春"
+    },
+    {
+        "id": 924011,
+        "name": "Suspicious Flame Flutter",
+        "namecn": "灯影蚀焰"
+    },
+    {
+        "id": 924021,
+        "name": "Thousand Star Explosion",
+        "namecn": "千星天爆"
+    },
+    {
+        "id": 924031,
+        "name": "Thunderbolt Tune",
+        "namecn": "春雷霹雳曲"
+    },
+    {
+        "id": 924041,
+        "name": "Fleeting Glimpse",
+        "namecn": "浮光掠影"
+    },
+    {
+        "id": 924051,
+        "name": "Yin Yang Tutelary Formation",
+        "namecn": "两仪金刚阵"
+    },
+    {
+        "id": 925011,
+        "name": "Ultimate Polaris Hexagram Base",
+        "namecn": "天元无极盘"
+    },
+    {
+        "id": 925021,
+        "name": "Star Moon Hexagram Fan",
+        "namecn": "星月六爻扇"
+    },
+    {
+        "id": 925031,
+        "name": "Great Galaxy",
+        "namecn": "气吞星河"
+    },
+    {
+        "id": 925041,
+        "name": "Xuanming Thundercloud Tribulation",
+        "namecn": "玄冥雷云劫"
+    },
+    {
+        "id": 925051,
+        "name": "Die Ling Shen Ying",
+        "namecn": "蝶灵神影"
+    },
+    {
+        "id": 925061,
+        "name": "Spiritual Hunter",
+        "namecn": "灵雀在后"
+    },
+    {
+        "id": 925071,
+        "name": "Hexagrams Generating Evils",
+        "namecn": "卦衍万邪"
+    },
+    {
+        "id": 925081,
+        "name": "Entangling Thornbush",
+        "namecn": "缚仙棘"
+    },
+    {
+        "id": 925091,
+        "name": "Astral Move - Jump",
+        "namecn": "星弈·跳"
+    },
+    {
+        "id": 926011,
+        "name": "Heavenly Maiden White Jade Ring",
+        "namecn": "天女白玉轮"
+    },
+    {
+        "id": 932011,
+        "name": "Cosmos Fleche",
+        "namecn": "浑星刺"
+    },
+    {
+        "id": 933011,
+        "name": "Kun Wu Molten Ring",
+        "namecn": "锟铻熔火环"
+    },
+    {
+        "id": 933021,
+        "name": "Fire Spirit - Blazing Flame",
+        "namecn": "火灵·耀炎"
+    },
+    {
+        "id": 934011,
+        "name": "Harmony of Water and Fire",
+        "namecn": "水火交融"
+    },
+    {
+        "id": 934021,
+        "name": "Metal Spirit - Meteor",
+        "namecn": "金灵·流星"
+    },
+    {
+        "id": 934031,
+        "name": "Wood Spirit Forceage Formation",
+        "namecn": "木灵天罡阵"
+    },
+    {
+        "id": 934041,
+        "name": "Water Spirit - Continuous Flow",
+        "namecn": "水灵·川流"
+    },
+    {
+        "id": 935011,
+        "name": "Heavenly Marrow Gourd",
+        "namecn": "天髓葫芦"
+    },
+    {
+        "id": 935021,
+        "name": "Ultimate Overcome Formation",
+        "namecn": "混元逆克阵"
+    },
+    {
+        "id": 935031,
+        "name": "Wood Spirit - All Things Grow",
+        "namecn": "木灵·万物生"
+    },
+    {
+        "id": 935041,
+        "name": "Xuanming Heavenly Essence Destruction",
+        "namecn": "玄冥天髓灭"
+    },
+    {
+        "id": 935051,
+        "name": "Pi Yun Zhui Yue",
+        "namecn": "披云追月"
+    },
+    {
+        "id": 935061,
+        "name": "Five Elements Guard",
+        "namecn": "五行护身"
+    },
+    {
+        "id": 935071,
+        "name": "Heavenly Marrow Dance Tune",
+        "namecn": "天髓狂舞曲"
+    },
+    {
+        "id": 935081,
+        "name": "Cosmos Brush",
+        "namecn": "浑天运笔"
+    },
+    {
+        "id": 935091,
+        "name": "Five Elements Spiritual Field",
+        "namecn": "五行灵田"
+    },
+    {
+        "id": 936011,
+        "name": "Kunlun Mirror",
+        "namecn": "昆仑镜"
+    },
+    {
+        "id": 943011,
+        "name": "Star Sky Forge Bone",
+        "namecn": "星辰锻骨诀"
+    },
+    {
+        "id": 944011,
+        "name": "Styx Night Footwork",
+        "namecn": "冥夜迷踪步"
+    },
+    {
+        "id": 944021,
+        "name": "Crash Fist - Return to Xuan",
+        "namecn": "崩拳·返玄"
+    },
+    {
+        "id": 944031,
+        "name": "Crash Fist - Star Seizing",
+        "namecn": "崩拳·夺星"
+    },
+    {
+        "id": 944041,
+        "name": "Cloud Footwork",
+        "namecn": "踏鹤飞云"
+    },
+    {
+        "id": 944051,
+        "name": "Spiritage And Exercise",
+        "namecn": "灵气锻身"
+    },
+    {
+        "id": 944061,
+        "name": "Continuous Tune",
+        "namecn": "逍遥连音曲"
+    },
+    {
+        "id": 944071,
+        "name": "Mystic Snowdrop",
+        "namecn": "玄域雪莲"
+    },
+    {
+        "id": 945011,
+        "name": "Unceasing Universe",
+        "namecn": "浩荡不息"
+    },
+    {
+        "id": 945021,
+        "name": "Soul Overwhelming Palm",
+        "namecn": "玄心盛气掌"
+    },
+    {
+        "id": 945031,
+        "name": "Xuanming Boundary-Breaking Palms",
+        "namecn": "玄冥破境掌"
+    },
+    {
+        "id": 945041,
+        "name": "Jiu Qi Po Xiao",
+        "namecn": "九气破霄"
+    },
+    {
+        "id": 945051,
+        "name": "Exercise To The Utmost",
+        "namecn": "锻龙诀"
+    },
+    {
+        "id": 945061,
+        "name": "Force Spiritage Formation",
+        "namecn": "势灵阵"
+    },
+    {
+        "id": 945071,
+        "name": "Heavenly Will - Seizing",
+        "namecn": "天机·返蛊"
+    },
+    {
+        "id": 946011,
+        "name": "Pangu Axe",
+        "namecn": "盘古斧"
     }
 ]

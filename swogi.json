@@ -7336,7 +7336,7 @@
 		]
 	},
 	"371011": {
-		"name": "God Saying - Attack",
+		"name": "Heavenly Decree - Attack",
 		"actions": [
 			["atk", 6],
 			["def", 3],
@@ -7358,7 +7358,7 @@
 		]
 	},
 	"371021": {
-		"name": "God Saying - Defend",
+		"name": "Heavenly Decree - Defend",
 		"actions": [
 			["atk", 2],
 			["def", 9],
@@ -7380,7 +7380,7 @@
 		]
 	},
 	"371031": {
-		"name": "Learn Fortune",
+		"name": "Foretell Fate",
 		"actions": [
 			["reduce_enemy_c_of_x", 6, "hp"]
 		],
@@ -7405,7 +7405,7 @@
 		]
 	},
 	"371041": {
-		"name": "Observe Body",
+		"name": "Examine Body",
 		"actions": [
 			["add_c_of_x", 5, "observe_body_stacks"]
 		],
@@ -7430,7 +7430,7 @@
 		]
 	},
 	"372011": {
-		"name": "God Luck - Approach",
+		"name": "Heavenly Fortune - Seek Fortune",
 		"actions": [
 			["continuous"],
 			["add_c_of_x", 2, "god_luck_approach_stacks"]
@@ -7449,7 +7449,7 @@
 		]
 	},
 	"372021": {
-		"name": "God Luck - Avoid",
+		"name": "Heavenly Fortune - Shun Misfortune",
 		"actions": [
 			["continuous"],
 			["add_c_of_x", 2, "god_luck_avoid_stacks"]
@@ -7521,7 +7521,7 @@
 		]
 	},
 	"373011": {
-		"name": "God Fate - Flies",
+		"name": "Heavenly Time - Fleeting",
 		"actions": [
 			["def", 6],
 			["add_c_of_x", 2, "skip_next_card_stacks"],
@@ -7543,7 +7543,7 @@
 		]
 	},
 	"373021": {
-		"name": "God Fate - Reborn",
+		"name": "Heavenly Time - Recurring",
 		"actions": [
 			["heal", 4],
 			["add_c_of_x", 1, "skip_to_previous_card_stacks"],
@@ -7590,7 +7590,7 @@
 		]
 	},
 	"373041": {
-		"name": "Good Omen",
+		"name": "Lucky Start",
 		"actions": [
 			["heal", 7]
 		],
@@ -7618,7 +7618,7 @@
 		]
 	},
 	"374011": {
-		"name": "Everything Goes Way",
+		"name": "Everything Goes Your Way",
 		"actions": [
 			["add_c_of_x", 3, "everything_goes_way_stacks"]
 		],
@@ -7643,7 +7643,7 @@
 		]
 	},
 	"374021": {
-		"name": "God Star - Promotion",
+		"name": "Heavenly Star - Guard",
 		"actions": [
 			["def", 4],
 			["heal", 4],
@@ -7665,7 +7665,7 @@
 		]
 	},
 	"374031": {
-		"name": "God Star - Traction",
+		"name": "Heavenly Star - Pull",
 		"actions": [
 			["qi", 2],
 			["retrigger_next_opening", 1, 2, 1]
@@ -7684,7 +7684,7 @@
 		]
 	},
 	"374041": {
-		"name": "Nothing Is Appropriate",
+		"name": "Everything is Unadvisable",
 		"actions": [
 			["def", 4],
 			["add_enemy_c_of_x", 2, "nothing_is_appropriate_stacks"]
@@ -7712,7 +7712,7 @@
 		]
 	},
 	"375011": {
-		"name": "Calamity Plaguin",
+		"name": "Envelop In Disaster",
 		"qi_cost": 1,
 		"actions": [
 			["add_enemy_c_of_x", 4, "internal_injury"]
@@ -7738,7 +7738,7 @@
 		]
 	},
 	"375021": {
-		"name": "Fate Reincarnates",
+		"name": "Cycle of Fate",
 		"actions": [
 			["add_c_of_x", 8, "max_hp"],
 			["heal", 8],
@@ -7763,7 +7763,7 @@
 		]
 	},
 	"375031": {
-		"name": "God's Opportunity - Conform",
+		"name": "Heavenly Will - Comply",
 		"actions": [
 			["qi", 2],
 			["add_c_of_x", 3, "god_opportunity_conform_stacks"]
@@ -7782,7 +7782,7 @@
 		]
 	},
 	"375041": {
-		"name": "God's Opportunity - Reversal",
+		"name": "Heavenly Will - Defy",
 		"actions": [
 			["qi", 2],
 			["add_c_of_x", 3, "god_opportunity_reversal_stacks"]
@@ -8921,6 +8921,17 @@
 			["chase"]
 		]
 	},
+	"615031": {
+		"name": "Yeying Sword Formation",
+		"actions": [],
+		"character": "sw6"
+	},
+	"615032": {
+		"actions": []
+	},
+	"615033": {
+		"actions": []
+	},
 	"621011": {
 		"name": "Perfectly Planned",
 		"actions": [
@@ -9246,44 +9257,6 @@
 			["if_x_at_least_c_do", "activate_water_spirit_stacks", 1, ["chase"]]
 		]
 	},
-	"633031": {
-		"name": "Water Spirit - Leisurely",
-		"actions": [
-			["qi", 2],
-			["add_c_of_x", 3, "max_hp"],
-			["heal", 3],
-			["if_x_at_least_c_do", "activate_wood_spirit_stacks", 1, ["chase"]],
-			["if_x_at_least_c_do", "activate_fire_spirit_stacks", 1, ["chase"]],
-			["if_x_at_least_c_do", "activate_earth_spirit_stacks", 1, ["chase"]],
-			["if_x_at_least_c_do", "activate_metal_spirit_stacks", 1, ["chase"]],
-			["if_x_at_least_c_do", "activate_water_spirit_stacks", 1, ["chase"]]
-		],
-		"character": "fe1"
-	},
-	"633032": {
-		"actions": [
-			["qi", 3],
-			["add_c_of_x", 6, "max_hp"],
-			["heal", 6],
-			["if_x_at_least_c_do", "activate_wood_spirit_stacks", 1, ["chase"]],
-			["if_x_at_least_c_do", "activate_fire_spirit_stacks", 1, ["chase"]],
-			["if_x_at_least_c_do", "activate_earth_spirit_stacks", 1, ["chase"]],
-			["if_x_at_least_c_do", "activate_metal_spirit_stacks", 1, ["chase"]],
-			["if_x_at_least_c_do", "activate_water_spirit_stacks", 1, ["chase"]]
-		]
-	},
-	"633033": {
-		"actions": [
-			["qi", 4],
-			["add_c_of_x", 9, "max_hp"],
-			["heal", 9],
-			["if_x_at_least_c_do", "activate_wood_spirit_stacks", 1, ["chase"]],
-			["if_x_at_least_c_do", "activate_fire_spirit_stacks", 1, ["chase"]],
-			["if_x_at_least_c_do", "activate_earth_spirit_stacks", 1, ["chase"]],
-			["if_x_at_least_c_do", "activate_metal_spirit_stacks", 1, ["chase"]],
-			["if_x_at_least_c_do", "activate_water_spirit_stacks", 1, ["chase"]]
-		]
-	},
 	"634011": {
 		"name": "Metal Spirit - Vigorous",
 		"actions": [
@@ -9368,6 +9341,17 @@
 			["do_earth_spirit_landslide", 15, 4]
 		]
 	},
+	"641011": {
+		"name": "Double Stick",
+		"actions": [],
+		"character": "dx5"
+	},
+	"641012": {
+		"actions": []
+	},
+	"641013": {
+		"actions": []
+	},
 	"642011": {
 		"name": "Unceasing Exercising",
 		"actions": [
@@ -9414,6 +9398,17 @@
 			["continuous"],
 			["add_c_of_x", 2, "overwhelming_power_stacks"]
 		]
+	},
+	"642031": {
+		"name": "Counter Move",
+		"actions": [],
+		"character": "dx5"
+	},
+	"642032": {
+		"actions": []
+	},
+	"642033": {
+		"actions": []
 	},
 	"643011": {
 		"name": "Gone Crazy",
@@ -9463,7 +9458,7 @@
 		]
 	},
 	"644011": {
-		"name": "Crash Fist - Stygian Night",
+		"name": "Crash Fist - Styx Night",
 		"actions": [
 			["add_c_of_x", 2, "styx"],
 			["continuous"],
@@ -9535,7 +9530,7 @@
 		]
 	},
 	"645011": {
-		"name": "Stygian Moon's Changuang",
+		"name": "Styx Moon's Glow",
 		"actions": [
 			["physique", 1],
 			["add_c_of_x", 2, "styx"],
@@ -9786,6 +9781,44 @@
 			["atk", 1],
 			["if_enemy_has_debuff_do", ["chase"]],
 			["post_action", ["add_enemy_c_of_x", 10, "internal_injury"]]
+		]
+	},
+	"733011": {
+		"name": "Water Spirit - Leisurely",
+		"actions": [
+			["qi", 2],
+			["add_c_of_x", 3, "max_hp"],
+			["heal", 3],
+			["if_x_at_least_c_do", "activate_wood_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_fire_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_earth_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_metal_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_water_spirit_stacks", 1, ["chase"]]
+		],
+		"character": "fe1"
+	},
+	"733012": {
+		"actions": [
+			["qi", 3],
+			["add_c_of_x", 6, "max_hp"],
+			["heal", 6],
+			["if_x_at_least_c_do", "activate_wood_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_fire_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_earth_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_metal_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_water_spirit_stacks", 1, ["chase"]]
+		]
+	},
+	"733013": {
+		"actions": [
+			["qi", 4],
+			["add_c_of_x", 9, "max_hp"],
+			["heal", 9],
+			["if_x_at_least_c_do", "activate_wood_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_fire_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_earth_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_metal_spirit_stacks", 1, ["chase"]],
+			["if_x_at_least_c_do", "activate_water_spirit_stacks", 1, ["chase"]]
 		]
 	},
 	"734011": {
