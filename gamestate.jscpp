@@ -1678,6 +1678,7 @@ export class Player {
         this.qi_gathering_merpeople_pearl_stacks = 0;
 #endif // HAS_QI_GATHERING_MERPEOPLE_PEARL
 #ifdef HAS_CRYSTALLIZED_MERPEOPLE_PEARL
+        //TODO: implement crystallized_merpeople_pearl_stacks
         this.crystallized_merpeople_pearl_stacks = 0;
 #endif // HAS_CRYSTALLIZED_MERPEOPLE_PEARL
 
@@ -4289,14 +4290,6 @@ export class GameState {
             this.advance_next_card_index();
         }
 #endif // HAS_SKIP_NEXT_CARD
-#ifdef HAS_CYCLE_OF_FATE
-        while (me.fate_reincarnates_stacks > 0 &&
-                (me.next_card_index === 3 || me.next_card_index === 4)) {
-            this.reduce_idx_x_by_c(0, "fate_reincarnates_stacks", 1);
-            this.do_opening(me.next_card_index);
-            this.advance_next_card_index();
-        }
-#endif // HAS_CYCLE_OF_FATE
 #ifdef HAS_ASTRAL_MOVE_JUMP
         const jump_amt = me.astral_move_jump_stacks;
         if (jump_amt > 0) {
@@ -4319,6 +4312,14 @@ export class GameState {
             }
         };
 #endif // HAS_ASTRAL_MOVE_JUMP
+#ifdef HAS_CYCLE_OF_FATE
+        while (me.fate_reincarnates_stacks > 0 &&
+                (me.next_card_index === 3 || me.next_card_index === 4)) {
+            this.reduce_idx_x_by_c(0, "fate_reincarnates_stacks", 1);
+            this.do_opening(me.next_card_index);
+            this.advance_next_card_index();
+        }
+#endif // HAS_CYCLE_OF_FATE
     }
     sim_turn() {
         const me = this.players[0];
