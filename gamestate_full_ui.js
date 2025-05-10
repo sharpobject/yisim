@@ -1081,22 +1081,20 @@ export class GameState {
         console.log(this.output.join("\n"));
     }
     log(str) {
-        let result = str;
+        let result = str.replace(/_/g, ' ');
         if (this.l.lang === 'cn') {
 
-            const cardPattern = new RegExp(names_json.map(item => item.name).join("|"), "g");
-    
-            result = str.replace(cardPattern, match => {
-              return names_json.find(item => item.name === match)?.namecn || match;
+            const cardPattern = new RegExp(names_json.map(item => item.name).join("|"), "gi");
+            result = result.replace(cardPattern, match => {
+              return names_json.find(item => item.name.toLowerCase() === match.toLowerCase())?.namecn || match;
             });
 
-            const otherPattern = new RegExp(Object.keys(this.l.cn).join("|"), "g");
-    
-            result = str.replace(otherPattern, match => {
-              return this.l.cn[match] || match;
+            const pattern = new RegExp(Object.keys(this.l.cn).join("|"), "gi");
+            result = result.replace(pattern, match => {
+              return this.l.cn[match.toLowerCase()] || match;
             });
         }
-        console.log(this.indentation + result)
+        
         this.output.push(this.indentation + result);
     }
     indent() {
@@ -1512,7 +1510,7 @@ export class GameState {
             }
             this.unindent();
             this.log("turn " + i + " ends");
-            this.log("-----------------------------------");
+            this.log("-----------");
             if (this.game_over) {
                 break;
             }
