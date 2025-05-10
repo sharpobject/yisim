@@ -12186,7 +12186,7 @@
 		"name": "Unceasing Universe",
 		"qi_cost": 2,
 		"actions": [
-			["atk", 6],
+			["atk", 9],
 			["physique", 3],
 			["heal", 3],
 			["add_c_of_x", 3, "force"],
@@ -12196,7 +12196,7 @@
 	},
 	"945012": {
 		"actions": [
-			["atk", 6],
+			["atk", 9],
 			["physique", 4],
 			["heal", 4],
 			["add_c_of_x", 4, "force"],
@@ -12205,7 +12205,7 @@
 	},
 	"945013": {
 		"actions": [
-			["atk", 6],
+			["atk", 9],
 			["physique", 5],
 			["heal", 5],
 			["add_c_of_x", 5, "force"],

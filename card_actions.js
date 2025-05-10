@@ -12311,7 +12311,7 @@ card_actions["944053"] = (game) => {
 
 // Unceasing Universe
 card_actions["945011"] = (game) => {
-    game.atk(6);
+    game.atk(9);
     game.physique(3);
     game.increase_idx_hp(0, 3);
     game.add_c_of_x(3, "force");
@@ -12320,7 +12320,7 @@ card_actions["945011"] = (game) => {
 
 // 945012
 card_actions["945012"] = (game) => {
-    game.atk(6);
+    game.atk(9);
     game.physique(4);
     game.increase_idx_hp(0, 4);
     game.add_c_of_x(4, "force");
@@ -12329,7 +12329,7 @@ card_actions["945012"] = (game) => {
 
 // 945013
 card_actions["945013"] = (game) => {
-    game.atk(6);
+    game.atk(9);
     game.physique(5);
     game.increase_idx_hp(0, 5);
     game.add_c_of_x(5, "force");
