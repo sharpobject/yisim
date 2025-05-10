@@ -1,0 +1,63 @@
+{
+    "hero": {
+        "cultivation": 92,
+        "hp": 111,
+        "physique": 0,
+        "max_physique": 0,
+        "max_hp": 111,
+        "round_number": 19,
+        "cards": [
+            "Moon Water Sword Formation 2",
+            "Chain Sword Formation 3",
+            "God's Opportunity Reversal 3",
+            "Chain Sword Formation 1",
+            "Black Silver Armor 1",
+            "Mirror Flower Sword Formation 3",
+            "God Fate Flies 3",
+            "Calamity Plaguin 2",
+            "Fate Reincarnates 1",
+            "Detect Qi 2",
+            "Giant Kun Spirit Sword 3",
+            "Nothing Is Appropriate 1",
+            "Mirror Flower Sword Formation 1",
+            "Fate Reincarnates 2",
+            "Nothing Is Appropriate 3",
+            "Rule Sky Sword Formation 3"
+        ],
+        "talents": [
+            "Shift As Cloud",
+            "Sword In Sheathed",
+            "Epiphany",
+            "Shade Of Cloud",
+            "Spring Course Tea"
+        ],
+        "sword_in_sheathed_stacks": 1,
+        "resonance_sword_formation_guard_stacks": 1
+    },
+    "villain": {
+        "cultivation": 103,
+        "hp": 111,
+        "physique": 0,
+        "max_physique": 0,
+        "max_hp": 111,
+        "round_number": "UNKNOWN",
+        "cards": [
+            "Chord In Tune 3",
+            "Predicament for Immortals 2",
+            "Loong 1",
+            "Giant Kun Spirit Sword 2",
+            "Moon Water Sword Formation 3",
+            "Rule Sky Sword Formation 1",
+            "Chain Sword Formation 3",
+            "Mirror Flower Sword Formation 2"
+        ],
+        "talents": [
+            "Inheritance of Dragonling",
+            "Coral Sword",
+            "Dragon Scale",
+            "Tool Governor",
+            "Inheritance of Sword Formation"
+        ],
+        "coral_sword_stacks": 1
+    }
+}
