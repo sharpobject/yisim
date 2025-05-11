@@ -4025,7 +4025,6 @@ export class GameState {
         this.players[0].ignore_decrease_atk = true;
     }
     check_for_death() {
-        //return false;
         const me = this.players[0];
         const enemy = this.players[1];
         while (me.hp <= 0 ||

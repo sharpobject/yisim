@@ -460,7 +460,7 @@ export class Player {
         this.skip_one_play.length = 0;
         this.exchange_card_chance = 0;
         this.round_number = 15;
-        this.destiny = 100;
+        this.destiny = 30;
         this.cultivation = 70;
         this.speed = 0;
         this.qi = 0;
@@ -944,6 +944,7 @@ export class Player {
 
         // merpeople pearls
         this.qi_gathering_merpeople_pearl_stacks = 0;
+        //TODO: implement crystallized_merpeople_pearl_stacks
         this.crystallized_merpeople_pearl_stacks = 0;
 
 
@@ -2831,12 +2832,6 @@ export class GameState {
             me.skip_next_card_stacks -= 1;
             this.advance_next_card_index();
         }
-        while (me.fate_reincarnates_stacks > 0 &&
-                (me.next_card_index === 3 || me.next_card_index === 4)) {
-            this.reduce_idx_x_by_c(0, "fate_reincarnates_stacks", 1);
-            this.do_opening(me.next_card_index);
-            this.advance_next_card_index();
-        }
         const jump_amt = me.astral_move_jump_stacks;
         if (jump_amt > 0) {
             this.reduce_idx_x_by_c(0, "astral_move_jump_stacks", jump_amt);
@@ -2857,6 +2852,12 @@ export class GameState {
                 }
             }
         };
+        while (me.fate_reincarnates_stacks > 0 &&
+                (me.next_card_index === 3 || me.next_card_index === 4)) {
+            this.reduce_idx_x_by_c(0, "fate_reincarnates_stacks", 1);
+            this.do_opening(me.next_card_index);
+            this.advance_next_card_index();
+        }
     }
     sim_turn() {
         const me = this.players[0];
@@ -4108,7 +4109,6 @@ export class GameState {
         this.players[0].ignore_decrease_atk = true;
     }
     check_for_death() {
-        //return false;
         const me = this.players[0];
         const enemy = this.players[1];
         while (me.hp <= 0 ||
