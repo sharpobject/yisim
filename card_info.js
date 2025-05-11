@@ -1,15 +1,39 @@
 import { card_actions } from './card_actions.js';
 
-let swogi, names_json;
+export const swogi = {};
+export const names_json = [];
+const card_names = [];
+const card_name_to_id = {};
+export function make_card_name_to_id_fuzzy(fuzzy) {
+    return function card_name_to_id_fuzzy(name) {
+        if (swogi[name] !== undefined) {
+            return name;
+        }
+        const [idxs, info, order] = fuzzy.search(card_names, name);
+        if (idxs.length === 0) {
+            console.log("could not find card with name " + name);
+            throw new Error("could not find card with name " + name);
+        }
+        return card_name_to_id[card_names[idxs[0]]];
+    }
+}
+export function format_card(card_id) {
+    let card_name = swogi[card_id].name;
+    let card_level = card_id.substring(card_id.length-1);
+    return format_name_level(card_name, card_level);
+}
+export const SECTS = ["sw", "he", "fe", "dx"];
+export const CRASH_FIST_CARDS = [[],[],[],[]];
 
+export const ready = (async () => {
 if (typeof process !== 'undefined' && process.versions && process.versions.node) {
   const module = await import('./card_json_node.js');
-  swogi = module.swogi;
-  names_json = module.names_json;
+  Object.assign(swogi, module.swogi);
+  Object.assign(names_json, module.names_json);
 } else {
   const module = await import('./card_json_web.js');
-  swogi = module.swogi;
-  names_json = module.names_json;
+  Object.assign(swogi, module.swogi);
+  Object.assign(names_json, module.names_json);
 }
 
 let keys = Object.keys(swogi);
@@ -22,21 +46,18 @@ function get_base_id(card_id) {
 function format_name_level(name, level) {
     return name + " (level " + level + ")";
 }
-export function format_card(card_id) {
-    //console.log(card_id);
-    let card_name = swogi[card_id].name;
-    let card_level = card_id.substring(card_id.length-1);
-    return format_name_level(card_name, card_level);
-}
 
 const id_to_names_ = {};
 const id_to_name_ = {};
+//console.log("names_json.length = ", names_json.length);
+//console.log("names_json = ", names_json);
 for (let i=0; i<names_json.length; i++) {
     const id = names_json[i].id + "";
     const names = [];
     for (const prop in names_json[i]) {
         // if it starts with "name", add it to the names array
         if (prop.startsWith("name")) {
+            //console.log("ADD NAME", id, names_json[i][prop]);
             names.push(names_json[i][prop]);
         }
     }
@@ -49,9 +70,11 @@ for (let i=0; i<keys.length; i++) {
     const card_id = keys[i];
     if (id_to_names_[card_id] !== undefined) {
         swogi[card_id].names = id_to_names_[card_id];
+        //console.log("SET NAMES", card_id, swogi[card_id].names);
     }
     if (id_to_name_[card_id] !== undefined) {
         swogi[card_id].name = id_to_name_[card_id];
+        //console.log("SET NAME", card_id, swogi[card_id].name);
     }
 }
 
@@ -74,7 +97,6 @@ function id_is_continuous(card_id) {
 function id_is_consumption(card_id) {
     return actions_contains_str(swogi[card_id].actions, "consumption");
 }
-export const SECTS = ["sw", "he", "fe", "dx"];
 const PREFIX_TO_MARKING = {
     ["11"]: "sw", // regular sect cards - cloud spirit sword sect
     ["12"]: "he", // regular sect cards - heptastar
@@ -299,11 +321,17 @@ for (let i=0; i<keys.length; i++) {
     Object.freeze(card);
 }
 
-const card_names = [];
-const card_name_to_id = {};
+for (let i=0; i<keys.length; i++) {
+    let card_id = keys[i];
+    if (is_crash_fist(card_id) && (card_id.startsWith("1") || card_id.startsWith("2"))) {
+        let level = parseInt(card_id.substring(card_id.length-1));
+        CRASH_FIST_CARDS[level].push(card_id);
+    }
+}
+
 for (let i=0; i<keys.length; i++) {
     const card_id = keys[i];
-    //console.log(card_id, swogi[card_id].name, swogi[card_id].names);
+    // console.log(card_id, swogi[card_id].name, swogi[card_id].names);
     for (const name of [swogi[card_id].name, ...swogi[card_id].names]) {
         if (card_id.endsWith("1")) {
             card_names.push(name);
@@ -321,18 +349,4 @@ for (let i=0; i<keys.length; i++) {
     }
 }
 card_names.sort((a, b) => a.length - b.length);
-export function make_card_name_to_id_fuzzy(fuzzy) {
-    return function card_name_to_id_fuzzy(name) {
-        if (swogi[name] !== undefined) {
-            return name;
-        }
-        const [idxs, info, order] = fuzzy.search(card_names, name);
-        if (idxs.length === 0) {
-            console.log("could not find card with name " + name);
-            throw new Error("could not find card with name " + name);
-        }
-        return card_name_to_id[card_names[idxs[0]]];
-    }
-}
-
-export { swogi };
+})();

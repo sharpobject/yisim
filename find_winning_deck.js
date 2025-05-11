@@ -1,8 +1,5 @@
-import {
-    format_card,
-    guess_character
-} from "./gamestate_full_ui.js";
-import  swogi from './swogi.json';
+import { guess_character, ready as gamestate_ready } from "./gamestate_full_ui.js";
+import { swogi, format_card, ready as card_info_ready } from './card_info.js';
 
 // a generator that takes an array and k and generates all k-combinations of the array's elements
 function* k_combinations(arr, k) {
@@ -48,6 +45,8 @@ function handle_response(riddle, response) {
 }
 
 export async function do_riddle(riddle, handler) {
+    await gamestate_ready;
+    await card_info_ready;
     const my_idx = riddle.my_idx;
     const enemy_idx = 1 - my_idx;
     const my_cards = riddle.players[my_idx].cards;

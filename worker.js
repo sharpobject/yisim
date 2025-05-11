@@ -1,5 +1,8 @@
-import { GameState as GameStateWithLog, Player as PlayerWithLog } from "./gamestate.js";
-import { GameState, Player } from "./gamestate_nolog.js";
+import { GameState as GameStateWithLog, Player as PlayerWithLog, ready as gamestate_ready } from "./gamestate.js";
+import { GameState, Player, ready as gamestate_nolog_ready } from "./gamestate_nolog.js";
+
+await gamestate_ready;
+await gamestate_nolog_ready;
 
 
 function next_permutation(arr) {

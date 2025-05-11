@@ -1,6 +1,6 @@
 // At the very top of web_worker.js
 // If the files export named exports
-import { GameState as GameStateWithLog, Player as PlayerWithLog } from './gamestate_full_ui.js';
+import { GameState as GameStateWithLog, Player as PlayerWithLog, ready as gamestate_ready } from './gamestate_full_ui_copy.js';
 //import { GameState, Player } from './gamestate_full_nolog_ui.js';
 const GameState = GameStateWithLog;
 const Player = PlayerWithLog;
@@ -32,7 +32,8 @@ function next_permutation(arr) {
 }
 
 // receive a GameState and return a list of most-winning decks
-self.onmessage = (event) => {
+self.onmessage = async (event) => {
+    await gamestate_ready;
     const worker_idx = event.data.worker_idx;
     const players = event.data.players;
     const my_idx = event.data.my_idx;

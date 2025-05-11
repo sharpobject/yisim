@@ -1,4 +1,5 @@
-import { swogi, SECTS, format_card } from './card_info.js';
+import { swogi, SECTS, format_card, CRASH_FIST_CARDS, ready } from './card_info.js';
+export { ready };
 let keys = Object.keys(swogi);
 keys.sort();
 export const CHARACTER_ID_TO_NAME = {
@@ -68,14 +69,6 @@ const is_seal = function(card_id) {
 }
 const is_spirit_sword = function(card_id) {
     return swogi[card_id].is_spirit_sword;
-}
-const CRASH_FIST_CARDS = [[],[],[],[]];
-for (let i=0; i<keys.length; i++) {
-    let card_id = keys[i];
-    if (is_crash_fist(card_id) && (card_id.startsWith("1") || card_id.startsWith("2"))) {
-        let level = parseInt(card_id.substring(card_id.length-1));
-        CRASH_FIST_CARDS[level].push(card_id);
-    }
 }
 const DEBUFF_NAMES = [
     "internal_injury",
@@ -414,7 +407,8 @@ export class GameState {
     do_opening(card_idx, trigger_idx) {
         const me = this.players[0];
         const card_id = me.cards[card_idx];
-        const action = swogi[card_id].opening;
+        const card = swogi[card_id];
+        const action = card.opening;
         if (action === undefined) {
             return;
         }

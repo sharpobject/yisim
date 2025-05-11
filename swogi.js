@@ -1,12 +1,16 @@
 import {
     GameState,
     CHARACTER_ID_TO_NAME,
-    guess_character
+    guess_character,
+    ready as gamestate_ready
 } from "./gamestate_full.js";
-import { format_card, swogi} from './card_info.js';
+import { format_card, swogi, ready as card_info_ready } from './card_info.js';
 import { card_name_to_id_fuzzy } from './card_name_to_id_fuzzy';
 import { preprocess_plz } from './preprocess.js';
 import os from 'os';
+
+await gamestate_ready;
+await card_info_ready;
 // import { onmessage } from './worker.js';
 
 // a generator that takes an array and k and generates all k-combinations of the array's elements
