@@ -13,9 +13,6 @@ gamestate_full_nolog.js: gamestate_full.js
 gamestate_full.js: gamestate.jscpp preprocess.js
 	bun preprocess.js
 
-gamestate_full_nolog_ui.js: gamestate_full_ui.js
-	sed '/^[[:space:]]*this\.log/d' gamestate_full_ui.js > gamestate_full_nolog_ui.js
-
 # Phony target to remove the generated file
 .PHONY: clean
 clean:

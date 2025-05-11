@@ -1,7 +1,9 @@
 // At the very top of web_worker.js
 // If the files export named exports
 import { GameState as GameStateWithLog, Player as PlayerWithLog } from './gamestate_full_ui.js';
-import { GameState, Player } from './gamestate_full_nolog_ui.js';
+//import { GameState, Player } from './gamestate_full_nolog_ui.js';
+const GameState = GameStateWithLog;
+const Player = PlayerWithLog;
 
 function next_permutation(arr) {
     let i = arr.length - 1;
