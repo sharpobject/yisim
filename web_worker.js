@@ -1,6 +1,6 @@
 // At the very top of web_worker.js
 // If the files export named exports
-import { GameState as GameStateWithLog, Player as PlayerWithLog, ready as gamestate_ready } from './gamestate_full_ui_copy.js';
+import { GameState as GameStateWithLog, Player as PlayerWithLog, ready as gamestate_ready } from './gamestate_full_ui.js';
 //import { GameState, Player } from './gamestate_full_nolog_ui.js';
 const GameState = GameStateWithLog;
 const Player = PlayerWithLog;

@@ -17,6 +17,9 @@ export function make_card_name_to_id_fuzzy(fuzzy) {
         return card_name_to_id[card_names[idxs[0]]];
     }
 }
+function format_name_level(name, level) {
+    return name + " (level " + level + ")";
+}
 export function format_card(card_id) {
     let card_name = swogi[card_id].name;
     let card_level = card_id.substring(card_id.length-1);
@@ -32,6 +35,7 @@ if (typeof process !== 'undefined' && process.versions && process.versions.node)
   Object.assign(names_json, module.names_json);
 } else {
   const module = await import('./card_json_web.js');
+  await module.ready;
   Object.assign(swogi, module.swogi);
   Object.assign(names_json, module.names_json);
 }
@@ -42,9 +46,6 @@ keys.sort();
 // the base_id of a card is the same id except that it always ends in 1
 function get_base_id(card_id) {
     return card_id.substring(0, card_id.length-1) + "1";
-}
-function format_name_level(name, level) {
-    return name + " (level " + level + ")";
 }
 
 const id_to_names_ = {};
