@@ -527,7 +527,7 @@ export class Player {
         this.exchange_card_chance = 0;
 #endif // HAS_EXCHANGE_CARD_CHANCE
         this.round_number = 15;
-        this.destiny = 100;
+        this.destiny = 30;
         this.cultivation = 70;
         this.speed = 0;
         this.qi = 0;

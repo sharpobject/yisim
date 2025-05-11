@@ -455,7 +455,7 @@ export class Player {
         this.skip_one_play.length = 0;
         this.exchange_card_chance = 0;
         this.round_number = 15;
-        this.destiny = 100;
+        this.destiny = 30;
         this.cultivation = 70;
         this.speed = 0;
         this.qi = 0;
