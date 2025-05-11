@@ -1,18 +1,7 @@
-// First import
-importScripts('./gamestate_full.js');
-
-// Extract what you need from that import
-const GameStateWithLog = self.GameStateWithLog;
-const PlayerWithLog = self.PlayerWithLog;
-
-// Second import (might overwrite some globals)
-importScripts('./gamestate_full_nolog.js');
-
-// Extract what you need from the second import
-const GameState = self.GameState;
-const Player = self.Player;
-const card_name_to_id_fuzzy = self.card_name_to_id_fuzzy;
-
+// At the very top of web_worker.js
+// If the files export named exports
+import { GameState as GameStateWithLog, Player as PlayerWithLog } from './gamestate_full_ui.js';
+import { GameState, Player } from './gamestate_full_nolog_ui.js';
 
 function next_permutation(arr) {
     let i = arr.length - 1;
@@ -41,8 +30,7 @@ function next_permutation(arr) {
 }
 
 // receive a GameState and return a list of most-winning decks
-onmessage = (event) => {
-// export const onmessage = (event) => {
+self.onmessage = (event) => {
     const worker_idx = event.data.worker_idx;
     const players = event.data.players;
     const my_idx = event.data.my_idx;
@@ -176,5 +164,4 @@ onmessage = (event) => {
     ret.winning_logs = winning_logs;
     ret.try_idx = try_idx;
     postMessage(ret);
-    //return ret;
 };

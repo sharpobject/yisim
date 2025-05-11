@@ -1,8 +1,8 @@
 import {
-    swogi,
     format_card,
     guess_character
-} from "./gamestate_full.js";
+} from "./gamestate_full_ui.js";
+import  swogi from './swogi.json';
 
 // a generator that takes an array and k and generates all k-combinations of the array's elements
 function* k_combinations(arr, k) {
@@ -47,7 +47,7 @@ function handle_response(riddle, response) {
     // console.log("handled response");
 }
 
-async function do_riddle(riddle) {
+export async function do_riddle(riddle, handler) {
     const my_idx = riddle.my_idx;
     const enemy_idx = 1 - my_idx;
     const my_cards = riddle.players[my_idx].cards;
@@ -65,12 +65,12 @@ async function do_riddle(riddle) {
     // }
     // preprocess_plz(preprocessor_config);
 
-    const numCores = navigator.hardwareConcurrency;
+    const numCores = Math.max(1, Math.floor(0.8 * navigator.hardwareConcurrency));
     const workers = [];
     const messages_outstanding = [];
 
     for (let i = 0; i < numCores; i++) {
-        const worker = new Worker('./web_worker.js');
+        const worker = new Worker('engine/web_worker.js', { type: 'module' });
         workers.push(worker);
         messages_outstanding.push(0);
         // Add error event listener to each worker
@@ -169,7 +169,7 @@ async function do_riddle(riddle) {
                 // wait for a message to come back
                 let response = await getMessage();
                 worker_idx = response.worker_idx;
-                handle_response(riddle, response);
+                handler(riddle, response);
             }
             riddle.players[my_idx].cards = combo;
             riddle.worker_idx = worker_idx;
@@ -186,7 +186,7 @@ async function do_riddle(riddle) {
     // console.log("total_messages_outstanding: " + total_messages_outstanding);
     while (total_messages_outstanding > 0) {
         let response = await getMessage();
-        handle_response(riddle, response);
+        handler(riddle, response);
         total_messages_outstanding -= 1;
     }
     // shut down the workers
