@@ -69,7 +69,7 @@ export async function do_riddle(riddle, handler) {
     const messages_outstanding = [];
 
     for (let i = 0; i < numCores; i++) {
-        const worker = new Worker('engine/web_worker.js', { type: 'module' });
+        const worker = new Worker(new URL('./web_worker.js', import.meta.url), { type: 'module' });
         workers.push(worker);
         messages_outstanding.push(0);
         // Add error event listener to each worker

@@ -1,4 +1,4 @@
-import { swogi, SECTS, format_card, CRASH_FIST_CARDS, ready } from './card_info.js';
+import { swogi, SECTS, format_card, CRASH_FIST_CARDS, ready, names_json } from './card_info.js';
 export { ready };
 let keys = Object.keys(swogi);
 keys.sort();
@@ -747,7 +747,6 @@ export class GameState {
     log(str) {
         let result = str.replace(/_/g, ' ');
         if (this.l.lang === 'cn') {
-
             const cardPattern = new RegExp(names_json.map(item => item.name).join("|"), "gi");
             result = result.replace(cardPattern, match => {
               return names_json.find(item => item.name.toLowerCase() === match.toLowerCase())?.namecn || match;
