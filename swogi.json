@@ -3267,7 +3267,7 @@
 		]
 	},
 	"141051": {
-		"name": "Mountain Cleaving Palms",
+		"name": "Mountain-Cleaving Palms",
 		"hp_cost": 4,
 		"actions": [
 			["atk", 10]
@@ -3682,7 +3682,7 @@
 		]
 	},
 	"142111": {
-		"name": "Magnaminous Righteousness",
+		"name": "Magnanimous Righteousness",
 		"actions": [
 			["qi", 1],
 			["def", 4],
@@ -3797,7 +3797,7 @@
 		]
 	},
 	"143051": {
-		"name": "Bearing The Load",
+		"name": "Bearing the Load",
 		"actions": [
 			["physique", 3],
 			["add_c_of_x", 2, "entangle"],
@@ -3910,7 +3910,7 @@
 		]
 	},
 	"143101": {
-		"name": "Sailing Through Sky",
+		"name": "Sailing through Sky",
 		"qi_cost": 1,
 		"actions": [
 			["add_c_of_x", 3, "force"],
@@ -5708,7 +5708,7 @@
 		]
 	},
 	"246021": {
-		"name": "Return To Simplicity",
+		"name": "Return to Simplicity",
 		"actions": [
 			["physique", 5],
 			["continuous"],
@@ -6665,7 +6665,7 @@
 		]
 	},
 	"342021": {
-		"name": "Feed on Illusions",
+		"name": "Feed On Illusions",
 		"actions": [
 			["add_c_of_x", 10, "max_hp"],
 			["qi", 2]
@@ -8479,7 +8479,7 @@
 		]
 	},
 	"605021": {
-		"name": "Qi-gathering Merpeople Pearl",
+		"name": "Qi-Gathering Merpeople Pearl",
 		"actions": [
 			["qi", 1],
 			["continuous"],
@@ -9281,7 +9281,7 @@
 		]
 	},
 	"634021": {
-		"name": "Overcome With Each Other",
+		"name": "Overcome with each other",
 		"actions": [
 			["do_overcome_with_each_other", 1, 3]
 		],
@@ -9784,7 +9784,7 @@
 		]
 	},
 	"733011": {
-		"name": "Water Spirit - Leisurely",
+		"name": "Water Spirit -  Leisurely",
 		"actions": [
 			["qi", 2],
 			["add_c_of_x", 3, "max_hp"],
@@ -11285,7 +11285,7 @@
 		"actions": []
 	},
 	"915081": {
-		"name": "Unrestrained Sword - Divine",
+		"name": "Unrestrained Sword  - Divine",
 		"actions": [
 			["def", 4],
 			["heal", 4],

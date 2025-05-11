@@ -202,6 +202,7 @@ function handle_response(riddle, response) {
     const winning_logs = response.winning_logs;
     console.log("got response with " + winning_decks.length + " winning decks");
     for (let i=0; i<winning_decks.length; i++) {
+        //if (winning_margins[i] > 10000) {
         if (winning_margins[i] > riddle.best_winning_margin) {
             riddle.best_winning_margin = winning_margins[i];
             for (let j=0; j<winning_decks[i].length; j++) {
@@ -220,6 +221,25 @@ function handle_response(riddle, response) {
 }
 
 async function do_riddle(riddle) {
+    const my_idx = riddle.my_idx;
+    const enemy_idx = 1 - my_idx;
+    const my_cards = riddle.players[my_idx].cards;
+    const enemy_cards = riddle.players[enemy_idx].cards;
+    riddle.best_winning_margin = -99999;
+    riddle.try_idx = 0;
+    fixup_deck(my_cards);
+    fixup_deck(enemy_cards);
+    const preprocessor_config = {};
+    for (let player of riddle.players) {
+        for (let key in player) {
+            preprocessor_config[key] = true;
+        }
+        for (let card_id of player.cards) {
+            preprocessor_config[card_id.slice(0, 5)] = true;
+        }
+    }
+    preprocess_plz(preprocessor_config);
+
     const numCores = os.cpus().length;
     const workers = [];
     const messages_outstanding = [];
@@ -267,24 +287,6 @@ async function do_riddle(riddle) {
     }
     const getMessage = createMessageHandler(workers);
 
-    const my_idx = riddle.my_idx;
-    const enemy_idx = 1 - my_idx;
-    const my_cards = riddle.players[my_idx].cards;
-    const enemy_cards = riddle.players[enemy_idx].cards;
-    riddle.best_winning_margin = -99999;
-    riddle.try_idx = 0;
-    fixup_deck(my_cards);
-    fixup_deck(enemy_cards);
-    const preprocessor_config = {};
-    for (let player of riddle.players) {
-        for (let key in player) {
-            preprocessor_config[key] = true;
-        }
-        for (let card_id of player.cards) {
-            preprocessor_config[card_id.slice(0, 5)] = true;
-        }
-    }
-    preprocess_plz(preprocessor_config);
     if (riddle.players[my_idx].character === undefined) {
         riddle.players[my_idx].character = guess_character(riddle.players[my_idx]);
     }
@@ -315,6 +317,11 @@ async function do_riddle(riddle) {
             tried_combos[combo_id] = true;
             // if this combo has 3 or more continuous/consumption cards, skip it
             let normal_attack_count = 0;
+            let hh_count = 0;
+            let stdiv_count = 0;
+            let faw_count = 0;
+            let stradiv_count = 0;
+            let twice_count = 0;
             let concon_count = 0;
             for (let i=0; i<combo.length; i++) {
                 if (swogi[combo[i]].is_continuous || swogi[combo[i]].is_consumption) {
@@ -323,10 +330,28 @@ async function do_riddle(riddle) {
                 if (swogi[combo[i]].name === "Normal Attack") {
                     normal_attack_count += 1;
                 }
+                if (swogi[combo[i]].name === "Heaven Hexagram") {
+                    hh_count += 1;
+                }
+                if (swogi[combo[i]].name === "Spiritual Divination") {
+                    stdiv_count += 1;
+                }
+                if (swogi[combo[i]].name === "Star Trail Divination") {
+                    stradiv_count += 1;
+                }
+                if (swogi[combo[i]].name === "Flowers And Water") {
+                    faw_count += 1;
+                }
+                if (swogi[combo[i]].name === "Strike Twice") {
+                    twice_count += 1;
+                }
             }
             if (concon_count >= 3) {
                 continue;
             }
+            // if (stdiv_count == 0 || stradiv_count < 2 || twice_count == 0) {
+            //     continue;
+            // }
             console.log("combo_idx: " + combo_idx);
             console.log("concon_count: " + concon_count);
             // if there is a ready worker, send the message
@@ -416,12 +441,18 @@ async function doo_riddle(riddle) {
                 if (swogi[combo[i]].name === "Normal Attack") {
                     normal_attack_count += 1;
                 }
+                if (swogi[combo[i]].name === "Flying Brush") {
+                    normal_attack_count += 1;
+                }
                 if (swogi[combo[i]].name === "Space Spiritual Field" && i > 5) {
                     concon_count += 99;
                 }
             }
             
             if (concon_count >= 3) {
+                continue;
+            }
+            if (normal_attack_count < 2) {
                 continue;
             }
             
@@ -433,16 +464,16 @@ async function doo_riddle(riddle) {
             
             // Create fake event object
             const fakeEvent = { data: riddle };
-            //await new Promise(resolve => setTimeout(resolve, 0)) 
+            await new Promise(resolve => setTimeout(resolve, 0)) 
             onmessage(fakeEvent);
         }
     }
     
     console.log("try_idx: " + riddle.try_idx);
 
-    // while(true) {
-    //     await new Promise(resolve => setTimeout(resolve, 1));
-    // }
+    while(true) {
+        await new Promise(resolve => setTimeout(resolve, 1));
+    }
 }
 
 riddles["99"] = async () => {
@@ -6576,7 +6607,81 @@ riddles["420"] = async () => {
     if (my_idx == 1) {
         players = [villain, hero];
     }
-    return await do_riddle({players: players, my_idx: my_idx});
+    return await do_riddle({players: players, my_idx: my_idx, dummy: true});
 }
 await riddles["420"]();
-console.log("done");
+console.log("done"); 
+
+
+
+riddles["421"] = async () => {
+    let try_idx = 0;
+    while (true) {
+        // find the highest value deck in deck_to_hp
+        // that is not also in seached_from_deck
+        let deck = null;
+        let best_value = 0;
+        let deck_up_str = null;
+        let deck_contains_meru = false;
+        try_idx = try_idx + 1;
+        const meru_ok = (try_idx % 5) === 0;
+        for (const [key, value] of Object.entries(deck_to_hp)) {
+            if (value <= best_value) {
+                continue;
+            }
+            const deck_arr = upgradedd(str_to_arr(key));
+            deck_contains_meru = false;
+            for (const card of deck_arr) {
+                if (card === "804063") {
+                    deck_contains_meru = true;
+                }
+            }
+            if (deck_contains_meru && value <= 1301 && !meru_ok) {
+                continue;
+            }
+            const up_str = stringifiedd(deck_arr);
+            if (searched_from_deck[up_str]) {
+                continue;
+            }
+            deck = deck_arr;
+            best_value = value;
+            deck_up_str = up_str;
+        }
+        deck_contains_meru = false;
+        // search the deck for meru ("804063")
+        for (const card of deck) {
+            if (card === "804063") {
+                deck_contains_meru = true;
+            }
+        }
+        searched_from_deck[deck_up_str] = true;
+        const players = [{},{}];
+        const my_idx = 0;
+        const enemy_idx = 1 - my_idx;
+        players[enemy_idx].hp = 1;
+        players[enemy_idx].cultivation = 0;
+        players[enemy_idx].physique = 0;
+        players[enemy_idx].max_physique = 0;
+        players[enemy_idx].max_hp = 10000;
+        players[my_idx].hp = 1;
+        players[my_idx].cultivation = 0;
+        players[my_idx].physique = 0;
+        players[my_idx].max_physique = 0;
+        players[my_idx].max_hp = 10000;
+        players[my_idx].cards = deck;
+        players[enemy_idx].cards = [
+            "meditation of xuan",
+            "elusive footwork",
+            "ghost howling 2",
+            "soul cleaving",
+            "bearing the load 2",
+            "bearing the load",
+            "soul seizing",
+            "soul seizing",
+        ];
+        await do_riddle({players: players, my_idx: my_idx, zongzi: true, small_radius: false});
+    }
+};
+
+//await riddles["421"]();
+//console.log("done"); 

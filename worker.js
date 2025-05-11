@@ -61,6 +61,8 @@ onmessage = (event) => {
         game.players[my_idx].cards = combo;
         if (event.data.zongzi) {
             game.sim_n_turns_zongzi(8);
+        } else if (event.data.dummy) {
+            game.sim_n_turns_zongzi(12);
         } else {
             game.sim_n_turns(64);
         }
@@ -85,6 +87,8 @@ onmessage = (event) => {
             game.players[my_idx].cards = combo;
             if (event.data.zongzi) {
                 game.sim_n_turns_zongzi(8);
+            } else if (event.data.dummy) {
+                game.sim_n_turns_zongzi(12);
             } else {
                 game.sim_n_turns(64);
             }
@@ -111,8 +115,8 @@ onmessage = (event) => {
             } else {
                 winrate = game.winner === my_idx ? 1 : 0;
             }
-            
-            if (game.winner === my_idx) {
+            if (game.winner === my_idx && !game.used_randomness) {
+            //if (game.players[enemy_idx].hp > 8599 && !game.used_randomness) {
             //if (game.winner === my_idx && !game.used_randomness) {
             //if (combo[0] == "633011" && combo[2] == "135072") {
             //if (!game.used_randomness) {
@@ -144,6 +148,8 @@ onmessage = (event) => {
                     game_with_log.players[my_idx].cards = combo;
                     if (event.data.zongzi) {
                         game_with_log.sim_n_turns_zongzi(8);
+                    } else if (event.data.dummy) {
+                        game_with_log.sim_n_turns_zongzi(12);
                     } else {
                         game_with_log.sim_n_turns(64);
                     }
