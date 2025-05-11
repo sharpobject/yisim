@@ -369,7 +369,7 @@ is_spirit_sword = function(card_id) {
 const CRASH_FIST_CARDS = [[],[],[],[]];
 for (let i=0; i<keys.length; i++) {
     let card_id = keys[i];
-    if (is_crash_fist(card_id)) {
+    if (is_crash_fist(card_id) && (card_id.startsWith("1") || card_id.startsWith("2"))) {
         let level = parseInt(card_id.substring(card_id.length-1));
         CRASH_FIST_CARDS[level].push(card_id);
     }
@@ -6208,7 +6208,9 @@ export class GameState {
         const playing_idx = this.players[0].currently_playing_card_idx;
         for (let i=0; i<5; i++) {
             const crash_idx = Math.floor(Math.random() * arr.length);
-            this.trigger_card(arr[crash_idx], playing_idx);
+            const card_id = arr[crash_idx];
+            this.log("triggering " + format_card(card_id));
+            this.trigger_card(card_id, playing_idx);
         }
     }
     do_clear_heart() {
@@ -6596,6 +6598,7 @@ export class GameState {
             const existing_upgrade_level = first_slot_id.substring(first_slot_id.length-1);
             const new_upgrade_level = Math.min(3, parseInt(existing_upgrade_level) + upgrade_amt);
             const new_card_id = first_slot_id.substring(0, first_slot_id.length-1) + new_upgrade_level;
+            this.log("triggering " + format_card(new_card_id));
             this.trigger_card(new_card_id, this.players[0].currently_playing_card_idx);
         }
     }
@@ -6694,6 +6697,7 @@ export class GameState {
             const next_upgrade_level = parseInt(next_id.substring(next_id.length-1));
             upgrade_level = Math.min(upgrade_level, next_upgrade_level);
             const new_id = next_id.substring(0, next_id.length-1) + upgrade_level;
+            this.log("triggering " + format_card(new_id));
             this.trigger_card(new_id, idx);
         }
     }
@@ -7158,12 +7162,14 @@ export class GameState {
         let idx = this.players[0].currently_playing_card_idx;
         const next_idx = this.get_next_idx(idx);
         const next_id = this.players[0].cards[next_idx];
+        this.log("triggering " + format_card(next_id));
         this.trigger_card(next_id, idx);
     }
     trigger_previous_card() {
         let idx = this.players[0].currently_playing_card_idx;
         const prev_idx = this.get_prev_idx(idx);
         const prev_id = this.players[0].cards[prev_idx];
+        this.log("triggering " + format_card(prev_id));
         this.trigger_card(prev_id, idx);
     }
 #ifdef HAS_PREVENT_ANTI_CHASE

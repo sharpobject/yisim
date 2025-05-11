@@ -400,11 +400,9 @@ export function card_name_to_id_fuzzy(name) {
 }
 const DEBUFF_NAMES = [
     "internal_injury",
-    "entangle",
 ];
 function is_debuff(attr_name) {
     if (attr_name === "internal_injury") return true;
-    if (attr_name === "entangle") return true;
     return false;
 }
 const ACTIVATE_NAMES = [
@@ -435,6 +433,7 @@ export class Player {
         this.this_turn_attacked = false; // whether the player has attacked this turn
         this.this_atk_injured = false; // whether the enemy hp has been injured by this atk
         this.damage_dealt_to_hp_by_atk = 0; // for stuff that keys off how much damage went through to hp
+        this.ignore_def = 0;
         this.bonus_rep_amt = 0; // card-specific bonus rep
         // for situations where multiple chases are allowed (Loong),
         // I'm not sure whether a single card chasing two times works the same as two cards chasing once.
@@ -448,12 +447,10 @@ export class Player {
         this.currently_triggering_card_idx = undefined;
         this.currently_triggering_card_id = undefined;
         this.trigger_depth = 0; // used to decide whether "continuous" and "consumption" deactivate a card
-        this.hexproof = 0;
 
 
         // debuffs
         this.internal_injury = 0;
-        this.entangle = 0;
 
 
         // cloud sword sect normal cards
@@ -506,6 +503,8 @@ export class Player {
 
 
         // musician side job cards
+        this.predicament_for_immortals_stacks = 0;
+        this.has_played_musician_card = 0;
 
 
         // painter side job cards
@@ -527,10 +526,9 @@ export class Player {
 
 
         // fortune teller side job cards
-        this.everything_goes_way_stacks = 0;
         this.nothing_is_appropriate_stacks = 0;
         this.fate_reincarnates_stacks = 0;
-        this.god_opportunity_conform_stacks = 0;
+        this.god_opportunity_reversal_stacks = 0;
 
 
         // talisman cards
@@ -544,20 +542,15 @@ export class Player {
 
         // cloud sword sect immortal fates
         this.sword_in_sheathed_stacks = 0;
-        this.endurance_as_cloud_sea_stacks = 0;
+        this.coral_sword_stacks = 0;
 
 
         // heptastar sect immortal fates
-        this.p5_astral_eclipse_stacks = 0;
-        this.gain_extra_debuff = 0;
 
         // five elements sect immortal fates
 
 
         // duan xuan sect immortal fates
-        this.surge_of_qi_stacks = 0;
-        this.stance_is_fist = true;
-        this.indomitable_will_stacks = 0;
 
 
         // life shop buffs
@@ -567,72 +560,63 @@ export class Player {
 
 
         // immortal relics fusion cards
+        this.prevent_anti_chase = 0;
 
 
         // merpeople pearls
 
 
         // general resonance immortal fates
-        this.resonance_store_qi_stacks = 0;
 
 
         // cloud sword sect resonance immortal fates
-        this.resonance_sword_rhyme_cultivate_stacks = 0;
-        this.resonance_inheritance_of_spirit_sword_stacks = 0;
+        // this.resonance_sword_rhyme_cultivate_stacks = 0;
         this.resonance_sword_formation_guard_stacks = 0;
-        this.resonance_rule_of_the_cloud_stacks = 0;
-        this.resonance_sword_pool_the_heart_ask_stacks = 0;
-        this.resonance_sword_in_sheathed_stacks = 0;
-        this.resonance_endurance_as_cloud_sea_stacks = 0;
-        this.resonance_fire_flame_blade_stacks = 0;
-        this.resonance_drift_ice_blade_stacks = 0;
-        this.resonance_coral_sword_stacks = 0;
-        this.resonance_dragon_scale_stacks = 0;
-        this.resonance_pray_rain_stacks = 0;
-        this.resonance_sky_delicate_bracelet_stacks = 0;
-        this.resonance_cat_paw_stacks = 0;
-        this.can_trigger_resonance_cat_paw = true;
-        this.resonance_spirit_cat_chaos_sword_stacks = 0;
-        this.resonance_lithe_as_cat_stacks = 0;
-        this.resonance_blade_forging_stacks = 0;
-        this.resonance_sword_pattern_carving_stacks = 0;
-        this.resonance_qi_forging_stacks = 0;
-        this.resonance_wind_rose_stacks = 0;
-        this.resonance_yeying_sword_formation_stacks = 0;
-        this.can_trigger_resonance_yeying_sword_formation = true;
+        // this.resonance_rule_of_the_cloud_stacks = 0;
+        // this.resonance_sword_pool_the_heart_ask_stacks = 0;
+        // this.resonance_sword_in_sheathed_stacks = 0;
+        // this.resonance_endurance_as_cloud_sea_stacks = 0;
+        // this.resonance_fire_flame_blade_stacks = 0;
+        // this.resonance_drift_ice_blade_stacks = 0;
+        // this.resonance_dragon_scale_stacks = 0;
+        // this.resonance_pray_rain_stacks = 0;
+        // this.resonance_spirit_cat_chaos_sword_stacks = 0;
+        // this.resonance_lithe_as_cat_stacks = 0;
+        // this.resonance_blade_forging_stacks = 0;
+        // this.resonance_sword_pattern_carving_stacks = 0;
+        // this.resonance_qi_forging_stacks = 0;
+        // this.resonance_wind_rose_stacks = 0;
+        // this.resonance_yeying_sword_formation_stacks = 0;
+        // this.can_trigger_resonance_yeying_sword_formation = true;
 
 
         // heptastar sect resonance immortal fates
-        this.resonance_divination_stacks = 0;
-        this.resonance_stargaze_stacks = 0;
-        this.resonance_post_strike_stacks = 0;
-        this.resonance_astral_eclipse_stacks = 0;
-        this.resonance_inheritance_of_thunder_stacks = 0;
-        this.resonance_rejuvenation_stacks = 0;
-        this.resonance_birdie_wind_stacks = 0;
-        this.resonance_avatar_of_bird_shade_stacks = 0;
-        this.resonance_bloodline_power_stacks = 0;
-        this.resonance_within_reach_stacks = 0;
-        this.resonance_fury_thunder_stacks = 0;
-        this.resonance_innate_spirit_body_stacks = 0;
-        this.resonance_flame_flutter_stacks = 0;
-        this.resonance_rotary_divination_hexagram_stacks = 0;
-        this.resonance_astrology_stacks = 0;
-        this.resonance_starburst_stacks = 0;
-        this.resonance_heptastar_soulstat_stacks = 0;
-        this.resonance_astral_divination_hexagram_stacks = 0;
-        this.resonance_perfectly_planned_stacks = 0;
-        this.resonance_rest_and_outwit_stacks = 0;
-        this.resonance_act_underhand_stacks = 0;
-        this.resonance_star_moon_folding_fan_stacks = 0;
+        // this.resonance_divination_stacks = 0;
+        // this.resonance_stargaze_stacks = 0;
+        // this.resonance_post_strike_stacks = 0;
+        // this.resonance_astral_eclipse_stacks = 0;
+        // this.resonance_inheritance_of_thunder_stacks = 0;
+        // this.resonance_birdie_wind_stacks = 0;
+        // this.resonance_avatar_of_bird_shade_stacks = 0;
+        // this.resonance_bloodline_power_stacks = 0;
+        // this.resonance_fury_thunder_stacks = 0;
+        // this.resonance_innate_spirit_body_stacks = 0;
+        // this.resonance_flame_flutter_stacks = 0;
+        // this.resonance_rotary_divination_hexagram_stacks = 0;
+        // this.resonance_astrology_stacks = 0;
+        // this.resonance_starburst_stacks = 0;
+        // this.resonance_heptastar_soulstat_stacks = 0;
+        // this.resonance_astral_divination_hexagram_stacks = 0;
+        // this.resonance_perfectly_planned_stacks = 0;
+        // this.resonance_rest_and_outwit_stacks = 0;
+        // this.resonance_act_underhand_stacks = 0;
+        // this.resonance_star_moon_folding_fan_stacks = 0;
 
 
         // five elements sect resonance immortal fates
 
 
         // duan xuan sect resonance immortal fates
-        this.resonance_indomitable_will_stacks = 0;
-        this.resonance_full_of_force_stacks = 0;
     }
     reset_can_play() {
         this.cards = this.cards.slice();
@@ -681,11 +665,10 @@ export class GameState {
     unindent() {
         this.indentation = this.indentation.substring(2);
     }
-    do_astral_eclipse(idx) {
-        const enemy_idx = 1 - idx;
-        const enemy = this.players[enemy_idx];
-        const me = this.players[idx];
-        enemy.gain_extra_debuff += 3 * me.p5_astral_eclipse_stacks;
+    do_coral_sword(idx) {
+        for (let i=0; i<this.players[idx].coral_sword_stacks; i++) {
+            this.increase_idx_x_by_c(idx, "ignore_def", 2);
+        }
     }
     get_n_different_five_elements(idx) {
         const cards = this.players[idx].cards;
@@ -781,7 +764,7 @@ export class GameState {
             this.players[idx].post_deck_setup();
         }
         for (let idx = 0; idx < 2; idx++) {
-            this.do_astral_eclipse(idx);
+            this.do_coral_sword(idx);
             this.do_resonance_setup(idx);
             if (idx === 1) {
                 this.swap_players();
@@ -868,13 +851,9 @@ export class GameState {
         }
         return this[action_name](...args);
     }
-    do_resonance_store_qi(idx) {
-        if (idx !== 0) {
-            return;
-        }
-        const me = this.players[0];
-        if (me.resonance_store_qi_stacks > 0) {
-            this.increase_idx_qi(0, 1);
+    do_record_musician_card_played_for_chord_in_tune(card_id) {
+        if (swogi[card_id].marking === "mu") {
+            this.players[0].has_played_musician_card = 1;
         }
     }
     is_crash_fist(card_id) {
@@ -885,7 +864,6 @@ export class GameState {
         const me = this.players[idx];
         let ret = 0;
         ret += me.internal_injury;
-        ret += me.entangle;
         return ret;
     }
     just_do_the_card_and_nothing_else(card) {
@@ -904,7 +882,6 @@ export class GameState {
         p0.currently_triggering_card_id = card_id;
         p0.bonus_rep_amt = 0;
         p0.this_trigger_directly_attacked = false;
-        this.do_resonance_store_qi(idx);
         this.just_do_the_card_and_nothing_else(card);
         //card_actions[card_id](this);
         //this.do_action(card.actions);
@@ -926,25 +903,21 @@ export class GameState {
     }
     process_this_card_chases() {
         const me = this.players[0];
+        if (me.predicament_for_immortals_stacks > 0
+            && me.prevent_anti_chase === 0
+        ) {
+            return;
+        }
+        const prevent_anti_chase = me.prevent_anti_chase > 0;
+        if (me.prevent_anti_chase > 0) {
+            me.prevent_anti_chase -= 1;
+        }
         // if we chased 1 or more times during this card, let's regard that as 1 chase for now...
         if (me.this_card_chases > 0 && me.chases < me.max_chases) {
-            let do_entangle = (me.entangle > 0
-            );
-            if (do_entangle &&
-                me.resonance_indomitable_will_stacks > 0 &&
-                !me.stance_is_fist
-            ) {
-                do_entangle = false;
-                this.reduce_idx_hp(0, 15);
-            }
-            if (do_entangle) {
-                this.reduce_idx_x_by_c(0, "entangle", 1);
-            } else {
                 me.chases += 1;
                 if (me.surge_of_qi_stacks > 0 && !me.stance_is_fist) {
                     this.increase_idx_qi(0, 1);
                 }
-            }
         }
     }
     play_card_inner(card_id, idx) {
@@ -952,6 +925,7 @@ export class GameState {
         me.this_card_attacked = false;
         me.this_card_directly_attacked = false;
         this.trigger_card(card_id, idx);
+        this.do_record_musician_card_played_for_chord_in_tune(card_id);
     }
     play_card(card_id, idx) {
         const me = this.players[0];
@@ -1022,12 +996,6 @@ export class GameState {
         const me = this.players[idx];
         let amt = me.internal_injury;
         if (amt > 0) {
-            if (is_start_of_turn &&
-                me.resonance_indomitable_will_stacks > 0 &&
-                me.stance_is_fist
-            ) {
-                amt = Math.floor(amt * 0.5);
-            }
             this.reduce_idx_hp(idx, amt);
         }
     }
@@ -1037,18 +1005,6 @@ export class GameState {
             return -6;
         }
         return 0;
-    }
-    do_indomitable_will() {
-        let ret = 0;
-        let me = this.players[0];
-        let enemy = this.players[1];
-        if (me.indomitable_will_stacks > 0 && !me.stance_is_fist) {
-            ret += 1;
-        }
-        if (enemy.indomitable_will_stacks > 0 && enemy.stance_is_fist) {
-            ret -= 1;
-        }
-        return ret;
     }
     do_sword_in_sheathed() {
         if (this.players[0].sword_in_sheathed_stacks > 0) {
@@ -1077,9 +1033,7 @@ export class GameState {
         const enemy = this.players[1];
         me.chases = 0;
         me.this_turn_attacked = false;
-        me.can_trigger_resonance_cat_paw = true;
-        this.reduce_idx_x_by_c(0, "everything_goes_way_stacks", 1);
-        this.reduce_idx_x_by_c(0, "god_opportunity_conform_stacks", 1);
+        this.reduce_idx_x_by_c(0, "god_opportunity_reversal_stacks", 1);
         this.do_def_decay();
         this.do_internal_injury(0, true);
         if (this.check_for_death()) {
@@ -1150,7 +1104,6 @@ export class GameState {
         }
         this.do_sword_in_sheathed();
         this.do_resonance_sword_formation_guard();
-        this.reduce_idx_x_by_c(0, "entangle", 1);
         if (this.check_for_death()) {
             return;
         }
@@ -1210,11 +1163,6 @@ export class GameState {
             return 0;
         }
         const me = this.players[idx];
-        {
-            if (me.god_opportunity_conform_stacks > 0) {
-                amt = Math.ceil(amt * 14 / 10);
-            }
-        }
         me.max_hp += amt;
     }
     increase_idx_hp(idx, amt, heal_while_dead) {
@@ -1226,10 +1174,9 @@ export class GameState {
         if (prev_hp <= 0 && !heal_while_dead) {
             return 0;
         }
-        {
-            if (me.god_opportunity_conform_stacks > 0) {
-                amt = Math.ceil(amt * 14 / 10);
-            }
+        if (me.god_opportunity_reversal_stacks > 0) {
+            const dmg_amt = Math.ceil(amt * 6 / 10);
+            this.deal_damage_inner(dmg_amt, false, idx);
         }
         me.hp += amt;
         if (me.hp > me.max_hp) {
@@ -1255,8 +1202,9 @@ export class GameState {
         if (amt === 0) {
             return;
         }
-        if (me.god_opportunity_conform_stacks > 0) {
-            amt = Math.ceil(amt * 14 / 10);
+        if (me.god_opportunity_reversal_stacks > 0) {
+            const dmg_amt = Math.ceil(amt * 6 / 10);
+            this.deal_damage_inner(dmg_amt, false, idx);
         }
         me.def += amt;
     }
@@ -1280,10 +1228,6 @@ export class GameState {
         }
         const me = this.players[idx];
         me.force += amt;
-        if (me.resonance_full_of_force_stacks > 0 &&
-            me.force > me.max_force) {
-            me.max_force += 1;
-        }
         if (me.force > me.max_force) {
             const excess_amt = me.force - me.max_force;
             me.force = me.max_force;
@@ -1335,29 +1279,6 @@ export class GameState {
             return;
         }
         const me = this.players[idx];
-        {
-            amt += me.gain_extra_debuff;
-            me.gain_extra_debuff = 0;
-        }
-        const to_sub = Math.min(amt, me.hexproof);
-        if (to_sub > 0) {
-            this.reduce_idx_x_by_c(idx, "hexproof", to_sub);
-            amt -= to_sub;
-        }
-        if (amt === 0) {
-            return;
-        }
-        if (me.indomitable_will_stacks > 0) {
-            if (me.stance_is_fist) {
-                if (x === "wound") {
-                    amt -= 1;
-                }
-            } else {
-                if (x === "decrease_atk") {
-                    amt -= 1;
-                }
-            }
-        }
         me[x] += amt;
     }
     increase_idx_x_by_c(idx, x, c) {
@@ -1371,17 +1292,11 @@ export class GameState {
         if (x === "hp") {
             return this.increase_idx_hp(idx, c);
         }
-        if (x === "max_hp") {
-            return this.increase_idx_max_hp(idx, c);
-        }
         if (x === "def") {
             return this.increase_idx_def(idx, c);
         }
         if (x === "physique") {
             return this.increase_idx_physique(idx, c);
-        }
-        if (is_debuff(x)) {
-            return this.increase_idx_debuff(idx, x, c);
         }
         me[x] += c;
     }
@@ -1409,6 +1324,7 @@ export class GameState {
     }
     deal_damage_inner(dmg, is_atk, my_idx, is_extra) {
         const enemy_idx = 1 - my_idx;
+        let ignore_def = false;
         let min_dmg = 1;
         const me = this.players[my_idx];
         const enemy = this.players[enemy_idx];
@@ -1420,15 +1336,19 @@ export class GameState {
             me.this_trigger_directly_attacked = true;
             me.this_card_attacked = true;
             me.this_turn_attacked = true;
-            dmg += this.do_nothing_is_appropriate();
-            dmg += this.do_indomitable_will();
-            if (me.everything_goes_way_stacks > 0) {
-                min_dmg = 6;
+            if (me.ignore_def > 0) {
+                this.reduce_idx_x_by_c(my_idx, "ignore_def", 1);
+                ignore_def = true;
             }
+            dmg += this.do_nothing_is_appropriate();
         }
         dmg = Math.max(min_dmg, dmg);
         let damage_to_def = 0;
         let damage_to_hp = 0;
+        if (ignore_def) {
+            damage_to_def = 0;
+            damage_to_hp = dmg;
+        } else
         {
             damage_to_def = Math.min(enemy.def, dmg);
             damage_to_hp = dmg - damage_to_def;
@@ -1444,7 +1364,6 @@ export class GameState {
             me.damage_dealt_to_hp_by_atk = damage_actually_dealt_to_hp;
             if (damage_actually_dealt_to_hp > 0) {
                 me.this_atk_injured = true;
-                this.do_resonance_cat_paw();
             }
         }
     }
@@ -1473,6 +1392,9 @@ export class GameState {
     }
     qi(amt) {
         this.increase_idx_qi(0, amt);
+    }
+    gain_ignore_def(amt) {
+        this.increase_idx_x_by_c(0, "ignore_def", amt);
     }
     for_each_x_reduce_c_pct_y(x, c, y) {
         let to_lose = Math.ceil(this.players[0][x] * c / 100);
@@ -1692,6 +1614,7 @@ export class GameState {
         this.increase_idx_debuff(1, debuff_name, 1);
     }
     check_for_death() {
+        //return false;
         const me = this.players[0];
         const enemy = this.players[1];
         while (me.hp <= 0 ||
@@ -1764,7 +1687,22 @@ export class GameState {
         const extent = hi_inclusive - lo_inclusive + 1;
         return lo_inclusive + Math.floor(Math.random() * extent);
     }
+    do_chord_in_tune_thing() {
+        if (this.players[0].has_played_musician_card > 0) {
+            this.chase();
+            return;
+        }
+        const next_idx = this.get_next_playable_idx(this.players[0].currently_playing_card_idx);
+        const next_id = this.players[0].cards[next_idx];
+        if (swogi[next_id].marking === "mu") {
+            this.chase();
+        }
+    }
     trigger_random_sect_card() {
+        this.used_randomness = true;
+        //TODO: this.
+    }
+    trigger_random_unrestrained_card() {
         this.used_randomness = true;
         //TODO: this.
     }
@@ -1912,7 +1850,6 @@ export class GameState {
     idx_has_debuff(idx) {
         const me = this.players[idx];
         if (me.internal_injury > 0) return true;
-        if (me.entangle > 0) return true;
     }
     if_no_debuff() {
         return !this.idx_has_debuff(0);
@@ -2087,6 +2024,9 @@ export class GameState {
         const prev_id = this.players[0].cards[prev_idx];
         this.trigger_card(prev_id, idx);
     }
+    prevent_anti_chase() {
+        this.players[0].prevent_anti_chase += 1;
+    }
     do_xuanming_requiem_fulu(my_hp_loss_pct, fixed_hp_loss) {
         const my_hp_loss = Math.ceil(this.players[0].hp * my_hp_loss_pct / 100);
         this.reduce_idx_hp(0, my_hp_loss);
@@ -2096,54 +2036,30 @@ export class GameState {
     do_resonance_setup(idx) {
         const me = this.players[idx];
         const round_number = me.round_number;
-        if (!(round_number >= 6 && me.indomitable_will_stacks > 0)) {
-            me.resonance_indomitable_will_stacks = 0;
-        }
-        if (!(round_number >= 8 && me.resonance_full_of_force_stacks > 0)) {
-            me.resonance_full_of_force_stacks = 0;
-        }
-        if (!(round_number >= 10 && me.resonance_store_qi_stacks > 0)) {
-            me.resonance_store_qi_stacks = 0;
-        }
-        if (!(round_number >= 11 && me.resonance_within_reach_stacks > 0)) {
-            me.resonance_within_reach_stacks = 0;
-        }
         if (!(round_number >= 13 && me.resonance_sword_formation_guard_stacks > 0)) {
             me.resonance_sword_formation_guard_stacks = 0;
-        }
-        if (round_number >= 13 && me.resonance_cat_paw_stacks > 0) {
-            me.resonance_cat_paw_stacks += 1;
-        }
-        if (round_number >= 14 && me.resonance_sky_delicate_bracelet_stacks > 0) {
-            let n_upgraded = 0;
-            const max_n_upgraded = 2;
-            for (let card_idx = 0; card_idx < me.cards.length; card_idx++) {
-                const card_id = me.cards[card_idx];
-                if (swogi[card_id].qi_cost === 1 && this.try_upgrade_card(idx, card_idx)) {
-                    n_upgraded += 1;
-                    if (n_upgraded === max_n_upgraded) {
-                        break;
-                    }
-                }
-            }
-        }
-    }
-    do_resonance_cat_paw() {
-        const me = this.players[0];
-        const amt = me.resonance_cat_paw_stacks;
-        if (amt > 0 &&
-            me.can_trigger_resonance_cat_paw &&
-            swogi[me.currently_triggering_card_id].is_cat) {
-            this.increase_idx_debuff(1, "wound", amt);
-            me.can_trigger_resonance_cat_paw = false;
         }
     }
     do_normal_attack(atk_amt) {
         const me = this.players[0];
         let rep_amt = 1;
         for (let i = 0; i < rep_amt; i++) {
-            game.atk(atk_amt);
+            this.atk(atk_amt);
         }
+    }
+    random_int(n) {
+        this.used_randomness = true;
+        return Math.floor(Math.random() * n);
+    }
+    spirit_sword_deck_cound(max_n) {
+        const me = this.players[0];
+        let n = 0;
+        for (let i=0; i<me.cards.length; i++) {
+            if (is_spirit_sword(me.cards[i])) {
+                n += 1;
+            }
+        }
+        return Math.min(n, max_n);
     }
 }
 

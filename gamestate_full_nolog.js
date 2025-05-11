@@ -363,7 +363,7 @@ is_spirit_sword = function(card_id) {
 const CRASH_FIST_CARDS = [[],[],[],[]];
 for (let i=0; i<keys.length; i++) {
     let card_id = keys[i];
-    if (is_crash_fist(card_id)) {
+    if (is_crash_fist(card_id) && (card_id.startsWith("1") || card_id.startsWith("2"))) {
         let level = parseInt(card_id.substring(card_id.length-1));
         CRASH_FIST_CARDS[level].push(card_id);
     }
@@ -4146,7 +4146,8 @@ export class GameState {
         const playing_idx = this.players[0].currently_playing_card_idx;
         for (let i=0; i<5; i++) {
             const crash_idx = Math.floor(Math.random() * arr.length);
-            this.trigger_card(arr[crash_idx], playing_idx);
+            const card_id = arr[crash_idx];
+            this.trigger_card(card_id, playing_idx);
         }
     }
     do_clear_heart() {
