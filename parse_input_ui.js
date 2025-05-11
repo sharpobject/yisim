@@ -1,4 +1,5 @@
-import { card_name_to_id_fuzzy, guess_character } from './gamestate_full_ui.js';
+import { guess_character } from './gamestate_full_ui.js';
+import { card_name_to_id_fuzzy } from './card_info.js';
 import example from './example.json';
 
 export default function(json) {

@@ -1,5 +1,7 @@
 import fs from 'fs';
-import { GameState, card_name_to_id_fuzzy, format_card } from './gamestate_full';
+import { GameState } from './gamestate_full';
+import { format_card } from './card_info';
+import { card_name_to_id_fuzzy } from './card_name_to_id_fuzzy';
 import parse_input from './parse_input';
 import db from './db_sqlite';
 

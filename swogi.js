@@ -1,11 +1,10 @@
 import {
     GameState,
-    card_name_to_id_fuzzy,
-    swogi,
-    format_card,
     CHARACTER_ID_TO_NAME,
     guess_character
 } from "./gamestate_full.js";
+import { format_card, swogi} from './card_info.js';
+import { card_name_to_id_fuzzy } from './card_name_to_id_fuzzy';
 import { preprocess_plz } from './preprocess.js';
 import os from 'os';
 // import { onmessage } from './worker.js';
