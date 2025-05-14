@@ -1,6 +1,16 @@
 import { guess_character, ready as gamestate_ready } from "./gamestate_full_ui.js";
 import { swogi, format_card, ready as card_info_ready } from './card_info.js';
 
+export function combinationCount(n, k) {
+    if (k < 0 || k > n) return 0;
+    if (k === 0 || k === n) return 1;
+    let res = 1;
+    for (let i = 1; i <= k; i++) {
+      res = res * (n - i + 1) / i;
+    }
+    return res;
+}
+
 // a generator that takes an array and k and generates all k-combinations of the array's elements
 function* k_combinations(arr, k) {
     if (k === 0) {
