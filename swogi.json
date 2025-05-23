@@ -9700,6 +9700,22 @@
 		"does_not_exist": true,
 		"actions": []
 	},
+	"701021": {
+		"name": "Xiaoyao - Seamless",
+		"actions": [
+			["add_c_of_x", 1, "guard_up"],
+			["chase"],
+			["exhaust"]
+		]
+	},
+	"701022": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"701023": {
+		"does_not_exist": true,
+		"actions": []
+	},
 	"714011": {
 		"name": "Azure Dragon Sword Formation",
 		"actions": [

@@ -26,8 +26,8 @@ const deps = {
     HAS_FIRE_FLAME_BLADE: ["fire_flame_blade_stacks"],
     HAS_GUARD_UP: ["HAS_PEACH_BRANCH_RUYI", "guard_up",
         "36403", "12409", "24302", "31501", "34402", "40501",
-        "40502", "60509", "61502", "63502", "90403", "91503",
-        "91601", ],
+        "40502", "60509", "61502", "63502", "70102", "90403",
+        "91503", "91601", ],
     HAS_PEACH_BRANCH_RUYI: ["peach_branch_ruyi_stacks"],
     HAS_IGNORE_GUARD_UP: ["91601", "ignore_guard_up"],
     HAS_INTERNAL_INJURY: ["HAS_TOXIC_PURPLE_FERN",
@@ -53,7 +53,7 @@ const deps = {
     HAS_P4_MARK_OF_DARK_HEART: ["p4_mark_of_dark_heart_stacks"],
     HAS_P5_MARK_OF_DARK_HEART: ["p5_mark_of_dark_heart_stacks"],
     HAS_METAL_SPIRIT_GIANT_TRIPOD: ["13504", "metal_spirit_giant_tripod_stacks"],
-    HAS_PENETRATE: ["13108", "13207", 
+    HAS_PENETRATE: ["13108", "13207",
         "13308", "13407", "23104", "63401", "73502", "13307",
         "p5_cycle_of_five_elements_stacks",
         "five_elements_anima_stacks",
@@ -883,7 +883,7 @@ const deps = {
     HAS_ATTACK_COUNT: ["attack_count", "71504"],
     HAS_M_RUTHLESS_WATER: ["m_ruthless_water_stacks", "72404"],
     HAS_M_SHIFTING_STARS: ["m_shifting_stars_stacks", "72503"],
-    
+
 
 
 };

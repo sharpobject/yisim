@@ -10050,7 +10050,7 @@ card_actions["714023"] = (game) => {
 
 // Xiaoyao - Formless
 card_actions["701011"] = (game) => {
-    game.add_enemy_c_of_x(1, "skip_next_card_stacks");
+    game.increase_idx_x_by_c(1, "skip_next_card_stacks", 1);
     game.chase();
     game.exhaust();
 }
@@ -10060,6 +10060,19 @@ card_actions["701012"] = (game) => {}
 
 // 701013
 card_actions["701013"] = (game) => {}
+
+// Xiaoyao - Seamless
+card_actions["701021"] = (game) => {
+    game.increase_idx_x_by_c(0, "guard_up", 1);
+    game.chase();
+    game.exhaust();
+}
+
+// 701012
+card_actions["701022"] = (game) => {}
+
+// 701013
+card_actions["701023"] = (game) => {}
 
 // M - Raven Spirit Sword
 card_actions["714031"] = (game) => {
