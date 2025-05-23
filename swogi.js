@@ -6610,7 +6610,7 @@ riddles["420"] = async () => {
     if (my_idx == 1) {
         players = [villain, hero];
     }
-    return await do_riddle({players: players, my_idx: my_idx, dummy: true});
+    return await do_riddle({players: players, my_idx: my_idx});
 }
 await riddles["420"]();
 console.log("done"); 

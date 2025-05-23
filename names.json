@@ -2207,6 +2207,11 @@
         "namecn": "土灵·山崩"
     },
     {
+        "id": 635021,
+        "name": "Forget Worries",
+        "namecn": "忘忧"
+    },
+    {
         "id": 641011,
         "name": "Double Stick",
         "namecn": "双截棍"
@@ -2280,6 +2285,21 @@
         "namecn": "云剑·晚霞"
     },
     {
+        "id": 714031,
+        "name": "M - Raven Spirit Sword",
+        "namecn": "幻·暗鸦灵剑"
+    },
+    {
+        "id": 714041,
+        "name": "M - Light Sword",
+        "namecn": "幻·轻剑"
+    },
+    {
+        "id": 714051,
+        "name": "M - Spiritage Sword",
+        "namecn": "幻·引气剑"
+    },
+    {
         "id": 715011,
         "name": "Dragon Devours Clouds",
         "namecn": "狂龙吞云"
@@ -2288,6 +2308,16 @@
         "id": 715021,
         "name": "Beast Spirit Sword Formation",
         "namecn": "百兽灵剑阵"
+    },
+    {
+        "id": 715031,
+        "name": "M - Cloud Sword Touch Sky",
+        "namecn": "幻·云剑探云"
+    },
+    {
+        "id": 715041,
+        "name": "M - Cloud Sword Conceal",
+        "namecn": "幻·云剑无锋"
     },
     {
         "id": 724011,
@@ -2300,6 +2330,21 @@
         "namecn": "摘花飞叶"
     },
     {
+        "id": 724031,
+        "name": "M - Cutting Weeds",
+        "namecn": "幻·斩草除根"
+    },
+    {
+        "id": 724041,
+        "name": "M - Ruthless Water",
+        "namecn": "幻·流水无情"
+    },
+    {
+        "id": 724051,
+        "name": "M - Astral Fleche",
+        "namecn": "幻·飞星刺"
+    },
+    {
         "id": 725011,
         "name": "Astral Move - Twin Swallows",
         "namecn": "星弈·双飞燕"
@@ -2308,6 +2353,16 @@
         "id": 725021,
         "name": "Water Drop Erosion",
         "namecn": "滴水穿石"
+    },
+    {
+        "id": 725031,
+        "name": "M - Shifting Stars",
+        "namecn": "幻·斗转星移"
+    },
+    {
+        "id": 725041,
+        "name": "M - Incessant",
+        "namecn": "幻·藕断丝连"
     },
     {
         "id": 733011,
@@ -2325,6 +2380,21 @@
         "namecn": "熔岩之印"
     },
     {
+        "id": 734031,
+        "name": "M - Fire Spirit Flame Eater",
+        "namecn": "幻·火灵聚炎"
+    },
+    {
+        "id": 734041,
+        "name": "M - Wood Spirit Recovery",
+        "namecn": "幻·木灵复苏"
+    },
+    {
+        "id": 734051,
+        "name": "M - Metal Spirit Needle",
+        "namecn": "幻·金灵针"
+    },
+    {
         "id": 735011,
         "name": "Boulder Seal",
         "namecn": "滚石之印"
@@ -2333,6 +2403,41 @@
         "id": 735021,
         "name": "Wave Cutter Seal",
         "namecn": "斩浪之印"
+    },
+    {
+        "id": 735031,
+        "name": "M - Water Spirit Billows",
+        "namecn": "幻·水灵波澜"
+    },
+    {
+        "id": 735041,
+        "name": "M - Five Elements Circulation",
+        "namecn": "幻·五行流转"
+    },
+    {
+        "id": 744011,
+        "name": "M - Youthful Vigor",
+        "namecn": "幻·血气方刚"
+    },
+    {
+        "id": 744021,
+        "name": "M - Exercise Bones",
+        "namecn": "幻·锻骨"
+    },
+    {
+        "id": 744031,
+        "name": "M - Sinking Qi",
+        "namecn": "幻·气沉丹田"
+    },
+    {
+        "id": 745011,
+        "name": "M - Double Trouble",
+        "namecn": "幻·双鬼拍门"
+    },
+    {
+        "id": 745021,
+        "name": "M - Rakshasa Pouncing",
+        "namecn": "幻·罗刹扑"
     },
     {
         "id": 801011,

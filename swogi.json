@@ -9341,6 +9341,80 @@
 			["do_earth_spirit_landslide", 15, 4]
 		]
 	},
+	"635021": {
+		"name": "Forget Worries",
+		"actions": [
+			["add_c_of_x", 8, "hp"],
+			["add_enemy_c_of_x", 8, "hp"],
+			["add_c_of_x", 2, "guard_up"],
+			["add_enemy_c_of_x", 2, "guard_up"],
+			["reduce_c_of_x", 2, "internal_injury"],
+			["reduce_c_of_x", 2, "weaken"],
+			["reduce_c_of_x", 2, "flaw"],
+			["reduce_c_of_x", 2, "decrease_atk"],
+			["reduce_c_of_x", 2, "entangle"],
+			["reduce_c_of_x", 2, "wound"],
+			["reduce_c_of_x", 2, "styx"],
+			["reduce_enemy_c_of_x", 2, "internal_injury"],
+			["reduce_enemy_c_of_x", 2, "weaken"],
+			["reduce_enemy_c_of_x", 2, "flaw"],
+			["reduce_enemy_c_of_x", 2, "decrease_atk"],
+			["reduce_enemy_c_of_x", 2, "entangle"],
+			["reduce_enemy_c_of_x", 2, "wound"],
+			["reduce_enemy_c_of_x", 2, "styx"],
+			["add_c_of_x", 1, "cannot_act_stacks"],
+			["add_enemy_c_of_x", 1, "cannot_act_stacks"]
+		],
+		"character": "fe6"
+	},
+	"635022": {
+		"actions": [
+			["add_c_of_x", 16, "hp"],
+			["add_enemy_c_of_x", 16, "hp"],
+			["add_c_of_x", 2, "guard_up"],
+			["add_enemy_c_of_x", 2, "guard_up"],
+			["reduce_c_of_x", 3, "internal_injury"],
+			["reduce_c_of_x", 3, "weaken"],
+			["reduce_c_of_x", 3, "flaw"],
+			["reduce_c_of_x", 3, "decrease_atk"],
+			["reduce_c_of_x", 3, "entangle"],
+			["reduce_c_of_x", 3, "wound"],
+			["reduce_c_of_x", 3, "styx"],
+			["reduce_enemy_c_of_x", 3, "internal_injury"],
+			["reduce_enemy_c_of_x", 3, "weaken"],
+			["reduce_enemy_c_of_x", 3, "flaw"],
+			["reduce_enemy_c_of_x", 3, "decrease_atk"],
+			["reduce_enemy_c_of_x", 3, "entangle"],
+			["reduce_enemy_c_of_x", 3, "wound"],
+			["reduce_enemy_c_of_x", 3, "styx"],
+			["add_c_of_x", 1, "cannot_act_stacks"],
+			["add_enemy_c_of_x", 1, "cannot_act_stacks"]
+		]
+	},
+	"635023": {
+		"actions": [
+			["add_c_of_x", 24, "hp"],
+			["add_enemy_c_of_x", 24, "hp"],
+			["add_c_of_x", 2, "guard_up"],
+			["add_enemy_c_of_x", 2, "guard_up"],
+			["reduce_c_of_x", 4, "internal_injury"],
+			["reduce_c_of_x", 4, "weaken"],
+			["reduce_c_of_x", 4, "flaw"],
+			["reduce_c_of_x", 4, "decrease_atk"],
+			["reduce_c_of_x", 4, "entangle"],
+			["reduce_c_of_x", 4, "wound"],
+			["reduce_c_of_x", 4, "styx"],
+			["reduce_enemy_c_of_x", 4, "internal_injury"],
+			["reduce_enemy_c_of_x", 4, "weaken"],
+			["reduce_enemy_c_of_x", 4, "flaw"],
+			["reduce_enemy_c_of_x", 4, "decrease_atk"],
+			["reduce_enemy_c_of_x", 4, "entangle"],
+			["reduce_enemy_c_of_x", 4, "wound"],
+			["reduce_enemy_c_of_x", 4, "styx"],
+			["add_c_of_x", 1, "cannot_act_stacks"],
+			["add_enemy_c_of_x", 1, "cannot_act_stacks"]
+		]
+	},
 	"641011": {
 		"name": "Double Stick",
 		"actions": [],
@@ -9645,6 +9719,60 @@
 				["for_each_x_add_c_y", "cloud_sword_chain_count", 2, "sword_intent"]]
 		]
 	},
+	"714031": {
+		"name": "M - Raven Spirit Sword",
+		"actions": [
+			["atk", 4]
+		]
+	},
+	"714032": {
+		"actions": [
+			["atk", 4]
+		]
+	},
+	"714033": {
+		"actions": [
+			["atk", 4]
+		]
+	},
+	"714041": {
+		"name": "M - Light Sword",
+		"actions": [
+			["atk", 4],
+			["qi", 1]
+		]
+	},
+	"714042": {
+		"actions": [
+			["atk", 4],
+			["qi", 1]
+		]
+	},
+	"714043": {
+		"actions": [
+			["atk", 4],
+			["qi", 1]
+		]
+	},
+	"714051": {
+		"name": "M - Spiritage Sword",
+		"actions": [
+			["atk", 4],
+			["qi", 1]
+		]
+	},
+	"714052": {
+		"actions": [
+			["atk", 4],
+			["qi", 1]
+		]
+	},
+	"714053": {
+		"actions": [
+			["atk", 4],
+			["qi", 1]
+		]
+	},
 	"715011": {
 		"name": "Dragon Devours Clouds",
 		"actions": [
@@ -9686,6 +9814,38 @@
 			["qi", 4],
 			["continuous"],
 			["add_c_of_x", 1, "beast_spirit_sword_formation_stacks"]
+		]
+	},
+	"715031": {
+		"name": "M - Cloud Sword Touch Sky",
+		"actions": [
+			["atk", 4]
+		]
+	},
+	"715032": {
+		"actions": [
+			["atk", 4]
+		]
+	},
+	"715033": {
+		"actions": [
+			["atk", 4]
+		]
+	},
+	"715041": {
+		"name": "M - Cloud Sword Conceal",
+		"actions": [
+			["atk", 4]
+		]
+	},
+	"715042": {
+		"actions": [
+			["atk", 4]
+		]
+	},
+	"715043": {
+		"actions": [
+			["atk", 4]
 		]
 	},
 	"724011": {
@@ -9731,6 +9891,64 @@
 			["qi", 3],
 			["continuous"],
 			["add_c_of_x", 1, "throw_petals_stacks"]
+		]
+	},
+	"724031": {
+		"name": "M - Cutting Weeds",
+		"qi_cost": 1,
+		"actions": [
+			["reduce_enemy_c_of_x", "max_hp", 1]
+		]
+	},
+	"724032": {
+		"actions": [
+			["reduce_enemy_c_of_x", "max_hp", 1]
+		]
+	},
+	"724033": {
+		"actions": [
+			["reduce_enemy_c_of_x", "max_hp", 1]
+		]
+	},
+	"724041": {
+		"name": "M - Ruthless Water",
+		"actions": [
+			["add_enemy_c_of_x", 2, "internal_injury"],
+			["continuous"],
+			["add_enemy_c_of_x", 1, "m_ruthless_water_stacks"]
+		]
+	},
+	"724042": {
+		"actions": [
+			["add_enemy_c_of_x", 3, "internal_injury"],
+			["continuous"],
+			["add_enemy_c_of_x", 1, "m_ruthless_water_stacks"]
+		]
+	},
+	"724043": {
+		"actions": [
+			["add_enemy_c_of_x", 5, "internal_injury"],
+			["continuous"],
+			["add_enemy_c_of_x", 1, "m_ruthless_water_stacks"]
+		]
+	},
+	"724051": {
+		"name": "M - Astral Fleche",
+		"actions": [
+			["atk", 5],
+			["add_c_of_x", 1, "star_power"]
+		]
+	},
+	"724052": {
+		"actions": [
+			["atk", 5],
+			["add_c_of_x", 2, "star_power"]
+		]
+	},
+	"724053": {
+		"actions": [
+			["atk", 5],
+			["add_c_of_x", 3, "star_power"]
 		]
 	},
 	"725011": {
@@ -9781,6 +9999,56 @@
 			["atk", 1],
 			["if_enemy_has_debuff_do", ["chase"]],
 			["post_action", ["add_enemy_c_of_x", 10, "internal_injury"]]
+		]
+	},
+	"725031": {
+		"name": "M - Shifting Stars",
+		"actions": [
+			["become_star_point", 1],
+			["continuous"],
+			["add_c_of_x", 2, "m_shifting_stars_stacks"]
+		]
+	},
+	"725032": {
+		"actions": [
+			["become_star_point", 1],
+			["continuous"],
+			["add_c_of_x", 4, "m_shifting_stars_stacks"]
+		]
+	},
+	"725033": {
+		"actions": [
+			["become_star_point", 1],
+			["continuous"],
+			["add_c_of_x", 6, "m_shifting_stars_stacks"]
+		]
+	},
+	"725041": {
+		"name": "M - Incessant",
+		"actions": [
+			["atk", 6],
+			["add_c_of_x", 3, "regen"],
+			["add_c_of_x", 6, "max_hp"],
+			["post_action", [["add_c_of_x", 3, "max_hp"],
+							["add_c_of_x", 3, "hp"]]]
+		]
+	},
+	"725042": {
+		"actions": [
+			["atk", 6],
+			["add_c_of_x", 4, "regen"],
+			["add_c_of_x", 9, "max_hp"],
+			["post_action", [["add_c_of_x", 4, "max_hp"],
+							["add_c_of_x", 4, "hp"]]]
+		]
+	},
+	"725043": {
+		"actions": [
+			["atk", 6],
+			["add_c_of_x", 5, "regen"],
+			["add_c_of_x", 12, "max_hp"],
+			["post_action", [["add_c_of_x", 5, "max_hp"],
+							["add_c_of_x", 5, "hp"]]]
 		]
 	},
 	"733011": {
@@ -9889,6 +10157,78 @@
 			["activate_earth_spirit"]
 		]
 	},
+	"734031": {
+		"name": "M - Fire Spirit Flame Eater",
+		"actions": [
+			["qi", 2],
+			["reduce_enemy_c_of_x", "hp", 3],
+			["reduce_enemy_c_of_x", "max_hp", 3],
+			["fire_spirit", ["add_c_of_x", 1, "m_fire_spirit_flame_eater_stacks"]]
+		]
+	},
+	"734032": {
+		"actions": [
+			["qi", 2],
+			["reduce_enemy_c_of_x", "hp", 3],
+			["reduce_enemy_c_of_x", "max_hp", 3],
+			["fire_spirit", ["add_c_of_x", 1, "m_fire_spirit_flame_eater_stacks"]]
+		]
+	},
+	"734033": {
+		"actions": [
+			["qi", 2],
+			["reduce_enemy_c_of_x", "hp", 3],
+			["reduce_enemy_c_of_x", "max_hp", 3],
+			["fire_spirit", ["add_c_of_x", 1, "m_fire_spirit_flame_eater_stacks"]]
+		]
+	},
+	"734041": {
+		"name": "M - Wood Spirit Recovery",
+		"actions": [
+			["qi", 2],
+			["do_xuanming_recurring", 0],
+			["wood_spirit", []]
+		]
+	},
+	"734042": {
+		"actions": [
+			["qi", 2],
+			["do_xuanming_recurring", 0],
+			["wood_spirit", []]
+		]
+	},
+	"734043": {
+		"actions": [
+			["qi", 2],
+			["do_xuanming_recurring", 0],
+			["wood_spirit", []]
+		]
+	},
+	"734051": {
+		"name": "M - Metal Spirit Needle",
+		"actions": [
+			["add_c_of_x", 1, "ignore_def"],
+			["atk", 6],
+			["add_c_of_x", 4, "penetrate"],
+			["metal_spirit", ["add_c_of_x", 1, "m_metal_spirit_needle_stacks"]]
+		]
+	},
+	"734052": {
+		"actions": [
+			["add_c_of_x", 1, "ignore_def"],
+			["atk", 6],
+			["add_c_of_x", 7, "penetrate"],
+			["metal_spirit", ["add_c_of_x", 1, "m_metal_spirit_needle_stacks"]]
+		]
+	},
+	"734053": {
+		"actions": [
+			["add_c_of_x", 1, "ignore_def"],
+			["atk", 6],
+			["add_c_of_x", 10, "penetrate"],
+			["metal_spirit", ["add_c_of_x", 1, "m_metal_spirit_needle_stacks"]]
+		]
+	},
 	"735011": {
 		"name": "Boulder Seal",
 		"actions": [
@@ -9952,6 +10292,158 @@
 		"opening": [
 			["activate_metal_spirit"],
 			["activate_water_spirit"]
+		]
+	},
+	"735031": {
+		"name": "M - Water Spirit Billows",
+		"qi_cost": 2,
+		"water_spirit_cost_0_qi": true,
+		"actions": [
+			["add_c_of_x", 3, "force_of_water"],
+			["add_c_of_x", 2, "m_water_spirit_billows_stacks"]
+		]
+	},
+	"735032": {
+		"actions": [
+			["add_c_of_x", 4, "force_of_water"],
+			["add_c_of_x", 2, "m_water_spirit_billows_stacks"]
+		]
+	},
+	"735033": {
+		"actions": [
+			["add_c_of_x", 5, "force_of_water"],
+			["add_c_of_x", 2, "m_water_spirit_billows_stacks"]
+		]
+	},
+	"735041": {
+		"name": "M - Five Elements Circulation",
+		"actions": [
+			["qi", 2]
+		]
+	},
+	"735042": {
+		"actions": [
+			["qi", 3]
+		]
+	},
+	"735043": {
+		"actions": [
+			["qi", 4]
+		]
+	},
+	"744011": {
+		"name": "M - Youthful Vigor",
+		"hp_cost": 2,
+		"actions": [
+			["rep", 2, ["atk", 6]]
+		]
+	},
+	"744012": {
+		"actions": [
+			["rep", 2, ["atk", 8]]
+		]
+	},
+	"744013": {
+		"actions": [
+			["rep", 2, ["atk", 10]]
+		]
+	},
+	"744021": {
+		"name": "M - Exercise Bones",
+		"actions": [
+			["add_c_of_x", 5, "hp"],
+			["continuous"],
+			["add_c_of_x", 2, "m_exercise_bones_stacks"]
+		]
+	},
+	"744022": {
+		"actions": [
+			["add_c_of_x", 5, "hp"],
+			["continuous"],
+			["add_c_of_x", 3, "m_exercise_bones_stacks"]
+		]
+	},
+	"744023": {
+		"actions": [
+			["add_c_of_x", 5, "hp"],
+			["continuous"],
+			["add_c_of_x", 4, "m_exercise_bones_stacks"]
+		]
+	},
+	"744031": {
+		"name": "M - Sinking Qi",
+		"actions": [
+			["add_c_of_x", 1, "qi"],
+			["add_c_of_x", 4, "hp"],
+			["add_c_of_x", 2, "m_sinking_qi_stacks"]
+		]
+	},
+	"744032": {
+		"actions": [
+			["add_c_of_x", 2, "qi"],
+			["add_c_of_x", 4, "hp"],
+			["add_c_of_x", 2, "m_sinking_qi_stacks"]
+		]
+	},
+	"744033": {
+		"actions": [
+			["add_c_of_x", 3, "qi"],
+			["add_c_of_x", 4, "hp"],
+			["add_c_of_x", 2, "m_sinking_qi_stacks"]
+		]
+	},
+	"745011": {
+		"name": "M - Double Trouble",
+		"qi_cost": 1,
+		"actions": [
+			["rep", 2, ["atk", 6]],
+			["add_enemy_c_of_x", 2, "internal_injury"],
+			["add_enemy_c_of_x", 1, "weaken"],
+			["add_enemy_c_of_x", 1, "wound"],
+			["add_c_of_x", 2, "internal_injury"],
+			["add_c_of_x", 1, "weaken"],
+			["add_c_of_x", 1, "wound"]
+		]
+	},
+	"745012": {
+		"actions": [
+			["rep", 2, ["atk", 8]],
+			["add_enemy_c_of_x", 4, "internal_injury"],
+			["add_enemy_c_of_x", 1, "weaken"],
+			["add_enemy_c_of_x", 1, "wound"],
+			["add_c_of_x", 4, "internal_injury"],
+			["add_c_of_x", 1, "weaken"],
+			["add_c_of_x", 1, "wound"]
+		]
+	},
+	"745013": {
+		"actions": [
+			["rep", 2, ["atk", 10]],
+			["add_enemy_c_of_x", 6, "internal_injury"],
+			["add_enemy_c_of_x", 1, "weaken"],
+			["add_enemy_c_of_x", 1, "wound"],
+			["add_c_of_x", 6, "internal_injury"],
+			["add_c_of_x", 1, "weaken"],
+			["add_c_of_x", 1, "wound"]
+		]
+	},
+	"745021": {
+		"name": "M - Rakshasa Pouncing",
+		"actions": [
+			["qi", 1],
+			["atk", 10]
+		]
+	},
+	"745022": {
+		"actions": [
+			["qi", 1],
+			["atk", 16]
+		]
+	},
+	"745023": {
+		"actions": [
+			["qi", 1],
+			["atk", 22]
 		]
 	},
 	"801011": {
