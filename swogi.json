@@ -8929,14 +8929,14 @@
 	},
 	"615031": {
 		"name": "Yeying Sword Formation",
-		"actions": [],
+		"actions": ["rep", 2, ["atk", 2]],
 		"character": "sw6"
 	},
 	"615032": {
-		"actions": []
+		"actions": ["rep", 2, ["atk", 2]]
 	},
 	"615033": {
-		"actions": []
+		"actions": ["rep", 2, ["atk", 2]]
 	},
 	"621011": {
 		"name": "Perfectly Planned",

@@ -122,10 +122,11 @@ export const ready = (async () => {
         ["62"]: "no_marking", // character-specific cards - heptastar
         ["63"]: "no_marking", // character-specific cards - five elements
         ["64"]: "no_marking", // character-specific cards - duan xuan
-        ["71"]: "sw", // legendary cards - cloud spirit sword sect
-        ["72"]: "he", // legendary cards - heptastar
-        ["73"]: "fe", // legendary cards - five elements
-        ["74"]: "dx", // legendary cards - duan xuan
+        ["70"]: "sw", // seasonal cards - neutral
+        ["71"]: "sw", // seasonal cards - cloud spirit sword sect
+        ["72"]: "he", // seasonal cards - heptastar
+        ["73"]: "fe", // seasonal cards - five elements
+        ["74"]: "dx", // seasonal cards - duan xuan
         ["80"]: "no_marking", // zongzi cards
         ["90"]: "check", // fusion cards - side jobs
         ["91"]: "check", // fusion cards - cloud spirit sword sect
@@ -286,7 +287,7 @@ export const ready = (async () => {
         const is_sweet = with_default(swogi[card_id].is_sweet, with_default(swogi[base_id].is_sweet, undefined));
         const marking = with_default(swogi[card_id].marking, with_default(swogi[base_id].marking, undefined));
         const gather_qi = with_default(swogi[card_id].gather_qi, with_default(swogi[base_id].gather_qi, undefined));
-        const is_add_qi = with_default(swogi[card_id].is_add_qi, with_default(swogi[base_id].is_add_qi, undefined));
+        let is_add_qi = with_default(swogi[card_id].is_add_qi, with_default(swogi[base_id].is_add_qi, undefined));
         if (is_add_qi === undefined) {
             is_add_qi = id_is_add_qi(card_id);
         }

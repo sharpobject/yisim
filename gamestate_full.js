@@ -459,6 +459,8 @@ export class Player {
         this.p3_sword_formation_guard_stacks = 0;
         this.p4_sword_formation_guard_stacks = 0;
         this.p5_sword_formation_guard_stacks = 0;
+        this.chengyuns_fusion_style_stacks = 0;
+        this.swordplay_talent_cards = [];
 
 
         // heptastar sect immortal fates
@@ -729,7 +731,7 @@ export class Player {
         for (let i=0; i<n_cards; i++) {
             let card_id = this.cards[i];
             let card = swogi[card_id];
-            if (card.is_sword_formation) {
+            if (this.is_sword_formation(card_id)) {
                 this.sword_formation_deck_count += 1;
             }
         }
@@ -1330,7 +1332,7 @@ export class GameState {
     do_sword_formation_deck_count(card_id) {
         const me = this.players[0];
         me.other_sword_formation_deck_count = me.sword_formation_deck_count;
-        if (swogi[card_id].is_sword_formation) {
+        if (this.is_sword_formation(card_id)) {
             me.other_sword_formation_deck_count -= 1;
         }
     }
@@ -1350,7 +1352,7 @@ export class GameState {
         if (this.players[0].trigger_depth > 1) {
             return;
         }
-        if (is_sword_formation(card_id)) {
+        if (this.is_sword_formation(card_id)) {
             this.log("Attacking for " + atk + " from emptiness sword formation.");
             this.atk(atk, true);
         }
@@ -1369,7 +1371,7 @@ export class GameState {
         this.players[0].triggered_beast_spirit_sword_formation = true;
         const dmg = stacks * this.players[0].qi;
         if (dmg > 0) {
-            if (is_sword_formation(card_id) || is_spirit_sword(card_id)) {
+            if (this.is_sword_formation(card_id) || this.is_spirit_sword(card_id)) {
                 this.log("Dealing " + dmg + " damage from beast spirit sword formation.");
                 this.deal_damage(dmg);
             }
@@ -1512,7 +1514,7 @@ export class GameState {
         if (me.resonance_inheritance_of_spirit_sword_stacks === 0) {
             return;
         }
-        if (!is_spirit_sword(card_id)) {
+        if (!this.is_spirit_sword(card_id)) {
             return;
         }
         this.increase_idx_qi(0, 2);
@@ -3682,7 +3684,7 @@ export class GameState {
         let idx = my_idx + step;
         while (idx >= 0 && idx < this.players[0].cards.length) {
             const card_id = this.players[0].cards[idx];
-            if (is_sword_formation(card_id)) {
+            if (this.is_sword_formation(card_id)) {
                 this.log("retriggering " + format_card(card_id));
                 this.trigger_card(card_id, idx);
                 return;
@@ -3794,6 +3796,10 @@ export class GameState {
         ret ||= (me.quench_of_sword_heart_unrestrained_stacks > 0 &&
             swogi[card_id].name === "Clear Heart Sword Embryo");
         ret ||= (me.m_light_sword_stacks > 0);
+        if (this.players[0].chengyuns_fusion_style_stacks > 0) {
+            const card_id_without_level = card_id.substring(0, card_id.length - 1);
+            ret ||= this.players[0].swordplay_talent_cards.includes(card_id_without_level);
+        }
         return ret;
     }
     is_fake_cloud_sword(card_id) {
@@ -3803,6 +3809,10 @@ export class GameState {
         ret ||= (swogi[card_id].marking === "fm" &&
             this.players[0].cloud_sword_endless_stacks > 0);
         ret ||= (me.m_light_sword_stacks > 0);
+        if (this.players[0].chengyuns_fusion_style_stacks > 0) {
+            const card_id_without_level = card_id.substring(0, card_id.length - 1);
+            ret ||= this.players[0].swordplay_talent_cards.includes(card_id_without_level);
+        }
         return ret;
     }
     ignore_weaken() {
@@ -4625,6 +4635,26 @@ export class GameState {
         }
         return false;
     }
+    is_sword_formation(card_id) {
+        const card = swogi[card_id];
+        let ret = false;
+        ret ||= card.is_sword_formation;
+        if (this.players[0].chengyuns_fusion_style_stacks > 0) {
+            const card_id_without_level = card_id.substring(0, card_id.length - 1);
+            ret ||= this.players[0].swordplay_talent_cards.includes(card_id_without_level);
+        }
+        return ret;
+    }
+    is_spirit_sword(card_id) {
+        const card = swogi[card_id];
+        let ret = false;
+        ret ||= card.is_spirit_sword;
+        if (this.players[0].chengyuns_fusion_style_stacks > 0) {
+            const card_id_without_level = card_id.substring(0, card_id.length - 1);
+            ret ||= this.players[0].swordplay_talent_cards.includes(card_id_without_level);
+        }
+        return ret;
+    }
     for_each_x_convert_c_pct_debuff_to_y(x, c, y) {
         let debuff_amt = this.get_debuff_count(0);
         let c_pct_x = Math.floor(this.players[0][x] * c / 100);
@@ -4829,7 +4859,17 @@ export class GameState {
         const me = this.players[0];
         let n = 0;
         for (let i=0; i<me.cards.length; i++) {
-            if (is_spirit_sword(me.cards[i])) {
+            if (this.is_spirit_sword(me.cards[i])) {
+                n += 1;
+            }
+        }
+        return Math.min(n, max_n);
+    }
+    sword_formation_deck_count(max_n) {
+        const me = this.players[0];
+        let n = 0;
+        for (let i=0; i<me.cards.length; i++) {
+            if (this.is_sword_formation(me.cards[i])) {
                 n += 1;
             }
         }

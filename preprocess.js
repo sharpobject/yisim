@@ -732,10 +732,14 @@ const deps = {
     HAS_DRAGON_DEVOURS_CLOUDS: [
         "dragon_devours_clouds_stacks", "71501"],
     HAS_FAKE_UNRESTRAINED_SWORD: [
-        "HAS_UNRESTRAINED_SWORD_CLEAR_HEART"],
+        "HAS_UNRESTRAINED_SWORD_CLEAR_HEART",
+        "HAS_M_LIGHT_SWORD",
+        "HAS_CHENGYUNS_FUSION_STYLE"],
     HAS_FAKE_CLOUD_SWORD: [
         "HAS_CLOUD_SWORD_CLEAR_HEART",
-        "HAS_CLOUD_SWORD_ENDLESS"],
+        "HAS_CLOUD_SWORD_ENDLESS",
+        "HAS_M_LIGHT_SWORD",
+        "HAS_CHENGYUNS_FUSION_STYLE"],
     HAS_PHYSIQUE: ["physique", "max_physique",
         "HAS_FIRMNESS_BODY",
         "HAS_ZEN_MIND_FORGING_BODY",
@@ -883,7 +887,9 @@ const deps = {
     HAS_ATTACK_COUNT: ["attack_count", "71504"],
     HAS_M_RUTHLESS_WATER: ["m_ruthless_water_stacks", "72404"],
     HAS_M_SHIFTING_STARS: ["m_shifting_stars_stacks", "72503"],
-
+    HAS_CHENGYUNS_FUSION_STYLE: [
+        "chengyuns_fusion_style_stacks",
+        "swordplay_talent_cards"],
 
 
 };

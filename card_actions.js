@@ -9176,6 +9176,45 @@ card_actions["615023"] = (game) => {
     game.chase();
 }
 
+// Yeying Sword Formation
+card_actions["615031"] = (game) => {
+    const reps = 2 + game.sword_formation_deck_count(3);
+    let def_amt = 0;
+    for (let i = 0; i < reps; i++) {
+        game.atk(2);
+        if (game.if_injured()) {
+            def_amt += 3;
+        }
+    }
+    game.increase_idx_def(0, def_amt);
+}
+
+// 615032
+card_actions["615032"] = (game) => {
+    const reps = 2 + game.sword_formation_deck_count(4);
+    let def_amt = 0;
+    for (let i = 0; i < reps; i++) {
+        game.atk(2);
+        if (game.if_injured()) {
+            def_amt += 3;
+        }
+    }
+    game.increase_idx_def(0, def_amt);
+}
+
+// 615033
+card_actions["615033"] = (game) => {
+    const reps = 3 + game.sword_formation_deck_count(4);
+    let def_amt = 0;
+    for (let i = 0; i < reps; i++) {
+        game.atk(2);
+        if (game.if_injured()) {
+            def_amt += 3;
+        }
+    }
+    game.increase_idx_def(0, def_amt);
+}
+
 // Perfectly Planned
 card_actions["621011"] = (game) => {
     game.increase_idx_qi(0, 1);
@@ -10174,6 +10213,13 @@ card_actions["715022"] = (game) => {
     game.add_c_of_x(1, "beast_spirit_sword_formation_stacks");
 }
 
+// 715023
+card_actions["715023"] = (game) => {
+    game.increase_idx_qi(0, 4);
+    game.continuous();
+    game.add_c_of_x(1, "beast_spirit_sword_formation_stacks");
+}
+
 // M - Cloud Sword Touch Sky
 card_actions["715031"] = (game) => {
     game.atk(6);
@@ -10220,13 +10266,6 @@ card_actions["715043"] = (game) => {
         const atk_amt = 6 + 4 * me.attack_count;
         game.atk(atk_amt);
     }
-}
-
-// 715023
-card_actions["715023"] = (game) => {
-    game.increase_idx_qi(0, 4);
-    game.continuous();
-    game.add_c_of_x(1, "beast_spirit_sword_formation_stacks");
 }
 
 // Spiritual Divination
