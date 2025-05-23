@@ -27,6 +27,7 @@
 "Chain Sword Pattern": "sword_pattern_carving_chain_attack_stacks",
 "Changes Of Catastrophe": null,
 "Charge Sword Pattern": "sword_pattern_carving_charge_stacks",
+"Chengyun's Fusion Style": "chengyuns_fusion_style_stacks",
 "Cloud Sword Heart": "quench_of_sword_heart_cloud_stacks",
 "Concentrated Element": "p{n}_concentrated_element_stacks",
 "Coral Sword": "coral_sword_stacks",
@@ -165,5 +166,6 @@
 "Wan Xuan Demon Breaking Palm": null,
 "Wind Rose": null,
 "Within Reach": null,
+"Yeying Sword Formation": null,
 "Zen Mind Forging Body": "zen_mind_forging_body_stacks"
 }
