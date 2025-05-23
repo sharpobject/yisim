@@ -356,7 +356,8 @@
 		"actions": [
 			["def", 9],
 			["exhaust_x_to_add_y", "sword_intent", "qi"]
-		]
+		],
+		"is_add_qi": true
 	},
 	"112082": {
 		"actions": [
@@ -498,7 +499,8 @@
 			["atk", 7],
 			["cloud_hit",
 				["for_each_x_add_y", "cloud_sword_chain_count", "qi"]]
-		]
+		],
+		"is_add_qi": true
 	},
 	"113042": {
 		"actions": [
@@ -920,7 +922,8 @@
 				["atk", 1],
 				["injured", ["qi", 1]]
 			]]
-		]
+		],
+		"is_add_qi": true
 	},
 	"115032": {
 		"actions": [
@@ -1783,7 +1786,8 @@
 		"name": "Star Trail Divination",
 		"actions": [
 			["do_star_trail_divination", 6, 1, 1, 1]
-		]
+		],
+		"is_add_qi": true
 	},
 	"124052": {
 		"actions": [
@@ -1818,7 +1822,8 @@
 		"name": "Thunder And Lighting",
 		"actions": [
 			["do_thunder_and_lightning", 10]
-		]
+		],
+		"is_add_qi": true
 	},
 	"124072": {
 		"actions": [
@@ -4284,7 +4289,8 @@
 			["add_enemy_c_of_x", 4, "internal_injury"],
 			["for_each_x_add_c_pct_y", "debuff", 50, "qi"],
 			["for_each_x_add_c_pct_y", "debuff", 50, "hp"]
-		]
+		],
+		"is_add_qi": true
 	},
 	"145052": {
 		"actions": [
@@ -9678,6 +9684,22 @@
 			["switch_stance"]
 		]
 	},
+	"701011": {
+		"name": "Xiaoyao - Formless",
+		"actions": [
+			["add_enemy_c_of_x", 1, "skip_next_card_stacks"],
+			["chase"],
+			["exhaust"]
+		]
+	},
+	"701012": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"701013": {
+		"does_not_exist": true,
+		"actions": []
+	},
 	"714011": {
 		"name": "Azure Dragon Sword Formation",
 		"actions": [
@@ -9932,25 +9954,6 @@
 			["add_enemy_c_of_x", 1, "m_ruthless_water_stacks"]
 		]
 	},
-	"724051": {
-		"name": "M - Astral Fleche",
-		"actions": [
-			["atk", 5],
-			["add_c_of_x", 1, "star_power"]
-		]
-	},
-	"724052": {
-		"actions": [
-			["atk", 5],
-			["add_c_of_x", 2, "star_power"]
-		]
-	},
-	"724053": {
-		"actions": [
-			["atk", 5],
-			["add_c_of_x", 3, "star_power"]
-		]
-	},
 	"725011": {
 		"name": "Astral Move - Twin Swallows",
 		"actions": [
@@ -10049,6 +10052,25 @@
 			["add_c_of_x", 12, "max_hp"],
 			["post_action", [["add_c_of_x", 5, "max_hp"],
 							["add_c_of_x", 5, "hp"]]]
+		]
+	},
+	"725051": {
+		"name": "M - Astral Fleche",
+		"actions": [
+			["atk", 5],
+			["add_c_of_x", 1, "star_power"]
+		]
+	},
+	"725052": {
+		"actions": [
+			["atk", 5],
+			["add_c_of_x", 2, "star_power"]
+		]
+	},
+	"725053": {
+		"actions": [
+			["atk", 5],
+			["add_c_of_x", 3, "star_power"]
 		]
 	},
 	"733011": {

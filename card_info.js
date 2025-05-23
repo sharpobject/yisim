@@ -230,6 +230,9 @@ export const ready = (async () => {
     let is_add_physique = function (card_id) {
         return actions_contains_str(swogi[card_id].actions, "physique");
     }
+    let id_is_add_qi = function (card_id) {
+        return actions_contains_str(swogi[card_id].actions, "physique");
+    }
     let is_astral_move = function (card_id) {
         return swogi[card_id].name.includes("Astral Move");
     }
@@ -283,6 +286,10 @@ export const ready = (async () => {
         const is_sweet = with_default(swogi[card_id].is_sweet, with_default(swogi[base_id].is_sweet, undefined));
         const marking = with_default(swogi[card_id].marking, with_default(swogi[base_id].marking, undefined));
         const gather_qi = with_default(swogi[card_id].gather_qi, with_default(swogi[base_id].gather_qi, undefined));
+        const is_add_qi = with_default(swogi[card_id].is_add_qi, with_default(swogi[base_id].is_add_qi, undefined));
+        if (is_add_qi === undefined) {
+            is_add_qi = id_is_add_qi(card_id);
+        }
         const card = {
             name: name,
             names: names,
@@ -312,6 +319,7 @@ export const ready = (async () => {
             is_seal: is_seal(card_id),
             is_spirit_sword: is_spirit_sword(card_id),
             is_cat: is_cat(card_id),
+            is_add_qi: is_add_qi,
             marking: marking,
             is_salty: is_salty,
             is_sweet: is_sweet,

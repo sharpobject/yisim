@@ -4,28 +4,7 @@ from pathlib import Path
 
 def process_all_screenshots():
     whitelist = [
-        "Heavenly Rain",
-        "71404",
-        "71405",
-        "71503",
-        "71504",
-        "72404",
-        "72403",
-        "72405",
-        "72504",
-        "72503",
-        "73403",
-        "73404",
-        "73405",
-        "74401",
-        "73503",
-        "73504",
-        "63502",
-        "74402",
-        "74403",
-        "71403",
-        "74502",
-        "74501",
+        "72505",
     ]
     # Create output directories if they don't exist
     os.makedirs('en', exist_ok=True)

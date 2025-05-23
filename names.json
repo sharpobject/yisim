@@ -2275,6 +2275,11 @@
         "namecn": "万玄破魔掌"
     },
     {
+        "id": 701011,
+        "name": "Xiaoyao - Formless",
+        "namecn": "逍遥·无相"
+    },
+    {
         "id": 714011,
         "name": "Azure Dragon Sword Formation",
         "namecn": "青龙剑阵"
@@ -2340,11 +2345,6 @@
         "namecn": "幻·流水无情"
     },
     {
-        "id": 724051,
-        "name": "M - Astral Fleche",
-        "namecn": "幻·飞星刺"
-    },
-    {
         "id": 725011,
         "name": "Astral Move - Twin Swallows",
         "namecn": "星弈·双飞燕"
@@ -2363,6 +2363,11 @@
         "id": 725041,
         "name": "M - Incessant",
         "namecn": "幻·藕断丝连"
+    },
+    {
+        "id": 725051,
+        "name": "M - Astral Fleche",
+        "namecn": "幻·飞星刺"
     },
     {
         "id": 733011,
