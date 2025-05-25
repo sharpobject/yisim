@@ -122,7 +122,7 @@ export const ready = (async () => {
         ["62"]: "no_marking", // character-specific cards - heptastar
         ["63"]: "no_marking", // character-specific cards - five elements
         ["64"]: "no_marking", // character-specific cards - duan xuan
-        ["70"]: "sw", // seasonal cards - neutral
+        ["70"]: "no_marking", // seasonal cards - neutral
         ["71"]: "sw", // seasonal cards - cloud spirit sword sect
         ["72"]: "he", // seasonal cards - heptastar
         ["73"]: "fe", // seasonal cards - five elements
@@ -199,10 +199,18 @@ export const ready = (async () => {
         SECT_TO_DIVINE_BRUSH_CARDS[sect] = get_available_divine_brush_cards_for_sect(sect_num);
     }
     let is_unrestrained_sword = function (card_id) {
-        return swogi[card_id].name.includes("Unrestrained Sword");
+        const name = swogi[card_id].name;
+        if (name === "M - Light Sword") {
+            return true;
+        }
+        return name.includes("Unrestrained Sword");
     }
     let is_cloud_sword = function (card_id) {
-        return swogi[card_id].name.includes("Cloud Sword");
+        const name = swogi[card_id].name;
+        if (name === "M - Light Sword") {
+            return true;
+        }
+        return name.includes("Cloud Sword");
     }
     let is_sword_formation = function (card_id) {
         return swogi[card_id].name.includes("Sword Formation");

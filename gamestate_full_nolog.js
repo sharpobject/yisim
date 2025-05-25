@@ -1895,9 +1895,7 @@ export class GameState {
         me.currently_playing_card_idx = idx;
         let plays = 1;
         if (me.unrestrained_sword_twin_dragons_stacks > 0) {
-            if (this.is_unrestrained_sword(card_id)
-                || swogi[card_id].name === "M - Light Sword"
-            ) {
+            if (this.is_unrestrained_sword(card_id)) {
                 plays += 1;
                 this.reduce_idx_x_by_c(0, "unrestrained_sword_twin_dragons_stacks", 1);
             }
