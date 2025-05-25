@@ -3841,6 +3841,7 @@ export class GameState {
     }
     is_fake_cloud_sword(card_id) {
         let ret = false;
+        const me = this.players[0];
         ret ||= (swogi[card_id].name === "Clear Heart Sword Embryo" &&
             this.players[0].quench_of_sword_heart_cloud_stacks > 0)
         ret ||= (swogi[card_id].marking === "fm" &&
