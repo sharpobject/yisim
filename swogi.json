@@ -113,7 +113,6 @@
 	"111071": {
 		"name": "Giant Tiger Spirit Sword",
 		"qi_cost": 1,
-		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
 		"actions": [
 			["atk", 10]
 		]
@@ -317,7 +316,6 @@
 	"112061": {
 		"name": "Giant Whale Spirit Sword",
 		"qi_cost": 2,
-		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
 		"actions": [
 			["atk", 16]
 		]
@@ -540,7 +538,6 @@
 	},
 	"113061": {
 		"name": "Raven Spirit Sword",
-		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
 		"actions": [
 			["atk", 6],
 			["for_each_x_add_c_y", "qi", 2, "def"]
@@ -581,7 +578,6 @@
 	"113081": {
 		"name": "Giant Roc Spirit Sword",
 		"qi_cost": 2,
-		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
 		"actions": [
 			["atk", 9],
 			["if_x_at_least_c_do", "qi", 1, ["chase"]]
@@ -719,7 +715,6 @@
 	},
 	"114041": {
 		"name": "CentiBird Spirit Sword Rhythm",
-		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
 		"actions": [
 			["qi", 1],
 			["continuous"],
@@ -743,7 +738,6 @@
 	"114051": {
 		"name": "Egret Spirit Sword",
 		"qi_cost": 1,
-		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
 		"actions": [
 			["for_each_x_add_c_y", "qi", 2, "bonus_atk_amt"],
 			["atk", 5]
@@ -764,7 +758,6 @@
 	"114061": {
 		"name": "Giant Kun Spirit Sword",
 		"qi_cost": 3,
-		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
 		"actions": [
 			["atk", 10],
 			["def", 10],
@@ -943,7 +936,6 @@
 	},
 	"115041": {
 		"name": "Dharma Spirit Sword",
-		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
 		"actions": [
 			["exhaust_x_to_add_c_y", "qi", 5, "bonus_atk_amt"],
 			["atk", 5]
@@ -4426,7 +4418,6 @@
 	},
 	"211011": {
 		"name": "Rhyme Spirit Sword",
-		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
 		"actions": [
 			["atk", 4],
 			["injured",
@@ -4491,7 +4482,6 @@
 	"212021": {
 		"name": "Giant Ape Spirit Sword",
 		"qi_cost": 2,
-		"decrease_qi_cost_by_x": "centibird_spirit_sword_rhythm_stacks",
 		"actions": [
 			["atk", 6],
 			["add_c_of_x", 3, "increase_atk"]
@@ -9713,6 +9703,36 @@
 		"actions": []
 	},
 	"701023": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"701031": {
+		"name": "Xiaoyao - Lawless",
+		"actions": [
+			["rep", 4, ["atk", 4]],
+			["exhaust"]
+		]
+	},
+	"701032": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"701033": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"701041": {
+		"name": "Xiaoyao - 20 atk",
+		"actions": [
+			["atk", 20],
+			["exhaust"]
+		]
+	},
+	"701042": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"701043": {
 		"does_not_exist": true,
 		"actions": []
 	},

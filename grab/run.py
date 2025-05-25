@@ -4,7 +4,7 @@ from pathlib import Path
 
 def process_all_screenshots():
     whitelist = [
-        "72505",
+        "70103",
     ]
     # Create output directories if they don't exist
     os.makedirs('en', exist_ok=True)
