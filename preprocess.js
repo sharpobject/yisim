@@ -590,7 +590,9 @@ const deps = {
         "HAS_WATER_SPIRIT_DIVE",
         "HAS_WEAKEN",
         "HAS_FLAW",
-        "HAS_THUNDER_CITTA_DHARMA"],
+        "HAS_THUNDER_CITTA_DHARMA",
+        "HAS_M_SINKING_QI",
+        "HAS_COUNTER_MOVE"],
     HAS_AGILITY: ["agility",
         "HAS_CRASH_FIST_BLINK",
         "HAS_ELUSIVE_FOOTWORK",
@@ -924,6 +926,9 @@ const deps = {
         "74403"],
     HAS_EVERY_DEBUFF: [
         "74502"],
+    HAS_COUNTER_MOVE: [
+        "counter_move_stacks",
+        "64203"],
 
 
 

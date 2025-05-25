@@ -9778,6 +9778,48 @@ card_actions["635023"] = (game) => {
     game.increase_idx_x_by_c(1, "cannot_act_stacks", 1);
 }
 
+// Double Stick
+card_actions["641011"] = (game) => {
+    game.atk(6);
+    const me = game.players[0];
+    if (game.if_fist_stance()) {
+        const def_amt = Math.floor(me.physique * 20 / 100);
+        game.increase_idx_def(0, def_amt);
+    } else {
+        const atk_amt = 1 + Math.floor(me.physique * 16.666667 / 100);
+        game.atk(atk_amt);
+    }
+    game.switch_stance();
+}
+
+// 641012
+card_actions["641011"] = (game) => {
+    game.atk(9);
+    const me = game.players[0];
+    if (game.if_fist_stance()) {
+        const def_amt = Math.floor(me.physique * 20 / 100);
+        game.increase_idx_def(0, def_amt);
+    } else {
+        const atk_amt = 1 + Math.floor(me.physique * 16.666667 / 100);
+        game.atk(atk_amt);
+    }
+    game.switch_stance();
+}
+
+// 641013
+card_actions["641013"] = (game) => {
+    game.atk(12);
+    const me = game.players[0];
+    if (game.if_fist_stance()) {
+        const def_amt = Math.floor(me.physique * 20 / 100);
+        game.increase_idx_def(0, def_amt);
+    } else {
+        const atk_amt = 1 + Math.floor(me.physique * 16.666667 / 100);
+        game.atk(atk_amt);
+    }
+    game.switch_stance();
+}
+
 // Unceasing Exercising
 card_actions["642011"] = (game) => {
     game.atk(4);
@@ -9818,6 +9860,24 @@ card_actions["642023"] = (game) => {
     game.add_c_of_x(4, "force");
     game.continuous();
     game.add_c_of_x(2, "overwhelming_power_stacks");
+}
+
+// Counter Move
+card_actions["642031"] = (game) => {
+    game.increase_idx_def(0, 7);
+    game.increase_idx_x_by_c(0, "counter_move_stacks", 1);
+}
+
+// 642032
+card_actions["642032"] = (game) => {
+    game.increase_idx_def(0, 12);
+    game.increase_idx_x_by_c(0, "counter_move_stacks", 1);
+}
+
+// 642033
+card_actions["642033"] = (game) => {
+    game.increase_idx_def(0, 17);
+    game.increase_idx_x_by_c(0, "counter_move_stacks", 1);
 }
 
 // Gone Crazy

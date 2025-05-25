@@ -1230,6 +1230,9 @@ export class Player {
 #ifdef HAS_INDOMITABLE_WILL
         this.indomitable_will_stacks = 0;
 #endif // HAS_INDOMITABLE_WILL
+#ifdef HAS_COUNTER_MOVE
+        this.counter_move_stacks = 0;
+#endif // HAS_COUNTER_MOVE
 
 
         // life shop buffs
@@ -5394,6 +5397,12 @@ export class GameState {
             }
 #endif // HAS_EVERYTHING_GOES_WAY
         }
+#ifdef HAS_COUNTER_MOVE
+        if (enemy.counter_move_stacks > 0 &&
+            enemy.stance_is_fist) {
+            pct_multiplier -= 50;
+        }
+#endif // HAS_COUNTER_MOVE
 #ifdef HAS_PCT_MULTIPLIER
         dmg = Math.floor(dmg * pct_multiplier / 100);
 #endif // HAS_PCT_MULTIPLIER
@@ -5551,6 +5560,12 @@ export class GameState {
             this.increase_idx_debuff(0, "internal_injury", amt);
         }
 #endif // HAS_THROW_PETALS
+#ifdef HAS_COUNTER_MOVE
+        if (enemy.counter_move_stacks > 0 &&
+            !enemy.stance_is_fist) {
+            this.deal_damage_inner(6, false, 0);
+        }
+#endif // HAS_COUNTER_MOVE
 #ifdef HAS_FIRE_FLAME_BLADE
         this.do_fire_flame_blade();
 #endif // HAS_FIRE_FLAME_BLADE

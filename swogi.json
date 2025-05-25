@@ -9413,14 +9413,20 @@
 	},
 	"641011": {
 		"name": "Double Stick",
-		"actions": [],
+		"actions": [
+			["atk", 6]
+		],
 		"character": "dx5"
 	},
 	"641012": {
-		"actions": []
+		"actions": [
+			["atk", 9]
+		]
 	},
 	"641013": {
-		"actions": []
+		"actions": [
+			["atk", 12]
+		]
 	},
 	"642011": {
 		"name": "Unceasing Exercising",
@@ -9471,14 +9477,20 @@
 	},
 	"642031": {
 		"name": "Counter Move",
-		"actions": [],
+		"actions": [
+			["def", 7]
+		],
 		"character": "dx5"
 	},
 	"642032": {
-		"actions": []
+		"actions": [
+			["def", 12]
+		]
 	},
 	"642033": {
-		"actions": []
+		"actions": [
+			["def", 17]
+		]
 	},
 	"643011": {
 		"name": "Gone Crazy",

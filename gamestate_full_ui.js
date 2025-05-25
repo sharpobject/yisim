@@ -560,6 +560,7 @@ export class Player {
         this.stance_is_fist = true;
         this.mortal_body_stacks = 0;
         this.indomitable_will_stacks = 0;
+        this.counter_move_stacks = 0;
 
 
         // life shop buffs
@@ -3450,6 +3451,10 @@ export class GameState {
                 min_dmg = 6;
             }
         }
+        if (enemy.counter_move_stacks > 0 &&
+            enemy.stance_is_fist) {
+            pct_multiplier -= 50;
+        }
         dmg = Math.floor(dmg * pct_multiplier / 100);
         dmg = Math.max(min_dmg, dmg);
         let damage_to_def = 0;
@@ -3554,6 +3559,10 @@ export class GameState {
         if (enemy.throw_petals_stacks > 0) {
             const amt = enemy.throw_petals_stacks;
             this.increase_idx_debuff(0, "internal_injury", amt);
+        }
+        if (enemy.counter_move_stacks > 0 &&
+            !enemy.stance_is_fist) {
+            this.deal_damage_inner(6, false, 0);
         }
         this.do_fire_flame_blade();
         this.deal_damage_inner(dmg, true, 0, is_extra);
