@@ -252,13 +252,17 @@ export const ready = (async () => {
         return swogi[card_id].name.includes("Thunder");
     }
     let is_seal = function (card_id) {
-        if (swogi[card_id].name === "Mysterious Gates Devil Seal Tower") {
+        const name = swogi[card_id].name;
+        if (name === "Mysterious Gates Devil Seal Tower") {
             return false;
         }
-        if (swogi[card_id].name === "Cosmos Seal Divine Orb") {
+        if (name === "Cosmos Seal Divine Orb") {
             return false;
         }
-        return swogi[card_id].name.includes("Seal");
+        if (name === "Remnant Cloud Sky Sealing Sword") {
+            return false;
+        }
+        return name.includes("Seal");
     }
     let is_spirit_sword = function (card_id) {
         return swogi[card_id].name.includes("Spirit Sword");
