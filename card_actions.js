@@ -4868,21 +4868,24 @@ card_actions["213023"] = (game) => {
 
 // Synergy Sword Formation
 card_actions["213031"] = (game) => {
-    const sdfc = game.players[0].other_sword_formation_deck_count;
+    const me = game.players[0];
+    const sdfc = game.sword_formation_deck_count(7, me.currently_triggering_card_idx);
     game.atk(4 + 3 * sdfc);
     game.increase_idx_def(0, 4 + 3 * sdfc);
 }
 
 // 213032
 card_actions["213032"] = (game) => {
-    const sdfc = game.players[0].other_sword_formation_deck_count;
+    const me = game.players[0];
+    const sdfc = game.sword_formation_deck_count(7, me.currently_triggering_card_idx);
     game.atk(4 + 4 * sdfc);
     game.increase_idx_def(0, 4 + 4 * sdfc);
 }
 
 // 213033
 card_actions["213033"] = (game) => {
-    const sdfc = game.players[0].other_sword_formation_deck_count;
+    const me = game.players[0];
+    const sdfc = game.sword_formation_deck_count(7, me.currently_triggering_card_idx);
     game.atk(4 + 5 * sdfc);
     game.increase_idx_def(0, 4 + 5 * sdfc);
 }
@@ -9178,7 +9181,8 @@ card_actions["615023"] = (game) => {
 
 // Yeying Sword Formation
 card_actions["615031"] = (game) => {
-    const reps = 2 + game.sword_formation_deck_count(3);
+    const me = game.players[0];
+    const reps = 2 + game.sword_formation_deck_count(3, me.currently_triggering_card_idx);
     let def_amt = 0;
     for (let i = 0; i < reps; i++) {
         game.atk(2);
@@ -9191,7 +9195,8 @@ card_actions["615031"] = (game) => {
 
 // 615032
 card_actions["615032"] = (game) => {
-    const reps = 2 + game.sword_formation_deck_count(4);
+    const me = game.players[0];
+    const reps = 2 + game.sword_formation_deck_count(4, me.currently_triggering_card_idx);
     let def_amt = 0;
     for (let i = 0; i < reps; i++) {
         game.atk(2);
@@ -9204,7 +9209,8 @@ card_actions["615032"] = (game) => {
 
 // 615033
 card_actions["615033"] = (game) => {
-    const reps = 3 + game.sword_formation_deck_count(4);
+    const me = game.players[0];
+    const reps = 3 + game.sword_formation_deck_count(4, me.currently_triggering_card_idx);
     let def_amt = 0;
     for (let i = 0; i < reps; i++) {
         game.atk(2);
@@ -10548,6 +10554,96 @@ card_actions["734023"] = (game) => {
     game.reduce_idx_max_hp(1, reduce_amt);
 }
 
+// M - Fire Spirit Flame Eater
+card_actions["734031"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.reduce_idx_hp(1, 3);
+    game.reduce_idx_max_hp(1, 3);
+    if (game.if_fire_spirit() && game.if_cost_x_qi(4)) {
+        game.increase_idx_x_by_c(0, "m_fire_spirit_flame_eater_stacks", 1);
+    }
+}
+
+// 734032
+card_actions["734032"] = (game) => {
+    game.increase_idx_qi(0, 3);
+    game.reduce_idx_hp(1, 5);
+    game.reduce_idx_max_hp(1, 5);
+    if (game.if_fire_spirit() && game.if_cost_x_qi(4)) {
+        game.increase_idx_x_by_c(0, "m_fire_spirit_flame_eater_stacks", 1);
+    }
+}
+
+// 734033
+card_actions["734033"] = (game) => {
+    game.increase_idx_qi(0, 4);
+    game.reduce_idx_hp(1, 7);
+    game.reduce_idx_max_hp(1, 7);
+    if (game.if_fire_spirit() && game.if_cost_x_qi(4)) {
+        game.increase_idx_x_by_c(0, "m_fire_spirit_flame_eater_stacks", 1);
+    }
+}
+
+// M - Wood Spirit Recovery
+card_actions["734041"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.do_xuanming_recurring(0);
+    const me = game.players[0];
+    if (game.if_wood_spirit() && me.hp_gained > 0) {
+        game.increase_idx_x_by_c(0, "increase_atk", 1);
+    }
+}
+
+// 734042
+card_actions["734042"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.do_xuanming_recurring(0);
+    const me = game.players[0];
+    if (game.if_wood_spirit() && me.hp_gained > 0) {
+        game.increase_idx_x_by_c(0, "increase_atk", 1);
+    }
+}
+
+// 734043
+card_actions["734033"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.do_xuanming_recurring(0);
+    const me = game.players[0];
+    if (game.if_wood_spirit() && me.hp_gained > 0) {
+        game.increase_idx_x_by_c(0, "increase_atk", 1);
+    }
+}
+
+// M - Metal Spirit Needle
+card_actions["734051"] = (game) => {
+    game.increase_idx_x_by_c(0, "ignore_def", 1);
+    game.atk(6);
+    game.increase_idx_penetrate(0, 4);
+    if (game.if_metal_spirit()) {
+        game.increase_idx_x_by_c(0, "m_metal_spirit_needle_stacks", 1);
+    }
+}
+
+// 734052
+card_actions["734052"] = (game) => {
+    game.increase_idx_x_by_c(0, "ignore_def", 1);
+    game.atk(6);
+    game.increase_idx_penetrate(0, 7);
+    if (game.if_metal_spirit()) {
+        game.increase_idx_x_by_c(0, "m_metal_spirit_needle_stacks", 1);
+    }
+}
+
+// 734053
+card_actions["734053"] = (game) => {
+    game.increase_idx_x_by_c(0, "ignore_def", 1);
+    game.atk(6);
+    game.increase_idx_penetrate(0, 10);
+    if (game.if_metal_spirit()) {
+        game.increase_idx_x_by_c(0, "m_metal_spirit_needle_stacks", 1);
+    }
+}
+
 // Boulder Seal
 card_actions["735011"] = (game) => {
     const def_amt = 2 + 2 * game.players[0].played_card_count;
@@ -10585,6 +10681,228 @@ card_actions["735022"] = (game) => {
 card_actions["735023"] = (game) => {
     game.increase_idx_qi(0, 4);
     game.for_each_x_add_c_y("qi", 3, "penetrate");
+}
+
+// M - Water Spirit Billows
+card_actions["735031"] = (game) => {
+    game.increase_idx_x_by_c(0, "force_of_water", 3);
+    game.increase_idx_x_by_c(0, "m_water_spirit_billows_stacks", 2);
+}
+
+// 735032
+card_actions["735032"] = (game) => {
+    game.increase_idx_x_by_c(0, "force_of_water", 4);
+    game.increase_idx_x_by_c(0, "m_water_spirit_billows_stacks", 2);
+}
+
+// 735033
+card_actions["735033"] = (game) => {
+    game.increase_idx_x_by_c(0, "force_of_water", 5);
+    game.increase_idx_x_by_c(0, "m_water_spirit_billows_stacks", 2);
+}
+
+// M - Five Elements Circulation
+card_actions["735041"] = (game) => {
+    game.do_m_five_elements_circulation(2, 1);
+}
+
+// 735042
+card_actions["735042"] = (game) => {
+    game.do_m_five_elements_circulation(3, 2);
+}
+
+// 735043
+card_actions["735043"] = (game) => {
+    game.do_m_five_elements_circulation(4, 3);
+}
+
+// M - Youthful Vigor
+card_actions["744011"] = (game) => {
+    const hp_gained = game.players[0].hp_gained;
+    const reps = 2 + Math.min(Math.floor(hp_gained * 5 / 100), 2);
+    for (let i=0; i<reps; i++) {
+        game.atk(6);
+    }
+}
+
+// 744012
+card_actions["744012"] = (game) => {
+    const hp_gained = game.players[0].hp_gained;
+    const reps = 2 + Math.min(Math.floor(hp_gained * 5.555556 / 100), 2);
+    for (let i=0; i<reps; i++) {
+        game.atk(8);
+    }
+}
+
+// 744013
+card_actions["744013"] = (game) => {
+    const hp_gained = game.players[0].hp_gained;
+    const reps = 2 + Math.min(Math.floor(hp_gained * 6.25 / 100), 2);
+    for (let i=0; i<reps; i++) {
+        game.atk(10);
+    }
+}
+
+// M - Exercise Bones
+card_actions["744021"] = (game) => {
+    game.increase_idx_hp(0, 5);
+    game.continuous();
+    game.increase_idx_x_by_c(0, "m_exercise_bones_damage_stacks", 1);
+    game.increase_idx_x_by_c(0, "m_exercise_bones_heal_stacks", 2);
+}
+
+// 744022
+card_actions["744022"] = (game) => {
+    game.increase_idx_hp(0, 7);
+    game.continuous();
+    game.increase_idx_x_by_c(0, "m_exercise_bones_damage_stacks", 1);
+    game.increase_idx_x_by_c(0, "m_exercise_bones_heal_stacks", 3);
+}
+
+// 744023
+card_actions["744023"] = (game) => {
+    game.increase_idx_hp(0, 9);
+    game.continuous();
+    game.increase_idx_x_by_c(0, "m_exercise_bones_damage_stacks", 1);
+    game.increase_idx_x_by_c(0, "m_exercise_bones_heal_stacks", 4);
+}
+
+// M - Sinking Qi
+card_actions["744031"] = (game) => {
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_hp(0, 4);
+    game.increase_idx_x_by_c(0, "m_sinking_qi_stacks", 2);
+}
+
+// 744032
+card_actions["744032"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_hp(0, 4);
+    game.increase_idx_x_by_c(0, "m_sinking_qi_stacks", 2);
+}
+
+// 744033
+card_actions["744033"] = (game) => {
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_hp(0, 4);
+    game.increase_idx_x_by_c(0, "m_sinking_qi_stacks", 2);
+}
+
+// M - Double Trouble
+card_actions["745011"] = (game) => {
+    for (let i = 0; i < 2; i++) {
+        game.atk(6);
+    }
+    game.increase_idx_debuff(0, "internal_injury", 2);
+    game.increase_idx_debuff(1, "internal_injury", 2);
+    game.increase_idx_debuff(0, "weaken", 1);
+    game.increase_idx_debuff(1, "weaken", 1);
+    game.increase_idx_debuff(0, "wound", 1);
+    game.increase_idx_debuff(1, "wound", 1);
+}
+
+// 745012
+card_actions["745012"] = (game) => {
+    for (let i = 0; i < 2; i++) {
+        game.atk(8);
+    }
+    game.increase_idx_debuff(0, "internal_injury", 4);
+    game.increase_idx_debuff(1, "internal_injury", 4);
+    game.increase_idx_debuff(0, "weaken", 1);
+    game.increase_idx_debuff(1, "weaken", 1);
+    game.increase_idx_debuff(0, "wound", 1);
+    game.increase_idx_debuff(1, "wound", 1);
+}
+
+// 745013
+card_actions["745013"] = (game) => {
+    for (let i = 0; i < 2; i++) {
+        game.atk(10);
+    }
+    game.increase_idx_debuff(0, "internal_injury", 6);
+    game.increase_idx_debuff(1, "internal_injury", 6);
+    game.increase_idx_debuff(0, "weaken", 1);
+    game.increase_idx_debuff(1, "weaken", 1);
+    game.increase_idx_debuff(0, "wound", 1);
+    game.increase_idx_debuff(1, "wound", 1);
+}
+
+// M - Rakshasa Pouncing
+card_actions["745021"] = (game) => {
+    game.increase_idx_qi(0, 1);
+    const enemy = game.players[1];
+    const ii_amt = enemy.internal_injury;
+    const weaken_amt = enemy.weaken;
+    const flaw_amt = enemy.flaw;
+    const da_amt = enemy.decrease_atk;
+    const entangle_amt = enemy.entangle;
+    const styx_amt = enemy.styx;
+    let wound_amt = ii_amt +
+                    weaken_amt +
+                    flaw_amt +
+                    da_amt +
+                    entangle_amt +
+                    styx_amt;
+    game.reduce_idx_x_by_c(1, "internal_injury", ii_amt);
+    game.reduce_idx_x_by_c(1, "weaken", weaken_amt);
+    game.reduce_idx_x_by_c(1, "flaw", flaw_amt);
+    game.reduce_idx_x_by_c(1, "decrease_atk", da_amt);
+    game.reduce_idx_x_by_c(1, "entangle", entangle_amt);
+    game.reduce_idx_x_by_c(1, "styx", styx_amt);
+    game.increase_idx_debuff(1, "wound", wound_amt);
+    game.atk(10);
+}
+
+// 745022
+card_actions["745022"] = (game) => {
+    game.increase_idx_qi(0, 1);
+    const enemy = game.players[1];
+    const ii_amt = enemy.internal_injury;
+    const weaken_amt = enemy.weaken;
+    const flaw_amt = enemy.flaw;
+    const da_amt = enemy.decrease_atk;
+    const entangle_amt = enemy.entangle;
+    const styx_amt = enemy.styx;
+    let wound_amt = ii_amt +
+                    weaken_amt +
+                    flaw_amt +
+                    da_amt +
+                    entangle_amt +
+                    styx_amt;
+    game.reduce_idx_x_by_c(1, "internal_injury", ii_amt);
+    game.reduce_idx_x_by_c(1, "weaken", weaken_amt);
+    game.reduce_idx_x_by_c(1, "flaw", flaw_amt);
+    game.reduce_idx_x_by_c(1, "decrease_atk", da_amt);
+    game.reduce_idx_x_by_c(1, "entangle", entangle_amt);
+    game.reduce_idx_x_by_c(1, "styx", styx_amt);
+    game.increase_idx_debuff(1, "wound", wound_amt);
+    game.atk(16);
+}
+
+// 745023
+card_actions["745023"] = (game) => {
+    game.increase_idx_qi(0, 1);
+    const enemy = game.players[1];
+    const ii_amt = enemy.internal_injury;
+    const weaken_amt = enemy.weaken;
+    const flaw_amt = enemy.flaw;
+    const da_amt = enemy.decrease_atk;
+    const entangle_amt = enemy.entangle;
+    const styx_amt = enemy.styx;
+    let wound_amt = ii_amt +
+                    weaken_amt +
+                    flaw_amt +
+                    da_amt +
+                    entangle_amt +
+                    styx_amt;
+    game.reduce_idx_x_by_c(1, "internal_injury", ii_amt);
+    game.reduce_idx_x_by_c(1, "weaken", weaken_amt);
+    game.reduce_idx_x_by_c(1, "flaw", flaw_amt);
+    game.reduce_idx_x_by_c(1, "decrease_atk", da_amt);
+    game.reduce_idx_x_by_c(1, "entangle", entangle_amt);
+    game.reduce_idx_x_by_c(1, "styx", styx_amt);
+    game.increase_idx_debuff(1, "wound", wound_amt);
+    game.atk(22);
 }
 
 // Mushroom Zongzi

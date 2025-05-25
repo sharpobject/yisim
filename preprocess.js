@@ -30,7 +30,9 @@ const deps = {
         "91503", "91601", ],
     HAS_PEACH_BRANCH_RUYI: ["peach_branch_ruyi_stacks"],
     HAS_IGNORE_GUARD_UP: ["91601", "ignore_guard_up"],
-    HAS_INTERNAL_INJURY: ["HAS_TOXIC_PURPLE_FERN",
+    HAS_INTERNAL_INJURY: [
+        "HAS_EVERY_DEBUFF",
+        "HAS_TOXIC_PURPLE_FERN",
         "HAS_MARK_OF_DARK_HEART",
         "HAS_HEARTBROKEN_TUNE",
         "HAS_MEDITATION_OF_XUAN",
@@ -43,7 +45,7 @@ const deps = {
         "14506", "22401", "24401", "24501", "24502", "32202",
         "32303", "32503", "33403", "34301", "37303", "37501",
         "40301", "60301", "60507", "60601", "62303", "63502",
-        "64301", "72502", "92401", "94402", ],
+        "64301", "72502", "74501", "92401", "94402", ],
     HAS_MARK_OF_DARK_HEART: ["HAS_P2_MARK_OF_DARK_HEART",
         "HAS_P3_MARK_OF_DARK_HEART",
         "HAS_P4_MARK_OF_DARK_HEART",
@@ -53,8 +55,8 @@ const deps = {
     HAS_P4_MARK_OF_DARK_HEART: ["p4_mark_of_dark_heart_stacks"],
     HAS_P5_MARK_OF_DARK_HEART: ["p5_mark_of_dark_heart_stacks"],
     HAS_METAL_SPIRIT_GIANT_TRIPOD: ["13504", "metal_spirit_giant_tripod_stacks"],
-    HAS_PENETRATE: ["13108", "13207",
-        "13308", "13407", "23104", "63401", "73502", "13307",
+    HAS_PENETRATE: ["13108", "13207", "13307",
+        "13308", "13407", "23104", "63401", "73502", "73405",
         "p5_cycle_of_five_elements_stacks",
         "five_elements_anima_stacks",
         "HAS_METAL_SPIRIT_RHYTHM_WATER",
@@ -64,32 +66,48 @@ const deps = {
         "penetrate"],
     HAS_TOXIC_PURPLE_FERN: ["toxic_purple_fern_stacks"],
     HAS_WATER_SPIRIT_SPRING: ["13310", "water_spirit_spring_stacks"],
-    HAS_WOUND: ["wound", "HAS_CRASH_FIST_ENTANGLE",
+    HAS_WOUND: [
+        "wound",
+        "HAS_EVERY_DEBUFF",
+        "HAS_CRASH_FIST_ENTANGLE",
         "HAS_ENTANGLING_ANCIENT_VINE",
         "HAS_BAD_OMEN",
         "HAS_COURAGE_TO_FIGHT",
         "14107", "14308", "14506", "22401", "24501", "24502",
         "32202", "33403", "34301", "60302", "60503", "60602",
-        "61501", "63502", "64301"],
-    HAS_DECREASE_ATK: ["HAS_ANTHOMANIA_FORMATION", "decrease_atk",
+        "61501", "63502", "64301", "74501"],
+    HAS_DECREASE_ATK: [
+        "HAS_EVERY_DEBUFF",
+        "HAS_ANTHOMANIA_FORMATION",
+        "decrease_atk",
         "14407", "14506", "22401", "24501", "32202", "33403",
         "34301", "63502", "64301"],
     HAS_IGNORE_DECREASE_ATK: ["14506", "ignore_decrease_atk"],
-    HAS_WEAKEN: ["weaken",
+    HAS_WEAKEN: [
+        "weaken",
+        "HAS_EVERY_DEBUFF",
         "12208", "12402", "14207", "14506", "22102", "22401",
         "24501", "24502", "32202", "32403", "32503", "33403",
-        "34301", "40401", "60504", "63502", "64301", "90403"],
+        "34301", "40401", "60504", "63502", "64301", "74501",
+        "90403"],
     HAS_IGNORE_WEAKEN: ["14506", "21302", "ignore_weaken"],
-    HAS_FLAW: ["flaw",
+    HAS_FLAW: [
+        "flaw",
+        "HAS_EVERY_DEBUFF",
         "12304", "14206", "14506", "22102", "22401", "24501",
         "24502", "32202", "32402", "32503", "33403", "34301",
         "40402", "60509", "61101", "63502", "64301"],
-    HAS_ENTANGLE: ["entangle",
+    HAS_ENTANGLE: [
+        "entangle",
+        "HAS_EVERY_DEBUFF",
         "HAS_RESONANCE_WITHIN_REACH",
         "14305", "14506", "22401", "24501", "24502", "32202",
         "33403", "34301", "36503", "40503", "60507", "63502",
         "64301", "90602"],
-    HAS_STYX: ["styx", "HAS_ENTERING_STYX",
+    HAS_STYX: [
+        "styx",
+        "HAS_EVERY_DEBUFF",
+        "HAS_ENTERING_STYX",
         "14506", "22401", "24501", "32202", "33403", "64301",
         "63502", "64401", "64501", "94401"],
     HAS_ENTERING_STYX: ["entering_styx_stacks"],
@@ -129,7 +147,7 @@ const deps = {
         "HAS_ACTIVATE_ANY",
         "13109", "23105", "63302", "93401", "93601", "73502",
         "73401"],
-    HAS_ACTIVATE_ANY: ["13311", "63402", "93502",
+    HAS_ACTIVATE_ANY: ["13311", "63402", "73504", "93502",
         "HAS_COSMOS_SEAL", "HAS_ACTIVATE_NEXT",
         "HAS_FIVE_ELEMENTS_PURE_VASE"],
     HAS_COSMOS_SEAL: ["HAS_MARK_OF_FIVE_ELEMENTS", "13211"],
@@ -192,7 +210,7 @@ const deps = {
     HAS_HEAVENLY_WILL_DEFY: ["god_opportunity_reversal_stacks",
         "37504"],
     HAS_FLAME_SOUL_REBIRTH: ["flame_soul_rebirth_stacks"],
-    HAS_XUANMING_RECURRING: ["90301"],
+    HAS_XUANMING_RECURRING: ["73403", "90301"],
     HAS_BLACK_EARTH_TURTLE: ["black_earth_turtle_stacks", "50301"],
     HAS_MOON_WATER_SWORD_FORMATION: ["moon_water_sword_formation_stacks",
         "11409", "HAS_SWORD_FORMATION_GUARD"],
@@ -288,7 +306,7 @@ const deps = {
         "HAS_FIVE_ELEMENTS_ANIMA",
         "HAS_METAL_SPIRIT_RHYTHM_WATER",
         "13110", "13209", "13210", "13409", "13505", "23105",
-        "23502", "93401"],
+        "23502", "73503", "93401"],
     HAS_METAL_SPIRIT_RHYTHM_WATER: ["23302"],
     HAS_HARD_BAMBOO: ["hard_bamboo_stacks", "36102"],
     HAS_XUANMING_REGEN_TUNE: [
@@ -304,9 +322,6 @@ const deps = {
     HAS_STRIKE_TWICE: ["strike_twice_stacks", "12505", "80505"],
     HAS_CRASH_FIST_DOUBLE: ["crash_fist_double_stacks", "24402"],
     HAS_SWIFT_BURNING_SEAL: ["swift_burning_seal_stacks"],
-    HAS_OTHER_SWORD_FORMATION_DECK_COUNT: ["21303"],
-    HAS_SWORD_FORMATION_DECK_COUNT: [
-        "HAS_OTHER_SWORD_FORMATION_DECK_COUNT"],
     HAS_FLYING_BRUSH: ["flying_brush_stacks",
         "HAS_SHADOW_OWL_REISHI", "34501"],
     HAS_SHADOW_OWL_REISHI: ["shadow_owl_reishi_stacks"],
@@ -674,7 +689,7 @@ const deps = {
         "stillness_citta_dharma_stacks", "12209"],
     HAS_HP_GAINED: [
         "HAS_CHASE_IF_HP_GAINED",
-        "12309", "23301", "92301"],
+        "12309", "23301", "73404", "74401", "92301"],
     HAS_STAR_POWER: [
         "HAS_STARGAZE",
         "HAS_ULTIMATE_POLARIS_HEXAGRAM_BASE",
@@ -890,6 +905,26 @@ const deps = {
     HAS_CHENGYUNS_FUSION_STYLE: [
         "chengyuns_fusion_style_stacks",
         "swordplay_talent_cards"],
+    HAS_M_FIRE_SPIRIT_FLAME_EATER: [
+        "m_fire_spirit_flame_eater_stacks",
+        "73403"],
+    HAS_M_METAL_SPIRIT_NEEDLE: [
+        "m_metal_spirit_needle_stacks",
+        "73405"],
+    HAS_M_WATER_SPIRIT_BILLOWS: [
+        "m_water_spirit_billows_stacks",
+        "73503"],
+    HAS_M_FIVE_ELEMENTS_CIRCULATION: ["73504"],
+    HAS_M_EXERCISE_BONES: [
+        "m_exercise_bones_damage_stacks",
+        "m_exercise_bones_heal_stacks",
+        "74402"],
+    HAS_M_SINKING_QI: [
+        "m_sinking_qi_stacks",
+        "74403"],
+    HAS_EVERY_DEBUFF: [
+        "74502"],
+
 
 
 };
