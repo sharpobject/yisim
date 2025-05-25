@@ -627,7 +627,6 @@ export class Player {
 
         // merpeople pearls
         this.qi_gathering_merpeople_pearl_stacks = 0;
-        //TODO: implement crystallized_merpeople_pearl_stacks
         this.crystallized_merpeople_pearl_stacks = 0;
 
 
@@ -730,20 +729,9 @@ export class Player {
         }
         this.cosmos_seal_stacks = this.mark_of_five_elements_stacks;
     }
-    reset_deck_counts() {
-        const n_cards = this.cards.length;
-        for (let i=0; i<n_cards; i++) {
-            let card_id = this.cards[i];
-            let card = swogi[card_id];
-            if (card.is_sword_formation) {
-                this.sword_formation_deck_count += 1;
-            }
-        }
-    }
     post_deck_setup() {
         this.xuanming_recurring_hp = this.hp;
         this.reset_can_play();
-        this.reset_deck_counts();
     }
 }
 export class GameState {
@@ -2176,12 +2164,20 @@ export class GameState {
         this.for_each_x_add_y("meditation_of_xuan_stacks", "regen");
     }
     do_unrestrained_sword_zero() {
-        if (this.players[0].unrestrained_sword_zero_stacks > 0) {
-            const card_id = this.players[0].currently_triggering_card_id;
+        const me = this.players[0];
+        if (me.unrestrained_sword_zero_stacks > 0) {
+            const card_id = me.currently_triggering_card_id;
             if (this.is_unrestrained_sword(card_id)) {
-                let healing_amt = Math.floor(this.players[0].damage_dealt_to_hp_by_atk * this.players[0].unrestrained_sword_zero_stacks / 100);
+                const healing_amt = Math.floor(me.damage_dealt_to_hp_by_atk * me.unrestrained_sword_zero_stacks / 100);
                 this.heal(healing_amt);
             }
+        }
+    }
+    do_crystallized_merpeople_pearl() {
+        const me = this.players[0];
+        if (me.crystallized_merpeople_pearl_stacks > 0) {
+            const def_amt = Math.floor(me.damage_dealt_to_hp_by_atk * me.crystallized_merpeople_pearl_stacks * 0.5);
+            this.increase_idx_def(0, def_amt);
         }
     }
     do_dark_star_bat() {
@@ -2635,7 +2631,6 @@ export class GameState {
             let card_id = me.cards[me.next_card_index];
             let card = swogi[card_id];
             let qi_cost = card.qi_cost;
-            // TODO: ths has to get reworked for chengyun's fusion style.
             if (card.decrease_qi_cost_by_x !== undefined) {
                 let x = card.decrease_qi_cost_by_x;
                 let reduce_amt = 0;
@@ -3527,6 +3522,7 @@ export class GameState {
                 if (!is_extra) {
                     this.do_unrestrained_sword_zero();
                 }
+                this.do_crystallized_merpeople_pearl();
                 this.do_dark_star_bat();
                 this.do_resonance_cat_paw();
             }
@@ -3833,9 +3829,9 @@ export class GameState {
         ret ||= (me.quench_of_sword_heart_unrestrained_stacks > 0 &&
             swogi[card_id].name === "Clear Heart Sword Embryo");
         ret ||= (me.m_light_sword_stacks > 0);
-        if (this.players[0].chengyuns_fusion_style_stacks > 0) {
+        if (me.chengyuns_fusion_style_stacks > 0) {
             const card_id_without_level = card_id.substring(0, card_id.length - 1);
-            ret ||= this.players[0].swordplay_talent_cards.includes(card_id_without_level);
+            ret ||= me.swordplay_talent_cards.includes(card_id_without_level);
         }
         return ret;
     }
@@ -3843,13 +3839,13 @@ export class GameState {
         let ret = false;
         const me = this.players[0];
         ret ||= (swogi[card_id].name === "Clear Heart Sword Embryo" &&
-            this.players[0].quench_of_sword_heart_cloud_stacks > 0)
+            me.quench_of_sword_heart_cloud_stacks > 0)
         ret ||= (swogi[card_id].marking === "fm" &&
-            this.players[0].cloud_sword_endless_stacks > 0);
+            me.cloud_sword_endless_stacks > 0);
         ret ||= (me.m_light_sword_stacks > 0);
-        if (this.players[0].chengyuns_fusion_style_stacks > 0) {
+        if (me.chengyuns_fusion_style_stacks > 0) {
             const card_id_without_level = card_id.substring(0, card_id.length - 1);
-            ret ||= this.players[0].swordplay_talent_cards.includes(card_id_without_level);
+            ret ||= me.swordplay_talent_cards.includes(card_id_without_level);
         }
         return ret;
     }
@@ -4696,8 +4692,8 @@ export class GameState {
     }
     is_sword_formation(card_id) {
         const card = swogi[card_id];
-        let ret = false;
-        ret ||= card.is_sword_formation;
+        let ret = card.is_sword_formation;
+        const me = this.players[0];
         if (this.players[0].chengyuns_fusion_style_stacks > 0) {
             const card_id_without_level = card_id.substring(0, card_id.length - 1);
             ret ||= this.players[0].swordplay_talent_cards.includes(card_id_without_level);
@@ -4706,11 +4702,11 @@ export class GameState {
     }
     is_spirit_sword(card_id) {
         const card = swogi[card_id];
-        let ret = false;
-        ret ||= card.is_spirit_sword;
-        if (this.players[0].chengyuns_fusion_style_stacks > 0) {
+        let ret = card.is_spirit_sword;
+        const me = this.players[0];
+        if (me.chengyuns_fusion_style_stacks > 0) {
             const card_id_without_level = card_id.substring(0, card_id.length - 1);
-            ret ||= this.players[0].swordplay_talent_cards.includes(card_id_without_level);
+            ret ||= me.swordplay_talent_cards.includes(card_id_without_level);
         }
         return ret;
     }
