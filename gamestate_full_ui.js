@@ -4390,7 +4390,11 @@ export class GameState {
             this.activate_element_of_card(next_id);
             this.chase();
         }
-        const activated = this.get_n_activated(me);
+        const activated = this.activate_wood_spirit_stacks +
+                          this.activate_fire_spirit_stacks +
+                          this.activate_earth_spirit_stacks +
+                          this.activate_metal_spirit_stacks +
+                          this.activate_water_spirit_stacks;
         this.increase_idx_def(0, def_amt * activated);
     }
     do_earth_spirit_dust() {
@@ -4493,14 +4497,6 @@ export class GameState {
     }
     if_either_has_def() {
         return this.players[0].def > 0 || this.players[1].def > 0;
-    }
-    if_any_element_activated() {
-        const me = this.players[0];
-        if (me.activate_wood_spirit_stacks > 0) return true;
-        if (me.activate_fire_spirit_stacks > 0) return true;
-        if (me.activate_earth_spirit_stacks > 0) return true;
-        if (me.activate_metal_spirit_stacks > 0) return true;
-        if (me.activate_water_spirit_stacks > 0) return true;
     }
     do_metal_spirit_rhythm_water(pen_gain_amt) {
         if (this.if_metal_spirit()) {

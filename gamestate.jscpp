@@ -6543,7 +6543,11 @@ export class GameState {
             this.activate_element_of_card(next_id);
             this.chase();
         }
-        const activated = this.get_n_activated(me);
+        const activated = this.activate_wood_spirit_stacks +
+                          this.activate_fire_spirit_stacks +
+                          this.activate_earth_spirit_stacks +
+                          this.activate_metal_spirit_stacks +
+                          this.activate_water_spirit_stacks;
         this.increase_idx_def(0, def_amt * activated);
     }
 #endif // HAS_M_FIVE_ELEMENTS_CIRCULATION
@@ -6669,24 +6673,6 @@ export class GameState {
 #endif // HAS_THUNDER_AND_LIGHTNING
     if_either_has_def() {
         return this.players[0].def > 0 || this.players[1].def > 0;
-    }
-    if_any_element_activated() {
-        const me = this.players[0];
-#ifdef HAS_ACTIVATE_WOOD
-        if (me.activate_wood_spirit_stacks > 0) return true;
-#endif // HAS_ACTIVATE_WOOD
-#ifdef HAS_ACTIVATE_FIRE
-        if (me.activate_fire_spirit_stacks > 0) return true;
-#endif // HAS_ACTIVATE_FIRE
-#ifdef HAS_ACTIVATE_EARTH
-        if (me.activate_earth_spirit_stacks > 0) return true;
-#endif // HAS_ACTIVATE_EARTH
-#ifdef HAS_ACTIVATE_METAL
-        if (me.activate_metal_spirit_stacks > 0) return true;
-#endif // HAS_ACTIVATE_METAL
-#ifdef HAS_ACTIVATE_WATER
-        if (me.activate_water_spirit_stacks > 0) return true;
-#endif // HAS_ACTIVATE_WATER
     }
 #ifdef HAS_METAL_SPIRIT_RHYTHM_WATER
     do_metal_spirit_rhythm_water(pen_gain_amt) {

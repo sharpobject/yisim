@@ -2485,7 +2485,8 @@ card_actions["131103"] = (game) => {
 // Five Elements Fleche
 card_actions["131111"] = (game) => {
     let atk_amt = 5;
-    if (game.if_any_element_activated()) {
+    const me = game.players[0];
+    if (game.get_n_activated(me) > 0) {
         atk_amt += 3;
     }
     game.atk(atk_amt);
@@ -2494,7 +2495,8 @@ card_actions["131111"] = (game) => {
 // 131112
 card_actions["131112"] = (game) => {
     let atk_amt = 5;
-    if (game.if_any_element_activated()) {
+    const me = game.players[0];
+    if (game.get_n_activated(me) > 0) {
         atk_amt += 6;
     }
     game.atk(atk_amt);
@@ -2503,7 +2505,8 @@ card_actions["131112"] = (game) => {
 // 131113
 card_actions["131113"] = (game) => {
     let atk_amt = 5;
-    if (game.if_any_element_activated()) {
+    const me = game.players[0];
+    if (game.get_n_activated(me) > 0) {
         atk_amt += 9;
     }
     game.atk(atk_amt);
