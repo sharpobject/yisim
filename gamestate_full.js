@@ -4379,7 +4379,8 @@ export class GameState {
         const prev_id = me.cards[prev_idx];
         const next_id = me.cards[next_idx];
         this.increase_idx_qi(0, qi_amt);
-        if (this.cards_have_generating_interaction(prev_id, next_id)) {
+        if (this.cards_have_generating_interaction(prev_id, next_id) ||
+            this.cards_have_generating_interaction(next_id, prev_id)) {
             this.activate_element_of_card(prev_id);
             this.activate_element_of_card(next_id);
             this.chase();

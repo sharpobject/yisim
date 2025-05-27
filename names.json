@@ -1997,6 +1997,16 @@
         "namecn": "普通攻击"
     },
     {
+        "id": 601021,
+        "name": "Leaping the Dragon Gate",
+        "namecn": "鱼跃龙门"
+    },
+    {
+        "id": 602011,
+        "name": "Firecracker",
+        "namecn": "爆竹"
+    },
+    {
         "id": 603011,
         "name": "Demonic Qi Haunt",
         "namecn": "魔气缠身"
@@ -2005,6 +2015,11 @@
         "id": 603021,
         "name": "Magic Dragon's Paw",
         "namecn": "魔龙之爪"
+    },
+    {
+        "id": 603031,
+        "name": "Firework",
+        "namecn": "烟花"
     },
     {
         "id": 605011,

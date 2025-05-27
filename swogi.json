@@ -8410,6 +8410,44 @@
 			["if_x_at_least_c_do", "carefree_guqin_stacks", 1, ["chase"]]
 		]
 	},
+	"601021": {
+		"name": "Leaping the Dragon Gate",
+		"actions": [
+			["atk", 3]
+		]
+	},
+	"601022": {
+		"actions": [
+			["atk", 6]
+		]
+	},
+	"601023": {
+		"actions": [
+			["atk", 9]
+		]
+	},
+	"602011": {
+		"name": "Firecracker",
+		"actions": [
+			["add_c_of_x", 2, "hexproof"],
+			["add_enemy_c_of_x", 1, "skip_next_card_stacks"],
+			["consumption"]
+		]
+	},
+	"602012": {
+		"actions": [
+			["add_c_of_x", 3, "hexproof"],
+			["add_enemy_c_of_x", 1, "skip_next_card_stacks"],
+			["consumption"]
+		]
+	},
+	"602013": {
+		"actions": [
+			["add_c_of_x", 4, "hexproof"],
+			["add_enemy_c_of_x", 1, "skip_next_card_stacks"],
+			["consumption"]
+		]
+	},
 	"603011": {
 		"name": "Demonic Qi Haunt",
 		"actions": [
@@ -8449,6 +8487,26 @@
 			["rep", 4, [
 				["atk", 2],
 				["add_enemy_c_of_x", 1, "wound"]]]
+		]
+	},
+	"603031": {
+		"name": "Firework",
+		"actions": [
+			["add_c_of_x", 1, "hexproof"],
+			["chase"]
+
+		]
+	},
+	"603032": {
+		"actions": [
+			["add_c_of_x", 2, "hexproof"],
+			["chase"]
+		]
+	},
+	"603033": {
+		"actions": [
+			["add_c_of_x", 3, "hexproof"],
+			["chase"]
 		]
 	},
 	"605011": {
