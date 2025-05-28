@@ -168,7 +168,7 @@ def flood_fill_from_top(img_array, top_row_idx,
 
     return mask
 
-def extract_and_round_corners(img, region, corner_radius, padding, masks):
+def extract_and_round_corners(img, region, corner_radius, padding, masks, do_en_text=False):
     # First extract the region plus some extra space above for text
     extra_height = padding*2  # Add 50 pixels above for potential text
     extended_region = (region[0]-extra_height, region[1]-extra_height, region[2]+extra_height, region[3]+extra_height)
@@ -178,7 +178,8 @@ def extract_and_round_corners(img, region, corner_radius, padding, masks):
     img_array = np.array(result)
 
     # Get mask of text pixels to keep
-    text_mask = flood_fill_from_top(img_array, extra_height)
+    if do_en_text:
+        text_mask = flood_fill_from_top(img_array, extra_height)
 
     # Create base mask for rounded corners
     corner_mask = Image.new('L', result.size, 0)
@@ -198,7 +199,9 @@ def extract_and_round_corners(img, region, corner_radius, padding, masks):
     corner_mask_array = np.array(corner_mask)
 
     # Combine corner mask with text mask
-    final_mask = np.maximum(corner_mask_array, text_mask)
+    final_mask = corner_mask_array
+    if do_en_text:
+        final_mask = np.maximum(final_mask, text_mask)
     for mask in masks:
         final_mask = np.maximum(final_mask, mask)
     final_mask = final_mask.astype(np.uint8)
@@ -312,6 +315,7 @@ def classify_image(img, padding, output_dir, k_threecards=0.7):
     return best_single_card_result
 
 def process_image(input_path, output_base, corner_radius, padding):
+    is_english = input_path.startswith("en")
     with Image.open(input_path) as img:
         if img.width == 1920:
             print(f"Upscaling from 1920x{img.height} to 2560x{int(img.height * 4/3)}")
@@ -363,7 +367,7 @@ def process_image(input_path, output_base, corner_radius, padding):
                     masks.append(hp_cost_mask)
                 if qi_cost > 0:
                     masks.append(qi_cost_mask)
-            rounded = extract_and_round_corners(img, region, corner_radius, padding, masks)
+            rounded = extract_and_round_corners(img, region, corner_radius, padding, masks, is_english)
             crop_region = (padding-1, padding-1, rounded.width-padding+1, rounded.height-padding+1)
             rounded = rounded.crop(crop_region)
             results.append(rounded)
