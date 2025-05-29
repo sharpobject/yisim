@@ -10187,7 +10187,7 @@ card_actions["714031"] = (game) => {
     game.atk(4);
     const me = game.players[0];
     game.increase_idx_def(0, me.qi);
-    if (game.spirit_sword_deck_count(3) === 3) {
+    if (game.spirit_sword_deck_count(2) === 2) {
         game.chase();
     }
 }
@@ -10197,7 +10197,7 @@ card_actions["714032"] = (game) => {
     game.atk(8);
     const me = game.players[0];
     game.increase_idx_def(0, me.qi);
-    if (game.spirit_sword_deck_count(3) === 3) {
+    if (game.spirit_sword_deck_count(2) === 2) {
         game.chase();
     }
 }
@@ -10207,7 +10207,7 @@ card_actions["714033"] = (game) => {
     game.atk(12);
     const me = game.players[0];
     game.increase_idx_def(0, me.qi);
-    if (game.spirit_sword_deck_count(3) === 3) {
+    if (game.spirit_sword_deck_count(2) === 2) {
         game.chase();
     }
 }
@@ -10518,7 +10518,7 @@ card_actions["725033"] = (game) => {
 // M - Incessant
 card_actions["725041"] = (game) => {
     game.atk(6);
-    game.increase_idx_x_by_c(0, "regen", 3);
+    game.increase_idx_x_by_c(0, "regen", 2);
     const me = game.players[0];
     const amt = 6 + me.regen;
     game.increase_idx_max_hp(0, amt);
@@ -10530,7 +10530,7 @@ card_actions["725041"] = (game) => {
 // 725042
 card_actions["725042"] = (game) => {
     game.atk(6);
-    game.increase_idx_x_by_c(0, "regen", 4);
+    game.increase_idx_x_by_c(0, "regen", 3);
     const me = game.players[0];
     const amt = 9 + me.regen;
     game.increase_idx_max_hp(0, amt);
@@ -10542,7 +10542,7 @@ card_actions["725042"] = (game) => {
 // 725043
 card_actions["725043"] = (game) => {
     game.atk(6);
-    game.increase_idx_x_by_c(0, "regen", 5);
+    game.increase_idx_x_by_c(0, "regen", 4);
     const me = game.players[0];
     const amt = 12 + me.regen;
     game.increase_idx_max_hp(0, amt);
@@ -10650,7 +10650,7 @@ card_actions["734033"] = (game) => {
 // M - Wood Spirit Recovery
 card_actions["734041"] = (game) => {
     game.increase_idx_qi(0, 2);
-    game.do_xuanming_recurring(0);
+    game.do_xuanming_recurring(0, 15);
     const me = game.players[0];
     if (game.if_wood_spirit() && me.hp_gained > 0) {
         game.increase_idx_x_by_c(0, "increase_atk", 1);
@@ -10660,7 +10660,7 @@ card_actions["734041"] = (game) => {
 // 734042
 card_actions["734042"] = (game) => {
     game.increase_idx_qi(0, 2);
-    game.do_xuanming_recurring(0);
+    game.do_xuanming_recurring(0, 15);
     const me = game.players[0];
     if (game.if_wood_spirit() && me.hp_gained > 0) {
         game.increase_idx_x_by_c(0, "increase_atk", 1);
@@ -10670,7 +10670,7 @@ card_actions["734042"] = (game) => {
 // 734043
 card_actions["734033"] = (game) => {
     game.increase_idx_qi(0, 2);
-    game.do_xuanming_recurring(0);
+    game.do_xuanming_recurring(0, 15);
     const me = game.players[0];
     if (game.if_wood_spirit() && me.hp_gained > 0) {
         game.increase_idx_x_by_c(0, "increase_atk", 1);
@@ -10808,7 +10808,6 @@ card_actions["744013"] = (game) => {
 
 // M - Exercise Bones
 card_actions["744021"] = (game) => {
-    game.increase_idx_hp(0, 5);
     game.continuous();
     game.increase_idx_x_by_c(0, "m_exercise_bones_damage_stacks", 1);
     game.increase_idx_x_by_c(0, "m_exercise_bones_heal_stacks", 2);
@@ -10816,7 +10815,6 @@ card_actions["744021"] = (game) => {
 
 // 744022
 card_actions["744022"] = (game) => {
-    game.increase_idx_hp(0, 7);
     game.continuous();
     game.increase_idx_x_by_c(0, "m_exercise_bones_damage_stacks", 1);
     game.increase_idx_x_by_c(0, "m_exercise_bones_heal_stacks", 3);
@@ -10824,7 +10822,6 @@ card_actions["744022"] = (game) => {
 
 // 744023
 card_actions["744023"] = (game) => {
-    game.increase_idx_hp(0, 9);
     game.continuous();
     game.increase_idx_x_by_c(0, "m_exercise_bones_damage_stacks", 1);
     game.increase_idx_x_by_c(0, "m_exercise_bones_heal_stacks", 4);
@@ -10833,21 +10830,21 @@ card_actions["744023"] = (game) => {
 // M - Sinking Qi
 card_actions["744031"] = (game) => {
     game.increase_idx_qi(0, 1);
-    game.increase_idx_hp(0, 4);
+    game.increase_idx_hp(0, 9);
     game.increase_idx_x_by_c(0, "m_sinking_qi_stacks", 2);
 }
 
 // 744032
 card_actions["744032"] = (game) => {
     game.increase_idx_qi(0, 2);
-    game.increase_idx_hp(0, 4);
+    game.increase_idx_hp(0, 10);
     game.increase_idx_x_by_c(0, "m_sinking_qi_stacks", 2);
 }
 
 // 744033
 card_actions["744033"] = (game) => {
     game.increase_idx_qi(0, 3);
-    game.increase_idx_hp(0, 4);
+    game.increase_idx_hp(0, 11);
     game.increase_idx_x_by_c(0, "m_sinking_qi_stacks", 2);
 }
 
@@ -10858,10 +10855,10 @@ card_actions["745011"] = (game) => {
     }
     game.increase_idx_debuff(0, "internal_injury", 2);
     game.increase_idx_debuff(1, "internal_injury", 2);
-    game.increase_idx_debuff(0, "weaken", 1);
-    game.increase_idx_debuff(1, "weaken", 1);
     game.increase_idx_debuff(0, "wound", 1);
     game.increase_idx_debuff(1, "wound", 1);
+    game.increase_idx_debuff(0, "weaken", 1);
+    game.increase_idx_debuff(1, "weaken", 1);
 }
 
 // 745012
@@ -10871,10 +10868,10 @@ card_actions["745012"] = (game) => {
     }
     game.increase_idx_debuff(0, "internal_injury", 4);
     game.increase_idx_debuff(1, "internal_injury", 4);
-    game.increase_idx_debuff(0, "weaken", 1);
-    game.increase_idx_debuff(1, "weaken", 1);
     game.increase_idx_debuff(0, "wound", 1);
     game.increase_idx_debuff(1, "wound", 1);
+    game.increase_idx_debuff(0, "weaken", 1);
+    game.increase_idx_debuff(1, "weaken", 1);
 }
 
 // 745013
@@ -10884,10 +10881,10 @@ card_actions["745013"] = (game) => {
     }
     game.increase_idx_debuff(0, "internal_injury", 6);
     game.increase_idx_debuff(1, "internal_injury", 6);
-    game.increase_idx_debuff(0, "weaken", 1);
-    game.increase_idx_debuff(1, "weaken", 1);
     game.increase_idx_debuff(0, "wound", 1);
     game.increase_idx_debuff(1, "wound", 1);
+    game.increase_idx_debuff(0, "weaken", 1);
+    game.increase_idx_debuff(1, "weaken", 1);
 }
 
 // M - Rakshasa Pouncing

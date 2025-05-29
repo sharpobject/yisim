@@ -2471,123 +2471,178 @@
     },
     {
         "id": 801011,
-        "name": "Mushroom Zongzi"
+        "name": "Mushroom Zongzi",
+        "namecn": "香菇粽"
     },
     {
         "id": 801021,
-        "name": "Honey Zongzi"
+        "name": "Honey Zongzi",
+        "namecn": "蜂蜜粽"
     },
     {
         "id": 801031,
-        "name": "Salted Meat Zongzi"
+        "name": "Salted Meat Zongzi",
+        "namecn": "咸肉粽"
     },
     {
         "id": 801041,
-        "name": "Red Bean Zongzi"
+        "name": "Red Bean Zongzi",
+        "namecn": "红豆粽"
     },
     {
         "id": 801051,
-        "name": "Jujube Zongzi"
+        "name": "Jujube Zongzi",
+        "namecn": "红枣粽"
     },
     {
         "id": 801061,
-        "name": "Fresh Meat Zongzi"
+        "name": "Fresh Meat Zongzi",
+        "namecn": "鲜肉粽"
+    },
+    {
+        "id": 801071,
+        "name": "Pure Rice Zongzi",
+        "namecn": "白粽"
     },
     {
         "id": 802011,
-        "name": "Candied Jujube Zongzi"
+        "name": "Candied Jujube Zongzi",
+        "namecn": "蜜枣粽"
     },
     {
         "id": 802021,
-        "name": "Spicy Zongzi"
+        "name": "Spicy Zongzi",
+        "namecn": "麻辣粽"
     },
     {
         "id": 802031,
-        "name": "Roasted Meat Zongzi"
+        "name": "Roasted Meat Zongzi",
+        "namecn": "烧肉粽"
     },
     {
         "id": 802041,
-        "name": "Mung Bean Zongzi"
+        "name": "Mung Bean Zongzi",
+        "namecn": "绿豆酥"
     },
     {
         "id": 802051,
-        "name": "Preserved Meat Zongzi"
+        "name": "Preserved Meat Zongzi",
+        "namecn": "腊肉粽"
     },
     {
         "id": 802061,
-        "name": "Jujube Paste Zongzi"
+        "name": "Jujube Paste Zongzi",
+        "namecn": "枣泥粽"
     },
     {
         "id": 803011,
-        "name": "Alkaline Water Zongzi"
+        "name": "Alkaline Water Zongzi",
+        "namecn": "碱水粽"
     },
     {
         "id": 803021,
-        "name": "Lotus Seeds Zongzi"
+        "name": "Lotus Seeds Zongzi",
+        "namecn": "莲子粽"
     },
     {
         "id": 803031,
-        "name": "Bean Paste Zongzi"
+        "name": "Bean Paste Zongzi",
+        "namecn": "豆沙粽"
     },
     {
         "id": 803041,
-        "name": "Sour Bamboo Shoots Zongzi"
+        "name": "Sour Bamboo Shoots Zongzi",
+        "namecn": "酸笋粽"
     },
     {
         "id": 803051,
-        "name": "Chestnut Zongzi"
+        "name": "Chestnut Zongzi",
+        "namecn": "板栗粽"
     },
     {
         "id": 803061,
-        "name": "Pungent Zongzi"
+        "name": "Pungent Zongzi",
+        "namecn": "香辣粽"
     },
     {
         "id": 804011,
-        "name": "Preserved Fruit Zongzi"
+        "name": "Preserved Fruit Zongzi",
+        "namecn": "蜜饯果粽"
     },
     {
         "id": 804021,
-        "name": "Crystal Ice Zongzi"
+        "name": "Crystal Ice Zongzi",
+        "namecn": "水晶冰粽"
     },
     {
         "id": 804031,
-        "name": "Fresh Fruit Zongzi"
+        "name": "Fresh Fruit Zongzi",
+        "namecn": "鲜果宝粽"
     },
     {
         "id": 804041,
-        "name": "Salted Egg Yolk Zongzi"
+        "name": "Salted Egg Yolk Zongzi",
+        "namecn": "咸蛋黄粽"
     },
     {
         "id": 804051,
-        "name": "Seafood Zongzi"
+        "name": "Seafood Zongzi",
+        "namecn": "海鲜肉粽"
     },
     {
         "id": 804061,
-        "name": "Pickled Mustard Zongzi"
+        "name": "Pickled Mustard Zongzi",
+        "namecn": "梅菜肉粽"
+    },
+    {
+        "id": 804071,
+        "name": "Osmanthus Zongzi",
+        "namecn": "桂花香粽"
+    },
+    {
+        "id": 804081,
+        "name": "Ham Zongzi",
+        "namecn": "火腿肉粽"
     },
     {
         "id": 805011,
-        "name": "Mixed Grain Zongzi"
+        "name": "Mixed Grain Zongzi",
+        "namecn": "八宝杂粮粽"
     },
     {
         "id": 805021,
-        "name": "Spirit Zongzi"
+        "name": "Spirit Zongzi",
+        "namecn": "仙风归灵粽"
     },
     {
         "id": 805031,
-        "name": "Water Combined Zongzi"
+        "name": "Water Combined Zongzi",
+        "namecn": "百川琉璃粽"
     },
     {
         "id": 805041,
-        "name": "Assorted Meat Zongzi"
+        "name": "Assorted Meat Zongzi",
+        "namecn": "秘制三鲜粽"
     },
     {
         "id": 805051,
-        "name": "Double Plum Zongzi"
+        "name": "Double Plum Zongzi",
+        "namecn": "梅香玉露粽"
     },
     {
         "id": 805061,
-        "name": "Shura Zongzi"
+        "name": "Shura Zongzi",
+        "namecn": "修罗镇魂粽"
+    },
+    {
+        "id": 805071,
+        "name": "Heavenly Delicacy Zongzi",
+        "namecn": "天髓珍馐粽"
+    },
+    {
+        "id": 805081,
+        "name": "Various Cate Zongzi",
+        "namecn": "缤纷玉馔粽"
     },
     {
         "id": 903011,

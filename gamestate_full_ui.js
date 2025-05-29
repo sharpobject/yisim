@@ -3242,8 +3242,10 @@ export class GameState {
                 this.reduce_idx_hp(idx, amt * 3, false);
             }
         }
-        if (me.m_ruthless_water_stacks > 0 &&
-            x !== "internal_injury") {
+        if (me.m_ruthless_water_stacks > 0
+            && x !== "internal_injury"
+            && x !== "styx"
+        ) {
             const ii_amt = amt * me.m_ruthless_water_stacks;
             this.increase_idx_x_by_c(idx, "internal_injury", ii_amt);
         }
@@ -4824,9 +4826,14 @@ export class GameState {
         this.reduce_enemy_hp(my_hp_loss + fixed_hp_loss);
         this.reduce_enemy_max_hp(my_hp_loss + fixed_hp_loss);
     }
-    do_xuanming_recurring(amt) {
-        if (this.players[0].xuanming_recurring_hp !== undefined) {
-            this.set_idx_c_of_x(0, "hp", this.players[0].xuanming_recurring_hp + amt);
+    do_xuanming_recurring(amt, cap) {
+        const me = this.players[0];
+        if (me.xuanming_recurring_hp !== undefined) {
+            let new_hp = me.xuanming_recurring_hp + amt;
+            if (cap !== undefined) {
+                new_hp = Math.min(new_hp, me.hp + cap);
+            }
+            this.set_idx_c_of_x(0, "hp", new_hp);
         }
     }
     do_resonance_setup(idx) {

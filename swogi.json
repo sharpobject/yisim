@@ -10040,6 +10040,7 @@
 	},
 	"724041": {
 		"name": "M - Ruthless Water",
+		"qi_cost": 1,
 		"actions": [
 			["add_enemy_c_of_x", 2, "internal_injury"],
 			["continuous"],
@@ -10701,6 +10702,22 @@
 			["reduce_random_debuff_by_c_n_times", 1, 1]
 		]
 	},
+	"801071": {
+		"name": "Pure Rice Zongzi",
+		"actions": [
+			["heal", 3]
+		]
+	},
+	"801072": {
+		"actions": [
+			["heal", 6]
+		]
+	},
+	"801073": {
+		"actions": [
+			["heal", 9]
+		]
+	},
 	"802011": {
 		"name": "Candied Jujube Zongzi",
 		"is_sweet": true,
@@ -11143,6 +11160,43 @@
 			["add_c_of_x", 3, "skip_next_card_stacks"]
 		]
 	},
+	"804071": {
+		"is_sweet": true,
+		"name": "Osmanthus Zongzi",
+		"actions": [
+			["heal", 3]
+		]
+	},
+	"804072": {
+		"actions": [
+			["heal", 6]
+		]
+	},
+	"804073": {
+		"actions": [
+			["heal", 9]
+		]
+	},
+	"804081": {
+		"is_salty": true,
+		"name": "Ham Zongzi",
+		"actions": [
+			["continuous"],
+			["heal", 3]
+		]
+	},
+	"804082": {
+		"actions": [
+			["continuous"],
+			["heal", 6]
+		]
+	},
+	"804083": {
+		"actions": [
+			["continuous"],
+			["heal", 9]
+		]
+	},
 	"805011": {
 		"name": "Mixed Grain Zongzi",
 		"is_sweet": true,
@@ -11286,6 +11340,43 @@
 			["for_each_x_add_y", "indigestion", "bonus_def_amt"],
 			["for_each_x_add_y", "bonus_def_amt", "qi"],
 			["for_each_x_add_c_y", "bonus_def_amt", 5, "hp"]
+		]
+	},
+	"805071": {
+		"name": "Heavenly Delicacy Zongzi",
+		"is_sweet": true,
+		"qi_cost": 2,
+		"actions": [
+			["heal", 2]
+		]
+	},
+	"805072": {
+		"qi_cost": 1,
+		"actions": [
+			["heal", 2]
+		]
+	},
+	"805073": {
+		"qi_cost": 0,
+		"actions": [
+			["heal", 2]
+		]
+	},
+	"805081": {
+		"name": "Various Cate Zongzi",
+		"is_salty": true,
+		"actions": [
+			["heal", 2]
+		]
+	},
+	"805082": {
+		"actions": [
+			["heal", 2]
+		]
+	},
+	"805083": {
+		"actions": [
+			["heal", 2]
 		]
 	},
 	"903011": {

@@ -5061,8 +5061,12 @@ export class GameState {
         }
 #endif // HAS_STYX
 #ifdef HAS_M_RUTHLESS_WATER
-        if (me.m_ruthless_water_stacks > 0 &&
-            x !== "internal_injury") {
+        if (me.m_ruthless_water_stacks > 0
+            && x !== "internal_injury"
+#ifdef HAS_STYX
+            && x !== "styx"
+#endif // HAS_STYX
+        ) {
             const ii_amt = amt * me.m_ruthless_water_stacks;
             this.increase_idx_x_by_c(idx, "internal_injury", ii_amt);
         }
@@ -7055,9 +7059,14 @@ export class GameState {
         this.reduce_enemy_max_hp(my_hp_loss + fixed_hp_loss);
     }
 #ifdef HAS_XUANMING_RECURRING
-    do_xuanming_recurring(amt) {
-        if (this.players[0].xuanming_recurring_hp !== undefined) {
-            this.set_idx_c_of_x(0, "hp", this.players[0].xuanming_recurring_hp + amt);
+    do_xuanming_recurring(amt, cap) {
+        const me = this.players[0];
+        if (me.xuanming_recurring_hp !== undefined) {
+            let new_hp = me.xuanming_recurring_hp + amt;
+            if (cap !== undefined) {
+                new_hp = Math.min(new_hp, me.hp + cap);
+            }
+            this.set_idx_c_of_x(0, "hp", new_hp);
         }
     }
 #endif // HAS_XUANMING_RECURRING
