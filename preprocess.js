@@ -153,7 +153,6 @@ const deps = {
     HAS_COSMOS_SEAL: ["HAS_MARK_OF_FIVE_ELEMENTS", "13211"],
     HAS_ACTIVATE_NEXT: ["93201", "93507"],
     HAS_MARK_OF_FIVE_ELEMENTS: ["mark_of_five_elements_stacks"],
-    HAS_ZONGZI_MODE: [],
     HAS_CORAL_SWORD: ["coral_sword_stacks"],
     HAS_IGNORE_DEF: ["ignore_def", "HAS_CORAL_SWORD",
         "HAS_RESONANCE_CORAL_SWORD",
@@ -929,6 +928,14 @@ const deps = {
     HAS_COUNTER_MOVE: [
         "counter_move_stacks",
         "64203"],
+    HAS_ZONGZI_MODE: [
+        "80101", "80102", "80103", "80104", "80105", "80106",
+        "80107", "80201", "80202", "80203", "80204", "80205",
+        "80206", "80301", "80302", "80303", "80304", "80305",
+        "80306", "80401", "80402", "80403", "80404", "80405",
+        "80406", "80407", "80408", "80501", "80502", "80503",
+        "80504", "80505", "80506", "80507", "80508"],
+
 
 
 

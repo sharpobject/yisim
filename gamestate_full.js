@@ -1152,7 +1152,7 @@ export class GameState {
             for (let card_idx = 0; card_idx < nc; card_idx++) {
                 this.do_opening(card_idx);
             }
-            this.do_five_elements_pure_vase(idx);
+            this.do_five_elements_pure_vase();
             if (idx === 1) {
                 this.swap_players();
             }
@@ -3308,6 +3308,14 @@ export class GameState {
         if (x === "force") {
             return this.reduce_idx_force(idx, c);
         }
+        if (x === "styx") {
+            c = Math.min(c, me.styx);
+            if (me.character === "dx3") {
+                this.increase_idx_hp(idx, c * 3);
+            } else {
+                this.reduce_idx_hp(idx, c * 3, false);
+            }
+        }
         if (c < 0) {
             this.log("error: c is negative: " + c);
             this.crash();
@@ -4935,8 +4943,8 @@ export class GameState {
         }
         return Math.min(n, max_n);
     }
-    do_five_elements_pure_vase(idx) {
-        const me = this.players[idx];
+    do_five_elements_pure_vase() {
+        const me = this.players[0];
         for (let i=0; i<me.five_elements_pure_vase_cards.length; i++) {
             const card_id = me.five_elements_pure_vase_cards[i];
             if (i === 0) {

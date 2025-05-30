@@ -2147,7 +2147,7 @@ export class GameState {
                 this.do_opening(card_idx);
             }
 #ifdef HAS_FIVE_ELEMENTS_PURE_VASE
-            this.do_five_elements_pure_vase(idx);
+            this.do_five_elements_pure_vase();
 #endif // HAS_FIVE_ELEMENTS_PURE_VASE
             if (idx === 1) {
                 this.swap_players();
@@ -5170,6 +5170,16 @@ export class GameState {
         }
 #endif // REDUCE_IDX_FORCE_DISPATCH
 #endif // HAS_FORCE
+#ifdef HAS_STYX
+        if (x === "styx") {
+            c = Math.min(c, me.styx);
+            if (me.character === "dx3") {
+                this.increase_idx_hp(idx, c * 3);
+            } else {
+                this.reduce_idx_hp(idx, c * 3, false);
+            }
+        }
+#endif // HAS_STYX
         if (c < 0) {
             this.log("error: c is negative: " + c);
             this.crash();
@@ -7214,8 +7224,8 @@ export class GameState {
         return Math.min(n, max_n);
     }
 #ifdef HAS_FIVE_ELEMENTS_PURE_VASE
-    do_five_elements_pure_vase(idx) {
-        const me = this.players[idx];
+    do_five_elements_pure_vase() {
+        const me = this.players[0];
         for (let i=0; i<me.five_elements_pure_vase_cards.length; i++) {
             const card_id = me.five_elements_pure_vase_cards[i];
             if (i === 0) {

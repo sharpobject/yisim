@@ -11613,7 +11613,7 @@ card_actions["805053"] = (game) => {
 card_actions["805061"] = (game) => {
     game.add_c_of_x(2, "internal_injury");
     const me = game.players[0];
-    const tummy_hurt_amt = me.internal_injury + me.indigestion;
+    const tummy_hurt_amt = me.internal_injury + me.indigestion + (me.styx || 0);
     game.increase_idx_qi(0, tummy_hurt_amt);
     game.increase_idx_hp(0, 3 * tummy_hurt_amt);
 }
@@ -11622,7 +11622,7 @@ card_actions["805061"] = (game) => {
 card_actions["805062"] = (game) => {
     game.add_c_of_x(3, "internal_injury");
     const me = game.players[0];
-    const tummy_hurt_amt = me.internal_injury + me.indigestion;
+    const tummy_hurt_amt = me.internal_injury + me.indigestion + (me.styx || 0);
     game.increase_idx_qi(0, tummy_hurt_amt);
     game.increase_idx_hp(0, 4 * tummy_hurt_amt);
 }
@@ -11631,7 +11631,7 @@ card_actions["805062"] = (game) => {
 card_actions["805063"] = (game) => {
     game.add_c_of_x(4, "internal_injury");
     const me = game.players[0];
-    const tummy_hurt_amt = me.internal_injury + me.indigestion;
+    const tummy_hurt_amt = me.internal_injury + me.indigestion + (me.styx || 0);
     game.increase_idx_qi(0, tummy_hurt_amt);
     game.increase_idx_hp(0, 5 * tummy_hurt_amt);
 }
