@@ -4980,12 +4980,12 @@ export class GameState {
         this.activate_wood_spirit();
     }
     do_m_spiritage_sword(max_level) {
-        const me = game.players[0];
+        const me = this.players[0];
         const hand_cards_with_add_qi = [];
         const unique_cards = new Set();
         for (let i = 0; i < me.hand_cards.length; i++) {
             const hand_id = me.hand_cards[i];
-            const first_char = card_id.substring(0, 1);
+            const first_char = hand_id.substring(0, 1);
             if (first_char === "1" || first_char === "3") {
                 const level = Math.min(parseInt(hand_id.substring(hand_id.length - 1)), max_level);
                 const card_id = hand_id.substring(0, hand_id.length - 1) + level;
