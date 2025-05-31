@@ -1052,6 +1052,15 @@ export class GameState {
             }
         }
     }
+    do_set_cards_by_round(idx) {
+        const me = this.players[idx];
+        let slot = 8;
+        if (me.round_number) {
+            slot = Math.min(8, me.round_number + 2);
+        }
+        me.hand_cards = me.cards.slice(slot);
+        me.cards = me.cards.slice(0, slot);
+    }
     do_the_body_of_fierce_tiger(idx) {
         const me = this.players[idx];
         if (me.the_body_of_fierce_tiger_stacks === 0) {
@@ -1127,6 +1136,7 @@ export class GameState {
             this.players[idx].post_deck_setup();
         }
         for (let idx = 0; idx < 2; idx++) {
+            this.do_set_cards_by_round(idx);
             this.do_the_body_of_fierce_tiger(idx);
             this.do_pact_of_equilibrium(idx);
             this.do_pact_of_adversity_reinforcement(idx);
@@ -4980,12 +4990,12 @@ export class GameState {
         this.activate_wood_spirit();
     }
     do_m_spiritage_sword(max_level) {
-        const me = game.players[0];
+        const me = this.players[0];
         const hand_cards_with_add_qi = [];
         const unique_cards = new Set();
         for (let i = 0; i < me.hand_cards.length; i++) {
             const hand_id = me.hand_cards[i];
-            const first_char = card_id.substring(0, 1);
+            const first_char = hand_id.substring(0, 1);
             if (first_char === "1" || first_char === "3") {
                 const level = Math.min(parseInt(hand_id.substring(hand_id.length - 1)), max_level);
                 const card_id = hand_id.substring(0, hand_id.length - 1) + level;

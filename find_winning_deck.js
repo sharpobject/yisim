@@ -195,7 +195,7 @@ export async function do_riddle(riddle, handler) {
     // console.log("total_messages_outstanding: " + total_messages_outstanding);
     while (total_messages_outstanding > 0) {
         let response = await getMessage();
-        handler(riddle, response);
+        handler(riddle, response, total_messages_outstanding === 1);
         total_messages_outstanding -= 1;
     }
     // shut down the workers
