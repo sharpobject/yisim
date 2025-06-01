@@ -4318,11 +4318,11 @@ export class GameState {
             this.activate_element_of_card(next_id);
             this.chase();
         }
-        const activated = this.activate_wood_spirit_stacks +
-                          this.activate_fire_spirit_stacks +
-                          this.activate_earth_spirit_stacks +
-                          this.activate_metal_spirit_stacks +
-                          this.activate_water_spirit_stacks;
+        const activated = me.activate_wood_spirit_stacks +
+                          me.activate_fire_spirit_stacks +
+                          me.activate_earth_spirit_stacks +
+                          me.activate_metal_spirit_stacks +
+                          me.activate_water_spirit_stacks;
         this.increase_idx_def(0, def_amt * activated);
     }
     do_earth_spirit_dust() {
