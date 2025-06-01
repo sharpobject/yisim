@@ -4015,7 +4015,7 @@ export class GameState {
         );
         let first_atk_damage = 6 + Math.min(this.players[0].round_number, 19);
         first_atk_damage += 3 * this.players[0].blade_forging_sharpness_stacks;
-        first_atk_damage -= 3 * this.players[0].blade_forging_stable_stacks;
+        first_atk_damage -= 2 * this.players[0].blade_forging_stable_stacks;
         first_atk_damage -= 1 * this.players[0].sword_pattern_carving_intense_stacks;
         first_atk_damage += 3 * this.players[0].quench_of_sword_heart_unrestrained_stacks;
         first_atk_damage -= 8 * this.players[0].quench_of_sword_heart_cloud_stacks;
@@ -4023,7 +4023,7 @@ export class GameState {
         // do the first atk
         this.atk(first_atk_damage);
         // gain def from blade_forging_stable
-        const blade_forging_stable_def = 8 + ult;
+        const blade_forging_stable_def = 9 + ult;
         for (let i=0; i<this.players[0].blade_forging_stable_stacks; i++) {
             this.increase_idx_def(0, blade_forging_stable_def);
         }
