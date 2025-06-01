@@ -240,7 +240,7 @@ export const ready = (async () => {
         return actions_contains_str(swogi[card_id].actions, "physique");
     }
     let id_is_add_qi = function (card_id) {
-        return actions_contains_str(swogi[card_id].actions, "physique");
+        return actions_contains_str(swogi[card_id].actions, "qi");
     }
     let is_astral_move = function (card_id) {
         return swogi[card_id].name.includes("Astral Move");
