@@ -697,8 +697,16 @@ export class Player {
         this.resonance_full_of_force_stacks = 0;
         this.resonance_firmness_body_stacks = 0;
     }
+    do_set_cards_by_round() {
+        let slot = 8;
+        if (this.round_number) {
+            slot = Math.min(8, this.round_number + 2);
+        }
+        this.hand_cards = this.cards.slice(slot);
+        this.cards = this.cards.slice(0, slot);
+    }
     reset_can_play() {
-        this.cards = this.cards.slice();
+        do_set_cards_by_round()
         this.can_play.length = 0;
         this.is_star_point.length = 0;
         this.can_post_action.length = 0;
@@ -1052,15 +1060,6 @@ export class GameState {
             }
         }
     }
-    do_set_cards_by_round(idx) {
-        const me = this.players[idx];
-        let slot = 8;
-        if (me.round_number) {
-            slot = Math.min(8, me.round_number + 2);
-        }
-        me.hand_cards = me.cards.slice(slot);
-        me.cards = me.cards.slice(0, slot);
-    }
     do_the_body_of_fierce_tiger(idx) {
         const me = this.players[idx];
         if (me.the_body_of_fierce_tiger_stacks === 0) {
@@ -1136,7 +1135,6 @@ export class GameState {
             this.players[idx].post_deck_setup();
         }
         for (let idx = 0; idx < 2; idx++) {
-            this.do_set_cards_by_round(idx);
             this.do_the_body_of_fierce_tiger(idx);
             this.do_pact_of_equilibrium(idx);
             this.do_pact_of_adversity_reinforcement(idx);
