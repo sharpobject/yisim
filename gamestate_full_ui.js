@@ -697,8 +697,16 @@ export class Player {
         this.resonance_full_of_force_stacks = 0;
         this.resonance_firmness_body_stacks = 0;
     }
+    do_set_cards_by_round() {
+        let slot = 8;
+        if (this.round_number) {
+            slot = Math.min(8, this.round_number + 2);
+        }
+        this.hand_cards = this.cards.slice(slot);
+        this.cards = this.cards.slice(0, slot);
+    }
     reset_can_play() {
-        this.cards = this.cards.slice();
+        do_set_cards_by_round()
         this.can_play.length = 0;
         this.is_star_point.length = 0;
         this.can_post_action.length = 0;
@@ -4017,7 +4025,7 @@ export class GameState {
         );
         let first_atk_damage = 6 + Math.min(this.players[0].round_number, 19);
         first_atk_damage += 3 * this.players[0].blade_forging_sharpness_stacks;
-        first_atk_damage -= 3 * this.players[0].blade_forging_stable_stacks;
+        first_atk_damage -= 2 * this.players[0].blade_forging_stable_stacks;
         first_atk_damage -= 1 * this.players[0].sword_pattern_carving_intense_stacks;
         first_atk_damage += 3 * this.players[0].quench_of_sword_heart_unrestrained_stacks;
         first_atk_damage -= 8 * this.players[0].quench_of_sword_heart_cloud_stacks;
@@ -4025,7 +4033,7 @@ export class GameState {
         // do the first atk
         this.atk(first_atk_damage);
         // gain def from blade_forging_stable
-        const blade_forging_stable_def = 8 + ult;
+        const blade_forging_stable_def = 9 + ult;
         for (let i=0; i<this.players[0].blade_forging_stable_stacks; i++) {
             this.increase_idx_def(0, blade_forging_stable_def);
         }
@@ -4411,11 +4419,11 @@ export class GameState {
             this.activate_element_of_card(next_id);
             this.chase();
         }
-        const activated = this.activate_wood_spirit_stacks +
-                          this.activate_fire_spirit_stacks +
-                          this.activate_earth_spirit_stacks +
-                          this.activate_metal_spirit_stacks +
-                          this.activate_water_spirit_stacks;
+        const activated = me.activate_wood_spirit_stacks +
+                          me.activate_fire_spirit_stacks +
+                          me.activate_earth_spirit_stacks +
+                          me.activate_metal_spirit_stacks +
+                          me.activate_water_spirit_stacks;
         this.increase_idx_def(0, def_amt * activated);
     }
     do_earth_spirit_dust() {

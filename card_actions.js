@@ -10668,7 +10668,7 @@ card_actions["734042"] = (game) => {
 }
 
 // 734043
-card_actions["734033"] = (game) => {
+card_actions["734043"] = (game) => {
     game.increase_idx_qi(0, 2);
     game.do_xuanming_recurring(0, 15);
     const me = game.players[0];

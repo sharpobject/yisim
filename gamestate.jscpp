@@ -6064,7 +6064,7 @@ export class GameState {
         first_atk_damage += 3 * this.players[0].blade_forging_sharpness_stacks;
 #endif // HAS_BLADE_FORGING_SHARPNESS
 #ifdef HAS_BLADE_FORGING_STABLE
-        first_atk_damage -= 3 * this.players[0].blade_forging_stable_stacks;
+        first_atk_damage -= 2 * this.players[0].blade_forging_stable_stacks;
 #endif // HAS_BLADE_FORGING_STABLE
 #ifdef HAS_SWORD_PATTERN_INTENSE
         first_atk_damage -= 1 * this.players[0].sword_pattern_carving_intense_stacks;
@@ -6080,7 +6080,7 @@ export class GameState {
         this.atk(first_atk_damage);
 #ifdef HAS_BLADE_FORGING_STABLE
         // gain def from blade_forging_stable
-        const blade_forging_stable_def = 8 + ult;
+        const blade_forging_stable_def = 9 + ult;
         for (let i=0; i<this.players[0].blade_forging_stable_stacks; i++) {
             this.increase_idx_def(0, blade_forging_stable_def);
         }
@@ -6558,11 +6558,11 @@ export class GameState {
             this.activate_element_of_card(next_id);
             this.chase();
         }
-        const activated = this.activate_wood_spirit_stacks +
-                          this.activate_fire_spirit_stacks +
-                          this.activate_earth_spirit_stacks +
-                          this.activate_metal_spirit_stacks +
-                          this.activate_water_spirit_stacks;
+        const activated = me.activate_wood_spirit_stacks +
+                          me.activate_fire_spirit_stacks +
+                          me.activate_earth_spirit_stacks +
+                          me.activate_metal_spirit_stacks +
+                          me.activate_water_spirit_stacks;
         this.increase_idx_def(0, def_amt * activated);
     }
 #endif // HAS_M_FIVE_ELEMENTS_CIRCULATION
