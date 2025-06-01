@@ -5541,13 +5541,13 @@ export class GameState {
         this.deal_damage_inner(dmg, false, 0);
     }
     atk(dmg, is_extra) {
-#ifdef HAS_ATTACK_COUNT
-        this.attack_count += 1;
-#endif // HAS_ATTACK_COUNT
 #ifdef HAS_DRIFT_ICE_BLADE
         this.do_drift_ice_blade();
 #endif // HAS_DRIFT_ICE_BLADE
         const me = this.players[0];
+#ifdef HAS_ATTACK_COUNT
+        me.attack_count += 1;
+#endif // HAS_ATTACK_COUNT
         const enemy = this.players[1];
 #ifdef HAS_APPARITION_CONFUSION
         if (me.apparition_confusion_stacks > 0) {

@@ -3574,9 +3574,9 @@ export class GameState {
         this.deal_damage_inner(dmg, false, 0);
     }
     atk(dmg, is_extra) {
-        this.attack_count += 1;
         this.do_drift_ice_blade();
         const me = this.players[0];
+        me.attack_count += 1;
         const enemy = this.players[1];
         if (me.apparition_confusion_stacks > 0) {
             this.reduce_my_hp(me.apparition_confusion_stacks);
