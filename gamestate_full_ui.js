@@ -707,6 +707,23 @@ export class Player {
     }
     reset_can_play() {
         this.do_set_cards_by_round()
+        if (this.chengyuns_fusion_style_stacks > 0) {
+            const swordplay_talent_cards = this.swordplay_talent_cards;
+            let seen_yeying = false;
+            for (let i=0; i<swordplay_talent_cards.length; i++) {
+                let x = swordplay_talent_cards[i];
+                if (typeof x !== 'string') {
+                    x = x.toString().substring(0, 5);
+                    swordplay_talent_cards[i] = x;
+                }
+                if (x === "61503") {
+                    seen_yeying = true;
+                }
+            }
+            if (!seen_yeying) {
+                swordplay_talent_cards.push("61503");
+            }
+        }
         this.can_play.length = 0;
         this.is_star_point.length = 0;
         this.can_post_action.length = 0;
@@ -3557,9 +3574,9 @@ export class GameState {
         this.deal_damage_inner(dmg, false, 0);
     }
     atk(dmg, is_extra) {
-        this.attack_count += 1;
         this.do_drift_ice_blade();
         const me = this.players[0];
+        me.attack_count += 1;
         const enemy = this.players[1];
         if (me.apparition_confusion_stacks > 0) {
             this.reduce_my_hp(me.apparition_confusion_stacks);
@@ -4960,7 +4977,11 @@ export class GameState {
     do_five_elements_pure_vase() {
         const me = this.players[0];
         for (let i=0; i<me.five_elements_pure_vase_cards.length; i++) {
-            const card_id = me.five_elements_pure_vase_cards[i];
+            let card_id = me.five_elements_pure_vase_cards[i];
+            if (typeof card_id !== "string") {
+                card_id = card_id.toString();
+                this.five_elements_pure_vase_cards[i] = card_id;
+            }
             if (i === 0) {
                 this.activate_element_of_card(card_id);
             }
