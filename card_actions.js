@@ -10214,21 +10214,21 @@ card_actions["714033"] = (game) => {
 
 // M - Light Sword
 card_actions["714041"] = (game) => {
-    game.set_c_up_to_x(0, "m_light_sword_stacks", 2);
+    game.set_c_up_to_x(2, "m_light_sword_stacks");
     game.atk(8);
     game.increase_idx_qi(0, 1);
 }
 
 // 714042
 card_actions["714042"] = (game) => {
-    game.set_c_up_to_x(0, "m_light_sword_stacks", 2);
+    game.set_c_up_to_x(2, "m_light_sword_stacks");
     game.atk(10);
     game.increase_idx_qi(0, 2);
 }
 
 // 714043
 card_actions["714043"] = (game) => {
-    game.set_c_up_to_x(0, "m_light_sword_stacks", 2);
+    game.set_c_up_to_x(2, "m_light_sword_stacks");
     game.atk(12);
     game.increase_idx_qi(0, 3);
 }
