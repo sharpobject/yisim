@@ -4980,7 +4980,7 @@ export class GameState {
             let card_id = me.five_elements_pure_vase_cards[i];
             if (typeof card_id !== "string") {
                 card_id = card_id.toString();
-                this.five_elements_pure_vase_cards[i] = card_id;
+                me.five_elements_pure_vase_cards[i] = card_id;
             }
             if (i === 0) {
                 this.activate_element_of_card(card_id);
