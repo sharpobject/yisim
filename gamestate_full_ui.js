@@ -706,7 +706,7 @@ export class Player {
         this.cards = this.cards.slice(0, slot);
     }
     reset_can_play() {
-        do_set_cards_by_round()
+        this.do_set_cards_by_round()
         if (this.chengyuns_fusion_style_stacks > 0) {
             const swordplay_talent_cards = this.swordplay_talent_cards;
             let seen_yeying = false;
