@@ -3126,6 +3126,9 @@ export class GameState {
         p0.this_trigger_directly_attacked = prev_this_trigger_directly_attacked;
         p0.currently_triggering_card_idx = prev_triggering_idx;
         p0.currently_triggering_card_id = prev_triggering_id;
+#ifdef HAS_SWORD_INTENT
+        p0.this_card_sword_intent = 0;
+#endif // HAS_SWORD_INTENT
         p0.trigger_depth -= 1;
         this.unindent();
     }
@@ -3208,9 +3211,6 @@ export class GameState {
 #ifdef HAS_SWORD_INTENT_FLOW
         me.sword_intent_flow_mode = false;
 #endif // HAS_SWORD_INTENT_FLOW
-#ifdef HAS_SWORD_INTENT
-        me.this_card_sword_intent = 0;
-#endif // HAS_SWORD_INTENT
 #ifdef HAS_SWIFT_BURNING_SEAL
         this.do_swift_burning_seal(card_id, idx);
 #endif // HAS_SWIFT_BURNING_SEAL

@@ -1824,6 +1824,7 @@ export class GameState {
         p0.this_trigger_directly_attacked = prev_this_trigger_directly_attacked;
         p0.currently_triggering_card_idx = prev_triggering_idx;
         p0.currently_triggering_card_id = prev_triggering_id;
+        p0.this_card_sword_intent = 0;
         p0.trigger_depth -= 1;
         this.unindent();
     }
@@ -1878,7 +1879,6 @@ export class GameState {
         me.this_card_attacked = false;
         me.this_card_directly_attacked = false;
         me.sword_intent_flow_mode = false;
-        me.this_card_sword_intent = 0;
         this.do_swift_burning_seal(card_id, idx);
         this.do_cosmos_seal(card_id);
         this.do_flying_brush_chase();
