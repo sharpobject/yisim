@@ -1729,6 +1729,9 @@ export class GameState {
         }
     }
     do_god_luck_approach(card_id) {
+        if (me.trigger_depth > 1) {
+            return;
+        }
         if (this.players[0].god_luck_approach_stacks > 0) {
             const card = swogi[card_id];
             const opening = card.opening;
@@ -1740,6 +1743,9 @@ export class GameState {
         }
     }
     do_god_luck_avoid(card_id) {
+        if (me.trigger_depth > 1) {
+            return;
+        }
         if (this.players[0].god_luck_avoid_stacks > 0) {
             const card = swogi[card_id];
             const opening = card.opening;
