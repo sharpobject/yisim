@@ -439,7 +439,8 @@ def main(hand_size, use_previous_screenshot=False, card_template_dir='card_templ
         round_info_region = (76, 310, 320, 72)
         round_info = extract_text(image, *round_info_region, "round_info")
         print(f"Round Info: {round_info}")
-        if "".join(round_info.split()) == "RoundInfo":
+        round_info = "".join(round_info.split())
+        if round_info == "RoundInfo" or round_info == "Round":
             cv2.imwrite('villain.png', image)
         if round_info == "":
             cv2.imwrite('hero.png', image)
