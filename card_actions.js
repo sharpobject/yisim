@@ -10323,7 +10323,7 @@ card_actions["715041"] = (game) => {
 card_actions["715042"] = (game) => {
     if (game.if_cloud_hit()) {
         const me = game.players[0];
-        const atk_amt = 6 + 3 * me.attack_count;
+        const atk_amt = 12 + 2 * me.attack_count;
         game.atk(atk_amt);
     }
 }
@@ -10332,9 +10332,27 @@ card_actions["715042"] = (game) => {
 card_actions["715043"] = (game) => {
     if (game.if_cloud_hit()) {
         const me = game.players[0];
-        const atk_amt = 6 + 4 * me.attack_count;
+        const atk_amt = 12 + 3 * me.attack_count;
         game.atk(atk_amt);
     }
+}
+
+// M - Consonance Sword Formation
+card_actions["715051"] = (game) => {
+    game.def(2);
+    game.increase_idx_x_by_c(0, "m_consonance_sword_formation_stacks", 1);
+}
+
+// 715052
+card_actions["715052"] = (game) => {
+    game.def(10);
+    game.increase_idx_x_by_c(0, "m_consonance_sword_formation_stacks", 1);
+}
+
+// 715053
+card_actions["715053"] = (game) => {
+    game.def(18);
+    game.increase_idx_x_by_c(0, "m_consonance_sword_formation_stacks", 1);
 }
 
 // Spiritual Divination
@@ -10381,7 +10399,7 @@ card_actions["724023"] = (game) => {
 card_actions["724031"] = (game) => {
     const qi_amt = game.exhaust_x("qi");
     const hexagram_amt = game.exhaust_x("hexagram");
-    const amt = 8 + 3 * (qi_amt + hexagram_amt);
+    const amt = 8 + 3 * qi_amt + 3 * hexagram_amt;
     game.do_fire_spirit_blazing_praerie(amt);
 }
 
@@ -10389,7 +10407,7 @@ card_actions["724031"] = (game) => {
 card_actions["724032"] = (game) => {
     const qi_amt = game.exhaust_x("qi");
     const hexagram_amt = game.exhaust_x("hexagram");
-    const amt = 13 + 3 * (qi_amt + hexagram_amt);
+    const amt = 8 + 4 * qi_amt + 3 * hexagram_amt;
     game.do_fire_spirit_blazing_praerie(amt);
 }
 
@@ -10397,7 +10415,7 @@ card_actions["724032"] = (game) => {
 card_actions["724033"] = (game) => {
     const qi_amt = game.exhaust_x("qi");
     const hexagram_amt = game.exhaust_x("hexagram");
-    const amt = 18 + 3 * (qi_amt + hexagram_amt);
+    const amt = 8 + 4 * qi_amt + 4 * hexagram_amt;
     game.do_fire_spirit_blazing_praerie(amt);
 }
 
@@ -10420,6 +10438,33 @@ card_actions["724043"] = (game) => {
     game.increase_idx_debuff(1, "internal_injury", 5);
     game.continuous();
     game.increase_idx_x_by_c(1, "m_ruthless_water_stacks", 1);
+}
+
+// M - Earth Hexagram
+card_actions["724051"] = (game) => {
+    game.increase_idx_def(0, 2);
+    game.increase_idx_x_by_c(0, "hexagram", 2);
+    const me = game.players[0];
+    const amt = 1 + Math.floor(me.hexagram / 4);
+    game.increase_idx_x_by_c(0, "m_earth_hexagram_stacks", amt);
+}
+
+// 724052
+card_actions["724052"] = (game) => {
+    game.increase_idx_def(0, 4);
+    game.increase_idx_x_by_c(0, "hexagram", 3);
+    const me = game.players[0];
+    const amt = 1 + Math.floor(me.hexagram / 4);
+    game.increase_idx_x_by_c(0, "m_earth_hexagram_stacks", amt);
+}
+
+// 724053
+card_actions["724053"] = (game) => {
+    game.increase_idx_def(0, 6);
+    game.increase_idx_x_by_c(0, "hexagram", 4);
+    const me = game.players[0];
+    const amt = 1 + Math.floor(me.hexagram / 4);
+    game.increase_idx_x_by_c(0, "m_earth_hexagram_stacks", amt);
 }
 
 // Astral Move - Twin Swallows
@@ -10619,30 +10664,30 @@ card_actions["734023"] = (game) => {
 
 // M - Fire Spirit Flame Eater
 card_actions["734031"] = (game) => {
-    game.increase_idx_qi(0, 2);
+    game.increase_idx_qi(0, 3);
     game.reduce_idx_hp(1, 3);
     game.reduce_idx_max_hp(1, 3);
-    if (game.if_fire_spirit() && game.if_cost_x_qi(4)) {
+    if (game.if_fire_spirit() && game.if_cost_x_qi(5)) {
         game.increase_idx_x_by_c(0, "m_fire_spirit_flame_eater_stacks", 1);
     }
 }
 
 // 734032
 card_actions["734032"] = (game) => {
-    game.increase_idx_qi(0, 3);
+    game.increase_idx_qi(0, 4);
     game.reduce_idx_hp(1, 5);
     game.reduce_idx_max_hp(1, 5);
-    if (game.if_fire_spirit() && game.if_cost_x_qi(4)) {
+    if (game.if_fire_spirit() && game.if_cost_x_qi(5)) {
         game.increase_idx_x_by_c(0, "m_fire_spirit_flame_eater_stacks", 1);
     }
 }
 
 // 734033
 card_actions["734033"] = (game) => {
-    game.increase_idx_qi(0, 4);
+    game.increase_idx_qi(0, 5);
     game.reduce_idx_hp(1, 7);
     game.reduce_idx_max_hp(1, 7);
-    if (game.if_fire_spirit() && game.if_cost_x_qi(4)) {
+    if (game.if_fire_spirit() && game.if_cost_x_qi(5)) {
         game.increase_idx_x_by_c(0, "m_fire_spirit_flame_eater_stacks", 1);
     }
 }
@@ -10771,12 +10816,45 @@ card_actions["735041"] = (game) => {
 
 // 735042
 card_actions["735042"] = (game) => {
-    game.do_m_five_elements_circulation(3, 2);
+    game.do_m_five_elements_circulation(2, 2);
 }
 
 // 735043
 card_actions["735043"] = (game) => {
-    game.do_m_five_elements_circulation(4, 3);
+    game.do_m_five_elements_circulation(3, 3);
+}
+
+// M - Earth Spirit Mountains
+card_actions["735051"] = (game) => {
+    const me = game.players[0];
+    game.increase_idx_def(0, 10);
+    const def_reduction = Math.ceil(this.players[0].def * 0.5);
+    game.deal_damage(def_reduction);
+    if (game.if_earth_spirit()) {
+        game.increase_idx_x_by_c(0, "next_turn_def", def_reduction);
+    }
+}
+
+// 735052
+card_actions["735052"] = (game) => {
+    const me = game.players[0];
+    game.increase_idx_def(0, 15);
+    const def_reduction = Math.ceil(this.players[0].def * 0.5);
+    game.deal_damage(def_reduction);
+    if (game.if_earth_spirit()) {
+        game.increase_idx_x_by_c(0, "next_turn_def", def_reduction);
+    }
+}
+
+// 735053
+card_actions["735053"] = (game) => {
+    const me = game.players[0];
+    game.increase_idx_def(0, 20);
+    const def_reduction = Math.ceil(this.players[0].def * 0.5);
+    game.deal_damage(def_reduction);
+    if (game.if_earth_spirit()) {
+        game.increase_idx_x_by_c(0, "next_turn_def", def_reduction);
+    }
 }
 
 // M - Youthful Vigor
@@ -10829,22 +10907,22 @@ card_actions["744023"] = (game) => {
 
 // M - Sinking Qi
 card_actions["744031"] = (game) => {
-    game.increase_idx_qi(0, 1);
-    game.increase_idx_hp(0, 9);
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_hp(0, 6);
     game.increase_idx_x_by_c(0, "m_sinking_qi_stacks", 2);
 }
 
 // 744032
 card_actions["744032"] = (game) => {
-    game.increase_idx_qi(0, 2);
-    game.increase_idx_hp(0, 10);
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_hp(0, 7);
     game.increase_idx_x_by_c(0, "m_sinking_qi_stacks", 2);
 }
 
 // 744033
 card_actions["744033"] = (game) => {
-    game.increase_idx_qi(0, 3);
-    game.increase_idx_hp(0, 11);
+    game.increase_idx_qi(0, 4);
+    game.increase_idx_hp(0, 8);
     game.increase_idx_x_by_c(0, "m_sinking_qi_stacks", 2);
 }
 
@@ -10963,6 +11041,24 @@ card_actions["745023"] = (game) => {
     game.reduce_idx_x_by_c(1, "styx", styx_amt);
     game.increase_idx_debuff(1, "wound", wound_amt);
     game.atk(22);
+}
+
+// M - Crash Fist Poke
+card_actions["745031"] = (game) => {
+    game.atk(9);
+    game.for_each_x_add_c_pct_y("physique", 11.111112, "later_crash_fist_poke_stacks");
+}
+
+// 745032
+card_actions["745032"] = (game) => {
+    game.atk(9);
+    game.for_each_x_add_c_pct_y("physique", 12.5, "later_crash_fist_poke_stacks");
+}
+
+// 745033
+card_actions["745033"] = (game) => {
+    game.atk(9);
+    game.for_each_x_add_c_pct_y("physique", 14.285715, "later_crash_fist_poke_stacks");
 }
 
 // Mushroom Zongzi

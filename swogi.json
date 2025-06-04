@@ -9976,6 +9976,22 @@
 			["atk", 4]
 		]
 	},
+	"715051": {
+		"name": "M - Consonance Sword Formation",
+		"actions": [
+			["def", 2]
+		]
+	},
+	"715052": {
+		"actions": [
+			["def", 2]
+		]
+	},
+	"715053": {
+		"actions": [
+			["def", 2]
+		]
+	},
 	"724011": {
 		"name": "Spiritual Divination",
 		"actions": [
@@ -10059,6 +10075,25 @@
 			["add_enemy_c_of_x", 5, "internal_injury"],
 			["continuous"],
 			["add_enemy_c_of_x", 1, "m_ruthless_water_stacks"]
+		]
+	},
+	"724051": {
+		"name": "M - Earth Hexagram",
+		"actions": [
+			["def", 2],
+			["add_c_of_x", 2, "hexagram"]
+		]
+	},
+	"724052": {
+		"actions": [
+			["def", 2],
+			["add_c_of_x", 2, "hexagram"]
+		]
+	},
+	"724053": {
+		"actions": [
+			["def", 2],
+			["add_c_of_x", 2, "hexagram"]
 		]
 	},
 	"725011": {
@@ -10460,6 +10495,22 @@
 			["qi", 4]
 		]
 	},
+	"735051": {
+		"name": "M - Earth Spirit Mountains",
+		"actions": [
+			["def", 2]
+		]
+	},
+	"735052": {
+		"actions": [
+			["def", 2]
+		]
+	},
+	"735053": {
+		"actions": [
+			["def", 2]
+		]
+	},
 	"744011": {
 		"name": "M - Youthful Vigor",
 		"hp_cost": 2,
@@ -10573,6 +10624,23 @@
 		"actions": [
 			["qi", 1],
 			["atk", 22]
+		]
+	},
+	"745031": {
+		"name": "M - Crash Fist Poke",
+		"hp_cost": 3,
+		"actions": [
+			["atk", 9]
+		]
+	},
+	"745032": {
+		"actions": [
+			["atk", 9]
+		]
+	},
+	"745033": {
+		"actions": [
+			["atk", 9]
 		]
 	},
 	"801011": {

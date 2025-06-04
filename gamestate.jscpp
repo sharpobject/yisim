@@ -1378,6 +1378,12 @@ export class Player {
 #ifdef HAS_M_SINKING_QI
         this.m_sinking_qi_stacks = 0;
 #endif // HAS_M_SINKING_QI
+#ifdef HAS_M_CONSONANCE_SWORD_FORMATION
+        this.m_consonance_sword_formation_stacks = 0;
+#endif // HAS_M_CONSONANCE_SWORD_FORMATION
+#ifdef HAS_M_EARTH_HEXAGRAM
+        this.m_earth_hexagram_stacks = 0;
+#endif // HAS_M_EARTH_HEXAGRAM
 
 
         // merpeople pearls
@@ -3832,6 +3838,16 @@ export class GameState {
         }
     }
 #endif // HAS_FINISHING_TOUCH
+#ifdef HAS_M_EARTH_HEXAGRAM
+    do_m_earth_hexagram(card_idx) {
+        const me = this.players[0];
+        if (me.m_earth_hexagram_stacks > 0) {
+            if (this.try_upgrade_card(0, card_idx)) {
+                this.reduce_idx_x_by_c(0, "m_earth_hexagram_stacks", 1);
+            }
+        }
+    }
+#endif // HAS_M_EARTH_HEXAGRAM
 #ifdef HAS_KONGTONG_SEAL
     do_kongtong_seal(card_idx) {
         if (this.players[0].kongtong_seal_stacks > 0) {
@@ -4357,6 +4373,9 @@ export class GameState {
 #ifdef HAS_SPIRIT_FUSION_POT
                 this.do_spirit_fusion_pot(card_idx);
 #endif // HAS_SPIRIT_FUSION_POT
+#ifdef HAS_M_EARTH_HEXAGRAM
+                this.do_m_earth_hexagram(card_idx);
+#endif // HAS_M_EARTH_HEXAGRAM
                 card_id = me.cards[card_idx];
                 this.play_card(card_id, card_idx);
                 if (this.check_for_death()) {
@@ -5250,6 +5269,12 @@ export class GameState {
                     this.reduce_idx_x_by_c(my_idx, "sword_intent", me.sword_intent);
                 }
             }
+#ifdef HAS_M_CONSONANCE_SWORD_FORMATION
+            if (me.m_consonance_sword_formation_stacks > 0) {
+                this.reduce_idx_x_by_c(my_idx, "m_consonance_sword_formation_stacks", 1);
+                this.increase_idx_qi(my_idx, me.this_card_sword_intent);
+            }
+#endif // HAS_M_CONSONANCE_SWORD_FORMATION
 #endif // HAS_SWORD_INTENT
 #ifdef HAS_STAR_POWER
             if (me.is_star_point[me.currently_playing_card_idx]) {

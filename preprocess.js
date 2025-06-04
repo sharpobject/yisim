@@ -168,7 +168,7 @@ const deps = {
     HAS_CRASH_FIST_BLITZ: ["crash_fist_blitz_stacks", "14203",
         "this_card_crash_fist_blitz_stacks"],
     HAS_NEXT_TURN_DEF: ["next_turn_def", "HAS_EARTH_SPIRIT_DUST",
-        "11309", "13206", "23103", "90405"],
+        "11309", "13206", "23103", "90405", "73505"],
     HAS_EARTH_SPIRIT_DUST: ["13305"],
     HAS_INCREASE_ATK: ["increase_atk", "HAS_COURAGE_TO_FIGHT",
         "HAS_STEP_MOON_INTO_CLOUD",
@@ -569,7 +569,8 @@ const deps = {
     HAS_CRASH_FIST_BLOCK: ["crash_fist_block_stacks",
         "14102", "14303"],
     HAS_CRASH_FIST_POKE: ["later_crash_fist_poke_stacks",
-        "crash_fist_poke_stacks", "14101", "14303"],
+        "crash_fist_poke_stacks",
+        "14101", "14303", "74503"],
     HAS_CRASH_FIST_CONTINUE: ["14403"],
     HAS_FORCE: ["force", "max_force",
         "HAS_FULL_OF_FORCE",
@@ -935,6 +936,12 @@ const deps = {
         "80306", "80401", "80402", "80403", "80404", "80405",
         "80406", "80407", "80408", "80501", "80502", "80503",
         "80504", "80505", "80506", "80507", "80508"],
+    HAS_M_CONSONANCE_SWORD_FORMATION: [
+        "m_consonance_sword_formation_stacks",
+        "71505"],
+    HAS_M_EARTH_HEXAGRAM: [
+        "m_earth_hexagram_stacks",
+        "72405"],
 
 
 

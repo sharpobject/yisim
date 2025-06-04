@@ -624,6 +624,8 @@ export class Player {
         this.m_exercise_bones_damage_stacks = 0;
         this.m_exercise_bones_heal_stacks = 0;
         this.m_sinking_qi_stacks = 0;
+        this.m_consonance_sword_formation_stacks = 0;
+        this.m_earth_hexagram_stacks = 0;
 
 
         // merpeople pearls
@@ -2348,6 +2350,14 @@ export class GameState {
             }
         }
     }
+    do_m_earth_hexagram(card_idx) {
+        const me = this.players[0];
+        if (me.m_earth_hexagram_stacks > 0) {
+            if (this.try_upgrade_card(0, card_idx)) {
+                this.reduce_idx_x_by_c(0, "m_earth_hexagram_stacks", 1);
+            }
+        }
+    }
     do_kongtong_seal(card_idx) {
         if (this.players[0].kongtong_seal_stacks > 0) {
             if (this.try_upgrade_card(0, card_idx)) {
@@ -2697,6 +2707,7 @@ export class GameState {
                 this.do_nether_void_canine(card_idx);
                 this.do_kongtong_seal(card_idx);
                 this.do_spirit_fusion_pot(card_idx);
+                this.do_m_earth_hexagram(card_idx);
                 card_id = me.cards[card_idx];
                 this.play_card(card_id, card_idx);
                 if (this.check_for_death()) {
@@ -3303,6 +3314,10 @@ export class GameState {
                     me.this_card_sword_intent += me.sword_intent;
                     this.reduce_idx_x_by_c(my_idx, "sword_intent", me.sword_intent);
                 }
+            }
+            if (me.m_consonance_sword_formation_stacks > 0) {
+                this.reduce_idx_x_by_c(my_idx, "m_consonance_sword_formation_stacks", 1);
+                this.increase_idx_qi(my_idx, me.this_card_sword_intent);
             }
             if (me.is_star_point[me.currently_playing_card_idx]) {
                 dmg += (me.star_power

@@ -2350,6 +2350,11 @@
         "namecn": "幻·云剑无锋"
     },
     {
+        "id": 715051,
+        "name": "M - Consonance Sword Formation",
+        "namecn": "幻·灵犀剑阵"
+    },
+    {
         "id": 724011,
         "name": "Spiritual Divination",
         "namecn": "灵卦术"
@@ -2368,6 +2373,11 @@
         "id": 724041,
         "name": "M - Ruthless Water",
         "namecn": "幻·流水无情"
+    },
+    {
+        "id": 724051,
+        "name": "M - Earth Hexagram",
+        "namecn": "幻·坤卦"
     },
     {
         "id": 725011,
@@ -2445,6 +2455,11 @@
         "namecn": "幻·五行流转"
     },
     {
+        "id": 735051,
+        "name": "M - Earth Spirit Mountains",
+        "namecn": "幻·土灵群山"
+    },
+    {
         "id": 744011,
         "name": "M - Youthful Vigor",
         "namecn": "幻·血气方刚"
@@ -2468,6 +2483,11 @@
         "id": 745021,
         "name": "M - Rakshasa Pouncing",
         "namecn": "幻·罗刹扑"
+    },
+    {
+        "id": 745031,
+        "name": "M - Crash Fist Poke",
+        "namecn": "幻·崩拳戳"
     },
     {
         "id": 801011,
