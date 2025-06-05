@@ -10828,7 +10828,7 @@ card_actions["735043"] = (game) => {
 card_actions["735051"] = (game) => {
     const me = game.players[0];
     game.increase_idx_def(0, 10);
-    const def_reduction = Math.ceil(this.players[0].def * 0.5);
+    const def_reduction = Math.ceil(me.def * 0.5);
     game.deal_damage(def_reduction);
     if (game.if_earth_spirit()) {
         game.increase_idx_x_by_c(0, "next_turn_def", def_reduction);
@@ -10839,7 +10839,7 @@ card_actions["735051"] = (game) => {
 card_actions["735052"] = (game) => {
     const me = game.players[0];
     game.increase_idx_def(0, 15);
-    const def_reduction = Math.ceil(this.players[0].def * 0.5);
+    const def_reduction = Math.ceil(me.def * 0.5);
     game.deal_damage(def_reduction);
     if (game.if_earth_spirit()) {
         game.increase_idx_x_by_c(0, "next_turn_def", def_reduction);
@@ -10850,7 +10850,7 @@ card_actions["735052"] = (game) => {
 card_actions["735053"] = (game) => {
     const me = game.players[0];
     game.increase_idx_def(0, 20);
-    const def_reduction = Math.ceil(this.players[0].def * 0.5);
+    const def_reduction = Math.ceil(me.def * 0.5);
     game.deal_damage(def_reduction);
     if (game.if_earth_spirit()) {
         game.increase_idx_x_by_c(0, "next_turn_def", def_reduction);
