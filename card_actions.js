@@ -10182,6 +10182,32 @@ card_actions["701022"] = (game) => {}
 // 701013
 card_actions["701023"] = (game) => {}
 
+// Xiaoyao - Lawless
+card_actions["701031"] = (game) => {
+    for (let i=0; i<4; i++) {
+        game.atk(4);
+    }
+    game.exhaust();
+}
+
+// 701032
+card_actions["701032"] = (game) => {}
+
+// 701033
+card_actions["701033"] = (game) => {}
+
+// Xiaoyao - 20 atk
+card_actions["701041"] = (game) => {
+    game.atk(20);
+    game.exhaust();
+}
+
+// 701042
+card_actions["701042"] = (game) => {}
+
+// 701043
+card_actions["701043"] = (game) => {}
+
 // M - Raven Spirit Sword
 card_actions["714031"] = (game) => {
     game.atk(4);
