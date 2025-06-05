@@ -5076,7 +5076,7 @@ export class GameState {
     }
 }
 
-const FATE_TO_CHARACTER_OR_SECT = {
+export const FATE_TO_CHARACTER_OR_SECT = {
     sword_in_sheathed_stacks: "sw1",
     endurance_as_cloud_sea_stacks: "sw1",
     fire_flame_blade_stacks: "sw2",
