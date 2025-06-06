@@ -3403,6 +3403,10 @@ export class GameState {
                 me.sword_intent_flow_mode = true;
             }
             if (me.sword_intent > 0) {
+                if (me.m_consonance_sword_formation_stacks > 0) {
+                    this.reduce_idx_x_by_c(my_idx, "m_consonance_sword_formation_stacks", 1);
+                    this.increase_idx_qi(my_idx, me.sword_intent);
+                }
                 if (me.sword_intent_flow_mode) {
                     if (me.this_card_sword_intent < me.sword_intent) {
                         this.log("in sword intent flow mode, using " + me.sword_intent + " sword intent without consuming");
@@ -3414,10 +3418,6 @@ export class GameState {
                     me.this_card_sword_intent += me.sword_intent;
                     this.reduce_idx_x_by_c(my_idx, "sword_intent", me.sword_intent);
                 }
-            }
-            if (me.m_consonance_sword_formation_stacks > 0) {
-                this.reduce_idx_x_by_c(my_idx, "m_consonance_sword_formation_stacks", 1);
-                this.increase_idx_qi(my_idx, me.this_card_sword_intent);
             }
             if (me.is_star_point[me.currently_playing_card_idx]) {
                 dmg += (me.star_power
