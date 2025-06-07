@@ -708,6 +708,22 @@ export class Player {
         this.cards = this.cards.slice(0, slot);
     }
     reset_can_play() {
+        {
+            const cards = this.cards;
+            for (let i=0; i<cards.length; i++) {
+                let card_id = cards[i];
+                if (swogi[card_id].does_not_exist) {
+                    card_id = card_id.substring(0, 5);
+                    for (let j=1; j<3; j++) {
+                        const maybe_card_id = card_id + j;
+                        if (!swogi[maybe_card_id].does_not_exist) {
+                            cards[i] = card_id;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
         this.do_set_cards_by_round()
         if (this.chengyuns_fusion_style_stacks > 0) {
             const swordplay_talent_cards = this.swordplay_talent_cards;
@@ -2720,6 +2736,7 @@ export class GameState {
                         this.log("player 0 is spending " + unbounded_qi_hp_cost + " hp and " + unbounded_qi_physique_cost + " physique to play " + format_card(card_id));
                         this.reduce_idx_hp(0, unbounded_qi_hp_cost, true);
                         this.reduce_idx_x_by_c(0, "physique", unbounded_qi_physique_cost);
+                        this.reduce_idx_x_by_c(0, "max_hp", unbounded_qi_physique_cost);
                     }
                 }
             }
@@ -5094,6 +5111,7 @@ export const FATE_TO_CHARACTER_OR_SECT = {
     quench_of_sword_heart_unrestrained_stacks: "sw5",
     quench_of_sword_heart_cloud_stacks: "sw5",
     quench_of_sword_heart_ultimate_stacks: "sw5",
+    chengyuns_fusion_style_stacks: "sw6",
     p4_mad_obsession_stacks: "sw",
     p5_mad_obsession_stacks: "sw",
     p2_rule_of_the_cloud_stacks: "sw",
@@ -5174,6 +5192,9 @@ export const FATE_TO_CHARACTER_OR_SECT = {
     entering_styx_stacks: "dx3",
     zen_mind_forging_body_stacks: "dx4",
     mind_body_resonance_stacks: "dx4",
+    surge_of_qi_stacks: "dx5",
+    mortal_body_stacks: "dx5",
+    indomitable_will_stacks: "dx5",
     p2_firmness_body_stacks: "dx",
     p3_firmness_body_stacks: "dx",
     p4_firmness_body_stacks: "dx",

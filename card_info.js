@@ -303,6 +303,7 @@ export const ready = (async () => {
         if (is_add_qi === undefined) {
             is_add_qi = id_is_add_qi(card_id);
         }
+        const does_not_exist = swogi[card_id].does_not_exist;
         const card = {
             name: name,
             names: names,
@@ -336,6 +337,7 @@ export const ready = (async () => {
             marking: marking,
             is_salty: is_salty,
             is_sweet: is_sweet,
+            does_not_exist: does_not_exist,
         };
         swogi[card_id] = card;
         if (card.marking === undefined) {
