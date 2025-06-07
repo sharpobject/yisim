@@ -2659,6 +2659,7 @@ export class GameState {
                         let unbounded_qi_physique_cost = excess_qi;
                         this.reduce_idx_hp(0, unbounded_qi_hp_cost, true);
                         this.reduce_idx_x_by_c(0, "physique", unbounded_qi_physique_cost);
+                        this.reduce_idx_x_by_c(0, "max_hp", unbounded_qi_physique_cost);
                     }
                 }
             }
