@@ -42,6 +42,7 @@ self.onmessage = async (event) => {
     const ret = {};
     const winning_decks = [];
     const winning_margins = [];
+    let winning_info = {};
     const winning_logs = [];
     let try_idx = 0;
     let best_winning_margin = -99999;
@@ -123,7 +124,7 @@ self.onmessage = async (event) => {
             //if (!game.used_randomness) {
             //if (winrate >= best_winrate) {
                 best_winrate = winrate;
-                const hp = game.players[my_idx].hp;
+                // const hp = game.players[my_idx].hp;
                 //if (hp > best_hp) {
                 //    winning_decks.length = 0;
                 //    winning_margins.length = 0;
@@ -131,7 +132,15 @@ self.onmessage = async (event) => {
                 //}
                 //best_hp = hp;
                 //const winning_margin = game.players[my_idx].hp - game.players[enemy_idx].hp - 1000 * game.turns_taken;
-                const winning_margin = -game.players[enemy_idx].hp;
+                // console.log({
+                //     myHP: game.players[my_idx].hp,
+                //     enemyHP: game.players[enemy_idx].hp,
+                //     turns: game.turns_taken
+                // })
+                const myHP = game.players[my_idx].hp;
+                const enemyHP = game.players[enemy_idx].hp;
+                const turns = game.turns_taken;
+                const winning_margin = (myHP - enemyHP) / turns;
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
                     winning_decks.length = 0;
@@ -140,6 +149,11 @@ self.onmessage = async (event) => {
                     best_winning_margin = winning_margin;
                     winning_decks.push(p_combo);
                     winning_margins.push(winning_margin);
+                    winning_info = {
+                        myHP,
+                        enemyHP,
+                        turns,
+                    }
                     let game_with_log = new GameStateWithLog(alog, blog);
                     for (let key in players[my_idx]) {
                         game_with_log.players[my_idx][key] = players[my_idx][key];
@@ -164,6 +178,7 @@ self.onmessage = async (event) => {
     ret.combo = combo;
     ret.winning_decks = winning_decks;
     ret.winning_margins = winning_margins;
+    ret.winning_info = winning_info;
     ret.winning_logs = winning_logs;
     ret.try_idx = try_idx;
     postMessage(ret);
