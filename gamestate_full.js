@@ -3372,6 +3372,10 @@ export class GameState {
                 me.sword_intent_flow_mode = true;
             }
             if (me.sword_intent > 0) {
+                if (me.m_consonance_sword_formation_stacks > 0) {
+                    this.reduce_idx_x_by_c(my_idx, "m_consonance_sword_formation_stacks", 1);
+                    this.increase_idx_qi(my_idx, me.sword_intent);
+                }
                 if (me.sword_intent_flow_mode) {
                     if (me.this_card_sword_intent < me.sword_intent) {
                         this.log("in sword intent flow mode, using " + me.sword_intent + " sword intent without consuming");
@@ -3383,10 +3387,6 @@ export class GameState {
                     me.this_card_sword_intent += me.sword_intent;
                     this.reduce_idx_x_by_c(my_idx, "sword_intent", me.sword_intent);
                 }
-            }
-            if (me.m_consonance_sword_formation_stacks > 0) {
-                this.reduce_idx_x_by_c(my_idx, "m_consonance_sword_formation_stacks", 1);
-                this.increase_idx_qi(my_idx, me.this_card_sword_intent);
             }
             if (me.is_star_point[me.currently_playing_card_idx]) {
                 dmg += (me.star_power
@@ -5041,7 +5041,7 @@ export class GameState {
     }
 }
 
-const FATE_TO_CHARACTER_OR_SECT = {
+export const FATE_TO_CHARACTER_OR_SECT = {
     sword_in_sheathed_stacks: "sw1",
     endurance_as_cloud_sea_stacks: "sw1",
     fire_flame_blade_stacks: "sw2",
@@ -5059,6 +5059,7 @@ const FATE_TO_CHARACTER_OR_SECT = {
     quench_of_sword_heart_unrestrained_stacks: "sw5",
     quench_of_sword_heart_cloud_stacks: "sw5",
     quench_of_sword_heart_ultimate_stacks: "sw5",
+    chengyuns_fusion_style_stacks: "sw6",
     p4_mad_obsession_stacks: "sw",
     p5_mad_obsession_stacks: "sw",
     p2_rule_of_the_cloud_stacks: "sw",
@@ -5139,6 +5140,9 @@ const FATE_TO_CHARACTER_OR_SECT = {
     entering_styx_stacks: "dx3",
     zen_mind_forging_body_stacks: "dx4",
     mind_body_resonance_stacks: "dx4",
+    surge_of_qi_stacks: "dx5",
+    mortal_body_stacks: "dx5",
+    indomitable_will_stacks: "dx5",
     p2_firmness_body_stacks: "dx",
     p3_firmness_body_stacks: "dx",
     p4_firmness_body_stacks: "dx",
