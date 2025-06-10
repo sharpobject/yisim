@@ -9796,7 +9796,7 @@ card_actions["641011"] = (game) => {
 }
 
 // 641012
-card_actions["641011"] = (game) => {
+card_actions["641012"] = (game) => {
     game.atk(9);
     const me = game.players[0];
     if (game.if_fist_stance()) {
