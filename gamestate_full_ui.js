@@ -708,23 +708,25 @@ export class Player {
         this.cards = this.cards.slice(0, slot);
     }
     reset_can_play() {
-        {
-            const cards = this.cards;
-            for (let i=0; i<cards.length; i++) {
-                let card_id = cards[i];
-                if (swogi[card_id].does_not_exist) {
-                    card_id = card_id.substring(0, 5);
-                    for (let j=1; j<3; j++) {
-                        const maybe_card_id = card_id + j;
-                        if (!swogi[maybe_card_id].does_not_exist) {
-                            cards[i] = card_id;
-                            break;
-                        }
+        
+        this.do_set_cards_by_round()
+        
+        const cards = this.cards;
+
+        for (let i=0; i<cards.length; i++) {
+            let card_id = cards[i];
+            if (swogi[card_id].does_not_exist) {
+                card_id = card_id.substring(0, 5);
+                for (let j=1; j<3; j++) {
+                    const maybe_card_id = card_id + j;
+                    if (!swogi[maybe_card_id].does_not_exist) {
+                        cards[i] = card_id;
+                        break;
                     }
                 }
             }
         }
-        this.do_set_cards_by_round()
+        
         if (this.chengyuns_fusion_style_stacks > 0) {
             const swordplay_talent_cards = this.swordplay_talent_cards;
             let seen_yeying = false;
