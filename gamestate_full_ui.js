@@ -2631,8 +2631,7 @@ export class GameState {
         this.reduce_idx_x_by_c(0, "god_opportunity_conform_stacks", 1);
         this.reduce_idx_x_by_c(0, "god_opportunity_reversal_stacks", 1);
         this.reduce_idx_x_by_c(0, "m_sinking_qi_stacks", 1);
-        this.do_resonance_rejuvenation();
-        me.xuanming_recurring_hp = me.hp;
+        this.do_resonance_rejuvenation();        
         this.do_def_decay();
         this.do_fat_immortal_raccoon();
         this.do_scarlet_eye_the_sky_consumer();
@@ -2808,6 +2807,7 @@ export class GameState {
                 this.process_this_card_chases();
             }
         }
+        me.xuanming_recurring_hp = me.hp;
         if (this.check_for_death()) {
             return;
         }
@@ -4908,7 +4908,7 @@ export class GameState {
             if (cap !== undefined) {
                 new_hp = Math.min(new_hp, me.hp + cap);
             }
-            this.set_idx_c_of_x(0, "hp", new_hp);
+            this.set_idx_c_of_x(0, new_hp, "hp");
         }
     }
     do_resonance_setup(idx) {

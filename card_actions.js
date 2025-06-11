@@ -10734,7 +10734,7 @@ card_actions["734042"] = (game) => {
     game.do_xuanming_recurring(0, 15);
     const me = game.players[0];
     if (game.if_wood_spirit() && me.hp_gained > 0) {
-        game.increase_idx_x_by_c(0, "increase_atk", 1);
+        game.increase_idx_x_by_c(0, "increase_atk", 2);
     }
 }
 
@@ -10744,7 +10744,7 @@ card_actions["734043"] = (game) => {
     game.do_xuanming_recurring(0, 15);
     const me = game.players[0];
     if (game.if_wood_spirit() && me.hp_gained > 0) {
-        game.increase_idx_x_by_c(0, "increase_atk", 1);
+        game.increase_idx_x_by_c(0, "increase_atk", 3);
     }
 }
 
