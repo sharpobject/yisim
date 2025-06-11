@@ -9796,7 +9796,7 @@ card_actions["641011"] = (game) => {
 }
 
 // 641012
-card_actions["641011"] = (game) => {
+card_actions["641012"] = (game) => {
     game.atk(9);
     const me = game.players[0];
     if (game.if_fist_stance()) {
@@ -10212,8 +10212,8 @@ card_actions["701043"] = (game) => {}
 card_actions["714031"] = (game) => {
     game.atk(4);
     const me = game.players[0];
-    game.increase_idx_def(0, me.qi);
-    if (game.spirit_sword_deck_count(2) === 2) {
+    game.increase_idx_def(0, Math.max(me.qi, 4));
+    if (game.spirit_sword_deck_count(3) === 3) {
         game.chase();
     }
 }
@@ -10222,7 +10222,7 @@ card_actions["714031"] = (game) => {
 card_actions["714032"] = (game) => {
     game.atk(8);
     const me = game.players[0];
-    game.increase_idx_def(0, me.qi);
+    game.increase_idx_def(0, Math.max(me.qi, 12));
     if (game.spirit_sword_deck_count(2) === 2) {
         game.chase();
     }
@@ -10232,8 +10232,8 @@ card_actions["714032"] = (game) => {
 card_actions["714033"] = (game) => {
     game.atk(12);
     const me = game.players[0];
-    game.increase_idx_def(0, me.qi);
-    if (game.spirit_sword_deck_count(2) === 2) {
+    game.increase_idx_def(0, Math.max(me.qi, 20));
+    if (game.spirit_sword_deck_count(1) === 1) {
         game.chase();
     }
 }
@@ -10471,7 +10471,7 @@ card_actions["724051"] = (game) => {
     game.increase_idx_def(0, 2);
     game.increase_idx_x_by_c(0, "hexagram", 2);
     const me = game.players[0];
-    const amt = 1 + Math.floor(me.hexagram / 4);
+    const amt = 1 + Math.floor(me.hexagram / 3);
     game.increase_idx_x_by_c(0, "m_earth_hexagram_stacks", amt);
 }
 
@@ -10480,7 +10480,7 @@ card_actions["724052"] = (game) => {
     game.increase_idx_def(0, 4);
     game.increase_idx_x_by_c(0, "hexagram", 3);
     const me = game.players[0];
-    const amt = 1 + Math.floor(me.hexagram / 4);
+    const amt = 1 + Math.floor(me.hexagram / 3);
     game.increase_idx_x_by_c(0, "m_earth_hexagram_stacks", amt);
 }
 
@@ -10489,7 +10489,7 @@ card_actions["724053"] = (game) => {
     game.increase_idx_def(0, 6);
     game.increase_idx_x_by_c(0, "hexagram", 4);
     const me = game.players[0];
-    const amt = 1 + Math.floor(me.hexagram / 4);
+    const amt = 1 + Math.floor(me.hexagram / 3);
     game.increase_idx_x_by_c(0, "m_earth_hexagram_stacks", amt);
 }
 
@@ -10898,7 +10898,7 @@ card_actions["744011"] = (game) => {
 // 744012
 card_actions["744012"] = (game) => {
     const hp_gained = game.players[0].hp_gained;
-    const reps = 2 + Math.min(Math.floor(hp_gained * 5.555556 / 100), 2);
+    const reps = 2 + Math.min(Math.floor(hp_gained * 6.25 / 100), 2);
     for (let i=0; i<reps; i++) {
         game.atk(8);
     }
@@ -10907,7 +10907,7 @@ card_actions["744012"] = (game) => {
 // 744013
 card_actions["744013"] = (game) => {
     const hp_gained = game.players[0].hp_gained;
-    const reps = 2 + Math.min(Math.floor(hp_gained * 6.25 / 100), 2);
+    const reps = 2 + Math.min(Math.floor(hp_gained * 8.333334 / 100), 2);
     for (let i=0; i<reps; i++) {
         game.atk(10);
     }
@@ -11017,7 +11017,7 @@ card_actions["745021"] = (game) => {
     game.reduce_idx_x_by_c(1, "entangle", entangle_amt);
     game.reduce_idx_x_by_c(1, "styx", styx_amt);
     game.increase_idx_debuff(1, "wound", wound_amt);
-    game.atk(10);
+    game.atk(12);
 }
 
 // 745022
@@ -11043,7 +11043,7 @@ card_actions["745022"] = (game) => {
     game.reduce_idx_x_by_c(1, "entangle", entangle_amt);
     game.reduce_idx_x_by_c(1, "styx", styx_amt);
     game.increase_idx_debuff(1, "wound", wound_amt);
-    game.atk(16);
+    game.atk(18);
 }
 
 // 745023
@@ -11069,25 +11069,25 @@ card_actions["745023"] = (game) => {
     game.reduce_idx_x_by_c(1, "entangle", entangle_amt);
     game.reduce_idx_x_by_c(1, "styx", styx_amt);
     game.increase_idx_debuff(1, "wound", wound_amt);
-    game.atk(22);
+    game.atk(24);
 }
 
 // M - Crash Fist Poke
 card_actions["745031"] = (game) => {
     game.atk(9);
-    game.for_each_x_add_c_pct_y("physique", 11.111112, "later_crash_fist_poke_stacks");
+    game.for_each_x_add_c_pct_y("physique", 12.5, "later_crash_fist_poke_stacks");
 }
 
 // 745032
 card_actions["745032"] = (game) => {
     game.atk(9);
-    game.for_each_x_add_c_pct_y("physique", 12.5, "later_crash_fist_poke_stacks");
+    game.for_each_x_add_c_pct_y("physique", 14.285715, "later_crash_fist_poke_stacks");
 }
 
 // 745033
 card_actions["745033"] = (game) => {
     game.atk(9);
-    game.for_each_x_add_c_pct_y("physique", 14.285715, "later_crash_fist_poke_stacks");
+    game.for_each_x_add_c_pct_y("physique", 16.666667, "later_crash_fist_poke_stacks");
 }
 
 // Mushroom Zongzi
