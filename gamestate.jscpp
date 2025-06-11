@@ -1328,6 +1328,7 @@ export class Player {
 #endif // HAS_XUANMING_REGEN_TUNE
 #ifdef HAS_XUANMING_RECURRING
         this.xuanming_recurring_hp = 0;
+        this.next_xuanming_recurring_hp = 0;
 #endif // HAS_XUANMING_RECURRING
 #ifdef HAS_THUNDERBOLT_TUNE
         this.thunderbolt_tune_stacks = 0;
@@ -1545,6 +1546,7 @@ export class Player {
     post_deck_setup() {
 #ifdef HAS_XUANMING_RECURRING
         this.xuanming_recurring_hp = this.hp;
+        this.next_xuanming_recurring_hp = this.hp;
 #endif // HAS_XUANMING_RECURRING
         this.reset_can_play();
     }
@@ -4116,7 +4118,8 @@ export class GameState {
         this.do_resonance_rejuvenation();
 #endif // HAS_RESONANCE_REJUVENATION
 #ifdef HAS_XUANMING_RECURRING
-        me.xuanming_recurring_hp = me.hp;
+        me.xuanming_recurring_hp = me.next_xuanming_recurring_hp;
+        me.next_xuanming_recurring_hp = me.hp;
 #endif // HAS_XUANMING_RECURRING
         this.do_def_decay();
 #ifdef HAS_FAT_IMMORTAL_RACCOON
@@ -7110,7 +7113,7 @@ export class GameState {
             if (cap !== undefined) {
                 new_hp = Math.min(new_hp, me.hp + cap);
             }
-            this.set_idx_c_of_x(0, "hp", new_hp);
+            this.set_idx_c_of_x(0, new_hp, "hp");
         }
     }
 #endif // HAS_XUANMING_RECURRING

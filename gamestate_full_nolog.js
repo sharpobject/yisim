@@ -605,6 +605,7 @@ export class Player {
         this.xuanming_regen_tune_heal_stacks = 0;
         this.xuanming_regen_tune_hurt_stacks = 0;
         this.xuanming_recurring_hp = 0;
+        this.next_xuanming_recurring_hp = 0;
         this.thunderbolt_tune_stacks = 0;
         this.astral_move_jump_stacks = 0;
         this.heavenly_marrow_dance_tune_stacks = 0;
@@ -734,6 +735,7 @@ export class Player {
     }
     post_deck_setup() {
         this.xuanming_recurring_hp = this.hp;
+        this.next_xuanming_recurring_hp = this.hp;
         this.reset_can_play();
     }
 }
@@ -2556,7 +2558,8 @@ export class GameState {
         this.reduce_idx_x_by_c(0, "god_opportunity_reversal_stacks", 1);
         this.reduce_idx_x_by_c(0, "m_sinking_qi_stacks", 1);
         this.do_resonance_rejuvenation();
-        me.xuanming_recurring_hp = me.hp;
+        me.xuanming_recurring_hp = me.next_xuanming_recurring_hp;
+        me.next_xuanming_recurring_hp = me.hp;
         this.do_def_decay();
         this.do_fat_immortal_raccoon();
         this.do_scarlet_eye_the_sky_consumer();
@@ -4778,7 +4781,7 @@ export class GameState {
             if (cap !== undefined) {
                 new_hp = Math.min(new_hp, me.hp + cap);
             }
-            this.set_idx_c_of_x(0, "hp", new_hp);
+            this.set_idx_c_of_x(0, new_hp, "hp");
         }
     }
     do_resonance_setup(idx) {
