@@ -10196,7 +10196,7 @@ card_actions["701032"] = (game) => {}
 // 701033
 card_actions["701033"] = (game) => {}
 
-// Xiaoyao - 20 atk
+// Xiaoyao - Irreversible
 card_actions["701041"] = (game) => {
     game.atk(20);
     game.exhaust();
@@ -10207,6 +10207,31 @@ card_actions["701042"] = (game) => {}
 
 // 701043
 card_actions["701043"] = (game) => {}
+
+// Xiaoyao - Breathless
+card_actions["701051"] = (game) => {
+    game.increase_idx_debuff(1, "internal_injury", 4);
+    game.exhaust();
+}
+
+// 701052
+card_actions["701052"] = (game) => {}
+
+// 701053
+card_actions["701053"] = (game) => {}
+
+// Xiaoyao - Imbalance
+card_actions["701061"] = (game) => {
+    game.increase_idx_debuff(1, "weaken", 2);
+    game.increase_idx_debuff(1, "flaw", 3);
+    game.exhaust();
+}
+
+// 701062
+card_actions["701062"] = (game) => {}
+
+// 701063
+card_actions["701063"] = (game) => {}
 
 // M - Raven Spirit Sword
 card_actions["714031"] = (game) => {

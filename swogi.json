@@ -9792,11 +9792,42 @@
 		"actions": []
 	},
 	"701041": {
-		"name": "Xiaoyao - 20 atk",
+		"name": "Xiaoyao - Irreversible",
 		"actions": [
 			["atk", 20],
 			["exhaust"]
 		]
+	},
+	"701051": {
+		"name": "Xiaoyao - Breathless",
+		"actions": [
+			["increase_idx_debuff", 1, "internal_injury", 4],
+			["exhaust"]
+		]
+	},
+	"701052": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"701053": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"701061": {
+		"name": "Xiaoyao - Imbalance",
+		"actions": [
+			["increase_idx_debuff", 1, "weaken", 2],
+			["increase_idx_debuff", 1, "flaw", 3],
+			["exhaust"]
+		]
+	},
+	"701062": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"701063": {
+		"does_not_exist": true,
+		"actions": []
 	},
 	"701042": {
 		"does_not_exist": true,

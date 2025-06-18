@@ -2301,8 +2301,18 @@
     },
     {
         "id": 701041,
-        "name": "Xiaoyao - 20 atk",
-        "namecn": "逍遥·20攻"
+        "name": "Xiaoyao - Irreversible",
+        "namecn": "逍遥·无回"
+    },
+    {
+        "id": 701051,
+        "name": "Xiaoyao - Breathless",
+        "namecn": "逍遥·无息"
+    },
+    {
+        "id": 701061,
+        "name": "Xiaoyao - Imbalance",
+        "namecn": "逍遥·无衡"
     },
     {
         "id": 714011,
@@ -2328,6 +2338,11 @@
         "id": 714051,
         "name": "M - Spiritage Sword",
         "namecn": "幻·引气剑"
+    },
+    {
+        "id": 714061,
+        "name": "M - Flying Fang Sword",
+        "namecn": "幻·飞牙剑"
     },
     {
         "id": 715011,
@@ -2378,6 +2393,11 @@
         "id": 724051,
         "name": "M - Earth Hexagram",
         "namecn": "幻·坤卦"
+    },
+    {
+        "id": 724061,
+        "name": "M - Dotted Around",
+        "namecn": "幻·星罗棋布"
     },
     {
         "id": 725011,
@@ -2435,6 +2455,11 @@
         "namecn": "幻·金灵针"
     },
     {
+        "id": 734061,
+        "name": "M - Cosmos Seal",
+        "namecn": "幻·浑天印"
+    },
+    {
         "id": 735011,
         "name": "Boulder Seal",
         "namecn": "滚石之印"
@@ -2473,6 +2498,11 @@
         "id": 744031,
         "name": "M - Sinking Qi",
         "namecn": "幻·气沉丹田"
+    },
+    {
+        "id": 744041,
+        "name": "M - Standing Firm",
+        "namecn": "幻·岿然不动"
     },
     {
         "id": 745011,
