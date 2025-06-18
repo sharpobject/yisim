@@ -151,7 +151,7 @@ const deps = {
         "HAS_COSMOS_SEAL", "HAS_ACTIVATE_NEXT",
         "HAS_FIVE_ELEMENTS_PURE_VASE"],
     HAS_COSMOS_SEAL: ["HAS_MARK_OF_FIVE_ELEMENTS", "13211"],
-    HAS_ACTIVATE_NEXT: ["93201", "93507"],
+    HAS_ACTIVATE_NEXT: ["73406", "93201", "93507"],
     HAS_MARK_OF_FIVE_ELEMENTS: ["mark_of_five_elements_stacks"],
     HAS_CORAL_SWORD: ["coral_sword_stacks"],
     HAS_IGNORE_DEF: ["ignore_def", "HAS_CORAL_SWORD",
@@ -581,7 +581,7 @@ const deps = {
         "HAS_SOUL_OVERWHELMING_PALM",
         "14110", "14111", "14208", "14309", "14310", "14311",
         "14401", "14409", "14410", "14507", "14508", "24102",
-        "24302", "64202", "94301", "94501", "94504"],
+        "24302", "64202", "74404", "94301", "94501", "94504"],
     HAS_SOUL_OVERWHELMING_PALM: ["94502"],
     HAS_THUNDER_CITTA_DHARMA: [
         "thunder_citta_dharma_stacks", "22403"],
@@ -600,7 +600,7 @@ const deps = {
         "HAS_RETURN_TO_SIMPLICITY",
         "14301", "14310", "14405", "14406", "14407", "14409",
         "14410", "14501", "14503", "14508", "24202", "24501",
-        "64501", "94401", "94501", "94504"],
+        "64501", "74404", "94401", "94501", "94504"],
     HAS_PLAYED_CARD_COUNT: ["played_card_count", "73501"],
     HAS_WILD_CROSSING_SEAL: ["wild_crossing_seal_stacks", "73401"],
     HAS_KUN_WU_METAL_RING: ["kun_wu_metal_ring_stacks", "63301"],
@@ -701,7 +701,8 @@ const deps = {
         "HAS_STAR_TRAIL_DIVINATION",
         "HAS_THOUSAND_STAR_EXPLOSION",
         "12102", "12201", "12301", "22202", "22402", "22503",
-        "62101", "62302", "62501", "72505", "92502", "92503"],
+        "62101", "62302", "62501", "72406", "72505", "92502",
+        "92503"],
     HAS_STAR_POINT: [
         "HAS_STAR_POWER",
         "HAS_STAR_MOON_FOLDING_FAN",
@@ -802,8 +803,8 @@ const deps = {
         "HAS_SWORD_PATTERN_INTENSE",
         "11109", "11110", "11111", "11202", "11207", "11208",
         "11210", "11305", "11407", "11505", "21302", "21401",
-        "61102", "71401", "71402", "91301", "91402", "91506",
-        "91507"],
+        "61102", "71401", "71402", "71406", "91301", "91402",
+        "91506", "91507"],
     INCREASE_MAX_HP_DISPATCH: [
         "HAS_HEAVENLY_WILL_COMPLY"],
     INCREASE_IDX_DEF_DISPATCH: [
@@ -942,7 +943,10 @@ const deps = {
     HAS_M_EARTH_HEXAGRAM: [
         "m_earth_hexagram_stacks",
         "72405"],
-
+    HAS_M_COSMOS_SEAL: ["73406"],
+    HAS_M_DOTTED_AROUND: [
+        "m_dotted_around_stacks",
+        "72406"],
 
 
 

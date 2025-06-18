@@ -9901,6 +9901,26 @@
 			["qi", 1]
 		]
 	},
+	"714061": {
+		"name": "M - Flying Fang Sword",
+		"qi_cost": 1,
+		"actions": [
+			["atk", 4],
+			["chase"]
+		]
+	},
+	"714062": {
+		"actions": [
+			["atk", 4],
+			["chase"]
+		]
+	},
+	"714063": {
+		"actions": [
+			["atk", 4],
+			["chase"]
+		]
+	},
 	"715011": {
 		"name": "Dragon Devours Clouds",
 		"actions": [
@@ -10094,6 +10114,28 @@
 		"actions": [
 			["def", 2],
 			["add_c_of_x", 2, "hexagram"]
+		]
+	},
+	"724061": {
+		"name": "M - Dotted Around",
+		"actions": [
+			["qi", 2],
+			["add_c_of_x", 1, "star_power"],
+			["add_c_of_x", 4, "m_dotted_around_stacks"]
+		]
+	},
+	"724062": {
+		"actions": [
+			["qi", 3],
+			["add_c_of_x", 1, "star_power"],
+			["add_c_of_x", 8, "m_dotted_around_stacks"]
+		]
+	},
+	"724063": {
+		"actions": [
+			["qi", 3],
+			["add_c_of_x", 2, "star_power"],
+			["add_c_of_x", 12, "m_dotted_around_stacks"]
 		]
 	},
 	"725011": {
@@ -10393,6 +10435,28 @@
 			["metal_spirit", ["add_c_of_x", 1, "m_metal_spirit_needle_stacks"]]
 		]
 	},
+	"734061": {
+		"name": "M - Cosmos Seal",
+		"actions": [
+			["atk", 5],
+			["qi", 1],
+			["activate_next_slots", 1]
+		]
+	},
+	"734062": {
+		"actions": [
+			["atk", 7],
+			["qi", 2],
+			["activate_next_slots", 1]
+		]
+	},
+	"734063": {
+		"actions": [
+			["atk", 9],
+			["qi", 3],
+			["activate_next_slots", 1]
+		]
+	},
 	"735011": {
 		"name": "Boulder Seal",
 		"actions": [
@@ -10570,6 +10634,28 @@
 			["add_c_of_x", 3, "qi"],
 			["add_c_of_x", 4, "hp"],
 			["add_c_of_x", 2, "m_sinking_qi_stacks"]
+		]
+	},
+	"744041": {
+		"name": "M - Standing Firm",
+		"actions": [
+			["add_c_of_x", 2, "force"],
+			["for_each_x_add_c_y", "force", 2, "def"],
+			["exhaust_x_to_add_c_y", "agility", 2, "hp"]
+		]
+	},
+	"744042": {
+		"actions": [
+			["add_c_of_x", 2, "force"],
+			["for_each_x_add_c_y", "force", 3, "def"],
+			["exhaust_x_to_add_c_y", "agility", 2, "hp"]
+		]
+	},
+	"744043": {
+		"actions": [
+			["add_c_of_x", 2, "force"],
+			["for_each_x_add_c_y", "force", 4, "def"],
+			["exhaust_x_to_add_c_y", "agility", 2, "hp"]
 		]
 	},
 	"745011": {

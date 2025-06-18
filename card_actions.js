@@ -10274,6 +10274,27 @@ card_actions["714053"] = (game) => {
     game.do_m_spiritage_sword(3);
 }
 
+// M - Flying Fang Sword
+card_actions["714061"] = (game) => {
+    game.atk(4);
+    game.chase();
+    game.regain_sword_intent();
+}
+
+// 714062
+card_actions["714062"] = (game) => {
+    game.atk(8);
+    game.chase();
+    game.regain_sword_intent();
+}
+
+// 714063
+card_actions["714063"] = (game) => {
+    game.atk(12);
+    game.chase();
+    game.regain_sword_intent();
+}
+
 // Dragon Devours Clouds
 card_actions["715011"] = (game) => {
     game.continuous();
@@ -10491,6 +10512,27 @@ card_actions["724053"] = (game) => {
     const me = game.players[0];
     const amt = 1 + Math.floor(me.hexagram / 3);
     game.increase_idx_x_by_c(0, "m_earth_hexagram_stacks", amt);
+}
+
+// M - Dotted Around
+card_actions["724061"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_x_by_c(0, "star_power", 1);
+    game.increase_idx_x_by_c(0, "m_dotted_around_stacks", 4);
+}
+
+// 724062
+card_actions["724062"] = (game) => {
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_x_by_c(0, "star_power", 1);
+    game.increase_idx_x_by_c(0, "m_dotted_around_stacks", 8);
+}
+
+// 724063
+card_actions["724063"] = (game) => {
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_x_by_c(0, "star_power", 2);
+    game.increase_idx_x_by_c(0, "m_dotted_around_stacks", 12);
 }
 
 // Astral Move - Twin Swallows
@@ -10778,6 +10820,27 @@ card_actions["734053"] = (game) => {
     }
 }
 
+// M - Cosmos Seal
+card_actions["734061"] = (game) => {
+    game.atk(5);
+    game.increase_idx_qi(0, 1);
+    game.activate_next_slots(1);
+}
+
+// 734062
+card_actions["734062"] = (game) => {
+    game.atk(7);
+    game.increase_idx_qi(0, 2);
+    game.activate_next_slots(1);
+}
+
+// 734063
+card_actions["734063"] = (game) => {
+    game.atk(9);
+    game.increase_idx_qi(0, 3);
+    game.activate_next_slots(1);
+}
+
 // Boulder Seal
 card_actions["735011"] = (game) => {
     const def_amt = 2 + 2 * game.players[0].played_card_count;
@@ -10953,6 +11016,27 @@ card_actions["744033"] = (game) => {
     game.increase_idx_qi(0, 4);
     game.increase_idx_hp(0, 8);
     game.increase_idx_x_by_c(0, "m_sinking_qi_stacks", 2);
+}
+
+// M - Standing Firm
+card_actions["744041"] = (game) => {
+    game.increase_idx_x_by_c(0, "force", 2);
+    game.for_each_x_add_c_y("force", 2, "def");
+    game.exhaust_x_to_add_c_y("agility", 2, "hp");
+}
+
+// 744042
+card_actions["744042"] = (game) => {
+    game.increase_idx_x_by_c(0, "force", 2);
+    game.for_each_x_add_c_y("force", 3, "def");
+    game.exhaust_x_to_add_c_y("agility", 2, "hp");
+}
+
+// 744043
+card_actions["744043"] = (game) => {
+    game.increase_idx_x_by_c(0, "force", 2);
+    game.for_each_x_add_c_y("force", 4, "def");
+    game.exhaust_x_to_add_c_y("agility", 2, "hp");
 }
 
 // M - Double Trouble

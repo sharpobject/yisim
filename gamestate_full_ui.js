@@ -627,6 +627,7 @@ export class Player {
         this.m_sinking_qi_stacks = 0;
         this.m_consonance_sword_formation_stacks = 0;
         this.m_earth_hexagram_stacks = 0;
+        this.m_dotted_around_stacks = 0;
 
 
         // merpeople pearls
@@ -776,6 +777,7 @@ export class Player {
     }
     post_deck_setup() {
         this.xuanming_recurring_hp = this.hp;
+        this.next_xuanming_recurring_hp = this.hp;
         this.reset_can_play();
     }
 }
@@ -912,6 +914,7 @@ export class GameState {
         let has_earth = false;
         let has_metal = false;
         let has_water = false;
+        let has_m_cosmos_seal = false;
         let different_elements = 0;
         for (let i=0; i<cards.length; i++) {
             let card_id = cards[i];
@@ -935,6 +938,10 @@ export class GameState {
             if (card.is_water_spirit && !has_water) {
                 has_water = true;
                 different_elements += 1;
+            }
+            if (card.name === "M - Cosmos Seal" && !has_m_cosmos_seal) {
+                has_m_cosmos_seal = true;
+                different_elements += 2;
             }
         }
         return different_elements;
@@ -3091,6 +3098,14 @@ export class GameState {
             return;
         }
         const me = this.players[idx];
+        if (me.colorful_spirit_crane_stacks > 0) {
+            amt *= 2;
+        }
+        if (me.m_dotted_around_stacks > 0) {
+            const star_power_amt = Math.min(amt, me.m_dotted_around_stacks);
+            this.increase_idx_star_power(idx, star_power_amt);
+            amt -= star_power_amt;
+        }
         if (me.mortal_body_stacks > 0) {
             this.increase_idx_physique(idx, amt);
             return;
@@ -3098,9 +3113,6 @@ export class GameState {
         if (me.mixed_grain_zongzi_stacks > 0) {
             amt += 1;
             this.increase_idx_hp(idx, me.mixed_grain_zongzi_stacks);
-        }
-        if (me.colorful_spirit_crane_stacks > 0) {
-            amt *= 2;
         }
         if (me.stillness_citta_dharma_stacks > 0) {
             this.increase_idx_hp(idx, amt * me.stillness_citta_dharma_stacks);
@@ -4255,36 +4267,7 @@ export class GameState {
         return this.players[0].has_played_continuous_card;
     }
     do_ultimate_world_formation(chases) {
-        let has_wood_spirit_card = false;
-        let has_fire_spirit_card = false;
-        let has_earth_spirit_card = false;
-        let has_metal_spirit_card = false;
-        let has_water_spirit_card = false;
-        const me = this.players[0];
-        for (let i=0; i<me.cards.length; i++) {
-            const card_id = me.cards[i];
-            const card = swogi[card_id];
-            has_wood_spirit_card |= card.is_wood_spirit;
-            has_fire_spirit_card |= card.is_fire_spirit;
-            has_earth_spirit_card |= card.is_earth_spirit;
-            has_metal_spirit_card |= card.is_metal_spirit;
-            has_water_spirit_card |= card.is_water_spirit;
-        }
-        if (has_wood_spirit_card) {
-            chases++;
-        }
-        if (has_fire_spirit_card) {
-            chases++;
-        }
-        if (has_earth_spirit_card) {
-            chases++;
-        }
-        if (has_metal_spirit_card) {
-            chases++;
-        }
-        if (has_water_spirit_card) {
-            chases++;
-        }
+        chases += this.get_n_different_five_elements(0);
         this.increase_idx_x_by_c(0, "ultimate_world_formation_stacks", chases);
     }
     if_star_point() {
