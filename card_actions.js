@@ -10845,27 +10845,6 @@ card_actions["734053"] = (game) => {
     }
 }
 
-// M - Cosmos Seal
-card_actions["734061"] = (game) => {
-    game.atk(5);
-    game.increase_idx_qi(0, 1);
-    game.activate_next_slots(1);
-}
-
-// 734062
-card_actions["734062"] = (game) => {
-    game.atk(7);
-    game.increase_idx_qi(0, 2);
-    game.activate_next_slots(1);
-}
-
-// 734063
-card_actions["734063"] = (game) => {
-    game.atk(9);
-    game.increase_idx_qi(0, 3);
-    game.activate_next_slots(1);
-}
-
 // Boulder Seal
 card_actions["735011"] = (game) => {
     const def_amt = 2 + 2 * game.players[0].played_card_count;
@@ -10972,6 +10951,27 @@ card_actions["735053"] = (game) => {
     if (game.if_earth_spirit()) {
         game.increase_idx_x_by_c(0, "next_turn_def", def_reduction);
     }
+}
+
+// M - Cosmos Seal
+card_actions["735061"] = (game) => {
+    game.atk(5);
+    game.increase_idx_qi(0, 1);
+    game.activate_next_slots(1);
+}
+
+// 735062
+card_actions["735062"] = (game) => {
+    game.atk(8);
+    game.increase_idx_qi(0, 2);
+    game.activate_next_slots(1);
+}
+
+// 735063
+card_actions["735063"] = (game) => {
+    game.atk(11);
+    game.increase_idx_qi(0, 3);
+    game.activate_next_slots(1);
 }
 
 // M - Youthful Vigor
