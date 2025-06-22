@@ -1898,6 +1898,7 @@ export class GameState {
 
 
         this.do_beast_spirit_sword_formation(card_id);
+        this.do_cloud_sword_chain_count(card_id);
         this.do_unrestrained_sword_count(card_id);
         this.do_sweet_zongzi_count(card_id);
         if (p0.chase_if_hp_gained > 0) {
@@ -1972,7 +1973,6 @@ export class GameState {
         this.do_cosmos_seal(card_id);
         this.do_flying_brush_chase();
         this.trigger_card(card_id, idx);
-        this.do_cloud_sword_chain_count(card_id);
         this.do_elemental_spirit_stuff(card_id);
         this.do_ultimate_overcome_formation(idx);
         this.do_record_musician_card_played_for_chord_in_tune(card_id);

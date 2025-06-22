@@ -3133,6 +3133,9 @@ export class GameState {
 #ifdef HAS_BEAST_SPIRIT_SWORD_FORMATION
         this.do_beast_spirit_sword_formation(card_id);
 #endif // HAS_BEAST_SPIRIT_SWORD_FORMATION
+#ifdef HAS_CLOUD_SWORD_CHAIN_COUNT
+        this.do_cloud_sword_chain_count(card_id);
+#endif // HAS_CLOUD_SWORD_CHAIN_COUNT
 #ifdef HAS_UNRESTRAINED_SWORD_COUNT
         this.do_unrestrained_sword_count(card_id);
 #endif // HAS_UNRESTRAINED_SWORD_COUNT
@@ -3249,9 +3252,6 @@ export class GameState {
         this.do_flying_brush_chase();
 #endif HAS_FLYING_BRUSH
         this.trigger_card(card_id, idx);
-#ifdef HAS_CLOUD_SWORD_CHAIN_COUNT
-        this.do_cloud_sword_chain_count(card_id);
-#endif // HAS_CLOUD_SWORD_CHAIN_COUNT
 #ifdef HAS_LAST_CARD_ID
         this.do_elemental_spirit_stuff(card_id);
 #endif // HAS_LAST_CARD_ID
