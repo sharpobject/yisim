@@ -2455,11 +2455,6 @@
         "namecn": "幻·金灵针"
     },
     {
-        "id": 734061,
-        "name": "M - Cosmos Seal",
-        "namecn": "幻·浑天印"
-    },
-    {
         "id": 735011,
         "name": "Boulder Seal",
         "namecn": "滚石之印"
@@ -2483,6 +2478,11 @@
         "id": 735051,
         "name": "M - Earth Spirit Mountains",
         "namecn": "幻·土灵群山"
+    },
+    {
+        "id": 735061,
+        "name": "M - Cosmos Seal",
+        "namecn": "幻·浑天印"
     },
     {
         "id": 744011,
