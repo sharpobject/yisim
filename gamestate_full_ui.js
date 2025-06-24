@@ -5061,7 +5061,7 @@ export class GameState {
             const idx = this.random_int(hand_cards_with_add_qi.length);
             card_id = hand_cards_with_add_qi[idx];
         }
-        this.trigger_card(card_id, this.currently_triggering_card_idx);
+        this.trigger_card(card_id, me.currently_triggering_card_idx);
         const phase = parseInt(card_id.substring(2, 3));
         if (phase >= 5) {
             return;
