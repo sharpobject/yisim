@@ -3261,6 +3261,11 @@ export class GameState {
 #ifdef HAS_HAS_PLAYED_MUSICIAN_CARD
         this.do_record_musician_card_played_for_chord_in_tune(card_id);
 #endif // HAS_HAS_PLAYED_MUSICIAN_CARD
+#ifdef HAS_M_SINKING_QI
+        if (me.this_card_attacked) {
+            this.reduce_idx_x_by_c(0, "m_sinking_qi_stacks", 1);
+        }
+#endif // HAS_M_SINKING_QI
 #ifdef HAS_POST_ACTION
         me.can_post_action[idx] = true;
 #endif // HAS_POST_ACTION
@@ -4123,9 +4128,6 @@ export class GameState {
 #ifdef HAS_HEAVENLY_WILL_DEFY
         this.reduce_idx_x_by_c(0, "god_opportunity_reversal_stacks", 1);
 #endif // HAS_HEAVENLY_WILL_DEFY
-#ifdef HAS_M_SINKING_QI
-        this.reduce_idx_x_by_c(0, "m_sinking_qi_stacks", 1);
-#endif // HAS_M_SINKING_QI
 #ifdef HAS_RESONANCE_REJUVENATION
         this.do_resonance_rejuvenation();
 #endif // HAS_RESONANCE_REJUVENATION
@@ -4822,7 +4824,7 @@ export class GameState {
         if (me.m_dotted_around_stacks > 0) {
             const star_power_amt = Math.min(amt, me.m_dotted_around_stacks);
             this.increase_idx_star_power(idx, star_power_amt);
-            amt -= star_power_amt;
+            this.reduce_idx_x_by_c(idx, "m_dotted_around_stacks", star_power_amt);
         }
 #endif // HAS_M_DOTTED_AROUND
 #ifdef HAS_MORTAL_BODY
@@ -7315,10 +7317,8 @@ export class GameState {
         if (phase >= 5) {
             return;
         }
-        const atk_amt = 3 + Math.floor(me.qi * 0.5);
-        for (let i = 0; i < 2; i++) {
-            this.atk(atk_amt);
-        }
+        const atk_amt = 3 + me.qi;
+        this.atk(atk_amt);
     }
 #endif // HAS_M_SPIRITAGE_SWORD
     if_cost_x_qi(x) {

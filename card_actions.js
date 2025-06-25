@@ -9185,7 +9185,7 @@ card_actions["615023"] = (game) => {
 // Yeying Sword Formation
 card_actions["615031"] = (game) => {
     const me = game.players[0];
-    const reps = 2 + game.sword_formation_deck_count(3, me.currently_triggering_card_idx);
+    const reps = 3 + game.sword_formation_deck_count(2, me.currently_triggering_card_idx);
     let def_amt = 0;
     for (let i = 0; i < reps; i++) {
         game.atk(2);
@@ -9199,7 +9199,7 @@ card_actions["615031"] = (game) => {
 // 615032
 card_actions["615032"] = (game) => {
     const me = game.players[0];
-    const reps = 2 + game.sword_formation_deck_count(4, me.currently_triggering_card_idx);
+    const reps = 3 + game.sword_formation_deck_count(3, me.currently_triggering_card_idx);
     let def_amt = 0;
     for (let i = 0; i < reps; i++) {
         game.atk(2);
@@ -9213,7 +9213,7 @@ card_actions["615032"] = (game) => {
 // 615033
 card_actions["615033"] = (game) => {
     const me = game.players[0];
-    const reps = 3 + game.sword_formation_deck_count(4, me.currently_triggering_card_idx);
+    const reps = 4 + game.sword_formation_deck_count(3, me.currently_triggering_card_idx);
     let def_amt = 0;
     for (let i = 0; i < reps; i++) {
         game.atk(2);
@@ -10548,16 +10548,16 @@ card_actions["724061"] = (game) => {
 
 // 724062
 card_actions["724062"] = (game) => {
-    game.increase_idx_qi(0, 3);
-    game.increase_idx_x_by_c(0, "star_power", 1);
-    game.increase_idx_x_by_c(0, "m_dotted_around_stacks", 8);
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_x_by_c(0, "star_power", 2);
+    game.increase_idx_x_by_c(0, "m_dotted_around_stacks", 6);
 }
 
 // 724063
 card_actions["724063"] = (game) => {
-    game.increase_idx_qi(0, 3);
-    game.increase_idx_x_by_c(0, "star_power", 2);
-    game.increase_idx_x_by_c(0, "m_dotted_around_stacks", 12);
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_x_by_c(0, "star_power", 3);
+    game.increase_idx_x_by_c(0, "m_dotted_around_stacks", 8);
 }
 
 // Astral Move - Twin Swallows
@@ -11045,6 +11045,7 @@ card_actions["744033"] = (game) => {
 
 // M - Standing Firm
 card_actions["744041"] = (game) => {
+    game.increase_idx_def(0, 4);
     game.increase_idx_x_by_c(0, "force", 2);
     game.for_each_x_add_c_y("force", 2, "def");
     game.exhaust_x_to_add_c_y("agility", 2, "hp");
@@ -11052,6 +11053,7 @@ card_actions["744041"] = (game) => {
 
 // 744042
 card_actions["744042"] = (game) => {
+    game.increase_idx_def(0, 4);
     game.increase_idx_x_by_c(0, "force", 2);
     game.for_each_x_add_c_y("force", 3, "def");
     game.exhaust_x_to_add_c_y("agility", 2, "hp");
@@ -11059,6 +11061,7 @@ card_actions["744042"] = (game) => {
 
 // 744043
 card_actions["744043"] = (game) => {
+    game.increase_idx_def(0, 4);
     game.increase_idx_x_by_c(0, "force", 2);
     game.for_each_x_add_c_y("force", 4, "def");
     game.exhaust_x_to_add_c_y("agility", 2, "hp");
@@ -11183,19 +11186,19 @@ card_actions["745023"] = (game) => {
 
 // M - Crash Fist Poke
 card_actions["745031"] = (game) => {
-    game.atk(9);
+    game.atk(12);
     game.for_each_x_add_c_pct_y("physique", 12.5, "later_crash_fist_poke_stacks");
 }
 
 // 745032
 card_actions["745032"] = (game) => {
-    game.atk(9);
+    game.atk(12);
     game.for_each_x_add_c_pct_y("physique", 14.285715, "later_crash_fist_poke_stacks");
 }
 
 // 745033
 card_actions["745033"] = (game) => {
-    game.atk(9);
+    game.atk(12);
     game.for_each_x_add_c_pct_y("physique", 16.666667, "later_crash_fist_poke_stacks");
 }
 
