@@ -11045,24 +11045,24 @@ card_actions["744033"] = (game) => {
 
 // M - Standing Firm
 card_actions["744041"] = (game) => {
-    game.increase_idx_def(0, 4);
     game.increase_idx_x_by_c(0, "force", 2);
+    game.increase_idx_def(0, 4);
     game.for_each_x_add_c_y("force", 2, "def");
     game.exhaust_x_to_add_c_y("agility", 2, "hp");
 }
 
 // 744042
 card_actions["744042"] = (game) => {
-    game.increase_idx_def(0, 4);
     game.increase_idx_x_by_c(0, "force", 2);
+    game.increase_idx_def(0, 4);
     game.for_each_x_add_c_y("force", 3, "def");
     game.exhaust_x_to_add_c_y("agility", 2, "hp");
 }
 
 // 744043
 card_actions["744043"] = (game) => {
-    game.increase_idx_def(0, 4);
     game.increase_idx_x_by_c(0, "force", 2);
+    game.increase_idx_def(0, 4);
     game.for_each_x_add_c_y("force", 4, "def");
     game.exhaust_x_to_add_c_y("agility", 2, "hp");
 }
