@@ -1978,6 +1978,9 @@ export class GameState {
         this.do_elemental_spirit_stuff(card_id);
         this.do_ultimate_overcome_formation(idx);
         this.do_record_musician_card_played_for_chord_in_tune(card_id);
+        if (me.this_card_attacked) {
+            this.reduce_idx_x_by_c(0, "m_sinking_qi_stacks", 1);
+        }
         me.can_post_action[idx] = true;
     }
     play_card(card_id, idx) {
@@ -2638,7 +2641,6 @@ export class GameState {
         this.reduce_idx_x_by_c(0, "everything_goes_way_stacks", 1);
         this.reduce_idx_x_by_c(0, "god_opportunity_conform_stacks", 1);
         this.reduce_idx_x_by_c(0, "god_opportunity_reversal_stacks", 1);
-        this.reduce_idx_x_by_c(0, "m_sinking_qi_stacks", 1);
         this.do_resonance_rejuvenation();
         me.xuanming_recurring_hp = me.next_xuanming_recurring_hp;
         me.next_xuanming_recurring_hp = me.hp;
@@ -3107,7 +3109,7 @@ export class GameState {
         if (me.m_dotted_around_stacks > 0) {
             const star_power_amt = Math.min(amt, me.m_dotted_around_stacks);
             this.increase_idx_star_power(idx, star_power_amt);
-            amt -= star_power_amt;
+            this.reduce_idx_x_by_c(idx, "m_dotted_around_stacks", star_power_amt);
         }
         if (me.mortal_body_stacks > 0) {
             this.increase_idx_physique(idx, amt);
@@ -5066,10 +5068,8 @@ export class GameState {
         if (phase >= 5) {
             return;
         }
-        const atk_amt = 3 + Math.floor(me.qi * 0.5);
-        for (let i = 0; i < 2; i++) {
-            this.atk(atk_amt);
-        }
+        const atk_amt = 3 + me.qi;
+        this.atk(atk_amt);
     }
     if_cost_x_qi(x) {
         const me = this.players[0];
