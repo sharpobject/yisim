@@ -5388,13 +5388,17 @@ card_actions["231011"] = (game) => {
 
 // 231012
 card_actions["231012"] = (game) => {
-    game.add_c_of_x(3, "increase_atk");
+    game.add_c_of_x(2, "increase_atk");
+    game.increase_idx_max_hp(0, 4);
+    game.increase_idx_hp(0, 4);
     game.activate_wood_spirit();
 }
 
 // 231013
 card_actions["231013"] = (game) => {
-    game.add_c_of_x(4, "increase_atk");
+    game.add_c_of_x(2, "increase_atk");
+    game.increase_idx_max_hp(0, 8);
+    game.increase_idx_hp(0, 8);
     game.activate_wood_spirit();
 }
 
@@ -9100,28 +9104,43 @@ card_actions["614013"] = (game) => {
 // Cloud Sword - Pray Rain
 card_actions["614021"] = (game) => {
     for (let i = 0; i < 3; i++) {
-        game.atk(3);
+        game.atk(2);
     }
     game.add_c_of_x(2, "regen");
     game.increase_idx_qi(0, 1);
+    if (game.if_cloud_hit()) {
+        const convert_amt = Math.min(game.players[0].regen, 2);
+        game.reduce_c_of_x(convert_amt, "regen");
+        game.add_c_of_x(convert_amt, "increase_atk");
+    }
 }
 
 // 614022
 card_actions["614022"] = (game) => {
     for (let i = 0; i < 4; i++) {
-        game.atk(3);
+        game.atk(2);
     }
     game.add_c_of_x(2, "regen");
     game.increase_idx_qi(0, 1);
+    if (game.if_cloud_hit()) {
+        const convert_amt = Math.min(game.players[0].regen, 3);
+        game.reduce_c_of_x(convert_amt, "regen");
+        game.add_c_of_x(convert_amt, "increase_atk");
+    }
 }
 
 // 614023
 card_actions["614023"] = (game) => {
     for (let i = 0; i < 5; i++) {
-        game.atk(3);
+        game.atk(2);
     }
     game.add_c_of_x(2, "regen");
     game.increase_idx_qi(0, 1);
+    if (game.if_cloud_hit()) {
+        const convert_amt = Math.min(game.players[0].regen, 4);
+        game.reduce_c_of_x(convert_amt, "regen");
+        game.add_c_of_x(convert_amt, "increase_atk");
+    }
 }
 
 // Spirit Cat Chaos Sword
@@ -9731,8 +9750,8 @@ card_actions["635013"] = (game) => {
 
 // Forget Worries
 card_actions["635021"] = (game) => {
-    game.increase_idx_hp(0, 8);
-    game.increase_idx_hp(1, 8);
+    game.increase_idx_max_hp(0, 12);
+    game.increase_idx_hp(0, 12);
     game.increase_idx_x_by_c(0, "guard_up", 2);
     game.increase_idx_x_by_c(1, "guard_up", 2);
     game.reduce_idx_x_by_c(0, "internal_injury", 2);
@@ -9755,8 +9774,8 @@ card_actions["635021"] = (game) => {
 
 // 635022
 card_actions["635022"] = (game) => {
-    game.increase_idx_hp(0, 16);
-    game.increase_idx_hp(1, 16);
+    game.increase_idx_max_hp(0, 18);
+    game.increase_idx_hp(0, 18);
     game.increase_idx_x_by_c(0, "guard_up", 2);
     game.increase_idx_x_by_c(1, "guard_up", 2);
     game.reduce_idx_x_by_c(0, "internal_injury", 3);
@@ -9779,8 +9798,8 @@ card_actions["635022"] = (game) => {
 
 // 635023
 card_actions["635023"] = (game) => {
+    game.increase_idx_max_hp(0, 24);
     game.increase_idx_hp(0, 24);
-    game.increase_idx_hp(1, 24);
     game.increase_idx_x_by_c(0, "guard_up", 2);
     game.increase_idx_x_by_c(1, "guard_up", 2);
     game.reduce_idx_x_by_c(0, "internal_injury", 4);
@@ -9968,21 +9987,21 @@ card_actions["643013"] = (game) => {
 
 // Crash Fist - Stygian Night
 card_actions["644011"] = (game) => {
-    game.add_c_of_x(2, "styx");
+    game.add_c_of_x(3, "styx");
     game.continuous();
     game.add_c_of_x(6, "crash_fist_stygian_night_stacks");
 }
 
 // 644012
 card_actions["644012"] = (game) => {
-    game.add_c_of_x(3, "styx");
+    game.add_c_of_x(4, "styx");
     game.continuous();
     game.add_c_of_x(9, "crash_fist_stygian_night_stacks");
 }
 
 // 644013
 card_actions["644013"] = (game) => {
-    game.add_c_of_x(4, "styx");
+    game.add_c_of_x(5, "styx");
     game.continuous();
     game.add_c_of_x(12, "crash_fist_stygian_night_stacks");
 }
@@ -12443,12 +12462,12 @@ card_actions["914051"] = (game) => {
 
 // 914052
 card_actions["914052"] = (game) => {
-    game.qi(3 + game.spirit_sword_deck_count(3));
+    game.qi(4 + game.spirit_sword_deck_count(3));
 }
 
 // 914053
 card_actions["914053"] = (game) => {
-    game.qi(4 + game.spirit_sword_deck_count(3));
+    game.qi(6 + game.spirit_sword_deck_count(3));
 }
 
 // Cloud Sword - Dragon Spring

@@ -4749,7 +4749,7 @@ export class GameState {
 #endif // HAS_HEAVENLY_WILL_COMPLY
 #ifdef HAS_HEAVENLY_WILL_DEFY
         if (me.god_opportunity_reversal_stacks > 0) {
-            const dmg_amt = Math.ceil(amt * 6 / 10);
+            const dmg_amt = Math.floor(amt / 2);
             this.deal_damage_inner(dmg_amt, false, idx);
         }
 #endif // HAS_HEAVENLY_WILL_DEFY
@@ -4813,7 +4813,7 @@ export class GameState {
 #endif // HAS_HEAVENLY_WILL_COMPLY
 #ifdef HAS_HEAVENLY_WILL_DEFY
         if (me.god_opportunity_reversal_stacks > 0) {
-            const dmg_amt = Math.ceil(amt * 6 / 10);
+            const dmg_amt = Math.floor(amt / 2);
             this.deal_damage_inner(dmg_amt, false, idx);
         }
 #endif // HAS_HEAVENLY_WILL_DEFY

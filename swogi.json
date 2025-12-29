@@ -955,7 +955,6 @@
 	},
 	"115051": {
 		"name": "Sword Intent Surge",
-		"qi_cost": 1,
 		"actions": [
 			["for_each_x_add_c_pct_y", "sword_intent", 80, "sword_intent"]
 		]
@@ -5047,13 +5046,17 @@
 	},
 	"231012": {
 		"actions": [
-			["add_c_of_x", 3, "increase_atk"],
+			["add_c_of_x", 2, "increase_atk"],
+			["increase_idx_max_hp", 0, 4],
+			["increase_idx_hp", 0, 4],
 			["activate_wood_spirit"]
 		]
 	},
 	"231013": {
 		"actions": [
-			["add_c_of_x", 4, "increase_atk"],
+			["add_c_of_x", 2, "increase_atk"],
+			["increase_idx_max_hp", 0, 8],
+			["increase_idx_hp", 0, 8],
 			["activate_wood_spirit"]
 		]
 	},
@@ -8888,24 +8891,27 @@
 	"614021": {
 		"name": "Cloud Sword - Pray Rain",
 		"actions": [
-			["rep", 3, ["atk", 3]],
+			["rep", 3, ["atk", 2]],
 			["add_c_of_x", 2, "regen"],
-			["qi", 1]
+			["qi", 1],
+			["cloud_hit", ["convert_x_to_y_up_to_c", "regen", "increase_atk", 2]]
 		],
 		"character": "sw3"
 	},
 	"614022": {
 		"actions": [
-			["rep", 4, ["atk", 3]],
+			["rep", 4, ["atk", 2]],
 			["add_c_of_x", 2, "regen"],
-			["qi", 1]
+			["qi", 1],
+			["cloud_hit", ["convert_x_to_y_up_to_c", "regen", "increase_atk", 3]]
 		]
 	},
 	"614023": {
 		"actions": [
-			["rep", 5, ["atk", 3]],
+			["rep", 5, ["atk", 2]],
 			["add_c_of_x", 2, "regen"],
-			["qi", 1]
+			["qi", 1],
+			["cloud_hit", ["convert_x_to_y_up_to_c", "regen", "increase_atk", 4]]
 		]
 	},
 	"614031": {
@@ -9599,23 +9605,26 @@
 	},
 	"644011": {
 		"name": "Crash Fist - Styx Night",
+		"hp_cost": 3,
 		"actions": [
-			["add_c_of_x", 2, "styx"],
+			["add_c_of_x", 3, "styx"],
 			["continuous"],
 			["add_c_of_x", 6, "crash_fist_stygian_night_stacks"]
 		],
 		"character": "dx3"
 	},
 	"644012": {
+		"hp_cost": 3,
 		"actions": [
-			["add_c_of_x", 3, "styx"],
+			["add_c_of_x", 4, "styx"],
 			["continuous"],
 			["add_c_of_x", 9, "crash_fist_stygian_night_stacks"]
 		]
 	},
 	"644013": {
+		"hp_cost": 3,
 		"actions": [
-			["add_c_of_x", 4, "styx"],
+			["add_c_of_x", 5, "styx"],
 			["continuous"],
 			["add_c_of_x", 12, "crash_fist_stygian_night_stacks"]
 		]
