@@ -1,0 +1,8 @@
+### 40102 - Thorns Spear
+  L1 CSV:  [hp=0 qi=1] 12 ATK | This card gets 1 more ATK for every 2 DEF the opponent have
+  L1 IMPL: [hp=0 qi=1]  game.atk(12 + Math.floor(game.players[1].def / 2)); ✓
+  L2 CSV:  [hp=0 qi=1] 16 ATK | This card gets 1 more ATK for every 2 DEF the opponent have
+  L2 IMPL: [hp=0 qi=1]  game.atk(16 + Math.floor(game.players[1].def / 2)); ✓
+  L3 CSV:  [hp=0 qi=1] 20 ATK | This card gets 1 more ATK for every 2 DEF the opponent have
+  L3 IMPL: [hp=0 qi=1]  game.atk(20 + Math.floor(game.players[1].def / 2)); ✓
+

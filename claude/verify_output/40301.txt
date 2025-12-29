@@ -1,0 +1,8 @@
+### 40301 - Fire Soul Refinement Flag
+  L1 CSV:  [hp=0 qi=2] Opponent loses 15 HP and Max HP | Apply 1 stack(s) of [Internal Injury]
+  L1 IMPL: [hp=0 qi=2]  game.reduce_enemy_c_of_x(15, "hp"); game.reduce_enemy_c_of_x(15, "max_hp"); game.add_enemy_c_of_x(1, "internal_injury"); ✓
+  L2 CSV:  [hp=0 qi=2] Opponent loses 15 HP and Max HP | Apply 2 stack(s) of [Internal Injury]
+  L2 IMPL: [hp=0 qi=2]  game.reduce_enemy_c_of_x(15, "hp"); game.reduce_enemy_c_of_x(15, "max_hp"); game.add_enemy_c_of_x(2, "internal_injury"); ✓
+  L3 CSV:  [hp=0 qi=2] Opponent loses 15 HP and Max HP | Apply 3 stack(s) of [Internal Injury]
+  L3 IMPL: [hp=0 qi=2]  game.reduce_enemy_c_of_x(15, "hp"); game.reduce_enemy_c_of_x(15, "max_hp"); game.add_enemy_c_of_x(3, "internal_injury"); ✓
+

@@ -1,0 +1,8 @@
+### 90501 - Xuanming Requiem Fulu
+  L1 CSV:  [no cost] Reduce your current HP by 20%, and cause the opponent to lose that amount plus 15 HP and Max HP | [Consumption]
+  L1 IMPL: [no cost]  game.do_xuanming_requiem_fulu(20, 15); game.consumption(); ✓
+  L2 CSV:  [no cost] Reduce your current HP by 25%, and cause the opponent to lose that amount plus 20 HP and Max HP | [Consumption]
+  L2 IMPL: [no cost]  game.do_xuanming_requiem_fulu(25, 20); game.consumption(); ✓
+  L3 CSV:  [no cost] Reduce your current HP by 30%, and cause the opponent to lose that amount plus 25 HP and Max HP | [Consumption]
+  L3 IMPL: [no cost]  game.do_xuanming_requiem_fulu(30, 25); game.consumption(); ✓
+

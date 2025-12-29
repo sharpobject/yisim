@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 5 ATK | [DEF]+2 | [Earth Spirit]: Add 3 [DEF] in your next turn
+  L1 IMPL: [no cost]  game.atk(5); game.increase_idx_def(0, 2); if (game.if_earth_spirit()) { game.add_c_of_x(3, "next_turn_def"); } ✓
+  L2 CSV:  [no cost] 6 ATK | [DEF]+3 | [Earth Spirit]: Add 6 [DEF] in your next turn
+  L2 IMPL: [no cost]  game.atk(6); game.increase_idx_def(0, 3); if (game.if_earth_spirit()) { game.add_c_of_x(6, "next_turn_def"); } ✓
+  L3 CSV:  [no cost] 7 ATK | [DEF]+4 | [Earth Spirit]: Add 9 [DEF] in your next turn
+  L3 IMPL: [no cost]  game.atk(7); game.increase_idx_def(0, 4); if (game.if_earth_spirit()) { game.add_c_of_x(9, "next_turn_def"); } ✓

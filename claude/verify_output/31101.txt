@@ -1,0 +1,8 @@
+### 31101 - Earth Spirit Elixir
+  L1 CSV:  [no cost] [DEF]+11 | [Consumption]
+  L1 IMPL: [no cost]  game.increase_idx_def(0, 11); game.consumption(); ✓
+  L2 CSV:  [no cost] [DEF]+16 | [Consumption]
+  L2 IMPL: [no cost]  game.increase_idx_def(0, 16); game.consumption(); ✓
+  L3 CSV:  [no cost] [DEF]+21 | [Consumption]
+  L3 IMPL: [no cost]  game.increase_idx_def(0, 21); game.consumption(); ✓
+

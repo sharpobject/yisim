@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Post Action]: 12 ATK, [Chase]
+  L1 IMPL: [no cost]  if (game.if_post_action()) { game.atk(12); game.chase(); } ✓
+  L2 CSV:  [no cost] [Post Action]: 18 ATK, [Chase]
+  L2 IMPL: [no cost]  if (game.if_post_action()) { game.atk(18); game.chase(); } ✓
+  L3 CSV:  [no cost] [Post Action]: 24 ATK, [Chase]
+  L3 IMPL: [no cost]  if (game.if_post_action()) { game.atk(24); game.chase(); } ✓

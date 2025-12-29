@@ -1,0 +1,8 @@
+### 23202 - Water Spirit - Rhythm Wood
+  L1 CSV:  [no cost] [Water Spirit]: [Qi]+2 | [Wood Spirit]: Add 2 HP for each Qi you have
+  L1 IMPL: [no cost]  if (game.if_water_spirit()) { game.increase_idx_qi(0, 2); } if (game.if_wood_spirit()) { game.for_each_x_add_c_y("qi", 2, "hp"); } ✓
+  L2 CSV:  [no cost] [Water Spirit]: [Qi]+3 | [Wood Spirit]: Add 2 HP for each Qi you have
+  L2 IMPL: [no cost]  if (game.if_water_spirit()) { game.increase_idx_qi(0, 3); } if (game.if_wood_spirit()) { game.for_each_x_add_c_y("qi", 2, "hp"); } ✓
+  L3 CSV:  [no cost] [Water Spirit]: [Qi]+4 | [Wood Spirit]: Add 2 HP for each Qi you have
+  L3 IMPL: [no cost]  if (game.if_water_spirit()) { game.increase_idx_qi(0, 4); } if (game.if_wood_spirit()) { game.for_each_x_add_c_y("qi", 2, "hp"); } ✓
+

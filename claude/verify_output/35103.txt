@@ -1,0 +1,8 @@
+### 35103 - Impact Formation
+  L1 CSV:  [no cost] 6 ATK | If you have played a Continuous card in this battle, make an additional 2 ATK
+  L1 IMPL: [no cost]  game.atk(6); if (game.if_played_continuous()) { game.atk(2); } ✓
+  L2 CSV:  [no cost] 8 ATK | If you have played a Continuous card in this battle, make an additional 3 ATK
+  L2 IMPL: [no cost]  game.atk(8); if (game.if_played_continuous()) { game.atk(3); } ✓
+  L3 CSV:  [no cost] 10 ATK | If you have played a Continuous card in this battle, make an additional 4 ATK
+  L3 IMPL: [no cost]  game.atk(10); if (game.if_played_continuous()) { game.atk(4); } ✓
+

@@ -1,0 +1,8 @@
+### 61101 - Cloud Sword - Flying Sand
+  L1 CSV:  [no cost] 5 ATK | [Cloud Hit]: Apply 2 stacks of [Flaw]
+  L1 IMPL: [no cost]  game.atk(5); if (game.if_cloud_hit()) { game.add_enemy_c_of_x(2, "flaw"); } ✓
+  L2 CSV:  [no cost] 8 ATK | [Cloud Hit]: Apply 2 stacks of [Flaw]
+  L2 IMPL: [no cost]  game.atk(8); if (game.if_cloud_hit()) { game.add_enemy_c_of_x(2, "flaw"); } ✓
+  L3 CSV:  [no cost] 9 ATK | [Cloud Hit]: Apply 3 stacks of [Flaw]
+  L3 IMPL: [no cost]  game.atk(9); if (game.if_cloud_hit()) { game.add_enemy_c_of_x(3, "flaw"); } ✓
+

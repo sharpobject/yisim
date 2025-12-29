@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Qi]+2 | [Water Spirit]: Gain 1 stack of [Force of Water] for every 5 [Injured] opponent's HP in next 1 attack
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 2); if (game.if_water_spirit()) { game.add_c_of_x(1, "water_spirit_spring_stacks"); } ✓
+  L2 CSV:  [no cost] [Qi]+3 | [Water Spirit]: Gain 1 stack of [Force of Water] for every 5 [Injured] opponent's HP in next 1 attack
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 3); if (game.if_water_spirit()) { game.add_c_of_x(1, "water_spirit_spring_stacks"); } ✓
+  L3 CSV:  [no cost] [Qi]+4 | [Water Spirit]: Gain 1 stack of [Force of Water] for every 5 [Injured] opponent's HP in next 1 attack
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 4); if (game.if_water_spirit()) { game.add_c_of_x(1, "water_spirit_spring_stacks"); } ✓

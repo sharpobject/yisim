@@ -1,0 +1,8 @@
+### 14410 - Overwhelming Force
+  L1 CSV:  [no cost] Exhaust [Force]. Add 4 [DEF] and Deal 3 [DMG] for each point exhausted | [Agility]+5
+  L1 IMPL: [no cost]  const me = game.players[0]; let def_amt = me.force * 4; let dmg_amt = me.force * 3; game.reduce_c_of_x(me.force, "force"); game.increase_idx_def(0, def_amt); game.deal_damage(dmg_amt); game.add_c_of_x(5, "agility"); ✓
+  L2 CSV:  [no cost] Exhaust [Force]. Add 4 [DEF] and Deal 4 [DMG] for each point exhausted | [Agility]+6
+  L2 IMPL: [no cost]  const me = game.players[0]; let def_amt = me.force * 4; let dmg_amt = me.force * 4; game.reduce_c_of_x(me.force, "force"); game.increase_idx_def(0, def_amt); game.deal_damage(dmg_amt); game.add_c_of_x(6, "agility"); ✓
+  L3 CSV:  [no cost] Exhaust [Force]. Add 4 [DEF] and Deal 5 [DMG] for each point exhausted | [Agility]+7
+  L3 IMPL: [no cost]  const me = game.players[0]; let def_amt = me.force * 4; let dmg_amt = me.force * 5; game.reduce_c_of_x(me.force, "force"); game.increase_idx_def(0, def_amt); game.deal_damage(dmg_amt); game.add_c_of_x(7, "agility"); ✓
+

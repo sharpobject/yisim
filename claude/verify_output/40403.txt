@@ -1,0 +1,8 @@
+### 40403 - Carefree Guqin
+  L1 CSV:  [no cost] [Continuous]: Both player's [Normal Attack] gain [Chase] and add 2 ATK 
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(2, "carefree_guqin_stacks"); game.add_enemy_c_of_x(2, "carefree_guqin_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous]: Both player's [Normal Attack] gain [Chase] and add 5 ATK 
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(5, "carefree_guqin_stacks"); game.add_enemy_c_of_x(5, "carefree_guqin_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous]: Both player's [Normal Attack] gain [Chase] and add 8 ATK 
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(8, "carefree_guqin_stacks"); game.add_enemy_c_of_x(8, "carefree_guqin_stacks"); ✓
+

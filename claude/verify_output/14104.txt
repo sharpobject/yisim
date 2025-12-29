@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 6 ATK | [Physique]+1
+  L1 IMPL: [no cost]  game.atk(6); game.physique(1); ✓
+  L2 CSV:  [no cost] 9 ATK | [Physique]+1
+  L2 IMPL: [no cost]  game.atk(9); game.physique(1); ✓
+  L3 CSV:  [no cost] 12 ATK | [Physique]+1
+  L3 IMPL: [no cost]  game.atk(12); game.physique(1); ✓

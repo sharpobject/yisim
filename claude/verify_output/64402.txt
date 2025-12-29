@@ -1,0 +1,8 @@
+### 64402 - Meditation of Xuan
+  L1 CSV:  [no cost] [Physique]+2 | [Continuous]: At the start of each your turn, you gain 2 [Internal Injury] and 2 [Regeneration]
+  L1 IMPL: [no cost]  game.physique(2); game.continuous(); game.add_c_of_x(2, "meditation_of_xuan_stacks"); ✓
+  L2 CSV:  [no cost] [Physique]+3 | [Continuous]: At the start of each your turn, you gain 3 [Internal Injury] and 3 [Regeneration]
+  L2 IMPL: [no cost]  game.physique(3); game.continuous(); game.add_c_of_x(3, "meditation_of_xuan_stacks"); ✓
+  L3 CSV:  [no cost] [Physique]+4 | [Continuous]: At the start of each your turn, you gain 4 [Internal Injury] and 4 [Regeneration]
+  L3 IMPL: [no cost]  game.physique(4); game.continuous(); game.add_c_of_x(4, "meditation_of_xuan_stacks"); ✓
+

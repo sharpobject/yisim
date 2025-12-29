@@ -1,0 +1,8 @@
+### 90604 - Kongtong Seal
+  L1 CSV:  [no cost] Max HP+5 in this game. | The next 2 times you play an upgradable card, upgrade it in this game. | [Chase] | [Consumption]
+  L1 IMPL: [no cost]  game.add_c_of_x(5, "max_hp"); game.add_c_of_x(5, "hp"); game.add_c_of_x(2, "kongtong_seal_stacks"); game.chase(); game.consumption(); ✓
+  L2 CSV:  [no cost] CSV NOT FOUND
+  L2 IMPL: [no cost]   ✓
+  L3 CSV:  [no cost] CSV NOT FOUND
+  L3 IMPL: [no cost]   ✓
+

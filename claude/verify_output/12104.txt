@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] 6 ATK | [Star Point]: Make an additional 5 ATK
+  L1 IMPL: [hp=0 qi=1]  game.atk(6); if (game.if_star_point()) { game.atk(5); } ✓
+  L2 CSV:  [hp=0 qi=1] 7 ATK | [Star Point]: Make an additional 7 ATK
+  L2 IMPL: [hp=0 qi=1]  game.atk(7); if (game.if_star_point()) { game.atk(7); } ✓
+  L3 CSV:  [hp=0 qi=1] 8 ATK | [Star Point]: Make an additional 9 ATK
+  L3 IMPL: [hp=0 qi=1]  game.atk(8); if (game.if_star_point()) { game.atk(9); } ✓

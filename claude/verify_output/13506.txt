@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Continuous] X [Times] (X is the number of different [Five Elements] in your deck): Whenever you activate any [Five Elements], [Chase]
+  L1 IMPL: [no cost]  game.continuous(); game.do_ultimate_world_formation(0); ✓
+  L2 CSV:  [no cost] [Continuous] X+2 [Times] (X is the number of different [Five Elements] in your deck): Whenever you activate any [Five Elements], [Chase]
+  L2 IMPL: [no cost]  game.continuous(); game.do_ultimate_world_formation(2); ✓
+  L3 CSV:  [no cost] [Continuous] X+4 [Times] (X is the number of different [Five Elements] in your deck): Whenever you activate any [Five Elements], [Chase]
+  L3 IMPL: [no cost]  game.continuous(); game.do_ultimate_world_formation(4); ✓

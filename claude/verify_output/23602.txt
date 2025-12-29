@@ -1,0 +1,8 @@
+### 23602 - Five Elements Blossom
+  L1 CSV:  [no cost] Play all [Five Elements] Spirit Seal cards | [Chase] | [Consumption]
+  L1 IMPL: [no cost]  game.trigger_card_by_id(131011); game.trigger_card_by_id(131031); game.trigger_card_by_id(131051); game.trigger_card_by_id(131071); game.trigger_card_by_id(131091); game.chase(); game.consumption(); ✓
+  L2 CSV:  [no cost] Play all [Five Elements] Spirit Seal cards | [Chase] | [Consumption]
+  L2 IMPL: [no cost]  game.trigger_card_by_id(131012); game.trigger_card_by_id(131032); game.trigger_card_by_id(131052); game.trigger_card_by_id(131072); game.trigger_card_by_id(131092); game.chase(); game.consumption(); ✓
+  L3 CSV:  [no cost] Play all [Five Elements] Spirit Seal cards | [Chase] | [Consumption]
+  L3 IMPL: [no cost]  game.trigger_card_by_id(131013); game.trigger_card_by_id(131033); game.trigger_card_by_id(131053); game.trigger_card_by_id(131073); game.trigger_card_by_id(131093); game.chase(); game.consumption(); ✓
+

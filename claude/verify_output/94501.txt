@@ -1,0 +1,8 @@
+### 94501 - Unceasing Universe
+  L1 CSV:  [hp=0 qi=2] 9 ATK | [Physique]+3 | HP+3 | [Force]+3 | [Agility]+10
+  L1 IMPL: [hp=0 qi=2]  game.atk(9); game.physique(3); game.increase_idx_hp(0, 3); game.add_c_of_x(3, "force"); game.add_c_of_x(10, "agility"); ✓
+  L2 CSV:  [hp=0 qi=2] 9 ATK | [Physique]+4 | HP+4 | [Force]+4 | [Agility]+10
+  L2 IMPL: [hp=0 qi=2]  game.atk(9); game.physique(4); game.increase_idx_hp(0, 4); game.add_c_of_x(4, "force"); game.add_c_of_x(10, "agility"); ✓
+  L3 CSV:  [hp=0 qi=2] 9 ATK | [Physique]+5 | HP+5 | [Force]+5 | [Agility]+10
+  L3 IMPL: [hp=0 qi=2]  game.atk(9); game.physique(5); game.increase_idx_hp(0, 5); game.add_c_of_x(5, "force"); game.add_c_of_x(10, "agility"); ✓
+

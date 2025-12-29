@@ -1,0 +1,8 @@
+### 61201 - Cloud Sword - Cat Paw
+  L1 CSV:  [no cost] 4 ATK × 2 | This card's attacks Ignore DEF
+  L1 IMPL: [no cost]  for (let i = 0; i < 2; i++) { game.increase_idx_x_by_c(0, "ignore_def", 1); game.atk(4); } ✓
+  L2 CSV:  [no cost] 6 ATK × 2 | This card's attacks Ignore DEF
+  L2 IMPL: [no cost]  for (let i = 0; i < 2; i++) { game.increase_idx_x_by_c(0, "ignore_def", 1); game.atk(6); } ✓
+  L3 CSV:  [no cost] 8 ATK × 2 | This card's attacks Ignore DEF
+  L3 IMPL: [no cost]  for (let i = 0; i < 2; i++) { game.increase_idx_x_by_c(0, "ignore_def", 1); game.atk(8); } ✓
+

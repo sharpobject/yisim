@@ -1,0 +1,8 @@
+### 32201 - Fire Cloud Fulu
+  L1 CSV:  [hp=0 qi=1] Opponent loses 12 HP and Max HP | [Consumption]
+  L1 IMPL: [hp=0 qi=1]  game.reduce_enemy_c_of_x(12, "hp"); game.reduce_enemy_c_of_x(12, "max_hp"); game.consumption(); ✓
+  L2 CSV:  [hp=0 qi=1] Opponent loses 16 HP and Max HP | [Consumption]
+  L2 IMPL: [hp=0 qi=1]  game.reduce_enemy_c_of_x(16, "hp"); game.reduce_enemy_c_of_x(16, "max_hp"); game.consumption(); ✓
+  L3 CSV:  [hp=0 qi=1] Opponent loses 20 HP and Max HP | [Consumption]
+  L3 IMPL: [hp=0 qi=1]  game.reduce_enemy_c_of_x(20, "hp"); game.reduce_enemy_c_of_x(20, "max_hp"); game.consumption(); ✓
+

@@ -1,0 +1,8 @@
+### 24502 - Eerie Melody Buries Soul
+  L1 CSV:  [no cost] Both players gain 3 stacks of [Internal Injury], [Flaw], [Weakened], [Entangled] and [Wound]
+  L1 IMPL: [no cost]  game.add_c_of_x(3, "internal_injury"); game.add_enemy_c_of_x(3, "internal_injury"); game.add_c_of_x(3, "flaw"); game.add_enemy_c_of_x(3, "flaw"); game.add_c_of_x(3, "weaken"); game.add_enemy_c_of_x(3, "weaken"); game.add_c_of_x(3, "entangle"); game.add_enemy_c_of_x(3, "entangle"); game.add_c_of_x(3, "wound"); game.add_enemy_c_of_x(3, "wound"); ✓
+  L2 CSV:  [no cost] Both players gain 4 stacks of [Internal Injury], [Flaw], [Weakened], [Entangled] and [Wound]
+  L2 IMPL: [no cost]  game.add_c_of_x(4, "internal_injury"); game.add_enemy_c_of_x(4, "internal_injury"); game.add_c_of_x(4, "flaw"); game.add_enemy_c_of_x(4, "flaw"); game.add_c_of_x(4, "weaken"); game.add_enemy_c_of_x(4, "weaken"); game.add_c_of_x(4, "entangle"); game.add_enemy_c_of_x(4, "entangle"); game.add_c_of_x(4, "wound"); game.add_enemy_c_of_x(4, "wound"); ✓
+  L3 CSV:  [no cost] Both players gain 5 stacks of [Internal Injury], [Flaw], [Weakened], [Entangled] and [Wound]
+  L3 IMPL: [no cost]  game.add_c_of_x(5, "internal_injury"); game.add_enemy_c_of_x(5, "internal_injury"); game.add_c_of_x(5, "flaw"); game.add_enemy_c_of_x(5, "flaw"); game.add_c_of_x(5, "weaken"); game.add_enemy_c_of_x(5, "weaken"); game.add_c_of_x(5, "entangle"); game.add_enemy_c_of_x(5, "entangle"); game.add_c_of_x(5, "wound"); game.add_enemy_c_of_x(5, "wound"); ✓
+

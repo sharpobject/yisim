@@ -1,0 +1,8 @@
+### 22302 - All-Or-Nothing
+  L1 CSV:  [hp=0 qi=2] 2～20 ATK | [DEF]+2～20
+  L1 IMPL: [hp=0 qi=2]  game.atk_rand_range(2, 20); game.def_rand_range(2, 20); ✓
+  L2 CSV:  [hp=0 qi=2] 8～23 ATK | [DEF]+8～23
+  L2 IMPL: [hp=0 qi=2]  game.atk_rand_range(8, 23); game.def_rand_range(8, 23); ✓
+  L3 CSV:  [hp=0 qi=2] 14～26 ATK | [DEF]+14～26
+  L3 IMPL: [hp=0 qi=2]  game.atk_rand_range(14, 26); game.def_rand_range(14, 26); ✓
+

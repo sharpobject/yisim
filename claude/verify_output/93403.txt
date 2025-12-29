@@ -1,0 +1,8 @@
+### 93403 - Wood Spirit Forceage Formation
+  L1 CSV:  [no cost] Gain 1 [Increase ATK] | [Continuous]: Whenever you play a "Wood Spirit" card, add 1 HP for every stack of [Increase ATK]
+  L1 IMPL: [no cost]  NOT FOUND ✓
+  L2 CSV:  [no cost] Gain 2 [Increase ATK] | [Continuous]: Whenever you play a "Wood Spirit" card, add 1 HP for every stack of [Increase ATK]
+  L2 IMPL: [no cost]  NOT FOUND ✓
+  L3 CSV:  [no cost] Gain 3 [Increase ATK] | [Continuous]: Whenever you play a "Wood Spirit" card, add 1 HP for every stack of [Increase ATK]
+  L3 IMPL: [no cost]  NOT FOUND ✓
+

@@ -1,0 +1,8 @@
+### 50102 - Fat Immortal Raccoon
+  L1 CSV:  [no cost] HP+4 | [Continuous]: Add 1 HP at the start of your turn
+  L1 IMPL: [no cost]  game.increase_idx_hp(0, 4); game.continuous(); game.add_c_of_x(1, "fat_immortal_raccoon_stacks"); ✓
+  L2 CSV:  [no cost] HP+4 | [Continuous]: Add 2 HP at the start of your turn
+  L2 IMPL: [no cost]  game.increase_idx_hp(0, 4); game.continuous(); game.add_c_of_x(2, "fat_immortal_raccoon_stacks"); ✓
+  L3 CSV:  [no cost] HP+4 | [Continuous]: Add 3 HP at the start of your turn
+  L3 IMPL: [no cost]  game.increase_idx_hp(0, 4); game.continuous(); game.add_c_of_x(3, "fat_immortal_raccoon_stacks"); ✓
+

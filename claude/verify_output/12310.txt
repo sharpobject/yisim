@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 2 ATK × 2 | HP+4 | [Post Action]: Make an additional 7 ATK
+  L1 IMPL: [no cost]  for (let i = 0; i < 2; i++) { game.atk(2); } game.increase_idx_hp(0, 4); if (game.if_post_action()) { game.atk(7); } ✓
+  L2 CSV:  [no cost] 3 ATK × 2 | HP+6 | [Post Action]: Make an additional 10 ATK
+  L2 IMPL: [no cost]  for (let i = 0; i < 2; i++) { game.atk(3); } game.increase_idx_hp(0, 6); if (game.if_post_action()) { game.atk(10); } ✓
+  L3 CSV:  [no cost] 4 ATK × 2 | HP+8 | [Post Action]: Make an additional 13 ATK
+  L3 IMPL: [no cost]  for (let i = 0; i < 2; i++) { game.atk(4); } game.increase_idx_hp(0, 8); if (game.if_post_action()) { game.atk(13); } ✓

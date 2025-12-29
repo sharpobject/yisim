@@ -1,0 +1,8 @@
+### 62303 - Flame Flutter
+  L1 CSV:  [no cost] 3 ATK | Apply 1～3 stack(s) of [Internal Injury]
+  L1 IMPL: [no cost]  game.atk(3); game.add_enemy_rand_range_of_x(1, 3, "internal_injury"); ✓
+  L2 CSV:  [no cost] 4 ATK | Apply 2～4 stack(s) of [Internal Injury]
+  L2 IMPL: [no cost]  game.atk(4); game.add_enemy_rand_range_of_x(2, 4, "internal_injury"); ✓
+  L3 CSV:  [no cost] 5 ATK | Apply 3～5 stack(s) of [Internal Injury]
+  L3 IMPL: [no cost]  game.atk(5); game.add_enemy_rand_range_of_x(3, 5, "internal_injury"); ✓
+

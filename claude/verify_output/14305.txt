@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Physique]+3 | Gain 2 [Entangled] | [DEF]+8 (1 more [DEF] for each stack of [Debuff])
+  L1 IMPL: [no cost]  game.physique(3); game.add_c_of_x(2, "entangle"); const def_amt = 8 + game.get_debuff_count(0); game.increase_idx_def(0, def_amt); ✓
+  L2 CSV:  [no cost] [Physique]+3 | Gain 3 [Entangled] | [DEF]+11 (1 more [DEF] for each stack of [Debuff])
+  L2 IMPL: [no cost]  game.physique(3); game.add_c_of_x(3, "entangle"); const def_amt = 11 + game.get_debuff_count(0); game.increase_idx_def(0, def_amt); ✓
+  L3 CSV:  [no cost] [Physique]+3 | Gain 4 [Entangled] | [DEF]+14 (1 more [DEF] for each stack of [Debuff])
+  L3 IMPL: [no cost]  game.physique(3); game.add_c_of_x(4, "entangle"); const def_amt = 14 + game.get_debuff_count(0); game.increase_idx_def(0, def_amt); ✓

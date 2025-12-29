@@ -1,0 +1,8 @@
+### 36403 - Frozen Blood Lotus
+  L1 CSV:  [no cost] [Growth] | Lose 10 HP | (At least 1 HP left) | Gain 1 stack of [Guard Up]
+  L1 IMPL: [no cost]  game.do_frozen_blood_lotus(1); ✓
+  L2 CSV:  [no cost] [Growth] | Lose 10 HP 2 times | (At least 1 HP left) | Gain 2 stack of [Guard Up]
+  L2 IMPL: [no cost]  game.do_frozen_blood_lotus(2); ✓
+  L3 CSV:  [no cost] Lose 10 HP 3 times | (At least 1 HP left) | Gain 3 stacks of [Guard Up]
+  L3 IMPL: [no cost]  game.do_frozen_blood_lotus(3); ✓
+

@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] 11 ATK | 11% chance to apply 1 stack(s) of [Weakened]
+  L1 IMPL: [hp=0 qi=1]  game.atk(11); if (game.if_c_pct(11)) { game.add_enemy_c_of_x(1, "weaken"); } ✓
+  L2 CSV:  [hp=0 qi=1] 15 ATK | 11% chance to apply 1 stack(s) of [Weakened]
+  L2 IMPL: [hp=0 qi=1]  game.atk(15); if (game.if_c_pct(11)) { game.add_enemy_c_of_x(1, "weaken"); } ✓
+  L3 CSV:  [hp=0 qi=1] 15 ATK | 11% chance to apply 2 stack(s) of [Weakened]
+  L3 IMPL: [hp=0 qi=1]  game.atk(15); if (game.if_c_pct(11)) { game.add_enemy_c_of_x(2, "weaken"); } ✓

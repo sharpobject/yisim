@@ -1,0 +1,8 @@
+### 92401 - Suspicious Flame Flutter
+  L1 CSV:  [no cost] Apply 4 [Internal Injury] | Repeat 3 times: 30% chance to make the opponent's [Internal Injury] take effect immediately
+  L1 IMPL: [no cost]  game.add_enemy_c_of_x(4, "internal_injury"); for (let i = 0; i < 3; i++) { if (game.if_c_pct(30)) { game.do_internal_injury(1); } } ✓
+  L2 CSV:  [no cost] Apply 5 [Internal Injury] | Repeat 3 times: 30% chance to make the opponent's [Internal Injury] take effect immediately
+  L2 IMPL: [no cost]  game.add_enemy_c_of_x(5, "internal_injury"); for (let i = 0; i < 3; i++) { if (game.if_c_pct(30)) { game.do_internal_injury(1); } } ✓
+  L3 CSV:  [no cost] Apply 6 [Internal Injury] | Repeat 3 times: 30% chance to make the opponent's [Internal Injury] take effect immediately
+  L3 IMPL: [no cost]  game.add_enemy_c_of_x(6, "internal_injury"); for (let i = 0; i < 3; i++) { if (game.if_c_pct(30)) { game.do_internal_injury(1); } } ✓
+

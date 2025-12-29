@@ -1,0 +1,8 @@
+### 91501 - Cloud Sword - Dragon Spring
+  L1 CSV:  [no cost] 2 ATK × 2 | [Injured]: [Upgrade] next 2 cards when playing them (restored after the battle) | [Cloud Hit]: [Chase]
+  L1 IMPL: [no cost]  game.do_cloud_sword_dragon_spring(2); ✓
+  L2 CSV:  [no cost] 2 ATK × 2 | [Injured]: [Upgrade] next 3 cards when playing them (restored after the battle) | [Cloud Hit]: [Chase]
+  L2 IMPL: [no cost]  game.do_cloud_sword_dragon_spring(3); ✓
+  L3 CSV:  [no cost] 2 ATK × 2 | [Injured]: [Upgrade] next 4 cards when playing them (restored after the battle) | [Cloud Hit]: [Chase]
+  L3 IMPL: [no cost]  game.do_cloud_sword_dragon_spring(4); ✓
+

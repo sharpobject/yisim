@@ -1,0 +1,8 @@
+### 63501 - Earth Spirit - Landslide
+  L1 CSV:  [no cost] 8 ATK | [Earth Spirit]: [DEF] halved, for each reduced point add 3 more [ATK]
+  L1 IMPL: [no cost]  game.do_earth_spirit_landslide(8, 3); ✓
+  L2 CSV:  [no cost] 15 ATK | [Earth Spirit]: [DEF] halved, for each reduced point add 3 more [ATK]
+  L2 IMPL: [no cost]  game.do_earth_spirit_landslide(15, 3); ✓
+  L3 CSV:  [no cost] 15 ATK | [Earth Spirit]: [DEF] halved, for each reduced point add 4 more [ATK]
+  L3 IMPL: [no cost]  game.do_earth_spirit_landslide(15, 4); ✓
+

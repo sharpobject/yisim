@@ -1,0 +1,8 @@
+### 23402 - Wood Spirit - Rhythm Fire
+  L1 CSV:  [no cost] [Wood Spirit]: HP+16 | [Fire Spirit]: 1 ATK (The rest of HP halved, for each reduced HP you gain 1 ATK)
+  L1 IMPL: [no cost]  game.do_wood_spirit_rhythm_fire(16); ✓
+  L2 CSV:  [no cost] [Wood Spirit]: HP+22 | [Fire Spirit]: 1 ATK (The rest of HP halved, for each reduced HP you gain 1 ATK)
+  L2 IMPL: [no cost]  game.do_wood_spirit_rhythm_fire(22); ✓
+  L3 CSV:  [no cost] [Wood Spirit]: HP+28 | [Fire Spirit]: 1 ATK (The rest of HP halved, for each reduced HP you gain 1 ATK)
+  L3 IMPL: [no cost]  game.do_wood_spirit_rhythm_fire(28); ✓
+

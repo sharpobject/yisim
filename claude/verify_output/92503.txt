@@ -1,0 +1,8 @@
+### 92503 - Great Galaxy
+  L1 CSV:  [no cost] Exhaust [Qi] and [Star Power], for each [Qi] / [Star Power] exhausted, add 2 / 4 HP and Max HP | If you have already added HP, [Chase] | [Post Action]: [Qi]+2
+  L1 IMPL: [no cost]  game.exhaust_x_to_add_c_y("qi", 2, "bonus_rep_amt"); game.exhaust_x_to_add_c_y("star_power", 4, "bonus_rep_amt"); game.for_each_x_add_y("bonus_rep_amt", "max_hp"); game.for_each_x_add_y("bonus_rep_amt", "hp"); game.add_c_of_x(1, "chase_if_hp_gained"); if (game.if_post_action()) { game.increase_idx_qi(0, 2); } ✓
+  L2 CSV:  [no cost] Exhaust [Qi] and [Star Power], for each [Qi] / [Star Power] exhausted, add 2 / 4 HP and Max HP | If you have already added HP, [Chase] | [Post Action]: [Qi]+4
+  L2 IMPL: [no cost]  game.exhaust_x_to_add_c_y("qi", 2, "bonus_rep_amt"); game.exhaust_x_to_add_c_y("star_power", 4, "bonus_rep_amt"); game.for_each_x_add_y("bonus_rep_amt", "max_hp"); game.for_each_x_add_y("bonus_rep_amt", "hp"); game.add_c_of_x(1, "chase_if_hp_gained"); if (game.if_post_action()) { game.increase_idx_qi(0, 4); } ✓
+  L3 CSV:  [no cost] Exhaust [Qi] and [Star Power], for each [Qi] / [Star Power] exhausted, add 2 / 4 HP and Max HP | If you have already added HP, [Chase] | [Post Action]: [Qi]+6
+  L3 IMPL: [no cost]  game.exhaust_x_to_add_c_y("qi", 2, "bonus_rep_amt"); game.exhaust_x_to_add_c_y("star_power", 4, "bonus_rep_amt"); game.for_each_x_add_y("bonus_rep_amt", "max_hp"); game.for_each_x_add_y("bonus_rep_amt", "hp"); game.add_c_of_x(1, "chase_if_hp_gained"); if (game.if_post_action()) { game.increase_idx_qi(0, 6); } ✓
+

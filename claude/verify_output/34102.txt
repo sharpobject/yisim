@@ -1,0 +1,8 @@
+### 34102 - Grinding Ink
+  L1 CSV:  [hp=0 qi=1] 8 ATK | [Qi]+1
+  L1 IMPL: [hp=0 qi=1]  game.atk(8); game.increase_idx_qi(0, 1); ✓
+  L2 CSV:  [hp=0 qi=1] 11 ATK | [Qi]+1
+  L2 IMPL: [hp=0 qi=1]  game.atk(11); game.increase_idx_qi(0, 1); ✓
+  L3 CSV:  [hp=0 qi=1] 14 ATK | [Qi]+1
+  L3 IMPL: [hp=0 qi=1]  game.atk(14); game.increase_idx_qi(0, 1); ✓
+

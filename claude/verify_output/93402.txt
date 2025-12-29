@@ -1,0 +1,8 @@
+### 93402 - Metal Spirit - Meteor
+  L1 CSV:  [no cost] 4 ATK (1 more ATK for every 8 [DEF] you have been lost) | [Metal Spirit]: [Chase]
+  L1 IMPL: [no cost]  game.atk(4 + Math.floor(game.players[0].def_lost * 12.5 / 100)); if (game.if_metal_spirit()) { game.chase(); } ✓
+  L2 CSV:  [no cost] 6 ATK (1 more ATK for every 7 [DEF] you have been lost) | [Metal Spirit]: [Chase]
+  L2 IMPL: [no cost]  game.atk(6 + Math.floor(game.players[0].def_lost * 14.285715 / 100)); if (game.if_metal_spirit()) { game.chase(); } ✓
+  L3 CSV:  [no cost] 8 ATK (1 more ATK for every 6 [DEF] you have been lost) | [Metal Spirit]: [Chase]
+  L3 IMPL: [no cost]  game.atk(8 + Math.floor(game.players[0].def_lost * 16.666667 / 100)); if (game.if_metal_spirit()) { game.chase(); } ✓
+

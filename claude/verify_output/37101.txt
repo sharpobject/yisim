@@ -1,0 +1,8 @@
+### 37101 - Heavenly Decree - Attack
+  L1 CSV:  [no cost] 6 ATK | [DEF]+3 | [Consumption] | [Switch]
+  L1 IMPL: [no cost]  game.atk(6); game.increase_idx_def(0, 3); game.consumption(); ✓
+  L2 CSV:  [no cost] 9 ATK | [DEF]+4 | [Consumption] | [Switch]
+  L2 IMPL: [no cost]  game.atk(9); game.increase_idx_def(0, 4); game.consumption(); ✓
+  L3 CSV:  [no cost] 12 ATK | [DEF]+5 | [Consumption] | [Switch]
+  L3 IMPL: [no cost]  game.atk(12); game.increase_idx_def(0, 5); game.consumption(); ✓
+

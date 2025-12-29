@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] 9 ATK | [Fire Spirit]: Make an additional 2 ATK
+  L1 IMPL: [hp=0 qi=1]  game.atk(9); if (game.if_fire_spirit()) { game.atk(2); } ✓
+  L2 CSV:  [hp=0 qi=1] 11 ATK | [Fire Spirit]: Make an additional 3 ATK
+  L2 IMPL: [hp=0 qi=1]  game.atk(11); if (game.if_fire_spirit()) { game.atk(3); } ✓
+  L3 CSV:  [hp=0 qi=1] 13 ATK | [Fire Spirit]: Make an additional 4 ATK
+  L3 IMPL: [hp=0 qi=1]  game.atk(13); if (game.if_fire_spirit()) { game.atk(4); } ✓

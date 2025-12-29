@@ -1,0 +1,8 @@
+### 74401 - M - Youthful Vigor
+  L1 CSV:  [hp=2 qi=0] 6 ATK × 2 | For every 24 HP added in this battle, make an additional attack
+  L1 IMPL: [hp=2 qi=0]  const hp_gained = game.players[0].hp_gained; const reps = 2 + Math.min(Math.floor(hp_gained * 5 / 100), 2); for (let i=0; i<reps; i++) { game.atk(6); } ✓
+  L2 CSV:  [hp=2 qi=0] 6 ATK × 2 | For every 18 HP added in this battle, make an additional attack
+  L2 IMPL: [hp=2 qi=0]  const hp_gained = game.players[0].hp_gained; const reps = 2 + Math.min(Math.floor(hp_gained * 6.25 / 100), 2); for (let i=0; i<reps; i++) { game.atk(8); } ✓
+  L3 CSV:  [hp=2 qi=0] 6 ATK × 2 | For every 14 HP added in this battle, make an additional attack
+  L3 IMPL: [hp=2 qi=0]  const hp_gained = game.players[0].hp_gained; const reps = 2 + Math.min(Math.floor(hp_gained * 8.333334 / 100), 2); for (let i=0; i<reps; i++) { game.atk(10); } ✓
+

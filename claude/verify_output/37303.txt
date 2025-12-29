@@ -1,0 +1,8 @@
+### 37303 - Disaster of Bloodshed
+  L1 CSV:  [no cost] Apply 1 [Internal Injury] | [Opening]: Apply 1 [Internal Injury]
+  L1 IMPL: [no cost] opening=[['add_enemy_c_of_x', 1, 'internal_injury']] game.add_enemy_c_of_x(1, "internal_injury"); ✓
+  L2 CSV:  [no cost] Apply 2 [Internal Injury] | [Opening]: Apply 1 [Internal Injury]
+  L2 IMPL: [no cost] opening=[['add_enemy_c_of_x', 1, 'internal_injury']] game.add_enemy_c_of_x(2, "internal_injury"); ✓
+  L3 CSV:  [no cost] Apply 3 [Internal Injury] | [Opening]: Apply 1 [Internal Injury]
+  L3 IMPL: [no cost] opening=[['add_enemy_c_of_x', 1, 'internal_injury']] game.add_enemy_c_of_x(3, "internal_injury"); ✓
+

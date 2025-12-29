@@ -1,0 +1,8 @@
+### 71404 - M - Light Sword
+  L1 CSV:  [no cost] 8 ATK | [Qi]+1 | This card counts as both Cloud Sword and Unrestrained Sword (also be applied to the next card played)
+  L1 IMPL: [no cost]  game.set_c_up_to_x(2, "m_light_sword_stacks"); game.atk(8); game.increase_idx_qi(0, 1); ✓
+  L2 CSV:  [no cost] 10 ATK | [Qi]+2 | This card counts as both Cloud Sword and Unrestrained Sword (also be applied to the next card played)
+  L2 IMPL: [no cost]  game.set_c_up_to_x(2, "m_light_sword_stacks"); game.atk(10); game.increase_idx_qi(0, 2); ✓
+  L3 CSV:  [no cost] 12 ATK | [Qi]+3 | This card counts as both Cloud Sword and Unrestrained Sword (also be applied to the next card played)
+  L3 IMPL: [no cost]  game.set_c_up_to_x(2, "m_light_sword_stacks"); game.atk(12); game.increase_idx_qi(0, 3); ✓
+

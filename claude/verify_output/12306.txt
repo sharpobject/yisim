@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Qi]+2 | Add 1 [DEF] and 1 HP for each [Hexagram]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.for_each_x_add_c_y("hexagram", 1, "def"); game.for_each_x_add_c_y("hexagram", 1, "hp"); ✓
+  L2 CSV:  [no cost] [Qi]+3 | Add 2 [DEF] and 1 HP for each [Hexagram]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.for_each_x_add_c_y("hexagram", 2, "def"); game.for_each_x_add_c_y("hexagram", 1, "hp"); ✓
+  L3 CSV:  [no cost] [Qi]+4 | Add 2 [DEF] and 2 HP for each [Hexagram]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 4); game.for_each_x_add_c_y("hexagram", 2, "def"); game.for_each_x_add_c_y("hexagram", 2, "hp"); ✓

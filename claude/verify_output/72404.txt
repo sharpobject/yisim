@@ -1,0 +1,8 @@
+### 72404 - M - Ruthless Water
+  L1 CSV:  [hp=0 qi=1] Apply 2 [Internal Injury] |  [Continuous]: Whenever the opponent gain 1 stack of [Debuff] other than [Internal Injury], they also gain 1 [Internal Injury]
+  L1 IMPL: [hp=0 qi=1]  game.increase_idx_debuff(1, "internal_injury", 2); game.continuous(); game.increase_idx_x_by_c(1, "m_ruthless_water_stacks", 1); ✓
+  L2 CSV:  [hp=0 qi=1] Apply 3 [Internal Injury] |  [Continuous]: Whenever the opponent gain 1 stack of [Debuff] other than [Internal Injury], they also gain 1 [Internal Injury]
+  L2 IMPL: [hp=0 qi=1]  game.increase_idx_debuff(1, "internal_injury", 3); game.continuous(); game.increase_idx_x_by_c(1, "m_ruthless_water_stacks", 1); ✓
+  L3 CSV:  [hp=0 qi=1] Apply 5 [Internal Injury] |  [Continuous]: Whenever the opponent gain 1 stack of [Debuff] other than [Internal Injury], they also gain 1 [Internal Injury]
+  L3 IMPL: [hp=0 qi=1]  game.increase_idx_debuff(1, "internal_injury", 5); game.continuous(); game.increase_idx_x_by_c(1, "m_ruthless_water_stacks", 1); ✓
+

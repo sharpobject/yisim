@@ -1,0 +1,8 @@
+### 36302 - Qi-corrupting Sunflower
+  L1 CSV:  [no cost] [Growth] | Opponent loses 1 [Qi]
+  L1 IMPL: [no cost]  game.reduce_enemy_c_of_x(1, "qi"); ✓
+  L2 CSV:  [no cost] [Growth] | Opponent loses 2 [Qi]
+  L2 IMPL: [no cost]  game.reduce_enemy_c_of_x(2, "qi"); ✓
+  L3 CSV:  [no cost] Opponent loses 3 [Qi] | If the opponent does not have enough [Qi], deal 5 damage for every point of [Qi] lacking
+  L3 IMPL: [no cost]  game.do_qi_corrupting_sunflower(); ✓
+

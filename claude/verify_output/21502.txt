@@ -1,0 +1,8 @@
+### 21502 - Step Moon Into Cloud
+  L1 CSV:  [no cost] [Continuous]: After each time you play a "Cloud Sword", add 1 stack of [Increase ATK]
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(1, "step_moon_into_cloud_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous]: After each time you play a "Cloud Sword", add 1 stack of [Increase ATK] | [Chase]
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(1, "step_moon_into_cloud_stacks"); game.chase(); ✓
+  L3 CSV:  [no cost] [Continuous]: After each time you play a "Cloud Sword", add 2 stacks of [Increase ATK] | [Chase]
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(2, "step_moon_into_cloud_stacks"); game.chase(); ✓
+

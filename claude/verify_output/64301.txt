@@ -1,0 +1,8 @@
+### 64301 - Gone Crazy
+  L1 CSV:  [no cost] Gain 2 [Styx] and 2 random [Debuff] | [Physique]+1 (increases by 1 for each stack of [Debuff], up to 10)
+  L1 IMPL: [no cost]  game.add_c_of_x(2, "styx"); for (let i = 0; i < 2; i++) { switch (game.random_int(6)) { case 0: game.add_c_of_x(1, "internal_injury"); break; case 1: game.add_c_of_x(1, "weaken"); break; case 2: game.add_c_of_x(1, "flaw"); break; case 3: game.add_c_of_x(1, "decrease_atk"); break; case 4: game.add_c_of_x(1, "entangle"); break; case 5: game.add_c_of_x(1, "wound"); break; } } const physique_amt = Math.min(10, game.get_debuff_count(0) + 1); game.increase_idx_physique(0, physique_amt); ✓
+  L2 CSV:  [no cost] Gain 3 [Styx] and 1 random [Debuff] | [Physique]+1 (increases by 1 for each stack of [Debuff], up to 15)
+  L2 IMPL: [no cost]  game.add_c_of_x(3, "styx"); switch (game.random_int(6)) { case 0: game.add_c_of_x(1, "internal_injury"); break; case 1: game.add_c_of_x(1, "weaken"); break; case 2: game.add_c_of_x(1, "flaw"); break; case 3: game.add_c_of_x(1, "decrease_atk"); break; case 4: game.add_c_of_x(1, "entangle"); break; case 5: game.add_c_of_x(1, "wound"); break; } const physique_amt = Math.min(15, game.get_debuff_count(0) + 1); game.increase_idx_physique(0, physique_amt); ✓
+  L3 CSV:  [no cost] Gain 4 [Styx] | [Physique]+1 (increases by 1 for each stack of [Debuff], up to 20)
+  L3 IMPL: [no cost]  game.add_c_of_x(4, "styx"); const physique_amt = Math.min(20, game.get_debuff_count(0) + 1); game.increase_idx_physique(0, physique_amt); ✓
+

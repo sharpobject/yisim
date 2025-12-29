@@ -1,0 +1,8 @@
+### 62101 - Perfectly Planned
+  L1 CSV:  [no cost] [Qi]+1 | [Hexagram]+1 | The next slot [Become Star Point]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 1); game.add_c_of_x(1, "hexagram"); game.become_star_point(1); ✓
+  L2 CSV:  [no cost] [Qi]+1 | [Hexagram]+1 | The next slot [Become Star Point] | [Star Power]+1
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 1); game.add_c_of_x(1, "hexagram"); game.become_star_point(1); game.add_c_of_x(1, "star_power"); ✓
+  L3 CSV:  [no cost] [Qi]+1 | [Hexagram]+1 | The next slot [Become Star Point] | [Star Power]+1 | HP and Max HP+4
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 1); game.add_c_of_x(1, "hexagram"); game.become_star_point(1); game.add_c_of_x(1, "star_power"); game.add_c_of_x(4, "max_hp"); game.increase_idx_hp(0, 4); ✓
+

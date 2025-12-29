@@ -1,0 +1,8 @@
+### 35301 - Spiritage Formation
+  L1 CSV:  [no cost] [Continuous] 2 [Times]: At the beginning of your turn, add 2 [Qi]
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(2, "spiritage_formation_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous] 3 [Times]: At the beginning of your turn, add 2 [Qi]
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(3, "spiritage_formation_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous] 4 [Times]: At the beginning of your turn, add 2 [Qi]
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(4, "spiritage_formation_stacks"); ✓
+

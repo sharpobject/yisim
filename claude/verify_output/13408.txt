@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Metal Spirit]: You take 5 less ATK or DMG (minimum to 1) from your opponent for 2 turns
+  L1 IMPL: [no cost]  if (game.if_metal_spirit()) { game.add_c_of_x(2, "metal_spirit_iron_bone_stacks"); } ✓
+  L2 CSV:  [no cost] [Metal Spirit]: You take 5 less ATK or DMG (minimum to 1) from your opponent for 3 turns
+  L2 IMPL: [no cost]  if (game.if_metal_spirit()) { game.add_c_of_x(3, "metal_spirit_iron_bone_stacks"); } ✓
+  L3 CSV:  [no cost] [Metal Spirit]: You take 5 less ATK or DMG (minimum to 1) from your opponent for 4 turns
+  L3 IMPL: [no cost]  if (game.if_metal_spirit()) { game.add_c_of_x(4, "metal_spirit_iron_bone_stacks"); } ✓

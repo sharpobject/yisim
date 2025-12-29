@@ -1,0 +1,8 @@
+### 23301 - Wood Spirit - Vine
+  L1 CSV:  [no cost] 4 ATK × 2. | [Wood Spirit]: For every 5 HP was added, make an additional ATK (Up to 3 times)
+  L1 IMPL: [no cost]  if (game.if_wood_spirit()) { game.for_each_x_add_c_pct_y_up_to_d("hp_gained", 20, "bonus_rep_amt", 3); } for (let i = 0; i < 2 + game.players[0].bonus_rep_amt; i++) { game.atk(4); } ✓
+  L2 CSV:  [no cost] 4 ATK × 2. | [Wood Spirit]: For every 5 HP was added, make an additional ATK (Up to 4 times)
+  L2 IMPL: [no cost]  if (game.if_wood_spirit()) { game.for_each_x_add_c_pct_y_up_to_d("hp_gained", 20, "bonus_rep_amt", 4); } for (let i = 0; i < 2 + game.players[0].bonus_rep_amt; i++) { game.atk(4); } ✓
+  L3 CSV:  [no cost] 4 ATK × 2. | [Wood Spirit]: For every 5 HP was added, make an additional ATK (Up to 5 times)
+  L3 IMPL: [no cost]  if (game.if_wood_spirit()) { game.for_each_x_add_c_pct_y_up_to_d("hp_gained", 20, "bonus_rep_amt", 5); } for (let i = 0; i < 2 + game.players[0].bonus_rep_amt; i++) { game.atk(4); } ✓
+

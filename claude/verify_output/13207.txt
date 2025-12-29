@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Penetrate]+4 | [Continuous]: Whenever you play a "Metal Spirit" card, add 1 [Penetrate]
+  L1 IMPL: [no cost]  game.add_c_of_x(4, "penetrate"); game.continuous(); game.add_c_of_x(1, "metal_spirit_formation_stacks"); ✓
+  L2 CSV:  [no cost] [Penetrate]+4 | [Continuous]: Whenever you play a "Metal Spirit" card, add 2 [Penetrate]
+  L2 IMPL: [no cost]  game.add_c_of_x(4, "penetrate"); game.continuous(); game.add_c_of_x(2, "metal_spirit_formation_stacks"); ✓
+  L3 CSV:  [no cost] [Penetrate]+4 | [Continuous]: Whenever you play a "Metal Spirit" card, add 3 [Penetrate]
+  L3 IMPL: [no cost]  game.add_c_of_x(4, "penetrate"); game.continuous(); game.add_c_of_x(3, "metal_spirit_formation_stacks"); ✓

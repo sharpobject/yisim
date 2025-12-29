@@ -1,0 +1,8 @@
+### 22502 - Preemptive Strike
+  L1 CSV:  [no cost] 4 ATK | [Continuous]: [Post Action] can be triggered when first time play it
+  L1 IMPL: [no cost]  game.atk(4); game.continuous(); game.add_c_of_x(1, "preemptive_strike_stacks"); ✓
+  L2 CSV:  [no cost] 10 ATK | [Continuous]: [Post Action] can be triggered when first time play it
+  L2 IMPL: [no cost]  game.atk(10); game.continuous(); game.add_c_of_x(1, "preemptive_strike_stacks"); ✓
+  L3 CSV:  [no cost] 16 ATK | [Continuous]: [Post Action] can be triggered when first time play it
+  L3 IMPL: [no cost]  game.atk(16); game.continuous(); game.add_c_of_x(1, "preemptive_strike_stacks"); ✓
+

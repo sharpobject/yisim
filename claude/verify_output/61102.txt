@@ -1,0 +1,8 @@
+### 61102 - Bronze Cat
+  L1 CSV:  [no cost] [DEF]+5 | For each Sword Intent add 2 [DEF]
+  L1 IMPL: [no cost]  const def_amt = 5 + 2 * game.players[0].sword_intent; game.increase_idx_def(0, def_amt); ✓
+  L2 CSV:  [no cost] [DEF]+5 | For each Sword Intent add 3 [DEF]
+  L2 IMPL: [no cost]  const def_amt = 5 + 3 * game.players[0].sword_intent; game.increase_idx_def(0, def_amt); ✓
+  L3 CSV:  [no cost] [DEF]+5 | For each Sword Intent add 4 [DEF]
+  L3 IMPL: [no cost]  const def_amt = 5 + 4 * game.players[0].sword_intent; game.increase_idx_def(0, def_amt); ✓
+

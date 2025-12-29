@@ -1,0 +1,8 @@
+### 64501 - Styx Moon's Glow
+  L1 CSV:  [no cost] [Physique]+1 | Gain 2 [Styx] | [Agility]+10
+  L1 IMPL: [no cost]  game.physique(1); game.add_c_of_x(2, "styx"); game.add_c_of_x(10, "agility"); ✓
+  L2 CSV:  [no cost] [Physique]+2 | Gain 3 [Styx] | [Agility]+11
+  L2 IMPL: [no cost]  game.physique(2); game.add_c_of_x(3, "styx"); game.add_c_of_x(11, "agility"); ✓
+  L3 CSV:  [no cost] [Physique]+3 | Gain 4 [Styx] | [Agility]+12
+  L3 IMPL: [no cost]  game.physique(3); game.add_c_of_x(4, "styx"); game.add_c_of_x(12, "agility"); ✓
+

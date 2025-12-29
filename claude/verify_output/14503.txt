@@ -1,0 +1,8 @@
+### 14503 - Exercise Soul
+  L1 CSV:  [no cost] 4 ATK | [Physique]+3 | [Physique]≥50: Gain 1 [Increase ATK] | [Physique]≥65: [Agility]+5
+  L1 IMPL: [no cost]  game.atk(4); game.physique(3); if (game.players[0].physique >= 50) { game.add_c_of_x(1, "increase_atk"); } if (game.players[0].physique >= 65) { game.add_c_of_x(5, "agility"); } ✓
+  L2 CSV:  [no cost] 8 ATK | [Physique]+4 | [Physique]≥50: Gain 1 [Increase ATK] | [Physique]≥65: [Agility]+6
+  L2 IMPL: [no cost]  game.atk(8); game.physique(4); if (game.players[0].physique >= 50) { game.add_c_of_x(1, "increase_atk"); } if (game.players[0].physique >= 65) { game.add_c_of_x(6, "agility"); } ✓
+  L3 CSV:  [no cost] 12 ATK | [Physique]+5 | [Physique]≥50: Gain 1 [Increase ATK] | [Physique]≥65: [Agility]+7
+  L3 IMPL: [no cost]  game.atk(12); game.physique(5); if (game.players[0].physique >= 50) { game.add_c_of_x(1, "increase_atk"); } if (game.players[0].physique >= 65) { game.add_c_of_x(7, "agility"); } ✓
+

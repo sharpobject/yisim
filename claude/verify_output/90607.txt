@@ -1,0 +1,8 @@
+### 90607 - Spirit Fusion Pot
+  L1 CSV:  [hp=0 qi=1] [Gather Qi] 4 | [Downgrade] opponent's next 4 cards on play. If a card cannot be downgraded, instead steal 9 HP and Max HP. | [Opening]: Apply above effect to opponent's next 2 cards
+  L1 IMPL: [hp=0 qi=1] opening=[['add_enemy_c_of_x', 1, 'spirit_fusion_pot_stacks']] game.add_enemy_c_of_x(4, "spirit_fusion_pot_stacks"); ✓
+  L2 CSV:  [no cost] CSV NOT FOUND
+  L2 IMPL: [hp=0 qi=1] opening=[['add_enemy_c_of_x', 1, 'spirit_fusion_pot_stacks']]  ✗COST
+  L3 CSV:  [no cost] CSV NOT FOUND
+  L3 IMPL: [hp=0 qi=1] opening=[['add_enemy_c_of_x', 1, 'spirit_fusion_pot_stacks']]  ✗COST
+

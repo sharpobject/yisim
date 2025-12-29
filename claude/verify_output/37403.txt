@@ -1,0 +1,8 @@
+### 37403 - Heavenly Star - Pull
+  L1 CSV:  [no cost] [Qi]+2 | Trigger the 2 [Opening] effects in your deck after this card, once each. | [Switch]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.retrigger_next_opening(1, 2, 1); ✓
+  L2 CSV:  [no cost] [Qi]+3 | Trigger the 2 [Opening] effects in your deck after this card, once each. | [Switch]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.retrigger_next_opening(1, 2, 1); ✓
+  L3 CSV:  [no cost] [Qi]+4 | Trigger the 2 [Opening] effects in your deck after this card, once each. | [Switch]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 4); game.retrigger_next_opening(1, 2, 1); ✓
+

@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] 10 ATK | [Water Spirit]: Add 1 ATK for each stack of [Force of Water]
+  L1 IMPL: [hp=0 qi=1]  let atk_amt = 10; if (game.if_water_spirit()) { atk_amt += game.players[0].force_of_water; } game.atk(atk_amt); ✓
+  L2 CSV:  [hp=0 qi=1] 14 ATK | [Water Spirit]: Add 1 ATK for each stack of [Force of Water]
+  L2 IMPL: [hp=0 qi=1]  let atk_amt = 14; if (game.if_water_spirit()) { atk_amt += game.players[0].force_of_water; } game.atk(atk_amt); ✓
+  L3 CSV:  [hp=0 qi=1] 18 ATK | [Water Spirit]: Add 1 ATK for each stack of [Force of Water]
+  L3 IMPL: [hp=0 qi=1]  let atk_amt = 18; if (game.if_water_spirit()) { atk_amt += game.players[0].force_of_water; } game.atk(atk_amt); ✓

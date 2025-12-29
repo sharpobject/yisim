@@ -1,0 +1,8 @@
+### 91301 - Unrestrained Sword - Nebula Cloud
+  L1 CSV:  [no cost] 6 ATK | For each "Unrestrained Sword" you played in this battle, gain 1 [Qi], 1 [DEF] and 1 [Sword Intent]
+  L1 IMPL: [no cost]  game.atk(6); game.for_each_x_add_y("unrestrained_sword_count", "qi"); game.for_each_x_add_c_y("unrestrained_sword_count", 1, "def"); game.for_each_x_add_y("unrestrained_sword_count", "sword_intent"); ✓
+  L2 CSV:  [no cost] 7 ATK | For each "Unrestrained Sword" you played in this battle, gain 1 [Qi], 2 [DEF] and 1 [Sword Intent]
+  L2 IMPL: [no cost]  game.atk(7); game.for_each_x_add_y("unrestrained_sword_count", "qi"); game.for_each_x_add_c_y("unrestrained_sword_count", 2, "def"); game.for_each_x_add_y("unrestrained_sword_count", "sword_intent"); ✓
+  L3 CSV:  [no cost] 8 ATK | For each "Unrestrained Sword" you played in this battle, gain 1 [Qi], 3 [DEF] and 1 [Sword Intent]
+  L3 IMPL: [no cost]  game.atk(8); game.for_each_x_add_y("unrestrained_sword_count", "qi"); game.for_each_x_add_c_y("unrestrained_sword_count", 3, "def"); game.for_each_x_add_y("unrestrained_sword_count", "sword_intent"); ✓
+

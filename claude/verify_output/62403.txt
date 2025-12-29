@@ -1,0 +1,8 @@
+### 62403 - Rotary Divination Hexagram
+  L1 CSV:  [no cost] [Hexagram]+4 | Opponent lose 2 HP | Opponent lose 1 Qi
+  L1 IMPL: [no cost]  game.add_c_of_x(4, "hexagram"); game.reduce_enemy_c_of_x(2, "hp"); game.reduce_enemy_c_of_x(1, "qi"); ✓
+  L2 CSV:  [no cost] [Hexagram]+5 | Opponent lose 3 HP | Opponent lose 2 Qi
+  L2 IMPL: [no cost]  game.add_c_of_x(5, "hexagram"); game.reduce_enemy_c_of_x(3, "hp"); game.reduce_enemy_c_of_x(2, "qi"); ✓
+  L3 CSV:  [no cost] [Hexagram]+6 | Opponent lose 4 HP | Opponent lose 3 Qi
+  L3 IMPL: [no cost]  game.add_c_of_x(6, "hexagram"); game.reduce_enemy_c_of_x(4, "hp"); game.reduce_enemy_c_of_x(3, "qi"); ✓
+

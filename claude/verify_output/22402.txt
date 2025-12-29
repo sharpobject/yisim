@@ -1,0 +1,8 @@
+### 22402 - Astral Move - Dragon Slay
+  L1 CSV:  [no cost] 10 ATK | [Star Point]: This card receives a 5x bonus from [Star Power]
+  L1 IMPL: [no cost]  game.add_c_of_x(4, "bonus_star_power_multiplier"); game.atk(10); ✓
+  L2 CSV:  [no cost] 12 ATK | [Star Point]: This card receives a 6x bonus from [Star Power]
+  L2 IMPL: [no cost]  game.add_c_of_x(5, "bonus_star_power_multiplier"); game.atk(12); ✓
+  L3 CSV:  [no cost] 14 ATK | [Star Point]: This card receives a 7x bonus from [Star Power]
+  L3 IMPL: [no cost]  game.add_c_of_x(6, "bonus_star_power_multiplier"); game.atk(14); ✓
+

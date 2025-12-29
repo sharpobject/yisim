@@ -1,0 +1,8 @@
+### 71504 - M - Cloud Sword Conceal
+  L1 CSV:  [no cost] [Cloud Hit]: 6 ATK (Add 2 more ATK for each attack performed in combat)
+  L1 IMPL: [no cost]  if (game.if_cloud_hit()) { const me = game.players[0]; const atk_amt = 6 + 2 * me.attack_count; game.atk(atk_amt); } ✓
+  L2 CSV:  [no cost] [Cloud Hit]: 12 ATK (Add 2 more ATK for each attack performed in combat)
+  L2 IMPL: [no cost]  if (game.if_cloud_hit()) { const me = game.players[0]; const atk_amt = 12 + 2 * me.attack_count; game.atk(atk_amt); } ✓
+  L3 CSV:  [no cost] [Cloud Hit]: 12 ATK (Add 3 more ATK for each attack performed in combat)
+  L3 IMPL: [no cost]  if (game.if_cloud_hit()) { const me = game.players[0]; const atk_amt = 12 + 3 * me.attack_count; game.atk(atk_amt); } ✓
+

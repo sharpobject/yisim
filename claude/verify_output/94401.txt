@@ -1,0 +1,8 @@
+### 94401 - Styx Night Footwork
+  L1 CSV:  [no cost] [Styx]+2 | [Agility]+2 | [Continuous]: Add 1 [Qi] and 1 [Agility] for the first HP lost in each turn
+  L1 IMPL: [no cost]  game.add_c_of_x(3, "styx"); game.add_c_of_x(3, "agility"); game.continuous(); game.add_c_of_x(1, "styx_night_footwork_stacks"); ✓
+  L2 CSV:  [no cost] [Styx]+3 | [Agility]+3 | [Continuous]: Add 1 [Qi] and 1 [Agility] for the first HP lost in each turn
+  L2 IMPL: [no cost]  game.add_c_of_x(4, "styx"); game.add_c_of_x(4, "agility"); game.continuous(); game.add_c_of_x(1, "styx_night_footwork_stacks"); ✓
+  L3 CSV:  [no cost] [Styx]+4 | [Agility]+4 | [Continuous]: Add 1 [Qi] and 1 [Agility] for the first HP lost in each turn
+  L3 IMPL: [no cost]  game.add_c_of_x(5, "styx"); game.add_c_of_x(5, "agility"); game.continuous(); game.add_c_of_x(1, "styx_night_footwork_stacks"); ✓
+

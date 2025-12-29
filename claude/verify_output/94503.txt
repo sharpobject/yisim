@@ -1,0 +1,8 @@
+### 94503 - Xuanming Boundary-Breaking Palms
+  L1 CSV:  [hp=4 qi=0] 4 ATK × 2 | Make an additional attack for every 30 HP lost in this battle
+  L1 IMPL: [hp=4 qi=0]  game.for_each_x_add_c_pct_y("hp_lost", 3.333334, "bonus_rep_amt"); for (let i = 0; i < 2 + game.players[0].bonus_rep_amt; i++) { game.atk(4); } ✓
+  L2 CSV:  [hp=4 qi=0] 5 ATK × 2 | Make an additional attack for every 27 HP lost in this battle
+  L2 IMPL: [hp=4 qi=0]  game.for_each_x_add_c_pct_y("hp_lost", 3.703704, "bonus_rep_amt"); for (let i = 0; i < 2 + game.players[0].bonus_rep_amt; i++) { game.atk(5); } ✓
+  L3 CSV:  [hp=4 qi=0] 6 ATK × 2 | Make an additional attack for every 25 HP lost in this battle
+  L3 IMPL: [hp=4 qi=0]  game.for_each_x_add_c_pct_y("hp_lost", 4, "bonus_rep_amt"); for (let i = 0; i < 2 + game.players[0].bonus_rep_amt; i++) { game.atk(6); } ✓
+

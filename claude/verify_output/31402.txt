@@ -1,0 +1,8 @@
+### 31402 - Spiritage Elixir
+  L1 CSV:  [no cost] [Qi]+4 | [Consumption]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 4); game.consumption(); ✓
+  L2 CSV:  [no cost] [Qi]+6 | [Consumption]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 6); game.consumption(); ✓
+  L3 CSV:  [no cost] [Qi]+8 | [Consumption]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 8); game.consumption(); ✓
+

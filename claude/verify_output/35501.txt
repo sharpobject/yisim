@@ -1,0 +1,8 @@
+### 35501 - Anthomania Formation
+  L1 CSV:  [no cost] [Continuous] 2 [Times]: At the end of your turn, apply 1 stack of [Decrease ATK] to the opponent, then steal 1 HP for every stack of [Decrease ATK] they have
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(2, "anthomania_formation_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous] 3 [Times]: At the end of your turn, apply 1 stack of [Decrease ATK] to the opponent, then steal 1 HP for every stack of [Decrease ATK] they have
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(3, "anthomania_formation_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous] 4 [Times]: At the end of your turn, apply 1 stack of [Decrease ATK] to the opponent, then steal 1 HP for every stack of [Decrease ATK] they have
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(4, "anthomania_formation_stacks"); ✓
+

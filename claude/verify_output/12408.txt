@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] HP and Max HP + 4 | [Continuous]: Whenever you are attacked by the opponent, deal 2 [DMG] to the opponent
+  L1 IMPL: [no cost]  game.add_c_of_x(4, "max_hp"); game.increase_idx_hp(0, 4); game.continuous(); game.add_c_of_x(2, "repel_citta_dharma_stacks"); ✓
+  L2 CSV:  [no cost] HP and Max HP + 6 | [Continuous]: Whenever you are attacked by the opponent, deal 3 [DMG] to the opponent
+  L2 IMPL: [no cost]  game.add_c_of_x(6, "max_hp"); game.increase_idx_hp(0, 6); game.continuous(); game.add_c_of_x(3, "repel_citta_dharma_stacks"); ✓
+  L3 CSV:  [no cost] HP and Max HP + 8 | [Continuous]: Whenever you are attacked by the opponent, deal 4 [DMG] to the opponent
+  L3 IMPL: [no cost]  game.add_c_of_x(8, "max_hp"); game.increase_idx_hp(0, 8); game.continuous(); game.add_c_of_x(4, "repel_citta_dharma_stacks"); ✓

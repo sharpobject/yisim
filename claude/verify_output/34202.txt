@@ -1,0 +1,8 @@
+### 34202 - Feed On Illusions
+  L1 CSV:  [no cost] Max HP+10 | [Qi]+2
+  L1 IMPL: [no cost]  game.add_c_of_x(10, "max_hp"); game.increase_idx_qi(0, 2); ✓
+  L2 CSV:  [no cost] Max HP+15 | [Qi]+3
+  L2 IMPL: [no cost]  game.add_c_of_x(15, "max_hp"); game.increase_idx_qi(0, 3); ✓
+  L3 CSV:  [no cost] Max HP+20 | [Qi]+4
+  L3 IMPL: [no cost]  game.add_c_of_x(20, "max_hp"); game.increase_idx_qi(0, 4); ✓
+

@@ -1,0 +1,8 @@
+### 93509 - Five Elements Spiritual Field
+  L1 CSV:  [no cost] [Skip] this card if in the last slot. | If this card is in deck, at the end of battle you lose 1 Cul. and gain 1 [Five Elements] card (First card's [Five Elements] priority).
+  L1 IMPL: [no cost]  NOT FOUND ✓
+  L2 CSV:  [no cost] [Skip] this card if in the last slot. | If this card is in deck, at the end of battle you lose 2 Cul. and gain 2 [Five Elements] cards (First card's [Five Elements] priority).
+  L2 IMPL: [no cost]  NOT FOUND ✓
+  L3 CSV:  [no cost] [Skip] this card if in the last slot. | If this card is in deck, at the end of battle you lose 3 Cul. and gain 3 [Five Elements] cards (First card's [Five Elements] priority).
+  L3 IMPL: [no cost]  NOT FOUND ✓
+

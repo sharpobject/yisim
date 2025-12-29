@@ -1,0 +1,8 @@
+### 40101 - Black Silver Armor
+  L1 CSV:  [no cost] [DEF]+5 | then [DEF] is doubled
+  L1 IMPL: [no cost]  game.increase_idx_def(0, 5); game.for_each_x_add_y("def", "def"); ✓
+  L2 CSV:  [no cost] [DEF]+8 | then [DEF] is doubled
+  L2 IMPL: [no cost]  game.increase_idx_def(0, 8); game.for_each_x_add_y("def", "def"); ✓
+  L3 CSV:  [no cost] [DEF]+11 | then [DEF] is doubled
+  L3 IMPL: [no cost]  game.increase_idx_def(0, 11); game.for_each_x_add_y("def", "def"); ✓
+

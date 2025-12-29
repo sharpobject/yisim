@@ -1,0 +1,8 @@
+### 94405 - Spiritage And Exercise
+  L1 CSV:  [no cost] [Qi]+3 | [Physique]+3 | Add 1 [Physique] for each [Qi] (up to 10）
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.increase_idx_hp(0, 3); game.for_each_x_up_to_c_add_y("qi", 10, "physique"); ✓
+  L2 CSV:  [no cost] [Qi]+4 | [Physique]+4 | Add 1 [Physique] for each [Qi] (up to 15）
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 4); game.increase_idx_hp(0, 4); game.for_each_x_up_to_c_add_y("qi", 15, "physique"); ✓
+  L3 CSV:  [no cost] [Qi]+5 | [Physique]+5 | Add 1 [Physique] for each [Qi] (up to 20）
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 5); game.increase_idx_hp(0, 5); game.for_each_x_up_to_c_add_y("qi", 20, "physique"); ✓
+

@@ -1,0 +1,8 @@
+### 31501 - Ice Spirit Guard Elixir
+  L1 CSV:  [hp=0 qi=1] Gain 2 stacks of [Guard Up] | [Consumption]
+  L1 IMPL: [hp=0 qi=1]  game.add_c_of_x(2, "guard_up"); game.consumption(); ✓
+  L2 CSV:  [hp=0 qi=1] Gain 3 stacks of [Guard Up] | [Consumption]
+  L2 IMPL: [hp=0 qi=1]  game.add_c_of_x(3, "guard_up"); game.consumption(); ✓
+  L3 CSV:  [hp=0 qi=1] Gain 4 stacks of [Guard Up] | [Consumption]
+  L3 IMPL: [hp=0 qi=1]  game.add_c_of_x(4, "guard_up"); game.consumption(); ✓
+

@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] Gain 1 stack(s) of [Increase ATK] | [Fire Spirit]: Opponent loses 7 HP and Max HP (increase this by 1 for every stack of [Increase ATK])
+  L1 IMPL: [hp=0 qi=1]  game.add_c_of_x(1, "increase_atk"); if (game.if_fire_spirit()) { let reduce_amt = 7 + game.players[0].increase_atk; game.reduce_enemy_c_of_x(reduce_amt, "hp"); game.reduce_enemy_c_of_x(reduce_amt, "max_hp"); } ✓
+  L2 CSV:  [hp=0 qi=1] Gain 2 stack(s) of [Increase ATK] | [Fire Spirit]: Opponent loses 7 HP and Max HP (increase this by 1 for every stack of [Increase ATK])
+  L2 IMPL: [hp=0 qi=1]  game.add_c_of_x(2, "increase_atk"); if (game.if_fire_spirit()) { let reduce_amt = 7 + game.players[0].increase_atk; game.reduce_enemy_c_of_x(reduce_amt, "hp"); game.reduce_enemy_c_of_x(reduce_amt, "max_hp"); } ✓
+  L3 CSV:  [hp=0 qi=1] Gain 3 stack(s) of [Increase ATK] | [Fire Spirit]: Opponent loses 7 HP and Max HP (increase this by 1 for every stack of [Increase ATK])
+  L3 IMPL: [hp=0 qi=1]  game.add_c_of_x(3, "increase_atk"); if (game.if_fire_spirit()) { let reduce_amt = 7 + game.players[0].increase_atk; game.reduce_enemy_c_of_x(reduce_amt, "hp"); game.reduce_enemy_c_of_x(reduce_amt, "max_hp"); } ✓

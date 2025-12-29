@@ -1,0 +1,8 @@
+### 23203 - Fire Spirit - Rhythm Earth
+  L1 CSV:  [no cost] [Fire Spirit]: Opponent loses 8 HP and Max HP | [Earth Spirit]: [DEF]+4 (Add 1 [DEF] for every 2 Max HP of the opponent has been reduced)
+  L1 IMPL: [no cost]  game.do_fire_spirit_rhythm_earth(8, 4); ✓
+  L2 CSV:  [no cost] [Fire Spirit]: Opponent loses 12 HP and Max HP | [Earth Spirit]: [DEF]+6 (Add 1 [DEF] for every 2 Max HP of the opponent has been reduced)
+  L2 IMPL: [no cost]  game.do_fire_spirit_rhythm_earth(12, 6); ✓
+  L3 CSV:  [no cost] [Fire Spirit]: Opponent loses 16 HP and Max HP | [Earth Spirit]: [DEF]+8 (Add 1 [DEF] for every 2 Max HP of the opponent has been reduced)
+  L3 IMPL: [no cost]  game.do_fire_spirit_rhythm_earth(16, 8); ✓
+

@@ -1,0 +1,8 @@
+### 32502 - Divine Walk Fulu
+  L1 CSV:  [no cost] [Qi]+2 | [Consumption] | [Chase]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.consumption(); game.chase(); ✓
+  L2 CSV:  [no cost] [Qi]+4 | [Consumption] | [Chase]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 4); game.consumption(); game.chase(); ✓
+  L3 CSV:  [no cost] [Qi]+6 | [Consumption] | [Chase]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 6); game.consumption(); game.chase(); ✓
+

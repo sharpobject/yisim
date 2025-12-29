@@ -1,0 +1,8 @@
+### 23104 - Metal Spirit Secret Seal
+  L1 CSV:  [no cost] [Penetrate]+8 | [Activate Metal Spirit]
+  L1 IMPL: [no cost]  game.add_c_of_x(8, "penetrate"); game.activate_metal_spirit(); ✓
+  L2 CSV:  [no cost] [Penetrate]+11 | [Activate Metal Spirit]
+  L2 IMPL: [no cost]  game.add_c_of_x(11, "penetrate"); game.activate_metal_spirit(); ✓
+  L3 CSV:  [no cost] [Penetrate]+14 | [Activate Metal Spirit]
+  L3 IMPL: [no cost]  game.add_c_of_x(14, "penetrate"); game.activate_metal_spirit(); ✓
+

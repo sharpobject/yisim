@@ -1,0 +1,8 @@
+### 91504 - Clear Heart Sword Formation
+  L1 CSV:  [no cost] [DEF]+2 | Inherits Virtuoso and Immortality Phase effects of Clear Heart Sword Embryo | If your deck contains 4 or more "Sword Formation", [Chase]
+  L1 IMPL: [no cost]  game.do_clear_heart_sword_formation(8); ✓
+  L2 CSV:  [no cost] [DEF]+7 | Inherits Virtuoso and Immortality Phase effects of Clear Heart Sword Embryo | If your deck contains 4 or more "Sword Formation", [Chase]
+  L2 IMPL: [no cost]  game.do_clear_heart_sword_formation(11); ✓
+  L3 CSV:  [no cost] [DEF]+12 | Inherits Virtuoso and Immortality Phase effects of Clear Heart Sword Embryo | If your deck contains 4 or more "Sword Formation", [Chase]
+  L3 IMPL: [no cost]  game.do_clear_heart_sword_formation(14); ✓
+

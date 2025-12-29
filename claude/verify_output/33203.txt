@@ -1,0 +1,8 @@
+### 33203 - Sky Spirit Tune
+  L1 CSV:  [no cost] Both players add 3 [Qi]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.add_enemy_c_of_x(3, "qi"); ✓
+  L2 CSV:  [no cost] Both players add 5 [Qi]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 5); game.add_enemy_c_of_x(5, "qi"); ✓
+  L3 CSV:  [no cost] Both players add 7 [Qi]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 7); game.add_enemy_c_of_x(7, "qi"); ✓
+

@@ -1,0 +1,8 @@
+### 23502 - Water Spirit - Tsunami
+  L1 CSV:  [hp=0 qi=4] Gain 4 stacks of [Force of Water] | [Water Spirit]: Make the opponent unable to act for 1 turn
+  L1 IMPL: [hp=0 qi=4]  game.add_c_of_x(4, "force_of_water"); if (game.if_water_spirit()) { game.add_enemy_c_of_x(1, "cannot_act_stacks"); } ✓
+  L2 CSV:  [hp=0 qi=3] Gain 5 stacks of [Force of Water] | [Water Spirit]: Make the opponent unable to act for 1 turn
+  L2 IMPL: [hp=0 qi=3]  game.add_c_of_x(5, "force_of_water"); if (game.if_water_spirit()) { game.add_enemy_c_of_x(1, "cannot_act_stacks"); } ✓
+  L3 CSV:  [hp=0 qi=2] Gain 6 stacks of [Force of Water] | [Water Spirit]: Make the opponent unable to act for 1 turn
+  L3 IMPL: [hp=0 qi=2]  game.add_c_of_x(6, "force_of_water"); if (game.if_water_spirit()) { game.add_enemy_c_of_x(1, "cannot_act_stacks"); } ✓
+

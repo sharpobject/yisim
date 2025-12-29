@@ -1,0 +1,8 @@
+### 35503 - Meru Formation
+  L1 CSV:  [no cost] [Skip] your next 1 card | If you have played a Continuous card in this battle, then [Chase]
+  L1 IMPL: [no cost]  game.add_c_of_x(1, "skip_next_card_stacks"); if (game.if_played_continuous()) { game.chase(); } ✓
+  L2 CSV:  [no cost] [Skip] your next 2 cards | If you have played a Continuous card in this battle, then [Chase]
+  L2 IMPL: [no cost]  game.add_c_of_x(2, "skip_next_card_stacks"); if (game.if_played_continuous()) { game.chase(); } ✓
+  L3 CSV:  [no cost] [Skip] your next 3 cards | If you have played a Continuous card in this battle, then [Chase]
+  L3 IMPL: [no cost]  game.add_c_of_x(3, "skip_next_card_stacks"); if (game.if_played_continuous()) { game.chase(); } ✓
+

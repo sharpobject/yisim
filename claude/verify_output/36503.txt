@@ -1,0 +1,8 @@
+### 36503 - Entangling Ancient Vine
+  L1 CSV:  [hp=0 qi=1] [Growth] | Apply 1 stack of [Entangled]
+  L1 IMPL: [hp=0 qi=1]  game.add_enemy_c_of_x(1, "entangle"); ✓
+  L2 CSV:  [hp=0 qi=1] [Growth] | Apply 2 stacks of [Entangled]
+  L2 IMPL: [hp=0 qi=1]  game.add_enemy_c_of_x(2, "entangle"); ✓
+  L3 CSV:  [hp=0 qi=1] Apply 3 stacks of [Entangled] | [Continuous]: When [Entangled] stops the opponent Chase, apply 2 stack of [Wound] additionally
+  L3 IMPL: [hp=0 qi=1]  game.add_enemy_c_of_x(3, "entangle"); game.continuous(); game.add_enemy_c_of_x(2, "entangling_ancient_vine_stacks"); ✓
+

@@ -1,0 +1,8 @@
+### 36203 - Leaf Shield Flower
+  L1 CSV:  [no cost] [Growth] | [DEF]+8
+  L1 IMPL: [no cost]  game.increase_idx_def(0, 8); ✓
+  L2 CSV:  [no cost] [Growth] | [DEF]+14
+  L2 IMPL: [no cost]  game.increase_idx_def(0, 14); ✓
+  L3 CSV:  [no cost] [DEF]+20 | [Continuous]: When your HP is reduced, up to half of it can be offset by [DEF]
+  L3 IMPL: [no cost]  game.increase_idx_def(0, 20); game.continuous(); game.add_c_of_x(1, "leaf_shield_flower_stacks"); ✓
+

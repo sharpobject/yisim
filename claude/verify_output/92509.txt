@@ -1,0 +1,8 @@
+### 92509 - Astral Move - Jump
+  L1 CSV:  [no cost] 2 ATK × 2 | [Chase] | [Star Point]: [Skip to] the first "Astral Move" card in the next 2 slot, and trigger the skipped [Opening] effect
+  L1 IMPL: [no cost]  for (let i = 0; i < 2; i++) { game.atk(2); } game.chase(); if (game.if_star_point()) { game.add_c_of_x(2, "astral_move_jump_stacks"); } ✓
+  L2 CSV:  [no cost] 2 ATK × 2 | [Chase] | [Star Point]: [Skip to] the first "Astral Move" card in the next 3 slot, and trigger the skipped [Opening] effect
+  L2 IMPL: [no cost]  for (let i = 0; i < 2; i++) { game.atk(2); } game.chase(); if (game.if_star_point()) { game.add_c_of_x(3, "astral_move_jump_stacks"); } ✓
+  L3 CSV:  [no cost] 2 ATK × 2 | [Chase] | [Star Point]: [Skip to] the first "Astral Move" card in the next 4 slot, and trigger the skipped [Opening] effect
+  L3 IMPL: [no cost]  for (let i = 0; i < 2; i++) { game.atk(3); } game.chase(); if (game.if_star_point()) { game.add_c_of_x(4, "astral_move_jump_stacks"); } ✓
+

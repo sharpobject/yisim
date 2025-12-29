@@ -1,0 +1,8 @@
+### 14501 - Crash Fist - Blink
+  L1 CSV:  [hp=7 qi=0] 5 ATK | [Agility]+7 (also triggered in the next Crash Fist)
+  L1 IMPL: [hp=7 qi=0]  game.atk(5); game.add_c_of_x(7, "agility"); game.add_c_of_x(7, "crash_fist_blink_stacks"); ✓
+  L2 CSV:  [hp=7 qi=0] 7 ATK | [Agility]+8 (also triggered in the next Crash Fist)
+  L2 IMPL: [hp=7 qi=0]  game.atk(7); game.add_c_of_x(8, "agility"); game.add_c_of_x(8, "crash_fist_blink_stacks"); ✓
+  L3 CSV:  [hp=7 qi=0] 9 ATK | [Agility]+9 (also triggered in the next Crash Fist)
+  L3 IMPL: [hp=7 qi=0]  game.atk(9); game.add_c_of_x(9, "agility"); game.add_c_of_x(9, "crash_fist_blink_stacks"); ✓
+

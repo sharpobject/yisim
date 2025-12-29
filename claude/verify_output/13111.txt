@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 5 ATK | If any [Five Elements] has been activated, increase 3 ATK
+  L1 IMPL: [no cost]  let atk_amt = 5; const me = game.players[0]; if (game.get_n_activated(me) > 0) { atk_amt += 3; } game.atk(atk_amt); ✓
+  L2 CSV:  [no cost] 5 ATK | If any [Five Elements] has been activated, increase 6 ATK
+  L2 IMPL: [no cost]  let atk_amt = 5; const me = game.players[0]; if (game.get_n_activated(me) > 0) { atk_amt += 6; } game.atk(atk_amt); ✓
+  L3 CSV:  [no cost] 5 ATK | If any [Five Elements] has been activated, increase 9 ATK
+  L3 IMPL: [no cost]  let atk_amt = 5; const me = game.players[0]; if (game.get_n_activated(me) > 0) { atk_amt += 9; } game.atk(atk_amt); ✓

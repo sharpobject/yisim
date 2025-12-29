@@ -1,0 +1,8 @@
+### 64403 - Shift Stance
+  L1 CSV:  [no cost] [Agility]+8 | [Fist]: Gain an additional 4 [Agility] | [Stick]: 8 ATK | [Switch Stance]
+  L1 IMPL: [no cost]  game.add_c_of_x(8, "agility"); if (game.if_fist_stance()) { game.add_c_of_x(4, "agility"); } else { game.atk(8); } game.switch_stance(); ✓
+  L2 CSV:  [no cost] [Agility]+8 | [Fist]: Gain an additional 6 [Agility] | [Stick]: 12 ATK | [Switch Stance]
+  L2 IMPL: [no cost]  game.add_c_of_x(8, "agility"); if (game.if_fist_stance()) { game.add_c_of_x(6, "agility"); } else { game.atk(12); } game.switch_stance(); ✓
+  L3 CSV:  [no cost] [Agility]+8 | [Fist]: Gain an additional 8 [Agility] | [Stick]: 16 ATK | [Switch Stance]
+  L3 IMPL: [no cost]  game.add_c_of_x(8, "agility"); if (game.if_fist_stance()) { game.add_c_of_x(8, "agility"); } else { game.atk(16); } game.switch_stance(); ✓
+

@@ -1,0 +1,8 @@
+### 31202 - Exorcism Elixir
+  L1 CSV:  [no cost] [DEF]+8 | Repeat 2 times: Random [Debuff] decrease 3 stacks | [Consumption]
+  L1 IMPL: [no cost]  game.increase_idx_def(0, 8); game.reduce_random_debuff_by_c_n_times(3, 2); game.consumption(); ✓
+  L2 CSV:  [no cost] [DEF]+12 | Repeat 3 times: Random [Debuff] decrease 3 stacks | [Consumption]
+  L2 IMPL: [no cost]  game.increase_idx_def(0, 12); game.reduce_random_debuff_by_c_n_times(3, 3); game.consumption(); ✓
+  L3 CSV:  [no cost] [DEF]+16 | Repeat 4 times: Random [Debuff] decrease 3 stacks | [Consumption]
+  L3 IMPL: [no cost]  game.increase_idx_def(0, 16); game.reduce_random_debuff_by_c_n_times(3, 4); game.consumption(); ✓
+

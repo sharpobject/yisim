@@ -1,0 +1,8 @@
+### 91403 - Cloud Sword - Clarity
+  L1 CSV:  [no cost] 4 ATK × 2 | [Cloud Hit]: Apply 2 [Weakened]
+  L1 IMPL: [no cost]  for (let i = 0; i < 2; i++) { game.atk(4); } if (game.if_cloud_hit()) { game.add_enemy_c_of_x(2, "weaken"); } ✓
+  L2 CSV:  [no cost] 4 ATK × 3 | [Cloud Hit]: Apply 2 [Weakened]
+  L2 IMPL: [no cost]  for (let i = 0; i < 3; i++) { game.atk(4); } if (game.if_cloud_hit()) { game.add_enemy_c_of_x(2, "weaken"); } ✓
+  L3 CSV:  [no cost] 4 ATK × 4 | [Cloud Hit]: Apply 2 [Weakened]
+  L3 IMPL: [no cost]  for (let i = 0; i < 4; i++) { game.atk(4); } if (game.if_cloud_hit()) { game.add_enemy_c_of_x(2, "weaken"); } ✓
+

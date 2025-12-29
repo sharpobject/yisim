@@ -1,0 +1,8 @@
+### 91601 - Xuan-Yuan Sword
+  L1 CSV:  [hp=0 qi=10] [Gather Qi] 5 | 120 ATK | [Ignore DEF] | Ignore [Guard Up]
+  L1 IMPL: [hp=0 qi=10]  game.increase_idx_x_by_c(0, "ignore_def", 1); game.add_c_of_x(1, "ignore_guard_up"); game.atk(120); ✓
+  L2 CSV:  [no cost] CSV NOT FOUND
+  L2 IMPL: [hp=0 qi=10]   ✗COST
+  L3 CSV:  [no cost] CSV NOT FOUND
+  L3 IMPL: [hp=0 qi=10]   ✗COST
+

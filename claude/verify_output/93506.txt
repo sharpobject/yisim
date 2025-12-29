@@ -1,0 +1,8 @@
+### 93506 - Five Elements Guard
+  L1 CSV:  [no cost] [DEF]+10 | Gain 1 [Guard Up](Gain 1 more on first play) | [Activate] the [Five Elements] in the next slot
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(2, "increase_atk"); game.add_enemy_c_of_x(2, "increase_atk"); game.add_c_of_x(1, "heavenly_marrow_dance_tune_stacks"); game.add_enemy_c_of_x(1, "heavenly_marrow_dance_tune_stacks"); ✓
+  L2 CSV:  [no cost] [DEF]+18 | Gain 1 [Guard Up](Gain 1 more on first play) | [Activate] the [Five Elements] in the next slot
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(3, "increase_atk"); game.add_enemy_c_of_x(3, "increase_atk"); game.add_c_of_x(1, "heavenly_marrow_dance_tune_stacks"); game.add_enemy_c_of_x(1, "heavenly_marrow_dance_tune_stacks"); ✓
+  L3 CSV:  [no cost] [DEF]+26 | Gain 1 [Guard Up](Gain 1 more on first play) | [Activate] the [Five Elements] in the next slot
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(4, "increase_atk"); game.add_enemy_c_of_x(4, "increase_atk"); game.add_c_of_x(1, "heavenly_marrow_dance_tune_stacks"); game.add_enemy_c_of_x(1, "heavenly_marrow_dance_tune_stacks"); ✓
+

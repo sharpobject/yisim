@@ -1,0 +1,8 @@
+### 63403 - Water Spirit - Spring Rain
+  L1 CSV:  [hp=0 qi=1] HP and Max HP+4 | [Continuous]: At the beginning of your turn, gain 1 stack of [Force of Water]
+  L1 IMPL: [hp=0 qi=1]  game.add_c_of_x(4, "max_hp"); game.increase_idx_hp(0, 4); game.continuous(); game.add_c_of_x(1, "water_spirit_spring_rain_stacks"); ✓
+  L2 CSV:  [hp=0 qi=1] HP and Max HP+10 | [Continuous]: At the beginning of your turn, gain 1 stack of [Force of Water]
+  L2 IMPL: [hp=0 qi=1]  game.add_c_of_x(10, "max_hp"); game.increase_idx_hp(0, 10); game.continuous(); game.add_c_of_x(1, "water_spirit_spring_rain_stacks"); ✓
+  L3 CSV:  [hp=0 qi=1] HP and Max HP+16 | [Continuous]: At the beginning of your turn, gain 1 stack of [Force of Water]
+  L3 IMPL: [hp=0 qi=1]  game.add_c_of_x(16, "max_hp"); game.increase_idx_hp(0, 16); game.continuous(); game.add_c_of_x(1, "water_spirit_spring_rain_stacks"); ✓
+

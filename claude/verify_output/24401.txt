@@ -1,0 +1,8 @@
+### 24401 - Strength Driven Mad
+  L1 CSV:  [no cost] Gain 1 stack of [Increase ATK] and [Internal Injury] for each 10 [Physique]
+  L1 IMPL: [no cost]  game.for_each_x_add_c_pct_y("physique", 10, "increase_atk"); game.for_each_x_add_c_pct_y("physique", 10, "internal_injury"); ✓
+  L2 CSV:  [no cost] Gain 1 stack of [Increase ATK] and [Internal Injury] for each 9 [Physique]
+  L2 IMPL: [no cost]  game.for_each_x_add_c_pct_y("physique", 11.111112, "increase_atk"); game.for_each_x_add_c_pct_y("physique", 11.111112, "internal_injury"); ✓
+  L3 CSV:  [no cost] Gain 1 stack of [Increase ATK] and [Internal Injury] for each 8 [Physique]
+  L3 IMPL: [no cost]  game.for_each_x_add_c_pct_y("physique", 12.5, "increase_atk"); game.for_each_x_add_c_pct_y("physique", 12.5, "internal_injury"); ✓
+

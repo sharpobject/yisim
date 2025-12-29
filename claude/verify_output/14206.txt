@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 4 ATK × 2 | [Qi]+2 | Gain 3 stacks of [Flaw]
+  L1 IMPL: [no cost]  for (let i = 0; i < 2; i++) { game.atk(4); } game.increase_idx_qi(0, 2); game.add_c_of_x(3, "flaw"); ✓
+  L2 CSV:  [no cost] 6 ATK × 2 | [Qi]+2 | Gain 3 stacks of [Flaw]
+  L2 IMPL: [no cost]  for (let i = 0; i < 2; i++) { game.atk(6); } game.increase_idx_qi(0, 2); game.add_c_of_x(3, "flaw"); ✓
+  L3 CSV:  [no cost] 8 ATK × 2 | [Qi]+2 | Gain 3 stacks of [Flaw]
+  L3 IMPL: [no cost]  for (let i = 0; i < 2; i++) { game.atk(8); } game.increase_idx_qi(0, 2); game.add_c_of_x(3, "flaw"); ✓

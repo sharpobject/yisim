@@ -1,0 +1,8 @@
+### 23201 - Metal Spirit - Chokehold
+  L1 CSV:  [no cost] 8 ATK | [Metal Spirit]: Make the opponent cannot add HP for 2 turns
+  L1 IMPL: [no cost]  game.atk(8); if (game.if_metal_spirit()) { game.add_enemy_c_of_x(2, "metal_spirit_chokehold_stacks"); } ✓
+  L2 CSV:  [no cost] 12 ATK | [Metal Spirit]: Make the opponent cannot add HP for 3 turns
+  L2 IMPL: [no cost]  game.atk(12); if (game.if_metal_spirit()) { game.add_enemy_c_of_x(3, "metal_spirit_chokehold_stacks"); } ✓
+  L3 CSV:  [no cost] 16 ATK | [Metal Spirit]: Make the opponent cannot add HP for 4 turns
+  L3 IMPL: [no cost]  game.atk(16); if (game.if_metal_spirit()) { game.add_enemy_c_of_x(4, "metal_spirit_chokehold_stacks"); } ✓
+

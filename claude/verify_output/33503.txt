@@ -1,0 +1,8 @@
+### 33503 - Chord In Tune
+  L1 CSV:  [no cost] [Qi]+2 | If you have played a Musician Card this battle or the next card in your deck is a Musician Card, [Chase]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.do_chord_in_tune_thing(); ✓
+  L2 CSV:  [no cost] [Qi]+4 | If you have played a Musician Card this battle or the next card in your deck is a Musician Card, [Chase]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 4); game.do_chord_in_tune_thing(); ✓
+  L3 CSV:  [no cost] [Qi]+6 | If you have played a Musician Card this battle or the next card in your deck is a Musician Card, [Chase]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 6); game.do_chord_in_tune_thing(); ✓
+

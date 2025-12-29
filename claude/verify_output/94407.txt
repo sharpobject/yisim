@@ -1,0 +1,8 @@
+### 94407 - Mystic Snowdrop
+  L1 CSV:  [no cost] HP+5 | The next 2 times you gain [Debuff], apply the same [Debuff] to your opponent
+  L1 IMPL: [no cost]  NOT FOUND ✓
+  L2 CSV:  [no cost] HP+10 | The next 2 times you gain [Debuff], apply the same [Debuff] to your opponent
+  L2 IMPL: [no cost]  NOT FOUND ✓
+  L3 CSV:  [no cost] HP+15 | The next 2 times you gain [Debuff], apply the same [Debuff] to your opponent
+  L3 IMPL: [no cost]  NOT FOUND ✓
+

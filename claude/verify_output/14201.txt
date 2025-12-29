@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=4 qi=0] 10 ATK | When you play the next Crash Fist, gain 2 [Force]
+  L1 IMPL: [hp=4 qi=0]  game.atk(10); game.add_c_of_x(2, "crash_fist_shake_stacks"); ✓
+  L2 CSV:  [hp=4 qi=0] 11 ATK | When you play the next Crash Fist, gain 3 [Force]
+  L2 IMPL: [hp=4 qi=0]  game.atk(11); game.add_c_of_x(3, "crash_fist_shake_stacks"); ✓
+  L3 CSV:  [hp=4 qi=0] 12 ATK | When you play the next Crash Fist, gain 4 [Force]
+  L3 IMPL: [hp=4 qi=0]  game.atk(12); game.add_c_of_x(4, "crash_fist_shake_stacks"); ✓

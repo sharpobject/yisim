@@ -1,0 +1,8 @@
+### 90602 - Haotian Pagoda
+  L1 CSV:  [hp=0 qi=5] [Gather Qi] 4 | Reduce the opponent's current [Qi], HP, and Max HP by half | Apply 4 [Entangled]
+  L1 IMPL: [hp=0 qi=5]  game.reduce_enemy_x_by_c_pct_enemy_y("qi", 50, "qi"); game.reduce_enemy_x_by_c_pct_enemy_y("hp", 50, "hp"); game.reduce_enemy_x_by_c_pct_enemy_y("max_hp", 50, "max_hp"); game.add_enemy_c_of_x(4, "entangle"); ✓
+  L2 CSV:  [no cost] CSV NOT FOUND
+  L2 IMPL: [hp=0 qi=5]   ✗COST
+  L3 CSV:  [no cost] CSV NOT FOUND
+  L3 IMPL: [hp=0 qi=5]   ✗COST
+

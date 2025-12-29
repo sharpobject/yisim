@@ -1,0 +1,8 @@
+### 92301 - Traces Revitalized
+  L1 CSV:  [no cost] 4 ATK (1 more ATK for each 4 HP have added before) | [Qi]+1 | [Post Action]: [Chase]
+  L1 IMPL: [no cost]  game.atk(4 + Math.floor(game.players[0].hp_gained * 25 / 100)); game.increase_idx_qi(0, 1); if (game.if_post_action()) { game.chase(); } ✓
+  L2 CSV:  [no cost] 4 ATK (1 more ATK for each 4 HP have added before) | [Qi]+1 | [Chase] | [Post Action]: HP+1
+  L2 IMPL: [no cost]  game.atk(4 + Math.floor(game.players[0].hp_gained * 25 / 100)); game.increase_idx_qi(0, 1); game.chase(); if (game.if_post_action()) { game.increase_idx_hp(0, 1); } ✓
+  L3 CSV:  [no cost] 4 ATK (1 more ATK for each 3 HP have added before) | [Qi]+1 | [Chase] | [Post Action]: HP+3
+  L3 IMPL: [no cost]  game.atk(4 + Math.floor(game.players[0].hp_gained * 33.333334 / 100)); game.increase_idx_qi(0, 1); game.chase(); if (game.if_post_action()) { game.increase_idx_hp(0, 3); } ✓
+

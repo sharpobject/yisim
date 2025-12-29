@@ -1,0 +1,8 @@
+### 73504 - M - Five Elements Circulation
+  L1 CSV:  [no cost] [Qi]+2 | If there is [Five Element Generating Interaction] between pre and next slot, [Activate] next slot and [Chase] | Gain 2 [DEF] for each [Five Elements] [Activated]
+  L1 IMPL: [no cost]  game.do_m_five_elements_circulation(2, 1); ✓
+  L2 CSV:  [no cost] [Qi]+3 | If there is [Five Element Generating Interaction] between pre and next slot, [Activate] next slot and [Chase] | Gain 4 [DEF] for each [Five Elements] [Activated]
+  L2 IMPL: [no cost]  game.do_m_five_elements_circulation(2, 2); ✓
+  L3 CSV:  [no cost] [Qi]+4 | If there is [Five Element Generating Interaction] between pre and next slot, [Activate] next slot and [Chase] | Gain 6 [DEF] for each [Five Elements] [Activated]
+  L3 IMPL: [no cost]  game.do_m_five_elements_circulation(3, 3); ✓
+

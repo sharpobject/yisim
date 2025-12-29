@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Qi]+2 | [Continuous]: Whenever you play a "Water Spirit" card, add 1 [Qi]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.continuous(); game.add_c_of_x(1, "water_spirit_formation_stacks"); ✓
+  L2 CSV:  [no cost] [Qi]+3 | [Continuous]: Whenever you play a "Water Spirit" card, add 1 [Qi]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.continuous(); game.add_c_of_x(1, "water_spirit_formation_stacks"); ✓
+  L3 CSV:  [no cost] [Qi]+5 | [Continuous]: Whenever you play a "Water Spirit" card, add 1 [Qi]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 5); game.continuous(); game.add_c_of_x(1, "water_spirit_formation_stacks"); ✓

@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [DEF]+4 | [Penetrate]+4 | [Metal Spirit]: Add 1 stack of [Penetrate] for each 4 [DEF]
+  L1 IMPL: [no cost]  game.increase_idx_def(0, 4); game.do_metal_spirit_charge(4); ✓
+  L2 CSV:  [no cost] [DEF]+6 | [Penetrate]+6 | [Metal Spirit]: Add 1 stack of [Penetrate] for each 4 [DEF]
+  L2 IMPL: [no cost]  game.increase_idx_def(0, 6); game.do_metal_spirit_charge(6); ✓
+  L3 CSV:  [no cost] [DEF]+8 | [Penetrate]+8 | [Metal Spirit]: Add 1 stack of [Penetrate] for each 4 [DEF]
+  L3 IMPL: [no cost]  game.increase_idx_def(0, 8); game.do_metal_spirit_charge(8); ✓

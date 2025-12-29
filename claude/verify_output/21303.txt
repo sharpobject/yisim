@@ -1,0 +1,8 @@
+### 21303 - Synergy Sword Formation
+  L1 CSV:  [no cost] 4 ATK | [DEF]+4 | For each other "Sword Formation" in the deck, this card has 3 more ATK and 3 more [DEF]
+  L1 IMPL: [no cost]  const me = game.players[0]; const sdfc = game.sword_formation_deck_count(7, me.currently_triggering_card_idx); game.atk(4 + 3 * sdfc); game.increase_idx_def(0, 4 + 3 * sdfc); ✓
+  L2 CSV:  [no cost] 4 ATK | [DEF]+4 | For each other "Sword Formation" in the deck, this card has 4 more ATK and 4 more [DEF]
+  L2 IMPL: [no cost]  const me = game.players[0]; const sdfc = game.sword_formation_deck_count(7, me.currently_triggering_card_idx); game.atk(4 + 4 * sdfc); game.increase_idx_def(0, 4 + 4 * sdfc); ✓
+  L3 CSV:  [no cost] 4 ATK | [DEF]+4 | For each other "Sword Formation" in the deck, this card has 5 more ATK and 5 more [DEF]
+  L3 IMPL: [no cost]  const me = game.players[0]; const sdfc = game.sword_formation_deck_count(7, me.currently_triggering_card_idx); game.atk(4 + 5 * sdfc); game.increase_idx_def(0, 4 + 5 * sdfc); ✓
+

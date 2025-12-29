@@ -1,0 +1,8 @@
+### 91505 - Cloud Sword - Starry Sky
+  L1 CSV:  [no cost] [DEF]+4 | [Chase] | [Cloud Hit]: Add 1 [DEF] for each [Qi]
+  L1 IMPL: [no cost]  game.increase_idx_def(0, 4); game.chase(); if (game.if_cloud_hit()) { game.for_each_x_add_c_y("qi", 1, "def"); } ✓
+  L2 CSV:  [no cost] [DEF]+10 | [Chase] | [Cloud Hit]: Add 1 [DEF] for each [Qi]
+  L2 IMPL: [no cost]  game.increase_idx_def(0, 10); game.chase(); if (game.if_cloud_hit()) { game.for_each_x_add_c_y("qi", 1, "def"); } ✓
+  L3 CSV:  [no cost] [DEF]+16 | [Chase] | [Cloud Hit]: Add 1 [DEF] for each [Qi]
+  L3 IMPL: [no cost]  game.increase_idx_def(0, 16); game.chase(); if (game.if_cloud_hit()) { game.for_each_x_add_c_y("qi", 1, "def"); } ✓
+

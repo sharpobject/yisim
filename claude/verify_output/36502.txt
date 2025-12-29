@@ -1,0 +1,8 @@
+### 36502 - Space Spiritual Field
+  L1 CSV:  [no cost] [Qi]+4 (If in the last 2 slots of deck, [Skip] the first play)  | As long as this card is in your deck, at the end of battle you lose 1 Cul. and gain 1 Growth card
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 4); ✓
+  L2 CSV:  [no cost] [Qi]+5 (If in the last 2 slots of deck, [Skip] the first play)  | As long as this card is in your deck, at the end of battle you lose 2 Cul. and gain 2 Growth cards
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 5); ✓
+  L3 CSV:  [no cost] [Qi]+6 (If in the last 2 slots of deck, [Skip] the first play)  | As long as this card is in your deck, at the end of battle you lose 3 Cul. and gain 3 Growth cards
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 6); ✓
+

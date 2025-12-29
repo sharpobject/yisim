@@ -1,0 +1,8 @@
+### 64202 - Overwhelming Power
+  L1 CSV:  [hp=2 qi=0] [Force]+2 | [Continuous]: whenever you lose 1 [Force], deal 2 damage to your opponent
+  L1 IMPL: [hp=2 qi=0]  game.add_c_of_x(2, "force"); game.continuous(); game.add_c_of_x(2, "overwhelming_power_stacks"); ✓
+  L2 CSV:  [hp=2 qi=0] [Force]+3 | [Continuous]: whenever you lose 1 [Force], deal 2 damage to your opponent
+  L2 IMPL: [hp=2 qi=0]  game.add_c_of_x(3, "force"); game.continuous(); game.add_c_of_x(2, "overwhelming_power_stacks"); ✓
+  L3 CSV:  [hp=2 qi=0] [Force]+4 | [Continuous]: whenever you lose 1 [Force], deal 2 damage to your opponent
+  L3 IMPL: [hp=2 qi=0]  game.add_c_of_x(4, "force"); game.continuous(); game.add_c_of_x(2, "overwhelming_power_stacks"); ✓
+

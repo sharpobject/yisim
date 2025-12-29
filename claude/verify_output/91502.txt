@@ -1,0 +1,8 @@
+### 91502 - Cloud Sword - Flying Snow Shade
+  L1 CSV:  [no cost] 2 ATK | [Cloud Hit]: For every successive "Cloud Sword" played before this card, gain 1 [Qi] and make an additional ATK
+  L1 IMPL: [no cost]  if (game.if_cloud_hit()) { game.for_each_x_add_c_y("cloud_sword_chain_count", 1, "bonus_rep_amt"); } for (let i = 0; i < 1 + game.players[0].bonus_rep_amt; i++) { game.atk(2); } if (game.if_cloud_hit()) { game.for_each_x_add_y("cloud_sword_chain_count", "qi"); } ✓
+  L2 CSV:  [no cost] 3 ATK | [Cloud Hit]: For every successive "Cloud Sword" played before this card, gain 1 [Qi] and make an additional ATK
+  L2 IMPL: [no cost]  if (game.if_cloud_hit()) { game.for_each_x_add_c_y("cloud_sword_chain_count", 1, "bonus_rep_amt"); } for (let i = 0; i < 1 + game.players[0].bonus_rep_amt; i++) { game.atk(3); } if (game.if_cloud_hit()) { game.for_each_x_add_y("cloud_sword_chain_count", "qi"); } ✓
+  L3 CSV:  [no cost] 4 ATK | [Cloud Hit]: For every successive "Cloud Sword" played before this card, gain 1 [Qi] and make an additional ATK
+  L3 IMPL: [no cost]  if (game.if_cloud_hit()) { game.for_each_x_add_c_y("cloud_sword_chain_count", 1, "bonus_rep_amt"); } for (let i = 0; i < 1 + game.players[0].bonus_rep_amt; i++) { game.atk(4); } if (game.if_cloud_hit()) { game.for_each_x_add_y("cloud_sword_chain_count", "qi"); } ✓
+

@@ -1,0 +1,8 @@
+### 90603 - Fuxi Guqin
+  L1 CSV:  [no cost] Copy the effect of your opponent's next card | [Skip] the opponent's next card | [Chase]
+  L1 IMPL: [no cost]  game.trigger_next_enemy_card(); game.add_enemy_c_of_x(1, "skip_next_card_stacks"); ✓
+  L2 CSV:  [no cost] CSV NOT FOUND
+  L2 IMPL: [no cost]   ✓
+  L3 CSV:  [no cost] CSV NOT FOUND
+  L3 IMPL: [no cost]   ✓
+

@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] 10 ATK | Add 1 ATK for each 5 HP have added before
+  L1 IMPL: [hp=0 qi=1]  const atk_amt = 10 + Math.floor(game.players[0].hp_gained * 20 / 100); game.atk(atk_amt); ✓
+  L2 CSV:  [hp=0 qi=1] 10 ATK | Add 1 ATK for each 4 HP have added before
+  L2 IMPL: [hp=0 qi=1]  const atk_amt = 10 + Math.floor(game.players[0].hp_gained * 25 / 100); game.atk(atk_amt); ✓
+  L3 CSV:  [hp=0 qi=1] 10 ATK | Add 1 ATK for each 3 HP have added before
+  L3 IMPL: [hp=0 qi=1]  const atk_amt = 10 + Math.floor(game.players[0].hp_gained * 33.333334 / 100); game.atk(atk_amt); ✓

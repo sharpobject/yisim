@@ -1,0 +1,8 @@
+### 23302 - Metal Spirit - Rhythm Water
+  L1 CSV:  [no cost] [Metal Spirit]: [Penetrate]+4 | [Water Spirit]: [Penetrate] halved, for each reduced point you gain 1 stack of [Force of Water]
+  L1 IMPL: [no cost]  game.do_metal_spirit_rhythm_water(4); ✓
+  L2 CSV:  [no cost] [Metal Spirit]: [Penetrate]+6 | [Water Spirit]: [Penetrate] halved, for each reduced point you gain 1 stack of [Force of Water]
+  L2 IMPL: [no cost]  game.do_metal_spirit_rhythm_water(6); ✓
+  L3 CSV:  [no cost] [Metal Spirit]: [Penetrate]+8 | [Water Spirit]: [Penetrate] halved, for each reduced point you gain 1 stack of [Force of Water]
+  L3 IMPL: [no cost]  game.do_metal_spirit_rhythm_water(8); ✓
+

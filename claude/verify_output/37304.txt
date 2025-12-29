@@ -1,0 +1,8 @@
+### 37304 - Lucky Start
+  L1 CSV:  [no cost] HP+7 | [Opening]: HP and Max HP+4
+  L1 IMPL: [no cost] opening=[['add_c_of_x', 4, 'max_hp'], ['heal', 4]] game.increase_idx_hp(0, 7); ✓
+  L2 CSV:  [no cost] HP+10 | [Opening]: HP and Max HP+5
+  L2 IMPL: [no cost] opening=[['add_c_of_x', 5, 'max_hp'], ['heal', 5]] game.increase_idx_hp(0, 10); ✓
+  L3 CSV:  [no cost] HP+13 | [Opening]: HP and Max HP+6
+  L3 IMPL: [no cost] opening=[['add_c_of_x', 6, 'max_hp'], ['heal', 6]] game.increase_idx_hp(0, 13); ✓
+

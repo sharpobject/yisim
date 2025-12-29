@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 1～8 ATK | [Qi]+1
+  L1 IMPL: [no cost]  game.atk_rand_range(1, 8); game.increase_idx_qi(0, 1); ✓
+  L2 CSV:  [no cost] 1～8 ATK | [Qi]+2
+  L2 IMPL: [no cost]  game.atk_rand_range(1, 8); game.increase_idx_qi(0, 2); ✓
+  L3 CSV:  [no cost] 1～8 ATK | [Qi]+3
+  L3 IMPL: [no cost]  game.atk_rand_range(1, 8); game.increase_idx_qi(0, 3); ✓

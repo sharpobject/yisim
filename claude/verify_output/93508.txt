@@ -1,0 +1,8 @@
+### 93508 - Cosmos Brush
+  L1 CSV:  [no cost] [Qi]+2 | [DEF]+2 | If the next slot is a [Five Elements] card, [Activate] the [Five Elements] and [Chase]
+  L1 IMPL: [no cost]  NOT FOUND ✓
+  L2 CSV:  [no cost] [Qi]+3 | [DEF]+4 | If the next slot is a [Five Elements] card, [Activate] the [Five Elements] and [Chase]
+  L2 IMPL: [no cost]  NOT FOUND ✓
+  L3 CSV:  [no cost] [Qi]+4 | [DEF]+6 | If the next slot is a [Five Elements] card, [Activate] the [Five Elements] and [Chase]
+  L3 IMPL: [no cost]  NOT FOUND ✓
+

@@ -1,0 +1,8 @@
+### 90401 - Xuanming Recover Elixir
+  L1 CSV:  [hp=8 qi=0] HP and Max HP + 20 | For every 4 HP lost in this battle, add 1 HP and Max HP | [Consumption]
+  L1 IMPL: [hp=8 qi=0]  const amt = Math.floor(game.players[0].hp_lost/4) + 20; game.add_c_of_x(amt, "max_hp"); game.increase_idx_hp(0, amt, true); game.consumption(); ✓
+  L2 CSV:  [hp=8 qi=0] HP and Max HP + 25 | For every 4 HP lost in this battle, add 1 HP and Max HP | [Consumption]
+  L2 IMPL: [hp=8 qi=0]  const amt = Math.floor(game.players[0].hp_lost/4) + 25; game.add_c_of_x(amt, "max_hp"); game.increase_idx_hp(0, amt, true); game.consumption(); ✓
+  L3 CSV:  [hp=8 qi=0] HP and Max HP + 30 | For every 4 HP lost in this battle, add 1 HP and Max HP | [Consumption]
+  L3 IMPL: [hp=8 qi=0]  const amt = Math.floor(game.players[0].hp_lost/4) + 30; game.add_c_of_x(amt, "max_hp"); game.increase_idx_hp(0, amt, true); game.consumption(); ✓
+

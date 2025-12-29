@@ -1,0 +1,8 @@
+### 22301 - Sun And Moon For Glory
+  L1 CSV:  [hp=0 qi=1] Deal 13 [DMG] (For every 2 Max HP higher than your opponent, deal 1 more [DMG])
+  L1 IMPL: [hp=0 qi=1]  game.do_sun_and_moon_for_glory(13, 0.5); ✓
+  L2 CSV:  [hp=0 qi=1] Deal 17 [DMG] (For every 2 Max HP higher than your opponent, deal 1 more [DMG])
+  L2 IMPL: [hp=0 qi=1]  game.do_sun_and_moon_for_glory(17, 0.5); ✓
+  L3 CSV:  [hp=0 qi=1] Deal 17 [DMG] (For every 1 Max HP higher than your opponent, deal 1 more [DMG])
+  L3 IMPL: [hp=0 qi=1]  game.do_sun_and_moon_for_glory(17, 1); ✓
+

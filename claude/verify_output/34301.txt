@@ -1,0 +1,8 @@
+### 34301 - Splash Ink
+  L1 CSV:  [no cost] Apply 2 stacks of random [Debuff]
+  L1 IMPL: [no cost]  switch (game.random_int(6)) { case 0: game.add_enemy_c_of_x(2, "internal_injury"); break; case 1: game.add_enemy_c_of_x(2, "weaken"); break; case 2: game.add_enemy_c_of_x(2, "flaw"); break; case 3: game.add_enemy_c_of_x(2, "decrease_atk"); break; case 4: game.add_enemy_c_of_x(2, "entangle"); break; case 5: game.add_enemy_c_of_x(2, "wound"); break; } ✓
+  L2 CSV:  [no cost] Apply 3 stacks of random [Debuff]
+  L2 IMPL: [no cost]  switch (game.random_int(6)) { case 0: game.add_enemy_c_of_x(3, "internal_injury"); break; case 1: game.add_enemy_c_of_x(3, "weaken"); break; case 2: game.add_enemy_c_of_x(3, "flaw"); break; case 3: game.add_enemy_c_of_x(3, "decrease_atk"); break; case 4: game.add_enemy_c_of_x(3, "entangle"); break; case 5: game.add_enemy_c_of_x(3, "wound"); break; } ✓
+  L3 CSV:  [no cost] Apply 4 stacks of random [Debuff]
+  L3 IMPL: [no cost]  switch (game.random_int(6)) { case 0: game.add_enemy_c_of_x(4, "internal_injury"); break; case 1: game.add_enemy_c_of_x(4, "weaken"); break; case 2: game.add_enemy_c_of_x(4, "flaw"); break; case 3: game.add_enemy_c_of_x(4, "decrease_atk"); break; case 4: game.add_enemy_c_of_x(4, "entangle"); break; case 5: game.add_enemy_c_of_x(4, "wound"); break; } ✓
+

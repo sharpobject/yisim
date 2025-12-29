@@ -1,0 +1,8 @@
+### 91405 - Sword Spirit Sunflower
+  L1 CSV:  [no cost] [Qi]+2 | For each Spirit Sword in the deck, add 1 [Qi] (up to 3)
+  L1 IMPL: [no cost]  game.qi(2 + game.spirit_sword_deck_count(3)); ✓
+  L2 CSV:  [no cost] [Qi]+4 | For each Spirit Sword in the deck, add 1 [Qi] (up to 3)
+  L2 IMPL: [no cost]  game.qi(3 + game.spirit_sword_deck_count(3)); ✓
+  L3 CSV:  [no cost] [Qi]+6 | For each Spirit Sword in the deck, add 1 [Qi] (up to 3)
+  L3 IMPL: [no cost]  game.qi(4 + game.spirit_sword_deck_count(3)); ✓
+

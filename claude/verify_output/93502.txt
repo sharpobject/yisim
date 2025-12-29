@@ -1,0 +1,8 @@
+### 93502 - Ultimate Overcome Formation
+  L1 CSV:  [no cost] [Continuous]: When you play a Five Elements card that has [Overcoming Interaction of Five Elements] with the next slot, [Activate] the [Five Elements] of the next slot, then add 2 [Qi] and 6 [DEF]
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(2, "ultimate_overcome_formation_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous]: When you play a Five Elements card that has [Overcoming Interaction of Five Elements] with the next slot, [Activate] the [Five Elements] of the next slot, then add 3 [Qi] and 8 [DEF]
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(3, "ultimate_overcome_formation_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous]: When you play a Five Elements card that has [Overcoming Interaction of Five Elements] with the next slot, [Activate] the [Five Elements] of the next slot, then add 4 [Qi] and 10 [DEF]
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(4, "ultimate_overcome_formation_stacks"); ✓
+

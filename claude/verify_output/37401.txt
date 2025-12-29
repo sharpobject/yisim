@@ -1,0 +1,8 @@
+### 37401 - Everything Goes Your Way
+  L1 CSV:  [no cost] Your ATK is no lower than 6 in every attack for 3 turns | [Opening]: Gain 1 [Hexproof]
+  L1 IMPL: [no cost] opening=[['add_c_of_x', 1, 'hexproof']] game.add_c_of_x(3, "everything_goes_way_stacks"); ✓
+  L2 CSV:  [no cost] Your ATK is no lower than 6 in every attack for 4 turns | [Opening]: Gain 2 [Hexproof]
+  L2 IMPL: [no cost] opening=[['add_c_of_x', 2, 'hexproof']] game.add_c_of_x(4, "everything_goes_way_stacks"); ✓
+  L3 CSV:  [no cost] Your ATK is no lower than 6 in every attack for 5 turns | [Opening]: Gain 3 [Hexproof]
+  L3 IMPL: [no cost] opening=[['add_c_of_x', 3, 'hexproof']] game.add_c_of_x(5, "everything_goes_way_stacks"); ✓
+

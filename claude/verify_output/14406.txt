@@ -1,0 +1,8 @@
+### 14406 - Elusive Footwork
+  L1 CSV:  [no cost] [Qi]+1 | [Agility]+2 | [Continuous]: Add 1 [Qi] and 1 [Agility] for the first HP lost in each your turn
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 1); game.add_c_of_x(2, "agility"); game.continuous(); game.add_c_of_x(1, "elusive_footwork_stacks"); ✓
+  L2 CSV:  [no cost] [Qi]+2 | [Agility]+3 | [Continuous]: Add 1 [Qi] and 1 [Agility] for the first HP lost in each your turn
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.add_c_of_x(3, "agility"); game.continuous(); game.add_c_of_x(1, "elusive_footwork_stacks"); ✓
+  L3 CSV:  [no cost] [Qi]+3 | [Agility]+4 | [Continuous]: Add 1 [Qi] and 1 [Agility] for the first HP lost in each your turn
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.add_c_of_x(4, "agility"); game.continuous(); game.add_c_of_x(1, "elusive_footwork_stacks"); ✓
+

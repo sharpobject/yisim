@@ -1,0 +1,8 @@
+### 73404 - M - Wood Spirit Recovery
+  L1 CSV:  [no cost] [Qi]+2 | Restore your HP to what it was at the start of your last turn(up to +15) | [Wood Spirit]: If you have already added HP, gain 1 [Increase ATK]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.do_xuanming_recurring(0, 15); const me = game.players[0]; if (game.if_wood_spirit() && me.hp_gained > 0) { game.increase_idx_x_by_c(0, "increase_atk", 1); } ✓
+  L2 CSV:  [no cost] [Qi]+2 | Restore your HP to what it was at the start of your last turn(up to +15) | [Wood Spirit]: If you have already added HP, gain 2 [Increase ATK]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.do_xuanming_recurring(0, 15); const me = game.players[0]; if (game.if_wood_spirit() && me.hp_gained > 0) { game.increase_idx_x_by_c(0, "increase_atk", 2); } ✓
+  L3 CSV:  [no cost] [Qi]+2 | Restore your HP to what it was at the start of your last turn(up to +15) | [Wood Spirit]: If you have already added HP, gain 3 [Increase ATK]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.do_xuanming_recurring(0, 15); const me = game.players[0]; if (game.if_wood_spirit() && me.hp_gained > 0) { game.increase_idx_x_by_c(0, "increase_atk", 3); } ✓
+

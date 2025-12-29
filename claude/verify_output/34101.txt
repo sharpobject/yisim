@@ -1,0 +1,8 @@
+### 34101 - Toning
+  L1 CSV:  [no cost] 3 ATK | [Qi]+1 | [DEF]+3
+  L1 IMPL: [no cost]  game.atk(3); game.increase_idx_qi(0, 1); game.increase_idx_def(0, 3); ✓
+  L2 CSV:  [no cost] 3 ATK | [Qi]+2 | [DEF]+3
+  L2 IMPL: [no cost]  game.atk(3); game.increase_idx_qi(0, 2); game.increase_idx_def(0, 3); ✓
+  L3 CSV:  [no cost] 4 ATK | [Qi]+3 | [DEF]+3
+  L3 IMPL: [no cost]  game.atk(4); game.increase_idx_qi(0, 3); game.increase_idx_def(0, 3); ✓
+

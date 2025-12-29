@@ -1,0 +1,8 @@
+### 63301 - Kun Wu Metal Ring
+  L1 CSV:  [no cost] [Activate Earth Spirit] | [Activate Metal Spirit] | [Continuous]: Whenever you gain [DEF] or [Penetrate], gain 2 additional stacks
+  L1 IMPL: [no cost]  game.activate_earth_spirit(); game.activate_metal_spirit(); game.continuous(); game.add_c_of_x(2, "kun_wu_metal_ring_stacks"); ✓
+  L2 CSV:  [no cost] [Activate Earth Spirit] | [Activate Metal Spirit] | [Continuous]: Whenever you gain [DEF] or [Penetrate], gain 3 additional stacks
+  L2 IMPL: [no cost]  game.activate_earth_spirit(); game.activate_metal_spirit(); game.continuous(); game.add_c_of_x(3, "kun_wu_metal_ring_stacks"); ✓
+  L3 CSV:  [no cost] [Activate Earth Spirit] | [Activate Metal Spirit] | [Continuous]: Whenever you gain [DEF] or [Penetrate], gain 4 additional stacks
+  L3 IMPL: [no cost]  game.activate_earth_spirit(); game.activate_metal_spirit(); game.continuous(); game.add_c_of_x(4, "kun_wu_metal_ring_stacks"); ✓
+

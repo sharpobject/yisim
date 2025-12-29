@@ -1,0 +1,8 @@
+### 62302 - Starburst
+  L1 CSV:  [no cost] 8 ATK | If you have [Star Power], remove 1 [Star Power] and this card has 8 more ATK
+  L1 IMPL: [no cost]  if (game.players[0].star_power >= 1) { game.reduce_c_of_x(1, "star_power"); game.atk(16); } ✓
+  L2 CSV:  [no cost] 10 ATK | If you have [Star Power], remove 1 [Star Power] and this card has 10 more ATK
+  L2 IMPL: [no cost]  if (game.players[0].star_power >= 1) { game.reduce_c_of_x(1, "star_power"); game.atk(20); } ✓
+  L3 CSV:  [no cost] 12 ATK | If you have [Star Power], remove 1 [Star Power] and this card has 13 more ATK
+  L3 IMPL: [no cost]  if (game.players[0].star_power >= 1) { game.reduce_c_of_x(1, "star_power"); game.atk(25); } ✓
+

@@ -1,0 +1,8 @@
+### 61402 - Cloud Sword - Pray Rain
+  L1 CSV:  [no cost] 2 ATK × 3 | [Qi]+1 | Gain 2 [Regeneration] | [Cloud Hit]: Convert up to 2 [Regeneration] to [Increase ATK]
+  L1 IMPL: [no cost]  for (let i = 0; i < 3; i++) { game.atk(3); } game.add_c_of_x(2, "regen"); game.increase_idx_qi(0, 1); ✓
+  L2 CSV:  [no cost] 2 ATK × 4 | [Qi]+1 | Gain 2 [Regeneration] | [Cloud Hit]: Convert up to 3 [Regeneration] to [Increase ATK]
+  L2 IMPL: [no cost]  for (let i = 0; i < 4; i++) { game.atk(3); } game.add_c_of_x(2, "regen"); game.increase_idx_qi(0, 1); ✓
+  L3 CSV:  [no cost] 2 ATK × 5 | [Qi]+1 | Gain 2 [Regeneration] | [Cloud Hit]: Convert up to 4 [Regeneration] to [Increase ATK]
+  L3 IMPL: [no cost]  for (let i = 0; i < 5; i++) { game.atk(3); } game.add_c_of_x(2, "regen"); game.increase_idx_qi(0, 1); ✓
+

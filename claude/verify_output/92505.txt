@@ -1,0 +1,8 @@
+### 92505 - Die Ling Shen Ying
+  L1 CSV:  [no cost] 5 ATK × 2 | Reverse self [Card Play Direction] | 10% chance to [Chase]
+  L1 IMPL: [no cost]  for (let i = 0; i < 2; i++) { game.atk(5); } game.reverse_card_play_direction(); if (game.if_c_pct(10)) { game.chase(); } ✓
+  L2 CSV:  [no cost] CSV NOT FOUND
+  L2 IMPL: [no cost]   ✓
+  L3 CSV:  [no cost] CSV NOT FOUND
+  L3 IMPL: [no cost]   ✓
+

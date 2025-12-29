@@ -1,0 +1,8 @@
+### 31301 - Healing Elixir
+  L1 CSV:  [no cost] HP+7 | Add 2 HP for each Qi | [Consumption]
+  L1 IMPL: [no cost]  game.increase_idx_hp(0, 7); game.for_each_x_add_c_y("qi", 2, "hp"); game.consumption(); ✓
+  L2 CSV:  [no cost] HP+12 | Add 2 HP for each Qi | [Consumption]
+  L2 IMPL: [no cost]  game.increase_idx_hp(0, 12); game.for_each_x_add_c_y("qi", 2, "hp"); game.consumption(); ✓
+  L3 CSV:  [no cost] HP+17 | Add 2 HP for each Qi | [Consumption]
+  L3 IMPL: [no cost]  game.increase_idx_hp(0, 17); game.for_each_x_add_c_y("qi", 2, "hp"); game.consumption(); ✓
+

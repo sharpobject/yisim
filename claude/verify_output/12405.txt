@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [DEF]+6 | Exhaust [Hexagram], then gain 1 [Star Power], 1 [Qi] and 1 HP for each [Hexagram] exhausted
+  L1 IMPL: [no cost]  game.do_star_trail_divination(6, 1, 1, 1); ✓
+  L2 CSV:  [no cost] [DEF]+12 | Exhaust [Hexagram], then gain 1 [Star Power], 1 [Qi] and 1 HP for each [Hexagram] exhausted
+  L2 IMPL: [no cost]  game.do_star_trail_divination(12, 1, 1, 1); ✓
+  L3 CSV:  [no cost] [DEF]+18 | Exhaust [Hexagram], then gain 1 [Star Power], 1 [Qi] and 2 HP for each [Hexagram] exhausted
+  L3 IMPL: [no cost]  game.do_star_trail_divination(18, 1, 1, 2); ✓

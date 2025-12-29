@@ -1,0 +1,8 @@
+### 23105 - Water Spirit Secret Seal
+  L1 CSV:  [no cost] Gain 2 stacks of [Force of Water] | [Activate Water Spirit]
+  L1 IMPL: [no cost]  game.add_c_of_x(2, "force_of_water"); game.activate_water_spirit(); ✓
+  L2 CSV:  [no cost] Gain 3 stacks of [Force of Water] | [Activate Water Spirit]
+  L2 IMPL: [no cost]  game.add_c_of_x(3, "force_of_water"); game.activate_water_spirit(); ✓
+  L3 CSV:  [no cost] Gain 4 stacks of [Force of Water] | [Activate Water Spirit]
+  L3 IMPL: [no cost]  game.add_c_of_x(4, "force_of_water"); game.activate_water_spirit(); ✓
+

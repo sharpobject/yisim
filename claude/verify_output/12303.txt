@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Hexagram]+2 | Both players add 2 Qi
+  L1 IMPL: [no cost]  game.add_c_of_x(2, "hexagram"); game.increase_idx_qi(0, 2); game.add_enemy_c_of_x(2, "qi"); ✓
+  L2 CSV:  [no cost] [Hexagram]+3 | Both players add 3 Qi
+  L2 IMPL: [no cost]  game.add_c_of_x(3, "hexagram"); game.increase_idx_qi(0, 3); game.add_enemy_c_of_x(3, "qi"); ✓
+  L3 CSV:  [no cost] [Hexagram]+4 | Both players add 4 Qi
+  L3 IMPL: [no cost]  game.add_c_of_x(4, "hexagram"); game.increase_idx_qi(0, 4); game.add_enemy_c_of_x(4, "qi"); ✓

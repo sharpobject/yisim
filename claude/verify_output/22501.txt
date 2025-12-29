@@ -1,0 +1,8 @@
+### 22501 - Thin On The Ground
+  L1 CSV:  [no cost] Max HP+2 in this game | HP+15 | 1% chance to get doubled effect | [Consumption]
+  L1 IMPL: [no cost]  if (game.if_c_pct(1)) { game.add_c_of_x(4, "max_hp"); game.increase_idx_hp(0, 30); } game.consumption(); ✓
+  L2 CSV:  [no cost] Max HP+3 in this game | HP+20 | 1% chance to get doubled effect | [Consumption]
+  L2 IMPL: [no cost]  if (game.if_c_pct(1)) { game.add_c_of_x(6, "max_hp"); game.increase_idx_hp(0, 40); } game.consumption(); ✓
+  L3 CSV:  [no cost] Max HP+4 in this game | HP+25 | 1% chance to get doubled effect | [Consumption]
+  L3 IMPL: [no cost]  if (game.if_c_pct(1)) { game.add_c_of_x(8, "max_hp"); game.increase_idx_hp(0, 50); } game.consumption(); ✓
+

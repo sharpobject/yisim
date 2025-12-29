@@ -1,0 +1,8 @@
+### 35402 - Octgates Lock Formation
+  L1 CSV:  [no cost] Deal 8 [DMG] | [Continuous] 2 [Times]: Deal 8 DMG to the opponent before the opponent's Chase
+  L1 IMPL: [no cost]  game.deal_damage(8); game.continuous(); game.add_enemy_c_of_x(2, "octgates_lock_formation_stacks"); ✓
+  L2 CSV:  [no cost] Deal 12 [DMG] | [Continuous] 3 [Times]: Deal 8 DMG to the opponent before the opponent's Chase
+  L2 IMPL: [no cost]  game.deal_damage(12); game.continuous(); game.add_enemy_c_of_x(3, "octgates_lock_formation_stacks"); ✓
+  L3 CSV:  [no cost] Deal 16 [DMG] | [Continuous] 4 [Times]: Deal 8 DMG to the opponent before the opponent's Chase
+  L3 IMPL: [no cost]  game.deal_damage(16); game.continuous(); game.add_enemy_c_of_x(4, "octgates_lock_formation_stacks"); ✓
+

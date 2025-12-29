@@ -1,0 +1,8 @@
+### 93401 - Harmony of Water and Fire
+  L1 CSV:  [no cost] Gain 1 [Force of Water] | [Activate Water Spirit] | [Activate Fire Spirit] | [Chase]
+  L1 IMPL: [no cost]  game.add_c_of_x(1, "force_of_water"); game.activate_water_spirit(); game.activate_fire_spirit(); game.chase(); ✓
+  L2 CSV:  [no cost] Gain 2 [Force of Water] | [Activate Water Spirit] | [Activate Fire Spirit] | [Chase]
+  L2 IMPL: [no cost]  game.add_c_of_x(2, "force_of_water"); game.activate_water_spirit(); game.activate_fire_spirit(); game.chase(); ✓
+  L3 CSV:  [no cost] Gain 3 [Force of Water] | [Activate Water Spirit] | [Activate Fire Spirit] | [Chase]
+  L3 IMPL: [no cost]  game.add_c_of_x(3, "force_of_water"); game.activate_water_spirit(); game.activate_fire_spirit(); game.chase(); ✓
+

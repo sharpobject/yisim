@@ -1,0 +1,8 @@
+### 50101 - Break Sky Eagle
+  L1 CSV:  [no cost] Deal 4 [DMG] | [Continuous]: Deal 1 [DMG] at the start of your turn
+  L1 IMPL: [no cost]  game.deal_damage(4); game.continuous(); game.add_c_of_x(1, "break_sky_eagle_stacks"); ✓
+  L2 CSV:  [no cost] Deal 4 [DMG] | [Continuous]: Deal 2 [DMG] at the start of your turn
+  L2 IMPL: [no cost]  game.deal_damage(4); game.continuous(); game.add_c_of_x(2, "break_sky_eagle_stacks"); ✓
+  L3 CSV:  [no cost] Deal 4 [DMG] | [Continuous]: Deal 3 [DMG] at the start of your turn
+  L3 IMPL: [no cost]  game.deal_damage(4); game.continuous(); game.add_c_of_x(3, "break_sky_eagle_stacks"); ✓
+

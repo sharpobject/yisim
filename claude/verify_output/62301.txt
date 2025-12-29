@@ -1,0 +1,8 @@
+### 62301 - Ultimate Hexagram Base
+  L1 CSV:  [no cost] [Continuous]: At the beginning of your turn, add 1 [Hexagram]
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(1, "ultimate_hexagram_base_stacks"); ✓
+  L2 CSV:  [no cost] [Hexagram]+2 | [Continuous]: At the beginning of your turn, add 1 [Hexagram]
+  L2 IMPL: [no cost]  game.add_c_of_x(2, "hexagram"); game.continuous(); game.add_c_of_x(1, "ultimate_hexagram_base_stacks"); ✓
+  L3 CSV:  [no cost] [Hexagram]+4 | [Continuous]: At the beginning of your turn, add 1 [Hexagram]
+  L3 IMPL: [no cost]  game.add_c_of_x(4, "hexagram"); game.continuous(); game.add_c_of_x(1, "ultimate_hexagram_base_stacks"); ✓
+

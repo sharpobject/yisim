@@ -1,0 +1,8 @@
+### 71506 - M - Cloud Dance Rhythm
+  L1 CSV:  [no cost] [Qi]+2 | [DEF]+4 | [Sword Intent]+2 | Gain 1 [Sword Intent] for each card used
+  L1 IMPL: [no cost]  const me = game.players[0]; game.increase_idx_qi(0, 2); game.increase_idx_def(0, 4); game.increase_idx_x_by_c(0, "sword_intent", 2); game.increase_idx_x_by_c(0, "sword_intent", me.played_card_count); ✓
+  L2 CSV:  [no cost] [Qi]+3 | [DEF]+6 | [Sword Intent]+3 | Gain 1 [Sword Intent] for each card used
+  L2 IMPL: [no cost]  const me = game.players[0]; game.increase_idx_qi(0, 3); game.increase_idx_def(0, 6); game.increase_idx_x_by_c(0, "sword_intent", 3); game.increase_idx_x_by_c(0, "sword_intent", me.played_card_count); ✓
+  L3 CSV:  [no cost] [Qi]+4 | [DEF]+8 | [Sword Intent]+4 | Gain 1 [Sword Intent] for each card used
+  L3 IMPL: [no cost]  const me = game.players[0]; game.increase_idx_qi(0, 4); game.increase_idx_def(0, 8); game.increase_idx_x_by_c(0, "sword_intent", 4); game.increase_idx_x_by_c(0, "sword_intent", me.played_card_count); ✓
+

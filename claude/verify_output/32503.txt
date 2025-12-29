@@ -1,0 +1,8 @@
+### 32503 - Thousand Evil Incantation
+  L1 CSV:  [hp=0 qi=2] Apply 2 stacks of [Internal Injury], 2 stacks of [Flaw], and 1 stack of [Weakened]
+  L1 IMPL: [hp=0 qi=2]  game.add_enemy_c_of_x(2, "internal_injury"); game.add_enemy_c_of_x(2, "flaw"); game.add_enemy_c_of_x(1, "weaken"); ✓
+  L2 CSV:  [hp=0 qi=2] Apply 3 stacks of [Internal Injury], 2 stacks of [Flaw], and 2 stacks of [Weakened]
+  L2 IMPL: [hp=0 qi=2]  game.add_enemy_c_of_x(3, "internal_injury"); game.add_enemy_c_of_x(2, "flaw"); game.add_enemy_c_of_x(2, "weaken"); ✓
+  L3 CSV:  [hp=0 qi=2] Apply 3 stacks of [Internal Injury], 3 stacks of [Flaw], and 3 stacks of [Weakened]
+  L3 IMPL: [hp=0 qi=2]  game.add_enemy_c_of_x(3, "internal_injury"); game.add_enemy_c_of_x(3, "flaw"); game.add_enemy_c_of_x(3, "weaken"); ✓
+

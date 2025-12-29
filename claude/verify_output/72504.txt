@@ -1,0 +1,8 @@
+### 72504 - M - Incessant
+  L1 CSV:  [no cost] 6 ATK | Gain 2 [Regeneration] |  Max HP+9 (add 1 more for each [Regeneration]) |  [Post Action]: add Max HP and HP instead
+  L1 IMPL: [no cost]  game.atk(6); game.increase_idx_x_by_c(0, "regen", 2); const me = game.players[0]; const amt = 6 + me.regen; game.increase_idx_max_hp(0, amt); if (game.if_post_action()) { game.increase_idx_hp(0, amt); } ✓
+  L2 CSV:  [no cost] 6 ATK | Gain 3 [Regeneration] |  Max HP+12 (add 1 more for each [Regeneration]) |  [Post Action]: add Max HP and HP instead
+  L2 IMPL: [no cost]  game.atk(6); game.increase_idx_x_by_c(0, "regen", 3); const me = game.players[0]; const amt = 9 + me.regen; game.increase_idx_max_hp(0, amt); if (game.if_post_action()) { game.increase_idx_hp(0, amt); } ✓
+  L3 CSV:  [no cost] 6 ATK | Gain 4 [Regeneration] |  Max HP+15 (add 1 more for each [Regeneration]) |  [Post Action]: add Max HP and HP instead
+  L3 IMPL: [no cost]  game.atk(6); game.increase_idx_x_by_c(0, "regen", 4); const me = game.players[0]; const amt = 12 + me.regen; game.increase_idx_max_hp(0, amt); if (game.if_post_action()) { game.increase_idx_hp(0, amt); } ✓
+

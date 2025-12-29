@@ -1,0 +1,8 @@
+### 40201 - Dew Jade Vase
+  L1 CSV:  [hp=0 qi=1] HP+11 | [Destiny]+2
+  L1 IMPL: [hp=0 qi=1]  game.increase_idx_hp(0, 11); game.add_c_of_x(2, "destiny"); ✓
+  L2 CSV:  [hp=0 qi=1] HP+14 | [Destiny]+3
+  L2 IMPL: [hp=0 qi=1]  game.increase_idx_hp(0, 14); game.add_c_of_x(3, "destiny"); ✓
+  L3 CSV:  [hp=0 qi=1] HP+17 | [Destiny]+4
+  L3 IMPL: [hp=0 qi=1]  game.increase_idx_hp(0, 17); game.add_c_of_x(4, "destiny"); ✓
+

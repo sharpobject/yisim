@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Hexagram]+3 | Opponent loses 2 Max HP
+  L1 IMPL: [no cost]  game.add_c_of_x(3, "hexagram"); game.reduce_enemy_c_of_x(2, "max_hp"); ✓
+  L2 CSV:  [no cost] [Hexagram]+4 | Opponent loses 4 Max HP
+  L2 IMPL: [no cost]  game.add_c_of_x(4, "hexagram"); game.reduce_enemy_c_of_x(4, "max_hp"); ✓
+  L3 CSV:  [no cost] [Hexagram]+5 | Opponent loses 6 Max HP
+  L3 IMPL: [no cost]  game.add_c_of_x(5, "hexagram"); game.reduce_enemy_c_of_x(6, "max_hp"); ✓

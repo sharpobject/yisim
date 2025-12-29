@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Qi]+2 | [Activate Water Spirit]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.activate_water_spirit(); ✓
+  L2 CSV:  [no cost] [Qi]+3 | [Activate Water Spirit]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.activate_water_spirit(); ✓
+  L3 CSV:  [no cost] [Qi]+4 | [Activate Water Spirit]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 4); game.activate_water_spirit(); ✓

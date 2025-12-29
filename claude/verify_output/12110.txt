@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] 9 ATK | 10% chance make an additional 5 ATK
+  L1 IMPL: [hp=0 qi=1]  game.atk(9); if (game.if_c_pct(10)) { game.atk(5); } ✓
+  L2 CSV:  [hp=0 qi=1] 10 ATK | 10% chance make an additional 7 ATK
+  L2 IMPL: [hp=0 qi=1]  game.atk(10); if (game.if_c_pct(10)) { game.atk(7); } ✓
+  L3 CSV:  [hp=0 qi=1] 11 ATK | 10% chance make an additional 9 ATK
+  L3 IMPL: [hp=0 qi=1]  game.atk(11); if (game.if_c_pct(10)) { game.atk(9); } ✓

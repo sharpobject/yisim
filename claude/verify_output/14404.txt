@@ -1,0 +1,8 @@
+### 14404 - Exercise Marrow
+  L1 CSV:  [no cost] [Physique]+3 | Restore HP of 8% Max HP
+  L1 IMPL: [no cost]  game.physique(3); game.for_each_x_add_c_pct_y("max_hp", 8, "hp"); ✓
+  L2 CSV:  [no cost] [Physique]+3 | Restore HP of 12% Max HP
+  L2 IMPL: [no cost]  game.physique(3); game.for_each_x_add_c_pct_y("max_hp", 12, "hp"); ✓
+  L3 CSV:  [no cost] [Physique]+3 | Restore HP of 16% Max HP
+  L3 IMPL: [no cost]  game.physique(3); game.for_each_x_add_c_pct_y("max_hp", 16, "hp"); ✓
+

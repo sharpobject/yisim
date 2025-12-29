@@ -1,0 +1,8 @@
+### 24101 - Endless Entanglement
+  L1 CSV:  [no cost] [Physique]+2 | Both players reduce 14 Max HP
+  L1 IMPL: [no cost]  game.physique(2); game.reduce_c_of_x(14, "max_hp"); game.reduce_enemy_c_of_x(14, "max_hp"); ✓
+  L2 CSV:  [no cost] [Physique]+2 | Both players reduce 20 Max HP
+  L2 IMPL: [no cost]  game.physique(2); game.reduce_c_of_x(20, "max_hp"); game.reduce_enemy_c_of_x(20, "max_hp"); ✓
+  L3 CSV:  [no cost] [Physique]+2 | Both players reduce 26 Max HP
+  L3 IMPL: [no cost]  game.physique(2); game.reduce_c_of_x(26, "max_hp"); game.reduce_enemy_c_of_x(26, "max_hp"); ✓
+

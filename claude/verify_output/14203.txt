@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=4 qi=0] 10 ATK | [Smash DEF] (also triggered in the next Crash Fist)
+  L1 IMPL: [hp=4 qi=0]  game.add_c_of_x(1, "smash_def"); game.atk(10); game.add_c_of_x(1, "crash_fist_blitz_stacks"); ✓
+  L2 CSV:  [hp=4 qi=0] 14 ATK | [Smash DEF] (also triggered in the next Crash Fist)
+  L2 IMPL: [hp=4 qi=0]  game.add_c_of_x(1, "smash_def"); game.atk(14); game.add_c_of_x(1, "crash_fist_blitz_stacks"); ✓
+  L3 CSV:  [hp=4 qi=0] 18 ATK | [Smash DEF] (also triggered in the next Crash Fist)
+  L3 IMPL: [hp=4 qi=0]  game.add_c_of_x(1, "smash_def"); game.atk(18); game.add_c_of_x(1, "crash_fist_blitz_stacks"); ✓

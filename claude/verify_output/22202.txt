@@ -1,0 +1,8 @@
+### 22202 - Star Born Rhythm
+  L1 CSV:  [no cost] [Star Power]+2 | [Post Action]:[Chase]
+  L1 IMPL: [no cost]  game.add_c_of_x(2, "star_power"); if (game.if_post_action()) { game.chase(); } ✓
+  L2 CSV:  [no cost] [Star Power]+3 | [Post Action]:[Chase]
+  L2 IMPL: [no cost]  game.add_c_of_x(3, "star_power"); if (game.if_post_action()) { game.chase(); } ✓
+  L3 CSV:  [no cost] [Star Power]+4 | [Post Action]:[Chase]
+  L3 IMPL: [no cost]  game.add_c_of_x(4, "star_power"); if (game.if_post_action()) { game.chase(); } ✓
+

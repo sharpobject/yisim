@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] Max HP+10 | [Continuous]: Whenever you play a "Wood Spirit" card, add 2 HP
+  L1 IMPL: [no cost]  game.add_c_of_x(10, "max_hp"); game.continuous(); game.add_c_of_x(2, "wood_spirit_formation_stacks"); ✓
+  L2 CSV:  [no cost] Max HP+15 | [Continuous]: Whenever you play a "Wood Spirit" card, add 3 HP
+  L2 IMPL: [no cost]  game.add_c_of_x(15, "max_hp"); game.continuous(); game.add_c_of_x(3, "wood_spirit_formation_stacks"); ✓
+  L3 CSV:  [no cost] Max HP+20 | [Continuous]: Whenever you play a "Wood Spirit" card, add 4 HP
+  L3 IMPL: [no cost]  game.add_c_of_x(20, "max_hp"); game.continuous(); game.add_c_of_x(4, "wood_spirit_formation_stacks"); ✓

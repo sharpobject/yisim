@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] Repeat twice:  | 1～10 ATK | If a [Hexagram] is triggered add 1 [Qi]
+  L1 IMPL: [no cost]  game.do_thunder_and_lightning(10); ✓
+  L2 CSV:  [no cost] Repeat twice:  | 1～13 ATK | If a [Hexagram] is triggered add 1 [Qi]
+  L2 IMPL: [no cost]  game.do_thunder_and_lightning(13); ✓
+  L3 CSV:  [no cost] Repeat twice:  | 1～16 ATK | If a [Hexagram] is triggered add 1 [Qi]
+  L3 IMPL: [no cost]  game.do_thunder_and_lightning(16); ✓

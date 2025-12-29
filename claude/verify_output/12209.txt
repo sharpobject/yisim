@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Continuous]: Whenever you gain 1 Qi, add 2 HP
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(2, "stillness_citta_dharma_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous]: Whenever you gain 1 Qi, add 3 HP
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(3, "stillness_citta_dharma_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous]: Whenever you gain 1 Qi, add 4 HP
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(4, "stillness_citta_dharma_stacks"); ✓

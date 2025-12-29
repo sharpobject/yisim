@@ -1,0 +1,8 @@
+### 37201 - Heavenly Fortune - Seek Fortune
+  L1 CSV:  [no cost] [Continuous] 2 [Times]: After playing a card with an [Opening] effect, trigger its [Opening] effect and deal 3 DMG | [Switch]
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(2, "god_luck_approach_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous] 3 [Times]: After playing a card with an [Opening] effect, trigger its [Opening] effect and deal 3 DMG | [Switch]
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(3, "god_luck_approach_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous] 4 [Times]: After playing a card with an [Opening] effect, trigger its [Opening] effect and deal 3 DMG | [Switch]
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(4, "god_luck_approach_stacks"); ✓
+

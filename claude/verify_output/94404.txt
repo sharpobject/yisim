@@ -1,0 +1,8 @@
+### 94404 - Cloud Footwork
+  L1 CSV:  [no cost] [Qi]+1 | [Agility]+10 | Next 2 attacks [Ignore DEF]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 1); game.increase_idx_x_by_c(0, "agility", 10); game.increase_idx_x_by_c(0, "ignore_def", 1); ✓
+  L2 CSV:  [no cost] [Qi]+2 | [Agility]+10 | Next 3 attacks [Ignore DEF]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.increase_idx_x_by_c(0, "agility", 10); game.increase_idx_x_by_c(0, "ignore_def", 2); ✓
+  L3 CSV:  [no cost] [Qi]+3 | [Agility]+10 | Next 4 attacks [Ignore DEF]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.increase_idx_x_by_c(0, "agility", 10); game.increase_idx_x_by_c(0, "ignore_def", 3); ✓
+

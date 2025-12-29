@@ -1,0 +1,8 @@
+### 92501 - Ultimate Polaris Hexagram Base
+  L1 CSV:  [no cost] [Continuous]: At the beginning of your turn, add 1 [Hexagram] and 1 [Star Power]
+  L1 IMPL: [no cost]  game.become_star_point(0); game.continuous(); game.add_c_of_x(1, "ultimate_polaris_hexagram_base_stacks"); ✓
+  L2 CSV:  [no cost] The next 2 slots [Become Star Point] | [Continuous]: At the beginning of your turn, add 1 [Hexagram] and 1 [Star Power]
+  L2 IMPL: [no cost]  game.become_star_point(2); game.continuous(); game.add_c_of_x(1, "ultimate_polaris_hexagram_base_stacks"); ✓
+  L3 CSV:  [no cost] The next 4 slots [Become Star Point] | [Continuous]: At the beginning of your turn, add 1 [Hexagram] and 1 [Star Power]
+  L3 IMPL: [no cost]  game.become_star_point(4); game.continuous(); game.add_c_of_x(1, "ultimate_polaris_hexagram_base_stacks"); ✓
+

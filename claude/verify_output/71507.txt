@@ -1,0 +1,8 @@
+### 71507 - M - Unrestrained Sword Dragon Coiled
+  L1 CSV:  [no cost] [DEF]+12 | For each Sword Formation used, gain 3 [DEF] in your next turn. | While in the deck, all Unrestrained Sword [Regular Card] are also counted as Sword Formation
+  L1 IMPL: [no cost]  const me = game.players[0]; game.increase_idx_def(0, 12); game.increase_idx_x_by_c(0, "next_turn_def", 3*me.played_sword_formation_count); ✓
+  L2 CSV:  [no cost] [DEF]+16 | For each Sword Formation used, gain 4 [DEF] in your next turn. | While in the deck, all Unrestrained Sword [Regular Card] are also counted as Sword Formation
+  L2 IMPL: [no cost]  const me = game.players[0]; game.increase_idx_def(0, 16); game.increase_idx_x_by_c(0, "next_turn_def", 4*me.played_sword_formation_count); ✓
+  L3 CSV:  [no cost] [DEF]+20 | For each Sword Formation used, gain 5 [DEF] in your next turn. | While in the deck, all Unrestrained Sword [Regular Card] are also counted as Sword Formation
+  L3 IMPL: [no cost]  const me = game.players[0]; game.increase_idx_def(0, 20); game.increase_idx_x_by_c(0, "next_turn_def", 5*me.played_sword_formation_count); ✓
+

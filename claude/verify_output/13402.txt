@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] 4 ATK × 3 | [Wood Spirit]: For every 3 HP [Injured] by this card, add 1 HP
+  L1 IMPL: [hp=0 qi=1]  for (let i = 0; i < 3; i++) { game.atk(4); } if (game.if_wood_spirit()) { const heal_amt = Math.floor( game.players[0].damage_dealt_to_hp_by_this_card_atk * 33.333334 / 100); game.increase_idx_hp(0, heal_amt); } ✓
+  L2 CSV:  [hp=0 qi=1] 4 ATK × 4 | [Wood Spirit]: For every 3 HP [Injured] by this card, add 1 HP
+  L2 IMPL: [hp=0 qi=1]  for (let i = 0; i < 4; i++) { game.atk(4); } if (game.if_wood_spirit()) { const heal_amt = Math.floor( game.players[0].damage_dealt_to_hp_by_this_card_atk * 33.333334 / 100); game.increase_idx_hp(0, heal_amt); } ✓
+  L3 CSV:  [hp=0 qi=1] 4 ATK × 5 | [Wood Spirit]: For every 3 HP [Injured] by this card, add 1 HP
+  L3 IMPL: [hp=0 qi=1]  for (let i = 0; i < 5; i++) { game.atk(4); } if (game.if_wood_spirit()) { const heal_amt = Math.floor( game.players[0].damage_dealt_to_hp_by_this_card_atk * 33.333334 / 100); game.increase_idx_hp(0, heal_amt); } ✓

@@ -1,0 +1,8 @@
+### 35401 - Heavenly Spirit Forceage Formation
+  L1 CSV:  [no cost] [Continuous] 2 [Times]: At the beginning of your turn, gain 1 stack of [Increase ATK]
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(2, "heavenly_spirit_forceage_formation_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous] 3 [Times]: At the beginning of your turn, gain 1 stack of [Increase ATK]
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(3, "heavenly_spirit_forceage_formation_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous] 4 [Times]: At the beginning of your turn, gain 1 stack of [Increase ATK]
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(4, "heavenly_spirit_forceage_formation_stacks"); ✓
+

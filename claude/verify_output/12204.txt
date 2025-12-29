@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Hexagram]+2 | HP and Max HP+2
+  L1 IMPL: [no cost]  game.add_c_of_x(2, "hexagram"); game.add_c_of_x(2, "max_hp"); game.increase_idx_hp(0, 2); ✓
+  L2 CSV:  [no cost] [Hexagram]+3 | HP and Max HP+3
+  L2 IMPL: [no cost]  game.add_c_of_x(3, "hexagram"); game.add_c_of_x(3, "max_hp"); game.increase_idx_hp(0, 3); ✓
+  L3 CSV:  [no cost] [Hexagram]+4 | HP and Max HP+4
+  L3 IMPL: [no cost]  game.add_c_of_x(4, "hexagram"); game.add_c_of_x(4, "max_hp"); game.increase_idx_hp(0, 4); ✓

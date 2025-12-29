@@ -1,0 +1,8 @@
+### 94506 - Force Spiritage Formation
+  L1 CSV:  [no cost] [Force] Cap+4 | [Continuous] 2 [Times]: At the beginning of your turn, add 2 [Qi] and [Force]
+  L1 IMPL: [no cost]  NOT FOUND ✓
+  L2 CSV:  [no cost] [Force] Cap+4 | [Continuous] 3 [Times]: At the beginning of your turn, add 2 [Qi] and [Force]
+  L2 IMPL: [no cost]  NOT FOUND ✓
+  L3 CSV:  [no cost] [Force] Cap+4 | [Continuous] 4 [Times]: At the beginning of your turn, add 2 [Qi] and [Force]
+  L3 IMPL: [no cost]  NOT FOUND ✓
+

@@ -1,0 +1,8 @@
+### 50403 - Three Tailed Cat
+  L1 CSV:  [no cost] Exchange Card Chance + 1 | [Continuous]: At the end of each your turn, you gain 1 stack of [Hexproof]
+  L1 IMPL: [no cost]  game.add_c_of_x(1, "exchange_card_chance"); game.continuous(); game.add_c_of_x(1, "three_tailed_cat_stacks"); ✓
+  L2 CSV:  [no cost] Exchange Card Chance + 2 | [Continuous]: At the end of each your turn, you gain 1 stack of [Hexproof]
+  L2 IMPL: [no cost]  game.add_c_of_x(2, "exchange_card_chance"); game.continuous(); game.add_c_of_x(1, "three_tailed_cat_stacks"); ✓
+  L3 CSV:  [no cost] Exchange Card Chance + 3 | [Continuous]: At the end of each your turn, you gain 1 stack of [Hexproof]
+  L3 IMPL: [no cost]  game.add_c_of_x(3, "exchange_card_chance"); game.continuous(); game.add_c_of_x(1, "three_tailed_cat_stacks"); ✓
+

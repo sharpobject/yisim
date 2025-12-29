@@ -1,0 +1,8 @@
+### 93601 - Kunlun Mirror
+  L1 CSV:  [hp=0 qi=5] [Gather Qi] 9 | [Activate] all [Five Elements] | Duplicate the effect of the card in the next slot | [Chase] (Cannot be stoped by other effects)
+  L1 IMPL: [hp=0 qi=5]  if (game.players[0].is_triggering_kunlun_mirror <= 0) { game.add_c_of_x(1, "is_triggering_kunlun_mirror"); game.activate_wood_spirit(); game.activate_fire_spirit(); game.activate_earth_spirit(); game.activate_metal_spirit(); game.activate_water_spirit(); game.trigger_next_card(); game.prevent_anti_chase(); game.chase(); game.reduce_c_of_x(1, "is_triggering_kunlun_mirror"); } ✓
+  L2 CSV:  [no cost] CSV NOT FOUND
+  L2 IMPL: [hp=0 qi=5]   ✗COST
+  L3 CSV:  [no cost] CSV NOT FOUND
+  L3 IMPL: [hp=0 qi=5]   ✗COST
+

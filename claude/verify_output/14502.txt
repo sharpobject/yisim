@@ -1,0 +1,8 @@
+### 14502 - Crash Fist - Shocked
+  L1 CSV:  [hp=8 qi=0] 10 ATK | After you played the next Crash Fist, make an additional 1 ATK (1 more ATK for each 5 HP you have lost)
+  L1 IMPL: [hp=8 qi=0]  game.atk(10); game.add_c_of_x(1, "crash_fist_shocked_stacks"); ✓
+  L2 CSV:  [hp=8 qi=0] 16 ATK | After you played the next Crash Fist, make an additional 1 ATK (1 more ATK for each 5 HP you have lost)
+  L2 IMPL: [hp=8 qi=0]  game.atk(16); game.add_c_of_x(1, "crash_fist_shocked_stacks"); ✓
+  L3 CSV:  [hp=8 qi=0] 22 ATK | After you played the next Crash Fist, make an additional 1 ATK (1 more ATK for each 5 HP you have lost)
+  L3 IMPL: [hp=8 qi=0]  game.atk(22); game.add_c_of_x(1, "crash_fist_shocked_stacks"); ✓
+

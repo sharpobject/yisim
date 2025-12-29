@@ -1,0 +1,8 @@
+### 34302 - Inspiration
+  L1 CSV:  [no cost] [Qi]+2 | Next card's [Qi] cost reduce 2
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.add_c_of_x(2, "inspiration_stacks"); ✓
+  L2 CSV:  [no cost] [Qi]+3 | Next card's [Qi] cost reduce 3
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.add_c_of_x(3, "inspiration_stacks"); ✓
+  L3 CSV:  [no cost] [Qi]+4 | Next card's [Qi] cost reduce 4
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 4); game.add_c_of_x(4, "inspiration_stacks"); ✓
+

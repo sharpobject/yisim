@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] 5 ATK × 2 | Opponent loses 3～13 Max HP
+  L1 IMPL: [hp=0 qi=1]  for (let i = 0; i < 2; i++) { game.atk(5); } game.reduce_enemy_max_hp_rand_range(3, 13); ✓
+  L2 CSV:  [hp=0 qi=1] 7 ATK × 2 | Opponent loses 6～17 Max HP
+  L2 IMPL: [hp=0 qi=1]  for (let i = 0; i < 2; i++) { game.atk(7); } game.reduce_enemy_max_hp_rand_range(6, 17); ✓
+  L3 CSV:  [hp=0 qi=1] 9 ATK × 2 | Opponent loses 9～21 Max HP
+  L3 IMPL: [hp=0 qi=1]  for (let i = 0; i < 2; i++) { game.atk(9); } game.reduce_enemy_max_hp_rand_range(9, 21); ✓

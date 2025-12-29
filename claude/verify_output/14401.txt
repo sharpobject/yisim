@@ -1,0 +1,8 @@
+### 14401 - Crash Citta-Dharma
+  L1 CSV:  [no cost] [Force]+2 | [Continuous]: Whenever you play a [Cost HP] card, gain 1 [Force] first
+  L1 IMPL: [no cost]  game.add_c_of_x(2, "force"); game.continuous(); game.add_c_of_x(1, "crash_citta_dharma_stacks"); ✓
+  L2 CSV:  [no cost] [Force]+3 | [Continuous]: Whenever you play a [Cost HP] card, gain 1 [Force] first
+  L2 IMPL: [no cost]  game.add_c_of_x(3, "force"); game.continuous(); game.add_c_of_x(1, "crash_citta_dharma_stacks"); ✓
+  L3 CSV:  [no cost] [Force]+4 | [Continuous]: Whenever you play a [Cost HP] card, gain 1 [Force] first
+  L3 IMPL: [no cost]  game.add_c_of_x(4, "force"); game.continuous(); game.add_c_of_x(1, "crash_citta_dharma_stacks"); ✓
+

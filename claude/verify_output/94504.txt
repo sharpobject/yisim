@@ -1,0 +1,8 @@
+### 94504 - Jiu Qi Po Xiao
+  L1 CSV:  [no cost] 10 ATK | Exhaust [Force] / [Qi] / [Agility], add 4/3/2 ATK for each point exhausted
+  L1 IMPL: [no cost]  const force_amt = game.exhaust_x("force"); const qi_amt = game.exhaust_x("qi"); const agility_amt = game.exhaust_x("agility"); game.atk(10 + 4 * force_amt + 3 * qi_amt + 2 * agility_amt); ✓
+  L2 CSV:  [no cost] CSV NOT FOUND
+  L2 IMPL: [no cost]   ✓
+  L3 CSV:  [no cost] CSV NOT FOUND
+  L3 IMPL: [no cost]   ✓
+

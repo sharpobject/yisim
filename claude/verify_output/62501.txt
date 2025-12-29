@@ -1,0 +1,8 @@
+### 62501 - Star Moon Folding Fan
+  L1 CSV:  [no cost] If [Qi]≥1, [Star Power]+1 | If [Star Power]≥3, [Chase] | [Continuous]: The [Qi] cost of cards on [Star Point] are reduced by 1
+  L1 IMPL: [no cost]  if (game.players[0].qi >= 1) { game.add_c_of_x(1, "star_power"); } if (game.players[0].star_power >= 3) { game.chase(); } game.continuous(); game.add_c_of_x(1, "reduce_qi_cost_on_star_point_stacks"); ✓
+  L2 CSV:  [no cost] If [Qi]≥1, [Star Power]+2 | If [Star Power]≥3, [Chase] | [Continuous]: The [Qi] cost of cards on [Star Point] are reduced by 1
+  L2 IMPL: [no cost]  if (game.players[0].qi >= 1) { game.add_c_of_x(2, "star_power"); } if (game.players[0].star_power >= 3) { game.chase(); } game.continuous(); game.add_c_of_x(1, "reduce_qi_cost_on_star_point_stacks"); ✓
+  L3 CSV:  [no cost] If [Qi]≥1, [Star Power]+3 | If [Star Power]≥3, [Chase] | [Continuous]: The [Qi] cost of cards on [Star Point] are reduced by 1
+  L3 IMPL: [no cost]  if (game.players[0].qi >= 1) { game.add_c_of_x(3, "star_power"); } if (game.players[0].star_power >= 3) { game.chase(); } game.continuous(); game.add_c_of_x(1, "reduce_qi_cost_on_star_point_stacks"); ✓
+

@@ -1,0 +1,8 @@
+### 24202 - Lying Drunk
+  L1 CSV:  [no cost] 3 ATK | [Agility]+8 | Next Normal Attack makes 3 additional attacks
+  L1 IMPL: [no cost]  game.atk(3); game.add_c_of_x(8, "agility"); game.add_c_of_x(3, "lying_drunk_stacks"); ✓
+  L2 CSV:  [no cost] 3 ATK | [Agility]+10 | Next Normal Attack makes 4 additional attacks
+  L2 IMPL: [no cost]  game.atk(3); game.add_c_of_x(10, "agility"); game.add_c_of_x(4, "lying_drunk_stacks"); ✓
+  L3 CSV:  [no cost] 3 ATK | [Agility]+12 | Next Normal Attack makes 5 additional attacks
+  L3 IMPL: [no cost]  game.atk(3); game.add_c_of_x(12, "agility"); game.add_c_of_x(5, "lying_drunk_stacks"); ✓
+

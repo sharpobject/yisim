@@ -1,0 +1,8 @@
+### 34401 - Divine Brush
+  L1 CSV:  [no cost] [DEF]+4 | Trigger the effect of a random Card of your Sect
+  L1 IMPL: [no cost]  game.increase_idx_def(0, 4); game.trigger_random_sect_card(1); ✓
+  L2 CSV:  [no cost] [DEF]+6 | Trigger the effect of a random Card of your Sect
+  L2 IMPL: [no cost]  game.increase_idx_def(0, 6); game.trigger_random_sect_card(2); ✓
+  L3 CSV:  [no cost] [DEF]+8 | Trigger the effect of a random Card of your Sect
+  L3 IMPL: [no cost]  game.increase_idx_def(0, 8); game.trigger_random_sect_card(3); ✓
+

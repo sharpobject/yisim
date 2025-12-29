@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] Reverse self [Card Play Direction] | [Continuous]: All cards with "Post Action" will make an additional 7 ATK after being played
+  L1 IMPL: [no cost]  game.reverse_card_play_direction(); game.continuous(); game.add_c_of_x(7, "hunter_hunting_hunter_stacks"); ✓
+  L2 CSV:  [no cost] Reverse self [Card Play Direction] | [Continuous]: All cards with "Post Action" will make an additional 10 ATK after being played
+  L2 IMPL: [no cost]  game.reverse_card_play_direction(); game.continuous(); game.add_c_of_x(10, "hunter_hunting_hunter_stacks"); ✓
+  L3 CSV:  [no cost] Reverse self [Card Play Direction] | [Continuous]: All cards with "Post Action" will make an additional 13 ATK after being played
+  L3 IMPL: [no cost]  game.reverse_card_play_direction(); game.continuous(); game.add_c_of_x(13, "hunter_hunting_hunter_stacks"); ✓

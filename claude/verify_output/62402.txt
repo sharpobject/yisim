@@ -1,0 +1,8 @@
+### 62402 - Within Reach
+  L1 CSV:  [no cost] 9 ATK | For each stack of [Debuff] the opponent has, this card gets 2 more ATK
+  L1 IMPL: [no cost]  const me = game.players[0]; if (me.resonance_within_reach_stacks !== undefined && me.resonance_within_reach_stacks > 0) { game.increase_idx_debuff(1, "internal_injury", 1); game.increase_idx_debuff(1, "entangle", 1); } game.atk(9 + game.get_debuff_count(1) * 2); ✓
+  L2 CSV:  [no cost] 9 ATK | For each stack of [Debuff] the opponent has, this card gets 3 more ATK
+  L2 IMPL: [no cost]  const me = game.players[0]; if (me.resonance_within_reach_stacks !== undefined && me.resonance_within_reach_stacks > 0) { game.increase_idx_debuff(1, "internal_injury", 1); game.increase_idx_debuff(1, "entangle", 1); } game.atk(9 + game.get_debuff_count(1) * 3); ✓
+  L3 CSV:  [no cost] 9 ATK | For each stack of [Debuff] the opponent has, this card gets 4 more ATK
+  L3 IMPL: [no cost]  const me = game.players[0]; if (me.resonance_within_reach_stacks !== undefined && me.resonance_within_reach_stacks > 0) { game.increase_idx_debuff(1, "internal_injury", 1); game.increase_idx_debuff(1, "entangle", 1); } game.atk(9 + game.get_debuff_count(1) * 4); ✓
+

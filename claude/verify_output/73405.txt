@@ -1,0 +1,8 @@
+### 73405 - M - Metal Spirit Needle
+  L1 CSV:  [no cost] 6 ATK ([Ignore DEF])  | [Penetrate]+4 | [Metal Spirit]: the next time you trigger [Penetrate], return the triggered [Penetrate]
+  L1 IMPL: [no cost]  game.increase_idx_x_by_c(0, "ignore_def", 1); game.atk(6); game.increase_idx_penetrate(0, 4); if (game.if_metal_spirit()) { game.increase_idx_x_by_c(0, "m_metal_spirit_needle_stacks", 1); } ✓
+  L2 CSV:  [no cost] 6 ATK ([Ignore DEF])  | [Penetrate]+7 | [Metal Spirit]: the next time you trigger [Penetrate], return the triggered [Penetrate]
+  L2 IMPL: [no cost]  game.increase_idx_x_by_c(0, "ignore_def", 1); game.atk(6); game.increase_idx_penetrate(0, 7); if (game.if_metal_spirit()) { game.increase_idx_x_by_c(0, "m_metal_spirit_needle_stacks", 1); } ✓
+  L3 CSV:  [no cost] 6 ATK ([Ignore DEF])  | [Penetrate]+10 | [Metal Spirit]: the next time you trigger [Penetrate], return the triggered [Penetrate]
+  L3 IMPL: [no cost]  game.increase_idx_x_by_c(0, "ignore_def", 1); game.atk(6); game.increase_idx_penetrate(0, 10); if (game.if_metal_spirit()) { game.increase_idx_x_by_c(0, "m_metal_spirit_needle_stacks", 1); } ✓
+

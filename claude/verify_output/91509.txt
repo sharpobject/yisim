@@ -1,0 +1,8 @@
+### 91509 - Heavenly Will - Earth Evil
+  L1 CSV:  [no cost] [Qi]+4 | Next 1 attack [Smash Def] and will add 1 [DEF] for every [Injured] opponent's HP
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.add_c_of_x(1, "heavenly_will_earth_evil_stacks"); ✓
+  L2 CSV:  [no cost] [Qi]+4 | Next 2 attacks [Smash Def] and will add 1 [DEF] for every [Injured] opponent's HP
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 4); game.add_c_of_x(1, "heavenly_will_earth_evil_stacks"); ✓
+  L3 CSV:  [no cost] [Qi]+4 | Next 3 attacks [Smash Def] and will add 1 [DEF] for every [Injured] opponent's HP
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 6); game.add_c_of_x(1, "heavenly_will_earth_evil_stacks"); ✓
+

@@ -1,0 +1,8 @@
+### 90601 - Nüwa Stone
+  L1 CSV:  [hp=0 qi=7] [Gather Qi] 7 | HP and Max HP + 64 | At the beginning of your next 1 turn, your HP will be doubled. | [Consumption]
+  L1 IMPL: [hp=0 qi=7]  game.add_c_of_x(64, "max_hp"); game.add_c_of_x(64, "hp"); game.add_c_of_x(1, "nuwa_stone_stacks"); ✓
+  L2 CSV:  [no cost] CSV NOT FOUND
+  L2 IMPL: [hp=0 qi=7]   ✗COST
+  L3 CSV:  [no cost] CSV NOT FOUND
+  L3 IMPL: [hp=0 qi=7]   ✗COST
+

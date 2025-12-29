@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Qi]+2 | [Fire Spirit]: Opponent loses 3 HP and Max HP
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 2); if (game.if_fire_spirit()) { game.reduce_enemy_c_of_x(3, "hp"); game.reduce_enemy_c_of_x(3, "max_hp"); } ✓
+  L2 CSV:  [no cost] [Qi]+3 | [Fire Spirit]: Opponent loses 4 HP and Max HP
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 3); if (game.if_fire_spirit()) { game.reduce_enemy_c_of_x(4, "hp"); game.reduce_enemy_c_of_x(4, "max_hp"); } ✓
+  L3 CSV:  [no cost] [Qi]+4 | [Fire Spirit]: Opponent loses 6 HP and Max HP
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 4); if (game.if_fire_spirit()) { game.reduce_enemy_c_of_x(6, "hp"); game.reduce_enemy_c_of_x(6, "max_hp"); } ✓

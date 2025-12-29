@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 1 ATK × 3 | [Star Point]: Apply 1 stack(s) of [Weakened]
+  L1 IMPL: [no cost]  for (let i = 0; i < 3; i++) { game.atk(1); } if (game.if_star_point()) { game.add_enemy_c_of_x(1, "weaken"); } ✓
+  L2 CSV:  [no cost] 1 ATK × 3 | [Star Point]: Apply 2 stack(s) of [Weakened]
+  L2 IMPL: [no cost]  for (let i = 0; i < 3; i++) { game.atk(1); } if (game.if_star_point()) { game.add_enemy_c_of_x(2, "weaken"); } ✓
+  L3 CSV:  [no cost] 1 ATK × 3 | [Star Point]: Apply 3 stack(s) of [Weakened]
+  L3 IMPL: [no cost]  for (let i = 0; i < 3; i++) { game.atk(1); } if (game.if_star_point()) { game.add_enemy_c_of_x(3, "weaken"); } ✓

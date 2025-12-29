@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 3 ATK | [DEF]+4 | [Activate Earth Spirit]
+  L1 IMPL: [no cost]  game.atk(3); game.increase_idx_def(0, 4); game.activate_earth_spirit(); ✓
+  L2 CSV:  [no cost] 5 ATK | [DEF]+6 | [Activate Earth Spirit]
+  L2 IMPL: [no cost]  game.atk(5); game.increase_idx_def(0, 6); game.activate_earth_spirit(); ✓
+  L3 CSV:  [no cost] 7 ATK | [DEF]+8 | [Activate Earth Spirit]
+  L3 IMPL: [no cost]  game.atk(7); game.increase_idx_def(0, 8); game.activate_earth_spirit(); ✓

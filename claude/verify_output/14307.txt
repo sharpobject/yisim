@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=4] Reduce Qi cost by 1 for each stack of [Debuff] you have | 18 ATK
+  L1 IMPL: [hp=0 qi=4]  game.atk(18); ✓
+  L2 CSV:  [hp=0 qi=4] Reduce Qi cost by 1 for each stack of [Debuff] you have | 22 ATK
+  L2 IMPL: [hp=0 qi=4]  game.atk(22); ✓
+  L3 CSV:  [hp=0 qi=4] Reduce Qi cost by 1 for each stack of [Debuff] you have | 26 ATK
+  L3 IMPL: [hp=0 qi=4]  game.atk(26); ✓

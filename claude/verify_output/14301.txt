@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Qi]+1 | [Agility]+4 | [Continuous]: Every card can be regarded as "Crash Fist"
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 1); game.add_c_of_x(4, "agility"); game.continuous(); game.add_c_of_x(1, "crash_footwork_stacks"); ✓
+  L2 CSV:  [no cost] [Qi]+2 | [Agility]+4 | [Continuous]: Every card can be regarded as "Crash Fist"
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.add_c_of_x(4, "agility"); game.continuous(); game.add_c_of_x(1, "crash_footwork_stacks"); ✓
+  L3 CSV:  [no cost] [Qi]+3 | [Agility]+4 | [Continuous]: Every card can be regarded as "Crash Fist"
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.add_c_of_x(4, "agility"); game.continuous(); game.add_c_of_x(1, "crash_footwork_stacks"); ✓

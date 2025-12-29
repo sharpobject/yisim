@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] 12 ATK | Gain 1 stack of [Internal Injury]
+  L1 IMPL: [hp=0 qi=1]  game.atk(12); game.add_c_of_x(1, "internal_injury"); ✓
+  L2 CSV:  [hp=0 qi=1] 15 ATK | Gain 1 stack of [Internal Injury]
+  L2 IMPL: [hp=0 qi=1]  game.atk(15); game.add_c_of_x(1, "internal_injury"); ✓
+  L3 CSV:  [hp=0 qi=1] 18 ATK | Gain 1 stack of [Internal Injury]
+  L3 IMPL: [hp=0 qi=1]  game.atk(18); game.add_c_of_x(1, "internal_injury"); ✓

@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] [DEF]+9 | HP+9 | [Post Action]: Gain 1 stack of [Guard Up]
+  L1 IMPL: [hp=0 qi=1]  game.increase_idx_def(0, 9); game.increase_idx_hp(0, 9); if (game.if_post_action()) { game.add_c_of_x(1, "guard_up"); } ✓
+  L2 CSV:  [hp=0 qi=1] [DEF]+12 | HP+12 | [Post Action]: Gain 1 stack of [Guard Up]
+  L2 IMPL: [hp=0 qi=1]  game.increase_idx_def(0, 12); game.increase_idx_hp(0, 12); if (game.if_post_action()) { game.add_c_of_x(1, "guard_up"); } ✓
+  L3 CSV:  [hp=0 qi=1] [DEF]+15 | HP+15 | [Post Action]: Gain 1 stack of [Guard Up]
+  L3 IMPL: [hp=0 qi=1]  game.increase_idx_def(0, 15); game.increase_idx_hp(0, 15); if (game.if_post_action()) { game.add_c_of_x(1, "guard_up"); } ✓

@@ -1,0 +1,8 @@
+### 73506 - M - Cosmos Seal
+  L1 CSV:  [no cost] 5 ATK | [Qi]+1 | [Active] the [Five Elements] in next grid | While in the deck, the deck is considered to have 2 additional types of [Five Elements] (non-stackable)
+  L1 IMPL: [no cost]  game.atk(5); game.increase_idx_qi(0, 1); game.activate_next_slots(1); ✓
+  L2 CSV:  [no cost] 8 ATK | [Qi]+2 | [Active] the [Five Elements] in next grid | While in the deck, the deck is considered to have 2 additional types of [Five Elements] (non-stackable)
+  L2 IMPL: [no cost]  game.atk(8); game.increase_idx_qi(0, 2); game.activate_next_slots(1); ✓
+  L3 CSV:  [no cost] 11 ATK | [Qi]+3 | [Active] the [Five Elements] in next grid | While in the deck, the deck is considered to have 2 additional types of [Five Elements] (non-stackable)
+  L3 IMPL: [no cost]  game.atk(11); game.increase_idx_qi(0, 3); game.activate_next_slots(1); ✓
+

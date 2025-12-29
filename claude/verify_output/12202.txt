@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 6 ATK | [Star Point]: Opponent loses 1 [Qi]
+  L1 IMPL: [no cost]  game.atk(6); if (game.if_star_point()) { game.reduce_enemy_c_of_x(1, "qi"); } ✓
+  L2 CSV:  [no cost] 10 ATK | [Star Point]: Opponent loses 1 [Qi]
+  L2 IMPL: [no cost]  game.atk(10); if (game.if_star_point()) { game.reduce_enemy_c_of_x(1, "qi"); } ✓
+  L3 CSV:  [no cost] 14 ATK | [Star Point]: Opponent loses 1 [Qi]
+  L3 IMPL: [no cost]  game.atk(14); if (game.if_star_point()) { game.reduce_enemy_c_of_x(1, "qi"); } ✓

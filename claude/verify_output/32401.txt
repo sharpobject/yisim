@@ -1,0 +1,8 @@
+### 32401 - Spiritage Incantation
+  L1 CSV:  [no cost] [Qi]+3 | Add 1 [DEF] for each [Qi] (up to 7)
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.for_each_x_up_to_c_add_y("qi", 7, "def"); ✓
+  L2 CSV:  [no cost] [Qi]+4 | Add 1 [DEF] for each [Qi] (up to 13)
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 4); game.for_each_x_up_to_c_add_y("qi", 13, "def"); ✓
+  L3 CSV:  [no cost] [Qi]+5 | Add 1 [DEF] for each [Qi] (up to 19)
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 5); game.for_each_x_up_to_c_add_y("qi", 19, "def"); ✓
+

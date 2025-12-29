@@ -1,0 +1,8 @@
+### 74503 - M - Crash Fist Poke
+  L1 CSV:  [hp=3 qi=0] 12 ATK | For every 8 [Physique], the next Crash Fist increase 1 ATK
+  L1 IMPL: [hp=3 qi=0]  game.atk(12); game.for_each_x_add_c_pct_y("physique", 12.5, "later_crash_fist_poke_stacks"); ✓
+  L2 CSV:  [hp=3 qi=0] 12 ATK | For every 7 [Physique], the next Crash Fist increase 1 ATK
+  L2 IMPL: [hp=3 qi=0]  game.atk(12); game.for_each_x_add_c_pct_y("physique", 14.285715, "later_crash_fist_poke_stacks"); ✓
+  L3 CSV:  [hp=3 qi=0] 12 ATK | For every 6 [Physique], the next Crash Fist increase 1 ATK
+  L3 IMPL: [hp=3 qi=0]  game.atk(12); game.for_each_x_add_c_pct_y("physique", 16.666667, "later_crash_fist_poke_stacks"); ✓
+

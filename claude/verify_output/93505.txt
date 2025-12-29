@@ -1,0 +1,8 @@
+### 93505 - Pi Yun Zhui Yue
+  L1 CSV:  [no cost] 2 ATK × 3 | For each different [Five Elements] you have in your deck, this card adds 2 ATK
+  L1 IMPL: [no cost]  let atk_amt = 2; atk_amt += game.get_n_different_five_elements(0) * 2; for (let i = 0; i < 3; i++) { game.atk(atk_amt); } ✓
+  L2 CSV:  [no cost] CSV NOT FOUND
+  L2 IMPL: [no cost]   ✓
+  L3 CSV:  [no cost] CSV NOT FOUND
+  L3 IMPL: [no cost]   ✓
+

@@ -1,0 +1,8 @@
+### 35202 - Cacopoisonous Formation
+  L1 CSV:  [no cost] [Continuous] 2 [Times]: At the beginning of your turn, apply 1 stack of [Internal Injury] to the opponent
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(2, "cacopoisonous_formation_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous] 3 [Times]: At the beginning of your turn, apply 1 stack of [Internal Injury] to the opponent
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(3, "cacopoisonous_formation_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous] 4 [Times]: At the beginning of your turn, apply 1 stack of [Internal Injury] to the opponent
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(4, "cacopoisonous_formation_stacks"); ✓
+

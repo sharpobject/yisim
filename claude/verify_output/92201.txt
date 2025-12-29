@@ -1,0 +1,8 @@
+### 92201 - Astral Move - Extend
+  L1 CSV:  [no cost] 4 ATK | [Qi]+1 | The next 3 slots [Become Star Point]
+  L1 IMPL: [no cost]  game.atk(4); game.increase_idx_qi(0, 1); game.become_star_point(3); ✓
+  L2 CSV:  [no cost] 6 ATK | [Qi]+1 | The next 4 slots [Become Star Point]
+  L2 IMPL: [no cost]  game.atk(6); game.increase_idx_qi(0, 1); game.become_star_point(4); ✓
+  L3 CSV:  [no cost] 8 ATK | [Qi]+1 | The next 5 slots [Become Star Point]
+  L3 IMPL: [no cost]  game.atk(8); game.increase_idx_qi(0, 1); game.become_star_point(5); ✓
+

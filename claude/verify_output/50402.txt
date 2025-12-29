@@ -1,0 +1,8 @@
+### 50402 - Ashes Phoenix
+  L1 CSV:  [no cost] [Continuous]: For the next time when the HP is less or equal to 0, revive with 10 HP and add 10 Max HP
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(10, "ashes_phoenix_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous]: For the next time when the HP is less or equal to 0, revive with 15 HP and add 15 Max HP
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(15, "ashes_phoenix_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous]: For the next time when the HP is less or equal to 0, revive with 20 HP and add 20 Max HP
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(20, "ashes_phoenix_stacks"); ✓
+

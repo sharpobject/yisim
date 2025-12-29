@@ -1,0 +1,8 @@
+### 23601 - Five Elements Spirit Blast
+  L1 CSV:  [hp=0 qi=3] [Wood Spirit]: 25 ATK | [Fire Spirit]: 25 ATK | [Earth Spirit]: 25 ATK | [Metal Spirit]: 25 ATK | [Water Spirit]: 25 ATK
+  L1 IMPL: [hp=0 qi=3]  if (game.if_wood_spirit()) { game.atk(25); } if (game.if_fire_spirit()) { game.atk(25); } if (game.if_earth_spirit()) { game.atk(25); } if (game.if_metal_spirit()) { game.atk(25); } if (game.if_water_spirit()) { game.atk(25); } ✓
+  L2 CSV:  [hp=0 qi=3] [Wood Spirit]: 28 ATK | [Fire Spirit]: 28 ATK | [Earth Spirit]: 28 ATK | [Metal Spirit]: 28 ATK | [Water Spirit]: 28 ATK
+  L2 IMPL: [hp=0 qi=3]  if (game.if_wood_spirit()) { game.atk(28); } if (game.if_fire_spirit()) { game.atk(28); } if (game.if_earth_spirit()) { game.atk(28); } if (game.if_metal_spirit()) { game.atk(28); } if (game.if_water_spirit()) { game.atk(28); } ✓
+  L3 CSV:  [hp=0 qi=3] [Wood Spirit]: 31 ATK | [Fire Spirit]: 31 ATK | [Earth Spirit]: 31 ATK | [Metal Spirit]: 31 ATK | [Water Spirit]: 31 ATK
+  L3 IMPL: [hp=0 qi=3]  if (game.if_wood_spirit()) { game.atk(31); } if (game.if_fire_spirit()) { game.atk(31); } if (game.if_earth_spirit()) { game.atk(31); } if (game.if_metal_spirit()) { game.atk(31); } if (game.if_water_spirit()) { game.atk(31); } ✓
+

@@ -1,0 +1,8 @@
+### 35302 - Endless Sword Formation
+  L1 CSV:  [no cost] [Continuous] 2 [Times]: All cards with ATK will make an additional 5 ATK after being played
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(2, "endless_sword_formation_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous] 3 [Times]: All cards with ATK will make an additional 5 ATK after being played
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(3, "endless_sword_formation_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous] 4 [Times]: All cards with ATK will make an additional 5 ATK after being played
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(4, "endless_sword_formation_stacks"); ✓
+

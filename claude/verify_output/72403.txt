@@ -1,0 +1,8 @@
+### 72403 - M - Cutting Weeds
+  L1 CSV:  [hp=0 qi=1] Reduces the opponent's Max HP to their current HP minus 8 (Exhasust [Qi] / [Hexagram], each reduces 3 / 3 more)
+  L1 IMPL: [hp=0 qi=1]  const qi_amt = game.exhaust_x("qi"); const hexagram_amt = game.exhaust_x("hexagram"); const amt = 8 + 3 * qi_amt + 3 * hexagram_amt; game.do_fire_spirit_blazing_praerie(amt); ✓
+  L2 CSV:  [hp=0 qi=1] Reduces the opponent's Max HP to their current HP minus 8 (Exhasust [Qi] / [Hexagram], each reduces 4 / 3 more)
+  L2 IMPL: [hp=0 qi=1]  const qi_amt = game.exhaust_x("qi"); const hexagram_amt = game.exhaust_x("hexagram"); const amt = 8 + 4 * qi_amt + 3 * hexagram_amt; game.do_fire_spirit_blazing_praerie(amt); ✓
+  L3 CSV:  [hp=0 qi=1] Reduces the opponent's Max HP to their current HP minus 8 (Exhasust [Qi] / [Hexagram], each reduces 4 / 4 more)
+  L3 IMPL: [hp=0 qi=1]  const qi_amt = game.exhaust_x("qi"); const hexagram_amt = game.exhaust_x("hexagram"); const amt = 8 + 4 * qi_amt + 4 * hexagram_amt; game.do_fire_spirit_blazing_praerie(amt); ✓
+

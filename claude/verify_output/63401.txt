@@ -1,0 +1,8 @@
+### 63401 - Metal Spirit - Vigorous
+  L1 CSV:  [no cost] 5 ATK | [Metal Spirit]: For every stack of [Penetrate] this card add 1 ATK, but will not trigger the effect of [Penetrate]
+  L1 IMPL: [no cost]  game.add_c_of_x(1, "disable_penetrate_stacks"); game.atk(5 + game.players[0].penetrate); ✓
+  L2 CSV:  [no cost] 10 ATK | [Metal Spirit]: For every stack of [Penetrate] this card add 1 ATK, but will not trigger the effect of [Penetrate]
+  L2 IMPL: [no cost]  game.add_c_of_x(1, "disable_penetrate_stacks"); game.atk(10 + game.players[0].penetrate); ✓
+  L3 CSV:  [no cost] 15 ATK | [Metal Spirit]: For every stack of [Penetrate] this card add 1 ATK, but will not trigger the effect of [Penetrate]
+  L3 IMPL: [no cost]  game.add_c_of_x(1, "disable_penetrate_stacks"); game.atk(15 + game.players[0].penetrate); ✓
+

@@ -1,0 +1,8 @@
+### 91503 - CentiBird Delicate Bracelet
+  L1 CSV:  [no cost] Gain 1 [Guard Up] | The "Spirit Sword" card's Qi cost decrease 1 | [Chase]
+  L1 IMPL: [no cost]  game.add_c_of_x(1, "guard_up"); game.add_c_of_x(1, "centibird_spirit_sword_rhythm_stacks"); game.chase(); ✓
+  L2 CSV:  [no cost] [Qi]+2 | Gain 1 [Guard Up] | The "Spirit Sword" card's Qi cost decrease 1 | [Chase]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.add_c_of_x(1, "guard_up"); game.add_c_of_x(1, "centibird_spirit_sword_rhythm_stacks"); game.chase(); ✓
+  L3 CSV:  [no cost] [Qi]+4 | Gain 1 [Guard Up] | The "Spirit Sword" card's Qi cost decrease 1 | [Chase]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 4); game.add_c_of_x(1, "guard_up"); game.add_c_of_x(1, "centibird_spirit_sword_rhythm_stacks"); game.chase(); ✓
+

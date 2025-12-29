@@ -1,0 +1,8 @@
+### 91401 - Unrestrained Sword - Cat Claw
+  L1 CSV:  [no cost] 5 ATK × 2 | [Ignore DEF] | For each "Unrestrained Sword" you played in this battle, make an additional attack | (This card count as 2 "Unrestrained Sword")
+  L1 IMPL: [no cost]  game.for_each_x_add_y("unrestrained_sword_count", "bonus_rep_amt"); game.add_c_of_x(1, "unrestrained_sword_count"); for (let i = 0; i < 2 + game.players[0].bonus_rep_amt; i++) { game.increase_idx_x_by_c(0, "ignore_def", 1); game.atk(5); } ✓
+  L2 CSV:  [no cost] 7 ATK × 2 | [Ignore DEF] | For each "Unrestrained Sword" you played in this battle, make an additional attack | (This card count as 2 "Unrestrained Sword")
+  L2 IMPL: [no cost]  game.for_each_x_add_y("unrestrained_sword_count", "bonus_rep_amt"); game.add_c_of_x(1, "unrestrained_sword_count"); for (let i = 0; i < 2 + game.players[0].bonus_rep_amt; i++) { game.increase_idx_x_by_c(0, "ignore_def", 1); game.atk(7); } ✓
+  L3 CSV:  [no cost] 9 ATK × 2 | [Ignore DEF] | For each "Unrestrained Sword" you played in this battle, make an additional attack | (This card count as 2 "Unrestrained Sword")
+  L3 IMPL: [no cost]  game.for_each_x_add_y("unrestrained_sword_count", "bonus_rep_amt"); game.add_c_of_x(1, "unrestrained_sword_count"); for (let i = 0; i < 2 + game.players[0].bonus_rep_amt; i++) { game.increase_idx_x_by_c(0, "ignore_def", 1); game.atk(9); } ✓
+

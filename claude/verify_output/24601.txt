@@ -1,0 +1,8 @@
+### 24601 - Endless Crash
+  L1 CSV:  [hp=9 qi=0] Trigger the effect of 5 Lv.1 Crash Fist cards (without Cost HP) | [Consumption]
+  L1 IMPL: [hp=9 qi=0]  game.do_endless_crash(1); game.consumption(); ✓
+  L2 CSV:  [hp=9 qi=0] Trigger the effect of 5 Lv.2 Crash Fist cards (without Cost HP) | [Consumption]
+  L2 IMPL: [hp=9 qi=0]  game.do_endless_crash(2); game.consumption(); ✓
+  L3 CSV:  [hp=9 qi=0] Trigger the effect of 5 Lv.3 Crash Fist cards (without Cost HP) | [Consumption]
+  L3 IMPL: [hp=9 qi=0]  game.do_endless_crash(3); game.consumption(); ✓
+

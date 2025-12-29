@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] Apply and gain 1 stack of [Internal Injury] and 1 stack of [Wound] | 6 ATK × 2
+  L1 IMPL: [hp=0 qi=1]  game.add_enemy_c_of_x(1, "internal_injury"); game.add_enemy_c_of_x(1, "wound"); game.add_c_of_x(1, "internal_injury"); game.add_c_of_x(1, "wound"); for (let i = 0; i < 2; i++) { game.atk(6); } ✓
+  L2 CSV:  [hp=0 qi=1] Apply and gain 2 stacks of [Internal Injury] and 1 stack of [Wound] | 7 ATK × 2
+  L2 IMPL: [hp=0 qi=1]  game.add_enemy_c_of_x(2, "internal_injury"); game.add_enemy_c_of_x(1, "wound"); game.add_c_of_x(2, "internal_injury"); game.add_c_of_x(1, "wound"); for (let i = 0; i < 2; i++) { game.atk(7); } ✓
+  L3 CSV:  [hp=0 qi=1] Apply and gain 2 stacks of [Internal Injury] and 2 stacks of [Wound] | 8 ATK × 2
+  L3 IMPL: [hp=0 qi=1]  game.add_enemy_c_of_x(2, "internal_injury"); game.add_enemy_c_of_x(2, "wound"); game.add_c_of_x(2, "internal_injury"); game.add_c_of_x(2, "wound"); for (let i = 0; i < 2; i++) { game.atk(8); } ✓

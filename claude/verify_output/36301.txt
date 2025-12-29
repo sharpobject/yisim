@@ -1,0 +1,8 @@
+### 36301 - Qi-seeking Sunflower
+  L1 CSV:  [no cost] [Growth] | [Qi]+2
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 2); ✓
+  L2 CSV:  [no cost] [Growth] | [Qi]+3
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 3); ✓
+  L3 CSV:  [no cost] [Qi]+4 (add 2 more [Qi] if either you or opponent have [Qi])
+  L3 IMPL: [no cost]  game.do_qi_seeking_sunflower(); ✓
+

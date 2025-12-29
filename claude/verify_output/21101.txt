@@ -1,0 +1,8 @@
+### 21101 - Rhyme Spirit Sword
+  L1 CSV:  [no cost] 4 ATK | [Injured]: Add [Qi] for each damage dealt to HP
+  L1 IMPL: [no cost]  game.atk(4); if (game.if_injured()) { game.for_each_x_add_y("damage_dealt_to_hp_by_atk", "qi"); } ✓
+  L2 CSV:  [no cost] 5 ATK | [Injured]: Add [Qi] for each damage dealt to HP
+  L2 IMPL: [no cost]  game.atk(5); if (game.if_injured()) { game.for_each_x_add_y("damage_dealt_to_hp_by_atk", "qi"); } ✓
+  L3 CSV:  [no cost] 6 ATK | [Injured]: Add [Qi] for each damage dealt to HP
+  L3 IMPL: [no cost]  game.atk(6); if (game.if_injured()) { game.for_each_x_add_y("damage_dealt_to_hp_by_atk", "qi"); } ✓
+

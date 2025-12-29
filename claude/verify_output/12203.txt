@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 7 ATK | [Star Point]: [Qi]+1
+  L1 IMPL: [no cost]  game.atk(7); if (game.if_star_point()) { game.increase_idx_qi(0, 1); } ✓
+  L2 CSV:  [no cost] 8 ATK | [Star Point]: [Qi]+2
+  L2 IMPL: [no cost]  game.atk(8); if (game.if_star_point()) { game.increase_idx_qi(0, 2); } ✓
+  L3 CSV:  [no cost] 9 ATK | [Star Point]: [Qi]+3
+  L3 IMPL: [no cost]  game.atk(9); if (game.if_star_point()) { game.increase_idx_qi(0, 3); } ✓

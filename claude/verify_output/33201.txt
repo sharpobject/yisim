@@ -1,0 +1,8 @@
+### 33201 - Kindness Tune
+  L1 CSV:  [no cost] [Continuous]: Both players reduce damage to [Destiny] by 4 (minimum to 1) | This effect is not stackable
+  L1 IMPL: [no cost]  game.continuous(); game.set_c_up_to_x(4, "kindness_tune_stacks"); game.set_enemy_c_up_to_x(4, "kindness_tune_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous]: Both players reduce damage to [Destiny] by 6 (minimum to 1) | This effect is not stackable
+  L2 IMPL: [no cost]  game.continuous(); game.set_c_up_to_x(6, "kindness_tune_stacks"); game.set_enemy_c_up_to_x(6, "kindness_tune_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous]: Both players reduce damage to [Destiny] by 8 (minimum to 1) | This effect is not stackable
+  L3 IMPL: [no cost]  game.continuous(); game.set_c_up_to_x(8, "kindness_tune_stacks"); game.set_enemy_c_up_to_x(8, "kindness_tune_stacks"); ✓
+

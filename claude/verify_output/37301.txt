@@ -1,0 +1,8 @@
+### 37301 - Heavenly Time - Fleeting
+  L1 CSV:  [no cost] [DEF]+6 | [Skip] your next 2 cards | [Consumption] | [Switch]
+  L1 IMPL: [no cost]  game.increase_idx_def(0, 6); game.add_c_of_x(2, "skip_next_card_stacks"); game.consumption(); ✓
+  L2 CSV:  [no cost] [DEF]+12 | [Skip] your next 2 cards | [Consumption] | [Switch]
+  L2 IMPL: [no cost]  game.increase_idx_def(0, 12); game.add_c_of_x(2, "skip_next_card_stacks"); game.consumption(); ✓
+  L3 CSV:  [no cost] [DEF]+18 | [Skip] your next 2 cards | [Consumption] | [Switch]
+  L3 IMPL: [no cost]  game.increase_idx_def(0, 18); game.add_c_of_x(2, "skip_next_card_stacks"); game.consumption(); ✓
+

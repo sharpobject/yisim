@@ -1,0 +1,8 @@
+### 50201 - Dark Star Bat
+  L1 CSV:  [no cost] [Continuous]: After you attack your opponent, if [Injured] your opponent's HP is not greater than 5, you gain an equal amount of HP
+  L1 IMPL: [no cost]  game.continuous(); game.set_c_up_to_x(5, "dark_star_bat_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous]: After you attack your opponent, if [Injured] your opponent's HP is not greater than 7, you gain an equal amount of HP
+  L2 IMPL: [no cost]  game.continuous(); game.set_c_up_to_x(7, "dark_star_bat_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous]: After you attack your opponent, if [Injured] your opponent's HP is not greater than 9, you gain an equal amount of HP
+  L3 IMPL: [no cost]  game.continuous(); game.set_c_up_to_x(9, "dark_star_bat_stacks"); ✓
+

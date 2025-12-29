@@ -1,0 +1,8 @@
+### 92403 - Thunderbolt Tune
+  L1 CSV:  [no cost] HP and Max HP+10 | [Continuous]: Both players has 10% chance to deal 10 [DMG] to their opponent at the end of their turn
+  L1 IMPL: [no cost]  game.add_c_of_x(10, "max_hp"); game.increase_idx_hp(0, 10); game.continuous(); game.add_c_of_x(10, "thunderbolt_tune_stacks"); game.add_enemy_c_of_x(10, "thunderbolt_tune_stacks"); ✓
+  L2 CSV:  [no cost] HP and Max HP+15 | [Continuous]: Both players has 10% chance to deal 12 [DMG] to their opponent at the end of their turn
+  L2 IMPL: [no cost]  game.add_c_of_x(15, "max_hp"); game.increase_idx_hp(0, 15); game.continuous(); game.add_c_of_x(12, "thunderbolt_tune_stacks"); game.add_enemy_c_of_x(12, "thunderbolt_tune_stacks"); ✓
+  L3 CSV:  [no cost] HP and Max HP+20 | [Continuous]: Both players has 10% chance to deal 14 [DMG] to their opponent at the end of their turn
+  L3 IMPL: [no cost]  game.add_c_of_x(20, "max_hp"); game.increase_idx_hp(0, 20); game.continuous(); game.add_c_of_x(14, "thunderbolt_tune_stacks"); game.add_enemy_c_of_x(14, "thunderbolt_tune_stacks"); ✓
+

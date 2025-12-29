@@ -1,0 +1,8 @@
+### 94601 - Pangu Axe
+  L1 CSV:  [no cost] 30 ATK | Your opponent cannot add HP for 1 turn | [Injured]: For the next time when your opponent's HP ≤ 0, deal 20 Destiny Damage to your opponent.
+  L1 IMPL: [no cost]  game.atk(30); game.add_enemy_c_of_x(20, "pangu_axe_stacks"); ✓
+  L2 CSV:  [no cost] CSV NOT FOUND
+  L2 IMPL: [no cost]   ✓
+  L3 CSV:  [no cost] CSV NOT FOUND
+  L3 IMPL: [no cost]   ✓
+

@@ -1,0 +1,8 @@
+### 22101 - Hexagrams Spirit Resurrection
+  L1 CSV:  [no cost] Exhaust Hexagram and Qi, add 4 HP for each point exhausted
+  L1 IMPL: [no cost]  const hexagram_amt = game.exhaust_x("hexagram"); const qi_amt = game.exhaust_x("qi"); const heal_amt = (hexagram_amt + qi_amt) * 4; game.increase_idx_hp(0, heal_amt); ✓
+  L2 CSV:  [no cost] Exhaust Hexagram and Qi, add 5 HP for each point exhausted
+  L2 IMPL: [no cost]  const hexagram_amt = game.exhaust_x("hexagram"); const qi_amt = game.exhaust_x("qi"); const heal_amt = (hexagram_amt + qi_amt) * 5; game.increase_idx_hp(0, heal_amt); ✓
+  L3 CSV:  [no cost] Exhaust Hexagram and Qi, add 6 HP for each point exhausted
+  L3 IMPL: [no cost]  const hexagram_amt = game.exhaust_x("hexagram"); const qi_amt = game.exhaust_x("qi"); const heal_amt = (hexagram_amt + qi_amt) * 6; game.increase_idx_hp(0, heal_amt); ✓
+

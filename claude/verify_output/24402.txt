@@ -1,0 +1,8 @@
+### 24402 - Crash Fist - Double
+  L1 CSV:  [hp=7 qi=0] 10 ATK | Next "Crash Fist" will trigger twice
+  L1 IMPL: [hp=7 qi=0]  game.atk(10); game.add_c_of_x(1, "crash_fist_double_stacks"); ✓
+  L2 CSV:  [hp=7 qi=0] 15 ATK | Next "Crash Fist" will trigger twice
+  L2 IMPL: [hp=7 qi=0]  game.atk(15); game.add_c_of_x(1, "crash_fist_double_stacks"); ✓
+  L3 CSV:  [hp=7 qi=0] 20 ATK | Next "Crash Fist" will trigger twice
+  L3 IMPL: [hp=7 qi=0]  game.atk(20); game.add_c_of_x(1, "crash_fist_double_stacks"); ✓
+

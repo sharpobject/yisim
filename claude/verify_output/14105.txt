@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=4 qi=0] 10 ATK | 1 less HP Cost for each 2 [Physique]
+  L1 IMPL: [hp=4 qi=0]  game.atk(10); ✓
+  L2 CSV:  [hp=4 qi=0] 13 ATK | 1 less HP Cost for each 2 [Physique]
+  L2 IMPL: [hp=4 qi=0]  game.atk(13); ✓
+  L3 CSV:  [hp=4 qi=0] 16 ATK | 1 less HP Cost for each 2 [Physique]
+  L3 IMPL: [hp=4 qi=0]  game.atk(16); ✓

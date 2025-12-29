@@ -1,0 +1,8 @@
+### 35403 - Motionless Tutelary Formation
+  L1 CSV:  [no cost] [Continuous] 2 [Times]: At the end of your turn, add 7 [DEF]. If you do not Chase this turn, add 7 HP and Max HP additionally
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(2, "motionless_tutelary_formation_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous] 3 [Times]: At the end of your turn, add 7 [DEF]. If you do not Chase this turn, add 7 HP and Max HP additionally
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(3, "motionless_tutelary_formation_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous] 4 [Times]: At the end of your turn, add 7 [DEF]. If you do not Chase this turn, add 7 HP and Max HP additionally
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(4, "motionless_tutelary_formation_stacks"); ✓
+

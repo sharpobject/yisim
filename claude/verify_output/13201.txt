@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Qi]+2 | [Wood Spirit]: HP+3 | （Add 1 HP for each stack of [Increase ATK]）
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 2); if (game.if_wood_spirit()) { const heal_amt = 3 + game.players[0].increase_atk; game.increase_idx_hp(0, heal_amt); } ✓
+  L2 CSV:  [no cost] [Qi]+3 | [Wood Spirit]: HP+4 | （Add 1 HP for each stack of [Increase ATK]）
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 3); if (game.if_wood_spirit()) { const heal_amt = 4 + game.players[0].increase_atk; game.increase_idx_hp(0, heal_amt); } ✓
+  L3 CSV:  [no cost] [Qi]+4 | [Wood Spirit]: HP+6 | （Add 1 HP for each stack of [Increase ATK]）
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 4); if (game.if_wood_spirit()) { const heal_amt = 6 + game.players[0].increase_atk; game.increase_idx_hp(0, heal_amt); } ✓

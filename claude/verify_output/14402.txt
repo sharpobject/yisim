@@ -1,0 +1,8 @@
+### 14402 - Crash Fist - Inch Force
+  L1 CSV:  [hp=5 qi=0] 10 ATK |  This card receive 2x bonus from [Force] (also triggered in the next Crash Fist, non-stackable)
+  L1 IMPL: [hp=5 qi=0]  game.add_c_of_x(1, "this_card_crash_fist_inch_force_stacks"); game.add_c_of_x(1, "crash_fist_inch_force_stacks"); game.atk(10); ✓
+  L2 CSV:  [hp=5 qi=0] 14 ATK |  This card receive 2x bonus from [Force] (also triggered in the next Crash Fist, non-stackable)
+  L2 IMPL: [hp=5 qi=0]  game.add_c_of_x(1, "this_card_crash_fist_inch_force_stacks"); game.add_c_of_x(1, "crash_fist_inch_force_stacks"); game.atk(14); ✓
+  L3 CSV:  [hp=5 qi=0] 18 ATK |  This card receive 2x bonus from [Force] (also triggered in the next Crash Fist, non-stackable)
+  L3 IMPL: [hp=5 qi=0]  game.add_c_of_x(1, "this_card_crash_fist_inch_force_stacks"); game.add_c_of_x(1, "crash_fist_inch_force_stacks"); game.atk(18); ✓
+

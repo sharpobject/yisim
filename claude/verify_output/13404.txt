@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 4 ATK × 2 | [Fire Spirit]: For every [Injured] HP by this card, decrease opponent's Max HP by 2
+  L1 IMPL: [no cost]  for (let i = 0; i < 2; i++) { game.atk(4); } if (game.if_fire_spirit()) { if (game.players[0].damage_dealt_to_hp_by_this_card_atk >= 1) { game.for_each_x_reduce_enemy_c_y("damage_dealt_to_hp_by_this_card_atk", 2, "max_hp"); } } ✓
+  L2 CSV:  [no cost] 5 ATK × 2 | [Fire Spirit]: For every [Injured] HP by this card, decrease opponent's Max HP by 2
+  L2 IMPL: [no cost]  for (let i = 0; i < 2; i++) { game.atk(5); } if (game.if_fire_spirit()) { if (game.players[0].damage_dealt_to_hp_by_this_card_atk >= 1) { game.for_each_x_reduce_enemy_c_y("damage_dealt_to_hp_by_this_card_atk", 2, "max_hp"); } } ✓
+  L3 CSV:  [no cost] 7 ATK × 2 | [Fire Spirit]: For every [Injured] HP by this card, decrease opponent's Max HP by 2
+  L3 IMPL: [no cost]  for (let i = 0; i < 2; i++) { game.atk(7); } if (game.if_fire_spirit()) { if (game.players[0].damage_dealt_to_hp_by_this_card_atk >= 1) { game.for_each_x_reduce_enemy_c_y("damage_dealt_to_hp_by_this_card_atk", 2, "max_hp"); } } ✓

@@ -1,0 +1,8 @@
+### 35102 - Fraccide Formation
+  L1 CSV:  [no cost] [Continuous] 2 [Times]: Add 3 more ATK when attack and apply [Smash DEF] effect
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(2, "fraccide_formation_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous] 3 [Times]: Add 3 more ATK when attack and apply [Smash DEF] effect
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(3, "fraccide_formation_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous] 4 [Times]: Add 3 more ATK when attack and apply [Smash DEF] effect
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(4, "fraccide_formation_stacks"); ✓
+

@@ -1,0 +1,8 @@
+### 93503 - Wood Spirit - All Things Grow
+  L1 CSV:  [hp=0 qi=1] HP and Max HP+3 | [Wood Spirit]: [Chase] | [Continuous]: At the beginning of your turn, add 1 [Increase ATK]
+  L1 IMPL: [hp=0 qi=1]  game.add_c_of_x(3, "max_hp"); game.increase_idx_hp(0, 3); if (game.if_wood_spirit()) { game.chase(); } game.continuous(); game.add_c_of_x(1, "wood_spirit_all_things_grow_stacks"); ✓
+  L2 CSV:  [hp=0 qi=1] HP and Max HP+9 | [Wood Spirit]: [Chase] | [Continuous]: At the beginning of your turn, add 1 [Increase ATK]
+  L2 IMPL: [hp=0 qi=1]  game.add_c_of_x(9, "max_hp"); game.increase_idx_hp(0, 9); if (game.if_wood_spirit()) { game.chase(); } game.continuous(); game.add_c_of_x(1, "wood_spirit_all_things_grow_stacks"); ✓
+  L3 CSV:  [hp=0 qi=1] HP and Max HP+15 | [Wood Spirit]: [Chase] | [Continuous]: At the beginning of your turn, add 1 [Increase ATK]
+  L3 IMPL: [hp=0 qi=1]  game.add_c_of_x(15, "max_hp"); game.increase_idx_hp(0, 15); if (game.if_wood_spirit()) { game.chase(); } game.continuous(); game.add_c_of_x(1, "wood_spirit_all_things_grow_stacks"); ✓
+

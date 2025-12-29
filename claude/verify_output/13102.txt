@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] 3 ATK × 2 | [Wood Spirit]: HP+5
+  L1 IMPL: [hp=0 qi=1]  for (let i = 0; i < 2; i++) { game.atk(3); } if (game.if_wood_spirit()) { game.increase_idx_hp(0, 5); } ✓
+  L2 CSV:  [hp=0 qi=1] 3 ATK × 3 | [Wood Spirit]: HP+5
+  L2 IMPL: [hp=0 qi=1]  for (let i = 0; i < 3; i++) { game.atk(3); } if (game.if_wood_spirit()) { game.increase_idx_hp(0, 5); } ✓
+  L3 CSV:  [hp=0 qi=1] 3 ATK × 4 | [Wood Spirit]: HP+5
+  L3 IMPL: [hp=0 qi=1]  for (let i = 0; i < 4; i++) { game.atk(3); } if (game.if_wood_spirit()) { game.increase_idx_hp(0, 5); } ✓
