@@ -1,0 +1,5592 @@
+[
+  {
+    "id": 1,
+    "name_cn": "虚无",
+    "name_en": "Void",
+    "name_tw": "虛無",
+    "desc_cn_template": "[被动生效]",
+    "desc_en_template": "[Passive Effect]",
+    "desc_tw_template": "[被動生效]",
+    "tiers": [
+      {
+        "tier": 1,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [],
+        "desc_cn": "[被动生效]",
+        "desc_en": "[Passive Effect]"
+      },
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [],
+        "desc_cn": "[被动生效]",
+        "desc_en": "[Passive Effect]"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [],
+        "desc_cn": "[被动生效]",
+        "desc_en": "[Passive Effect]"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 8,
+        "params": [],
+        "desc_cn": "[被动生效]",
+        "desc_en": "[Passive Effect]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 10,
+        "params": [],
+        "desc_cn": "[被动生效]",
+        "desc_en": "[Passive Effect]"
+      },
+      {
+        "tier": 6,
+        "sigil_value": 1,
+        "max_hp": 12,
+        "params": [],
+        "desc_cn": "[被动生效]",
+        "desc_en": "[Passive Effect]"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name_cn": "固防",
+    "name_en": "Solidify Defense",
+    "name_tw": "固防",
+    "desc_cn_template": "下一次加[防]时额外加{otherParams[0]}[防]",
+    "desc_en_template": "Gain an additional {otherParams[0]} [DEF] when adding [DEF] next time",
+    "desc_tw_template": "下一次加[防]時額外加{otherParams[0]}[防]",
+    "tiers": [
+      {
+        "tier": 1,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          2
+        ],
+        "desc_cn": "下一次加[防]时额外加2[防]",
+        "desc_en": "Gain an additional 2 [DEF] when adding [DEF] next time"
+      },
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 3,
+        "params": [
+          3
+        ],
+        "desc_cn": "下一次加[防]时额外加3[防]",
+        "desc_en": "Gain an additional 3 [DEF] when adding [DEF] next time"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          4
+        ],
+        "desc_cn": "下一次加[防]时额外加4[防]",
+        "desc_en": "Gain an additional 4 [DEF] when adding [DEF] next time"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 5,
+        "params": [
+          5
+        ],
+        "desc_cn": "下一次加[防]时额外加5[防]",
+        "desc_en": "Gain an additional 5 [DEF] when adding [DEF] next time"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          6
+        ],
+        "desc_cn": "下一次加[防]时额外加6[防]",
+        "desc_en": "Gain an additional 6 [DEF] when adding [DEF] next time"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name_cn": "生命",
+    "name_en": "HP",
+    "name_tw": "生命",
+    "desc_cn_template": "生命+{otherParams[0]}",
+    "desc_en_template": "HP + {otherParams[0]}",
+    "desc_tw_template": "生命+{otherParams[0]}",
+    "tiers": [
+      {
+        "tier": 1,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          2
+        ],
+        "desc_cn": "生命+2",
+        "desc_en": "HP + 2"
+      },
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 3,
+        "params": [
+          3
+        ],
+        "desc_cn": "生命+3",
+        "desc_en": "HP + 3"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          4
+        ],
+        "desc_cn": "生命+4",
+        "desc_en": "HP + 4"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 5,
+        "params": [
+          5
+        ],
+        "desc_cn": "生命+5",
+        "desc_en": "HP + 5"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          6
+        ],
+        "desc_cn": "生命+6",
+        "desc_en": "HP + 6"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name_cn": "强攻",
+    "name_en": "Strong Attack",
+    "name_tw": "强攻",
+    "desc_cn_template": "下一次攻击多{otherParams[0]}攻",
+    "desc_en_template": "Deal {otherParams[0]} more ATK in the next attack",
+    "desc_tw_template": "下一次攻擊多{otherParams[0]}攻",
+    "tiers": [
+      {
+        "tier": 1,
+        "sigil_value": 1,
+        "max_hp": 1,
+        "params": [
+          2
+        ],
+        "desc_cn": "下一次攻击多2攻",
+        "desc_en": "Deal 2 more ATK in the next attack"
+      },
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          3
+        ],
+        "desc_cn": "下一次攻击多3攻",
+        "desc_en": "Deal 3 more ATK in the next attack"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 3,
+        "params": [
+          4
+        ],
+        "desc_cn": "下一次攻击多4攻",
+        "desc_en": "Deal 4 more ATK in the next attack"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          5
+        ],
+        "desc_cn": "下一次攻击多5攻",
+        "desc_en": "Deal 5 more ATK in the next attack"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 5,
+        "params": [
+          6
+        ],
+        "desc_cn": "下一次攻击多6攻",
+        "desc_en": "Deal 6 more ATK in the next attack"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name_cn": "碎防",
+    "name_en": "Smash DEF",
+    "name_tw": "碎防",
+    "desc_cn_template": "下{otherParams[0]}次攻击获得[碎防]",
+    "desc_en_template": "Gain [Smash DEF] for the next {otherParams[0]} attacks",
+    "desc_tw_template": "下{otherParams[0]}次攻擊獲得[碎防]",
+    "tiers": [
+      {
+        "tier": 1,
+        "sigil_value": 1,
+        "max_hp": 3,
+        "params": [
+          1
+        ],
+        "desc_cn": "下1次攻击获得[碎防]",
+        "desc_en": "Gain [Smash DEF] for the next 1 attacks"
+      },
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 3,
+        "params": [
+          2
+        ],
+        "desc_cn": "下2次攻击获得[碎防]",
+        "desc_en": "Gain [Smash DEF] for the next 2 attacks"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 5,
+        "params": [
+          2
+        ],
+        "desc_cn": "下2次攻击获得[碎防]",
+        "desc_en": "Gain [Smash DEF] for the next 2 attacks"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 5,
+        "params": [
+          3
+        ],
+        "desc_cn": "下3次攻击获得[碎防]",
+        "desc_en": "Gain [Smash DEF] for the next 3 attacks"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 5,
+        "params": [
+          4
+        ],
+        "desc_cn": "下4次攻击获得[碎防]",
+        "desc_en": "Gain [Smash DEF] for the next 4 attacks"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name_cn": "逍遥",
+    "name_en": "Carefree",
+    "name_tw": "逍遙",
+    "desc_cn_template": "下一次[普通攻击]的攻击多{otherParams[0]}攻",
+    "desc_en_template": "Deal {otherParams[0]} more ATK in the next [Normal Attack]",
+    "desc_tw_template": "下一次[普通攻擊]的攻擊多{otherParams[0]}攻",
+    "tiers": [
+      {
+        "tier": 1,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          5
+        ],
+        "desc_cn": "下一次[普通攻击]的攻击多5攻",
+        "desc_en": "Deal 5 more ATK in the next [Normal Attack]"
+      },
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          7
+        ],
+        "desc_cn": "下一次[普通攻击]的攻击多7攻",
+        "desc_en": "Deal 7 more ATK in the next [Normal Attack]"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          9
+        ],
+        "desc_cn": "下一次[普通攻击]的攻击多9攻",
+        "desc_en": "Deal 9 more ATK in the next [Normal Attack]"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          13
+        ],
+        "desc_cn": "下一次[普通攻击]的攻击多13攻",
+        "desc_en": "Deal 13 more ATK in the next [Normal Attack]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          18
+        ],
+        "desc_cn": "下一次[普通攻击]的攻击多18攻",
+        "desc_en": "Deal 18 more ATK in the next [Normal Attack]"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name_cn": "云起",
+    "name_en": "Cloud Rise",
+    "name_tw": "雲起",
+    "desc_cn_template": "[被动生效]\\n战斗开始时视作已用过1次[云剑]",
+    "desc_en_template": "[Passive Effect]\\nTreated as having played [Cloud Sword] once at the start of the battle",
+    "desc_tw_template": "[被動生效]\\n戰鬥開始時視作已用過1次[雲劍]",
+    "tiers": [
+      {
+        "tier": 1,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [],
+        "desc_cn": "[被动生效]\\n战斗开始时视作已用过1次[云剑]",
+        "desc_en": "[Passive Effect]\\nTreated as having played [Cloud Sword] once at the start of the battle"
+      },
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [],
+        "desc_cn": "[被动生效]\\n战斗开始时视作已用过1次[云剑]",
+        "desc_en": "[Passive Effect]\\nTreated as having played [Cloud Sword] once at the start of the battle"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [],
+        "desc_cn": "[被动生效]\\n战斗开始时视作已用过1次[云剑]",
+        "desc_en": "[Passive Effect]\\nTreated as having played [Cloud Sword] once at the start of the battle"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 8,
+        "params": [],
+        "desc_cn": "[被动生效]\\n战斗开始时视作已用过1次[云剑]",
+        "desc_en": "[Passive Effect]\\nTreated as having played [Cloud Sword] once at the start of the battle"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 10,
+        "params": [],
+        "desc_cn": "[被动生效]\\n战斗开始时视作已用过1次[云剑]",
+        "desc_en": "[Passive Effect]\\nTreated as having played [Cloud Sword] once at the start of the battle"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name_cn": "灵斩",
+    "name_en": "Spirit Slash",
+    "name_tw": "靈斬",
+    "desc_cn_template": "下一次[灵剑]的攻击多{otherParams[0]}攻",
+    "desc_en_template": "Deal {otherParams[0]} more ATK in the next [Spirit Sword] attack",
+    "desc_tw_template": "下一次[靈劍]的攻擊多{otherParams[0]}攻",
+    "tiers": [
+      {
+        "tier": 1,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          2
+        ],
+        "desc_cn": "下一次[灵剑]的攻击多2攻",
+        "desc_en": "Deal 2 more ATK in the next [Spirit Sword] attack"
+      },
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          4
+        ],
+        "desc_cn": "下一次[灵剑]的攻击多4攻",
+        "desc_en": "Deal 4 more ATK in the next [Spirit Sword] attack"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          6
+        ],
+        "desc_cn": "下一次[灵剑]的攻击多6攻",
+        "desc_en": "Deal 6 more ATK in the next [Spirit Sword] attack"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          8
+        ],
+        "desc_cn": "下一次[灵剑]的攻击多8攻",
+        "desc_en": "Deal 8 more ATK in the next [Spirit Sword] attack"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          10
+        ],
+        "desc_cn": "下一次[灵剑]的攻击多10攻",
+        "desc_en": "Deal 10 more ATK in the next [Spirit Sword] attack"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name_cn": "练剑",
+    "name_en": "Sword Practice",
+    "name_tw": "練劍",
+    "desc_cn_template": "下一次使用[剑劈]或[剑挡]后加{otherParams[0]}[剑意]",
+    "desc_en_template": "Gain {otherParams[0]} [Sword Intent] after playing [Sword Slash] or [Sword Defence] next time",
+    "desc_tw_template": "下一次使用[劍劈]或[劍擋]後加{otherParams[0]}[劍意]",
+    "tiers": [
+      {
+        "tier": 1,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次使用[剑劈]或[剑挡]后加1[剑意]",
+        "desc_en": "Gain 1 [Sword Intent] after playing [Sword Slash] or [Sword Defence] next time"
+      },
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次使用[剑劈]或[剑挡]后加1[剑意]",
+        "desc_en": "Gain 1 [Sword Intent] after playing [Sword Slash] or [Sword Defence] next time"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次使用[剑劈]或[剑挡]后加1[剑意]",
+        "desc_en": "Gain 1 [Sword Intent] after playing [Sword Slash] or [Sword Defence] next time"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 8,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次使用[剑劈]或[剑挡]后加1[剑意]",
+        "desc_en": "Gain 1 [Sword Intent] after playing [Sword Slash] or [Sword Defence] next time"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          2
+        ],
+        "desc_cn": "下一次使用[剑劈]或[剑挡]后加2[剑意]",
+        "desc_en": "Gain 2 [Sword Intent] after playing [Sword Slash] or [Sword Defence] next time"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name_cn": "移星",
+    "name_en": "Shift Stars",
+    "name_tw": "移星",
+    "desc_cn_template": "下一次使用[斗转星移]或[众星拱月]时额外多{otherParams[0]}格成为[星位]",
+    "desc_en_template": "Gain an additional grid as [Star Point] when playing [Shifting Stars] or [Starry Moon] next time",
+    "desc_tw_template": "下一次使用[鬥轉星移]或[衆星拱月]時額外多{otherParams[0]}格成爲[星位]",
+    "tiers": [
+      {
+        "tier": 1,
+        "sigil_value": 1,
+        "max_hp": 1,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次使用[斗转星移]或[众星拱月]时额外多1格成为[星位]",
+        "desc_en": "Gain an additional grid as [Star Point] when playing [Shifting Stars] or [Starry Moon] next time"
+      },
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 3,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次使用[斗转星移]或[众星拱月]时额外多1格成为[星位]",
+        "desc_en": "Gain an additional grid as [Star Point] when playing [Shifting Stars] or [Starry Moon] next time"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 5,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次使用[斗转星移]或[众星拱月]时额外多1格成为[星位]",
+        "desc_en": "Gain an additional grid as [Star Point] when playing [Shifting Stars] or [Starry Moon] next time"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 7,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次使用[斗转星移]或[众星拱月]时额外多1格成为[星位]",
+        "desc_en": "Gain an additional grid as [Star Point] when playing [Shifting Stars] or [Starry Moon] next time"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 9,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次使用[斗转星移]或[众星拱月]时额外多1格成为[星位]",
+        "desc_en": "Gain an additional grid as [Star Point] when playing [Shifting Stars] or [Starry Moon] next time"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name_cn": "落卦",
+    "name_en": "Hexagram Fall",
+    "name_tw": "落卦",
+    "desc_cn_template": "下一次加[卦象]时向对方造成{otherParams[0]}[伤害]",
+    "desc_en_template": "Deal {otherParams[0]} [DMG] to the opponent when adding [Hexagram] next time",
+    "desc_tw_template": "下一次加[卦象]時向對方造成{otherParams[0]}[傷害]",
+    "tiers": [
+      {
+        "tier": 1,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          4
+        ],
+        "desc_cn": "下一次加[卦象]时向对方造成4[伤害]",
+        "desc_en": "Deal 4 [DMG] to the opponent when adding [Hexagram] next time"
+      },
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 1,
+        "params": [
+          5
+        ],
+        "desc_cn": "下一次加[卦象]时向对方造成5[伤害]",
+        "desc_en": "Deal 5 [DMG] to the opponent when adding [Hexagram] next time"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          6
+        ],
+        "desc_cn": "下一次加[卦象]时向对方造成6[伤害]",
+        "desc_en": "Deal 6 [DMG] to the opponent when adding [Hexagram] next time"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 3,
+        "params": [
+          7
+        ],
+        "desc_cn": "下一次加[卦象]时向对方造成7[伤害]",
+        "desc_en": "Deal 7 [DMG] to the opponent when adding [Hexagram] next time"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          8
+        ],
+        "desc_cn": "下一次加[卦象]时向对方造成8[伤害]",
+        "desc_en": "Deal 8 [DMG] to the opponent when adding [Hexagram] next time"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name_cn": "霹雳",
+    "name_en": "Thunderbolt",
+    "name_tw": "霹靂",
+    "desc_cn_template": "[被动生效]\\n随机范围的[攻]加{otherParams[0]}上限",
+    "desc_en_template": "[Passive Effect]\\nFor ATK with a random range, increase their ATK upper limit by {otherParams[0]}",
+    "desc_tw_template": "[被動生效]\\n隨機範圍的[攻]加{otherParams[0]}上限",
+    "tiers": [
+      {
+        "tier": 1,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          1
+        ],
+        "desc_cn": "[被动生效]\\n随机范围的[攻]加1上限",
+        "desc_en": "[Passive Effect]\\nFor ATK with a random range, increase their ATK upper limit by 1"
+      },
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          1
+        ],
+        "desc_cn": "[被动生效]\\n随机范围的[攻]加1上限",
+        "desc_en": "[Passive Effect]\\nFor ATK with a random range, increase their ATK upper limit by 1"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          2
+        ],
+        "desc_cn": "[被动生效]\\n随机范围的[攻]加2上限",
+        "desc_en": "[Passive Effect]\\nFor ATK with a random range, increase their ATK upper limit by 2"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          2
+        ],
+        "desc_cn": "[被动生效]\\n随机范围的[攻]加2上限",
+        "desc_en": "[Passive Effect]\\nFor ATK with a random range, increase their ATK upper limit by 2"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          3
+        ],
+        "desc_cn": "[被动生效]\\n随机范围的[攻]加3上限",
+        "desc_en": "[Passive Effect]\\nFor ATK with a random range, increase their ATK upper limit by 3"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name_cn": "锐之刺",
+    "name_en": "Sharp Thrust",
+    "name_tw": "銳之刺",
+    "desc_cn_template": "下一次[锋锐]触发时，额外多减对方{otherParams[0]}生命",
+    "desc_en_template": "Reduce the opponent's HP by an additional {otherParams[0]} when [Penetrate] is triggered next time",
+    "desc_tw_template": "下一次[鋒銳]觸發時，額外多减對方{otherParams[0]}生命",
+    "tiers": [
+      {
+        "tier": 1,
+        "sigil_value": 1,
+        "max_hp": 1,
+        "params": [
+          3
+        ],
+        "desc_cn": "下一次[锋锐]触发时，额外多减对方3生命",
+        "desc_en": "Reduce the opponent's HP by an additional 3 when [Penetrate] is triggered next time"
+      },
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          4
+        ],
+        "desc_cn": "下一次[锋锐]触发时，额外多减对方4生命",
+        "desc_en": "Reduce the opponent's HP by an additional 4 when [Penetrate] is triggered next time"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 3,
+        "params": [
+          5
+        ],
+        "desc_cn": "下一次[锋锐]触发时，额外多减对方5生命",
+        "desc_en": "Reduce the opponent's HP by an additional 5 when [Penetrate] is triggered next time"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          6
+        ],
+        "desc_cn": "下一次[锋锐]触发时，额外多减对方6生命",
+        "desc_en": "Reduce the opponent's HP by an additional 6 when [Penetrate] is triggered next time"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 5,
+        "params": [
+          7
+        ],
+        "desc_cn": "下一次[锋锐]触发时，额外多减对方7生命",
+        "desc_en": "Reduce the opponent's HP by an additional 7 when [Penetrate] is triggered next time"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name_cn": "热砂",
+    "name_en": "Hot Sand",
+    "name_tw": "熱砂",
+    "desc_cn_template": "下一次使用[土灵]或[火灵]牌时向对方造成{otherParams[0]}[伤害]",
+    "desc_en_template": "Deal {otherParams[0]} [DMG] to the opponent when playing [Earth Spirit] or [Fire Spirit] card next time",
+    "desc_tw_template": "下一次使用[土靈]或[火靈]牌時向對方造成{otherParams[0]}[傷害]",
+    "tiers": [
+      {
+        "tier": 1,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          2
+        ],
+        "desc_cn": "下一次使用[土灵]或[火灵]牌时向对方造成2[伤害]",
+        "desc_en": "Deal 2 [DMG] to the opponent when playing [Earth Spirit] or [Fire Spirit] card next time"
+      },
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 3,
+        "params": [
+          3
+        ],
+        "desc_cn": "下一次使用[土灵]或[火灵]牌时向对方造成3[伤害]",
+        "desc_en": "Deal 3 [DMG] to the opponent when playing [Earth Spirit] or [Fire Spirit] card next time"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          4
+        ],
+        "desc_cn": "下一次使用[土灵]或[火灵]牌时向对方造成4[伤害]",
+        "desc_en": "Deal 4 [DMG] to the opponent when playing [Earth Spirit] or [Fire Spirit] card next time"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 5,
+        "params": [
+          5
+        ],
+        "desc_cn": "下一次使用[土灵]或[火灵]牌时向对方造成5[伤害]",
+        "desc_en": "Deal 5 [DMG] to the opponent when playing [Earth Spirit] or [Fire Spirit] card next time"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          6
+        ],
+        "desc_cn": "下一次使用[土灵]或[火灵]牌时向对方造成6[伤害]",
+        "desc_en": "Deal 6 [DMG] to the opponent when playing [Earth Spirit] or [Fire Spirit] card next time"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name_cn": "滋养",
+    "name_en": "Nourish",
+    "name_tw": "滋養",
+    "desc_cn_template": "下一次使用[木灵]或[水灵]牌时加{otherParams[0]}生命及上限",
+    "desc_en_template": "Increase HP and Max HP by {otherParams[0]} when playing [Wood Spirit] or [Water Spirit] card next time",
+    "desc_tw_template": "下一次使用[木靈]或[水靈]牌時加{otherParams[0]}生命及上限",
+    "tiers": [
+      {
+        "tier": 1,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          4
+        ],
+        "desc_cn": "下一次使用[木灵]或[水灵]牌时加4生命及上限",
+        "desc_en": "Increase HP and Max HP by 4 when playing [Wood Spirit] or [Water Spirit] card next time"
+      },
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          6
+        ],
+        "desc_cn": "下一次使用[木灵]或[水灵]牌时加6生命及上限",
+        "desc_en": "Increase HP and Max HP by 6 when playing [Wood Spirit] or [Water Spirit] card next time"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          8
+        ],
+        "desc_cn": "下一次使用[木灵]或[水灵]牌时加8生命及上限",
+        "desc_en": "Increase HP and Max HP by 8 when playing [Wood Spirit] or [Water Spirit] card next time"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          10
+        ],
+        "desc_cn": "下一次使用[木灵]或[水灵]牌时加10生命及上限",
+        "desc_en": "Increase HP and Max HP by 10 when playing [Wood Spirit] or [Water Spirit] card next time"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          12
+        ],
+        "desc_cn": "下一次使用[木灵]或[水灵]牌时加12生命及上限",
+        "desc_en": "Increase HP and Max HP by 12 when playing [Wood Spirit] or [Water Spirit] card next time"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name_cn": "御玄",
+    "name_en": "Resist Xuan",
+    "name_tw": "禦玄",
+    "desc_cn_template": "下一次获得[负面状态]时，[防]+{otherParams[0]}",
+    "desc_en_template": "Gain {otherParams[0]} [DEF] when receiving a [Debuff] next time",
+    "desc_tw_template": "下一次獲得[負面狀態]時，[防]+{otherParams[0]}",
+    "tiers": [
+      {
+        "tier": 1,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          3
+        ],
+        "desc_cn": "下一次获得[负面状态]时，[防]+3",
+        "desc_en": "Gain 3 [DEF] when receiving a [Debuff] next time"
+      },
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          5
+        ],
+        "desc_cn": "下一次获得[负面状态]时，[防]+5",
+        "desc_en": "Gain 5 [DEF] when receiving a [Debuff] next time"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          7
+        ],
+        "desc_cn": "下一次获得[负面状态]时，[防]+7",
+        "desc_en": "Gain 7 [DEF] when receiving a [Debuff] next time"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          9
+        ],
+        "desc_cn": "下一次获得[负面状态]时，[防]+9",
+        "desc_en": "Gain 9 [DEF] when receiving a [Debuff] next time"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          12
+        ],
+        "desc_cn": "下一次获得[负面状态]时，[防]+12",
+        "desc_en": "Gain 12 [DEF] when receiving a [Debuff] next time"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name_cn": "锻拳",
+    "name_en": "Fist Training",
+    "name_tw": "鍛拳",
+    "desc_cn_template": "下一次使用[锻拳]后，加{otherParams[0]}[体魄]",
+    "desc_en_template": "Gain {otherParams[0]} [Physique] after playing [Exercise Fist] next time",
+    "desc_tw_template": "下一次使用[鍛拳]後，加{otherParams[0]}[體魄]",
+    "tiers": [
+      {
+        "tier": 1,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          2
+        ],
+        "desc_cn": "下一次使用[锻拳]后，加2[体魄]",
+        "desc_en": "Gain 2 [Physique] after playing [Exercise Fist] next time"
+      },
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 3,
+        "params": [
+          3
+        ],
+        "desc_cn": "下一次使用[锻拳]后，加3[体魄]",
+        "desc_en": "Gain 3 [Physique] after playing [Exercise Fist] next time"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          4
+        ],
+        "desc_cn": "下一次使用[锻拳]后，加4[体魄]",
+        "desc_en": "Gain 4 [Physique] after playing [Exercise Fist] next time"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 5,
+        "params": [
+          5
+        ],
+        "desc_cn": "下一次使用[锻拳]后，加5[体魄]",
+        "desc_en": "Gain 5 [Physique] after playing [Exercise Fist] next time"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          7
+        ],
+        "desc_cn": "下一次使用[锻拳]后，加7[体魄]",
+        "desc_en": "Gain 7 [Physique] after playing [Exercise Fist] next time"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name_cn": "调息",
+    "name_en": "Regulate Breathing",
+    "name_tw": "調息",
+    "desc_cn_template": "本回合结束时耗1[灵气]：生命及上限+{otherParams[0]}",
+    "desc_en_template": "Consume 1 [Qi] at the end of this turn: HP and Max HP + {otherParams[0]}",
+    "desc_tw_template": "本回合結束時耗1[靈氣]：生命及上限+{otherParams[0]}",
+    "tiers": [
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          6
+        ],
+        "desc_cn": "本回合结束时耗1[灵气]：生命及上限+6",
+        "desc_en": "Consume 1 [Qi] at the end of this turn: HP and Max HP + 6"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 5,
+        "params": [
+          7
+        ],
+        "desc_cn": "本回合结束时耗1[灵气]：生命及上限+7",
+        "desc_en": "Consume 1 [Qi] at the end of this turn: HP and Max HP + 7"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          9
+        ],
+        "desc_cn": "本回合结束时耗1[灵气]：生命及上限+9",
+        "desc_en": "Consume 1 [Qi] at the end of this turn: HP and Max HP + 9"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 7,
+        "params": [
+          11
+        ],
+        "desc_cn": "本回合结束时耗1[灵气]：生命及上限+11",
+        "desc_en": "Consume 1 [Qi] at the end of this turn: HP and Max HP + 11"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name_cn": "固本元",
+    "name_en": "Strengthen Fundamental Essence",
+    "name_tw": "固本元",
+    "desc_cn_template": "生命+{otherParams[0]}，[防]+{otherParams[0]}，减1层[内伤]、[外伤]和[破绽]",
+    "desc_en_template": "HP + {otherParams[0]}, [DEF] + {otherParams[0]}, reduce 1 stack of [Internal Injury], [Wound] and [Flaw]",
+    "desc_tw_template": "生命+{otherParams[0]}，[防]+{otherParams[0]}，减1層[內傷]、[外傷]和[破綻]",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 2,
+        "max_hp": 6,
+        "params": [
+          5
+        ],
+        "desc_cn": "生命+5，[防]+5，减1层[内伤]、[外伤]和[破绽]",
+        "desc_en": "HP + 5, [DEF] + 5, reduce 1 stack of [Internal Injury], [Wound] and [Flaw]"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 6,
+        "params": [
+          7
+        ],
+        "desc_cn": "生命+7，[防]+7，减1层[内伤]、[外伤]和[破绽]",
+        "desc_en": "HP + 7, [DEF] + 7, reduce 1 stack of [Internal Injury], [Wound] and [Flaw]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 6,
+        "params": [
+          9
+        ],
+        "desc_cn": "生命+9，[防]+9，减1层[内伤]、[外伤]和[破绽]",
+        "desc_en": "HP + 9, [DEF] + 9, reduce 1 stack of [Internal Injury], [Wound] and [Flaw]"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name_cn": "扩生机",
+    "name_en": "Expand Vitality",
+    "name_tw": "擴生機",
+    "desc_cn_template": "生命上限+{otherParams[0]}",
+    "desc_en_template": "Max HP + {otherParams[0]}",
+    "desc_tw_template": "生命上限+{otherParams[0]}",
+    "tiers": [
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          14
+        ],
+        "desc_cn": "生命上限+14",
+        "desc_en": "Max HP + 14"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          16
+        ],
+        "desc_cn": "生命上限+16",
+        "desc_en": "Max HP + 16"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 8,
+        "params": [
+          18
+        ],
+        "desc_cn": "生命上限+18",
+        "desc_en": "Max HP + 18"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 10,
+        "params": [
+          20
+        ],
+        "desc_cn": "生命上限+20",
+        "desc_en": "Max HP + 20"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "name_cn": "驱邪",
+    "name_en": "Exorcise Evil",
+    "name_tw": "驅邪",
+    "desc_cn_template": "重复{otherParams[0]}次：随机减少1层[负面状态]",
+    "desc_en_template": "Repeat {otherParams[0]} times: randomly reduce 1 stack of [Debuff]",
+    "desc_tw_template": "重複{otherParams[0]}次：隨機减少1層[負面狀態]",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          2
+        ],
+        "desc_cn": "重复2次：随机减少1层[负面状态]",
+        "desc_en": "Repeat 2 times: randomly reduce 1 stack of [Debuff]"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          3
+        ],
+        "desc_cn": "重复3次：随机减少1层[负面状态]",
+        "desc_en": "Repeat 3 times: randomly reduce 1 stack of [Debuff]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          4
+        ],
+        "desc_cn": "重复4次：随机减少1层[负面状态]",
+        "desc_en": "Repeat 4 times: randomly reduce 1 stack of [Debuff]"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name_cn": "压制",
+    "name_en": "Suppress",
+    "name_tw": "壓制",
+    "desc_cn_template": "造成{otherParams[0]}[伤害]（自身每比对方高1修为就加1[伤害]，最多加{otherParams[1]}）",
+    "desc_en_template": "Deal {otherParams[0]} [DMG] (increase 1 [DMG] for every 1 Cultivation higher than the opponent, maximum increase of {otherParams[1]})",
+    "desc_tw_template": "造成{otherParams[0]}[傷害]（自身每比對方高1修爲就加1[傷害]，最多加{otherParams[1]}）",
+    "tiers": [
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          1,
+          6
+        ],
+        "desc_cn": "造成1[伤害]（自身每比对方高1修为就加1[伤害]，最多加6）",
+        "desc_en": "Deal 1 [DMG] (increase 1 [DMG] for every 1 Cultivation higher than the opponent, maximum increase of 6)"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          2,
+          8
+        ],
+        "desc_cn": "造成2[伤害]（自身每比对方高1修为就加1[伤害]，最多加8）",
+        "desc_en": "Deal 2 [DMG] (increase 1 [DMG] for every 1 Cultivation higher than the opponent, maximum increase of 8)"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          3,
+          10
+        ],
+        "desc_cn": "造成3[伤害]（自身每比对方高1修为就加1[伤害]，最多加10）",
+        "desc_en": "Deal 3 [DMG] (increase 1 [DMG] for every 1 Cultivation higher than the opponent, maximum increase of 10)"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          4,
+          12
+        ],
+        "desc_cn": "造成4[伤害]（自身每比对方高1修为就加1[伤害]，最多加12）",
+        "desc_en": "Deal 4 [DMG] (increase 1 [DMG] for every 1 Cultivation higher than the opponent, maximum increase of 12)"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "name_cn": "预防",
+    "name_en": "Prevent",
+    "name_tw": "預防",
+    "desc_cn_template": "下一次受到[攻]或[伤害]时，先加{otherParams[0]}[防]",
+    "desc_en_template": "First gain {otherParams[0]} [DEF] when receiving [ATK] or [DMG] next time",
+    "desc_tw_template": "下一次受到[攻]或[傷害]時，先加{otherParams[0]}[防]",
+    "tiers": [
+      {
+        "tier": 2,
+        "sigil_value": 2,
+        "max_hp": 6,
+        "params": [
+          7
+        ],
+        "desc_cn": "下一次受到[攻]或[伤害]时，先加7[防]",
+        "desc_en": "First gain 7 [DEF] when receiving [ATK] or [DMG] next time"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 2,
+        "max_hp": 7,
+        "params": [
+          10
+        ],
+        "desc_cn": "下一次受到[攻]或[伤害]时，先加10[防]",
+        "desc_en": "First gain 10 [DEF] when receiving [ATK] or [DMG] next time"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 8,
+        "params": [
+          13
+        ],
+        "desc_cn": "下一次受到[攻]或[伤害]时，先加13[防]",
+        "desc_en": "First gain 13 [DEF] when receiving [ATK] or [DMG] next time"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 9,
+        "params": [
+          16
+        ],
+        "desc_cn": "下一次受到[攻]或[伤害]时，先加16[防]",
+        "desc_en": "First gain 16 [DEF] when receiving [ATK] or [DMG] next time"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "name_cn": "云屯星聚",
+    "name_en": "Clouds Gather and Stars Converge",
+    "name_tw": "雲屯星聚",
+    "desc_cn_template": "[被动生效]\\n使用[云剑·探云]或[云剑·点星]后，自身所有牌均视作[云剑]，直到战斗结束",
+    "desc_en_template": "[Passive Effect]\\nAfter playing [Cloud Sword - Touch Sky] or [Cloud Sword - Pierce the Star], all your cards are treated as [Cloud Sword] until the end of the battle",
+    "desc_tw_template": "[被動生效]\\n使用[雲劍·探雲]或[雲劍·點星]後，自身所有牌均視作[雲劍]，直到戰鬥結束",
+    "tiers": [
+      {
+        "tier": 2,
+        "sigil_value": 2,
+        "max_hp": 8,
+        "params": [],
+        "desc_cn": "[被动生效]\\n使用[云剑·探云]或[云剑·点星]后，自身所有牌均视作[云剑]，直到战斗结束",
+        "desc_en": "[Passive Effect]\\nAfter playing [Cloud Sword - Touch Sky] or [Cloud Sword - Pierce the Star], all your cards are treated as [Cloud Sword] until the end of the battle"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 2,
+        "max_hp": 12,
+        "params": [],
+        "desc_cn": "[被动生效]\\n使用[云剑·探云]或[云剑·点星]后，自身所有牌均视作[云剑]，直到战斗结束",
+        "desc_en": "[Passive Effect]\\nAfter playing [Cloud Sword - Touch Sky] or [Cloud Sword - Pierce the Star], all your cards are treated as [Cloud Sword] until the end of the battle"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 16,
+        "params": [],
+        "desc_cn": "[被动生效]\\n使用[云剑·探云]或[云剑·点星]后，自身所有牌均视作[云剑]，直到战斗结束",
+        "desc_en": "[Passive Effect]\\nAfter playing [Cloud Sword - Touch Sky] or [Cloud Sword - Pierce the Star], all your cards are treated as [Cloud Sword] until the end of the battle"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 20,
+        "params": [],
+        "desc_cn": "[被动生效]\\n使用[云剑·探云]或[云剑·点星]后，自身所有牌均视作[云剑]，直到战斗结束",
+        "desc_en": "[Passive Effect]\\nAfter playing [Cloud Sword - Touch Sky] or [Cloud Sword - Pierce the Star], all your cards are treated as [Cloud Sword] until the end of the battle"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name_cn": "伤其体",
+    "name_en": "Harm the Body",
+    "name_tw": "傷其體",
+    "desc_cn_template": "下一次攻击额外减对方{otherParams[0]}生命，且必定视作[击伤]了对手",
+    "desc_en_template": "Reduce the opponent's HP by an additional {otherParams[0]} in the next attack, and it will definitely be treated as [Injured] the opponent",
+    "desc_tw_template": "下一次攻擊額外减對方{otherParams[0]}生命，且必定視作[擊傷]了對手",
+    "tiers": [
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          2
+        ],
+        "desc_cn": "下一次攻击额外减对方2生命，且必定视作[击伤]了对手",
+        "desc_en": "Reduce the opponent's HP by an additional 2 in the next attack, and it will definitely be treated as [Injured] the opponent"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          4
+        ],
+        "desc_cn": "下一次攻击额外减对方4生命，且必定视作[击伤]了对手",
+        "desc_en": "Reduce the opponent's HP by an additional 4 in the next attack, and it will definitely be treated as [Injured] the opponent"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          6
+        ],
+        "desc_cn": "下一次攻击额外减对方6生命，且必定视作[击伤]了对手",
+        "desc_en": "Reduce the opponent's HP by an additional 6 in the next attack, and it will definitely be treated as [Injured] the opponent"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          8
+        ],
+        "desc_cn": "下一次攻击额外减对方8生命，且必定视作[击伤]了对手",
+        "desc_en": "Reduce the opponent's HP by an additional 8 in the next attack, and it will definitely be treated as [Injured] the opponent"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name_cn": "飞牙",
+    "name_en": "Flying Fang",
+    "name_tw": "飛牙",
+    "desc_cn_template": "下一张牌攻击后，返还其攻击用的[剑意]（最多{otherParams[0]}点）",
+    "desc_en_template": "After the next card attacks, refund the [Sword Intent] used for its attack (maximum {otherParams[0]} points)",
+    "desc_tw_template": "下一張牌攻擊後，返還其攻擊用的[劍意]（最多{otherParams[0]}點）",
+    "tiers": [
+      {
+        "tier": 2,
+        "sigil_value": 2,
+        "max_hp": 4,
+        "params": [
+          4
+        ],
+        "desc_cn": "下一张牌攻击后，返还其攻击用的[剑意]（最多4点）",
+        "desc_en": "After the next card attacks, refund the [Sword Intent] used for its attack (maximum 4 points)"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 2,
+        "max_hp": 5,
+        "params": [
+          5
+        ],
+        "desc_cn": "下一张牌攻击后，返还其攻击用的[剑意]（最多5点）",
+        "desc_en": "After the next card attacks, refund the [Sword Intent] used for its attack (maximum 5 points)"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 6,
+        "params": [
+          6
+        ],
+        "desc_cn": "下一张牌攻击后，返还其攻击用的[剑意]（最多6点）",
+        "desc_en": "After the next card attacks, refund the [Sword Intent] used for its attack (maximum 6 points)"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 8,
+        "params": [
+          8
+        ],
+        "desc_cn": "下一张牌攻击后，返还其攻击用的[剑意]（最多8点）",
+        "desc_en": "After the next card attacks, refund the [Sword Intent] used for its attack (maximum 8 points)"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "name_cn": "聚星力",
+    "name_en": "Gather Star Power",
+    "name_tw": "聚星力",
+    "desc_cn_template": "下一次使用[星罗棋布]或[飞星刺]后额外加{otherParams[0]}[星力]",
+    "desc_en_template": "Gain an additional {otherParams[0]} [Star Power] after playing [Dotted Around] or [Astral Fleche] next time",
+    "desc_tw_template": "下一次使用[星羅棋布]或[飛星刺]後額外加{otherParams[0]}[星力]",
+    "tiers": [
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次使用[星罗棋布]或[飞星刺]后额外加1[星力]",
+        "desc_en": "Gain an additional 1 [Star Power] after playing [Dotted Around] or [Astral Fleche] next time"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次使用[星罗棋布]或[飞星刺]后额外加1[星力]",
+        "desc_en": "Gain an additional 1 [Star Power] after playing [Dotted Around] or [Astral Fleche] next time"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次使用[星罗棋布]或[飞星刺]后额外加1[星力]",
+        "desc_en": "Gain an additional 1 [Star Power] after playing [Dotted Around] or [Astral Fleche] next time"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 8,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次使用[星罗棋布]或[飞星刺]后额外加1[星力]",
+        "desc_en": "Gain an additional 1 [Star Power] after playing [Dotted Around] or [Astral Fleche] next time"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "name_cn": "黯星伤魂",
+    "name_en": "Dark Star Soul Injury",
+    "name_tw": "黯星傷魂",
+    "desc_cn_template": "[被动生效]\\n自身所有加[星力]的效果改为向对方施加等量[内伤]",
+    "desc_en_template": "[Passive Effect]\\nEffects that increase [Star Power] are changed to apply the same amount of [Internal Injury] on the opponent",
+    "desc_tw_template": "[被動生效]\\n自身所有加[星力]的效果改爲向對方施加等量[內傷]",
+    "tiers": [
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [],
+        "desc_cn": "[被动生效]\\n自身所有加[星力]的效果改为向对方施加等量[内伤]",
+        "desc_en": "[Passive Effect]\\nEffects that increase [Star Power] are changed to apply the same amount of [Internal Injury] on the opponent"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [],
+        "desc_cn": "[被动生效]\\n自身所有加[星力]的效果改为向对方施加等量[内伤]",
+        "desc_en": "[Passive Effect]\\nEffects that increase [Star Power] are changed to apply the same amount of [Internal Injury] on the opponent"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [],
+        "desc_cn": "[被动生效]\\n自身所有加[星力]的效果改为向对方施加等量[内伤]",
+        "desc_en": "[Passive Effect]\\nEffects that increase [Star Power] are changed to apply the same amount of [Internal Injury] on the opponent"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 8,
+        "params": [],
+        "desc_cn": "[被动生效]\\n自身所有加[星力]的效果改为向对方施加等量[内伤]",
+        "desc_en": "[Passive Effect]\\nEffects that increase [Star Power] are changed to apply the same amount of [Internal Injury] on the opponent"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "name_cn": "占卦象",
+    "name_en": "Divine Hexagram",
+    "name_tw": "占卦象",
+    "desc_cn_template": "下一次加[卦象]时，多加{otherParams[0]}",
+    "desc_en_template": "Gain an additional {otherParams[0]} when adding [Hexagram] next time",
+    "desc_tw_template": "下一次加[卦象]時，多加{otherParams[0]}",
+    "tiers": [
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次加[卦象]时，多加1",
+        "desc_en": "Gain an additional 1 when adding [Hexagram] next time"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次加[卦象]时，多加1",
+        "desc_en": "Gain an additional 1 when adding [Hexagram] next time"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次加[卦象]时，多加1",
+        "desc_en": "Gain an additional 1 when adding [Hexagram] next time"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 8,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次加[卦象]时，多加1",
+        "desc_en": "Gain an additional 1 when adding [Hexagram] next time"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "name_cn": "五行灵旋",
+    "name_en": "Five Elements Spirit Spin",
+    "name_tw": "五行靈旋",
+    "desc_cn_template": "[被动生效]\\n每当重复[激活]已激活的[五行]时，向对方造成{otherParams[0]}[伤害]",
+    "desc_en_template": "[Passive Effect]\\nEvery time [Activate] is repeated on the activated [Five Elements], deal {otherParams[0]} [DMG] to the opponent",
+    "desc_tw_template": "[被動生效]\\n每當重複[激活]已激活的[五行]時，向對方造成{otherParams[0]}[傷害]",
+    "tiers": [
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          2
+        ],
+        "desc_cn": "[被动生效]\\n每当重复[激活]已激活的[五行]时，向对方造成2[伤害]",
+        "desc_en": "[Passive Effect]\\nEvery time [Activate] is repeated on the activated [Five Elements], deal 2 [DMG] to the opponent"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          2
+        ],
+        "desc_cn": "[被动生效]\\n每当重复[激活]已激活的[五行]时，向对方造成2[伤害]",
+        "desc_en": "[Passive Effect]\\nEvery time [Activate] is repeated on the activated [Five Elements], deal 2 [DMG] to the opponent"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          2
+        ],
+        "desc_cn": "[被动生效]\\n每当重复[激活]已激活的[五行]时，向对方造成2[伤害]",
+        "desc_en": "[Passive Effect]\\nEvery time [Activate] is repeated on the activated [Five Elements], deal 2 [DMG] to the opponent"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          3
+        ],
+        "desc_cn": "[被动生效]\\n每当重复[激活]已激活的[五行]时，向对方造成3[伤害]",
+        "desc_en": "[Passive Effect]\\nEvery time [Activate] is repeated on the activated [Five Elements], deal 3 [DMG] to the opponent"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "name_cn": "穿心",
+    "name_en": "Heart Pierce",
+    "name_tw": "穿心",
+    "desc_cn_template": "[被动生效]\\n使用[金灵·穿心]攻击后，返还其触发的[锋锐](最多{otherParams[0]}）",
+    "desc_en_template": "[Passive Effect]\\nAfter attacking with [Metal Spirit - Heart Pierce], refund the [Penetrate] triggered by it (maximum {otherParams[0]})",
+    "desc_tw_template": "[被動生效]\\n使用[金靈·穿心]攻擊後，返還其觸發的[鋒銳](最多{otherParams[0]}）",
+    "tiers": [
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          3
+        ],
+        "desc_cn": "[被动生效]\\n使用[金灵·穿心]攻击后，返还其触发的[锋锐](最多3）",
+        "desc_en": "[Passive Effect]\\nAfter attacking with [Metal Spirit - Heart Pierce], refund the [Penetrate] triggered by it (maximum 3)"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 3,
+        "params": [
+          6
+        ],
+        "desc_cn": "[被动生效]\\n使用[金灵·穿心]攻击后，返还其触发的[锋锐](最多6）",
+        "desc_en": "[Passive Effect]\\nAfter attacking with [Metal Spirit - Heart Pierce], refund the [Penetrate] triggered by it (maximum 6)"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          9
+        ],
+        "desc_cn": "[被动生效]\\n使用[金灵·穿心]攻击后，返还其触发的[锋锐](最多9）",
+        "desc_en": "[Passive Effect]\\nAfter attacking with [Metal Spirit - Heart Pierce], refund the [Penetrate] triggered by it (maximum 9)"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 5,
+        "params": [
+          12
+        ],
+        "desc_cn": "[被动生效]\\n使用[金灵·穿心]攻击后，返还其触发的[锋锐](最多12）",
+        "desc_en": "[Passive Effect]\\nAfter attacking with [Metal Spirit - Heart Pierce], refund the [Penetrate] triggered by it (maximum 12)"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "name_cn": "初苗",
+    "name_en": "Young Seedling",
+    "name_tw": "初苗",
+    "desc_cn_template": "下一次使用筑基期的[木灵]牌后获得{otherParams[0]}层[加攻]",
+    "desc_en_template": "Gain {otherParams[0]} stacks of [Increase ATK] after playing the Foundation Phase [Wood Spirit] card next time",
+    "desc_tw_template": "下一次使用築基期的[木靈]牌後獲得{otherParams[0]}層[加攻]",
+    "tiers": [
+      {
+        "tier": 2,
+        "sigil_value": 2,
+        "max_hp": 6,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次使用筑基期的[木灵]牌后获得1层[加攻]",
+        "desc_en": "Gain 1 stacks of [Increase ATK] after playing the Foundation Phase [Wood Spirit] card next time"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 2,
+        "max_hp": 10,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次使用筑基期的[木灵]牌后获得1层[加攻]",
+        "desc_en": "Gain 1 stacks of [Increase ATK] after playing the Foundation Phase [Wood Spirit] card next time"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 4,
+        "params": [
+          2
+        ],
+        "desc_cn": "下一次使用筑基期的[木灵]牌后获得2层[加攻]",
+        "desc_en": "Gain 2 stacks of [Increase ATK] after playing the Foundation Phase [Wood Spirit] card next time"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 8,
+        "params": [
+          2
+        ],
+        "desc_cn": "下一次使用筑基期的[木灵]牌后获得2层[加攻]",
+        "desc_en": "Gain 2 stacks of [Increase ATK] after playing the Foundation Phase [Wood Spirit] card next time"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "name_cn": "挣脱",
+    "name_en": "Break Free",
+    "name_tw": "掙脫",
+    "desc_cn_template": "本回合结束时，[虚弱]、[破绽]、[困缚]各额外减少{otherParams[0]}层",
+    "desc_en_template": "At the end of this turn, reduce [Weakened], [Flaw], and [Entangled] by an additional {otherParams[0]} stacks each",
+    "desc_tw_template": "本回合結束時，[虛弱]、[破綻]、[困縛]各額外减少{otherParams[0]}層",
+    "tiers": [
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          2
+        ],
+        "desc_cn": "本回合结束时，[虚弱]、[破绽]、[困缚]各额外减少2层",
+        "desc_en": "At the end of this turn, reduce [Weakened], [Flaw], and [Entangled] by an additional 2 stacks each"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          2
+        ],
+        "desc_cn": "本回合结束时，[虚弱]、[破绽]、[困缚]各额外减少2层",
+        "desc_en": "At the end of this turn, reduce [Weakened], [Flaw], and [Entangled] by an additional 2 stacks each"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 8,
+        "params": [
+          2
+        ],
+        "desc_cn": "本回合结束时，[虚弱]、[破绽]、[困缚]各额外减少2层",
+        "desc_en": "At the end of this turn, reduce [Weakened], [Flaw], and [Entangled] by an additional 2 stacks each"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 10,
+        "params": [
+          2
+        ],
+        "desc_cn": "本回合结束时，[虚弱]、[破绽]、[困缚]各额外减少2层",
+        "desc_en": "At the end of this turn, reduce [Weakened], [Flaw], and [Entangled] by an additional 2 stacks each"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "name_cn": "返生",
+    "name_en": "Resurrection",
+    "name_tw": "返生",
+    "desc_cn_template": "下{otherParams[0]}次使用[耗生命]的牌时，加等量生命",
+    "desc_en_template": "When playing [HP cost] cards for the next {otherParams[0]} times, gain HP equal to the amount of [HP cost]",
+    "desc_tw_template": "下{otherParams[0]}次使用[耗生命]的牌時，加等量生命",
+    "tiers": [
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          1
+        ],
+        "desc_cn": "下1次使用[耗生命]的牌时，加等量生命",
+        "desc_en": "When playing [HP cost] cards for the next 1 times, gain HP equal to the amount of [HP cost]"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          1
+        ],
+        "desc_cn": "下1次使用[耗生命]的牌时，加等量生命",
+        "desc_en": "When playing [HP cost] cards for the next 1 times, gain HP equal to the amount of [HP cost]"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          1
+        ],
+        "desc_cn": "下1次使用[耗生命]的牌时，加等量生命",
+        "desc_en": "When playing [HP cost] cards for the next 1 times, gain HP equal to the amount of [HP cost]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          2
+        ],
+        "desc_cn": "下2次使用[耗生命]的牌时，加等量生命",
+        "desc_en": "When playing [HP cost] cards for the next 2 times, gain HP equal to the amount of [HP cost]"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "name_cn": "诱敌",
+    "name_en": "Lure Enemy",
+    "name_tw": "誘敵",
+    "desc_cn_template": "下一次自身获得[负面状态]时，向对方施加{otherParams[0]}层[破绽]",
+    "desc_en_template": "When you gain a [Debuff] next time, apply {otherParams[0]} stacks of [Flaw] on the opponent",
+    "desc_tw_template": "下一次自身獲得[負面狀態]時，向對方施加{otherParams[0]}層[破綻]",
+    "tiers": [
+      {
+        "tier": 2,
+        "sigil_value": 2,
+        "max_hp": 5,
+        "params": [
+          2
+        ],
+        "desc_cn": "下一次自身获得[负面状态]时，向对方施加2层[破绽]",
+        "desc_en": "When you gain a [Debuff] next time, apply 2 stacks of [Flaw] on the opponent"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 2,
+        "max_hp": 8,
+        "params": [
+          2
+        ],
+        "desc_cn": "下一次自身获得[负面状态]时，向对方施加2层[破绽]",
+        "desc_en": "When you gain a [Debuff] next time, apply 2 stacks of [Flaw] on the opponent"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 11,
+        "params": [
+          2
+        ],
+        "desc_cn": "下一次自身获得[负面状态]时，向对方施加2层[破绽]",
+        "desc_en": "When you gain a [Debuff] next time, apply 2 stacks of [Flaw] on the opponent"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 14,
+        "params": [
+          2
+        ],
+        "desc_cn": "下一次自身获得[负面状态]时，向对方施加2层[破绽]",
+        "desc_en": "When you gain a [Debuff] next time, apply 2 stacks of [Flaw] on the opponent"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "name_cn": "淬毒",
+    "name_en": "Poison Tempering",
+    "name_tw": "淬毒",
+    "desc_cn_template": "下一次攻击后施加{otherParams[0]}层[内伤]",
+    "desc_en_template": "Apply {otherParams[0]} stacks of [Internal Injury] after the next attack",
+    "desc_tw_template": "下一次攻擊後施加{otherParams[0]}層[內傷]",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 2,
+        "max_hp": 2,
+        "params": [
+          2
+        ],
+        "desc_cn": "下一次攻击后施加2层[内伤]",
+        "desc_en": "Apply 2 stacks of [Internal Injury] after the next attack"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 2,
+        "params": [
+          3
+        ],
+        "desc_cn": "下一次攻击后施加3层[内伤]",
+        "desc_en": "Apply 3 stacks of [Internal Injury] after the next attack"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 2,
+        "params": [
+          4
+        ],
+        "desc_cn": "下一次攻击后施加4层[内伤]",
+        "desc_en": "Apply 4 stacks of [Internal Injury] after the next attack"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "name_cn": "涌神力",
+    "name_en": "Surge of Divine Power",
+    "name_tw": "涌神力",
+    "desc_cn_template": "下一次获得[加攻]时额外获得{otherParams[0]}层",
+    "desc_en_template": "Gain an additional {otherParams[0]} stack when gaining [Increase ATK] next time",
+    "desc_tw_template": "下一次獲得[加攻]時額外獲得{otherParams[0]}層",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次获得[加攻]时额外获得1层",
+        "desc_en": "Gain an additional 1 stack when gaining [Increase ATK] next time"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次获得[加攻]时额外获得1层",
+        "desc_en": "Gain an additional 1 stack when gaining [Increase ATK] next time"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次获得[加攻]时额外获得1层",
+        "desc_en": "Gain an additional 1 stack when gaining [Increase ATK] next time"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "name_cn": "卸劲",
+    "name_en": "Dissipate Force",
+    "name_tw": "卸勁",
+    "desc_cn_template": "移除对方的[加攻]和[护体]各{otherParams[0]}层",
+    "desc_en_template": "Remove {otherParams[0]} stack of the opponent's [Increase ATK] and [Guard Up]",
+    "desc_tw_template": "移除對方的[加攻]和[護體]各{otherParams[0]}層",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          1
+        ],
+        "desc_cn": "移除对方的[加攻]和[护体]各1层",
+        "desc_en": "Remove 1 stack of the opponent's [Increase ATK] and [Guard Up]"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          1
+        ],
+        "desc_cn": "移除对方的[加攻]和[护体]各1层",
+        "desc_en": "Remove 1 stack of the opponent's [Increase ATK] and [Guard Up]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 8,
+        "params": [
+          1
+        ],
+        "desc_cn": "移除对方的[加攻]和[护体]各1层",
+        "desc_en": "Remove 1 stack of the opponent's [Increase ATK] and [Guard Up]"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "name_cn": "速度",
+    "name_en": "Speed",
+    "name_tw": "速度",
+    "desc_cn_template": "[被动生效]\\n[速度]+{otherParams[0]}",
+    "desc_en_template": "[Passive Effect]\\n[Speed] + {otherParams[0]}",
+    "desc_tw_template": "[被動生效]\\n[速度]+{otherParams[0]}",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 4,
+        "params": [
+          3
+        ],
+        "desc_cn": "[被动生效]\\n[速度]+3",
+        "desc_en": "[Passive Effect]\\n[Speed] + 3"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 4,
+        "params": [
+          4
+        ],
+        "desc_cn": "[被动生效]\\n[速度]+4",
+        "desc_en": "[Passive Effect]\\n[Speed] + 4"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "name_cn": "无妄",
+    "name_en": "Necessity",
+    "name_tw": "無妄",
+    "desc_cn_template": "[被动生效]\\n通过[云剑·无妄]获得[无视防御]次数时还会获得等量[加攻]",
+    "desc_en_template": "[Passive Effect]\\nWhen gaining [Ignore DEF] via [Cloud Sword - Necessity], also gain the same number of [Increase ATK]",
+    "desc_tw_template": "[被動生效]\\n通過[雲劍·無妄]獲得[無視防禦]次數時還會獲得等量[加攻]",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 2,
+        "max_hp": 10,
+        "params": [
+          1
+        ],
+        "desc_cn": "[被动生效]\\n通过[云剑·无妄]获得[无视防御]次数时还会获得等量[加攻]",
+        "desc_en": "[Passive Effect]\\nWhen gaining [Ignore DEF] via [Cloud Sword - Necessity], also gain the same number of [Increase ATK]"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 14,
+        "params": [
+          1
+        ],
+        "desc_cn": "[被动生效]\\n通过[云剑·无妄]获得[无视防御]次数时还会获得等量[加攻]",
+        "desc_en": "[Passive Effect]\\nWhen gaining [Ignore DEF] via [Cloud Sword - Necessity], also gain the same number of [Increase ATK]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 18,
+        "params": [
+          1
+        ],
+        "desc_cn": "[被动生效]\\n通过[云剑·无妄]获得[无视防御]次数时还会获得等量[加攻]",
+        "desc_en": "[Passive Effect]\\nWhen gaining [Ignore DEF] via [Cloud Sword - Necessity], also gain the same number of [Increase ATK]"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "name_cn": "狂念",
+    "name_en": "Madness",
+    "name_tw": "狂念",
+    "desc_cn_template": "下一次使用的牌临时视作[狂剑]",
+    "desc_en_template": "The next card played is treated as [Unrestrained Sword]",
+    "desc_tw_template": "下一次使用的牌臨時視作[狂劍]",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [],
+        "desc_cn": "下一次使用的牌临时视作[狂剑]",
+        "desc_en": "The next card played is treated as [Unrestrained Sword]"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [],
+        "desc_cn": "下一次使用的牌临时视作[狂剑]",
+        "desc_en": "The next card played is treated as [Unrestrained Sword]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 8,
+        "params": [],
+        "desc_cn": "下一次使用的牌临时视作[狂剑]",
+        "desc_en": "The next card played is treated as [Unrestrained Sword]"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "name_cn": "凝剑意",
+    "name_en": "Condense Sword Intent",
+    "name_tw": "凝劍意",
+    "desc_cn_template": "下一次加[剑意]时多加{otherParams[0]}",
+    "desc_en_template": "Gain an additional {otherParams[0]} when increasing [Sword Intent] next time",
+    "desc_tw_template": "下一次加[劍意]時多加{otherParams[0]}",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 2,
+        "max_hp": 10,
+        "params": [
+          2
+        ],
+        "desc_cn": "下一次加[剑意]时多加2",
+        "desc_en": "Gain an additional 2 when increasing [Sword Intent] next time"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 5,
+        "params": [
+          3
+        ],
+        "desc_cn": "下一次加[剑意]时多加3",
+        "desc_en": "Gain an additional 3 when increasing [Sword Intent] next time"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": null,
+        "params": [
+          4
+        ],
+        "desc_cn": "下一次加[剑意]时多加4",
+        "desc_en": "Gain an additional 4 when increasing [Sword Intent] next time"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "name_cn": "鲲鹏",
+    "name_en": "Kunpeng",
+    "name_tw": "鯤鵬",
+    "desc_cn_template": "[被动生效]\\n[巨鹏灵剑]和[巨鲲灵剑]多{otherParams[0]}攻，且获得[碎防]",
+    "desc_en_template": "[Passive Effect]\\n[Giant Roc Spirit Sword] and [Giant Kun Spirit Sword] deal {otherParams[0]} more ATK and gain [Smash DEF]",
+    "desc_tw_template": "[被動生效]\\n[巨鵬靈劍]和[巨鯤靈劍]多{otherParams[0]}攻，且獲得[碎防]",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 2,
+        "max_hp": 3,
+        "params": [
+          5
+        ],
+        "desc_cn": "[被动生效]\\n[巨鹏灵剑]和[巨鲲灵剑]多5攻，且获得[碎防]",
+        "desc_en": "[Passive Effect]\\n[Giant Roc Spirit Sword] and [Giant Kun Spirit Sword] deal 5 more ATK and gain [Smash DEF]"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 4,
+        "params": [
+          6
+        ],
+        "desc_cn": "[被动生效]\\n[巨鹏灵剑]和[巨鲲灵剑]多6攻，且获得[碎防]",
+        "desc_en": "[Passive Effect]\\n[Giant Roc Spirit Sword] and [Giant Kun Spirit Sword] deal 6 more ATK and gain [Smash DEF]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 5,
+        "params": [
+          7
+        ],
+        "desc_cn": "[被动生效]\\n[巨鹏灵剑]和[巨鲲灵剑]多7攻，且获得[碎防]",
+        "desc_en": "[Passive Effect]\\n[Giant Roc Spirit Sword] and [Giant Kun Spirit Sword] deal 7 more ATK and gain [Smash DEF]"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "name_cn": "化星灵",
+    "name_en": "Transform Star Spirit",
+    "name_tw": "化星靈",
+    "desc_cn_template": "[被动生效]\\n使用卡牌前若[灵气]不足，则耗1[星力]加2[灵气]",
+    "desc_en_template": "[Passive Effect]\\nIf [Qi] is insufficient before playing a card, consume 1 [Star Power] to gain 2 [Qi]",
+    "desc_tw_template": "[被動生效]\\n使用卡牌前若[靈氣]不足，則耗1[星力]加2[靈氣]",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [],
+        "desc_cn": "[被动生效]\\n使用卡牌前若[灵气]不足，则耗1[星力]加2[灵气]",
+        "desc_en": "[Passive Effect]\\nIf [Qi] is insufficient before playing a card, consume 1 [Star Power] to gain 2 [Qi]"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 8,
+        "params": [],
+        "desc_cn": "[被动生效]\\n使用卡牌前若[灵气]不足，则耗1[星力]加2[灵气]",
+        "desc_en": "[Passive Effect]\\nIf [Qi] is insufficient before playing a card, consume 1 [Star Power] to gain 2 [Qi]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 10,
+        "params": [],
+        "desc_cn": "[被动生效]\\n使用卡牌前若[灵气]不足，则耗1[星力]加2[灵气]",
+        "desc_en": "[Passive Effect]\\nIf [Qi] is insufficient before playing a card, consume 1 [Star Power] to gain 2 [Qi]"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "name_cn": "捕蝉",
+    "name_en": "Catch Cicada",
+    "name_tw": "捕蟬",
+    "desc_cn_template": "[被动生效]\\n每次使用含[后招]的牌后加{otherParams[0]}生命及上限；[螳螂捕蝉]每[击伤]对方1生命额外加1生命及上限",
+    "desc_en_template": "[Passive Effect]\\nAfter playing a card with [Post Action], increase HP and Max HP by {otherParams[0]}; When playing [Hunter Becomes Preyer], gain +1 HP and Max HP for each point of damage it deals to the opponent.",
+    "desc_tw_template": "[被動生效]\\n每次使用含[後招]的牌後加{otherParams[0]}生命及上限；[螳螂捕蟬]每[擊傷]對方1生命額外加1生命及上限",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 3,
+        "max_hp": 2,
+        "params": [
+          2
+        ],
+        "desc_cn": "[被动生效]\\n每次使用含[后招]的牌后加2生命及上限；[螳螂捕蝉]每[击伤]对方1生命额外加1生命及上限",
+        "desc_en": "[Passive Effect]\\nAfter playing a card with [Post Action], increase HP and Max HP by 2; When playing [Hunter Becomes Preyer], gain +1 HP and Max HP for each point of damage it deals to the opponent."
+      },
+      {
+        "tier": 4,
+        "sigil_value": 3,
+        "max_hp": 2,
+        "params": [
+          3
+        ],
+        "desc_cn": "[被动生效]\\n每次使用含[后招]的牌后加3生命及上限；[螳螂捕蝉]每[击伤]对方1生命额外加1生命及上限",
+        "desc_en": "[Passive Effect]\\nAfter playing a card with [Post Action], increase HP and Max HP by 3; When playing [Hunter Becomes Preyer], gain +1 HP and Max HP for each point of damage it deals to the opponent."
+      },
+      {
+        "tier": 5,
+        "sigil_value": 3,
+        "max_hp": 2,
+        "params": [
+          4
+        ],
+        "desc_cn": "[被动生效]\\n每次使用含[后招]的牌后加4生命及上限；[螳螂捕蝉]每[击伤]对方1生命额外加1生命及上限",
+        "desc_en": "[Passive Effect]\\nAfter playing a card with [Post Action], increase HP and Max HP by 4; When playing [Hunter Becomes Preyer], gain +1 HP and Max HP for each point of damage it deals to the opponent."
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "name_cn": "两仪",
+    "name_en": "Yin-Yang",
+    "name_tw": "兩儀",
+    "desc_cn_template": "[被动生效]\\n使用[两仪阵]加[灵气]时还会加等量[卦象]",
+    "desc_en_template": "[Passive Effect]\\nWhen gaining [Qi] by playing [Yin Yang Formation], also gain the same number of [Hexagram]",
+    "desc_tw_template": "[被動生效]\\n使用[兩儀陣]加[靈氣]時還會加等量[卦象]",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 2,
+        "max_hp": 4,
+        "params": [],
+        "desc_cn": "[被动生效]\\n使用[两仪阵]加[灵气]时还会加等量[卦象]",
+        "desc_en": "[Passive Effect]\\nWhen gaining [Qi] by playing [Yin Yang Formation], also gain the same number of [Hexagram]"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 8,
+        "params": [],
+        "desc_cn": "[被动生效]\\n使用[两仪阵]加[灵气]时还会加等量[卦象]",
+        "desc_en": "[Passive Effect]\\nWhen gaining [Qi] by playing [Yin Yang Formation], also gain the same number of [Hexagram]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 12,
+        "params": [],
+        "desc_cn": "[被动生效]\\n使用[两仪阵]加[灵气]时还会加等量[卦象]",
+        "desc_en": "[Passive Effect]\\nWhen gaining [Qi] by playing [Yin Yang Formation], also gain the same number of [Hexagram]"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "name_cn": "惊雷破",
+    "name_en": "Thunder Break",
+    "name_tw": "驚雷破",
+    "desc_cn_template": "下一次使用[雷]牌攻击前向对方施加{otherParams[0]}层[外伤]，且攻击附加[碎防]",
+    "desc_en_template": "When attack with a [Thunder] card next time, apply {otherParams[0]} [Wound] on the opponent, and the ATK gains [Smash DEF]",
+    "desc_tw_template": "下一次使用[雷]牌攻擊前向對方施加{otherParams[0]}層[外傷]，且攻擊附加[碎防]",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次使用[雷]牌攻击前向对方施加1层[外伤]，且攻击附加[碎防]",
+        "desc_en": "When attack with a [Thunder] card next time, apply 1 [Wound] on the opponent, and the ATK gains [Smash DEF]"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次使用[雷]牌攻击前向对方施加1层[外伤]，且攻击附加[碎防]",
+        "desc_en": "When attack with a [Thunder] card next time, apply 1 [Wound] on the opponent, and the ATK gains [Smash DEF]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          1
+        ],
+        "desc_cn": "下一次使用[雷]牌攻击前向对方施加1层[外伤]，且攻击附加[碎防]",
+        "desc_en": "When attack with a [Thunder] card next time, apply 1 [Wound] on the opponent, and the ATK gains [Smash DEF]"
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "name_cn": "土之固",
+    "name_en": "Earth's Firmness",
+    "name_tw": "土之固",
+    "desc_cn_template": "下一次使用[土灵]牌时加{otherParams[0]}[防]",
+    "desc_en_template": "Gain {otherParams[0]} [DEF] when playing an [Earth Spirit] card next time",
+    "desc_tw_template": "下一次使用[土靈]牌時加{otherParams[0]}[防]",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          6
+        ],
+        "desc_cn": "下一次使用[土灵]牌时加6[防]",
+        "desc_en": "Gain 6 [DEF] when playing an [Earth Spirit] card next time"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          8
+        ],
+        "desc_cn": "下一次使用[土灵]牌时加8[防]",
+        "desc_en": "Gain 8 [DEF] when playing an [Earth Spirit] card next time"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          10
+        ],
+        "desc_cn": "下一次使用[土灵]牌时加10[防]",
+        "desc_en": "Gain 10 [DEF] when playing an [Earth Spirit] card next time"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "name_cn": "金之锐",
+    "name_en": "Metal's Sharpness",
+    "name_tw": "金之銳",
+    "desc_cn_template": "下一次使用[金灵]牌时加{otherParams[0]}[锋锐]",
+    "desc_en_template": "Gain {otherParams[0]} [Penetrate] when playing a [Metal Spirit] card next time",
+    "desc_tw_template": "下一次使用[金靈]牌時加{otherParams[0]}[鋒銳]",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          2
+        ],
+        "desc_cn": "下一次使用[金灵]牌时加2[锋锐]",
+        "desc_en": "Gain 2 [Penetrate] when playing a [Metal Spirit] card next time"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          3
+        ],
+        "desc_cn": "下一次使用[金灵]牌时加3[锋锐]",
+        "desc_en": "Gain 3 [Penetrate] when playing a [Metal Spirit] card next time"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          4
+        ],
+        "desc_cn": "下一次使用[金灵]牌时加4[锋锐]",
+        "desc_en": "Gain 4 [Penetrate] when playing a [Metal Spirit] card next time"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "name_cn": "火之炽",
+    "name_en": "Fire's Blaze",
+    "name_tw": "火之熾",
+    "desc_cn_template": "下一次使用[火灵]牌时减对方{otherParams[0]}生命及上限",
+    "desc_en_template": "Reduce the opponent's HP and Max HP by {otherParams[0]} when playing a [Fire Spirit] card next time",
+    "desc_tw_template": "下一次使用[火靈]牌時减對方{otherParams[0]}生命及上限",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          6
+        ],
+        "desc_cn": "下一次使用[火灵]牌时减对方6生命及上限",
+        "desc_en": "Reduce the opponent's HP and Max HP by 6 when playing a [Fire Spirit] card next time"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          8
+        ],
+        "desc_cn": "下一次使用[火灵]牌时减对方8生命及上限",
+        "desc_en": "Reduce the opponent's HP and Max HP by 8 when playing a [Fire Spirit] card next time"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          10
+        ],
+        "desc_cn": "下一次使用[火灵]牌时减对方10生命及上限",
+        "desc_en": "Reduce the opponent's HP and Max HP by 10 when playing a [Fire Spirit] card next time"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "name_cn": "汹涌",
+    "name_en": "Turbulence",
+    "name_tw": "汹涌",
+    "desc_cn_template": "下一次使用[水灵·汹涌]时额外攻击1次",
+    "desc_en_template": "Perform an additional attack when playing [Water Spirit - Turbulent] next time",
+    "desc_tw_template": "下一次使用[水靈·汹涌]時額外攻擊1次",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 2,
+        "max_hp": 4,
+        "params": [],
+        "desc_cn": "下一次使用[水灵·汹涌]时额外攻击1次",
+        "desc_en": "Perform an additional attack when playing [Water Spirit - Turbulent] next time"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 8,
+        "params": [],
+        "desc_cn": "下一次使用[水灵·汹涌]时额外攻击1次",
+        "desc_en": "Perform an additional attack when playing [Water Spirit - Turbulent] next time"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 12,
+        "params": [],
+        "desc_cn": "下一次使用[水灵·汹涌]时额外攻击1次",
+        "desc_en": "Perform an additional attack when playing [Water Spirit - Turbulent] next time"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "name_cn": "浑天克",
+    "name_en": "Cosmos Overcoming",
+    "name_tw": "渾天克",
+    "desc_cn_template": "下一次[激活]任意[五行]时，额外[激活]其[五行克制]的[五行]",
+    "desc_en_template": "When [Activating] any [Five Elements] next time, additionally [Activate] the [Five Elements] that correspond to the [Overcoming Interaction of Five Elements] ",
+    "desc_tw_template": "下一次[激活]任意[五行]時，額外[激活]其[五行克制]的[五行]",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 2,
+        "max_hp": 12,
+        "params": [],
+        "desc_cn": "下一次[激活]任意[五行]时，额外[激活]其[五行克制]的[五行]",
+        "desc_en": "When [Activating] any [Five Elements] next time, additionally [Activate] the [Five Elements] that correspond to the [Overcoming Interaction of Five Elements] "
+      },
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 16,
+        "params": [],
+        "desc_cn": "下一次[激活]任意[五行]时，额外[激活]其[五行克制]的[五行]",
+        "desc_en": "When [Activating] any [Five Elements] next time, additionally [Activate] the [Five Elements] that correspond to the [Overcoming Interaction of Five Elements] "
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 20,
+        "params": [],
+        "desc_cn": "下一次[激活]任意[五行]时，额外[激活]其[五行克制]的[五行]",
+        "desc_en": "When [Activating] any [Five Elements] next time, additionally [Activate] the [Five Elements] that correspond to the [Overcoming Interaction of Five Elements] "
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "name_cn": "崩拳劲",
+    "name_en": "Crash Fist Power",
+    "name_tw": "崩拳勁",
+    "desc_cn_template": "[被动生效]\\n自身[崩拳]多{otherParams[0]}攻",
+    "desc_en_template": "[Passive Effect]\\nYour [Crash Fist] deals {otherParams[0]} more ATK",
+    "desc_tw_template": "[被動生效]\\n自身[崩拳]多{otherParams[0]}攻",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 1,
+        "params": [
+          1
+        ],
+        "desc_cn": "[被动生效]\\n自身[崩拳]多1攻",
+        "desc_en": "[Passive Effect]\\nYour [Crash Fist] deals 1 more ATK"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 3,
+        "params": [
+          1
+        ],
+        "desc_cn": "[被动生效]\\n自身[崩拳]多1攻",
+        "desc_en": "[Passive Effect]\\nYour [Crash Fist] deals 1 more ATK"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 5,
+        "params": [
+          1
+        ],
+        "desc_cn": "[被动生效]\\n自身[崩拳]多1攻",
+        "desc_en": "[Passive Effect]\\nYour [Crash Fist] deals 1 more ATK"
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "name_cn": "破限",
+    "name_en": "Break Limit",
+    "name_tw": "破限",
+    "desc_cn_template": "[被动生效]\\n[探马掌]加防上限加{otherParams[0]}，[迎风掌]的攻上限加{otherParams[1]}",
+    "desc_en_template": "[Passive Effect]\\nThe maximum DEF increase limit of [Detect-Horse Palms] is increased by {otherParams[0]}, and the maximum ATK increase limit of [Windward Palms] is increased by {otherParams[1]}",
+    "desc_tw_template": "[被動生效]\\n[探馬掌]加防上限加{otherParams[0]}，[迎風掌]的攻上限加{otherParams[1]}",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          4,
+          2
+        ],
+        "desc_cn": "[被动生效]\\n[探马掌]加防上限加4，[迎风掌]的攻上限加2",
+        "desc_en": "[Passive Effect]\\nThe maximum DEF increase limit of [Detect-Horse Palms] is increased by 4, and the maximum ATK increase limit of [Windward Palms] is increased by 2"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          6,
+          3
+        ],
+        "desc_cn": "[被动生效]\\n[探马掌]加防上限加6，[迎风掌]的攻上限加3",
+        "desc_en": "[Passive Effect]\\nThe maximum DEF increase limit of [Detect-Horse Palms] is increased by 6, and the maximum ATK increase limit of [Windward Palms] is increased by 3"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 8,
+        "params": [
+          8,
+          4
+        ],
+        "desc_cn": "[被动生效]\\n[探马掌]加防上限加8，[迎风掌]的攻上限加4",
+        "desc_en": "[Passive Effect]\\nThe maximum DEF increase limit of [Detect-Horse Palms] is increased by 8, and the maximum ATK increase limit of [Windward Palms] is increased by 4"
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "name_cn": "悬气势",
+    "name_en": "Suspend Momentum",
+    "name_tw": "懸氣勢",
+    "desc_cn_template": "下{otherParams[0]}次攻击时先加1[气势]",
+    "desc_en_template": "Add 1 [Force] first during your next {otherParams[0]} attacks",
+    "desc_tw_template": "下{otherParams[0]}次攻擊時先加1[氣勢]",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 3,
+        "params": [
+          2
+        ],
+        "desc_cn": "下2次攻击时先加1[气势]",
+        "desc_en": "Add 1 [Force] first during your next 2 attacks"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 5,
+        "params": [
+          2
+        ],
+        "desc_cn": "下2次攻击时先加1[气势]",
+        "desc_en": "Add 1 [Force] first during your next 2 attacks"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 7,
+        "params": [
+          2
+        ],
+        "desc_cn": "下2次攻击时先加1[气势]",
+        "desc_en": "Add 1 [Force] first during your next 2 attacks"
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "name_cn": "坚体魄",
+    "name_en": "Solid Physique",
+    "name_tw": "堅體魄",
+    "desc_cn_template": "[体魄]+{otherParams[0]}，每有{otherParams[1]}[体魄]就加1[防]",
+    "desc_en_template": "[Physique] + {otherParams[0]}; gain 1 [DEF] for every {otherParams[1]} [Physique]",
+    "desc_tw_template": "[體魄]+{otherParams[0]}，每有{otherParams[1]}[體魄]就加1[防]",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 2,
+        "max_hp": 4,
+        "params": [
+          1,
+          4
+        ],
+        "desc_cn": "[体魄]+1，每有4[体魄]就加1[防]",
+        "desc_en": "[Physique] + 1; gain 1 [DEF] for every 4 [Physique]"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 4,
+        "params": [
+          2,
+          4
+        ],
+        "desc_cn": "[体魄]+2，每有4[体魄]就加1[防]",
+        "desc_en": "[Physique] + 2; gain 1 [DEF] for every 4 [Physique]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 4,
+        "params": [
+          3,
+          4
+        ],
+        "desc_cn": "[体魄]+3，每有4[体魄]就加1[防]",
+        "desc_en": "[Physique] + 3; gain 1 [DEF] for every 4 [Physique]"
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "name_cn": "辟邪",
+    "name_en": "Hexproof",
+    "name_tw": "辟邪",
+    "desc_cn_template": "获得{otherParams[0]}层[辟邪]",
+    "desc_en_template": "Gain {otherParams[0]} [Hexproof]",
+    "desc_tw_template": "獲得{otherParams[0]}層[辟邪]",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          2
+        ],
+        "desc_cn": "获得2层[辟邪]",
+        "desc_en": "Gain 2 [Hexproof]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          3
+        ],
+        "desc_cn": "获得3层[辟邪]",
+        "desc_en": "Gain 3 [Hexproof]"
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "name_cn": "刻印强化",
+    "name_en": "Sigil Enhancement",
+    "name_tw": "刻印强化",
+    "desc_cn_template": "[被动生效]\\n战斗开始时后一格的[刻印]永久提升1个境界（最高升至元婴期）",
+    "desc_en_template": "[Passive Effect]\\nAt the start of the battle, the [Sigil] in the next slot permanently increases by 1 Phase (maximum up to Incarnation Phase)",
+    "desc_tw_template": "[被動生效]\\n戰鬥開始時後一格的[刻印]永久提升1個境界（最高升至元嬰期）",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [],
+        "desc_cn": "[被动生效]\\n战斗开始时后一格的[刻印]永久提升1个境界（最高升至元婴期）",
+        "desc_en": "[Passive Effect]\\nAt the start of the battle, the [Sigil] in the next slot permanently increases by 1 Phase (maximum up to Incarnation Phase)"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 8,
+        "params": [],
+        "desc_cn": "[被动生效]\\n战斗开始时后一格的[刻印]永久提升1个境界（最高升至元婴期）",
+        "desc_en": "[Passive Effect]\\nAt the start of the battle, the [Sigil] in the next slot permanently increases by 1 Phase (maximum up to Incarnation Phase)"
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "name_cn": "变换",
+    "name_en": "Exchange",
+    "name_tw": "變換",
+    "desc_cn_template": "[被动生效]\\n战斗结束后换牌机会+{otherParams[0]}，销毁此刻印",
+    "desc_en_template": "[Passive Effect]\\nAfter the battle ends, Exchange Card Chance + {otherParams[0]}, and destroy this Sigil.",
+    "desc_tw_template": "[被動生效]\\n戰鬥結束後換牌機會+{otherParams[0]}，銷毀此刻印",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          3
+        ],
+        "desc_cn": "[被动生效]\\n战斗结束后换牌机会+3，销毁此刻印",
+        "desc_en": "[Passive Effect]\\nAfter the battle ends, Exchange Card Chance + 3, and destroy this Sigil."
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          4
+        ],
+        "desc_cn": "[被动生效]\\n战斗结束后换牌机会+4，销毁此刻印",
+        "desc_en": "[Passive Effect]\\nAfter the battle ends, Exchange Card Chance + 4, and destroy this Sigil."
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "name_cn": "不动",
+    "name_en": "Immovable",
+    "name_tw": "不動",
+    "desc_cn_template": "[被动生效]\\n自身每回合结束时，若该回合没有触发[再次行动]则加{otherParams[0]}[防]",
+    "desc_en_template": "[Passive Effect]\\nAt the end of each of your turns, if [Chase] was not triggered this turn, gain {otherParams[0]} [DEF]",
+    "desc_tw_template": "[被動生效]\\n自身每回合結束時，若該回合沒有觸發[再次行動]則加{otherParams[0]}[防]",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          3
+        ],
+        "desc_cn": "[被动生效]\\n自身每回合结束时，若该回合没有触发[再次行动]则加3[防]",
+        "desc_en": "[Passive Effect]\\nAt the end of each of your turns, if [Chase] was not triggered this turn, gain 3 [DEF]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          3
+        ],
+        "desc_cn": "[被动生效]\\n自身每回合结束时，若该回合没有触发[再次行动]则加3[防]",
+        "desc_en": "[Passive Effect]\\nAt the end of each of your turns, if [Chase] was not triggered this turn, gain 3 [DEF]"
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "name_cn": "承载",
+    "name_en": "Bear",
+    "name_tw": "承載",
+    "desc_cn_template": "[被动生效]\\n卡组中可多放1张[持续]或[消耗]牌",
+    "desc_en_template": "[Passive Effect]\\nYou can add 1 more [Continuous] or [Consumption] card to your deck",
+    "desc_tw_template": "[被動生效]\\n卡組中可多放1張[持續]或[消耗]牌",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 16,
+        "params": [],
+        "desc_cn": "[被动生效]\\n卡组中可多放1张[持续]或[消耗]牌",
+        "desc_en": "[Passive Effect]\\nYou can add 1 more [Continuous] or [Consumption] card to your deck"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 20,
+        "params": [],
+        "desc_cn": "[被动生效]\\n卡组中可多放1张[持续]或[消耗]牌",
+        "desc_en": "[Passive Effect]\\nYou can add 1 more [Continuous] or [Consumption] card to your deck"
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "name_cn": "百鸟",
+    "name_en": "Hundred Birds",
+    "name_tw": "百鳥",
+    "desc_cn_template": "[被动生效]\\n[灵剑]牌的[灵气]消耗减1",
+    "desc_en_template": "[Passive Effect]\\nReduce the [Qi] cost of [Spirit Sword] cards by 1",
+    "desc_tw_template": "[被動生效]\\n[靈劍]牌的[靈氣]消耗减1",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [],
+        "desc_cn": "[被动生效]\\n[灵剑]牌的[灵气]消耗减1",
+        "desc_en": "[Passive Effect]\\nReduce the [Qi] cost of [Spirit Sword] cards by 1"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [],
+        "desc_cn": "[被动生效]\\n[灵剑]牌的[灵气]消耗减1",
+        "desc_en": "[Passive Effect]\\nReduce the [Qi] cost of [Spirit Sword] cards by 1"
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "name_cn": "柔心",
+    "name_en": "Soft Heart",
+    "name_tw": "柔心",
+    "desc_cn_template": "下一次使用[云剑·柔心]后加{otherParams[0]}生命上限，并[再次行动]",
+    "desc_en_template": "After playing [Cloud Sword - Softheart] next time, increase Max HP by {otherParams[0]} and trigger [Chase]",
+    "desc_tw_template": "下一次使用[雲劍·柔心]後加{otherParams[0]}生命上限，幷[再次行動]",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 3,
+        "max_hp": 8,
+        "params": [
+          20
+        ],
+        "desc_cn": "下一次使用[云剑·柔心]后加20生命上限，并[再次行动]",
+        "desc_en": "After playing [Cloud Sword - Softheart] next time, increase Max HP by 20 and trigger [Chase]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 3,
+        "max_hp": 14,
+        "params": [
+          30
+        ],
+        "desc_cn": "下一次使用[云剑·柔心]后加30生命上限，并[再次行动]",
+        "desc_en": "After playing [Cloud Sword - Softheart] next time, increase Max HP by 30 and trigger [Chase]"
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "name_cn": "闪风",
+    "name_en": "Flash Wind",
+    "name_tw": "閃風",
+    "desc_cn_template": "[被动生效]\\n每当使用[云剑·闪风]后，该回合可多触发1次[再次行动]（每回合限生效1次）",
+    "desc_en_template": "[Passive Effect]\\nAfter playing [Cloud Sword - Flash Wind] each time, you can trigger [Chase] one more time this turn (can only take effect once per turn)",
+    "desc_tw_template": "[被動生效]\\n每當使用[雲劍·閃風]後，該回合可多觸發1次[再次行動]（每回合限生效1次）",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 3,
+        "max_hp": 8,
+        "params": [],
+        "desc_cn": "[被动生效]\\n每当使用[云剑·闪风]后，该回合可多触发1次[再次行动]（每回合限生效1次）",
+        "desc_en": "[Passive Effect]\\nAfter playing [Cloud Sword - Flash Wind] each time, you can trigger [Chase] one more time this turn (can only take effect once per turn)"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 3,
+        "max_hp": 14,
+        "params": [],
+        "desc_cn": "[被动生效]\\n每当使用[云剑·闪风]后，该回合可多触发1次[再次行动]（每回合限生效1次）",
+        "desc_en": "[Passive Effect]\\nAfter playing [Cloud Sword - Flash Wind] each time, you can trigger [Chase] one more time this turn (can only take effect once per turn)"
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "name_cn": "水中月",
+    "name_en": "Moon in Water",
+    "name_tw": "水中月",
+    "desc_cn_template": "[防]+{otherParams[0]}，获得{otherParams[1]}回合[水月剑阵]效果（回合开始时防不减半）",
+    "desc_en_template": "[DEF] + {otherParams[0]}; gain the effect of [Moon Water Sword Formation] for {otherParams[1]} turns (DEF is not halved at the start of the turn)",
+    "desc_tw_template": "[防]+{otherParams[0]}，獲得{otherParams[1]}回合[水月劍陣]效果（回合開始時防不减半）",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 8,
+        "params": [
+          6,
+          2
+        ],
+        "desc_cn": "[防]+6，获得2回合[水月剑阵]效果（回合开始时防不减半）",
+        "desc_en": "[DEF] + 6; gain the effect of [Moon Water Sword Formation] for 2 turns (DEF is not halved at the start of the turn)"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 8,
+        "params": [
+          8,
+          3
+        ],
+        "desc_cn": "[防]+8，获得3回合[水月剑阵]效果（回合开始时防不减半）",
+        "desc_en": "[DEF] + 8; gain the effect of [Moon Water Sword Formation] for 3 turns (DEF is not halved at the start of the turn)"
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "name_cn": "意守阵",
+    "name_en": "Concentrate on Formation",
+    "name_tw": "意守陣",
+    "desc_cn_template": "下一次使用[剑阵]牌时，每有1点[剑意]加{otherParams[0]}[防]",
+    "desc_en_template": "When playing a [Sword Formation] card next time, gain {otherParams[0]} [DEF] for every 1 [Sword Intent]",
+    "desc_tw_template": "下一次使用[劍陣]牌時，每有1點[劍意]加{otherParams[0]}[防]",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 8,
+        "params": [
+          2
+        ],
+        "desc_cn": "下一次使用[剑阵]牌时，每有1点[剑意]加2[防]",
+        "desc_en": "When playing a [Sword Formation] card next time, gain 2 [DEF] for every 1 [Sword Intent]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 10,
+        "params": [
+          2
+        ],
+        "desc_cn": "下一次使用[剑阵]牌时，每有1点[剑意]加2[防]",
+        "desc_en": "When playing a [Sword Formation] card next time, gain 2 [DEF] for every 1 [Sword Intent]"
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "name_cn": "逢春",
+    "name_en": "Spring Return",
+    "name_tw": "逢春",
+    "desc_cn_template": "下一次使用[枯木逢春]或卡组第8格的牌时，每剩余1[灵气]就加{otherParams[0]}生命及上限",
+    "desc_en_template": "When playing [Revitalized] or the card in the 8th slot of your deck next time, increase HP and Max HP by {otherParams[0]} for every remaining 1 [Qi]",
+    "desc_tw_template": "下一次使用[枯木逢春]或卡組第8格的牌時，每剩餘1[靈氣]就加{otherParams[0]}生命及上限",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 6,
+        "params": [
+          3
+        ],
+        "desc_cn": "下一次使用[枯木逢春]或卡组第8格的牌时，每剩余1[灵气]就加3生命及上限",
+        "desc_en": "When playing [Revitalized] or the card in the 8th slot of your deck next time, increase HP and Max HP by 3 for every remaining 1 [Qi]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 10,
+        "params": [
+          3
+        ],
+        "desc_cn": "下一次使用[枯木逢春]或卡组第8格的牌时，每剩余1[灵气]就加3生命及上限",
+        "desc_en": "When playing [Revitalized] or the card in the 8th slot of your deck next time, increase HP and Max HP by 3 for every remaining 1 [Qi]"
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "name_cn": "无情",
+    "name_en": "Ruthless",
+    "name_tw": "無情",
+    "desc_cn_template": "[被动生效]\\n[流水无情]不再耗灵气，且对方每有1层[内伤]多1攻",
+    "desc_en_template": "[Passive Effect]\\n[Ruthless Water] no longer consumes Qi, and deals 1 more ATK for every 1 stack of [Internal Injury] the opponent has",
+    "desc_tw_template": "[被動生效]\\n[流水無情]不再耗靈氣，且對方每有1層[內傷]多1攻",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 7,
+        "params": [
+          1
+        ],
+        "desc_cn": "[被动生效]\\n[流水无情]不再耗灵气，且对方每有1层[内伤]多1攻",
+        "desc_en": "[Passive Effect]\\n[Ruthless Water] no longer consumes Qi, and deals 1 more ATK for every 1 stack of [Internal Injury] the opponent has"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 9,
+        "params": [
+          1
+        ],
+        "desc_cn": "[被动生效]\\n[流水无情]不再耗灵气，且对方每有1层[内伤]多1攻",
+        "desc_en": "[Passive Effect]\\n[Ruthless Water] no longer consumes Qi, and deals 1 more ATK for every 1 stack of [Internal Injury] the opponent has"
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "name_cn": "祭雷",
+    "name_en": "Sacrifice to Thunder",
+    "name_tw": "祭雷",
+    "desc_cn_template": "下一次使用[雷]牌时自身减{otherParams[0]}生命，加{otherParams[1]}[卦象]",
+    "desc_en_template": "When playing a [Thunder] card next time, reduce your HP by {otherParams[0]} and gain {otherParams[1]} [Hexagram]",
+    "desc_tw_template": "下一次使用[雷]牌時自身减{otherParams[0]}生命，加{otherParams[1]}[卦象]",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 3,
+        "max_hp": null,
+        "params": [
+          2,
+          4
+        ],
+        "desc_cn": "下一次使用[雷]牌时自身减2生命，加4[卦象]",
+        "desc_en": "When playing a [Thunder] card next time, reduce your HP by 2 and gain 4 [Hexagram]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 3,
+        "max_hp": null,
+        "params": [
+          4,
+          5
+        ],
+        "desc_cn": "下一次使用[雷]牌时自身减4生命，加5[卦象]",
+        "desc_en": "When playing a [Thunder] card next time, reduce your HP by 4 and gain 5 [Hexagram]"
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "name_cn": "底牌",
+    "name_en": "Trump Card",
+    "name_tw": "底牌",
+    "desc_cn_template": "[被动生效]\\n卡组第8格的牌可直接触发其[后招]效果",
+    "desc_en_template": "[Passive Effect]\\nThe card in the 8th slot of your deck can directly trigger its [Post Action] effect",
+    "desc_tw_template": "[被動生效]\\n卡組第8格的牌可直接觸發其[後招]效果",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": null,
+        "params": [],
+        "desc_cn": "[被动生效]\\n卡组第8格的牌可直接触发其[后招]效果",
+        "desc_en": "[Passive Effect]\\nThe card in the 8th slot of your deck can directly trigger its [Post Action] effect"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 4,
+        "params": [],
+        "desc_cn": "[被动生效]\\n卡组第8格的牌可直接触发其[后招]效果",
+        "desc_en": "[Passive Effect]\\nThe card in the 8th slot of your deck can directly trigger its [Post Action] effect"
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "name_cn": "震伤",
+    "name_en": "Shock Injury",
+    "name_tw": "震傷",
+    "desc_cn_template": "[被动生效]\\n[反震心法]和[六爻绝阵]每次造成[伤害]时，每有1[星力]或[加攻]就多1[伤害]",
+    "desc_en_template": "[Passive Effect]\\nWhen [Repel Citta-Dharma] and [Hexagram Formacide] deal [DMG] each time, deal 1 more [DMG] for every 1 [Star Power] or [Increase ATK] you have",
+    "desc_tw_template": "[被動生效]\\n[反震心法]和[六爻絕陣]每次造成[傷害]時，每有1[星力]或[加攻]就多1[傷害]",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 10,
+        "params": [],
+        "desc_cn": "[被动生效]\\n[反震心法]和[六爻绝阵]每次造成[伤害]时，每有1[星力]或[加攻]就多1[伤害]",
+        "desc_en": "[Passive Effect]\\nWhen [Repel Citta-Dharma] and [Hexagram Formacide] deal [DMG] each time, deal 1 more [DMG] for every 1 [Star Power] or [Increase ATK] you have"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 14,
+        "params": [],
+        "desc_cn": "[被动生效]\\n[反震心法]和[六爻绝阵]每次造成[伤害]时，每有1[星力]或[加攻]就多1[伤害]",
+        "desc_en": "[Passive Effect]\\nWhen [Repel Citta-Dharma] and [Hexagram Formacide] deal [DMG] each time, deal 1 more [DMG] for every 1 [Star Power] or [Increase ATK] you have"
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "name_cn": "水之灵",
+    "name_en": "Water Spirit",
+    "name_tw": "水之靈",
+    "desc_cn_template": "下一次使用[水灵]牌时加{otherParams[0]}[灵气]",
+    "desc_en_template": "Gain {otherParams[0]} [Qi] when playing a [Water Spirit] card next time",
+    "desc_tw_template": "下一次使用[水靈]牌時加{otherParams[0]}[靈氣]",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          2
+        ],
+        "desc_cn": "下一次使用[水灵]牌时加2[灵气]",
+        "desc_en": "Gain 2 [Qi] when playing a [Water Spirit] card next time"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          3
+        ],
+        "desc_cn": "下一次使用[水灵]牌时加3[灵气]",
+        "desc_en": "Gain 3 [Qi] when playing a [Water Spirit] card next time"
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "name_cn": "融混元",
+    "name_en": "Blend Cosmos",
+    "name_tw": "融混元",
+    "desc_cn_template": "[被动生效]\\n计算卡组中不同[五行]数量时额外视作+{otherParams[0]}",
+    "desc_en_template": "[Passive Effect]\\nWhen counting the number of different [Five Elements] in your deck, it is treated as an additional +{otherParams[0]}",
+    "desc_tw_template": "[被動生效]\\n計算卡組中不同[五行]數量時額外視作+{otherParams[0]}",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          1
+        ],
+        "desc_cn": "[被动生效]\\n计算卡组中不同[五行]数量时额外视作+1",
+        "desc_en": "[Passive Effect]\\nWhen counting the number of different [Five Elements] in your deck, it is treated as an additional +1"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          1
+        ],
+        "desc_cn": "[被动生效]\\n计算卡组中不同[五行]数量时额外视作+1",
+        "desc_en": "[Passive Effect]\\nWhen counting the number of different [Five Elements] in your deck, it is treated as an additional +1"
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "name_cn": "断崖",
+    "name_en": "Cliff",
+    "name_tw": "斷崖",
+    "desc_cn_template": "[被动生效]\\n[土灵·断崖]的效果触发时向对方造成的[伤害]加倍",
+    "desc_en_template": "[Passive Effect]\\nDouble the [DMG] deal to the opponent when the effect of [Earth Spirit - Cliff] is triggered",
+    "desc_tw_template": "[被動生效]\\n[土靈·斷崖]的效果觸發時向對方造成的[傷害]加倍",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 6,
+        "params": [],
+        "desc_cn": "[被动生效]\\n[土灵·断崖]的效果触发时向对方造成的[伤害]加倍",
+        "desc_en": "[Passive Effect]\\nDouble the [DMG] deal to the opponent when the effect of [Earth Spirit - Cliff] is triggered"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 10,
+        "params": [],
+        "desc_cn": "[被动生效]\\n[土灵·断崖]的效果触发时向对方造成的[伤害]加倍",
+        "desc_en": "[Passive Effect]\\nDouble the [DMG] deal to the opponent when the effect of [Earth Spirit - Cliff] is triggered"
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "name_cn": "熔岩",
+    "name_en": "Lava",
+    "name_tw": "熔岩",
+    "desc_cn_template": "[被动生效]\\n每次使用[火灵]牌时，自身减最多{otherParams[0]}[防]，然后对方减等量生命及上限",
+    "desc_en_template": "[Passive Effect]\\nEach time you play a [Fire Spirit] card, reduce your own [DEF] by up to {otherParams[0]}, then reduce the opponent's HP and Max HP by the same amount",
+    "desc_tw_template": "[被動生效]\\n每次使用[火靈]牌時，自身减最多{otherParams[0]}[防]，然後對方减等量生命及上限",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 8,
+        "params": [
+          24
+        ],
+        "desc_cn": "[被动生效]\\n每次使用[火灵]牌时，自身减最多24[防]，然后对方减等量生命及上限",
+        "desc_en": "[Passive Effect]\\nEach time you play a [Fire Spirit] card, reduce your own [DEF] by up to 24, then reduce the opponent's HP and Max HP by the same amount"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 10,
+        "params": [
+          30
+        ],
+        "desc_cn": "[被动生效]\\n每次使用[火灵]牌时，自身减最多30[防]，然后对方减等量生命及上限",
+        "desc_en": "[Passive Effect]\\nEach time you play a [Fire Spirit] card, reduce your own [DEF] by up to 30, then reduce the opponent's HP and Max HP by the same amount"
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "name_cn": "锻冥魄",
+    "name_en": "Temper Nether Soul",
+    "name_tw": "鍛冥魄",
+    "desc_cn_template": "每有2层[负面状态]加1[体魄]（最多加{otherParams[0]}）",
+    "desc_en_template": "Gain 1 [Physique] for every 2 stacks of [Debuff] you have (maximum gain {otherParams[0]})",
+    "desc_tw_template": "每有2層[負面狀態]加1[體魄]（最多加{otherParams[0]}）",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 3,
+        "params": [
+          4
+        ],
+        "desc_cn": "每有2层[负面状态]加1[体魄]（最多加4）",
+        "desc_en": "Gain 1 [Physique] for every 2 stacks of [Debuff] you have (maximum gain 4)"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 3,
+        "params": [
+          6
+        ],
+        "desc_cn": "每有2层[负面状态]加1[体魄]（最多加6）",
+        "desc_en": "Gain 1 [Physique] for every 2 stacks of [Debuff] you have (maximum gain 6)"
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "name_cn": "寸劲",
+    "name_en": "Inch Force",
+    "name_tw": "寸勁",
+    "desc_cn_template": "下1张[崩拳]的攻击受双倍[气势]加成（不可叠加）",
+    "desc_en_template": "The attack of the next [Crash Fist] gains double [Force] bonus (cannot stack)",
+    "desc_tw_template": "下1張[崩拳]的攻擊受雙倍[氣勢]加成（不可叠加）",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 6,
+        "params": [],
+        "desc_cn": "下1张[崩拳]的攻击受双倍[气势]加成（不可叠加）",
+        "desc_en": "The attack of the next [Crash Fist] gains double [Force] bonus (cannot stack)"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 10,
+        "params": [],
+        "desc_cn": "下1张[崩拳]的攻击受双倍[气势]加成（不可叠加）",
+        "desc_en": "The attack of the next [Crash Fist] gains double [Force] bonus (cannot stack)"
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "name_cn": "迷踪",
+    "name_en": "Elusive",
+    "name_tw": "迷踪",
+    "desc_cn_template": "[被动生效]\\n[灵玄迷踪步]的持续效果在对方回合也可每回合触发1次",
+    "desc_en_template": "[Passive Effect]\\nThe continuous effect of [Elusive Footwork] can also be triggered once per turn during the opponent's turn",
+    "desc_tw_template": "[被動生效]\\n[靈玄迷踪步]的持續效果在對方回合也可每回合觸發1次",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [],
+        "desc_cn": "[被动生效]\\n[灵玄迷踪步]的持续效果在对方回合也可每回合触发1次",
+        "desc_en": "[Passive Effect]\\nThe continuous effect of [Elusive Footwork] can also be triggered once per turn during the opponent's turn"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [],
+        "desc_cn": "[被动生效]\\n[灵玄迷踪步]的持续效果在对方回合也可每回合触发1次",
+        "desc_en": "[Passive Effect]\\nThe continuous effect of [Elusive Footwork] can also be triggered once per turn during the opponent's turn"
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "name_cn": "玄疗",
+    "name_en": "Xuan Healing",
+    "name_tw": "玄療",
+    "desc_cn_template": "自身每有1层[负面状态]就加{otherParams[0]}生命",
+    "desc_en_template": "Gain {otherParams[0]} HP for each stack of [Debuff] you have",
+    "desc_tw_template": "自身每有1層[負面狀態]就加{otherParams[0]}生命",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          1
+        ],
+        "desc_cn": "自身每有1层[负面状态]就加1生命",
+        "desc_en": "Gain 1 HP for each stack of [Debuff] you have"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          1
+        ],
+        "desc_cn": "自身每有1层[负面状态]就加1生命",
+        "desc_en": "Gain 1 HP for each stack of [Debuff] you have"
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "name_cn": "画龙",
+    "name_en": "Draw Dragon",
+    "name_tw": "畫龍",
+    "desc_cn_template": "下{otherParams[0]}次使用可[升级]的牌时先将其[升级]，战斗结束还原",
+    "desc_en_template": "When you play a card that can be [Upgraded] next time, [Upgrade] it (restored after the battle)",
+    "desc_tw_template": "下{otherParams[0]}次使用可[升級]的牌時先將其[升級]，戰鬥結束還原",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 10,
+        "params": [
+          1
+        ],
+        "desc_cn": "下1次使用可[升级]的牌时先将其[升级]，战斗结束还原",
+        "desc_en": "When you play a card that can be [Upgraded] next time, [Upgrade] it (restored after the battle)"
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "name_cn": "溢灵",
+    "name_en": "Spirit Overflow",
+    "name_tw": "溢靈",
+    "desc_cn_template": "下一次加[灵气]时多加{otherParams[0]}[灵气]",
+    "desc_en_template": "Gain an additional {otherParams[0]} [Qi] when increasing [Qi] next time",
+    "desc_tw_template": "下一次加[靈氣]時多加{otherParams[0]}[靈氣]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 3,
+        "max_hp": 10,
+        "params": [
+          5
+        ],
+        "desc_cn": "下一次加[灵气]时多加5[灵气]",
+        "desc_en": "Gain an additional 5 [Qi] when increasing [Qi] next time"
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "name_cn": "厄劫",
+    "name_en": "Disaster",
+    "name_tw": "厄劫",
+    "desc_cn_template": "对方下1次使用可[降级]的牌时先将其[降级]，战斗结束还原",
+    "desc_en_template": "When the opponent plays a card that can be [Downgraded] next time, [Downgrade] it (restored after the battle)",
+    "desc_tw_template": "對方下1次使用可[降級]的牌時先將其[降級]，戰鬥結束還原",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [],
+        "desc_cn": "对方下1次使用可[降级]的牌时先将其[降级]，战斗结束还原",
+        "desc_en": "When the opponent plays a card that can be [Downgraded] next time, [Downgrade] it (restored after the battle)"
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "name_cn": "困仙",
+    "name_en": "Immortal Trapping",
+    "name_tw": "困仙",
+    "desc_cn_template": "双方无法触发[再次行动]，各持续{otherParams[0]}回合",
+    "desc_en_template": "Both players cannot trigger [Chase], each lasts for {otherParams[0]} turns",
+    "desc_tw_template": "雙方無法觸發[再次行動]，各持續{otherParams[0]}回合",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 8,
+        "params": [
+          2
+        ],
+        "desc_cn": "双方无法触发[再次行动]，各持续2回合",
+        "desc_en": "Both players cannot trigger [Chase], each lasts for 2 turns"
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "name_cn": "护体",
+    "name_en": "Guard Up",
+    "name_tw": "護體",
+    "desc_cn_template": "获得{otherParams[0]}层[护体]",
+    "desc_en_template": "Gain {otherParams[0]} [Guard Up]",
+    "desc_tw_template": "獲得{otherParams[0]}層[護體]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 4,
+        "params": [
+          2
+        ],
+        "desc_cn": "获得2层[护体]",
+        "desc_en": "Gain 2 [Guard Up]"
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "name_cn": "云海游龙",
+    "name_en": "Cloud Sea Wandering Dragon",
+    "name_tw": "雲海游龍",
+    "desc_cn_template": "[被动生效]\\n使用卡组第一格的牌后，若[击伤]对方则[再次行动]\\n自身所有[云剑·游龙]获得[再次行动]",
+    "desc_en_template": "[Passive Effect]\\nAfter playing the card in the first slot of the deck, trigger [Chase] if you [Injured] the opponent\\nAll your [Cloud Sword - Dragon Roam] gain [Chase]",
+    "desc_tw_template": "[被動生效]\\n使用卡組第一格的牌後，若[擊傷]對方則[再次行動]\\n自身所有[雲劍·游龍]獲得[再次行動]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 3,
+        "max_hp": 12,
+        "params": [],
+        "desc_cn": "[被动生效]\\n使用卡组第一格的牌后，若[击伤]对方则[再次行动]\\n自身所有[云剑·游龙]获得[再次行动]",
+        "desc_en": "[Passive Effect]\\nAfter playing the card in the first slot of the deck, trigger [Chase] if you [Injured] the opponent\\nAll your [Cloud Sword - Dragon Roam] gain [Chase]"
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "name_cn": "零式",
+    "name_en": "Zero Form",
+    "name_tw": "零式",
+    "desc_cn_template": "[被动生效]\\n每当使用[狂剑·零式]后，生命上限加{otherParams[0]}并获得{otherParams[1]}层[加攻]",
+    "desc_en_template": "[Passive Effect]\\nEvery time [Unrestrained Sword - Zero] is played, your Max HP increases by {otherParams[0]} and you gain {otherParams[1]} [Increase ATK]",
+    "desc_tw_template": "[被動生效]\\n每當使用[狂劍·零式]後，生命上限加{otherParams[0]}幷獲得{otherParams[1]}層[加攻]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          20,
+          1
+        ],
+        "desc_cn": "[被动生效]\\n每当使用[狂剑·零式]后，生命上限加20并获得1层[加攻]",
+        "desc_en": "[Passive Effect]\\nEvery time [Unrestrained Sword - Zero] is played, your Max HP increases by 20 and you gain 1 [Increase ATK]"
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "name_cn": "灵与狂",
+    "name_en": "Spirit and Unrestrain",
+    "name_tw": "靈與狂",
+    "desc_cn_template": "[被动生效]\\n每次使用[狂剑]时加1[灵气]；用过的[灵剑]也算入用过[狂剑]的次数",
+    "desc_en_template": "[Passive Effect]\\nGain 1 [Qi] each time you play [Unrestrained Sword]; [Spirit Sword] played also counts as [Unrestrained Sword] played",
+    "desc_tw_template": "[被動生效]\\n每次使用[狂劍]時加1[靈氣]；用過的[靈劍]也算入用過[狂劍]的次數",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 10,
+        "params": [
+          1
+        ],
+        "desc_cn": "[被动生效]\\n每次使用[狂剑]时加1[灵气]；用过的[灵剑]也算入用过[狂剑]的次数",
+        "desc_en": "[Passive Effect]\\nGain 1 [Qi] each time you play [Unrestrained Sword]; [Spirit Sword] played also counts as [Unrestrained Sword] played"
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "name_cn": "御剑结阵",
+    "name_en": "Control Sword to Form Formation",
+    "name_tw": "禦劍結陣",
+    "desc_cn_template": "[被动生效]\\n每次加[防]时多加{otherParams[0]}并向对方造成{otherParams[1]}[伤害]（每场战斗最多触发{otherParams[2]}次）",
+    "desc_en_template": "[Passive Effect]\\nEach time you gain [DEF], gain an additional {otherParams[0]} [DEF] and deal {otherParams[1]} [DMG] to the opponent (can be triggered at most {otherParams[2]} times per battle)",
+    "desc_tw_template": "[被動生效]\\n每次加[防]時多加{otherParams[0]}幷向對方造成{otherParams[1]}[傷害]（每場戰鬥最多觸發{otherParams[2]}次）",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 3,
+        "max_hp": null,
+        "params": [
+          2,
+          2,
+          15
+        ],
+        "desc_cn": "[被动生效]\\n每次加[防]时多加2并向对方造成2[伤害]（每场战斗最多触发15次）",
+        "desc_en": "[Passive Effect]\\nEach time you gain [DEF], gain an additional 2 [DEF] and deal 2 [DMG] to the opponent (can be triggered at most 15 times per battle)"
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "name_cn": "荡剑开天",
+    "name_en": "Swing Sword to Split Heaven",
+    "name_tw": "蕩劍開天",
+    "desc_cn_template": "下一次使用有攻的牌后追加{otherParams[0]}攻",
+    "desc_en_template": "Make an additional {otherParams[0]} ATK after playing a card with ATK next time",
+    "desc_tw_template": "下一次使用有攻的牌後追加{otherParams[0]}攻",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 3,
+        "max_hp": 12,
+        "params": [
+          24
+        ],
+        "desc_cn": "下一次使用有攻的牌后追加24攻",
+        "desc_en": "Make an additional 24 ATK after playing a card with ATK next time"
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "name_cn": "血梅",
+    "name_en": "Blood Plum",
+    "name_tw": "血梅",
+    "desc_cn_template": "[被动生效]\\n[梅开二度]不再耗灵气，但是会耗8生命",
+    "desc_en_template": "[Passive Effect]\\n[Strike Twice] no longer need [Qi], but will cost 8 HP.",
+    "desc_tw_template": "[被動生效]\\n[梅開二度]不再耗靈氣，但是會耗8生命",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 10,
+        "params": [],
+        "desc_cn": "[被动生效]\\n[梅开二度]不再耗灵气，但是会耗8生命",
+        "desc_en": "[Passive Effect]\\n[Strike Twice] no longer need [Qi], but will cost 8 HP."
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "name_cn": "天元映星",
+    "name_en": "Heavenly Axis Reflects Stars",
+    "name_tw": "天元映星",
+    "desc_cn_template": "[被动生效]\\n所有格子视作[星位]\\n首次使用[天元心法]后减1[星力]并[再次行动]",
+    "desc_en_template": "[Passive Effect]\\nAll slots are treated as [Star Point]\\nLose 1 [Star Power] and trigger [Chase] after playing [Polaris Citta-Dharma] for the first time",
+    "desc_tw_template": "[被動生效]\\n所有格子視作[星位]\\n首次使用[天元心法]後减1[星力]幷[再次行動]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 3,
+        "max_hp": 2,
+        "params": [],
+        "desc_cn": "[被动生效]\\n所有格子视作[星位]\\n首次使用[天元心法]后减1[星力]并[再次行动]",
+        "desc_en": "[Passive Effect]\\nAll slots are treated as [Star Point]\\nLose 1 [Star Power] and trigger [Chase] after playing [Polaris Citta-Dharma] for the first time"
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "name_cn": "续天命",
+    "name_en": "Continue Heavenly Fate",
+    "name_tw": "續天命",
+    "desc_cn_template": "[被动生效]\\n战斗中首次生命≤0时，自身每有1[卦象]就加{otherParams[0]}生命及上限，然后若生命>0则继续战斗",
+    "desc_en_template": "[Passive Effect]\\nWhen your HP drops to ≤ 0 for the first time in battle, increase HP and Max HP by {otherParams[0]} for each [Hexagram] you have, then continue fighting if HP > 0",
+    "desc_tw_template": "[被動生效]\\n戰鬥中首次生命≤0時，自身每有1[卦象]就加{otherParams[0]}生命及上限，然後若生命>0則繼續戰鬥",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 5,
+        "params": [
+          3
+        ],
+        "desc_cn": "[被动生效]\\n战斗中首次生命≤0时，自身每有1[卦象]就加3生命及上限，然后若生命>0则继续战斗",
+        "desc_en": "[Passive Effect]\\nWhen your HP drops to ≤ 0 for the first time in battle, increase HP and Max HP by 3 for each [Hexagram] you have, then continue fighting if HP > 0"
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "name_cn": "引征",
+    "name_en": "Ko Threat Extension",
+    "name_tw": "引征",
+    "desc_cn_template": "下一次使用[星位]上的牌后，令其多生效1次",
+    "desc_en_template": "After the next card on [Star Point] is played, make it take effect one more time",
+    "desc_tw_template": "下一次使用[星位]上的牌後，使其多生效1次",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 3,
+        "max_hp": 6,
+        "params": [],
+        "desc_cn": "下一次使用[星位]上的牌后，令其多生效1次",
+        "desc_en": "After the next card on [Star Point] is played, make it take effect one more time"
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "name_cn": "溃其伤",
+    "name_en": "Aggravate Internal Injury",
+    "name_tw": "潰其傷",
+    "desc_cn_template": "令对方的[内伤]层数加倍\\n若对方没有[内伤]，则改为施加{otherParams[0]}层[内伤]",
+    "desc_en_template": "Double the opponent's [Internal Injury]\\nIf the opponent has no [Internal Injury], instead apply {otherParams[0]} [Internal Injury]",
+    "desc_tw_template": "令對方的[內傷]層數加倍\\n若對方沒有[內傷]，則改爲施加{otherParams[0]}層[內傷]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 3,
+        "max_hp": 6,
+        "params": [
+          6
+        ],
+        "desc_cn": "令对方的[内伤]层数加倍\\n若对方没有[内伤]，则改为施加6层[内伤]",
+        "desc_en": "Double the opponent's [Internal Injury]\\nIf the opponent has no [Internal Injury], instead apply 6 [Internal Injury]"
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "name_cn": "炼鼎",
+    "name_en": "Refine Cauldron",
+    "name_tw": "煉鼎",
+    "desc_cn_template": "将手牌最右侧的[金灵]牌永久变为高一个境界的1级[金灵]牌（最高至化神期）",
+    "desc_en_template": "Permanently turn the [Metal Spirit] card on the far right of your hand into a Level 1 [Metal Spirit] card of the next higher Phase (maximum up to Incarnation Phase)",
+    "desc_tw_template": "將手牌最右側的[金靈]牌永久變爲高一個境界的1級[金靈]牌（最高至化神期）",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 9,
+        "params": [],
+        "desc_cn": "将手牌最右侧的[金灵]牌永久变为高一个境界的1级[金灵]牌（最高至化神期）",
+        "desc_en": "Permanently turn the [Metal Spirit] card on the far right of your hand into a Level 1 [Metal Spirit] card of the next higher Phase (maximum up to Incarnation Phase)"
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "name_cn": "水刃",
+    "name_en": "Water Blade",
+    "name_tw": "水刃",
+    "desc_cn_template": "[被动生效]\\n自身回合结束时，[水势]造成[伤害]的效果改为一次攻击，且[击伤]对方时扣减的生命多50%",
+    "desc_en_template": "[Passive Effect]\\nAt the end of your turn, the [DMG] caused by [Force of Water] is changed to a single attack, and the HP reduced when [Injured] the opponent is increased by 50%",
+    "desc_tw_template": "[被動生效]\\n自身回合結束時，[水勢]造成[傷害]的效果改爲一次攻擊，且[擊傷]對方時扣减的生命多50%",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 8,
+        "params": [],
+        "desc_cn": "[被动生效]\\n自身回合结束时，[水势]造成[伤害]的效果改为一次攻击，且[击伤]对方时扣减的生命多50%",
+        "desc_en": "[Passive Effect]\\nAt the end of your turn, the [DMG] caused by [Force of Water] is changed to a single attack, and the HP reduced when [Injured] the opponent is increased by 50%"
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "name_cn": "灵阵展开",
+    "name_en": "Spirit Formation Deployment",
+    "name_tw": "靈陣展開",
+    "desc_cn_template": "下1次使用[灵阵]牌后[再次行动]",
+    "desc_en_template": "Trigger [Chase] after playing a [Spirit Formation] card next time",
+    "desc_tw_template": "下1次使用[靈陣]牌後[再次行動]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 3,
+        "max_hp": 12,
+        "params": [],
+        "desc_cn": "下1次使用[灵阵]牌后[再次行动]",
+        "desc_en": "Trigger [Chase] after playing a [Spirit Formation] card next time"
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "name_cn": "滴天髓",
+    "name_en": "Heavenly Marrow",
+    "name_tw": "滴天髓",
+    "desc_cn_template": "[被动生效]\\n[五行天髓诀]持续次数加倍，且在卡组仅含2种[五行]时也可生效",
+    "desc_en_template": "[Passive Effect]\\nThe [Continuous] count of [Five Elements Heavenly Marrow Rhythm] is doubled, and it can also take effect when the deck contains only 2 types of [Five Elements]",
+    "desc_tw_template": "[被動生效]\\n[五行天髓訣]持續次數加倍，且在卡組僅含2種[五行]時也可生效",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 3,
+        "max_hp": 5,
+        "params": [],
+        "desc_cn": "[被动生效]\\n[五行天髓诀]持续次数加倍，且在卡组仅含2种[五行]时也可生效",
+        "desc_en": "[Passive Effect]\\nThe [Continuous] count of [Five Elements Heavenly Marrow Rhythm] is doubled, and it can also take effect when the deck contains only 2 types of [Five Elements]"
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "name_cn": "引冥灵",
+    "name_en": "Invoke Nether Spirit",
+    "name_tw": "引冥靈",
+    "desc_cn_template": "[灵气]+{otherParams[0]}，获得{otherParams[1]}层[内伤]",
+    "desc_en_template": "[Qi] + {otherParams[0]}, gain {otherParams[1]} [Internal Injury]",
+    "desc_tw_template": "[靈氣]+{otherParams[0]}，獲得{otherParams[1]}層[內傷]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          2,
+          2
+        ],
+        "desc_cn": "[灵气]+2，获得2层[内伤]",
+        "desc_en": "[Qi] + 2, gain 2 [Internal Injury]"
+      }
+    ]
+  },
+  {
+    "id": 106,
+    "name_cn": "血影遁",
+    "name_en": "Blood Shadow Agility",
+    "name_tw": "血影遁",
+    "desc_cn_template": "使用下1张[耗生命]的牌时每耗1生命就加1[身法]",
+    "desc_en_template": "Gain 1 [Agility] for every 1 HP cost when playing the next [HP cost] card",
+    "desc_tw_template": "使用下1張[耗生命]的牌時每耗1生命就加1[身法]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 4,
+        "params": [],
+        "desc_cn": "使用下1张[耗生命]的牌时每耗1生命就加1[身法]",
+        "desc_en": "Gain 1 [Agility] for every 1 HP cost when playing the next [HP cost] card"
+      }
+    ]
+  },
+  {
+    "id": 107,
+    "name_cn": "法天象地",
+    "name_en": "Imitate Heaven and Earth",
+    "name_tw": "法天象地",
+    "desc_cn_template": "[被动生效]\\n每场战斗首次[体魄]超过[体魄上限]时，获得{otherParams[0]}层[加攻]，并永久加{otherParams[1]}[体魄上限]",
+    "desc_en_template": "[Passive Effect]\\nWhen [Physique] exceeds [Physique Cap] for the first time in a battle, gain {otherParams[0]} [Increase ATK] and permanently increase [Physique Cap] by {otherParams[1]}",
+    "desc_tw_template": "[被動生效]\\n每場戰鬥首次[體魄]超過[體魄上限]時，獲得{otherParams[0]}層[加攻]，幷永久加{otherParams[1]}[體魄上限]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 3,
+        "max_hp": 12,
+        "params": [
+          2,
+          3
+        ],
+        "desc_cn": "[被动生效]\\n每场战斗首次[体魄]超过[体魄上限]时，获得2层[加攻]，并永久加3[体魄上限]",
+        "desc_en": "[Passive Effect]\\nWhen [Physique] exceeds [Physique Cap] for the first time in a battle, gain 2 [Increase ATK] and permanently increase [Physique Cap] by 3"
+      }
+    ]
+  },
+  {
+    "id": 108,
+    "name_cn": "赤血怒",
+    "name_en": "Scarlet Blood Rage",
+    "name_tw": "赤血怒",
+    "desc_cn_template": "[被动生效]\\n每次使用[耗生命]的牌时，向对方造成与[耗生命]等量的[伤害]",
+    "desc_en_template": "[Passive Effect]\\nEach time you play a [HP cost] card, deal [DMG] equal to the [HP cost] to the opponent",
+    "desc_tw_template": "[被動生效]\\n每次使用[耗生命]的牌時，向對方造成與[耗生命]等量的[傷害]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 3,
+        "max_hp": 12,
+        "params": [],
+        "desc_cn": "[被动生效]\\n每次使用[耗生命]的牌时，向对方造成与[耗生命]等量的[伤害]",
+        "desc_en": "[Passive Effect]\\nEach time you play a [HP cost] card, deal [DMG] equal to the [HP cost] to the opponent"
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "name_cn": "守势",
+    "name_en": "Defensive Posture",
+    "name_tw": "守勢",
+    "desc_cn_template": "[被动生效]\\n每获得或失去1点[气势]时加{otherParams[0]}[防]",
+    "desc_en_template": "[Passive Effect]\\nGain {otherParams[0]} [DEF] each time you gain or lose 1 point of [Force]",
+    "desc_tw_template": "[被動生效]\\n每獲得或失去1點[氣勢]時加{otherParams[0]}[防]",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          1
+        ],
+        "desc_cn": "[被动生效]\\n每获得或失去1点[气势]时加1[防]",
+        "desc_en": "[Passive Effect]\\nGain 1 [DEF] each time you gain or lose 1 point of [Force]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          1
+        ],
+        "desc_cn": "[被动生效]\\n每获得或失去1点[气势]时加1[防]",
+        "desc_en": "[Passive Effect]\\nGain 1 [DEF] each time you gain or lose 1 point of [Force]"
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "name_cn": "地煞",
+    "name_en": "Earth Fiend",
+    "name_tw": "地煞",
+    "desc_cn_template": "下一次[击伤]对方时，每[击伤]1生命就加1[防]（最多{otherParams[0]}）",
+    "desc_en_template": "Add [DEF] for each damage dealt to HP of your next ATK (maximum {otherParams[0]})",
+    "desc_tw_template": "下一次[擊傷]對方時，每[擊傷]1生命就加1[防]（最多{otherParams[0]}）",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          8
+        ],
+        "desc_cn": "下一次[击伤]对方时，每[击伤]1生命就加1[防]（最多8）",
+        "desc_en": "Add [DEF] for each damage dealt to HP of your next ATK (maximum 8)"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 3,
+        "params": [
+          9
+        ],
+        "desc_cn": "下一次[击伤]对方时，每[击伤]1生命就加1[防]（最多9）",
+        "desc_en": "Add [DEF] for each damage dealt to HP of your next ATK (maximum 9)"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          10
+        ],
+        "desc_cn": "下一次[击伤]对方时，每[击伤]1生命就加1[防]（最多10）",
+        "desc_en": "Add [DEF] for each damage dealt to HP of your next ATK (maximum 10)"
+      }
+    ]
+  },
+  {
+    "id": 111,
+    "name_cn": "衍星位",
+    "name_en": "Derive Star Point",
+    "name_tw": "衍星位",
+    "desc_cn_template": "[被动生效]\\n卡组第4、5格视作[星位]",
+    "desc_en_template": "[Passive Effect]\\nSlots 4 and 5 of the deck are treated as [Star Point]",
+    "desc_tw_template": "[被動生效]\\n卡組第4、5格視作[星位]",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 2,
+        "max_hp": 7,
+        "params": [],
+        "desc_cn": "[被动生效]\\n卡组第4、5格视作[星位]",
+        "desc_en": "[Passive Effect]\\nSlots 4 and 5 of the deck are treated as [Star Point]"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 11,
+        "params": [],
+        "desc_cn": "[被动生效]\\n卡组第4、5格视作[星位]",
+        "desc_en": "[Passive Effect]\\nSlots 4 and 5 of the deck are treated as [Star Point]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 15,
+        "params": [],
+        "desc_cn": "[被动生效]\\n卡组第4、5格视作[星位]",
+        "desc_en": "[Passive Effect]\\nSlots 4 and 5 of the deck are treated as [Star Point]"
+      }
+    ]
+  },
+  {
+    "id": 112,
+    "name_cn": "冥心",
+    "name_en": "Nether Heart",
+    "name_tw": "冥心",
+    "desc_cn_template": "获得{otherParams[0]}层[内伤]和{otherParams[0]}层[恢复]",
+    "desc_en_template": "Gain {otherParams[0]} [Internal Injury] and {otherParams[0]} [Regeneration]",
+    "desc_tw_template": "獲得{otherParams[0]}層[內傷]和{otherParams[0]}層[恢復]",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 2,
+        "max_hp": 9,
+        "params": [
+          1
+        ],
+        "desc_cn": "获得1层[内伤]和1层[恢复]",
+        "desc_en": "Gain 1 [Internal Injury] and 1 [Regeneration]"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 9,
+        "params": [
+          2
+        ],
+        "desc_cn": "获得2层[内伤]和2层[恢复]",
+        "desc_en": "Gain 2 [Internal Injury] and 2 [Regeneration]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 9,
+        "params": [
+          3
+        ],
+        "desc_cn": "获得3层[内伤]和3层[恢复]",
+        "desc_en": "Gain 3 [Internal Injury] and 3 [Regeneration]"
+      }
+    ]
+  },
+  {
+    "id": 113,
+    "name_cn": "汲取",
+    "name_en": "Absorb",
+    "name_tw": "汲取",
+    "desc_cn_template": "吸取对方{otherParams[0]}生命",
+    "desc_en_template": "Steal {otherParams[0]} HP from the opponent",
+    "desc_tw_template": "吸取對方{otherParams[0]}生命",
+    "tiers": [
+      {
+        "tier": 2,
+        "sigil_value": 2,
+        "max_hp": null,
+        "params": [
+          6
+        ],
+        "desc_cn": "吸取对方6生命",
+        "desc_en": "Steal 6 HP from the opponent"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 2,
+        "max_hp": null,
+        "params": [
+          8
+        ],
+        "desc_cn": "吸取对方8生命",
+        "desc_en": "Steal 8 HP from the opponent"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": null,
+        "params": [
+          10
+        ],
+        "desc_cn": "吸取对方10生命",
+        "desc_en": "Steal 10 HP from the opponent"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": null,
+        "params": [
+          12
+        ],
+        "desc_cn": "吸取对方12生命",
+        "desc_en": "Steal 12 HP from the opponent"
+      }
+    ]
+  },
+  {
+    "id": 114,
+    "name_cn": "拳风",
+    "name_en": "Fist Wind",
+    "name_tw": "拳風",
+    "desc_cn_template": "下一次使用[耗生命]的牌时向对方造成{otherParams[0]}[伤害]",
+    "desc_en_template": "Deal {otherParams[0]} [DMG] to the opponent when playing the next [HP cost] card",
+    "desc_tw_template": "下一次使用[耗生命]的牌時向對方造成{otherParams[0]}[傷害]",
+    "tiers": [
+      {
+        "tier": 1,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          2
+        ],
+        "desc_cn": "下一次使用[耗生命]的牌时向对方造成2[伤害]",
+        "desc_en": "Deal 2 [DMG] to the opponent when playing the next [HP cost] card"
+      },
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          4
+        ],
+        "desc_cn": "下一次使用[耗生命]的牌时向对方造成4[伤害]",
+        "desc_en": "Deal 4 [DMG] to the opponent when playing the next [HP cost] card"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          6
+        ],
+        "desc_cn": "下一次使用[耗生命]的牌时向对方造成6[伤害]",
+        "desc_en": "Deal 6 [DMG] to the opponent when playing the next [HP cost] card"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          8
+        ],
+        "desc_cn": "下一次使用[耗生命]的牌时向对方造成8[伤害]",
+        "desc_en": "Deal 8 [DMG] to the opponent when playing the next [HP cost] card"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          10
+        ],
+        "desc_cn": "下一次使用[耗生命]的牌时向对方造成10[伤害]",
+        "desc_en": "Deal 10 [DMG] to the opponent when playing the next [HP cost] card"
+      }
+    ]
+  },
+  {
+    "id": 115,
+    "name_cn": "冥之势",
+    "name_en": "Nether Momentum",
+    "name_tw": "冥之勢",
+    "desc_cn_template": "[气势]+{otherParams[0]}（自身有[负面状态]时多加{otherParams[1]}）",
+    "desc_en_template": "[Force] + {otherParams[0]} (gain an additional {otherParams[1]} if you have [Debuff])",
+    "desc_tw_template": "[氣勢]+{otherParams[0]}（自身有[負面狀態]時多加{otherParams[1]}）",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 4,
+        "params": [
+          2,
+          2
+        ],
+        "desc_cn": "[气势]+2（自身有[负面状态]时多加2）",
+        "desc_en": "[Force] + 2 (gain an additional 2 if you have [Debuff])"
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "name_cn": "火鞭",
+    "name_en": "Fire Whip",
+    "name_tw": "火鞭",
+    "desc_cn_template": "下一次使用[木灵]或[火灵]牌攻击后追加{otherParams[0]}攻×2",
+    "desc_en_template": "Make an additional {otherParams[0]} ATK × 2 after attacking with [Wood Spirit] or [Fire Spirit] card next time",
+    "desc_tw_template": "下一次使用[木靈]或[火靈]牌攻擊後追加{otherParams[0]}攻×2",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 4,
+        "params": [
+          5
+        ],
+        "desc_cn": "下一次使用[木灵]或[火灵]牌攻击后追加5攻×2",
+        "desc_en": "Make an additional 5 ATK × 2 after attacking with [Wood Spirit] or [Fire Spirit] card next time"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 4,
+        "params": [
+          7
+        ],
+        "desc_cn": "下一次使用[木灵]或[火灵]牌攻击后追加7攻×2",
+        "desc_en": "Make an additional 7 ATK × 2 after attacking with [Wood Spirit] or [Fire Spirit] card next time"
+      }
+    ]
+  },
+  {
+    "id": 117,
+    "name_cn": "筑城",
+    "name_en": "Build Fortress",
+    "name_tw": "築城",
+    "desc_cn_template": "自身回合结束时将最多{otherParams[1]}[防]转为等量生命及上限，持续{otherParams[0]}回合",
+    "desc_en_template": "At the end of your turn, convert up to {otherParams[1]} [DEF] into equivalent HP and Max HP. This effect lasts for {otherParams[0]} turns.",
+    "desc_tw_template": "自身回合結束時將最多{otherParams[1]}[防]轉爲等量生命及上限，持續{otherParams[0]}回合",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 8,
+        "params": [
+          2,
+          24
+        ],
+        "desc_cn": "自身回合结束时将最多24[防]转为等量生命及上限，持续2回合",
+        "desc_en": "At the end of your turn, convert up to 24 [DEF] into equivalent HP and Max HP. This effect lasts for 2 turns."
+      }
+    ]
+  },
+  {
+    "id": 118,
+    "name_cn": "机关组装",
+    "name_en": "Mechanism Assembly",
+    "name_tw": "機關組裝",
+    "desc_cn_template": "[机关刻纹]+{otherParams[0]}",
+    "desc_en_template": "[Mechanism Rune] + {otherParams[0]}",
+    "desc_tw_template": "[機關刻紋]+{otherParams[0]}",
+    "tiers": [
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          3
+        ],
+        "desc_cn": "[机关刻纹]+3",
+        "desc_en": "[Mechanism Rune] + 3"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          4
+        ],
+        "desc_cn": "[机关刻纹]+4",
+        "desc_en": "[Mechanism Rune] + 4"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          5
+        ],
+        "desc_cn": "[机关刻纹]+5",
+        "desc_en": "[Mechanism Rune] + 5"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          6
+        ],
+        "desc_cn": "[机关刻纹]+6",
+        "desc_en": "[Mechanism Rune] + 6"
+      }
+    ]
+  },
+  {
+    "id": 119,
+    "name_cn": "机关盾",
+    "name_en": "Mechanism Shield",
+    "name_tw": "機關盾",
+    "desc_cn_template": "[机关刻纹]+{otherParams[0]}\\n每有1层[机关刻纹]加{otherParams[1]}[防]",
+    "desc_en_template": "[Mechanism Rune] + {otherParams[0]}\\nGain {otherParams[1]} [DEF] for each stack of [Mechanism Rune]",
+    "desc_tw_template": "[機關刻紋]+{otherParams[0]}\\n每有1層[機關刻紋]加{otherParams[1]}[防]",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          2,
+          1
+        ],
+        "desc_cn": "[机关刻纹]+2\\n每有1层[机关刻纹]加1[防]",
+        "desc_en": "[Mechanism Rune] + 2\\nGain 1 [DEF] for each stack of [Mechanism Rune]"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 1,
+        "params": [
+          3,
+          1
+        ],
+        "desc_cn": "[机关刻纹]+3\\n每有1层[机关刻纹]加1[防]",
+        "desc_en": "[Mechanism Rune] + 3\\nGain 1 [DEF] for each stack of [Mechanism Rune]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          4,
+          1
+        ],
+        "desc_cn": "[机关刻纹]+4\\n每有1层[机关刻纹]加1[防]",
+        "desc_en": "[Mechanism Rune] + 4\\nGain 1 [DEF] for each stack of [Mechanism Rune]"
+      }
+    ]
+  },
+  {
+    "id": 120,
+    "name_cn": "灵纹机关",
+    "name_en": "Spirit Rune Mechanism",
+    "name_tw": "靈紋機關",
+    "desc_cn_template": "[机关刻纹]+{otherParams[0]}\\n本回合结束时耗1[灵气]：[机关刻纹]+{otherParams[1]}",
+    "desc_en_template": "[Mechanism Rune] + {otherParams[0]}\\nConsume 1 [Qi] at the end of this turn: [Mechanism Rune] + {otherParams[1]}",
+    "desc_tw_template": "[機關刻紋]+{otherParams[0]}\\n本回合結束時耗1[靈氣]：[機關刻紋]+{otherParams[1]}",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          3,
+          3
+        ],
+        "desc_cn": "[机关刻纹]+3\\n本回合结束时耗1[灵气]：[机关刻纹]+3",
+        "desc_en": "[Mechanism Rune] + 3\\nConsume 1 [Qi] at the end of this turn: [Mechanism Rune] + 3"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          4,
+          3
+        ],
+        "desc_cn": "[机关刻纹]+4\\n本回合结束时耗1[灵气]：[机关刻纹]+3",
+        "desc_en": "[Mechanism Rune] + 4\\nConsume 1 [Qi] at the end of this turn: [Mechanism Rune] + 3"
+      }
+    ]
+  },
+  {
+    "id": 122,
+    "name_cn": "机关剑·裂",
+    "name_en": "Mechanism Sword - Split",
+    "name_tw": "機關劍·裂",
+    "desc_cn_template": "[机关刻纹]+{otherParams[0]}\\n下1次攻击时耗1[机关刻纹]令该次攻击多3攻且[无视防御]",
+    "desc_en_template": "[Mechanism Rune] + {otherParams[0]}\\nConsume 1 [Mechanism Rune] in the next attack to deal 3 more ATK and gain [Ignore DEF] for that attack",
+    "desc_tw_template": "[機關刻紋]+{otherParams[0]}\\n下1次攻擊時耗1[機關刻紋]令該次攻擊多3攻且[無視防禦]",
+    "tiers": [
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          2
+        ],
+        "desc_cn": "[机关刻纹]+2\\n下1次攻击时耗1[机关刻纹]令该次攻击多3攻且[无视防御]",
+        "desc_en": "[Mechanism Rune] + 2\\nConsume 1 [Mechanism Rune] in the next attack to deal 3 more ATK and gain [Ignore DEF] for that attack"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          3
+        ],
+        "desc_cn": "[机关刻纹]+3\\n下1次攻击时耗1[机关刻纹]令该次攻击多3攻且[无视防御]",
+        "desc_en": "[Mechanism Rune] + 3\\nConsume 1 [Mechanism Rune] in the next attack to deal 3 more ATK and gain [Ignore DEF] for that attack"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          4
+        ],
+        "desc_cn": "[机关刻纹]+4\\n下1次攻击时耗1[机关刻纹]令该次攻击多3攻且[无视防御]",
+        "desc_en": "[Mechanism Rune] + 4\\nConsume 1 [Mechanism Rune] in the next attack to deal 3 more ATK and gain [Ignore DEF] for that attack"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          5
+        ],
+        "desc_cn": "[机关刻纹]+5\\n下1次攻击时耗1[机关刻纹]令该次攻击多3攻且[无视防御]",
+        "desc_en": "[Mechanism Rune] + 5\\nConsume 1 [Mechanism Rune] in the next attack to deal 3 more ATK and gain [Ignore DEF] for that attack"
+      }
+    ]
+  },
+  {
+    "id": 123,
+    "name_cn": "机关剑·斩",
+    "name_en": "Mechanism Sword - Slash",
+    "name_tw": "機關劍·斬",
+    "desc_cn_template": "[机关刻纹]+{otherParams[0]}\\n下1次攻击时耗尽所有[机关刻纹]，每层多{otherParams[1]}攻",
+    "desc_en_template": "[Mechanism Rune] + {otherParams[0]}\\nConsume all [Mechanism Rune] in the next attack, dealing {otherParams[1]} more ATK per stack",
+    "desc_tw_template": "[機關刻紋]+{otherParams[0]}\\n下1次攻擊時耗盡所有[機關刻紋]，每層多{otherParams[1]}攻",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          3,
+          2
+        ],
+        "desc_cn": "[机关刻纹]+3\\n下1次攻击时耗尽所有[机关刻纹]，每层多2攻",
+        "desc_en": "[Mechanism Rune] + 3\\nConsume all [Mechanism Rune] in the next attack, dealing 2 more ATK per stack"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          4,
+          2
+        ],
+        "desc_cn": "[机关刻纹]+4\\n下1次攻击时耗尽所有[机关刻纹]，每层多2攻",
+        "desc_en": "[Mechanism Rune] + 4\\nConsume all [Mechanism Rune] in the next attack, dealing 2 more ATK per stack"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          5,
+          2
+        ],
+        "desc_cn": "[机关刻纹]+5\\n下1次攻击时耗尽所有[机关刻纹]，每层多2攻",
+        "desc_en": "[Mechanism Rune] + 5\\nConsume all [Mechanism Rune] in the next attack, dealing 2 more ATK per stack"
+      }
+    ]
+  },
+  {
+    "id": 124,
+    "name_cn": "机关龟",
+    "name_en": "Mechanism Turtle",
+    "name_tw": "機關龜",
+    "desc_cn_template": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n每次加[防]时耗1[机关刻纹]多加{otherParams[1]}[防]",
+    "desc_en_template": "[Passive Effect]\\n[Mechanism Rune] + {otherParams[0]}\\nConsume 1 [Mechanism Rune] each time you increase [DEF] to gain an additional {otherParams[1]} [DEF]",
+    "desc_tw_template": "[被動生效]\\n[機關刻紋]+{otherParams[0]}\\n每次加[防]時耗1[機關刻紋]多加{otherParams[1]}[防]",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          2,
+          3
+        ],
+        "desc_cn": "[被动生效]\\n[机关刻纹]+2\\n每次加[防]时耗1[机关刻纹]多加3[防]",
+        "desc_en": "[Passive Effect]\\n[Mechanism Rune] + 2\\nConsume 1 [Mechanism Rune] each time you increase [DEF] to gain an additional 3 [DEF]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          3,
+          3
+        ],
+        "desc_cn": "[被动生效]\\n[机关刻纹]+3\\n每次加[防]时耗1[机关刻纹]多加3[防]",
+        "desc_en": "[Passive Effect]\\n[Mechanism Rune] + 3\\nConsume 1 [Mechanism Rune] each time you increase [DEF] to gain an additional 3 [DEF]"
+      }
+    ]
+  },
+  {
+    "id": 125,
+    "name_cn": "机关剑·震",
+    "name_en": "Mechanism Sword - Shock",
+    "name_tw": "機關劍·震",
+    "desc_cn_template": "[机关刻纹]+{otherParams[0]}\\n下1次攻击时，先向对方造成{otherParams[1]}[伤害]（自身每有2[机关刻纹]就重复1次该[伤害]）",
+    "desc_en_template": "[Mechanism Rune] + {otherParams[0]}\\nFirst deal {otherParams[1]} [DMG] to the opponent in the next attack (repeat this [DMG] once for every 2 [Mechanism Rune] you have)",
+    "desc_tw_template": "[機關刻紋]+{otherParams[0]}\\n下1次攻擊時，先向對方造成{otherParams[1]}[傷害]（自身每有2[機關刻紋]就重複1次該[傷害]）",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          3,
+          2
+        ],
+        "desc_cn": "[机关刻纹]+3\\n下1次攻击时，先向对方造成2[伤害]（自身每有2[机关刻纹]就重复1次该[伤害]）",
+        "desc_en": "[Mechanism Rune] + 3\\nFirst deal 2 [DMG] to the opponent in the next attack (repeat this [DMG] once for every 2 [Mechanism Rune] you have)"
+      }
+    ]
+  },
+  {
+    "id": 126,
+    "name_cn": "机关星仪",
+    "name_en": "Mechanism Star Instrument",
+    "name_tw": "機關星儀",
+    "desc_cn_template": "[机关刻纹]+{otherParams[0]}\\n下{otherParams[1]}次使用非[星位]上的牌时，耗2[机关刻纹]令那一格[成为星位]",
+    "desc_en_template": "[Mechanism Rune] + {otherParams[0]}\\nFor the next {otherParams[1]} card not on [Star Point], consume 2 [Mechanism Rune] to make that slot [Become Star Point]",
+    "desc_tw_template": "[機關刻紋]+{otherParams[0]}\\n下{otherParams[1]}次使用非[星位]上的牌時，耗2[機關刻紋]令那一格[成爲星位]",
+    "tiers": [
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          1,
+          1
+        ],
+        "desc_cn": "[机关刻纹]+1\\n下1次使用非[星位]上的牌时，耗2[机关刻纹]令那一格[成为星位]",
+        "desc_en": "[Mechanism Rune] + 1\\nFor the next 1 card not on [Star Point], consume 2 [Mechanism Rune] to make that slot [Become Star Point]"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          1,
+          1
+        ],
+        "desc_cn": "[机关刻纹]+1\\n下1次使用非[星位]上的牌时，耗2[机关刻纹]令那一格[成为星位]",
+        "desc_en": "[Mechanism Rune] + 1\\nFor the next 1 card not on [Star Point], consume 2 [Mechanism Rune] to make that slot [Become Star Point]"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 8,
+        "params": [
+          1,
+          1
+        ],
+        "desc_cn": "[机关刻纹]+1\\n下1次使用非[星位]上的牌时，耗2[机关刻纹]令那一格[成为星位]",
+        "desc_en": "[Mechanism Rune] + 1\\nFor the next 1 card not on [Star Point], consume 2 [Mechanism Rune] to make that slot [Become Star Point]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 8,
+        "params": [
+          2,
+          1
+        ],
+        "desc_cn": "[机关刻纹]+2\\n下1次使用非[星位]上的牌时，耗2[机关刻纹]令那一格[成为星位]",
+        "desc_en": "[Mechanism Rune] + 2\\nFor the next 1 card not on [Star Point], consume 2 [Mechanism Rune] to make that slot [Become Star Point]"
+      }
+    ]
+  },
+  {
+    "id": 127,
+    "name_cn": "机关猫",
+    "name_en": "Mechanism Cat",
+    "name_tw": "機關猫",
+    "desc_cn_template": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n自身每回合结束时耗1[机关刻纹]加{otherParams[1]}生命及上限",
+    "desc_en_template": "[Passive Effect]\\n[Mechanism Rune] + {otherParams[0]}\\nConsume 1 [Mechanism Rune] at the end of each of your turns to increase HP and Max HP by {otherParams[1]}",
+    "desc_tw_template": "[被動生效]\\n[機關刻紋]+{otherParams[0]}\\n自身每回合結束時耗1[機關刻紋]加{otherParams[1]}生命及上限",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          2,
+          3
+        ],
+        "desc_cn": "[被动生效]\\n[机关刻纹]+2\\n自身每回合结束时耗1[机关刻纹]加3生命及上限",
+        "desc_en": "[Passive Effect]\\n[Mechanism Rune] + 2\\nConsume 1 [Mechanism Rune] at the end of each of your turns to increase HP and Max HP by 3"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          3,
+          3
+        ],
+        "desc_cn": "[被动生效]\\n[机关刻纹]+3\\n自身每回合结束时耗1[机关刻纹]加3生命及上限",
+        "desc_en": "[Passive Effect]\\n[Mechanism Rune] + 3\\nConsume 1 [Mechanism Rune] at the end of each of your turns to increase HP and Max HP by 3"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          4,
+          3
+        ],
+        "desc_cn": "[被动生效]\\n[机关刻纹]+4\\n自身每回合结束时耗1[机关刻纹]加3生命及上限",
+        "desc_en": "[Passive Effect]\\n[Mechanism Rune] + 4\\nConsume 1 [Mechanism Rune] at the end of each of your turns to increase HP and Max HP by 3"
+      }
+    ]
+  },
+  {
+    "id": 128,
+    "name_cn": "机关鼠",
+    "name_en": "Mechanism Rat",
+    "name_tw": "機關鼠",
+    "desc_cn_template": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n自身每回合开始时若[机关刻纹]＜{otherParams[1]}，则耗1[灵气]加{otherParams[1]}[机关刻纹]",
+    "desc_en_template": "[Passive Effect]\\n[Mechanism Rune] + {otherParams[0]}\\nIf [Mechanism Rune] < {otherParams[1]} at the start of each of your turns, consume 1 [Qi] to increase [Mechanism Rune] by {otherParams[1]}",
+    "desc_tw_template": "[被動生效]\\n[機關刻紋]+{otherParams[0]}\\n自身每回合開始時若[機關刻紋]＜{otherParams[1]}，則耗1[靈氣]加{otherParams[1]}[機關刻紋]",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          3,
+          3
+        ],
+        "desc_cn": "[被动生效]\\n[机关刻纹]+3\\n自身每回合开始时若[机关刻纹]＜3，则耗1[灵气]加3[机关刻纹]",
+        "desc_en": "[Passive Effect]\\n[Mechanism Rune] + 3\\nIf [Mechanism Rune] < 3 at the start of each of your turns, consume 1 [Qi] to increase [Mechanism Rune] by 3"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          4,
+          3
+        ],
+        "desc_cn": "[被动生效]\\n[机关刻纹]+4\\n自身每回合开始时若[机关刻纹]＜3，则耗1[灵气]加3[机关刻纹]",
+        "desc_en": "[Passive Effect]\\n[Mechanism Rune] + 4\\nIf [Mechanism Rune] < 3 at the start of each of your turns, consume 1 [Qi] to increase [Mechanism Rune] by 3"
+      }
+    ]
+  },
+  {
+    "id": 129,
+    "name_cn": "机关蛇",
+    "name_en": "Mechanism Snake",
+    "name_tw": "機關蛇",
+    "desc_cn_template": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n自身每回合开始时耗{otherParams[1]}[机关刻纹]向对方施加1层[内伤]",
+    "desc_en_template": "[Passive Effect]\\n[Mechanism Rune] + {otherParams[0]}\\nConsume {otherParams[1]} [Mechanism Rune] at the start of each of your turns to apply 1 [Internal Injury] to the opponent",
+    "desc_tw_template": "[被動生效]\\n[機關刻紋]+{otherParams[0]}\\n自身每回合開始時耗{otherParams[1]}[機關刻紋]向對方施加1層[內傷]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          3,
+          2
+        ],
+        "desc_cn": "[被动生效]\\n[机关刻纹]+3\\n自身每回合开始时耗2[机关刻纹]向对方施加1层[内伤]",
+        "desc_en": "[Passive Effect]\\n[Mechanism Rune] + 3\\nConsume 2 [Mechanism Rune] at the start of each of your turns to apply 1 [Internal Injury] to the opponent"
+      }
+    ]
+  },
+  {
+    "id": 130,
+    "name_cn": "机关灵印",
+    "name_en": "Mechanism Spirit Seal",
+    "name_tw": "機關靈印",
+    "desc_cn_template": "[机关刻纹]+{otherParams[0]}\\n本回合中使用未[激活][五行]的牌时，耗2层[机关刻纹][激活]其所属[五行]",
+    "desc_en_template": "[Mechanism Rune] + {otherParams[0]}\\nIn this turn, when playing a card whose [Five Elements] is not [Activated], consume 2 [Mechanism Rune] to [Activate] its [Five Elements]",
+    "desc_tw_template": "[機關刻紋]+{otherParams[0]}\\n本回合中使用未[激活][五行]的牌時，耗2層[機關刻紋][激活]其所屬[五行]",
+    "tiers": [
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          1
+        ],
+        "desc_cn": "[机关刻纹]+1\\n本回合中使用未[激活][五行]的牌时，耗2层[机关刻纹][激活]其所属[五行]",
+        "desc_en": "[Mechanism Rune] + 1\\nIn this turn, when playing a card whose [Five Elements] is not [Activated], consume 2 [Mechanism Rune] to [Activate] its [Five Elements]"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          1
+        ],
+        "desc_cn": "[机关刻纹]+1\\n本回合中使用未[激活][五行]的牌时，耗2层[机关刻纹][激活]其所属[五行]",
+        "desc_en": "[Mechanism Rune] + 1\\nIn this turn, when playing a card whose [Five Elements] is not [Activated], consume 2 [Mechanism Rune] to [Activate] its [Five Elements]"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 8,
+        "params": [
+          1
+        ],
+        "desc_cn": "[机关刻纹]+1\\n本回合中使用未[激活][五行]的牌时，耗2层[机关刻纹][激活]其所属[五行]",
+        "desc_en": "[Mechanism Rune] + 1\\nIn this turn, when playing a card whose [Five Elements] is not [Activated], consume 2 [Mechanism Rune] to [Activate] its [Five Elements]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 8,
+        "params": [
+          2
+        ],
+        "desc_cn": "[机关刻纹]+2\\n本回合中使用未[激活][五行]的牌时，耗2层[机关刻纹][激活]其所属[五行]",
+        "desc_en": "[Mechanism Rune] + 2\\nIn this turn, when playing a card whose [Five Elements] is not [Activated], consume 2 [Mechanism Rune] to [Activate] its [Five Elements]"
+      }
+    ]
+  },
+  {
+    "id": 131,
+    "name_cn": "混元机关",
+    "name_en": "Cosmos Mechanism",
+    "name_tw": "混元機關",
+    "desc_cn_template": "[机关刻纹]+{otherParams[0]}（卡组中每有1种[五行]多加1）",
+    "desc_en_template": "[Mechanism Rune] + {otherParams[0]} (gain an additional 1 for each type of [Five Elements] in the deck)",
+    "desc_tw_template": "[機關刻紋]+{otherParams[0]}（卡組中每有1種[五行]多加1）",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          1
+        ],
+        "desc_cn": "[机关刻纹]+1（卡组中每有1种[五行]多加1）",
+        "desc_en": "[Mechanism Rune] + 1 (gain an additional 1 for each type of [Five Elements] in the deck)"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          2
+        ],
+        "desc_cn": "[机关刻纹]+2（卡组中每有1种[五行]多加1）",
+        "desc_en": "[Mechanism Rune] + 2 (gain an additional 1 for each type of [Five Elements] in the deck)"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          3
+        ],
+        "desc_cn": "[机关刻纹]+3（卡组中每有1种[五行]多加1）",
+        "desc_en": "[Mechanism Rune] + 3 (gain an additional 1 for each type of [Five Elements] in the deck)"
+      }
+    ]
+  },
+  {
+    "id": 132,
+    "name_cn": "机关鳄",
+    "name_en": "Mechanism Crocodile",
+    "name_tw": "機關鰐",
+    "desc_cn_template": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n使用[水灵]牌时耗2[机关刻纹]加{otherParams[1]}[水势]；使用[土灵]牌时耗2[机关刻纹]加{otherParams[2]}[防]",
+    "desc_en_template": "[Passive Effect]\\n[Mechanism Rune] + {otherParams[0]}\\nConsume 2 [Mechanism Rune] when playing [Water Spirit] card to gain {otherParams[1]} [Force of Water]; consume 2 [Mechanism Rune] when playing [Earth Spirit] card to gain {otherParams[2]} [DEF]",
+    "desc_tw_template": "[被動生效]\\n[機關刻紋]+{otherParams[0]}\\n使用[水靈]牌時耗2[機關刻紋]加{otherParams[1]}[水勢]；使用[土靈]牌時耗2[機關刻紋]加{otherParams[2]}[防]",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          2,
+          1,
+          4
+        ],
+        "desc_cn": "[被动生效]\\n[机关刻纹]+2\\n使用[水灵]牌时耗2[机关刻纹]加1[水势]；使用[土灵]牌时耗2[机关刻纹]加4[防]",
+        "desc_en": "[Passive Effect]\\n[Mechanism Rune] + 2\\nConsume 2 [Mechanism Rune] when playing [Water Spirit] card to gain 1 [Force of Water]; consume 2 [Mechanism Rune] when playing [Earth Spirit] card to gain 4 [DEF]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 6,
+        "params": [
+          3,
+          1,
+          4
+        ],
+        "desc_cn": "[被动生效]\\n[机关刻纹]+3\\n使用[水灵]牌时耗2[机关刻纹]加1[水势]；使用[土灵]牌时耗2[机关刻纹]加4[防]",
+        "desc_en": "[Passive Effect]\\n[Mechanism Rune] + 3\\nConsume 2 [Mechanism Rune] when playing [Water Spirit] card to gain 1 [Force of Water]; consume 2 [Mechanism Rune] when playing [Earth Spirit] card to gain 4 [DEF]"
+      }
+    ]
+  },
+  {
+    "id": 133,
+    "name_cn": "机关鹿",
+    "name_en": "Mechanism Deer",
+    "name_tw": "機關鹿",
+    "desc_cn_template": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n使用[金灵]牌时耗2[机关刻纹]加3[锋锐]；使用[木灵]牌时耗2[机关刻纹]加1[加攻]",
+    "desc_en_template": "[Passive Effect]\\n[Mechanism Rune] + {otherParams[0]}\\nConsume 2 [Mechanism Rune] when playing [Metal Spirit] card to gain 3 [Penetrate]; consume 2 [Mechanism Rune] when playing [Wood Spirit] card to gain 1 [Increase ATK]",
+    "desc_tw_template": "[被動生效]\\n[機關刻紋]+{otherParams[0]}\\n使用[金靈]牌時耗2[機關刻紋]加3[鋒銳]；使用[木靈]牌時耗2[機關刻紋]加1[加攻]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          2
+        ],
+        "desc_cn": "[被动生效]\\n[机关刻纹]+2\\n使用[金灵]牌时耗2[机关刻纹]加3[锋锐]；使用[木灵]牌时耗2[机关刻纹]加1[加攻]",
+        "desc_en": "[Passive Effect]\\n[Mechanism Rune] + 2\\nConsume 2 [Mechanism Rune] when playing [Metal Spirit] card to gain 3 [Penetrate]; consume 2 [Mechanism Rune] when playing [Wood Spirit] card to gain 1 [Increase ATK]"
+      }
+    ]
+  },
+  {
+    "id": 134,
+    "name_cn": "训练机关",
+    "name_en": "Training Mechanism",
+    "name_tw": "訓練機關",
+    "desc_cn_template": "[体魄]+{otherParams[0]}\\n[机关刻纹]+{otherParams[1]}",
+    "desc_en_template": "[Physique] + {otherParams[0]}\\n[Mechanism Rune] + {otherParams[1]}",
+    "desc_tw_template": "[體魄]+{otherParams[0]}\\n[機關刻紋]+{otherParams[1]}",
+    "tiers": [
+      {
+        "tier": 2,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          1,
+          2
+        ],
+        "desc_cn": "[体魄]+1\\n[机关刻纹]+2",
+        "desc_en": "[Physique] + 1\\n[Mechanism Rune] + 2"
+      },
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          1,
+          3
+        ],
+        "desc_cn": "[体魄]+1\\n[机关刻纹]+3",
+        "desc_en": "[Physique] + 1\\n[Mechanism Rune] + 3"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          1,
+          4
+        ],
+        "desc_cn": "[体魄]+1\\n[机关刻纹]+4",
+        "desc_en": "[Physique] + 1\\n[Mechanism Rune] + 4"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          1,
+          5
+        ],
+        "desc_cn": "[体魄]+1\\n[机关刻纹]+5",
+        "desc_en": "[Physique] + 1\\n[Mechanism Rune] + 5"
+      }
+    ]
+  },
+  {
+    "id": 135,
+    "name_cn": "机关虎",
+    "name_en": "Mechanism Tiger",
+    "name_tw": "機關虎",
+    "desc_cn_template": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n每次攻击时耗1[机关刻纹]，该次攻击多{otherParams[1]}攻",
+    "desc_en_template": "[Passive Effect]\\n[Mechanism Rune] + {otherParams[0]}\\nConsume 1 [Mechanism Rune] each time you attack, dealing {otherParams[1]} more ATK for that attack",
+    "desc_tw_template": "[被動生效]\\n[機關刻紋]+{otherParams[0]}\\n每次攻擊時耗1[機關刻紋]，該次攻擊多{otherParams[1]}攻",
+    "tiers": [
+      {
+        "tier": 3,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          3,
+          2
+        ],
+        "desc_cn": "[被动生效]\\n[机关刻纹]+3\\n每次攻击时耗1[机关刻纹]，该次攻击多2攻",
+        "desc_en": "[Passive Effect]\\n[Mechanism Rune] + 3\\nConsume 1 [Mechanism Rune] each time you attack, dealing 2 more ATK for that attack"
+      },
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          4,
+          2
+        ],
+        "desc_cn": "[被动生效]\\n[机关刻纹]+4\\n每次攻击时耗1[机关刻纹]，该次攻击多2攻",
+        "desc_en": "[Passive Effect]\\n[Mechanism Rune] + 4\\nConsume 1 [Mechanism Rune] each time you attack, dealing 2 more ATK for that attack"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          5,
+          2
+        ],
+        "desc_cn": "[被动生效]\\n[机关刻纹]+5\\n每次攻击时耗1[机关刻纹]，该次攻击多2攻",
+        "desc_en": "[Passive Effect]\\n[Mechanism Rune] + 5\\nConsume 1 [Mechanism Rune] each time you attack, dealing 2 more ATK for that attack"
+      }
+    ]
+  },
+  {
+    "id": 136,
+    "name_cn": "机关狮",
+    "name_en": "Mechanism Lion",
+    "name_tw": "機關獅",
+    "desc_cn_template": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n自身每回合开始时耗1[机关刻纹]加1[气势]",
+    "desc_en_template": "[Passive Effect]\\n[Mechanism Rune] + {otherParams[0]}\\nConsume 1 [Mechanism Rune] at the start of each of your turns to gain 1 [Force]",
+    "desc_tw_template": "[被動生效]\\n[機關刻紋]+{otherParams[0]}\\n自身每回合開始時耗1[機關刻紋]加1[氣勢]",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          2
+        ],
+        "desc_cn": "[被动生效]\\n[机关刻纹]+2\\n自身每回合开始时耗1[机关刻纹]加1[气势]",
+        "desc_en": "[Passive Effect]\\n[Mechanism Rune] + 2\\nConsume 1 [Mechanism Rune] at the start of each of your turns to gain 1 [Force]"
+      },
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          3
+        ],
+        "desc_cn": "[被动生效]\\n[机关刻纹]+3\\n自身每回合开始时耗1[机关刻纹]加1[气势]",
+        "desc_en": "[Passive Effect]\\n[Mechanism Rune] + 3\\nConsume 1 [Mechanism Rune] at the start of each of your turns to gain 1 [Force]"
+      }
+    ]
+  },
+  {
+    "id": 137,
+    "name_cn": "机关豹",
+    "name_en": "Mechanism Leopard",
+    "name_tw": "機關豹",
+    "desc_cn_template": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n每当使用卡牌后，若本回合未进行过攻击，则耗2[机关刻纹]加{otherParams[1]}[身法]",
+    "desc_en_template": "[Passive Effect]\\n[Mechanism Rune] + {otherParams[0]}\\nAfter playing a card, if no attack has been made this turn, consume 2 [Mechanism Rune] to gain {otherParams[1]} [Agility]",
+    "desc_tw_template": "[被動生效]\\n[機關刻紋]+{otherParams[0]}\\n每當使用卡牌後，若本回合未進行過攻擊，則耗2[機關刻紋]加{otherParams[1]}[身法]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 2,
+        "params": [
+          3,
+          2
+        ],
+        "desc_cn": "[被动生效]\\n[机关刻纹]+3\\n每当使用卡牌后，若本回合未进行过攻击，则耗2[机关刻纹]加2[身法]",
+        "desc_en": "[Passive Effect]\\n[Mechanism Rune] + 3\\nAfter playing a card, if no attack has been made this turn, consume 2 [Mechanism Rune] to gain 2 [Agility]"
+      }
+    ]
+  },
+  {
+    "id": 138,
+    "name_cn": "机关引擎",
+    "name_en": "Mechanism Engine",
+    "name_tw": "機關引擎",
+    "desc_cn_template": "[被动生效]\\n自身每回合开始时加{otherParams[0]}[机关刻纹]",
+    "desc_en_template": "[Passive Effect]\\nGain {otherParams[0]} [Mechanism Rune] at the start of each of your turns",
+    "desc_tw_template": "[被動生效]\\n自身每回合開始時加{otherParams[0]}[機關刻紋]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": 4,
+        "params": [
+          1
+        ],
+        "desc_cn": "[被动生效]\\n自身每回合开始时加1[机关刻纹]",
+        "desc_en": "[Passive Effect]\\nGain 1 [Mechanism Rune] at the start of each of your turns"
+      }
+    ]
+  },
+  {
+    "id": 141,
+    "name_cn": "饮道茶",
+    "name_en": "Sip Spring Course Tea",
+    "name_tw": "飲道茶",
+    "desc_cn_template": "[被动生效]\\n战斗结束后减1修为，获得1张[云泉道茶]，销毁此刻印",
+    "desc_en_template": "[Passive Effect]\\nAfter the battle ends, reduce [Cultivation] by 1, gain 1 [Spring Course Tea] card, and destroy this Sigil.",
+    "desc_tw_template": "[被動生效]\\n戰鬥結束後减1修爲，獲得1張[雲泉道茶]，銷毀此刻印",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [],
+        "desc_cn": "[被动生效]\\n战斗结束后减1修为，获得1张[云泉道茶]，销毁此刻印",
+        "desc_en": "[Passive Effect]\\nAfter the battle ends, reduce [Cultivation] by 1, gain 1 [Spring Course Tea] card, and destroy this Sigil."
+      }
+    ]
+  },
+  {
+    "id": 142,
+    "name_cn": "舞狂炎",
+    "name_en": "Wield Flame Dance",
+    "name_tw": "舞狂炎",
+    "desc_cn_template": "下{otherParams[0]}次[击伤]对方时，每次施加1层[外伤]",
+    "desc_en_template": "For the next {otherParams[0]} times you [Injure] the opponent, apply 1 [Wound] each time.",
+    "desc_tw_template": "下{otherParams[0]}次[擊傷]對方時，每次施加1層[外傷]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 2,
+        "params": [
+          2
+        ],
+        "desc_cn": "下2次[击伤]对方时，每次施加1层[外伤]",
+        "desc_en": "For the next 2 times you [Injure] the opponent, apply 1 [Wound] each time."
+      }
+    ]
+  },
+  {
+    "id": 143,
+    "name_cn": "护玲珑",
+    "name_en": "Guard Delicate Bracelet",
+    "name_tw": "護玲瓏",
+    "desc_cn_template": "下{otherParams[0]}次触发[再次行动]时，每次获得1层[护体]并加5[防]",
+    "desc_en_template": "For the next {otherParams[0]} times [Chase] is triggered, gain 1 [Guard Up] and add 5 [DEF] each time.",
+    "desc_tw_template": "下{otherParams[0]}次觸發[再次行動]時，每次獲得1層[護體]幷加5[防]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": null,
+        "params": [
+          2
+        ],
+        "desc_cn": "下2次触发[再次行动]时，每次获得1层[护体]并加5[防]",
+        "desc_en": "For the next 2 times [Chase] is triggered, gain 1 [Guard Up] and add 5 [DEF] each time."
+      }
+    ]
+  },
+  {
+    "id": 144,
+    "name_cn": "踏灵云",
+    "name_en": "Tread Spirit Clouds",
+    "name_tw": "踏靈雲",
+    "desc_cn_template": "下{otherParams[0]}次使用[云剑]时，每次加1[灵气]",
+    "desc_en_template": "For the next {otherParams[0]} times you play [Cloud Sword], add 1 [Qi] each time.",
+    "desc_tw_template": "下{otherParams[0]}次使用[雲劍]時，每次加1[靈氣]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 6,
+        "params": [
+          5
+        ],
+        "desc_cn": "下5次使用[云剑]时，每次加1[灵气]",
+        "desc_en": "For the next 5 times you play [Cloud Sword], add 1 [Qi] each time."
+      }
+    ]
+  },
+  {
+    "id": 145,
+    "name_cn": "御灵防",
+    "name_en": "Ward Spiritstat Shield",
+    "name_tw": "禦靈防",
+    "desc_cn_template": "本回合结束时每有1[灵气]加{otherParams[0]}[防]",
+    "desc_en_template": "At the end of this turn, add {otherParams[0]} [DEF] for each 1 [Qi] you have.",
+    "desc_tw_template": "本回合結束時每有1[靈氣]加{otherParams[0]}[防]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          3
+        ],
+        "desc_cn": "本回合结束时每有1[灵气]加3[防]",
+        "desc_en": "At the end of this turn, add 3 [DEF] for each 1 [Qi] you have."
+      }
+    ]
+  },
+  {
+    "id": 146,
+    "name_cn": "融剑阵",
+    "name_en": "Merge Fusion Style",
+    "name_tw": "融劍陣",
+    "desc_cn_template": "[被动生效]\\n[御空剑阵]将同时视作[云剑]、[狂剑]和[灵剑]",
+    "desc_en_template": "[Passive Effect]\\n[Rule Sky Sword Formation] is regarded as [Cloud Sword], [Unrestrained Sword], and [Spirit Sword].",
+    "desc_tw_template": "[被動生效]\\n[禦空劍陣]將同時視作[雲劍]、[狂劍]和[靈劍]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 4,
+        "params": [],
+        "desc_cn": "[被动生效]\\n[御空剑阵]将同时视作[云剑]、[狂剑]和[灵剑]",
+        "desc_en": "[Passive Effect]\\n[Rule Sky Sword Formation] is regarded as [Cloud Sword], [Unrestrained Sword], and [Spirit Sword]."
+      }
+    ]
+  },
+  {
+    "id": 147,
+    "name_cn": "拂清风",
+    "name_en": "Brush Birdie Wind",
+    "name_tw": "拂清風",
+    "desc_cn_template": "[被动生效]\\n每当自身生命变化时加{otherParams[0]}[防]",
+    "desc_en_template": "[Passive Effect]\\nAdd {otherParams[0]} [DEF] whenever your HP changes.",
+    "desc_tw_template": "[被動生效]\\n每當自身生命變化時加{otherParams[0]}[防]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [
+          1
+        ],
+        "desc_cn": "[被动生效]\\n每当自身生命变化时加1[防]",
+        "desc_en": "[Passive Effect]\\nAdd 1 [DEF] whenever your HP changes."
+      }
+    ]
+  },
+  {
+    "id": 148,
+    "name_cn": "捉困鳖",
+    "name_en": "Capture Trapped Turtle",
+    "name_tw": "捉困鱉",
+    "desc_cn_template": "下次攻击时，对方每有1层[负面状态]多{otherParams[0]}攻",
+    "desc_en_template": "In your next attack, add {otherParams[0]} ATK for each stack of [Debuff] the opponent has.",
+    "desc_tw_template": "下次攻擊時，對方每有1層[負面狀態]多{otherParams[0]}攻",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 6,
+        "params": [
+          2
+        ],
+        "desc_cn": "下次攻击时，对方每有1层[负面状态]多2攻",
+        "desc_en": "In your next attack, add 2 ATK for each stack of [Debuff] the opponent has."
+      }
+    ]
+  },
+  {
+    "id": 149,
+    "name_cn": "卜灵灯",
+    "name_en": "Divine with Lamp",
+    "name_tw": "蔔靈燈",
+    "desc_cn_template": "下1次使用名字含“卦”的牌时[卦象]+2，减对方2生命，减对方1[灵气]",
+    "desc_en_template": "When you play a card with \"Hexagram\" in its name for the next time, [Hexagram] + 2, reduce the opponent's HP by 2, and reduce the opponent's [Qi] by 1.",
+    "desc_tw_template": "下1次使用名字含“卦”的牌時[卦象]+2，减對方2生命，减對方1[靈氣]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 6,
+        "params": [],
+        "desc_cn": "下1次使用名字含“卦”的牌时[卦象]+2，减对方2生命，减对方1[灵气]",
+        "desc_en": "When you play a card with \"Hexagram\" in its name for the next time, [Hexagram] + 2, reduce the opponent's HP by 2, and reduce the opponent's [Qi] by 1."
+      }
+    ]
+  },
+  {
+    "id": 150,
+    "name_cn": "布星卦",
+    "name_en": "Arrange Astral Hexagram",
+    "name_tw": "布星卦",
+    "desc_cn_template": "下{otherParams[0]}次使用[星弈]牌时，每次加1[卦象]",
+    "desc_en_template": "For the next {otherParams[0]} times you play [Astral Move] cards, add 1 [Hexagram] each time.",
+    "desc_tw_template": "下{otherParams[0]}次使用[星弈]牌時，每次加1[卦象]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 2,
+        "params": [
+          4
+        ],
+        "desc_cn": "下4次使用[星弈]牌时，每次加1[卦象]",
+        "desc_en": "For the next 4 times you play [Astral Move] cards, add 1 [Hexagram] each time."
+      }
+    ]
+  },
+  {
+    "id": 151,
+    "name_cn": "扇星月",
+    "name_en": "Fan Star-Moon Breeze",
+    "name_tw": "扇星月",
+    "desc_cn_template": "[被动生效]\\n[星位]上的牌[灵气]消耗减1",
+    "desc_en_template": "[Passive Effect]\\nReduce the [Qi] cost of cards on [Star Point] by 1.",
+    "desc_tw_template": "[被動生效]\\n[星位]上的牌[靈氣]消耗减1",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": null,
+        "params": [],
+        "desc_cn": "[被动生效]\\n[星位]上的牌[灵气]消耗减1",
+        "desc_en": "[Passive Effect]\\nReduce the [Qi] cost of cards on [Star Point] by 1."
+      }
+    ]
+  },
+  {
+    "id": 152,
+    "name_cn": "隐孤虚",
+    "name_en": "Hide in Solitary Void",
+    "name_tw": "隱孤虛",
+    "desc_cn_template": "自身下1次被攻击时，先向对方施加1层[虚弱]",
+    "desc_en_template": "When you are attacked for the next time, first apply 1 [Weakened] to the opponent.",
+    "desc_tw_template": "自身下1次被攻擊時，先向對方施加1層[虛弱]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 14,
+        "params": [],
+        "desc_cn": "自身下1次被攻击时，先向对方施加1层[虚弱]",
+        "desc_en": "When you are attacked for the next time, first apply 1 [Weakened] to the opponent."
+      }
+    ]
+  },
+  {
+    "id": 153,
+    "name_cn": "承五行",
+    "name_en": "Bear Five Elements",
+    "name_tw": "承五行",
+    "desc_cn_template": "[被动生效]\\n战斗结束后减3修为，获得1张[五行传承]，销毁此刻印",
+    "desc_en_template": "[Passive Effect]\\nAfter the battle ends, reduce [Cultivation] by 3, gain 1 [Inheritance of Five Elements] card, and destroy this Sigil.",
+    "desc_tw_template": "[被動生效]\\n戰鬥結束後减3修爲，獲得1張[五行傳承]，銷毀此刻印",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 1,
+        "max_hp": null,
+        "params": [],
+        "desc_cn": "[被动生效]\\n战斗结束后减3修为，获得1张[五行传承]，销毁此刻印",
+        "desc_en": "[Passive Effect]\\nAfter the battle ends, reduce [Cultivation] by 3, gain 1 [Inheritance of Five Elements] card, and destroy this Sigil."
+      }
+    ]
+  },
+  {
+    "id": 154,
+    "name_cn": "唤元灵",
+    "name_en": "Summon Elements Anima",
+    "name_tw": "喚元靈",
+    "desc_cn_template": "下{otherParams[0]}次[激活五行]时触发额外效果：\\n木灵：[加攻]+1\\n火灵：对方减8生命及上限\\n土灵：[防]+10\\n金灵：[锋锐]+4\\n水灵：[水势]+2",
+    "desc_en_template": "Trigger additional effects when you [Activate Five Elements] for the next {otherParams[0]} times:\nWood Spirit: [Increase ATK] + 1\nFire Spirit: Reduce the opponent's HP and Max HP by 8\nEarth Spirit: [DEF] + 10\nMetal Spirit: [Penetrate] + 4\nWater Spirit: [Force of Water] + 2",
+    "desc_tw_template": "下{otherParams[0]}次[激活五行]時觸發額外效果：\\n木靈：[加攻]+1\\n火靈：對方减8生命及上限\\n土靈：[防]+10\\n金靈：[鋒銳]+4\\n水靈：[水勢]+2",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 6,
+        "params": [
+          2
+        ],
+        "desc_cn": "下2次[激活五行]时触发额外效果：\\n木灵：[加攻]+1\\n火灵：对方减8生命及上限\\n土灵：[防]+10\\n金灵：[锋锐]+4\\n水灵：[水势]+2",
+        "desc_en": "Trigger additional effects when you [Activate Five Elements] for the next 2 times:\nWood Spirit: [Increase ATK] + 1\nFire Spirit: Reduce the opponent's HP and Max HP by 8\nEarth Spirit: [DEF] + 10\nMetal Spirit: [Penetrate] + 4\nWater Spirit: [Force of Water] + 2"
+      }
+    ]
+  },
+  {
+    "id": 155,
+    "name_cn": "舞花灵",
+    "name_en": "Dance with Blossom Spirits",
+    "name_tw": "舞花靈",
+    "desc_cn_template": "[被动生效]\\n以[五行相生]顺序使用牌时加{otherParams[0]}[灵气]和{otherParams[1]}生命",
+    "desc_en_template": "[Passive Effect]\\nAdd {otherParams[0]} [Qi] and {otherParams[1]} HP when playing cards in the order of [Five Element Generating Interaction].",
+    "desc_tw_template": "[被動生效]\\n以[五行相生]順序使用牌時加{otherParams[0]}[靈氣]和{otherParams[1]}生命",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 6,
+        "params": [
+          1,
+          1
+        ],
+        "desc_cn": "[被动生效]\\n以[五行相生]顺序使用牌时加1[灵气]和1生命",
+        "desc_en": "[Passive Effect]\\nAdd 1 [Qi] and 1 HP when playing cards in the order of [Five Element Generating Interaction]."
+      }
+    ]
+  },
+  {
+    "id": 156,
+    "name_cn": "震山崩",
+    "name_en": "Shake for Landslide",
+    "name_tw": "震山崩",
+    "desc_cn_template": "下1次攻击时，自身[防]减半，每减1点多{otherParams[0]}攻",
+    "desc_en_template": "In your next attack, halve your [DEF], and add {otherParams[0]} ATK for each point reduced.",
+    "desc_tw_template": "下1次攻擊時，自身[防]减半，每减1點多{otherParams[0]}攻",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": null,
+        "params": [
+          2
+        ],
+        "desc_cn": "下1次攻击时，自身[防]减半，每减1点多2攻",
+        "desc_en": "In your next attack, halve your [DEF], and add 2 ATK for each point reduced."
+      }
+    ]
+  },
+  {
+    "id": 157,
+    "name_cn": "燃咒印",
+    "name_en": "Ignite Burning Seal",
+    "name_tw": "燃咒印",
+    "desc_cn_template": "下1次使用名字含“印”的牌后将其[消耗]并[再次行动]",
+    "desc_en_template": "After playing a card with \"Seal\" in its name for the next time, [Consume] it and trigger [Chase].",
+    "desc_tw_template": "下1次使用名字含“印”的牌後將其[消耗]幷[再次行動]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 3,
+        "max_hp": null,
+        "params": [],
+        "desc_cn": "下1次使用名字含“印”的牌后将其[消耗]并[再次行动]",
+        "desc_en": "After playing a card with \"Seal\" in its name for the next time, [Consume] it and trigger [Chase]."
+      }
+    ]
+  },
+  {
+    "id": 158,
+    "name_cn": "忘百忧",
+    "name_en": "Banish All Worries",
+    "name_tw": "忘百憂",
+    "desc_cn_template": "双方各加{otherParams[0]}层[护体]\\n双方各减{otherParams[1]}层全部[负面状态]",
+    "desc_en_template": "Both players gain {otherParams[0]} [Guard Up]; both players reduce {otherParams[1]} stack of each [Debuff].",
+    "desc_tw_template": "雙方各加{otherParams[0]}層[護體]\\n雙方各减{otherParams[1]}層全部[負面狀態]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 16,
+        "params": [
+          2,
+          2
+        ],
+        "desc_cn": "双方各加2层[护体]\\n双方各减2层全部[负面状态]",
+        "desc_en": "Both players gain 2 [Guard Up]; both players reduce 2 stack of each [Debuff]."
+      }
+    ]
+  },
+  {
+    "id": 159,
+    "name_cn": "修玄心",
+    "name_en": "Cultivate Unwavering Soul",
+    "name_tw": "修玄心",
+    "desc_cn_template": "[被动生效]\\n每获得1层[负面状态]时加{otherParams[0]}生命",
+    "desc_en_template": "[Passive Effect]\\nAdd {otherParams[0]} HP whenever you gain 1 stack of [Debuff].",
+    "desc_tw_template": "[被動生效]\\n每獲得1層[負面狀態]時加{otherParams[0]}生命",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 8,
+        "params": [
+          1
+        ],
+        "desc_cn": "[被动生效]\\n每获得1层[负面状态]时加1生命",
+        "desc_en": "[Passive Effect]\\nAdd 1 HP whenever you gain 1 stack of [Debuff]."
+      }
+    ]
+  },
+  {
+    "id": 160,
+    "name_cn": "追猛攻",
+    "name_en": "Chase Fierce Attack",
+    "name_tw": "追猛攻",
+    "desc_cn_template": "[被动生效]\\n战斗中每次使用含加[体魄]效果的牌后，追加{otherParams[0]}攻",
+    "desc_en_template": "[Passive Effect]\\nMake an additional {otherParams[0]} ATK after each time you play a card that adds [Physique].",
+    "desc_tw_template": "[被動生效]\\n戰鬥中每次使用含加[體魄]效果的牌後，追加{otherParams[0]}攻",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": null,
+        "params": [
+          3
+        ],
+        "desc_cn": "[被动生效]\\n战斗中每次使用含加[体魄]效果的牌后，追加3攻",
+        "desc_en": "[Passive Effect]\\nMake an additional 3 ATK after each time you play a card that adds [Physique]."
+      }
+    ]
+  },
+  {
+    "id": 161,
+    "name_cn": "拥冥月",
+    "name_en": "Embrace Styx Moon",
+    "name_tw": "擁冥月",
+    "desc_cn_template": "[被动生效]\\n每次使用卡组第1格的牌时[体魄]+{otherParams[0]}，[身法]+{otherParams[1]}，随机获得{otherParams[0]}层[负面状态]（随机到[困缚]时改为[冥]）",
+    "desc_en_template": "[Passive Effect]\\nEach time you play the card in the 1st slot of your deck, [Physique] + {otherParams[0]}, [Agility] + {otherParams[1]}, and randomly gain {otherParams[0]} [Debuff] (if [Entangled] is randomly selected, it is replaced with [Styx]).",
+    "desc_tw_template": "[被動生效]\\n每次使用卡組第1格的牌時[體魄]+{otherParams[0]}，[身法]+{otherParams[1]}，隨機獲得{otherParams[0]}層[負面狀態]（隨機到[困縛]時改爲[冥]）",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 3,
+        "max_hp": 8,
+        "params": [
+          1,
+          5,
+          1
+        ],
+        "desc_cn": "[被动生效]\\n每次使用卡组第1格的牌时[体魄]+1，[身法]+5，随机获得1层[负面状态]（随机到[困缚]时改为[冥]）",
+        "desc_en": "[Passive Effect]\\nEach time you play the card in the 1st slot of your deck, [Physique] + 1, [Agility] + 5, and randomly gain 1 [Debuff] (if [Entangled] is randomly selected, it is replaced with [Styx])."
+      }
+    ]
+  },
+  {
+    "id": 162,
+    "name_cn": "破玄魔",
+    "name_en": "Shatter Xuan Demon",
+    "name_tw": "破玄魔",
+    "desc_cn_template": "将最多{otherParams[0]}层随机[负面状态]转为等量[加攻]",
+    "desc_en_template": "Convert up to {otherParams[0]} stacks of [Debuff] into the same amount of [Increase ATK].",
+    "desc_tw_template": "將最多{otherParams[0]}層隨機[負面狀態]轉爲等量[加攻]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": null,
+        "params": [
+          2
+        ],
+        "desc_cn": "将最多2层随机[负面状态]转为等量[加攻]",
+        "desc_en": "Convert up to 2 stacks of [Debuff] into the same amount of [Increase ATK]."
+      }
+    ]
+  },
+  {
+    "id": 163,
+    "name_cn": "涌灵炁",
+    "name_en": "Surge Spiritual Qi",
+    "name_tw": "涌靈炁",
+    "desc_cn_template": "[被动生效]\\n每当自身[再次行动]时加{otherParams[0]}[灵气]",
+    "desc_en_template": "[Passive Effect]\\nAdd {otherParams[0]} [Qi] whenever you trigger [Chase].",
+    "desc_tw_template": "[被動生效]\\n每當自身[再次行動]時加{otherParams[0]}[靈氣]",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 8,
+        "params": [
+          1
+        ],
+        "desc_cn": "[被动生效]\\n每当自身[再次行动]时加1[灵气]",
+        "desc_en": "[Passive Effect]\\nAdd 1 [Qi] whenever you trigger [Chase]."
+      }
+    ]
+  },
+  {
+    "id": 164,
+    "name_cn": "展灵翼",
+    "name_en": "Unfold Spirit Wings",
+    "name_tw": "展靈翼",
+    "desc_cn_template": "本回合结束时耗{otherParams[0]}[灵气]：[身法]+{otherParams[1]}",
+    "desc_en_template": "At the end of this turn, consume {otherParams[0]} [Qi]: [Agility] + {otherParams[1]}",
+    "desc_tw_template": "本回合結束時耗{otherParams[0]}[靈氣]：[身法]+{otherParams[1]}",
+    "tiers": [
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 6,
+        "params": [
+          3,
+          10
+        ],
+        "desc_cn": "本回合结束时耗3[灵气]：[身法]+10",
+        "desc_en": "At the end of this turn, consume 3 [Qi]: [Agility] + 10"
+      }
+    ]
+  },
+  {
+    "id": 168,
+    "name_cn": "栖白鹭",
+    "name_en": "Perch Egret",
+    "name_tw": "栖白鷺",
+    "desc_cn_template": "下1次使用[灵剑]时将其临时[升级]（战斗结束还原），若其为[白鹭灵剑]则改为永久[升级]",
+    "desc_en_template": "For the next time you play a [Spirit Sword] card, temporarily [Upgrade] it (revert after the battle ends); if it is [Egret Spirit Sword], change it to permanent [Upgrade] instead.",
+    "desc_tw_template": "下1次使用[靈劍]時將其臨時[升級]（戰鬥結束還原），若其爲[白鷺靈劍]則改爲永久[升級]",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 8,
+        "params": [],
+        "desc_cn": "下1次使用[灵剑]时将其临时[升级]（战斗结束还原），若其为[白鹭灵剑]则改为永久[升级]",
+        "desc_en": "For the next time you play a [Spirit Sword] card, temporarily [Upgrade] it (revert after the battle ends); if it is [Egret Spirit Sword], change it to permanent [Upgrade] instead."
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 12,
+        "params": [],
+        "desc_cn": "下1次使用[灵剑]时将其临时[升级]（战斗结束还原），若其为[白鹭灵剑]则改为永久[升级]",
+        "desc_en": "For the next time you play a [Spirit Sword] card, temporarily [Upgrade] it (revert after the battle ends); if it is [Egret Spirit Sword], change it to permanent [Upgrade] instead."
+      }
+    ]
+  },
+  {
+    "id": 169,
+    "name_cn": "离之火",
+    "name_en": "Flame of Li",
+    "name_tw": "離之火",
+    "desc_cn_template": "下一次使用[离卦]后，每有1[卦象]就减对方{otherParams[0]}生命及上限",
+    "desc_en_template": "After playing [Flame Hexagram] for the next time, reduce the opponent's HP and Max HP by {otherParams[0]} for each 1 [Hexagram] you have.",
+    "desc_tw_template": "下一次使用[離卦]後，每有1[卦象]就减對方{otherParams[0]}生命及上限",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": null,
+        "params": [
+          3
+        ],
+        "desc_cn": "下一次使用[离卦]后，每有1[卦象]就减对方3生命及上限",
+        "desc_en": "After playing [Flame Hexagram] for the next time, reduce the opponent's HP and Max HP by 3 for each 1 [Hexagram] you have."
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 4,
+        "params": [
+          3
+        ],
+        "desc_cn": "下一次使用[离卦]后，每有1[卦象]就减对方3生命及上限",
+        "desc_en": "After playing [Flame Hexagram] for the next time, reduce the opponent's HP and Max HP by 3 for each 1 [Hexagram] you have."
+      }
+    ]
+  },
+  {
+    "id": 170,
+    "name_cn": "泉之涌",
+    "name_en": "Spring Surge",
+    "name_tw": "泉之涌",
+    "desc_cn_template": "下1次[击伤]对方且[击伤]值≥{otherParams[0]}时，每[击伤]{otherParams[1]}生命就获得1层[水势]",
+    "desc_en_template": "When you [Injure] the opponent for the next time and the [Injure] value ≥ {otherParams[0]}, gain 1 [Force of Water] for every {otherParams[1]} HP [Injured].",
+    "desc_tw_template": "下1次[擊傷]對方且[擊傷]值≥{otherParams[0]}時，每[擊傷]{otherParams[1]}生命就獲得1層[水勢]",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 2,
+        "max_hp": 4,
+        "params": [
+          15,
+          5
+        ],
+        "desc_cn": "下1次[击伤]对方且[击伤]值≥15时，每[击伤]5生命就获得1层[水势]",
+        "desc_en": "When you [Injure] the opponent for the next time and the [Injure] value ≥ 15, gain 1 [Force of Water] for every 5 HP [Injured]."
+      },
+      {
+        "tier": 5,
+        "sigil_value": 2,
+        "max_hp": 8,
+        "params": [
+          15,
+          5
+        ],
+        "desc_cn": "下1次[击伤]对方且[击伤]值≥15时，每[击伤]5生命就获得1层[水势]",
+        "desc_en": "When you [Injure] the opponent for the next time and the [Injure] value ≥ 15, gain 1 [Force of Water] for every 5 HP [Injured]."
+      }
+    ]
+  },
+  {
+    "id": 171,
+    "name_cn": "磅礴势",
+    "name_en": "Majestic Momentum",
+    "name_tw": "磅礴勢",
+    "desc_cn_template": "下一次使用[磅礴之势]或[天地浩荡]时先加{otherParams[0]}[气势]",
+    "desc_en_template": "When playing [Overwhelming Force] or [Vast Universe] for the next time, first add {otherParams[0]} [Force].",
+    "desc_tw_template": "下一次使用[磅礴之勢]或[天地浩蕩]時先加{otherParams[0]}[氣勢]",
+    "tiers": [
+      {
+        "tier": 4,
+        "sigil_value": 3,
+        "max_hp": 4,
+        "params": [
+          6
+        ],
+        "desc_cn": "下一次使用[磅礴之势]或[天地浩荡]时先加6[气势]",
+        "desc_en": "When playing [Overwhelming Force] or [Vast Universe] for the next time, first add 6 [Force]."
+      },
+      {
+        "tier": 5,
+        "sigil_value": 3,
+        "max_hp": 10,
+        "params": [
+          6
+        ],
+        "desc_cn": "下一次使用[磅礴之势]或[天地浩荡]时先加6[气势]",
+        "desc_en": "When playing [Overwhelming Force] or [Vast Universe] for the next time, first add 6 [Force]."
+      }
+    ]
+  }
+]

@@ -1,0 +1,1576 @@
+[
+  {
+    "field_1": 104,
+    "desc": "共鸣·云雾变幻",
+    "field_4": 1,
+    "field_5": 1000001,
+    "field_7": 18,
+    "field_103": 140
+  },
+  {
+    "field_1": 3,
+    "desc": "共鸣·剑不出鞘",
+    "field_4": 1,
+    "field_5": 1000001,
+    "field_6": 1,
+    "field_7": 66,
+    "otherParams": [
+      1
+    ],
+    "field_101": 8,
+    "field_103": 140
+  },
+  {
+    "field_1": 2,
+    "desc": "共鸣·云海连绵",
+    "field_4": 1,
+    "field_5": 1000001,
+    "field_6": 1,
+    "field_7": 14,
+    "otherParams": [
+      2,
+      3
+    ],
+    "field_102": 5,
+    "field_103": 140
+  },
+  {
+    "field_1": 1,
+    "desc": "共鸣·云影化身",
+    "field_4": 1,
+    "field_5": 1000001,
+    "field_7": 7,
+    "otherParams": [
+      50,
+      2
+    ],
+    "field_103": 140
+  },
+  {
+    "field_1": 105,
+    "desc": "共鸣·云泉道茶",
+    "field_4": 1,
+    "field_5": 1000001,
+    "field_7": 17,
+    "otherParams": [
+      6,
+      4,
+      4
+    ],
+    "field_103": 140
+  },
+  {
+    "field_1": 106,
+    "desc": "共鸣·血脉潜能",
+    "field_4": 1,
+    "field_5": 1000002,
+    "field_7": 19,
+    "otherParams": [
+      30
+    ],
+    "field_103": 140
+  },
+  {
+    "field_1": 5,
+    "desc": "共鸣·炽火炎刃",
+    "field_4": 1,
+    "field_5": 1000002,
+    "field_6": 1,
+    "field_7": 67,
+    "otherParams": [
+      2,
+      6,
+      5
+    ],
+    "field_101": 8,
+    "field_103": 140
+  },
+  {
+    "field_1": 6,
+    "desc": "共鸣·流冰寒刃",
+    "field_4": 1,
+    "field_5": 1000002,
+    "field_6": 1,
+    "field_7": 68,
+    "otherParams": [
+      10,
+      1
+    ],
+    "field_101": 11,
+    "field_103": 140
+  },
+  {
+    "field_1": 107,
+    "desc": "共鸣·崩雪",
+    "field_4": 1,
+    "field_5": 1000002,
+    "field_7": 23,
+    "otherParams": [
+      2
+    ],
+    "field_102": 4,
+    "field_103": 140
+  },
+  {
+    "field_1": 4,
+    "desc": "共鸣·炎舞",
+    "field_4": 1,
+    "field_5": 1000002,
+    "field_7": 22,
+    "otherParams": [
+      1
+    ],
+    "field_101": 11,
+    "field_102": 5,
+    "field_103": 140
+  },
+  {
+    "field_1": 108,
+    "desc": "共鸣·龙脉传承",
+    "field_4": 1,
+    "field_5": 1000003,
+    "field_7": 24,
+    "otherParams": [
+      10
+    ],
+    "field_101": 17,
+    "field_103": 140
+  },
+  {
+    "field_1": 7,
+    "desc": "共鸣·珊瑚剑",
+    "field_4": 1,
+    "field_5": 1000003,
+    "field_6": 1,
+    "field_7": 25,
+    "otherParams": [
+      1
+    ],
+    "field_101": 13,
+    "field_103": 140
+  },
+  {
+    "field_1": 8,
+    "desc": "共鸣·龙鳞",
+    "field_4": 1,
+    "field_5": 1000003,
+    "field_6": 1,
+    "field_7": 27,
+    "otherParams": [
+      50,
+      30
+    ],
+    "field_103": 140
+  },
+  {
+    "field_1": 109,
+    "desc": "共鸣·唤雨",
+    "field_4": 1,
+    "field_5": 1000003,
+    "field_6": 1,
+    "field_7": 85,
+    "field_101": 9,
+    "field_103": 140
+  },
+  {
+    "field_1": 9,
+    "desc": "共鸣·九霄玲珑镯",
+    "field_4": 1,
+    "field_5": 1000003,
+    "field_6": 1,
+    "field_7": 86,
+    "otherParams": [
+      2
+    ],
+    "field_101": 14,
+    "field_103": 140
+  },
+  {
+    "field_1": 110,
+    "desc": "共鸣·好奇心",
+    "field_4": 1,
+    "field_5": 1000004,
+    "field_7": 129,
+    "field_103": 140
+  },
+  {
+    "field_1": 11,
+    "desc": "共鸣·猫爪",
+    "field_4": 1,
+    "field_5": 1000004,
+    "field_6": 1,
+    "field_7": 44,
+    "otherParams": [
+      1,
+      2
+    ],
+    "field_101": 14,
+    "field_103": 140
+  },
+  {
+    "field_1": 12,
+    "desc": "共鸣·猫魂庇佑",
+    "field_4": 1,
+    "field_5": 1000004,
+    "field_7": 45,
+    "field_101": 3,
+    "field_103": 140
+  },
+  {
+    "field_1": 99,
+    "desc": "共鸣·灵猫乱剑",
+    "field_4": 1,
+    "field_5": 1000004,
+    "field_6": 1,
+    "field_7": 46,
+    "otherParams": [
+      6
+    ],
+    "field_101": 14,
+    "field_103": 140
+  },
+  {
+    "field_1": 10,
+    "desc": "共鸣·灵猫踏云",
+    "field_4": 1,
+    "field_5": 1000004,
+    "field_6": 1,
+    "field_7": 15,
+    "otherParams": [
+      3
+    ],
+    "field_102": 4,
+    "field_103": 140
+  },
+  {
+    "field_1": 13,
+    "desc": "共鸣·铸剑师",
+    "field_4": 1,
+    "field_5": 1000005,
+    "field_7": 92,
+    "otherParams": [
+      2
+    ],
+    "field_101": 9,
+    "field_103": 140
+  },
+  {
+    "field_1": 111,
+    "desc": "共鸣·剑锋锻造",
+    "field_4": 1,
+    "field_5": 1000005,
+    "field_6": 1,
+    "field_7": 93,
+    "field_103": 140
+  },
+  {
+    "field_1": 14,
+    "desc": "共鸣·剑纹雕琢",
+    "field_4": 1,
+    "field_5": 1000005,
+    "field_6": 1,
+    "field_7": 94,
+    "otherParams": [
+      5
+    ],
+    "field_101": 13,
+    "field_103": 140
+  },
+  {
+    "field_1": 15,
+    "desc": "共鸣·灵气凝铸",
+    "field_4": 1,
+    "field_5": 1000005,
+    "field_6": 1,
+    "field_7": 95,
+    "otherParams": [
+      1,
+      2
+    ],
+    "field_103": 140
+  },
+  {
+    "field_1": 96,
+    "desc": "共鸣·狂剑之心",
+    "field_4": 1,
+    "field_5": 1000005,
+    "field_7": 10096,
+    "otherParams": [
+      2
+    ],
+    "field_102": 4,
+    "field_103": 140
+  },
+  {
+    "field_1": 112,
+    "desc": "共鸣·悟剑天赋",
+    "field_4": 1,
+    "field_5": 1000006,
+    "field_7": 189,
+    "field_103": 140
+  },
+  {
+    "field_1": 113,
+    "desc": "共鸣·八方来风",
+    "field_4": 1,
+    "field_5": 1000006,
+    "field_6": 1,
+    "field_7": 191,
+    "otherParams": [
+      3
+    ],
+    "field_101": 8,
+    "field_103": 140
+  },
+  {
+    "field_1": 16,
+    "desc": "共鸣·观壁悟道",
+    "field_4": 1,
+    "field_5": 1000006,
+    "field_7": 190,
+    "otherParams": [
+      1
+    ],
+    "field_103": 140
+  },
+  {
+    "field_1": 17,
+    "desc": "共鸣·剑招融汇",
+    "field_4": 1,
+    "field_5": 1000006,
+    "field_6": 1,
+    "field_7": 192,
+    "field_103": 140
+  },
+  {
+    "field_1": 18,
+    "desc": "共鸣·曳影剑阵",
+    "field_4": 1,
+    "field_5": 1000006,
+    "field_6": 1,
+    "field_7": 193,
+    "field_101": 6,
+    "field_103": 140
+  },
+  {
+    "field_1": 19,
+    "desc": "共鸣·勤学苦练",
+    "field_4": 2,
+    "field_5": 2000001,
+    "field_7": 29,
+    "field_103": 140
+  },
+  {
+    "field_1": 114,
+    "desc": "共鸣·飞鸿踏雪",
+    "field_4": 2,
+    "field_5": 2000001,
+    "field_7": 63,
+    "field_103": 140
+  },
+  {
+    "field_1": 20,
+    "desc": "共鸣·雪羽清风",
+    "field_4": 2,
+    "field_5": 2000001,
+    "field_6": 1,
+    "field_7": 64,
+    "otherParams": [
+      20,
+      1
+    ],
+    "field_101": 15,
+    "field_103": 140
+  },
+  {
+    "field_1": 21,
+    "desc": "共鸣·雁影化身",
+    "field_4": 2,
+    "field_5": 2000001,
+    "field_6": 1,
+    "field_7": 65,
+    "otherParams": [
+      20,
+      2
+    ],
+    "field_103": 140
+  },
+  {
+    "field_1": 115,
+    "desc": "共鸣·斩断俗尘",
+    "field_4": 2,
+    "field_5": 2000001,
+    "field_7": 42,
+    "otherParams": [
+      4
+    ],
+    "field_102": 5,
+    "field_103": 140
+  },
+  {
+    "field_1": 116,
+    "desc": "共鸣·血脉威能",
+    "field_4": 2,
+    "field_5": 2000002,
+    "field_6": 1,
+    "field_7": 114,
+    "otherParams": [
+      4
+    ],
+    "field_103": 140
+  },
+  {
+    "field_1": 23,
+    "desc": "共鸣·燃命之焰",
+    "field_4": 2,
+    "field_5": 2000002,
+    "field_7": 115,
+    "otherParams": [
+      1,
+      8
+    ],
+    "field_103": 140
+  },
+  {
+    "field_1": 100,
+    "desc": "共鸣·无极卦盘",
+    "field_4": 2,
+    "field_5": 2000002,
+    "field_7": 121,
+    "field_103": 140
+  },
+  {
+    "field_1": 22,
+    "desc": "共鸣·瓮中捉鳖",
+    "field_4": 2,
+    "field_5": 2000002,
+    "field_6": 1,
+    "field_7": 35,
+    "field_101": 11,
+    "field_103": 140
+  },
+  {
+    "field_1": 24,
+    "desc": "共鸣·狂雷电闪",
+    "field_4": 2,
+    "field_5": 2000002,
+    "field_6": 1,
+    "field_7": 122,
+    "field_101": 13,
+    "field_103": 140
+  },
+  {
+    "field_1": 117,
+    "desc": "共鸣·先天灵躯",
+    "field_4": 2,
+    "field_5": 2000003,
+    "field_6": 1,
+    "field_7": 37,
+    "field_102": 5,
+    "field_103": 140
+  },
+  {
+    "field_1": 27,
+    "desc": "共鸣·绛纱守护",
+    "field_4": 2,
+    "field_5": 2000003,
+    "field_7": 105,
+    "otherParams": [
+      20
+    ],
+    "field_103": 140
+  },
+  {
+    "field_1": 25,
+    "desc": "共鸣·灯焰飞舞",
+    "field_4": 2,
+    "field_5": 2000003,
+    "field_6": 1,
+    "field_7": 39,
+    "field_101": 12,
+    "field_103": 140
+  },
+  {
+    "field_1": 26,
+    "desc": "共鸣·旋灯占卦",
+    "field_4": 2,
+    "field_5": 2000003,
+    "field_6": 1,
+    "field_7": 40,
+    "field_101": 4,
+    "field_103": 140
+  },
+  {
+    "field_1": 118,
+    "desc": "共鸣·灯灵觉醒",
+    "field_4": 2,
+    "field_5": 2000003,
+    "field_7": 28,
+    "field_101": 12,
+    "field_103": 140
+  },
+  {
+    "field_1": 29,
+    "desc": "共鸣·运筹帷幄",
+    "field_4": 2,
+    "field_5": 2000004,
+    "field_7": 48,
+    "otherParams": [
+      2
+    ],
+    "field_103": 140
+  },
+  {
+    "field_1": 119,
+    "desc": "共鸣·占星",
+    "field_4": 2,
+    "field_5": 2000004,
+    "field_6": 1,
+    "field_7": 61,
+    "otherParams": [
+      5
+    ],
+    "field_101": 7,
+    "field_103": 140
+  },
+  {
+    "field_1": 120,
+    "desc": "共鸣·星爆术",
+    "field_4": 2,
+    "field_5": 2000004,
+    "field_6": 1,
+    "field_7": 50,
+    "otherParams": [
+      0
+    ],
+    "field_101": 11,
+    "field_103": 140
+  },
+  {
+    "field_1": 28,
+    "desc": "共鸣·七星定魂",
+    "field_4": 2,
+    "field_5": 2000004,
+    "field_6": 1,
+    "field_7": 52,
+    "otherParams": [
+      1
+    ],
+    "field_101": 10,
+    "field_103": 140
+  },
+  {
+    "field_1": 30,
+    "desc": "共鸣·布星问卦",
+    "field_4": 2,
+    "field_5": 2000004,
+    "field_6": 1,
+    "field_7": 62,
+    "otherParams": [
+      2
+    ],
+    "field_101": 6,
+    "field_103": 140
+  },
+  {
+    "field_1": 121,
+    "desc": "共鸣·算无遗策",
+    "field_4": 2,
+    "field_5": 2000005,
+    "field_6": 1,
+    "field_7": 104,
+    "otherParams": [
+      12
+    ],
+    "field_101": 7,
+    "field_103": 140
+  },
+  {
+    "field_1": 33,
+    "desc": "共鸣·以逸待劳",
+    "field_4": 2,
+    "field_5": 2000005,
+    "field_6": 1,
+    "field_7": 142,
+    "otherParams": [
+      3,
+      4
+    ],
+    "field_101": 8,
+    "field_103": 140
+  },
+  {
+    "field_1": 32,
+    "desc": "共鸣·计出万全",
+    "field_4": 2,
+    "field_5": 2000005,
+    "field_7": 141,
+    "field_101": 12,
+    "field_103": 140
+  },
+  {
+    "field_1": 122,
+    "desc": "共鸣·瞒天过海",
+    "field_4": 2,
+    "field_5": 2000005,
+    "field_6": 1,
+    "field_7": 108,
+    "otherParams": [
+      8
+    ],
+    "field_103": 140
+  },
+  {
+    "field_1": 31,
+    "desc": "共鸣·星月折扇",
+    "field_4": 2,
+    "field_5": 2000005,
+    "field_6": 1,
+    "field_7": 106,
+    "field_101": 7,
+    "field_103": 140
+  },
+  {
+    "field_1": 97,
+    "desc": "共鸣·战斗历练",
+    "field_4": 3,
+    "field_5": 3000001,
+    "field_7": 80,
+    "otherParams": [
+      5,
+      2
+    ],
+    "field_103": 140
+  },
+  {
+    "field_1": 34,
+    "desc": "共鸣·五行印记",
+    "field_4": 3,
+    "field_5": 3000001,
+    "field_6": 1,
+    "field_7": 82,
+    "otherParams": [
+      5
+    ],
+    "field_101": 14,
+    "field_103": 140
+  },
+  {
+    "field_1": 123,
+    "desc": "共鸣·悠然葫芦",
+    "field_4": 3,
+    "field_5": 3000001,
+    "field_7": 81,
+    "field_101": 14,
+    "field_102": 5,
+    "field_103": 140
+  },
+  {
+    "field_1": 35,
+    "desc": "共鸣·五行化身",
+    "field_4": 3,
+    "field_5": 3000001,
+    "field_7": 83,
+    "otherParams": [
+      30
+    ],
+    "field_103": 140
+  },
+  {
+    "field_1": 36,
+    "desc": "共鸣·五行传承",
+    "field_4": 3,
+    "field_5": 3000001,
+    "field_6": 1,
+    "field_7": 123,
+    "otherParams": [
+      1,
+      3
+    ],
+    "field_101": 3,
+    "field_103": 140
+  },
+  {
+    "field_1": 37,
+    "desc": "共鸣·先天五行",
+    "field_4": 3,
+    "field_5": 3000002,
+    "field_7": 109,
+    "otherParams": [
+      3
+    ],
+    "field_102": 5,
+    "field_103": 140
+  },
+  {
+    "field_1": 38,
+    "desc": "共鸣·先天印记",
+    "field_4": 3,
+    "field_5": 3000002,
+    "field_6": 1,
+    "field_7": 110,
+    "field_103": 140
+  },
+  {
+    "field_1": 39,
+    "desc": "共鸣·先天灵阵",
+    "field_4": 3,
+    "field_5": 3000002,
+    "field_6": 1,
+    "field_7": 111,
+    "otherParams": [
+      2
+    ],
+    "field_101": 6,
+    "field_103": 140
+  },
+  {
+    "field_1": 101,
+    "desc": "共鸣·双鸳逆克",
+    "field_4": 3,
+    "field_5": 3000002,
+    "field_7": 124,
+    "otherParams": [
+      2
+    ],
+    "field_101": 12,
+    "field_102": 5,
+    "field_103": 140
+  },
+  {
+    "field_1": 124,
+    "desc": "共鸣·五行元灵",
+    "field_4": 3,
+    "field_5": 3000002,
+    "field_6": 1,
+    "field_7": 112,
+    "field_103": 140
+  },
+  {
+    "field_1": 42,
+    "desc": "共鸣·五行润养",
+    "field_4": 3,
+    "field_5": 3000003,
+    "field_7": 133,
+    "field_101": 7,
+    "field_103": 140
+  },
+  {
+    "field_1": 125,
+    "desc": "共鸣·桃花印",
+    "field_4": 3,
+    "field_5": 3000003,
+    "field_6": 1,
+    "field_7": 98,
+    "otherParams": [
+      1,
+      3
+    ],
+    "field_101": 13,
+    "field_103": 140
+  },
+  {
+    "field_1": 40,
+    "desc": "共鸣·水灵印记",
+    "field_4": 3,
+    "field_5": 3000003,
+    "field_6": 1,
+    "field_7": 99,
+    "otherParams": [
+      1
+    ],
+    "field_101": 13,
+    "field_103": 140
+  },
+  {
+    "field_1": 126,
+    "desc": "共鸣·春雨",
+    "field_4": 3,
+    "field_5": 3000003,
+    "field_6": 1,
+    "field_7": 90,
+    "otherParams": [
+      7
+    ],
+    "field_101": 12,
+    "field_103": 140
+  },
+  {
+    "field_1": 41,
+    "desc": "共鸣·花舞",
+    "field_4": 3,
+    "field_5": 3000003,
+    "field_7": 101,
+    "field_102": 5,
+    "field_103": 140
+  },
+  {
+    "field_1": 127,
+    "desc": "共鸣·猛虎之躯",
+    "field_4": 3,
+    "field_5": 3000004,
+    "field_6": 1,
+    "field_7": 125,
+    "otherParams": [
+      12
+    ],
+    "field_101": 15,
+    "field_103": 140
+  },
+  {
+    "field_1": 43,
+    "desc": "共鸣·木灵炼体",
+    "field_4": 3,
+    "field_5": 3000004,
+    "field_6": 1,
+    "field_7": 89,
+    "otherParams": [
+      3
+    ],
+    "field_103": 140
+  },
+  {
+    "field_1": 128,
+    "desc": "共鸣·锟铻金环",
+    "field_4": 3,
+    "field_5": 3000004,
+    "field_6": 1,
+    "field_7": 132,
+    "field_101": 13,
+    "field_103": 140
+  },
+  {
+    "field_1": 44,
+    "desc": "共鸣·刚劲",
+    "field_4": 3,
+    "field_5": 3000004,
+    "field_6": 1,
+    "field_7": 91,
+    "otherParams": [
+      1
+    ],
+    "field_101": 10,
+    "field_103": 140
+  },
+  {
+    "field_1": 45,
+    "desc": "共鸣·山崩",
+    "field_4": 3,
+    "field_5": 3000004,
+    "field_6": 1,
+    "field_7": 100,
+    "otherParams": [
+      1,
+      2
+    ],
+    "field_101": 13,
+    "field_103": 140
+  },
+  {
+    "field_1": 46,
+    "desc": "共鸣·秘印亲和",
+    "field_4": 3,
+    "field_5": 3000005,
+    "field_7": 136,
+    "otherParams": [
+      3
+    ],
+    "field_103": 140
+  },
+  {
+    "field_1": 98,
+    "desc": "共鸣·相生之火",
+    "field_4": 3,
+    "field_5": 3000005,
+    "field_6": 1,
+    "field_7": 137,
+    "otherParams": [
+      2
+    ],
+    "field_102": 4,
+    "field_103": 140
+  },
+  {
+    "field_1": 47,
+    "desc": "共鸣·五行爆炎",
+    "field_4": 3,
+    "field_5": 3000005,
+    "field_6": 1,
+    "field_7": 138,
+    "otherParams": [
+      4,
+      2
+    ],
+    "field_101": 12,
+    "field_103": 140
+  },
+  {
+    "field_1": 48,
+    "desc": "共鸣·焰魂归复",
+    "field_4": 3,
+    "field_5": 3000005,
+    "field_6": 1,
+    "field_7": 139,
+    "otherParams": [
+      10
+    ],
+    "field_101": 13,
+    "field_103": 140
+  },
+  {
+    "field_1": 129,
+    "desc": "共鸣·疾燃咒印",
+    "field_4": 3,
+    "field_5": 3000005,
+    "field_6": 1,
+    "field_7": 140,
+    "field_103": 140
+  },
+  {
+    "field_1": 49,
+    "desc": "共鸣·磨砺不止",
+    "field_4": 4,
+    "field_5": 4000001,
+    "field_7": 151,
+    "otherParams": [
+      3
+    ],
+    "field_101": 6,
+    "field_103": 140
+  },
+  {
+    "field_1": 130,
+    "desc": "共鸣·锻体不息",
+    "field_4": 4,
+    "field_5": 4000001,
+    "field_7": 152,
+    "otherParams": [
+      3,
+      3
+    ],
+    "field_102": 3,
+    "field_103": 140
+  },
+  {
+    "field_1": 50,
+    "desc": "共鸣·灵涌不竭",
+    "field_4": 4,
+    "field_5": 4000001,
+    "field_6": 1,
+    "field_7": 153,
+    "field_101": 9,
+    "field_103": 140
+  },
+  {
+    "field_1": 131,
+    "desc": "共鸣·生机不灭",
+    "field_4": 4,
+    "field_5": 4000001,
+    "field_7": 154,
+    "otherParams": [
+      0
+    ],
+    "field_103": 140
+  },
+  {
+    "field_1": 51,
+    "desc": "共鸣·修玄不泯",
+    "field_4": 4,
+    "field_5": 4000001,
+    "field_7": 177,
+    "otherParams": [
+      2,
+      9
+    ],
+    "field_101": 9,
+    "field_103": 140
+  },
+  {
+    "field_1": 102,
+    "desc": "共鸣·锻躯之道",
+    "field_4": 4,
+    "field_5": 4000002,
+    "field_7": 170,
+    "otherParams": [
+      2
+    ],
+    "field_103": 140
+  },
+  {
+    "field_1": 52,
+    "desc": "共鸣·盛气凌人",
+    "field_4": 4,
+    "field_5": 4000002,
+    "field_6": 1,
+    "field_7": 172,
+    "otherParams": [
+      1,
+      2
+    ],
+    "field_101": 11,
+    "field_103": 140
+  },
+  {
+    "field_1": 53,
+    "desc": "共鸣·搏命之勇",
+    "field_4": 4,
+    "field_5": 4000002,
+    "field_6": 1,
+    "field_7": 171,
+    "field_101": 9,
+    "field_103": 140
+  },
+  {
+    "field_1": 54,
+    "desc": "共鸣·崩裂之拳",
+    "field_4": 4,
+    "field_5": 4000002,
+    "field_6": 1,
+    "field_7": 174,
+    "field_103": 140
+  },
+  {
+    "field_1": 132,
+    "desc": "共鸣·猛攻之姿",
+    "field_4": 4,
+    "field_5": 4000002,
+    "field_6": 1,
+    "field_7": 173,
+    "otherParams": [
+      3
+    ],
+    "field_101": 6,
+    "field_103": 140
+  },
+  {
+    "field_1": 103,
+    "desc": "共鸣·阴晴圆缺",
+    "field_4": 4,
+    "field_5": 4000003,
+    "field_7": 178,
+    "field_103": 140
+  },
+  {
+    "field_1": 55,
+    "desc": "共鸣·入冥",
+    "field_4": 4,
+    "field_5": 4000003,
+    "field_6": 1,
+    "field_7": 179,
+    "otherParams": [
+      1,
+      2
+    ],
+    "field_101": 13,
+    "field_103": 140
+  },
+  {
+    "field_1": 56,
+    "desc": "共鸣·疯魔",
+    "field_4": 4,
+    "field_5": 4000003,
+    "field_6": 1,
+    "field_7": 180,
+    "otherParams": [
+      1
+    ],
+    "field_101": 5,
+    "field_103": 140
+  },
+  {
+    "field_1": 133,
+    "desc": "共鸣·冥夜",
+    "field_4": 4,
+    "field_5": 4000003,
+    "field_6": 1,
+    "field_7": 181,
+    "otherParams": [
+      2
+    ],
+    "field_101": 12,
+    "field_103": 140
+  },
+  {
+    "field_1": 57,
+    "desc": "共鸣·冥月蟾光",
+    "field_4": 4,
+    "field_5": 4000003,
+    "field_6": 1,
+    "field_7": 182,
+    "field_103": 140
+  },
+  {
+    "field_1": 134,
+    "desc": "共鸣·禅心锻身",
+    "field_4": 4,
+    "field_5": 4000004,
+    "field_7": 183,
+    "field_101": 9,
+    "field_103": 140
+  },
+  {
+    "field_1": 58,
+    "desc": "共鸣·心体共鸣",
+    "field_4": 4,
+    "field_5": 4000004,
+    "field_6": 1,
+    "field_7": 184,
+    "otherParams": [
+      1,
+      4
+    ],
+    "field_101": 12,
+    "field_103": 140
+  },
+  {
+    "field_1": 59,
+    "desc": "共鸣·记忆碎片",
+    "field_4": 4,
+    "field_5": 4000004,
+    "field_7": 186,
+    "field_103": 140
+  },
+  {
+    "field_1": 135,
+    "desc": "共鸣·冥心入玄",
+    "field_4": 4,
+    "field_5": 4000004,
+    "field_6": 1,
+    "field_7": 185,
+    "field_101": 10,
+    "field_103": 140
+  },
+  {
+    "field_1": 60,
+    "desc": "共鸣·万玄破魔掌",
+    "field_4": 4,
+    "field_5": 4000004,
+    "field_7": 187,
+    "field_101": 13,
+    "field_102": 5,
+    "field_103": 140
+  },
+  {
+    "field_1": 92,
+    "desc": "共鸣·凡躯",
+    "field_4": 4,
+    "field_5": 4000005,
+    "field_6": 1,
+    "field_7": 204,
+    "otherParams": [
+      2
+    ],
+    "field_101": 3,
+    "field_103": 140
+  },
+  {
+    "field_1": 93,
+    "desc": "共鸣·拆招",
+    "field_4": 4,
+    "field_5": 4000005,
+    "field_6": 1,
+    "field_7": 205,
+    "field_101": 6,
+    "field_103": 140
+  },
+  {
+    "field_1": 136,
+    "desc": "共鸣·志坚",
+    "field_4": 4,
+    "field_5": 4000005,
+    "field_6": 1,
+    "field_7": 206,
+    "field_101": 6,
+    "field_103": 140
+  },
+  {
+    "field_1": 94,
+    "desc": "共鸣·转势",
+    "field_4": 4,
+    "field_5": 4000005,
+    "field_6": 1,
+    "field_7": 207,
+    "otherParams": [
+      2,
+      5
+    ],
+    "field_101": 6,
+    "field_103": 140
+  },
+  {
+    "field_1": 137,
+    "desc": "共鸣·得炁",
+    "field_4": 4,
+    "field_5": 4000005,
+    "field_7": 208,
+    "otherParams": [
+      4
+    ],
+    "field_101": 9,
+    "field_103": 140
+  },
+  {
+    "field_1": 61,
+    "field_2": 16,
+    "desc": "共鸣·剑韵修炼",
+    "field_4": 1,
+    "field_6": 1,
+    "field_7": 16,
+    "field_101": 10,
+    "field_103": 50
+  },
+  {
+    "field_1": 62,
+    "field_2": 55,
+    "desc": "共鸣·灵剑传承",
+    "field_4": 1,
+    "field_6": 1,
+    "field_7": 55,
+    "otherParams": [
+      2
+    ],
+    "field_101": 11,
+    "field_103": 50
+  },
+  {
+    "field_1": 63,
+    "field_2": 57,
+    "desc": "共鸣·剑阵守护",
+    "field_4": 1,
+    "field_6": 1,
+    "field_7": 57,
+    "otherParams": [
+      3
+    ],
+    "field_101": 13,
+    "field_103": 50
+  },
+  {
+    "field_1": 64,
+    "field_2": 69,
+    "desc": "共鸣·云之道",
+    "field_4": 1,
+    "field_6": 1,
+    "field_7": 69,
+    "field_101": 8,
+    "field_103": 50
+  },
+  {
+    "field_1": 65,
+    "field_2": 70,
+    "desc": "共鸣·狂之执念",
+    "field_4": 1,
+    "field_7": 70,
+    "otherParams": [
+      1
+    ],
+    "field_102": 5,
+    "field_103": 50
+  },
+  {
+    "field_1": 66,
+    "field_2": 119,
+    "desc": "共鸣·剑池问心",
+    "field_4": 1,
+    "field_6": 1,
+    "field_7": 119,
+    "field_101": 12,
+    "field_103": 50
+  },
+  {
+    "field_1": 67,
+    "field_2": 30,
+    "desc": "共鸣·卜卦",
+    "field_4": 2,
+    "field_6": 1,
+    "field_7": 30,
+    "otherParams": [
+      1
+    ],
+    "field_101": 11,
+    "field_103": 50
+  },
+  {
+    "field_1": 68,
+    "field_2": 31,
+    "desc": "共鸣·观星",
+    "field_4": 2,
+    "field_6": 1,
+    "field_7": 31,
+    "field_101": 6,
+    "field_103": 50
+  },
+  {
+    "field_1": 69,
+    "field_2": 71,
+    "desc": "共鸣·后发制人",
+    "field_4": 2,
+    "field_6": 1,
+    "field_7": 71,
+    "field_101": 10,
+    "field_103": 50
+  },
+  {
+    "field_1": 70,
+    "field_2": 103,
+    "desc": "共鸣·星蚀",
+    "field_4": 2,
+    "field_6": 1,
+    "field_7": 103,
+    "field_101": 13,
+    "field_103": 50
+  },
+  {
+    "field_1": 71,
+    "field_2": 117,
+    "desc": "共鸣·雷霆传承",
+    "field_4": 2,
+    "field_6": 1,
+    "field_7": 117,
+    "field_101": 7,
+    "field_103": 50
+  },
+  {
+    "field_1": 72,
+    "field_2": 120,
+    "desc": "共鸣·妙手回春",
+    "field_4": 2,
+    "field_6": 1,
+    "field_7": 120,
+    "otherParams": [
+      50,
+      25
+    ],
+    "field_101": 13,
+    "field_103": 50
+  },
+  {
+    "field_1": 73,
+    "field_2": 74,
+    "desc": "共鸣·木灵传承",
+    "field_4": 3,
+    "field_6": 1,
+    "field_7": 74,
+    "otherParams": [
+      1
+    ],
+    "field_101": 13,
+    "field_103": 50
+  },
+  {
+    "field_1": 74,
+    "field_2": 76,
+    "desc": "共鸣·火灵传承",
+    "field_4": 3,
+    "field_6": 1,
+    "field_7": 76,
+    "otherParams": [
+      10
+    ],
+    "field_101": 13,
+    "field_103": 50
+  },
+  {
+    "field_1": 75,
+    "field_2": 77,
+    "desc": "共鸣·土灵传承",
+    "field_4": 3,
+    "field_6": 1,
+    "field_7": 77,
+    "otherParams": [
+      10
+    ],
+    "field_101": 11,
+    "field_103": 50
+  },
+  {
+    "field_1": 76,
+    "field_2": 73,
+    "desc": "共鸣·金灵传承",
+    "field_4": 3,
+    "field_6": 1,
+    "field_7": 73,
+    "otherParams": [
+      3
+    ],
+    "field_101": 13,
+    "field_103": 50
+  },
+  {
+    "field_1": 77,
+    "field_2": 75,
+    "desc": "共鸣·水灵传承",
+    "field_4": 3,
+    "field_6": 1,
+    "field_7": 75,
+    "otherParams": [
+      2
+    ],
+    "field_101": 13,
+    "field_103": 50
+  },
+  {
+    "field_1": 78,
+    "field_2": 128,
+    "desc": "共鸣·五行专一",
+    "field_4": 3,
+    "field_7": 128,
+    "field_101": 10,
+    "field_103": 50
+  },
+  {
+    "field_1": 79,
+    "field_2": 143,
+    "desc": "共鸣·崩拳传承",
+    "field_4": 4,
+    "field_6": 1,
+    "field_7": 143,
+    "otherParams": [
+      3
+    ],
+    "field_101": 12,
+    "field_103": 50
+  },
+  {
+    "field_1": 80,
+    "field_2": 144,
+    "desc": "共鸣·炼体传承",
+    "field_4": 4,
+    "field_6": 1,
+    "field_7": 144,
+    "field_101": 9,
+    "field_103": 50
+  },
+  {
+    "field_1": 81,
+    "field_2": 145,
+    "desc": "共鸣·气势充沛",
+    "field_4": 4,
+    "field_6": 1,
+    "field_7": 145,
+    "field_101": 8,
+    "field_103": 50
+  },
+  {
+    "field_1": 82,
+    "field_2": 176,
+    "desc": "共鸣·筋骨健壮",
+    "field_4": 4,
+    "field_6": 1,
+    "field_7": 176,
+    "field_101": 13,
+    "field_103": 50
+  },
+  {
+    "field_1": 83,
+    "field_2": 150,
+    "desc": "共鸣·冥心烙印",
+    "field_4": 4,
+    "field_6": 1,
+    "field_7": 150,
+    "otherParams": [
+      2
+    ],
+    "field_101": 10,
+    "field_103": 50
+  },
+  {
+    "field_1": 84,
+    "field_2": 175,
+    "desc": "共鸣·历战不屈",
+    "field_4": 4,
+    "field_6": 1,
+    "field_7": 175,
+    "otherParams": [
+      2
+    ],
+    "field_101": 6,
+    "field_103": 50
+  },
+  {
+    "field_1": 85,
+    "field_2": 4,
+    "desc": "共鸣·感悟丛生",
+    "field_7": 4,
+    "otherParams": [
+      2
+    ],
+    "field_102": 5,
+    "field_103": 50
+  },
+  {
+    "field_1": 86,
+    "field_2": 6,
+    "desc": "共鸣·变换之道",
+    "field_7": 6,
+    "otherParams": [
+      10,
+      1
+    ],
+    "field_103": 50
+  },
+  {
+    "field_1": 87,
+    "field_2": 8,
+    "desc": "共鸣·休养生息",
+    "field_7": 8,
+    "otherParams": [
+      30
+    ],
+    "field_103": 50
+  },
+  {
+    "field_1": 88,
+    "field_2": 12,
+    "desc": "共鸣·顿悟",
+    "field_7": 12,
+    "otherParams": [
+      1
+    ],
+    "field_103": 50
+  },
+  {
+    "field_1": 89,
+    "field_2": 13,
+    "desc": "共鸣·储纳灵气",
+    "field_6": 1,
+    "field_7": 13,
+    "otherParams": [
+      1
+    ],
+    "field_101": 10,
+    "field_103": 50
+  },
+  {
+    "field_1": 90,
+    "field_2": 56,
+    "desc": "共鸣·斩道",
+    "field_7": 56,
+    "otherParams": [
+      4
+    ],
+    "field_103": 50
+  },
+  {
+    "field_1": 91,
+    "field_2": 188,
+    "desc": "共鸣·副职兼修",
+    "field_7": 188,
+    "otherParams": [
+      2
+    ],
+    "field_102": 5,
+    "field_103": 50
+  },
+  {
+    "field_1": 95,
+    "field_2": 1,
+    "desc": "共鸣·锻体",
+    "field_7": 1,
+    "otherParams": [
+      1
+    ],
+    "field_101": 6,
+    "field_103": 50
+  }
+]

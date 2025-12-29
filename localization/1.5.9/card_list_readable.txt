@@ -1,0 +1,980 @@
+============================================================
+SECTS (regular cards)
+============================================================
+
+Sect 1: Cloud Spirit Sword (52 cards)
+  Phase 1:
+    1000001: Cloud Sword - Touch Sky
+    1000002: Cloud Sword - Fleche
+    1000003: Cloud Sword - Touch Earth
+    1000004: Light Sword
+    1000005: Guard Qi
+    1000006: Qi Perfusion
+    1000007: Giant Tiger Spirit Sword
+    1000009: Thunder Sword
+    1000010: Sword Slash
+    1000012: Sword Defence
+    1000013: Wind Sword
+    1000021: Flying Fang Sword
+  Phase 2:
+    1000011: Form-Intention Sword
+    1000014: Cloud Sword - Conceal
+    1000015: Cloud Sword - Riddle
+    1000016: Cloud Sword - Reguard
+    1000017: Contemplate Spirits Rhythm
+    1000018: Transforming Spirits Rhythm
+    1000019: Giant Whale Spirit Sword
+    1000022: Unrestrained Sword - One
+    1000024: Spiritage Sword
+    1000030: Earth Evil Sword
+    1000033: Consonance Sword Formation
+  Phase 3:
+    1000008: Reflexive Sword
+    1000020: Raven Spirit Sword
+    1000023: Burst Sword
+    1000026: Cloud Sword - Softheart
+    1000027: Cloud Sword - Pierce the Star
+    1000028: Cloud Sword - Necessity
+    1000029: Giant Roc Spirit Sword
+    1000031: Cloud Dance Rhythm
+    1000032: Tri-Peak Sword
+    1000046: Mirror Flower Sword Formation
+    1000063: Cloud Sword - Spirit Coercion
+  Phase 4:
+    1000034: Spirit Gather Citta-Dharma
+    1000035: Unrestrained Sword - Two
+    1000036: Giant Kun Spirit Sword
+    1000037: Flow Cloud Chaos Sword
+    1000038: Inspiration Sword
+    1000039: Cloud Sword - Flash Wind
+    1000040: Cloud Sword - Moon Shade
+    1000041: Moon Water Sword Formation
+    1000059: Egret Spirit Sword
+    1000065: CentiBird Spirit Sword Rhythm
+  Phase 5:
+    1000025: Rule Sky Sword Formation
+    1000042: Cloud Sword - Dragon Roam
+    1000043: Flying Spirit Shade Sword
+    1000044: Sword Intent Surge
+    1000045: Dharma Spirit Sword
+    1000060: Cloud Sword - Step Lightly
+    1000064: Chain Sword Formation
+    1000066: Unrestrained Sword - Zero
+
+Sect 2: Heptastar (52 cards)
+  Phase 1:
+    4000001: Wind Hexagram
+    4000002: Earth Hexagram
+    4000003: Zhen Hexagram
+    4000004: Palm Thunder
+    4000005: White Crane Bright Wings
+    4000006: Striding Into the Wind
+    4000008: Dotted Around
+    4000010: Astral Move - Flank
+    4000011: Astral Move - Block
+    4000013: Incessant
+    4000023: Shifting Stars
+    4000061: Sparrow's Tail
+  Phase 2:
+    4000009: Astral Move - Stand
+    4000015: Water Hexagram
+    4000016: Mountain Hexagram
+    4000018: Imposing
+    4000019: Cutting Weeds
+    4000020: Golden Rooster Independence
+    4000021: Flower Sentient
+    4000024: Astral Fleche
+    4000027: Stillness Citta-Dharma
+    4000028: Astral Move - Point
+    4000030: Falling Thunder
+  Phase 3:
+    4000017: Qi Therapy
+    4000022: Ruthless Water
+    4000025: Lake Hexagram
+    4000029: Astral Move - Hit
+    4000031: White Snake
+    4000032: Starry Moon
+    4000033: Drag Moon In Sea
+    4000040: Yin Yang Formation
+    4000042: Revitalized
+    4000043: Hunter Becomes Preyer
+    4000068: Thunder Hexagram Rhythm
+  Phase 4:
+    4000014: Hexagram Formacide
+    4000034: Flame Hexagram
+    4000035: Dance Of The Dragonfly
+    4000036: Escape Plan
+    4000037: Repel Citta-Dharma
+    4000038: Astral Move - Fly
+    4000039: Astral Move - Tiger
+    4000059: Extremely Suspicious
+    4000062: Star Trail Divination
+    4000063: Thunder And Lighting
+  Phase 5:
+    4000026: Heaven Hexagram
+    4000041: Strike Twice
+    4000044: Astral Move - Cide
+    4000045: Polaris Citta-Dharma
+    4000046: Five Thunders
+    4000060: Great Spirit
+    4000066: Hunter Hunting Hunter
+    4000067: Propitious Omen
+
+Sect 3: Five Elements (51 cards)
+  Phase 1:
+    7000001: Metal Spirit Seal
+    7000002: Metal Spirit - Needle
+    7000003: Wood Spirit Seal
+    7000004: Wood Spirit - Bud
+    7000006: Water Spirit Seal
+    7000007: Water Spirit - Waves
+    7000009: Fire Spirit Seal
+    7000010: Fire Spirit - Rush
+    7000011: Earth Spirit Seal
+    7000013: Earth Spirit - Smash
+    7000060: Five Elements Fleche
+  Phase 2:
+    7000014: Cosmos Seal
+    7000015: Metal Spirit - Heart Pierce
+    7000016: Metal Spirit Formation
+    7000017: Wood Spirit - Sparse Shadow
+    7000018: Wood Spirit - Recovery
+    7000019: Water Spirit - Billows
+    7000021: Fire Spirit - Flame Eater
+    7000022: Fire Spirit - Scarlet Flame
+    7000023: Earth Spirit Formation
+    7000024: Earth Spirit - Mountains
+    7000037: Water Spirit - Turbulent
+  Phase 3:
+    7000012: Earth Spirit - Dust
+    7000025: Metal Spirit - Charge
+    7000026: Metal Spirit - Sharp
+    7000028: Wood Spirit - Forest Guard
+    7000029: Water Spirit Formation
+    7000031: Fire Spirit Formation
+    7000032: Fire Spirit - Blast
+    7000036: Wood Spirit Formation
+    7000059: Water Spirit - Spring
+    7000062: Earth Spirit - Cliff
+    7000067: Five Elements Circulation
+  Phase 4:
+    7000020: Water Spirit - Dive
+    7000027: Wood Spirit - Thorn
+    7000030: Water Spirit - Great Waves
+    7000033: Earth Spirit - Quicksand
+    7000034: Metal Spirit - Shuttle
+    7000035: Metal Spirit - Iron Bone
+    7000038: Fire Spirit - Flash Fire
+    7000039: Fire Spirit - Heart Fire
+    7000040: Earth Spirit - Steep
+    7000061: Wood Spirit - Fragrant
+    7000066: World Smash
+  Phase 5:
+    7000042: Metal Spirit - Giant Tripod
+    7000043: Wood Spirit - Willow Leaf
+    7000053: Earth Spirit - Combine World
+    7000056: Fire Spirit - Blazing Prairie
+    7000057: Water Spirit - Combine Rivers
+    7000058: Ultimate World Formation
+    7000073: Five Elements Heavenly Marrow Rhythm
+
+Sect 4: Forge Body Soul (52 cards)
+  Phase 1:
+    10000001: Crash Fist - Poke
+    10000002: Crash Fist - Block
+    10000003: Crash Fist - Bounce
+    10000004: Exercise Fist
+    10000005: Mountain-Cleaving Palms
+    10000006: Embracing Qi Technique
+    10000007: Sky-Piercing Claw
+    10000008: Rakshasa Pouncing
+    10000009: Mountain Falling
+    10000010: Gather Force
+    10000011: Vigorous Force
+    10000012: Youthful Vigor
+  Phase 2:
+    10000013: Crash Fist - Shake
+    10000014: Crash Fist - Entangle
+    10000015: Crash Fist - Blitz
+    10000016: Exercise Tendons
+    10000017: Detect-Horse Palms
+    10000018: Gale Shadow Claw
+    10000019: Ghost Howling
+    10000021: Standing Firm
+    10000022: Strong Force
+    10000023: Magnanimous Righteousness
+    10000032: Sinking Qi
+  Phase 3:
+    10000020: Majestic Qi
+    10000024: Crash Fist - Truncate
+    10000026: Crash Footwork
+    10000027: Exercise Bones
+    10000028: Windward Palms
+    10000029: Tiger Pouncing
+    10000030: Double Trouble
+    10000031: Bearing the Load
+    10000033: Mighty Force
+    10000034: Sailing through Sky
+    10000036: Crash Fist - Subdue Dragon
+  Phase 4:
+    10000025: Crash Fist - Inch Force
+    10000035: Crash Fist - Continue
+    10000037: Exercise Marrow
+    10000038: Crane Footwork
+    10000039: Styx Agility
+    10000040: Soul Seizing
+    10000042: Surging Waves
+    10000043: Overwhelming Force
+    10000044: Crash Citta-Dharma
+    10000050: Elusive Footwork
+  Phase 5:
+    10000041: Shura Roar
+    10000045: Crash Fist - Blink
+    10000046: Crash Fist - Shocked
+    10000047: Realm-Killing Palms
+    10000048: Exercise Soul
+    10000051: Gather Intense Force
+    10000052: Vast Universe
+    10000068: Soul Cleaving
+
+============================================================
+SECT SECRET ENCHANTMENT
+============================================================
+
+Sect Secret Enchantment (59 cards)
+  Sect 1 (14 cards):
+  Phase 1:
+    1000047: Rhyme Spirit Sword
+    1000054: Diligent Sword
+  Phase 2:
+    1000048: Cloud Sword - Dawn
+    1000055: Giant Ape Spirit Sword
+  Phase 3:
+    1000049: Unrestrained Sword - Dragon Coiled
+    1000056: One Heart One Sword
+    1000062: Synergy Sword Formation
+  Phase 4:
+    1000050: Sword Intent Flow
+    1000051: Emptiness Sword Formation
+  Phase 5:
+    1000053: Apex Sword Citta-Dharma
+    1000057: Step Moon Into Cloud
+    1000061: Unrestrained Sword - Twin Dragons
+  Phase 6:
+    1000052: Remnant Cloud Sky Sealing Sword
+    1000058: Secret Sword - Spirit Cloud
+  Sect 2 (14 cards):
+  Phase 1:
+    4000047: Hexagrams Spirit Resurrection
+    4000053: Throwing Stones For Directions
+  Phase 2:
+    4000048: Vitality Blossom
+    4000054: Star Born Rhythm
+  Phase 3:
+    4000050: Sun And Moon For Glory
+    4000055: All-Or-Nothing
+  Phase 4:
+    4000051: Astral Move - Dragon Slay
+    4000056: Flowers And Water
+    4000064: Thunder Citta-Dharma
+  Phase 5:
+    4000049: Preemptive Strike
+    4000057: Thin On The Ground
+    4000065: Meteorite Meteor
+  Phase 6:
+    4000052: Covert Shift
+    4000058: Destiny Catastrophe
+  Sect 3 (18 cards):
+  Phase 1:
+    7000068: Wood Spirit Secret Seal
+    7000069: Fire Spirit Secret Seal
+    7000070: Earth Spirit Secret Seal
+    7000071: Metal Spirit Secret Seal
+    7000072: Water Spirit Secret Seal
+  Phase 2:
+    7000048: Water Spirit - Rhythm Wood
+    7000049: Fire Spirit - Rhythm Earth
+    7000063: Metal Spirit - Chokehold
+  Phase 3:
+    7000050: Metal Spirit - Rhythm Water
+    7000055: Five Elements Escape
+    7000064: Wood Spirit - Vine
+  Phase 4:
+    7000046: Earth Spirit - Earthquake
+    7000047: Earth Spirit - Rhythm Metal
+    7000051: Wood Spirit - Rhythm Fire
+  Phase 5:
+    7000044: Water Spirit - Tsunami
+    7000045: Fire Spirit - Burning Sky
+  Phase 6:
+    7000052: Five Elements Spirit Blast
+    7000065: Five Elements Blossom
+  Sect 4 (13 cards):
+  Phase 1:
+    10000053: Endless Force
+    10000054: Endless Entanglement
+  Phase 2:
+    10000055: Toxin Immunity
+    10000056: Lying Drunk
+  Phase 3:
+    10000058: Herbal Bath [non-playable] [not in swogi]
+    10000061: Break Pots and Sink Boats
+  Phase 4:
+    10000057: Strength Driven Mad
+    10000060: Crash Fist - Double
+    10000067: Styx Three Hit
+  Phase 5:
+    10000062: Break Cocoon
+    10000064: Eerie Melody Buries Soul
+  Phase 6:
+    10000065: Endless Crash
+    10000066: Return to Simplicity
+
+============================================================
+SIDE JOBS
+============================================================
+
+Talisman Master (15 cards)
+  Phase 1:
+    3000001: Thunder Fulu
+    3000002: Guard Spirit Fulu
+    3000003: Sharp Metal Fulu
+  Phase 2:
+    3000004: Mist Fulu
+    3000005: Fire Cloud Fulu
+    3000006: Calm Incantation
+  Phase 3:
+    3000007: Spirit Absorb Fulu
+    3000008: Miasma Fulu
+    3000009: Ice Incantation
+  Phase 4:
+    3000010: Spiritage Incantation
+    3000011: Distubing Fulu
+    3000012: Weaken Fulu
+  Phase 5:
+    3000013: Divine Walk Fulu
+    3000014: Soul Requiem Fulu
+    3000015: Thousand Evil Incantation
+
+Elixirist (15 cards, 5 non-playable)
+  Phase 1:
+    2000001: Small Recover Elixir
+    2000002: Fundamental Elixir
+    2000003: Earth Spirit Elixir
+  Phase 2:
+    2000004: Exorcism Elixir
+    2000005: Cloud Elixir
+    2000006: Bodybuilding Elixir [non-playable] [not in swogi]
+  Phase 3:
+    2000007: Healing Elixir
+    2000008: Divine Power Elixir
+    2000009: Resurrection Elixir [non-playable] [not in swogi]
+  Phase 4:
+    2000010: Spiritage Elixir
+    2000011: Great Recover Elixir
+    2000012: Talent Elixir [non-playable] [not in swogi]
+  Phase 5:
+    2000013: Ice Spirit Guard Elixir
+    2000014: Great Bodybuilding Elixir [non-playable] [not in swogi]
+    2000015: Enlightenment Elixir [non-playable] [not in swogi]
+
+Music Master (15 cards)
+  Phase 1:
+    5000001: Cracking Voice
+    5000002: Earth Tune
+    5000003: Carefree Tune
+  Phase 2:
+    5000004: Sky Spirit Tune
+    5000005: Illusion Tune
+    5000006: Kindness Tune
+  Phase 3:
+    5000007: Heartbroken Tune
+    5000008: Craze Dance Tune
+    5000009: Tremolo
+  Phase 4:
+    5000010: Regen Tune
+    5000011: Nine Evil Ruptsprite
+    5000012: Concentric Tune
+  Phase 5:
+    5000013: Apparition Confusion
+    5000014: Chord In Tune
+    5000015: Predicament for Immortals
+
+Painter (15 cards, 4 non-playable)
+  Phase 1:
+    6000001: Toning
+    6000002: Practice Writing [non-playable] [not in swogi]
+    6000003: Grinding Ink
+  Phase 2:
+    6000004: Pen Walks Dragon Snake
+    6000005: Feed On Illusions
+    6000006: Gild The Lily
+  Phase 3:
+    6000007: Splash Ink
+    6000008: Inspiration
+    6000009: Ask Dao By Paint [non-playable] [not in swogi]
+  Phase 4:
+    6000010: Reason By Analogy [non-playable] [not in swogi]
+    6000011: Divine Brush
+    6000014: Falling Paper Clouds
+  Phase 5:
+    6000012: Flying Brush
+    6000013: Finishing Touch
+    6000015: Wonderful Strokes [non-playable] [not in swogi]
+
+Formation Master (15 cards)
+  Phase 1:
+    8000001: Thunderphilia Formation
+    8000002: Fraccide Formation
+    8000003: Impact Formation
+  Phase 2:
+    8000004: Scutturtle Formation
+    8000005: Cacopoisonous Formation
+    8000006: Cure Formation
+  Phase 3:
+    8000007: Spiritage Formation
+    8000008: Endless Sword Formation
+    8000009: Hexproof Formation
+  Phase 4:
+    8000010: Octgates Lock Formation
+    8000011: Heavenly Spirit Forceage Formation
+    8000016: Motionless Tutelary Formation
+  Phase 5:
+    8000012: Echo Formation
+    8000013: Anthomania Formation
+    8000014: Meru Formation
+
+Plant Master (27 cards, 15 non-playable)
+  Phase 1:
+    9000001: Origin Herb [non-playable] [not in swogi]
+    9000002: Shuttle Orchid [non-playable] [not in swogi]
+    9000003: Sword Bamboo
+  Phase 2:
+    9000006: Mystery Seed [non-playable]
+    9000008: Divine Power Grass [non-playable] [not in swogi]
+    9000009: Leaf Shield Flower
+    9000016: Rock Herb [non-playable] [not in swogi]
+    9000018: Leaf Blade Flower
+    9000021: Fire Orchid [non-playable] [not in swogi]
+    9000022: Lose Power Grass [non-playable] [not in swogi]
+    9000027: Hard Bamboo
+  Phase 3:
+    9000004: Healing Chamomile [non-playable] [not in swogi]
+    9000005: Qi-seeking Sunflower
+    9000007: Spiritual Plant Watering [non-playable] [not in swogi]
+    9000017: Qi-corrupting Sunflower
+    9000023: Clear Chamomile [non-playable] [not in swogi]
+  Phase 4:
+    9000010: Flying Owl Reishi [non-playable] [not in swogi]
+    9000012: Toxic Purple Fern [non-playable] [not in swogi]
+    9000013: Frozen Snow Lotus
+    9000020: Frozen Blood Lotus
+    9000024: Shadow Owl Reishi [non-playable] [not in swogi]
+    9000026: Detoxific Purple Fern
+  Phase 5:
+    9000011: Entangling Ancient Vine
+    9000014: Mysterious Dao Fruit [non-playable] [not in swogi]
+    9000015: Space Spiritual Field
+    9000019: Devouring Ancient Vine
+    9000025: Demonic Dao Fruit [non-playable] [not in swogi]
+
+Fortune Teller (20 cards)
+  Phase 1:
+    11000001: Foretell Fate
+    11000003: Heavenly Decree - Defend
+    11000004: Heavenly Decree - Attack
+    11000022: Examine Body
+  Phase 2:
+    11000007: Heavenly Fortune - Shun Misfortune
+    11000008: Heavenly Fortune - Seek Fortune
+    11000009: Detect Qi
+    11000023: Bad Omen
+  Phase 3:
+    11000005: Lucky Start
+    11000011: Heavenly Time - Fleeting
+    11000012: Heavenly Time - Recurring
+    11000024: Disaster of Bloodshed
+  Phase 4:
+    11000013: Everything Goes Your Way
+    11000014: Everything is Unadvisable
+    11000025: Heavenly Star - Pull
+    11000026: Heavenly Star - Guard
+  Phase 5:
+    11000018: Envelop In Disaster
+    11000019: Heavenly Will - Comply
+    11000020: Heavenly Will - Defy
+    11000021: Cycle of Fate
+============================================================
+SPECIAL CARD POOLS
+============================================================
+
+Talisman (battle cards from talisman side job items) (15 cards)
+  Phase 1:
+    99000100: Black Silver Armor
+    99000107: Thorns Spear
+  Phase 2:
+    99000101: Dew Jade Vase
+    99000108: Nameless Ancient Sword
+  Phase 3:
+    99000102: Fire Soul Refinement Flag
+    99000109: Requiem Jade Lotus
+    99000112: Blood Crystal of Wolf King
+  Phase 4:
+    99000103: Cosmos Seal Divine Orb
+    99000110: Metal Tri-Thorn Spear
+    99000113: Carefree Guqin
+  Phase 5:
+    99000104: Nether Seal Evil Signet
+    99000106: Dark Crystal Heart Shield
+    99000114: Bow of Hunting Owl
+  Phase 6:
+    99000105: Void Split Spear
+    99000111: Mysterious Gates Devil Seal Tower
+
+Spiritual Pet (13 cards)
+  Phase 1:
+    99000200: Break Sky Eagle
+    99000208: Fat Immortal Raccoon
+  Phase 2:
+    99000201: Dark Star Bat
+    99000209: Lonely Night Wolf
+  Phase 3:
+    99000202: Black Earth Turtle
+    99000203: Brocade Rat
+  Phase 4:
+    99000205: Scarlet-Eye The Sky Consumer
+    99000207: Ashes Phoenix
+    99000212: Three Tailed Cat
+  Phase 5:
+    99000204: Colorful Spirit Crane
+    99000210: Shadow Owl Rabbit
+  Phase 6:
+    99000206: Void The Spirit Consumer
+    99000211: Nether Void Canine
+
+Luck Season Legendary (12 cards)
+  Phase 4:
+    47: Cloud Sword - Sunset Glow
+    48: Azure Dragon Sword Formation
+    51: Spiritual Divination
+    52: Throw Petals
+    55: Wild Crossing Seal
+    56: Lava Seal
+  Phase 5:
+    49: Beast Spirit Sword Formation
+    50: Dragon Devours Clouds
+    53: Astral Move - Twin Swallows
+    54: Water Drop Erosion
+    57: Boulder Seal
+    58: Wave Cutter Seal
+
+============================================================
+IMMORTAL RELICS SEASON - FUSION CARDS
+============================================================
+
+Immmortal Relics Fusion (81 cards)
+
+  character_specific (19 cards):
+    122: Cloud Sword - Dragon Spring
+    123: Cloud Sword - Flying Snow Shade
+    124: CentiBird Delicate Bracelet
+    125: Unrestrained Sword - Cat Claw
+    126: Clear Heart Sword Formation
+    127: Traces Revitalized
+    128: Ultimate Polaris Hexagram Base
+    129: Suspicious Flame Flutter
+    130: Thousand Star Explosion
+    131: Star Moon Hexagram Fan
+    132: Heavenly Marrow Gourd
+    133: Ultimate Overcome Formation
+    134: Wood Spirit - All Things Grow
+    135: Kun Wu Molten Ring
+    136: Harmony of Water and Fire
+    137: Unceasing Universe
+    138: Soul Overwhelming Palm
+    139: Styx Night Footwork
+    140: Crash Fist - Return to Xuan
+
+  mirror_of_stars (8 cards):
+    141: Cloud Sword - Starry Sky
+    142: Astral Move - Extend
+    143: Metal Spirit - Meteor
+    144: Crash Fist - Star Seizing
+    151: Unrestrained Sword - Nebula Cloud
+    152: Great Galaxy
+    153: Cosmos Fleche
+    154: Star Sky Forge Bone
+
+  xuanming (11 cards):
+    156: Xuanming Recover Elixir
+    157: Xuanming Requiem Fulu
+    158: Xuanming Regen Tune
+    159: Xuanming Clouds
+    160: Xuanming Forceage Formation
+    161: Xuanming Snowdrop
+    162: Xuanming Recurring
+    163: Xuanming Sword Intent Mantra
+    164: Xuanming Thundercloud Tribulation
+    165: Xuanming Heavenly Essence Destruction
+    166: Xuanming Boundary-Breaking Palms
+
+  kunlun_door (15 cards):
+    167: Shen Jian Ao Zhou
+    168: Die Ling Shen Ying
+    169: Pi Yun Zhui Yue
+    170: Jiu Qi Po Xiao
+    171: Xuan-Yuan Sword
+    172: Heavenly Maiden White Jade Ring
+    173: Kunlun Mirror
+    174: Pangu Axe
+    175: Nüwa Stone
+    176: Haotian Pagoda
+    177: Fuxi Guqin
+    178: Kongtong Seal
+    179: Donghuang Zhong
+    180: Shennong Ding
+    181: Spirit Fusion Pot
+
+  shelf (28 cards):
+    183: Contemplate Spirits Vitality Rhythm
+    184: Cloud Sword - Clarity
+    185: Spiritstat Tune
+    186: Unrestrained Sword  - Divine
+    187: Cloud Sword - Endless
+    188: Sword Spirit Sunflower
+    189: Heavenly Will - Earth Evil
+    190: Spiritual Hunter
+    191: Hexagrams Generating Evils
+    192: Thunderbolt Tune
+    193: Fleeting Glimpse
+    194: Yin Yang Tutelary Formation
+    195: Entangling Thornbush
+    196: Astral Move - Jump
+    197: Five Elements Guard
+    198: Fire Spirit - Blazing Flame
+    199: Heavenly Marrow Dance Tune
+    200: Cosmos Brush
+    201: Wood Spirit Forceage Formation
+    202: Five Elements Spiritual Field
+    203: Water Spirit - Continuous Flow
+    204: Cloud Footwork
+    205: Spiritage And Exercise
+    206: Continuous Tune
+    207: Exercise To The Utmost
+    208: Force Spiritage Formation
+    209: Mystic Snowdrop
+    210: Heavenly Will - Seizing
+
+  Special (relic-associated, 2 cards):
+  155: Xuanming Waters [non-playable] [not in swogi] (from Pot of Xuanming)
+  182: Crimson Star (from Kunlun Door)
+
+============================================================
+SPACETIME MIRAGE SEASON
+============================================================
+
+Selectable M- Cards (40 cards)
+  Phase 4:
+    260: M - Raven Spirit Sword
+    261: M - Light Sword
+    262: M - Spiritage Sword
+    263: M - Flying Fang Sword
+    265: M - Cutting Weeds
+    266: M - Ruthless Water
+    268: M - Dotted Around
+    270: M - Fire Spirit Flame Eater
+    272: M - Wood Spirit Recovery
+    273: M - Metal Spirit Needle
+    275: M - Youthful Vigor
+    277: M - Exercise Bones
+    278: M - Sinking Qi
+    291: M - Standing Firm
+    307: M - Earth Hexagram
+    315: M - Fire Spirit Seal [not in swogi]
+    317: M - Earth Spirit Formation [not in swogi]
+    318: M - Endless Entanglement [not in swogi]
+    323: M - Diligent Sword
+    324: M - Vitality Blossom [not in swogi]
+  Phase 5:
+    264: M - Cloud Sword Touch Sky
+    269: M - Shifting Stars
+    271: M - Water Spirit Billows
+    274: M - Earth Spirit Mountains
+    288: M - Cloud Sword Conceal
+    289: M - Flower Sentient [not in swogi]
+    292: M - Cosmos Seal
+    294: M - Astral Fleche
+    295: M - Five Elements Circulation
+    296: M - Double Trouble
+    297: M - Rakshasa Pouncing
+    298: M - Incessant
+    308: M - Crash Fist Poke
+    309: M - Cloud Dance Rhythm
+    310: M - Magnanimous Righteousness [not in swogi]
+    312: M - Unrestrained Sword Dragon Coiled
+    316: M - Metal Spirit Seal [not in swogi]
+    319: M - Crash Fist Entangle [not in swogi]
+    320: M - Yin Yang Formation [not in swogi]
+    325: M - Consonance Sword Formation
+
+Special Mirage Cards (9 cards)
+  280: Xiaoyao - Formless
+  281: Xiaoyao - Seamless
+  282: Xiaoyao - Breathless
+  283: Xiaoyao - Imbalance
+  284: Xiaoyao - Irreversible
+  285: Xiaoyao - Lawless
+  286: Normal Attack
+  321: M - Mirroring Merpeople Pearl [non-playable] [not in swogi]
+  322: Xiaoyao - Reproduction [not in swogi]
+
+============================================================
+CHARACTER-SPECIFIC CARDS
+============================================================
+
+Character-Specific (50 cards)
+  Phase 1:
+    19: Clear Heart Sword Embryo
+    22: Perfectly Planned
+    33: Dried small fish [non-playable] [not in swogi]
+    34: Catnip [non-playable] [not in swogi]
+    35: Cat Teaser [non-playable] [not in swogi]
+    36: Cloud Sword - Flying Sand
+    37: Bronze Cat
+    219: Double Stick
+  Phase 2:
+    8: Cloud Sword - Cat Paw
+    12: Only Traces
+    20: Wood Spirit - Peach Blossom Seal
+    45: Unceasing Exercising
+    70: Overwhelming Power
+    214: Jade Scroll of Yin Symbol [not in swogi]
+    221: Counter Move
+  Phase 3:
+    6: Flame Flutter
+    10: Starburst
+    13: Gourd Of Leisurely
+    28: Ultimate Hexagram Base
+    38: Kun Wu Metal Ring
+    73: Gone Crazy
+    258: Water Spirit -  Leisurely
+    259: Heavenly Rain [non-playable] [not in swogi]
+  Phase 4:
+    3: Cloud Sword - Avalanche
+    5: Within Reach
+    7: Rotary Divination Hexagram
+    9: Spirit Cat Chaos Sword
+    11: Heptastar Soulstat
+    15: Cloud Sword - Pray Rain
+    17: Water Spirit - Spring Rain
+    18: Metal Spirit - Vigorous
+    32: Overcome with each other
+    74: Crash Fist - Styx Night
+    81: Meditation of Xuan
+    222: Shift Stance
+  Phase 5:
+    1: Spring Course Tea [non-playable] [not in swogi]
+    2: Unrestrained Sword - Flame Dance
+    16: Sky Delicate Bracelet
+    21: Earth Spirit - Landslide
+    23: Star Moon Folding Fan
+    29: Fury Thunder
+    31: Inheritance of Five Elements [non-playable] [not in swogi]
+    75: Styx Moon's Glow
+    82: Wan Xuan Demon Breaking Palm
+    213: Yeying Sword Formation
+    215: Solitary Void Golden Scroll [not in swogi]
+    216: Face Isolation [not in swogi]
+    217: Strike Vacuity [not in swogi]
+    218: Forget Worries
+    220: Red Gold Dragon Stick
+
+============================================================
+EVENT MODE CARDS
+============================================================
+
+Event Mode (8 cards)
+  39: Demonic Qi Haunt
+  40: Demonic Qi Burst
+  41: Firecracker
+  42: Waiting for Rabbit [not in swogi]
+  76: Magic Dragon's Paw
+  77: Demonic Dragon's Chaotic Dance
+  78: Leaping the Dragon Gate
+  80: Firework
+
+============================================================
+ZONGZI EVENT
+============================================================
+
+Sweet Zongzi (17 cards)
+  83: Red Bean Zongzi
+  84: Jujube Zongzi
+  85: Honey Zongzi
+  86: Mung Bean Zongzi
+  87: Candied Jujube Zongzi
+  88: Jujube Paste Zongzi
+  89: Alkaline Water Zongzi
+  90: Lotus Seeds Zongzi
+  91: Bean Paste Zongzi
+  92: Preserved Fruit Zongzi
+  93: Crystal Ice Zongzi
+  94: Fresh Fruit Zongzi
+  95: Mixed Grain Zongzi
+  96: Spirit Zongzi
+  97: Water Combined Zongzi
+  301: Heavenly Delicacy Zongzi
+  303: Osmanthus Zongzi
+
+Salty Zongzi (17 cards)
+  98: Salted Meat Zongzi
+  99: Mushroom Zongzi
+  100: Fresh Meat Zongzi
+  101: Roasted Meat Zongzi
+  102: Spicy Zongzi
+  103: Preserved Meat Zongzi
+  104: Sour Bamboo Shoots Zongzi
+  105: Chestnut Zongzi
+  106: Pungent Zongzi
+  107: Salted Egg Yolk Zongzi
+  108: Seafood Zongzi
+  109: Pickled Mustard Zongzi
+  110: Assorted Meat Zongzi
+  111: Double Plum Zongzi
+  112: Shura Zongzi
+  302: Various Cate Zongzi
+  306: Ham Zongzi
+
+Neutral Zongzi (1 cards)
+  113: Pure Rice Zongzi
+
+Zongzi Event Items (2 cards)
+  299: Five Colored Strings [non-playable] [not in swogi]
+  300: Zongzi Leaves [non-playable] [not in swogi]
+
+============================================================
+OTHER SPECIAL CARDS
+============================================================
+
+Merpeople Pearls (10 cards)
+  60: Cursed Merpeople Pearl
+  61: Abyssal Merpeople Pearl
+  62: Frenzied Merpeople Pearl
+  63: Bewildering Merpeople Pearl
+  64: Multicolored Merpeople Pearl
+  65: Qi-Gathering Merpeople Pearl
+  66: Crystallized Merpeople Pearl
+  67: Mirroring Merpeople Pearl
+  68: Sneak Merpeople Pearl
+  69: Blood-cultivated Merpeople Pearl
+
+Loong (1 cards)
+  79: Loong
+
+Merge/Craft Utility (2 cards)
+  46: Daoist Rhyme Aura [non-playable] [not in swogi]
+  59: Pure Merpeople Pearl [non-playable] [not in swogi]
+
+Normal Attack (1 cards)
+  0: Normal Attack
+
+Non-Playable Special (2 cards)
+  27: At Own Pace [not in swogi]
+  114: Zongzi Trial [not in swogi]
+
+============================================================
+MINIGAMES & NON-BATTLE
+============================================================
+
+Shopkeeper Minigame (35 cards)
+  223: Rest [not in swogi]
+  224: Furnace [not in swogi]
+  225: Earth Spirit Elixir
+  226: Cloud Elixir
+  227: Bodybuilding Elixir [not in swogi]
+  228: Hexagram Furnace [not in swogi]
+  229: Resurrection Elixir [not in swogi]
+  230: Talent Elixir [not in swogi]
+  231: Great Recover Elixir
+  232: Ice Spirit Guard Elixir
+  233: Furnace of Void [not in swogi]
+  234: Thunder Fulu
+  235: Guard Spirit Fulu
+  236: Fire Cloud Fulu
+  237: Calm Incantation
+  238: Spirit Absorb Fulu
+  239: Ice Incantation
+  240: Weaken Fulu
+  241: Spiritage Incantation
+  242: Soul Requiem Fulu
+  243: Divine Walk Fulu
+  244: Black Silver Armor
+  245: Thorns Spear
+  246: Dew Jade Vase
+  247: Nameless Ancient Sword
+  248: Requiem Jade Lotus
+  249: Blood Crystal of Wolf King
+  250: Carefree Guqin
+  251: Cosmos Seal Divine Orb
+  252: Dark Crystal Heart Shield
+  253: Nether Seal Evil Signet
+  254: Dark Star Bat
+  255: Brocade Rat
+  256: Three Tailed Cat
+  257: Shadow Owl Rabbit
+
+Bridge Minigame (7 cards)
+  115: 1 [not in swogi]
+  116: 2 [not in swogi]
+  117: 3 [not in swogi]
+  118: 4 [not in swogi]
+  119: 5 [not in swogi]
+  120: 6 [not in swogi]
+  121: 7 [not in swogi]
+
+Artillery Minigame (2 cards)
+  326: Angle [not in swogi]
+  327: Force [not in swogi]
+
+Decoration Preview (6 cards)
+  145: 1 Attack [not in swogi]
+  146: 2 Attacks [not in swogi]
+  147: 3 Attacks [not in swogi]
+  148: 4 Attacks [not in swogi]
+  149: 5 Attacks [not in swogi]
+  150: 7 Attacks [not in swogi]
+
+Vouchers (3 cards)
+  99000001: Treasures Appear [non-playable] [not in swogi]
+  99000002: Spirit Pet Mastered [non-playable] [not in swogi]
+  99000003: Inheritance of the Secret Enchantment [non-playable] [not in swogi]
+
+============================================================
+UNUSED / EMPTY
+============================================================
+
+Unused Cards (17 cards)
+  4: Heptastar Lantern [non-playable] [not in swogi]
+  14: Five Elements Of World [not in swogi]
+  24: Act Underhand [not in swogi]
+  71: Rakshasa Pouncing
+  72: Sky-Piercing Claw
+  293: M - Consonance Sword Formation (unused version) [non-playable] (unused - DEF +2/10/18 with Sword Intent version, replaced by 325)
+  4000007: Astral Move - Extend [non-playable] (unused - fusion version exists)
+  4000012: Scholasticism [non-playable] [not in swogi] (unused)
+  7000005: Wood Spirit - Fragrant [non-playable] (unused)
+  7000008: Water Spirit - Cleanse [non-playable] [not in swogi] (unused)
+  7000041: Earth Spirit - Rockslide [non-playable] [not in swogi] (unused)
+  7000054: Cosmos Guard [non-playable] [not in swogi] (unused)
+  8000015: Reform Formation [non-playable] [not in swogi] (unused)
+  10000049: Thousand Souls Strike [non-playable] [not in swogi] (unused)
+  99000000: Fortunes and Luck [non-playable] [not in swogi] (unused voucher)
+  99000004: Mysterious Treasure Map [non-playable] [not in swogi] (unused voucher)
+  99000005: An Epiphany [non-playable] [not in swogi] (unused voucher)
+
+Empty/Deleted Cards (5 cards)
+  26:  [non-playable] [not in swogi]
+  30:  [non-playable] [not in swogi]
+  43:  [non-playable] [not in swogi]
+  44:  [non-playable] [not in swogi]
+  287:  [non-playable] [not in swogi]

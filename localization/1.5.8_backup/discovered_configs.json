@@ -1,0 +1,60 @@
+{
+  "extracted": [
+    "TA18TalentConfig",
+    "KeYinCardConfig",
+    "SectTalentConfig",
+    "CardConfig",
+    "TalentConfig",
+    "TalentResonanceConfig"
+  ],
+  "not_extracted": [
+    "AchievementConfig",
+    "ActivityPracticeConfig",
+    "AnimClipConfig",
+    "BranchConfig",
+    "DivinationWordConfig",
+    "MentorLevelConfig",
+    "PlotConfig",
+    "RogueEnemyConfig",
+    "ServerConfig",
+    "TAExchangeConfig"
+  ],
+  "all_configs": {
+    "AchievementConfig": [
+      "36bb0fbdec23d55ea46ed90f05978173.bundle"
+    ],
+    "ActivityPracticeConfig": [
+      "affcb1d962d1488e3d8848235317776f.bundle"
+    ],
+    "AnimClipConfig": [
+      "affcb1d962d1488e3d8848235317776f.bundle"
+    ],
+    "BranchConfig": [
+      "affcb1d962d1488e3d8848235317776f.bundle"
+    ],
+    "CardConfig": [
+      "affcb1d962d1488e3d8848235317776f.bundle"
+    ],
+    "DivinationWordConfig": [
+      "affcb1d962d1488e3d8848235317776f.bundle"
+    ],
+    "MentorLevelConfig": [
+      "affcb1d962d1488e3d8848235317776f.bundle"
+    ],
+    "PlotConfig": [
+      "affcb1d962d1488e3d8848235317776f.bundle"
+    ],
+    "RogueEnemyConfig": [
+      "affcb1d962d1488e3d8848235317776f.bundle"
+    ],
+    "ServerConfig": [
+      "36bb0fbdec23d55ea46ed90f05978173.bundle"
+    ],
+    "TAExchangeConfig": [
+      "36bb0fbdec23d55ea46ed90f05978173.bundle"
+    ],
+    "TalentResonanceConfig": [
+      "ff36828409907da0ddc657b9f4c91417.bundle"
+    ]
+  }
+}

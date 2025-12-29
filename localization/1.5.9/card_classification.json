@@ -1,0 +1,5476 @@
+{
+  "classification_notes": "Card classifications for YiXianPai 1.5.9",
+  "field_104_meanings": {
+    "1": "voucher",
+    "2": "talisman_secret_enchantment",
+    "3": "spiritual_pet",
+    "4": "sect_secret_enchantment",
+    "5": "side_job_plant_master",
+    "6": "luck_season_legendary",
+    "7": "side_job_fortune_teller",
+    "8": "zongzi_sweet",
+    "9": "zongzi_salty",
+    "10": "immortal_relics_fusion",
+    "11": "shopkeeper",
+    "12": "spacetime_mirage",
+    "13": "artillery_minigame"
+  },
+  "categories": {
+    "normal_attack": {
+      "count": 1,
+      "in_swogi": 1,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 0,
+          "name": "Normal Attack",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "character_specific": {
+      "count": 50,
+      "in_swogi": 40,
+      "non_playable_count": 5,
+      "cards": [
+        {
+          "base_id": 2,
+          "name": "Unrestrained Sword - Flame Dance",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 3,
+          "name": "Cloud Sword - Avalanche",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 5,
+          "name": "Within Reach",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 6,
+          "name": "Flame Flutter",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7,
+          "name": "Rotary Divination Hexagram",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 8,
+          "name": "Cloud Sword - Cat Paw",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 9,
+          "name": "Spirit Cat Chaos Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10,
+          "name": "Starburst",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 11,
+          "name": "Heptastar Soulstat",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 12,
+          "name": "Only Traces",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 13,
+          "name": "Gourd Of Leisurely",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 15,
+          "name": "Cloud Sword - Pray Rain",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 16,
+          "name": "Sky Delicate Bracelet",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 17,
+          "name": "Water Spirit - Spring Rain",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 18,
+          "name": "Metal Spirit - Vigorous",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 19,
+          "name": "Clear Heart Sword Embryo",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 20,
+          "name": "Wood Spirit - Peach Blossom Seal",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 21,
+          "name": "Earth Spirit - Landslide",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 22,
+          "name": "Perfectly Planned",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 23,
+          "name": "Star Moon Folding Fan",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 28,
+          "name": "Ultimate Hexagram Base",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 29,
+          "name": "Fury Thunder",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 31,
+          "name": "Inheritance of Five Elements",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 32,
+          "name": "Overcome with each other",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 33,
+          "name": "Dried small fish",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 34,
+          "name": "Catnip",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 35,
+          "name": "Cat Teaser",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 36,
+          "name": "Cloud Sword - Flying Sand",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 37,
+          "name": "Bronze Cat",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 38,
+          "name": "Kun Wu Metal Ring",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 45,
+          "name": "Unceasing Exercising",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 70,
+          "name": "Overwhelming Power",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 73,
+          "name": "Gone Crazy",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 74,
+          "name": "Crash Fist - Styx Night",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 75,
+          "name": "Styx Moon's Glow",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 81,
+          "name": "Meditation of Xuan",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 82,
+          "name": "Wan Xuan Demon Breaking Palm",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 213,
+          "name": "Yeying Sword Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 214,
+          "name": "Jade Scroll of Yin Symbol",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 215,
+          "name": "Solitary Void Golden Scroll",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 216,
+          "name": "Face Isolation",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 217,
+          "name": "Strike Vacuity",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 218,
+          "name": "Forget Worries",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 219,
+          "name": "Double Stick",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 220,
+          "name": "Red Gold Dragon Stick",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 221,
+          "name": "Counter Move",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 222,
+          "name": "Shift Stance",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 258,
+          "name": "Water Spirit -  Leisurely",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 259,
+          "name": "Heavenly Rain",
+          "in_swogi": false,
+          "non_playable": true
+        }
+      ]
+    },
+    "unused": {
+      "count": 17,
+      "in_swogi": 0,
+      "non_playable_count": 17,
+      "cards": [
+        {
+          "base_id": 4,
+          "name": "Heptastar Lantern",
+          "in_swogi": false,
+          "non_playable": true,
+          "note": "unused"
+        },
+        {
+          "base_id": 14,
+          "name": "Five Elements Of World",
+          "in_swogi": false,
+          "non_playable": true,
+          "note": "unused"
+        },
+        {
+          "base_id": 24,
+          "name": "Act Underhand",
+          "in_swogi": false,
+          "non_playable": true,
+          "note": "unused"
+        },
+        {
+          "base_id": 71,
+          "name": "Rakshasa Pouncing",
+          "in_swogi": false,
+          "non_playable": true,
+          "note": "unused"
+        },
+        {
+          "base_id": 72,
+          "name": "Sky-Piercing Claw",
+          "in_swogi": false,
+          "non_playable": true,
+          "note": "unused"
+        },
+        {
+          "base_id": 293,
+          "name": "M - Consonance Sword Formation",
+          "in_swogi": false,
+          "non_playable": true,
+          "note": "unused - DEF +2/10/18 with Sword Intent version, replaced by 325"
+        },
+        {
+          "base_id": 4000007,
+          "name": "Astral Move - Extend",
+          "in_swogi": false,
+          "non_playable": true,
+          "note": "unused - fusion version exists"
+        },
+        {
+          "base_id": 4000012,
+          "name": "Scholasticism",
+          "in_swogi": false,
+          "non_playable": true,
+          "note": "unused"
+        },
+        {
+          "base_id": 7000005,
+          "name": "Wood Spirit - Fragrant",
+          "in_swogi": false,
+          "non_playable": true,
+          "note": "unused"
+        },
+        {
+          "base_id": 7000008,
+          "name": "Water Spirit - Cleanse",
+          "in_swogi": false,
+          "non_playable": true,
+          "note": "unused"
+        },
+        {
+          "base_id": 7000041,
+          "name": "Earth Spirit - Rockslide",
+          "in_swogi": false,
+          "non_playable": true,
+          "note": "unused"
+        },
+        {
+          "base_id": 7000054,
+          "name": "Cosmos Guard",
+          "in_swogi": false,
+          "non_playable": true,
+          "note": "unused"
+        },
+        {
+          "base_id": 8000015,
+          "name": "Reform Formation",
+          "in_swogi": false,
+          "non_playable": true,
+          "note": "unused"
+        },
+        {
+          "base_id": 10000049,
+          "name": "Thousand Souls Strike",
+          "in_swogi": false,
+          "non_playable": true,
+          "note": "unused"
+        },
+        {
+          "base_id": 99000000,
+          "name": "Fortunes and Luck",
+          "in_swogi": false,
+          "non_playable": true,
+          "note": "unused voucher"
+        },
+        {
+          "base_id": 99000004,
+          "name": "Mysterious Treasure Map",
+          "in_swogi": false,
+          "non_playable": true,
+          "note": "unused voucher"
+        },
+        {
+          "base_id": 99000005,
+          "name": "An Epiphany",
+          "in_swogi": false,
+          "non_playable": true,
+          "note": "unused voucher"
+        }
+      ]
+    },
+    "unused_empty": {
+      "count": 5,
+      "in_swogi": 0,
+      "non_playable_count": 5,
+      "cards": [
+        {
+          "base_id": 26,
+          "name": "灵猫踏云",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 30,
+          "name": "符刀•斩怨",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 43,
+          "name": "逆境不弃",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 44,
+          "name": "疾驰不休",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 287,
+          "name": "逍遥•附灵",
+          "in_swogi": false,
+          "non_playable": true
+        }
+      ]
+    },
+    "non_playable_special": {
+      "count": 2,
+      "in_swogi": 0,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 27,
+          "name": "At Own Pace",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 114,
+          "name": "Zongzi Trial",
+          "in_swogi": false,
+          "non_playable": false
+        }
+      ]
+    },
+    "event_mode": {
+      "count": 8,
+      "in_swogi": 7,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 39,
+          "name": "Demonic Qi Haunt",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 40,
+          "name": "Demonic Qi Burst",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 41,
+          "name": "Firecracker",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 42,
+          "name": "Waiting for Rabbit",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 76,
+          "name": "Magic Dragon's Paw",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 77,
+          "name": "Demonic Dragon's Chaotic Dance",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 78,
+          "name": "Leaping the Dragon Gate",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 80,
+          "name": "Firework",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "merge_utility": {
+      "count": 4,
+      "in_swogi": 0,
+      "non_playable_count": 1,
+      "cards": [
+        {
+          "base_id": 1,
+          "name": "Spring Course Tea",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 46,
+          "name": "Daoist Rhyme Aura",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 59,
+          "name": "Pure Merpeople Pearl",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 299,
+          "name": "Five Colored Strings",
+          "in_swogi": false,
+          "non_playable": false
+        }
+      ]
+    },
+    "luck_season_legendary": {
+      "count": 12,
+      "in_swogi": 12,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 47,
+          "name": "Cloud Sword - Sunset Glow",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 48,
+          "name": "Azure Dragon Sword Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 49,
+          "name": "Beast Spirit Sword Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 50,
+          "name": "Dragon Devours Clouds",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 51,
+          "name": "Spiritual Divination",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 52,
+          "name": "Throw Petals",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 53,
+          "name": "Astral Move - Twin Swallows",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 54,
+          "name": "Water Drop Erosion",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 55,
+          "name": "Wild Crossing Seal",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 56,
+          "name": "Lava Seal",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 57,
+          "name": "Boulder Seal",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 58,
+          "name": "Wave Cutter Seal",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "merpeople_pearl": {
+      "count": 10,
+      "in_swogi": 10,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 60,
+          "name": "Cursed Merpeople Pearl",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 61,
+          "name": "Abyssal Merpeople Pearl",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 62,
+          "name": "Frenzied Merpeople Pearl",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 63,
+          "name": "Bewildering Merpeople Pearl",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 64,
+          "name": "Multicolored Merpeople Pearl",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 65,
+          "name": "Qi-Gathering Merpeople Pearl",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 66,
+          "name": "Crystallized Merpeople Pearl",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 67,
+          "name": "Mirroring Merpeople Pearl",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 68,
+          "name": "Sneak Merpeople Pearl",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 69,
+          "name": "Blood-cultivated Merpeople Pearl",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "loong": {
+      "count": 1,
+      "in_swogi": 1,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 79,
+          "name": "Loong",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "zongzi_sweet": {
+      "count": 17,
+      "in_swogi": 17,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 83,
+          "name": "Red Bean Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 84,
+          "name": "Jujube Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 85,
+          "name": "Honey Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 86,
+          "name": "Mung Bean Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 87,
+          "name": "Candied Jujube Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 88,
+          "name": "Jujube Paste Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 89,
+          "name": "Alkaline Water Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 90,
+          "name": "Lotus Seeds Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 91,
+          "name": "Bean Paste Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 92,
+          "name": "Preserved Fruit Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 93,
+          "name": "Crystal Ice Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 94,
+          "name": "Fresh Fruit Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 95,
+          "name": "Mixed Grain Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 96,
+          "name": "Spirit Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 97,
+          "name": "Water Combined Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 301,
+          "name": "Heavenly Delicacy Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 303,
+          "name": "Osmanthus Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "zongzi_salty": {
+      "count": 17,
+      "in_swogi": 17,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 98,
+          "name": "Salted Meat Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99,
+          "name": "Mushroom Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 100,
+          "name": "Fresh Meat Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 101,
+          "name": "Roasted Meat Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 102,
+          "name": "Spicy Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 103,
+          "name": "Preserved Meat Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 104,
+          "name": "Sour Bamboo Shoots Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 105,
+          "name": "Chestnut Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 106,
+          "name": "Pungent Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 107,
+          "name": "Salted Egg Yolk Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 108,
+          "name": "Seafood Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 109,
+          "name": "Pickled Mustard Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 110,
+          "name": "Assorted Meat Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 111,
+          "name": "Double Plum Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 112,
+          "name": "Shura Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 302,
+          "name": "Various Cate Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 306,
+          "name": "Ham Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "zongzi_neutral": {
+      "count": 1,
+      "in_swogi": 1,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 113,
+          "name": "Pure Rice Zongzi",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "bridge_minigame": {
+      "count": 7,
+      "in_swogi": 0,
+      "non_playable_count": 7,
+      "cards": [
+        {
+          "base_id": 115,
+          "name": "1",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 116,
+          "name": "2",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 117,
+          "name": "3",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 118,
+          "name": "4",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 119,
+          "name": "5",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 120,
+          "name": "6",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 121,
+          "name": "7",
+          "in_swogi": false,
+          "non_playable": true
+        }
+      ]
+    },
+    "immortal_relics_fusion": {
+      "count": 81,
+      "in_swogi": 81,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 122,
+          "name": "Cloud Sword - Dragon Spring",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 123,
+          "name": "Cloud Sword - Flying Snow Shade",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 124,
+          "name": "CentiBird Delicate Bracelet",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 125,
+          "name": "Unrestrained Sword - Cat Claw",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 126,
+          "name": "Clear Heart Sword Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 127,
+          "name": "Traces Revitalized",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 128,
+          "name": "Ultimate Polaris Hexagram Base",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 129,
+          "name": "Suspicious Flame Flutter",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 130,
+          "name": "Thousand Star Explosion",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 131,
+          "name": "Star Moon Hexagram Fan",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 132,
+          "name": "Heavenly Marrow Gourd",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 133,
+          "name": "Ultimate Overcome Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 134,
+          "name": "Wood Spirit - All Things Grow",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 135,
+          "name": "Kun Wu Molten Ring",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 136,
+          "name": "Harmony of Water and Fire",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 137,
+          "name": "Unceasing Universe",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 138,
+          "name": "Soul Overwhelming Palm",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 139,
+          "name": "Styx Night Footwork",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 140,
+          "name": "Crash Fist - Return to Xuan",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 141,
+          "name": "Cloud Sword - Starry Sky",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 142,
+          "name": "Astral Move - Extend",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 143,
+          "name": "Metal Spirit - Meteor",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 144,
+          "name": "Crash Fist - Star Seizing",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 151,
+          "name": "Unrestrained Sword - Nebula Cloud",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 152,
+          "name": "Great Galaxy",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 153,
+          "name": "Cosmos Fleche",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 154,
+          "name": "Star Sky Forge Bone",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 156,
+          "name": "Xuanming Recover Elixir",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 157,
+          "name": "Xuanming Requiem Fulu",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 158,
+          "name": "Xuanming Regen Tune",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 159,
+          "name": "Xuanming Clouds",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 160,
+          "name": "Xuanming Forceage Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 161,
+          "name": "Xuanming Snowdrop",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 162,
+          "name": "Xuanming Recurring",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 163,
+          "name": "Xuanming Sword Intent Mantra",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 164,
+          "name": "Xuanming Thundercloud Tribulation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 165,
+          "name": "Xuanming Heavenly Essence Destruction",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 166,
+          "name": "Xuanming Boundary-Breaking Palms",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 167,
+          "name": "Shen Jian Ao Zhou",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 168,
+          "name": "Die Ling Shen Ying",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 169,
+          "name": "Pi Yun Zhui Yue",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 170,
+          "name": "Jiu Qi Po Xiao",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 171,
+          "name": "Xuan-Yuan Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 172,
+          "name": "Heavenly Maiden White Jade Ring",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 173,
+          "name": "Kunlun Mirror",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 174,
+          "name": "Pangu Axe",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 175,
+          "name": "Nüwa Stone",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 176,
+          "name": "Haotian Pagoda",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 177,
+          "name": "Fuxi Guqin",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 178,
+          "name": "Kongtong Seal",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 179,
+          "name": "Donghuang Zhong",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 180,
+          "name": "Shennong Ding",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 181,
+          "name": "Spirit Fusion Pot",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 183,
+          "name": "Contemplate Spirits Vitality Rhythm",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 184,
+          "name": "Cloud Sword - Clarity",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 185,
+          "name": "Spiritstat Tune",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 186,
+          "name": "Unrestrained Sword  - Divine",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 187,
+          "name": "Cloud Sword - Endless",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 188,
+          "name": "Sword Spirit Sunflower",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 189,
+          "name": "Heavenly Will - Earth Evil",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 190,
+          "name": "Spiritual Hunter",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 191,
+          "name": "Hexagrams Generating Evils",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 192,
+          "name": "Thunderbolt Tune",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 193,
+          "name": "Fleeting Glimpse",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 194,
+          "name": "Yin Yang Tutelary Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 195,
+          "name": "Entangling Thornbush",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 196,
+          "name": "Astral Move - Jump",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 197,
+          "name": "Five Elements Guard",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 198,
+          "name": "Fire Spirit - Blazing Flame",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 199,
+          "name": "Heavenly Marrow Dance Tune",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 200,
+          "name": "Cosmos Brush",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 201,
+          "name": "Wood Spirit Forceage Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 202,
+          "name": "Five Elements Spiritual Field",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 203,
+          "name": "Water Spirit - Continuous Flow",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 204,
+          "name": "Cloud Footwork",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 205,
+          "name": "Spiritage And Exercise",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 206,
+          "name": "Continuous Tune",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 207,
+          "name": "Exercise To The Utmost",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 208,
+          "name": "Force Spiritage Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 209,
+          "name": "Mystic Snowdrop",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 210,
+          "name": "Heavenly Will - Seizing",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "decoration_preview": {
+      "count": 6,
+      "in_swogi": 0,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 145,
+          "name": "1 Attack",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 146,
+          "name": "2 Attacks",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 147,
+          "name": "3 Attacks",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 148,
+          "name": "4 Attacks",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 149,
+          "name": "5 Attacks",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 150,
+          "name": "7 Attacks",
+          "in_swogi": false,
+          "non_playable": false
+        }
+      ]
+    },
+    "seasonal_immortal_relics_special": {
+      "count": 2,
+      "in_swogi": 1,
+      "non_playable_count": 1,
+      "cards": [
+        {
+          "base_id": 155,
+          "name": "Xuanming Waters",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 182,
+          "name": "Crimson Star",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "shopkeeper": {
+      "count": 35,
+      "in_swogi": 28,
+      "non_playable_count": 35,
+      "cards": [
+        {
+          "base_id": 223,
+          "name": "Rest",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 224,
+          "name": "Furnace ",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 225,
+          "name": "Earth Spirit Elixir",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 226,
+          "name": "Cloud Elixir",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 227,
+          "name": "Bodybuilding Elixir",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 228,
+          "name": "Hexagram Furnace ",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 229,
+          "name": "Resurrection Elixir",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 230,
+          "name": "Talent Elixir",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 231,
+          "name": "Great Recover Elixir",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 232,
+          "name": "Ice Spirit Guard Elixir",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 233,
+          "name": "Furnace of Void",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 234,
+          "name": "Thunder Fulu",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 235,
+          "name": "Guard Spirit Fulu",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 236,
+          "name": "Fire Cloud Fulu",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 237,
+          "name": "Calm Incantation",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 238,
+          "name": "Spirit Absorb Fulu",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 239,
+          "name": "Ice Incantation",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 240,
+          "name": "Weaken Fulu",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 241,
+          "name": "Spiritage Incantation",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 242,
+          "name": "Soul Requiem Fulu",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 243,
+          "name": "Divine Walk Fulu",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 244,
+          "name": "Black Silver Armor",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 245,
+          "name": "Thorns Spear",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 246,
+          "name": "Dew Jade Vase",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 247,
+          "name": "Nameless Ancient Sword",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 248,
+          "name": "Requiem Jade Lotus",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 249,
+          "name": "Blood Crystal of Wolf King",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 250,
+          "name": "Carefree Guqin",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 251,
+          "name": "Cosmos Seal Divine Orb",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 252,
+          "name": "Dark Crystal Heart Shield",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 253,
+          "name": "Nether Seal Evil Signet",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 254,
+          "name": "Dark Star Bat",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 255,
+          "name": "Brocade Rat",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 256,
+          "name": "Three Tailed Cat",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 257,
+          "name": "Shadow Owl Rabbit",
+          "in_swogi": true,
+          "non_playable": true
+        }
+      ]
+    },
+    "seasonal_mirage_selectable": {
+      "count": 40,
+      "in_swogi": 31,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 260,
+          "name": "M - Raven Spirit Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 261,
+          "name": "M - Light Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 262,
+          "name": "M - Spiritage Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 263,
+          "name": "M - Flying Fang Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 264,
+          "name": "M - Cloud Sword Touch Sky",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 265,
+          "name": "M - Cutting Weeds",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 266,
+          "name": "M - Ruthless Water",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 268,
+          "name": "M - Dotted Around",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 269,
+          "name": "M - Shifting Stars",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 270,
+          "name": "M - Fire Spirit Flame Eater",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 271,
+          "name": "M - Water Spirit Billows",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 272,
+          "name": "M - Wood Spirit Recovery",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 273,
+          "name": "M - Metal Spirit Needle",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 274,
+          "name": "M - Earth Spirit Mountains",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 275,
+          "name": "M - Youthful Vigor",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 277,
+          "name": "M - Exercise Bones",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 278,
+          "name": "M - Sinking Qi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 288,
+          "name": "M - Cloud Sword Conceal",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 289,
+          "name": "M - Flower Sentient",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 291,
+          "name": "M - Standing Firm",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 292,
+          "name": "M - Cosmos Seal",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 294,
+          "name": "M - Astral Fleche",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 295,
+          "name": "M - Five Elements Circulation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 296,
+          "name": "M - Double Trouble",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 297,
+          "name": "M - Rakshasa Pouncing",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 298,
+          "name": "M - Incessant",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 307,
+          "name": "M - Earth Hexagram",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 308,
+          "name": "M - Crash Fist Poke",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 309,
+          "name": "M - Cloud Dance Rhythm",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 310,
+          "name": "M - Magnanimous Righteousness",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 312,
+          "name": "M - Unrestrained Sword Dragon Coiled",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 315,
+          "name": "M - Fire Spirit Seal",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 316,
+          "name": "M - Metal Spirit Seal",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 317,
+          "name": "M - Earth Spirit Formation",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 318,
+          "name": "M - Endless Entanglement",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 319,
+          "name": "M - Crash Fist Entangle",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 320,
+          "name": "M - Yin Yang Formation",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 323,
+          "name": "M - Diligent Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 324,
+          "name": "M - Vitality Blossom",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 325,
+          "name": "M - Consonance Sword Formation",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "seasonal_mirage_special": {
+      "count": 9,
+      "in_swogi": 7,
+      "non_playable_count": 1,
+      "cards": [
+        {
+          "base_id": 280,
+          "name": "Xiaoyao - Formless",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 281,
+          "name": "Xiaoyao - Seamless",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 282,
+          "name": "Xiaoyao - Breathless",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 283,
+          "name": "Xiaoyao - Imbalance",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 284,
+          "name": "Xiaoyao - Irreversible",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 285,
+          "name": "Xiaoyao - Lawless",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 286,
+          "name": "Normal Attack",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 321,
+          "name": "M - Mirroring Merpeople Pearl",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 322,
+          "name": "Xiaoyao - Reproduction",
+          "in_swogi": false,
+          "non_playable": false
+        }
+      ]
+    },
+    "zongzi_event": {
+      "count": 2,
+      "in_swogi": 0,
+      "non_playable_count": 1,
+      "cards": [
+        {
+          "base_id": 300,
+          "name": "Zongzi Leaves",
+          "in_swogi": false,
+          "non_playable": true
+        }
+      ]
+    },
+    "artillery_minigame": {
+      "count": 2,
+      "in_swogi": 0,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 326,
+          "name": "Angle",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 327,
+          "name": "Force",
+          "in_swogi": false,
+          "non_playable": false
+        }
+      ]
+    },
+    "sect_1_cloud_spirit_sword": {
+      "count": 52,
+      "in_swogi": 52,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 1000001,
+          "name": "Cloud Sword - Touch Sky",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000002,
+          "name": "Cloud Sword - Fleche",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000003,
+          "name": "Cloud Sword - Touch Earth",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000004,
+          "name": "Light Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000005,
+          "name": "Guard Qi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000006,
+          "name": "Qi Perfusion",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000007,
+          "name": "Giant Tiger Spirit Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000008,
+          "name": "Reflexive Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000009,
+          "name": "Thunder Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000010,
+          "name": "Sword Slash",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000011,
+          "name": "Form-Intention Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000012,
+          "name": "Sword Defence",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000013,
+          "name": "Wind Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000014,
+          "name": "Cloud Sword - Conceal",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000015,
+          "name": "Cloud Sword - Riddle",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000016,
+          "name": "Cloud Sword - Reguard",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000017,
+          "name": "Contemplate Spirits Rhythm",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000018,
+          "name": "Transforming Spirits Rhythm",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000019,
+          "name": "Giant Whale Spirit Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000020,
+          "name": "Raven Spirit Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000021,
+          "name": "Flying Fang Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000022,
+          "name": "Unrestrained Sword - One",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000023,
+          "name": "Burst Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000024,
+          "name": "Spiritage Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000025,
+          "name": "Rule Sky Sword Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000026,
+          "name": "Cloud Sword - Softheart",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000027,
+          "name": "Cloud Sword - Pierce the Star",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000028,
+          "name": "Cloud Sword - Necessity",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000029,
+          "name": "Giant Roc Spirit Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000030,
+          "name": "Earth Evil Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000031,
+          "name": "Cloud Dance Rhythm",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000032,
+          "name": "Tri-Peak Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000033,
+          "name": "Consonance Sword Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000034,
+          "name": "Spirit Gather Citta-Dharma",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000035,
+          "name": "Unrestrained Sword - Two",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000036,
+          "name": "Giant Kun Spirit Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000037,
+          "name": "Flow Cloud Chaos Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000038,
+          "name": "Inspiration Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000039,
+          "name": "Cloud Sword - Flash Wind",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000040,
+          "name": "Cloud Sword - Moon Shade",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000041,
+          "name": "Moon Water Sword Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000042,
+          "name": "Cloud Sword - Dragon Roam",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000043,
+          "name": "Flying Spirit Shade Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000044,
+          "name": "Sword Intent Surge",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000045,
+          "name": "Dharma Spirit Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000046,
+          "name": "Mirror Flower Sword Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000059,
+          "name": "Egret Spirit Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000060,
+          "name": "Cloud Sword - Step Lightly",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000063,
+          "name": "Cloud Sword - Spirit Coercion",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000064,
+          "name": "Chain Sword Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000065,
+          "name": "CentiBird Spirit Sword Rhythm",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000066,
+          "name": "Unrestrained Sword - Zero",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "sect_secret_enchantment": {
+      "count": 59,
+      "in_swogi": 58,
+      "non_playable_count": 1,
+      "cards": [
+        {
+          "base_id": 1000047,
+          "name": "Rhyme Spirit Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000048,
+          "name": "Cloud Sword - Dawn",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000049,
+          "name": "Unrestrained Sword - Dragon Coiled",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000050,
+          "name": "Sword Intent Flow",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000051,
+          "name": "Emptiness Sword Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000052,
+          "name": "Remnant Cloud Sky Sealing Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000053,
+          "name": "Apex Sword Citta-Dharma",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000054,
+          "name": "Diligent Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000055,
+          "name": "Giant Ape Spirit Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000056,
+          "name": "One Heart One Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000057,
+          "name": "Step Moon Into Cloud",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000058,
+          "name": "Secret Sword - Spirit Cloud",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000061,
+          "name": "Unrestrained Sword - Twin Dragons",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 1000062,
+          "name": "Synergy Sword Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000047,
+          "name": "Hexagrams Spirit Resurrection",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000048,
+          "name": "Vitality Blossom",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000049,
+          "name": "Preemptive Strike",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000050,
+          "name": "Sun And Moon For Glory",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000051,
+          "name": "Astral Move - Dragon Slay",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000052,
+          "name": "Covert Shift",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000053,
+          "name": "Throwing Stones For Directions",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000054,
+          "name": "Star Born Rhythm",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000055,
+          "name": "All-Or-Nothing",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000056,
+          "name": "Flowers And Water",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000057,
+          "name": "Thin On The Ground",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000058,
+          "name": "Destiny Catastrophe",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000064,
+          "name": "Thunder Citta-Dharma",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000065,
+          "name": "Meteorite Meteor",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000044,
+          "name": "Water Spirit - Tsunami",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000045,
+          "name": "Fire Spirit - Burning Sky",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000046,
+          "name": "Earth Spirit - Earthquake",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000047,
+          "name": "Earth Spirit - Rhythm Metal",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000048,
+          "name": "Water Spirit - Rhythm Wood",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000049,
+          "name": "Fire Spirit - Rhythm Earth",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000050,
+          "name": "Metal Spirit - Rhythm Water",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000051,
+          "name": "Wood Spirit - Rhythm Fire",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000052,
+          "name": "Five Elements Spirit Blast",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000055,
+          "name": "Five Elements Escape",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000063,
+          "name": "Metal Spirit - Chokehold",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000064,
+          "name": "Wood Spirit - Vine",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000065,
+          "name": "Five Elements Blossom",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000068,
+          "name": "Wood Spirit Secret Seal",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000069,
+          "name": "Fire Spirit Secret Seal",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000070,
+          "name": "Earth Spirit Secret Seal",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000071,
+          "name": "Metal Spirit Secret Seal",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000072,
+          "name": "Water Spirit Secret Seal",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000053,
+          "name": "Endless Force",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000054,
+          "name": "Endless Entanglement",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000055,
+          "name": "Toxin Immunity",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000056,
+          "name": "Lying Drunk",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000057,
+          "name": "Strength Driven Mad",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000058,
+          "name": "Herbal Bath",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 10000060,
+          "name": "Crash Fist - Double",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000061,
+          "name": "Break Pots and Sink Boats",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000062,
+          "name": "Break Cocoon",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000064,
+          "name": "Eerie Melody Buries Soul",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000065,
+          "name": "Endless Crash",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000066,
+          "name": "Return to Simplicity",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000067,
+          "name": "Styx Three Hit",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "side_job_elixirist": {
+      "count": 15,
+      "in_swogi": 10,
+      "non_playable_count": 5,
+      "cards": [
+        {
+          "base_id": 2000001,
+          "name": "Small Recover Elixir",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 2000002,
+          "name": "Fundamental Elixir",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 2000003,
+          "name": "Earth Spirit Elixir",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 2000004,
+          "name": "Exorcism Elixir",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 2000005,
+          "name": "Cloud Elixir",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 2000006,
+          "name": "Bodybuilding Elixir",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 2000007,
+          "name": "Healing Elixir",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 2000008,
+          "name": "Divine Power Elixir",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 2000009,
+          "name": "Resurrection Elixir",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 2000010,
+          "name": "Spiritage Elixir",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 2000011,
+          "name": "Great Recover Elixir",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 2000012,
+          "name": "Talent Elixir",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 2000013,
+          "name": "Ice Spirit Guard Elixir",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 2000014,
+          "name": "Great Bodybuilding Elixir",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 2000015,
+          "name": "Enlightenment Elixir",
+          "in_swogi": false,
+          "non_playable": true
+        }
+      ]
+    },
+    "side_job_talisman": {
+      "count": 15,
+      "in_swogi": 15,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 3000001,
+          "name": "Thunder Fulu",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 3000002,
+          "name": "Guard Spirit Fulu",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 3000003,
+          "name": "Sharp Metal Fulu",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 3000004,
+          "name": "Mist Fulu",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 3000005,
+          "name": "Fire Cloud Fulu",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 3000006,
+          "name": "Calm Incantation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 3000007,
+          "name": "Spirit Absorb Fulu",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 3000008,
+          "name": "Miasma Fulu",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 3000009,
+          "name": "Ice Incantation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 3000010,
+          "name": "Spiritage Incantation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 3000011,
+          "name": "Distubing Fulu",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 3000012,
+          "name": "Weaken Fulu",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 3000013,
+          "name": "Divine Walk Fulu",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 3000014,
+          "name": "Soul Requiem Fulu",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 3000015,
+          "name": "Thousand Evil Incantation",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "sect_2_heptastar": {
+      "count": 52,
+      "in_swogi": 52,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 4000001,
+          "name": "Wind Hexagram",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000002,
+          "name": "Earth Hexagram",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000003,
+          "name": "Zhen Hexagram",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000004,
+          "name": "Palm Thunder",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000005,
+          "name": "White Crane Bright Wings",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000006,
+          "name": "Striding Into the Wind",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000008,
+          "name": "Dotted Around",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000009,
+          "name": "Astral Move - Stand",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000010,
+          "name": "Astral Move - Flank",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000011,
+          "name": "Astral Move - Block",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000013,
+          "name": "Incessant",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000014,
+          "name": "Hexagram Formacide",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000015,
+          "name": "Water Hexagram",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000016,
+          "name": "Mountain Hexagram",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000017,
+          "name": "Qi Therapy",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000018,
+          "name": "Imposing",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000019,
+          "name": "Cutting Weeds",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000020,
+          "name": "Golden Rooster Independence",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000021,
+          "name": "Flower Sentient",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000022,
+          "name": "Ruthless Water",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000023,
+          "name": "Shifting Stars",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000024,
+          "name": "Astral Fleche",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000025,
+          "name": "Lake Hexagram",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000026,
+          "name": "Heaven Hexagram",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000027,
+          "name": "Stillness Citta-Dharma",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000028,
+          "name": "Astral Move - Point",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000029,
+          "name": "Astral Move - Hit",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000030,
+          "name": "Falling Thunder",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000031,
+          "name": "White Snake",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000032,
+          "name": "Starry Moon",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000033,
+          "name": "Drag Moon In Sea",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000034,
+          "name": "Flame Hexagram",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000035,
+          "name": "Dance Of The Dragonfly",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000036,
+          "name": "Escape Plan",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000037,
+          "name": "Repel Citta-Dharma",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000038,
+          "name": "Astral Move - Fly",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000039,
+          "name": "Astral Move - Tiger",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000040,
+          "name": "Yin Yang Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000041,
+          "name": "Strike Twice",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000042,
+          "name": "Revitalized",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000043,
+          "name": "Hunter Becomes Preyer",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000044,
+          "name": "Astral Move - Cide",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000045,
+          "name": "Polaris Citta-Dharma",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000046,
+          "name": "Five Thunders",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000059,
+          "name": "Extremely Suspicious",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000060,
+          "name": "Great Spirit",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000061,
+          "name": "Sparrow's Tail",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000062,
+          "name": "Star Trail Divination",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000063,
+          "name": "Thunder And Lighting",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000066,
+          "name": "Hunter Hunting Hunter",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000067,
+          "name": "Propitious Omen",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 4000068,
+          "name": "Thunder Hexagram Rhythm",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "side_job_music": {
+      "count": 15,
+      "in_swogi": 15,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 5000001,
+          "name": "Cracking Voice",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 5000002,
+          "name": "Earth Tune",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 5000003,
+          "name": "Carefree Tune",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 5000004,
+          "name": "Sky Spirit Tune",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 5000005,
+          "name": "Illusion Tune",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 5000006,
+          "name": "Kindness Tune",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 5000007,
+          "name": "Heartbroken Tune",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 5000008,
+          "name": "Craze Dance Tune",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 5000009,
+          "name": "Tremolo",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 5000010,
+          "name": "Regen Tune",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 5000011,
+          "name": "Nine Evil Ruptsprite",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 5000012,
+          "name": "Concentric Tune",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 5000013,
+          "name": "Apparition Confusion",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 5000014,
+          "name": "Chord In Tune",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 5000015,
+          "name": "Predicament for Immortals",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "side_job_painter": {
+      "count": 15,
+      "in_swogi": 11,
+      "non_playable_count": 4,
+      "cards": [
+        {
+          "base_id": 6000001,
+          "name": "Toning",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 6000002,
+          "name": "Practice Writing",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 6000003,
+          "name": "Grinding Ink",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 6000004,
+          "name": "Pen Walks Dragon Snake",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 6000005,
+          "name": "Feed On Illusions",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 6000006,
+          "name": "Gild The Lily",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 6000007,
+          "name": "Splash Ink",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 6000008,
+          "name": "Inspiration",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 6000009,
+          "name": "Ask Dao By Paint",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 6000010,
+          "name": "Reason By Analogy",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 6000011,
+          "name": "Divine Brush",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 6000012,
+          "name": "Flying Brush",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 6000013,
+          "name": "Finishing Touch",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 6000014,
+          "name": "Falling Paper Clouds",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 6000015,
+          "name": "Wonderful Strokes",
+          "in_swogi": false,
+          "non_playable": true
+        }
+      ]
+    },
+    "sect_3_five_elements": {
+      "count": 51,
+      "in_swogi": 51,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 7000001,
+          "name": "Metal Spirit Seal",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000002,
+          "name": "Metal Spirit - Needle",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000003,
+          "name": "Wood Spirit Seal",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000004,
+          "name": "Wood Spirit - Bud",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000006,
+          "name": "Water Spirit Seal",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000007,
+          "name": "Water Spirit - Waves",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000009,
+          "name": "Fire Spirit Seal",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000010,
+          "name": "Fire Spirit - Rush",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000011,
+          "name": "Earth Spirit Seal",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000012,
+          "name": "Earth Spirit - Dust",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000013,
+          "name": "Earth Spirit - Smash",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000014,
+          "name": "Cosmos Seal",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000015,
+          "name": "Metal Spirit - Heart Pierce",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000016,
+          "name": "Metal Spirit Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000017,
+          "name": "Wood Spirit - Sparse Shadow",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000018,
+          "name": "Wood Spirit - Recovery",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000019,
+          "name": "Water Spirit - Billows",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000020,
+          "name": "Water Spirit - Dive",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000021,
+          "name": "Fire Spirit - Flame Eater",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000022,
+          "name": "Fire Spirit - Scarlet Flame",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000023,
+          "name": "Earth Spirit Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000024,
+          "name": "Earth Spirit - Mountains",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000025,
+          "name": "Metal Spirit - Charge",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000026,
+          "name": "Metal Spirit - Sharp",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000027,
+          "name": "Wood Spirit - Thorn",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000028,
+          "name": "Wood Spirit - Forest Guard",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000029,
+          "name": "Water Spirit Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000030,
+          "name": "Water Spirit - Great Waves",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000031,
+          "name": "Fire Spirit Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000032,
+          "name": "Fire Spirit - Blast",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000033,
+          "name": "Earth Spirit - Quicksand",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000034,
+          "name": "Metal Spirit - Shuttle",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000035,
+          "name": "Metal Spirit - Iron Bone",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000036,
+          "name": "Wood Spirit Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000037,
+          "name": "Water Spirit - Turbulent",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000038,
+          "name": "Fire Spirit - Flash Fire",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000039,
+          "name": "Fire Spirit - Heart Fire",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000040,
+          "name": "Earth Spirit - Steep",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000042,
+          "name": "Metal Spirit - Giant Tripod",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000043,
+          "name": "Wood Spirit - Willow Leaf",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000053,
+          "name": "Earth Spirit - Combine World",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000056,
+          "name": "Fire Spirit - Blazing Prairie",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000057,
+          "name": "Water Spirit - Combine Rivers",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000058,
+          "name": "Ultimate World Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000059,
+          "name": "Water Spirit - Spring",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000060,
+          "name": "Five Elements Fleche",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000061,
+          "name": "Wood Spirit - Fragrant",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000062,
+          "name": "Earth Spirit - Cliff",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000066,
+          "name": "World Smash",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000067,
+          "name": "Five Elements Circulation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 7000073,
+          "name": "Five Elements Heavenly Marrow Rhythm",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "side_job_formation": {
+      "count": 15,
+      "in_swogi": 15,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 8000001,
+          "name": "Thunderphilia Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 8000002,
+          "name": "Fraccide Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 8000003,
+          "name": "Impact Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 8000004,
+          "name": "Scutturtle Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 8000005,
+          "name": "Cacopoisonous Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 8000006,
+          "name": "Cure Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 8000007,
+          "name": "Spiritage Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 8000008,
+          "name": "Endless Sword Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 8000009,
+          "name": "Hexproof Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 8000010,
+          "name": "Octgates Lock Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 8000011,
+          "name": "Heavenly Spirit Forceage Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 8000012,
+          "name": "Echo Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 8000013,
+          "name": "Anthomania Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 8000014,
+          "name": "Meru Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 8000016,
+          "name": "Motionless Tutelary Formation",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "side_job_plant_master": {
+      "count": 27,
+      "in_swogi": 13,
+      "non_playable_count": 19,
+      "cards": [
+        {
+          "base_id": 9000001,
+          "name": "Origin Herb",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 9000002,
+          "name": "Shuttle Orchid",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 9000003,
+          "name": "Sword Bamboo",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 9000004,
+          "name": "Healing Chamomile",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 9000005,
+          "name": "Qi-seeking Sunflower",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 9000006,
+          "name": "Mystery Seed",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 9000007,
+          "name": "Spiritual Plant Watering",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 9000008,
+          "name": "Divine Power Grass",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 9000009,
+          "name": "Leaf Shield Flower",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 9000010,
+          "name": "Flying Owl Reishi",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 9000011,
+          "name": "Entangling Ancient Vine",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 9000012,
+          "name": "Toxic Purple Fern",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 9000013,
+          "name": "Frozen Snow Lotus",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 9000014,
+          "name": "Mysterious Dao Fruit",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 9000015,
+          "name": "Space Spiritual Field",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 9000016,
+          "name": "Rock Herb",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 9000017,
+          "name": "Qi-corrupting Sunflower",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 9000018,
+          "name": "Leaf Blade Flower",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 9000019,
+          "name": "Devouring Ancient Vine",
+          "in_swogi": true,
+          "non_playable": true
+        },
+        {
+          "base_id": 9000020,
+          "name": "Frozen Blood Lotus",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 9000021,
+          "name": "Fire Orchid",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 9000022,
+          "name": "Lose Power Grass",
+          "in_swogi": false,
+          "non_playable": false
+        },
+        {
+          "base_id": 9000023,
+          "name": "Clear Chamomile",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 9000024,
+          "name": "Shadow Owl Reishi",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 9000025,
+          "name": "Demonic Dao Fruit",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 9000026,
+          "name": "Detoxific Purple Fern",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 9000027,
+          "name": "Hard Bamboo",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "sect_4_forge_body_soul": {
+      "count": 52,
+      "in_swogi": 52,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 10000001,
+          "name": "Crash Fist - Poke",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000002,
+          "name": "Crash Fist - Block",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000003,
+          "name": "Crash Fist - Bounce",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000004,
+          "name": "Exercise Fist",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000005,
+          "name": "Mountain-Cleaving Palms",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000006,
+          "name": "Embracing Qi Technique",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000007,
+          "name": "Sky-Piercing Claw",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000008,
+          "name": "Rakshasa Pouncing",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000009,
+          "name": "Mountain Falling",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000010,
+          "name": "Gather Force",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000011,
+          "name": "Vigorous Force",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000012,
+          "name": "Youthful Vigor",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000013,
+          "name": "Crash Fist - Shake",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000014,
+          "name": "Crash Fist - Entangle",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000015,
+          "name": "Crash Fist - Blitz",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000016,
+          "name": "Exercise Tendons",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000017,
+          "name": "Detect-Horse Palms",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000018,
+          "name": "Gale Shadow Claw",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000019,
+          "name": "Ghost Howling",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000020,
+          "name": "Majestic Qi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000021,
+          "name": "Standing Firm",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000022,
+          "name": "Strong Force",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000023,
+          "name": "Magnanimous Righteousness",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000024,
+          "name": "Crash Fist - Truncate",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000025,
+          "name": "Crash Fist - Inch Force",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000026,
+          "name": "Crash Footwork",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000027,
+          "name": "Exercise Bones",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000028,
+          "name": "Windward Palms",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000029,
+          "name": "Tiger Pouncing",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000030,
+          "name": "Double Trouble",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000031,
+          "name": "Bearing the Load",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000032,
+          "name": "Sinking Qi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000033,
+          "name": "Mighty Force",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000034,
+          "name": "Sailing through Sky",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000035,
+          "name": "Crash Fist - Continue",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000036,
+          "name": "Crash Fist - Subdue Dragon",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000037,
+          "name": "Exercise Marrow",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000038,
+          "name": "Crane Footwork",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000039,
+          "name": "Styx Agility",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000040,
+          "name": "Soul Seizing",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000041,
+          "name": "Shura Roar",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000042,
+          "name": "Surging Waves",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000043,
+          "name": "Overwhelming Force",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000044,
+          "name": "Crash Citta-Dharma",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000045,
+          "name": "Crash Fist - Blink",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000046,
+          "name": "Crash Fist - Shocked",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000047,
+          "name": "Realm-Killing Palms",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000048,
+          "name": "Exercise Soul",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000050,
+          "name": "Elusive Footwork",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000051,
+          "name": "Gather Intense Force",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000052,
+          "name": "Vast Universe",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 10000068,
+          "name": "Soul Cleaving",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "side_job_fortune_teller": {
+      "count": 20,
+      "in_swogi": 20,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 11000001,
+          "name": "Foretell Fate",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 11000003,
+          "name": "Heavenly Decree - Defend",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 11000004,
+          "name": "Heavenly Decree - Attack",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 11000005,
+          "name": "Lucky Start",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 11000007,
+          "name": "Heavenly Fortune - Shun Misfortune",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 11000008,
+          "name": "Heavenly Fortune - Seek Fortune",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 11000009,
+          "name": "Detect Qi",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 11000011,
+          "name": "Heavenly Time - Fleeting",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 11000012,
+          "name": "Heavenly Time - Recurring",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 11000013,
+          "name": "Everything Goes Your Way",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 11000014,
+          "name": "Everything is Unadvisable",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 11000018,
+          "name": "Envelop In Disaster",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 11000019,
+          "name": "Heavenly Will - Comply",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 11000020,
+          "name": "Heavenly Will - Defy",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 11000021,
+          "name": "Cycle of Fate",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 11000022,
+          "name": "Examine Body",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 11000023,
+          "name": "Bad Omen",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 11000024,
+          "name": "Disaster of Bloodshed",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 11000025,
+          "name": "Heavenly Star - Pull",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 11000026,
+          "name": "Heavenly Star - Guard",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "voucher": {
+      "count": 3,
+      "in_swogi": 0,
+      "non_playable_count": 3,
+      "cards": [
+        {
+          "base_id": 99000001,
+          "name": "Treasures Appear",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 99000002,
+          "name": "Spirit Pet Mastered",
+          "in_swogi": false,
+          "non_playable": true
+        },
+        {
+          "base_id": 99000003,
+          "name": "Inheritance of the Secret Enchantment",
+          "in_swogi": false,
+          "non_playable": true
+        }
+      ]
+    },
+    "talisman": {
+      "count": 15,
+      "in_swogi": 15,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 99000100,
+          "name": "Black Silver Armor",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000101,
+          "name": "Dew Jade Vase",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000102,
+          "name": "Fire Soul Refinement Flag",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000103,
+          "name": "Cosmos Seal Divine Orb",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000104,
+          "name": "Nether Seal Evil Signet",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000105,
+          "name": "Void Split Spear",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000106,
+          "name": "Dark Crystal Heart Shield",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000107,
+          "name": "Thorns Spear",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000108,
+          "name": "Nameless Ancient Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000109,
+          "name": "Requiem Jade Lotus",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000110,
+          "name": "Metal Tri-Thorn Spear",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000111,
+          "name": "Mysterious Gates Devil Seal Tower",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000112,
+          "name": "Blood Crystal of Wolf King",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000113,
+          "name": "Carefree Guqin",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000114,
+          "name": "Bow of Hunting Owl",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "spiritual_pet": {
+      "count": 13,
+      "in_swogi": 13,
+      "non_playable_count": 0,
+      "cards": [
+        {
+          "base_id": 99000200,
+          "name": "Break Sky Eagle",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000201,
+          "name": "Dark Star Bat",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000202,
+          "name": "Black Earth Turtle",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000203,
+          "name": "Brocade Rat",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000204,
+          "name": "Colorful Spirit Crane",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000205,
+          "name": "Scarlet-Eye The Sky Consumer",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000206,
+          "name": "Void The Spirit Consumer",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000207,
+          "name": "Ashes Phoenix",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000208,
+          "name": "Fat Immortal Raccoon",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000209,
+          "name": "Lonely Night Wolf",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000210,
+          "name": "Shadow Owl Rabbit",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000211,
+          "name": "Nether Void Canine",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 99000212,
+          "name": "Three Tailed Cat",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    }
+  },
+  "immortal_relics_fusion_subcategories": {
+    "character_specific": {
+      "count": 19,
+      "cards": [
+        {
+          "base_id": 122,
+          "name": "Cloud Sword - Dragon Spring",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 123,
+          "name": "Cloud Sword - Flying Snow Shade",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 124,
+          "name": "CentiBird Delicate Bracelet",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 125,
+          "name": "Unrestrained Sword - Cat Claw",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 126,
+          "name": "Clear Heart Sword Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 127,
+          "name": "Traces Revitalized",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 128,
+          "name": "Ultimate Polaris Hexagram Base",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 129,
+          "name": "Suspicious Flame Flutter",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 130,
+          "name": "Thousand Star Explosion",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 131,
+          "name": "Star Moon Hexagram Fan",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 132,
+          "name": "Heavenly Marrow Gourd",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 133,
+          "name": "Ultimate Overcome Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 134,
+          "name": "Wood Spirit - All Things Grow",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 135,
+          "name": "Kun Wu Molten Ring",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 136,
+          "name": "Harmony of Water and Fire",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 137,
+          "name": "Unceasing Universe",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 138,
+          "name": "Soul Overwhelming Palm",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 139,
+          "name": "Styx Night Footwork",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 140,
+          "name": "Crash Fist - Return to Xuan",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "mirror_of_stars": {
+      "count": 8,
+      "cards": [
+        {
+          "base_id": 141,
+          "name": "Cloud Sword - Starry Sky",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 142,
+          "name": "Astral Move - Extend",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 143,
+          "name": "Metal Spirit - Meteor",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 144,
+          "name": "Crash Fist - Star Seizing",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 151,
+          "name": "Unrestrained Sword - Nebula Cloud",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 152,
+          "name": "Great Galaxy",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 153,
+          "name": "Cosmos Fleche",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 154,
+          "name": "Star Sky Forge Bone",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "xuanming": {
+      "count": 11,
+      "cards": [
+        {
+          "base_id": 156,
+          "name": "Xuanming Recover Elixir",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 157,
+          "name": "Xuanming Requiem Fulu",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 158,
+          "name": "Xuanming Regen Tune",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 159,
+          "name": "Xuanming Clouds",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 160,
+          "name": "Xuanming Forceage Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 161,
+          "name": "Xuanming Snowdrop",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 162,
+          "name": "Xuanming Recurring",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 163,
+          "name": "Xuanming Sword Intent Mantra",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 164,
+          "name": "Xuanming Thundercloud Tribulation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 165,
+          "name": "Xuanming Heavenly Essence Destruction",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 166,
+          "name": "Xuanming Boundary-Breaking Palms",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "kunlun_door": {
+      "count": 15,
+      "cards": [
+        {
+          "base_id": 167,
+          "name": "Shen Jian Ao Zhou",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 168,
+          "name": "Die Ling Shen Ying",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 169,
+          "name": "Pi Yun Zhui Yue",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 170,
+          "name": "Jiu Qi Po Xiao",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 171,
+          "name": "Xuan-Yuan Sword",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 172,
+          "name": "Heavenly Maiden White Jade Ring",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 173,
+          "name": "Kunlun Mirror",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 174,
+          "name": "Pangu Axe",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 175,
+          "name": "Nüwa Stone",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 176,
+          "name": "Haotian Pagoda",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 177,
+          "name": "Fuxi Guqin",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 178,
+          "name": "Kongtong Seal",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 179,
+          "name": "Donghuang Zhong",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 180,
+          "name": "Shennong Ding",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 181,
+          "name": "Spirit Fusion Pot",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    },
+    "shelf": {
+      "count": 28,
+      "cards": [
+        {
+          "base_id": 183,
+          "name": "Contemplate Spirits Vitality Rhythm",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 184,
+          "name": "Cloud Sword - Clarity",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 185,
+          "name": "Spiritstat Tune",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 186,
+          "name": "Unrestrained Sword  - Divine",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 187,
+          "name": "Cloud Sword - Endless",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 188,
+          "name": "Sword Spirit Sunflower",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 189,
+          "name": "Heavenly Will - Earth Evil",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 190,
+          "name": "Spiritual Hunter",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 191,
+          "name": "Hexagrams Generating Evils",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 192,
+          "name": "Thunderbolt Tune",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 193,
+          "name": "Fleeting Glimpse",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 194,
+          "name": "Yin Yang Tutelary Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 195,
+          "name": "Entangling Thornbush",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 196,
+          "name": "Astral Move - Jump",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 197,
+          "name": "Five Elements Guard",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 198,
+          "name": "Fire Spirit - Blazing Flame",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 199,
+          "name": "Heavenly Marrow Dance Tune",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 200,
+          "name": "Cosmos Brush",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 201,
+          "name": "Wood Spirit Forceage Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 202,
+          "name": "Five Elements Spiritual Field",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 203,
+          "name": "Water Spirit - Continuous Flow",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 204,
+          "name": "Cloud Footwork",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 205,
+          "name": "Spiritage And Exercise",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 206,
+          "name": "Continuous Tune",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 207,
+          "name": "Exercise To The Utmost",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 208,
+          "name": "Force Spiritage Formation",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 209,
+          "name": "Mystic Snowdrop",
+          "in_swogi": true,
+          "non_playable": false
+        },
+        {
+          "base_id": 210,
+          "name": "Heavenly Will - Seizing",
+          "in_swogi": true,
+          "non_playable": false
+        }
+      ]
+    }
+  },
+  "summary": {
+    "total_unique_cards": 746,
+    "total_in_swogi": 646,
+    "total_non_playable": 105
+  },
+  "unused": [
+    4,
+    7000005,
+    293,
+    71,
+    72,
+    4000007,
+    7000008,
+    7000041,
+    4000012,
+    14,
+    8000015,
+    10000049,
+    7000054,
+    24
+  ],
+  "plant_master": {
+    "playable": [
+      {
+        "base_id": 9000008,
+        "name": "Divine Power Grass",
+        "in_swogi": false,
+        "non_playable": false
+      },
+      {
+        "base_id": 9000009,
+        "name": "Leaf Shield Flower",
+        "in_swogi": true,
+        "non_playable": false
+      },
+      {
+        "base_id": 9000011,
+        "name": "Entangling Ancient Vine",
+        "in_swogi": true,
+        "non_playable": false
+      },
+      {
+        "base_id": 9000015,
+        "name": "Space Spiritual Field",
+        "in_swogi": true,
+        "non_playable": false
+      },
+      {
+        "base_id": 9000020,
+        "name": "Frozen Blood Lotus",
+        "in_swogi": true,
+        "non_playable": false
+      },
+      {
+        "base_id": 9000022,
+        "name": "Lose Power Grass",
+        "in_swogi": false,
+        "non_playable": false
+      },
+      {
+        "base_id": 9000026,
+        "name": "Detoxific Purple Fern",
+        "in_swogi": true,
+        "non_playable": false
+      },
+      {
+        "base_id": 9000027,
+        "name": "Hard Bamboo",
+        "in_swogi": true,
+        "non_playable": false
+      }
+    ],
+    "non_playable": [
+      {
+        "base_id": 9000001,
+        "name": "Origin Herb",
+        "in_swogi": false,
+        "non_playable": true
+      },
+      {
+        "base_id": 9000002,
+        "name": "Shuttle Orchid",
+        "in_swogi": false,
+        "non_playable": true
+      },
+      {
+        "base_id": 9000003,
+        "name": "Sword Bamboo",
+        "in_swogi": true,
+        "non_playable": true
+      },
+      {
+        "base_id": 9000004,
+        "name": "Healing Chamomile",
+        "in_swogi": false,
+        "non_playable": true
+      },
+      {
+        "base_id": 9000005,
+        "name": "Qi-seeking Sunflower",
+        "in_swogi": true,
+        "non_playable": true
+      },
+      {
+        "base_id": 9000006,
+        "name": "Mystery Seed",
+        "in_swogi": true,
+        "non_playable": true
+      },
+      {
+        "base_id": 9000007,
+        "name": "Spiritual Plant Watering",
+        "in_swogi": false,
+        "non_playable": true
+      },
+      {
+        "base_id": 9000010,
+        "name": "Flying Owl Reishi",
+        "in_swogi": false,
+        "non_playable": true
+      },
+      {
+        "base_id": 9000012,
+        "name": "Toxic Purple Fern",
+        "in_swogi": false,
+        "non_playable": true
+      },
+      {
+        "base_id": 9000013,
+        "name": "Frozen Snow Lotus",
+        "in_swogi": true,
+        "non_playable": true
+      },
+      {
+        "base_id": 9000014,
+        "name": "Mysterious Dao Fruit",
+        "in_swogi": false,
+        "non_playable": true
+      },
+      {
+        "base_id": 9000016,
+        "name": "Rock Herb",
+        "in_swogi": false,
+        "non_playable": true
+      },
+      {
+        "base_id": 9000017,
+        "name": "Qi-corrupting Sunflower",
+        "in_swogi": true,
+        "non_playable": true
+      },
+      {
+        "base_id": 9000018,
+        "name": "Leaf Blade Flower",
+        "in_swogi": true,
+        "non_playable": true
+      },
+      {
+        "base_id": 9000019,
+        "name": "Devouring Ancient Vine",
+        "in_swogi": true,
+        "non_playable": true
+      },
+      {
+        "base_id": 9000021,
+        "name": "Fire Orchid",
+        "in_swogi": false,
+        "non_playable": true
+      },
+      {
+        "base_id": 9000023,
+        "name": "Clear Chamomile",
+        "in_swogi": false,
+        "non_playable": true
+      },
+      {
+        "base_id": 9000024,
+        "name": "Shadow Owl Reishi",
+        "in_swogi": false,
+        "non_playable": true
+      },
+      {
+        "base_id": 9000025,
+        "name": "Demonic Dao Fruit",
+        "in_swogi": false,
+        "non_playable": true
+      }
+    ],
+    "count_playable": 8,
+    "count_non_playable": 19
+  }
+}

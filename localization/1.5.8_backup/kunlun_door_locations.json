@@ -1,0 +1,335 @@
+[
+  {
+    "id": 1,
+    "title_cn": "伏魔山",
+    "title_en": "Demonbane Mountain",
+    "title_tw": "伏魔山",
+    "desc_cn": "找到神秘果（换牌机会储存上限+{0}）",
+    "desc_en": "Exchange Card Chance storage limit + {0}",
+    "desc_en_resolved": "Exchange Card Chance storage limit + {0}"
+  },
+  {
+    "id": 2,
+    "title_cn": "月河村",
+    "title_en": "Moon River Village",
+    "title_tw": "月河村",
+    "desc_cn": "在村中客栈休息（命元+{ModifyLife}）",
+    "desc_en": "Destiny + {ModifyLife}",
+    "desc_en_resolved": "Destiny + {ModifyLife}"
+  },
+  {
+    "id": 3,
+    "title_cn": "雷夏泽",
+    "title_en": "Summer Swamp",
+    "title_tw": "雷夏澤",
+    "desc_cn": "和小妹妹玩猜数字游戏（换牌机会+{ModifyReplaceCardChance}）",
+    "desc_en": "Exchange Card Chance + {ModifyReplaceCardChance}",
+    "desc_en_resolved": "Exchange Card Chance + {ModifyReplaceCardChance}"
+  },
+  {
+    "id": 4,
+    "title_cn": "黑山镇",
+    "title_en": "Black Mountain Town",
+    "title_tw": "黑山鎮",
+    "desc_cn": "帮药店收集药材（生命上限+{ModifyExtraMaxHp}）",
+    "desc_en": "Max HP + {ModifyExtraMaxHp}",
+    "desc_en_resolved": "Max HP + {ModifyExtraMaxHp}"
+  },
+  {
+    "id": 5,
+    "title_cn": "东莱",
+    "title_en": "Donglai",
+    "title_tw": "東萊",
+    "desc_cn": "击败鬼蛙（修为+{ModifyExp}）",
+    "desc_en": "Cultivation + {ModifyExp}",
+    "desc_en_resolved": "Cultivation + {ModifyExp}"
+  },
+  {
+    "id": 6,
+    "title_cn": "赤贯星",
+    "title_en": "Crimson Star",
+    "title_tw": "赤貫星",
+    "desc_cn": "封印天之痕（获得【182】）",
+    "desc_en": "Gain 【182】",
+    "desc_en_resolved": "Gain [Crimson Star]"
+  },
+  {
+    "id": 7,
+    "title_cn": "森林军营",
+    "title_en": "Forest Military Camp",
+    "title_tw": "森林軍營",
+    "desc_cn": "击败邪尸骷髅（命元{ModifyLife}，获得【{0}】）",
+    "desc_en": "Destiny{ModifyLife}, gain 【{0}】",
+    "desc_en_resolved": "Destiny{ModifyLife}, gain 【{0}】"
+  },
+  {
+    "id": 8,
+    "title_cn": "大雁岭",
+    "title_en": "Dayanling",
+    "title_tw": "大雁嶺",
+    "desc_cn": "练习招式（随机升级1张1级炼气期常规门派牌）",
+    "desc_en": "Randomly upgrade a Lv. 1 regular sect card of Meditation Phase",
+    "desc_en_resolved": "Randomly upgrade a Lv. 1 regular sect card of Meditation Phase"
+  },
+  {
+    "id": 9,
+    "title_cn": "芦家渡",
+    "title_en": "Seaside Village",
+    "title_tw": "蘆家渡",
+    "desc_cn": "向剑师老吴购买武器（修为减1，随机抽1张牌）",
+    "desc_en": "Lose 1 Cultivation, draw a card",
+    "desc_en_resolved": "Lose 1 Cultivation, draw a card"
+  },
+  {
+    "id": 10,
+    "title_cn": "大梁",
+    "title_en": "Daliang",
+    "title_tw": "大梁",
+    "desc_cn": "找到神秘果×2（换牌机会储存上限+{0}）",
+    "desc_en": "Exchange Card Chance storage limit + {0}",
+    "desc_en_resolved": "Exchange Card Chance storage limit + {0}"
+  },
+  {
+    "id": 11,
+    "title_cn": "豆子坑",
+    "title_en": "Tiny Outpost",
+    "title_tw": "豆子坑",
+    "desc_cn": "帮小叶子找回香包（换牌机会+{ModifyReplaceCardChance}）",
+    "desc_en": "Exchange Card Chance + {ModifyReplaceCardChance}",
+    "desc_en_resolved": "Exchange Card Chance + {ModifyReplaceCardChance}"
+  },
+  {
+    "id": 12,
+    "title_cn": "魔王砦",
+    "title_en": "Robber's Den",
+    "title_tw": "魔王砦",
+    "desc_cn": "与程咬金切磋（修为{ModifyExp}，获得【{0}】）",
+    "desc_en": "Cultivation{ModifyExp}, gain 【{0}】",
+    "desc_en_resolved": "Cultivation{ModifyExp}, gain 【{0}】"
+  },
+  {
+    "id": 13,
+    "title_cn": "采药洞窟",
+    "title_en": "Herbalist Cave",
+    "title_tw": "采藥洞窟",
+    "desc_cn": "采集大叶合欢散（生命上限+{ModifyExtraMaxHp}）",
+    "desc_en": "Max HP + {ModifyExtraMaxHp}",
+    "desc_en_resolved": "Max HP + {ModifyExtraMaxHp}"
+  },
+  {
+    "id": 14,
+    "title_cn": "鱼肚内",
+    "title_en": "Whale's Belly",
+    "title_tw": "魚肚內",
+    "desc_cn": "击败氐人族战士（命元{ModifyLife}，生命上限+{ModifyExtraMaxHp}）",
+    "desc_en": "Destiny{ModifyLife}, Max HP + {ModifyExtraMaxHp}",
+    "desc_en_resolved": "Destiny{ModifyLife}, Max HP + {ModifyExtraMaxHp}"
+  },
+  {
+    "id": 15,
+    "title_cn": "氐人国",
+    "title_en": "Merman Kingdom",
+    "title_tw": "氐人國",
+    "desc_cn": "找到珍珠（修为{ModifyExp}，获得【{0}】）",
+    "desc_en": "Cultivation{ModifyExp}, gain 【{0}】",
+    "desc_en_resolved": "Cultivation{ModifyExp}, gain 【{0}】"
+  },
+  {
+    "id": 16,
+    "title_cn": "贝壳海",
+    "title_en": "Shell Sea",
+    "title_tw": "貝殼海",
+    "desc_cn": "找到灵宠蛋（获得【{0}】）",
+    "desc_en": "Gain 【{0}】",
+    "desc_en_resolved": "Gain 【{0}】"
+  },
+  {
+    "id": 17,
+    "title_cn": "仙山岛",
+    "title_en": "Mythic Island",
+    "title_tw": "仙山島",
+    "desc_cn": "找到乾坤袋（修为{ModifyExp}，随机抽2张牌）",
+    "desc_en": "Cultivation{ModifyExp}, draw 2 cards",
+    "desc_en_resolved": "Cultivation{ModifyExp}, draw 2 cards"
+  },
+  {
+    "id": 18,
+    "title_cn": "天外村",
+    "title_en": "Mythic Village",
+    "title_tw": "天外村",
+    "desc_cn": "在井中发现秘密通道（获得【{0}】）",
+    "desc_en": "Gain 【{0}】",
+    "desc_en_resolved": "Gain 【{0}】"
+  },
+  {
+    "id": 19,
+    "title_cn": "西母峰",
+    "title_en": "East Queen Peaks",
+    "title_tw": "西母峰",
+    "desc_cn": "找到神木之精（生命上限+{ModifyExtraMaxHp}，命元+{ModifyLife}）",
+    "desc_en": "Max HP + {ModifyExtraMaxHp}, Destiny + {ModifyLife}",
+    "desc_en_resolved": "Max HP + {ModifyExtraMaxHp}, Destiny + {ModifyLife}"
+  },
+  {
+    "id": 20,
+    "title_cn": "龙宫通道",
+    "title_en": "Undersea Palace Corridor",
+    "title_tw": "龍宮通道",
+    "desc_cn": "探索海底（换牌机会+{ModifyReplaceCardChance}，但储存上限减{0}）",
+    "desc_en": "Exchange Card Chance + {ModifyReplaceCardChance}, but storage limit - {0}",
+    "desc_en_resolved": "Exchange Card Chance + {ModifyReplaceCardChance}, but storage limit - {0}"
+  },
+  {
+    "id": 21,
+    "title_cn": "海中建木",
+    "title_en": "World Tree",
+    "title_tw": "海中建木",
+    "desc_cn": "与盘古切磋（命元{ModifyLife}，获得【{0}】）",
+    "desc_en": "Destiny{ModifyLife}, gain 【{0}】",
+    "desc_en_resolved": "Destiny{ModifyLife}, gain 【{0}】"
+  },
+  {
+    "id": 22,
+    "title_cn": "江都",
+    "title_en": "Jiangdu",
+    "title_tw": "江都",
+    "desc_cn": "在客栈中休息（命元+{ModifyLife}）",
+    "desc_en": "Destiny + {ModifyLife}",
+    "desc_en_resolved": "Destiny + {ModifyLife}"
+  },
+  {
+    "id": 23,
+    "title_cn": "长沙郡",
+    "title_en": "Changshadu",
+    "title_tw": "長沙郡",
+    "desc_cn": "购买琼花种子（换牌机会{ModifyReplaceCardChance}，命元+{ModifyLife}）",
+    "desc_en": "Exchange Card Chance{ModifyReplaceCardChance}, Destiny + {ModifyLife}",
+    "desc_en_resolved": "Exchange Card Chance{ModifyReplaceCardChance}, Destiny + {ModifyLife}"
+  },
+  {
+    "id": 24,
+    "title_cn": "寒音刹",
+    "title_en": "Freezing Sound Monastery",
+    "title_tw": "寒音刹",
+    "desc_cn": "击败上古魔兽“混沌”（修为{ModifyExp}，获得【{0}】）",
+    "desc_en": "Cultivation{ModifyExp}, gain 【{0}】",
+    "desc_en_resolved": "Cultivation{ModifyExp}, gain 【{0}】"
+  },
+  {
+    "id": 25,
+    "title_cn": "大兴城",
+    "title_en": "Darsing City",
+    "title_tw": "大興城",
+    "desc_cn": "和宇文拓切磋（命元{ModifyLife}，随机获得1张化神期牌）",
+    "desc_en": "Destiny{ModifyLife}, gain a random Incarnation Phase card",
+    "desc_en_resolved": "Destiny{ModifyLife}, gain a random Incarnation Phase card"
+  },
+  {
+    "id": 26,
+    "title_cn": "巴蜀古王墓",
+    "title_en": "Bajhuo Emperial Grave",
+    "title_tw": "巴蜀古王墓",
+    "desc_cn": "击败上古魔兽“梼杌”（修为{ModifyExp}，获得【{0}】）",
+    "desc_en": "Cultivation{ModifyExp}, gain 【{0}】",
+    "desc_en_resolved": "Cultivation{ModifyExp}, gain 【{0}】"
+  },
+  {
+    "id": 27,
+    "title_cn": "皇家宝库",
+    "title_en": "Royal Treasury",
+    "title_tw": "皇家寶庫",
+    "desc_cn": "寻找宝物（获得【{0}】）",
+    "desc_en": "Gain 【{0}】",
+    "desc_en_resolved": "Gain 【{0}】"
+  },
+  {
+    "id": 28,
+    "title_cn": "太师府",
+    "title_en": "Chancellor's Manor",
+    "title_tw": "太師府",
+    "desc_cn": "修为临时+{0}，战斗开始前还原",
+    "desc_en": "Temporary Cultivation + {0}, revert back before the battle starts.",
+    "desc_en_resolved": "Temporary Cultivation + {0}, revert back before the battle starts."
+  },
+  {
+    "id": 29,
+    "title_cn": "云岗石窟",
+    "title_en": "Yungang Caverns",
+    "title_tw": "雲崗石窟",
+    "desc_cn": "与剑仙切磋（生命上限{ModifyExtraMaxHp}，抽1张牌）",
+    "desc_en": "Max HP{ModifyExtraMaxHp}, draw a card",
+    "desc_en_resolved": "Max HP{ModifyExtraMaxHp}, draw a card"
+  },
+  {
+    "id": 30,
+    "title_cn": "洛阳",
+    "title_en": "Luoyang",
+    "title_tw": "洛陽",
+    "desc_cn": "让王半仙卜卦（命元{ModifyLife}，换牌机会+{ModifyReplaceCardChance}）",
+    "desc_en": "Destiny{ModifyLife}, Exchange Card Chance + {ModifyReplaceCardChance}",
+    "desc_en_resolved": "Destiny{ModifyLife}, Exchange Card Chance + {ModifyReplaceCardChance}"
+  },
+  {
+    "id": 31,
+    "title_cn": "人界通天塔",
+    "title_en": "Sky-Piercing Tower of the Human Realm",
+    "title_tw": "人界通天塔",
+    "desc_cn": "爬塔锻炼（命元{ModifyLife}，生命上限+{ModifyExtraMaxHp}）",
+    "desc_en": "Destiny{ModifyLife}, Max HP + {ModifyExtraMaxHp}",
+    "desc_en_resolved": "Destiny{ModifyLife}, Max HP + {ModifyExtraMaxHp}"
+  },
+  {
+    "id": 32,
+    "title_cn": "殇魂塔",
+    "title_en": "Tower of Dead Souls",
+    "title_tw": "殤魂塔",
+    "desc_cn": "击败尉迟嫣红（命元{ModifyLife}，随机升级1张牌）",
+    "desc_en": "Destiny{ModifyLife}, randomly upgrade 1 card",
+    "desc_en_resolved": "Destiny{ModifyLife}, randomly upgrade 1 card"
+  },
+  {
+    "id": 33,
+    "title_cn": "螫魂塔",
+    "title_en": "Tower of Sleeping Souls",
+    "title_tw": "螫魂塔",
+    "desc_cn": "击败单小小（命元{ModifyLife}，换牌机会+{ModifyReplaceCardChance}）",
+    "desc_en": "Destiny{ModifyLife}, Exchange Card Chance + {ModifyReplaceCardChance}",
+    "desc_en_resolved": "Destiny{ModifyLife}, Exchange Card Chance + {ModifyReplaceCardChance}"
+  },
+  {
+    "id": 34,
+    "title_cn": "魔界通天塔",
+    "title_en": "Sky-Piercing Tower of the Demon Realm",
+    "title_tw": "魔界通天塔",
+    "desc_cn": "击败独孤宁珂（命元{ModifyLife}，触发1次道韵预感）",
+    "desc_en": "Destiny{ModifyLife}, trigger the Daoist Rhyme Omen",
+    "desc_en_resolved": "Destiny{ModifyLife}, trigger the Daoist Rhyme Omen"
+  },
+  {
+    "id": 35,
+    "title_cn": "伏羲宫殿",
+    "title_en": "Fuxi Palace",
+    "title_tw": "伏羲宮殿",
+    "desc_cn": "每剩余{0}次换牌机会就加1次换牌机会",
+    "desc_en": "For every {0} remaining Exchange Card Chance, add 1 additional Exchange Card Chance",
+    "desc_en_resolved": "For every {0} remaining Exchange Card Chance, add 1 additional Exchange Card Chance"
+  },
+  {
+    "id": 36,
+    "title_cn": "次元交错空间",
+    "title_en": "Dimensional Interlace",
+    "title_tw": "次元交錯空間",
+    "desc_cn": "击败上古魔兽“饕餮”（修为{ModifyExp}，获得【{0}】）",
+    "desc_en": "Cultivation{ModifyExp}, gain 【{0}】",
+    "desc_en_resolved": "Cultivation{ModifyExp}, gain 【{0}】"
+  },
+  {
+    "id": 37,
+    "title_cn": "大禹水路",
+    "title_en": "Ancient Aqueduct",
+    "title_tw": "大禹水路",
+    "desc_cn": "剩余换牌机会变为{0}",
+    "desc_en": "The remaining Exchange Card Chance are changed to {0}.",
+    "desc_en_resolved": "The remaining Exchange Card Chance are changed to {0}."
+  }
+]

@@ -1,0 +1,4417 @@
+[
+  {
+    "field_1": 10001,
+    "name": "虚无",
+    "desc": "[被动生效]",
+    "field_6": 1,
+    "field_7": 1,
+    "field_8": 2,
+    "field_101": 1
+  },
+  {
+    "field_1": 20001,
+    "name": "虚无",
+    "desc": "[被动生效]",
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 4,
+    "field_101": 1
+  },
+  {
+    "field_1": 30001,
+    "name": "虚无",
+    "desc": "[被动生效]",
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 6,
+    "field_101": 1
+  },
+  {
+    "field_1": 40001,
+    "name": "虚无",
+    "desc": "[被动生效]",
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 8,
+    "field_101": 1
+  },
+  {
+    "field_1": 50001,
+    "name": "虚无",
+    "desc": "[被动生效]",
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 10,
+    "field_101": 1
+  },
+  {
+    "field_1": 60001,
+    "name": "虚无",
+    "desc": "[被动生效]",
+    "field_6": 6,
+    "field_7": 1,
+    "field_8": 12,
+    "field_101": 1
+  },
+  {
+    "field_1": 10002,
+    "name": "固防",
+    "desc": "下一次加[防]时额外加{otherParams[0]}[防]",
+    "field_6": 1,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20002,
+    "name": "固防",
+    "desc": "下一次加[防]时额外加{otherParams[0]}[防]",
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 3,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 30002,
+    "name": "固防",
+    "desc": "下一次加[防]时额外加{otherParams[0]}[防]",
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 40002,
+    "name": "固防",
+    "desc": "下一次加[防]时额外加{otherParams[0]}[防]",
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 5,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 50002,
+    "name": "固防",
+    "desc": "下一次加[防]时额外加{otherParams[0]}[防]",
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 10003,
+    "name": "生命",
+    "desc": "生命+{otherParams[0]}",
+    "field_6": 1,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20003,
+    "name": "生命",
+    "desc": "生命+{otherParams[0]}",
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 3,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 30003,
+    "name": "生命",
+    "desc": "生命+{otherParams[0]}",
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 40003,
+    "name": "生命",
+    "desc": "生命+{otherParams[0]}",
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 5,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 50003,
+    "name": "生命",
+    "desc": "生命+{otherParams[0]}",
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 10004,
+    "name": "强攻",
+    "desc": "下一次攻击多{otherParams[0]}攻",
+    "field_6": 1,
+    "field_7": 1,
+    "field_8": 1,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20004,
+    "name": "强攻",
+    "desc": "下一次攻击多{otherParams[0]}攻",
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 30004,
+    "name": "强攻",
+    "desc": "下一次攻击多{otherParams[0]}攻",
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 3,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 40004,
+    "name": "强攻",
+    "desc": "下一次攻击多{otherParams[0]}攻",
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 50004,
+    "name": "强攻",
+    "desc": "下一次攻击多{otherParams[0]}攻",
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 5,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 10005,
+    "name": "碎防",
+    "desc": "下{otherParams[0]}次攻击获得[碎防]",
+    "field_6": 1,
+    "field_7": 1,
+    "field_8": 3,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 20005,
+    "name": "碎防",
+    "desc": "下{otherParams[0]}次攻击获得[碎防]",
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 3,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30005,
+    "name": "碎防",
+    "desc": "下{otherParams[0]}次攻击获得[碎防]",
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 5,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 40005,
+    "name": "碎防",
+    "desc": "下{otherParams[0]}次攻击获得[碎防]",
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 5,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 50005,
+    "name": "碎防",
+    "desc": "下{otherParams[0]}次攻击获得[碎防]",
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 5,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 10006,
+    "name": "逍遥",
+    "desc": "下一次[普通攻击]的攻击多{otherParams[0]}攻",
+    "field_6": 1,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 20006,
+    "name": "逍遥",
+    "desc": "下一次[普通攻击]的攻击多{otherParams[0]}攻",
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      7
+    ]
+  },
+  {
+    "field_1": 30006,
+    "name": "逍遥",
+    "desc": "下一次[普通攻击]的攻击多{otherParams[0]}攻",
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      9
+    ]
+  },
+  {
+    "field_1": 40006,
+    "name": "逍遥",
+    "desc": "下一次[普通攻击]的攻击多{otherParams[0]}攻",
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      13
+    ]
+  },
+  {
+    "field_1": 50006,
+    "name": "逍遥",
+    "desc": "下一次[普通攻击]的攻击多{otherParams[0]}攻",
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      18
+    ]
+  },
+  {
+    "field_1": 10007,
+    "name": "云起",
+    "desc": "[被动生效]\\n战斗开始时视作已用过1次[云剑]",
+    "field_4": 1,
+    "field_6": 1,
+    "field_7": 1,
+    "field_8": 2
+  },
+  {
+    "field_1": 20007,
+    "name": "云起",
+    "desc": "[被动生效]\\n战斗开始时视作已用过1次[云剑]",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 4
+  },
+  {
+    "field_1": 30007,
+    "name": "云起",
+    "desc": "[被动生效]\\n战斗开始时视作已用过1次[云剑]",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 6
+  },
+  {
+    "field_1": 40007,
+    "name": "云起",
+    "desc": "[被动生效]\\n战斗开始时视作已用过1次[云剑]",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 8
+  },
+  {
+    "field_1": 50007,
+    "name": "云起",
+    "desc": "[被动生效]\\n战斗开始时视作已用过1次[云剑]",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 10
+  },
+  {
+    "field_1": 10008,
+    "name": "灵斩",
+    "desc": "下一次[灵剑]的攻击多{otherParams[0]}攻",
+    "field_4": 1,
+    "field_6": 1,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20008,
+    "name": "灵斩",
+    "desc": "下一次[灵剑]的攻击多{otherParams[0]}攻",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 30008,
+    "name": "灵斩",
+    "desc": "下一次[灵剑]的攻击多{otherParams[0]}攻",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 40008,
+    "name": "灵斩",
+    "desc": "下一次[灵剑]的攻击多{otherParams[0]}攻",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      8
+    ]
+  },
+  {
+    "field_1": 50008,
+    "name": "灵斩",
+    "desc": "下一次[灵剑]的攻击多{otherParams[0]}攻",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      10
+    ]
+  },
+  {
+    "field_1": 10009,
+    "name": "练剑",
+    "desc": "下一次使用[剑劈]或[剑挡]后加{otherParams[0]}[剑意]",
+    "field_4": 1,
+    "field_6": 1,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 20009,
+    "name": "练剑",
+    "desc": "下一次使用[剑劈]或[剑挡]后加{otherParams[0]}[剑意]",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 30009,
+    "name": "练剑",
+    "desc": "下一次使用[剑劈]或[剑挡]后加{otherParams[0]}[剑意]",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 40009,
+    "name": "练剑",
+    "desc": "下一次使用[剑劈]或[剑挡]后加{otherParams[0]}[剑意]",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 8,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50009,
+    "name": "练剑",
+    "desc": "下一次使用[剑劈]或[剑挡]后加{otherParams[0]}[剑意]",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 10010,
+    "name": "移星",
+    "desc": "下一次使用[斗转星移]或[众星拱月]时额外多{otherParams[0]}格成为[星位]",
+    "field_4": 2,
+    "field_6": 1,
+    "field_7": 1,
+    "field_8": 1,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 20010,
+    "name": "移星",
+    "desc": "下一次使用[斗转星移]或[众星拱月]时额外多{otherParams[0]}格成为[星位]",
+    "field_4": 2,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 3,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 30010,
+    "name": "移星",
+    "desc": "下一次使用[斗转星移]或[众星拱月]时额外多{otherParams[0]}格成为[星位]",
+    "field_4": 2,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 5,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 40010,
+    "name": "移星",
+    "desc": "下一次使用[斗转星移]或[众星拱月]时额外多{otherParams[0]}格成为[星位]",
+    "field_4": 2,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 7,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50010,
+    "name": "移星",
+    "desc": "下一次使用[斗转星移]或[众星拱月]时额外多{otherParams[0]}格成为[星位]",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 9,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 10011,
+    "name": "落卦",
+    "desc": "下一次加[卦象]时向对方造成{otherParams[0]}[伤害]",
+    "field_4": 2,
+    "field_6": 1,
+    "field_7": 1,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 20011,
+    "name": "落卦",
+    "desc": "下一次加[卦象]时向对方造成{otherParams[0]}[伤害]",
+    "field_4": 2,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 1,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 30011,
+    "name": "落卦",
+    "desc": "下一次加[卦象]时向对方造成{otherParams[0]}[伤害]",
+    "field_4": 2,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 40011,
+    "name": "落卦",
+    "desc": "下一次加[卦象]时向对方造成{otherParams[0]}[伤害]",
+    "field_4": 2,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 3,
+    "otherParams": [
+      7
+    ]
+  },
+  {
+    "field_1": 50011,
+    "name": "落卦",
+    "desc": "下一次加[卦象]时向对方造成{otherParams[0]}[伤害]",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      8
+    ]
+  },
+  {
+    "field_1": 10012,
+    "name": "霹雳",
+    "desc": "[被动生效]\\n随机范围的[攻]加{otherParams[0]}上限",
+    "field_4": 2,
+    "field_6": 1,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 20012,
+    "name": "霹雳",
+    "desc": "[被动生效]\\n随机范围的[攻]加{otherParams[0]}上限",
+    "field_4": 2,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 30012,
+    "name": "霹雳",
+    "desc": "[被动生效]\\n随机范围的[攻]加{otherParams[0]}上限",
+    "field_4": 2,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 40012,
+    "name": "霹雳",
+    "desc": "[被动生效]\\n随机范围的[攻]加{otherParams[0]}上限",
+    "field_4": 2,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 50012,
+    "name": "霹雳",
+    "desc": "[被动生效]\\n随机范围的[攻]加{otherParams[0]}上限",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 10013,
+    "name": "锐之刺",
+    "desc": "下一次[锋锐]触发时，额外多减对方{otherParams[0]}生命",
+    "field_4": 3,
+    "field_6": 1,
+    "field_7": 1,
+    "field_8": 1,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 20013,
+    "name": "锐之刺",
+    "desc": "下一次[锋锐]触发时，额外多减对方{otherParams[0]}生命",
+    "field_4": 3,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 30013,
+    "name": "锐之刺",
+    "desc": "下一次[锋锐]触发时，额外多减对方{otherParams[0]}生命",
+    "field_4": 3,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 3,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 40013,
+    "name": "锐之刺",
+    "desc": "下一次[锋锐]触发时，额外多减对方{otherParams[0]}生命",
+    "field_4": 3,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 50013,
+    "name": "锐之刺",
+    "desc": "下一次[锋锐]触发时，额外多减对方{otherParams[0]}生命",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 5,
+    "otherParams": [
+      7
+    ]
+  },
+  {
+    "field_1": 10014,
+    "name": "热砂",
+    "desc": "下一次使用[土灵]或[火灵]牌时向对方造成{otherParams[0]}[伤害]",
+    "field_4": 3,
+    "field_6": 1,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20014,
+    "name": "热砂",
+    "desc": "下一次使用[土灵]或[火灵]牌时向对方造成{otherParams[0]}[伤害]",
+    "field_4": 3,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 3,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 30014,
+    "name": "热砂",
+    "desc": "下一次使用[土灵]或[火灵]牌时向对方造成{otherParams[0]}[伤害]",
+    "field_4": 3,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 40014,
+    "name": "热砂",
+    "desc": "下一次使用[土灵]或[火灵]牌时向对方造成{otherParams[0]}[伤害]",
+    "field_4": 3,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 5,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 50014,
+    "name": "热砂",
+    "desc": "下一次使用[土灵]或[火灵]牌时向对方造成{otherParams[0]}[伤害]",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 10015,
+    "name": "滋养",
+    "desc": "下一次使用[木灵]或[水灵]牌时加{otherParams[0]}生命及上限",
+    "field_4": 3,
+    "field_6": 1,
+    "field_7": 1,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 20015,
+    "name": "滋养",
+    "desc": "下一次使用[木灵]或[水灵]牌时加{otherParams[0]}生命及上限",
+    "field_4": 3,
+    "field_6": 2,
+    "field_7": 1,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 30015,
+    "name": "滋养",
+    "desc": "下一次使用[木灵]或[水灵]牌时加{otherParams[0]}生命及上限",
+    "field_4": 3,
+    "field_6": 3,
+    "field_7": 1,
+    "otherParams": [
+      8
+    ]
+  },
+  {
+    "field_1": 40015,
+    "name": "滋养",
+    "desc": "下一次使用[木灵]或[水灵]牌时加{otherParams[0]}生命及上限",
+    "field_4": 3,
+    "field_6": 4,
+    "field_7": 1,
+    "otherParams": [
+      10
+    ]
+  },
+  {
+    "field_1": 50015,
+    "name": "滋养",
+    "desc": "下一次使用[木灵]或[水灵]牌时加{otherParams[0]}生命及上限",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 1,
+    "otherParams": [
+      12
+    ]
+  },
+  {
+    "field_1": 10016,
+    "name": "御玄",
+    "desc": "下一次获得[负面状态]时，[防]+{otherParams[0]}",
+    "field_4": 4,
+    "field_6": 1,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 20016,
+    "name": "御玄",
+    "desc": "下一次获得[负面状态]时，[防]+{otherParams[0]}",
+    "field_4": 4,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 30016,
+    "name": "御玄",
+    "desc": "下一次获得[负面状态]时，[防]+{otherParams[0]}",
+    "field_4": 4,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      7
+    ]
+  },
+  {
+    "field_1": 40016,
+    "name": "御玄",
+    "desc": "下一次获得[负面状态]时，[防]+{otherParams[0]}",
+    "field_4": 4,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      9
+    ]
+  },
+  {
+    "field_1": 50016,
+    "name": "御玄",
+    "desc": "下一次获得[负面状态]时，[防]+{otherParams[0]}",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      12
+    ]
+  },
+  {
+    "field_1": 10017,
+    "name": "锻拳",
+    "desc": "下一次使用[锻拳]后，加{otherParams[0]}[体魄]",
+    "field_4": 4,
+    "field_6": 1,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20017,
+    "name": "锻拳",
+    "desc": "下一次使用[锻拳]后，加{otherParams[0]}[体魄]",
+    "field_4": 4,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 3,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 30017,
+    "name": "锻拳",
+    "desc": "下一次使用[锻拳]后，加{otherParams[0]}[体魄]",
+    "field_4": 4,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 40017,
+    "name": "锻拳",
+    "desc": "下一次使用[锻拳]后，加{otherParams[0]}[体魄]",
+    "field_4": 4,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 5,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 50017,
+    "name": "锻拳",
+    "desc": "下一次使用[锻拳]后，加{otherParams[0]}[体魄]",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      7
+    ]
+  },
+  {
+    "field_1": 20018,
+    "name": "调息",
+    "desc": "本回合结束时耗1[灵气]：生命及上限+{otherParams[0]}",
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 30018,
+    "name": "调息",
+    "desc": "本回合结束时耗1[灵气]：生命及上限+{otherParams[0]}",
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 5,
+    "otherParams": [
+      7
+    ]
+  },
+  {
+    "field_1": 40018,
+    "name": "调息",
+    "desc": "本回合结束时耗1[灵气]：生命及上限+{otherParams[0]}",
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      9
+    ]
+  },
+  {
+    "field_1": 50018,
+    "name": "调息",
+    "desc": "本回合结束时耗1[灵气]：生命及上限+{otherParams[0]}",
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 7,
+    "otherParams": [
+      11
+    ]
+  },
+  {
+    "field_1": 30019,
+    "name": "固本元",
+    "desc": "生命+{otherParams[0]}，[防]+{otherParams[0]}，减1层[内伤]、[外伤]和[破绽]",
+    "field_6": 3,
+    "field_7": 2,
+    "field_8": 6,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 40019,
+    "name": "固本元",
+    "desc": "生命+{otherParams[0]}，[防]+{otherParams[0]}，减1层[内伤]、[外伤]和[破绽]",
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 6,
+    "otherParams": [
+      7
+    ]
+  },
+  {
+    "field_1": 50019,
+    "name": "固本元",
+    "desc": "生命+{otherParams[0]}，[防]+{otherParams[0]}，减1层[内伤]、[外伤]和[破绽]",
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 6,
+    "otherParams": [
+      9
+    ]
+  },
+  {
+    "field_1": 20020,
+    "name": "扩生机",
+    "desc": "生命上限+{otherParams[0]}",
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      14
+    ]
+  },
+  {
+    "field_1": 30020,
+    "name": "扩生机",
+    "desc": "生命上限+{otherParams[0]}",
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      16
+    ]
+  },
+  {
+    "field_1": 40020,
+    "name": "扩生机",
+    "desc": "生命上限+{otherParams[0]}",
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 8,
+    "otherParams": [
+      18
+    ]
+  },
+  {
+    "field_1": 50020,
+    "name": "扩生机",
+    "desc": "生命上限+{otherParams[0]}",
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 10,
+    "otherParams": [
+      20
+    ]
+  },
+  {
+    "field_1": 30021,
+    "name": "驱邪",
+    "desc": "重复{otherParams[0]}次：随机减少1层[负面状态]",
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 40021,
+    "name": "驱邪",
+    "desc": "重复{otherParams[0]}次：随机减少1层[负面状态]",
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 50021,
+    "name": "驱邪",
+    "desc": "重复{otherParams[0]}次：随机减少1层[负面状态]",
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 20022,
+    "name": "压制",
+    "desc": "造成{otherParams[0]}[伤害]（自身每比对方高1修为就加1[伤害]，最多加{otherParams[1]}）",
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      1,
+      6
+    ]
+  },
+  {
+    "field_1": 30022,
+    "name": "压制",
+    "desc": "造成{otherParams[0]}[伤害]（自身每比对方高1修为就加1[伤害]，最多加{otherParams[1]}）",
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      2,
+      8
+    ]
+  },
+  {
+    "field_1": 40022,
+    "name": "压制",
+    "desc": "造成{otherParams[0]}[伤害]（自身每比对方高1修为就加1[伤害]，最多加{otherParams[1]}）",
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      3,
+      10
+    ]
+  },
+  {
+    "field_1": 50022,
+    "name": "压制",
+    "desc": "造成{otherParams[0]}[伤害]（自身每比对方高1修为就加1[伤害]，最多加{otherParams[1]}）",
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      4,
+      12
+    ]
+  },
+  {
+    "field_1": 20024,
+    "name": "预防",
+    "desc": "下一次受到[攻]或[伤害]时，先加{otherParams[0]}[防]",
+    "field_6": 2,
+    "field_7": 2,
+    "field_8": 6,
+    "otherParams": [
+      7
+    ]
+  },
+  {
+    "field_1": 30024,
+    "name": "预防",
+    "desc": "下一次受到[攻]或[伤害]时，先加{otherParams[0]}[防]",
+    "field_6": 3,
+    "field_7": 2,
+    "field_8": 7,
+    "otherParams": [
+      10
+    ]
+  },
+  {
+    "field_1": 40024,
+    "name": "预防",
+    "desc": "下一次受到[攻]或[伤害]时，先加{otherParams[0]}[防]",
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 8,
+    "otherParams": [
+      13
+    ]
+  },
+  {
+    "field_1": 50024,
+    "name": "预防",
+    "desc": "下一次受到[攻]或[伤害]时，先加{otherParams[0]}[防]",
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 9,
+    "otherParams": [
+      16
+    ]
+  },
+  {
+    "field_1": 20025,
+    "name": "云屯星聚",
+    "desc": "[被动生效]\\n使用[云剑·探云]或[云剑·点星]后，自身所有牌均视作[云剑]，直到战斗结束",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 2,
+    "field_8": 8
+  },
+  {
+    "field_1": 30025,
+    "name": "云屯星聚",
+    "desc": "[被动生效]\\n使用[云剑·探云]或[云剑·点星]后，自身所有牌均视作[云剑]，直到战斗结束",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 2,
+    "field_8": 12
+  },
+  {
+    "field_1": 40025,
+    "name": "云屯星聚",
+    "desc": "[被动生效]\\n使用[云剑·探云]或[云剑·点星]后，自身所有牌均视作[云剑]，直到战斗结束",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 16
+  },
+  {
+    "field_1": 50025,
+    "name": "云屯星聚",
+    "desc": "[被动生效]\\n使用[云剑·探云]或[云剑·点星]后，自身所有牌均视作[云剑]，直到战斗结束",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 20
+  },
+  {
+    "field_1": 20026,
+    "name": "伤其体",
+    "desc": "下一次攻击额外减对方{otherParams[0]}生命，且必定视作[击伤]了对手",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30026,
+    "name": "伤其体",
+    "desc": "下一次攻击额外减对方{otherParams[0]}生命，且必定视作[击伤]了对手",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 40026,
+    "name": "伤其体",
+    "desc": "下一次攻击额外减对方{otherParams[0]}生命，且必定视作[击伤]了对手",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 50026,
+    "name": "伤其体",
+    "desc": "下一次攻击额外减对方{otherParams[0]}生命，且必定视作[击伤]了对手",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      8
+    ]
+  },
+  {
+    "field_1": 20027,
+    "name": "飞牙",
+    "desc": "下一张牌攻击后，返还其攻击用的[剑意]（最多{otherParams[0]}点）",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 2,
+    "field_8": 4,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 30027,
+    "name": "飞牙",
+    "desc": "下一张牌攻击后，返还其攻击用的[剑意]（最多{otherParams[0]}点）",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 2,
+    "field_8": 5,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 40027,
+    "name": "飞牙",
+    "desc": "下一张牌攻击后，返还其攻击用的[剑意]（最多{otherParams[0]}点）",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 6,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 50027,
+    "name": "飞牙",
+    "desc": "下一张牌攻击后，返还其攻击用的[剑意]（最多{otherParams[0]}点）",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 8,
+    "otherParams": [
+      8
+    ]
+  },
+  {
+    "field_1": 20028,
+    "name": "聚星力",
+    "desc": "下一次使用[星罗棋布]或[飞星刺]后额外加{otherParams[0]}[星力]",
+    "field_4": 2,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 30028,
+    "name": "聚星力",
+    "desc": "下一次使用[星罗棋布]或[飞星刺]后额外加{otherParams[0]}[星力]",
+    "field_4": 2,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 40028,
+    "name": "聚星力",
+    "desc": "下一次使用[星罗棋布]或[飞星刺]后额外加{otherParams[0]}[星力]",
+    "field_4": 2,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50028,
+    "name": "聚星力",
+    "desc": "下一次使用[星罗棋布]或[飞星刺]后额外加{otherParams[0]}[星力]",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 8,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 20029,
+    "name": "黯星伤魂",
+    "desc": "[被动生效]\\n自身所有加[星力]的效果改为向对方施加等量[内伤]",
+    "field_4": 2,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 2
+  },
+  {
+    "field_1": 30029,
+    "name": "黯星伤魂",
+    "desc": "[被动生效]\\n自身所有加[星力]的效果改为向对方施加等量[内伤]",
+    "field_4": 2,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 4
+  },
+  {
+    "field_1": 40029,
+    "name": "黯星伤魂",
+    "desc": "[被动生效]\\n自身所有加[星力]的效果改为向对方施加等量[内伤]",
+    "field_4": 2,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 6
+  },
+  {
+    "field_1": 50029,
+    "name": "黯星伤魂",
+    "desc": "[被动生效]\\n自身所有加[星力]的效果改为向对方施加等量[内伤]",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 8
+  },
+  {
+    "field_1": 20030,
+    "name": "占卦象",
+    "desc": "下一次加[卦象]时，多加{otherParams[0]}",
+    "field_4": 2,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 30030,
+    "name": "占卦象",
+    "desc": "下一次加[卦象]时，多加{otherParams[0]}",
+    "field_4": 2,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 40030,
+    "name": "占卦象",
+    "desc": "下一次加[卦象]时，多加{otherParams[0]}",
+    "field_4": 2,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50030,
+    "name": "占卦象",
+    "desc": "下一次加[卦象]时，多加{otherParams[0]}",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 8,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 20031,
+    "name": "五行灵旋",
+    "desc": "[被动生效]\\n每当重复[激活]已激活的[五行]时，向对方造成{otherParams[0]}[伤害]",
+    "field_4": 3,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30031,
+    "name": "五行灵旋",
+    "desc": "[被动生效]\\n每当重复[激活]已激活的[五行]时，向对方造成{otherParams[0]}[伤害]",
+    "field_4": 3,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 40031,
+    "name": "五行灵旋",
+    "desc": "[被动生效]\\n每当重复[激活]已激活的[五行]时，向对方造成{otherParams[0]}[伤害]",
+    "field_4": 3,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 50031,
+    "name": "五行灵旋",
+    "desc": "[被动生效]\\n每当重复[激活]已激活的[五行]时，向对方造成{otherParams[0]}[伤害]",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 20032,
+    "name": "穿心",
+    "desc": "[被动生效]\\n使用[金灵·穿心]攻击后，返还其触发的[锋锐](最多{otherParams[0]}）",
+    "field_4": 3,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 30032,
+    "name": "穿心",
+    "desc": "[被动生效]\\n使用[金灵·穿心]攻击后，返还其触发的[锋锐](最多{otherParams[0]}）",
+    "field_4": 3,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 3,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 40032,
+    "name": "穿心",
+    "desc": "[被动生效]\\n使用[金灵·穿心]攻击后，返还其触发的[锋锐](最多{otherParams[0]}）",
+    "field_4": 3,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      9
+    ]
+  },
+  {
+    "field_1": 50032,
+    "name": "穿心",
+    "desc": "[被动生效]\\n使用[金灵·穿心]攻击后，返还其触发的[锋锐](最多{otherParams[0]}）",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 5,
+    "otherParams": [
+      12
+    ]
+  },
+  {
+    "field_1": 20033,
+    "name": "初苗",
+    "desc": "下一次使用筑基期的[木灵]牌后获得{otherParams[0]}层[加攻]",
+    "field_4": 3,
+    "field_6": 2,
+    "field_7": 2,
+    "field_8": 6,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 30033,
+    "name": "初苗",
+    "desc": "下一次使用筑基期的[木灵]牌后获得{otherParams[0]}层[加攻]",
+    "field_4": 3,
+    "field_6": 3,
+    "field_7": 2,
+    "field_8": 10,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 40033,
+    "name": "初苗",
+    "desc": "下一次使用筑基期的[木灵]牌后获得{otherParams[0]}层[加攻]",
+    "field_4": 3,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 4,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 50033,
+    "name": "初苗",
+    "desc": "下一次使用筑基期的[木灵]牌后获得{otherParams[0]}层[加攻]",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 8,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20034,
+    "name": "挣脱",
+    "desc": "本回合结束时，[虚弱]、[破绽]、[困缚]各额外减少{otherParams[0]}层",
+    "field_4": 4,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30034,
+    "name": "挣脱",
+    "desc": "本回合结束时，[虚弱]、[破绽]、[困缚]各额外减少{otherParams[0]}层",
+    "field_4": 4,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 40034,
+    "name": "挣脱",
+    "desc": "本回合结束时，[虚弱]、[破绽]、[困缚]各额外减少{otherParams[0]}层",
+    "field_4": 4,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 8,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 50034,
+    "name": "挣脱",
+    "desc": "本回合结束时，[虚弱]、[破绽]、[困缚]各额外减少{otherParams[0]}层",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 10,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20035,
+    "name": "返生",
+    "desc": "下{otherParams[0]}次使用[耗生命]的牌时，加等量生命",
+    "field_4": 4,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 30035,
+    "name": "返生",
+    "desc": "下{otherParams[0]}次使用[耗生命]的牌时，加等量生命",
+    "field_4": 4,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 40035,
+    "name": "返生",
+    "desc": "下{otherParams[0]}次使用[耗生命]的牌时，加等量生命",
+    "field_4": 4,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50035,
+    "name": "返生",
+    "desc": "下{otherParams[0]}次使用[耗生命]的牌时，加等量生命",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20036,
+    "name": "诱敌",
+    "desc": "下一次自身获得[负面状态]时，向对方施加{otherParams[0]}层[破绽]",
+    "field_4": 4,
+    "field_6": 2,
+    "field_7": 2,
+    "field_8": 5,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30036,
+    "name": "诱敌",
+    "desc": "下一次自身获得[负面状态]时，向对方施加{otherParams[0]}层[破绽]",
+    "field_4": 4,
+    "field_6": 3,
+    "field_7": 2,
+    "field_8": 8,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 40036,
+    "name": "诱敌",
+    "desc": "下一次自身获得[负面状态]时，向对方施加{otherParams[0]}层[破绽]",
+    "field_4": 4,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 11,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 50036,
+    "name": "诱敌",
+    "desc": "下一次自身获得[负面状态]时，向对方施加{otherParams[0]}层[破绽]",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 14,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30039,
+    "name": "淬毒",
+    "desc": "下一次攻击后施加{otherParams[0]}层[内伤]",
+    "field_6": 3,
+    "field_7": 2,
+    "field_8": 2,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 40039,
+    "name": "淬毒",
+    "desc": "下一次攻击后施加{otherParams[0]}层[内伤]",
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 2,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 50039,
+    "name": "淬毒",
+    "desc": "下一次攻击后施加{otherParams[0]}层[内伤]",
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 2,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 30040,
+    "name": "涌神力",
+    "desc": "下一次获得[加攻]时额外获得{otherParams[0]}层",
+    "field_6": 3,
+    "field_7": 1,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 40040,
+    "name": "涌神力",
+    "desc": "下一次获得[加攻]时额外获得{otherParams[0]}层",
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50040,
+    "name": "涌神力",
+    "desc": "下一次获得[加攻]时额外获得{otherParams[0]}层",
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 30041,
+    "name": "卸劲",
+    "desc": "移除对方的[加攻]和[护体]各{otherParams[0]}层",
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 40041,
+    "name": "卸劲",
+    "desc": "移除对方的[加攻]和[护体]各{otherParams[0]}层",
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50041,
+    "name": "卸劲",
+    "desc": "移除对方的[加攻]和[护体]各{otherParams[0]}层",
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 8,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 40042,
+    "name": "速度",
+    "desc": "[被动生效]\\n[速度]+{otherParams[0]}",
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 4,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 50042,
+    "name": "速度",
+    "desc": "[被动生效]\\n[速度]+{otherParams[0]}",
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 4,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 30043,
+    "name": "无妄",
+    "desc": "[被动生效]\\n通过[云剑·无妄]获得[无视防御]次数时还会获得等量[加攻]",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 2,
+    "field_8": 10,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 40043,
+    "name": "无妄",
+    "desc": "[被动生效]\\n通过[云剑·无妄]获得[无视防御]次数时还会获得等量[加攻]",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 14,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50043,
+    "name": "无妄",
+    "desc": "[被动生效]\\n通过[云剑·无妄]获得[无视防御]次数时还会获得等量[加攻]",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 18,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 30044,
+    "name": "狂念",
+    "desc": "下一次使用的牌临时视作[狂剑]",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 4
+  },
+  {
+    "field_1": 40044,
+    "name": "狂念",
+    "desc": "下一次使用的牌临时视作[狂剑]",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 6
+  },
+  {
+    "field_1": 50044,
+    "name": "狂念",
+    "desc": "下一次使用的牌临时视作[狂剑]",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 8
+  },
+  {
+    "field_1": 30045,
+    "name": "凝剑意",
+    "desc": "下一次加[剑意]时多加{otherParams[0]}",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 2,
+    "field_8": 10,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 40045,
+    "name": "凝剑意",
+    "desc": "下一次加[剑意]时多加{otherParams[0]}",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 5,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 50045,
+    "name": "凝剑意",
+    "desc": "下一次加[剑意]时多加{otherParams[0]}",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 2,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 30046,
+    "name": "鲲鹏",
+    "desc": "[被动生效]\\n[巨鹏灵剑]和[巨鲲灵剑]多{otherParams[0]}攻，且获得[碎防]",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 2,
+    "field_8": 3,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 40046,
+    "name": "鲲鹏",
+    "desc": "[被动生效]\\n[巨鹏灵剑]和[巨鲲灵剑]多{otherParams[0]}攻，且获得[碎防]",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 4,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 50046,
+    "name": "鲲鹏",
+    "desc": "[被动生效]\\n[巨鹏灵剑]和[巨鲲灵剑]多{otherParams[0]}攻，且获得[碎防]",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 5,
+    "otherParams": [
+      7
+    ]
+  },
+  {
+    "field_1": 30047,
+    "name": "化星灵",
+    "desc": "[被动生效]\\n使用卡牌前若[灵气]不足，则耗1[星力]加2[灵气]",
+    "field_4": 2,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 6
+  },
+  {
+    "field_1": 40047,
+    "name": "化星灵",
+    "desc": "[被动生效]\\n使用卡牌前若[灵气]不足，则耗1[星力]加2[灵气]",
+    "field_4": 2,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 8
+  },
+  {
+    "field_1": 50047,
+    "name": "化星灵",
+    "desc": "[被动生效]\\n使用卡牌前若[灵气]不足，则耗1[星力]加2[灵气]",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 10
+  },
+  {
+    "field_1": 30048,
+    "name": "捕蝉",
+    "desc": "[被动生效]\\n每次使用含[后招]的牌后加{otherParams[0]}生命及上限；[螳螂捕蝉]每[击伤]对方1生命额外加1生命及上限",
+    "field_4": 2,
+    "field_6": 3,
+    "field_7": 3,
+    "field_8": 2,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 40048,
+    "name": "捕蝉",
+    "desc": "[被动生效]\\n每次使用含[后招]的牌后加{otherParams[0]}生命及上限；[螳螂捕蝉]每[击伤]对方1生命额外加1生命及上限",
+    "field_4": 2,
+    "field_6": 4,
+    "field_7": 3,
+    "field_8": 2,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 50048,
+    "name": "捕蝉",
+    "desc": "[被动生效]\\n每次使用含[后招]的牌后加{otherParams[0]}生命及上限；[螳螂捕蝉]每[击伤]对方1生命额外加1生命及上限",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 3,
+    "field_8": 2,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 30049,
+    "name": "两仪",
+    "desc": "[被动生效]\\n使用[两仪阵]加[灵气]时还会加等量[卦象]",
+    "field_4": 2,
+    "field_6": 3,
+    "field_7": 2,
+    "field_8": 4
+  },
+  {
+    "field_1": 40049,
+    "name": "两仪",
+    "desc": "[被动生效]\\n使用[两仪阵]加[灵气]时还会加等量[卦象]",
+    "field_4": 2,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 8
+  },
+  {
+    "field_1": 50049,
+    "name": "两仪",
+    "desc": "[被动生效]\\n使用[两仪阵]加[灵气]时还会加等量[卦象]",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 12
+  },
+  {
+    "field_1": 30050,
+    "name": "惊雷破",
+    "desc": "下一次使用[雷]牌攻击前向对方施加{otherParams[0]}层[外伤]，且攻击附加[碎防]",
+    "field_4": 2,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 40050,
+    "name": "惊雷破",
+    "desc": "下一次使用[雷]牌攻击前向对方施加{otherParams[0]}层[外伤]，且攻击附加[碎防]",
+    "field_4": 2,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50050,
+    "name": "惊雷破",
+    "desc": "下一次使用[雷]牌攻击前向对方施加{otherParams[0]}层[外伤]，且攻击附加[碎防]",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 30051,
+    "name": "土之固",
+    "desc": "下一次使用[土灵]牌时加{otherParams[0]}[防]",
+    "field_4": 3,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 40051,
+    "name": "土之固",
+    "desc": "下一次使用[土灵]牌时加{otherParams[0]}[防]",
+    "field_4": 3,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      8
+    ]
+  },
+  {
+    "field_1": 50051,
+    "name": "土之固",
+    "desc": "下一次使用[土灵]牌时加{otherParams[0]}[防]",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      10
+    ]
+  },
+  {
+    "field_1": 30052,
+    "name": "金之锐",
+    "desc": "下一次使用[金灵]牌时加{otherParams[0]}[锋锐]",
+    "field_4": 3,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 40052,
+    "name": "金之锐",
+    "desc": "下一次使用[金灵]牌时加{otherParams[0]}[锋锐]",
+    "field_4": 3,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 50052,
+    "name": "金之锐",
+    "desc": "下一次使用[金灵]牌时加{otherParams[0]}[锋锐]",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 30053,
+    "name": "火之炽",
+    "desc": "下一次使用[火灵]牌时减对方{otherParams[0]}生命及上限",
+    "field_4": 3,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 40053,
+    "name": "火之炽",
+    "desc": "下一次使用[火灵]牌时减对方{otherParams[0]}生命及上限",
+    "field_4": 3,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      8
+    ]
+  },
+  {
+    "field_1": 50053,
+    "name": "火之炽",
+    "desc": "下一次使用[火灵]牌时减对方{otherParams[0]}生命及上限",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      10
+    ]
+  },
+  {
+    "field_1": 30054,
+    "name": "汹涌",
+    "desc": "下一次使用[水灵·汹涌]时额外攻击1次",
+    "field_4": 3,
+    "field_6": 3,
+    "field_7": 2,
+    "field_8": 4
+  },
+  {
+    "field_1": 40054,
+    "name": "汹涌",
+    "desc": "下一次使用[水灵·汹涌]时额外攻击1次",
+    "field_4": 3,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 8
+  },
+  {
+    "field_1": 50054,
+    "name": "汹涌",
+    "desc": "下一次使用[水灵·汹涌]时额外攻击1次",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 12
+  },
+  {
+    "field_1": 30055,
+    "name": "浑天克",
+    "desc": "下一次[激活]任意[五行]时，额外[激活]其[五行克制]的[五行]",
+    "field_4": 3,
+    "field_6": 3,
+    "field_7": 2,
+    "field_8": 12
+  },
+  {
+    "field_1": 40055,
+    "name": "浑天克",
+    "desc": "下一次[激活]任意[五行]时，额外[激活]其[五行克制]的[五行]",
+    "field_4": 3,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 16
+  },
+  {
+    "field_1": 50055,
+    "name": "浑天克",
+    "desc": "下一次[激活]任意[五行]时，额外[激活]其[五行克制]的[五行]",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 20
+  },
+  {
+    "field_1": 30056,
+    "name": "崩拳劲",
+    "desc": "[被动生效]\\n自身[崩拳]多{otherParams[0]}攻",
+    "field_4": 4,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 1,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 40056,
+    "name": "崩拳劲",
+    "desc": "[被动生效]\\n自身[崩拳]多{otherParams[0]}攻",
+    "field_4": 4,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 3,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50056,
+    "name": "崩拳劲",
+    "desc": "[被动生效]\\n自身[崩拳]多{otherParams[0]}攻",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 5,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 30057,
+    "name": "破限",
+    "desc": "[被动生效]\\n[探马掌]加防上限加{otherParams[0]}，[迎风掌]的攻上限加{otherParams[1]}",
+    "field_4": 4,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      4,
+      2
+    ]
+  },
+  {
+    "field_1": 40057,
+    "name": "破限",
+    "desc": "[被动生效]\\n[探马掌]加防上限加{otherParams[0]}，[迎风掌]的攻上限加{otherParams[1]}",
+    "field_4": 4,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      6,
+      3
+    ]
+  },
+  {
+    "field_1": 50057,
+    "name": "破限",
+    "desc": "[被动生效]\\n[探马掌]加防上限加{otherParams[0]}，[迎风掌]的攻上限加{otherParams[1]}",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 8,
+    "otherParams": [
+      8,
+      4
+    ]
+  },
+  {
+    "field_1": 30058,
+    "name": "悬气势",
+    "desc": "下{otherParams[0]}次攻击时先加1[气势]",
+    "field_4": 4,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 3,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 40058,
+    "name": "悬气势",
+    "desc": "下{otherParams[0]}次攻击时先加1[气势]",
+    "field_4": 4,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 5,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 50058,
+    "name": "悬气势",
+    "desc": "下{otherParams[0]}次攻击时先加1[气势]",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 7,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30059,
+    "name": "坚体魄",
+    "desc": "[体魄]+{otherParams[0]}，每有{otherParams[1]}[体魄]就加1[防]",
+    "field_4": 4,
+    "field_6": 3,
+    "field_7": 2,
+    "field_8": 4,
+    "otherParams": [
+      1,
+      4
+    ]
+  },
+  {
+    "field_1": 40059,
+    "name": "坚体魄",
+    "desc": "[体魄]+{otherParams[0]}，每有{otherParams[1]}[体魄]就加1[防]",
+    "field_4": 4,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 4,
+    "otherParams": [
+      2,
+      4
+    ]
+  },
+  {
+    "field_1": 50059,
+    "name": "坚体魄",
+    "desc": "[体魄]+{otherParams[0]}，每有{otherParams[1]}[体魄]就加1[防]",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 4,
+    "otherParams": [
+      3,
+      4
+    ]
+  },
+  {
+    "field_1": 40060,
+    "name": "辟邪",
+    "desc": "获得{otherParams[0]}层[辟邪]",
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 50060,
+    "name": "辟邪",
+    "desc": "获得{otherParams[0]}层[辟邪]",
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 40061,
+    "name": "刻印强化",
+    "desc": "[被动生效]\\n战斗开始时后一格的[刻印]永久提升1个境界（最高升至元婴期）",
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 6
+  },
+  {
+    "field_1": 50061,
+    "name": "刻印强化",
+    "desc": "[被动生效]\\n战斗开始时后一格的[刻印]永久提升1个境界（最高升至化神期）",
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 8
+  },
+  {
+    "field_1": 40063,
+    "name": "不动",
+    "desc": "[被动生效]\\n自身每回合结束时，若该回合没有触发[再次行动]则加{otherParams[0]}[防]",
+    "field_6": 4,
+    "field_7": 1,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 50063,
+    "name": "不动",
+    "desc": "[被动生效]\\n自身每回合结束时，若该回合没有触发[再次行动]则加{otherParams[0]}[防]",
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 40064,
+    "name": "承载",
+    "desc": "[被动生效]\\n卡组中可多放1张[持续]或[消耗]牌",
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 16
+  },
+  {
+    "field_1": 50064,
+    "name": "承载",
+    "desc": "[被动生效]\\n卡组中可多放1张[持续]或[消耗]牌",
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 20
+  },
+  {
+    "field_1": 40065,
+    "name": "百鸟",
+    "desc": "[被动生效]\\n[灵剑]牌的[灵气]消耗减1",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 1
+  },
+  {
+    "field_1": 50065,
+    "name": "百鸟",
+    "desc": "[被动生效]\\n[灵剑]牌的[灵气]消耗减1",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 2
+  },
+  {
+    "field_1": 40066,
+    "name": "柔心",
+    "desc": "下一次使用[云剑·柔心]后加{otherParams[0]}生命上限，并[再次行动]",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 3,
+    "field_8": 8,
+    "otherParams": [
+      20
+    ]
+  },
+  {
+    "field_1": 50066,
+    "name": "柔心",
+    "desc": "下一次使用[云剑·柔心]后加{otherParams[0]}生命上限，并[再次行动]",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 3,
+    "field_8": 14,
+    "otherParams": [
+      30
+    ]
+  },
+  {
+    "field_1": 40067,
+    "name": "闪风",
+    "desc": "[被动生效]\\n每当使用[云剑·闪风]后，该回合可多触发1次[再次行动]（每回合限生效1次）",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 3,
+    "field_8": 8
+  },
+  {
+    "field_1": 50067,
+    "name": "闪风",
+    "desc": "[被动生效]\\n每当使用[云剑·闪风]后，该回合可多触发1次[再次行动]（每回合限生效1次）",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 3,
+    "field_8": 14
+  },
+  {
+    "field_1": 40068,
+    "name": "水中月",
+    "desc": "[防]+{otherParams[0]}，获得{otherParams[1]}回合[水月剑阵]效果（回合开始时防不减半）",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 8,
+    "otherParams": [
+      6,
+      2
+    ]
+  },
+  {
+    "field_1": 50068,
+    "name": "水中月",
+    "desc": "[防]+{otherParams[0]}，获得{otherParams[1]}回合[水月剑阵]效果（回合开始时防不减半）",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 8,
+    "otherParams": [
+      8,
+      3
+    ]
+  },
+  {
+    "field_1": 40069,
+    "name": "意守阵",
+    "desc": "下一次使用[剑阵]牌时，每有1点[剑意]加{otherParams[0]}[防]",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 8,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 50069,
+    "name": "意守阵",
+    "desc": "下一次使用[剑阵]牌时，每有1点[剑意]加{otherParams[0]}[防]",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 10,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 40070,
+    "name": "逢春",
+    "desc": "下一次使用[枯木逢春]或卡组第8格的牌时，每剩余1[灵气]就加{otherParams[0]}生命及上限",
+    "field_4": 2,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 6,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 50070,
+    "name": "逢春",
+    "desc": "下一次使用[枯木逢春]或卡组第8格的牌时，每剩余1[灵气]就加{otherParams[0]}生命及上限",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 10,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 40071,
+    "name": "无情",
+    "desc": "[被动生效]\\n[流水无情]不再耗灵气，且对方每有1层[内伤]多{otherParams[0]}攻",
+    "field_4": 2,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 7,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50071,
+    "name": "无情",
+    "desc": "[被动生效]\\n[流水无情]不再耗灵气，且对方每有1层[内伤]多{otherParams[0]}攻",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 9,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 40072,
+    "name": "祭雷",
+    "desc": "下一次使用[雷]牌时自身减{otherParams[0]}生命，加{otherParams[1]}[卦象]",
+    "field_4": 2,
+    "field_6": 4,
+    "field_7": 3,
+    "otherParams": [
+      2,
+      4
+    ]
+  },
+  {
+    "field_1": 50072,
+    "name": "祭雷",
+    "desc": "下一次使用[雷]牌时自身减{otherParams[0]}生命，加{otherParams[1]}[卦象]",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 3,
+    "otherParams": [
+      4,
+      5
+    ]
+  },
+  {
+    "field_1": 40073,
+    "name": "底牌",
+    "desc": "[被动生效]\\n卡组第8格的牌可直接触发其[后招]效果",
+    "field_4": 2,
+    "field_6": 4,
+    "field_7": 2
+  },
+  {
+    "field_1": 50073,
+    "name": "底牌",
+    "desc": "[被动生效]\\n卡组第8格的牌可直接触发其[后招]效果",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 4
+  },
+  {
+    "field_1": 40074,
+    "name": "震伤",
+    "desc": "[被动生效]\\n[反震心法]和[六爻绝阵]每次造成[伤害]时，每有1[星力]或[加攻]就多1[伤害]",
+    "field_4": 2,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 10
+  },
+  {
+    "field_1": 50074,
+    "name": "震伤",
+    "desc": "[被动生效]\\n[反震心法]和[六爻绝阵]每次造成[伤害]时，每有1[星力]或[加攻]就多1[伤害]",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 14
+  },
+  {
+    "field_1": 40075,
+    "name": "水之灵",
+    "desc": "下一次使用[水灵]牌时加{otherParams[0]}[灵气]",
+    "field_4": 3,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 50075,
+    "name": "水之灵",
+    "desc": "下一次使用[水灵]牌时加{otherParams[0]}[灵气]",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 1,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 40076,
+    "name": "融混元",
+    "desc": "[被动生效]\\n计算卡组中不同[五行]数量时额外视作+{otherParams[0]}",
+    "field_4": 3,
+    "field_6": 4,
+    "field_7": 1,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50076,
+    "name": "融混元",
+    "desc": "[被动生效]\\n计算卡组中不同[五行]数量时额外视作+{otherParams[0]}",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 40077,
+    "name": "断崖",
+    "desc": "[被动生效]\\n[土灵·断崖]的效果触发时向对方造成的[伤害]加倍",
+    "field_4": 3,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 6
+  },
+  {
+    "field_1": 50077,
+    "name": "断崖",
+    "desc": "[被动生效]\\n[土灵·断崖]的效果触发时向对方造成的[伤害]加倍",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 10
+  },
+  {
+    "field_1": 40078,
+    "name": "熔岩",
+    "desc": "[被动生效]\\n每次使用[火灵]牌时，自身减最多{otherParams[0]}[防]，然后对方减等量生命及上限",
+    "field_4": 3,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 8,
+    "otherParams": [
+      24
+    ]
+  },
+  {
+    "field_1": 50078,
+    "name": "熔岩",
+    "desc": "[被动生效]\\n每次使用[火灵]牌时，自身减最多{otherParams[0]}[防]，然后对方减等量生命及上限",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 10,
+    "otherParams": [
+      30
+    ]
+  },
+  {
+    "field_1": 40080,
+    "name": "锻冥魄",
+    "desc": "每有2层[负面状态]加1[体魄]（最多加{otherParams[0]}）",
+    "field_4": 4,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 3,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 50080,
+    "name": "锻冥魄",
+    "desc": "每有2层[负面状态]加1[体魄]（最多加{otherParams[0]}）",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 3,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 40081,
+    "name": "寸劲",
+    "desc": "下1张[崩拳]的攻击受双倍[气势]加成（不可叠加）",
+    "field_4": 4,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 6
+  },
+  {
+    "field_1": 50081,
+    "name": "寸劲",
+    "desc": "下1张[崩拳]的攻击受双倍[气势]加成（不可叠加）",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 10
+  },
+  {
+    "field_1": 40083,
+    "name": "迷踪",
+    "desc": "[被动生效]\\n[灵玄迷踪步]的持续效果在对方回合也可每回合触发1次",
+    "field_4": 4,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 2
+  },
+  {
+    "field_1": 50083,
+    "name": "迷踪",
+    "desc": "[被动生效]\\n[灵玄迷踪步]的持续效果在对方回合也可每回合触发1次",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 4
+  },
+  {
+    "field_1": 40084,
+    "name": "玄疗",
+    "desc": "自身每有1层[负面状态]就加{otherParams[0]}生命",
+    "field_4": 4,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50084,
+    "name": "玄疗",
+    "desc": "自身每有1层[负面状态]就加{otherParams[0]}生命",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50085,
+    "name": "画龙",
+    "desc": "下{otherParams[0]}次使用可[升级]的牌时先将其[升级]，战斗结束还原",
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 10,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50086,
+    "name": "溢灵",
+    "desc": "下一次加[灵气]时多加{otherParams[0]}[灵气]",
+    "field_6": 5,
+    "field_7": 3,
+    "field_8": 10,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 50087,
+    "name": "厄劫",
+    "desc": "对方下1次使用可[降级]的牌时先将其[降级]，战斗结束还原",
+    "field_6": 5,
+    "field_7": 1
+  },
+  {
+    "field_1": 50088,
+    "name": "困仙",
+    "desc": "双方无法触发[再次行动]，各持续{otherParams[0]}回合",
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 8,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 50089,
+    "name": "护体",
+    "desc": "获得{otherParams[0]}层[护体]",
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 4,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 50090,
+    "name": "云海游龙",
+    "desc": "[被动生效]\\n使用卡组第一格的牌后，若[击伤]对方则[再次行动]\\n自身所有[云剑·游龙]获得[再次行动]",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 3,
+    "field_8": 12
+  },
+  {
+    "field_1": 50091,
+    "name": "零式",
+    "desc": "[被动生效]\\n每当使用[狂剑·零式]后，生命上限加{otherParams[0]}并获得{otherParams[1]}层[加攻]",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      20,
+      1
+    ]
+  },
+  {
+    "field_1": 50092,
+    "name": "灵与狂",
+    "desc": "[被动生效]\\n每次使用[狂剑]时加1[灵气]；用过的[灵剑]也算入用过[狂剑]的次数",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 10,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50093,
+    "name": "御剑结阵",
+    "desc": "[被动生效]\\n每次加[防]时多加{otherParams[0]}并向对方造成{otherParams[1]}[伤害]（每场战斗最多触发{otherParams[2]}次）",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 3,
+    "otherParams": [
+      2,
+      2,
+      15
+    ]
+  },
+  {
+    "field_1": 50094,
+    "name": "荡剑开天",
+    "desc": "下一次使用有攻的牌后追加{otherParams[0]}攻",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 3,
+    "field_8": 12,
+    "otherParams": [
+      24
+    ]
+  },
+  {
+    "field_1": 50095,
+    "name": "血梅",
+    "desc": "[被动生效]\\n[梅开二度]不再耗灵气，但是会耗8生命",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 10
+  },
+  {
+    "field_1": 50096,
+    "name": "天元映星",
+    "desc": "[被动生效]\\n所有格子视作[星位]\\n首次使用[天元心法]后减1[星力]并[再次行动]",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 3,
+    "field_8": 2
+  },
+  {
+    "field_1": 50097,
+    "name": "续天命",
+    "desc": "[被动生效]\\n战斗中首次生命≤0时，自身每有1[卦象]就加{otherParams[0]}生命及上限，然后若生命>0则继续战斗",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 5,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 50098,
+    "name": "引征",
+    "desc": "下一次使用[星位]上的牌后，令其再生效1次",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 3,
+    "field_8": 6
+  },
+  {
+    "field_1": 50099,
+    "name": "溃其伤",
+    "desc": "令对方的[内伤]层数加倍\\n若对方没有[内伤]，则改为施加{otherParams[0]}层[内伤]",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 3,
+    "field_8": 6,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 50100,
+    "name": "炼鼎",
+    "desc": "将手牌最右侧的[金灵]牌永久变为高一个境界的1级[金灵]牌（最高至化神期）",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 9
+  },
+  {
+    "field_1": 50101,
+    "name": "水刃",
+    "desc": "[被动生效]\\n自身回合结束时，[水势]造成[伤害]的效果改为一次攻击，且[击伤]对方时扣减的生命多50%",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 8
+  },
+  {
+    "field_1": 50103,
+    "name": "灵阵展开",
+    "desc": "下1次使用[灵阵]牌后[再次行动]",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 3,
+    "field_8": 12
+  },
+  {
+    "field_1": 50104,
+    "name": "滴天髓",
+    "desc": "[被动生效]\\n[五行天髓诀]持续次数加倍，且在卡组仅含2种[五行]时也可生效",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 3,
+    "field_8": 5
+  },
+  {
+    "field_1": 50105,
+    "name": "引冥灵",
+    "desc": "[灵气]+{otherParams[0]}，获得{otherParams[1]}层[内伤]",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      2,
+      2
+    ]
+  },
+  {
+    "field_1": 50106,
+    "name": "血影遁",
+    "desc": "使用下1张[耗生命]的牌时每耗1生命就加1[身法]",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 4
+  },
+  {
+    "field_1": 50107,
+    "name": "法天象地",
+    "desc": "[被动生效]\\n每场战斗首次[体魄]超过[体魄上限]时，获得{otherParams[0]}层[加攻]，并永久加{otherParams[1]}[体魄上限]",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 3,
+    "field_8": 12,
+    "otherParams": [
+      2,
+      3
+    ]
+  },
+  {
+    "field_1": 50108,
+    "name": "赤血怒",
+    "desc": "[被动生效]\\n每次使用[耗生命]的牌时，向对方造成与[耗生命]等量的[伤害]",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 3,
+    "field_8": 12
+  },
+  {
+    "field_1": 40109,
+    "name": "守势",
+    "desc": "[被动生效]\\n每获得或失去1点[气势]时加{otherParams[0]}[防]",
+    "field_4": 4,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50109,
+    "name": "守势",
+    "desc": "[被动生效]\\n每获得或失去1点[气势]时加{otherParams[0]}[防]",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 30110,
+    "name": "地煞",
+    "desc": "下一次[击伤]对方时，每[击伤]1生命就加1[防]（最多{otherParams[0]}）",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      8
+    ]
+  },
+  {
+    "field_1": 40110,
+    "name": "地煞",
+    "desc": "下一次[击伤]对方时，每[击伤]1生命就加1[防]（最多{otherParams[0]}）",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 3,
+    "otherParams": [
+      9
+    ]
+  },
+  {
+    "field_1": 50110,
+    "name": "地煞",
+    "desc": "下一次[击伤]对方时，每[击伤]1生命就加1[防]（最多{otherParams[0]}）",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      10
+    ]
+  },
+  {
+    "field_1": 30111,
+    "name": "衍星位",
+    "desc": "[被动生效]\\n卡组第4、5格视作[星位]",
+    "field_4": 2,
+    "field_6": 3,
+    "field_7": 2,
+    "field_8": 7
+  },
+  {
+    "field_1": 40111,
+    "name": "衍星位",
+    "desc": "[被动生效]\\n卡组第4、5格视作[星位]",
+    "field_4": 2,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 11
+  },
+  {
+    "field_1": 50111,
+    "name": "衍星位",
+    "desc": "[被动生效]\\n卡组第4、5格视作[星位]",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 15
+  },
+  {
+    "field_1": 30112,
+    "name": "冥心",
+    "desc": "获得{otherParams[0]}层[内伤]和{otherParams[0]}层[恢复]",
+    "field_4": 4,
+    "field_6": 3,
+    "field_7": 2,
+    "field_8": 9,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 40112,
+    "name": "冥心",
+    "desc": "获得{otherParams[0]}层[内伤]和{otherParams[0]}层[恢复]",
+    "field_4": 4,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 9,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 50112,
+    "name": "冥心",
+    "desc": "获得{otherParams[0]}层[内伤]和{otherParams[0]}层[恢复]",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 9,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 20113,
+    "name": "汲取",
+    "desc": "吸取对方{otherParams[0]}生命",
+    "field_6": 2,
+    "field_7": 2,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 30113,
+    "name": "汲取",
+    "desc": "吸取对方{otherParams[0]}生命",
+    "field_6": 3,
+    "field_7": 2,
+    "otherParams": [
+      8
+    ]
+  },
+  {
+    "field_1": 40113,
+    "name": "汲取",
+    "desc": "吸取对方{otherParams[0]}生命",
+    "field_6": 4,
+    "field_7": 2,
+    "otherParams": [
+      10
+    ]
+  },
+  {
+    "field_1": 50113,
+    "name": "汲取",
+    "desc": "吸取对方{otherParams[0]}生命",
+    "field_6": 5,
+    "field_7": 2,
+    "otherParams": [
+      12
+    ]
+  },
+  {
+    "field_1": 10114,
+    "name": "拳风",
+    "desc": "下一次使用[耗生命]的牌时向对方造成{otherParams[0]}[伤害]",
+    "field_4": 4,
+    "field_6": 1,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20114,
+    "name": "拳风",
+    "desc": "下一次使用[耗生命]的牌时向对方造成{otherParams[0]}[伤害]",
+    "field_4": 4,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 30114,
+    "name": "拳风",
+    "desc": "下一次使用[耗生命]的牌时向对方造成{otherParams[0]}[伤害]",
+    "field_4": 4,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 40114,
+    "name": "拳风",
+    "desc": "下一次使用[耗生命]的牌时向对方造成{otherParams[0]}[伤害]",
+    "field_4": 4,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      8
+    ]
+  },
+  {
+    "field_1": 50114,
+    "name": "拳风",
+    "desc": "下一次使用[耗生命]的牌时向对方造成{otherParams[0]}[伤害]",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      10
+    ]
+  },
+  {
+    "field_1": 50115,
+    "name": "冥之势",
+    "desc": "[气势]+{otherParams[0]}（自身有[负面状态]时多加{otherParams[1]}）",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 4,
+    "otherParams": [
+      2,
+      2
+    ]
+  },
+  {
+    "field_1": 40116,
+    "name": "火鞭",
+    "desc": "下一次使用[木灵]或[火灵]牌攻击后追加{otherParams[0]}攻×2",
+    "field_4": 3,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 4,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 50116,
+    "name": "火鞭",
+    "desc": "下一次使用[木灵]或[火灵]牌攻击后追加{otherParams[0]}攻×2",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 4,
+    "otherParams": [
+      7
+    ]
+  },
+  {
+    "field_1": 50117,
+    "name": "筑城",
+    "desc": "自身回合结束时将最多{otherParams[1]}[防]转为等量生命及上限，持续{otherParams[0]}回合",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 8,
+    "otherParams": [
+      2,
+      24
+    ]
+  },
+  {
+    "field_1": 20118,
+    "name": "机关组装",
+    "desc": "[机关刻纹]+{otherParams[0]}",
+    "field_6": 2,
+    "field_7": 1,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 30118,
+    "name": "机关组装",
+    "desc": "[机关刻纹]+{otherParams[0]}",
+    "field_6": 3,
+    "field_7": 1,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 40118,
+    "name": "机关组装",
+    "desc": "[机关刻纹]+{otherParams[0]}",
+    "field_6": 4,
+    "field_7": 1,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 50118,
+    "name": "机关组装",
+    "desc": "[机关刻纹]+{otherParams[0]}",
+    "field_6": 5,
+    "field_7": 1,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 30119,
+    "name": "机关盾",
+    "desc": "[机关刻纹]+{otherParams[0]}\\n每有1层[机关刻纹]加{otherParams[1]}[防]",
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      2,
+      1
+    ]
+  },
+  {
+    "field_1": 40119,
+    "name": "机关盾",
+    "desc": "[机关刻纹]+{otherParams[0]}\\n每有1层[机关刻纹]加{otherParams[1]}[防]",
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 1,
+    "otherParams": [
+      3,
+      1
+    ]
+  },
+  {
+    "field_1": 50119,
+    "name": "机关盾",
+    "desc": "[机关刻纹]+{otherParams[0]}\\n每有1层[机关刻纹]加{otherParams[1]}[防]",
+    "field_6": 5,
+    "field_7": 1,
+    "otherParams": [
+      4,
+      1
+    ]
+  },
+  {
+    "field_1": 40120,
+    "name": "灵纹机关",
+    "desc": "[机关刻纹]+{otherParams[0]}\\n本回合结束时耗1[灵气]：[机关刻纹]+{otherParams[1]}",
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      3,
+      3
+    ]
+  },
+  {
+    "field_1": 50120,
+    "name": "灵纹机关",
+    "desc": "[机关刻纹]+{otherParams[0]}\\n本回合结束时耗1[灵气]：[机关刻纹]+{otherParams[1]}",
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      4,
+      3
+    ]
+  },
+  {
+    "field_1": 20122,
+    "name": "机关剑·裂",
+    "desc": "[机关刻纹]+{otherParams[0]}\\n下1次攻击时耗1[机关刻纹]令该次攻击多3攻且[无视防御]",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 1,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30122,
+    "name": "机关剑·裂",
+    "desc": "[机关刻纹]+{otherParams[0]}\\n下1次攻击时耗1[机关刻纹]令该次攻击多3攻且[无视防御]",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 1,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 40122,
+    "name": "机关剑·裂",
+    "desc": "[机关刻纹]+{otherParams[0]}\\n下1次攻击时耗1[机关刻纹]令该次攻击多3攻且[无视防御]",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 1,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 50122,
+    "name": "机关剑·裂",
+    "desc": "[机关刻纹]+{otherParams[0]}\\n下1次攻击时耗1[机关刻纹]令该次攻击多3攻且[无视防御]",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 30123,
+    "name": "机关剑·斩",
+    "desc": "[机关刻纹]+{otherParams[0]}\\n下1次攻击时耗尽所有[机关刻纹]，每层多{otherParams[1]}攻",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      3,
+      2
+    ]
+  },
+  {
+    "field_1": 40123,
+    "name": "机关剑·斩",
+    "desc": "[机关刻纹]+{otherParams[0]}\\n下1次攻击时耗尽所有[机关刻纹]，每层多{otherParams[1]}攻",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      4,
+      2
+    ]
+  },
+  {
+    "field_1": 50123,
+    "name": "机关剑·斩",
+    "desc": "[机关刻纹]+{otherParams[0]}\\n下1次攻击时耗尽所有[机关刻纹]，每层多{otherParams[1]}攻",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      5,
+      2
+    ]
+  },
+  {
+    "field_1": 40124,
+    "name": "机关龟",
+    "desc": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n每次加[防]时耗1[机关刻纹]多加{otherParams[1]}[防]",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      2,
+      3
+    ]
+  },
+  {
+    "field_1": 50124,
+    "name": "机关龟",
+    "desc": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n每次加[防]时耗1[机关刻纹]多加{otherParams[1]}[防]",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      3,
+      3
+    ]
+  },
+  {
+    "field_1": 50125,
+    "name": "机关剑·震",
+    "desc": "[机关刻纹]+{otherParams[0]}\\n下1次攻击时，先向对方造成{otherParams[1]}[伤害]（自身每有2[机关刻纹]就重复1次该[伤害]）",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      3,
+      2
+    ]
+  },
+  {
+    "field_1": 20126,
+    "name": "机关星仪",
+    "desc": "[机关刻纹]+{otherParams[0]}\\n下{otherParams[1]}次使用非[星位]上的牌时，耗2[机关刻纹]令那一格[成为星位]",
+    "field_4": 2,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      1,
+      1
+    ]
+  },
+  {
+    "field_1": 30126,
+    "name": "机关星仪",
+    "desc": "[机关刻纹]+{otherParams[0]}\\n下{otherParams[1]}次使用非[星位]上的牌时，耗2[机关刻纹]令那一格[成为星位]",
+    "field_4": 2,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      1,
+      1
+    ]
+  },
+  {
+    "field_1": 40126,
+    "name": "机关星仪",
+    "desc": "[机关刻纹]+{otherParams[0]}\\n下{otherParams[1]}次使用非[星位]上的牌时，耗2[机关刻纹]令那一格[成为星位]",
+    "field_4": 2,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 8,
+    "otherParams": [
+      1,
+      1
+    ]
+  },
+  {
+    "field_1": 50126,
+    "name": "机关星仪",
+    "desc": "[机关刻纹]+{otherParams[0]}\\n下{otherParams[1]}次使用非[星位]上的牌时，耗2[机关刻纹]令那一格[成为星位]",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 8,
+    "otherParams": [
+      2,
+      1
+    ]
+  },
+  {
+    "field_1": 30127,
+    "name": "机关猫",
+    "desc": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n自身每回合结束时耗1[机关刻纹]加{otherParams[1]}生命及上限",
+    "field_4": 2,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      2,
+      3
+    ]
+  },
+  {
+    "field_1": 40127,
+    "name": "机关猫",
+    "desc": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n自身每回合结束时耗1[机关刻纹]加{otherParams[1]}生命及上限",
+    "field_4": 2,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      3,
+      3
+    ]
+  },
+  {
+    "field_1": 50127,
+    "name": "机关猫",
+    "desc": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n自身每回合结束时耗1[机关刻纹]加{otherParams[1]}生命及上限",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      4,
+      3
+    ]
+  },
+  {
+    "field_1": 40128,
+    "name": "机关鼠",
+    "desc": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n自身每回合开始时若[机关刻纹]＜{otherParams[1]}，则耗1[灵气]加{otherParams[1]}[机关刻纹]",
+    "field_4": 2,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      3,
+      3
+    ]
+  },
+  {
+    "field_1": 50128,
+    "name": "机关鼠",
+    "desc": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n自身每回合开始时若[机关刻纹]＜{otherParams[1]}，则耗1[灵气]加{otherParams[1]}[机关刻纹]",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      4,
+      3
+    ]
+  },
+  {
+    "field_1": 50129,
+    "name": "机关蛇",
+    "desc": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n自身每回合开始时耗{otherParams[1]}[机关刻纹]向对方施加1层[内伤]",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      3,
+      2
+    ]
+  },
+  {
+    "field_1": 20130,
+    "name": "机关灵印",
+    "desc": "[机关刻纹]+{otherParams[0]}\\n本回合中使用未[激活][五行]的牌时，耗2[机关刻纹][激活]其所属[五行]",
+    "field_4": 3,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 30130,
+    "name": "机关灵印",
+    "desc": "[机关刻纹]+{otherParams[0]}\\n本回合中使用未[激活][五行]的牌时，耗2[机关刻纹][激活]其所属[五行]",
+    "field_4": 3,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 40130,
+    "name": "机关灵印",
+    "desc": "[机关刻纹]+{otherParams[0]}\\n本回合中使用未[激活][五行]的牌时，耗2[机关刻纹][激活]其所属[五行]",
+    "field_4": 3,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 8,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50130,
+    "name": "机关灵印",
+    "desc": "[机关刻纹]+{otherParams[0]}\\n本回合中使用未[激活][五行]的牌时，耗2[机关刻纹][激活]其所属[五行]",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 8,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30131,
+    "name": "混元机关",
+    "desc": "[机关刻纹]+{otherParams[0]}（卡组中每有1种[五行]多加1）",
+    "field_4": 3,
+    "field_6": 3,
+    "field_7": 1,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 40131,
+    "name": "混元机关",
+    "desc": "[机关刻纹]+{otherParams[0]}（卡组中每有1种[五行]多加1）",
+    "field_4": 3,
+    "field_6": 4,
+    "field_7": 1,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 50131,
+    "name": "混元机关",
+    "desc": "[机关刻纹]+{otherParams[0]}（卡组中每有1种[五行]多加1）",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 1,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 40132,
+    "name": "机关鳄",
+    "desc": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n使用[水灵]牌时耗2[机关刻纹]加{otherParams[1]}[水势]；使用[土灵]牌时耗2[机关刻纹]加{otherParams[2]}[防]",
+    "field_4": 3,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      2,
+      1,
+      4
+    ]
+  },
+  {
+    "field_1": 50132,
+    "name": "机关鳄",
+    "desc": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n使用[水灵]牌时耗2[机关刻纹]加{otherParams[1]}[水势]；使用[土灵]牌时耗2[机关刻纹]加{otherParams[2]}[防]",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 6,
+    "otherParams": [
+      3,
+      1,
+      4
+    ]
+  },
+  {
+    "field_1": 50133,
+    "name": "机关鹿",
+    "desc": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n使用[金灵]牌时耗2[机关刻纹]加3[锋锐]；使用[木灵]牌时耗2[机关刻纹]加1[加攻]",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20134,
+    "name": "训练机关",
+    "desc": "[体魄]+{otherParams[0]}\\n[机关刻纹]+{otherParams[1]}",
+    "field_4": 4,
+    "field_6": 2,
+    "field_7": 1,
+    "otherParams": [
+      1,
+      2
+    ]
+  },
+  {
+    "field_1": 30134,
+    "name": "训练机关",
+    "desc": "[体魄]+{otherParams[0]}\\n[机关刻纹]+{otherParams[1]}",
+    "field_4": 4,
+    "field_6": 3,
+    "field_7": 1,
+    "otherParams": [
+      1,
+      3
+    ]
+  },
+  {
+    "field_1": 40134,
+    "name": "训练机关",
+    "desc": "[体魄]+{otherParams[0]}\\n[机关刻纹]+{otherParams[1]}",
+    "field_4": 4,
+    "field_6": 4,
+    "field_7": 1,
+    "otherParams": [
+      1,
+      4
+    ]
+  },
+  {
+    "field_1": 50134,
+    "name": "训练机关",
+    "desc": "[体魄]+{otherParams[0]}\\n[机关刻纹]+{otherParams[1]}",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 1,
+    "otherParams": [
+      1,
+      5
+    ]
+  },
+  {
+    "field_1": 30135,
+    "name": "机关虎",
+    "desc": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n每次攻击时耗1[机关刻纹]，该次攻击多{otherParams[1]}攻",
+    "field_4": 4,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      3,
+      2
+    ]
+  },
+  {
+    "field_1": 40135,
+    "name": "机关虎",
+    "desc": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n每次攻击时耗1[机关刻纹]，该次攻击多{otherParams[1]}攻",
+    "field_4": 4,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      4,
+      2
+    ]
+  },
+  {
+    "field_1": 50135,
+    "name": "机关虎",
+    "desc": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n每次攻击时耗1[机关刻纹]，该次攻击多{otherParams[1]}攻",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      5,
+      2
+    ]
+  },
+  {
+    "field_1": 40136,
+    "name": "机关狮",
+    "desc": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n自身每回合开始时耗1[机关刻纹]加1[气势]",
+    "field_4": 4,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 50136,
+    "name": "机关狮",
+    "desc": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n自身每回合开始时耗1[机关刻纹]加1[气势]",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 50137,
+    "name": "机关豹",
+    "desc": "[被动生效]\\n[机关刻纹]+{otherParams[0]}\\n每当使用卡牌后，若本回合未进行过攻击，则耗2[机关刻纹]加{otherParams[1]}[身法]",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 2,
+    "otherParams": [
+      3,
+      2
+    ]
+  },
+  {
+    "field_1": 50138,
+    "name": "机关引擎",
+    "desc": "[被动生效]\\n自身每回合开始时加{otherParams[0]}[机关刻纹]",
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 4,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50141,
+    "name": "饮道茶",
+    "desc": "[被动生效]\\n战斗结束后减1修为，获得1张[云泉道茶]，销毁此刻印",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1
+  },
+  {
+    "field_1": 50142,
+    "name": "舞狂炎",
+    "desc": "下{otherParams[0]}次[击伤]对方时，每次施加1层[外伤]",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 2,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 50143,
+    "name": "护玲珑",
+    "desc": "下{otherParams[0]}次触发[再次行动]时，每次获得1层[护体]并加5[防]",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 2,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 50144,
+    "name": "踏灵云",
+    "desc": "下{otherParams[0]}次使用[云剑]时，每次加1[灵气]",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 6,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 50145,
+    "name": "御灵防",
+    "desc": "本回合结束时每有1[灵气]加{otherParams[0]}[防]",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 50146,
+    "name": "融剑阵",
+    "desc": "[被动生效]\\n[御空剑阵]将同时视作[云剑]、[狂剑]和[灵剑]",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 4
+  },
+  {
+    "field_1": 50147,
+    "name": "拂清风",
+    "desc": "[被动生效]\\n每当自身生命变化时加{otherParams[0]}[防]",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 1,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50148,
+    "name": "捉困鳖",
+    "desc": "下次攻击时，对方每有1层[负面状态]多{otherParams[0]}攻",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 6,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 50149,
+    "name": "卜灵灯",
+    "desc": "下1次使用名字含“卦”的牌时[卦象]+2，减对方2生命，减对方1[灵气]",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 6
+  },
+  {
+    "field_1": 50150,
+    "name": "布星卦",
+    "desc": "下{otherParams[0]}次使用[星弈]牌时，每次加1[卦象]",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 2,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 50151,
+    "name": "扇星月",
+    "desc": "[被动生效]\\n[星位]上的牌[灵气]消耗减1",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 2
+  },
+  {
+    "field_1": 50152,
+    "name": "隐孤虚",
+    "desc": "自身下1次被攻击时，先向对方施加1层[虚弱]",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 14
+  },
+  {
+    "field_1": 50153,
+    "name": "承五行",
+    "desc": "[被动生效]\\n战斗结束后减3修为，获得1张[五行传承]，销毁此刻印",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 1
+  },
+  {
+    "field_1": 50154,
+    "name": "唤元灵",
+    "desc": "下{otherParams[0]}次[激活五行]时触发额外效果：\\n木灵：[加攻]+1\\n火灵：对方减8生命及上限\\n土灵：[防]+10\\n金灵：[锋锐]+4\\n水灵：[水势]+2",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 6,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 50155,
+    "name": "舞花灵",
+    "desc": "[被动生效]\\n以[五行相生]顺序使用牌时加{otherParams[0]}[灵气]和{otherParams[1]}生命",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 6,
+    "otherParams": [
+      1,
+      1
+    ]
+  },
+  {
+    "field_1": 50156,
+    "name": "震山崩",
+    "desc": "下1次攻击时，自身[防]减半，每减1点多{otherParams[0]}攻",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 2,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 50157,
+    "name": "燃咒印",
+    "desc": "下1次使用名字含“印”的牌后将其[消耗]并[再次行动]",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 3
+  },
+  {
+    "field_1": 50158,
+    "name": "忘百忧",
+    "desc": "双方各加{otherParams[0]}层[护体]\\n双方各减{otherParams[1]}层全部[负面状态]",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 16,
+    "otherParams": [
+      2,
+      2
+    ]
+  },
+  {
+    "field_1": 50159,
+    "name": "修玄心",
+    "desc": "[被动生效]\\n每获得1层[负面状态]时加{otherParams[0]}生命",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 8,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50160,
+    "name": "追猛攻",
+    "desc": "[被动生效]\\n战斗中每次使用含加[体魄]效果的牌后，追加{otherParams[0]}攻",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 2,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 50161,
+    "name": "拥冥月",
+    "desc": "[被动生效]\\n每次使用卡组第1格的牌时[体魄]+{otherParams[0]}，[身法]+{otherParams[1]}，随机获得{otherParams[0]}层[负面状态]（随机到[困缚]时改为[冥]）",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 3,
+    "field_8": 8,
+    "otherParams": [
+      1,
+      5,
+      1
+    ]
+  },
+  {
+    "field_1": 50162,
+    "name": "破玄魔",
+    "desc": "将最多{otherParams[0]}层随机[负面状态]转为等量[加攻]",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 2,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 50163,
+    "name": "涌灵炁",
+    "desc": "[被动生效]\\n每当自身[再次行动]时加{otherParams[0]}[灵气]",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 8,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50164,
+    "name": "展灵翼",
+    "desc": "本回合结束时耗{otherParams[0]}[灵气]：[身法]+{otherParams[1]}",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 6,
+    "otherParams": [
+      3,
+      10
+    ]
+  },
+  {
+    "field_1": 40062,
+    "name": "变换",
+    "desc": "[被动生效]\\n战斗结束后换牌机会+{otherParams[0]}，销毁此刻印",
+    "field_6": 4,
+    "field_7": 1,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 50062,
+    "name": "变换",
+    "desc": "[被动生效]\\n战斗结束后换牌机会+{otherParams[0]}，销毁此刻印",
+    "field_6": 5,
+    "field_7": 1,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 40168,
+    "name": "栖白鹭",
+    "desc": "下1次使用[灵剑]牌时将其临时[升级]（战斗结束还原），若其为[白鹭灵剑]则改为永久[升级]",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 8
+  },
+  {
+    "field_1": 50168,
+    "name": "栖白鹭",
+    "desc": "下1次使用[灵剑]牌时将其临时[升级]（战斗结束还原），若其为[白鹭灵剑]则改为永久[升级]",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 12
+  },
+  {
+    "field_1": 40169,
+    "name": "离之火",
+    "desc": "下一次使用[离卦]后，每有1[卦象]就减对方{otherParams[0]}生命及上限",
+    "field_4": 2,
+    "field_6": 4,
+    "field_7": 2,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 50169,
+    "name": "离之火",
+    "desc": "下一次使用[离卦]后，每有1[卦象]就减对方{otherParams[0]}生命及上限",
+    "field_4": 2,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 4,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 40170,
+    "name": "泉之涌",
+    "desc": "下1次[击伤]对方且[击伤]值≥{otherParams[0]}时，每[击伤]{otherParams[1]}生命就获得1层[水势]",
+    "field_4": 3,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 4,
+    "otherParams": [
+      15,
+      5
+    ]
+  },
+  {
+    "field_1": 50170,
+    "name": "泉之涌",
+    "desc": "下1次[击伤]对方且[击伤]值≥{otherParams[0]}时，每[击伤]{otherParams[1]}生命就获得1层[水势]",
+    "field_4": 3,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 8,
+    "otherParams": [
+      15,
+      5
+    ]
+  },
+  {
+    "field_1": 40171,
+    "name": "磅礴势",
+    "desc": "下一次使用[磅礴之势]或[天地浩荡]时先加{otherParams[0]}[气势]",
+    "field_4": 4,
+    "field_6": 4,
+    "field_7": 3,
+    "field_8": 4,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 50171,
+    "name": "磅礴势",
+    "desc": "下一次使用[磅礴之势]或[天地浩荡]时先加{otherParams[0]}[气势]",
+    "field_4": 4,
+    "field_6": 5,
+    "field_7": 3,
+    "field_8": 10,
+    "otherParams": [
+      6
+    ]
+  }
+]

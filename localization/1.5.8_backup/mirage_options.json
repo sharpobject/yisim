@@ -1,0 +1,2351 @@
+[
+  {
+    "id": 101,
+    "text_cn": "记忆幻景招式（选择一张幻景招式，替代牌池中的同名牌）",
+    "text_en": "Learn Mirage Techniques (Select a mirage technique card to replace its original card in the card pool)",
+    "text_tw": "記憶幻景招式（選擇一張幻景招式，替代牌池中的同名牌）",
+    "text_cn_resolved": "记忆幻景招式（选择一张幻景招式，替代牌池中的同名牌）",
+    "text_en_resolved": "Learn Mirage Techniques (Select a mirage technique card to replace its original card in the card pool)",
+    "text_tw_resolved": "記憶幻景招式（選擇一張幻景招式，替代牌池中的同名牌）"
+  },
+  {
+    "id": 102,
+    "text_cn": "领悟平行时空法则（获得4次刷新仙命选项的机会，可在任意境界使用）",
+    "text_en": "Comprehend Parallel Spacetime Laws (Gain 4 chances to refresh Immortal Fate options, which can be used at any Phase.)",
+    "text_tw": "領悟平行時空法則（獲得4次刷新仙命選項的機會，可在任意境界使用）",
+    "text_cn_resolved": "领悟平行时空法则（获得4次刷新仙命选项的机会，可在任意境界使用）",
+    "text_en_resolved": "Comprehend Parallel Spacetime Laws (Gain 4 chances to refresh Immortal Fate options, which can be used at any Phase.)",
+    "text_tw_resolved": "領悟平行時空法則（獲得4次刷新仙命選項的機會，可在任意境界使用）"
+  },
+  {
+    "id": 103,
+    "text_cn": "坚守本心修炼（修为+{0}，换牌机会+{1}）",
+    "text_en": "Persist in cultivation (Cultivation+{0}, Exchange Card Chance+{1})",
+    "text_tw": "堅守本心修煉（修為+{0}，換牌機會+{1}）",
+    "text_cn_resolved": "坚守本心修炼（修为+{0}，换牌机会+{1}）",
+    "text_en_resolved": "Persist in cultivation (Cultivation+{0}, Exchange Card Chance+{1})",
+    "text_tw_resolved": "堅守本心修煉（修為+{0}，換牌機會+{1}）"
+  },
+  {
+    "id": 104,
+    "text_cn": "借助时空扭曲修炼（本局游戏突破境界所需修为-2）",
+    "text_en": "Cultivate via Spacetime Distortion (Reduce Cultivation required for Phase breakthroughs by 2 for this game)",
+    "text_tw": "借助時空扭曲修煉（本局遊戲突破境界所需修為-2）",
+    "text_cn_resolved": "借助时空扭曲修炼（本局游戏突破境界所需修为-2）",
+    "text_en_resolved": "Cultivate via Spacetime Distortion (Reduce Cultivation required for Phase breakthroughs by 2 for this game)",
+    "text_tw_resolved": "借助時空扭曲修煉（本局遊戲突破境界所需修為-2）"
+  },
+  {
+    "id": 105,
+    "text_cn": "感悟变幻原理（换牌机会及储存上限+{0}）",
+    "text_en": "Understand the principle of change (Exchange Card Chance and Exchange Card Chance storage limit +{0})",
+    "text_tw": "感悟變幻原理（換牌機會及儲存上限+{0}）",
+    "text_cn_resolved": "感悟变幻原理（换牌机会及储存上限+{0}）",
+    "text_en_resolved": "Understand the principle of change (Exchange Card Chance and Exchange Card Chance storage limit +{0})",
+    "text_tw_resolved": "感悟變幻原理（換牌機會及儲存上限+{0}）"
+  },
+  {
+    "id": 106,
+    "text_cn": "稳定为上（每次突破境界后的前2次常规换牌优先换出新境界的牌）",
+    "text_en": "Stability comes first (Prioritize new Phase cards for the first 2 regular Exchanges after each breakthrough)",
+    "text_tw": "穩定為上（每次突破境界後的前2次常規換牌優先換出新境界的牌）",
+    "text_cn_resolved": "稳定为上（每次突破境界后的前2次常规换牌优先换出新境界的牌）",
+    "text_en_resolved": "Stability comes first (Prioritize new Phase cards for the first 2 regular Exchanges after each breakthrough)",
+    "text_tw_resolved": "穩定為上（每次突破境界後的前2次常規換牌優先換出新境界的牌）"
+  },
+  {
+    "id": 107,
+    "text_cn": "探索未知（每轮首次常规换牌优先换出本局游戏未获得过的牌）",
+    "text_en": "Explore the Unknown (The first time you regular Exchange Card in each round, you will priority get the card you haven't received before)",
+    "text_tw": "探索未知（每輪首次常規換牌優先換出本局遊戲未獲得過的牌）",
+    "text_cn_resolved": "探索未知（每轮首次常规换牌优先换出本局游戏未获得过的牌）",
+    "text_en_resolved": "Explore the Unknown (The first time you regular Exchange Card in each round, you will priority get the card you haven't received before)",
+    "text_tw_resolved": "探索未知（每輪首次常規換牌優先換出本局遊戲未獲得過的牌）"
+  },
+  {
+    "id": 108,
+    "text_cn": "稳固炼体（每次突破境界时加2生命上限）",
+    "text_en": "Fortify Body (Max HP+2 for each Phase breakthrough)",
+    "text_tw": "穩固煉體（每次突破境界時加2生命上限）",
+    "text_cn_resolved": "稳固炼体（每次突破境界时加2生命上限）",
+    "text_en_resolved": "Fortify Body (Max HP+2 for each Phase breakthrough)",
+    "text_tw_resolved": "穩固煉體（每次突破境界時加2生命上限）"
+  },
+  {
+    "id": 109,
+    "text_cn": "预感强化（通过道韵预感获得牌时，减1修为额外获得1张。触发两次后失效）",
+    "text_en": "Omen Enhancement (When obtaining card through Daoist Rhyme Omen, lose 1 Cul. to obtain an additional one. Trigger up to 2 times)",
+    "text_tw": "預感強化（通過道韻預感獲得牌時，減1修為額外獲得1張。觸發兩次後失效）",
+    "text_cn_resolved": "预感强化（通过道韵预感获得牌时，减1修为额外获得1张。触发两次后失效）",
+    "text_en_resolved": "Omen Enhancement (When obtaining card through Daoist Rhyme Omen, lose 1 Cul. to obtain an additional one. Trigger up to 2 times)",
+    "text_tw_resolved": "預感強化（通過道韻預感獲得牌時，減1修為額外獲得1張。觸發兩次後失效）"
+  },
+  {
+    "id": 110,
+    "text_cn": "专注未来（突破至化神期时获得1张【46】）",
+    "text_en": "Focus on the Future (When breaking through to Incarnation Phase, gain a 【46】)",
+    "text_tw": "專注未來（突破至化神期時獲得1張【46】）",
+    "text_cn_resolved": "专注未来（突破至化神期时获得1张[道韵气息]）",
+    "text_en_resolved": "Focus on the Future (When breaking through to Incarnation Phase, gain a [Daoist Rhyme Aura])",
+    "text_tw_resolved": "專注未來（突破至化神期時獲得1張[道韻氣息]）"
+  },
+  {
+    "id": 111,
+    "text_cn": "积累优势（每轮开始时若换牌机会≥{0}，多加{1}换牌机会）",
+    "text_en": "Accumulate Advantage (If Exchange Card Chance ≥ {0} at round start, add {1} more Exchange Card Chance)",
+    "text_tw": "積累優勢（每輪開始時若換牌機會≥{0}，多加{1}換牌機會）",
+    "text_cn_resolved": "积累优势（每轮开始时若换牌机会≥{0}，多加{1}换牌机会）",
+    "text_en_resolved": "Accumulate Advantage (If Exchange Card Chance ≥ {0} at round start, add {1} more Exchange Card Chance)",
+    "text_tw_resolved": "積累優勢（每輪開始時若換牌機會≥{0}，多加{1}換牌機會）"
+  },
+  {
+    "id": 112,
+    "text_cn": "稳固道心（命元+{0}，生命上限+{1}）",
+    "text_en": "Stabilize Daoist Heart (Destiny+{0}, Max HP+{1})",
+    "text_tw": "穩固道心（命元+{0}，生命上限+{1}）",
+    "text_cn_resolved": "稳固道心（命元+{0}，生命上限+{1}）",
+    "text_en_resolved": "Stabilize Daoist Heart (Destiny+{0}, Max HP+{1})",
+    "text_tw_resolved": "穩固道心（命元+{0}，生命上限+{1}）"
+  },
+  {
+    "id": 113,
+    "text_cn": "专注门派招式（每次突破境界时，减1修为抽1张新境界的门派牌）",
+    "text_en": "Dedicate to Sect Techniques (Lose 1 Cultivation to draw 1 new Phase Sect card after each Phase breakthrough)",
+    "text_tw": "專注門派招式（每次突破境界時，減1修為抽1張新境界的門派牌）",
+    "text_cn_resolved": "专注门派招式（每次突破境界时，减1修为抽1张新境界的门派牌）",
+    "text_en_resolved": "Dedicate to Sect Techniques (Lose 1 Cultivation to draw 1 new Phase Sect card after each Phase breakthrough)",
+    "text_tw_resolved": "專注門派招式（每次突破境界時，減1修為抽1張新境界的門派牌）"
+  },
+  {
+    "id": 114,
+    "text_cn": "专注副职技能（每次突破境界时，减1修为抽1张新境界的副职牌，突破至化神期时额外触发1次）",
+    "text_en": "Dedicate to Side Jobs Skills (Lose 1 Cultivation to draw 1 new Phase Side Jobs card after each Phase breakthrough, the effect will be triggered twice when breaking through to Incarnation Phase.)",
+    "text_tw": "專註副職技能（每次突破境界時，減1修為抽1張新境界的副職牌，突破至化神期時額外觸發1次）",
+    "text_cn_resolved": "专注副职技能（每次突破境界时，减1修为抽1张新境界的副职牌，突破至化神期时额外触发1次）",
+    "text_en_resolved": "Dedicate to Side Jobs Skills (Lose 1 Cultivation to draw 1 new Phase Side Jobs card after each Phase breakthrough, the effect will be triggered twice when breaking through to Incarnation Phase.)",
+    "text_tw_resolved": "專註副職技能（每次突破境界時，減1修為抽1張新境界的副職牌，突破至化神期時額外觸發1次）"
+  },
+  {
+    "id": 115,
+    "text_cn": "重视未来（突破至化神期时获得1张【runtimeParam】）",
+    "text_en": "Value the Future (When you breakthrough to the Incarnation Phase, gain 1 【runtimeParam】)",
+    "text_tw": "重視未來（突破至化神期時獲得1張【runtimeParam】）",
+    "text_cn_resolved": "重视未来（突破至化神期时获得1张【runtimeParam】）",
+    "text_en_resolved": "Value the Future (When you breakthrough to the Incarnation Phase, gain 1 【runtimeParam】)",
+    "text_tw_resolved": "重視未來（突破至化神期時獲得1張【runtimeParam】）"
+  },
+  {
+    "id": 116,
+    "text_cn": "预感丛生（获得4次刷新道韵预感的机会）",
+    "text_en": "Omen Proliferation (Gain 4 refreshes for Daoist Rhyme Omen)",
+    "text_tw": "預感叢生（獲得4次刷新道韻預感的機會）",
+    "text_cn_resolved": "预感丛生（获得4次刷新道韵预感的机会）",
+    "text_en_resolved": "Omen Proliferation (Gain 4 refreshes for Daoist Rhyme Omen)",
+    "text_tw_resolved": "預感叢生（獲得4次刷新道韻預感的機會）"
+  },
+  {
+    "id": 117,
+    "text_cn": "提前做好最坏打算（本局游戏命元首次低于30时，换牌机会及储存上限+10）",
+    "text_en": "Worst-case Planning (When Destiny first drops below 30 this game, Exchange Card Chance and storage limit +10)",
+    "text_tw": "提前做好最壞打算（本局遊戲命元首次低於30時，換牌機會及儲存上限+10）",
+    "text_cn_resolved": "提前做好最坏打算（本局游戏命元首次低于30时，换牌机会及储存上限+10）",
+    "text_en_resolved": "Worst-case Planning (When Destiny first drops below 30 this game, Exchange Card Chance and storage limit +10)",
+    "text_tw_resolved": "提前做好最壞打算（本局遊戲命元首次低於30時，換牌機會及儲存上限+10）"
+  },
+  {
+    "id": 118,
+    "text_cn": "重视过渡期（本局游戏换出的前{0}张金丹期牌变为2级）",
+    "text_en": "Value Transition (The first {0} Virtuoso Phase cards exchanged this game become Level 2)",
+    "text_tw": "重視過渡期（本局遊戲換出的前{0}張金丹期牌變為2級）",
+    "text_cn_resolved": "重视过渡期（本局游戏换出的前{0}张金丹期牌变为2级）",
+    "text_en_resolved": "Value Transition (The first {0} Virtuoso Phase cards exchanged this game become Level 2)",
+    "text_tw_resolved": "重視過渡期（本局遊戲換出的前{0}張金丹期牌變為2級）"
+  },
+  {
+    "id": 119,
+    "text_cn": "斩道历练（突破至元婴期和化神期时各触发1次：修为-4，抽4张牌）",
+    "text_en": "Shattered Dao Trial (When you breakthrough to Immortality Phase and Incarnation Phase, trigger once each: Cultivation -4, draw 4 cards)",
+    "text_tw": "斬道曆練（突破至元嬰期和化神期時各觸發1次：修為-4，抽4張牌）",
+    "text_cn_resolved": "斩道历练（突破至元婴期和化神期时各触发1次：修为-4，抽4张牌）",
+    "text_en_resolved": "Shattered Dao Trial (When you breakthrough to Immortality Phase and Incarnation Phase, trigger once each: Cultivation -4, draw 4 cards)",
+    "text_tw_resolved": "斬道曆練（突破至元嬰期和化神期時各觸發1次：修為-4，抽4張牌）"
+  },
+  {
+    "id": 120,
+    "text_cn": "寻找镜像（到达第13轮时：修为-1，获得一张【321】）",
+    "text_en": "Seek Mirror (Upon reaching Round 13: Cultivation -1, gain 1【321】)",
+    "text_tw": "尋找鏡像（到達第13輪時：修為-1，獲得一張【321】）",
+    "text_cn_resolved": "寻找镜像（到达第13轮时：修为-1，获得一张[\n    \n幻•镜像鲛珠\n  \n ]）",
+    "text_en_resolved": "Seek Mirror (Upon reaching Round 13: Cultivation -1, gain 1[M - Mirroring Merpeople Pearl])",
+    "text_tw_resolved": "尋找鏡像（到達第13輪時：修為-1，獲得一張[幻•鏡像鮫珠]）"
+  },
+  {
+    "id": 121,
+    "text_cn": "副职涉猎（向牌池中加入所有副职业的化神期牌各6张）",
+    "text_en": "Side Jobs Excursion (Add 6 copies of Incarnation Phase cards for every Side Job to the card pool)",
+    "text_tw": "副職涉獵（向牌池中加入所有副職業的化神期牌各6張）",
+    "text_cn_resolved": "副职涉猎（向牌池中加入所有副职业的化神期牌各6张）",
+    "text_en_resolved": "Side Jobs Excursion (Add 6 copies of Incarnation Phase cards for every Side Job to the card pool)",
+    "text_tw_resolved": "副職涉獵（向牌池中加入所有副職業的化神期牌各6張）"
+  },
+  {
+    "id": 122,
+    "text_cn": "发散领悟（第{0}轮起生效：每轮开始抽到的牌中随机一张升至2级）",
+    "text_en": "Divergent Insight (Takes effect from Round {0}: One of the cards drawn at the beginning of each round will be upgraded to level 2)",
+    "text_tw": "發散領悟（第{0}輪起生效：每輪開始抽到的牌中隨機一張升至2級）",
+    "text_cn_resolved": "发散领悟（第{0}轮起生效：每轮开始抽到的牌中随机一张升至2级）",
+    "text_en_resolved": "Divergent Insight (Takes effect from Round {0}: One of the cards drawn at the beginning of each round will be upgraded to level 2)",
+    "text_tw_resolved": "發散領悟（第{0}輪起生效：每輪開始抽到的牌中隨機一張升至2級）"
+  },
+  {
+    "id": 123,
+    "text_cn": "竭尽领悟，寻求回报(第{0}轮起生效：耗尽换牌机会时优先换出当前境界的牌)",
+    "text_en": "Exhaustion Comprehension, Seek Rewards (Effective from round {0}: Prioritize drawing a current-Phase card when Exchange Card Chances are depleted)",
+    "text_tw": "竭盡領悟，尋求回報(第{0}輪起生效：耗盡換牌機會時優先換出當前境界的牌)",
+    "text_cn_resolved": "竭尽领悟，寻求回报(第{0}轮起生效：耗尽换牌机会时优先换出当前境界的牌)",
+    "text_en_resolved": "Exhaustion Comprehension, Seek Rewards (Effective from round {0}: Prioritize drawing a current-Phase card when Exchange Card Chances are depleted)",
+    "text_tw_resolved": "竭盡領悟，尋求回報(第{0}輪起生效：耗盡換牌機會時優先換出當前境界的牌)"
+  },
+  {
+    "id": 124,
+    "text_cn": "持续领悟，源源不绝(第{0}轮起生效：若换牌机会为0，每轮开始时多加1换牌机会)",
+    "text_en": "Continuous Comprehension, Never-Ending (Effective from round {0}: If Exchange Card Chances=0, +1 Chance at round start)",
+    "text_tw": "持續領悟，源源不絕(第{0}輪起生效：若換牌機會為0，每輪開始時多加1換牌機會)",
+    "text_cn_resolved": "持续领悟，源源不绝(第{0}轮起生效：若换牌机会为0，每轮开始时多加1换牌机会)",
+    "text_en_resolved": "Continuous Comprehension, Never-Ending (Effective from round {0}: If Exchange Card Chances=0, +1 Chance at round start)",
+    "text_tw_resolved": "持續領悟，源源不絕(第{0}輪起生效：若換牌機會為0，每輪開始時多加1換牌機會)"
+  },
+  {
+    "id": 201,
+    "text_cn": "静坐修养（换牌机会+{0}）",
+    "text_en": "Meditative Rest (Exchange Card Chance+{0})",
+    "text_tw": "靜坐修養（換牌機會+{0}）",
+    "text_cn_resolved": "静坐修养（换牌机会+{0}）",
+    "text_en_resolved": "Meditative Rest (Exchange Card Chance+{0})",
+    "text_tw_resolved": "靜坐修養（換牌機會+{0}）"
+  },
+  {
+    "id": 202,
+    "text_cn": "在变化中感悟招式（修为-{0}，抽{1}张牌）",
+    "text_en": "Adapt Through Change (Cultivation-{0}, draw {1} cards)",
+    "text_tw": "在變化中感悟招式（修為-{0}，抽{1}張牌）",
+    "text_cn_resolved": "在变化中感悟招式（修为-{0}，抽{1}张牌）",
+    "text_en_resolved": "Adapt Through Change (Cultivation-{0}, draw {1} cards)",
+    "text_tw_resolved": "在變化中感悟招式（修為-{0}，抽{1}張牌）"
+  },
+  {
+    "id": 203,
+    "text_cn": "跟随更换修炼方式（剩余换牌机会变为{0}）",
+    "text_en": "Follow Shifting Methods (Remaining Exchange Card Chances become {0})",
+    "text_tw": "跟隨更換修煉方式（剩餘換牌機會變為{0}）",
+    "text_cn_resolved": "跟随更换修炼方式（剩余换牌机会变为{0}）",
+    "text_en_resolved": "Follow Shifting Methods (Remaining Exchange Card Chances become {0})",
+    "text_tw_resolved": "跟隨更換修煉方式（剩餘換牌機會變為{0}）"
+  },
+  {
+    "id": 204,
+    "text_cn": "随心所欲（换牌机会+{0}~{1}）",
+    "text_en": "Unrestrained Freedom (Exchange Card Chance+{0}~{1})",
+    "text_tw": "隨心所欲（換牌機會+{0}~{1}）",
+    "text_cn_resolved": "随心所欲（换牌机会+{0}~{1}）",
+    "text_en_resolved": "Unrestrained Freedom (Exchange Card Chance+{0}~{1})",
+    "text_tw_resolved": "隨心所欲（換牌機會+{0}~{1}）"
+  },
+  {
+    "id": 205,
+    "text_cn": "趁机强化自身（换牌机会-{0}，随机升级1张1级【KEYWORD_常规牌】）",
+    "text_en": "Opportunistic Enhancement (Exchange Card Chance-{0}, randomly upgrade 1 level 1【KEYWORD_常规牌】)",
+    "text_tw": "趁機強化自身（換牌機會-{0}，隨機升級1張1級【KEYWORD_常规牌】）",
+    "text_cn_resolved": "趁机强化自身（换牌机会-{0}，随机升级1张1级[常规牌]）",
+    "text_en_resolved": "Opportunistic Enhancement (Exchange Card Chance-{0}, randomly upgrade 1 level 1[Regular Card])",
+    "text_tw_resolved": "趁機強化自身（換牌機會-{0}，隨機升級1張1級[常規牌]）"
+  },
+  {
+    "id": 206,
+    "text_cn": "逐渐积累优势（卡组中每有1张2级或3级门派牌就加1换牌机会）",
+    "text_en": "Gradual Accumulation (Gain 1 Exchange Card Chance per Level 2/3 sect-card in deck)",
+    "text_tw": "逐漸積累優勢（卡組中每有1張2級或3級門派牌就加1換牌機會）",
+    "text_cn_resolved": "逐渐积累优势（卡组中每有1张2级或3级门派牌就加1换牌机会）",
+    "text_en_resolved": "Gradual Accumulation (Gain 1 Exchange Card Chance per Level 2/3 sect-card in deck)",
+    "text_tw_resolved": "逐漸積累優勢（卡組中每有1張2級或3級門派牌就加1換牌機會）"
+  },
+  {
+    "id": 301,
+    "text_cn": "专注门派招式（牌池中自身当前境界的门派牌加{0}张）",
+    "text_en": "Dedicate to Sect Techniques (Add {0} sect cards of current Phase to the card pool)",
+    "text_tw": "專注門派招式（牌池中自身當前境界的門派牌加{0}張）",
+    "text_cn_resolved": "专注门派招式（牌池中自身当前境界的门派牌加{0}张）",
+    "text_en_resolved": "Dedicate to Sect Techniques (Add {0} sect cards of current Phase to the card pool)",
+    "text_tw_resolved": "專注門派招式（牌池中自身當前境界的門派牌加{0}張）"
+  },
+  {
+    "id": 302,
+    "text_cn": "专注副职技能（牌池中自身当前境界的副职牌加{0}张）",
+    "text_en": "Dedicate to Side Jobs Skills (Add {0} Side Jobs cards of current Phase to the card pool)",
+    "text_tw": "專注副職技能（牌池中自身當前境界的副職牌加{0}張）",
+    "text_cn_resolved": "专注副职技能（牌池中自身当前境界的副职牌加{0}张）",
+    "text_en_resolved": "Dedicate to Side Jobs Skills (Add {0} Side Jobs cards of current Phase to the card pool)",
+    "text_tw_resolved": "專注副職技能（牌池中自身當前境界的副職牌加{0}張）"
+  },
+  {
+    "id": 303,
+    "text_cn": "回忆门派招式（修为-{0}，抽1张当前境界的门派牌）",
+    "text_en": "Recall Sect Techniques (Cultivation-{0}, draw 1 Sect Card of current Phase)",
+    "text_tw": "回憶門派招式（修為-{0}，抽1張當前境界的門派牌）",
+    "text_cn_resolved": "回忆门派招式（修为-{0}，抽1张当前境界的门派牌）",
+    "text_en_resolved": "Recall Sect Techniques (Cultivation-{0}, draw 1 Sect Card of current Phase)",
+    "text_tw_resolved": "回憶門派招式（修為-{0}，抽1張當前境界的門派牌）"
+  },
+  {
+    "id": 304,
+    "text_cn": "回忆副职技能（修为-{0}，抽1张当前境界的副职牌）",
+    "text_en": "Recall Side Jobs Skills (Cultivation -{0}, draw 1 Side Jobs Card of current Phase)",
+    "text_tw": "回憶副職技能（修為-{0}，抽1張當前境界的副職牌）",
+    "text_cn_resolved": "回忆副职技能（修为-{0}，抽1张当前境界的副职牌）",
+    "text_en_resolved": "Recall Side Jobs Skills (Cultivation -{0}, draw 1 Side Jobs Card of current Phase)",
+    "text_tw_resolved": "回憶副職技能（修為-{0}，抽1張當前境界的副職牌）"
+  },
+  {
+    "id": 305,
+    "text_cn": "我全都要（修为-{0}，命元-{1}，抽当前境界的门派牌和副职牌各1张）",
+    "text_en": "I Want Them All (Cultivation-{0}, Destiny-{1}, draw 1 Sect and 1 Side Jobs card of current Phase)",
+    "text_tw": "我全都要（修為-{0}，命元-{1}，抽當前境界的門派牌和副職牌各1張）",
+    "text_cn_resolved": "我全都要（修为-{0}，命元-{1}，抽当前境界的门派牌和副职牌各1张）",
+    "text_en_resolved": "I Want Them All (Cultivation-{0}, Destiny-{1}, draw 1 Sect and 1 Side Jobs card of current Phase)",
+    "text_tw_resolved": "我全都要（修為-{0}，命元-{1}，抽當前境界的門派牌和副職牌各1張）"
+  },
+  {
+    "id": 401,
+    "text_cn": "打坐恢复（命元+{0}）",
+    "text_en": "Meditative Recovery (Destiny+{0})",
+    "text_tw": "打坐恢複（命元+{0}）",
+    "text_cn_resolved": "打坐恢复（命元+{0}）",
+    "text_en_resolved": "Meditative Recovery (Destiny+{0})",
+    "text_tw_resolved": "打坐恢複（命元+{0}）"
+  },
+  {
+    "id": 402,
+    "text_cn": "打坐感悟时空变幻（命元-{0}，换牌机会+{1}）",
+    "text_en": "Meditate on Spacetime changes (Destiny-{0}, Exchange Card Chance+{1})",
+    "text_tw": "打坐感悟時空變幻（命元-{0}，換牌機會+{1}）",
+    "text_cn_resolved": "打坐感悟时空变幻（命元-{0}，换牌机会+{1}）",
+    "text_en_resolved": "Meditate on Spacetime changes (Destiny-{0}, Exchange Card Chance+{1})",
+    "text_tw_resolved": "打坐感悟時空變幻（命元-{0}，換牌機會+{1}）"
+  },
+  {
+    "id": 403,
+    "text_cn": "消耗体力，强化打坐（换牌机会-{0}，命元+{1}）",
+    "text_en": "Intensive Meditation (Exchange Card Chance-{0}, Destiny+{1})",
+    "text_tw": "消耗體力，強化打坐（換牌機會-{0}，命元+{1}）",
+    "text_cn_resolved": "消耗体力，强化打坐（换牌机会-{0}，命元+{1}）",
+    "text_en_resolved": "Intensive Meditation (Exchange Card Chance-{0}, Destiny+{1})",
+    "text_tw_resolved": "消耗體力，強化打坐（換牌機會-{0}，命元+{1}）"
+  },
+  {
+    "id": 404,
+    "text_cn": "要什么命元，炼体要紧（命元-{0}，生命上限+{1}）",
+    "text_en": "Body Over Destiny (Destiny-{0}, Max HP+{1})",
+    "text_tw": "要什麼命元，煉體要緊（命元-{0}，生命上限+{1}）",
+    "text_cn_resolved": "要什么命元，炼体要紧（命元-{0}，生命上限+{1}）",
+    "text_en_resolved": "Body Over Destiny (Destiny-{0}, Max HP+{1})",
+    "text_tw_resolved": "要什麼命元，煉體要緊（命元-{0}，生命上限+{1}）"
+  },
+  {
+    "id": 405,
+    "text_cn": "打坐冥思，放飞思绪（命元+{0}~{1}）",
+    "text_en": "Unbound Contemplation (Destiny+{0}~{1})",
+    "text_tw": "打坐冥思，放飛思緒（命元+{0}~{1}）",
+    "text_cn_resolved": "打坐冥思，放飞思绪（命元+{0}~{1}）",
+    "text_en_resolved": "Unbound Contemplation (Destiny+{0}~{1})",
+    "text_tw_resolved": "打坐冥思，放飛思緒（命元+{0}~{1}）"
+  },
+  {
+    "id": 406,
+    "text_cn": "要什么命元，领悟招式要紧（命元-{0}，修为-1，获得2级的【runtimeParam】）",
+    "text_en": "Techniques Over Destiny (Destiny-{0}, Cultivation-1, gain 【runtimeParam】 of level 2)",
+    "text_tw": "要什麼命元，領悟招式要緊（命元-{0}，修為-1，獲得2級的【runtimeParam】）",
+    "text_cn_resolved": "要什么命元，领悟招式要紧（命元-{0}，修为-1，获得2级的【runtimeParam】）",
+    "text_en_resolved": "Techniques Over Destiny (Destiny-{0}, Cultivation-1, gain 【runtimeParam】 of level 2)",
+    "text_tw_resolved": "要什麼命元，領悟招式要緊（命元-{0}，修為-1，獲得2級的【runtimeParam】）"
+  },
+  {
+    "id": 407,
+    "text_cn": "去偷学一些本领应该有用（命元-{0}，将卡组第1格牌变为【runtimeParam】（继承等级））",
+    "text_en": "Steal Knowledge (Destiny-{0}, transform the first card in deck into 【runtimeParam】 (inherits level))",
+    "text_tw": "去偷學一些本領應該有用（命元-{0}，將卡組第1格牌變為【runtimeParam】（繼承等級））",
+    "text_cn_resolved": "去偷学一些本领应该有用（命元-{0}，将卡组第1格牌变为【runtimeParam】（继承等级））",
+    "text_en_resolved": "Steal Knowledge (Destiny-{0}, transform the first card in deck into 【runtimeParam】 (inherits level))",
+    "text_tw_resolved": "去偷學一些本領應該有用（命元-{0}，將卡組第1格牌變為【runtimeParam】（繼承等級））"
+  },
+  {
+    "id": 501,
+    "text_cn": "搜寻自身记忆，强化不同招式（下场战斗开始时临时升级卡组中的前{0}张1级牌）",
+    "text_en": "Strengthen Techniques (Temporarily upgrade the first {0} level 1 cards in the deck at the beginning of the next battle)",
+    "text_tw": "搜尋自身記憶，強化不同招式（下場戰鬥開始時臨時升級卡組中的前{0}張1級牌）",
+    "text_cn_resolved": "搜寻自身记忆，强化不同招式（下场战斗开始时临时升级卡组中的前{0}张1级牌）",
+    "text_en_resolved": "Strengthen Techniques (Temporarily upgrade the first {0} level 1 cards in the deck at the beginning of the next battle)",
+    "text_tw_resolved": "搜尋自身記憶，強化不同招式（下場戰鬥開始時臨時升級卡組中的前{0}張1級牌）"
+  },
+  {
+    "id": 502,
+    "text_cn": "优先确保先手（下场战斗开始时自身速度+{0}）",
+    "text_en": "Preemptive Strike (Speed+{0} when next battle starts)",
+    "text_tw": "優先確保先手（下場戰鬥開始時自身速度+{0}）",
+    "text_cn_resolved": "优先确保先手（下场战斗开始时自身速度+{0}）",
+    "text_en_resolved": "Preemptive Strike (Speed+{0} when next battle starts)",
+    "text_tw_resolved": "優先確保先手（下場戰鬥開始時自身速度+{0}）"
+  },
+  {
+    "id": 503,
+    "text_cn": "搜寻自身记忆，寻找最强招式（下场战斗开始时临时升级卡组中首张2级牌）",
+    "text_en": "Find the Strongest Techniques (Temporarily upgrade the first level 2 card in the deck at the beginning of the next battle)",
+    "text_tw": "搜尋自身記憶，尋找最強招式（下場戰鬥開始時臨時升級卡組中首張2級牌）",
+    "text_cn_resolved": "搜寻自身记忆，寻找最强招式（下场战斗开始时临时升级卡组中首张2级牌）",
+    "text_en_resolved": "Find the Strongest Techniques (Temporarily upgrade the first level 2 card in the deck at the beginning of the next battle)",
+    "text_tw_resolved": "搜尋自身記憶，尋找最強招式（下場戰鬥開始時臨時升級卡組中首張2級牌）"
+  },
+  {
+    "id": 504,
+    "text_cn": "搜寻对方弱点，发动偷袭（下场战斗开始时向对方施加{0}层内伤）",
+    "text_en": "Search for the Opponent's Weaknesses (Apply {0} stack(s) of Internal Jnjury to the opponent at the beginning of the next battle)",
+    "text_tw": "搜尋對方弱點，發動偷襲（下場戰鬥開始時向對方施加{0}層內傷）",
+    "text_cn_resolved": "搜寻对方弱点，发动偷袭（下场战斗开始时向对方施加{0}层内伤）",
+    "text_en_resolved": "Search for the Opponent's Weaknesses (Apply {0} stack(s) of Internal Jnjury to the opponent at the beginning of the next battle)",
+    "text_tw_resolved": "搜尋對方弱點，發動偷襲（下場戰鬥開始時向對方施加{0}層內傷）"
+  },
+  {
+    "id": 601,
+    "text_cn": "带走1株灵植（修为-{0}，获得1张3级的【{1}】）",
+    "text_en": "Take 1 Spirit Plant (Cultivation-{0}, gain 1 Level 3 【{1}】)",
+    "text_tw": "帶走1株靈植（修為-{0}，獲得1張3級的【{1}】）",
+    "text_cn_resolved": "带走1株灵植（修为-{0}，获得1张3级的[Card {1}]）",
+    "text_en_resolved": "Take 1 Spirit Plant (Cultivation-{0}, gain 1 Level 3 [Card {1}])",
+    "text_tw_resolved": "帶走1株靈植（修為-{0}，獲得1張3級的[Card {1}]）"
+  },
+  {
+    "id": 602,
+    "text_cn": "带走1株灵植（修为-{0}，获得1张3级的【{1}】）",
+    "text_en": "Take 1 Spirit Plant (Cultivation-{0}, gain 1 Level 3 【{1}】)",
+    "text_tw": "帶走1株靈植（修為-{0}，獲得1張3級的【{1}】）",
+    "text_cn_resolved": "带走1株灵植（修为-{0}，获得1张3级的[Card {1}]）",
+    "text_en_resolved": "Take 1 Spirit Plant (Cultivation-{0}, gain 1 Level 3 [Card {1}])",
+    "text_tw_resolved": "帶走1株靈植（修為-{0}，獲得1張3級的[Card {1}]）"
+  },
+  {
+    "id": 603,
+    "text_cn": "带走2株幼苗，自己培育（修为-{0}，获得【{1}】和【{2}】各1张）",
+    "text_en": "Take 2 Seedlings to Cultivate (Cultivation-{0}, gain 1 【{1}】 and 1 【{2}】)",
+    "text_tw": "帶走2株幼苗，自己培育（修為-{0}，獲得【{1}】和【{2}】各1張）",
+    "text_cn_resolved": "带走2株幼苗，自己培育（修为-{0}，获得[Card {1}]和[Card {2}]各1张）",
+    "text_en_resolved": "Take 2 Seedlings to Cultivate (Cultivation-{0}, gain 1 [Card {1}] and 1 [Card {2}])",
+    "text_tw_resolved": "帶走2株幼苗，自己培育（修為-{0}，獲得[Card {1}]和[Card {2}]各1張）"
+  },
+  {
+    "id": 604,
+    "text_cn": "带走2颗种子，试试运气（修为-{0}，获得2张【{1}】）",
+    "text_en": "Take 2 Seeds to Test Luck (Cultivation-{0}, gain 2 【{1}】)",
+    "text_tw": "帶走2顆種子，試試運氣（修為-{0}，獲得2張【{1}】）",
+    "text_cn_resolved": "带走2颗种子，试试运气（修为-{0}，获得2张[Card {1}]）",
+    "text_en_resolved": "Take 2 Seeds to Test Luck (Cultivation-{0}, gain 2 [Card {1}])",
+    "text_tw_resolved": "帶走2顆種子，試試運氣（修為-{0}，獲得2張[Card {1}]）"
+  },
+  {
+    "id": 605,
+    "text_cn": "带走1株灵植（修为-{0}，获得1张2级的【{1}】）",
+    "text_en": "Take 1 Spirit Plant (Cultivation -{0}, gain 1 Level 2 【{1}】)",
+    "text_tw": "帶走1株靈植（修為-{0}，獲得1張2級的【{1}】）",
+    "text_cn_resolved": "带走1株灵植（修为-{0}，获得1张2级的[Card {1}]）",
+    "text_en_resolved": "Take 1 Spirit Plant (Cultivation -{0}, gain 1 Level 2 [Card {1}])",
+    "text_tw_resolved": "帶走1株靈植（修為-{0}，獲得1張2級的[Card {1}]）"
+  },
+  {
+    "id": 701,
+    "text_cn": "捕捉返虚灵宠（修为-1，获得【runtimeParam】）",
+    "text_en": "Capture Divinity Phase Spiritual Pet (Cultivation-1, gain 【runtimeParam】)",
+    "text_tw": "捕捉返虛靈寵（修為-1，獲得【runtimeParam】）",
+    "text_cn_resolved": "捕捉返虚灵宠（修为-1，获得【runtimeParam】）",
+    "text_en_resolved": "Capture Divinity Phase Spiritual Pet (Cultivation-1, gain 【runtimeParam】)",
+    "text_tw_resolved": "捕捉返虛靈寵（修為-1，獲得【runtimeParam】）"
+  },
+  {
+    "id": 702,
+    "text_cn": "思考新的招式（换牌机会+{0}）",
+    "text_en": "Devise New Techniques (Exchange Card Chance+{0})",
+    "text_tw": "思考新的招式（換牌機會+{0}）",
+    "text_cn_resolved": "思考新的招式（换牌机会+{0}）",
+    "text_en_resolved": "Devise New Techniques (Exchange Card Chance+{0})",
+    "text_tw_resolved": "思考新的招式（換牌機會+{0}）"
+  },
+  {
+    "id": 703,
+    "text_cn": "稳固自身根基（生命上限+{0}）",
+    "text_en": "Fortify Foundations (Max HP+{0})",
+    "text_tw": "穩固自身根基（生命上限+{0}）",
+    "text_cn_resolved": "稳固自身根基（生命上限+{0}）",
+    "text_en_resolved": "Fortify Foundations (Max HP+{0})",
+    "text_tw_resolved": "穩固自身根基（生命上限+{0}）"
+  },
+  {
+    "id": 704,
+    "text_cn": "感受天地灵气（修为+{0}）",
+    "text_en": "Sense Worldly Spiritual Energy (Cultivation+{0})",
+    "text_tw": "感受天地靈氣（修為+{0}）",
+    "text_cn_resolved": "感受天地灵气（修为+{0}）",
+    "text_en_resolved": "Sense Worldly Spiritual Energy (Cultivation+{0})",
+    "text_tw_resolved": "感受天地靈氣（修為+{0}）"
+  },
+  {
+    "id": 705,
+    "text_cn": "收获返虚法宝（修为-1，获得【runtimeParam】）",
+    "text_en": "Obtain Divinity Phase Talisman (Cultivation-1, gain 【runtimeParam】)",
+    "text_tw": "收獲返虛法寶（修為-1，獲得【runtimeParam】）",
+    "text_cn_resolved": "收获返虚法宝（修为-1，获得【runtimeParam】）",
+    "text_en_resolved": "Obtain Divinity Phase Talisman (Cultivation-1, gain 【runtimeParam】)",
+    "text_tw_resolved": "收獲返虛法寶（修為-1，獲得【runtimeParam】）"
+  },
+  {
+    "id": 706,
+    "text_cn": "学习返虚秘术（修为-1，获得【runtimeParam】）",
+    "text_en": "Learn Divinity Phase Secret Enchantment (Cultivation-1, gain 【runtimeParam】)",
+    "text_tw": "學習返虛秘術（修為-1，獲得【runtimeParam】）",
+    "text_cn_resolved": "学习返虚秘术（修为-1，获得【runtimeParam】）",
+    "text_en_resolved": "Learn Divinity Phase Secret Enchantment (Cultivation-1, gain 【runtimeParam】)",
+    "text_tw_resolved": "學習返虛秘術（修為-1，獲得【runtimeParam】）"
+  },
+  {
+    "id": 707,
+    "text_cn": "练习现有招式（随机升级手牌或卡组中的{0}张1级牌）",
+    "text_en": "Practice Existing Techniques (Randomly Upgrade {0} Level 1 cards in hand/deck)",
+    "text_tw": "練習現有招式（隨機升級手牌或卡組中的{0}張1級牌）",
+    "text_cn_resolved": "练习现有招式（随机升级手牌或卡组中的{0}张1级牌）",
+    "text_en_resolved": "Practice Existing Techniques (Randomly Upgrade {0} Level 1 cards in hand/deck)",
+    "text_tw_resolved": "練習現有招式（隨機升級手牌或卡組中的{0}張1級牌）"
+  },
+  {
+    "id": 801,
+    "text_cn": "修为还是多多益善（换牌机会-{0}，修为+{1}）",
+    "text_en": "More Cultivation Is Better (Exchange Card Chance-{0}, Cultivation+{1})",
+    "text_tw": "修為還是多多益善（換牌機會-{0}，修為+{1}）",
+    "text_cn_resolved": "修为还是多多益善（换牌机会-{0}，修为+{1}）",
+    "text_en_resolved": "More Cultivation Is Better (Exchange Card Chance-{0}, Cultivation+{1})",
+    "text_tw_resolved": "修為還是多多益善（換牌機會-{0}，修為+{1}）"
+  },
+  {
+    "id": 802,
+    "text_cn": "修为只是用来突破、提升自身罢了（修为临时+{0}，下场战斗开始前还原）",
+    "text_en": "Cultivation Is for Breakthroughs (Temporarily gain {0} Cultivations, reset before next battle)",
+    "text_tw": "修為隻是用來突破、提升自身罷了（修為臨時+{0}，下場戰鬥開始前還原）",
+    "text_cn_resolved": "修为只是用来突破、提升自身罢了（修为临时+{0}，下场战斗开始前还原）",
+    "text_en_resolved": "Cultivation Is for Breakthroughs (Temporarily gain {0} Cultivations, reset before next battle)",
+    "text_tw_resolved": "修為隻是用來突破、提升自身罷了（修為臨時+{0}，下場戰鬥開始前還原）"
+  },
+  {
+    "id": 803,
+    "text_cn": "修为无用，生存要紧（修为-1，生命上限+{0}，获得1张【{1}】）",
+    "text_en": "Survival Over Cultivation (Cultivation-1, Max HP+{0}, gain 1 【{1}】)",
+    "text_tw": "修為無用，生存要緊（修為-1，生命上限+{0}，獲得1張【{1}】）",
+    "text_cn_resolved": "修为无用，生存要紧（修为-1，生命上限+{0}，获得1张[Card {1}]）",
+    "text_en_resolved": "Survival Over Cultivation (Cultivation-1, Max HP+{0}, gain 1 [Card {1}])",
+    "text_tw_resolved": "修為無用，生存要緊（修為-1，生命上限+{0}，獲得1張[Card {1}]）"
+  },
+  {
+    "id": 804,
+    "text_cn": "修为至上，用命换取（生命上限-{0}，修为+{1}）",
+    "text_en": "Cultivation Above All (Max HP-{0}, Cultivation+{1})",
+    "text_tw": "修為至上，用命換取（生命上限-{0}，修為+{1}）",
+    "text_cn_resolved": "修为至上，用命换取（生命上限-{0}，修为+{1}）",
+    "text_en_resolved": "Cultivation Above All (Max HP-{0}, Cultivation+{1})",
+    "text_tw_resolved": "修為至上，用命換取（生命上限-{0}，修為+{1}）"
+  },
+  {
+    "id": 805,
+    "text_cn": "积极进取，赚取修为（下场战斗若胜利则修为+{0}）",
+    "text_en": "Aggressive Progress (If next battle is won, Cultivation+{0})",
+    "text_tw": "積極進取，賺取修為（下場戰鬥若勝利則修為+{0}）",
+    "text_cn_resolved": "积极进取，赚取修为（下场战斗若胜利则修为+{0}）",
+    "text_en_resolved": "Aggressive Progress (If next battle is won, Cultivation+{0})",
+    "text_tw_resolved": "積極進取，賺取修為（下場戰鬥若勝利則修為+{0}）"
+  },
+  {
+    "id": 806,
+    "text_cn": "放下执念（修为-{0}，抽{1}张牌，至少包含{2}张自身境界的牌）",
+    "text_en": "Let Go of Obsession (Cultivation-{0}, draw {1} cards, contain at least {2} cards of your Phase)",
+    "text_tw": "放下執念（修為-{0}，抽{1}張牌，至少包含{2}張自身境界的牌）",
+    "text_cn_resolved": "放下执念（修为-{0}，抽{1}张牌，至少包含{2}张自身境界的牌）",
+    "text_en_resolved": "Let Go of Obsession (Cultivation-{0}, draw {1} cards, contain at least {2} cards of your Phase)",
+    "text_tw_resolved": "放下執念（修為-{0}，抽{1}張牌，至少包含{2}張自身境界的牌）"
+  },
+  {
+    "id": 901,
+    "text_cn": "用琴音疗愈（下场战斗结束时，若卡组中有【286】，永久加{0}生命上限）",
+    "text_en": "Heal with Music (If deck contains 【286】 at the next battle's end, permanently gain {0} Max HP)",
+    "text_tw": "用琴音療愈（下場戰鬥結束時，若卡組中有【286】，永久加{0}生命上限）",
+    "text_cn_resolved": "用琴音疗愈（下场战斗结束时，若卡组中有[普通攻击]，永久加{0}生命上限）",
+    "text_en_resolved": "Heal with Music (If deck contains [Normal Attack] at the next battle's end, permanently gain {0} Max HP)",
+    "text_tw_resolved": "用琴音療愈（下場戰鬥結束時，若卡組中有[普通攻擊]，永久加{0}生命上限）"
+  },
+  {
+    "id": 902,
+    "text_cn": "聆听琴音（生命上限+{0}）",
+    "text_en": "Listen to Music (Max HP+{0})",
+    "text_tw": "聆聽琴音（生命上限+{0}）",
+    "text_cn_resolved": "聆听琴音（生命上限+{0}）",
+    "text_en_resolved": "Listen to Music (Max HP+{0})",
+    "text_tw_resolved": "聆聽琴音（生命上限+{0}）"
+  },
+  {
+    "id": 903,
+    "text_cn": "虚心请教（修为-{0}，获得3级的【{1}】）",
+    "text_en": "Seek Guidance Humbly (Cultivation-{0}, gain 1 Level 3 【{1}】)",
+    "text_tw": "虛心請教（修為-{0}，獲得3級的【{1}】）",
+    "text_cn_resolved": "虚心请教（修为-{0}，获得3级的[Card {1}]）",
+    "text_en_resolved": "Seek Guidance Humbly (Cultivation-{0}, gain 1 Level 3 [Card {1}])",
+    "text_tw_resolved": "虛心請教（修為-{0}，獲得3級的[Card {1}]）"
+  },
+  {
+    "id": 904,
+    "text_cn": "沉浸于琴音疗愈（下场战斗结束时，若卡组中至少有2张【286】，永久加{0}生命上限）",
+    "text_en": "Immerse in Musical Healing (If deck contains ≥2 【286】 at the next battle's end, permanently gain {0} Max HP)",
+    "text_tw": "沉浸於琴音療愈（下場戰鬥結束時，若卡組中至少有2張【286】，永久加{0}生命上限）",
+    "text_cn_resolved": "沉浸于琴音疗愈（下场战斗结束时，若卡组中至少有2张[普通攻击]，永久加{0}生命上限）",
+    "text_en_resolved": "Immerse in Musical Healing (If deck contains ≥2 [Normal Attack] at the next battle's end, permanently gain {0} Max HP)",
+    "text_tw_resolved": "沉浸於琴音療愈（下場戰鬥結束時，若卡組中至少有2張[普通攻擊]，永久加{0}生命上限）"
+  },
+  {
+    "id": 1001,
+    "text_cn": "优先交换门派招式（若卡组前两格为同境界的门派【KEYWORD_常规牌】，交换二者的等级）",
+    "text_en": "Prioritize Sect Technique Swap (If first two deck slots are same-Phase sect【KEYWORD_常规牌】, swap their levels)",
+    "text_tw": "優先交換門派招式（若卡組前兩格為同境界的門派【KEYWORD_常规牌】，交換二者的等級）",
+    "text_cn_resolved": "优先交换门派招式（若卡组前两格为同境界的门派[常规牌]，交换二者的等级）",
+    "text_en_resolved": "Prioritize Sect Technique Swap (If first two deck slots are same-Phase sect[Regular Card], swap their levels)",
+    "text_tw_resolved": "優先交換門派招式（若卡組前兩格為同境界的門派[常規牌]，交換二者的等級）"
+  },
+  {
+    "id": 1002,
+    "text_cn": "先领悟更多门派招式（修为-1，获得【runtimeParam】）",
+    "text_en": "Learn More Sect Techniques First (Cultivation -1, gain 【runtimeParam】)",
+    "text_tw": "先領悟更多門派招式（修為-1，獲得【runtimeParam】）",
+    "text_cn_resolved": "先领悟更多门派招式（修为-1，获得【runtimeParam】）",
+    "text_en_resolved": "Learn More Sect Techniques First (Cultivation -1, gain 【runtimeParam】)",
+    "text_tw_resolved": "先領悟更多門派招式（修為-1，獲得【runtimeParam】）"
+  },
+  {
+    "id": 1003,
+    "text_cn": "先领悟更多门派招式（修为-1，获得【runtimeParam】）",
+    "text_en": "Learn More Sect Techniques First (Cultivation -1, gain 【runtimeParam】)",
+    "text_tw": "先領悟更多門派招式（修為-1，獲得【runtimeParam】）",
+    "text_cn_resolved": "先领悟更多门派招式（修为-1，获得【runtimeParam】）",
+    "text_en_resolved": "Learn More Sect Techniques First (Cultivation -1, gain 【runtimeParam】)",
+    "text_tw_resolved": "先領悟更多門派招式（修為-1，獲得【runtimeParam】）"
+  },
+  {
+    "id": 1101,
+    "text_cn": "回忆门派招式（修为-{0}，换牌机会-{1}，自选并获得1张当前境界的门派【KEYWORD_常规牌】）",
+    "text_en": "Recall Sect Techniques (Cultivation-{0}, Exchange Card Chance-{1}, select and gain 1 current-Phase sect 【KEYWORD_常规牌】)",
+    "text_tw": "回憶門派招式（修爲-{0}，換牌機會-{1}，自選並獲得1張當前境界的門派【KEYWORD_常规牌】）",
+    "text_cn_resolved": "回忆门派招式（修为-{0}，换牌机会-{1}，自选并获得1张当前境界的门派[常规牌]）",
+    "text_en_resolved": "Recall Sect Techniques (Cultivation-{0}, Exchange Card Chance-{1}, select and gain 1 current-Phase sect [Regular Card])",
+    "text_tw_resolved": "回憶門派招式（修爲-{0}，換牌機會-{1}，自選並獲得1張當前境界的門派[常規牌]）"
+  },
+  {
+    "id": 1102,
+    "text_cn": "推倒书架（随机变换所有手牌）",
+    "text_en": "Topple Bookshelf (Randomly transform all hand cards)",
+    "text_tw": "推倒書架（隨機變換所有手牌）",
+    "text_cn_resolved": "推倒书架（随机变换所有手牌）",
+    "text_en_resolved": "Topple Bookshelf (Randomly transform all hand cards)",
+    "text_tw_resolved": "推倒書架（隨機變換所有手牌）"
+  },
+  {
+    "id": 1103,
+    "text_cn": "尝试学习门派秘籍（修为-{0}，随机获得1张门派秘术牌）",
+    "text_en": "Attempt Sect Manual Study (Cultivation-{0}, randomly gain 1 sect Secret Enchantment)",
+    "text_tw": "嚐試學習門派秘籍（修為-{0}，隨機獲得1張門派秘術牌）",
+    "text_cn_resolved": "尝试学习门派秘籍（修为-{0}，随机获得1张门派秘术牌）",
+    "text_en_resolved": "Attempt Sect Manual Study (Cultivation-{0}, randomly gain 1 sect Secret Enchantment)",
+    "text_tw_resolved": "嚐試學習門派秘籍（修為-{0}，隨機獲得1張門派秘術牌）"
+  },
+  {
+    "id": 1104,
+    "text_cn": "睡一觉（每有2次换牌机会就加1命元，最多{0}）",
+    "text_en": "Sleep (Gain 1 Destiny per 2 Exchange Card Chance, max {0})",
+    "text_tw": "睡一覺（每有2次換牌機會就加1命元，最多{0}）",
+    "text_cn_resolved": "睡一觉（每有2次换牌机会就加1命元，最多{0}）",
+    "text_en_resolved": "Sleep (Gain 1 Destiny per 2 Exchange Card Chance, max {0})",
+    "text_tw_resolved": "睡一覺（每有2次換牌機會就加1命元，最多{0}）"
+  },
+  {
+    "id": 1105,
+    "text_cn": "练习现有招式（随机升级手牌或卡组中的1张1级牌）",
+    "text_en": "Practice Existing Techniques (Randomly Upgrade 1 Level 1 card in hand/deck)",
+    "text_tw": "練習現有招式（隨機升級手牌或卡組中的1張1級牌）",
+    "text_cn_resolved": "练习现有招式（随机升级手牌或卡组中的1张1级牌）",
+    "text_en_resolved": "Practice Existing Techniques (Randomly Upgrade 1 Level 1 card in hand/deck)",
+    "text_tw_resolved": "練習現有招式（隨機升級手牌或卡組中的1張1級牌）"
+  },
+  {
+    "id": 1201,
+    "text_cn": "持续牌（获得{0}张持续牌）",
+    "text_en": "Continuous Cards (Gain {0} Continuous cards)",
+    "text_tw": "持續牌（獲得{0}張持續牌）",
+    "text_cn_resolved": "持续牌（获得{0}张持续牌）",
+    "text_en_resolved": "Continuous Cards (Gain {0} Continuous cards)",
+    "text_tw_resolved": "持續牌（獲得{0}張持續牌）"
+  },
+  {
+    "id": 1202,
+    "text_cn": "与再次行动有关的牌（获得{0}张描述中含“再次行动”或“身法”的牌）",
+    "text_en": "Cards about Chase (Gain {0} cards with \"Chase\" or \"Agility\" descriptions)",
+    "text_tw": "與再次行動有關的牌（獲得{0}張描述中含“再次行動”或“身法”的牌）",
+    "text_cn_resolved": "与再次行动有关的牌（获得{0}张描述中含“再次行动”或“身法”的牌）",
+    "text_en_resolved": "Cards about Chase (Gain {0} cards with \"Chase\" or \"Agility\" descriptions)",
+    "text_tw_resolved": "與再次行動有關的牌（獲得{0}張描述中含“再次行動”或“身法”的牌）"
+  },
+  {
+    "id": 1203,
+    "text_cn": "强化过的牌（获得{0}张金丹期以上的2级牌）",
+    "text_en": "Enhanced Cards (Gain {0} Level 2 cards from Virtuoso Phase or above)",
+    "text_tw": "強化過的牌（獲得{0}張金丹期以上的2級牌）",
+    "text_cn_resolved": "强化过的牌（获得{0}张金丹期以上的2级牌）",
+    "text_en_resolved": "Enhanced Cards (Gain {0} Level 2 cards from Virtuoso Phase or above)",
+    "text_tw_resolved": "強化過的牌（獲得{0}張金丹期以上的2級牌）"
+  },
+  {
+    "id": 1204,
+    "text_cn": "多段攻击牌（获得{0}张攻击次数≥2的牌）",
+    "text_en": "Multi-attack Cards (Gain {0} cards with ≥2 attacks)",
+    "text_tw": "多段攻擊牌（獲得{0}張攻擊次數≥2的牌）",
+    "text_cn_resolved": "多段攻击牌（获得{0}张攻击次数≥2的牌）",
+    "text_en_resolved": "Multi-attack Cards (Gain {0} cards with ≥2 attacks)",
+    "text_tw_resolved": "多段攻擊牌（獲得{0}張攻擊次數≥2的牌）"
+  },
+  {
+    "id": 1205,
+    "text_cn": "加灵气的牌（获得{0}张金丹期以上的加灵气的牌）",
+    "text_en": "Qi Gain Cards (Gain {0} Qi Gain cards from Virtuoso Phase or above)",
+    "text_tw": "加靈氣的牌（獲得{0}張金丹期以上的加靈氣的牌）",
+    "text_cn_resolved": "加灵气的牌（获得{0}张金丹期以上的加灵气的牌）",
+    "text_en_resolved": "Qi Gain Cards (Gain {0} Qi Gain cards from Virtuoso Phase or above)",
+    "text_tw_resolved": "加靈氣的牌（獲得{0}張金丹期以上的加靈氣的牌）"
+  },
+  {
+    "id": 1206,
+    "text_cn": "耗灵气的牌（获得{0}张金丹期以上的耗灵气的牌）",
+    "text_en": "Qi Cost Cards (Gain {0} Qi Cost cards from Virtuoso Phase or above)",
+    "text_tw": "耗靈氣的牌（獲得{0}張金丹期以上的耗靈氣的牌）",
+    "text_cn_resolved": "耗灵气的牌（获得{0}张金丹期以上的耗灵气的牌）",
+    "text_en_resolved": "Qi Cost Cards (Gain {0} Qi Cost cards from Virtuoso Phase or above)",
+    "text_tw_resolved": "耗靈氣的牌（獲得{0}張金丹期以上的耗靈氣的牌）"
+  },
+  {
+    "id": 1301,
+    "text_cn": "立即观测未来（若已到达化神期：进行{0}次道韵预感）",
+    "text_en": "Observe Future Immediately (If at Incarnation Phase: Perform {0} Daoist Rhyme Omens)",
+    "text_tw": "立即觀測未來（若已到達化神期：進行{0}次道韻預感）",
+    "text_cn_resolved": "立即观测未来（若已到达化神期：进行{0}次道韵预感）",
+    "text_en_resolved": "Observe Future Immediately (If at Incarnation Phase: Perform {0} Daoist Rhyme Omens)",
+    "text_tw_resolved": "立即觀測未來（若已到達化神期：進行{0}次道韻預感）"
+  },
+  {
+    "id": 1302,
+    "text_cn": "把握机会，认真选择（若已到达化神期：命元-{0}，进行1次道韵预感，获得的牌变为2级）",
+    "text_en": "Seize Opportunity (If at Incarnation Phase: Destiny-{0}, perform 1 Daoist Rhyme Omen, and the card becomes Level 2)",
+    "text_tw": "把握機會，認真選擇（若已到達化神期：命元-{0}，進行1次道韻預感，獲得的牌變為2級）",
+    "text_cn_resolved": "把握机会，认真选择（若已到达化神期：命元-{0}，进行1次道韵预感，获得的牌变为2级）",
+    "text_en_resolved": "Seize Opportunity (If at Incarnation Phase: Destiny-{0}, perform 1 Daoist Rhyme Omen, and the card becomes Level 2)",
+    "text_tw_resolved": "把握機會，認真選擇（若已到達化神期：命元-{0}，進行1次道韻預感，獲得的牌變為2級）"
+  },
+  {
+    "id": 1303,
+    "text_cn": "不急，好机会还在后头（命元-{0}，向牌池中加入{1}张【46】）",
+    "text_en": "Wait for Better Chances (Destiny-{0}, add {1} 【46】 to card pool)",
+    "text_tw": "不急，好機會還在後頭（命元-{0}，向牌池中加入{1}張【46】）",
+    "text_cn_resolved": "不急，好机会还在后头（命元-{0}，向牌池中加入{1}张[道韵气息]）",
+    "text_en_resolved": "Wait for Better Chances (Destiny-{0}, add {1} [Daoist Rhyme Aura] to card pool)",
+    "text_tw_resolved": "不急，好機會還在後頭（命元-{0}，向牌池中加入{1}張[道韻氣息]）"
+  },
+  {
+    "id": 1401,
+    "text_cn": "复制常规招式（若卡组第一格为【KEYWORD_常规牌】，将其{0}张1级复制加入牌池）",
+    "text_en": "Copy Regular Techniques (If first deck slot is a 【KEYWORD_常规牌】, add {0} Level 1 copies to card pool)",
+    "text_tw": "複製常規招式（若卡組第一格為【KEYWORD_常规牌】，將其{0}張1級複製加入牌池）",
+    "text_cn_resolved": "复制常规招式（若卡组第一格为[常规牌]，将其{0}张1级复制加入牌池）",
+    "text_en_resolved": "Copy Regular Techniques (If first deck slot is a [Regular Card], add {0} Level 1 copies to card pool)",
+    "text_tw_resolved": "複製常規招式（若卡組第一格為[常規牌]，將其{0}張1級複製加入牌池）"
+  },
+  {
+    "id": 1402,
+    "text_cn": "逆施复制之镜（移除卡组第一格牌在牌池中的所有同名牌）",
+    "text_en": "Reverse Mirror of Copy (Remove all same-name cards of first deck slot from card pool)",
+    "text_tw": "逆施複製之鏡（移除卡組第一格牌在牌池中的所有同名牌）",
+    "text_cn_resolved": "逆施复制之镜（移除卡组第一格牌在牌池中的所有同名牌）",
+    "text_en_resolved": "Reverse Mirror of Copy (Remove all same-name cards of first deck slot from card pool)",
+    "text_tw_resolved": "逆施複製之鏡（移除卡組第一格牌在牌池中的所有同名牌）"
+  },
+  {
+    "id": 1403,
+    "text_cn": "强化复制常规招式（若卡组第一格为【KEYWORD_常规牌】，则命元-{0}，将其{1}张1级复制加入牌池）",
+    "text_en": "Enhance to Copy Regular Techniques (If first deck slot is a 【KEYWORD_常规牌】, Destiny-{0}, add {1} Level 1 copies to card pool)",
+    "text_tw": "強化複製常規招式（若卡組第一格為【KEYWORD_常规牌】，則命元-{0}，將其{1}張1級複製加入牌池）",
+    "text_cn_resolved": "强化复制常规招式（若卡组第一格为[常规牌]，则命元-{0}，将其{1}张1级复制加入牌池）",
+    "text_en_resolved": "Enhance to Copy Regular Techniques (If first deck slot is a [Regular Card], Destiny-{0}, add {1} Level 1 copies to card pool)",
+    "text_tw_resolved": "強化複製常規招式（若卡組第一格為[常規牌]，則命元-{0}，將其{1}張1級複製加入牌池）"
+  },
+  {
+    "id": 1404,
+    "text_cn": "复制并立即使用（若卡组第一格为【KEYWORD_常规牌】，则命元-{0}，修为-1，获得其1张1级复制）",
+    "text_en": "Copy and Use Immediately (If first deck slot is a 【KEYWORD_常规牌】, Destiny-{0}, Cultivation-1, gain 1 Level 1 copy)",
+    "text_tw": "複製並立即使用（若卡組第一格為【KEYWORD_常规牌】，則命元-{0}，修為-1，獲得其1張1級複製）",
+    "text_cn_resolved": "复制并立即使用（若卡组第一格为[常规牌]，则命元-{0}，修为-1，获得其1张1级复制）",
+    "text_en_resolved": "Copy and Use Immediately (If first deck slot is a [Regular Card], Destiny-{0}, Cultivation-1, gain 1 Level 1 copy)",
+    "text_tw_resolved": "複製並立即使用（若卡組第一格為[常規牌]，則命元-{0}，修為-1，獲得其1張1級複製）"
+  },
+  {
+    "id": 1501,
+    "text_cn": "大凶，准备退路（下场战斗若失败所受命元伤害-{0}）",
+    "text_en": "Great Misfortune, Prepare Escape (If next battle is lost, Destiny Damage taken -{0})",
+    "text_tw": "大凶，準備退路（下場戰鬥若失敗所受命元傷害-{0}）",
+    "text_cn_resolved": "大凶，准备退路（下场战斗若失败所受命元伤害-{0}）",
+    "text_en_resolved": "Great Misfortune, Prepare Escape (If next battle is lost, Destiny Damage taken -{0})",
+    "text_tw_resolved": "大凶，準備退路（下場戰鬥若失敗所受命元傷害-{0}）"
+  },
+  {
+    "id": 1502,
+    "text_cn": "小吉，磨砺招式（下场战斗若胜利加{0}换牌机会）",
+    "text_en": "Minor Fortune, Hone Techniques (If next battle is won, Exchange +{0})",
+    "text_tw": "小吉，磨礪招式（下場戰鬥若勝利加{0}換牌機會）",
+    "text_cn_resolved": "小吉，磨砺招式（下场战斗若胜利加{0}换牌机会）",
+    "text_en_resolved": "Minor Fortune, Hone Techniques (If next battle is won, Exchange +{0})",
+    "text_tw_resolved": "小吉，磨礪招式（下場戰鬥若勝利加{0}換牌機會）"
+  },
+  {
+    "id": 1503,
+    "text_cn": "中吉，稳固根基（下场战斗若胜利永久加{0}生命上限）",
+    "text_en": "Moderate Fortune, Stabilize Foundations (If next battle is won, permanently gain +{0} Max HP)",
+    "text_tw": "中吉，穩固根基（下場戰鬥若勝利永久加{0}生命上限）",
+    "text_cn_resolved": "中吉，稳固根基（下场战斗若胜利永久加{0}生命上限）",
+    "text_en_resolved": "Moderate Fortune, Stabilize Foundations (If next battle is won, permanently gain +{0} Max HP)",
+    "text_tw_resolved": "中吉，穩固根基（下場戰鬥若勝利永久加{0}生命上限）"
+  },
+  {
+    "id": 1504,
+    "text_cn": "大吉，生机不绝（下场战斗若胜利加{0}命元）",
+    "text_en": "Great Fortune, Unending Vitality (If next battle is won, Destiny +{0})",
+    "text_tw": "大吉，生機不絕（下場戰鬥若勝利加{0}命元）",
+    "text_cn_resolved": "大吉，生机不绝（下场战斗若胜利加{0}命元）",
+    "text_en_resolved": "Great Fortune, Unending Vitality (If next battle is won, Destiny +{0})",
+    "text_tw_resolved": "大吉，生機不絕（下場戰鬥若勝利加{0}命元）"
+  },
+  {
+    "id": 1601,
+    "text_cn": "强健筋骨（生命上限+{0}）",
+    "text_en": "Strengthen Bones (Max HP+{0})",
+    "text_tw": "強健筋骨（生命上限+{0}）",
+    "text_cn_resolved": "强健筋骨（生命上限+{0}）",
+    "text_en_resolved": "Strengthen Bones (Max HP+{0})",
+    "text_tw_resolved": "強健筋骨（生命上限+{0}）"
+  },
+  {
+    "id": 1602,
+    "text_cn": "活跃心肺（换牌机会+{0}）",
+    "text_en": "Activate Lung (Exchange Card Chance+{0})",
+    "text_tw": "活躍心肺（換牌機會+{0}）",
+    "text_cn_resolved": "活跃心肺（换牌机会+{0}）",
+    "text_en_resolved": "Activate Lung (Exchange Card Chance+{0})",
+    "text_tw_resolved": "活躍心肺（換牌機會+{0}）"
+  },
+  {
+    "id": 1603,
+    "text_cn": "涤清肠胃（移除卡组第一格牌在牌池中的所有同名牌）",
+    "text_en": "Purge Stomach (Remove all same-name cards of the first deck slot from the card pool)",
+    "text_tw": "滌清腸胃（移除卡組第一格牌在牌池中的所有同名牌）",
+    "text_cn_resolved": "涤清肠胃（移除卡组第一格牌在牌池中的所有同名牌）",
+    "text_en_resolved": "Purge Stomach (Remove all same-name cards of the first deck slot from the card pool)",
+    "text_tw_resolved": "滌清腸胃（移除卡組第一格牌在牌池中的所有同名牌）"
+  },
+  {
+    "id": 1604,
+    "text_cn": "养护肝胆（向牌池中加入{0}张【runtimeParam】）",
+    "text_en": "Maintain Liver and Gallbladder (Add {0} 【runtimeParam】 to card pool)",
+    "text_tw": "養護肝膽（向牌池中加入{0}張【runtimeParam】）",
+    "text_cn_resolved": "养护肝胆（向牌池中加入{0}张【runtimeParam】）",
+    "text_en_resolved": "Maintain Liver and Gallbladder (Add {0} 【runtimeParam】 to card pool)",
+    "text_tw_resolved": "養護肝膽（向牌池中加入{0}張【runtimeParam】）"
+  },
+  {
+    "id": 1701,
+    "text_cn": "转换招式（将卡组第一格的门派牌变为同等级同境界的其他牌）",
+    "text_en": "Convert Techniques (Transform the sect card in the first slot into another same-level/Phase sect card)",
+    "text_tw": "轉換招式（將卡組第一格的門派牌變為同等級同境界的其他牌）",
+    "text_cn_resolved": "转换招式（将卡组第一格的门派牌变为同等级同境界的其他牌）",
+    "text_en_resolved": "Convert Techniques (Transform the sect card in the first slot into another same-level/Phase sect card)",
+    "text_tw_resolved": "轉換招式（將卡組第一格的門派牌變為同等級同境界的其他牌）"
+  },
+  {
+    "id": 1702,
+    "text_cn": "转换更多招式（命元-{0}，将前两格的门派牌变为同等级同境界的其他牌）",
+    "text_en": "Convert More Techniques (Destiny-{0}, transform the sect cards in the first two slots into other same-level/Phase sect cards)",
+    "text_tw": "轉換更多招式（命元-{0}，將前兩格的門派牌變為同等級同境界的其他牌）",
+    "text_cn_resolved": "转换更多招式（命元-{0}，将前两格的门派牌变为同等级同境界的其他牌）",
+    "text_en_resolved": "Convert More Techniques (Destiny-{0}, transform the sect cards in the first two slots into other same-level/Phase sect cards)",
+    "text_tw_resolved": "轉換更多招式（命元-{0}，將前兩格的門派牌變為同等級同境界的其他牌）"
+  },
+  {
+    "id": 1703,
+    "text_cn": "辅助领悟（修为-1，获得1张【runtimeParam】）",
+    "text_en": "Aid Comprehension (Cultivation-1, gain 1 【runtimeParam】)",
+    "text_tw": "輔助領悟（修為-1，獲得1張【runtimeParam】）",
+    "text_cn_resolved": "辅助领悟（修为-1，获得1张【runtimeParam】）",
+    "text_en_resolved": "Aid Comprehension (Cultivation-1, gain 1 【runtimeParam】)",
+    "text_tw_resolved": "輔助領悟（修為-1，獲得1張【runtimeParam】）"
+  },
+  {
+    "id": 1801,
+    "text_cn": "打坐悟道（修为-{0}，抽{0}张牌）",
+    "text_en": "Meditative Enlightenment (Cultivation-{0}, draw {0} cards)",
+    "text_tw": "打坐悟道（修為-{0}，抽{0}張牌）",
+    "text_cn_resolved": "打坐悟道（修为-{0}，抽{0}张牌）",
+    "text_en_resolved": "Meditative Enlightenment (Cultivation-{0}, draw {0} cards)",
+    "text_tw_resolved": "打坐悟道（修為-{0}，抽{0}張牌）"
+  },
+  {
+    "id": 1802,
+    "text_cn": "日积月累，水滴石穿（每有4次换牌机会就加1换牌机会）",
+    "text_en": "Dripping Water Pierces Stone (Gain 1 Exchange Card Chance per 4 Exchange Card Chances)",
+    "text_tw": "日積月累，水滴石穿（每有4次換牌機會就加1換牌機會）",
+    "text_cn_resolved": "日积月累，水滴石穿（每有4次换牌机会就加1换牌机会）",
+    "text_en_resolved": "Dripping Water Pierces Stone (Gain 1 Exchange Card Chance per 4 Exchange Card Chances)",
+    "text_tw_resolved": "日積月累，水滴石穿（每有4次換牌機會就加1換牌機會）"
+  },
+  {
+    "id": 1803,
+    "text_cn": "无欲无求，道心稳固（换牌机会-{0}，生命上限+{1}）",
+    "text_en": "Desireless Daoist Heart (Exchange Card Chance-{0}, Max HP+{1})",
+    "text_tw": "無欲無求，道心穩固（換牌機會-{0}，生命上限+{1}）",
+    "text_cn_resolved": "无欲无求，道心稳固（换牌机会-{0}，生命上限+{1}）",
+    "text_en_resolved": "Desireless Daoist Heart (Exchange Card Chance-{0}, Max HP+{1})",
+    "text_tw_resolved": "無欲無求，道心穩固（換牌機會-{0}，生命上限+{1}）"
+  },
+  {
+    "id": 1804,
+    "text_cn": "逆练功法，尽快领悟（生命上限-{0}，换牌机会+{1}）",
+    "text_en": "Reverse Cultivation for Insight (Max HP-{0}, Exchange Card Chance+{1})",
+    "text_tw": "逆練功法，盡快領悟（生命上限-{0}，換牌機會+{1}）",
+    "text_cn_resolved": "逆练功法，尽快领悟（生命上限-{0}，换牌机会+{1}）",
+    "text_en_resolved": "Reverse Cultivation for Insight (Max HP-{0}, Exchange Card Chance+{1})",
+    "text_tw_resolved": "逆練功法，盡快領悟（生命上限-{0}，換牌機會+{1}）"
+  },
+  {
+    "id": 1901,
+    "text_cn": "换取大量秘籍（命元-{0}，换牌机会+{1}）",
+    "text_en": "Trade for Bulk Manuals (Destiny-{0}, Exchange Card Chance+{1})",
+    "text_tw": "換取大量秘籍（命元-{0}，換牌機會+{1}）",
+    "text_cn_resolved": "换取大量秘籍（命元-{0}，换牌机会+{1}）",
+    "text_en_resolved": "Trade for Bulk Manuals (Destiny-{0}, Exchange Card Chance+{1})",
+    "text_tw_resolved": "換取大量秘籍（命元-{0}，換牌機會+{1}）"
+  },
+  {
+    "id": 1902,
+    "text_cn": "换取秘籍（命元-{0}，换牌机会+{1}）",
+    "text_en": "Trade for Manuals (Destiny -{0}, Exchange Card Chance+{1})",
+    "text_tw": "換取秘籍（命元-{0}，換牌機會+{1}）",
+    "text_cn_resolved": "换取秘籍（命元-{0}，换牌机会+{1}）",
+    "text_en_resolved": "Trade for Manuals (Destiny -{0}, Exchange Card Chance+{1})",
+    "text_tw_resolved": "換取秘籍（命元-{0}，換牌機會+{1}）"
+  },
+  {
+    "id": 1903,
+    "text_cn": "换取修为（命元-{0}，修为+{1}）",
+    "text_en": "Trade for Cultivation (Destiny-{0}, Cultivation+{1})",
+    "text_tw": "換取修為（命元-{0}，修為+{1}）",
+    "text_cn_resolved": "换取修为（命元-{0}，修为+{1}）",
+    "text_en_resolved": "Trade for Cultivation (Destiny-{0}, Cultivation+{1})",
+    "text_tw_resolved": "換取修為（命元-{0}，修為+{1}）"
+  },
+  {
+    "id": 1904,
+    "text_cn": "换取招式心得（命元-{0}，抽{1}张当前境界的牌）",
+    "text_en": "Trade for Technique Insights (Destiny-{0}, draw {1} current-Phase cards)",
+    "text_tw": "換取招式心得（命元-{0}，抽{1}張當前境界的牌）",
+    "text_cn_resolved": "换取招式心得（命元-{0}，抽{1}张当前境界的牌）",
+    "text_en_resolved": "Trade for Technique Insights (Destiny-{0}, draw {1} current-Phase cards)",
+    "text_tw_resolved": "換取招式心得（命元-{0}，抽{1}張當前境界的牌）"
+  },
+  {
+    "id": 1905,
+    "text_cn": "揍玄巳一顿，抢夺命元（命元+{0}）",
+    "text_en": "Beat Xuan Si and Steal Destiny (Destiny+{0})",
+    "text_tw": "揍玄巳一頓，搶奪命元（命元+{0}）",
+    "text_cn_resolved": "揍玄巳一顿，抢夺命元（命元+{0}）",
+    "text_en_resolved": "Beat Xuan Si and Steal Destiny (Destiny+{0})",
+    "text_tw_resolved": "揍玄巳一頓，搶奪命元（命元+{0}）"
+  },
+  {
+    "id": 2001,
+    "text_cn": "神来之笔（将卡组第一格牌变为【{0}】，继承等级）",
+    "text_en": "Divine Brush (Transform the first deck card into 【{0}】 (inherits level))",
+    "text_tw": "神來之筆（將卡組第一格牌變為【{0}】，繼承等級）",
+    "text_cn_resolved": "神来之笔（将卡组第一格牌变为[Card {0}]，继承等级）",
+    "text_en_resolved": "Divine Brush (Transform the first deck card into [Card {0}] (inherits level))",
+    "text_tw_resolved": "神來之筆（將卡組第一格牌變為[Card {0}]，繼承等級）"
+  },
+  {
+    "id": 2002,
+    "text_cn": "触类旁通（修为-{0}，获得{0}张【{1}】）",
+    "text_en": "Cross-Discipline Insight (Cultivation-{0}, gain {0} 【{1}】)",
+    "text_tw": "觸類旁通（修為-{0}，獲得{0}張【{1}】）",
+    "text_cn_resolved": "触类旁通（修为-{0}，获得{0}张[Card {1}]）",
+    "text_en_resolved": "Cross-Discipline Insight (Cultivation-{0}, gain {0} [Card {1}])",
+    "text_tw_resolved": "觸類旁通（修為-{0}，獲得{0}張[Card {1}]）"
+  },
+  {
+    "id": 2003,
+    "text_cn": "以画入道（修为-{0}，获得{0}张【{1}】）",
+    "text_en": "Ask Dao By Paint (Cultivation-{0}, gain {0} 【{1}】)",
+    "text_tw": "以畫入道（修為-{0}，獲得{0}張【{1}】）",
+    "text_cn_resolved": "以画入道（修为-{0}，获得{0}张[Card {1}]）",
+    "text_en_resolved": "Ask Dao By Paint (Cultivation-{0}, gain {0} [Card {1}])",
+    "text_tw_resolved": "以畫入道（修為-{0}，獲得{0}張[Card {1}]）"
+  },
+  {
+    "id": 2004,
+    "text_cn": "随便练练（修为-{0}，获得{0}张【{1}】）",
+    "text_en": "Casual Practice (Cultivation-{0}, gain {0} 【{1}】)",
+    "text_tw": "隨便練練（修為-{0}，獲得{0}張【{1}】）",
+    "text_cn_resolved": "随便练练（修为-{0}，获得{0}张[Card {1}]）",
+    "text_en_resolved": "Casual Practice (Cultivation-{0}, gain {0} [Card {1}])",
+    "text_tw_resolved": "隨便練練（修為-{0}，獲得{0}張[Card {1}]）"
+  },
+  {
+    "id": 2101,
+    "text_cn": "选这颗（修为-{0}，获得{0}张【runtimeParam】）",
+    "text_en": "Choose This (Cultivation-{0}, gain {0} 【runtimeParam】)",
+    "text_tw": "選這顆（修為-{0}，獲得{0}張【runtimeParam】）",
+    "text_cn_resolved": "选这颗（修为-{0}，获得{0}张【runtimeParam】）",
+    "text_en_resolved": "Choose This (Cultivation-{0}, gain {0} 【runtimeParam】)",
+    "text_tw_resolved": "選這顆（修為-{0}，獲得{0}張【runtimeParam】）"
+  },
+  {
+    "id": 2102,
+    "text_cn": "选这颗（修为-{0}，获得{0}张【runtimeParam】）",
+    "text_en": "Choose This (Cultivation-{0}, gain {0} 【runtimeParam】)",
+    "text_tw": "選這顆（修為-{0}，獲得{0}張【runtimeParam】）",
+    "text_cn_resolved": "选这颗（修为-{0}，获得{0}张【runtimeParam】）",
+    "text_en_resolved": "Choose This (Cultivation-{0}, gain {0} 【runtimeParam】)",
+    "text_tw_resolved": "選這顆（修為-{0}，獲得{0}張【runtimeParam】）"
+  },
+  {
+    "id": 2103,
+    "text_cn": "借助鲛珠灵气领悟招式（修为-{0}，获得{0}张【runtimeParam】）",
+    "text_en": "Learn Techniques via Merpeople Pearl (Cultivation-{0}, gain {0} 【runtimeParam】)",
+    "text_tw": "借助鮫珠靈氣領悟招式（修為-{0}，獲得{0}張【runtimeParam】）",
+    "text_cn_resolved": "借助鲛珠灵气领悟招式（修为-{0}，获得{0}张【runtimeParam】）",
+    "text_en_resolved": "Learn Techniques via Merpeople Pearl (Cultivation-{0}, gain {0} 【runtimeParam】)",
+    "text_tw_resolved": "借助鮫珠靈氣領悟招式（修為-{0}，獲得{0}張【runtimeParam】）"
+  },
+  {
+    "id": 2104,
+    "text_cn": "借助鲛珠灵气领悟招式（修为-{0}，获得{0}张【runtimeParam】）",
+    "text_en": "Learn Techniques via Merpeople Pearl (Cultivation-{0}, gain {0} 【runtimeParam】)",
+    "text_tw": "借助鮫珠靈氣領悟招式（修為-{0}，獲得{0}張【runtimeParam】）",
+    "text_cn_resolved": "借助鲛珠灵气领悟招式（修为-{0}，获得{0}张【runtimeParam】）",
+    "text_en_resolved": "Learn Techniques via Merpeople Pearl (Cultivation-{0}, gain {0} 【runtimeParam】)",
+    "text_tw_resolved": "借助鮫珠靈氣領悟招式（修為-{0}，獲得{0}張【runtimeParam】）"
+  },
+  {
+    "id": 2105,
+    "text_cn": "将鲛珠炼化（命元+{0}）",
+    "text_en": "Refine Merpeople Pearl (Destiny+{0})",
+    "text_tw": "將鮫珠煉化（命元+{0}）",
+    "text_cn_resolved": "将鲛珠炼化（命元+{0}）",
+    "text_en_resolved": "Refine Merpeople Pearl (Destiny+{0})",
+    "text_tw_resolved": "將鮫珠煉化（命元+{0}）"
+  },
+  {
+    "id": 2201,
+    "text_cn": "拿一件法宝（修为-{0}，命元-{1}，获得【runtimeParam】）",
+    "text_en": "Take a Talisman (Cultivation-{0}, Destiny-{1}, gain 【runtimeParam】)",
+    "text_tw": "拿一件法寶（修為-{0}，命元-{1}，獲得【runtimeParam】）",
+    "text_cn_resolved": "拿一件法宝（修为-{0}，命元-{1}，获得【runtimeParam】）",
+    "text_en_resolved": "Take a Talisman (Cultivation-{0}, Destiny-{1}, gain 【runtimeParam】)",
+    "text_tw_resolved": "拿一件法寶（修為-{0}，命元-{1}，獲得【runtimeParam】）"
+  },
+  {
+    "id": 2202,
+    "text_cn": "拿一本门派秘籍（修为-{0}，获得【runtimeParam】）",
+    "text_en": "Take a Sect Manual (Cultivation-{0}, gain 【runtimeParam】)",
+    "text_tw": "拿一本門派秘籍（修為-{0}，獲得【runtimeParam】）",
+    "text_cn_resolved": "拿一本门派秘籍（修为-{0}，获得【runtimeParam】）",
+    "text_en_resolved": "Take a Sect Manual (Cultivation-{0}, gain 【runtimeParam】)",
+    "text_tw_resolved": "拿一本門派秘籍（修為-{0}，獲得【runtimeParam】）"
+  },
+  {
+    "id": 2203,
+    "text_cn": "拿一本副职秘籍（修为-{0}，获得【runtimeParam】）",
+    "text_en": "Take a Side Jobs Manual (Cultivation-{0}, gain 【runtimeParam】)",
+    "text_tw": "拿一本副職秘籍（修為-{0}，獲得【runtimeParam】）",
+    "text_cn_resolved": "拿一本副职秘籍（修为-{0}，获得【runtimeParam】）",
+    "text_en_resolved": "Take a Side Jobs Manual (Cultivation-{0}, gain 【runtimeParam】)",
+    "text_tw_resolved": "拿一本副職秘籍（修為-{0}，獲得【runtimeParam】）"
+  },
+  {
+    "id": 2204,
+    "text_cn": "拿一只灵宠（修为-{0}，命元-{1}，获得【runtimeParam】）",
+    "text_en": "Take a Spiritual Pet (Cultivation-{0}, Destiny-{1}, gain 【runtimeParam】)",
+    "text_tw": "拿一隻靈寵（修為-{0}，命元-{1}，獲得【runtimeParam】）",
+    "text_cn_resolved": "拿一只灵宠（修为-{0}，命元-{1}，获得【runtimeParam】）",
+    "text_en_resolved": "Take a Spiritual Pet (Cultivation-{0}, Destiny-{1}, gain 【runtimeParam】)",
+    "text_tw_resolved": "拿一隻靈寵（修為-{0}，命元-{1}，獲得【runtimeParam】）"
+  },
+  {
+    "id": 2301,
+    "text_cn": "随机升级{0}张1级【KEYWORD_常规牌】",
+    "text_en": "Randomly Upgrade {0} Level 1 【KEYWORD_常规牌】",
+    "text_tw": "隨機升級{0}張1級【KEYWORD_常规牌】",
+    "text_cn_resolved": "随机升级{0}张1级[常规牌]",
+    "text_en_resolved": "Randomly Upgrade {0} Level 1 [Regular Card]",
+    "text_tw_resolved": "隨機升級{0}張1級[常規牌]"
+  },
+  {
+    "id": 2302,
+    "text_cn": "随机升级{0}张1级【KEYWORD_常规牌】，自身下场战斗开始时获得{1}层【KEYWORD_虚弱】",
+    "text_en": "Randomly Upgrade {0} Level 1 【KEYWORD_常规牌】 (Gain {1} stacks of 【KEYWORD_虚弱】 at next battle start)",
+    "text_tw": "隨機升級{0}張1級【KEYWORD_常规牌】，自身下場戰鬥開始時獲得{1}層【KEYWORD_虚弱】",
+    "text_cn_resolved": "随机升级{0}张1级[常规牌]，自身下场战斗开始时获得{1}层[虚弱]",
+    "text_en_resolved": "Randomly Upgrade {0} Level 1 [Regular Card] (Gain {1} stacks of [Weakened] at next battle start)",
+    "text_tw_resolved": "隨機升級{0}張1級[常規牌]，自身下場戰鬥開始時獲得{1}層[虛弱]"
+  },
+  {
+    "id": 2303,
+    "text_cn": "随机升级{0}张1级【KEYWORD_常规牌】，自身下场战斗开始时减{1}生命",
+    "text_en": "Randomly Upgrade {0} Level 1 【KEYWORD_常规牌】 (Lose {1} HP at next battle start)",
+    "text_tw": "隨機升級{0}張1級【KEYWORD_常规牌】，自身下場戰鬥開始時減{1}生命",
+    "text_cn_resolved": "随机升级{0}张1级[常规牌]，自身下场战斗开始时减{1}生命",
+    "text_en_resolved": "Randomly Upgrade {0} Level 1 [Regular Card] (Lose {1} HP at next battle start)",
+    "text_tw_resolved": "隨機升級{0}張1級[常規牌]，自身下場戰鬥開始時減{1}生命"
+  },
+  {
+    "id": 2304,
+    "text_cn": "随机升级{0}张1级【KEYWORD_常规牌】，自身下场战斗开始时获得{1}层【KEYWORD_内伤】",
+    "text_en": "Randomly Upgrade {0} Level 1 【KEYWORD_常规牌】 (Gain {1} stacks of 【KEYWORD_内伤】 at next battle start)",
+    "text_tw": "隨機升級{0}張1級【KEYWORD_常规牌】，自身下場戰鬥開始時獲得{1}層【KEYWORD_内伤】",
+    "text_cn_resolved": "随机升级{0}张1级[常规牌]，自身下场战斗开始时获得{1}层[内伤]",
+    "text_en_resolved": "Randomly Upgrade {0} Level 1 [Regular Card] (Gain {1} stacks of [Internal Injury] at next battle start)",
+    "text_tw_resolved": "隨機升級{0}張1級[常規牌]，自身下場戰鬥開始時獲得{1}層[內傷]"
+  },
+  {
+    "id": 2305,
+    "text_cn": "随机升级{0}张1级【KEYWORD_常规牌】，自身下场战斗开始时获得{1}层【KEYWORD_破绽】",
+    "text_en": "Randomly Upgrade {0} Level 1 【KEYWORD_常规牌】 (Gain {1} stacks of 【KEYWORD_破绽】 at next battle start)",
+    "text_tw": "隨機升級{0}張1級【KEYWORD_常规牌】，自身下場戰鬥開始時獲得{1}層【KEYWORD_破绽】",
+    "text_cn_resolved": "随机升级{0}张1级[常规牌]，自身下场战斗开始时获得{1}层[破绽]",
+    "text_en_resolved": "Randomly Upgrade {0} Level 1 [Regular Card] (Gain {1} stacks of [Flaw] at next battle start)",
+    "text_tw_resolved": "隨機升級{0}張1級[常規牌]，自身下場戰鬥開始時獲得{1}層[破綻]"
+  },
+  {
+    "id": 2306,
+    "text_cn": "随机升级{0}张1级【KEYWORD_常规牌】，自身下场战斗开始时获得{1}层【KEYWORD_外伤】",
+    "text_en": "Randomly Upgrade {0} Level 1 【KEYWORD_常规牌】 (Gain {1} stacks of 【KEYWORD_外伤】 at next battle start)",
+    "text_tw": "隨機升級{0}張1級【KEYWORD_常规牌】，自身下場戰鬥開始時獲得{1}層【KEYWORD_外伤】",
+    "text_cn_resolved": "随机升级{0}张1级[常规牌]，自身下场战斗开始时获得{1}层[外伤]",
+    "text_en_resolved": "Randomly Upgrade {0} Level 1 [Regular Card] (Gain {1} stacks of [Wound] at next battle start)",
+    "text_tw_resolved": "隨機升級{0}張1級[常規牌]，自身下場戰鬥開始時獲得{1}層[外傷]"
+  },
+  {
+    "id": 2401,
+    "text_cn": "自在随心（修为-{0}，获得【runtimeParam】）",
+    "text_en": "Unbound Freedom (Cultivation-{0}, gain 【runtimeParam】)",
+    "text_tw": "自在隨心（修為-{0}，獲得【runtimeParam】）",
+    "text_cn_resolved": "自在随心（修为-{0}，获得【runtimeParam】）",
+    "text_en_resolved": "Unbound Freedom (Cultivation-{0}, gain 【runtimeParam】)",
+    "text_tw_resolved": "自在隨心（修為-{0}，獲得【runtimeParam】）"
+  },
+  {
+    "id": 2402,
+    "text_cn": "自在随心（修为-{0}，获得【runtimeParam】）",
+    "text_en": "Unbound Freedom (Cultivation-{0}, gain 【runtimeParam】)",
+    "text_tw": "自在隨心（修為-{0}，獲得【runtimeParam】）",
+    "text_cn_resolved": "自在随心（修为-{0}，获得【runtimeParam】）",
+    "text_en_resolved": "Unbound Freedom (Cultivation-{0}, gain 【runtimeParam】)",
+    "text_tw_resolved": "自在隨心（修為-{0}，獲得【runtimeParam】）"
+  },
+  {
+    "id": 2403,
+    "text_cn": "自在随心（修为-{0}，获得【runtimeParam】）",
+    "text_en": "Unbound Freedom (Cultivation-{0}, gain 【runtimeParam】)",
+    "text_tw": "自在隨心（修為-{0}，獲得【runtimeParam】）",
+    "text_cn_resolved": "自在随心（修为-{0}，获得【runtimeParam】）",
+    "text_en_resolved": "Unbound Freedom (Cultivation-{0}, gain 【runtimeParam】)",
+    "text_tw_resolved": "自在隨心（修為-{0}，獲得【runtimeParam】）"
+  },
+  {
+    "id": 2404,
+    "text_cn": "坚守本心（修为-{0}，随机获得{0}张自身副职的化神期牌）",
+    "text_en": "Stay True (Cultivation-{0}, randomly gain {0} Incarnation Phase Side Jobs cards)",
+    "text_tw": "堅守本心（修為-{0}，隨機獲得{0}張自身副職的化神期牌）",
+    "text_cn_resolved": "坚守本心（修为-{0}，随机获得{0}张自身副职的化神期牌）",
+    "text_en_resolved": "Stay True (Cultivation-{0}, randomly gain {0} Incarnation Phase Side Jobs cards)",
+    "text_tw_resolved": "堅守本心（修為-{0}，隨機獲得{0}張自身副職的化神期牌）"
+  },
+  {
+    "id": 2501,
+    "text_cn": "修为-{0}，获得【runtimeParam】",
+    "text_en": "Cultivation-{0}, gain 【runtimeParam】",
+    "text_tw": "修為-{0}，獲得【runtimeParam】",
+    "text_cn_resolved": "修为-{0}，获得【runtimeParam】",
+    "text_en_resolved": "Cultivation-{0}, gain 【runtimeParam】",
+    "text_tw_resolved": "修為-{0}，獲得【runtimeParam】"
+  },
+  {
+    "id": 2502,
+    "text_cn": "修为-{0}，获得【runtimeParam】",
+    "text_en": "Cultivation-{0}, gain 【runtimeParam】",
+    "text_tw": "修為-{0}，獲得【runtimeParam】",
+    "text_cn_resolved": "修为-{0}，获得【runtimeParam】",
+    "text_en_resolved": "Cultivation-{0}, gain 【runtimeParam】",
+    "text_tw_resolved": "修為-{0}，獲得【runtimeParam】"
+  },
+  {
+    "id": 2503,
+    "text_cn": "牌池中加入{0}张【runtimeParam】",
+    "text_en": "Add {0} 【runtimeParam】 to the card pool",
+    "text_tw": "牌池中加入{0}張【runtimeParam】",
+    "text_cn_resolved": "牌池中加入{0}张【runtimeParam】",
+    "text_en_resolved": "Add {0} 【runtimeParam】 to the card pool",
+    "text_tw_resolved": "牌池中加入{0}張【runtimeParam】"
+  },
+  {
+    "id": 2504,
+    "text_cn": "牌池中加入{0}张【runtimeParam】",
+    "text_en": "Add {0} 【runtimeParam】 to the card pool",
+    "text_tw": "牌池中加入{0}張【runtimeParam】",
+    "text_cn_resolved": "牌池中加入{0}张【runtimeParam】",
+    "text_en_resolved": "Add {0} 【runtimeParam】 to the card pool",
+    "text_tw_resolved": "牌池中加入{0}張【runtimeParam】"
+  },
+  {
+    "id": 2601,
+    "text_cn": "探索金丹期招式（若已到达金丹期：修为-{0}，抽{0}张金丹期牌）",
+    "text_en": "Explore Virtuoso Phase Techniques (If reached Virtuoso Phase: Cultivation-{0}, draw {0} Virtuoso Phase cards)",
+    "text_tw": "探索金丹期招式（若已到達金丹期：修為-{0}，抽{0}張金丹期牌）",
+    "text_cn_resolved": "探索金丹期招式（若已到达金丹期：修为-{0}，抽{0}张金丹期牌）",
+    "text_en_resolved": "Explore Virtuoso Phase Techniques (If reached Virtuoso Phase: Cultivation-{0}, draw {0} Virtuoso Phase cards)",
+    "text_tw_resolved": "探索金丹期招式（若已到達金丹期：修為-{0}，抽{0}張金丹期牌）"
+  },
+  {
+    "id": 2602,
+    "text_cn": "强化炼气期招式（若卡组首格为炼气期【KEYWORD_常规牌】，将其升1级）",
+    "text_en": "Strengthen Meditation Phase Techniques (If first deck slot is Meditation Phase 【KEYWORD_常规牌】, Upgrade it)",
+    "text_tw": "強化煉氣期招式（若卡組首格為煉氣期【KEYWORD_常规牌】，將其升1級）",
+    "text_cn_resolved": "强化炼气期招式（若卡组首格为炼气期[常规牌]，将其升1级）",
+    "text_en_resolved": "Strengthen Meditation Phase Techniques (If first deck slot is Meditation Phase [Regular Card], Upgrade it)",
+    "text_tw_resolved": "強化煉氣期招式（若卡組首格為煉氣期[常規牌]，將其升1級）"
+  },
+  {
+    "id": 2603,
+    "text_cn": "强化筑基期招式（若卡组首格为筑基期【KEYWORD_常规牌】，则命元-{0}，将其升1级）",
+    "text_en": "Strengthen Foundation Phase Techniques (If first deck slot is Foundation Phase 【KEYWORD_常规牌】, Destiny-{0}, Upgrade it)",
+    "text_tw": "強化築基期招式（若卡組首格為築基期【KEYWORD_常规牌】，則命元-{0}，將其升1級）",
+    "text_cn_resolved": "强化筑基期招式（若卡组首格为筑基期[常规牌]，则命元-{0}，将其升1级）",
+    "text_en_resolved": "Strengthen Foundation Phase Techniques (If first deck slot is Foundation Phase [Regular Card], Destiny-{0}, Upgrade it)",
+    "text_tw_resolved": "強化築基期招式（若卡組首格為築基期[常規牌]，則命元-{0}，將其升1級）"
+  },
+  {
+    "id": 2604,
+    "text_cn": "强化金丹期招式（若卡组首格为金丹期【KEYWORD_常规牌】，则命元-{0}，将其升1级）",
+    "text_en": "Strengthen Virtuoso Phase Techniques (If first deck slot is Virtuoso Phase【KEYWORD_常规牌】, Destiny-{0}, Upgrade it)",
+    "text_tw": "強化金丹期招式（若卡組首格為金丹期【KEYWORD_常规牌】，則命元-{0}，將其升1級）",
+    "text_cn_resolved": "强化金丹期招式（若卡组首格为金丹期[常规牌]，则命元-{0}，将其升1级）",
+    "text_en_resolved": "Strengthen Virtuoso Phase Techniques (If first deck slot is Virtuoso Phase[Regular Card], Destiny-{0}, Upgrade it)",
+    "text_tw_resolved": "強化金丹期招式（若卡組首格為金丹期[常規牌]，則命元-{0}，將其升1級）"
+  },
+  {
+    "id": 2605,
+    "text_cn": "挖掘筑基期招式（若已到达筑基期：修为-{0}，抽{0}张筑基期牌）",
+    "text_en": "Dig Foundation Phase Techniques (If reached Foundation Phase: Cultivation-{0}, draw {0} Foundation Phase cards)",
+    "text_tw": "挖掘築基期招式（若已到達築基期：修為-{0}，抽{0}張築基期牌）",
+    "text_cn_resolved": "挖掘筑基期招式（若已到达筑基期：修为-{0}，抽{0}张筑基期牌）",
+    "text_en_resolved": "Dig Foundation Phase Techniques (If reached Foundation Phase: Cultivation-{0}, draw {0} Foundation Phase cards)",
+    "text_tw_resolved": "挖掘築基期招式（若已到達築基期：修為-{0}，抽{0}張築基期牌）"
+  },
+  {
+    "id": 2606,
+    "text_cn": "挖掘炼气期招式（修为-{0}，抽{0}张炼气期牌）",
+    "text_en": "Dig Meditation Phase Techniques (Cultivation-{0}, draw {0} Meditation Phase cards)",
+    "text_tw": "挖掘煉氣期招式（修為-{0}，抽{0}張煉氣期牌）",
+    "text_cn_resolved": "挖掘炼气期招式（修为-{0}，抽{0}张炼气期牌）",
+    "text_en_resolved": "Dig Meditation Phase Techniques (Cultivation-{0}, draw {0} Meditation Phase cards)",
+    "text_tw_resolved": "挖掘煉氣期招式（修為-{0}，抽{0}張煉氣期牌）"
+  },
+  {
+    "id": 2701,
+    "text_cn": "换取命元（本轮下一次炼化门派牌时加{0}命元，2级牌2倍，3级牌3倍）",
+    "text_en": "Exchange for Destiny (Next sect card absorbed this round adds {0} Destiny, doubled for Level 2, tripled for Level 3)",
+    "text_tw": "換取命元（本輪下一次煉化門派牌時加{0}命元，2級牌2倍，3級牌3倍）",
+    "text_cn_resolved": "换取命元（本轮下一次炼化门派牌时加{0}命元，2级牌2倍，3级牌3倍）",
+    "text_en_resolved": "Exchange for Destiny (Next sect card absorbed this round adds {0} Destiny, doubled for Level 2, tripled for Level 3)",
+    "text_tw_resolved": "換取命元（本輪下一次煉化門派牌時加{0}命元，2級牌2倍，3級牌3倍）"
+  },
+  {
+    "id": 2702,
+    "text_cn": "换取其他招式（本轮下一次炼化门派牌时加{0}换牌机会，2级牌2倍，3级牌3倍）",
+    "text_en": "Exchange for Other Techniques (Next sect card absorbed this round adds {0} Exchange Card Chances, doubled for Level 2, tripled for Level 3)",
+    "text_tw": "換取其他招式（本輪下一次煉化門派牌時加{0}換牌機會，2級牌2倍，3級牌3倍）",
+    "text_cn_resolved": "换取其他招式（本轮下一次炼化门派牌时加{0}换牌机会，2级牌2倍，3级牌3倍）",
+    "text_en_resolved": "Exchange for Other Techniques (Next sect card absorbed this round adds {0} Exchange Card Chances, doubled for Level 2, tripled for Level 3)",
+    "text_tw_resolved": "換取其他招式（本輪下一次煉化門派牌時加{0}換牌機會，2級牌2倍，3級牌3倍）"
+  },
+  {
+    "id": 2703,
+    "text_cn": "换取根基稳固（本轮下一次炼化门派牌时加{0}生命上限，2级牌2倍，3级牌3倍）",
+    "text_en": "Exchange for Stability (Next sect card absorbed this round adds {0} Max HP, doubled for Level 2, tripled for Level 3)",
+    "text_tw": "換取根基穩固（本輪下一次煉化門派牌時加{0}生命上限，2級牌2倍，3級牌3倍）",
+    "text_cn_resolved": "换取根基稳固（本轮下一次炼化门派牌时加{0}生命上限，2级牌2倍，3级牌3倍）",
+    "text_en_resolved": "Exchange for Stability (Next sect card absorbed this round adds {0} Max HP, doubled for Level 2, tripled for Level 3)",
+    "text_tw_resolved": "換取根基穩固（本輪下一次煉化門派牌時加{0}生命上限，2級牌2倍，3級牌3倍）"
+  },
+  {
+    "id": 2801,
+    "text_cn": "随便逛逛（换牌机会+{0}）",
+    "text_en": "Wander Aimlessly (Exchange Card Chance+{0})",
+    "text_tw": "隨便逛逛（換牌機會+{0}）",
+    "text_cn_resolved": "随便逛逛（换牌机会+{0}）",
+    "text_en_resolved": "Wander Aimlessly (Exchange Card Chance+{0})",
+    "text_tw_resolved": "隨便逛逛（換牌機會+{0}）"
+  },
+  {
+    "id": 2802,
+    "text_cn": "认真旅行（换牌机会+{0}，下场战斗开始时减{1}生命）",
+    "text_en": "Travel Seriously (Exchange Card Chance+{0}, lose {1} HP at next battle start)",
+    "text_tw": "認真旅行（換牌機會+{0}，下場戰鬥開始時減{1}生命）",
+    "text_cn_resolved": "认真旅行（换牌机会+{0}，下场战斗开始时减{1}生命）",
+    "text_en_resolved": "Travel Seriously (Exchange Card Chance+{0}, lose {1} HP at next battle start)",
+    "text_tw_resolved": "認真旅行（換牌機會+{0}，下場戰鬥開始時減{1}生命）"
+  },
+  {
+    "id": 2803,
+    "text_cn": "将三洲看遍（换牌机会+{0}，下场战斗开始时减{1}生命）",
+    "text_en": "Traverse the Three Continents (Exchange Card Chance+{0}, lose {1} HP at next battle start)",
+    "text_tw": "將三洲看遍（換牌機會+{0}，下場戰鬥開始時減{1}生命）",
+    "text_cn_resolved": "将三洲看遍（换牌机会+{0}，下场战斗开始时减{1}生命）",
+    "text_en_resolved": "Traverse the Three Continents (Exchange Card Chance+{0}, lose {1} HP at next battle start)",
+    "text_tw_resolved": "將三洲看遍（換牌機會+{0}，下場戰鬥開始時減{1}生命）"
+  },
+  {
+    "id": 2804,
+    "text_cn": "不去，专心提升自我（换牌机会-{0}，下场战斗开始时加{1}生命及上限）",
+    "text_en": "Refuse, Focus on Self (Exchange Card Chance-{0}, gain {1} HP and Max HP at next battle start)",
+    "text_tw": "不去，專心提升自我（換牌機會-{0}，下場戰鬥開始時加{1}生命及上限）",
+    "text_cn_resolved": "不去，专心提升自我（换牌机会-{0}，下场战斗开始时加{1}生命及上限）",
+    "text_en_resolved": "Refuse, Focus on Self (Exchange Card Chance-{0}, gain {1} HP and Max HP at next battle start)",
+    "text_tw_resolved": "不去，專心提升自我（換牌機會-{0}，下場戰鬥開始時加{1}生命及上限）"
+  },
+  {
+    "id": 2805,
+    "text_cn": "不去，准备切磋要紧（换牌机会-{0}，下场战斗临时升级卡组前{1}张1级牌）",
+    "text_en": "Refuse, Prepare for Combat (Exchange Card Chance-{0}, temporarily Upgrade the first {1} Level 1 cards in deck at next battle start)",
+    "text_tw": "不去，準備切磋要緊（換牌機會-{0}，下場戰鬥臨時升級卡組前{1}張1級牌）",
+    "text_cn_resolved": "不去，准备切磋要紧（换牌机会-{0}，下场战斗临时升级卡组前{1}张1级牌）",
+    "text_en_resolved": "Refuse, Prepare for Combat (Exchange Card Chance-{0}, temporarily Upgrade the first {1} Level 1 cards in deck at next battle start)",
+    "text_tw_resolved": "不去，準備切磋要緊（換牌機會-{0}，下場戰鬥臨時升級卡組前{1}張1級牌）"
+  },
+  {
+    "id": 2901,
+    "text_cn": "超逍遥兮绝尘埃（修为-{0}，获得【{1}】）",
+    "text_en": "Do as you please (Cultivation-{0}, gain 【{1}】)",
+    "text_tw": "超逍遙兮絕塵埃（修為-{0}，獲得【{1}】）",
+    "text_cn_resolved": "超逍遥兮绝尘埃（修为-{0}，获得[Card {1}]）",
+    "text_en_resolved": "Do as you please (Cultivation-{0}, gain [Card {1}])",
+    "text_tw_resolved": "超逍遙兮絕塵埃（修為-{0}，獲得[Card {1}]）"
+  },
+  {
+    "id": 2902,
+    "text_cn": "福亦不至兮祸不来（修为-{0}，获得【{1}】）",
+    "text_en": "Act as you wish (Cultivation-{0}, gain 【{1}】)",
+    "text_tw": "福亦不至兮禍不來（修為-{0}，獲得【{1}】）",
+    "text_cn_resolved": "福亦不至兮祸不来（修为-{0}，获得[Card {1}]）",
+    "text_en_resolved": "Act as you wish (Cultivation-{0}, gain [Card {1}])",
+    "text_tw_resolved": "福亦不至兮禍不來（修為-{0}，獲得[Card {1}]）"
+  },
+  {
+    "id": 3001,
+    "text_cn": "拒绝交易，保住命元（换牌机会-{0}，命元+{1}）",
+    "text_en": "Refuse Trade, Keep Destiny (Exchange Card Chance-{0}, Destiny+{1})",
+    "text_tw": "拒絕交易，保住命元（換牌機會-{0}，命元+{1}）",
+    "text_cn_resolved": "拒绝交易，保住命元（换牌机会-{0}，命元+{1}）",
+    "text_en_resolved": "Refuse Trade, Keep Destiny (Exchange Card Chance-{0}, Destiny+{1})",
+    "text_tw_resolved": "拒絕交易，保住命元（換牌機會-{0}，命元+{1}）"
+  },
+  {
+    "id": 3002,
+    "text_cn": "用命元稳固根基（命元-{0}，生命上限+{1}）",
+    "text_en": "Use Destiny to Stabilize (Destiny-{0}, Max HP+{1})",
+    "text_tw": "用命元穩固根基（命元-{0}，生命上限+{1}）",
+    "text_cn_resolved": "用命元稳固根基（命元-{0}，生命上限+{1}）",
+    "text_en_resolved": "Use Destiny to Stabilize (Destiny-{0}, Max HP+{1})",
+    "text_tw_resolved": "用命元穩固根基（命元-{0}，生命上限+{1}）"
+  },
+  {
+    "id": 3003,
+    "text_cn": "用大量命元稳固根基（命元-{0}，生命上限+{1}）",
+    "text_en": "Use Massive Destiny to Stabilize (Destiny-{0}, Max HP+{1})",
+    "text_tw": "用大量命元穩固根基（命元-{0}，生命上限+{1}）",
+    "text_cn_resolved": "用大量命元稳固根基（命元-{0}，生命上限+{1}）",
+    "text_en_resolved": "Use Massive Destiny to Stabilize (Destiny-{0}, Max HP+{1})",
+    "text_tw_resolved": "用大量命元穩固根基（命元-{0}，生命上限+{1}）"
+  },
+  {
+    "id": 3004,
+    "text_cn": "用命元强化招式（命元-{0}，随机升级1张1级牌）",
+    "text_en": "Use Destiny to Enhance Techniques (Destiny-{0}, randomly Upgrade 1 Level 1 card)",
+    "text_tw": "用命元強化招式（命元-{0}，隨機升級1張1級牌）",
+    "text_cn_resolved": "用命元强化招式（命元-{0}，随机升级1张1级牌）",
+    "text_en_resolved": "Use Destiny to Enhance Techniques (Destiny-{0}, randomly Upgrade 1 Level 1 card)",
+    "text_tw_resolved": "用命元強化招式（命元-{0}，隨機升級1張1級牌）"
+  },
+  {
+    "id": 3005,
+    "text_cn": "命元珍贵，改用生命（生命上限-{0}，随机升级1张1级牌）",
+    "text_en": "Treasure Destiny, Use HP Instead (Max HP-{0}, randomly Upgrade 1 Level 1 card)",
+    "text_tw": "命元珍貴，改用生命（生命上限-{0}，隨機升級1張1級牌）",
+    "text_cn_resolved": "命元珍贵，改用生命（生命上限-{0}，随机升级1张1级牌）",
+    "text_en_resolved": "Treasure Destiny, Use HP Instead (Max HP-{0}, randomly Upgrade 1 Level 1 card)",
+    "text_tw_resolved": "命元珍貴，改用生命（生命上限-{0}，隨機升級1張1級牌）"
+  },
+  {
+    "id": 3006,
+    "text_cn": "用命元领悟新招式（命元-{0}，换牌机会+{1}）",
+    "text_en": "Use Destiny to Learn New Techniques (Destiny-{0}, Exchange Card Chance+{1})",
+    "text_tw": "用命元領悟新招式（命元-{0}，換牌機會+{1}）",
+    "text_cn_resolved": "用命元领悟新招式（命元-{0}，换牌机会+{1}）",
+    "text_en_resolved": "Use Destiny to Learn New Techniques (Destiny-{0}, Exchange Card Chance+{1})",
+    "text_tw_resolved": "用命元領悟新招式（命元-{0}，換牌機會+{1}）"
+  },
+  {
+    "id": 3101,
+    "text_cn": "超逍遥兮绝尘埃（修为-{0}，获得【{1}】）",
+    "text_en": "Do as you please (Cultivation-{0}, gain 【{1}】)",
+    "text_tw": "超逍遙兮絕塵埃（修為-{0}，獲得【{1}】）",
+    "text_cn_resolved": "超逍遥兮绝尘埃（修为-{0}，获得[Card {1}]）",
+    "text_en_resolved": "Do as you please (Cultivation-{0}, gain [Card {1}])",
+    "text_tw_resolved": "超逍遙兮絕塵埃（修為-{0}，獲得[Card {1}]）"
+  },
+  {
+    "id": 3102,
+    "text_cn": "福亦不至兮祸不来（修为-{0}，获得【{1}】）",
+    "text_en": "Act as you wish (Cultivation-{0}, gain 【{1}】)",
+    "text_tw": "福亦不至兮禍不來（修為-{0}，獲得【{1}】）",
+    "text_cn_resolved": "福亦不至兮祸不来（修为-{0}，获得[Card {1}]）",
+    "text_en_resolved": "Act as you wish (Cultivation-{0}, gain [Card {1}])",
+    "text_tw_resolved": "福亦不至兮禍不來（修為-{0}，獲得[Card {1}]）"
+  },
+  {
+    "id": 3201,
+    "text_cn": "超逍遥兮绝尘埃（修为-{0}，获得【{1}】）",
+    "text_en": "Do as you please (Cultivation-{0}, gain 【{1}】)",
+    "text_tw": "超逍遙兮絕塵埃（修為-{0}，獲得【{1}】）",
+    "text_cn_resolved": "超逍遥兮绝尘埃（修为-{0}，获得[Card {1}]）",
+    "text_en_resolved": "Do as you please (Cultivation-{0}, gain [Card {1}])",
+    "text_tw_resolved": "超逍遙兮絕塵埃（修為-{0}，獲得[Card {1}]）"
+  },
+  {
+    "id": 3202,
+    "text_cn": "福亦不至兮祸不来（修为-{0}，获得【{1}】）",
+    "text_en": "Act as you wish (Cultivation-{0}, gain 【{1}】)",
+    "text_tw": "福亦不至兮禍不來（修為-{0}，獲得【{1}】）",
+    "text_cn_resolved": "福亦不至兮祸不来（修为-{0}，获得[Card {1}]）",
+    "text_en_resolved": "Act as you wish (Cultivation-{0}, gain [Card {1}])",
+    "text_tw_resolved": "福亦不至兮禍不來（修為-{0}，獲得[Card {1}]）"
+  },
+  {
+    "id": 3301,
+    "text_cn": "收下这本（修为-{0}，获得【runtimeParam】）",
+    "text_en": "Accept This (Cultivation-{0}, gain 【runtimeParam】)",
+    "text_tw": "收下這本（修為-{0}，獲得【runtimeParam】）",
+    "text_cn_resolved": "收下这本（修为-{0}，获得【runtimeParam】）",
+    "text_en_resolved": "Accept This (Cultivation-{0}, gain 【runtimeParam】)",
+    "text_tw_resolved": "收下這本（修為-{0}，獲得【runtimeParam】）"
+  },
+  {
+    "id": 3302,
+    "text_cn": "强行修炼（修为-{0}，命元-{1}，获得2级【runtimeParam】）",
+    "text_en": "Force Cultivation (Cultivation-{0}, Destiny-{1}, gain Level 2 【runtimeParam】)",
+    "text_tw": "強行修煉（修為-{0}，命元-{1}，獲得2級【runtimeParam】）",
+    "text_cn_resolved": "强行修炼（修为-{0}，命元-{1}，获得2级【runtimeParam】）",
+    "text_en_resolved": "Force Cultivation (Cultivation-{0}, Destiny-{1}, gain Level 2 【runtimeParam】)",
+    "text_tw_resolved": "強行修煉（修為-{0}，命元-{1}，獲得2級【runtimeParam】）"
+  },
+  {
+    "id": 3303,
+    "text_cn": "收下这本（修为-{0}，获得【runtimeParam】）",
+    "text_en": "Accept This (Cultivation-{0}, gain 【runtimeParam】)",
+    "text_tw": "收下這本（修為-{0}，獲得【runtimeParam】）",
+    "text_cn_resolved": "收下这本（修为-{0}，获得【runtimeParam】）",
+    "text_en_resolved": "Accept This (Cultivation-{0}, gain 【runtimeParam】)",
+    "text_tw_resolved": "收下這本（修為-{0}，獲得【runtimeParam】）"
+  },
+  {
+    "id": 3304,
+    "text_cn": "强行修炼（修为-{0}，命元-{1}，获得2级【runtimeParam】）",
+    "text_en": "Force Cultivation (Cultivation-{0}, Destiny-{1}, gain Level 2 【runtimeParam】)",
+    "text_tw": "強行修煉（修為-{0}，命元-{1}，獲得2級【runtimeParam】）",
+    "text_cn_resolved": "强行修炼（修为-{0}，命元-{1}，获得2级【runtimeParam】）",
+    "text_en_resolved": "Force Cultivation (Cultivation-{0}, Destiny-{1}, gain Level 2 【runtimeParam】)",
+    "text_tw_resolved": "強行修煉（修為-{0}，命元-{1}，獲得2級【runtimeParam】）"
+  },
+  {
+    "id": 3401,
+    "text_cn": "速战速决（下场战斗使用首张牌后再次行动）",
+    "text_en": "Quick Resolution (When using the first card in the next battle, Chase)",
+    "text_tw": "速戰速決（下場戰鬥使用首張牌後再次行動）",
+    "text_cn_resolved": "速战速决（下场战斗使用首张牌后再次行动）",
+    "text_en_resolved": "Quick Resolution (When using the first card in the next battle, Chase)",
+    "text_tw_resolved": "速戰速決（下場戰鬥使用首張牌後再次行動）"
+  },
+  {
+    "id": 3402,
+    "text_cn": "先手压制（下场战斗首张使用的牌连续生效两次）",
+    "text_en": "Preemptive Suppression (The first card used in the next battle takes effect twice)",
+    "text_tw": "先手壓製（下場戰鬥首張使用的牌連續生效兩次）",
+    "text_cn_resolved": "先手压制（下场战斗首张使用的牌连续生效两次）",
+    "text_en_resolved": "Preemptive Suppression (The first card used in the next battle takes effect twice)",
+    "text_tw_resolved": "先手壓製（下場戰鬥首張使用的牌連續生效兩次）"
+  },
+  {
+    "id": 3403,
+    "text_cn": "实力碾压（下场战斗开始时自身生命及上限+{0}）",
+    "text_en": "Overwhelming Power (HP and Max HP+{0} at the next battle start)",
+    "text_tw": "實力碾壓（下場戰鬥開始時自身生命及上限+{0}）",
+    "text_cn_resolved": "实力碾压（下场战斗开始时自身生命及上限+{0}）",
+    "text_en_resolved": "Overwhelming Power (HP and Max HP+{0} at the next battle start)",
+    "text_tw_resolved": "實力碾壓（下場戰鬥開始時自身生命及上限+{0}）"
+  },
+  {
+    "id": 3501,
+    "text_cn": "修为-{0}，获得{0}张描述中含“再次行动”或“身法”的牌（元婴期以上）",
+    "text_en": "Cultivation-{0}, gain {0} card with \"Chase\" or \"Agility\" (Immortality Phase or above)",
+    "text_tw": "修為-{0}，獲得{0}張描述中含“再次行動”或“身法”的牌（元嬰期以上）",
+    "text_cn_resolved": "修为-{0}，获得{0}张描述中含“再次行动”或“身法”的牌（元婴期以上）",
+    "text_en_resolved": "Cultivation-{0}, gain {0} card with \"Chase\" or \"Agility\" (Immortality Phase or above)",
+    "text_tw_resolved": "修為-{0}，獲得{0}張描述中含“再次行動”或“身法”的牌（元嬰期以上）"
+  },
+  {
+    "id": 3502,
+    "text_cn": "修为-1，获得【runtimeParam】，本局游戏为其永久附加“再次行动”的效果",
+    "text_en": "Cultivation-1, gain 【runtimeParam】, permanently add \"Chase\" effect to it this game",
+    "text_tw": "修為-1，獲得【runtimeParam】，本局遊戲為其永久附加“再次行動”的效果",
+    "text_cn_resolved": "修为-1，获得【runtimeParam】，本局游戏为其永久附加“再次行动”的效果",
+    "text_en_resolved": "Cultivation-1, gain 【runtimeParam】, permanently add \"Chase\" effect to it this game",
+    "text_tw_resolved": "修為-1，獲得【runtimeParam】，本局遊戲為其永久附加“再次行動”的效果"
+  },
+  {
+    "id": 3601,
+    "text_cn": "直到本轮结束，每次炼化炼气期的牌时加{0}命元",
+    "text_en": "Until this round ends, gain {0} Destiny each time absorbing Meditation Phase card",
+    "text_tw": "直到本輪結束，每次煉化煉氣期的牌時加{0}命元",
+    "text_cn_resolved": "直到本轮结束，每次炼化炼气期的牌时加{0}命元",
+    "text_en_resolved": "Until this round ends, gain {0} Destiny each time absorbing Meditation Phase card",
+    "text_tw_resolved": "直到本輪結束，每次煉化煉氣期的牌時加{0}命元"
+  },
+  {
+    "id": 3602,
+    "text_cn": "直到本轮结束，每次炼化筑基期的牌时加{0}命元",
+    "text_en": "Until this round ends, gain {0} Destiny each time absorbing Foundation Phase card",
+    "text_tw": "直到本輪結束，每次煉化築基期的牌時加{0}命元",
+    "text_cn_resolved": "直到本轮结束，每次炼化筑基期的牌时加{0}命元",
+    "text_en_resolved": "Until this round ends, gain {0} Destiny each time absorbing Foundation Phase card",
+    "text_tw_resolved": "直到本輪結束，每次煉化築基期的牌時加{0}命元"
+  },
+  {
+    "id": 3603,
+    "text_cn": "直到本轮结束，每次炼化金丹期的牌时加{0}换牌机会",
+    "text_en": "Until this round ends, gain {0} Exchange each time absorbing Virtuoso Phase card",
+    "text_tw": "直到本輪結束，每次煉化金丹期的牌時加{0}換牌機會",
+    "text_cn_resolved": "直到本轮结束，每次炼化金丹期的牌时加{0}换牌机会",
+    "text_en_resolved": "Until this round ends, gain {0} Exchange each time absorbing Virtuoso Phase card",
+    "text_tw_resolved": "直到本輪結束，每次煉化金丹期的牌時加{0}換牌機會"
+  },
+  {
+    "id": 3604,
+    "text_cn": "直到本轮结束，每次炼化金丹期的牌时加{0}命元",
+    "text_en": "Until this round ends, gain {0} Destiny each time absorbing Virtuoso Phase card",
+    "text_tw": "直到本輪結束，每次煉化金丹期的牌時加{0}命元",
+    "text_cn_resolved": "直到本轮结束，每次炼化金丹期的牌时加{0}命元",
+    "text_en_resolved": "Until this round ends, gain {0} Destiny each time absorbing Virtuoso Phase card",
+    "text_tw_resolved": "直到本輪結束，每次煉化金丹期的牌時加{0}命元"
+  },
+  {
+    "id": 3605,
+    "text_cn": "直到本轮结束，每次炼化2级或3级牌门派牌时加{0}换牌机会",
+    "text_en": "Until this round ends, gain {0} Exchange Card Chance each time absorbing Level 2/3 sect card",
+    "text_tw": "直到本輪結束，每次煉化2級或3級牌門派牌時加{0}換牌機會",
+    "text_cn_resolved": "直到本轮结束，每次炼化2级或3级牌门派牌时加{0}换牌机会",
+    "text_en_resolved": "Until this round ends, gain {0} Exchange Card Chance each time absorbing Level 2/3 sect card",
+    "text_tw_resolved": "直到本輪結束，每次煉化2級或3級牌門派牌時加{0}換牌機會"
+  },
+  {
+    "id": 3701,
+    "text_cn": "拼尽全力强化招式（命元变为1，随机升级{0}张2级牌）",
+    "text_en": "Go All Out on Techniques (Set Destiny to 1, randomly Upgrade {0} Level 2 cards)",
+    "text_tw": "拚盡全力強化招式（命元變為1，隨機升級{0}張2級牌）",
+    "text_cn_resolved": "拼尽全力强化招式（命元变为1，随机升级{0}张2级牌）",
+    "text_en_resolved": "Go All Out on Techniques (Set Destiny to 1, randomly Upgrade {0} Level 2 cards)",
+    "text_tw_resolved": "拚盡全力強化招式（命元變為1，隨機升級{0}張2級牌）"
+  },
+  {
+    "id": 3702,
+    "text_cn": "拼尽全力突破上限（命元变为1，抽{0}张化神期的牌）",
+    "text_en": "Go All Out on Limits (Set Destiny to 1, draw {0} Incarnation Phase cards)",
+    "text_tw": "拚盡全力突破上限（命元變為1，抽{0}張化神期的牌）",
+    "text_cn_resolved": "拼尽全力突破上限（命元变为1，抽{0}张化神期的牌）",
+    "text_en_resolved": "Go All Out on Limits (Set Destiny to 1, draw {0} Incarnation Phase cards)",
+    "text_tw_resolved": "拚盡全力突破上限（命元變為1，抽{0}張化神期的牌）"
+  },
+  {
+    "id": 3703,
+    "text_cn": "拼尽全力无法战胜（下场战斗若战败所受命元伤害变为0）",
+    "text_en": "Go All Out but lose (If defeated next battle, Destiny Damage taken becomes 0)",
+    "text_tw": "拚盡全力無法戰勝（下場戰鬥若戰敗所受命元傷害變為0）",
+    "text_cn_resolved": "拼尽全力无法战胜（下场战斗若战败所受命元伤害变为0）",
+    "text_en_resolved": "Go All Out but lose (If defeated next battle, Destiny Damage taken becomes 0)",
+    "text_tw_resolved": "拚盡全力無法戰勝（下場戰鬥若戰敗所受命元傷害變為0）"
+  },
+  {
+    "id": 3704,
+    "text_cn": "拼尽全力领悟招式（命元变为1，换牌机会+{0}）",
+    "text_en": "Go All Out on Comprehension (Set Destiny to 1, Exchange Card Chance+{0})",
+    "text_tw": "拚盡全力領悟招式（命元變為1，換牌機會+{0}）",
+    "text_cn_resolved": "拼尽全力领悟招式（命元变为1，换牌机会+{0}）",
+    "text_en_resolved": "Go All Out on Comprehension (Set Destiny to 1, Exchange Card Chance+{0})",
+    "text_tw_resolved": "拚盡全力領悟招式（命元變為1，換牌機會+{0}）"
+  },
+  {
+    "id": 3801,
+    "text_cn": "学习幻景招式（修为-1，随机获得1张幻景招式。优先获得时空漩涡中领悟的幻景招式）",
+    "text_en": "Learn Mirage Techniques (Cultivation-1, randomly gain 1 mirage technique. Prioritize mirage techniques learned in Spacetime Vortex)",
+    "text_tw": "學習幻景招式（修為-1，隨機獲得1張幻景招式。優先獲得時空漩渦中領悟的幻景招式）",
+    "text_cn_resolved": "学习幻景招式（修为-1，随机获得1张幻景招式。优先获得时空漩涡中领悟的幻景招式）",
+    "text_en_resolved": "Learn Mirage Techniques (Cultivation-1, randomly gain 1 mirage technique. Prioritize mirage techniques learned in Spacetime Vortex)",
+    "text_tw_resolved": "學習幻景招式（修為-1，隨機獲得1張幻景招式。優先獲得時空漩渦中領悟的幻景招式）"
+  },
+  {
+    "id": 3802,
+    "text_cn": "感受时空变化（换牌机会+{0}）",
+    "text_en": "Sense Spacetime Changes (Exchange Card Chance+{0})",
+    "text_tw": "感受時空變化（換牌機會+{0}）",
+    "text_cn_resolved": "感受时空变化（换牌机会+{0}）",
+    "text_en_resolved": "Sense Spacetime Changes (Exchange Card Chance+{0})",
+    "text_tw_resolved": "感受時空變化（換牌機會+{0}）"
+  },
+  {
+    "id": 3803,
+    "text_cn": "巩固门派招式（修为-{0}，获得【runtimeParam】）",
+    "text_en": "Consolidate Sect Techniques (Cultivation-{0}, gain 【runtimeParam】)",
+    "text_tw": "鞏固門派招式（修為-{0}，獲得【runtimeParam】）",
+    "text_cn_resolved": "巩固门派招式（修为-{0}，获得【runtimeParam】）",
+    "text_en_resolved": "Consolidate Sect Techniques (Cultivation-{0}, gain 【runtimeParam】)",
+    "text_tw_resolved": "鞏固門派招式（修為-{0}，獲得【runtimeParam】）"
+  },
+  {
+    "id": 3804,
+    "text_cn": "巩固副职技能（修为-{0}，获得【runtimeParam】）",
+    "text_en": "Consolidate Side Jobs (Cultivation-{0}, gain 【runtimeParam】)",
+    "text_tw": "鞏固副職技能（修為-{0}，獲得【runtimeParam】）",
+    "text_cn_resolved": "巩固副职技能（修为-{0}，获得【runtimeParam】）",
+    "text_en_resolved": "Consolidate Side Jobs (Cultivation-{0}, gain 【runtimeParam】)",
+    "text_tw_resolved": "鞏固副職技能（修為-{0}，獲得【runtimeParam】）"
+  },
+  {
+    "id": 3901,
+    "text_cn": "分给其一些魂魄（生命上限-{0}，命元+{1}）",
+    "text_en": "Share Some Souls (Max HP-{0}, Destiny+{1})",
+    "text_tw": "分給其一些魂魄（生命上限-{0}，命元+{1}）",
+    "text_cn_resolved": "分给其一些魂魄（生命上限-{0}，命元+{1}）",
+    "text_en_resolved": "Share Some Souls (Max HP-{0}, Destiny+{1})",
+    "text_tw_resolved": "分給其一些魂魄（生命上限-{0}，命元+{1}）"
+  },
+  {
+    "id": 3902,
+    "text_cn": "分给其一些魂魄（生命上限-{0}，换牌机会+{1}）",
+    "text_en": "Share Some Souls (Max HP-{0}, Exchange Card Chance+{1})",
+    "text_tw": "分給其一些魂魄（生命上限-{0}，換牌機會+{1}）",
+    "text_cn_resolved": "分给其一些魂魄（生命上限-{0}，换牌机会+{1}）",
+    "text_en_resolved": "Share Some Souls (Max HP-{0}, Exchange Card Chance+{1})",
+    "text_tw_resolved": "分給其一些魂魄（生命上限-{0}，換牌機會+{1}）"
+  },
+  {
+    "id": 3903,
+    "text_cn": "学习他们的招式（换牌机会+{0}）",
+    "text_en": "Learn Their Techniques (Exchange Card Chance+{0})",
+    "text_tw": "學習他們的招式（換牌機會+{0}）",
+    "text_cn_resolved": "学习他们的招式（换牌机会+{0}）",
+    "text_en_resolved": "Learn Their Techniques (Exchange Card Chance+{0})",
+    "text_tw_resolved": "學習他們的招式（換牌機會+{0}）"
+  },
+  {
+    "id": 3904,
+    "text_cn": "自保要紧（命元+{0}）",
+    "text_en": "Prioritize Survival (Destiny+{0})",
+    "text_tw": "自保要緊（命元+{0}）",
+    "text_cn_resolved": "自保要紧（命元+{0}）",
+    "text_en_resolved": "Prioritize Survival (Destiny+{0})",
+    "text_tw_resolved": "自保要緊（命元+{0}）"
+  },
+  {
+    "id": 3905,
+    "text_cn": "分给其一些魂魄（生命上限-{0}，随机升级{1}张1级【KEYWORD_常规牌】）",
+    "text_en": "Share Some Souls (Max HP-{0}, randomly Upgrade {1} Level 1 【KEYWORD_常规牌】)",
+    "text_tw": "分給其一些魂魄（生命上限-{0}，隨機升級{1}張1級【KEYWORD_常规牌】）",
+    "text_cn_resolved": "分给其一些魂魄（生命上限-{0}，随机升级{1}张1级[常规牌]）",
+    "text_en_resolved": "Share Some Souls (Max HP-{0}, randomly Upgrade {1} Level 1 [Regular Card])",
+    "text_tw_resolved": "分給其一些魂魄（生命上限-{0}，隨機升級{1}張1級[常規牌]）"
+  },
+  {
+    "id": 4001,
+    "text_cn": "用灵气强化基础招式（若卡组首格为【KEYWORD_常规牌】且不高于筑基期，本局游戏为其永久附加“灵气+1”的效果）",
+    "text_en": "Use Qi to Enhance Basics (If first deck slot is a 【KEYWORD_常规牌】 and not beyond Foundation Phase, permanently add \"Qi+1\" to it this game)",
+    "text_tw": "用靈氣強化基礎招式（若卡組首格為【KEYWORD_常规牌】且不高於築基期，本局遊戲為其永久附加“靈氣+1”的效果）",
+    "text_cn_resolved": "用灵气强化基础招式（若卡组首格为[常规牌]且不高于筑基期，本局游戏为其永久附加“灵气+1”的效果）",
+    "text_en_resolved": "Use Qi to Enhance Basics (If first deck slot is a [Regular Card] and not beyond Foundation Phase, permanently add \"Qi+1\" to it this game)",
+    "text_tw_resolved": "用靈氣強化基礎招式（若卡組首格為[常規牌]且不高於築基期，本局遊戲為其永久附加“靈氣+1”的效果）"
+  },
+  {
+    "id": 4002,
+    "text_cn": "寻找更多灵气（若已到达筑基期：修为-{0}，获得{0}张加灵气的牌（筑基期以上））",
+    "text_en": "Seek More Qi (If reached Foundation Phase: Cultivation-{0}, gain {0} Qi-adding cards (Foundation Phase or above))",
+    "text_tw": "尋找更多靈氣（若已到達築基期：修為-{0}，獲得{0}張加靈氣的牌（築基期以上））",
+    "text_cn_resolved": "寻找更多灵气（若已到达筑基期：修为-{0}，获得{0}张加灵气的牌（筑基期以上））",
+    "text_en_resolved": "Seek More Qi (If reached Foundation Phase: Cultivation-{0}, gain {0} Qi-adding cards (Foundation Phase or above))",
+    "text_tw_resolved": "尋找更多靈氣（若已到達築基期：修為-{0}，獲得{0}張加靈氣的牌（築基期以上））"
+  },
+  {
+    "id": 4003,
+    "text_cn": "将灵气消耗掉（若已到达筑基期：修为-{0}，获得{0}张耗灵气的牌（筑基期以上））",
+    "text_en": "Consume Qi (If reached Foundation Phase: Cultivation-{0}, gain {0} Qi-consuming cards (Foundation Phase or above))",
+    "text_tw": "將靈氣消耗掉（若已到達築基期：修為-{0}，獲得{0}張耗靈氣的牌（築基期以上））",
+    "text_cn_resolved": "将灵气消耗掉（若已到达筑基期：修为-{0}，获得{0}张耗灵气的牌（筑基期以上））",
+    "text_en_resolved": "Consume Qi (If reached Foundation Phase: Cultivation-{0}, gain {0} Qi-consuming cards (Foundation Phase or above))",
+    "text_tw_resolved": "將靈氣消耗掉（若已到達築基期：修為-{0}，獲得{0}張耗靈氣的牌（築基期以上））"
+  },
+  {
+    "id": 4101,
+    "text_cn": "甜粽派（获得1张3级的【runtimeParam】）",
+    "text_en": "Sweet Zongzi Faction (Gain 1 Level 3 【runtimeParam】)",
+    "text_tw": "甜粽派（獲得1張3級的【runtimeParam】）",
+    "text_cn_resolved": "甜粽派（获得1张3级的【runtimeParam】）",
+    "text_en_resolved": "Sweet Zongzi Faction (Gain 1 Level 3 【runtimeParam】)",
+    "text_tw_resolved": "甜粽派（獲得1張3級的【runtimeParam】）"
+  },
+  {
+    "id": 4102,
+    "text_cn": "咸粽派（获得1张3级的【runtimeParam】）",
+    "text_en": "Salty Zongzi Faction (Gain 1 Level 3 【runtimeParam】)",
+    "text_tw": "鹹粽派（獲得1張3級的【runtimeParam】）",
+    "text_cn_resolved": "咸粽派（获得1张3级的【runtimeParam】）",
+    "text_en_resolved": "Salty Zongzi Faction (Gain 1 Level 3 【runtimeParam】)",
+    "text_tw_resolved": "鹹粽派（獲得1張3級的【runtimeParam】）"
+  },
+  {
+    "id": 4201,
+    "text_cn": "摘星换斗（将卡组第一格的牌变为【runtimeParam】）",
+    "text_en": "Picking Stars (change the card in the first slot of the deck to 【runtimeParam】)",
+    "text_tw": "摘星換斗（將卡組第一格的牌變為【runtimeParam】）",
+    "text_cn_resolved": "摘星换斗（将卡组第一格的牌变为【runtimeParam】）",
+    "text_en_resolved": "Picking Stars (change the card in the first slot of the deck to 【runtimeParam】)",
+    "text_tw_resolved": "摘星換斗（將卡組第一格的牌變為【runtimeParam】）"
+  },
+  {
+    "id": 4202,
+    "text_cn": "摘星换斗（将卡组第一格的牌变为【runtimeParam】）",
+    "text_en": "Picking Stars (change the card in the first slot of the deck to 【runtimeParam】)",
+    "text_tw": "摘星換斗（將卡組第一格的牌變為【runtimeParam】）",
+    "text_cn_resolved": "摘星换斗（将卡组第一格的牌变为【runtimeParam】）",
+    "text_en_resolved": "Picking Stars (change the card in the first slot of the deck to 【runtimeParam】)",
+    "text_tw_resolved": "摘星換斗（將卡組第一格的牌變為【runtimeParam】）"
+  },
+  {
+    "id": 4203,
+    "text_cn": "摘星换斗（将卡组第一格的牌变为【runtimeParam】）",
+    "text_en": "Picking Stars (change the card in the first slot of the deck to 【runtimeParam】)",
+    "text_tw": "摘星換斗（將卡組第一格的牌變為【runtimeParam】）",
+    "text_cn_resolved": "摘星换斗（将卡组第一格的牌变为【runtimeParam】）",
+    "text_en_resolved": "Picking Stars (change the card in the first slot of the deck to 【runtimeParam】)",
+    "text_tw_resolved": "摘星換斗（將卡組第一格的牌變為【runtimeParam】）"
+  },
+  {
+    "id": 4204,
+    "text_cn": "物换星移（将卡组第一格的牌变为当前境界随机牌，可能出现气运秘传或秘术）",
+    "text_en": "Moving Stars (change the card in the first slot of the deck to a random card in the current phase, which may result in the Legendary of Genesis Fate or Secret Enchantment)",
+    "text_tw": "物換星移（將卡組第一格的牌變為當前境界隨機牌，可能出現氣運秘傳或秘術）",
+    "text_cn_resolved": "物换星移（将卡组第一格的牌变为当前境界随机牌，可能出现气运秘传或秘术）",
+    "text_en_resolved": "Moving Stars (change the card in the first slot of the deck to a random card in the current phase, which may result in the Legendary of Genesis Fate or Secret Enchantment)",
+    "text_tw_resolved": "物換星移（將卡組第一格的牌變為當前境界隨機牌，可能出現氣運秘傳或秘術）"
+  },
+  {
+    "id": 4301,
+    "text_cn": "修为-1，获得2级【runtimeParam】",
+    "text_en": "Cultivation-1, gain 【runtimeParam】 of level 2",
+    "text_tw": "修為-1，獲得2級【runtimeParam】",
+    "text_cn_resolved": "修为-1，获得2级【runtimeParam】",
+    "text_en_resolved": "Cultivation-1, gain 【runtimeParam】 of level 2",
+    "text_tw_resolved": "修為-1，獲得2級【runtimeParam】"
+  },
+  {
+    "id": 4302,
+    "text_cn": "修为-1，获得2级【runtimeParam】",
+    "text_en": "Cultivation-1, gain 【runtimeParam】 of level 2",
+    "text_tw": "修為-1，獲得2級【runtimeParam】",
+    "text_cn_resolved": "修为-1，获得2级【runtimeParam】",
+    "text_en_resolved": "Cultivation-1, gain 【runtimeParam】 of level 2",
+    "text_tw_resolved": "修為-1，獲得2級【runtimeParam】"
+  },
+  {
+    "id": 4303,
+    "text_cn": "修为-1，获得2级【runtimeParam】",
+    "text_en": "Cultivation-1, gain 【runtimeParam】 of level 2",
+    "text_tw": "修為-1，獲得2級【runtimeParam】",
+    "text_cn_resolved": "修为-1，获得2级【runtimeParam】",
+    "text_en_resolved": "Cultivation-1, gain 【runtimeParam】 of level 2",
+    "text_tw_resolved": "修為-1，獲得2級【runtimeParam】"
+  },
+  {
+    "id": 4401,
+    "text_cn": "卡牌升级（若卡组第一格为1级【KEYWORD_常规牌】，则换牌机会-{0}，将其升1级）",
+    "text_en": "Card Upgrade (If the first card in deck is Lv.1【KEYWORD_常规牌】, Exchange Card Chance -{0} and Upgrade it)",
+    "text_tw": "卡牌升級（若卡組第一格爲1級【KEYWORD_常规牌】，則換牌機會-{0}，將其升1級）",
+    "text_cn_resolved": "卡牌升级（若卡组第一格为1级[常规牌]，则换牌机会-{0}，将其升1级）",
+    "text_en_resolved": "Card Upgrade (If the first card in deck is Lv.1[Regular Card], Exchange Card Chance -{0} and Upgrade it)",
+    "text_tw_resolved": "卡牌升級（若卡組第一格爲1級[常規牌]，則換牌機會-{0}，將其升1級）"
+  },
+  {
+    "id": 4402,
+    "text_cn": "卡牌分裂（若卡组第一格为2/3级【KEYWORD_常规牌】，将其拆为2/4张1级牌，并减1/3修为）",
+    "text_en": "Card Split (If the first card in deck is Lv.2 / 3【KEYWORD_常规牌】, split it into 2 / 4 Lv.1 cards and lose 1 / 3 Cul.)",
+    "text_tw": "卡牌分裂（若卡組第一格爲2/3級【KEYWORD_常規牌】，將其拆爲2/4張1級牌，並減1/3修爲）",
+    "text_cn_resolved": "卡牌分裂（若卡组第一格为2/3级[常规牌]，将其拆为2/4张1级牌，并减1/3修为）",
+    "text_en_resolved": "Card Split (If the first card in deck is Lv.2 / 3[Regular Card], split it into 2 / 4 Lv.1 cards and lose 1 / 3 Cul.)",
+    "text_tw_resolved": "卡牌分裂（若卡組第一格爲2/3級[常規牌]，將其拆爲2/4張1級牌，並減1/3修爲）"
+  },
+  {
+    "id": 4403,
+    "text_cn": "提升境界（若卡组第一格为1级【KEYWORD_常规牌】且低于自身境界，将其变为高1境界的随机牌）",
+    "text_en": "Phase Ascension (If the first card in the deck is Lv.1【KEYWORD_常规牌】and below your Phase, Turn it into a random card 1 Phase higher)",
+    "text_tw": "提升境界（若卡組第一格爲1級【KEYWORD_常规牌】且低於自身境界，將其變爲高1境界的隨機牌）",
+    "text_cn_resolved": "提升境界（若卡组第一格为1级[常规牌]且低于自身境界，将其变为高1境界的随机牌）",
+    "text_en_resolved": "Phase Ascension (If the first card in the deck is Lv.1[Regular Card]and below your Phase, Turn it into a random card 1 Phase higher)",
+    "text_tw_resolved": "提升境界（若卡組第一格爲1級[常規牌]且低於自身境界，將其變爲高1境界的隨機牌）"
+  },
+  {
+    "id": 4404,
+    "text_cn": "重塑境界（若卡组第一格为1级【KEYWORD_常规牌】，将其变为低1境界的随机牌，然后升1级）",
+    "text_en": "Phase Reforging (If the first card in the deck is Lv.1【KEYWORD_常规牌】, Turn it into a random card 1 Phase lower then Upgrade it)",
+    "text_tw": "重塑境界（若卡組第一格爲1級【KEYWORD_常规牌】，將其變爲低1境界的隨機牌，然後升1級）",
+    "text_cn_resolved": "重塑境界（若卡组第一格为1级[常规牌]，将其变为低1境界的随机牌，然后升1级）",
+    "text_en_resolved": "Phase Reforging (If the first card in the deck is Lv.1[Regular Card], Turn it into a random card 1 Phase lower then Upgrade it)",
+    "text_tw_resolved": "重塑境界（若卡組第一格爲1級[常規牌]，將其變爲低1境界的隨機牌，然後升1級）"
+  },
+  {
+    "id": 4501,
+    "text_cn": "选择博弈，逆天改命（下场战斗反转先后手，即修为加速度低者先行动。若对方也选反转则恢复正常）",
+    "text_en": "Game and Reverse(In the next battle, reverse the Act Order, that is, the one with low Cultivation and Speed act first. If the opponent also chooses to reverse, it will return to normal)",
+    "text_tw": "選擇博弈，逆天改命（下場戰鬥反轉先後手，即修為加速度低者先行動。若對方也選反轉則恢複正常）",
+    "text_cn_resolved": "选择博弈，逆天改命（下场战斗反转先后手，即修为加速度低者先行动。若对方也选反转则恢复正常）",
+    "text_en_resolved": "Game and Reverse(In the next battle, reverse the Act Order, that is, the one with low Cultivation and Speed act first. If the opponent also chooses to reverse, it will return to normal)",
+    "text_tw_resolved": "選擇博弈，逆天改命（下場戰鬥反轉先後手，即修為加速度低者先行動。若對方也選反轉則恢複正常）"
+  },
+  {
+    "id": 4502,
+    "text_cn": "猜先（下场战斗先手方加{0}生命及上限）",
+    "text_en": "Guess first (At the beginning of the battle, the one act first add {0} HP and Max Hp)",
+    "text_tw": "猜先（下場戰鬥先手方加{0}生命及上限）",
+    "text_cn_resolved": "猜先（下场战斗先手方加{0}生命及上限）",
+    "text_en_resolved": "Guess first (At the beginning of the battle, the one act first add {0} HP and Max Hp)",
+    "text_tw_resolved": "猜先（下場戰鬥先手方加{0}生命及上限）"
+  },
+  {
+    "id": 4503,
+    "text_cn": "猜后（下场战斗后手方加{0}生命及上限）",
+    "text_en": "Guess later (At the beginning of the battle, the one act later add {0} HP and Max Hp)",
+    "text_tw": "猜後（下場戰鬥後手方加{0}生命及上限）",
+    "text_cn_resolved": "猜后（下场战斗后手方加{0}生命及上限）",
+    "text_en_resolved": "Guess later (At the beginning of the battle, the one act later add {0} HP and Max Hp)",
+    "text_tw_resolved": "猜後（下場戰鬥後手方加{0}生命及上限）"
+  },
+  {
+    "id": 4504,
+    "text_cn": "放弃博弈，直接拼了（下场战斗自身加{0}生命及上限）",
+    "text_en": "Give up gaming and fight directly (At the beginning of the battle, your add {0} HP and Max Hp)",
+    "text_tw": "放棄博弈，直接拚了（下場戰鬥自身加{0}生命及上限）",
+    "text_cn_resolved": "放弃博弈，直接拼了（下场战斗自身加{0}生命及上限）",
+    "text_en_resolved": "Give up gaming and fight directly (At the beginning of the battle, your add {0} HP and Max Hp)",
+    "text_tw_resolved": "放棄博弈，直接拚了（下場戰鬥自身加{0}生命及上限）"
+  },
+  {
+    "id": 4505,
+    "text_cn": "放弃博弈，积极修炼（换牌机会+{0}）",
+    "text_en": "Give up gaming and cultivate actively (Gain {0} Exchange Card Chance)",
+    "text_tw": "放棄博弈，積極修煉（換牌機會+{0}）",
+    "text_cn_resolved": "放弃博弈，积极修炼（换牌机会+{0}）",
+    "text_en_resolved": "Give up gaming and cultivate actively (Gain {0} Exchange Card Chance)",
+    "text_tw_resolved": "放棄博弈，積極修煉（換牌機會+{0}）"
+  },
+  {
+    "id": 4506,
+    "text_cn": "先积攒实力（自身每保留1张手牌下场战斗就加1速度）",
+    "text_en": "Accumulate Strength First (For every hand card held, add 1 Speed in the next battle)",
+    "text_tw": "先積攢實力（自身每保留1張手牌下場戰鬥就加1速度）",
+    "text_cn_resolved": "先积攒实力（自身每保留1张手牌下场战斗就加1速度）",
+    "text_en_resolved": "Accumulate Strength First (For every hand card held, add 1 Speed in the next battle)",
+    "text_tw_resolved": "先積攢實力（自身每保留1張手牌下場戰鬥就加1速度）"
+  },
+  {
+    "id": 4601,
+    "text_cn": "等级公平（下场战斗开始时，双方所有牌变为2级）",
+    "text_en": "Level Equality (At the beginning of the next battle, all cards on both sides become Level 2)",
+    "text_tw": "等級公平（下場戰鬥開始時，雙方所有牌變為2級）",
+    "text_cn_resolved": "等级公平（下场战斗开始时，双方所有牌变为2级）",
+    "text_en_resolved": "Level Equality (At the beginning of the next battle, all cards on both sides become Level 2)",
+    "text_tw_resolved": "等級公平（下場戰鬥開始時，雙方所有牌變為2級）"
+  },
+  {
+    "id": 4602,
+    "text_cn": "先手公平（下场战斗无视修为和速度，随机一方先手，但后手方额外加{0}生命及上限）",
+    "text_en": "Initiative Equality (At the beginning of the next battle, ignore Cultivation and Speed and randomize initiative order. The second-acting side gains {0} HP and Max HP)",
+    "text_tw": "先手公平（下場戰鬥無視修為和速度，隨機一方先手，但後手方額外加{0}生命及上限）",
+    "text_cn_resolved": "先手公平（下场战斗无视修为和速度，随机一方先手，但后手方额外加{0}生命及上限）",
+    "text_en_resolved": "Initiative Equality (At the beginning of the next battle, ignore Cultivation and Speed and randomize initiative order. The second-acting side gains {0} HP and Max HP)",
+    "text_tw_resolved": "先手公平（下場戰鬥無視修為和速度，隨機一方先手，但後手方額外加{0}生命及上限）"
+  },
+  {
+    "id": 4603,
+    "text_cn": "生命公平（下场战斗开始时，双方的生命和生命上限变为相同，取双方的较高值）",
+    "text_en": "HP Equality (At the beginning of the next battle, set both sides' HP and Max HP to the higher value between you)",
+    "text_tw": "生命公平（下場戰鬥開始時，雙方的生命和生命上限變為相同，取雙方的較高值）",
+    "text_cn_resolved": "生命公平（下场战斗开始时，双方的生命和生命上限变为相同，取双方的较高值）",
+    "text_en_resolved": "HP Equality (At the beginning of the next battle, set both sides' HP and Max HP to the higher value between you)",
+    "text_tw_resolved": "生命公平（下場戰鬥開始時，雙方的生命和生命上限變為相同，取雙方的較高值）"
+  },
+  {
+    "id": 4701,
+    "text_cn": "定向求索（修为-{0}，换牌机会-{1}，自选并获得1张自身初始副职业的牌）",
+    "text_en": "Targeted Research (Cultivation-{0}, Exchange Card Chance-{1} to select and gain 1 card of your initial Side Job.)",
+    "text_tw": "定向求索（修為-{0}，換牌機會-{1}，自選並獲得1張自身初始副職業的牌）",
+    "text_cn_resolved": "定向求索（修为-{0}，换牌机会-{1}，自选并获得1张自身初始副职业的牌）",
+    "text_en_resolved": "Targeted Research (Cultivation-{0}, Exchange Card Chance-{1} to select and gain 1 card of your initial Side Job.)",
+    "text_tw_resolved": "定向求索（修為-{0}，換牌機會-{1}，自選並獲得1張自身初始副職業的牌）"
+  },
+  {
+    "id": 4702,
+    "text_cn": "追求卓越（生命上限-{0}，删除牌池中炼气期和筑基期的副职牌）",
+    "text_en": "Pursuit of Excellence (Max HP-{0} to delete all Meditation Phase and Foundation Phase Side Job cards from the card pool)",
+    "text_tw": "追求卓越（生命上限-{0}，刪除牌池中煉氣期和築基期的副職牌）",
+    "text_cn_resolved": "追求卓越（生命上限-{0}，删除牌池中炼气期和筑基期的副职牌）",
+    "text_en_resolved": "Pursuit of Excellence (Max HP-{0} to delete all Meditation Phase and Foundation Phase Side Job cards from the card pool)",
+    "text_tw_resolved": "追求卓越（生命上限-{0}，刪除牌池中煉氣期和築基期的副職牌）"
+  },
+  {
+    "id": 4703,
+    "text_cn": "拓展眼界（牌池中元婴期和化神期的副职牌的数量+{0}）",
+    "text_en": "Broaden Horizons (Add {0} Immortality Phase and Incarnation Phase Side Job cards to the card pool)",
+    "text_tw": "拓展眼界（牌池中元嬰期和化神期的副職牌的數量+{0}）",
+    "text_cn_resolved": "拓展眼界（牌池中元婴期和化神期的副职牌的数量+{0}）",
+    "text_en_resolved": "Broaden Horizons (Add {0} Immortality Phase and Incarnation Phase Side Job cards to the card pool)",
+    "text_tw_resolved": "拓展眼界（牌池中元嬰期和化神期的副職牌的數量+{0}）"
+  },
+  {
+    "id": 4704,
+    "text_cn": "深入钻研（随机升级手牌或卡组中的1张1级的副职牌）",
+    "text_en": "Deep Specialization (Randomly upgrade 1 Level 1 Side Job card in hand/deck)",
+    "text_tw": "深入鑽研（隨機升級手牌或卡組中的1張1級的副職牌）",
+    "text_cn_resolved": "深入钻研（随机升级手牌或卡组中的1张1级的副职牌）",
+    "text_en_resolved": "Deep Specialization (Randomly upgrade 1 Level 1 Side Job card in hand/deck)",
+    "text_tw_resolved": "深入鑽研（隨機升級手牌或卡組中的1張1級的副職牌）"
+  },
+  {
+    "id": 4801,
+    "text_cn": "提议休养生息（下轮开始时，所有角色加{0}命元）",
+    "text_en": "Propose to Rest (When the next round begins, all characters will gain {0} Destiny)",
+    "text_tw": "提議休養生息（下輪開始時，所有角色加{0}命元）",
+    "text_cn_resolved": "提议休养生息（下轮开始时，所有角色加{0}命元）",
+    "text_en_resolved": "Propose to Rest (When the next round begins, all characters will gain {0} Destiny)",
+    "text_tw_resolved": "提議休養生息（下輪開始時，所有角色加{0}命元）"
+  },
+  {
+    "id": 4802,
+    "text_cn": "提议开拓创新（下轮开始时，所有角色加{0}换牌机会和储存上限）",
+    "text_en": "Propose to Innovate (When the next round begins, all characters will gain {0} Exchange Card Chance and storage limit)",
+    "text_tw": "提議開拓創新（下輪開始時，所有角色加{0}換牌機會和儲存上限）",
+    "text_cn_resolved": "提议开拓创新（下轮开始时，所有角色加{0}换牌机会和储存上限）",
+    "text_en_resolved": "Propose to Innovate (When the next round begins, all characters will gain {0} Exchange Card Chance and storage limit)",
+    "text_tw_resolved": "提議開拓創新（下輪開始時，所有角色加{0}換牌機會和儲存上限）"
+  },
+  {
+    "id": 4803,
+    "text_cn": "提议稳固基础（下轮开始时，所有角色加{0}生命上限）",
+    "text_en": "Propose to Stabilize the Foundation (When the next round begins, all characters will gain {0} max HP)",
+    "text_tw": "提議穩固基礎（下輪開始時，所有角色加{0}生命上限）",
+    "text_cn_resolved": "提议稳固基础（下轮开始时，所有角色加{0}生命上限）",
+    "text_en_resolved": "Propose to Stabilize the Foundation (When the next round begins, all characters will gain {0} max HP)",
+    "text_tw_resolved": "提議穩固基礎（下輪開始時，所有角色加{0}生命上限）"
+  },
+  {
+    "id": 4804,
+    "text_cn": "提议积极修炼（下轮开始时，所有角色抽{0}张牌，累计最多{1}张）",
+    "text_en": "Propose to Actively Cultivate (When the next round begins, all characters will Draw {0} Card, with a maximum of {1} cards accumulated)",
+    "text_tw": "提議積極修煉（下輪開始時，所有角色抽{0}張牌，累計最多{1}張）",
+    "text_cn_resolved": "提议积极修炼（下轮开始时，所有角色抽{0}张牌，累计最多{1}张）",
+    "text_en_resolved": "Propose to Actively Cultivate (When the next round begins, all characters will Draw {0} Card, with a maximum of {1} cards accumulated)",
+    "text_tw_resolved": "提議積極修煉（下輪開始時，所有角色抽{0}張牌，累計最多{1}張）"
+  },
+  {
+    "id": 4805,
+    "text_cn": "不装了，我摊牌了！（下轮开始时，所有角色本轮的提议不生效）",
+    "text_en": "Flip the Table (When the next round begins, all characters' proposals in this round will not take effect)",
+    "text_tw": "不裝了，我攤牌了！（下輪開始時，所有角色本輪的提議不生效）",
+    "text_cn_resolved": "不装了，我摊牌了！（下轮开始时，所有角色本轮的提议不生效）",
+    "text_en_resolved": "Flip the Table (When the next round begins, all characters' proposals in this round will not take effect)",
+    "text_tw_resolved": "不裝了，我攤牌了！（下輪開始時，所有角色本輪的提議不生效）"
+  },
+  {
+    "id": 4901,
+    "text_cn": "专注门派（本轮下{0}次常规换牌优先换出门派牌）",
+    "text_en": "Focus on the Sect (The next {0} times you Exchange Card in this round, you will priority get the card of your sect)",
+    "text_tw": "專注門派（本輪下{0}次常規換牌優先換出門派牌）",
+    "text_cn_resolved": "专注门派（本轮下{0}次常规换牌优先换出门派牌）",
+    "text_en_resolved": "Focus on the Sect (The next {0} times you Exchange Card in this round, you will priority get the card of your sect)",
+    "text_tw_resolved": "專注門派（本輪下{0}次常規換牌優先換出門派牌）"
+  },
+  {
+    "id": 4902,
+    "text_cn": "专注副职（本轮下{0}次常规换牌优先换出副职牌）",
+    "text_en": "Focus on Side Job (The next {0} times you Exchange Card in this round, you will priority get the card of your Side Job)",
+    "text_tw": "專注副職（本輪下{0}次常規換牌優先換出副職牌）",
+    "text_cn_resolved": "专注副职（本轮下{0}次常规换牌优先换出副职牌）",
+    "text_en_resolved": "Focus on Side Job (The next {0} times you Exchange Card in this round, you will priority get the card of your Side Job)",
+    "text_tw_resolved": "專注副職（本輪下{0}次常規換牌優先換出副職牌）"
+  },
+  {
+    "id": 4903,
+    "text_cn": "专注境界（本轮下{0}次常规换牌优先换出当前境界的牌）",
+    "text_en": "Focus on Phase (The next {0} times you Exchange Card in this round, you will priority get the card of your Phase)",
+    "text_tw": "專注境界（本輪下{0}次常規換牌優先換出當前境界的牌）",
+    "text_cn_resolved": "专注境界（本轮下{0}次常规换牌优先换出当前境界的牌）",
+    "text_en_resolved": "Focus on Phase (The next {0} times you Exchange Card in this round, you will priority get the card of your Phase)",
+    "text_tw_resolved": "專注境界（本輪下{0}次常規換牌優先換出當前境界的牌）"
+  },
+  {
+    "id": 4904,
+    "text_cn": "涉猎亦为重中之重（换牌机会+{0}）",
+    "text_en": "Exploring is also of Utmost Importance (Exchange Card Chance+{0})",
+    "text_tw": "涉獵亦為重中之重（換牌機會+{0}）",
+    "text_cn_resolved": "涉猎亦为重中之重（换牌机会+{0}）",
+    "text_en_resolved": "Exploring is also of Utmost Importance (Exchange Card Chance+{0})",
+    "text_tw_resolved": "涉獵亦為重中之重（換牌機會+{0}）"
+  },
+  {
+    "id": 5001,
+    "text_cn": "将黄色印记放入第一个槽位（下场战斗自身第{0}回合开始时：获得1层护体）",
+    "text_en": "Place Yellow Seal in 1st Slot (At start of your turn {0} next battle: Gain 1 layer of Guard Up)",
+    "text_tw": "將黃色印記放入第一個槽位（下場戰鬥自身第{0}回合開始時：獲得1層護體）",
+    "text_cn_resolved": "将黄色印记放入第一个槽位（下场战斗自身第{0}回合开始时：获得1层护体）",
+    "text_en_resolved": "Place Yellow Seal in 1st Slot (At start of your turn {0} next battle: Gain 1 layer of Guard Up)",
+    "text_tw_resolved": "將黃色印記放入第一個槽位（下場戰鬥自身第{0}回合開始時：獲得1層護體）"
+  },
+  {
+    "id": 5002,
+    "text_cn": "将黄色印记放入第二个槽位（下场战斗自身第{0}回合开始时：获得1层护体）",
+    "text_en": "Place Yellow Seal in 2nd Slot (At start of your turn {0} next battle: Gain 1 layer of Guard Up)",
+    "text_tw": "將黃色印記放入第二個槽位（下場戰鬥自身第{0}回合開始時：獲得1層護體）",
+    "text_cn_resolved": "将黄色印记放入第二个槽位（下场战斗自身第{0}回合开始时：获得1层护体）",
+    "text_en_resolved": "Place Yellow Seal in 2nd Slot (At start of your turn {0} next battle: Gain 1 layer of Guard Up)",
+    "text_tw_resolved": "將黃色印記放入第二個槽位（下場戰鬥自身第{0}回合開始時：獲得1層護體）"
+  },
+  {
+    "id": 5003,
+    "text_cn": "将黄色印记放入第三个槽位（下场战斗自身第{0}回合开始时：获得1层护体）",
+    "text_en": "Place Yellow Seal in 3rd Slot (At start of your turn {0} next battle: Gain 1 layer of Guard Up)",
+    "text_tw": "將黃色印記放入第三個槽位（下場戰鬥自身第{0}回合開始時：獲得1層護體）",
+    "text_cn_resolved": "将黄色印记放入第三个槽位（下场战斗自身第{0}回合开始时：获得1层护体）",
+    "text_en_resolved": "Place Yellow Seal in 3rd Slot (At start of your turn {0} next battle: Gain 1 layer of Guard Up)",
+    "text_tw_resolved": "將黃色印記放入第三個槽位（下場戰鬥自身第{0}回合開始時：獲得1層護體）"
+  },
+  {
+    "id": 5004,
+    "text_cn": "将蓝色印记放入第一个槽位（下场战斗自身第{0}回合开始时：升级下1次使用的牌）",
+    "text_en": "Place Blue Seal in 1st Slot (At start of your turn {0} next battle: Upgrade your next used card)",
+    "text_tw": "將藍色印記放入第一個槽位（下場戰鬥自身第{0}回合開始時：升級下1次使用的牌）",
+    "text_cn_resolved": "将蓝色印记放入第一个槽位（下场战斗自身第{0}回合开始时：升级下1次使用的牌）",
+    "text_en_resolved": "Place Blue Seal in 1st Slot (At start of your turn {0} next battle: Upgrade your next used card)",
+    "text_tw_resolved": "將藍色印記放入第一個槽位（下場戰鬥自身第{0}回合開始時：升級下1次使用的牌）"
+  },
+  {
+    "id": 5005,
+    "text_cn": "将蓝色印记放入第二个槽位（下场战斗自身第{0}回合开始时：升级下1次使用的牌）",
+    "text_en": "Place Blue Seal in 2nd Slot (At start of your turn {0} next battle: Upgrade your next used card)",
+    "text_tw": "將藍色印記放入第二個槽位（下場戰鬥自身第{0}回合開始時：升級下1次使用的牌）",
+    "text_cn_resolved": "将蓝色印记放入第二个槽位（下场战斗自身第{0}回合开始时：升级下1次使用的牌）",
+    "text_en_resolved": "Place Blue Seal in 2nd Slot (At start of your turn {0} next battle: Upgrade your next used card)",
+    "text_tw_resolved": "將藍色印記放入第二個槽位（下場戰鬥自身第{0}回合開始時：升級下1次使用的牌）"
+  },
+  {
+    "id": 5006,
+    "text_cn": "将蓝色印记放入第三个槽位（下场战斗自身第{0}回合开始时：升级下1次使用的牌）",
+    "text_en": "Place Blue Seal in 3rd Slot (At start of your turn {0} next battle: Upgrade your next used card)",
+    "text_tw": "將藍色印記放入第三個槽位（下場戰鬥自身第{0}回合開始時：升級下1次使用的牌）",
+    "text_cn_resolved": "将蓝色印记放入第三个槽位（下场战斗自身第{0}回合开始时：升级下1次使用的牌）",
+    "text_en_resolved": "Place Blue Seal in 3rd Slot (At start of your turn {0} next battle: Upgrade your next used card)",
+    "text_tw_resolved": "將藍色印記放入第三個槽位（下場戰鬥自身第{0}回合開始時：升級下1次使用的牌）"
+  },
+  {
+    "id": 5007,
+    "text_cn": "将红色印记放入第一个槽位（下场战斗自身第{0}回合开始时：降级对方下1次使用的牌）",
+    "text_en": "Place Red Seal in 1st Slot (At start of your turn {0} next battle: Downgrade opponent’s next used card)",
+    "text_tw": "將紅色印記放入第一個槽位（下場戰鬥自身第{0}回合開始時：降級對方下1次使用的牌）",
+    "text_cn_resolved": "将红色印记放入第一个槽位（下场战斗自身第{0}回合开始时：降级对方下1次使用的牌）",
+    "text_en_resolved": "Place Red Seal in 1st Slot (At start of your turn {0} next battle: Downgrade opponent’s next used card)",
+    "text_tw_resolved": "將紅色印記放入第一個槽位（下場戰鬥自身第{0}回合開始時：降級對方下1次使用的牌）"
+  },
+  {
+    "id": 5008,
+    "text_cn": "将红色印记放入第二个槽位（下场战斗自身第{0}回合开始时：降级对方下1次使用的牌）",
+    "text_en": "Place Red Seal in 2nd Slot (At start of your turn {0} next battle: Downgrade opponent’s next used card)",
+    "text_tw": "將紅色印記放入第二個槽位（下場戰鬥自身第{0}回合開始時：降級對方下1次使用的牌）",
+    "text_cn_resolved": "将红色印记放入第二个槽位（下场战斗自身第{0}回合开始时：降级对方下1次使用的牌）",
+    "text_en_resolved": "Place Red Seal in 2nd Slot (At start of your turn {0} next battle: Downgrade opponent’s next used card)",
+    "text_tw_resolved": "將紅色印記放入第二個槽位（下場戰鬥自身第{0}回合開始時：降級對方下1次使用的牌）"
+  },
+  {
+    "id": 5009,
+    "text_cn": "将红色印记放入第三个槽位（下场战斗自身第{0}回合开始时：降级对方下1次使用的牌）",
+    "text_en": "Place Red Seal in 3rd Slot (At start of your turn {0} next battle: Downgrade opponent’s next used card)",
+    "text_tw": "將紅色印記放入第三個槽位（下場戰鬥自身第{0}回合開始時：降級對方下1次使用的牌）",
+    "text_cn_resolved": "将红色印记放入第三个槽位（下场战斗自身第{0}回合开始时：降级对方下1次使用的牌）",
+    "text_en_resolved": "Place Red Seal in 3rd Slot (At start of your turn {0} next battle: Downgrade opponent’s next used card)",
+    "text_tw_resolved": "將紅色印記放入第三個槽位（下場戰鬥自身第{0}回合開始時：降級對方下1次使用的牌）"
+  },
+  {
+    "id": 5101,
+    "text_cn": "用气运换牌（换牌机会+{0}，下场战斗若胜利再加{0}换牌机会）",
+    "text_en": "Use Luck for Cards (Exchange Card Chance +{0}. If next battle is won: +{0} more Exchange Card Chance)",
+    "text_tw": "用氣運換牌（換牌機會+{0}，下場戰鬥若勝利再加{0}換牌機會）",
+    "text_cn_resolved": "用气运换牌（换牌机会+{0}，下场战斗若胜利再加{0}换牌机会）",
+    "text_en_resolved": "Use Luck for Cards (Exchange Card Chance +{0}. If next battle is won: +{0} more Exchange Card Chance)",
+    "text_tw_resolved": "用氣運換牌（換牌機會+{0}，下場戰鬥若勝利再加{0}換牌機會）"
+  },
+  {
+    "id": 5102,
+    "text_cn": "用气运刷新仙命（获得1次刷新仙命选项的机会，下场战斗若胜利则再获得1次）",
+    "text_en": "Use Luck for Immortal Fate (Gain 1 Immortal Fate option refresh. If next battle is won: Gain +1 more refresh)",
+    "text_tw": "用氣運刷新仙命（獲得1次刷新仙命選項的機會，下場戰鬥若勝利則再獲得1次）",
+    "text_cn_resolved": "用气运刷新仙命（获得1次刷新仙命选项的机会，下场战斗若胜利则再获得1次）",
+    "text_en_resolved": "Use Luck for Immortal Fate (Gain 1 Immortal Fate option refresh. If next battle is won: Gain +1 more refresh)",
+    "text_tw_resolved": "用氣運刷新仙命（獲得1次刷新仙命選項的機會，下場戰鬥若勝利則再獲得1次）"
+  },
+  {
+    "id": 5103,
+    "text_cn": "用气运刷新预感（获得1次刷新道韵预感的机会，下场战斗若胜利则再获得1次）",
+    "text_en": "Use Luck for Omen Refresh (Gain 1 Daoist Rhyme Omen refresh. If next battle is won: Gain +1 more refresh)",
+    "text_tw": "用氣運刷新預感（獲得1次刷新道韻預感的機會，下場戰鬥若勝利則再獲得1次）",
+    "text_cn_resolved": "用气运刷新预感（获得1次刷新道韵预感的机会，下场战斗若胜利则再获得1次）",
+    "text_en_resolved": "Use Luck for Omen Refresh (Gain 1 Daoist Rhyme Omen refresh. If next battle is won: Gain +1 more refresh)",
+    "text_tw_resolved": "用氣運刷新預感（獲得1次刷新道韻預感的機會，下場戰鬥若勝利則再獲得1次）"
+  },
+  {
+    "id": 5104,
+    "text_cn": "用气运强化胜利（本局游戏若为第一名，天梯分额外+10。道心分不受影响）",
+    "text_en": "Use Luck for Strengthen Victory (If you achieve the 1st position, you will receive an extra 10 Rank Points. Dao Mindset Score remain unaffected)",
+    "text_tw": "用氣運強化勝利（本局遊戲若為第一名，天梯分額外+10。道心分不受影響）",
+    "text_cn_resolved": "用气运强化胜利（本局游戏若为第一名，天梯分额外+10。道心分不受影响）",
+    "text_en_resolved": "Use Luck for Strengthen Victory (If you achieve the 1st position, you will receive an extra 10 Rank Points. Dao Mindset Score remain unaffected)",
+    "text_tw_resolved": "用氣運強化勝利（本局遊戲若為第一名，天梯分額外+10。道心分不受影響）"
+  },
+  {
+    "id": 5201,
+    "text_cn": "学习逍遥绝学（修为-1，获得【322】）",
+    "text_en": "Learn Xiaoyao Divine Art (Cultivation-1, gain 【322】)",
+    "text_tw": "學習逍遙絕學（修為-1，獲得【322】）",
+    "text_cn_resolved": "学习逍遥绝学（修为-1，获得[逍遥•复刻]）",
+    "text_en_resolved": "Learn Xiaoyao Divine Art (Cultivation-1, gain [Xiaoyao - Reproduction])",
+    "text_tw_resolved": "學習逍遙絕學（修為-1，獲得[逍遙•複刻]）"
+  },
+  {
+    "id": 5202,
+    "text_cn": "随心领悟逍遥招式（修为-2，获得2张随机逍遥牌）",
+    "text_en": "Comprehend Xiaoyao moves at will (Cultivation-2, gain 2 random Xiaoyao Cards)",
+    "text_tw": "隨心領悟逍遙招式（修為-2，獲得2張隨機逍遙牌）",
+    "text_cn_resolved": "随心领悟逍遥招式（修为-2，获得2张随机逍遥牌）",
+    "text_en_resolved": "Comprehend Xiaoyao moves at will (Cultivation-2, gain 2 random Xiaoyao Cards)",
+    "text_tw_resolved": "隨心領悟逍遙招式（修為-2，獲得2張隨機逍遙牌）"
+  },
+  {
+    "id": 5203,
+    "text_cn": "领悟其他招式（修为-1，抽1张牌）",
+    "text_en": "Learn other moves (Cultivation -1, draw 1 card)",
+    "text_tw": "學習其他招式（修為-1，抽1張牌）",
+    "text_cn_resolved": "领悟其他招式（修为-1，抽1张牌）",
+    "text_en_resolved": "Learn other moves (Cultivation -1, draw 1 card)",
+    "text_tw_resolved": "學習其他招式（修為-1，抽1張牌）"
+  },
+  {
+    "id": 5301,
+    "text_cn": "选择云灵剑宗秘籍（修为-1，获得2级【runtimeParam】）",
+    "text_en": "Choose Cloud Spirit Sword Sect Manual (Cultivation-1, gain 【runtimeParam】 of Level 2)",
+    "text_tw": "選擇雲靈劍宗秘籍（修為-1，獲得2級【runtimeParam】）",
+    "text_cn_resolved": "选择云灵剑宗秘籍（修为-1，获得2级【runtimeParam】）",
+    "text_en_resolved": "Choose Cloud Spirit Sword Sect Manual (Cultivation-1, gain 【runtimeParam】 of Level 2)",
+    "text_tw_resolved": "選擇雲靈劍宗秘籍（修為-1，獲得2級【runtimeParam】）"
+  },
+  {
+    "id": 5302,
+    "text_cn": "选择七星阁秘籍（修为-1，获得2级【runtimeParam】）",
+    "text_en": "Choose Heptastar Pavilion Manual (Cultivation-1, gain 【runtimeParam】 of Level 2)",
+    "text_tw": "選擇七星閣秘籍（修為-1，獲得2級【runtimeParam】）",
+    "text_cn_resolved": "选择七星阁秘籍（修为-1，获得2级【runtimeParam】）",
+    "text_en_resolved": "Choose Heptastar Pavilion Manual (Cultivation-1, gain 【runtimeParam】 of Level 2)",
+    "text_tw_resolved": "選擇七星閣秘籍（修為-1，獲得2級【runtimeParam】）"
+  },
+  {
+    "id": 5303,
+    "text_cn": "选择五行道盟秘籍（修为-1，获得2级【runtimeParam】）",
+    "text_en": "Choose Five Elements Alliance Manual (Cultivation-1, gain 【runtimeParam】 of Level 2)",
+    "text_tw": "選擇五行道盟秘籍（修為-1，獲得2級【runtimeParam】）",
+    "text_cn_resolved": "选择五行道盟秘籍（修为-1，获得2级【runtimeParam】）",
+    "text_en_resolved": "Choose Five Elements Alliance Manual (Cultivation-1, gain 【runtimeParam】 of Level 2)",
+    "text_tw_resolved": "選擇五行道盟秘籍（修為-1，獲得2級【runtimeParam】）"
+  },
+  {
+    "id": 5304,
+    "text_cn": "选择锻玄宗秘籍（修为-1，获得2级【runtimeParam】）",
+    "text_en": "Choose Duan Xuan Sect Manual (Cultivation-1, gain 【runtimeParam】 of Level 2)",
+    "text_tw": "選擇鍛玄宗秘籍（修為-1，獲得2級【runtimeParam】）",
+    "text_cn_resolved": "选择锻玄宗秘籍（修为-1，获得2级【runtimeParam】）",
+    "text_en_resolved": "Choose Duan Xuan Sect Manual (Cultivation-1, gain 【runtimeParam】 of Level 2)",
+    "text_tw_resolved": "選擇鍛玄宗秘籍（修為-1，獲得2級【runtimeParam】）"
+  },
+  {
+    "id": 5401,
+    "text_cn": "回忆融汇招式（修为-1，自选并获得1张融汇招式，并向牌池中额外加入{0}张）",
+    "text_en": "Recall Fusion Moves (Cultivation -1, select and obtain 1 Fusion Move, add {0} extra cards to pool)",
+    "text_tw": "回憶融彙招式（修為-1，自選並獲得1張融彙招式，並向牌池中額外加入{0}張）",
+    "text_cn_resolved": "回忆融汇招式（修为-1，自选并获得1张融汇招式，并向牌池中额外加入{0}张）",
+    "text_en_resolved": "Recall Fusion Moves (Cultivation -1, select and obtain 1 Fusion Move, add {0} extra cards to pool)",
+    "text_tw_resolved": "回憶融彙招式（修為-1，自選並獲得1張融彙招式，並向牌池中額外加入{0}張）"
+  },
+  {
+    "id": 5402,
+    "text_cn": "放弃回忆，自行悟道（修为-2，获得2张【2000015】）",
+    "text_en": "Abandon Recall, Self-Enlightenment (Cultivation -2, obtain two【2000015】)",
+    "text_tw": "放棄回憶，自行悟道（修為-2，獲得2張【2000015】）",
+    "text_cn_resolved": "放弃回忆，自行悟道（修为-2，获得2张[悟道丹]）",
+    "text_en_resolved": "Abandon Recall, Self-Enlightenment (Cultivation -2, obtain two[Enlightenment Elixir])",
+    "text_tw_resolved": "放棄回憶，自行悟道（修為-2，獲得2張[悟道丹]）"
+  },
+  {
+    "id": 5403,
+    "text_cn": "转念回忆门派招式（随机变换手牌中的所有门派牌，继承等级和境界）",
+    "text_en": "Shift Focus to Sect Moves (Randomly transform all Sect cards in hand, retaining level and Phase)",
+    "text_tw": "轉念回憶門派招式（隨機變換手牌中的所有門派牌，繼承等級和境界）",
+    "text_cn_resolved": "转念回忆门派招式（随机变换手牌中的所有门派牌，继承等级和境界）",
+    "text_en_resolved": "Shift Focus to Sect Moves (Randomly transform all Sect cards in hand, retaining level and Phase)",
+    "text_tw_resolved": "轉念回憶門派招式（隨機變換手牌中的所有門派牌，繼承等級和境界）"
+  },
+  {
+    "id": 5404,
+    "text_cn": "感觉不如幻景牌...好用（修为-1，自选并获得1张幻景招式）",
+    "text_en": "Not as Useful as Mirage Moves... (Cultivation -1, select and obtain 1 Mirage Card)",
+    "text_tw": "感覺不如幻景牌...好用（修為-1，自選並獲得1張幻景招式）",
+    "text_cn_resolved": "感觉不如幻景牌...好用（修为-1，自选并获得1张幻景招式）",
+    "text_en_resolved": "Not as Useful as Mirage Moves... (Cultivation -1, select and obtain 1 Mirage Card)",
+    "text_tw_resolved": "感覺不如幻景牌...好用（修為-1，自選並獲得1張幻景招式）"
+  },
+  {
+    "id": 5501,
+    "text_cn": "若手牌中保留1级的【runtimeParam】，下场战斗结束时将其升1级（最多升级1张）",
+    "text_en": "If 【runtimeParam】 of Level 1  is kept in hand: Upgrade it by 1 level after next battle (max 1 card)",
+    "text_tw": "若手牌中保留1級的【runtimeParam】，下場戰鬥結束時將其升1級（最多升級1張）",
+    "text_cn_resolved": "若手牌中保留1级的【runtimeParam】，下场战斗结束时将其升1级（最多升级1张）",
+    "text_en_resolved": "If 【runtimeParam】 of Level 1  is kept in hand: Upgrade it by 1 level after next battle (max 1 card)",
+    "text_tw_resolved": "若手牌中保留1級的【runtimeParam】，下場戰鬥結束時將其升1級（最多升級1張）"
+  },
+  {
+    "id": 5502,
+    "text_cn": "若手牌中保留1级的【runtimeParam】，下场战斗结束时将其升1级（最多升级1张）",
+    "text_en": "If 【runtimeParam】 of Level 1  is kept in hand: Upgrade it by 1 level after next battle (max 1 card)",
+    "text_tw": "若手牌中保留1級的【runtimeParam】，下場戰鬥結束時將其升1級（最多升級1張）",
+    "text_cn_resolved": "若手牌中保留1级的【runtimeParam】，下场战斗结束时将其升1级（最多升级1张）",
+    "text_en_resolved": "If 【runtimeParam】 of Level 1  is kept in hand: Upgrade it by 1 level after next battle (max 1 card)",
+    "text_tw_resolved": "若手牌中保留1級的【runtimeParam】，下場戰鬥結束時將其升1級（最多升級1張）"
+  },
+  {
+    "id": 5503,
+    "text_cn": "若手牌中保留1级的【runtimeParam】，下场战斗结束时将其升1级（最多升级1张）",
+    "text_en": "If 【runtimeParam】 of Level 1  is kept in hand: Upgrade it by 1 level after next battle (max 1 card)",
+    "text_tw": "若手牌中保留1級的【runtimeParam】，下場戰鬥結束時將其升1級（最多升級1張）",
+    "text_cn_resolved": "若手牌中保留1级的【runtimeParam】，下场战斗结束时将其升1级（最多升级1张）",
+    "text_en_resolved": "If 【runtimeParam】 of Level 1  is kept in hand: Upgrade it by 1 level after next battle (max 1 card)",
+    "text_tw_resolved": "若手牌中保留1級的【runtimeParam】，下場戰鬥結束時將其升1級（最多升級1張）"
+  },
+  {
+    "id": 5504,
+    "text_cn": "若手牌中保留1级的【runtimeParam】，下场战斗结束时将其升1级（最多升级1张）",
+    "text_en": "If 【runtimeParam】 of Level 1  is kept in hand: Upgrade it by 1 level after next battle (max 1 card)",
+    "text_tw": "若手牌中保留1級的【runtimeParam】，下場戰鬥結束時將其升1級（最多升級1張）",
+    "text_cn_resolved": "若手牌中保留1级的【runtimeParam】，下场战斗结束时将其升1级（最多升级1张）",
+    "text_en_resolved": "If 【runtimeParam】 of Level 1  is kept in hand: Upgrade it by 1 level after next battle (max 1 card)",
+    "text_tw_resolved": "若手牌中保留1級的【runtimeParam】，下場戰鬥結束時將其升1級（最多升級1張）"
+  },
+  {
+    "id": 5601,
+    "text_cn": "下场战斗结束时，若卡组第{0}格为副职牌，则减1修为获得1张1级复制",
+    "text_en": "After next battle, if card slot {0} is Side Job card: Reduce 1 Cultivation → Obtain 1 copy of Level 1",
+    "text_tw": "下場戰鬥結束時，若卡組第{0}格為副職牌，則減1修為獲得1張1級複製",
+    "text_cn_resolved": "下场战斗结束时，若卡组第{0}格为副职牌，则减1修为获得1张1级复制",
+    "text_en_resolved": "After next battle, if card slot {0} is Side Job card: Reduce 1 Cultivation → Obtain 1 copy of Level 1",
+    "text_tw_resolved": "下場戰鬥結束時，若卡組第{0}格為副職牌，則減1修為獲得1張1級複製"
+  },
+  {
+    "id": 5602,
+    "text_cn": "下场战斗结束时，若卡组第{0}格为副职牌，则减1修为获得1张1级复制",
+    "text_en": "After next battle, if card slot {0} is Side Job card: Reduce 1 Cultivation → Obtain 1 copy of Level 1",
+    "text_tw": "下場戰鬥結束時，若卡組第{0}格為副職牌，則減1修為獲得1張1級複製",
+    "text_cn_resolved": "下场战斗结束时，若卡组第{0}格为副职牌，则减1修为获得1张1级复制",
+    "text_en_resolved": "After next battle, if card slot {0} is Side Job card: Reduce 1 Cultivation → Obtain 1 copy of Level 1",
+    "text_tw_resolved": "下場戰鬥結束時，若卡組第{0}格為副職牌，則減1修為獲得1張1級複製"
+  },
+  {
+    "id": 5603,
+    "text_cn": "下场战斗结束时，若卡组第{0}格为副职牌，则减1修为获得1张1级复制",
+    "text_en": "After next battle, if card slot {0} is Side Job card: Reduce 1 Cultivation → Obtain 1 copy of Level 1",
+    "text_tw": "下場戰鬥結束時，若卡組第{0}格為副職牌，則減1修為獲得1張1級複製",
+    "text_cn_resolved": "下场战斗结束时，若卡组第{0}格为副职牌，则减1修为获得1张1级复制",
+    "text_en_resolved": "After next battle, if card slot {0} is Side Job card: Reduce 1 Cultivation → Obtain 1 copy of Level 1",
+    "text_tw_resolved": "下場戰鬥結束時，若卡組第{0}格為副職牌，則減1修為獲得1張1級複製"
+  },
+  {
+    "id": 5604,
+    "text_cn": "下场战斗结束时，若卡组第{0}格为副职牌，则减1修为获得1张1级复制",
+    "text_en": "After next battle, if card slot {0} is Side Job card: Reduce 1 Cultivation → Obtain 1 copy of Level 1",
+    "text_tw": "下場戰鬥結束時，若卡組第{0}格為副職牌，則減1修為獲得1張1級複製",
+    "text_cn_resolved": "下场战斗结束时，若卡组第{0}格为副职牌，则减1修为获得1张1级复制",
+    "text_en_resolved": "After next battle, if card slot {0} is Side Job card: Reduce 1 Cultivation → Obtain 1 copy of Level 1",
+    "text_tw_resolved": "下場戰鬥結束時，若卡組第{0}格為副職牌，則減1修為獲得1張1級複製"
+  },
+  {
+    "id": 5605,
+    "text_cn": "下场战斗结束时，若卡组第{0}格为副职牌，则减1修为获得1张1级复制",
+    "text_en": "After next battle, if card slot {0} is Side Job card: Reduce 1 Cultivation → Obtain 1 copy of Level 1",
+    "text_tw": "下場戰鬥結束時，若卡組第{0}格為副職牌，則減1修為獲得1張1級複製",
+    "text_cn_resolved": "下场战斗结束时，若卡组第{0}格为副职牌，则减1修为获得1张1级复制",
+    "text_en_resolved": "After next battle, if card slot {0} is Side Job card: Reduce 1 Cultivation → Obtain 1 copy of Level 1",
+    "text_tw_resolved": "下場戰鬥結束時，若卡組第{0}格為副職牌，則減1修為獲得1張1級複製"
+  },
+  {
+    "id": 5606,
+    "text_cn": "下场战斗结束时，若卡组第{0}格为副职牌，则减1修为获得1张1级复制",
+    "text_en": "After next battle, if card slot {0} is Side Job card: Reduce 1 Cultivation → Obtain 1 copy of Level 1",
+    "text_tw": "下場戰鬥結束時，若卡組第{0}格為副職牌，則減1修為獲得1張1級複製",
+    "text_cn_resolved": "下场战斗结束时，若卡组第{0}格为副职牌，则减1修为获得1张1级复制",
+    "text_en_resolved": "After next battle, if card slot {0} is Side Job card: Reduce 1 Cultivation → Obtain 1 copy of Level 1",
+    "text_tw_resolved": "下場戰鬥結束時，若卡組第{0}格為副職牌，則減1修為獲得1張1級複製"
+  }
+]

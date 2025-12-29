@@ -1,0 +1,196 @@
+NOTE FOR CLAUDE - YiXianPai Data Extraction Project
+====================================================
+
+WHAT THIS PROJECT IS:
+Extracting game data from YiXianPai (弈仙牌 - "Chess Immortal Cards"), a Chinese
+cultivation roguelike card game. The game uses Unity with I2 Localization plugin
+and protobuf configs. We are extracting from the LIVE version of the game (not beta).
+
+KEY DOCUMENTATION:
+- LOCALIZATION_EXTRACTION.md - Main documentation with all extraction procedures
+- config_inventory.json - List of all discovered config types (extracted and not)
+- The 1.5.8/ folder contains all extracted data for version 1.5.8
+
+EXTRACTION SCRIPTS:
+- extract_all.py - MAIN SCRIPT: Automates entire extraction process
+  Usage: python3 extract_all.py <version>
+  Auto-detects AssetRipper port (or set ASSETRIPPER_URL env var)
+
+- extract_localization.py - Extracts Localization.json from Unity binary
+- extract_card_params.py - Extracts card parameters from CardConfig.dat
+- extract_sigil_talent_params.py - Extracts sigils, talents, resonance talents, fate branches
+- extract_talents_sigils.py - Combines params with localization, resolves references
+- extract_mirages.py - Extracts mirages with resolved card/keyword references
+- extract_fate_branches.py - Extracts fate branches with filled templates
+- combine_card_data.py - Merges card data with localization
+- find_i2_bundle.py - Finds the I2 localization bundle
+
+WHAT'S BEEN EXTRACTED:
+✓ Cards (2087 cards with filled templates, qi_cost, qi_gain, hp_cost)
+✓ Sigils (159 sigils with tier data)
+✓ Immortal Fates/Talents (306 with versions)
+✓ Resonance Talents (137 with filled templates)
+✓ Mirages (56 events, 261 options with resolved references)
+✓ Life Shop Items (38 scrolls, 17 pacts)
+✓ Kunlun Door Locations (37 locations)
+✓ Fate Branches (122 branches with filled templates)
+
+CONFIG EXTRACTION NOTES (CRITICAL - READ THIS):
+================================================
+
+ALL CONFIGS ARE IN BUNDLE 130 (89f98c60da1a90cce630f5f0999c5909.bundle):
+- This bundle contains 116+ config TextAssets
+- AssetRipper can decrypt and extract them properly
+- To extract: Load bundles folder in AssetRipper, navigate to bundle 130, download binaries
+
+EXTRACTION PROCEDURE:
+1. Start AssetRipper at http://127.0.0.1:53701
+2. Load the entire bundles folder:
+   POST /LoadFolder with path=/Users/sharpobject/Library/Application Support/Steam/steamapps/common/YiXianPai/YiXianPai.app/Contents/Resources/Data/StreamingAssets/aa/StandaloneOSX
+3. Navigate to bundle 130 (89f98c60da1a90cce630f5f0999c5909.bundle)
+4. Download each TextAsset via /Assets/Binary?Path={url-encoded-path}
+5. The binary is in proper format: [4-byte name length][name][padding][4-byte size][protobuf]
+
+PROPER CONFIG .DAT FILE FORMAT:
+- 4 bytes: little-endian length of name (e.g., 0x10 = 16 for "FateBranchConfig")
+- Name string: "FateBranchConfig", "TalentConfig", etc.
+- Padding to 4-byte alignment (null bytes if needed)
+- 4 bytes: data size
+- Protobuf data starting with version info: 0a XX 0a 05 32 2e 39 2e 31 ... ("2.9.1")
+
+Example FateBranchConfig.dat header:
+  10 00 00 00  46 61 74 65 42 72 61 6e 63 68 43 6f 6e 66 69 67  6f 0c 00 00  0a 7a ...
+  [length=16] [FateBranchConfig                                ] [size=0x0c6f] [protobuf]
+
+FATEBRANCH CONFIG PROTOBUF STRUCTURE:
+- field_1 (f1): ID
+- field_2 (f2): unknown (possibly related ID)
+- field_4 (f4): can contain negative values (signed stored as unsigned)
+- field_5 (f5): unknown parameter (values like 15, 70, 100)
+- field_6 (f6): countParam for {countParam} template placeholder
+- field_7 (f7, length-delimited): otherParams as packed varints
+- field_8 (f8): unknown
+- field_20 (f20): boolean flag
+
+PARAMETER DECODING:
+- otherParams values like 1000022 are talent_id + 1000000 (so talent ID 22)
+- Smaller values (9, 53, 59) are direct talent IDs
+- {countParam} maps to field_6 (or field_4 if field_6 is null)
+- {otherParams[N]} maps to decoded packed varints from field_7
+
+GAME FILE LOCATIONS:
+- Live game: /Users/sharpobject/Library/Application Support/Steam/steamapps/common/YiXianPai/
+- Beta game: /Users/sharpobject/Library/Application Support/Steam/steamapps/common/YiXianPai_beta/
+- Bundles in: .../YiXianPai.app/Contents/Resources/Data/StreamingAssets/aa/StandaloneOSX/
+- AssetRipper runs at http://127.0.0.1:53701 when open
+
+REFERENCE RESOLUTION:
+The extraction resolves these patterns in text:
+- 【KEYWORD_xxx】 → [English keyword] (lookup by Chinese text)
+- 【TALENT_N】 → [Talent Name] (lookup by talent ID)
+- 【N】 → [Card Name] (lookup by card base_id)
+- 【{N}】 → [Card {N}] (runtime card reference)
+- {0}, {1} → kept as-is (runtime parameters)
+- {countParam} → filled from protobuf field_6
+- {otherParams[N]} → filled from protobuf field_7 packed varints
+
+CONFIGS AVAILABLE IN BUNDLE 130 (116 total):
+AchievementConfig, ActivityConfig, ActivityPracticeConfig, BuffConfig, CanJuRewardConfig,
+CardCombineConfig, CardConfig, CardFXConfig, CardKeywordDesc, CardSkinConfig,
+CharacterAnimClipConfig, CharacterConfig, CharacterSkinConfig, CommonGuideConfig,
+CupConfig, DailyShopConfig, DefeatEffectConfig, DivinationCharacterConfig,
+DivinationDeckConfig, DivinationWordConfig, FateBranchConfig, GiftPackConfig,
+KanbanConfig, KeYinCardConfig, LevelConfig, MallConfig, MentorLevelConfig,
+MirageConfig, MirageOptionConfig, MissionConfig, NpcConfig, PassportConfig,
+PlotConfig, RecommendDeckConfig, RogueDifficultyConfig, RogueEnemyConfig,
+RogueEventConfig, SceneSummonConfig, SeasonConfig, SectTalentConfig, SummonConfig,
+TA01Config, TA02Config, TA03Config, TA04Config, TA06Config, TA10CardConfig,
+TA12DailyChallengeConfig, TA18ProductConfig, TA18TalentConfig, TA21CardConfig,
+TA23CardConfig, TA26QuestionConfig, TA28YiWenMissionConfig, TA31PuzzleConfig,
+TAExchangeConfig, TAMissionConfig, TARewardConfig, TASegmentRewardConfig,
+TASignConfig, TAUniversalConfig, TalentConfig, TalentResonanceConfig,
+TotalSummonRewardConfig, VersusCardConfig, XianYuConfig, YiXianLuConfig,
+YuanGuConclusionConfig, YuanGuDebrisConfig, YuanGuEnemyConfig, YuanGuEventConfig,
+YuanGuScriptConfig, ZunHaoConfig, and more...
+
+CARDCONFIG PROTOBUF STRUCTURE (for cards):
+- field_1: card_id
+- field_6: phase
+- field_7: qi (positive = qi_gain, negative stored as unsigned = qi_cost)
+- field_8: attack
+- field_20: hp_cost
+- field_100: otherParams (packed varints)
+
+COMPLETE RE-EXTRACTION PROCEDURE FOR GAME PATCHES:
+===================================================
+
+AUTOMATED METHOD (RECOMMENDED):
+-------------------------------
+1. Start AssetRipper GUI (port will be auto-detected)
+2. Run:
+   python3 extract_all.py X.X.X
+
+   This will:
+   - Create X.X.X/ folder if needed
+   - Check for existing files (skips download if all present)
+   - Auto-detect AssetRipper port
+   - Load game bundles and download configs + localization
+   - Run all extraction scripts
+   - Output all JSON files to X.X.X/
+
+3. Diff the results:
+   diff -u OLD_VERSION/combined_cards.json X.X.X/combined_cards.json
+
+MANUAL METHOD (if automation fails):
+------------------------------------
+STEP 1: Create new version folder
+mkdir X.X.X  # e.g., 1.5.9
+
+STEP 2: Download raw assets from AssetRipper GUI
+1. Open AssetRipper GUI (note the port it runs on)
+2. File → Open Folder → Select the bundles folder:
+   /Users/sharpobject/Library/Application Support/Steam/steamapps/common/YiXianPai/YiXianPai.app/Contents/Resources/Data/StreamingAssets/aa/StandaloneOSX
+
+3. Find and download config binaries from bundle 130 (89f98c60...):
+   - Navigate to bundle 130, then Collections view
+   - Download these TextAssets to X.X.X/:
+     * CardConfig.dat, KeYinCardConfig.dat, TalentConfig.dat
+     * TalentResonanceConfig.dat, SectTalentConfig.dat
+     * TA18TalentConfig.dat, FateBranchConfig.dat
+
+4. Find and download I2 Localization:
+   - Search bundles on disk for "LanguageSource" marker
+   - Find matching bundle in AssetRipper, download largest MonoBehaviour
+   - Save as: X.X.X/localization_binary.dat
+
+STEP 3-6: Run extraction scripts (or use extract_all.py without --download)
+python3 extract_all.py X.X.X
+
+STEP 7: Diff the results
+diff -u OLD_VERSION/combined_cards.json X.X.X/combined_cards.json
+
+OUTPUT FILES SUMMARY:
+
+Final JSON files (for consumption):
+- combined_cards.json: All cards with qi_cost, qi_gain, hp_cost, filled templates
+- sigils.json: Sigils with tiers
+- immortal_fates.json: Talents with versions
+- resonance_talents.json: Resonance talents
+- fate_branches.json: Fate branches with filled templates
+- mirages.json + mirage_options.json: Mirage events and choices
+- life_shop_items.json: Scrolls and pacts
+- kunlun_door_locations.json: Kunlun Door locations
+
+Intermediate files (generated by extract_sigil_talent_params.py):
+- cards_with_params.json: Raw card data from CardConfig.dat
+- sigil_params.json: Raw sigil data from KeYinCardConfig.dat
+- talent_params.json: Raw talent data from TalentConfig.dat
+- talent_resonance_params.json: Raw resonance talent data
+- sect_talent_params.json: Raw sect talent data
+- ta18_talent_params.json: Raw TA18 talent data
+- fate_branch_params.json: Raw fate branch data
+
+Reference files:
+- Localization.json: I2 localization data (Chinese/English/Traditional Chinese)
+- *.dat files: Raw protobuf binaries from game
+- localization_binary.dat: Raw I2 binary (can be deleted after extracting Localization.json)

@@ -1,0 +1,501 @@
+{
+  "scrolls": [
+    {
+      "id": 201,
+      "name_cn": "修为之卷（一）",
+      "name_en": "Scroll of Cultivation (I)",
+      "name_tw": "修爲之卷（一）",
+      "desc_cn": "修为+{0}",
+      "desc_en": "Cultivation + {0}",
+      "desc_tw": "修爲+{0}"
+    },
+    {
+      "id": 202,
+      "name_cn": "修为之卷（二）",
+      "name_en": "Scroll of Cultivation (II)",
+      "name_tw": "修爲之卷（二）",
+      "desc_cn": "修为+{0}",
+      "desc_en": "Cultivation + {0}",
+      "desc_tw": "修爲+{0}"
+    },
+    {
+      "id": 203,
+      "name_cn": "修为之卷（三）",
+      "name_en": "Scroll of Cultivation (III)",
+      "name_tw": "修爲之卷（三）",
+      "desc_cn": "修为+{0}",
+      "desc_en": "Cultivation + {0}",
+      "desc_tw": "修爲+{0}"
+    },
+    {
+      "id": 204,
+      "name_cn": "生命之卷（一）",
+      "name_en": "Scroll of HP (I)",
+      "name_tw": "生命之卷（一）",
+      "desc_cn": "生命上限+{0}",
+      "desc_en": "Max HP + {0}",
+      "desc_tw": "生命上限+{0}"
+    },
+    {
+      "id": 205,
+      "name_cn": "生命之卷（二）",
+      "name_en": "Scroll of HP (II)",
+      "name_tw": "生命之卷（二）",
+      "desc_cn": "生命上限+{0}",
+      "desc_en": "Max HP + {0}",
+      "desc_tw": "生命上限+{0}"
+    },
+    {
+      "id": 206,
+      "name_cn": "生命之卷（三）",
+      "name_en": "Scroll of HP (III)",
+      "name_tw": "生命之卷（三）",
+      "desc_cn": "生命上限+{0}",
+      "desc_en": "Max HP + {0}",
+      "desc_tw": "生命上限+{0}"
+    },
+    {
+      "id": 207,
+      "name_cn": "生命之卷（四）",
+      "name_en": "Scroll of HP (IV)",
+      "name_tw": "生命之卷（四）",
+      "desc_cn": "生命上限+{0}",
+      "desc_en": "Max HP + {0}",
+      "desc_tw": "生命上限+{0}"
+    },
+    {
+      "id": 208,
+      "name_cn": "招式之卷（一）",
+      "name_en": "Scroll of Moves (I)",
+      "name_tw": "招式之卷（一）",
+      "desc_cn": "换牌机会+{0}",
+      "desc_en": "Exchange Chance + {0}",
+      "desc_tw": "換牌機會+{0}"
+    },
+    {
+      "id": 209,
+      "name_cn": "招式之卷（二）",
+      "name_en": "Scroll of Moves (II)",
+      "name_tw": "招式之卷（二）",
+      "desc_cn": "换牌机会+{0}",
+      "desc_en": "Exchange Chance + {0}",
+      "desc_tw": "換牌機會+{0}"
+    },
+    {
+      "id": 210,
+      "name_cn": "招式之卷（三）",
+      "name_en": "Scroll of Moves (III)",
+      "name_tw": "招式之卷（三）",
+      "desc_cn": "换牌机会+{0}",
+      "desc_en": "Exchange Chance + {0}",
+      "desc_tw": "換牌機會+{0}"
+    },
+    {
+      "id": 211,
+      "name_cn": "置换之卷",
+      "name_en": "Scroll of Exchange",
+      "name_tw": "置換之卷",
+      "desc_cn": "随机变换全部手牌",
+      "desc_en": "Randomly change all cards in your hand",
+      "desc_tw": "隨機變換全部手牌"
+    },
+    {
+      "id": 212,
+      "name_cn": "炼丹之卷",
+      "name_en": "Scroll of Elixir",
+      "name_tw": "煉丹之卷",
+      "desc_cn": "副职业转为炼丹师。然后获得1张当前境界的副职牌。",
+      "desc_en": "Change your Side Job to Elixirist. Then gain a Side Job card of your current Phase.",
+      "desc_tw": "副職業轉爲煉丹師。然後獲得1張當前境界的副職牌。"
+    },
+    {
+      "id": 213,
+      "name_cn": "符咒之卷",
+      "name_en": "Scroll of Fulu",
+      "name_tw": "符咒之卷",
+      "desc_cn": "副职业转为符咒师。然后获得1张当前境界的副职牌。",
+      "desc_en": "Change your Side Job to Fuluist. Then gain a Side Job card of your current Phase.",
+      "desc_tw": "副職業轉爲符咒師。然後獲得1張當前境界的副職牌。"
+    },
+    {
+      "id": 214,
+      "name_cn": "琴音之卷",
+      "name_en": "Scroll of Tune",
+      "name_tw": "琴音之卷",
+      "desc_cn": "副职业转为琴师。然后获得1张当前境界的副职牌。",
+      "desc_en": "Change your Side Job to Musician. Then gain a Side Job card of your current Phase.",
+      "desc_tw": "副職業轉爲琴師。然後獲得1張當前境界的副職牌。"
+    },
+    {
+      "id": 215,
+      "name_cn": "书画之卷",
+      "name_en": "Scroll of Painting",
+      "name_tw": "書畫之卷",
+      "desc_cn": "副职业转为画师。然后获得1张当前境界的副职牌。",
+      "desc_en": "Change your Side Job to Painter. Then gain a Side Job card of your current Phase.",
+      "desc_tw": "副職業轉爲畫師。然後獲得1張當前境界的副職牌。"
+    },
+    {
+      "id": 216,
+      "name_cn": "阵法之卷",
+      "name_en": "Scroll of Formation",
+      "name_tw": "陣法之卷",
+      "desc_cn": "副职业转为阵法师。然后获得1张当前境界的副职牌。",
+      "desc_en": "Change your Side Job to Formation Master. Then gain a Side Job card of your current Phase.",
+      "desc_tw": "副職業轉爲陣法師。然後獲得1張當前境界的副職牌。"
+    },
+    {
+      "id": 217,
+      "name_cn": "灵植之卷",
+      "name_en": "Scroll of Plant",
+      "name_tw": "靈植之卷",
+      "desc_cn": "副职业转为灵植师。然后获得1张当前境界的副职牌。",
+      "desc_en": "Change your Side Job to Plant Master. Then gain a Side Job card of your current Phase.",
+      "desc_tw": "副職業轉爲靈植師。然後獲得1張當前境界的副職牌。"
+    },
+    {
+      "id": 218,
+      "name_cn": "悟道之卷（一）",
+      "name_en": "Scroll of  Enlightenment (I)",
+      "name_tw": "悟道之卷（一）",
+      "desc_cn": "随机升级卡组或手牌{0}张1级牌",
+      "desc_en": "Randomly upgrade {0} Lv.1 card(s) in your deck or hand",
+      "desc_tw": "隨機升級卡組或手牌{0}張1級牌"
+    },
+    {
+      "id": 219,
+      "name_cn": "悟道之卷（二）",
+      "name_en": "Scroll of  Enlightenment (II)",
+      "name_tw": "悟道之卷（二）",
+      "desc_cn": "随机升级卡组或手牌{0}张1级牌",
+      "desc_en": "Randomly upgrade {0} Lv.1 card(s) in your deck or hand",
+      "desc_tw": "隨機升級卡組或手牌{0}張1級牌"
+    },
+    {
+      "id": 220,
+      "name_cn": "悟道之卷（三）",
+      "name_en": "Scroll of  Enlightenment (III)",
+      "name_tw": "悟道之卷（三）",
+      "desc_cn": "随机升级卡组或手牌{0}张1级牌",
+      "desc_en": "Randomly upgrade {0} Lv.1 card(s) in your deck or hand",
+      "desc_tw": "隨機升級卡組或手牌{0}張1級牌"
+    },
+    {
+      "id": 221,
+      "name_cn": "背水之卷",
+      "name_en": "Scroll of Last Stand",
+      "name_tw": "背水之卷",
+      "desc_cn": "命元变为{0}，换牌机会+{1}，生命上限+{2}，抽{3}张牌",
+      "desc_en": "Destiny becomes {0}, Exchange Chance + {1}, Max HP + {2}, Draw {3} cards",
+      "desc_tw": "命元變爲{0}，換牌機會+{1}，生命上限+{2}，抽{3}張牌"
+    },
+    {
+      "id": 222,
+      "name_cn": "试探之卷",
+      "name_en": "Scroll of Feint",
+      "name_tw": "試探之卷",
+      "desc_cn": "本轮战斗若战败不会受到命元伤害",
+      "desc_en": "You do not take Destiny damage if you lose this round battle.",
+      "desc_tw": "本輪戰鬥若戰敗不會受到命元傷害"
+    },
+    {
+      "id": 223,
+      "name_cn": "元婴之卷",
+      "name_en": "Scroll of Immortality",
+      "name_tw": "元嬰之卷",
+      "desc_cn": "修为减{0}，抽{1}张元婴牌",
+      "desc_en": "Lose {0} Cultivation, then draw {1} Immortality Phase cards",
+      "desc_tw": "修爲减{0}，抽{1}張元嬰牌"
+    },
+    {
+      "id": 224,
+      "name_cn": "化神之卷",
+      "name_en": "Scroll of Incarnation",
+      "name_tw": "化神之卷",
+      "desc_cn": "修为减{0}，抽{1}张化神牌",
+      "desc_en": "Lose {0} Cultivation, then draw {1} Incarnation Phase cards",
+      "desc_tw": "修爲减{0}，抽{1}張化神牌"
+    },
+    {
+      "id": 225,
+      "name_cn": "斩道之卷",
+      "name_en": "Scroll of Draw Cards",
+      "name_tw": "斬道之卷",
+      "desc_cn": "修为减{0}，抽{1}张牌",
+      "desc_en": "Lose {0} Cultivation, then draw cards",
+      "desc_tw": "修爲减{0}，抽{1}張牌"
+    },
+    {
+      "id": 226,
+      "name_cn": "招式之卷（四）",
+      "name_en": "Scroll of Moves (IV)",
+      "name_tw": "招式之卷（四）",
+      "desc_cn": "换牌机会+{0}",
+      "desc_en": "Exchange Chance + {0}",
+      "desc_tw": "換牌機會+{0}"
+    },
+    {
+      "id": 227,
+      "name_cn": "修为之卷（四）",
+      "name_en": "Scroll of Cultivation (IV)",
+      "name_tw": "修爲之卷（四）",
+      "desc_cn": "修为+{0}",
+      "desc_en": "Cultivation + {0}",
+      "desc_tw": "修爲+{0}"
+    },
+    {
+      "id": 228,
+      "name_cn": "突破之卷",
+      "name_en": "Scroll of Breakthrough",
+      "name_tw": "突破之卷",
+      "desc_cn": "修为临时+{0}，本轮战斗开始前还原",
+      "desc_en": "Temporary gain {0} Cultivation until the start of this round of battle",
+      "desc_tw": "修爲臨時+{0}，本輪戰鬥開始前還原"
+    },
+    {
+      "id": 229,
+      "name_cn": "回收之卷",
+      "name_en": "Scroll of Recycle",
+      "name_tw": "回收之卷",
+      "desc_cn": "下一次炼化门派牌时将额外获得命元（炼气/筑基/金丹/元婴/化神牌分别为{0}/{1}/{2}/{3}/{4}命元，2级牌2倍，3级牌4倍）",
+      "desc_en": "The next time you Absorb Sect Card, you will gain additional Destiny ({0}/{1}/{2}/{3}/{4} Destiny for Meditation / Foundation / Virtuoso / Immortality / Incarnation card; 2x for Level 2 cards, 4x for Level 3 cards)",
+      "desc_tw": "下一次煉化門派牌時將額外獲得命元（煉氣/築基/金丹/元嬰/化神牌分別爲{0}/{1}/{2}/{3}/{4}命元，2級牌2倍，3級牌4倍）"
+    },
+    {
+      "id": 230,
+      "name_cn": "逆命之卷",
+      "name_en": "Scroll of Reversed Fate",
+      "name_tw": "逆命之卷",
+      "desc_cn": "重新选择当前境界的仙命（删除旧仙命，但已触发的效果可保留）",
+      "desc_en": "Reselect the current phase's Immortal Fate (triggered effects do not disappear)",
+      "desc_tw": "重新選擇當前境界的仙命（删除舊仙命，但已觸發的效果可保留）"
+    },
+    {
+      "id": 231,
+      "name_cn": "互惠之卷",
+      "name_en": "Scroll of Reciprocity",
+      "name_tw": "互惠之卷",
+      "desc_cn": "自身立刻抽{0}张牌，其他角色在下轮开始时多抽{0}张牌",
+      "desc_en": "You draw {0} card immediately, and the other characters draw {0} card at the start of the next round.",
+      "desc_tw": "自身立刻抽{0}張牌，其他角色在下輪開始時多抽{0}張牌"
+    },
+    {
+      "id": 232,
+      "name_cn": "基础之卷",
+      "name_en": "Scroll of Basics",
+      "name_tw": "基礎之卷",
+      "desc_cn": "升级手牌和卡组中所有炼气期牌",
+      "desc_en": "Upgrade all Meditation Phase cards in your hand and deck.",
+      "desc_tw": "升級手牌和卡組中所有煉氣期牌"
+    },
+    {
+      "id": 233,
+      "name_cn": "娴熟之卷",
+      "name_en": "Scroll of Foundation",
+      "name_tw": "嫻熟之卷",
+      "desc_cn": "修为减{0}，随机获得1张筑基期的2级牌",
+      "desc_en": "Lose {0} Cultivation, then gain a Foundation Phase card of Lv. 2 ",
+      "desc_tw": "修爲减{0}，隨機獲得1張築基期的2級牌"
+    },
+    {
+      "id": 234,
+      "name_cn": "金丹之卷",
+      "name_en": "Scroll of Virtuoso",
+      "name_tw": "金丹之卷",
+      "desc_cn": "修为减{0}，抽{1}张金丹期牌",
+      "desc_en": "Lose {0} Cultivation, then draw {1} Virtuoso Phase cards",
+      "desc_tw": "修爲减{0}，抽{1}張金丹期牌"
+    },
+    {
+      "id": 236,
+      "name_cn": "猛进之卷",
+      "name_en": "Scroll of Advancement",
+      "name_tw": "猛進之卷",
+      "desc_cn": "抽{0}张牌，但下场战斗开始时自身减{1}生命",
+      "desc_en": "Draw {0} cards, but reduce your HP by {1} at the start of your next battle.",
+      "desc_tw": "抽{0}張牌，但下場戰鬥開始時自身减{1}生命"
+    },
+    {
+      "id": 237,
+      "name_cn": "融汇之卷",
+      "name_en": "Scroll of Fusion",
+      "name_tw": "融匯之卷",
+      "desc_cn": "下一次炼化3级的门派牌时，升级自身卡组第1格的牌",
+      "desc_en": "The next time you Absorb a level 3 Sect card, upgrade the first card in your deck.",
+      "desc_tw": "下一次煉化3級的門派牌時，升級自身卡組第1格的牌"
+    },
+    {
+      "id": 238,
+      "name_cn": "双韵之卷",
+      "name_en": "Scroll of Dual Rhyme",
+      "name_tw": "雙韵之卷",
+      "desc_cn": "通过道韵预感获得牌时额外复制1张（仅限1次）",
+      "desc_en": "The next time you gain a card through Daoist Rhyme Omen, gain an additional copy of that card.",
+      "desc_tw": "通過道韵預感獲得牌時額外複製1張（僅限1次）"
+    },
+    {
+      "id": 239,
+      "name_cn": "酬宾之卷",
+      "name_en": "Scroll of Reward",
+      "name_tw": "酬賓之卷",
+      "desc_cn": "命元+{0}\n(买空其他商品后才能购买酬宾之卷)",
+      "desc_en": "Destiny + {0}\n(You can only get it after you buy out other items)",
+      "desc_tw": "命元+{0}\n(買空其他商品後才能購買酬賓之卷)"
+    }
+  ],
+  "pacts": [
+    {
+      "id": 301,
+      "name_cn": "积攒契约-变换",
+      "name_en": "Pact of Accumulation - Exchange",
+      "name_tw": "積攢契約-變換",
+      "desc_cn": "每轮开始前若换牌机会≥{0}，多加{1}次换牌机会",
+      "desc_en": "If your Exchange Chance is greater than or equal to {0}, add {1} more Exchange Chance at the beginning of each round",
+      "desc_tw": "每輪開始前若換牌機會≥{0}，多加{1}次換牌機會"
+    },
+    {
+      "id": 302,
+      "name_cn": "竭尽契约-变换",
+      "name_en": "Pact of Exhaustion - Exchange",
+      "name_tw": "竭盡契約-變換",
+      "desc_cn": "每轮开始前若换牌机会为{0}，多加{1}次换牌机会",
+      "desc_en": "If your Exchange Chance is {0}, add {1} more Exchange Chance at the beginning of each round",
+      "desc_tw": "每輪開始前若換牌機會爲{0}，多加{1}次換牌機會"
+    },
+    {
+      "id": 303,
+      "name_cn": "胜利契约-生命",
+      "name_en": "Pact of Victory - Max HP",
+      "name_tw": "勝利契約-生命",
+      "desc_cn": "每次战斗胜利后永久加{0}生命上限",
+      "desc_en": "Gain {0} Max HP permanently after winning each battle.",
+      "desc_tw": "每次戰鬥勝利後永久加{0}生命上限"
+    },
+    {
+      "id": 304,
+      "name_cn": "逍遥契约-生命",
+      "name_en": "Pact of Carefree - Max HP",
+      "name_tw": "逍遙契約-生命",
+      "desc_cn": "若卡组中有普通攻击，每次战斗结束后永久加{0}生命上限",
+      "desc_en": "If there is a Normal Attack in your deck, permanently add {0} Max HP at the end of each battle",
+      "desc_tw": "若卡組中有普通攻擊，每次戰鬥結束後永久加{0}生命上限"
+    },
+    {
+      "id": 305,
+      "name_cn": "均衡契约",
+      "name_en": "Pact of Equilibrium",
+      "name_tw": "均衡契約",
+      "desc_cn": "每保留2张手牌，战斗开始时依次升级卡组中的1张1级牌（持续到战斗结束）",
+      "desc_en": "For each 2 cards you keep in your hand, upgrade 1 Level 1 card in your deck in turn at the start of each battle (lasts until the end of the battle)",
+      "desc_tw": "每保留2張手牌，戰鬥開始時依次升級卡組中的1張1級牌（持續到戰鬥結束）"
+    },
+    {
+      "id": 306,
+      "name_cn": "生机契约",
+      "name_en": "Pact of Vitality",
+      "name_tw": "生機契約",
+      "desc_cn": "战斗开始时，双方各加{0}生命及上限",
+      "desc_en": "At the start of each battle, both players add {0} HP and Max HP",
+      "desc_tw": "戰鬥開始時，雙方各加{0}生命及上限"
+    },
+    {
+      "id": 307,
+      "name_cn": "肃杀契约",
+      "name_en": "Pact of Death",
+      "name_tw": "肅殺契約",
+      "desc_cn": "战斗开始时，双方各减{0}生命及上限",
+      "desc_en": "At the start of each battle, both players lose {0} HP and Max HP",
+      "desc_tw": "戰鬥開始時，雙方各减{0}生命及上限"
+    },
+    {
+      "id": 308,
+      "name_cn": "炼化契约-变换",
+      "name_en": "Pact of Absorb - Exchange",
+      "name_tw": "煉化契約-變換",
+      "desc_cn": "炼化门派牌时，2级牌加1换牌机会，3级牌加2换牌机会",
+      "desc_en": "When you Absorb a Sect Card, add 1 Exchange Chance for level 2 card, and 2 Exchange Chance for level 3 card",
+      "desc_tw": "煉化門派牌時，2級牌加1換牌機會，3級牌加2換牌機會"
+    },
+    {
+      "id": 309,
+      "name_cn": "记忆契约",
+      "name_en": "Pact of Memory",
+      "name_tw": "記憶契約",
+      "desc_cn": "取消换牌机会储存上限",
+      "desc_en": "Eliminate Exchange Chance Storage Limit",
+      "desc_tw": "取消換牌機會儲存上限"
+    },
+    {
+      "id": 310,
+      "name_cn": "逆境契约-强化",
+      "name_en": "Pact of Adversity - Reinforcement",
+      "name_tw": "逆境契約-强化",
+      "desc_cn": "若自身命元小于对方，战斗开始时升级卡组中的{0}张牌（取从左至右第1张可升级的牌）",
+      "desc_en": "If your Destiny is less than your opponent's, upgrade {0} cards in your deck at the start of battle (take the first upgradeable card from left to right)",
+      "desc_tw": "若自身命元小于對方，戰鬥開始時升級卡組中的{0}張牌（取從左至右第1張可升級的牌）"
+    },
+    {
+      "id": 311,
+      "name_cn": "命元契约-变换",
+      "name_en": "Pact of Destiny Payment - Exchange",
+      "name_tw": "命元契約-變換",
+      "desc_cn": "每轮开始时减{0}命元（最低减至1），多加{1}次换牌机会",
+      "desc_en": "Lose {0} Destiny at the start of each round (minimum to 1), and gain {1} Exchange Chance",
+      "desc_tw": "每輪開始時减{0}命元（最低减至1），多加{1}次換牌機會"
+    },
+    {
+      "id": 312,
+      "name_cn": "暗谷契约",
+      "name_en": "Pact of Dark Valley",
+      "name_tw": "暗谷契約",
+      "desc_cn": "加入暗谷，永远忠于玄巳（请隐藏你的身份，不要告诉别人）\n俸禄：每轮多加{0}次换牌机会",
+      "desc_en": "Join the Dark Valley and stay loyal to Xuan Si forever (please hide your identity and don't tell anyone)\nSalary: add {0} more Exchange Chance per round",
+      "desc_tw": "加入暗谷，永遠忠于玄巳（請隱藏你的身份，不要告訴別人）\n俸祿：每輪多加{0}次換牌機會"
+    },
+    {
+      "id": 313,
+      "name_cn": "神力契约",
+      "name_en": "Pact of Divine Power",
+      "name_tw": "神力契約",
+      "desc_cn": "战斗开始时双方各获得{0}层加攻",
+      "desc_en": "At the start of battle, each player gains {0} stack of [Increase ATK]",
+      "desc_tw": "戰鬥開始時雙方各獲得{0}層加攻"
+    },
+    {
+      "id": 314,
+      "name_cn": "苦修契约",
+      "name_en": "Pact of Suffering",
+      "name_tw": "苦修契約",
+      "desc_cn": "之后每次突破境界时减{0}生命上限并加{1}修为",
+      "desc_en": "Each time you breakthrough the Phase, you will lose {0} Max HP and gain {1} Cultivation.",
+      "desc_tw": "之後每次突破境界時减{0}生命上限幷加{1}修爲"
+    },
+    {
+      "id": 315,
+      "name_cn": "专注契约",
+      "name_en": "Pact of Concentration",
+      "name_tw": "專注契約",
+      "desc_cn": "常规抽牌和换牌时优先获得门派牌，排除副职牌",
+      "desc_en": "You will priority get the Sect Cards rather than Side Job Cards during regular card draws and card exchanges.",
+      "desc_tw": "常規抽牌和換牌時優先獲得門派牌，排除副職牌"
+    },
+    {
+      "id": 316,
+      "name_cn": "吉运契约",
+      "name_en": "Pact of Luck",
+      "name_tw": "吉運契約",
+      "desc_cn": "使用最后1次换牌机会时，优先换出和自身同境界的牌",
+      "desc_en": "When you use your last Exchange Chance to change a card, you will priority get the card of your Phase",
+      "desc_tw": "使用最後1次換牌機會時，優先換出和自身同境界的牌"
+    },
+    {
+      "id": 317,
+      "name_cn": "领悟契约",
+      "name_en": "Pact of Enlightenment",
+      "name_tw": "領悟契約",
+      "desc_cn": "每轮开始抽到的牌中随机一张变为2级",
+      "desc_en": "One of the cards drawn at the beginning of each round will be upgraded to level 2.",
+      "desc_tw": "每輪開始抽到的牌中隨機一張變爲2級"
+    }
+  ]
+}
