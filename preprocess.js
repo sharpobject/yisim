@@ -601,7 +601,8 @@ const deps = {
         "14301", "14310", "14405", "14406", "14407", "14409",
         "14410", "14501", "14503", "14508", "24202", "24501",
         "64501", "74404", "94401", "94501", "94504"],
-    HAS_PLAYED_CARD_COUNT: ["played_card_count", "73501"],
+    HAS_PLAYED_CARD_COUNT: ["played_card_count",
+        "73501", "71506"],
     HAS_WILD_CROSSING_SEAL: ["wild_crossing_seal_stacks", "73401"],
     HAS_KUN_WU_METAL_RING: ["kun_wu_metal_ring_stacks", "63301"],
     HAS_MAX_HP_LOST: ["max_hp_lost",
@@ -832,7 +833,9 @@ const deps = {
     INCREASE_IDX_ACTIVATE_DISPATCH: [
         "HAS_ULTIMATE_WORLD_FORMATION",
         "HAS_FIVE_ELEMENTS_EXPLOSION",
-        "HAS_FIVE_ELEMENTS_ANIMA"],
+        "HAS_FIVE_ELEMENTS_ANIMA",
+        "HAS_HERBS_FLOURISH",
+        "HAS_FIVE_ELEMENTS_GATHER_QI"],
     INCREASE_IDX_HEXAGRAM_DISPATCH: [
         "HAS_ASTROLOGY",
         "HAS_HEXAGRAM_FORMACIDE",
@@ -937,9 +940,6 @@ const deps = {
         "80306", "80401", "80402", "80403", "80404", "80405",
         "80406", "80407", "80408", "80501", "80502", "80503",
         "80504", "80505", "80506", "80507", "80508"],
-    HAS_M_CONSONANCE_SWORD_FORMATION: [
-        "m_consonance_sword_formation_stacks",
-        "71505"],
     HAS_M_EARTH_HEXAGRAM: [
         "m_earth_hexagram_stacks",
         "72405"],
@@ -947,6 +947,8 @@ const deps = {
     HAS_M_DOTTED_AROUND: [
         "m_dotted_around_stacks",
         "72406"],
+    HAS_M_UNRESTRAINED_SWORD_DRAGON_COILED: [
+        "71507"],
 
 
 

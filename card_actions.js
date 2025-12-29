@@ -999,31 +999,43 @@ card_actions["115023"] = (game) => {
 
 // Flying Spirit Shade Sword
 card_actions["115031"] = (game) => {
+    let injured_times = 0;
     for (let i = 0; i < 4; i++) {
         game.atk(1);
         if (game.if_injured()) {
-            game.increase_idx_qi(0, 1);
+            injured_times++;
         }
+    }
+    if (injured_times > 0) {
+        game.increase_idx_qi(0, injured_times);
     }
 }
 
 // 115032
 card_actions["115032"] = (game) => {
+    let injured_times = 0;
     for (let i = 0; i < 5; i++) {
         game.atk(1);
         if (game.if_injured()) {
-            game.increase_idx_qi(0, 1);
+            injured_times++;
         }
+    }
+    if (injured_times > 0) {
+        game.increase_idx_qi(0, injured_times);
     }
 }
 
 // 115033
 card_actions["115033"] = (game) => {
+    let injured_times = 0;
     for (let i = 0; i < 6; i++) {
         game.atk(1);
         if (game.if_injured()) {
-            game.increase_idx_qi(0, 1);
+            injured_times++;
         }
+    }
+    if (injured_times > 0) {
+        game.increase_idx_qi(0, injured_times);
     }
 }
 
@@ -4002,7 +4014,7 @@ card_actions["142103"] = (game) => {
     game.increase_idx_hp(0, 10);
 }
 
-// Magnaminous Righteousness
+// Magnanimous Righteousness
 card_actions["142111"] = (game) => {
     game.increase_idx_qi(0, 1);
     game.increase_idx_def(0, 4);
@@ -4015,6 +4027,14 @@ card_actions["142112"] = (game) => {
     game.increase_idx_def(0, 8);
     game.add_c_of_x(3, "hexproof");
 }
+
+    // game.increase_idx_qi(0, 2);
+    // game.increase_idx_x_by_c(0, "agility", 6);
+    // const amt = Math.min(game.get_debuff_count(0), 6);
+    // game.reduce_random_debuff_by_c_n_times(1, amt);
+    // game.increase_idx_x_by_c(0, "agility", amt);
+    // game.increase_idx_force(0, amt);
+
 
 // 142113
 card_actions["142113"] = (game) => {
@@ -10237,7 +10257,7 @@ card_actions["701063"] = (game) => {}
 card_actions["714031"] = (game) => {
     game.atk(4);
     const me = game.players[0];
-    game.increase_idx_def(0, Math.max(me.qi, 4));
+    game.increase_idx_def(0, Math.max(me.qi * 2, 4));
     if (game.spirit_sword_deck_count(3) === 3) {
         game.chase();
     }
@@ -10247,7 +10267,7 @@ card_actions["714031"] = (game) => {
 card_actions["714032"] = (game) => {
     game.atk(8);
     const me = game.players[0];
-    game.increase_idx_def(0, Math.max(me.qi, 12));
+    game.increase_idx_def(0, Math.max(me.qi * 2, 12));
     if (game.spirit_sword_deck_count(2) === 2) {
         game.chase();
     }
@@ -10257,7 +10277,7 @@ card_actions["714032"] = (game) => {
 card_actions["714033"] = (game) => {
     game.atk(12);
     const me = game.players[0];
-    game.increase_idx_def(0, Math.max(me.qi, 20));
+    game.increase_idx_def(0, Math.max(me.qi * 2, 20));
     if (game.spirit_sword_deck_count(1) === 1) {
         game.chase();
     }
@@ -10304,20 +10324,56 @@ card_actions["714061"] = (game) => {
     game.atk(4);
     game.chase();
     game.regain_sword_intent();
+    game.add_c_of_x(1, "sword_intent");
 }
 
 // 714062
 card_actions["714062"] = (game) => {
-    game.atk(8);
+    game.atk(4);
     game.chase();
     game.regain_sword_intent();
+    game.add_c_of_x(2, "sword_intent");
 }
 
 // 714063
 card_actions["714063"] = (game) => {
-    game.atk(12);
+    game.atk(4);
     game.chase();
     game.regain_sword_intent();
+    game.add_c_of_x(3, "sword_intent");
+}
+
+// M - Diligent Sword
+card_actions["714071"] = (game) => {
+    const me = game.players[0];
+    game.atk(6);
+    let amt = 1;
+    if (me.cultivation >= 85) {
+        amt = 2;
+    }
+    game.add_c_of_x(amt, "m_diligent_sword_stacks");
+}
+
+// 714072
+card_actions["714072"] = (game) => {
+    const me = game.players[0];
+    game.atk(10);
+    let amt = 1;
+    if (me.cultivation >= 80) {
+        amt = 2;
+    }
+    game.add_c_of_x(amt, "m_diligent_sword_stacks");
+}
+
+// 714073
+card_actions["714073"] = (game) => {
+    const me = game.players[0];
+    game.atk(14);
+    let amt = 1;
+    if (me.cultivation >= 75) {
+        amt = 2;
+    }
+    game.add_c_of_x(amt, "m_diligent_sword_stacks");
 }
 
 // Dragon Devours Clouds
@@ -10411,20 +10467,68 @@ card_actions["715043"] = (game) => {
 
 // M - Consonance Sword Formation
 card_actions["715051"] = (game) => {
-    game.def(2);
-    game.increase_idx_x_by_c(0, "m_consonance_sword_formation_stacks", 1);
+    game.def(6);
+    game.for_each_x_add_c_pct_y("def", 25, "qi");
 }
 
 // 715052
 card_actions["715052"] = (game) => {
     game.def(10);
-    game.increase_idx_x_by_c(0, "m_consonance_sword_formation_stacks", 1);
+    game.for_each_x_add_c_pct_y("def", 25, "qi");
 }
 
 // 715053
 card_actions["715053"] = (game) => {
-    game.def(18);
-    game.increase_idx_x_by_c(0, "m_consonance_sword_formation_stacks", 1);
+    game.def(14);
+    game.for_each_x_add_c_pct_y("def", 25, "qi");
+}
+
+// M - Cloud Dance Rhythm
+card_actions["715061"] = (game) => {
+    const me = game.players[0];
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_def(0, 4);
+    game.increase_idx_x_by_c(0, "sword_intent", 2);
+    game.increase_idx_x_by_c(0, "sword_intent", me.played_card_count);
+}
+
+// 715062
+card_actions["715062"] = (game) => {
+    const me = game.players[0];
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_def(0, 6);
+    game.increase_idx_x_by_c(0, "sword_intent", 3);
+    game.increase_idx_x_by_c(0, "sword_intent", me.played_card_count);
+}
+
+// 715063
+card_actions["715063"] = (game) => {
+    const me = game.players[0];
+    game.increase_idx_qi(0, 4);
+    game.increase_idx_def(0, 8);
+    game.increase_idx_x_by_c(0, "sword_intent", 4);
+    game.increase_idx_x_by_c(0, "sword_intent", me.played_card_count);
+}
+
+// M - Unrestrained Sword Dragon Coiled
+card_actions["715071"] = (game) => {
+    const me = game.players[0];
+    game.increase_idx_def(0, 12);
+    game.increase_idx_x_by_c(0, "next_turn_def", 3*me.played_sword_formation_count);
+}
+
+// 715072
+card_actions["715072"] = (game) => {
+    const me = game.players[0];
+    game.increase_idx_def(0, 16);
+    game.increase_idx_x_by_c(0, "next_turn_def", 4*me.played_sword_formation_count);
+}
+
+// 715073
+card_actions["715073"] = (game) => {
+    const me = game.players[0];
+    game.increase_idx_def(0, 20);
+    game.increase_idx_x_by_c(0, "next_turn_def", 5*me.played_sword_formation_count);
 }
 
 // Spiritual Divination

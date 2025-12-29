@@ -1357,6 +1357,12 @@ export class Player {
 #ifdef HAS_ATTACK_COUNT
         this.attack_count = 0;
 #endif // HAS_ATTACK_COUNT
+#ifdef HAS_M_DILIGENT_SWORD
+        this.m_diligent_sword_stacks = 0;
+#endif // HAS_M_DILIGENT_SWORD
+#ifdef HAS_PLAYED_SWORD_FORMATION_COUNT
+        this.played_sword_formation_count = 0;
+#endif // HAS_PLAYED_SWORD_FORMATION_COUNT
 #ifdef HAS_M_RUTHLESS_WATER
         this.m_ruthless_water_stacks = 0;
 #endif // HAS_M_RUTHLESS_WATER
@@ -1379,9 +1385,6 @@ export class Player {
 #ifdef HAS_M_SINKING_QI
         this.m_sinking_qi_stacks = 0;
 #endif // HAS_M_SINKING_QI
-#ifdef HAS_M_CONSONANCE_SWORD_FORMATION
-        this.m_consonance_sword_formation_stacks = 0;
-#endif // HAS_M_CONSONANCE_SWORD_FORMATION
 #ifdef HAS_M_EARTH_HEXAGRAM
         this.m_earth_hexagram_stacks = 0;
 #endif // HAS_M_EARTH_HEXAGRAM
@@ -3251,6 +3254,9 @@ export class GameState {
 #ifdef HAS_FLYING_BRUSH
         this.do_flying_brush_chase();
 #endif HAS_FLYING_BRUSH
+#ifdef HAS_M_DILIGENT_SWORD
+        this.do_m_diligent_sword_chase(card_id);
+#endif // HAS_M_DILIGENT_SWORD
         this.trigger_card(card_id, idx);
 #ifdef HAS_LAST_CARD_ID
         this.do_elemental_spirit_stuff(card_id);
@@ -3316,6 +3322,11 @@ export class GameState {
 #ifdef HAS_PLAYED_CARD_COUNT
             me.played_card_count += 1;
 #endif // HAS_PLAYED_CARD_COUNT
+#ifdef HAS_PLAYED_SWORD_FORMATION_COUNT
+            if (this.is_sword_formation(card_id)) {
+                me.played_sword_formation_count += 1;
+            }
+#endif // HAS_PLAYED_SWORD_FORMATION_COUNT
         }
         me.currently_playing_card_idx = undefined;
     }
@@ -3703,6 +3714,16 @@ export class GameState {
         }
     }
 #endif // HAS_FLYING_BRUSH
+#ifdef HAS_M_DILIGENT_SWORD
+    do_m_diligent_sword_chase(card_id) {
+        if (this.players[0].m_diligent_sword_stacks > 0 &&
+            this.is_plain_sword(card_id)
+        ) {
+            this.chase();
+            this.reduce_idx_x_by_c(0, "m_diligent_sword_stacks", 1);
+        }
+    }
+#endif // HAS_M_DILIGENT_SWORD
 #ifdef HAS_FIVE_ELEMENTS_HEAVENLY_MARROW_RHYTHM
     do_five_elements_heavenly_marrow_rhythm_chase() {
         const me = this.players[0];
@@ -5280,12 +5301,6 @@ export class GameState {
             }
 #endif // HAS_SWORD_INTENT_FLOW
             if (me.sword_intent > 0) {
-#ifdef HAS_M_CONSONANCE_SWORD_FORMATION
-                if (me.m_consonance_sword_formation_stacks > 0) {
-                    this.reduce_idx_x_by_c(my_idx, "m_consonance_sword_formation_stacks", 1);
-                    this.increase_idx_qi(my_idx, me.sword_intent);
-                }
-#endif // HAS_M_CONSONANCE_SWORD_FORMATION
 #ifdef HAS_SWORD_INTENT_FLOW
                 if (me.sword_intent_flow_mode) {
                     if (me.this_card_sword_intent < me.sword_intent) {
@@ -5546,12 +5561,11 @@ export class GameState {
             if (me.metal_spirit_giant_tripod_stacks > 0) {
                 me.metal_spirit_giant_tripod_stacks -= 1;
 #ifdef HAS_COVERT_SHIFT
-                if (enemy.covert_shift_stacks === 0) {
+                if (enemy.covert_shift_stacks === 0)
+#endif // HAS_COVERT_SHIFT
+                {
                     damage_to_hp *= 2;
                 }
-#else  // HAS_COVERT_SHIFT
-                damage_to_hp *= 2;
-#endif // HAS_COVERT_SHIFT
             }
 #endif // HAS_METAL_SPIRIT_GIANT_TRIPOD
         }
@@ -5807,11 +5821,20 @@ export class GameState {
         this.add_c_of_x(amt_to_add, y);
     }
     retrigger_previous_sword_formation() {
-        const my_idx = this.players[0].currently_triggering_card_idx;
-        const step = -this.players[0].card_play_direction;
+        const me = this.players[0];
+#ifdef HAS_UNRESTRAINED_SWORD_CLEAR_HEART
+        const my_usch = me.unrestrained_sword_clear_heart_stacks;
+        me.unrestrained_sword_clear_heart_stacks = 0;
+#endif // HAS_UNRESTRAINED_SWORD_CLEAR_HEART
+#ifdef HAS_M_LIGHT_SWORD
+        const my_mls = me.m_light_sword_stacks;
+        me.m_light_sword_stacks = 0;
+#endif // HAS_M_LIGHT_SWORD
+        const my_idx = me.currently_triggering_card_idx;
+        const step = -me.card_play_direction;
         let idx = my_idx + step;
-        while (idx >= 0 && idx < this.players[0].cards.length) {
-            const card_id = this.players[0].cards[idx];
+        while (idx >= 0 && idx < me.cards.length) {
+            const card_id = me.cards[idx];
             if (this.is_sword_formation(card_id)) {
                 this.log("retriggering " + format_card(card_id));
                 this.trigger_card(card_id, idx);
@@ -5819,6 +5842,12 @@ export class GameState {
             }
             idx += step;
         }
+#ifdef HAS_UNRESTRAINED_SWORD_CLEAR_HEART
+        me.unrestrained_sword_clear_heart_stacks = my_usch;
+#endif // HAS_UNRESTRAINED_SWORD_CLEAR_HEART
+#ifdef HAS_M_LIGHT_SWORD
+        me.m_light_sword_stacks = my_mls;
+#endif // HAS_M_LIGHT_SWORD
     }
     retrigger_next_opening(step_multiplier, n_cards, reps_per_card) {
         const my_idx = this.players[0].currently_triggering_card_idx;
@@ -6952,13 +6981,31 @@ export class GameState {
     is_sword_formation(card_id) {
         const card = swogi[card_id];
         let ret = card.is_sword_formation;
-#ifdef HAS_CHENGYUNS_FUSION_STYLE
         const me = this.players[0];
+#ifdef HAS_CHENGYUNS_FUSION_STYLE
         if (this.players[0].chengyuns_fusion_style_stacks > 0) {
             const card_id_without_level = card_id.substring(0, card_id.length - 1);
             ret ||= this.players[0].swordplay_talent_cards.includes(card_id_without_level);
         }
 #endif // HAS_CHENGYUNS_FUSION_STYLE
+#ifdef HAS_M_UNRESTRAINED_SWORD_DRAGON_COILED
+        {
+            var i_have_usdc = false;
+            let idx = 0;
+            while (idx >= 0 && idx < me.cards.length) {
+                const card_id = me.cards[idx];
+                if (swogi[card_id].name === "M - Unrestrained Sword Dragon Coiled") {
+                    i_have_usdc = true;
+                }
+                idx += 1;
+            }
+            const is_regular = this.is_regular_card(card_id);
+            const is_us = this.is_unrestrained_sword(card_id);
+            if (i_have_usdc && is_regular && is_us) {
+                return true;
+            }
+        }
+#endif // HAS_M_UNRESTRAINED_SWORD_DRAGON_COILED
         return ret;
     }
     is_spirit_sword(card_id) {
@@ -6972,6 +7019,34 @@ export class GameState {
         }
 #endif // HAS_CHENGYUNS_FUSION_STYLE
         return ret;
+    }
+    is_plain_sword(card_id) {
+        const card = swogi[card_id];
+        if (!card.is_plain_sword) {
+            return false;
+        }
+        const me = this.players[0];
+#ifdef HAS_CLEAR_HEART_ULTIMATE
+        if (me.quench_of_sword_heart_ultimate_stacks > 0 && card.name === "Clear Heart Sword Embryo") {
+            return false;
+        }
+#endif // HAS_CLEAR_HEART_ULTIMATE
+#ifdef HAS_FAKE_UNRESTRAINED_SWORD
+        if (this.is_fake_unrestrained_sword(card_id)) {
+            return false;
+        }
+#endif // HAS_FAKE_UNRESTRAINED_SWORD
+#ifdef HAS_FAKE_CLOUD_SWORD
+        if (this.is_fake_cloud_sword(card_id)) {
+            return false;
+        }
+#endif // HAS_FAKE_CLOUD_SWORD
+        // TODO: refactor the below to use separate fakeness-oriented functions
+        if (this.is_sword_formation(card_id) ||
+            this.is_spirit_sword(card_id)) {
+            return false;
+        }
+        return true;
     }
     for_each_x_convert_c_pct_debuff_to_y(x, c, y) {
         let debuff_amt = this.get_debuff_count(0);
@@ -7289,42 +7364,40 @@ export class GameState {
 #ifdef HAS_M_SPIRITAGE_SWORD
     do_m_spiritage_sword(max_level) {
         const me = this.players[0];
-        const hand_cards_with_add_qi = [];
-        const unique_cards = new Set();
+        var card_id_to_play = undefined;
         for (let i = 0; i < me.hand_cards.length; i++) {
             const hand_id = me.hand_cards[i];
-            const first_char = hand_id.substring(0, 1);
-            if (first_char === "1" || first_char === "3") {
+            if (this.is_regular_card(hand_id)) {
                 const level = Math.min(parseInt(hand_id.substring(hand_id.length - 1)), max_level);
                 const card_id = hand_id.substring(0, hand_id.length - 1) + level;
                 if (swogi[card_id].is_add_qi) {
-                    hand_cards_with_add_qi.push(card_id);
-                    unique_cards.add(card_id);
+                    card_id_to_play = card_id;
                 }
             }
         }
-        if (hand_cards_with_add_qi.length === 0) {
-            this.increase_idx_qi(0, 1);
+        if (card_id_to_play === undefined) {
             return;
         }
-        let card_id = hand_cards_with_add_qi[0];
-        if (unique_cards.size > 1) {
-            const idx = this.random_int(hand_cards_with_add_qi.length);
-            card_id = hand_cards_with_add_qi[idx];
-        }
-        this.trigger_card(card_id, me.currently_triggering_card_idx);
-        const phase = parseInt(card_id.substring(2, 3));
+        this.trigger_card(card_id_to_play, me.currently_triggering_card_idx);
+        const phase = parseInt(card_id_to_play.substring(2, 3));
         if (phase >= 5) {
             return;
         }
-        const atk_amt = 3 + me.qi;
-        this.atk(atk_amt);
+        const atk_amt = 1 + max_level * 2 + me.qi;
     }
 #endif // HAS_M_SPIRITAGE_SWORD
     if_cost_x_qi(x) {
         const me = this.players[0];
         if (me.qi >= x) {
             this.reduce_idx_x_by_c(0, "qi", x);
+            return true;
+        }
+        return false;
+    }
+    is_regular_card(card_id) {
+        // TODO: this erroneously includes variation cards from plant master
+        const first_char = card_id.substring(0, 1);
+        if (first_char === "1" || first_char === "3") {
             return true;
         }
         return false;

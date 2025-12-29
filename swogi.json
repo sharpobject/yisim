@@ -9952,6 +9952,22 @@
 			["chase"]
 		]
 	},
+	"714071": {
+		"name": "M - Diligent Sword",
+		"actions": [
+			["atk", 4]
+		]
+	},
+	"714072": {
+		"actions": [
+			["atk", 4]
+		]
+	},
+	"714073": {
+		"actions": [
+			["atk", 4]
+		]
+	},
 	"715011": {
 		"name": "Dragon Devours Clouds",
 		"actions": [
@@ -10039,6 +10055,38 @@
 		]
 	},
 	"715053": {
+		"actions": [
+			["def", 2]
+		]
+	},
+	"715061": {
+		"name": "M - Cloud Dance Rhythm",
+		"actions": [
+			["def", 2]
+		]
+	},
+	"715062": {
+		"actions": [
+			["def", 2]
+		]
+	},
+	"715063": {
+		"actions": [
+			["def", 2]
+		]
+	},
+	"715071": {
+		"name": "M - Unrestrained Sword Dragon Coiled",
+		"actions": [
+			["def", 2]
+		]
+	},
+	"715072": {
+		"actions": [
+			["def", 2]
+		]
+	},
+	"715073": {
 		"actions": [
 			["def", 2]
 		]
