@@ -9807,6 +9807,14 @@
 			["exhaust"]
 		]
 	},
+	"701042": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"701043": {
+		"does_not_exist": true,
+		"actions": []
+	},
 	"701051": {
 		"name": "Xiaoyao - Breathless",
 		"actions": [
@@ -9835,14 +9843,6 @@
 		"actions": []
 	},
 	"701063": {
-		"does_not_exist": true,
-		"actions": []
-	},
-	"701042": {
-		"does_not_exist": true,
-		"actions": []
-	},
-	"701043": {
 		"does_not_exist": true,
 		"actions": []
 	},
@@ -12169,14 +12169,14 @@
 	},
 	"915041": {
 		"name": "Clear Heart Sword Formation",
-		"actions": ["do_clear_heart_sword_formation", 8],
+		"actions": ["do_clear_heart_sword_formation", 2],
 		"character": "sw5"
 	},
 	"915042": {
-		"actions": ["do_clear_heart_sword_formation", 11]
+		"actions": ["do_clear_heart_sword_formation", 7]
 	},
 	"915043": {
-		"actions": ["do_clear_heart_sword_formation", 14]
+		"actions": ["do_clear_heart_sword_formation", 12]
 	},
 	"915051": {
 		"name": "Cloud Sword - Starry Sky",
@@ -12265,7 +12265,8 @@
 	"915091": {
 		"name": "Heavenly Will - Earth Evil",
 		"actions": [
-			["qi", 2],
+			["qi", 4],
+			["add_c_of_x", 1, "smash_def"],
 			["add_c_of_x", 1, "heavenly_will_earth_evil_stacks"]
 		],
 		"marking": "ft"
@@ -12273,14 +12274,16 @@
 	"915092": {
 		"actions": [
 			["qi", 4],
-			["add_c_of_x", 1, "heavenly_will_earth_evil_stacks"]
+			["add_c_of_x", 2, "smash_def"],
+			["add_c_of_x", 2, "heavenly_will_earth_evil_stacks"]
 		],
 		"marking": "ft"
 	},
 	"915093": {
 		"actions": [
-			["qi", 6],
-			["add_c_of_x", 1, "heavenly_will_earth_evil_stacks"]
+			["qi", 4],
+			["add_c_of_x", 3, "smash_def"],
+			["add_c_of_x", 3, "heavenly_will_earth_evil_stacks"]
 		],
 		"marking": "ft"
 	},
@@ -12871,6 +12874,7 @@
 	},
 	"935071": {
 		"name": "Heavenly Marrow Dance Tune",
+		"qi_cost": 1,
 		"actions": [
 			["continuous"],
 			["add_c_of_x", 2, "increase_atk"],
@@ -12881,6 +12885,7 @@
 		"marking": "mu"
 	},
 	"935072": {
+		"qi_cost": 0,
 		"actions": [
 			["continuous"],
 			["add_c_of_x", 3, "increase_atk"],
@@ -12890,6 +12895,7 @@
 		]
 	},
 	"935073": {
+		"qi_cost": 0,
 		"actions": [
 			["continuous"],
 			["add_c_of_x", 4, "increase_atk"],

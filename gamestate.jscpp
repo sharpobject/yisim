@@ -1310,6 +1310,12 @@ export class Player {
 #ifdef HAS_SPIRIT_FUSION_POT
         this.spirit_fusion_pot_stacks = 0;
 #endif // HAS_SPIRIT_FUSION_POT
+#ifdef HAS_YIN_YANG_TUTELARY_FORMATION
+        this.yin_yang_tutelary_formation_stacks = 0;
+#endif // HAS_YIN_YANG_TUTELARY_FORMATION
+#ifdef HAS_SPIRITUAL_HUNTER
+        this.spiritual_hunter_stacks = 0;
+#endif // HAS_SPIRITUAL_HUNTER
 #ifdef HAS_IGNORE_GUARD_UP
         this.ignore_guard_up = 0;
 #endif
@@ -1322,6 +1328,9 @@ export class Player {
 #ifdef HAS_XUANMING_FORCEAGE_FORMATION
         this.xuanming_forceage_formation_stacks = 0;
 #endif // HAS_XUANMING_FORCEAGE_FORMATION
+#ifdef HAS_WOOD_SPIRIT_FORCEAGE_FORMATION
+        this.wood_spirit_forceage_formation_stacks = 0;
+#endif // HAS_WOOD_SPIRIT_FORCEAGE_FORMATION
 #ifdef HAS_XUANMING_REGEN_TUNE
         this.xuanming_regen_tune_heal_stacks = 0;
         this.xuanming_regen_tune_hurt_stacks = 0;
@@ -2785,6 +2794,17 @@ export class GameState {
         }
     }
 #endif // HAS_WOOD_SPIRIT_FORMATION
+#ifdef HAS_WOOD_SPIRIT_FORCEAGE_FORMATION
+    do_wood_spirit_forceage_formation(card_id) {
+        const card = swogi[card_id];
+        if (card.is_wood_spirit) {
+            const me = this.players[0];
+            if (me.wood_spirit_forceage_formation_stacks > 0) {
+                this.increase_idx_hp(0, me.increase_atk);
+            }
+        }
+    }
+#endif // HAS_WOOD_SPIRIT_FORCEAGE_FORMATION
 #ifdef HAS_FIRE_SPIRIT_FORMATION
     do_fire_spirit_formation(card_id) {
         const card = swogi[card_id];
@@ -3054,6 +3074,9 @@ export class GameState {
 #ifdef HAS_WOOD_SPIRIT_FORMATION
         this.do_wood_spirit_formation(card_id);
 #endif // HAS_WOOD_SPIRIT_FORMATION
+#ifdef HAS_WOOD_SPIRIT_FORCEAGE_FORMATION
+        this.do_wood_spirit_forceage_formation(card_id);
+#endif // HAS_WOOD_SPIRIT_FORCEAGE_FORMATION
 #ifdef HAS_FIRE_SPIRIT_FORMATION
         this.do_fire_spirit_formation(card_id);
 #endif // HAS_FIRE_SPIRIT_FORMATION
@@ -3127,6 +3150,16 @@ export class GameState {
 #ifdef HAS_CLOUD_SWORD_ENDLESS
         this.do_cloud_sword_endless(card_id);
 #endif // HAS_CLOUD_SWORD_ENDLESS
+#ifdef HAS_SPIRITUAL_HUNTER
+#ifdef HAS_POST_ACTION
+        if (me.spiritual_hunter_stacks > 0 && is_post_action(card_id)) {
+            if (me.trigger_depth <= 1) {
+                this.log("Attacking for " + me.spiritual_hunter_stacks + " from spiritual hunter.");
+                this.atk(me.spiritual_hunter_stacks, true);
+            }
+        }
+#endif // HAS_POST_ACTION
+#endif // HAS_SPIRITUAL_HUNTER
 #ifdef HAS_M_SHIFTING_STARS
         this.do_m_shifting_stars(card_id);
 #endif // HAS_M_SHIFTING_STARS
@@ -4265,6 +4298,13 @@ export class GameState {
                 this.do_skip_next_card();
             }
 #endif // HAS_SKIP_ONE_PLAY
+#ifdef HAS_FIVE_ELEMENTS_SPIRITUAL_FIELD
+            while (me.next_card_index === me.cards.length - 1 &&
+                   swogi[me.cards[me.next_card_index]].name === "Five Elements Spiritual Field") {
+                this.advance_next_card_index();
+                this.do_skip_next_card();
+            }
+#endif // HAS_FIVE_ELEMENTS_SPIRITUAL_FIELD
             let card_id = me.cards[me.next_card_index];
             let card = swogi[card_id];
             let qi_cost = card.qi_cost;
@@ -4294,6 +4334,13 @@ export class GameState {
                 qi_cost = Math.max(0, qi_cost - me.centibird_spirit_sword_rhythm_stacks);
             }
 #endif // HAS_CENTIBIRD_SPIRIT_SWORD_RHYTHM
+#ifdef HAS_SPIRITUAL_HUNTER
+#ifdef HAS_POST_ACTION
+            if (me.spiritual_hunter_stacks > 0 && is_post_action(card_id)) {
+                qi_cost = Math.max(0, qi_cost - 2);
+            }
+#endif // HAS_POST_ACTION
+#endif // HAS_SPIRITUAL_HUNTER
 #ifdef HAS_WATER_SPIRIT_COST_0_QI
             if (card.water_spirit_cost_0_qi && this.if_water_spirit()) {
                 qi_cost = 0;
@@ -4479,6 +4526,9 @@ export class GameState {
 #ifdef HAS_RESONANCE_SWORD_FORMATION_GUARD
         this.do_resonance_sword_formation_guard();
 #endif // HAS_RESONANCE_SWORD_FORMATION_GUARD
+#ifdef HAS_YIN_YANG_TUTELARY_FORMATION
+        this.do_yin_yang_tutelary_formation();
+#endif // HAS_YIN_YANG_TUTELARY_FORMATION
 #ifdef HAS_ENTANGLE
         this.reduce_idx_x_by_c(0, "entangle", 1);
 #endif // HAS_ENTANGLE
@@ -4878,7 +4928,7 @@ export class GameState {
 #endif // HAS_WILD_CROSSING_SEAL
 #ifdef HAS_STAR_MOON_HEXAGRAM_FAN
         if (me.star_moon_hexagram_fan_stacks > 0) {
-            const dmg = amt * me.star_moon_hexagram_fan_stacks;
+            const dmg = amt * 2 * me.star_moon_hexagram_fan_stacks;
             this.deal_damage_inner(dmg, false, idx);
         }
 #endif // HAS_STAR_MOON_HEXAGRAM_FAN
@@ -5054,7 +5104,7 @@ export class GameState {
 #endif // HAS_HEXAGRAM_FORMACIDE
 #ifdef HAS_STAR_MOON_HEXAGRAM_FAN
         if (me.star_moon_hexagram_fan_stacks > 0) {
-            const dmg = amt * me.star_moon_hexagram_fan_stacks;
+            const dmg = amt * 3 * me.star_moon_hexagram_fan_stacks;
             this.deal_damage_inner(dmg, false, idx);
         }
 #endif // HAS_STAR_MOON_HEXAGRAM_FAN
@@ -5068,7 +5118,7 @@ export class GameState {
         me.star_power += amt;
 #ifdef HAS_STAR_MOON_HEXAGRAM_FAN
         if (me.star_moon_hexagram_fan_stacks > 0) {
-            const dmg = amt * me.star_moon_hexagram_fan_stacks;
+            const dmg = amt * 3 * me.star_moon_hexagram_fan_stacks;
             this.deal_damage_inner(dmg, false, idx);
         }
 #endif // HAS_STAR_MOON_HEXAGRAM_FAN
@@ -6232,69 +6282,52 @@ export class GameState {
         this.players[0].cloud_sword_clear_heart_stacks += this.players[0].quench_of_sword_heart_cloud_stacks;
 #endif // HAS_CLOUD_SWORD_CLEAR_HEART
     }
-    do_clear_heart_sword_formation(first_atk_damage) {
-        const first_def_amt = first_atk_damage;
-#ifdef HAS_BLADE_FORGING_SHARPNESS
-        first_atk_damage += 3 * this.players[0].blade_forging_sharpness_stacks;
-#endif // HAS_BLADE_FORGING_SHARPNESS
-#ifdef HAS_BLADE_FORGING_STABLE
-        first_atk_damage -= 3 * this.players[0].blade_forging_stable_stacks;
-#endif // HAS_BLADE_FORGING_STABLE
-#ifdef HAS_SWORD_PATTERN_INTENSE
-        first_atk_damage -= 1 * this.players[0].sword_pattern_carving_intense_stacks;
-#endif // HAS_SWORD_PATTERN_INTENSE
-        // do the first atk
-        this.atk(first_atk_damage);
-        this.increase_idx_def(0, first_def_amt);
-#ifdef HAS_BLADE_FORGING_STABLE
-        // gain def from blade_forging_stable
-        const blade_forging_stable_def = 8;
-        for (let i=0; i<this.players[0].blade_forging_stable_stacks; i++) {
-            this.increase_idx_def(0, blade_forging_stable_def);
-        }
-#endif // HAS_BLADE_FORGING_STABLE
+    do_clear_heart_sword_formation(def_amt) {
+        const me = this.players[0];
+        // Base DEF (2/7/12)
+        this.increase_idx_def(0, def_amt);
 #ifdef HAS_SWORD_PATTERN_CHAIN_ATTACK
-        // attack for chain_attack
+        // Sword Pattern - Chain Attack: additional 5 ATK
         const chain_attack_atk = 5;
-        for (let i=0; i<this.players[0].sword_pattern_carving_chain_attack_stacks; i++) {
+        for (let i=0; i<me.sword_pattern_carving_chain_attack_stacks; i++) {
             this.atk(chain_attack_atk);
         }
 #endif // HAS_SWORD_PATTERN_CHAIN_ATTACK
 #ifdef HAS_SWORD_PATTERN_CHARGE
-        // gain increase_atk from charge
+        // Sword Pattern - Charge: +1 Increase ATK
         const charge_increase_atk = 1;
-        for (let i=0; i<this.players[0].sword_pattern_carving_charge_stacks; i++) {
+        for (let i=0; i<me.sword_pattern_carving_charge_stacks; i++) {
             this.increase_idx_x_by_c(0, "increase_atk", charge_increase_atk);
         }
 #endif // HAS_SWORD_PATTERN_CHARGE
 #ifdef HAS_SWORD_PATTERN_INTENSE
-        // gain sword_intent from intense
+        // Sword Pattern - Intense: +4 Sword Intent (no ATK to reduce)
         const intense_sword_intent = 4;
-        for (let i=0; i<this.players[0].sword_pattern_carving_intense_stacks; i++) {
+        for (let i=0; i<me.sword_pattern_carving_intense_stacks; i++) {
             this.increase_idx_x_by_c(0, "sword_intent", intense_sword_intent);
         }
 #endif // HAS_SWORD_PATTERN_INTENSE
 #ifdef HAS_QI_FORGING_SPIRITAGE
-        // gain qi from spiritage
+        // Qi Forging - Spiritage: Qi+2
         const spiritage_qi = 2;
-        for (let i=0; i<this.players[0].qi_forging_spiritage_stacks; i++) {
+        for (let i=0; i<me.qi_forging_spiritage_stacks; i++) {
             this.increase_idx_qi(0, spiritage_qi);
         }
 #endif // HAS_QI_FORGING_SPIRITAGE
 #ifdef HAS_QI_FORGING_SPIRITSTAT
-        // gain def from spiritstat
+        // Qi Forging - Spiritstat: 3 DEF per Qi
         const spiritstat_def = 3;
-        for (let i=0; i<this.players[0].qi_forging_spiritstat_stacks; i++) {
+        for (let i=0; i<me.qi_forging_spiritstat_stacks; i++) {
             this.for_each_x_add_c_y("qi", spiritstat_def, "def");
         }
 #endif // HAS_QI_FORGING_SPIRITSTAT
 #ifdef HAS_QI_FORGING_SPIRITUAL_POWER
-        // pay qi to make attacks from spiritual_power
+        // Qi Forging - Spiritual Power: cost 1 Qi for 2x4 ATK
         const spiritual_power_qi_cost = 1;
         const spiritual_power_rep = 2;
         const spiritual_power_atk = 4;
-        for (let i=0; i<this.players[0].qi_forging_spiritual_power_stacks; i++) {
-            if (this.players[0].qi >= spiritual_power_qi_cost) {
+        for (let i=0; i<me.qi_forging_spiritual_power_stacks; i++) {
+            if (me.qi >= spiritual_power_qi_cost) {
                 this.reduce_c_of_x(spiritual_power_qi_cost, "qi");
                 for (let j=0; j<spiritual_power_rep; j++) {
                     this.atk(spiritual_power_atk);
@@ -6302,6 +6335,11 @@ export class GameState {
             }
         }
 #endif // HAS_QI_FORGING_SPIRITUAL_POWER
+        // Chase if 4+ sword formations (including this card)
+        // sword_formation_deck_count excludes this card, so check >= 3
+        if (this.sword_formation_deck_count(3, me.currently_playing_card_idx) >= 3) {
+            this.chase();
+        }
     }
 #ifdef HAS_ACTIVATE_WOOD
     activate_wood_spirit() {
@@ -6878,10 +6916,11 @@ export class GameState {
     do_fury_thunder(flaw_amt) {
         this.add_enemy_c_of_x(flaw_amt, "flaw");
         const me = this.players[0];
-        const next_idx = this.get_next_playable_idx(me.currently_playing_card_idx);
-        const next_id = me.cards[next_idx];
-        if (is_thunder(next_id)) {
-            this.chase();
+        for (let i = 0; i < me.cards.length; i++) {
+            if (is_thunder(me.cards[i])) {
+                this.chase();
+                break;
+            }
         }
     }
     do_overcome_with_each_other(qi_amt, def_amt) {
@@ -7088,7 +7127,7 @@ export class GameState {
 #endif // HAS_CLOUD_SWORD_DRAGON_SPRING
 #ifdef HAS_THOUSAND_STAR_EXPLOSION
     do_thousand_star_explosion(atk_per_star_power) {
-        this.atk(4 + atk_per_star_power * this.players[0].star_power);
+        this.atk(6 + atk_per_star_power * this.players[0].star_power);
         const star_power_to_reduce = Math.ceil(this.players[0].star_power / 2);
         this.reduce_idx_x_by_c(0, "star_power", star_power_to_reduce);
     }
@@ -7402,6 +7441,19 @@ export class GameState {
         }
         return false;
     }
+#ifdef HAS_YIN_YANG_TUTELARY_FORMATION
+    do_yin_yang_tutelary_formation() {
+        const me = this.players[0];
+        if (me.yin_yang_tutelary_formation_stacks > 0) {
+            if (me.qi > 0 || me.hexagram > 0) {
+                const hp_and_def = me.qi + me.hexagram * 2;
+                this.increase_idx_hp(0, hp_and_def);
+                this.increase_idx_def(0, hp_and_def);
+            }
+            this.reduce_idx_x_by_c(0, "yin_yang_tutelary_formation_stacks", 1);
+        }
+    }
+#endif // HAS_YIN_YANG_TUTELARY_FORMATION
 }
 
 export const FATE_TO_CHARACTER_OR_SECT = {

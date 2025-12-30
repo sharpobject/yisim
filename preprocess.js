@@ -27,7 +27,7 @@ const deps = {
     HAS_GUARD_UP: ["HAS_PEACH_BRANCH_RUYI", "guard_up",
         "36403", "12409", "24302", "31501", "34402", "40501",
         "40502", "60509", "61502", "63502", "70102", "90403",
-        "91503", "91601", ],
+        "91503", "91601", "93506"],
     HAS_PEACH_BRANCH_RUYI: ["peach_branch_ruyi_stacks"],
     HAS_IGNORE_GUARD_UP: ["91601", "ignore_guard_up"],
     HAS_INTERNAL_INJURY: [
@@ -45,7 +45,7 @@ const deps = {
         "14506", "22401", "24401", "24501", "24502", "32202",
         "32303", "32503", "33403", "34301", "37303", "37501",
         "40301", "60301", "60507", "60601", "62303", "63502",
-        "64301", "70105", "72502", "74501", "92401", "94402"],
+        "64301", "70105", "72502", "74501", "92401", "92404", "92507", "94402"],
     HAS_MARK_OF_DARK_HEART: ["HAS_P2_MARK_OF_DARK_HEART",
         "HAS_P3_MARK_OF_DARK_HEART",
         "HAS_P4_MARK_OF_DARK_HEART",
@@ -75,13 +75,13 @@ const deps = {
         "HAS_COURAGE_TO_FIGHT",
         "14107", "14308", "14506", "22401", "24501", "24502",
         "32202", "33403", "34301", "60302", "60503", "60602",
-        "61501", "63502", "64301", "74501"],
+        "61501", "63502", "64301", "74501", "92404", "92508"],
     HAS_DECREASE_ATK: [
         "HAS_EVERY_DEBUFF",
         "HAS_ANTHOMANIA_FORMATION",
         "decrease_atk",
         "14407", "14506", "22401", "24501", "32202", "33403",
-        "34301", "63502", "64301"],
+        "34301", "63502", "64301", "92404"],
     HAS_IGNORE_DECREASE_ATK: ["14506", "ignore_decrease_atk"],
     HAS_WEAKEN: [
         "weaken",
@@ -89,21 +89,21 @@ const deps = {
         "12208", "12402", "14207", "14506", "22102", "22401",
         "24501", "24502", "32202", "32403", "32503", "33403",
         "34301", "40401", "60504", "63502", "64301", "70106",
-        "74501", "90403"],
+        "74501", "90403", "92404", "92507"],
     HAS_IGNORE_WEAKEN: ["14506", "21302", "ignore_weaken"],
     HAS_FLAW: [
         "flaw",
         "HAS_EVERY_DEBUFF",
         "12304", "14206", "14506", "22102", "22401", "24501",
         "24502", "32202", "32402", "32503", "33403", "34301",
-        "40402", "60509", "61101", "63502", "64301", "70106"],
+        "40402", "60509", "61101", "63502", "64301", "70106", "92404"],
     HAS_ENTANGLE: [
         "entangle",
         "HAS_EVERY_DEBUFF",
         "HAS_RESONANCE_WITHIN_REACH",
         "14305", "14506", "22401", "24501", "24502", "32202",
         "33403", "34301", "36503", "40503", "60507", "63502",
-        "64301", "90602"],
+        "64301", "90602", "92404", "92508"],
     HAS_STYX: [
         "styx",
         "HAS_EVERY_DEBUFF",
@@ -151,18 +151,18 @@ const deps = {
         "HAS_COSMOS_SEAL", "HAS_ACTIVATE_NEXT",
         "HAS_FIVE_ELEMENTS_PURE_VASE"],
     HAS_COSMOS_SEAL: ["HAS_MARK_OF_FIVE_ELEMENTS", "13211"],
-    HAS_ACTIVATE_NEXT: ["73406", "93201", "93507"],
+    HAS_ACTIVATE_NEXT: ["73406", "93201", "93506", "93508"],
     HAS_MARK_OF_FIVE_ELEMENTS: ["mark_of_five_elements_stacks"],
     HAS_CORAL_SWORD: ["coral_sword_stacks"],
     HAS_IGNORE_DEF: ["ignore_def", "HAS_CORAL_SWORD",
         "HAS_RESONANCE_CORAL_SWORD",
         "11106", "11302", "13208", "14207", "31201", "33101",
-        "33303", "61201", "91401", "91601"],
+        "33303", "61201", "91401", "91601", "94404"],
     HAS_SMASH_DEF: ["smash_def",
         "HAS_FRACCIDE_FORMATION",
         "HAS_LEAF_BLADE_FLOWER",
         "HAS_CRASH_FIST_BLITZ",
-        "13302", "13411", "14203", "14209", "91507"],
+        "13302", "13411", "14203", "14209", "91507", "91509"],
     HAS_FRACCIDE_FORMATION: ["fraccide_formation_stacks", "35102"],
     HAS_LEAF_BLADE_FLOWER: ["leaf_blade_flower_stacks", "36204"],
     HAS_CRASH_FIST_BLITZ: ["crash_fist_blitz_stacks", "14203",
@@ -179,7 +179,7 @@ const deps = {
         "sword_pattern_carving_charge_stacks",
         "11402", "13201", "13202", "13304", "13401", "13501",
         "14503", "21202", "23101", "24302", "24401", "31302",
-        "40303", "60503", "64502", "91507"],
+        "40303", "60503", "64502", "91507", "93302", "93403", "93507", "94505"],
     HAS_STEP_MOON_INTO_CLOUD: ["step_moon_into_cloud_stacks", "21502"],
     HAS_WOOD_SPIRIT_ALL_THINGS_GROW: ["93503",
         "wood_spirit_all_things_grow_stacks"],
@@ -600,7 +600,7 @@ const deps = {
         "HAS_RETURN_TO_SIMPLICITY",
         "14301", "14310", "14405", "14406", "14407", "14409",
         "14410", "14501", "14503", "14508", "24202", "24501",
-        "64501", "74404", "94401", "94501", "94504"],
+        "64501", "74404", "94401", "94404", "94501", "94504"],
     HAS_PLAYED_CARD_COUNT: ["played_card_count",
         "73501", "71506"],
     HAS_WILD_CROSSING_SEAL: ["wild_crossing_seal_stacks", "73401"],
@@ -645,7 +645,7 @@ const deps = {
         "HAS_WOOD_SPIRIT_RHYTHM_FIRE",
         "HAS_FIRE_SPIRIT_BURNING_SKY",
         "13104", "13203", "13204", "13304", "13403", "13404",
-        "13502", "23601"],
+        "13502", "23601", "93302"],
     HAS_IF_EARTH_SPIRIT: [
         "HAS_EARTH_SPIRIT_LANDSLIDE",
         "HAS_FIRE_SPIRIT_RHYTHM_EARTH",
@@ -769,7 +769,7 @@ const deps = {
         "14104", "14106", "14204", "14205", "14304", "14305",
         "14306", "14404", "14405", "14503", "14504", "24101",
         "24401", "24501", "24602", "64201", "64301", "64402",
-        "64501", "64502", "94301", "94501"],
+        "64501", "64502", "94301", "94501", "94505"],
     HAS_HAND_COUNT: [
         "hand_count",
         "HAS_PACT_OF_EQUILIBRIUM",
@@ -871,7 +871,7 @@ const deps = {
         "HAS_CRASH_FIST_SHOCKED"],
     HAS_RESONANCE_WITHIN_REACH: ["resonance_within_reach_stacks"],
     HAS_HEAVENLY_MARROW_DANCE_TUNE: [
-        "heavenly_marrow_dance_tune_stacks", "93506"],
+        "heavenly_marrow_dance_tune_stacks", "93507"],
     HAS_RESONANCE_CORAL_SWORD: ["resonance_coral_sword_stacks"],
     HAS_RESONANCE_FIRMNESS_BODY: ["resonance_firmness_body_stacks"],
     HAS_RESONANCE_REJUVENATION: ["resonance_rejuvenation_stacks"],
@@ -929,7 +929,7 @@ const deps = {
         "m_sinking_qi_stacks",
         "74403"],
     HAS_EVERY_DEBUFF: [
-        "74502"],
+        "74502", "93302"],
     HAS_COUNTER_MOVE: [
         "counter_move_stacks",
         "64203"],
@@ -949,7 +949,17 @@ const deps = {
         "72406"],
     HAS_M_UNRESTRAINED_SWORD_DRAGON_COILED: [
         "71507"],
-
+    HAS_YIN_YANG_TUTELARY_FORMATION: [
+        "yin_yang_tutelary_formation_stacks",
+        "92405"],
+    HAS_SPIRITUAL_HUNTER: [
+        "spiritual_hunter_stacks",
+        "92506"],
+    HAS_WOOD_SPIRIT_FORCEAGE_FORMATION: [
+        "wood_spirit_forceage_formation_stacks",
+        "93403"],
+    HAS_FIVE_ELEMENTS_SPIRITUAL_FIELD: [
+        "93509"],
 
 
 };
