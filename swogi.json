@@ -9041,6 +9041,34 @@
 			["post_action", ["heal", 1]]
 		]
 	},
+	"622021": {
+		"name": "Jade Scroll of Yin Symbol",
+		"actions": [
+			["qi", 1],
+			["add_enemy_c_of_x", 1, "weaken"],
+			["add_enemy_c_of_x", 2, "flaw"],
+			["continuous"],
+			["add_enemy_c_of_x", 1, "jade_scroll_of_yin_symbol_stacks"]
+		]
+	},
+	"622022": {
+		"actions": [
+			["qi", 1],
+			["add_enemy_c_of_x", 2, "weaken"],
+			["add_enemy_c_of_x", 2, "flaw"],
+			["continuous"],
+			["add_enemy_c_of_x", 1, "jade_scroll_of_yin_symbol_stacks"]
+		]
+	},
+	"622023": {
+		"actions": [
+			["qi", 1],
+			["add_enemy_c_of_x", 3, "weaken"],
+			["add_enemy_c_of_x", 2, "flaw"],
+			["continuous"],
+			["add_enemy_c_of_x", 1, "jade_scroll_of_yin_symbol_stacks"]
+		]
+	},
 	"623011": {
 		"name": "Ultimate Hexagram Base",
 		"actions": [
@@ -9232,6 +9260,54 @@
 		"actions": [
 			["do_fury_thunder", 3]
 		]
+	},
+	"625031": {
+		"name": "Solitary Void Golden Scroll",
+		"actions": [
+			["qi", 2],
+			["heal", 6]
+		]
+	},
+	"625032": {
+		"actions": [
+			["qi", 4],
+			["def", 6]
+		]
+	},
+	"625033": {
+		"actions": [
+			["qi", 4]
+		]
+	},
+	"625041": {
+		"name": "Face Isolation",
+		"actions": [
+			["add_enemy_c_of_x", 1, "face_isolation_stacks"],
+			["chase"]
+		]
+	},
+	"625042": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"625043": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"625051": {
+		"name": "Strike Vacuity",
+		"actions": [
+			["add_enemy_c_of_x", 1, "strike_vacuity_stacks"],
+			["chase"]
+		]
+	},
+	"625052": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"625053": {
+		"does_not_exist": true,
+		"actions": []
 	},
 	"632011": {
 		"name": "Wood Spirit - Peach Blossom Seal",

@@ -9314,6 +9314,33 @@ card_actions["622013"] = (game) => {
     }
 }
 
+// Jade Scroll of Yin Symbol
+card_actions["622021"] = (game) => {
+    game.increase_idx_qi(0, 1);
+    game.add_enemy_c_of_x(1, "weaken");
+    game.add_enemy_c_of_x(2, "flaw");
+    game.continuous();
+    game.add_enemy_c_of_x(1, "jade_scroll_of_yin_symbol_stacks");
+}
+
+// 622022
+card_actions["622022"] = (game) => {
+    game.increase_idx_qi(0, 1);
+    game.add_enemy_c_of_x(2, "weaken");
+    game.add_enemy_c_of_x(2, "flaw");
+    game.continuous();
+    game.add_enemy_c_of_x(1, "jade_scroll_of_yin_symbol_stacks");
+}
+
+// 622023
+card_actions["622023"] = (game) => {
+    game.increase_idx_qi(0, 1);
+    game.add_enemy_c_of_x(3, "weaken");
+    game.add_enemy_c_of_x(2, "flaw");
+    game.continuous();
+    game.add_enemy_c_of_x(1, "jade_scroll_of_yin_symbol_stacks");
+}
+
 // Ultimate Hexagram Base
 card_actions["623011"] = (game) => {
     game.continuous();
@@ -9494,6 +9521,59 @@ card_actions["625022"] = (game) => {
 // 625023
 card_actions["625023"] = (game) => {
     game.do_fury_thunder(3);
+}
+
+// Solitary Void Golden Scroll
+card_actions["625031"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_hp(0, 6);
+}
+
+// 625032
+card_actions["625032"] = (game) => {
+    game.increase_idx_qi(0, 4);
+    game.increase_idx_def(0, 6);
+}
+
+// 625033
+card_actions["625033"] = (game) => {
+    game.increase_idx_qi(0, 4);
+    const qi = game.players[0].qi;
+    game.add_enemy_c_of_x(qi, "internal_injury");
+    const halved = Math.floor(qi / 2);
+    game.reduce_c_of_x(qi - halved, "qi");
+}
+
+// Face Isolation
+card_actions["625041"] = (game) => {
+    game.add_enemy_c_of_x(1, "face_isolation_stacks");
+    game.chase();
+}
+
+// 625042
+card_actions["625042"] = (game) => {
+
+}
+
+// 625043
+card_actions["625043"] = (game) => {
+
+}
+
+// Strike Vacuity
+card_actions["625051"] = (game) => {
+    game.add_enemy_c_of_x(1, "strike_vacuity_stacks");
+    game.chase();
+}
+
+// 625052
+card_actions["625052"] = (game) => {
+
+}
+
+// 625053
+card_actions["625053"] = (game) => {
+
 }
 
 // Wood Spirit - Peach Blossom Seal

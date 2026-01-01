@@ -1304,6 +1304,15 @@ export class Player {
 #ifdef HAS_PANGU_AXE
         this.pangu_axe_stacks = 0;
 #endif // HAS_PANGU_AXE
+#ifdef HAS_JADE_SCROLL_OF_YIN_SYMBOL_STACKS
+        this.jade_scroll_of_yin_symbol_stacks = 0;
+#endif // HAS_JADE_SCROLL_OF_YIN_SYMBOL_STACKS
+#ifdef HAS_FACE_ISOLATION_STACKS
+        this.face_isolation_stacks = 0;
+#endif // HAS_FACE_ISOLATION_STACKS
+#ifdef HAS_STRIKE_VACUITY_STACKS
+        this.strike_vacuity_stacks = 0;
+#endif // HAS_STRIKE_VACUITY_STACKS
 #ifdef HAS_KONGTONG_SEAL
         this.kongtong_seal_stacks = 0;
 #endif // HAS_KONGTONG_SEAL
@@ -5481,6 +5490,11 @@ export class GameState {
 #endif //HAS_IGNORE_WEAKEN
             ) {
                 pct_multiplier -= 40;
+#ifdef HAS_JADE_SCROLL_OF_YIN_SYMBOL_STACKS
+                if (me.jade_scroll_of_yin_symbol_stacks > 0) {
+                    pct_multiplier -= 10;
+                }
+#endif // HAS_JADE_SCROLL_OF_YIN_SYMBOL_STACKS
 #ifdef HAS_RESONANCE_INDOMITABLE_WILL
                 if (me.resonance_indomitable_will_stacks > 0 &&
                     !me.stance_is_fist
@@ -5496,6 +5510,11 @@ export class GameState {
 #ifdef HAS_FLAW
             if (enemy.flaw > 0) {
                 pct_multiplier += 40;
+#ifdef HAS_JADE_SCROLL_OF_YIN_SYMBOL_STACKS
+                if (enemy.jade_scroll_of_yin_symbol_stacks > 0) {
+                    pct_multiplier += 10;
+                }
+#endif // HAS_JADE_SCROLL_OF_YIN_SYMBOL_STACKS
 #ifdef HAS_RESONANCE_INDOMITABLE_WILL
                 if (enemy.resonance_indomitable_will_stacks > 0 &&
                     enemy.stance_is_fist
@@ -5698,6 +5717,18 @@ export class GameState {
             this.deal_damage_inner(6, false, 0);
         }
 #endif // HAS_COUNTER_MOVE
+#ifdef HAS_FACE_ISOLATION_STACKS
+        if (me.face_isolation_stacks > 0) {
+            this.increase_idx_debuff(0, "weaken", 1);
+            me.face_isolation_stacks -= 1;
+        }
+#endif // HAS_FACE_ISOLATION_STACKS
+#ifdef HAS_STRIKE_VACUITY_STACKS
+        if (enemy.strike_vacuity_stacks > 0) {
+            this.increase_idx_debuff(1, "flaw", 1);
+            enemy.strike_vacuity_stacks -= 1;
+        }
+#endif // HAS_STRIKE_VACUITY_STACKS
 #ifdef HAS_FIRE_FLAME_BLADE
         this.do_fire_flame_blade();
 #endif // HAS_FIRE_FLAME_BLADE
