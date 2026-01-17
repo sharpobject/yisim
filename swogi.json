@@ -13197,25 +13197,46 @@
 	},
 	"944061": {
 		"name": "Continuous Tune",
-		"actions": [],
+		"actions": [
+			["add_c_of_x", 4, "agility"],
+			["add_c_of_x", 1, "continuous_tune_stacks"],
+			["continuous"]
+		],
 		"marking": "mu"
 	},
 	"944062": {
-		"actions": []
+		"actions": [
+			["add_c_of_x", 7, "agility"],
+			["add_c_of_x", 1, "continuous_tune_stacks"],
+			["continuous"]
+		]
 	},
 	"944063": {
-		"actions": []
+		"actions": [
+			["add_c_of_x", 10, "agility"],
+			["add_c_of_x", 1, "continuous_tune_stacks"],
+			["continuous"]
+		]
 	},
 	"944071": {
 		"name": "Mystic Snowdrop",
-		"actions": [],
+		"actions": [
+			["add_c_of_x", 5, "hp"],
+			["add_c_of_x", 2, "mystic_snowdrop_stacks"]
+		],
 		"marking": "pm"
 	},
 	"944072": {
-		"actions": []
+		"actions": [
+			["add_c_of_x", 10, "hp"],
+			["add_c_of_x", 2, "mystic_snowdrop_stacks"]
+		]
 	},
 	"944073": {
-		"actions": []
+		"actions": [
+			["add_c_of_x", 15, "hp"],
+			["add_c_of_x", 2, "mystic_snowdrop_stacks"]
+		]
 	},
 	"945011": {
 		"name": "Unceasing Universe",
@@ -13309,31 +13330,50 @@
 	},
 	"945061": {
 		"name": "Force Spiritage Formation",
-		"actions": [],
+		"actions": [
+			["add_c_of_x", 4, "max_force"],
+			["add_c_of_x", 2, "force_spiritage_formation_stacks"]
+		],
 		"marking": "fm"
 	},
 	"945062": {
-		"actions": []
+		"actions": [
+			["add_c_of_x", 4, "max_force"],
+			["add_c_of_x", 3, "force_spiritage_formation_stacks"]
+		]
 	},
 	"945063": {
-		"actions": []
+		"actions": [
+			["add_c_of_x", 4, "max_force"],
+			["add_c_of_x", 4, "force_spiritage_formation_stacks"]
+		]
 	},
 	"945071": {
 		"name": "Heavenly Will - Seizing",
-		"actions": [],
+		"actions": [
+			["atk", 10],
+			["add_c_of_x", 1, "heavenly_will_seizing_stacks"]
+		],
 		"marking": "ft"
 	},
 	"945072": {
-		"actions": []
+		"actions": [
+			["atk", 16],
+			["add_c_of_x", 1, "heavenly_will_seizing_stacks"]
+		]
 	},
 	"945073": {
-		"actions": []
+		"actions": [
+			["atk", 22],
+			["add_c_of_x", 1, "heavenly_will_seizing_stacks"]
+		]
 	},
 	"946011": {
 		"name": "Pangu Axe",
 		"actions": [
 			["atk", 30],
-			["add_enemy_c_of_x", 20, "pangu_axe_stacks"]
+			["add_enemy_c_of_x", 1, "metal_spirit_chokehold_stacks"],
+			["injured", ["add_enemy_c_of_x", 20, "pangu_axe_stacks"]]
 		]
 	},
 	"946012": {

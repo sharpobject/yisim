@@ -318,7 +318,7 @@ const deps = {
         "xuanming_regen_tune_hurt_stacks", "90402"],
     HAS_THUNDERBOLT_TUNE: ["thunderbolt_tune_stacks", "92403"],
     HAS_METAL_SPIRIT_CHOKEHOLD: [
-        "metal_spirit_chokehold_stacks", "23201"],
+        "metal_spirit_chokehold_stacks", "23201", "94601"],
     HAS_IF_PLAYED_CONTINUOUS: [
         "35103", "35203", "35303", "35503"],
     HAS_UNRESTRAINED_SWORD_TWIN_DRAGONS: [
@@ -969,6 +969,18 @@ const deps = {
         "93403"],
     HAS_FIVE_ELEMENTS_SPIRITUAL_FIELD: [
         "93509"],
+    HAS_FORCE_SPIRITAGE_FORMATION: [
+        "force_spiritage_formation_stacks",
+        "94506"],
+    HAS_MYSTIC_SNOWDROP: [
+        "mystic_snowdrop_stacks",
+        "94407"],
+    HAS_CONTINUOUS_TUNE: [
+        "continuous_tune_stacks",
+        "94406"],
+    HAS_HEAVENLY_WILL_SEIZING: [
+        "heavenly_will_seizing_stacks",
+        "94507"],
 
 
 };

@@ -1366,6 +1366,18 @@ export class Player {
 #ifdef HAS_HEAVENLY_WILL_EARTH_EVIL
         this.heavenly_will_earth_evil_stacks = 0;
 #endif // HAS_HEAVENLY_WILL_EARTH_EVIL
+#ifdef HAS_FORCE_SPIRITAGE_FORMATION
+        this.force_spiritage_formation_stacks = 0;
+#endif // HAS_FORCE_SPIRITAGE_FORMATION
+#ifdef HAS_MYSTIC_SNOWDROP
+        this.mystic_snowdrop_stacks = 0;
+#endif // HAS_MYSTIC_SNOWDROP
+#ifdef HAS_CONTINUOUS_TUNE
+        this.continuous_tune_stacks = 0;
+#endif // HAS_CONTINUOUS_TUNE
+#ifdef HAS_HEAVENLY_WILL_SEIZING
+        this.heavenly_will_seizing_stacks = 0;
+#endif // HAS_HEAVENLY_WILL_SEIZING
 
 
         // spacetime mirage mirage/future cards
@@ -4106,6 +4118,15 @@ export class GameState {
         }
     }
 #endif // HAS_SPIRITAGE_FORMATION
+#ifdef HAS_FORCE_SPIRITAGE_FORMATION
+    do_force_spiritage_formation() {
+        if (this.players[0].force_spiritage_formation_stacks > 0) {
+            this.reduce_idx_x_by_c(0, "force_spiritage_formation_stacks", 1);
+            this.add_c_of_x(2, "qi");
+            this.add_c_of_x(2, "force");
+        }
+    }
+#endif // HAS_FORCE_SPIRITAGE_FORMATION
     do_skip_next_card() {
         const me = this.players[0];
 #ifdef HAS_SKIP_TO_PREVIOUS_CARD
@@ -4262,6 +4283,9 @@ export class GameState {
 #ifdef HAS_NUWA_STONE
         this.do_nuwa_stone();
 #endif // HAS_NUWA_STONE
+#ifdef HAS_FORCE_SPIRITAGE_FORMATION
+        this.do_force_spiritage_formation();
+#endif // HAS_FORCE_SPIRITAGE_FORMATION
         if (this.check_for_death()) {
             return;
         }
@@ -4450,6 +4474,9 @@ export class GameState {
                     this.log("player 0 is playing " + format_card(card_id));
                 }
                 const card_idx = me.next_card_index;
+#ifdef HAS_CONTINUOUS_TUNE
+                this.do_continuous_tune(card_idx);
+#endif // HAS_CONTINUOUS_TUNE
 #ifdef HAS_FINISHING_TOUCH
                 this.do_finishing_touch(card_idx);
 #endif // HAS_FINISHING_TOUCH
@@ -4626,9 +4653,10 @@ export class GameState {
         this.log("reduced player " + idx +" hp by " + dmg + " to " + me.hp);
 #ifdef HAS_PANGU_AXE
         if (me.hp <= 0 && me.pangu_axe_stacks > 0) {
-            this.log("pangu axe: reduced player " + idx + " destiny by " + me.pangu_axe_stacks + " to " + me.destiny);
-            me.destiny -= me.pangu_axe_stacks;
+            const stacks = me.pangu_axe_stacks;
+            me.destiny -= stacks;
             me.pangu_axe_stacks = 0;
+            this.log("pangu axe: reduced player " + idx + " destiny by " + stacks + " to " + me.destiny);
         }
 #endif // HAS_PANGU_AXE
 #ifdef HAS_ELUSIVE_FOOTWORK
@@ -4698,9 +4726,10 @@ export class GameState {
         }
 #ifdef HAS_PANGU_AXE
         if (me.hp <= 0 && me.pangu_axe_stacks > 0) {
-            this.log("pangu axe: reduced player " + idx + " destiny by " + me.pangu_axe_stacks + " to " + me.destiny);
-            me.destiny -= me.pangu_axe_stacks;
+            const stacks = me.pangu_axe_stacks;
+            me.destiny -= stacks;
             me.pangu_axe_stacks = 0;
+            this.log("pangu axe: reduced player " + idx + " destiny by " + stacks + " to " + me.destiny);
         }
 #endif // HAS_PANGU_AXE
         this.log("reduced player " + idx + " max_hp by " + amt + " to " + me.max_hp);
@@ -5205,6 +5234,12 @@ export class GameState {
 #endif // HAS_M_RUTHLESS_WATER
         me[x] += amt;
         this.log("gained " + amt + " " + x + ". Now have " + me[x] + " " + x);
+#ifdef HAS_MYSTIC_SNOWDROP
+        if (me.mystic_snowdrop_stacks > 0) {
+            this.reduce_idx_x_by_c(idx, "mystic_snowdrop_stacks", 1);
+            this.increase_idx_x_by_c(1 - idx, x, amt);
+        }
+#endif // HAS_MYSTIC_SNOWDROP
     }
     increase_idx_x_by_c(idx, x, c) {
         if (c === 0) {
@@ -5449,6 +5484,70 @@ export class GameState {
 #ifdef HAS_CRAZE_DANCE_TUNE
             dmg += me.craze_dance_tune_stacks;
 #endif // HAS_CRAZE_DANCE_TUNE
+#ifdef HAS_HEAVENLY_WILL_SEIZING
+            if (me.heavenly_will_seizing_stacks > 0) {
+                this.reduce_idx_x_by_c(my_idx, "heavenly_will_seizing_stacks", 1);
+                let transferred = 0;
+#ifdef HAS_INTERNAL_INJURY
+                if (enemy.internal_injury > 0) {
+                    const amt = enemy.internal_injury;
+                    transferred += amt;
+                    this.reduce_idx_x_by_c(enemy_idx, "internal_injury", amt);
+                    this.increase_idx_debuff(my_idx, "internal_injury", amt);
+                }
+#endif // HAS_INTERNAL_INJURY
+#ifdef HAS_DECREASE_ATK
+                if (enemy.decrease_atk > 0) {
+                    const amt = enemy.decrease_atk;
+                    transferred += amt;
+                    this.reduce_idx_x_by_c(enemy_idx, "decrease_atk", amt);
+                    this.increase_idx_debuff(my_idx, "decrease_atk", amt);
+                }
+#endif // HAS_DECREASE_ATK
+#ifdef HAS_WEAKEN
+                if (enemy.weaken > 0) {
+                    const amt = enemy.weaken;
+                    transferred += amt;
+                    this.reduce_idx_x_by_c(enemy_idx, "weaken", amt);
+                    this.increase_idx_debuff(my_idx, "weaken", amt);
+                }
+#endif // HAS_WEAKEN
+#ifdef HAS_FLAW
+                if (enemy.flaw > 0) {
+                    const amt = enemy.flaw;
+                    transferred += amt;
+                    this.reduce_idx_x_by_c(enemy_idx, "flaw", amt);
+                    this.increase_idx_debuff(my_idx, "flaw", amt);
+                }
+#endif // HAS_FLAW
+#ifdef HAS_ENTANGLE
+                if (enemy.entangle > 0) {
+                    const amt = enemy.entangle;
+                    transferred += amt;
+                    this.reduce_idx_x_by_c(enemy_idx, "entangle", amt);
+                    this.increase_idx_debuff(my_idx, "entangle", amt);
+                }
+#endif // HAS_ENTANGLE
+#ifdef HAS_WOUND
+                if (enemy.wound > 0) {
+                    const amt = enemy.wound;
+                    transferred += amt;
+                    this.reduce_idx_x_by_c(enemy_idx, "wound", amt);
+                    this.increase_idx_debuff(my_idx, "wound", amt);
+                }
+#endif // HAS_WOUND
+#ifdef HAS_STYX
+                if (enemy.styx > 0) {
+                    const amt = enemy.styx;
+                    transferred += amt;
+                    this.reduce_idx_x_by_c(enemy_idx, "styx", amt);
+                    this.increase_idx_debuff(my_idx, "styx", amt);
+                }
+#endif // HAS_STYX
+                dmg += transferred;
+                this.log("Heavenly Will - Seizing transferred " + transferred + " debuffs, bonus ATK: " + transferred);
+            }
+#endif // HAS_HEAVENLY_WILL_SEIZING
 #ifdef HAS_DECREASE_ATK
 #ifdef HAS_IGNORE_DECREASE_ATK
             if (!me.ignore_decrease_atk) {
@@ -7485,6 +7584,27 @@ export class GameState {
         }
     }
 #endif // HAS_YIN_YANG_TUTELARY_FORMATION
+#ifdef HAS_CONTINUOUS_TUNE
+    do_continuous_tune(card_idx) {
+        const me = this.players[0];
+        if (me.continuous_tune_stacks === 0) {
+            return;
+        }
+        const card_id = me.cards[card_idx];
+        // Check if the card is Normal Attack (base_id 60101)
+        if (!card_id.startsWith("60101")) {
+            return;
+        }
+        const prev_idx = this.get_prev_idx(card_idx);
+        const prev_id = me.cards[prev_idx];
+        // Copy the previous card to this slot
+        me.cards[card_idx] = prev_id;
+        this.log("Continuous Tune: copied " + format_card(prev_id) + " to Normal Attack slot");
+        // Upgrade the copied card
+        this.try_upgrade_card(0, card_idx);
+        this.reduce_idx_x_by_c(0, "continuous_tune_stacks", 1);
+    }
+#endif // HAS_CONTINUOUS_TUNE
 }
 
 export const FATE_TO_CHARACTER_OR_SECT = {

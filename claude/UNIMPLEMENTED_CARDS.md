@@ -9,16 +9,7 @@ Cards that exist in card_data.csv but are not yet implemented in swogi.json.
 
 ---
 
-## Not in swogi.json (15 cards)
-
-### Character Specific (4)
-
-| CSV base_id | Name |
-|-------------|------|
-| 214 | Jade Scroll of Yin Symbol |
-| 215 | Solitary Void Golden Scroll |
-| 216 | Face Isolation |
-| 217 | Strike Vacuity |
+## Not in swogi.json (11 cards)
 
 ### Event Mode (1)
 

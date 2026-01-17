@@ -13788,6 +13788,45 @@ card_actions["944053"] = (game) => {
     game.for_each_x_up_to_c_add_y("qi", 20, "physique");
 }
 
+// Continuous Tune
+card_actions["944061"] = (game) => {
+    game.add_c_of_x(4, "agility");
+    game.add_c_of_x(1, "continuous_tune_stacks");
+    game.continuous();
+}
+
+// 944062
+card_actions["944062"] = (game) => {
+    game.add_c_of_x(7, "agility");
+    game.add_c_of_x(1, "continuous_tune_stacks");
+    game.continuous();
+}
+
+// 944063
+card_actions["944063"] = (game) => {
+    game.add_c_of_x(10, "agility");
+    game.add_c_of_x(1, "continuous_tune_stacks");
+    game.continuous();
+}
+
+// Mystic Snowdrop
+card_actions["944071"] = (game) => {
+    game.add_c_of_x(5, "hp");
+    game.add_c_of_x(2, "mystic_snowdrop_stacks");
+}
+
+// 944072
+card_actions["944072"] = (game) => {
+    game.add_c_of_x(10, "hp");
+    game.add_c_of_x(2, "mystic_snowdrop_stacks");
+}
+
+// 944073
+card_actions["944073"] = (game) => {
+    game.add_c_of_x(15, "hp");
+    game.add_c_of_x(2, "mystic_snowdrop_stacks");
+}
+
 // Unceasing Universe
 card_actions["945011"] = (game) => {
     game.atk(9);
@@ -13894,10 +13933,49 @@ card_actions["945053"] = (game) => {
     game.consumption();
 }
 
+// Force Spiritage Formation
+card_actions["945061"] = (game) => {
+    game.add_c_of_x(4, "max_force");
+    game.add_c_of_x(2, "force_spiritage_formation_stacks");
+}
+
+// 945062
+card_actions["945062"] = (game) => {
+    game.add_c_of_x(4, "max_force");
+    game.add_c_of_x(3, "force_spiritage_formation_stacks");
+}
+
+// 945063
+card_actions["945063"] = (game) => {
+    game.add_c_of_x(4, "max_force");
+    game.add_c_of_x(4, "force_spiritage_formation_stacks");
+}
+
+// Heavenly Will - Seizing
+card_actions["945071"] = (game) => {
+    game.atk(10);
+    game.add_c_of_x(1, "heavenly_will_seizing_stacks");
+}
+
+// 945072
+card_actions["945072"] = (game) => {
+    game.atk(16);
+    game.add_c_of_x(1, "heavenly_will_seizing_stacks");
+}
+
+// 945073
+card_actions["945073"] = (game) => {
+    game.atk(22);
+    game.add_c_of_x(1, "heavenly_will_seizing_stacks");
+}
+
 // Pangu Axe
 card_actions["946011"] = (game) => {
     game.atk(30);
-    game.add_enemy_c_of_x(20, "pangu_axe_stacks");
+    game.add_enemy_c_of_x(1, "metal_spirit_chokehold_stacks");
+    if (game.if_injured()) {
+        game.add_enemy_c_of_x(20, "pangu_axe_stacks");
+    }
 }
 
 // 946012
