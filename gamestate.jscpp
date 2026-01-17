@@ -1421,6 +1421,28 @@ export class Player {
 #ifdef HAS_M_DOTTED_AROUND
         this.m_dotted_around_stacks = 0;
 #endif // HAS_M_DOTTED_AROUND
+#ifdef HAS_M_FLOWER_SENTIENT
+        this.m_flower_sentient_stacks = 0;
+#endif // HAS_M_FLOWER_SENTIENT
+#ifdef HAS_M_VITALITY_BLOSSOM
+        this.m_vitality_blossom_stacks = 0;
+#endif // HAS_M_VITALITY_BLOSSOM
+#ifdef HAS_M_FIRE_SPIRIT_SEAL
+        this.m_fire_spirit_seal_stacks = 0;
+#endif // HAS_M_FIRE_SPIRIT_SEAL
+#ifdef HAS_M_METAL_SPIRIT_SEAL
+        this.m_metal_spirit_seal_stacks = 0;
+#endif // HAS_M_METAL_SPIRIT_SEAL
+#ifdef HAS_M_EARTH_SPIRIT_FORMATION
+        this.m_earth_spirit_formation_stacks = 0;
+#endif // HAS_M_EARTH_SPIRIT_FORMATION
+#ifdef HAS_M_ENDLESS_ENTANGLEMENT
+        this.m_endless_entanglement_stacks = 0;
+#endif // HAS_M_ENDLESS_ENTANGLEMENT
+#ifdef HAS_M_CRASH_FIST_ENTANGLE
+        this.m_crash_fist_entangle_stacks = 0;
+        this.this_card_m_crash_fist_entangle_stacks = 0;
+#endif // HAS_M_CRASH_FIST_ENTANGLE
 
 
         // merpeople pearls
@@ -2724,6 +2746,9 @@ export class GameState {
 #ifdef HAS_CRASH_FIST_SHOCKED
         this.for_each_x_add_y("crash_fist_shocked_stacks", "this_card_crash_fist_shocked_stacks");
 #endif // HAS_CRASH_FIST_SHOCKED
+#ifdef HAS_M_CRASH_FIST_ENTANGLE
+        this.for_each_x_add_y("m_crash_fist_entangle_stacks", "this_card_m_crash_fist_entangle_stacks");
+#endif // HAS_M_CRASH_FIST_ENTANGLE
 #ifdef HAS_CRASH_FIST_CONTINUE
         if (swogi[card_id].name !== "Crash Fist - Continue")
 #endif // HAS_CRASH_FIST_CONTINUE
@@ -2752,6 +2777,9 @@ export class GameState {
 #ifdef HAS_CRASH_FIST_SHOCKED
             me.crash_fist_shocked_stacks = 0;
 #endif // HAS_CRASH_FIST_SHOCKED
+#ifdef HAS_M_CRASH_FIST_ENTANGLE
+            me.m_crash_fist_entangle_stacks = 0;
+#endif // HAS_M_CRASH_FIST_ENTANGLE
 #ifdef HAS_CRASH_FIST_STAR_SEIZING
             me.crash_fist_star_seizing_stacks = 0;
 #endif // HAS_CRASH_FIST_STAR_SEIZING
@@ -2807,6 +2835,24 @@ export class GameState {
         this.players[0].this_card_crash_fist_shocked_stacks = 0;
     }
 #endif // HAS_CRASH_FIST_SHOCKED
+#ifdef HAS_M_CRASH_FIST_ENTANGLE
+    do_m_crash_fist_entangle(card_id) {
+        const me = this.players[0];
+        if (me.this_card_m_crash_fist_entangle_stacks === 0) {
+            return;
+        }
+        if (!this.is_crash_fist(card_id)) {
+            return;
+        }
+        // Make 3 ATK x 2 for each stack
+        for (let s = 0; s < me.this_card_m_crash_fist_entangle_stacks; s++) {
+            for (let i = 0; i < 2; i++) {
+                this.atk(3, true);
+            }
+        }
+        me.this_card_m_crash_fist_entangle_stacks = 0;
+    }
+#endif // HAS_M_CRASH_FIST_ENTANGLE
 #ifdef HAS_WOOD_SPIRIT_FORMATION
     do_wood_spirit_formation(card_id) {
         const card = swogi[card_id];
@@ -3165,6 +3211,9 @@ export class GameState {
 #ifdef HAS_CRASH_FIST_SHOCKED
         this.do_crash_fist_shocked(card_id);
 #endif // HAS_CRASH_FIST_SHOCKED
+#ifdef HAS_M_CRASH_FIST_ENTANGLE
+        this.do_m_crash_fist_entangle(card_id);
+#endif // HAS_M_CRASH_FIST_ENTANGLE
 #ifdef HAS_OBSERVE_BODY
         this.do_observe_body();
 #endif // HAS_OBSERVE_BODY
@@ -3556,6 +3605,14 @@ export class GameState {
                 amt = Math.floor(amt * 0.5);
             }
 #endif // HAS_RESONANCE_INDOMITABLE_WILL
+#ifdef HAS_M_ENDLESS_ENTANGLEMENT
+            if (is_start_of_turn && me.m_endless_entanglement_stacks > 0) {
+                for (let i = 0; i < me.m_endless_entanglement_stacks; i++) {
+                    this.reduce_idx_hp(idx, amt);
+                }
+                me.m_endless_entanglement_stacks = 0;
+            }
+#endif // HAS_M_ENDLESS_ENTANGLEMENT
             this.reduce_idx_hp(idx, amt);
         }
     }
@@ -4477,6 +4534,9 @@ export class GameState {
 #ifdef HAS_CONTINUOUS_TUNE
                 this.do_continuous_tune(card_idx);
 #endif // HAS_CONTINUOUS_TUNE
+#ifdef HAS_XIAOYAO_REPRODUCTION
+                this.do_xiaoyao_reproduction(card_idx);
+#endif // HAS_XIAOYAO_REPRODUCTION
 #ifdef HAS_FINISHING_TOUCH
                 this.do_finishing_touch(card_idx);
 #endif // HAS_FINISHING_TOUCH
@@ -4577,6 +4637,21 @@ export class GameState {
 #ifdef HAS_METAL_SPIRIT_CHOKEHOLD
         this.reduce_idx_x_by_c(0, "metal_spirit_chokehold_stacks", 1);
 #endif // HAS_METAL_SPIRIT_CHOKEHOLD
+#ifdef HAS_M_FLOWER_SENTIENT
+        this.reduce_idx_x_by_c(0, "m_flower_sentient_stacks", 1);
+#endif // HAS_M_FLOWER_SENTIENT
+#ifdef HAS_M_VITALITY_BLOSSOM
+        this.do_m_vitality_blossom();
+#endif // HAS_M_VITALITY_BLOSSOM
+#ifdef HAS_M_FIRE_SPIRIT_SEAL
+        this.reduce_idx_x_by_c(0, "m_fire_spirit_seal_stacks", 1);
+#endif // HAS_M_FIRE_SPIRIT_SEAL
+#ifdef HAS_M_METAL_SPIRIT_SEAL
+        this.reduce_idx_x_by_c(0, "m_metal_spirit_seal_stacks", 1);
+#endif // HAS_M_METAL_SPIRIT_SEAL
+#ifdef HAS_M_EARTH_SPIRIT_FORMATION
+        this.do_m_earth_spirit_formation();
+#endif // HAS_M_EARTH_SPIRIT_FORMATION
         if (this.check_for_death()) {
             return;
         }
@@ -4805,6 +4880,13 @@ export class GameState {
             return 0;
         }
 #endif // HAS_METAL_SPIRIT_CHOKEHOLD
+#ifdef HAS_M_METAL_SPIRIT_SEAL
+        if (me.m_metal_spirit_seal_stacks > 0) {
+            this.increase_idx_penetrate(idx, amt);
+            this.log("M - Metal Spirit Seal: converted " + amt + " HP gain to Penetrate");
+            return 0;
+        }
+#endif // HAS_M_METAL_SPIRIT_SEAL
 #ifdef HAS_P2_REJUVENATION
         for (let i=0; i<me.p2_rejuvenation_stacks; i++) {
             this.increase_idx_max_hp(idx, 3);
@@ -4856,8 +4938,8 @@ export class GameState {
                 const exccess_hp = me.hp - me.max_hp;
                 this.increase_idx_max_hp(idx, exccess_hp);
             }
-            if (me.hp > me.max_hp)
 #endif // HAS_VITALITY_BLOSSOM
+            if (me.hp > me.max_hp)
             {
                 me.hp = me.max_hp;
             }
@@ -4916,6 +4998,15 @@ export class GameState {
 #ifdef HAS_KUN_WU_METAL_RING
         amt += me.kun_wu_metal_ring_stacks;
 #endif // HAS_KUN_WU_METAL_RING
+#ifdef HAS_M_FIRE_SPIRIT_SEAL
+        if (me.m_fire_spirit_seal_stacks > 0) {
+            const hp_loss = amt * 2;
+            this.reduce_idx_hp(1 - idx, hp_loss, false);
+            this.reduce_idx_max_hp(1 - idx, hp_loss);
+            this.log("M - Fire Spirit Seal: converted " + amt + " penetrate to " + hp_loss + " HP&Max HP loss on opponent");
+            return;
+        }
+#endif // HAS_M_FIRE_SPIRIT_SEAL
         me.penetrate += amt;
         this.log("gained " + amt + " penetrate. Now have " + me.penetrate + " penetrate");
     }
@@ -5232,6 +5323,11 @@ export class GameState {
             this.increase_idx_x_by_c(idx, "internal_injury", ii_amt);
         }
 #endif // HAS_M_RUTHLESS_WATER
+#ifdef HAS_M_FLOWER_SENTIENT
+        if (me.m_flower_sentient_stacks > 0 && x === "internal_injury") {
+            amt += 2;
+        }
+#endif // HAS_M_FLOWER_SENTIENT
         me[x] += amt;
         this.log("gained " + amt + " " + x + ". Now have " + me[x] + " " + x);
 #ifdef HAS_MYSTIC_SNOWDROP
@@ -7605,6 +7701,51 @@ export class GameState {
         this.reduce_idx_x_by_c(0, "continuous_tune_stacks", 1);
     }
 #endif // HAS_CONTINUOUS_TUNE
+#ifdef HAS_XIAOYAO_REPRODUCTION
+    do_xiaoyao_reproduction(card_idx) {
+        const me = this.players[0];
+        const card_id = me.cards[card_idx];
+        // Check if the card is Xiaoyao - Reproduction (701071)
+        if (card_id !== "701071") {
+            return;
+        }
+        const enemy = this.players[1];
+        // Get opponent's card at the same index
+        const enemy_card_id = enemy.cards[card_idx];
+        // Permanently transform into the opponent's card
+        me.cards[card_idx] = enemy_card_id;
+        this.log("Xiaoyao - Reproduction: transformed into " + format_card(enemy_card_id));
+    }
+#endif // HAS_XIAOYAO_REPRODUCTION
+#ifdef HAS_M_VITALITY_BLOSSOM
+    do_m_vitality_blossom() {
+        const me = this.players[0];
+        if (me.m_vitality_blossom_stacks === 0) {
+            return;
+        }
+        const amt = me.m_vitality_blossom_stacks;
+        // Enable overflow mechanic
+        this.increase_idx_x_by_c(0, "vitality_blossom_stacks", 1);
+        // Add HP (excess becomes max HP)
+        this.increase_idx_hp(0, amt);
+        // Disable overflow mechanic
+        this.reduce_idx_x_by_c(0, "vitality_blossom_stacks", 1);
+        // Lose HP
+        this.reduce_idx_hp(0, amt, false);
+    }
+#endif // HAS_M_VITALITY_BLOSSOM
+#ifdef HAS_M_EARTH_SPIRIT_FORMATION
+    do_m_earth_spirit_formation() {
+        const me = this.players[0];
+        if (me.m_earth_spirit_formation_stacks === 0) {
+            return;
+        }
+        const def_amt = Math.min(me.force_of_water, me.m_earth_spirit_formation_stacks);
+        if (def_amt > 0) {
+            this.increase_idx_def(0, def_amt);
+        }
+    }
+#endif // HAS_M_EARTH_SPIRIT_FORMATION
 }
 
 export const FATE_TO_CHARACTER_OR_SECT = {

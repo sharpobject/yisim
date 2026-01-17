@@ -8512,6 +8512,25 @@
 			["chase"]
 		]
 	},
+	"604011": {
+		"name": "Waiting for Rabbit",
+		"actions": [
+			["def", 15],
+			["consumption"]
+		]
+	},
+	"604012": {
+		"actions": [
+			["def", 20],
+			["consumption"]
+		]
+	},
+	"604013": {
+		"actions": [
+			["def", 25],
+			["consumption"]
+		]
+	},
 	"605011": {
 		"name": "Mirroring Merpeople Pearl",
 		"actions": [
@@ -9922,6 +9941,18 @@
 		"does_not_exist": true,
 		"actions": []
 	},
+	"701071": {
+		"name": "Xiaoyao - Reproduction",
+		"actions": []
+	},
+	"701072": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"701073": {
+		"does_not_exist": true,
+		"actions": []
+	},
 	"714011": {
 		"name": "Azure Dragon Sword Formation",
 		"actions": [
@@ -10302,6 +10333,31 @@
 			["add_c_of_x", 12, "m_dotted_around_stacks"]
 		]
 	},
+	"724071": {
+		"name": "M - Vitality Blossom",
+		"actions": [
+			["add_c_of_x", 10, "hp"],
+			["add_c_of_x", 10, "max_hp"],
+			["continuous"],
+			["add_c_of_x", 8, "m_vitality_blossom_stacks"]
+		]
+	},
+	"724072": {
+		"actions": [
+			["add_c_of_x", 15, "hp"],
+			["add_c_of_x", 15, "max_hp"],
+			["continuous"],
+			["add_c_of_x", 12, "m_vitality_blossom_stacks"]
+		]
+	},
+	"724073": {
+		"actions": [
+			["add_c_of_x", 20, "hp"],
+			["add_c_of_x", 20, "max_hp"],
+			["continuous"],
+			["add_c_of_x", 16, "m_vitality_blossom_stacks"]
+		]
+	},
 	"725011": {
 		"name": "Astral Move - Twin Swallows",
 		"actions": [
@@ -10419,6 +10475,55 @@
 		"actions": [
 			["atk", 5],
 			["add_c_of_x", 3, "star_power"]
+		]
+	},
+	"725061": {
+		"name": "M - Flower Sentient",
+		"actions": [
+			["qi", 3],
+			["add_enemy_c_of_x", 1, "internal_injury"],
+			["add_enemy_c_of_x", 3, "m_flower_sentient_stacks"]
+		]
+	},
+	"725062": {
+		"actions": [
+			["qi", 3],
+			["add_enemy_c_of_x", 2, "internal_injury"],
+			["add_enemy_c_of_x", 4, "m_flower_sentient_stacks"]
+		]
+	},
+	"725063": {
+		"actions": [
+			["qi", 3],
+			["add_enemy_c_of_x", 3, "internal_injury"],
+			["add_enemy_c_of_x", 5, "m_flower_sentient_stacks"]
+		]
+	},
+	"725071": {
+		"name": "M - Yin Yang Formation",
+		"actions": [
+			["for_each_x_add_y", "qi", "def"],
+			["for_each_x_add_y", "qi", "hp"],
+			["for_each_x_add_y", "hexagram", "def"],
+			["for_each_x_add_y", "hexagram", "hp"]
+		]
+	},
+	"725072": {
+		"actions": [
+			["qi", 1],
+			["for_each_x_add_y", "qi", "def"],
+			["for_each_x_add_y", "qi", "hp"],
+			["for_each_x_add_y", "hexagram", "def"],
+			["for_each_x_add_y", "hexagram", "hp"]
+		]
+	},
+	"725073": {
+		"actions": [
+			["qi", 2],
+			["for_each_x_add_y", "qi", "def"],
+			["for_each_x_add_y", "qi", "hp"],
+			["for_each_x_add_y", "hexagram", "def"],
+			["for_each_x_add_y", "hexagram", "hp"]
 		]
 	},
 	"733011": {
@@ -10599,6 +10704,74 @@
 			["metal_spirit", ["add_c_of_x", 1, "m_metal_spirit_needle_stacks"]]
 		]
 	},
+	"734061": {
+		"name": "M - Fire Spirit Seal",
+		"actions": [
+			["qi", 2],
+			["reduce_enemy_c_of_x", 3, "hp"],
+			["reduce_enemy_c_of_x", 3, "max_hp"],
+			["continuous"],
+			["add_c_of_x", 3, "m_fire_spirit_seal_stacks"]
+		],
+		"opening": [
+			["activate_fire_spirit"],
+			["activate_metal_spirit"]
+		]
+	},
+	"734062": {
+		"actions": [
+			["qi", 2],
+			["reduce_enemy_c_of_x", 6, "hp"],
+			["reduce_enemy_c_of_x", 6, "max_hp"],
+			["continuous"],
+			["add_c_of_x", 4, "m_fire_spirit_seal_stacks"]
+		],
+		"opening": [
+			["activate_fire_spirit"],
+			["activate_metal_spirit"]
+		]
+	},
+	"734063": {
+		"actions": [
+			["qi", 2],
+			["reduce_enemy_c_of_x", 9, "hp"],
+			["reduce_enemy_c_of_x", 9, "max_hp"],
+			["continuous"],
+			["add_c_of_x", 5, "m_fire_spirit_seal_stacks"]
+		],
+		"opening": [
+			["activate_fire_spirit"],
+			["activate_metal_spirit"]
+		]
+	},
+	"734071": {
+		"name": "M - Earth Spirit Formation",
+		"actions": [
+			["add_c_of_x", 1, "force_of_water"],
+			["activate_earth_spirit"],
+			["activate_water_spirit"],
+			["continuous"],
+			["add_c_of_x", 4, "m_earth_spirit_formation_stacks"]
+		]
+	},
+	"734072": {
+		"actions": [
+			["add_c_of_x", 1, "force_of_water"],
+			["activate_earth_spirit"],
+			["activate_water_spirit"],
+			["continuous"],
+			["add_c_of_x", 10, "m_earth_spirit_formation_stacks"]
+		]
+	},
+	"734073": {
+		"actions": [
+			["add_c_of_x", 1, "force_of_water"],
+			["activate_earth_spirit"],
+			["activate_water_spirit"],
+			["continuous"],
+			["add_c_of_x", 16, "m_earth_spirit_formation_stacks"]
+		]
+	},
 	"735011": {
 		"name": "Boulder Seal",
 		"actions": [
@@ -10739,6 +10912,34 @@
 			["activate_next_slots", 1]
 		]
 	},
+	"735071": {
+		"name": "M - Metal Spirit Seal",
+		"actions": [
+			["add_c_of_x", 8, "penetrate"],
+			["activate_metal_spirit"],
+			["activate_wood_spirit"],
+			["continuous"],
+			["add_c_of_x", 3, "m_metal_spirit_seal_stacks"]
+		]
+	},
+	"735072": {
+		"actions": [
+			["add_c_of_x", 12, "penetrate"],
+			["activate_metal_spirit"],
+			["activate_wood_spirit"],
+			["continuous"],
+			["add_c_of_x", 4, "m_metal_spirit_seal_stacks"]
+		]
+	},
+	"735073": {
+		"actions": [
+			["add_c_of_x", 16, "penetrate"],
+			["activate_metal_spirit"],
+			["activate_wood_spirit"],
+			["continuous"],
+			["add_c_of_x", 5, "m_metal_spirit_seal_stacks"]
+		]
+	},
 	"744011": {
 		"name": "M - Youthful Vigor",
 		"hp_cost": 2,
@@ -10822,6 +11023,28 @@
 			["exhaust_x_to_add_c_y", "agility", 2, "hp"]
 		]
 	},
+	"744051": {
+		"name": "M - Endless Entanglement",
+		"actions": [
+			["physique", 2],
+			["add_enemy_c_of_x", 2, "internal_injury"],
+			["add_c_of_x", 2, "internal_injury"]
+		]
+	},
+	"744052": {
+		"actions": [
+			["physique", 4],
+			["add_enemy_c_of_x", 3, "internal_injury"],
+			["add_c_of_x", 3, "internal_injury"]
+		]
+	},
+	"744053": {
+		"actions": [
+			["physique", 6],
+			["add_enemy_c_of_x", 4, "internal_injury"],
+			["add_c_of_x", 4, "internal_injury"]
+		]
+	},
 	"745011": {
 		"name": "M - Double Trouble",
 		"qi_cost": 1,
@@ -10891,6 +11114,45 @@
 	"745033": {
 		"actions": [
 			["atk", 9]
+		]
+	},
+	"745041": {
+		"name": "M - Magnanimous Righteousness",
+		"actions": [
+			["qi", 2],
+			["agility", 6]
+		]
+	},
+	"745042": {
+		"actions": [
+			["qi", 2],
+			["agility", 6]
+		]
+	},
+	"745043": {
+		"actions": [
+			["qi", 2],
+			["agility", 6]
+		]
+	},
+	"745051": {
+		"name": "M - Crash Fist Entangle",
+		"hp_cost": 4,
+		"actions": [
+			["add_enemy_c_of_x", 2, "wound"],
+			["rep", 2, ["atk", 3]]
+		]
+	},
+	"745052": {
+		"actions": [
+			["add_enemy_c_of_x", 2, "wound"],
+			["rep", 3, ["atk", 3]]
+		]
+	},
+	"745053": {
+		"actions": [
+			["add_enemy_c_of_x", 2, "wound"],
+			["rep", 4, ["atk", 3]]
 		]
 	},
 	"801011": {

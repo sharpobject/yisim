@@ -46,7 +46,7 @@ const deps = {
         "32303", "32503", "33403", "34301", "37303", "37501",
         "40301", "60301", "60507", "60601", "62303", "62503",
         "63502", "64301", "70105", "72502", "74501", "92401",
-        "92404", "92507", "94402"],
+        "92404", "92507", "94402", "72506", "74405"],
     HAS_MARK_OF_DARK_HEART: ["HAS_P2_MARK_OF_DARK_HEART",
         "HAS_P3_MARK_OF_DARK_HEART",
         "HAS_P4_MARK_OF_DARK_HEART",
@@ -76,7 +76,7 @@ const deps = {
         "HAS_COURAGE_TO_FIGHT",
         "14107", "14308", "14506", "22401", "24501", "24502",
         "32202", "33403", "34301", "60302", "60503", "60602",
-        "61501", "63502", "64301", "74501", "92404", "92508"],
+        "61501", "63502", "64301", "74501", "74505", "92404", "92508"],
     HAS_DECREASE_ATK: [
         "HAS_EVERY_DEBUFF",
         "HAS_ANTHOMANIA_FORMATION",
@@ -688,7 +688,7 @@ const deps = {
     HAS_BONUS_STAR_POWER_MULTIPLIER: [
         "bonus_star_power_multiplier", "22402"],
     HAS_VITALITY_BLOSSOM: [
-        "vitality_blossom_stacks", "22201"],
+        "vitality_blossom_stacks", "22201", "HAS_M_VITALITY_BLOSSOM"],
     HAS_HUNTER_HUNTING_HUNTER: [
         "hunter_hunting_hunter_stacks", "12507"],
     HAS_REPEL_CITTA_DHARMA: [
@@ -877,7 +877,8 @@ const deps = {
         "HAS_CRASH_FIST_INCH_FORCE",
         "HAS_CRASH_FIST_STAR_SEIZING",
         "HAS_CRASH_FIST_BLINK",
-        "HAS_CRASH_FIST_SHOCKED"],
+        "HAS_CRASH_FIST_SHOCKED",
+        "HAS_M_CRASH_FIST_ENTANGLE"],
     HAS_RESONANCE_WITHIN_REACH: ["resonance_within_reach_stacks"],
     HAS_HEAVENLY_MARROW_DANCE_TUNE: [
         "heavenly_marrow_dance_tune_stacks", "93507"],
@@ -938,7 +939,7 @@ const deps = {
         "m_sinking_qi_stacks",
         "74403"],
     HAS_EVERY_DEBUFF: [
-        "74502", "93302"],
+        "74502", "74504", "93302"],
     HAS_COUNTER_MOVE: [
         "counter_move_stacks",
         "64203"],
@@ -981,6 +982,30 @@ const deps = {
     HAS_HEAVENLY_WILL_SEIZING: [
         "heavenly_will_seizing_stacks",
         "94507"],
+    HAS_XIAOYAO_REPRODUCTION: [
+        "70107"],
+    HAS_M_FLOWER_SENTIENT: [
+        "m_flower_sentient_stacks",
+        "72506"],
+    HAS_M_VITALITY_BLOSSOM: [
+        "m_vitality_blossom_stacks",
+        "72407"],
+    HAS_M_FIRE_SPIRIT_SEAL: [
+        "m_fire_spirit_seal_stacks",
+        "73406"],
+    HAS_M_METAL_SPIRIT_SEAL: [
+        "m_metal_spirit_seal_stacks",
+        "73507"],
+    HAS_M_EARTH_SPIRIT_FORMATION: [
+        "m_earth_spirit_formation_stacks",
+        "73407"],
+    HAS_M_ENDLESS_ENTANGLEMENT: [
+        "m_endless_entanglement_stacks",
+        "74405"],
+    HAS_M_CRASH_FIST_ENTANGLE: [
+        "m_crash_fist_entangle_stacks",
+        "this_card_m_crash_fist_entangle_stacks",
+        "74505"],
 
 
 };

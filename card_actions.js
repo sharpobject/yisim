@@ -8717,6 +8717,24 @@ card_actions["603023"] = (game) => {
     }
 }
 
+// Waiting for Rabbit
+card_actions["604011"] = (game) => {
+    game.increase_idx_def(0, 15);
+    game.consumption();
+}
+
+// 604012
+card_actions["604012"] = (game) => {
+    game.increase_idx_def(0, 20);
+    game.consumption();
+}
+
+// 604013
+card_actions["604013"] = (game) => {
+    game.increase_idx_def(0, 25);
+    game.consumption();
+}
+
 // Mirroring Merpeople Pearl
 card_actions["605011"] = (game) => {
     game.add_c_of_x("hand_count", 1);
@@ -10310,6 +10328,17 @@ card_actions["701062"] = (game) => {}
 // 701063
 card_actions["701063"] = (game) => {}
 
+// Xiaoyao - Reproduction
+card_actions["701071"] = (game) => {
+    // Card transforms before playing, action is handled by do_xiaoyao_reproduction
+}
+
+// 701072
+card_actions["701072"] = (game) => {}
+
+// 701073
+card_actions["701073"] = (game) => {}
+
 // Azure Dragon Sword Formation
 card_actions["714011"] = (game) => {
     game.increase_idx_def(0, 8);
@@ -10763,6 +10792,30 @@ card_actions["724063"] = (game) => {
     game.increase_idx_x_by_c(0, "m_dotted_around_stacks", 8);
 }
 
+// M - Vitality Blossom
+card_actions["724071"] = (game) => {
+    game.increase_idx_hp(0, 10);
+    game.increase_idx_max_hp(0, 10);
+    game.continuous();
+    game.add_c_of_x(8, "m_vitality_blossom_stacks");
+}
+
+// 724072
+card_actions["724072"] = (game) => {
+    game.increase_idx_hp(0, 15);
+    game.increase_idx_max_hp(0, 15);
+    game.continuous();
+    game.add_c_of_x(12, "m_vitality_blossom_stacks");
+}
+
+// 724073
+card_actions["724073"] = (game) => {
+    game.increase_idx_hp(0, 20);
+    game.increase_idx_max_hp(0, 20);
+    game.continuous();
+    game.add_c_of_x(16, "m_vitality_blossom_stacks");
+}
+
 // Astral Move - Twin Swallows
 card_actions["725011"] = (game) => {
     let atk_amt = 4;
@@ -10919,6 +10972,65 @@ card_actions["725053"] = (game) => {
     }
 }
 
+// M - Flower Sentient
+card_actions["725061"] = (game) => {
+    game.increase_idx_qi(0, 3);
+    game.add_enemy_c_of_x(1, "internal_injury");
+    game.add_enemy_c_of_x(3, "m_flower_sentient_stacks");
+}
+
+// 725062
+card_actions["725062"] = (game) => {
+    game.increase_idx_qi(0, 3);
+    game.add_enemy_c_of_x(2, "internal_injury");
+    game.add_enemy_c_of_x(4, "m_flower_sentient_stacks");
+}
+
+// 725063
+card_actions["725063"] = (game) => {
+    game.increase_idx_qi(0, 3);
+    game.add_enemy_c_of_x(3, "internal_injury");
+    game.add_enemy_c_of_x(5, "m_flower_sentient_stacks");
+}
+
+// M - Yin Yang Formation
+card_actions["725071"] = (game) => {
+    const qi = game.players[0].qi;
+    const hexagram = game.players[0].hexagram;
+    game.increase_idx_def(0, qi + hexagram);
+    game.increase_idx_hp(0, qi + hexagram);
+    game.reduce_c_of_x(qi, "qi");
+    game.reduce_c_of_x(hexagram, "hexagram");
+    game.add_c_of_x(qi, "hexagram");
+    game.add_c_of_x(hexagram, "qi");
+}
+
+// 725072
+card_actions["725072"] = (game) => {
+    game.increase_idx_qi(0, 1);
+    const qi = game.players[0].qi;
+    const hexagram = game.players[0].hexagram;
+    game.increase_idx_def(0, qi + hexagram);
+    game.increase_idx_hp(0, qi + hexagram);
+    game.reduce_c_of_x(qi, "qi");
+    game.reduce_c_of_x(hexagram, "hexagram");
+    game.add_c_of_x(qi, "hexagram");
+    game.add_c_of_x(hexagram, "qi");
+}
+
+// 725073
+card_actions["725073"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    const qi = game.players[0].qi;
+    const hexagram = game.players[0].hexagram;
+    game.increase_idx_def(0, qi + hexagram);
+    game.increase_idx_hp(0, qi + hexagram);
+    game.reduce_c_of_x(qi, "qi");
+    game.reduce_c_of_x(hexagram, "hexagram");
+    game.add_c_of_x(qi, "hexagram");
+    game.add_c_of_x(hexagram, "qi");
+}
+
 // Wild Crossing Seal
 card_actions["734011"] = (game) => {
     game.increase_idx_qi(0, 2);
@@ -11046,6 +11158,60 @@ card_actions["734053"] = (game) => {
     if (game.if_metal_spirit()) {
         game.increase_idx_x_by_c(0, "m_metal_spirit_needle_stacks", 1);
     }
+}
+
+// M - Fire Spirit Seal
+card_actions["734061"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.reduce_idx_hp(1, 3, false);
+    game.reduce_idx_max_hp(1, 3);
+    game.continuous();
+    game.add_c_of_x(3, "m_fire_spirit_seal_stacks");
+}
+
+// 734062
+card_actions["734062"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.reduce_idx_hp(1, 6, false);
+    game.reduce_idx_max_hp(1, 6);
+    game.continuous();
+    game.add_c_of_x(4, "m_fire_spirit_seal_stacks");
+}
+
+// 734063
+card_actions["734063"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.reduce_idx_hp(1, 9, false);
+    game.reduce_idx_max_hp(1, 9);
+    game.continuous();
+    game.add_c_of_x(5, "m_fire_spirit_seal_stacks");
+}
+
+// M - Earth Spirit Formation
+card_actions["734071"] = (game) => {
+    game.add_c_of_x(1, "force_of_water");
+    game.activate_earth_spirit();
+    game.activate_water_spirit();
+    game.continuous();
+    game.add_c_of_x(4, "m_earth_spirit_formation_stacks");
+}
+
+// 734072
+card_actions["734072"] = (game) => {
+    game.add_c_of_x(1, "force_of_water");
+    game.activate_earth_spirit();
+    game.activate_water_spirit();
+    game.continuous();
+    game.add_c_of_x(10, "m_earth_spirit_formation_stacks");
+}
+
+// 734073
+card_actions["734073"] = (game) => {
+    game.add_c_of_x(1, "force_of_water");
+    game.activate_earth_spirit();
+    game.activate_water_spirit();
+    game.continuous();
+    game.add_c_of_x(16, "m_earth_spirit_formation_stacks");
 }
 
 // Boulder Seal
@@ -11177,6 +11343,33 @@ card_actions["735063"] = (game) => {
     game.activate_next_slots(1);
 }
 
+// M - Metal Spirit Seal
+card_actions["735071"] = (game) => {
+    game.increase_idx_penetrate(0, 8);
+    game.activate_metal_spirit();
+    game.activate_wood_spirit();
+    game.continuous();
+    game.add_c_of_x(3, "m_metal_spirit_seal_stacks");
+}
+
+// 735072
+card_actions["735072"] = (game) => {
+    game.increase_idx_penetrate(0, 12);
+    game.activate_metal_spirit();
+    game.activate_wood_spirit();
+    game.continuous();
+    game.add_c_of_x(4, "m_metal_spirit_seal_stacks");
+}
+
+// 735073
+card_actions["735073"] = (game) => {
+    game.increase_idx_penetrate(0, 16);
+    game.activate_metal_spirit();
+    game.activate_wood_spirit();
+    game.continuous();
+    game.add_c_of_x(5, "m_metal_spirit_seal_stacks");
+}
+
 // M - Youthful Vigor
 card_actions["744011"] = (game) => {
     const hp_gained = game.players[0].hp_gained;
@@ -11268,6 +11461,36 @@ card_actions["744043"] = (game) => {
     game.increase_idx_def(0, 4);
     game.for_each_x_add_c_y("force", 4, "def");
     game.exhaust_x_to_add_c_y("agility", 2, "hp");
+}
+
+// M - Endless Entanglement
+card_actions["744051"] = (game) => {
+    game.physique(2);
+    game.increase_idx_debuff(0, "internal_injury", 2);
+    game.increase_idx_debuff(1, "internal_injury", 2);
+    const stacks = Math.floor(game.players[0].physique / 30);
+    game.players[0].m_endless_entanglement_stacks += stacks;
+    game.players[1].m_endless_entanglement_stacks += stacks;
+}
+
+// 744052
+card_actions["744052"] = (game) => {
+    game.physique(4);
+    game.increase_idx_debuff(0, "internal_injury", 3);
+    game.increase_idx_debuff(1, "internal_injury", 3);
+    const stacks = Math.floor(game.players[0].physique / 30);
+    game.players[0].m_endless_entanglement_stacks += stacks;
+    game.players[1].m_endless_entanglement_stacks += stacks;
+}
+
+// 744053
+card_actions["744053"] = (game) => {
+    game.physique(6);
+    game.increase_idx_debuff(0, "internal_injury", 4);
+    game.increase_idx_debuff(1, "internal_injury", 4);
+    const stacks = Math.floor(game.players[0].physique / 30);
+    game.players[0].m_endless_entanglement_stacks += stacks;
+    game.players[1].m_endless_entanglement_stacks += stacks;
 }
 
 // M - Double Trouble
@@ -11403,6 +11626,72 @@ card_actions["745032"] = (game) => {
 card_actions["745033"] = (game) => {
     game.atk(12);
     game.for_each_x_add_c_pct_y("physique", 16.666667, "later_crash_fist_poke_stacks");
+}
+
+// M - Magnanimous Righteousness
+card_actions["745041"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_agility(0, 6);
+    // Remove up to 4 debuff stacks, gain 1 agility + 1 force per stack removed
+    const me = game.players[0];
+    let total_debuffs = me.internal_injury + me.decrease_atk + me.weaken + me.flaw + me.entangle + me.wound + me.styx;
+    let removed = Math.min(total_debuffs, 4);
+    game.reduce_random_debuff_by_c_n_times(1, removed);
+    game.increase_idx_agility(0, removed);
+    game.add_c_of_x(removed, "force");
+}
+
+// 745042
+card_actions["745042"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_agility(0, 6);
+    // Remove up to 6 debuff stacks, gain 1 agility + 1 force per stack removed
+    const me = game.players[0];
+    let total_debuffs = me.internal_injury + me.decrease_atk + me.weaken + me.flaw + me.entangle + me.wound + me.styx;
+    let removed = Math.min(total_debuffs, 6);
+    game.reduce_random_debuff_by_c_n_times(1, removed);
+    game.increase_idx_agility(0, removed);
+    game.add_c_of_x(removed, "force");
+}
+
+// 745043
+card_actions["745043"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_agility(0, 6);
+    // Remove up to 8 debuff stacks, gain 1 agility + 1 force per stack removed
+    const me = game.players[0];
+    let total_debuffs = me.internal_injury + me.decrease_atk + me.weaken + me.flaw + me.entangle + me.wound + me.styx;
+    let removed = Math.min(total_debuffs, 8);
+    game.reduce_random_debuff_by_c_n_times(1, removed);
+    game.increase_idx_agility(0, removed);
+    game.add_c_of_x(removed, "force");
+}
+
+// M - Crash Fist Entangle
+card_actions["745051"] = (game) => {
+    game.add_enemy_c_of_x(2, "wound");
+    for (let i = 0; i < 2; i++) {
+        game.atk(3);
+    }
+    game.add_c_of_x(1, "m_crash_fist_entangle_stacks");
+}
+
+// 745052
+card_actions["745052"] = (game) => {
+    game.add_enemy_c_of_x(2, "wound");
+    for (let i = 0; i < 3; i++) {
+        game.atk(3);
+    }
+    game.add_c_of_x(1, "m_crash_fist_entangle_stacks");
+}
+
+// 745053
+card_actions["745053"] = (game) => {
+    game.add_enemy_c_of_x(2, "wound");
+    for (let i = 0; i < 4; i++) {
+        game.atk(3);
+    }
+    game.add_c_of_x(1, "m_crash_fist_entangle_stacks");
 }
 
 // Mushroom Zongzi
