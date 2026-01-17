@@ -136,7 +136,11 @@ export async function do_riddle(riddle, handler) {
     } else {
         let combo_idx = 0;
         const tried_combos = {};
-        for (let combo of k_combinations(my_cards, 8)) {
+        let slot = 8;
+        if (riddle.players[my_idx].round_number) {
+            slot = Math.min(8, riddle.players[my_idx].round_number + 2);
+        }
+        for (let combo of k_combinations(my_cards, slot)) {
             combo_idx += 1;
             // sort the combo
             combo.sort();

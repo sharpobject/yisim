@@ -140,7 +140,7 @@ self.onmessage = async (event) => {
                 const myHP = game.players[my_idx].hp;
                 const enemyHP = game.players[enemy_idx].hp;
                 const turns = game.turns_taken;
-                const winning_margin = (myHP - enemyHP) / turns;
+                const winning_margin = (myHP * 2 - enemyHP - Math.min(turns, 8) * 2);
                 const p_combo = combo.slice();
                 if (winning_margin > best_winning_margin) {
                     winning_decks.length = 0;
