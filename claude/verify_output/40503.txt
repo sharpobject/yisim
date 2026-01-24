@@ -1,0 +1,8 @@
+### 40503 - Bow of Hunting Owl
+  L1 CSV:  [hp=0 qi=2] 12 ATK | [Injured]: Apply 6 stacks of [Entangled]
+  L1 IMPL: [hp=0 qi=2]  game.atk(12); if (game.if_injured()) { game.add_enemy_c_of_x(6, "entangle"); } ✓
+  L2 CSV:  [hp=0 qi=2] 14 ATK | [Injured]: Apply 7 stacks of [Entangled]
+  L2 IMPL: [hp=0 qi=2]  game.atk(14); if (game.if_injured()) { game.add_enemy_c_of_x(7, "entangle"); } ✓
+  L3 CSV:  [hp=0 qi=2] 16 ATK | [Injured]: Apply 8 stacks of [Entangled]
+  L3 IMPL: [hp=0 qi=2]  game.atk(16); if (game.if_injured()) { game.add_enemy_c_of_x(8, "entangle"); } ✓
+

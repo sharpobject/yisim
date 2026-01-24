@@ -1,0 +1,8 @@
+### 23102 - Fire Spirit Secret Seal
+  L1 CSV:  [no cost] Opponent loses 8 HP and Max HP | [Activate Fire Spirit]
+  L1 IMPL: [no cost]  game.reduce_enemy_c_of_x(8, "hp"); game.reduce_enemy_c_of_x(8, "max_hp"); game.activate_fire_spirit(); ✓
+  L2 CSV:  [no cost] Opponent loses 12 HP and Max HP | [Activate Fire Spirit]
+  L2 IMPL: [no cost]  game.reduce_enemy_c_of_x(12, "hp"); game.reduce_enemy_c_of_x(12, "max_hp"); game.activate_fire_spirit(); ✓
+  L3 CSV:  [no cost] Opponent loses 16 HP and Max HP | [Activate Fire Spirit]
+  L3 IMPL: [no cost]  game.reduce_enemy_c_of_x(16, "hp"); game.reduce_enemy_c_of_x(16, "max_hp"); game.activate_fire_spirit(); ✓
+

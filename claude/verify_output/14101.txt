@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=3 qi=0] 9 ATK | The next Crash Fist adds 2 ATK
+  L1 IMPL: [hp=3 qi=0]  game.atk(9); game.add_c_of_x(2, "later_crash_fist_poke_stacks"); ✓
+  L2 CSV:  [hp=3 qi=0] 11 ATK | The next Crash Fist adds 3 ATK
+  L2 IMPL: [hp=3 qi=0]  game.atk(11); game.add_c_of_x(3, "later_crash_fist_poke_stacks"); ✓
+  L3 CSV:  [hp=3 qi=0] 13 ATK | The next Crash Fist adds 4 ATK
+  L3 IMPL: [hp=3 qi=0]  game.atk(13); game.add_c_of_x(4, "later_crash_fist_poke_stacks"); ✓

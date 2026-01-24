@@ -1,0 +1,8 @@
+### 33202 - Illusion Tune
+  L1 CSV:  [no cost] [Continuous]: Both players will lose 3 HP and add 3 [DEF] at the beginning of their turn
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(3, "illusion_tune_stacks"); game.add_enemy_c_of_x(3, "illusion_tune_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous]: Both players will lose 5 HP and add 5 [DEF] at the beginning of their turn
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(5, "illusion_tune_stacks"); game.add_enemy_c_of_x(5, "illusion_tune_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous]: Both players will lose 7 HP and add 7 [DEF] at the beginning of their turn
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(7, "illusion_tune_stacks"); game.add_enemy_c_of_x(7, "illusion_tune_stacks"); ✓
+

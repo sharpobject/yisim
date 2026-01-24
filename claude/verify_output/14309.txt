@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Qi]+2 | [Force]+1 | Add 1 [Force] first during your next 2 attacks
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.add_c_of_x(1, "force"); game.add_c_of_x(2, "majestic_qi_stacks"); ✓
+  L2 CSV:  [no cost] [Qi]+3 | [Force]+1 | Add 1 [Force] first during your next 3 attacks
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.add_c_of_x(1, "force"); game.add_c_of_x(3, "majestic_qi_stacks"); ✓
+  L3 CSV:  [no cost] [Qi]+4 | [Force]+1 | Add 1 [Force] first during your next 4 attacks
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 4); game.add_c_of_x(1, "force"); game.add_c_of_x(4, "majestic_qi_stacks"); ✓

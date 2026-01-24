@@ -1,0 +1,8 @@
+### 63302 - Gourd Of Leisurely
+  L1 CSV:  [no cost] [Qi]+1 | HP+3 | If any [Five Elements] has been activated, [Chase]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 1); game.increase_idx_hp(0, 3); if (game.players[0].activate_wood_spirit_stacks >= 1) { game.chase(); } if (game.players[0].activate_fire_spirit_stacks >= 1) { game.chase(); } if (game.players[0].activate_earth_spirit_stacks >= 1) { game.chase(); } if (game.players[0].activate_metal_spirit_stacks >= 1) { game.chase(); } if (game.players[0].activate_water_spirit_stacks >= 1) { game.chase(); } ✓
+  L2 CSV:  [no cost] [Qi]+2 | HP+5 | If any [Five Elements] has been activated, [Chase]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.increase_idx_hp(0, 5); if (game.players[0].activate_wood_spirit_stacks >= 1) { game.chase(); } if (game.players[0].activate_fire_spirit_stacks >= 1) { game.chase(); } if (game.players[0].activate_earth_spirit_stacks >= 1) { game.chase(); } if (game.players[0].activate_metal_spirit_stacks >= 1) { game.chase(); } if (game.players[0].activate_water_spirit_stacks >= 1) { game.chase(); } ✓
+  L3 CSV:  [no cost] [Qi]+3 | HP+7 | If any [Five Elements] has been activated, [Chase]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.increase_idx_hp(0, 7); if (game.players[0].activate_wood_spirit_stacks >= 1) { game.chase(); } if (game.players[0].activate_fire_spirit_stacks >= 1) { game.chase(); } if (game.players[0].activate_earth_spirit_stacks >= 1) { game.chase(); } if (game.players[0].activate_metal_spirit_stacks >= 1) { game.chase(); } if (game.players[0].activate_water_spirit_stacks >= 1) { game.chase(); } ✓
+

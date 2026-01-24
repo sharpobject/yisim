@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=4 qi=0] 10 ATK | When you play the next Crash Fist, apply 1 stack of [Wound]
+  L1 IMPL: [hp=4 qi=0]  game.atk(10); game.add_c_of_x(1, "crash_fist_entangle_stacks"); ✓
+  L2 CSV:  [hp=4 qi=0] 11 ATK | When you play the next Crash Fist, apply 2 stacks of [Wound]
+  L2 IMPL: [hp=4 qi=0]  game.atk(11); game.add_c_of_x(2, "crash_fist_entangle_stacks"); ✓
+  L3 CSV:  [hp=4 qi=0] 12 ATK | When you play the next Crash Fist, apply 3 stacks of [Wound]
+  L3 IMPL: [hp=4 qi=0]  game.atk(12); game.add_c_of_x(3, "crash_fist_entangle_stacks"); ✓

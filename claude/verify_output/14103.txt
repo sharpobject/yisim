@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=2 qi=0] 8 ATK | When the next Crash Fist costs HP, add it back
+  L1 IMPL: [hp=2 qi=0]  game.atk(8); game.add_c_of_x(1, "crash_fist_bounce_stacks"); ✓
+  L2 CSV:  [hp=2 qi=0] 11 ATK | When the next Crash Fist costs HP, add it back
+  L2 IMPL: [hp=2 qi=0]  game.atk(11); game.add_c_of_x(1, "crash_fist_bounce_stacks"); ✓
+  L3 CSV:  [hp=2 qi=0] 14 ATK | When the next Crash Fist costs HP, add it back
+  L3 IMPL: [hp=2 qi=0]  game.atk(14); game.add_c_of_x(1, "crash_fist_bounce_stacks"); ✓

@@ -1,0 +1,8 @@
+### 40402 - Metal Tri-Thorn Spear
+  L1 CSV:  [hp=0 qi=2] 3 ATK × 3 | Apply 1 stack of [Flaw] after each attack
+  L1 IMPL: [hp=0 qi=2]  for (let i = 0; i < 3; i++) { game.atk(3); game.add_enemy_c_of_x(1, "flaw"); } ✓
+  L2 CSV:  [hp=0 qi=2] 5 ATK × 3 | Apply 1 stack of [Flaw] after each attack
+  L2 IMPL: [hp=0 qi=2]  for (let i = 0; i < 3; i++) { game.atk(5); game.add_enemy_c_of_x(1, "flaw"); } ✓
+  L3 CSV:  [hp=0 qi=2] 7 ATK × 3 | Apply 1 stack of [Flaw] after each attack
+  L3 IMPL: [hp=0 qi=2]  for (let i = 0; i < 3; i++) { game.atk(7); game.add_enemy_c_of_x(1, "flaw"); } ✓
+

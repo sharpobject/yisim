@@ -1,0 +1,8 @@
+### 90404 - Xuanming Forceage Formation
+  L1 CSV:  [hp=12 qi=0] Gain 3 [Increase ATK] | [Continuous] 2 [Times]: Gain 1 [Increase ATK] when you lose HP
+  L1 IMPL: [hp=12 qi=0]  game.add_c_of_x(3, "increase_atk"); game.continuous(); game.add_c_of_x(2, "xuanming_forceage_formation_stacks"); ✓
+  L2 CSV:  [hp=12 qi=0] Gain 3 [Increase ATK] | [Continuous] 3 [Times]: Gain 1 [Increase ATK] when you lose HP
+  L2 IMPL: [hp=12 qi=0]  game.add_c_of_x(3, "increase_atk"); game.continuous(); game.add_c_of_x(3, "xuanming_forceage_formation_stacks"); ✓
+  L3 CSV:  [hp=12 qi=0] Gain 3 [Increase ATK] | [Continuous] 4 [Times]: Gain 1 [Increase ATK] when you lose HP
+  L3 IMPL: [hp=12 qi=0]  game.add_c_of_x(3, "increase_atk"); game.continuous(); game.add_c_of_x(4, "xuanming_forceage_formation_stacks"); ✓
+

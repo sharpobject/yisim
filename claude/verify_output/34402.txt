@@ -1,0 +1,8 @@
+### 34402 - Falling Paper Clouds
+  L1 CSV:  [no cost] Random Effect:  | Add 18 [DEF], add 14 HP, or add 1 stack(s) of [Guard Up]
+  L1 IMPL: [no cost]  switch (game.random_int(3)) { case 0: game.increase_idx_def(0, 18); break; case 1: game.increase_idx_hp(0, 14); break; case 2: game.add_c_of_x(1, "guard_up"); break; } ✓
+  L2 CSV:  [no cost] Random Effect:  | Add 26 [DEF], add 20 HP, or add 2 stack(s) of [Guard Up]
+  L2 IMPL: [no cost]  switch (game.random_int(3)) { case 0: game.increase_idx_def(0, 26); break; case 1: game.increase_idx_hp(0, 20); break; case 2: game.add_c_of_x(2, "guard_up"); break; } ✓
+  L3 CSV:  [no cost] Random Effect:  | Add 34 [DEF], add 26 HP, or add 3 stack(s) of [Guard Up]
+  L3 IMPL: [no cost]  switch (game.random_int(3)) { case 0: game.increase_idx_def(0, 34); break; case 1: game.increase_idx_hp(0, 26); break; case 2: game.add_c_of_x(3, "guard_up"); break; } ✓
+

@@ -1,0 +1,8 @@
+### 22601 - Destiny Catastrophe
+  L1 CSV:  [hp=0 qi=2] If your [Hexagram] is exactly 8 stacks, change your opponent's HP to 8
+  L1 IMPL: [hp=0 qi=2]  if (game.players[0].hexagram >= 8) { if (game.players[0].hexagram <= 8) { game.set_enemy_c_of_x(8, "hp"); } } ✓
+  L2 CSV:  [hp=0 qi=1] If your [Hexagram] is exactly 8 stacks, change your opponent's HP to 4
+  L2 IMPL: [hp=0 qi=1]  if (game.players[0].hexagram >= 8) { if (game.players[0].hexagram <= 8) { game.set_enemy_c_of_x(4, "hp"); } } ✓
+  L3 CSV:  [no cost] If your [Hexagram] is exactly 8 stacks, change your opponent's HP to 1
+  L3 IMPL: [no cost]  if (game.players[0].hexagram >= 8) { if (game.players[0].hexagram <= 8) { game.set_enemy_c_of_x(1, "hp"); } } ✓
+

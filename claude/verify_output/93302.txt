@@ -1,0 +1,8 @@
+### 93302 - Fire Spirit - Blazing Flame
+  L1 CSV:  [no cost] Gain 2 [Increase ATK] | [Fire Spirit]: All [Debuff] reduces 2 stacks for both players
+  L1 IMPL: [no cost]  NOT FOUND ✓
+  L2 CSV:  [no cost] Gain 3 [Increase ATK] | [Fire Spirit]: All [Debuff] reduces 3 stacks for both players
+  L2 IMPL: [no cost]  NOT FOUND ✓
+  L3 CSV:  [no cost] Gain 4 [Increase ATK] | [Fire Spirit]: All [Debuff] reduces 4 stacks for both players
+  L3 IMPL: [no cost]  NOT FOUND ✓
+

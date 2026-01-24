@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] Gain 1 stack(s) of [Increase ATK] | HP+3 | [Wood Spirit]: [Chase]
+  L1 IMPL: [hp=0 qi=1]  game.add_c_of_x(1, "increase_atk"); game.increase_idx_hp(0, 3); if (game.if_wood_spirit()) { game.chase(); } ✓
+  L2 CSV:  [hp=0 qi=1] Gain 2 stack(s) of [Increase ATK] | HP+3 | [Wood Spirit]: [Chase]
+  L2 IMPL: [hp=0 qi=1]  game.add_c_of_x(2, "increase_atk"); game.increase_idx_hp(0, 3); if (game.if_wood_spirit()) { game.chase(); } ✓
+  L3 CSV:  [hp=0 qi=1] Gain 3 stack(s) of [Increase ATK] | HP+3 | [Wood Spirit]: [Chase]
+  L3 IMPL: [hp=0 qi=1]  game.add_c_of_x(3, "increase_atk"); game.increase_idx_hp(0, 3); if (game.if_wood_spirit()) { game.chase(); } ✓

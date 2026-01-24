@@ -1,0 +1,8 @@
+### 34201 - Pen Walks Dragon Snake
+  L1 CSV:  [no cost] [DEF]+5～16
+  L1 IMPL: [no cost]  game.def_rand_range(5, 16); ✓
+  L2 CSV:  [no cost] [DEF]+10～21
+  L2 IMPL: [no cost]  game.def_rand_range(10, 21); ✓
+  L3 CSV:  [no cost] [DEF]+15～26
+  L3 IMPL: [no cost]  game.def_rand_range(15, 26); ✓
+

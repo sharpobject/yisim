@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] Opponent loses 2 HP and Max HP | [Continuous]: Whenever you play a "Fire Spirit" card, the opponent loses 2 HP and Max HP
+  L1 IMPL: [no cost]  game.reduce_enemy_c_of_x(2, "hp"); game.reduce_enemy_c_of_x(2, "max_hp"); game.continuous(); game.add_c_of_x(2, "fire_spirit_formation_stacks"); ✓
+  L2 CSV:  [no cost] Opponent loses 3 HP and Max HP | [Continuous]: Whenever you play a "Fire Spirit" card, the opponent loses 3 HP and Max HP
+  L2 IMPL: [no cost]  game.reduce_enemy_c_of_x(3, "hp"); game.reduce_enemy_c_of_x(3, "max_hp"); game.continuous(); game.add_c_of_x(3, "fire_spirit_formation_stacks"); ✓
+  L3 CSV:  [no cost] Opponent loses 4 HP and Max HP | [Continuous]: Whenever you play a "Fire Spirit" card, the opponent loses 4 HP and Max HP
+  L3 IMPL: [no cost]  game.reduce_enemy_c_of_x(4, "hp"); game.reduce_enemy_c_of_x(4, "max_hp"); game.continuous(); game.add_c_of_x(4, "fire_spirit_formation_stacks"); ✓

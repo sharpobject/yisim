@@ -1,0 +1,8 @@
+### 36401 - Frozen Snow Lotus
+  L1 CSV:  [no cost] [Growth] | HP+5
+  L1 IMPL: [no cost]  game.increase_idx_hp(0, 5); ✓
+  L2 CSV:  [no cost] [Growth] | HP+10
+  L2 IMPL: [no cost]  game.increase_idx_hp(0, 10); ✓
+  L3 CSV:  [no cost] HP+10 | Next 3 times after losing HP, gain [DEF] equal to the lost HP
+  L3 IMPL: [no cost]  game.increase_idx_hp(0, 10); game.add_c_of_x(3, "frozen_snow_lotus_stacks"); ✓
+

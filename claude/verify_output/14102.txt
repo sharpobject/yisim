@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=3 qi=0] 7 ATK | [DEF]+2 (also triggered in the next Crash Fist)
+  L1 IMPL: [hp=3 qi=0]  game.atk(7); game.increase_idx_def(0, 2); game.add_c_of_x(2, "crash_fist_block_stacks"); ✓
+  L2 CSV:  [hp=3 qi=0] 9 ATK | [DEF]+3 (also triggered in the next Crash Fist)
+  L2 IMPL: [hp=3 qi=0]  game.atk(9); game.increase_idx_def(0, 3); game.add_c_of_x(3, "crash_fist_block_stacks"); ✓
+  L3 CSV:  [hp=3 qi=0] 11 ATK | [DEF]+4 (also triggered in the next Crash Fist)
+  L3 IMPL: [hp=3 qi=0]  game.atk(11); game.increase_idx_def(0, 4); game.add_c_of_x(4, "crash_fist_block_stacks"); ✓

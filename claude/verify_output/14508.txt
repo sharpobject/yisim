@@ -1,0 +1,8 @@
+### 14508 - Vast Universe
+  L1 CSV:  [hp=0 qi=2] 10 ATK | HP+4 | [Agility]+4 (2 more [Agility] for each [Force])
+  L1 IMPL: [hp=0 qi=2]  game.atk(10); game.increase_idx_hp(0, 4); game.add_c_of_x(4, "agility"); game.for_each_x_add_c_y("force", 2, "agility"); ✓
+  L2 CSV:  [hp=0 qi=2] 12 ATK | HP+6 | [Agility]+5 (2 more [Agility] for each [Force])
+  L2 IMPL: [hp=0 qi=2]  game.atk(12); game.increase_idx_hp(0, 6); game.add_c_of_x(5, "agility"); game.for_each_x_add_c_y("force", 2, "agility"); ✓
+  L3 CSV:  [hp=0 qi=2] 14 ATK | HP+8 | [Agility]+6 (2 more [Agility] for each [Force])
+  L3 IMPL: [hp=0 qi=2]  game.atk(14); game.increase_idx_hp(0, 8); game.add_c_of_x(6, "agility"); game.for_each_x_add_c_y("force", 2, "agility"); ✓
+

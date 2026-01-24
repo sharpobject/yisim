@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 1～9 ATK | [Hexagram]+X (X is the number of Hexagram triggered in this battle, and up to 3)
+  L1 IMPL: [no cost]  game.atk_rand_range(1, 9); game.for_each_x_up_to_c_add_y("triggered_hexagram_count", 3, "hexagram"); ✓
+  L2 CSV:  [no cost] 1～10 ATK | [Hexagram]+X (X is the number of Hexagram triggered in this battle, and up to 4)
+  L2 IMPL: [no cost]  game.atk_rand_range(1, 10); game.for_each_x_up_to_c_add_y("triggered_hexagram_count", 4, "hexagram"); ✓
+  L3 CSV:  [no cost] 1～11 ATK | [Hexagram]+X (X is the number of Hexagram triggered in this battle, and up to 5)
+  L3 IMPL: [no cost]  game.atk_rand_range(1, 11); game.for_each_x_up_to_c_add_y("triggered_hexagram_count", 5, "hexagram"); ✓

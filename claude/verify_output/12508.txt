@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Qi]+2 | Add 3 to the largest stack of: [Qi], [Hexagram] or [Star Power] (if there is a tie, add to the former)
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.do_propitious_omen(3); ✓
+  L2 CSV:  [no cost] [Qi]+2 | Add 5 to the largest stack of: [Qi], [Hexagram] or [Star Power] (if there is a tie, add to the former)
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.do_propitious_omen(5); ✓
+  L3 CSV:  [no cost] [Qi]+2 | Add 7 to the largest stack of: [Qi], [Hexagram] or [Star Power] (if there is a tie, add to the former)
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.do_propitious_omen(7); ✓

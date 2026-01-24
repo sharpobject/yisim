@@ -1,0 +1,8 @@
+### 33403 - Concentric Tune
+  L1 CSV:  [hp=0 qi=2] Apply all [Debuff] on you to the opponent
+  L1 IMPL: [hp=0 qi=2]  game.add_my_x_to_enemy_y("internal_injury", "internal_injury"); game.add_my_x_to_enemy_y("weaken", "weaken"); game.add_my_x_to_enemy_y("flaw", "flaw"); game.add_my_x_to_enemy_y("decrease_atk", "decrease_atk"); game.add_my_x_to_enemy_y("entangle", "entangle"); game.add_my_x_to_enemy_y("wound", "wound"); game.add_my_x_to_enemy_y("styx", "styx"); ✓
+  L2 CSV:  [hp=0 qi=1] Apply all [Debuff] on you to the opponent
+  L2 IMPL: [hp=0 qi=1]  game.add_my_x_to_enemy_y("internal_injury", "internal_injury"); game.add_my_x_to_enemy_y("weaken", "weaken"); game.add_my_x_to_enemy_y("flaw", "flaw"); game.add_my_x_to_enemy_y("decrease_atk", "decrease_atk"); game.add_my_x_to_enemy_y("entangle", "entangle"); game.add_my_x_to_enemy_y("wound", "wound"); game.add_my_x_to_enemy_y("styx", "styx"); ✓
+  L3 CSV:  [no cost] Apply all [Debuff] on you to the opponent
+  L3 IMPL: [no cost]  game.add_my_x_to_enemy_y("internal_injury", "internal_injury"); game.add_my_x_to_enemy_y("weaken", "weaken"); game.add_my_x_to_enemy_y("flaw", "flaw"); game.add_my_x_to_enemy_y("decrease_atk", "decrease_atk"); game.add_my_x_to_enemy_y("entangle", "entangle"); game.add_my_x_to_enemy_y("wound", "wound"); game.add_my_x_to_enemy_y("styx", "styx"); ✓
+

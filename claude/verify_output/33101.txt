@@ -1,0 +1,8 @@
+### 33101 - Cracking Voice
+  L1 CSV:  [no cost] 6 ATK (1 more ATK if you've played a Musician Card) | [Ignore DEF]
+  L1 IMPL: [no cost]  game.increase_idx_x_by_c(0, "ignore_def", 1); let atk_amt = 6; if (game.players[0].has_played_musician_card >= 1) { atk_amt += 1; } game.atk(atk_amt); ✓
+  L2 CSV:  [no cost] 9 ATK (1 more ATK if you've played a Musician Card) | [Ignore DEF]
+  L2 IMPL: [no cost]  game.increase_idx_x_by_c(0, "ignore_def", 1); let atk_amt = 9; if (game.players[0].has_played_musician_card >= 1) { atk_amt += 1; } game.atk(atk_amt); ✓
+  L3 CSV:  [no cost] 12 ATK (1 more ATK if you've played a Musician Card) | [Ignore DEF]
+  L3 IMPL: [no cost]  game.increase_idx_x_by_c(0, "ignore_def", 1); let atk_amt = 12; if (game.players[0].has_played_musician_card >= 1) { atk_amt += 1; } game.atk(atk_amt); ✓
+

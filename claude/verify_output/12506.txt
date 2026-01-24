@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=2] Max HP+12 | [Chase] | [Post Action]: HP+24
+  L1 IMPL: [hp=0 qi=2]  game.add_c_of_x(12, "max_hp"); game.chase(); if (game.if_post_action()) { game.increase_idx_hp(0, 24); } ✓
+  L2 CSV:  [hp=0 qi=2] Max HP+16 | [Chase] | [Post Action]: HP+31
+  L2 IMPL: [hp=0 qi=2]  game.add_c_of_x(16, "max_hp"); game.chase(); if (game.if_post_action()) { game.increase_idx_hp(0, 31); } ✓
+  L3 CSV:  [hp=0 qi=2] Max HP+20 | [Chase] | [Post Action]: HP+38
+  L3 IMPL: [hp=0 qi=2]  game.add_c_of_x(20, "max_hp"); game.chase(); if (game.if_post_action()) { game.increase_idx_hp(0, 38); } ✓

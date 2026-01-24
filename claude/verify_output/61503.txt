@@ -1,0 +1,8 @@
+### 61503 - Yeying Sword Formation
+  L1 CSV:  [no cost] 2 ATK × 2 | Make an additional attack for every “Sword Formation” in the deck (up to 3)  | Add 3 [DEF] for every attack that [Injured] the opponent
+  L1 IMPL: [no cost]  const me = game.players[0]; const reps = 3 + game.sword_formation_deck_count(2, me.currently_triggering_card_idx); let def_amt = 0; for (let i = 0; i < reps; i++) { game.atk(2); if (game.if_injured()) { def_amt += 3; } } game.increase_idx_def(0, def_amt); ✓
+  L2 CSV:  [no cost] 2 ATK × 2 | Make an additional attack for every “Sword Formation” in the deck (up to 4)  | Add 3 [DEF] for every attack that [Injured] the opponent
+  L2 IMPL: [no cost]  const me = game.players[0]; const reps = 3 + game.sword_formation_deck_count(3, me.currently_triggering_card_idx); let def_amt = 0; for (let i = 0; i < reps; i++) { game.atk(2); if (game.if_injured()) { def_amt += 3; } } game.increase_idx_def(0, def_amt); ✓
+  L3 CSV:  [no cost] 2 ATK × 3 | Make an additional attack for every “Sword Formation” in the deck (up to 4)  | Add 3 [DEF] for every attack that [Injured] the opponent
+  L3 IMPL: [no cost]  const me = game.players[0]; const reps = 4 + game.sword_formation_deck_count(3, me.currently_triggering_card_idx); let def_amt = 0; for (let i = 0; i < reps; i++) { game.atk(2); if (game.if_injured()) { def_amt += 3; } } game.increase_idx_def(0, def_amt); ✓
+

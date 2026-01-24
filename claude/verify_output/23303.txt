@@ -1,0 +1,8 @@
+### 23303 - Five Elements Escape
+  L1 CSV:  [no cost] [DEF]+8 | If at least 2 types of [Five Elements] have been activated, [Chase]
+  L1 IMPL: [no cost]  game.do_five_elements_escape(8); ✓
+  L2 CSV:  [no cost] [DEF]+13 | If at least 2 types of [Five Elements] have been activated, [Chase]
+  L2 IMPL: [no cost]  game.do_five_elements_escape(13); ✓
+  L3 CSV:  [no cost] [DEF]+18 | If at least 2 types of [Five Elements] have been activated, [Chase]
+  L3 IMPL: [no cost]  game.do_five_elements_escape(18); ✓
+

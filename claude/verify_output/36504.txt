@@ -1,0 +1,8 @@
+### 36504 - Devouring Ancient Vine
+  L1 CSV:  [hp=0 qi=1] [Growth] | Steal 5 HP from the opponent
+  L1 IMPL: [hp=0 qi=1]  game.reduce_enemy_c_of_x(5, "hp"); game.increase_idx_hp(0, 5); ✓
+  L2 CSV:  [hp=0 qi=1] [Growth] | Steal 10 HP from the opponent
+  L2 IMPL: [hp=0 qi=1]  game.reduce_enemy_c_of_x(10, "hp"); game.increase_idx_hp(0, 10); ✓
+  L3 CSV:  [hp=0 qi=1] Steal 10 HP from the opponent | [Continuous]: Whenever the opponent triggers [Chase], steal 6 HP
+  L3 IMPL: [hp=0 qi=1]  game.reduce_enemy_c_of_x(10, "hp"); game.increase_idx_hp(0, 10); game.continuous(); game.add_enemy_c_of_x(6, "devouring_ancient_vine_stacks"); ✓
+

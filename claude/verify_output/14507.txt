@@ -1,0 +1,8 @@
+### 14507 - Gather Intense Force
+  L1 CSV:  [no cost] [DEF]+8 | [Force] Cap+3 | [Force]+3
+  L1 IMPL: [no cost]  game.increase_idx_def(0, 8); game.add_c_of_x(3, "max_force"); game.add_c_of_x(3, "force"); ✓
+  L2 CSV:  [no cost] [DEF]+10 | [Force] Cap+4 | [Force]+4
+  L2 IMPL: [no cost]  game.increase_idx_def(0, 10); game.add_c_of_x(4, "max_force"); game.add_c_of_x(4, "force"); ✓
+  L3 CSV:  [no cost] [DEF]+12 | [Force] Cap+5 | [Force]+5
+  L3 IMPL: [no cost]  game.increase_idx_def(0, 12); game.add_c_of_x(5, "max_force"); game.add_c_of_x(5, "force"); ✓
+

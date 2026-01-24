@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Qi]+1 | [Physique]+2 | HP+1
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 1); game.physique(2); game.increase_idx_hp(0, 1); ✓
+  L2 CSV:  [no cost] [Qi]+1 | [Physique]+2 | HP+4
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 1); game.physique(2); game.increase_idx_hp(0, 4); ✓
+  L3 CSV:  [no cost] [Qi]+1 | [Physique]+2 | HP+7
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 1); game.physique(2); game.increase_idx_hp(0, 7); ✓

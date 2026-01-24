@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] 6～16 ATK
+  L1 IMPL: [hp=0 qi=1]  game.atk_rand_range(6, 16); ✓
+  L2 CSV:  [hp=0 qi=1] 9～20 ATK
+  L2 IMPL: [hp=0 qi=1]  game.atk_rand_range(9, 20); ✓
+  L3 CSV:  [hp=0 qi=1] 12～24 ATK
+  L3 IMPL: [hp=0 qi=1]  game.atk_rand_range(12, 24); ✓

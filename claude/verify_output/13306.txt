@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [DEF]+10 | [Earth Spirit]: When the next 1 time your DEF is reduced, deal the same value of the reduced DEF's [DMG] to the opponent
+  L1 IMPL: [no cost]  game.increase_idx_def(0, 10); if (game.if_earth_spirit()) { game.add_c_of_x(1, "earth_spirit_cliff_stacks"); } ✓
+  L2 CSV:  [no cost] [DEF]+15 | [Earth Spirit]: When the next 1 time your DEF is reduced, deal the same value of the reduced DEF's [DMG] to the opponent
+  L2 IMPL: [no cost]  game.increase_idx_def(0, 15); if (game.if_earth_spirit()) { game.add_c_of_x(1, "earth_spirit_cliff_stacks"); } ✓
+  L3 CSV:  [no cost] [DEF]+20 | [Earth Spirit]: When the next 1 time your DEF is reduced, deal the same value of the reduced DEF's [DMG] to the opponent
+  L3 IMPL: [no cost]  game.increase_idx_def(0, 20); if (game.if_earth_spirit()) { game.add_c_of_x(1, "earth_spirit_cliff_stacks"); } ✓

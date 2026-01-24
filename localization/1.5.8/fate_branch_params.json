@@ -1,0 +1,1426 @@
+[
+  {
+    "field_1": 2,
+    "field_4": 6,
+    "field_5": 15,
+    "otherParams": [
+      53
+    ],
+    "field_7": "5",
+    "field_8": 1,
+    "field_20": 1
+  },
+  {
+    "field_1": 3,
+    "field_2": 3,
+    "field_4": 4,
+    "field_5": 15,
+    "field_6": 2,
+    "field_8": 6
+  },
+  {
+    "field_1": 4,
+    "field_5": 70,
+    "field_6": 2,
+    "otherParams": [
+      59
+    ],
+    "field_7": ";",
+    "field_8": 2,
+    "field_20": 1
+  },
+  {
+    "field_1": 5,
+    "field_4": 6,
+    "field_5": 70,
+    "otherParams": [
+      9
+    ],
+    "field_8": 3,
+    "field_20": 1
+  },
+  {
+    "field_1": 6,
+    "field_4": 10,
+    "field_5": 70,
+    "field_6": 2,
+    "otherParams": [
+      188
+    ],
+    "field_8": 7,
+    "field_20": 1
+  },
+  {
+    "field_1": 7,
+    "field_2": 4,
+    "field_4": 18446744073709551612,
+    "field_5": 70,
+    "field_8": 10,
+    "field_20": 1
+  },
+  {
+    "field_1": 8,
+    "field_2": 4,
+    "field_4": 18446744073709551612,
+    "field_5": 70,
+    "field_6": 3,
+    "field_8": 9
+  },
+  {
+    "field_1": 9,
+    "field_4": 18446744073709551606,
+    "field_5": 70,
+    "otherParams": [
+      6
+    ],
+    "field_8": 8,
+    "field_20": 1
+  },
+  {
+    "field_1": 10,
+    "field_2": 1,
+    "field_4": 4,
+    "field_5": 70,
+    "field_6": 4,
+    "field_8": 4
+  },
+  {
+    "field_1": 101,
+    "field_3": 1,
+    "field_4": 18446744073709551610,
+    "field_5": 100,
+    "field_6": 2,
+    "otherParams": [
+      70
+    ],
+    "field_7": "F",
+    "field_8": 7,
+    "field_20": 1
+  },
+  {
+    "field_1": 102,
+    "field_2": 1,
+    "field_3": 1,
+    "field_4": 4,
+    "field_5": 100,
+    "field_6": 6,
+    "otherParams": [
+      1000022,
+      1000035,
+      1000066
+    ],
+    "field_8": 3
+  },
+  {
+    "field_1": 103,
+    "field_2": 2,
+    "field_3": 1,
+    "field_4": 4,
+    "field_5": 100,
+    "otherParams": [
+      1000035,
+      1000066
+    ],
+    "field_8": 11
+  },
+  {
+    "field_1": 104,
+    "field_2": 3,
+    "field_3": 1,
+    "field_4": 2,
+    "field_5": 20,
+    "field_6": 4,
+    "otherParams": [
+      1000049,
+      50,
+      1000061
+    ],
+    "field_8": 16
+  },
+  {
+    "field_1": 105,
+    "field_3": 1,
+    "field_5": 100,
+    "field_6": 2,
+    "otherParams": [
+      69
+    ],
+    "field_7": "E",
+    "field_8": 10,
+    "field_20": 1
+  },
+  {
+    "field_1": 106,
+    "field_2": 1,
+    "field_3": 1,
+    "field_5": 100,
+    "field_6": 4,
+    "otherParams": [
+      1000039,
+      1000040,
+      1000042,
+      1000060
+    ],
+    "field_8": 1
+  },
+  {
+    "field_1": 107,
+    "field_2": 3,
+    "field_3": 1,
+    "field_4": 18446744073709551614,
+    "field_5": 20,
+    "field_6": 3,
+    "otherParams": [
+      1000048,
+      47,
+      1000057
+    ],
+    "field_8": 13
+  },
+  {
+    "field_1": 108,
+    "field_2": 2,
+    "field_3": 1,
+    "field_4": 2,
+    "field_5": 100,
+    "otherParams": [
+      1000039,
+      1000040,
+      1000042,
+      1000060
+    ],
+    "field_8": 17
+  },
+  {
+    "field_1": 109,
+    "field_3": 1,
+    "field_4": 18446744073709551612,
+    "field_5": 100,
+    "field_6": 2,
+    "otherParams": [
+      13,
+      55
+    ],
+    "field_8": 2,
+    "field_20": 1
+  },
+  {
+    "field_1": 110,
+    "field_2": 1,
+    "field_3": 1,
+    "field_4": 4,
+    "field_5": 100,
+    "field_6": 3,
+    "field_8": 9
+  },
+  {
+    "field_1": 111,
+    "field_2": 2,
+    "field_3": 1,
+    "field_5": 100,
+    "otherParams": [
+      1000034,
+      1000045
+    ],
+    "field_8": 8
+  },
+  {
+    "field_1": 112,
+    "field_3": 1,
+    "field_5": 100,
+    "field_6": 2,
+    "otherParams": [
+      16
+    ],
+    "field_8": 5,
+    "field_20": 1
+  },
+  {
+    "field_1": 113,
+    "field_2": 1,
+    "field_3": 1,
+    "field_4": 10,
+    "field_5": 100,
+    "field_6": 3,
+    "field_8": 15
+  },
+  {
+    "field_1": 114,
+    "field_2": 2,
+    "field_3": 1,
+    "field_4": 2,
+    "field_5": 100,
+    "otherParams": [
+      1000037,
+      1000044
+    ],
+    "field_8": 14
+  },
+  {
+    "field_1": 115,
+    "field_2": 3,
+    "field_3": 1,
+    "field_5": 20,
+    "field_6": 4,
+    "otherParams": [
+      1000056,
+      1000050,
+      1000053
+    ],
+    "field_8": 6
+  },
+  {
+    "field_1": 116,
+    "field_3": 1,
+    "field_4": 4,
+    "field_5": 100,
+    "field_6": 2,
+    "otherParams": [
+      57
+    ],
+    "field_7": "9",
+    "field_8": 4,
+    "field_20": 1
+  },
+  {
+    "field_1": 117,
+    "field_2": 1,
+    "field_3": 1,
+    "field_4": 2,
+    "field_5": 100,
+    "field_6": 4,
+    "otherParams": [
+      1000046,
+      1000041,
+      1000025,
+      1000064
+    ],
+    "field_8": 12
+  },
+  {
+    "field_1": 118,
+    "field_2": 3,
+    "field_3": 1,
+    "field_4": 18446744073709551612,
+    "field_5": 20,
+    "field_6": 4,
+    "otherParams": [
+      1000062,
+      1000051
+    ],
+    "field_8": 19
+  },
+  {
+    "field_1": 119,
+    "field_3": 1,
+    "field_5": 100,
+    "field_6": 2,
+    "otherParams": [
+      119
+    ],
+    "field_7": "w",
+    "field_8": 20,
+    "field_20": 1
+  },
+  {
+    "field_1": 120,
+    "field_2": 3,
+    "field_3": 1,
+    "field_4": 6,
+    "field_5": 20,
+    "field_6": 6,
+    "otherParams": [
+      1000047,
+      49
+    ],
+    "field_8": 18
+  },
+  {
+    "field_1": 201,
+    "field_3": 2,
+    "field_4": 18446744073709551612,
+    "field_5": 100,
+    "field_6": 2,
+    "otherParams": [
+      30
+    ],
+    "field_8": 7,
+    "field_20": 1
+  },
+  {
+    "field_1": 202,
+    "field_2": 1,
+    "field_3": 2,
+    "field_4": 6,
+    "field_5": 100,
+    "field_6": 6,
+    "otherParams": [
+      4000014
+    ],
+    "field_8": 1
+  },
+  {
+    "field_1": 203,
+    "field_2": 2,
+    "field_3": 2,
+    "field_5": 100,
+    "otherParams": [
+      4000014
+    ],
+    "field_8": 12
+  },
+  {
+    "field_1": 204,
+    "field_2": 2,
+    "field_3": 2,
+    "field_4": 2,
+    "field_5": 100,
+    "otherParams": [
+      4000026
+    ],
+    "field_8": 3
+  },
+  {
+    "field_1": 205,
+    "field_2": 3,
+    "field_3": 2,
+    "field_4": 4,
+    "field_5": 20,
+    "field_6": 6,
+    "otherParams": [
+      4000064,
+      4000004,
+      4000030,
+      4000068,
+      4000063,
+      4000046
+    ],
+    "field_8": 6
+  },
+  {
+    "field_1": 206,
+    "field_3": 2,
+    "field_4": 18446744073709551614,
+    "field_5": 100,
+    "field_6": 2,
+    "otherParams": [
+      31,
+      58
+    ],
+    "field_8": 2,
+    "field_20": 1
+  },
+  {
+    "field_1": 207,
+    "field_2": 1,
+    "field_3": 2,
+    "field_5": 100,
+    "field_6": 3,
+    "otherParams": [
+      4000045
+    ],
+    "field_8": 15
+  },
+  {
+    "field_1": 208,
+    "field_2": 2,
+    "field_3": 2,
+    "field_4": 18446744073709551610,
+    "field_5": 100,
+    "otherParams": [
+      4000038,
+      4000045
+    ],
+    "field_8": 9
+  },
+  {
+    "field_1": 209,
+    "field_2": 3,
+    "field_3": 2,
+    "field_4": 18446744073709551614,
+    "field_5": 20,
+    "field_6": 2,
+    "otherParams": [
+      4000051,
+      4000065,
+      53
+    ],
+    "field_8": 13
+  },
+  {
+    "field_1": 210,
+    "field_2": 1,
+    "field_3": 2,
+    "field_4": 10,
+    "field_6": 8,
+    "otherParams": [
+      4000059
+    ],
+    "field_8": 10
+  },
+  {
+    "field_1": 211,
+    "field_3": 2,
+    "field_4": 18446744073709551606,
+    "field_5": 100,
+    "field_6": 2,
+    "otherParams": [
+      103
+    ],
+    "field_7": "g",
+    "field_8": 8,
+    "field_20": 1
+  },
+  {
+    "field_1": 212,
+    "field_3": 2,
+    "field_4": 2,
+    "field_5": 100,
+    "field_6": 2,
+    "otherParams": [
+      120,
+      71
+    ],
+    "field_7": "xG",
+    "field_8": 4,
+    "field_20": 1
+  },
+  {
+    "field_1": 213,
+    "field_2": 1,
+    "field_3": 2,
+    "field_4": 8,
+    "field_5": 100,
+    "field_6": 4,
+    "otherParams": [
+      4000027,
+      4000042,
+      4000060
+    ],
+    "field_8": 14
+  },
+  {
+    "field_1": 214,
+    "field_2": 2,
+    "field_3": 2,
+    "field_5": 100,
+    "otherParams": [
+      4000027,
+      4000060
+    ],
+    "field_8": 16
+  },
+  {
+    "field_1": 215,
+    "field_2": 3,
+    "field_3": 2,
+    "field_4": 10,
+    "field_5": 20,
+    "field_6": 4,
+    "otherParams": [
+      4000047,
+      4000048,
+      4000050,
+      4000057
+    ],
+    "field_8": 18
+  },
+  {
+    "field_1": 216,
+    "field_2": 3,
+    "field_3": 2,
+    "field_4": 18446744073709551614,
+    "field_5": 20,
+    "field_6": 4,
+    "otherParams": [
+      4000049,
+      54
+    ],
+    "field_8": 17
+  },
+  {
+    "field_1": 217,
+    "field_2": 1,
+    "field_3": 2,
+    "field_4": 2,
+    "field_5": 100,
+    "field_6": 3,
+    "otherParams": [
+      4000033,
+      4000036,
+      4000060,
+      4000066
+    ],
+    "field_8": 11
+  },
+  {
+    "field_1": 218,
+    "field_2": 2,
+    "field_3": 2,
+    "field_5": 100,
+    "otherParams": [
+      4000041,
+      4000066
+    ],
+    "field_8": 20
+  },
+  {
+    "field_1": 219,
+    "field_2": 3,
+    "field_3": 2,
+    "field_4": 18446744073709551608,
+    "field_5": 20,
+    "field_6": 6,
+    "otherParams": [
+      51
+    ],
+    "field_7": "3",
+    "field_8": 19
+  },
+  {
+    "field_1": 220,
+    "field_3": 2,
+    "field_5": 100,
+    "field_6": 2,
+    "otherParams": [
+      72
+    ],
+    "field_7": "H",
+    "field_8": 5,
+    "field_20": 1
+  },
+  {
+    "field_1": 221,
+    "field_2": 3,
+    "field_3": 2,
+    "field_5": 20,
+    "field_6": 4,
+    "otherParams": [
+      4000059,
+      4000056
+    ]
+  },
+  {
+    "field_1": 301,
+    "field_2": 1,
+    "field_3": 3,
+    "field_4": 4,
+    "field_5": 100,
+    "field_6": 4,
+    "otherParams": [
+      7000036,
+      7000028,
+      7000027,
+      7000043,
+      7000061
+    ],
+    "field_8": 1
+  },
+  {
+    "field_1": 302,
+    "field_2": 2,
+    "field_3": 3,
+    "field_5": 100,
+    "otherParams": [
+      7000043,
+      7000061
+    ],
+    "field_8": 6
+  },
+  {
+    "field_1": 303,
+    "field_2": 1,
+    "field_3": 3,
+    "field_4": 4,
+    "field_5": 100,
+    "field_6": 4,
+    "otherParams": [
+      7000031,
+      7000039,
+      7000038,
+      7000056,
+      7000032
+    ],
+    "field_8": 2
+  },
+  {
+    "field_1": 304,
+    "field_2": 2,
+    "field_3": 3,
+    "field_5": 100,
+    "otherParams": [
+      7000056,
+      7000038
+    ],
+    "field_8": 10
+  },
+  {
+    "field_1": 305,
+    "field_2": 1,
+    "field_3": 3,
+    "field_5": 100,
+    "field_6": 4,
+    "otherParams": [
+      7000023,
+      7000040,
+      7000033,
+      7000053
+    ],
+    "field_8": 15
+  },
+  {
+    "field_1": 306,
+    "field_2": 2,
+    "field_3": 3,
+    "field_5": 100,
+    "otherParams": [
+      7000053,
+      7000033
+    ],
+    "field_8": 3
+  },
+  {
+    "field_1": 307,
+    "field_2": 1,
+    "field_3": 3,
+    "field_4": 18446744073709551612,
+    "field_5": 100,
+    "field_6": 3,
+    "otherParams": [
+      7000016,
+      7000034,
+      7000035,
+      7000042
+    ],
+    "field_8": 11
+  },
+  {
+    "field_1": 308,
+    "field_2": 2,
+    "field_3": 3,
+    "field_4": 18446744073709551614,
+    "field_5": 100,
+    "otherParams": [
+      7000042,
+      7000034
+    ],
+    "field_8": 4
+  },
+  {
+    "field_1": 309,
+    "field_2": 1,
+    "field_3": 3,
+    "field_4": 8,
+    "field_5": 100,
+    "field_6": 4,
+    "otherParams": [
+      7000057,
+      7000020,
+      7000059,
+      7000030,
+      7000029
+    ],
+    "field_8": 12
+  },
+  {
+    "field_1": 310,
+    "field_2": 2,
+    "field_3": 3,
+    "field_5": 100,
+    "otherParams": [
+      7000057,
+      7000030
+    ],
+    "field_8": 5
+  },
+  {
+    "field_1": 311,
+    "field_3": 3,
+    "field_4": 2,
+    "field_5": 100,
+    "field_6": 3,
+    "otherParams": [
+      102,
+      127
+    ],
+    "field_8": 7,
+    "field_20": 1
+  },
+  {
+    "field_1": 312,
+    "field_2": 2,
+    "field_3": 3,
+    "field_4": 18446744073709551608,
+    "field_5": 100,
+    "otherParams": [
+      7000058
+    ],
+    "field_8": 8
+  },
+  {
+    "field_1": 313,
+    "field_2": 2,
+    "field_3": 3,
+    "field_4": 18446744073709551606,
+    "field_5": 100,
+    "otherParams": [
+      7000066
+    ],
+    "field_8": 9,
+    "field_20": 1
+  },
+  {
+    "field_1": 314,
+    "field_2": 1,
+    "field_3": 3,
+    "field_5": 100,
+    "field_6": 4,
+    "otherParams": [
+      7000058,
+      7000066
+    ],
+    "field_8": 19
+  },
+  {
+    "field_1": 315,
+    "field_2": 1,
+    "field_3": 3,
+    "field_4": 6,
+    "field_5": 100,
+    "field_6": 3,
+    "otherParams": [
+      7000067,
+      7000042,
+      7000043,
+      7000057,
+      7000056,
+      7000053
+    ],
+    "field_8": 14
+  },
+  {
+    "field_1": 316,
+    "field_3": 3,
+    "field_5": 100,
+    "otherParams": [
+      128
+    ],
+    "field_8": 16,
+    "field_20": 1
+  },
+  {
+    "field_1": 317,
+    "field_2": 2,
+    "field_3": 3,
+    "field_4": 4,
+    "field_5": 100,
+    "otherParams": [
+      7000073
+    ],
+    "field_8": 17
+  },
+  {
+    "field_1": 318,
+    "field_2": 3,
+    "field_3": 3,
+    "field_5": 20,
+    "field_6": 4,
+    "otherParams": [
+      55,
+      58
+    ],
+    "field_7": "7:",
+    "field_8": 18
+  },
+  {
+    "field_1": 319,
+    "field_2": 3,
+    "field_3": 3,
+    "field_4": 18446744073709551614,
+    "field_5": 20,
+    "field_6": 4,
+    "otherParams": [
+      7000047,
+      57
+    ],
+    "field_8": 13
+  },
+  {
+    "field_1": 320,
+    "field_2": 3,
+    "field_3": 3,
+    "field_5": 20,
+    "field_6": 4,
+    "otherParams": [
+      7000049,
+      56
+    ],
+    "field_8": 20
+  },
+  {
+    "field_1": 401,
+    "field_3": 4,
+    "field_4": 6,
+    "field_5": 100,
+    "otherParams": [
+      146,
+      144
+    ],
+    "field_8": 1
+  },
+  {
+    "field_1": 402,
+    "field_2": 1,
+    "field_3": 4,
+    "field_4": 8,
+    "field_5": 100,
+    "field_6": 4,
+    "otherParams": [
+      10000005,
+      10000017,
+      10000028,
+      10000047
+    ],
+    "field_8": 3
+  },
+  {
+    "field_1": 403,
+    "field_2": 2,
+    "field_3": 4,
+    "field_5": 100,
+    "otherParams": [
+      10000047
+    ],
+    "field_8": 12
+  },
+  {
+    "field_1": 404,
+    "field_2": 3,
+    "field_3": 4,
+    "field_4": 18446744073709551614,
+    "field_5": 20,
+    "field_6": 3,
+    "otherParams": [
+      10000057,
+      10000062
+    ],
+    "field_8": 20
+  },
+  {
+    "field_1": 405,
+    "field_2": 1,
+    "field_3": 4,
+    "field_4": 8,
+    "field_5": 100,
+    "field_6": 4,
+    "otherParams": [
+      10000004,
+      10000016,
+      10000027,
+      10000037,
+      10000048
+    ],
+    "field_8": 7
+  },
+  {
+    "field_1": 406,
+    "field_3": 4,
+    "field_4": 2,
+    "field_5": 100,
+    "field_6": 2,
+    "otherParams": [
+      145
+    ],
+    "field_8": 2,
+    "field_20": 1
+  },
+  {
+    "field_1": 407,
+    "field_2": 1,
+    "field_3": 4,
+    "field_4": 8,
+    "field_5": 100,
+    "field_6": 3,
+    "otherParams": [
+      10000020,
+      10000034,
+      10000033,
+      10000044,
+      10000042,
+      10000051
+    ],
+    "field_8": 14
+  },
+  {
+    "field_1": 408,
+    "field_2": 2,
+    "field_3": 4,
+    "field_4": 2,
+    "field_5": 100,
+    "otherParams": [
+      10000051,
+      10000052
+    ],
+    "field_8": 9
+  },
+  {
+    "field_1": 409,
+    "field_3": 4,
+    "field_4": 2,
+    "field_5": 100,
+    "field_6": 2,
+    "otherParams": [
+      143
+    ],
+    "field_8": 6,
+    "field_20": 1
+  },
+  {
+    "field_1": 410,
+    "field_2": 1,
+    "field_3": 4,
+    "field_4": 2,
+    "field_5": 100,
+    "field_6": 4,
+    "field_8": 4
+  },
+  {
+    "field_1": 411,
+    "field_2": 2,
+    "field_3": 4,
+    "field_5": 100,
+    "otherParams": [
+      10000044,
+      10000045,
+      10000046
+    ],
+    "field_8": 13
+  },
+  {
+    "field_1": 412,
+    "field_2": 3,
+    "field_3": 4,
+    "field_4": 18446744073709551612,
+    "field_5": 20,
+    "field_6": 6,
+    "otherParams": [
+      10000060
+    ],
+    "field_8": 11
+  },
+  {
+    "field_1": 413,
+    "field_3": 4,
+    "field_4": 2,
+    "field_5": 100,
+    "field_6": 2,
+    "otherParams": [
+      150
+    ],
+    "field_8": 15,
+    "field_20": 1
+  },
+  {
+    "field_1": 414,
+    "field_2": 1,
+    "field_3": 4,
+    "field_4": 6,
+    "field_5": 100,
+    "field_6": 3,
+    "otherParams": [
+      10000039,
+      10000040,
+      10000050,
+      10000068
+    ],
+    "field_8": 5
+  },
+  {
+    "field_1": 415,
+    "field_2": 2,
+    "field_3": 4,
+    "field_5": 100,
+    "otherParams": [
+      10000040,
+      10000068
+    ],
+    "field_8": 8
+  },
+  {
+    "field_1": 416,
+    "field_2": 2,
+    "field_3": 4,
+    "field_5": 100,
+    "otherParams": [
+      10000039,
+      10000038
+    ],
+    "field_8": 17
+  },
+  {
+    "field_1": 417,
+    "field_2": 3,
+    "field_3": 4,
+    "field_4": 18446744073709551610,
+    "field_5": 20,
+    "field_6": 3,
+    "otherParams": [
+      10000055,
+      10000064
+    ],
+    "field_8": 18
+  },
+  {
+    "field_1": 418,
+    "field_3": 4,
+    "field_5": 100,
+    "field_6": 2,
+    "otherParams": [
+      149,
+      176
+    ],
+    "field_8": 10,
+    "field_20": 1
+  },
+  {
+    "field_1": 419,
+    "field_2": 3,
+    "field_3": 4,
+    "field_4": 18446744073709551610,
+    "field_5": 20,
+    "field_6": 4,
+    "otherParams": [
+      10000058
+    ],
+    "field_8": 16
+  },
+  {
+    "field_1": 420,
+    "field_2": 3,
+    "field_3": 4,
+    "field_4": 18446744073709551614,
+    "field_6": 4,
+    "otherParams": [
+      10000056,
+      99000113
+    ],
+    "field_8": 19
+  },
+  {
+    "field_1": 421,
+    "field_2": 1,
+    "field_3": 4,
+    "field_4": 6,
+    "field_5": 100,
+    "field_6": 6,
+    "otherParams": [
+      10000042,
+      10000043
+    ]
+  },
+  {
+    "field_1": 13,
+    "field_2": 1,
+    "field_5": 70,
+    "field_6": 8,
+    "otherParams": [
+      46
+    ],
+    "field_7": "."
+  },
+  {
+    "field_1": 14,
+    "field_4": 4,
+    "field_5": 70,
+    "field_6": 2,
+    "otherParams": [
+      56
+    ],
+    "field_7": "8",
+    "field_20": 1
+  },
+  {
+    "field_1": 16,
+    "field_2": 5,
+    "field_5": 15,
+    "field_6": 1,
+    "otherParams": [
+      99000210
+    ],
+    "field_20": 1
+  },
+  {
+    "field_1": 17,
+    "field_2": 1,
+    "field_5": 10,
+    "field_6": 4,
+    "otherParams": [
+      2000014,
+      2000015
+    ],
+    "field_20": 1
+  },
+  {
+    "field_1": 18,
+    "field_2": 1,
+    "field_4": 4,
+    "field_5": 10,
+    "field_6": 4,
+    "otherParams": [
+      3000013,
+      3000015
+    ],
+    "field_20": 1
+  },
+  {
+    "field_1": 19,
+    "field_2": 1,
+    "field_4": 2,
+    "field_5": 10,
+    "field_6": 4,
+    "otherParams": [
+      6000012,
+      6000013
+    ],
+    "field_20": 1
+  },
+  {
+    "field_1": 20,
+    "field_2": 1,
+    "field_4": 6,
+    "field_5": 10,
+    "field_6": 4,
+    "otherParams": [
+      5000015,
+      5000014
+    ],
+    "field_20": 1
+  },
+  {
+    "field_1": 21,
+    "field_2": 1,
+    "field_5": 10,
+    "field_6": 4,
+    "otherParams": [
+      8000012,
+      8000014
+    ],
+    "field_20": 1
+  },
+  {
+    "field_1": 22,
+    "field_2": 1,
+    "field_4": 4,
+    "field_5": 10,
+    "field_6": 4,
+    "otherParams": [
+      9000007,
+      9000015
+    ],
+    "field_20": 1
+  },
+  {
+    "field_1": 23,
+    "field_2": 1,
+    "field_4": 4,
+    "field_5": 10,
+    "field_6": 4,
+    "otherParams": [
+      11000018,
+      11000021
+    ],
+    "field_20": 1
+  },
+  {
+    "field_1": 24,
+    "field_2": 4,
+    "field_5": 70,
+    "field_6": 1,
+    "field_20": 1
+  },
+  {
+    "field_1": 121,
+    "field_2": 2,
+    "field_3": 1,
+    "field_4": 2,
+    "field_5": 100,
+    "otherParams": [
+      1000025,
+      1000064
+    ]
+  },
+  {
+    "field_1": 122,
+    "field_2": 5,
+    "field_3": 1,
+    "field_4": 4,
+    "field_5": 100,
+    "field_6": 4,
+    "otherParams": [
+      1000065
+    ],
+    "field_20": 1
+  },
+  {
+    "field_1": 123,
+    "field_2": 5,
+    "field_3": 1,
+    "field_4": 4,
+    "field_5": 100,
+    "field_6": 2,
+    "otherParams": [
+      1000043
+    ],
+    "field_20": 1
+  },
+  {
+    "field_1": 124,
+    "field_2": 6,
+    "field_3": 1,
+    "field_4": 6,
+    "field_5": 20,
+    "field_6": 2,
+    "otherParams": [
+      1000046,
+      1000038,
+      48
+    ]
+  },
+  {
+    "field_1": 222,
+    "field_3": 2,
+    "field_5": 100,
+    "field_6": 2,
+    "otherParams": [
+      117
+    ],
+    "field_7": "u",
+    "field_20": 1
+  },
+  {
+    "field_1": 223,
+    "field_2": 5,
+    "field_3": 2,
+    "field_4": 8,
+    "field_5": 100,
+    "field_6": 4,
+    "otherParams": [
+      4000034
+    ],
+    "field_20": 1
+  },
+  {
+    "field_1": 224,
+    "field_2": 5,
+    "field_3": 2,
+    "field_4": 2,
+    "field_5": 100,
+    "field_6": 2,
+    "otherParams": [
+      4000046
+    ],
+    "field_20": 1
+  },
+  {
+    "field_1": 225,
+    "field_2": 6,
+    "field_3": 2,
+    "field_5": 20,
+    "field_6": 2,
+    "otherParams": [
+      4000021,
+      4000037,
+      52
+    ]
+  },
+  {
+    "field_1": 321,
+    "field_2": 1,
+    "field_3": 3,
+    "field_5": 100,
+    "field_6": 8,
+    "otherParams": [
+      7000073
+    ],
+    "field_20": 1
+  },
+  {
+    "field_1": 322,
+    "field_2": 5,
+    "field_3": 3,
+    "field_5": 100,
+    "field_6": 4,
+    "otherParams": [
+      7000039
+    ],
+    "field_20": 1
+  },
+  {
+    "field_1": 323,
+    "field_2": 5,
+    "field_3": 3,
+    "field_5": 100,
+    "field_6": 4,
+    "otherParams": [
+      7000027
+    ],
+    "field_20": 1
+  },
+  {
+    "field_1": 324,
+    "field_2": 6,
+    "field_3": 3,
+    "field_5": 20,
+    "field_6": 1,
+    "otherParams": [
+      7000032,
+      7000056,
+      7000045
+    ]
+  },
+  {
+    "field_1": 422,
+    "field_3": 4,
+    "field_5": 100,
+    "otherParams": [
+      175
+    ],
+    "field_20": 1
+  },
+  {
+    "field_1": 423,
+    "field_2": 5,
+    "field_3": 4,
+    "field_4": 4,
+    "field_5": 100,
+    "field_6": 4,
+    "otherParams": [
+      10000050
+    ],
+    "field_20": 1
+  },
+  {
+    "field_1": 424,
+    "field_2": 5,
+    "field_3": 4,
+    "field_5": 100,
+    "field_6": 2,
+    "otherParams": [
+      10000041
+    ],
+    "field_20": 1
+  },
+  {
+    "field_1": 425,
+    "field_2": 6,
+    "field_3": 4,
+    "field_4": 6,
+    "field_5": 20,
+    "field_6": 2,
+    "otherParams": [
+      10000031,
+      10000034,
+      10000061
+    ]
+  }
+]

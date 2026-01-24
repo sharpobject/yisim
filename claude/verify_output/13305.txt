@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 8 ATK | [Earth Spirit]: Add 1 [DEF] for every 4 Max HP difference between you and your opponent, then add the same amount of [DEF] next turn
+  L1 IMPL: [no cost]  game.atk(8); if (game.if_earth_spirit()) { game.do_earth_spirit_dust(); } ✓
+  L2 CSV:  [no cost] 12 ATK | [Earth Spirit]: Add 1 [DEF] for every 4 Max HP difference between you and your opponent, then add the same amount of [DEF] next turn
+  L2 IMPL: [no cost]  game.atk(12); if (game.if_earth_spirit()) { game.do_earth_spirit_dust(); } ✓
+  L3 CSV:  [no cost] 16 ATK | [Earth Spirit]: Add 1 [DEF] for every 4 Max HP difference between you and your opponent, then add the same amount of [DEF] next turn
+  L3 IMPL: [no cost]  game.atk(16); if (game.if_earth_spirit()) { game.do_earth_spirit_dust(); } ✓

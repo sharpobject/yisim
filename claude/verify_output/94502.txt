@@ -1,0 +1,8 @@
+### 94502 - Soul Overwhelming Palm
+  L1 CSV:  [hp=2 qi=0] For every different [Debuff] you have, add 2 [Force] | 8 ATK (2 more ATK for each stack of [Force])
+  L1 IMPL: [hp=2 qi=0]  game.do_soul_overwhelming_palm(2, 8, 2); ✓
+  L2 CSV:  [hp=2 qi=0] For every different [Debuff] you have, add 3 [Force] | 10 ATK (2 more ATK for each stack of [Force])
+  L2 IMPL: [hp=2 qi=0]  game.do_soul_overwhelming_palm(3, 10, 2); ✓
+  L3 CSV:  [hp=2 qi=0] For every different [Debuff] you have, add 4 [Force] | 12 ATK (2 more ATK for each stack of [Force])
+  L3 IMPL: [hp=2 qi=0]  game.do_soul_overwhelming_palm(4, 12, 2); ✓
+

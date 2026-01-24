@@ -1,0 +1,8 @@
+### 22503 - Meteorite Meteor
+  L1 CSV:  [no cost] Lost all [Star Power], for each: Deal 8 [DMG] to the opponent
+  L1 IMPL: [no cost]  game.exhaust_x_to_add_y("star_power", "bonus_rep_amt"); for (let i = 0; i < 0 + game.players[0].bonus_rep_amt; i++) { game.deal_damage(8); } ✓
+  L2 CSV:  [no cost] Lost all [Star Power], for each: Deal 9 [DMG] to the opponent
+  L2 IMPL: [no cost]  game.exhaust_x_to_add_y("star_power", "bonus_rep_amt"); for (let i = 0; i < 0 + game.players[0].bonus_rep_amt; i++) { game.deal_damage(9); } ✓
+  L3 CSV:  [no cost] Lost all [Star Power], for each: Deal 10 [DMG] to the opponent
+  L3 IMPL: [no cost]  game.exhaust_x_to_add_y("star_power", "bonus_rep_amt"); for (let i = 0; i < 0 + game.players[0].bonus_rep_amt; i++) { game.deal_damage(10); } ✓
+

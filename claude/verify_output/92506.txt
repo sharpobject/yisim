@@ -1,0 +1,8 @@
+### 92506 - Spiritual Hunter
+  L1 CSV:  [no cost] [Qi]+1 | [Continuous]: "Post Action" card's [Qi] cost decrease 2, and will make an additional 1 ATK after being played
+  L1 IMPL: [no cost]   ✓
+  L2 CSV:  [no cost] [Qi]+1 | [Continuous]: "Post Action" card's [Qi] cost decrease 2, and will make an additional 4 ATK after being played
+  L2 IMPL: [no cost]   ✓
+  L3 CSV:  [no cost] [Qi]+1 | [Continuous]: "Post Action" card's [Qi] cost decrease 2, and will make an additional 7 ATK after being played
+  L3 IMPL: [no cost]   ✓
+

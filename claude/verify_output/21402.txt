@@ -1,0 +1,8 @@
+### 21402 - Emptiness Sword Formation
+  L1 CSV:  [no cost] [Continuous]: After each time you play a "Sword Formation" card, make an additional 7 ATK
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(7, "emptiness_sword_formation_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous]: After each time you play a "Sword Formation" card, make an additional 10 ATK
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(10, "emptiness_sword_formation_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous]: After each time you play a "Sword Formation" card, make an additional 13 ATK
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(13, "emptiness_sword_formation_stacks"); ✓
+

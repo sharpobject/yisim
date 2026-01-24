@@ -1,0 +1,8 @@
+### 33102 - Earth Tune
+  L1 CSV:  [no cost] Both players add 14 [DEF]
+  L1 IMPL: [no cost]  game.add_c_of_x(14, "def"); game.add_enemy_c_of_x(14, "def"); ✓
+  L2 CSV:  [no cost] Both players add 20 [DEF]
+  L2 IMPL: [no cost]  game.add_c_of_x(20, "def"); game.add_enemy_c_of_x(20, "def"); ✓
+  L3 CSV:  [no cost] Both players add 26 [DEF]
+  L3 IMPL: [no cost]  game.add_c_of_x(26, "def"); game.add_enemy_c_of_x(26, "def"); ✓
+

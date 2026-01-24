@@ -1,0 +1,2050 @@
+[
+  {
+    "id": 1,
+    "name_cn": "我命由我",
+    "name_en": "My Fate, My Choice",
+    "name_tw": "我命由我",
+    "desc_cn_template": "每次突破境界时可以刷新1次仙命选项，若不刷新则加{countParam}换牌机会",
+    "desc_en_template": "You can refresh the Immortal Fate option 1 time each time you break through Phase, or add {countParam} to Exchange Chance if you don't refresh it.",
+    "desc_tw_template": "每次突破境界時可以刷新1次仙命選項，若不刷新則加{countParam}換牌機會",
+    "params": [],
+    "count_param": null,
+    "desc_cn": "每次突破境界时可以刷新1次仙命选项，若不刷新则加{countParam}换牌机会",
+    "desc_en": "You can refresh the Immortal Fate option 1 time each time you break through Phase, or add {countParam} to Exchange Chance if you don't refresh it.",
+    "desc_tw": "每次突破境界時可以刷新1次仙命選項，若不刷新則加{countParam}換牌機會"
+  },
+  {
+    "id": 2,
+    "name_cn": "机缘加身",
+    "name_en": "Fate of Fortunes",
+    "name_tw": "機緣加身",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】。增加每轮获得机缘牌的概率。",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】. Increase the probability of getting Fortunes Card each round.",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】。增加每輪獲得機緣牌的概率。",
+    "params": [
+      53
+    ],
+    "count_param": 6,
+    "desc_cn": "每次突破时仙命选项必然包含[机缘造化]。增加每轮获得机缘牌的概率。",
+    "desc_en": "Immortal Fate option will definitely include [Fortunes and Luck]. Increase the probability of getting Fortunes Card each round.",
+    "desc_tw": "每次突破時仙命選項必然包含[機緣造化]。增加每輪獲得機緣牌的概率。"
+  },
+  {
+    "id": 3,
+    "name_cn": "御兽秘传",
+    "name_en": "Esoteric of Pet",
+    "name_tw": "禦獸秘傳",
+    "desc_cn_template": "牌池中加入灵宠牌各{countParam}张",
+    "desc_en_template": "Add {countParam} copies of each Pet card to your card pool.",
+    "desc_tw_template": "牌池中加入靈寵牌各{countParam}張",
+    "params": [],
+    "count_param": 2,
+    "desc_cn": "牌池中加入灵宠牌各2张",
+    "desc_en": "Add 2 copies of each Pet card to your card pool.",
+    "desc_tw": "牌池中加入靈寵牌各2張"
+  },
+  {
+    "id": 4,
+    "name_cn": "淬体之命",
+    "name_en": "Fate of Bodybuilding",
+    "name_tw": "淬體之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】（选择{countParam}次后失效）；选择【TALENT_{otherParams[0]}】时不再扣减命元",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】 (disabled after selecting {countParam} time(s)). Selecting 【TALENT_{otherParams[0]}】 will not deduct Destiny of you.",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】（選擇{countParam}次後失效）；選擇【TALENT_{otherParams[0]}】時不再扣减命元",
+    "params": [
+      59
+    ],
+    "count_param": 2,
+    "desc_cn": "每次突破时仙命选项必然包含[陨星淬体]（选择2次后失效）；选择[陨星淬体]时不再扣减命元",
+    "desc_en": "Immortal Fate option will definitely include [Meteor Quench] (disabled after selecting 2 time(s)). Selecting [Meteor Quench] will not deduct Destiny of you.",
+    "desc_tw": "每次突破時仙命選項必然包含[隕星淬體]（選擇2次後失效）；選擇[隕星淬體]時不再扣减命元"
+  },
+  {
+    "id": 5,
+    "name_cn": "雷劫之命",
+    "name_en": "Fate of Thunder Tribulation",
+    "name_tw": "雷劫之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】",
+    "params": [
+      9
+    ],
+    "count_param": 6,
+    "desc_cn": "每次突破时仙命选项必然包含[云巅雷劫]",
+    "desc_en": "Immortal Fate option will definitely include [Thunder Tribulation]",
+    "desc_tw": "每次突破時仙命選項必然包含[雲巔雷劫]"
+  },
+  {
+    "id": 6,
+    "name_cn": "兼修之命",
+    "name_en": "Fate of Side Jobs",
+    "name_tw": "兼修之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】（选择{countParam}次后失效）",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】 (disabled after selecting {countParam} time(s))",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】（選擇{countParam}次後失效）",
+    "params": [
+      188
+    ],
+    "count_param": 2,
+    "desc_cn": "每次突破时仙命选项必然包含[副职兼修]（选择2次后失效）",
+    "desc_en": "Immortal Fate option will definitely include [Additional Side Job] (disabled after selecting 2 time(s))",
+    "desc_tw": "每次突破時仙命選項必然包含[副職兼修]（選擇2次後失效）"
+  },
+  {
+    "id": 7,
+    "name_cn": "专注之心",
+    "name_en": "Concentration Mind",
+    "name_tw": "專注之心",
+    "desc_cn_template": "常规换牌时优先换出门派牌（每轮抽牌不受影响）",
+    "desc_en_template": "You will priority get the Sect Cards rather than Side Job Cards during regular card exchanges (drawing cards each round is not affected)",
+    "desc_tw_template": "常規換牌時優先換出門派牌（每輪抽牌不受影響）",
+    "params": [],
+    "count_param": 18446744073709551612,
+    "desc_cn": "常规换牌时优先换出门派牌（每轮抽牌不受影响）",
+    "desc_en": "You will priority get the Sect Cards rather than Side Job Cards during regular card exchanges (drawing cards each round is not affected)",
+    "desc_tw": "常規換牌時優先換出門派牌（每輪抽牌不受影響）"
+  },
+  {
+    "id": 8,
+    "name_cn": "天赋异禀",
+    "name_en": "Cultivation Genius",
+    "name_tw": "天賦异禀",
+    "desc_cn_template": "突破境界所需的修为减{countParam}",
+    "desc_en_template": "Reduce {countParam} the amount of Cultivation needed to break through Phase",
+    "desc_tw_template": "突破境界所需的修爲减{countParam}",
+    "params": [],
+    "count_param": 3,
+    "desc_cn": "突破境界所需的修为减3",
+    "desc_en": "Reduce 3 the amount of Cultivation needed to break through Phase",
+    "desc_tw": "突破境界所需的修爲减3"
+  },
+  {
+    "id": 9,
+    "name_cn": "变换之命",
+    "name_en": "Fate of Exchange",
+    "name_tw": "變換之命",
+    "desc_cn_template": "每轮多加1次换牌机会，但换牌机会储存上限变为1。每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】。",
+    "desc_en_template": "Add 1 more Exchange Card Chance per round, but the Exchange Card Chance storage limit becomes 1. Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】. ",
+    "desc_tw_template": "每輪多加1次換牌機會，但換牌機會儲存上限變爲1。每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】。",
+    "params": [
+      6
+    ],
+    "count_param": 18446744073709551606,
+    "desc_cn": "每轮多加1次换牌机会，但换牌机会储存上限变为1。每次突破时仙命选项必然包含[变换之道]。",
+    "desc_en": "Add 1 more Exchange Card Chance per round, but the Exchange Card Chance storage limit becomes 1. Immortal Fate option will definitely include [The Way of Adaptation]. ",
+    "desc_tw": "每輪多加1次換牌機會，但換牌機會儲存上限變爲1。每次突破時仙命選項必然包含[變換之道]。"
+  },
+  {
+    "id": 10,
+    "name_cn": "元婴专精",
+    "name_en": "Mastery of Immortality Phase",
+    "name_tw": "元嬰專精",
+    "desc_cn_template": "牌池中所有元婴期牌各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of each Immortality Phase card to your card pool.",
+    "desc_tw_template": "牌池中所有元嬰期牌各加{countParam}張",
+    "params": [],
+    "count_param": 4,
+    "desc_cn": "牌池中所有元婴期牌各加4张",
+    "desc_en": "Add 4 copies of each Immortality Phase card to your card pool.",
+    "desc_tw": "牌池中所有元嬰期牌各加4張"
+  },
+  {
+    "id": 11,
+    "name_cn": "化神专精",
+    "name_en": "Mastery of Incarnation Phase",
+    "name_tw": "化神專精",
+    "desc_cn_template": "牌池中所有化神期牌各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of each Incarnation Phase card to your card pool.",
+    "desc_tw_template": "牌池中所有化神期牌各加{countParam}張",
+    "params": [],
+    "count_param": null,
+    "desc_cn": "牌池中所有化神期牌各加{countParam}张",
+    "desc_en": "Add {countParam} copies of each Incarnation Phase card to your card pool.",
+    "desc_tw": "牌池中所有化神期牌各加{countParam}張"
+  },
+  {
+    "id": 12,
+    "name_cn": "突破感悟",
+    "name_en": "Comprehension of Breakthrough",
+    "name_tw": "突破感悟",
+    "desc_cn_template": "每次突破境界后，新境界的前2次常规换牌优先换出该境界的牌",
+    "desc_en_template": "The first 2 times you Exchange Card after breakthrough to the new Phase, you will priority get the card of the new Phase.",
+    "desc_tw_template": "每次突破境界後，新境界的前2次常規換牌優先換出該境界的牌",
+    "params": [],
+    "count_param": null,
+    "desc_cn": "每次突破境界后，新境界的前2次常规换牌优先换出该境界的牌",
+    "desc_en": "The first 2 times you Exchange Card after breakthrough to the new Phase, you will priority get the card of the new Phase.",
+    "desc_tw": "每次突破境界後，新境界的前2次常規換牌優先換出該境界的牌"
+  },
+  {
+    "id": 13,
+    "name_cn": "道韵专精",
+    "name_en": "Mastery of Daoist Rhyme",
+    "name_tw": "道韵專精",
+    "desc_cn_template": "牌池中加入{countParam}张【{otherParams[0]}】",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 to your card pool.",
+    "desc_tw_template": "牌池中加入{countParam}張【{otherParams[0]}】",
+    "params": [
+      46
+    ],
+    "count_param": 8,
+    "desc_cn": "牌池中加入8张[道韵气息]",
+    "desc_en": "Add 8 copies of [Daoist Rhyme Aura] to your card pool.",
+    "desc_tw": "牌池中加入8張[道韻氣息]"
+  },
+  {
+    "id": 14,
+    "name_cn": "斩道之命",
+    "name_en": "Fate of Shattered Dao",
+    "name_tw": "斬道之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】（选择{countParam}次后失效）；选择【TALENT_{otherParams[0]}】后至少抽到1张自身境界的牌",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】 (disabled after selecting {countParam} time(s)); Selecting 【TALENT_{otherParams[0]}】 will draw at least 1 card from your Phase.",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】（選擇{countParam}次後失效）；選擇【TALENT_{otherParams[0]}】後至少抽到1張自身境界的牌",
+    "params": [
+      56
+    ],
+    "count_param": 2,
+    "desc_cn": "每次突破时仙命选项必然包含[斩道]（选择2次后失效）；选择[斩道]后至少抽到1张自身境界的牌",
+    "desc_en": "Immortal Fate option will definitely include [Shattered Dao] (disabled after selecting 2 time(s)); Selecting [Shattered Dao] will draw at least 1 card from your Phase.",
+    "desc_tw": "每次突破時仙命選項必然包含[斬道]（選擇2次後失效）；選擇[斬道]後至少抽到1張自身境界的牌"
+  },
+  {
+    "id": 15,
+    "name_cn": "稳固之命",
+    "name_en": "Fate of Solid Foundation",
+    "name_tw": "穩固之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】（选择{countParam}次后失效）",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】 (disabled after selecting {countParam} time(s)).",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】（選擇{countParam}次後失效）",
+    "params": [],
+    "count_param": null,
+    "desc_cn": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】（选择{countParam}次后失效）",
+    "desc_en": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】 (disabled after selecting {countParam} time(s)).",
+    "desc_tw": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】（選擇{countParam}次後失效）"
+  },
+  {
+    "id": 16,
+    "name_cn": "影枭试炼",
+    "name_en": "Trial of Shadow Owl Rabbit",
+    "name_tw": "影梟試煉",
+    "desc_cn_template": "若战斗中触发过3次以上再次行动，则下轮首次换出化神牌时，那张牌变为【{otherParams[0]}】（最多生效1次）",
+    "desc_en_template": "If you have triggered Chase 3 or more times in the previous battle, the first Incarnation Phase card you obtain through Exchange will become 【{otherParams[0]}】 (once only)",
+    "desc_tw_template": "若戰鬥中觸發過3次以上再次行動，則下輪首次換出化神牌時，那張牌變爲【{otherParams[0]}】（最多生效1次）",
+    "params": [
+      99000210
+    ],
+    "count_param": 1,
+    "desc_cn": "若战斗中触发过3次以上再次行动，则下轮首次换出化神牌时，那张牌变为[影枭兔]（最多生效1次）",
+    "desc_en": "If you have triggered Chase 3 or more times in the previous battle, the first Incarnation Phase card you obtain through Exchange will become [Shadow Owl Rabbit] (once only)",
+    "desc_tw": "若戰鬥中觸發過3次以上再次行動，則下輪首次換出化神牌時，那張牌變爲[影梟兔]（最多生效1次）"
+  },
+  {
+    "id": 17,
+    "name_cn": "炼丹天赋",
+    "name_en": "Alchemy Talent",
+    "name_tw": "煉丹天賦",
+    "desc_cn_template": "第2轮自动选择炼丹师；牌池中【{otherParams[0]}】和【{otherParams[1]}】各加{countParam}张",
+    "desc_en_template": "You automatically choose the Elixirist on round 2. Add {countParam} copies of 【{otherParams[0]}】 and 【{otherParams[1]}】 to your card pool.",
+    "desc_tw_template": "第2輪自動選擇煉丹師；牌池中【{otherParams[0]}】和【{otherParams[1]}】各加{countParam}張",
+    "params": [
+      2000014,
+      2000015
+    ],
+    "count_param": 4,
+    "desc_cn": "第2轮自动选择炼丹师；牌池中[锻体玄丹]和[悟道丹]各加4张",
+    "desc_en": "You automatically choose the Elixirist on round 2. Add 4 copies of [Great Bodybuilding Elixir] and [Enlightenment Elixir] to your card pool.",
+    "desc_tw": "第2輪自動選擇煉丹師；牌池中[鍛體玄丹]和[悟道丹]各加4張"
+  },
+  {
+    "id": 18,
+    "name_cn": "符咒天赋",
+    "name_en": "Fulu Talent",
+    "name_tw": "符咒天賦",
+    "desc_cn_template": "第2轮自动选择符咒师；牌池中【{otherParams[0]}】和【{otherParams[1]}】各加{countParam}张",
+    "desc_en_template": "You automatically choose the Fuluist on round 2. Add {countParam} copies of 【{otherParams[0]}】 and 【{otherParams[1]}】 to your card pool.",
+    "desc_tw_template": "第2輪自動選擇符咒師；牌池中【{otherParams[0]}】和【{otherParams[1]}】各加{countParam}張",
+    "params": [
+      3000013,
+      3000015
+    ],
+    "count_param": 4,
+    "desc_cn": "第2轮自动选择符咒师；牌池中[千里神行符]和[万邪入体咒]各加4张",
+    "desc_en": "You automatically choose the Fuluist on round 2. Add 4 copies of [Divine Walk Fulu] and [Thousand Evil Incantation] to your card pool.",
+    "desc_tw": "第2輪自動選擇符咒師；牌池中[千里神行符]和[萬邪入體咒]各加4張"
+  },
+  {
+    "id": 19,
+    "name_cn": "画师天赋",
+    "name_en": "Drawing Talent",
+    "name_tw": "畫師天賦",
+    "desc_cn_template": "第2轮自动选择画师；牌池中【{otherParams[0]}】和【{otherParams[1]}】各加{countParam}张",
+    "desc_en_template": "You automatically choose the Painter on round 2. Add {countParam} copies of 【{otherParams[0]}】 and 【{otherParams[1]}】 to your card pool.",
+    "desc_tw_template": "第2輪自動選擇畫師；牌池中【{otherParams[0]}】和【{otherParams[1]}】各加{countParam}張",
+    "params": [
+      6000012,
+      6000013
+    ],
+    "count_param": 4,
+    "desc_cn": "第2轮自动选择画师；牌池中[运笔如飞]和[画龙点睛]各加4张",
+    "desc_en": "You automatically choose the Painter on round 2. Add 4 copies of [Flying Brush] and [Finishing Touch] to your card pool.",
+    "desc_tw": "第2輪自動選擇畫師；牌池中[運筆如飛]和[畫龍點睛]各加4張"
+  },
+  {
+    "id": 20,
+    "name_cn": "琴师天赋",
+    "name_en": "Musical Talent",
+    "name_tw": "琴師天賦",
+    "desc_cn_template": "第2轮自动选择琴师；牌池中【{otherParams[0]}】和【{otherParams[1]}】各加{countParam}张",
+    "desc_en_template": "You automatically choose the Musician on round 2. Add {countParam} copies of 【{otherParams[0]}】 and 【{otherParams[1]}】 to your card pool.",
+    "desc_tw_template": "第2輪自動選擇琴師；牌池中【{otherParams[0]}】和【{otherParams[1]}】各加{countParam}張",
+    "params": [
+      5000015,
+      5000014
+    ],
+    "count_param": 4,
+    "desc_cn": "第2轮自动选择琴师；牌池中[天音困仙曲]和[转弦合调]各加4张",
+    "desc_en": "You automatically choose the Musician on round 2. Add 4 copies of [Predicament for Immortals] and [Chord In Tune] to your card pool.",
+    "desc_tw": "第2輪自動選擇琴師；牌池中[天音困仙曲]和[轉弦合調]各加4張"
+  },
+  {
+    "id": 21,
+    "name_cn": "阵法天赋",
+    "name_en": "Formation Talent",
+    "name_tw": "陣法天賦",
+    "desc_cn_template": "第2轮自动选择阵法师；牌池中【{otherParams[0]}】和【{otherParams[1]}】各加{countParam}张",
+    "desc_en_template": "You automatically choose the Formation Master on round 2. Add {countParam} copies of 【{otherParams[0]}】 and 【{otherParams[1]}】 to your card pool.",
+    "desc_tw_template": "第2輪自動選擇陣法師；牌池中【{otherParams[0]}】和【{otherParams[1]}】各加{countParam}張",
+    "params": [
+      8000012,
+      8000014
+    ],
+    "count_param": 4,
+    "desc_cn": "第2轮自动选择阵法师；牌池中[回响阵纹]和[须弥阵纹]各加4张",
+    "desc_en": "You automatically choose the Formation Master on round 2. Add 4 copies of [Echo Formation] and [Meru Formation] to your card pool.",
+    "desc_tw": "第2輪自動選擇陣法師；牌池中[迴響陣紋]和[須彌陣紋]各加4張"
+  },
+  {
+    "id": 22,
+    "name_cn": "灵植天赋",
+    "name_en": "Planting Talent",
+    "name_tw": "靈植天賦",
+    "desc_cn_template": "第2轮自动选择灵植师；牌池中【{otherParams[0]}】和【{otherParams[1]}】各加{countParam}张",
+    "desc_en_template": "You automatically choose the Plant Master on round 2. Add {countParam} copies of 【{otherParams[0]}】 and 【{otherParams[1]}】 to your card pool.",
+    "desc_tw_template": "第2輪自動選擇靈植師；牌池中【{otherParams[0]}】和【{otherParams[1]}】各加{countParam}張",
+    "params": [
+      9000007,
+      9000015
+    ],
+    "count_param": 4,
+    "desc_cn": "第2轮自动选择灵植师；牌池中[灵植浇灌]和[空间灵田]各加4张",
+    "desc_en": "You automatically choose the Plant Master on round 2. Add 4 copies of [Spiritual Plant Watering] and [Space Spiritual Field] to your card pool.",
+    "desc_tw": "第2輪自動選擇靈植師；牌池中[靈植澆灌]和[空間靈田]各加4張"
+  },
+  {
+    "id": 23,
+    "name_cn": "命理天赋",
+    "name_en": "Fortune Talent",
+    "name_tw": "命理天賦",
+    "desc_cn_template": "第2轮自动选择命理师；牌池中【{otherParams[0]}】和【{otherParams[1]}】各加{countParam}张",
+    "desc_en_template": "You automatically choose the Fortune Teller on round 2. Add {countParam} copies of 【{otherParams[0]}】 and 【{otherParams[1]}】 to your card pool.",
+    "desc_tw_template": "第2輪自動選擇命理師；牌池中【{otherParams[0]}】和【{otherParams[1]}】各加{countParam}張",
+    "params": [
+      11000018,
+      11000021
+    ],
+    "count_param": 4,
+    "desc_cn": "第2轮自动选择命理师；牌池中[厄劫缠身]和[命运轮回]各加4张",
+    "desc_en": "You automatically choose the Fortune Teller on round 2. Add 4 copies of [Envelop In Disaster] and [Cycle of Fate] to your card pool.",
+    "desc_tw": "第2輪自動選擇命理師；牌池中[厄劫纏身]和[命運輪回]各加4張"
+  },
+  {
+    "id": 24,
+    "name_cn": "势在必得",
+    "name_en": "Inevitability of Success",
+    "name_tw": "勢在必得",
+    "desc_cn_template": "每轮首次常规换牌优先换出本局游戏中未曾获得过的牌。\n\n<color=#909090><size=15><i>设计者：剑气纵横三千里</i></size></color>",
+    "desc_en_template": "The first time you Exchange Card in each round, you will priority get the card that have not been obtained in this game.\n\n<color=#909090><size=15><i>Designed by 剑气纵横三千里</i></size></color>",
+    "desc_tw_template": "每輪首次常規換牌優先換出本局游戲中未曾獲得過的牌。\n\n <color=#909090><size=15><i>設計者：劍氣縱橫三千里</i></size></color>",
+    "params": [],
+    "count_param": 1,
+    "desc_cn": "每轮首次常规换牌优先换出本局游戏中未曾获得过的牌。\n\n<color=#909090><size=15><i>设计者：剑气纵横三千里</i></size></color>",
+    "desc_en": "The first time you Exchange Card in each round, you will priority get the card that have not been obtained in this game.\n\n<color=#909090><size=15><i>Designed by 剑气纵横三千里</i></size></color>",
+    "desc_tw": "每輪首次常規換牌優先換出本局游戲中未曾獲得過的牌。\n\n <color=#909090><size=15><i>設計者：劍氣縱橫三千里</i></size></color>"
+  },
+  {
+    "id": 101,
+    "name_cn": "狂剑之命",
+    "name_en": "Fate of Unrestrained Sword",
+    "name_tw": "狂劍之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】（选择{countParam}次后失效）",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】  (disabled after selecting {countParam} time(s))",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】（選擇{countParam}次後失效）",
+    "params": [
+      70
+    ],
+    "count_param": 2,
+    "desc_cn": "每次突破时仙命选项必然包含[狂之执念]（选择2次后失效）",
+    "desc_en": "Immortal Fate option will definitely include [Mad Obsession]  (disabled after selecting 2 time(s))",
+    "desc_tw": "每次突破時仙命選項必然包含[狂之執念]（選擇2次後失效）"
+  },
+  {
+    "id": 102,
+    "name_cn": "狂剑专精",
+    "name_en": "Mastery of Unrestrained Sword",
+    "name_tw": "狂劍專精",
+    "desc_cn_template": "自身门派牌池中的狂剑各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of each Unrestrained Sword card to your card pool.",
+    "desc_tw_template": "自身門派牌池中的狂劍各加{countParam}張",
+    "params": [
+      1000022,
+      1000035,
+      1000066
+    ],
+    "count_param": 6,
+    "desc_cn": "自身门派牌池中的狂剑各加6张",
+    "desc_en": "Add 6 copies of each Unrestrained Sword card to your card pool.",
+    "desc_tw": "自身門派牌池中的狂劍各加6張"
+  },
+  {
+    "id": 103,
+    "name_cn": "狂剑道统",
+    "name_en": "Omen of Unrestrained Sword",
+    "name_tw": "狂劍道統",
+    "desc_cn_template": "道韵预感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include 【{otherParams[0]}】 and 【{otherParams[1]}】",
+    "desc_tw_template": "道韵預感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "params": [
+      1000035,
+      1000066
+    ],
+    "count_param": 4,
+    "desc_cn": "道韵预感必然包含[狂剑•二式]和[狂剑•零式]",
+    "desc_en": "Daoist Rhyme Omen option will definitely include [Unrestrained Sword - Two] and [Unrestrained Sword - Zero]",
+    "desc_tw": "道韵預感必然包含[狂劍•二式]和[狂劍•零式]"
+  },
+  {
+    "id": 104,
+    "name_cn": "狂剑秘传",
+    "name_en": "Esoteric of Unrestrained Sword",
+    "name_tw": "狂劍秘傳",
+    "desc_cn_template": "牌池中加入【{otherParams[0]}】、【{otherParams[1]}】、【{otherParams[2]}】各{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】, 【{otherParams[1]}】, and 【{otherParams[2]}】to your card pool.",
+    "desc_tw_template": "牌池中加入【{otherParams[0]}】、【{otherParams[1]}】、【{otherParams[2]}】各{countParam}張",
+    "params": [
+      1000049,
+      50,
+      1000061
+    ],
+    "count_param": 4,
+    "desc_cn": "牌池中加入[狂剑•盘龙]、[狂龙吞云]、[狂剑•双龙]各4张",
+    "desc_en": "Add 4 copies of [Unrestrained Sword - Dragon Coiled], [Dragon Devours Clouds], and [Unrestrained Sword - Twin Dragons]to your card pool.",
+    "desc_tw": "牌池中加入[狂劍•盤龍]、[狂龍吞雲]、[狂劍•雙龍]各4張"
+  },
+  {
+    "id": 105,
+    "name_cn": "云剑之命",
+    "name_en": "Fate of Cloud Sword",
+    "name_tw": "雲劍之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】（选择{countParam}次后失效）；选择【TALENT_{otherParams[0]}】时减1修为，获得1张云剑（筑基期以上）",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】  (disabled after selecting {countParam} time(s)); When selecting 【TALENT_{otherParams[0]}】, reduce your Cul. by 1, and gain 1 Card of Cloud Sword (Foundation Phase or higher)",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】（選擇{countParam}次後失效）；選擇【TALENT_{otherParams[0]}】時减1修爲，獲得1張雲劍（築基期以上）",
+    "params": [
+      69
+    ],
+    "count_param": 2,
+    "desc_cn": "每次突破时仙命选项必然包含[云之道]（选择2次后失效）；选择[云之道]时减1修为，获得1张云剑（筑基期以上）",
+    "desc_en": "Immortal Fate option will definitely include [Rule Of The Cloud]  (disabled after selecting 2 time(s)); When selecting [Rule Of The Cloud], reduce your Cul. by 1, and gain 1 Card of Cloud Sword (Foundation Phase or higher)",
+    "desc_tw": "每次突破時仙命選項必然包含[雲之道]（選擇2次後失效）；選擇[雲之道]時减1修爲，獲得1張雲劍（築基期以上）"
+  },
+  {
+    "id": 106,
+    "name_cn": "云剑专精",
+    "name_en": "Mastery of Cloud Sword",
+    "name_tw": "雲劍專精",
+    "desc_cn_template": "牌池中元婴期以上的云剑牌各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of each Cloud Sword card at Immortality Phase or above to your card pool.",
+    "desc_tw_template": "牌池中元嬰期以上的雲劍牌各加{countParam}張",
+    "params": [
+      1000039,
+      1000040,
+      1000042,
+      1000060
+    ],
+    "count_param": 4,
+    "desc_cn": "牌池中元婴期以上的云剑牌各加4张",
+    "desc_en": "Add 4 copies of each Cloud Sword card at Immortality Phase or above to your card pool.",
+    "desc_tw": "牌池中元嬰期以上的雲劍牌各加4張"
+  },
+  {
+    "id": 107,
+    "name_cn": "云剑秘传",
+    "name_en": "Esoteric of Cloud Sword",
+    "name_tw": "雲劍秘傳",
+    "desc_cn_template": "牌池中加入【{otherParams[0]}】、【{otherParams[1]}】、【{otherParams[2]}】各{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】, 【{otherParams[1]}】, and 【{otherParams[2]}】 to your card pool.",
+    "desc_tw_template": "牌池中加入【{otherParams[0]}】、【{otherParams[1]}】、【{otherParams[2]}】各{countParam}張",
+    "params": [
+      1000048,
+      47,
+      1000057
+    ],
+    "count_param": 3,
+    "desc_cn": "牌池中加入[云剑•拂晓]、[云剑·晚霞]、[步月登云]各3张",
+    "desc_en": "Add 3 copies of [Cloud Sword - Dawn], [Cloud Sword - Sunset Glow], and [Step Moon Into Cloud] to your card pool.",
+    "desc_tw": "牌池中加入[雲劍•拂曉]、[雲劍·晚霞]、[步月登雲]各3張"
+  },
+  {
+    "id": 108,
+    "name_cn": "云剑道统",
+    "name_en": "Omen of Cloud Sword",
+    "name_tw": "雲劍道統",
+    "desc_cn_template": "道韵预感必然包含1张元婴期云剑和1张化神期云剑",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include a Immortality Phase Cloud Sword and a Incarnation Phase Cloud Sword.",
+    "desc_tw_template": "道韵預感必然包含1張元嬰期雲劍和1張化神期雲劍",
+    "params": [
+      1000039,
+      1000040,
+      1000042,
+      1000060
+    ],
+    "count_param": 2,
+    "desc_cn": "道韵预感必然包含1张元婴期云剑和1张化神期云剑",
+    "desc_en": "Daoist Rhyme Omen option will definitely include a Immortality Phase Cloud Sword and a Incarnation Phase Cloud Sword.",
+    "desc_tw": "道韵預感必然包含1張元嬰期雲劍和1張化神期雲劍"
+  },
+  {
+    "id": 109,
+    "name_cn": "灵剑之命",
+    "name_en": "Fate of Spirit Sword",
+    "name_tw": "靈劍之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】和【TALENT_{otherParams[1]}】（选择{countParam}次后失效）；选择【TALENT_{otherParams[0]}】或【TALENT_{otherParams[1]}】时减1修为，获得1张灵剑（筑基期以上）",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】 and 【TALENT_{otherParams[1]}】 (disabled after selecting {countParam} time(s)); When selecting 【TALENT_{otherParams[0]}】 or 【TALENT_{otherParams[1]}】, reduce your Cul. by 1, and gain 1 Card of Spirit Sword (Foundation Phase or higher)",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】和【TALENT_{otherParams[1]}】（選擇{countParam}次後失效）；選擇【TALENT_{otherParams[0]}】或【TALENT_{otherParams[1]}】時减1修爲，獲得1張靈劍（築基期以上）",
+    "params": [
+      13,
+      55
+    ],
+    "count_param": 2,
+    "desc_cn": "每次突破时仙命选项必然包含[储纳灵气]和[灵剑传承]（选择2次后失效）；选择[储纳灵气]或[灵剑传承]时减1修为，获得1张灵剑（筑基期以上）",
+    "desc_en": "Immortal Fate option will definitely include [Store Qi] and [Inheritance of Spirit Sword] (disabled after selecting 2 time(s)); When selecting [Store Qi] or [Inheritance of Spirit Sword], reduce your Cul. by 1, and gain 1 Card of Spirit Sword (Foundation Phase or higher)",
+    "desc_tw": "每次突破時仙命選項必然包含[儲納靈氣]和[靈劍傳承]（選擇2次後失效）；選擇[儲納靈氣]或[靈劍傳承]時减1修爲，獲得1張靈劍（築基期以上）"
+  },
+  {
+    "id": 110,
+    "name_cn": "灵剑专精",
+    "name_en": "Mastery of Spirit Sword",
+    "name_tw": "靈劍專精",
+    "desc_cn_template": "自身门派牌池中金丹期以上的灵剑牌和加灵气的牌各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of each Spirit Sword card and card that add Qi to your card pool at Virtuoso Phase or above.",
+    "desc_tw_template": "自身門派牌池中金丹期以上的靈劍牌和加靈氣的牌各加{countParam}張",
+    "params": [],
+    "count_param": 3,
+    "desc_cn": "自身门派牌池中金丹期以上的灵剑牌和加灵气的牌各加3张",
+    "desc_en": "Add 3 copies of each Spirit Sword card and card that add Qi to your card pool at Virtuoso Phase or above.",
+    "desc_tw": "自身門派牌池中金丹期以上的靈劍牌和加靈氣的牌各加3張"
+  },
+  {
+    "id": 111,
+    "name_cn": "灵剑道统",
+    "name_en": "Omen of Spirit Sword",
+    "name_tw": "靈劍道統",
+    "desc_cn_template": "道韵预感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include 【{otherParams[0]}】 and 【{otherParams[1]}】",
+    "desc_tw_template": "道韵預感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "params": [
+      1000034,
+      1000045
+    ],
+    "count_param": 1,
+    "desc_cn": "道韵预感必然包含[聚灵心法]和[万法归灵剑]",
+    "desc_en": "Daoist Rhyme Omen option will definitely include [Spirit Gather Citta-Dharma] and [Dharma Spirit Sword]",
+    "desc_tw": "道韵預感必然包含[聚靈心法]和[萬法歸靈劍]"
+  },
+  {
+    "id": 112,
+    "name_cn": "剑意之命",
+    "name_en": "Fate of Sword Intent",
+    "name_tw": "劍意之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】（选择{countParam}次后失效）；选择【TALENT_{otherParams[0]}】时减1修为，获得1张加剑意的牌",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】  (disabled after selecting {countParam} time(s)); When selecting 【TALENT_{otherParams[0]}】, reduce your Cul. by 1, and gain 1 Card that add Sword Intent",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】（選擇{countParam}次後失效）；選擇【TALENT_{otherParams[0]}】時减1修爲，獲得1張加劍意的牌",
+    "params": [
+      16
+    ],
+    "count_param": 2,
+    "desc_cn": "每次突破时仙命选项必然包含[剑韵修炼]（选择2次后失效）；选择[剑韵修炼]时减1修为，获得1张加剑意的牌",
+    "desc_en": "Immortal Fate option will definitely include [Sword Rhyme Cultivate]  (disabled after selecting 2 time(s)); When selecting [Sword Rhyme Cultivate], reduce your Cul. by 1, and gain 1 Card that add Sword Intent",
+    "desc_tw": "每次突破時仙命選項必然包含[劍韻修煉]（選擇2次後失效）；選擇[劍韻修煉]時减1修爲，獲得1張加劍意的牌"
+  },
+  {
+    "id": 113,
+    "name_cn": "剑意专精",
+    "name_en": "Mastery of Sword Intent",
+    "name_tw": "劍意專精",
+    "desc_cn_template": "自身门派牌池中加剑意的牌和3段攻击以上的牌各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of each cards with ATK×3 or more and card that add Sword Intent to your card pool.",
+    "desc_tw_template": "自身門派牌池中加劍意的牌和3段攻擊以上的牌各加{countParam}張",
+    "params": [],
+    "count_param": 3,
+    "desc_cn": "自身门派牌池中加剑意的牌和3段攻击以上的牌各加3张",
+    "desc_en": "Add 3 copies of each cards with ATK×3 or more and card that add Sword Intent to your card pool.",
+    "desc_tw": "自身門派牌池中加劍意的牌和3段攻擊以上的牌各加3張"
+  },
+  {
+    "id": 114,
+    "name_cn": "剑意道统",
+    "name_en": "Omen of Sword Intent",
+    "name_tw": "劍意道統",
+    "desc_cn_template": "道韵预感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include 【{otherParams[0]}】 and 【{otherParams[1]}】",
+    "desc_tw_template": "道韵預感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "params": [
+      1000037,
+      1000044
+    ],
+    "count_param": 2,
+    "desc_cn": "道韵预感必然包含[流云乱剑]和[剑意激荡]",
+    "desc_en": "Daoist Rhyme Omen option will definitely include [Flow Cloud Chaos Sword] and [Sword Intent Surge]",
+    "desc_tw": "道韵預感必然包含[流雲亂劍]和[劍意激蕩]"
+  },
+  {
+    "id": 115,
+    "name_cn": "剑意秘传",
+    "name_en": "Esoteric of Sword Intent",
+    "name_tw": "劍意秘傳",
+    "desc_cn_template": "牌池中加入【{otherParams[0]}】、【{otherParams[1]}】、【{otherParams[2]}】各{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】, 【{otherParams[1]}】, and 【{otherParams[2]}】 to your card pool.",
+    "desc_tw_template": "牌池中加入【{otherParams[0]}】、【{otherParams[1]}】、【{otherParams[2]}】各{countParam}張",
+    "params": [
+      1000056,
+      1000050,
+      1000053
+    ],
+    "count_param": 4,
+    "desc_cn": "牌池中加入[一心一剑]、[剑意流转]、[凌剑心法]各4张",
+    "desc_en": "Add 4 copies of [One Heart One Sword], [Sword Intent Flow], and [Apex Sword Citta-Dharma] to your card pool.",
+    "desc_tw": "牌池中加入[一心一劍]、[劍意流轉]、[淩劍心法]各4張"
+  },
+  {
+    "id": 116,
+    "name_cn": "剑阵之命",
+    "name_en": "Fate of Sword Formation",
+    "name_tw": "劍陣之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】（选择{countParam}次后失效）",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】 (disabled after selecting {countParam} time(s))",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】（選擇{countParam}次後失效）",
+    "params": [
+      57
+    ],
+    "count_param": 2,
+    "desc_cn": "每次突破时仙命选项必然包含[剑阵守护]（选择2次后失效）",
+    "desc_en": "Immortal Fate option will definitely include [Sword Formation Guard] (disabled after selecting 2 time(s))",
+    "desc_tw": "每次突破時仙命選項必然包含[劍陣守護]（選擇2次後失效）"
+  },
+  {
+    "id": 117,
+    "name_cn": "剑阵专精",
+    "name_en": "Mastery of Sword Formation",
+    "name_tw": "劍陣專精",
+    "desc_cn_template": "自身门派牌池中金丹期以上的剑阵牌各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of Sword Formation Card to your card pool at Virtuoso Phase or above.",
+    "desc_tw_template": "自身門派牌池中金丹期以上的劍陣牌各加{countParam}張",
+    "params": [
+      1000046,
+      1000041,
+      1000025,
+      1000064
+    ],
+    "count_param": 4,
+    "desc_cn": "自身门派牌池中金丹期以上的剑阵牌各加4张",
+    "desc_en": "Add 4 copies of Sword Formation Card to your card pool at Virtuoso Phase or above.",
+    "desc_tw": "自身門派牌池中金丹期以上的劍陣牌各加4張"
+  },
+  {
+    "id": 118,
+    "name_cn": "剑阵秘传",
+    "name_en": "Esoteric of Sword Formation",
+    "name_tw": "劍陣秘傳",
+    "desc_cn_template": "牌池中加入【{otherParams[0]}】、【{otherParams[1]}】各{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 and 【{otherParams[1]}】 to your card pool.",
+    "desc_tw_template": "牌池中加入【{otherParams[0]}】、【{otherParams[1]}】各{countParam}張",
+    "params": [
+      1000062,
+      1000051
+    ],
+    "count_param": 4,
+    "desc_cn": "牌池中加入[合势剑阵]、[溟空剑阵诀]各4张",
+    "desc_en": "Add 4 copies of [Synergy Sword Formation] and [Emptiness Sword Formation] to your card pool.",
+    "desc_tw": "牌池中加入[合勢劍陣]、[溟空劍陣訣]各4張"
+  },
+  {
+    "id": 119,
+    "name_cn": "剑池之命",
+    "name_en": "Fate of Sword Pool",
+    "name_tw": "劍池之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】（选择{countParam}次后失效）；选择【TALENT_{otherParams[0]}】不再扣减命元",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】 (disabled after selecting {countParam} time(s))；Selecting [TALENT_{otherParams[0]}] will not deduct Destiny of you.",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】（選擇{countParam}次後失效）；選擇【TALENT_{otherParams[0]}】不再扣减命元",
+    "params": [
+      119
+    ],
+    "count_param": 2,
+    "desc_cn": "每次突破时仙命选项必然包含[剑池问心]（选择2次后失效）；选择[剑池问心]不再扣减命元",
+    "desc_en": "Immortal Fate option will definitely include [Sword Pool The Heart Ask] (disabled after selecting 2 time(s))；Selecting [TALENT_119] will not deduct Destiny of you.",
+    "desc_tw": "每次突破時仙命選項必然包含[劍池問心]（選擇2次後失效）；選擇[劍池問心]不再扣减命元"
+  },
+  {
+    "id": 120,
+    "name_cn": "灵剑秘传",
+    "name_en": "Esoteric of Spirit Sword",
+    "name_tw": "靈劍秘傳",
+    "desc_cn_template": "牌池中加入【{otherParams[0]}】和【{otherParams[1]}】各{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 and  【{otherParams[1]}】 to your card pool.",
+    "desc_tw_template": "牌池中加入【{otherParams[0]}】和【{otherParams[1]}】各{countParam}張",
+    "params": [
+      1000047,
+      49
+    ],
+    "count_param": 6,
+    "desc_cn": "牌池中加入[韵灵剑]和[百兽灵剑阵]各6张",
+    "desc_en": "Add 6 copies of [Rhyme Spirit Sword] and  [Beast Spirit Sword Formation] to your card pool.",
+    "desc_tw": "牌池中加入[韻靈劍]和[百獸靈劍陣]各6張"
+  },
+  {
+    "id": 121,
+    "name_cn": "剑阵道统",
+    "name_en": "Omen of Sword Formation",
+    "name_tw": "劍陣道統",
+    "desc_cn_template": "道韵预感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include 【{otherParams[0]}】 and 【{otherParams[1]}】",
+    "desc_tw_template": "道韵預感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "params": [
+      1000025,
+      1000064
+    ],
+    "count_param": 2,
+    "desc_cn": "道韵预感必然包含[御空剑阵]和[连环剑阵]",
+    "desc_en": "Daoist Rhyme Omen option will definitely include [Rule Sky Sword Formation] and [Chain Sword Formation]",
+    "desc_tw": "道韵預感必然包含[禦空劍陣]和[連環劍陣]"
+  },
+  {
+    "id": 122,
+    "name_cn": "百鸟试炼",
+    "name_en": "Trial of CentiBird",
+    "name_tw": "百鳥試煉",
+    "desc_cn_template": "若战斗时卡组包含2张以上“灵剑”牌，则下轮首次换出元婴牌时，必定为【{otherParams[0]}】（最多生效{countParam}次）",
+    "desc_en_template": "If your deck had 2 or more “Spirit Sword” cards in the previous battle, the first Immortality Phase card you obtain through Exchange will be 【{otherParams[0]}】 (once per round, up to {countParam} times)",
+    "desc_tw_template": "若戰鬥時卡組包含2張以上“靈劍”牌，則下輪首次換出元嬰牌時，必定爲【{otherParams[0]}】（最多生效{countParam}次）",
+    "params": [
+      1000065
+    ],
+    "count_param": 4,
+    "desc_cn": "若战斗时卡组包含2张以上“灵剑”牌，则下轮首次换出元婴牌时，必定为[百鸟灵剑诀]（最多生效4次）",
+    "desc_en": "If your deck had 2 or more “Spirit Sword” cards in the previous battle, the first Immortality Phase card you obtain through Exchange will be [CentiBird Spirit Sword Rhythm] (once per round, up to 4 times)",
+    "desc_tw": "若戰鬥時卡組包含2張以上“靈劍”牌，則下輪首次換出元嬰牌時，必定爲[百鳥靈劍訣]（最多生效4次）"
+  },
+  {
+    "id": 123,
+    "name_cn": "飞灵试炼",
+    "name_en": "Trial of Flying Spirit",
+    "name_tw": "飛靈試煉",
+    "desc_cn_template": "若战斗中自身灵气达到过5点以上，则下轮首次换出化神牌时，必定为【{otherParams[0]}】（最多生效{countParam}次）",
+    "desc_en_template": "If your Qi reached 5 or more in the previous battle, the first Incarnation Phase card you obtain through Exchange will be 【{otherParams[0]}】 (once per round, up to {countParam} times)",
+    "desc_tw_template": "若戰鬥中自身靈氣達到過5點以上，則下輪首次換出化神牌時，必定爲【{otherParams[0]}】（最多生效{countParam}次）",
+    "params": [
+      1000043
+    ],
+    "count_param": 2,
+    "desc_cn": "若战斗中自身灵气达到过5点以上，则下轮首次换出化神牌时，必定为[飞灵闪影剑]（最多生效2次）",
+    "desc_en": "If your Qi reached 5 or more in the previous battle, the first Incarnation Phase card you obtain through Exchange will be [Flying Spirit Shade Sword] (once per round, up to 2 times)",
+    "desc_tw": "若戰鬥中自身靈氣達到過5點以上，則下輪首次換出化神牌時，必定爲[飛靈閃影劍]（最多生效2次）"
+  },
+  {
+    "id": 124,
+    "name_cn": "青龙融汇",
+    "name_en": "Fusion of Azure Dragon",
+    "name_tw": "青龍融匯",
+    "desc_cn_template": "【{otherParams[0]}】+【{otherParams[1]}】可在手牌中合成1级【{otherParams[2]}】（最多合成{countParam}次）",
+    "desc_en_template": "【{otherParams[0]}】 and 【{otherParams[1]}】 can be fused into a level 1 【{otherParams[2]}】 in your hand (up to {countParam} times)",
+    "desc_tw_template": "【{otherParams[0]}】+【{otherParams[1]}】可在手牌中合成1級【{otherParams[2]}】（最多合成{countParam}次）",
+    "params": [
+      1000046,
+      1000038,
+      48
+    ],
+    "count_param": 2,
+    "desc_cn": "[镜花剑阵]+[灵感剑]可在手牌中合成1级[青龙剑阵]（最多合成2次）",
+    "desc_en": "[Mirror Flower Sword Formation] and [Inspiration Sword] can be fused into a level 1 [Azure Dragon Sword Formation] in your hand (up to 2 times)",
+    "desc_tw": "[鏡花劍陣]+[靈感劍]可在手牌中合成1級[青龍劍陣]（最多合成2次）"
+  },
+  {
+    "id": 201,
+    "name_cn": "卜卦之命",
+    "name_en": "Fate of Divination",
+    "name_tw": "卜卦之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】（选择{countParam}次后失效）",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】 (disabled after selecting {countParam} time(s))",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】（選擇{countParam}次後失效）",
+    "params": [
+      30
+    ],
+    "count_param": 2,
+    "desc_cn": "每次突破时仙命选项必然包含[卜卦]（选择2次后失效）",
+    "desc_en": "Immortal Fate option will definitely include [Divination] (disabled after selecting 2 time(s))",
+    "desc_tw": "每次突破時仙命選項必然包含[卜卦]（選擇2次後失效）"
+  },
+  {
+    "id": 202,
+    "name_cn": "六爻专精",
+    "name_en": "Mastery of Hexagram Formacide",
+    "name_tw": "六爻專精",
+    "desc_cn_template": "牌池中【{otherParams[0]}】增加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 to your card pool.",
+    "desc_tw_template": "牌池中【{otherParams[0]}】增加{countParam}張",
+    "params": [
+      4000014
+    ],
+    "count_param": 6,
+    "desc_cn": "牌池中[六爻绝阵]增加6张",
+    "desc_en": "Add 6 copies of [Hexagram Formacide] to your card pool.",
+    "desc_tw": "牌池中[六爻絕陣]增加6張"
+  },
+  {
+    "id": 203,
+    "name_cn": "六爻道统",
+    "name_en": "Omen of Hexagram Formacide",
+    "name_tw": "六爻道統",
+    "desc_cn_template": "道韵预感必然包含【{otherParams[0]}】",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include 【{otherParams[0]}】",
+    "desc_tw_template": "道韵預感必然包含【{otherParams[0]}】",
+    "params": [
+      4000014
+    ],
+    "count_param": 2,
+    "desc_cn": "道韵预感必然包含[六爻绝阵]",
+    "desc_en": "Daoist Rhyme Omen option will definitely include [Hexagram Formacide]",
+    "desc_tw": "道韵預感必然包含[六爻絕陣]"
+  },
+  {
+    "id": 204,
+    "name_cn": "卦象道统",
+    "name_en": "Omen of Hexagram",
+    "name_tw": "卦象道統",
+    "desc_cn_template": "道韵预感必然包含【{otherParams[0]}】",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include 【{otherParams[0]}】",
+    "desc_tw_template": "道韵預感必然包含【{otherParams[0]}】",
+    "params": [
+      4000026
+    ],
+    "count_param": 2,
+    "desc_cn": "道韵预感必然包含[乾卦]",
+    "desc_en": "Daoist Rhyme Omen option will definitely include [Heaven Hexagram]",
+    "desc_tw": "道韵預感必然包含[乾卦]"
+  },
+  {
+    "id": 205,
+    "name_cn": "雷法秘传",
+    "name_en": "Esoteric of Thunder ",
+    "name_tw": "雷法秘傳",
+    "desc_cn_template": "牌池中加入{countParam}张【{otherParams[0]}】，且其他名字含“雷”的牌各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 and card with Thunder in name to your card pool.",
+    "desc_tw_template": "牌池中加入{countParam}張【{otherParams[0]}】，且其他名字含“雷”的牌各加{countParam}張",
+    "params": [
+      4000064,
+      4000004,
+      4000030,
+      4000068,
+      4000063,
+      4000046
+    ],
+    "count_param": 6,
+    "desc_cn": "牌池中加入6张[雷霆心法]，且其他名字含“雷”的牌各加6张",
+    "desc_en": "Add 6 copies of [Thunder Citta-Dharma] and card with Thunder in name to your card pool.",
+    "desc_tw": "牌池中加入6張[雷霆心法]，且其他名字含“雷”的牌各加6張"
+  },
+  {
+    "id": 206,
+    "name_cn": "星弈之命",
+    "name_en": "Fate of Astral Move",
+    "name_tw": "星弈之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】和【TALENT_{otherParams[1]}】（选择{countParam}次后失效）",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】 and 【TALENT_{otherParams[1]}】 (disabled after selecting {countParam} time(s))",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】和【TALENT_{otherParams[1]}】（選擇{countParam}次後失效）",
+    "params": [
+      31,
+      58
+    ],
+    "count_param": 2,
+    "desc_cn": "每次突破时仙命选项必然包含[观星]和[星弈传承]（选择2次后失效）",
+    "desc_en": "Immortal Fate option will definitely include [Stargaze] and [Inheritance of Astral Move] (disabled after selecting 2 time(s))",
+    "desc_tw": "每次突破時仙命選項必然包含[觀星]和[星弈傳承]（選擇2次後失效）"
+  },
+  {
+    "id": 207,
+    "name_cn": "星弈专精",
+    "name_en": "Mastery of Astral Move",
+    "name_tw": "星弈專精",
+    "desc_cn_template": "牌池中的星弈牌和【{otherParams[0]}】各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 and Astral Move card to your card pool.",
+    "desc_tw_template": "牌池中的星弈牌和【{otherParams[0]}】各加{countParam}張",
+    "params": [
+      4000045
+    ],
+    "count_param": 3,
+    "desc_cn": "牌池中的星弈牌和[天元心法]各加3张",
+    "desc_en": "Add 3 copies of [Polaris Citta-Dharma] and Astral Move card to your card pool.",
+    "desc_tw": "牌池中的星弈牌和[天元心法]各加3張"
+  },
+  {
+    "id": 208,
+    "name_cn": "星弈道统",
+    "name_en": "Omen of Astral Move",
+    "name_tw": "星弈道統",
+    "desc_cn_template": "道韵预感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include 【{otherParams[0]}】 and 【{otherParams[1]}】",
+    "desc_tw_template": "道韵預感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "params": [
+      4000038,
+      4000045
+    ],
+    "count_param": 18446744073709551610,
+    "desc_cn": "道韵预感必然包含[星弈•飞]和[天元心法]",
+    "desc_en": "Daoist Rhyme Omen option will definitely include [Astral Move - Fly] and [Polaris Citta-Dharma]",
+    "desc_tw": "道韵預感必然包含[星弈•飛]和[天元心法]"
+  },
+  {
+    "id": 209,
+    "name_cn": "星弈秘传",
+    "name_en": "Esoteric of Astral Move",
+    "name_tw": "星弈秘傳",
+    "desc_cn_template": "牌池中加入【{otherParams[0]}】、【{otherParams[1]}】、【{otherParams[2]}】各{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】, 【{otherParams[1]}】 and 【{otherParams[2]}】 to your card pool.",
+    "desc_tw_template": "牌池中加入【{otherParams[0]}】、【{otherParams[1]}】、【{otherParams[2]}】各{countParam}張",
+    "params": [
+      4000051,
+      4000065,
+      53
+    ],
+    "count_param": 2,
+    "desc_cn": "牌池中加入[星弈•屠龙]、[流星天陨]、[星弈·双飞燕]各2张",
+    "desc_en": "Add 2 copies of [Astral Move - Dragon Slay], [Meteorite Meteor] and [Astral Move - Twin Swallows] to your card pool.",
+    "desc_tw": "牌池中加入[星弈•屠龍]、[流星天隕]、[星弈·雙飛燕]各2張"
+  },
+  {
+    "id": 210,
+    "name_cn": "蛇影专精",
+    "name_en": "Mastery of Extremely Suspicious",
+    "name_tw": "蛇影專精",
+    "desc_cn_template": "牌池中【{otherParams[0]}】增加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 to your card pool.",
+    "desc_tw_template": "牌池中【{otherParams[0]}】增加{countParam}張",
+    "params": [
+      4000059
+    ],
+    "count_param": 8,
+    "desc_cn": "牌池中[杯弓蛇影]增加8张",
+    "desc_en": "Add 8 copies of [Extremely Suspicious] to your card pool.",
+    "desc_tw": "牌池中[杯弓蛇影]增加8張"
+  },
+  {
+    "id": 211,
+    "name_cn": "星蚀之命",
+    "name_en": "Fate of Astral Eclipse",
+    "name_tw": "星蝕之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】（选择{countParam}次后失效）",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】 (disabled after selecting {countParam} time(s))",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】（選擇{countParam}次後失效）",
+    "params": [
+      103
+    ],
+    "count_param": 2,
+    "desc_cn": "每次突破时仙命选项必然包含[星蚀]（选择2次后失效）",
+    "desc_en": "Immortal Fate option will definitely include [Astral Eclipse] (disabled after selecting 2 time(s))",
+    "desc_tw": "每次突破時仙命選項必然包含[星蝕]（選擇2次後失效）"
+  },
+  {
+    "id": 212,
+    "name_cn": "生机之命",
+    "name_en": "Fate of Vitality",
+    "name_tw": "生機之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】和【TALENT_{otherParams[1]}】（选择{countParam}次后失效）；选择【TALENT_{otherParams[0]}】或【TALENT_{otherParams[1]}】时额外加4生命上限。",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】 and 【TALENT_{otherParams[1]}】 (disabled after selecting {countParam} time(s)); When selecting 【TALENT_{otherParams[0]}】 or 【TALENT_{otherParams[1]}】, your Max HP increased by 4.",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】和【TALENT_{otherParams[1]}】（選擇{countParam}次後失效）；選擇【TALENT_{otherParams[0]}】或【TALENT_{otherParams[1]}】時額外加4生命上限。",
+    "params": [
+      120,
+      71
+    ],
+    "count_param": 2,
+    "desc_cn": "每次突破时仙命选项必然包含[妙手回春]和[后发制人]（选择2次后失效）；选择[妙手回春]或[后发制人]时额外加4生命上限。",
+    "desc_en": "Immortal Fate option will definitely include [Rejuvenation] and [Post Strike] (disabled after selecting 2 time(s)); When selecting [Rejuvenation] or [Post Strike], your Max HP increased by 4.",
+    "desc_tw": "每次突破時仙命選項必然包含[妙手回春]和[後發制人]（選擇2次後失效）；選擇[妙手回春]或[後發制人]時額外加4生命上限。"
+  },
+  {
+    "id": 213,
+    "name_cn": "生机专精",
+    "name_en": "Mastery of Vitality",
+    "name_tw": "生機專精",
+    "desc_cn_template": "牌池中【{otherParams[0]}】、【{otherParams[1]}】、【{otherParams[2]}】各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】, 【{otherParams[1]}】, and 【{otherParams[2]}】to your card pool.",
+    "desc_tw_template": "牌池中【{otherParams[0]}】、【{otherParams[1]}】、【{otherParams[2]}】各加{countParam}張",
+    "params": [
+      4000027,
+      4000042,
+      4000060
+    ],
+    "count_param": 4,
+    "desc_cn": "牌池中[静气心法]、[枯木逢春]、[气吞山河]各加4张",
+    "desc_en": "Add 4 copies of [Stillness Citta-Dharma], [Revitalized], and [Great Spirit]to your card pool.",
+    "desc_tw": "牌池中[靜氣心法]、[枯木逢春]、[氣吞山河]各加4張"
+  },
+  {
+    "id": 214,
+    "name_cn": "生机道统",
+    "name_en": "Omen of Vitality",
+    "name_tw": "生機道統",
+    "desc_cn_template": "道韵预感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include 【{otherParams[0]}】 and 【{otherParams[1]}】",
+    "desc_tw_template": "道韵預感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "params": [
+      4000027,
+      4000060
+    ],
+    "count_param": 2,
+    "desc_cn": "道韵预感必然包含[静气心法]和[气吞山河]",
+    "desc_en": "Daoist Rhyme Omen option will definitely include [Stillness Citta-Dharma] and [Great Spirit]",
+    "desc_tw": "道韵預感必然包含[靜氣心法]和[氣吞山河]"
+  },
+  {
+    "id": 215,
+    "name_cn": "生机秘传",
+    "name_en": "Esoteric of Vitality",
+    "name_tw": "生機秘傳",
+    "desc_cn_template": "牌池中加入【{otherParams[0]}】、【{otherParams[1]}】、【{otherParams[2]}】和【{otherParams[3]}】各{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】, 【{otherParams[1]}】, 【{otherParams[2]}】 and 【{otherParams[3]}】 to your card pool.",
+    "desc_tw_template": "牌池中加入【{otherParams[0]}】、【{otherParams[1]}】、【{otherParams[2]}】和【{otherParams[3]}】各{countParam}張",
+    "params": [
+      4000047,
+      4000048,
+      4000050,
+      4000057
+    ],
+    "count_param": 4,
+    "desc_cn": "牌池中加入[卦灵返生]、[生机绽放]、[日月争辉]和[铁树开花]各4张",
+    "desc_en": "Add 4 copies of [Hexagrams Spirit Resurrection], [Vitality Blossom], [Sun And Moon For Glory] and [Thin On The Ground] to your card pool.",
+    "desc_tw": "牌池中加入[卦靈返生]、[生機綻放]、[日月爭輝]和[鐵樹開花]各4張"
+  },
+  {
+    "id": 216,
+    "name_cn": "后招秘传",
+    "name_en": "Esoteric of Post Action",
+    "name_tw": "後招秘傳",
+    "desc_cn_template": "牌池中加入【{otherParams[0]}】和【{otherParams[1]}】各{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 and 【{otherParams[1]}】 to your card pool.",
+    "desc_tw_template": "牌池中加入【{otherParams[0]}】和【{otherParams[1]}】各{countParam}張",
+    "params": [
+      4000049,
+      54
+    ],
+    "count_param": 4,
+    "desc_cn": "牌池中加入[先发制人]和[滴水穿石]各4张",
+    "desc_en": "Add 4 copies of [Preemptive Strike] and [Water Drop Erosion] to your card pool.",
+    "desc_tw": "牌池中加入[先發制人]和[滴水穿石]各4張"
+  },
+  {
+    "id": 217,
+    "name_cn": "后招专精",
+    "name_en": "Mastery of Post Action",
+    "name_tw": "後招專精",
+    "desc_cn_template": "牌池中【{otherParams[0]}】、【{otherParams[1]}】、【{otherParams[2]}】和【{otherParams[3]}】各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】, 【{otherParams[1]}】, 【{otherParams[2]}】 and 【{otherParams[3]}】 to your card pool.",
+    "desc_tw_template": "牌池中【{otherParams[0]}】、【{otherParams[1]}】、【{otherParams[2]}】和【{otherParams[3]}】各加{countParam}張",
+    "params": [
+      4000033,
+      4000036,
+      4000060,
+      4000066
+    ],
+    "count_param": 3,
+    "desc_cn": "牌池中[海底捞月]、[金蝉脱壳]、[气吞山河]和[黄雀在后]各加3张",
+    "desc_en": "Add 3 copies of [Drag Moon In Sea], [Escape Plan], [Great Spirit] and [Hunter Hunting Hunter] to your card pool.",
+    "desc_tw": "牌池中[海底撈月]、[金蟬脫殼]、[氣吞山河]和[黃雀在後]各加3張"
+  },
+  {
+    "id": 218,
+    "name_cn": "后招道统",
+    "name_en": "Omen of Post Action",
+    "name_tw": "後招道統",
+    "desc_cn_template": "道韵预感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include 【{otherParams[0]}】 and 【{otherParams[1]}】",
+    "desc_tw_template": "道韵預感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "params": [
+      4000041,
+      4000066
+    ],
+    "count_param": 2,
+    "desc_cn": "道韵预感必然包含[梅开二度]和[黄雀在后]",
+    "desc_en": "Daoist Rhyme Omen option will definitely include [Strike Twice] and [Hunter Hunting Hunter]",
+    "desc_tw": "道韵預感必然包含[梅開二度]和[黃雀在後]"
+  },
+  {
+    "id": 219,
+    "name_cn": "灵卦秘传",
+    "name_en": "Esoteric of Spiritual Divination",
+    "name_tw": "靈卦秘傳",
+    "desc_cn_template": "牌池中加入{countParam}张【{otherParams[0]}】",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 to your card pool.",
+    "desc_tw_template": "牌池中加入{countParam}張【{otherParams[0]}】",
+    "params": [
+      51
+    ],
+    "count_param": 6,
+    "desc_cn": "牌池中加入6张[灵卦术]",
+    "desc_en": "Add 6 copies of [Spiritual Divination] to your card pool.",
+    "desc_tw": "牌池中加入6張[靈卦術]"
+  },
+  {
+    "id": 220,
+    "name_cn": "化劫之命",
+    "name_en": "Fate of Changes",
+    "name_tw": "化劫之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】（选择{countParam}次后失效）；选择【TALENT_{otherParams[0]}】时若自身命元≤30，则加9命元",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】  (disabled after selecting {countParam} time(s)); When selecting 【TALENT_{otherParams[0]}】, if your Destiny ≤ 30, you gain 9 Destiny.",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】（選擇{countParam}次後失效）；選擇【TALENT_{otherParams[0]}】時若自身命元≤30，則加9命元",
+    "params": [
+      72
+    ],
+    "count_param": 2,
+    "desc_cn": "每次突破时仙命选项必然包含[易数化劫]（选择2次后失效）；选择[易数化劫]时若自身命元≤30，则加9命元",
+    "desc_en": "Immortal Fate option will definitely include [Changes Of Catastrophe]  (disabled after selecting 2 time(s)); When selecting [Changes Of Catastrophe], if your Destiny ≤ 30, you gain 9 Destiny.",
+    "desc_tw": "每次突破時仙命選項必然包含[易數化劫]（選擇2次後失效）；選擇[易數化劫]時若自身命元≤30，則加9命元"
+  },
+  {
+    "id": 221,
+    "name_cn": "内伤秘传",
+    "name_en": "Esoteric of Internal Injury",
+    "name_tw": "內傷秘傳",
+    "desc_cn_template": "牌池中加入【{otherParams[0]}】和【{otherParams[1]}】各{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 and 【{otherParams[1]}】 to your card pool.",
+    "desc_tw_template": "牌池中加入【{otherParams[0]}】和【{otherParams[1]}】各{countParam}張",
+    "params": [
+      4000059,
+      4000056
+    ],
+    "count_param": 4,
+    "desc_cn": "牌池中加入[杯弓蛇影]和[落花流水]各4张",
+    "desc_en": "Add 4 copies of [Extremely Suspicious] and [Flowers And Water] to your card pool.",
+    "desc_tw": "牌池中加入[杯弓蛇影]和[落花流水]各4張"
+  },
+  {
+    "id": 222,
+    "name_cn": "雷霆之命",
+    "name_en": "Fate of Thunder",
+    "name_tw": "雷霆之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】（选择{countParam}次后失效）",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】  (disabled after selecting {countParam} time(s))",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】（選擇{countParam}次後失效）",
+    "params": [
+      117
+    ],
+    "count_param": 2,
+    "desc_cn": "每次突破时仙命选项必然包含[雷霆传承]（选择2次后失效）",
+    "desc_en": "Immortal Fate option will definitely include [Inheritance of Thunder]  (disabled after selecting 2 time(s))",
+    "desc_tw": "每次突破時仙命選項必然包含[雷霆傳承]（選擇2次後失效）"
+  },
+  {
+    "id": 223,
+    "name_cn": "离卦试炼",
+    "name_en": "Trial of Flame Hexagram",
+    "name_tw": "離卦試煉",
+    "desc_cn_template": "若战斗中自身卦象达到过3点以上，则下轮首次换出元婴牌时，必定为【{otherParams[0]}】（最多生效{countParam}次）",
+    "desc_en_template": "If your Hexagram reached 3 or more in the previous battle, the first Immortality Phase card you obtain through Exchange will be 【{otherParams[0]}】 (once per round, up to {countParam} times)",
+    "desc_tw_template": "若戰鬥中自身卦象達到過3點以上，則下輪首次換出元嬰牌時，必定爲【{otherParams[0]}】（最多生效{countParam}次）",
+    "params": [
+      4000034
+    ],
+    "count_param": 4,
+    "desc_cn": "若战斗中自身卦象达到过3点以上，则下轮首次换出元婴牌时，必定为[离卦]（最多生效4次）",
+    "desc_en": "If your Hexagram reached 3 or more in the previous battle, the first Immortality Phase card you obtain through Exchange will be [Flame Hexagram] (once per round, up to 4 times)",
+    "desc_tw": "若戰鬥中自身卦象達到過3點以上，則下輪首次換出元嬰牌時，必定爲[離卦]（最多生效4次）"
+  },
+  {
+    "id": 224,
+    "name_cn": "五雷试炼",
+    "name_en": "Trial of Five Thunders",
+    "name_tw": "五雷試煉",
+    "desc_cn_template": "若战斗时卡组包含4张以上名字含“雷”的牌，则下轮首次换出化神牌时，必定为【{otherParams[0]}】（最多生效{countParam}次）",
+    "desc_en_template": "If your deck had 4 or more cards with name containing \"Thunder\" in the previous battle, the first Incarnation Phase card you obtain through Exchange will be 【{otherParams[0]}】 (once per round, up to {countParam} times)",
+    "desc_tw_template": "若戰鬥時卡組包含4張以上名字含“雷”的牌，則下輪首次換出化神牌時，必定爲【{otherParams[0]}】（最多生效{countParam}次）",
+    "params": [
+      4000046
+    ],
+    "count_param": 2,
+    "desc_cn": "若战斗时卡组包含4张以上名字含“雷”的牌，则下轮首次换出化神牌时，必定为[五雷轰顶]（最多生效2次）",
+    "desc_en": "If your deck had 4 or more cards with name containing \"Thunder\" in the previous battle, the first Incarnation Phase card you obtain through Exchange will be [Five Thunders] (once per round, up to 2 times)",
+    "desc_tw": "若戰鬥時卡組包含4張以上名字含“雷”的牌，則下輪首次換出化神牌時，必定爲[五雷轟頂]（最多生效2次）"
+  },
+  {
+    "id": 225,
+    "name_cn": "摘花融汇",
+    "name_en": "Fusion of Throw Petals",
+    "name_tw": "摘花融匯",
+    "desc_cn_template": "【{otherParams[0]}】+【{otherParams[1]}】可在手牌中合成1级【{otherParams[2]}】（最多合成{countParam}次）",
+    "desc_en_template": "【{otherParams[0]}】 and 【{otherParams[1]}】 can be fused into a level 1 【{otherParams[2]}】 in your hand (up to {countParam} times)",
+    "desc_tw_template": "【{otherParams[0]}】+【{otherParams[1]}】可在手牌中合成1級【{otherParams[2]}】（最多合成{countParam}次）",
+    "params": [
+      4000021,
+      4000037,
+      52
+    ],
+    "count_param": 2,
+    "desc_cn": "[落花有意]+[反震心法]可在手牌中合成1级[摘花飞叶]（最多合成2次）",
+    "desc_en": "[Flower Sentient] and [Repel Citta-Dharma] can be fused into a level 1 [Throw Petals] in your hand (up to 2 times)",
+    "desc_tw": "[落花有意]+[反震心法]可在手牌中合成1級[摘花飛葉]（最多合成2次）"
+  },
+  {
+    "id": 301,
+    "name_cn": "木灵专精",
+    "name_en": "Mastery of Wood Spirit",
+    "name_tw": "木靈專精",
+    "desc_cn_template": "自身门派牌池中金丹期以上的木灵牌各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of each Wood Spirit card to your card pool at Virtuoso Phase or above.",
+    "desc_tw_template": "自身門派牌池中金丹期以上的木靈牌各加{countParam}張",
+    "params": [
+      7000036,
+      7000028,
+      7000027,
+      7000043,
+      7000061
+    ],
+    "count_param": 4,
+    "desc_cn": "自身门派牌池中金丹期以上的木灵牌各加4张",
+    "desc_en": "Add 4 copies of each Wood Spirit card to your card pool at Virtuoso Phase or above.",
+    "desc_tw": "自身門派牌池中金丹期以上的木靈牌各加4張"
+  },
+  {
+    "id": 302,
+    "name_cn": "木灵道统",
+    "name_en": "Omen of Wood Spirit",
+    "name_tw": "木靈道統",
+    "desc_cn_template": "道韵预感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include 【{otherParams[0]}】 and 【{otherParams[1]}】",
+    "desc_tw_template": "道韵預感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "params": [
+      7000043,
+      7000061
+    ],
+    "count_param": 3,
+    "desc_cn": "道韵预感必然包含[木灵•柳纷飞]和[木灵•暗香]",
+    "desc_en": "Daoist Rhyme Omen option will definitely include [Wood Spirit - Willow Leaf] and [Wood Spirit - Fragrant]",
+    "desc_tw": "道韵預感必然包含[木靈•柳紛飛]和[木靈•暗香]"
+  },
+  {
+    "id": 303,
+    "name_cn": "火灵专精",
+    "name_en": "Mastery of Fire Spirit",
+    "name_tw": "火靈專精",
+    "desc_cn_template": "自身门派牌池中金丹期以上的火灵牌各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of each Fire Spirit card to your card pool at Virtuoso Phase or above.",
+    "desc_tw_template": "自身門派牌池中金丹期以上的火靈牌各加{countParam}張",
+    "params": [
+      7000031,
+      7000039,
+      7000038,
+      7000056,
+      7000032
+    ],
+    "count_param": 4,
+    "desc_cn": "自身门派牌池中金丹期以上的火灵牌各加4张",
+    "desc_en": "Add 4 copies of each Fire Spirit card to your card pool at Virtuoso Phase or above.",
+    "desc_tw": "自身門派牌池中金丹期以上的火靈牌各加4張"
+  },
+  {
+    "id": 304,
+    "name_cn": "火灵道统",
+    "name_en": "Omen of Fire Spirit",
+    "name_tw": "火靈道統",
+    "desc_cn_template": "道韵预感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include 【{otherParams[0]}】 and 【{otherParams[1]}】",
+    "desc_tw_template": "道韵預感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "params": [
+      7000056,
+      7000038
+    ],
+    "count_param": 3,
+    "desc_cn": "道韵预感必然包含[火灵•烈燎原]和[火灵•瞬燃]",
+    "desc_en": "Daoist Rhyme Omen option will definitely include [Fire Spirit - Blazing Prairie] and [Fire Spirit - Flash Fire]",
+    "desc_tw": "道韵預感必然包含[火靈•烈燎原]和[火靈•瞬燃]"
+  },
+  {
+    "id": 305,
+    "name_cn": "土灵专精",
+    "name_en": "Mastery of Earth Spirit",
+    "name_tw": "土靈專精",
+    "desc_cn_template": "自身门派牌池中【{otherParams[0]}】和元婴期以上的土灵牌各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 and each Earth Spirit card at Immortality Phase or above to your card pool.",
+    "desc_tw_template": "自身門派牌池中【{otherParams[0]}】和元嬰期以上的土靈牌各加{countParam}張",
+    "params": [
+      7000023,
+      7000040,
+      7000033,
+      7000053
+    ],
+    "count_param": 4,
+    "desc_cn": "自身门派牌池中[土灵阵]和元婴期以上的土灵牌各加4张",
+    "desc_en": "Add 4 copies of [Earth Spirit Formation] and each Earth Spirit card at Immortality Phase or above to your card pool.",
+    "desc_tw": "自身門派牌池中[土靈陣]和元嬰期以上的土靈牌各加4張"
+  },
+  {
+    "id": 306,
+    "name_cn": "土灵道统",
+    "name_en": "Omen of Earth Spirit",
+    "name_tw": "土靈道統",
+    "desc_cn_template": "道韵预感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include 【{otherParams[0]}】 and 【{otherParams[1]}】",
+    "desc_tw_template": "道韵預感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "params": [
+      7000053,
+      7000033
+    ],
+    "count_param": 3,
+    "desc_cn": "道韵预感必然包含[土灵•合八荒]和[土灵•流沙]",
+    "desc_en": "Daoist Rhyme Omen option will definitely include [Earth Spirit - Combine World] and [Earth Spirit - Quicksand]",
+    "desc_tw": "道韵預感必然包含[土靈•合八荒]和[土靈•流沙]"
+  },
+  {
+    "id": 307,
+    "name_cn": "金灵专精",
+    "name_en": "Mastery of Metal Spirit",
+    "name_tw": "金靈專精",
+    "desc_cn_template": "自身门派牌池中【{otherParams[0]}】和元婴期以上的金灵牌各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 and each Metal Spirit card at Immortality Phase or above to your card pool.",
+    "desc_tw_template": "自身門派牌池中【{otherParams[0]}】和元嬰期以上的金靈牌各加{countParam}張",
+    "params": [
+      7000016,
+      7000034,
+      7000035,
+      7000042
+    ],
+    "count_param": 3,
+    "desc_cn": "自身门派牌池中[金灵阵]和元婴期以上的金灵牌各加3张",
+    "desc_en": "Add 3 copies of [Metal Spirit Formation] and each Metal Spirit card at Immortality Phase or above to your card pool.",
+    "desc_tw": "自身門派牌池中[金靈陣]和元嬰期以上的金靈牌各加3張"
+  },
+  {
+    "id": 308,
+    "name_cn": "金灵道统",
+    "name_en": "Omen of Metal Spirit",
+    "name_tw": "金靈道統",
+    "desc_cn_template": "道韵预感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include 【{otherParams[0]}】 and 【{otherParams[1]}】",
+    "desc_tw_template": "道韵預感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "params": [
+      7000042,
+      7000034
+    ],
+    "count_param": 18446744073709551614,
+    "desc_cn": "道韵预感必然包含[金灵•巨鼎落]和[金灵•飞梭]",
+    "desc_en": "Daoist Rhyme Omen option will definitely include [Metal Spirit - Giant Tripod] and [Metal Spirit - Shuttle]",
+    "desc_tw": "道韵預感必然包含[金靈•巨鼎落]和[金靈•飛梭]"
+  },
+  {
+    "id": 309,
+    "name_cn": "水灵专精",
+    "name_en": "Mastery of Water Spirit",
+    "name_tw": "水靈專精",
+    "desc_cn_template": "自身门派牌池中金丹期以上的水灵牌各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of each Water Spirit card to your card pool at Virtuoso Phase or above.",
+    "desc_tw_template": "自身門派牌池中金丹期以上的水靈牌各加{countParam}張",
+    "params": [
+      7000057,
+      7000020,
+      7000059,
+      7000030,
+      7000029
+    ],
+    "count_param": 4,
+    "desc_cn": "自身门派牌池中金丹期以上的水灵牌各加4张",
+    "desc_en": "Add 4 copies of each Water Spirit card to your card pool at Virtuoso Phase or above.",
+    "desc_tw": "自身門派牌池中金丹期以上的水靈牌各加4張"
+  },
+  {
+    "id": 310,
+    "name_cn": "水灵道统",
+    "name_en": "Omen of Water Spirit",
+    "name_tw": "水靈道統",
+    "desc_cn_template": "道韵预感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include 【{otherParams[0]}】 and 【{otherParams[1]}】",
+    "desc_tw_template": "道韵預感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "params": [
+      7000057,
+      7000030
+    ],
+    "count_param": 3,
+    "desc_cn": "道韵预感必然包含[水灵•纳百川]和[水灵•腾浪]",
+    "desc_en": "Daoist Rhyme Omen option will definitely include [Water Spirit - Combine Rivers] and [Water Spirit - Great Waves]",
+    "desc_tw": "道韵預感必然包含[水靈•納百川]和[水靈•騰浪]"
+  },
+  {
+    "id": 311,
+    "name_cn": "相生之命",
+    "name_en": "Fate of Generating Interaction",
+    "name_tw": "相生之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】和【TALENT_{otherParams[1]}】（选择{countParam}次后失效）",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】 and 【TALENT_{otherParams[1]}】 (disabled after selecting {countParam} time(s))",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】和【TALENT_{otherParams[1]}】（選擇{countParam}次後失效）",
+    "params": [
+      102,
+      127
+    ],
+    "count_param": 3,
+    "desc_cn": "每次突破时仙命选项必然包含[五行循环]和[相生相成]（选择3次后失效）",
+    "desc_en": "Immortal Fate option will definitely include [Cycle Of Five Elements] and [Mutual Growth] (disabled after selecting 3 time(s))",
+    "desc_tw": "每次突破時仙命選項必然包含[五行循環]和[相生相成]（選擇3次後失效）"
+  },
+  {
+    "id": 312,
+    "name_cn": "无极道统",
+    "name_en": "Omen of Ultimate",
+    "name_tw": "無極道統",
+    "desc_cn_template": "道韵预感必然包含【{otherParams[0]}】",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include 【{otherParams[0]}】",
+    "desc_tw_template": "道韵預感必然包含【{otherParams[0]}】",
+    "params": [
+      7000058
+    ],
+    "count_param": 18446744073709551608,
+    "desc_cn": "道韵预感必然包含[混元无极阵]",
+    "desc_en": "Daoist Rhyme Omen option will definitely include [Ultimate World Formation]",
+    "desc_tw": "道韵預感必然包含[混元無極陣]"
+  },
+  {
+    "id": 313,
+    "name_cn": "碎击道统",
+    "name_en": "Omen of World Smash",
+    "name_tw": "碎擊道統",
+    "desc_cn_template": "道韵预感必然包含【{otherParams[0]}】；第15轮的道韵预感变为2级【{otherParams[0]}】",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include 【{otherParams[0]}】; Round 15's Daoist Rhyme Omen option will include Lv. 2 【{otherParams[0]}】",
+    "desc_tw_template": "道韵預感必然包含【{otherParams[0]}】；第15輪的道韵預感變爲2級【{otherParams[0]}】",
+    "params": [
+      7000066
+    ],
+    "count_param": 18446744073709551606,
+    "desc_cn": "道韵预感必然包含[混元碎击]；第15轮的道韵预感变为2级[混元碎击]",
+    "desc_en": "Daoist Rhyme Omen option will definitely include [World Smash]; Round 15's Daoist Rhyme Omen option will include Lv. 2 [World Smash]",
+    "desc_tw": "道韵預感必然包含[混元碎擊]；第15輪的道韵預感變爲2級[混元碎擊]"
+  },
+  {
+    "id": 314,
+    "name_cn": "混元专精",
+    "name_en": "Mastery of World",
+    "name_tw": "混元專精",
+    "desc_cn_template": "牌池中【{otherParams[0]}】和【{otherParams[1]}】各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 and 【{otherParams[1]}】 to your card pool.",
+    "desc_tw_template": "牌池中【{otherParams[0]}】和【{otherParams[1]}】各加{countParam}張",
+    "params": [
+      7000058,
+      7000066
+    ],
+    "count_param": 4,
+    "desc_cn": "牌池中[混元无极阵]和[混元碎击]各加4张",
+    "desc_en": "Add 4 copies of [Ultimate World Formation] and [World Smash] to your card pool.",
+    "desc_tw": "牌池中[混元無極陣]和[混元碎擊]各加4張"
+  },
+  {
+    "id": 315,
+    "name_cn": "相生专精",
+    "name_en": "Mastery of Generating Interaction",
+    "name_tw": "相生專精",
+    "desc_cn_template": "牌池中加入【7000067】和化神期的五行牌各{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【7000067】 and Incarnation Phase Five Element card to your card pool.",
+    "desc_tw_template": "牌池中加入【7000067】和化神期的五行牌各{countParam}張",
+    "params": [
+      7000067,
+      7000042,
+      7000043,
+      7000057,
+      7000056,
+      7000053
+    ],
+    "count_param": 3,
+    "desc_cn": "牌池中加入[五行流转]和化神期的五行牌各3张",
+    "desc_en": "Add 3 copies of [Five Elements Circulation] and Incarnation Phase Five Element card to your card pool.",
+    "desc_tw": "牌池中加入[五行流轉]和化神期的五行牌各3張"
+  },
+  {
+    "id": 316,
+    "name_cn": "专一之命",
+    "name_en": "Fate of Concentrated Element",
+    "name_tw": "專一之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】以及和卡组首张牌相同五行的传承仙命",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】and Inheritance of the Five Elements of the first card in your deck.",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】以及和卡組首張牌相同五行的傳承仙命",
+    "params": [
+      128
+    ],
+    "count_param": 3,
+    "desc_cn": "每次突破时仙命选项必然包含[五行专一]以及和卡组首张牌相同五行的传承仙命",
+    "desc_en": "Immortal Fate option will definitely include [Concentrated Element]and Inheritance of the Five Elements of the first card in your deck.",
+    "desc_tw": "每次突破時仙命選項必然包含[五行專一]以及和卡組首張牌相同五行的傳承仙命"
+  },
+  {
+    "id": 317,
+    "name_cn": "天髓道统",
+    "name_en": "Omen of Heavenly Marrow",
+    "name_tw": "天髓道統",
+    "desc_cn_template": "道韵预感必然包含【{otherParams[0]}】",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include 【{otherParams[0]}】",
+    "desc_tw_template": "道韵預感必然包含【{otherParams[0]}】",
+    "params": [
+      7000073
+    ],
+    "count_param": 4,
+    "desc_cn": "道韵预感必然包含[五行天髓诀]",
+    "desc_en": "Daoist Rhyme Omen option will definitely include [Five Elements Heavenly Marrow Rhythm]",
+    "desc_tw": "道韵預感必然包含[五行天髓訣]"
+  },
+  {
+    "id": 318,
+    "name_cn": "斩浪秘传",
+    "name_en": "Esoteric of Wave Cutter",
+    "name_tw": "斬浪秘傳",
+    "desc_cn_template": "牌池中加入【{otherParams[0]}】和【{otherParams[1]}】各{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 and 【{otherParams[1]}】 to your card pool.",
+    "desc_tw_template": "牌池中加入【{otherParams[0]}】和【{otherParams[1]}】各{countParam}張",
+    "params": [
+      55,
+      58
+    ],
+    "count_param": 4,
+    "desc_cn": "牌池中加入[野渡之印]和[斩浪之印]各4张",
+    "desc_en": "Add 4 copies of [Wild Crossing Seal] and [Wave Cutter Seal] to your card pool.",
+    "desc_tw": "牌池中加入[野渡之印]和[斬浪之印]各4張"
+  },
+  {
+    "id": 319,
+    "name_cn": "滚石秘传",
+    "name_en": "Esoteric of Boulder",
+    "name_tw": "滾石秘傳",
+    "desc_cn_template": "牌池中加入【{otherParams[0]}】和【{otherParams[1]}】各{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 and 【{otherParams[1]}】 to your card pool.",
+    "desc_tw_template": "牌池中加入【{otherParams[0]}】和【{otherParams[1]}】各{countParam}張",
+    "params": [
+      7000047,
+      57
+    ],
+    "count_param": 4,
+    "desc_cn": "牌池中加入[土灵•韵金]和[滚石之印]各4张",
+    "desc_en": "Add 4 copies of [Earth Spirit - Rhythm Metal] and [Boulder Seal] to your card pool.",
+    "desc_tw": "牌池中加入[土靈•韻金]和[滾石之印]各4張"
+  },
+  {
+    "id": 320,
+    "name_cn": "熔岩秘传",
+    "name_en": "Esoteric of Lava",
+    "name_tw": "熔岩秘傳",
+    "desc_cn_template": "牌池中加入【{otherParams[0]}】和【{otherParams[1]}】各{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 and 【{otherParams[1]}】 to your card pool.",
+    "desc_tw_template": "牌池中加入【{otherParams[0]}】和【{otherParams[1]}】各{countParam}張",
+    "params": [
+      7000049,
+      56
+    ],
+    "count_param": 4,
+    "desc_cn": "牌池中加入[火灵•窑土]和[熔岩之印]各4张",
+    "desc_en": "Add 4 copies of [Fire Spirit - Rhythm Earth] and [Lava Seal] to your card pool.",
+    "desc_tw": "牌池中加入[火靈•窯土]和[熔岩之印]各4張"
+  },
+  {
+    "id": 321,
+    "name_cn": "天髓专精",
+    "name_en": "Mastery of Heavenly Marrow",
+    "name_tw": "天髓專精",
+    "desc_cn_template": "牌池中【{otherParams[0]}】增加{countParam}张；若自身上轮卡组中仅有一种五行，置换【{otherParams[0]}】时将必定获得该五行的牌。",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 to your card pool; If you had only one type of the Five Elements in your deck last round, you will always get Five Elements card of that type when you Exchange 【{otherParams[0]}】.",
+    "desc_tw_template": "牌池中【{otherParams[0]}】增加{countParam}張；若自身上輪卡組中僅有一種五行，置換【{otherParams[0]}】時將必定獲得該五行的牌。",
+    "params": [
+      7000073
+    ],
+    "count_param": 8,
+    "desc_cn": "牌池中[五行天髓诀]增加8张；若自身上轮卡组中仅有一种五行，置换[五行天髓诀]时将必定获得该五行的牌。",
+    "desc_en": "Add 8 copies of [Five Elements Heavenly Marrow Rhythm] to your card pool; If you had only one type of the Five Elements in your deck last round, you will always get Five Elements card of that type when you Exchange [Five Elements Heavenly Marrow Rhythm].",
+    "desc_tw": "牌池中[五行天髓訣]增加8張；若自身上輪卡組中僅有一種五行，置換[五行天髓訣]時將必定獲得該五行的牌。"
+  },
+  {
+    "id": 322,
+    "name_cn": "灼心试炼",
+    "name_en": "Trial of Heart Fire",
+    "name_tw": "灼心試煉",
+    "desc_cn_template": "若战斗中至少扣减过对方16点生命上限，则下轮首次换出元婴牌时，必定为【{otherParams[0]}】（最多生效{countParam}次）",
+    "desc_en_template": "If your opponent lost 16 or more Max HP in the previous battle, the first Immortality Phase card you obtain through Exchange will be 【{otherParams[0]}】 (once per round, up to {countParam} times)",
+    "desc_tw_template": "若戰鬥中至少扣减過對方16點生命上限，則下輪首次換出元嬰牌時，必定爲【{otherParams[0]}】（最多生效{countParam}次）",
+    "params": [
+      7000039
+    ],
+    "count_param": 4,
+    "desc_cn": "若战斗中至少扣减过对方16点生命上限，则下轮首次换出元婴牌时，必定为[火灵•灼心]（最多生效4次）",
+    "desc_en": "If your opponent lost 16 or more Max HP in the previous battle, the first Immortality Phase card you obtain through Exchange will be [Fire Spirit - Heart Fire] (once per round, up to 4 times)",
+    "desc_tw": "若戰鬥中至少扣减過對方16點生命上限，則下輪首次換出元嬰牌時，必定爲[火靈•灼心]（最多生效4次）"
+  },
+  {
+    "id": 323,
+    "name_cn": "玫刺试炼",
+    "name_en": "Trial of Thorn",
+    "name_tw": "玫刺試煉",
+    "desc_cn_template": "若战斗中至少加过自身12点生命，则下轮首次换出元婴牌时，必定为【{otherParams[0]}】（最多生效{countParam}次）",
+    "desc_en_template": "If you added 12 or more HP in the previous battle, the first Immortality Phase card you obtain through Exchange will be 【{otherParams[0]}】 (once per round, up to {countParam} times)",
+    "desc_tw_template": "若戰鬥中至少加過自身12點生命，則下輪首次換出元嬰牌時，必定爲【{otherParams[0]}】（最多生效{countParam}次）",
+    "params": [
+      7000027
+    ],
+    "count_param": 4,
+    "desc_cn": "若战斗中至少加过自身12点生命，则下轮首次换出元婴牌时，必定为[木灵•玫刺]（最多生效4次）",
+    "desc_en": "If you added 12 or more HP in the previous battle, the first Immortality Phase card you obtain through Exchange will be [Wood Spirit - Thorn] (once per round, up to 4 times)",
+    "desc_tw": "若戰鬥中至少加過自身12點生命，則下輪首次換出元嬰牌時，必定爲[木靈•玫刺]（最多生效4次）"
+  },
+  {
+    "id": 324,
+    "name_cn": "焚天融汇",
+    "name_en": "Fusion of Burning Sky",
+    "name_tw": "焚天融匯",
+    "desc_cn_template": "【{otherParams[0]}】+【{otherParams[1]}】可在手牌中合成1级【{otherParams[2]}】（最多合成{countParam}次）",
+    "desc_en_template": "【{otherParams[0]}】 and 【{otherParams[1]}】 can be fused into a level 1 【{otherParams[2]}】 in your hand (up to {countParam} times)",
+    "desc_tw_template": "【{otherParams[0]}】+【{otherParams[1]}】可在手牌中合成1級【{otherParams[2]}】（最多合成{countParam}次）",
+    "params": [
+      7000032,
+      7000056,
+      7000045
+    ],
+    "count_param": 1,
+    "desc_cn": "[火灵•轰爆]+[火灵•烈燎原]可在手牌中合成1级[火灵•焚天焱]（最多合成1次）",
+    "desc_en": "[Fire Spirit - Blast] and [Fire Spirit - Blazing Prairie] can be fused into a level 1 [Fire Spirit - Burning Sky] in your hand (up to 1 times)",
+    "desc_tw": "[火靈•轟爆]+[火靈•烈燎原]可在手牌中合成1級[火靈•焚天焱]（最多合成1次）"
+  },
+  {
+    "id": 401,
+    "name_cn": "体修之命",
+    "name_en": "Fate of Physique",
+    "name_tw": "體修之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】和【TALENT_{otherParams[1]}】",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】 and 【TALENT_{otherParams[1]}】",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】和【TALENT_{otherParams[1]}】",
+    "params": [
+      146,
+      144
+    ],
+    "count_param": 6,
+    "desc_cn": "每次突破时仙命选项必然包含[体修入道]和[炼体传承]",
+    "desc_en": "Immortal Fate option will definitely include [Physique Master] and [Inheritance of Physique Building]",
+    "desc_tw": "每次突破時仙命選項必然包含[體修入道]和[煉體傳承]"
+  },
+  {
+    "id": 402,
+    "name_cn": "掌法专精",
+    "name_en": "Mastery of Palms",
+    "name_tw": "掌法專精",
+    "desc_cn_template": "自身门派牌池中名字含“掌”的牌各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of Palms card to your card pool.",
+    "desc_tw_template": "自身門派牌池中名字含“掌”的牌各加{countParam}張",
+    "params": [
+      10000005,
+      10000017,
+      10000028,
+      10000047
+    ],
+    "count_param": 4,
+    "desc_cn": "自身门派牌池中名字含“掌”的牌各加4张",
+    "desc_en": "Add 4 copies of Palms card to your card pool.",
+    "desc_tw": "自身門派牌池中名字含“掌”的牌各加4張"
+  },
+  {
+    "id": 403,
+    "name_cn": "百杀道统",
+    "name_en": "Omen of Realm-Killing",
+    "name_tw": "百殺道統",
+    "desc_cn_template": "道韵预感必然包含【{otherParams[0]}】",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include 【{otherParams[0]}】",
+    "desc_tw_template": "道韵預感必然包含【{otherParams[0]}】",
+    "params": [
+      10000047
+    ],
+    "count_param": 4,
+    "desc_cn": "道韵预感必然包含[百杀破境掌]",
+    "desc_en": "Daoist Rhyme Omen option will definitely include [Realm-Killing Palms]",
+    "desc_tw": "道韵預感必然包含[百殺破境掌]"
+  },
+  {
+    "id": 404,
+    "name_cn": "锻体秘传",
+    "name_en": "Esoteric of Exercise",
+    "name_tw": "鍛體秘傳",
+    "desc_cn_template": "牌池中加入【{otherParams[0]}】和【{otherParams[1]}】各{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 and 【{otherParams[1]}】 to your card pool.",
+    "desc_tw_template": "牌池中加入【{otherParams[0]}】和【{otherParams[1]}】各{countParam}張",
+    "params": [
+      10000057,
+      10000062
+    ],
+    "count_param": 3,
+    "desc_cn": "牌池中加入[力若疯魔]和[破茧化蝶]各3张",
+    "desc_en": "Add 3 copies of [Strength Driven Mad] and [Break Cocoon] to your card pool.",
+    "desc_tw": "牌池中加入[力若瘋魔]和[破繭化蝶]各3張"
+  },
+  {
+    "id": 405,
+    "name_cn": "锻体专精",
+    "name_en": "Mastery of Exercise",
+    "name_tw": "鍛體專精",
+    "desc_cn_template": "牌池中【{otherParams[0]}】、【{otherParams[1]}】、【{otherParams[2]}】、【{otherParams[3]}】和【{otherParams[4]}】各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】, 【{otherParams[1]}】, 【{otherParams[2]}】, 【{otherParams[3]}】 and 【{otherParams[4]}】 to your card pool.",
+    "desc_tw_template": "牌池中【{otherParams[0]}】、【{otherParams[1]}】、【{otherParams[2]}】、【{otherParams[3]}】和【{otherParams[4]}】各加{countParam}張",
+    "params": [
+      10000004,
+      10000016,
+      10000027,
+      10000037,
+      10000048
+    ],
+    "count_param": 4,
+    "desc_cn": "牌池中[锻拳]、[锻筋]、[锻骨]、[锻髓]和[锻神开海]各加4张",
+    "desc_en": "Add 4 copies of [Exercise Fist], [Exercise Tendons], [Exercise Bones], [Exercise Marrow] and [Exercise Soul] to your card pool.",
+    "desc_tw": "牌池中[鍛拳]、[鍛筋]、[鍛骨]、[鍛髓]和[鍛神開海]各加4張"
+  },
+  {
+    "id": 406,
+    "name_cn": "气势之命",
+    "name_en": "Fate of Force",
+    "name_tw": "氣勢之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】（选择{countParam}次后失效）",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】 (disabled after selecting {countParam} time(s))",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】（選擇{countParam}次後失效）",
+    "params": [
+      145
+    ],
+    "count_param": 2,
+    "desc_cn": "每次突破时仙命选项必然包含[气势充沛]（选择2次后失效）",
+    "desc_en": "Immortal Fate option will definitely include [Full of Force] (disabled after selecting 2 time(s))",
+    "desc_tw": "每次突破時仙命選項必然包含[氣勢充沛]（選擇2次後失效）"
+  },
+  {
+    "id": 407,
+    "name_cn": "气势专精",
+    "name_en": "Mastery of Force",
+    "name_tw": "氣勢專精",
+    "desc_cn_template": "自身门派牌池中金丹期以上所有加气势的牌各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of card that add Force to your card pool at Virtuoso Phase or above.",
+    "desc_tw_template": "自身門派牌池中金丹期以上所有加氣勢的牌各加{countParam}張",
+    "params": [
+      10000020,
+      10000034,
+      10000033,
+      10000044,
+      10000042,
+      10000051
+    ],
+    "count_param": 3,
+    "desc_cn": "自身门派牌池中金丹期以上所有加气势的牌各加3张",
+    "desc_en": "Add 3 copies of card that add Force to your card pool at Virtuoso Phase or above.",
+    "desc_tw": "自身門派牌池中金丹期以上所有加氣勢的牌各加3張"
+  },
+  {
+    "id": 408,
+    "name_cn": "气势道统",
+    "name_en": "Omen of Force",
+    "name_tw": "氣勢道統",
+    "desc_cn_template": "道韵预感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include 【{otherParams[0]}】 and 【{otherParams[1]}】",
+    "desc_tw_template": "道韵預感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "params": [
+      10000051,
+      10000052
+    ],
+    "count_param": 2,
+    "desc_cn": "道韵预感必然包含[威震四方]和[天地浩荡]",
+    "desc_en": "Daoist Rhyme Omen option will definitely include [Gather Intense Force] and [Vast Universe]",
+    "desc_tw": "道韵預感必然包含[威震四方]和[天地浩蕩]"
+  },
+  {
+    "id": 409,
+    "name_cn": "崩拳之命",
+    "name_en": "Fate of Crash Fist",
+    "name_tw": "崩拳之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】（选择{countParam}次后失效）；选择【TALENT_{otherParams[0]}】时减1修为，获得1张崩拳（筑基期以上）",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】  (disabled after selecting {countParam} time(s)); When selecting 【TALENT_{otherParams[0]}】, reduce your Cul. by 1, and gain 1 Card of Crash Fist (Foundation Phase or higher)",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】（選擇{countParam}次後失效）；選擇【TALENT_{otherParams[0]}】時减1修爲，獲得1張崩拳（築基期以上）",
+    "params": [
+      143
+    ],
+    "count_param": 2,
+    "desc_cn": "每次突破时仙命选项必然包含[崩拳传承]（选择2次后失效）；选择[崩拳传承]时减1修为，获得1张崩拳（筑基期以上）",
+    "desc_en": "Immortal Fate option will definitely include [Inheritance of Crash Fist]  (disabled after selecting 2 time(s)); When selecting [Inheritance of Crash Fist], reduce your Cul. by 1, and gain 1 Card of Crash Fist (Foundation Phase or higher)",
+    "desc_tw": "每次突破時仙命選項必然包含[崩拳傳承]（選擇2次後失效）；選擇[崩拳傳承]時减1修爲，獲得1張崩拳（築基期以上）"
+  },
+  {
+    "id": 410,
+    "name_cn": "崩拳专精",
+    "name_en": "Mastery of Crash Fist",
+    "name_tw": "崩拳專精",
+    "desc_cn_template": "自身门派牌池中金丹期以上所有崩拳牌各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of Crash Fist card to your card pool at Virtuoso Phase or above.",
+    "desc_tw_template": "自身門派牌池中金丹期以上所有崩拳牌各加{countParam}張",
+    "params": [],
+    "count_param": 4,
+    "desc_cn": "自身门派牌池中金丹期以上所有崩拳牌各加4张",
+    "desc_en": "Add 4 copies of Crash Fist card to your card pool at Virtuoso Phase or above.",
+    "desc_tw": "自身門派牌池中金丹期以上所有崩拳牌各加4張"
+  },
+  {
+    "id": 411,
+    "name_cn": "崩拳道统",
+    "name_en": "Omen of Crash Fist",
+    "name_tw": "崩拳道統",
+    "desc_cn_template": "道韵预感必然包含【{otherParams[0]}】、【{otherParams[1]}】和【{otherParams[2]}】",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include 【{otherParams[0]}】, 【{otherParams[1]}】 and 【{otherParams[2]}】",
+    "desc_tw_template": "道韵預感必然包含【{otherParams[0]}】、【{otherParams[1]}】和【{otherParams[2]}】",
+    "params": [
+      10000044,
+      10000045,
+      10000046
+    ],
+    "count_param": 4,
+    "desc_cn": "道韵预感必然包含[崩灭心法]、[崩拳•闪击]和[崩拳•惊触]",
+    "desc_en": "Daoist Rhyme Omen option will definitely include [Crash Citta-Dharma], [Crash Fist - Blink] and [Crash Fist - Shocked]",
+    "desc_tw": "道韵預感必然包含[崩滅心法]、[崩拳•閃擊]和[崩拳•驚觸]"
+  },
+  {
+    "id": 412,
+    "name_cn": "崩拳秘传",
+    "name_en": "Esoteric of Crash Fist",
+    "name_tw": "崩拳秘傳",
+    "desc_cn_template": "牌池中加入{countParam}张【{otherParams[0]}】",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 to your card pool.",
+    "desc_tw_template": "牌池中加入{countParam}張【{otherParams[0]}】",
+    "params": [
+      10000060
+    ],
+    "count_param": 6,
+    "desc_cn": "牌池中加入6张[崩拳•双影]",
+    "desc_en": "Add 6 copies of [Crash Fist - Double] to your card pool.",
+    "desc_tw": "牌池中加入6張[崩拳•雙影]"
+  },
+  {
+    "id": 413,
+    "name_cn": "冥心之命",
+    "name_en": "Fate of Dark Heart",
+    "name_tw": "冥心之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】（选择{countParam}次后失效）；选择【TALENT_{otherParams[0]}】时减8体魄，加2修为（体魄不足则无效）。",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】  (disabled after selecting {countParam} time(s)); When selecting 【TALENT_{otherParams[0]}】, reduce your Physique by 8, and gain 2 Cul. (ineffective if Physique is insufficient).",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】（選擇{countParam}次後失效）；選擇【TALENT_{otherParams[0]}】時减8體魄，加2修爲（體魄不足則無效）。",
+    "params": [
+      150
+    ],
+    "count_param": 2,
+    "desc_cn": "每次突破时仙命选项必然包含[冥心烙印]（选择2次后失效）；选择[冥心烙印]时减8体魄，加2修为（体魄不足则无效）。",
+    "desc_en": "Immortal Fate option will definitely include [Mark of Dark Heart]  (disabled after selecting 2 time(s)); When selecting [Mark of Dark Heart], reduce your Physique by 8, and gain 2 Cul. (ineffective if Physique is insufficient).",
+    "desc_tw": "每次突破時仙命選項必然包含[冥心烙印]（選擇2次後失效）；選擇[冥心烙印]時减8體魄，加2修爲（體魄不足則無效）。"
+  },
+  {
+    "id": 414,
+    "name_cn": "冥玄专精",
+    "name_en": "Mastery of Soul",
+    "name_tw": "冥玄專精",
+    "desc_cn_template": "牌池中【{otherParams[0]}】、【{otherParams[1]}】、【{otherParams[2]}】和【{otherParams[3]}】各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】, 【{otherParams[1]}】, 【{otherParams[2]}】 and 【{otherParams[3]}】 to your card pool.",
+    "desc_tw_template": "牌池中【{otherParams[0]}】、【{otherParams[1]}】、【{otherParams[2]}】和【{otherParams[3]}】各加{countParam}張",
+    "params": [
+      10000039,
+      10000040,
+      10000050,
+      10000068
+    ],
+    "count_param": 3,
+    "desc_cn": "牌池中[冥影身法]、[玄手夺魂]、[灵玄迷踪步]和[玄心斩魄]各加3张",
+    "desc_en": "Add 3 copies of [Styx Agility], [Soul Seizing], [Elusive Footwork] and [Soul Cleaving] to your card pool.",
+    "desc_tw": "牌池中[冥影身法]、[玄手奪魂]、[靈玄迷踪步]和[玄心斬魄]各加3張"
+  },
+  {
+    "id": 415,
+    "name_cn": "冥玄道统",
+    "name_en": "Omen of Soul",
+    "name_tw": "冥玄道統",
+    "desc_cn_template": "道韵预感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include 【{otherParams[0]}】 and 【{otherParams[1]}】",
+    "desc_tw_template": "道韵預感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "params": [
+      10000040,
+      10000068
+    ],
+    "count_param": 4,
+    "desc_cn": "道韵预感必然包含[玄手夺魂]和[玄心斩魄]",
+    "desc_en": "Daoist Rhyme Omen option will definitely include [Soul Seizing] and [Soul Cleaving]",
+    "desc_tw": "道韵預感必然包含[玄手奪魂]和[玄心斬魄]"
+  },
+  {
+    "id": 416,
+    "name_cn": "身法道统",
+    "name_en": "Omen of Agility",
+    "name_tw": "身法道統",
+    "desc_cn_template": "道韵预感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "desc_en_template": "Daoist Rhyme Omen option will definitely include 【{otherParams[0]}】 and 【{otherParams[1]}】",
+    "desc_tw_template": "道韵預感必然包含【{otherParams[0]}】和【{otherParams[1]}】",
+    "params": [
+      10000039,
+      10000038
+    ],
+    "count_param": 4,
+    "desc_cn": "道韵预感必然包含[冥影身法]和[鹤步]",
+    "desc_en": "Daoist Rhyme Omen option will definitely include [Styx Agility] and [Crane Footwork]",
+    "desc_tw": "道韵預感必然包含[冥影身法]和[鶴步]"
+  },
+  {
+    "id": 417,
+    "name_cn": "冥魂秘传",
+    "name_en": "Esoteric of Soul",
+    "name_tw": "冥魂秘傳",
+    "desc_cn_template": "牌池中加入【{otherParams[0]}】和【{otherParams[1]}】各{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 and 【{otherParams[1]}】 to your card pool.",
+    "desc_tw_template": "牌池中加入【{otherParams[0]}】和【{otherParams[1]}】各{countParam}張",
+    "params": [
+      10000055,
+      10000064
+    ],
+    "count_param": 3,
+    "desc_cn": "牌池中加入[百毒不侵]和[鬼音葬魂]各3张",
+    "desc_en": "Add 3 copies of [Toxin Immunity] and [Eerie Melody Buries Soul] to your card pool.",
+    "desc_tw": "牌池中加入[百毒不侵]和[鬼音葬魂]各3張"
+  },
+  {
+    "id": 418,
+    "name_cn": "健体之命",
+    "name_en": "Fate of Body",
+    "name_tw": "健體之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】和【TALENT_{otherParams[1]}】（选择{countParam}次后失效）",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】 and 【TALENT_{otherParams[1]}】 (disabled after selecting {countParam} time(s))",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】和【TALENT_{otherParams[1]}】（選擇{countParam}次後失效）",
+    "params": [
+      149,
+      176
+    ],
+    "count_param": 2,
+    "desc_cn": "每次突破时仙命选项必然包含[再生之躯]和[筋骨健壮]（选择2次后失效）",
+    "desc_en": "Immortal Fate option will definitely include [Regenerating Body] and [Firmness Body] (disabled after selecting 2 time(s))",
+    "desc_tw": "每次突破時仙命選項必然包含[再生之軀]和[筋骨健壯]（選擇2次後失效）"
+  },
+  {
+    "id": 419,
+    "name_cn": "药浴秘传",
+    "name_en": "Esoteric of Herbal Bath",
+    "name_tw": "藥浴秘傳",
+    "desc_cn_template": "牌池中加入{countParam}张【{otherParams[0]}】",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 to your card pool.",
+    "desc_tw_template": "牌池中加入{countParam}張【{otherParams[0]}】",
+    "params": [
+      10000058
+    ],
+    "count_param": 4,
+    "desc_cn": "牌池中加入4张[灵草药浴]",
+    "desc_en": "Add 4 copies of [Herbal Bath] to your card pool.",
+    "desc_tw": "牌池中加入4張[靈草藥浴]"
+  },
+  {
+    "id": 420,
+    "name_cn": "逍遥秘传",
+    "name_en": "Esoteric of Carefree",
+    "name_tw": "逍遙秘傳",
+    "desc_cn_template": "牌池中加入【{otherParams[0]}】和【{otherParams[1]}】各{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 and 【{otherParams[1]}】 to your card pool.",
+    "desc_tw_template": "牌池中加入【{otherParams[0]}】和【{otherParams[1]}】各{countParam}張",
+    "params": [
+      10000056,
+      99000113
+    ],
+    "count_param": 4,
+    "desc_cn": "牌池中加入[醉卧逍遥]和[逍遥古琴]各4张",
+    "desc_en": "Add 4 copies of [Lying Drunk] and [Carefree Guqin] to your card pool.",
+    "desc_tw": "牌池中加入[醉臥逍遙]和[逍遙古琴]各4張"
+  },
+  {
+    "id": 421,
+    "name_cn": "冲霄专精",
+    "name_en": "Mastery of Surging Waves",
+    "name_tw": "沖霄專精",
+    "desc_cn_template": "牌池中【{otherParams[0]}】和【{otherParams[1]}】各加{countParam}张",
+    "desc_en_template": "Add {countParam} copies of 【{otherParams[0]}】 and 【{otherParams[1]}】 to your card pool.",
+    "desc_tw_template": "牌池中【{otherParams[0]}】和【{otherParams[1]}】各加{countParam}張",
+    "params": [
+      10000042,
+      10000043
+    ],
+    "count_param": 6,
+    "desc_cn": "牌池中[冲霄破浪]和[磅礴之势]各加6张",
+    "desc_en": "Add 6 copies of [Surging Waves] and [Overwhelming Force] to your card pool.",
+    "desc_tw": "牌池中[沖霄破浪]和[磅礴之勢]各加6張"
+  },
+  {
+    "id": 422,
+    "name_cn": "不屈之命",
+    "name_en": "Fate of Unbowed",
+    "name_tw": "不屈之命",
+    "desc_cn_template": "每次突破时仙命选项必然包含【TALENT_{otherParams[0]}】",
+    "desc_en_template": "Immortal Fate option will definitely include 【TALENT_{otherParams[0]}】",
+    "desc_tw_template": "每次突破時仙命選項必然包含【TALENT_{otherParams[0]}】",
+    "params": [
+      175
+    ],
+    "count_param": 4,
+    "desc_cn": "每次突破时仙命选项必然包含[历战不屈]",
+    "desc_en": "Immortal Fate option will definitely include [Unbowed through battle]",
+    "desc_tw": "每次突破時仙命選項必然包含[曆戰不屈]"
+  },
+  {
+    "id": 423,
+    "name_cn": "迷踪试炼",
+    "name_en": "Trial of Elusive ",
+    "name_tw": "迷踪試煉",
+    "desc_cn_template": "若战斗中自身身法达到过10点以上，则下轮首次换出元婴牌时，必定为【{otherParams[0]}】（最多生效{countParam}次）",
+    "desc_en_template": "If your Agility reached 10 or more in the previous battle, the first Immortality Phase card you obtain through Exchange will be 【{otherParams[0]}】 (once per round, up to {countParam} times)",
+    "desc_tw_template": "若戰鬥中自身身法達到過10點以上，則下輪首次換出元嬰牌時，必定爲【{otherParams[0]}】（最多生效{countParam}次）",
+    "params": [
+      10000050
+    ],
+    "count_param": 4,
+    "desc_cn": "若战斗中自身身法达到过10点以上，则下轮首次换出元婴牌时，必定为[灵玄迷踪步]（最多生效4次）",
+    "desc_en": "If your Agility reached 10 or more in the previous battle, the first Immortality Phase card you obtain through Exchange will be [Elusive Footwork] (once per round, up to 4 times)",
+    "desc_tw": "若戰鬥中自身身法達到過10點以上，則下輪首次換出元嬰牌時，必定爲[靈玄迷踪步]（最多生效4次）"
+  },
+  {
+    "id": 424,
+    "name_cn": "修罗试炼",
+    "name_en": "Trial of Shura",
+    "name_tw": "修羅試煉",
+    "desc_cn_template": "若战斗中自身负面状态达到过8层以上，则下轮首次换出化神牌时，必定为【{otherParams[0]}】（最多生效{countParam}次）",
+    "desc_en_template": "If your total Debuff stack reached 8 or more in the previous battle, the first Incarnation Phase card you obtain through Exchange will be 【{otherParams[0]}】 (once per round, up to {countParam} times)",
+    "desc_tw_template": "若戰鬥中自身負面狀態達到過8層以上，則下輪首次換出化神牌時，必定爲【{otherParams[0]}】（最多生效{countParam}次）",
+    "params": [
+      10000041
+    ],
+    "count_param": 2,
+    "desc_cn": "若战斗中自身负面状态达到过8层以上，则下轮首次换出化神牌时，必定为[修罗吼]（最多生效2次）",
+    "desc_en": "If your total Debuff stack reached 8 or more in the previous battle, the first Incarnation Phase card you obtain through Exchange will be [Shura Roar] (once per round, up to 2 times)",
+    "desc_tw": "若戰鬥中自身負面狀態達到過8層以上，則下輪首次換出化神牌時，必定爲[修羅吼]（最多生效2次）"
+  },
+  {
+    "id": 425,
+    "name_cn": "破釜融汇",
+    "name_en": "Fusion of Break Pots",
+    "name_tw": "破釜融匯",
+    "desc_cn_template": "【{otherParams[0]}】+【{otherParams[1]}】可在手牌中合成1级【{otherParams[2]}】（最多合成{countParam}次）",
+    "desc_en_template": "【{otherParams[0]}】 and 【{otherParams[1]}】 can be fused into a level 1 【{otherParams[2]}】 in your hand (up to {countParam} times)",
+    "desc_tw_template": "【{otherParams[0]}】+【{otherParams[1]}】可在手牌中合成1級【{otherParams[2]}】（最多合成{countParam}次）",
+    "params": [
+      10000031,
+      10000034,
+      10000061
+    ],
+    "count_param": 2,
+    "desc_cn": "[荷重前行]+[踏破九霄]可在手牌中合成1级[破釜沉舟]（最多合成2次）",
+    "desc_en": "[Bearing the Load] and [Sailing through Sky] can be fused into a level 1 [Break Pots and Sink Boats] in your hand (up to 2 times)",
+    "desc_tw": "[荷重前行]+[踏破九霄]可在手牌中合成1級[破釜沉舟]（最多合成2次）"
+  }
+]

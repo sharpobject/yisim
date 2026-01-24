@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Continuous] 2 [Times]: If there is only one type of [Five Elements] in your deck, whenever you play a [Five Elements] card that is not an ATK, [Chase]
+  L1 IMPL: [no cost]  game.continuous(); if (game.get_n_different_five_elements(0) <= 1) { game.add_c_of_x(2, "five_elements_heavenly_marrow_rhythm_stacks"); } ✓
+  L2 CSV:  [no cost] [Qi]+2 | [Continuous] 2 [Times]: If there is only one type of [Five Elements] in your deck, whenever you play a [Five Elements] card that is not an ATK, [Chase]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.continuous(); if (game.get_n_different_five_elements(0) <= 1) { game.add_c_of_x(2, "five_elements_heavenly_marrow_rhythm_stacks"); } ✓
+  L3 CSV:  [no cost] [Qi]+2 | [Continuous] 3 [Times]: If there is only one type of [Five Elements] in your deck, whenever you play a [Five Elements] card that is not an ATK, [Chase]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.continuous(); if (game.get_n_different_five_elements(0) <= 1) { game.add_c_of_x(3, "five_elements_heavenly_marrow_rhythm_stacks"); } ✓

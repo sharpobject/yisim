@@ -1,0 +1,8 @@
+### 90301 - Xuanming Recurring
+  L1 CSV:  [hp=0 qi=1] Restore your HP to what it was at the start of your last turn | [Skip To] the card in your previous slot | [Consumption]
+  L1 IMPL: [hp=0 qi=1]  game.do_xuanming_recurring(0); game.add_c_of_x(1, "skip_to_previous_card_stacks"); game.consumption(); ✓
+  L2 CSV:  [hp=0 qi=1] Restore your HP to what it was at the start of your last turn plus 5 | [Skip To] the card in your previous slot | [Consumption]
+  L2 IMPL: [hp=0 qi=1]  game.do_xuanming_recurring(5); game.add_c_of_x(1, "skip_to_previous_card_stacks"); game.consumption(); ✓
+  L3 CSV:  [hp=0 qi=1] Restore your HP to what it was at the start of your last turn plus 10 | [Skip To] the card in your previous slot | [Consumption]
+  L3 IMPL: [hp=0 qi=1]  game.do_xuanming_recurring(10); game.add_c_of_x(1, "skip_to_previous_card_stacks"); game.consumption(); ✓
+

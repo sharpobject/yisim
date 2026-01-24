@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=2] 6 ATK × 3 | [Fire Spirit]: Reduces the opponent's Max HP to their current HP minus 2
+  L1 IMPL: [hp=0 qi=2]  for (let i = 0; i < 3; i++) { game.atk(6); } if (game.if_fire_spirit()) { game.do_fire_spirit_blazing_praerie(2); } ✓
+  L2 CSV:  [hp=0 qi=2] 8 ATK × 3 | [Fire Spirit]: Reduces the opponent's Max HP to their current HP minus 3
+  L2 IMPL: [hp=0 qi=2]  for (let i = 0; i < 3; i++) { game.atk(8); } if (game.if_fire_spirit()) { game.do_fire_spirit_blazing_praerie(3); } ✓
+  L3 CSV:  [hp=0 qi=2] 10 ATK × 3 | [Fire Spirit]: Reduces the opponent's Max HP to their current HP minus 4
+  L3 IMPL: [hp=0 qi=2]  for (let i = 0; i < 3; i++) { game.atk(10); } if (game.if_fire_spirit()) { game.do_fire_spirit_blazing_praerie(4); } ✓

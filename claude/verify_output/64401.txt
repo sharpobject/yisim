@@ -1,0 +1,8 @@
+### 64401 - Crash Fist - Styx Night
+  L1 CSV:  [hp=3 qi=0] Gain 3 [Styx] | [Continuous]: When attacking with "Crash Fist", it increases 1 ATK for each stack of [Debuff] you have (up to 6).
+  L1 IMPL: [no cost]  game.add_c_of_x(2, "styx"); game.continuous(); game.add_c_of_x(6, "crash_fist_stygian_night_stacks"); ✗COST
+  L2 CSV:  [hp=3 qi=0] Gain 4 [Styx] | [Continuous]: When attacking with "Crash Fist", it increases 1 ATK for each stack of [Debuff] you have (up to 9).
+  L2 IMPL: [no cost]  game.add_c_of_x(3, "styx"); game.continuous(); game.add_c_of_x(9, "crash_fist_stygian_night_stacks"); ✗COST
+  L3 CSV:  [hp=3 qi=0] Gain 5 [Styx] | [Continuous]: When attacking with "Crash Fist", it increases 1 ATK for each stack of [Debuff] you have (up to 12).
+  L3 IMPL: [no cost]  game.add_c_of_x(4, "styx"); game.continuous(); game.add_c_of_x(12, "crash_fist_stygian_night_stacks"); ✗COST
+

@@ -1,0 +1,8 @@
+### 62201 - Only Traces
+  L1 CSV:  [no cost] [Qi]+3 | [Post Action]: [Chase]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 3); if (game.if_post_action()) { game.chase(); } ✓
+  L2 CSV:  [no cost] [Qi]+3 | [Chase] | [Post Action]: HP+1
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.chase(); if (game.if_post_action()) { game.increase_idx_hp(0, 1); } ✓
+  L3 CSV:  [no cost] [Qi]+4 | [Chase] | [Post Action]: HP+1
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 4); game.chase(); if (game.if_post_action()) { game.increase_idx_hp(0, 1); } ✓
+

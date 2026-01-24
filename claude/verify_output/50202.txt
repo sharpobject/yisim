@@ -1,0 +1,8 @@
+### 50202 - Lonely Night Wolf
+  L1 CSV:  [no cost] [Continuous]: When your HP is less than half Max Hp, all cards add 4 ATK
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(4, "lonely_night_wolf_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous]: When your HP is less than half Max Hp, all cards add 5 ATK
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(5, "lonely_night_wolf_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous]: When your HP is less than half Max Hp, all cards add 6 ATK
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(6, "lonely_night_wolf_stacks"); ✓
+

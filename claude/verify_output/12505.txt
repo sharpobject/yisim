@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] HP+2 | The next card will trigger twice
+  L1 IMPL: [hp=0 qi=1]  game.increase_idx_hp(0, 2); game.add_c_of_x(1, "strike_twice_stacks"); ✓
+  L2 CSV:  [hp=0 qi=1] HP+8 | The next card will trigger twice
+  L2 IMPL: [hp=0 qi=1]  game.increase_idx_hp(0, 8); game.add_c_of_x(1, "strike_twice_stacks"); ✓
+  L3 CSV:  [hp=0 qi=1] HP+14 | The next card will trigger twice
+  L3 IMPL: [hp=0 qi=1]  game.increase_idx_hp(0, 14); game.add_c_of_x(1, "strike_twice_stacks"); ✓

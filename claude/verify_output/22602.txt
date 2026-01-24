@@ -1,0 +1,8 @@
+### 22602 - Covert Shift
+  L1 CSV:  [no cost] Reduce HP is reversed to add HP for next 2 times 
+  L1 IMPL: [no cost]  game.add_c_of_x(2, "covert_shift_stacks"); ✓
+  L2 CSV:  [no cost] Reduce HP is reversed to add HP for next 3 times 
+  L2 IMPL: [no cost]  game.add_c_of_x(3, "covert_shift_stacks"); ✓
+  L3 CSV:  [no cost] Reduce HP is reversed to add HP for next 4 times 
+  L3 IMPL: [no cost]  game.add_c_of_x(4, "covert_shift_stacks"); ✓
+

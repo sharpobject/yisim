@@ -1,0 +1,8 @@
+### 22201 - Vitality Blossom
+  L1 CSV:  [no cost] HP and Max HP+7 | [Continuous]: When the added HP exceeds the Max HP, the Max HP increases with the HP
+  L1 IMPL: [no cost]  game.add_c_of_x(7, "max_hp"); game.increase_idx_hp(0, 7); game.continuous(); game.add_c_of_x(1, "vitality_blossom_stacks"); ✓
+  L2 CSV:  [no cost] HP and Max HP+11 | [Continuous]: When the added HP exceeds the Max HP, the Max HP increases with the HP
+  L2 IMPL: [no cost]  game.add_c_of_x(11, "max_hp"); game.increase_idx_hp(0, 11); game.continuous(); game.add_c_of_x(1, "vitality_blossom_stacks"); ✓
+  L3 CSV:  [no cost] HP and Max HP+15 | [Continuous]: When the added HP exceeds the Max HP, the Max HP increases with the HP
+  L3 IMPL: [no cost]  game.add_c_of_x(15, "max_hp"); game.increase_idx_hp(0, 15); game.continuous(); game.add_c_of_x(1, "vitality_blossom_stacks"); ✓
+

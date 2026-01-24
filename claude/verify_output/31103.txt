@@ -1,0 +1,8 @@
+### 31103 - Small Recover Elixir
+  L1 CSV:  [no cost] HP+8 | [Consumption]
+  L1 IMPL: [no cost]  game.increase_idx_hp(0, 8); game.consumption(); ✓
+  L2 CSV:  [no cost] HP+12 | [Consumption]
+  L2 IMPL: [no cost]  game.increase_idx_hp(0, 12); game.consumption(); ✓
+  L3 CSV:  [no cost] HP+16 | [Consumption]
+  L3 IMPL: [no cost]  game.increase_idx_hp(0, 16); game.consumption(); ✓
+

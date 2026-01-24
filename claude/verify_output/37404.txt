@@ -1,0 +1,8 @@
+### 37404 - Everything is Unadvisable
+  L1 CSV:  [no cost] [DEF]+4 | You take 6 less ATK (minimum to 1) in opponent's next 2 attack | [Opening]: [DEF]+4
+  L1 IMPL: [no cost] opening=[['def', 4]] game.increase_idx_def(0, 4); game.add_enemy_c_of_x(2, "nothing_is_appropriate_stacks"); ✓
+  L2 CSV:  [no cost] [DEF]+5 | You take 6 less ATK (minimum to 1) in opponent's next 3 attack | [Opening]: [DEF]+5
+  L2 IMPL: [no cost] opening=[['def', 5]] game.increase_idx_def(0, 5); game.add_enemy_c_of_x(3, "nothing_is_appropriate_stacks"); ✓
+  L3 CSV:  [no cost] [DEF]+6 | You take 6 less ATK (minimum to 1) in opponent's next 4 attack | [Opening]: [DEF]+6
+  L3 IMPL: [no cost] opening=[['def', 6]] game.increase_idx_def(0, 6); game.add_enemy_c_of_x(4, "nothing_is_appropriate_stacks"); ✓
+

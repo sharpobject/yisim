@@ -1,0 +1,8 @@
+### 94505 - Exercise To The Utmost
+  L1 CSV:  [no cost] [Physique]+4 | Physique Cap+3 permanently. | Gain 2 [Increase ATK] | [Consumption]
+  L1 IMPL: [no cost]  NOT FOUND ✓
+  L2 CSV:  [no cost] [Physique]+6 | Physique Cap+3 permanently. | Gain 3 [Increase ATK] | [Consumption]
+  L2 IMPL: [no cost]  NOT FOUND ✓
+  L3 CSV:  [no cost] [Physique]+8 | Physique Cap+3 permanently. | Gain 4 [Increase ATK] | [Consumption]
+  L3 IMPL: [no cost]  NOT FOUND ✓
+

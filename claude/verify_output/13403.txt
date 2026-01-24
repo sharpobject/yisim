@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] Opponent loses 4 Max HP | [Fire Spirit]: [Chase]
+  L1 IMPL: [no cost]  game.reduce_enemy_c_of_x(4, "max_hp"); if (game.if_fire_spirit()) { game.chase(); } ✓
+  L2 CSV:  [no cost] Opponent loses 8 Max HP | [Fire Spirit]: [Chase]
+  L2 IMPL: [no cost]  game.reduce_enemy_c_of_x(8, "max_hp"); if (game.if_fire_spirit()) { game.chase(); } ✓
+  L3 CSV:  [no cost] Opponent loses 12 Max HP | [Fire Spirit]: [Chase]
+  L3 IMPL: [no cost]  game.reduce_enemy_c_of_x(12, "max_hp"); if (game.if_fire_spirit()) { game.chase(); } ✓

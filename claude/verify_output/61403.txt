@@ -1,0 +1,8 @@
+### 61403 - Spirit Cat Chaos Sword
+  L1 CSV:  [no cost] 2 ATK × 2 | Make an additional attack for every remaining hand card (up to 3)
+  L1 IMPL: [no cost]  game.for_each_x_up_to_c_add_y("hand_count", 3, "bonus_rep_amt"); for (let i = 0; i < 2 + game.players[0].bonus_rep_amt; i++) { game.atk(2); } ✓
+  L2 CSV:  [no cost] 2 ATK × 3 | Make an additional attack for every remaining hand card (up to 3)
+  L2 IMPL: [no cost]  game.for_each_x_up_to_c_add_y("hand_count", 3, "bonus_rep_amt"); for (let i = 0; i < 3 + game.players[0].bonus_rep_amt; i++) { game.atk(2); } ✓
+  L3 CSV:  [no cost] 2 ATK × 4 | Make an additional attack for every remaining hand card (up to 3)
+  L3 IMPL: [no cost]  game.for_each_x_up_to_c_add_y("hand_count", 3, "bonus_rep_amt"); for (let i = 0; i < 4 + game.players[0].bonus_rep_amt; i++) { game.atk(2); } ✓
+

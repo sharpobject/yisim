@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 7 ATK | [Metal Spirit]: If the opponent is [Injured] by this card, double the HP deduction
+  L1 IMPL: [no cost]  if (game.if_metal_spirit()) { game.add_c_of_x(1, "metal_spirit_giant_tripod_stacks"); } game.atk(7); ✓
+  L2 CSV:  [no cost] 11 ATK | [Metal Spirit]: If the opponent is [Injured] by this card, double the HP deduction
+  L2 IMPL: [no cost]  if (game.if_metal_spirit()) { game.add_c_of_x(1, "metal_spirit_giant_tripod_stacks"); } game.atk(11); ✓
+  L3 CSV:  [no cost] 15 ATK | [Metal Spirit]: If the opponent is [Injured] by this card, double the HP deduction
+  L3 IMPL: [no cost]  if (game.if_metal_spirit()) { game.add_c_of_x(1, "metal_spirit_giant_tripod_stacks"); } game.atk(15); ✓

@@ -1,0 +1,8 @@
+### 24302 - Break Pots and Sink Boats
+  L1 CSV:  [no cost] Lose 80% Max HP | Gain 3 stacks of [Force], [Guard Up] and [Increase ATK]
+  L1 IMPL: [no cost]  game.for_each_x_reduce_c_pct_y("max_hp", 80, "max_hp"); game.add_c_of_x(3, "force"); game.add_c_of_x(3, "guard_up"); game.add_c_of_x(3, "increase_atk"); ✓
+  L2 CSV:  [no cost] Lose 80% Max HP | Gain 4 stacks of [Force], [Guard Up] and [Increase ATK]
+  L2 IMPL: [no cost]  game.for_each_x_reduce_c_pct_y("max_hp", 80, "max_hp"); game.add_c_of_x(4, "force"); game.add_c_of_x(4, "guard_up"); game.add_c_of_x(4, "increase_atk"); ✓
+  L3 CSV:  [no cost] Lose 80% Max HP | Gain 5 stacks of [Force], [Guard Up] and [Increase ATK]
+  L3 IMPL: [no cost]  game.for_each_x_reduce_c_pct_y("max_hp", 80, "max_hp"); game.add_c_of_x(5, "force"); game.add_c_of_x(5, "guard_up"); game.add_c_of_x(5, "increase_atk"); ✓
+

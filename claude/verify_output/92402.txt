@@ -1,0 +1,8 @@
+### 92402 - Thousand Star Explosion
+  L1 CSV:  [no cost] 6 ATK (4 more ATK for each [Star Power]) | Halve your [Star Power]
+  L1 IMPL: [no cost]  game.do_thousand_star_explosion(4); ✓
+  L2 CSV:  [no cost] 6 ATK (5 more ATK for each [Star Power]) | Halve your [Star Power]
+  L2 IMPL: [no cost]  game.do_thousand_star_explosion(5); ✓
+  L3 CSV:  [no cost] 6 ATK (6 more ATK for each [Star Power]) | Halve your [Star Power]
+  L3 IMPL: [no cost]  game.do_thousand_star_explosion(6); ✓
+

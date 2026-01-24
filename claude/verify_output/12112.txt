@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 6 ATK | [Post Action]: HP+2
+  L1 IMPL: [no cost]  game.atk(6); if (game.if_post_action()) { game.increase_idx_hp(0, 2); } ✓
+  L2 CSV:  [no cost] 9 ATK | [Post Action]: HP+4
+  L2 IMPL: [no cost]  game.atk(9); if (game.if_post_action()) { game.increase_idx_hp(0, 4); } ✓
+  L3 CSV:  [no cost] 12 ATK | [Post Action]: HP+6
+  L3 IMPL: [no cost]  game.atk(12); if (game.if_post_action()) { game.increase_idx_hp(0, 6); } ✓

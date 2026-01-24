@@ -1,0 +1,8 @@
+### 37204 - Bad Omen
+  L1 CSV:  [no cost] For next 1 time，apply 1 [Wound] when opponent loses HP | [Opening]: Both players lose 3 HP
+  L1 IMPL: [no cost] opening=[['reduce_enemy_c_of_x', 3, 'hp'], ['reduce_c_of_x', 3, 'hp']] game.add_enemy_c_of_x(1, "bad_omen_stacks"); ✓
+  L2 CSV:  [no cost] For next 2 times，apply 1 [Wound] when opponent loses HP | [Opening]: Both players lose 4 HP
+  L2 IMPL: [no cost] opening=[['reduce_enemy_c_of_x', 4, 'hp'], ['reduce_c_of_x', 4, 'hp']] game.add_enemy_c_of_x(2, "bad_omen_stacks"); ✓
+  L3 CSV:  [no cost] For next 3 times，apply 1 [Wound] when opponent loses HP | [Opening]: Both players lose 5 HP
+  L3 IMPL: [no cost] opening=[['reduce_enemy_c_of_x', 5, 'hp'], ['reduce_c_of_x', 5, 'hp']] game.add_enemy_c_of_x(3, "bad_omen_stacks"); ✓
+

@@ -1,0 +1,8 @@
+### 14505 - Shura Roar
+  L1 CSV:  [no cost] Both players gain 4 stacks of [Internal Injury] | Add 1 [Qi] and 1 HP for each 2 stacks of [Debuff] you have
+  L1 IMPL: [no cost]  game.add_c_of_x(4, "internal_injury"); game.add_enemy_c_of_x(4, "internal_injury"); game.for_each_x_add_c_pct_y("debuff", 50, "qi"); game.for_each_x_add_c_pct_y("debuff", 50, "hp"); ✓
+  L2 CSV:  [no cost] Both players gain 6 stacks of [Internal Injury] | Add 1 [Qi] and 1 HP for each 2 stacks of [Debuff] you have
+  L2 IMPL: [no cost]  game.add_c_of_x(6, "internal_injury"); game.add_enemy_c_of_x(6, "internal_injury"); game.for_each_x_add_c_pct_y("debuff", 50, "qi"); game.for_each_x_add_c_pct_y("debuff", 50, "hp"); ✓
+  L3 CSV:  [no cost] Both players gain 8 stacks of [Internal Injury] | Add 1 [Qi] and 1 HP for each 2 stacks of [Debuff] you have
+  L3 IMPL: [no cost]  game.add_c_of_x(8, "internal_injury"); game.add_enemy_c_of_x(8, "internal_injury"); game.for_each_x_add_c_pct_y("debuff", 50, "qi"); game.for_each_x_add_c_pct_y("debuff", 50, "hp"); ✓
+

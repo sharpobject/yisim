@@ -1,0 +1,8 @@
+### 92404 - Fleeting Glimpse
+  L1 CSV:  [no cost] Apply 0~2 random [Debuff] | [Chase] if the opponent's [Debuff] stack count ≥ 3
+  L1 IMPL: [no cost]  NOT FOUND ✓
+  L2 CSV:  [no cost] Apply 1~3 random [Debuff] | [Chase] if the opponent's [Debuff] stack count ≥ 3
+  L2 IMPL: [no cost]  NOT FOUND ✓
+  L3 CSV:  [no cost] Apply 2~4 random [Debuff] | [Chase] if the opponent's [Debuff] stack count ≥ 3
+  L3 IMPL: [no cost]  NOT FOUND ✓
+

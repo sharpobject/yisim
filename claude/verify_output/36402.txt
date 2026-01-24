@@ -1,0 +1,8 @@
+### 36402 - Detoxific Purple Fern
+  L1 CSV:  [no cost] [Growth] | One random [Debuff] decreases 1 stack
+  L1 IMPL: [no cost]  game.reduce_random_debuff_by_c_n_times(1, 1); ✓
+  L2 CSV:  [no cost] [Growth] | One random [Debuff] decreases 2 stacks
+  L2 IMPL: [no cost]  game.reduce_random_debuff_by_c_n_times(2, 1); ✓
+  L3 CSV:  [no cost] One random [Debuff] decreases 3 stacks, then [Chase] if you have no [Debuff]
+  L3 IMPL: [no cost]  game.reduce_random_debuff_by_c_n_times(3, 1); if (game.if_no_debuff()) { game.chase(); } ✓
+

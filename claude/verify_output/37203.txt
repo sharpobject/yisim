@@ -1,0 +1,8 @@
+### 37203 - Detect Qi
+  L1 CSV:  [no cost] [Qi]+2 | [Opening]: [Qi]+1
+  L1 IMPL: [no cost] opening=[['qi', 1]] game.increase_idx_qi(0, 2); ✓
+  L2 CSV:  [no cost] [Qi]+3 | [Opening]: [Qi]+1
+  L2 IMPL: [no cost] opening=[['qi', 1]] game.increase_idx_qi(0, 3); ✓
+  L3 CSV:  [no cost] [Qi]+4 | [Opening]: [Qi]+1
+  L3 IMPL: [no cost] opening=[['qi', 1]] game.increase_idx_qi(0, 4); ✓
+

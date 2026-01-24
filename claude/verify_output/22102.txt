@@ -1,0 +1,8 @@
+### 22102 - Throwing Stones For Directions
+  L1 CSV:  [no cost] 6 ATK | Apply 0～2 stack(s) of [Weakened] | Apply 0～2 stack(s) of [Flaw]
+  L1 IMPL: [no cost]  game.atk(6); game.add_enemy_rand_range_of_x(0, 2, "weaken"); game.add_enemy_rand_range_of_x(0, 2, "flaw"); ✓
+  L2 CSV:  [no cost] 6 ATK | Apply 0～2 stack(s) of [Weakened] | Apply 0～3 stack(s) of [Flaw]
+  L2 IMPL: [no cost]  game.atk(6); game.add_enemy_rand_range_of_x(0, 2, "weaken"); game.add_enemy_rand_range_of_x(0, 3, "flaw"); ✓
+  L3 CSV:  [no cost] 6 ATK | Apply 0～3 stack(s) of [Weakened] | Apply 0～3 stack(s) of [Flaw]
+  L3 IMPL: [no cost]  game.atk(6); game.add_enemy_rand_range_of_x(0, 3, "weaken"); game.add_enemy_rand_range_of_x(0, 3, "flaw"); ✓
+

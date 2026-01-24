@@ -1,0 +1,8 @@
+### 74402 - M - Exercise Bones
+  L1 CSV:  [no cost] [Continuous]: Whenever you add 1 [Physique], if your [Physique] exceeds the cap, gain 2 HP and deal 1 [DMG] to the opponent
+  L1 IMPL: [no cost]  game.continuous(); game.increase_idx_x_by_c(0, "m_exercise_bones_damage_stacks", 1); game.increase_idx_x_by_c(0, "m_exercise_bones_heal_stacks", 2); ✓
+  L2 CSV:  [no cost] [Continuous]: Whenever you add 1 [Physique], if your [Physique] exceeds the cap, gain 3 HP and deal 1 [DMG] to the opponent
+  L2 IMPL: [no cost]  game.continuous(); game.increase_idx_x_by_c(0, "m_exercise_bones_damage_stacks", 1); game.increase_idx_x_by_c(0, "m_exercise_bones_heal_stacks", 3); ✓
+  L3 CSV:  [no cost] [Continuous]: Whenever you add 1 [Physique], if your [Physique] exceeds the cap, gain 4 HP and deal 1 [DMG] to the opponent
+  L3 IMPL: [no cost]  game.continuous(); game.increase_idx_x_by_c(0, "m_exercise_bones_damage_stacks", 1); game.increase_idx_x_by_c(0, "m_exercise_bones_heal_stacks", 4); ✓
+

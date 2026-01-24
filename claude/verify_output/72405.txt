@@ -1,0 +1,8 @@
+### 72405 - M - Earth Hexagram
+  L1 CSV:  [no cost] [DEF]+2 | [Hexagram]+2 | [Upgrade] the next card used, and for every 3 [Hexagram], [Upgrade] 1 more (restored after the battle)
+  L1 IMPL: [no cost]  game.increase_idx_def(0, 2); game.increase_idx_x_by_c(0, "hexagram", 2); const me = game.players[0]; const amt = 1 + Math.floor(me.hexagram / 3); game.increase_idx_x_by_c(0, "m_earth_hexagram_stacks", amt); ✓
+  L2 CSV:  [no cost] [DEF]+4 | [Hexagram]+3 | [Upgrade] the next card used, and for every 3 [Hexagram], [Upgrade] 1 more (restored after the battle)
+  L2 IMPL: [no cost]  game.increase_idx_def(0, 4); game.increase_idx_x_by_c(0, "hexagram", 3); const me = game.players[0]; const amt = 1 + Math.floor(me.hexagram / 3); game.increase_idx_x_by_c(0, "m_earth_hexagram_stacks", amt); ✓
+  L3 CSV:  [no cost] [DEF]+6 | [Hexagram]+4 | [Upgrade] the next card used, and for every 3 [Hexagram], [Upgrade] 1 more (restored after the battle)
+  L3 IMPL: [no cost]  game.increase_idx_def(0, 6); game.increase_idx_x_by_c(0, "hexagram", 4); const me = game.players[0]; const amt = 1 + Math.floor(me.hexagram / 3); game.increase_idx_x_by_c(0, "m_earth_hexagram_stacks", amt); ✓
+

@@ -1,0 +1,8 @@
+### 37501 - Envelop In Disaster
+  L1 CSV:  [hp=0 qi=1] Apply 4 [Internal Injury] | [Opening]: [Downgrade] oppenent's card in the same slot (Restored at end of battle), or deal 6 DMG if unable
+  L1 IMPL: [hp=0 qi=1] opening=[['downgrade_enemy_card_or_deal_damage', 6]] game.add_enemy_c_of_x(4, "internal_injury"); ✓
+  L2 CSV:  [hp=0 qi=1] Apply 5 [Internal Injury] | [Opening]: [Downgrade] oppenent's card in the same slot (Restored at end of battle), or deal 9 DMG if unable
+  L2 IMPL: [hp=0 qi=1] opening=[['downgrade_enemy_card_or_deal_damage', 9]] game.add_enemy_c_of_x(5, "internal_injury"); ✓
+  L3 CSV:  [hp=0 qi=1] Apply 6 [Internal Injury] | [Opening]: [Downgrade] oppenent's card in the same slot (Restored at end of battle), or deal 12 DMG if unable
+  L3 IMPL: [hp=0 qi=1] opening=[['downgrade_enemy_card_or_deal_damage', 12]] game.add_enemy_c_of_x(6, "internal_injury"); ✓
+

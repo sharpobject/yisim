@@ -1,0 +1,8 @@
+### 14409 - Surging Waves
+  L1 CSV:  [no cost] [Qi]+1 | Add 1 [Force] for each [Qi] | [Agility]+5
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 1); game.for_each_x_add_y("qi", "force"); game.add_c_of_x(5, "agility"); ✓
+  L2 CSV:  [no cost] [Qi]+2 | Add 1 [Force] for each [Qi] | [Agility]+5
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.for_each_x_add_y("qi", "force"); game.add_c_of_x(5, "agility"); ✓
+  L3 CSV:  [no cost] [Qi]+3 | Add 1 [Force] for each [Qi] | [Agility]+5
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.for_each_x_add_y("qi", "force"); game.add_c_of_x(5, "agility"); ✓
+

@@ -1,0 +1,8 @@
+### 71505 - M - Consonance Sword Formation
+  L1 CSV:  [no cost] [DEF]+6 | Add 1 [Qi] for every 4 [DEF] you have
+  L1 IMPL: [no cost]  game.def(6); game.for_each_x_add_c_pct_y("def", 25, "qi"); ✓
+  L2 CSV:  [no cost] [DEF]+10 | Add 1 [Qi] for every 4 [DEF] you have
+  L2 IMPL: [no cost]  game.def(10); game.for_each_x_add_c_pct_y("def", 25, "qi"); ✓
+  L3 CSV:  [no cost] [DEF]+14 | Add 1 [Qi] for every 4 [DEF] you have
+  L3 IMPL: [no cost]  game.def(14); game.for_each_x_add_c_pct_y("def", 25, "qi"); ✓
+

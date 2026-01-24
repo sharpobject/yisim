@@ -1,0 +1,8 @@
+### 64201 - Unceasing Exercising
+  L1 CSV:  [no cost] 4 ATK | [Physique]+3 | HP+3
+  L1 IMPL: [no cost]  game.atk(4); game.add_c_of_x(3, "physique"); game.increase_idx_hp(0, 3); ✓
+  L2 CSV:  [no cost] 6 ATK | [Physique]+4 | HP+4
+  L2 IMPL: [no cost]  game.atk(6); game.add_c_of_x(4, "physique"); game.increase_idx_hp(0, 4); ✓
+  L3 CSV:  [no cost] 8 ATK | [Physique]+5 | HP+5
+  L3 IMPL: [no cost]  game.atk(8); game.add_c_of_x(5, "physique"); game.increase_idx_hp(0, 5); ✓
+

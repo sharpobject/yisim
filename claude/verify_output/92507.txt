@@ -1,0 +1,8 @@
+### 92507 - Hexagrams Generating Evils
+  L1 CSV:  [no cost] Apply 1 [Internal Injury] | HP+2 | Exhaust [Hexagram], then Apply 1 [Internal Injury] and [Weakened] for each [Hexagram] exhausted
+  L1 IMPL: [no cost]   ✓
+  L2 CSV:  [no cost] Apply 2 [Internal Injury] | HP+4 | Exhaust [Hexagram], then Apply 1 [Internal Injury] and [Weakened] for each [Hexagram] exhausted
+  L2 IMPL: [no cost]   ✓
+  L3 CSV:  [no cost] Apply 3 [Internal Injury] | HP+6 | Exhaust [Hexagram], then Apply 1 [Internal Injury] and [Weakened] for each [Hexagram] exhausted
+  L3 IMPL: [no cost]   ✓
+

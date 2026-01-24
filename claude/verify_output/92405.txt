@@ -1,0 +1,8 @@
+### 92405 - Yin Yang Tutelary Formation
+  L1 CSV:  [no cost] [Continuous] 2 [Times]: At the end of your turn, if you have [Qi] or [Hexagram], add 1/2 HP and [DEF] for each [Qi] / [Hexagram]
+  L1 IMPL: [no cost]  NOT FOUND ✓
+  L2 CSV:  [no cost] [Continuous] 3 [Times]: At the end of your turn, if you have [Qi] or [Hexagram], add 1/2 HP and [DEF] for each [Qi] / [Hexagram]
+  L2 IMPL: [no cost]  NOT FOUND ✓
+  L3 CSV:  [no cost] [Continuous] 4 [Times]: At the end of your turn, if you have [Qi] or [Hexagram], add 1/2 HP and [DEF] for each [Qi] / [Hexagram]
+  L3 IMPL: [no cost]  NOT FOUND ✓
+

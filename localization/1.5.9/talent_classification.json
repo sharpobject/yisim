@@ -1,0 +1,85 @@
+{
+  "classification_notes": "Classifications verified by user. Claude translations noted where applicable.",
+  
+  "general_immortal_fates": {
+    "description": "Can be offered to any character during breakthrough",
+    "ids": [1, 4, 5, 6, 8, 9, 12, 13, 53, 56, 59, 118, 188]
+  },
+  
+  "sect_immortal_fates": {
+    "description": "Can be offered to characters from one sect only",
+    "sect_1_cloud_spirit_sword": [16, 54, 55, 57, 69, 70, 116, 119],
+    "sect_2_heptastar": [30, 31, 58, 71, 72, 103, 117, 120],
+    "sect_3_five_elements": [73, 74, 75, 76, 77, 102, 127, 128],
+    "sect_4_forge_body_soul": [143, 144, 145, 146, 149, 150, 175, 176]
+  },
+  
+  "luck_season_immortal_fates": {
+    "description": "Grant Legendary cards, from luck season event",
+    "sect_1": [157, 158, 159, 160],
+    "sect_2": [161, 162, 163, 164],
+    "sect_3": [165, 166, 167, 168]
+  },
+  
+  "character_specific_immortal_fates": {
+    "description": "5 per character (P1-P5), one is starting fate",
+    "S1C1_Mu_Yifeng": [18, 66, 14, 7, 17],
+    "S1C2_Fire_Ice": [19, 67, 68, 23, 22],
+    "S1C3_Dragon": [24, 25, 27, 85, 86],
+    "S1C4_Lin_Xiaoyue": [129, 44, 45, 46, 15],
+    "S1C5_Swordsmith": [92, 93, 94, 95, 96],
+    "S1C6_Sword_Formation": [189, 191, 190, 192, 193],
+    "S2C1_Bird_Scholar": [29, 63, 64, 65, 42],
+    "S2C2_Bloodline": [114, 115, 121, 35, 122],
+    "S2C3_Lantern": [37, 105, 39, 40, 28],
+    "S2C4_Astrology": [48, 61, 50, 52, 62],
+    "S2C5_Schemes": [104, 142, 141, 108, 106],
+    "S2C6_Hexagram_Scrolls": [194, 196, 195, 197, 198],
+    "S3C1_Five_Elements_Master": [80, 82, 81, 83, 123],
+    "S3C2_Innate_Element": [109, 110, 111, 124, 112],
+    "S3C3_Wood_Water": [133, 98, 99, 90, 101],
+    "S3C4_Metal_Earth": [125, 89, 132, 91, 100],
+    "S3C5_Fire_Seals": [136, 137, 138, 139, 140],
+    "S3C6_Pure_Vase": [199, 200, 201, 202, 203],
+    "S4C1_Unyielding": [151, 152, 153, 154, 177],
+    "S4C2_Force_Fist": [170, 172, 171, 174, 173],
+    "S4C3_Styx_Moon": [178, 179, 180, 181, 182],
+    "S4C4_Zen_Memory": [183, 184, 186, 185, 187],
+    "S4C5_Mortal_Body": [204, 205, 206, 207, 208]
+  },
+  
+  "character_replacement_fates": {
+    "description": "Replace character's normal fates during choices or progression",
+    "S1C5_Swordsmith_choices": {
+      "93_Blade_Forging": [10093, 20093],
+      "94_Sword_Pattern": [10094, 20094, 30094],
+      "95_Qi_Forging": [10095, 20095, 30095],
+      "96_Sword_Heart": [10096, 20096, 30096]
+    },
+    "S3C2_Innate_Element_choices": {
+      "109_Innate_Element": [10109, 20109, 30109, 40109, 50109]
+    },
+    "S3C3_self_replace": {
+      "133_Five_Elements_Infuse": [134]
+    },
+    "S4C5_self_replace": {
+      "208_Attain_Qi": [209]
+    }
+  },
+  
+  "unused_4_variant": {
+    "description": "Unused fates that have 4 phase variants",
+    "general": [2, 10, 78],
+    "sect_3_five_elements": [60, 79],
+    "sect_4_forge_body_soul": [148]
+  },
+  
+  "unused_1_variant": {
+    "description": "Unused fates with only 1 variant (orphans)",
+    "general": [3, 11, 20, 21, 26, 32, 33, 34, 36, 38, 41, 43, 51, 84, 87, 130, 131, 155, 156, 169],
+    "sect_1_cloud_spirit_sword": [47],
+    "sect_2_heptastar": [107, 135],
+    "sect_3_five_elements": [88, 97, 126],
+    "sect_4_forge_body_soul": [147]
+  }
+}

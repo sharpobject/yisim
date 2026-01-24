@@ -1,0 +1,8 @@
+### 62502 - Fury Thunder
+  L1 CSV:  [no cost] Apply 1 [Flaw] | If there are other cards in the deck with "Thunder" in their names, [Chase]
+  L1 IMPL: [no cost]  game.do_fury_thunder(1); ✓
+  L2 CSV:  [no cost] Apply 2 [Flaw] | If there are other cards in the deck with "Thunder" in their names, [Chase]
+  L2 IMPL: [no cost]  game.do_fury_thunder(2); ✓
+  L3 CSV:  [no cost] Apply 3 [Flaw] | If there are other cards in the deck with "Thunder" in their names, [Chase]
+  L3 IMPL: [no cost]  game.do_fury_thunder(3); ✓
+

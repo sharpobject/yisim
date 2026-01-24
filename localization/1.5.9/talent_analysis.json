@@ -1,0 +1,6640 @@
+[
+  {
+    "base_id": 1,
+    "name_cn": "锻体",
+    "name_en": "Bodybuilding",
+    "count": 4,
+    "ids": [
+      1,
+      10001,
+      20001,
+      30001
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "generic (has variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        5
+      ],
+      [
+        7
+      ],
+      [
+        10
+      ],
+      [
+        12
+      ]
+    ]
+  },
+  {
+    "base_id": 2,
+    "name_cn": "融会贯通",
+    "name_en": "Integrating Knowledge",
+    "count": 4,
+    "ids": [
+      2,
+      10002,
+      20002,
+      30002
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "generic (has variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 4,
+    "name_cn": "感悟丛生",
+    "name_en": "Mental Perception",
+    "count": 4,
+    "ids": [
+      4,
+      10004,
+      20004,
+      30004
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "generic (has variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 5,
+    "name_cn": "善假于物",
+    "name_en": "Tool Governor",
+    "count": 4,
+    "ids": [
+      5,
+      10005,
+      20005,
+      30005
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "generic (has variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 6,
+    "name_cn": "变换之道",
+    "name_en": "The Way of Adaptation",
+    "count": 4,
+    "ids": [
+      6,
+      10006,
+      20006,
+      30006
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "generic (has variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        6,
+        6
+      ],
+      [
+        8,
+        8
+      ],
+      [
+        10,
+        10
+      ],
+      [
+        12,
+        12
+      ]
+    ]
+  },
+  {
+    "base_id": 8,
+    "name_cn": "休养生息",
+    "name_en": "Recuperate",
+    "count": 4,
+    "ids": [
+      8,
+      10008,
+      20008,
+      30008
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "generic (has variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        14
+      ],
+      [
+        18
+      ],
+      [
+        24
+      ],
+      [
+        30
+      ]
+    ]
+  },
+  {
+    "base_id": 9,
+    "name_cn": "云巅雷劫",
+    "name_en": "Thunder Tribulation",
+    "count": 4,
+    "ids": [
+      9,
+      10009,
+      20009,
+      30009
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "generic (has variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        14,
+        2
+      ],
+      [
+        14,
+        3
+      ],
+      [
+        14,
+        4
+      ],
+      [
+        14,
+        5
+      ]
+    ]
+  },
+  {
+    "base_id": 10,
+    "name_cn": "道韵传承",
+    "name_en": "Inheritance of the Daoist Rhyme",
+    "count": 4,
+    "ids": [
+      10,
+      10010,
+      20010,
+      30010
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "generic (has variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ]
+  },
+  {
+    "base_id": 12,
+    "name_cn": "顿悟",
+    "name_en": "Epiphany",
+    "count": 4,
+    "ids": [
+      12,
+      10012,
+      20012,
+      30012
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "generic (has variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        6,
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 13,
+    "name_cn": "储纳灵气",
+    "name_en": "Store Qi",
+    "count": 4,
+    "ids": [
+      13,
+      10013,
+      20013,
+      30013
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "generic (has variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 16,
+    "name_cn": "剑韵修炼",
+    "name_en": "Sword Rhyme Cultivate",
+    "count": 4,
+    "ids": [
+      16,
+      10016,
+      20016,
+      30016
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [1])",
+    "field_7": [
+      1
+    ],
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ]
+  },
+  {
+    "base_id": 30,
+    "name_cn": "卜卦",
+    "name_en": "Divination",
+    "count": 4,
+    "ids": [
+      30,
+      10030,
+      20030,
+      30030
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [2])",
+    "field_7": [
+      2
+    ],
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 31,
+    "name_cn": "观星",
+    "name_en": "Stargaze",
+    "count": 4,
+    "ids": [
+      31,
+      10031,
+      20031,
+      30031
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [2])",
+    "field_7": [
+      2
+    ],
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        18446744073709551610,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        6,
+        1
+      ],
+      [
+        12,
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 53,
+    "name_cn": "机缘造化",
+    "name_en": "Fortunes and Luck",
+    "count": 4,
+    "ids": [
+      53,
+      10053,
+      20053,
+      30053
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "generic (has variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 54,
+    "name_cn": "云剑传承",
+    "name_en": "Inheritance of Cloud Sword",
+    "count": 4,
+    "ids": [
+      54,
+      10054,
+      20054,
+      30054
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [1])",
+    "field_7": [
+      1
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 55,
+    "name_cn": "灵剑传承",
+    "name_en": "Inheritance of Spirit Sword",
+    "count": 4,
+    "ids": [
+      55,
+      10055,
+      20055,
+      30055
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [1])",
+    "field_7": [
+      1
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 56,
+    "name_cn": "斩道",
+    "name_en": "Shattered Dao",
+    "count": 4,
+    "ids": [
+      56,
+      10056,
+      20056,
+      30056
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "generic (has variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        6,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        8,
+        8
+      ],
+      [
+        10,
+        9
+      ]
+    ]
+  },
+  {
+    "base_id": 57,
+    "name_cn": "剑阵守护",
+    "name_en": "Sword Formation Guard",
+    "count": 4,
+    "ids": [
+      57,
+      10057,
+      20057,
+      30057
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [1])",
+    "field_7": [
+      1
+    ],
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1
+      ],
+      [
+        3
+      ],
+      [
+        6
+      ],
+      [
+        9
+      ]
+    ]
+  },
+  {
+    "base_id": 58,
+    "name_cn": "星弈传承",
+    "name_en": "Inheritance of Astral Move",
+    "count": 4,
+    "ids": [
+      58,
+      10058,
+      20058,
+      30058
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [2])",
+    "field_7": [
+      2
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 59,
+    "name_cn": "陨星淬体",
+    "name_en": "Meteor Quench",
+    "count": 4,
+    "ids": [
+      59,
+      10059,
+      20059,
+      30059
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "generic (has variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        4,
+        6
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        8,
+        13
+      ],
+      [
+        10,
+        17
+      ]
+    ]
+  },
+  {
+    "base_id": 60,
+    "name_cn": "木灵之躯",
+    "name_en": "Body of Wood Spirit",
+    "count": 4,
+    "ids": [
+      60,
+      10060,
+      20060,
+      30060
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "generic (has variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        10
+      ],
+      [
+        10
+      ],
+      [
+        15
+      ],
+      [
+        20
+      ]
+    ]
+  },
+  {
+    "base_id": 69,
+    "name_cn": "云之道",
+    "name_en": "Rule Of The Cloud",
+    "count": 4,
+    "ids": [
+      69,
+      10069,
+      20069,
+      30069
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [1])",
+    "field_7": [
+      1
+    ],
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 70,
+    "name_cn": "狂之执念",
+    "name_en": "Mad Obsession",
+    "count": 4,
+    "ids": [
+      70,
+      10070,
+      20070,
+      30070
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [1])",
+    "field_7": [
+      1
+    ],
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 71,
+    "name_cn": "后发制人",
+    "name_en": "Post Strike",
+    "count": 4,
+    "ids": [
+      71,
+      10071,
+      20071,
+      30071
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [2])",
+    "field_7": [
+      2
+    ],
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ]
+    ]
+  },
+  {
+    "base_id": 72,
+    "name_cn": "易数化劫",
+    "name_en": "Changes Of Catastrophe",
+    "count": 4,
+    "ids": [
+      72,
+      10072,
+      20072,
+      30072
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [2])",
+    "field_7": [
+      2
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        5,
+        2
+      ]
+    ]
+  },
+  {
+    "base_id": 73,
+    "name_cn": "金灵传承",
+    "name_en": "Inheritance of Metal Spirit",
+    "count": 4,
+    "ids": [
+      73,
+      10073,
+      20073,
+      30073
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [3])",
+    "field_7": [
+      3
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 74,
+    "name_cn": "木灵传承",
+    "name_en": "Inheritance of Wood Spirit",
+    "count": 4,
+    "ids": [
+      74,
+      10074,
+      20074,
+      30074
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [3])",
+    "field_7": [
+      3
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 75,
+    "name_cn": "水灵传承",
+    "name_en": "Inheritance of Water Spirit",
+    "count": 4,
+    "ids": [
+      75,
+      10075,
+      20075,
+      30075
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [3])",
+    "field_7": [
+      3
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 76,
+    "name_cn": "火灵传承",
+    "name_en": "Inheritance of Fire Spirit",
+    "count": 4,
+    "ids": [
+      76,
+      10076,
+      20076,
+      30076
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [3])",
+    "field_7": [
+      3
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 77,
+    "name_cn": "土灵传承",
+    "name_en": "Inheritance of Earth Spirit",
+    "count": 4,
+    "ids": [
+      77,
+      10077,
+      20077,
+      30077
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [3])",
+    "field_7": [
+      3
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 78,
+    "name_cn": "舍身化道",
+    "name_en": "Sacrificing Into Dao",
+    "count": 4,
+    "ids": [
+      78,
+      10078,
+      20078,
+      30078
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "generic (has variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        5
+      ]
+    ]
+  },
+  {
+    "base_id": 79,
+    "name_cn": "元灵沟通",
+    "name_en": "In Touch Anima",
+    "count": 4,
+    "ids": [
+      79,
+      10079,
+      20079,
+      30079
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "generic (has variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        3
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        2
+      ]
+    ]
+  },
+  {
+    "base_id": 102,
+    "name_cn": "五行循环",
+    "name_en": "Cycle Of Five Elements",
+    "count": 4,
+    "ids": [
+      102,
+      10102,
+      20102,
+      30102
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [3])",
+    "field_7": [
+      3
+    ],
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        3
+      ],
+      [
+        1
+      ],
+      [
+        4
+      ],
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "base_id": 103,
+    "name_cn": "星蚀",
+    "name_en": "Astral Eclipse",
+    "count": 4,
+    "ids": [
+      103,
+      10103,
+      20103,
+      30103
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [2])",
+    "field_7": [
+      2
+    ],
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 116,
+    "name_cn": "剑阵传承",
+    "name_en": "Inheritance of Sword Formation",
+    "count": 4,
+    "ids": [
+      116,
+      10116,
+      20116,
+      30116
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [1])",
+    "field_7": [
+      1
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 117,
+    "name_cn": "雷霆传承",
+    "name_en": "Inheritance of Thunder",
+    "count": 4,
+    "ids": [
+      117,
+      10117,
+      20117,
+      30117
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [2])",
+    "field_7": [
+      2
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        10
+      ],
+      [
+        4,
+        10
+      ]
+    ]
+  },
+  {
+    "base_id": 118,
+    "name_cn": "稳固根基",
+    "name_en": "Solid Foundation",
+    "count": 4,
+    "ids": [
+      118,
+      10118,
+      20118,
+      30118
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "generic (has variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        2,
+        12
+      ],
+      [
+        3,
+        15
+      ]
+    ]
+  },
+  {
+    "base_id": 119,
+    "name_cn": "剑池问心",
+    "name_en": "Sword Pool The Heart Ask",
+    "count": 4,
+    "ids": [
+      119,
+      10119,
+      20119,
+      30119
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [1])",
+    "field_7": [
+      1
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        4,
+        1
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        9,
+        2
+      ],
+      [
+        10,
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 120,
+    "name_cn": "妙手回春",
+    "name_en": "Rejuvenation",
+    "count": 4,
+    "ids": [
+      120,
+      10120,
+      20120,
+      30120
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [2])",
+    "field_7": [
+      2
+    ],
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ]
+    ]
+  },
+  {
+    "base_id": 127,
+    "name_cn": "相生相成",
+    "name_en": "Mutual Growth",
+    "count": 4,
+    "ids": [
+      127,
+      10127,
+      20127,
+      30127
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [3])",
+    "field_7": [
+      3
+    ],
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 128,
+    "name_cn": "五行专一",
+    "name_en": "Concentrated Element",
+    "count": 4,
+    "ids": [
+      128,
+      10128,
+      20128,
+      30128
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [3])",
+    "field_7": [
+      3
+    ],
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ]
+    ]
+  },
+  {
+    "base_id": 143,
+    "name_cn": "崩拳传承",
+    "name_en": "Inheritance of Crash Fist",
+    "count": 4,
+    "ids": [
+      143,
+      10143,
+      20143,
+      30143
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [4])",
+    "field_7": [
+      4
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 144,
+    "name_cn": "炼体传承",
+    "name_en": "Inheritance of Physique Building",
+    "count": 4,
+    "ids": [
+      144,
+      10144,
+      20144,
+      30144
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [4])",
+    "field_7": [
+      4
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 145,
+    "name_cn": "气势充沛",
+    "name_en": "Full of Force",
+    "count": 4,
+    "ids": [
+      145,
+      10145,
+      20145,
+      30145
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [4])",
+    "field_7": [
+      4
+    ],
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 146,
+    "name_cn": "体修入道",
+    "name_en": "Physique Master",
+    "count": 4,
+    "ids": [
+      146,
+      10146,
+      20146,
+      30146
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [4])",
+    "field_7": [
+      4
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        5,
+        2
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        8,
+        4
+      ],
+      [
+        12,
+        8
+      ]
+    ]
+  },
+  {
+    "base_id": 148,
+    "name_cn": "血痕记忆",
+    "name_en": "Memory of Blood Scars (Claude translation)",
+    "count": 4,
+    "ids": [
+      148,
+      10148,
+      20148,
+      30148
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [4])",
+    "field_7": [
+      4
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        6,
+        5
+      ]
+    ]
+  },
+  {
+    "base_id": 149,
+    "name_cn": "再生之躯",
+    "name_en": "Regenerating Body",
+    "count": 4,
+    "ids": [
+      149,
+      10149,
+      20149,
+      30149
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [4])",
+    "field_7": [
+      4
+    ],
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        6
+      ]
+    ]
+  },
+  {
+    "base_id": 150,
+    "name_cn": "冥心烙印",
+    "name_en": "Mark of Dark Heart",
+    "count": 4,
+    "ids": [
+      150,
+      10150,
+      20150,
+      30150
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [4])",
+    "field_7": [
+      4
+    ],
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 157,
+    "name_cn": "晚霞",
+    "name_en": "Sunset Glow",
+    "count": 4,
+    "ids": [
+      157,
+      10157,
+      20157,
+      30157
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [1])",
+    "field_7": [
+      1
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        47,
+        4,
+        0
+      ],
+      [
+        47,
+        4,
+        1
+      ],
+      [
+        47,
+        4,
+        2
+      ],
+      [
+        47,
+        4,
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 158,
+    "name_cn": "青龙剑阵",
+    "name_en": "Azure Dragon Sword Formation",
+    "count": 4,
+    "ids": [
+      158,
+      10158,
+      20158,
+      30158
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [1])",
+    "field_7": [
+      1
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        48,
+        4,
+        0
+      ],
+      [
+        48,
+        4,
+        1
+      ],
+      [
+        48,
+        4,
+        2
+      ],
+      [
+        48,
+        4,
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 159,
+    "name_cn": "百兽灵剑阵",
+    "name_en": "Beast Spirit Sword Formation",
+    "count": 4,
+    "ids": [
+      159,
+      10159,
+      20159,
+      30159
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [1])",
+    "field_7": [
+      1
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        49,
+        5,
+        0
+      ],
+      [
+        49,
+        5,
+        1
+      ],
+      [
+        49,
+        5,
+        2
+      ],
+      [
+        49,
+        5,
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 160,
+    "name_cn": "狂龙吞云",
+    "name_en": "Dragon Devours Clouds",
+    "count": 4,
+    "ids": [
+      160,
+      10160,
+      20160,
+      30160
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [1])",
+    "field_7": [
+      1
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        50,
+        5,
+        0
+      ],
+      [
+        50,
+        5,
+        1
+      ],
+      [
+        50,
+        5,
+        2
+      ],
+      [
+        50,
+        5,
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 161,
+    "name_cn": "灵卦术",
+    "name_en": "Spiritual Divination",
+    "count": 4,
+    "ids": [
+      161,
+      10161,
+      20161,
+      30161
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [2])",
+    "field_7": [
+      2
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        51,
+        4,
+        0
+      ],
+      [
+        51,
+        4,
+        1
+      ],
+      [
+        51,
+        4,
+        2
+      ],
+      [
+        51,
+        4,
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 162,
+    "name_cn": "摘花飞叶",
+    "name_en": "Throw Petals",
+    "count": 4,
+    "ids": [
+      162,
+      10162,
+      20162,
+      30162
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [2])",
+    "field_7": [
+      2
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        52,
+        4,
+        0
+      ],
+      [
+        52,
+        4,
+        1
+      ],
+      [
+        52,
+        4,
+        2
+      ],
+      [
+        52,
+        4,
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 163,
+    "name_cn": "双飞燕",
+    "name_en": "Twin Swallows",
+    "count": 4,
+    "ids": [
+      163,
+      10163,
+      20163,
+      30163
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [2])",
+    "field_7": [
+      2
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        53,
+        5,
+        0
+      ],
+      [
+        53,
+        5,
+        1
+      ],
+      [
+        53,
+        5,
+        2
+      ],
+      [
+        53,
+        5,
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 164,
+    "name_cn": "滴水穿石",
+    "name_en": "Water Drop Erosion",
+    "count": 4,
+    "ids": [
+      164,
+      10164,
+      20164,
+      30164
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [2])",
+    "field_7": [
+      2
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        54,
+        5,
+        0
+      ],
+      [
+        54,
+        5,
+        1
+      ],
+      [
+        54,
+        5,
+        2
+      ],
+      [
+        54,
+        5,
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 165,
+    "name_cn": "野渡之印",
+    "name_en": "Wild Crossing Seal",
+    "count": 4,
+    "ids": [
+      165,
+      10165,
+      20165,
+      30165
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [3])",
+    "field_7": [
+      3
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        55,
+        4,
+        0
+      ],
+      [
+        55,
+        4,
+        1
+      ],
+      [
+        55,
+        4,
+        2
+      ],
+      [
+        55,
+        4,
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 166,
+    "name_cn": "熔岩之印",
+    "name_en": "Lava Seal",
+    "count": 4,
+    "ids": [
+      166,
+      10166,
+      20166,
+      30166
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [3])",
+    "field_7": [
+      3
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        56,
+        4,
+        0
+      ],
+      [
+        56,
+        4,
+        1
+      ],
+      [
+        56,
+        4,
+        2
+      ],
+      [
+        56,
+        4,
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 167,
+    "name_cn": "滚石之印",
+    "name_en": "Boulder Seal",
+    "count": 4,
+    "ids": [
+      167,
+      10167,
+      20167,
+      30167
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [3])",
+    "field_7": [
+      3
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        57,
+        5,
+        0
+      ],
+      [
+        57,
+        5,
+        1
+      ],
+      [
+        57,
+        5,
+        2
+      ],
+      [
+        57,
+        5,
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 168,
+    "name_cn": "斩浪之印",
+    "name_en": "Wave Cutter Seal",
+    "count": 4,
+    "ids": [
+      168,
+      10168,
+      20168,
+      30168
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [3])",
+    "field_7": [
+      3
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        58,
+        5,
+        0
+      ],
+      [
+        58,
+        5,
+        1
+      ],
+      [
+        58,
+        5,
+        2
+      ],
+      [
+        58,
+        5,
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 175,
+    "name_cn": "历战不屈",
+    "name_en": "Unbowed through battle",
+    "count": 4,
+    "ids": [
+      175,
+      10175,
+      20175,
+      30175
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [4])",
+    "field_7": [
+      4
+    ],
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        2,
+        1
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        9,
+        4
+      ]
+    ]
+  },
+  {
+    "base_id": 176,
+    "name_cn": "筋骨健壮",
+    "name_en": "Firmness Body",
+    "count": 4,
+    "ids": [
+      176,
+      10176,
+      20176,
+      30176
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "sect-pool (sect [4])",
+    "field_7": [
+      4
+    ],
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        2,
+        10
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        6
+      ]
+    ]
+  },
+  {
+    "base_id": 188,
+    "name_cn": "副职兼修",
+    "name_en": "Additional Side Job",
+    "count": 4,
+    "ids": [
+      188,
+      10188,
+      20188,
+      30188
+    ],
+    "phases": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "type": "generic (has variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        2
+      ],
+      [
+        2
+      ]
+    ]
+  },
+  {
+    "base_id": 3,
+    "name_cn": "戒备防守",
+    "name_en": "Be On Guard",
+    "count": 1,
+    "ids": [
+      3
+    ],
+    "phases": [
+      2
+    ],
+    "type": "orphan (no variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        8
+      ]
+    ]
+  },
+  {
+    "base_id": 7,
+    "name_cn": "云影化身",
+    "name_en": "Shade Of Cloud",
+    "count": 1,
+    "ids": [
+      7
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000001
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        5
+      ]
+    ]
+  },
+  {
+    "base_id": 11,
+    "name_cn": "博采众长",
+    "name_en": "Learn From Others",
+    "count": 1,
+    "ids": [
+      11
+    ],
+    "phases": [
+      5
+    ],
+    "type": "orphan (no variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 14,
+    "name_cn": "云海连绵",
+    "name_en": "Endurance As Cloud Sea",
+    "count": 1,
+    "ids": [
+      14
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000001
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 15,
+    "name_cn": "灵猫踏云",
+    "name_en": "Lithe As Cat",
+    "count": 1,
+    "ids": [
+      15
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000004
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 17,
+    "name_cn": "云泉道茶",
+    "name_en": "Spring Course Tea",
+    "count": 1,
+    "ids": [
+      17
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000001
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1,
+        2
+      ]
+    ]
+  },
+  {
+    "base_id": 18,
+    "name_cn": "云雾变幻",
+    "name_en": "Shift As Cloud",
+    "count": 1,
+    "ids": [
+      18
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000001
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 19,
+    "name_cn": "血脉潜能",
+    "name_en": "Bloodline Potential",
+    "count": 1,
+    "ids": [
+      19
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000002
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        18,
+        12,
+        10
+      ]
+    ]
+  },
+  {
+    "base_id": 20,
+    "name_cn": "精进",
+    "name_en": "Diligent",
+    "count": 1,
+    "ids": [
+      20
+    ],
+    "phases": [
+      2
+    ],
+    "type": "orphan (no variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 21,
+    "name_cn": "冷静",
+    "name_en": "Calm",
+    "count": 1,
+    "ids": [
+      21
+    ],
+    "phases": [
+      3
+    ],
+    "type": "orphan (no variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 22,
+    "name_cn": "炎舞",
+    "name_en": "Flame Dance",
+    "count": 1,
+    "ids": [
+      22
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000002
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        2
+      ]
+    ]
+  },
+  {
+    "base_id": 23,
+    "name_cn": "崩雪",
+    "name_en": "Avalanche",
+    "count": 1,
+    "ids": [
+      23
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000002
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 24,
+    "name_cn": "龙脉传承",
+    "name_en": "Inheritance of Dragonling",
+    "count": 1,
+    "ids": [
+      24
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000003
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        2,
+        2,
+        8
+      ]
+    ]
+  },
+  {
+    "base_id": 25,
+    "name_cn": "珊瑚剑",
+    "name_en": "Coral Sword",
+    "count": 1,
+    "ids": [
+      25
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000003
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        2
+      ]
+    ]
+  },
+  {
+    "base_id": 26,
+    "name_cn": "泪天镯",
+    "name_en": "Tears Bracelet",
+    "count": 1,
+    "ids": [
+      26
+    ],
+    "phases": [
+      3
+    ],
+    "type": "orphan (no variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 27,
+    "name_cn": "龙鳞",
+    "name_en": "Dragon Scale",
+    "count": 1,
+    "ids": [
+      27
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000003
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        20,
+        0
+      ]
+    ]
+  },
+  {
+    "base_id": 28,
+    "name_cn": "灯灵觉醒",
+    "name_en": "Lantern Spirit Awakening",
+    "count": 1,
+    "ids": [
+      28
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000003
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1,
+        1,
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 29,
+    "name_cn": "勤学苦练",
+    "name_en": "Study Hard",
+    "count": 1,
+    "ids": [
+      29
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000001
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        8,
+        1,
+        6
+      ]
+    ]
+  },
+  {
+    "base_id": 32,
+    "name_cn": "生机绽放",
+    "name_en": "Vitality Blossom",
+    "count": 1,
+    "ids": [
+      32
+    ],
+    "phases": [
+      5
+    ],
+    "type": "orphan (no variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 33,
+    "name_cn": "北斗星盘",
+    "name_en": "Dipper Astrolabe",
+    "count": 1,
+    "ids": [
+      33
+    ],
+    "phases": [
+      3
+    ],
+    "type": "orphan (no variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 34,
+    "name_cn": "七星灯",
+    "name_en": "Heptastar Lantern",
+    "count": 1,
+    "ids": [
+      34
+    ],
+    "phases": [
+      3
+    ],
+    "type": "orphan (no variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "base_id": 35,
+    "name_cn": "瓮中捉鳖",
+    "name_en": "Within Reach",
+    "count": 1,
+    "ids": [
+      35
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000002
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        5
+      ]
+    ]
+  },
+  {
+    "base_id": 36,
+    "name_cn": "聚灵卦",
+    "name_en": "Spiritage Hexagram",
+    "count": 1,
+    "ids": [
+      36
+    ],
+    "phases": [
+      5
+    ],
+    "type": "orphan (no variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        2
+      ]
+    ]
+  },
+  {
+    "base_id": 37,
+    "name_cn": "先天灵躯",
+    "name_en": "Innate Spirit Body",
+    "count": 1,
+    "ids": [
+      37
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000003
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 38,
+    "name_cn": "稳固防御",
+    "name_en": "Solid Defense",
+    "count": 1,
+    "ids": [
+      38
+    ],
+    "phases": [
+      3
+    ],
+    "type": "orphan (no variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 39,
+    "name_cn": "灯焰飞舞",
+    "name_en": "Flame Flutter",
+    "count": 1,
+    "ids": [
+      39
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000003
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        6
+      ]
+    ]
+  },
+  {
+    "base_id": 40,
+    "name_cn": "旋灯占卦",
+    "name_en": "Rotary Divination Hexagram",
+    "count": 1,
+    "ids": [
+      40
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000003
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        7
+      ]
+    ]
+  },
+  {
+    "base_id": 41,
+    "name_cn": "枯木逢春",
+    "name_en": "Revitalized",
+    "count": 1,
+    "ids": [
+      41
+    ],
+    "phases": [
+      5
+    ],
+    "type": "orphan (no variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 42,
+    "name_cn": "斩断俗尘",
+    "name_en": "Cut Off Mundane",
+    "count": 1,
+    "ids": [
+      42
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000001
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        0
+      ]
+    ]
+  },
+  {
+    "base_id": 43,
+    "name_cn": "好奇心",
+    "name_en": "Curiosity",
+    "count": 1,
+    "ids": [
+      43
+    ],
+    "phases": [
+      1
+    ],
+    "type": "orphan (no variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        10
+      ]
+    ]
+  },
+  {
+    "base_id": 44,
+    "name_cn": "猫爪",
+    "name_en": "Cat Paw",
+    "count": 1,
+    "ids": [
+      44
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000004
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        8
+      ]
+    ]
+  },
+  {
+    "base_id": 45,
+    "name_cn": "猫魂庇佑",
+    "name_en": "Cat Soul Bless",
+    "count": 1,
+    "ids": [
+      45
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000004
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 46,
+    "name_cn": "灵猫乱剑",
+    "name_en": "Spirit Cat Chaos Sword",
+    "count": 1,
+    "ids": [
+      46
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000004
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        9
+      ]
+    ]
+  },
+  {
+    "base_id": 47,
+    "name_cn": "剑灵极影",
+    "name_en": "Sword Spirit Shadow",
+    "count": 1,
+    "ids": [
+      47
+    ],
+    "phases": [
+      5
+    ],
+    "type": "sect-pool (sect [1])",
+    "field_7": [
+      1
+    ],
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 48,
+    "name_cn": "运筹帷幄",
+    "name_en": "Strategize",
+    "count": 1,
+    "ids": [
+      48
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000004
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 50,
+    "name_cn": "星爆术",
+    "name_en": "Starburst",
+    "count": 1,
+    "ids": [
+      50
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000004
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        10,
+        2
+      ]
+    ]
+  },
+  {
+    "base_id": 51,
+    "name_cn": "星蚀",
+    "name_en": "Astral Eclipse",
+    "count": 1,
+    "ids": [
+      51
+    ],
+    "phases": [
+      4
+    ],
+    "type": "orphan (no variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 52,
+    "name_cn": "七星定魂",
+    "name_en": "Heptastar Soulstat",
+    "count": 1,
+    "ids": [
+      52
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000004
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 61,
+    "name_cn": "占星",
+    "name_en": "Astrology",
+    "count": 1,
+    "ids": [
+      61
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000004
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 62,
+    "name_cn": "布星问卦",
+    "name_en": "Astral Divination Hexagram",
+    "count": 1,
+    "ids": [
+      62
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000004
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 63,
+    "name_cn": "飞鸿踏雪",
+    "name_en": "Only Traces",
+    "count": 1,
+    "ids": [
+      63
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000001
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        12
+      ]
+    ]
+  },
+  {
+    "base_id": 64,
+    "name_cn": "雪羽清风",
+    "name_en": "Birdie Wind",
+    "count": 1,
+    "ids": [
+      64
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000001
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 65,
+    "name_cn": "雁影化身",
+    "name_en": "Avatar of Bird Shade",
+    "count": 1,
+    "ids": [
+      65
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000001
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 66,
+    "name_cn": "剑不出鞘",
+    "name_en": "Sword In Sheathed",
+    "count": 1,
+    "ids": [
+      66
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000001
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 67,
+    "name_cn": "炽火炎刃",
+    "name_en": "Fire Flame Blade",
+    "count": 1,
+    "ids": [
+      67
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000002
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 68,
+    "name_cn": "流冰寒刃",
+    "name_en": "Drift Ice Blade",
+    "count": 1,
+    "ids": [
+      68
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000002
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1,
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 80,
+    "name_cn": "战斗历练",
+    "name_en": "Battle Experience",
+    "count": 1,
+    "ids": [
+      80
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000001
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        2
+      ]
+    ]
+  },
+  {
+    "base_id": 81,
+    "name_cn": "悠然葫芦",
+    "name_en": "Gourd Of Leisurely",
+    "count": 1,
+    "ids": [
+      81
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000001
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        13
+      ]
+    ]
+  },
+  {
+    "base_id": 82,
+    "name_cn": "五行印记",
+    "name_en": "Mark Of Five Elements",
+    "count": 1,
+    "ids": [
+      82
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000001
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 83,
+    "name_cn": "五行化身",
+    "name_en": "Avater Of Five Elements",
+    "count": 1,
+    "ids": [
+      83
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000001
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 84,
+    "name_cn": "五行凝炼",
+    "name_en": "Combine Of Five Elements",
+    "count": 1,
+    "ids": [
+      84
+    ],
+    "phases": [
+      5
+    ],
+    "type": "orphan (no variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 85,
+    "name_cn": "唤雨",
+    "name_en": "Pray Rain",
+    "count": 1,
+    "ids": [
+      85
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000003
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        15
+      ]
+    ]
+  },
+  {
+    "base_id": 86,
+    "name_cn": "九霄玲珑镯",
+    "name_en": "Sky Delicate Bracelet",
+    "count": 1,
+    "ids": [
+      86
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000003
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        16
+      ]
+    ]
+  },
+  {
+    "base_id": 87,
+    "name_cn": "灵阵精通",
+    "name_en": "Spirit Formation Mastered",
+    "count": 1,
+    "ids": [
+      87
+    ],
+    "phases": [
+      1
+    ],
+    "type": "orphan (no variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 88,
+    "name_cn": "土灵印记",
+    "name_en": "Mark Of Earth Spirit",
+    "count": 1,
+    "ids": [
+      88
+    ],
+    "phases": [
+      3
+    ],
+    "type": "sect-pool (sect [3])",
+    "field_7": [
+      3
+    ],
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        6
+      ]
+    ]
+  },
+  {
+    "base_id": 89,
+    "name_cn": "木灵炼体",
+    "name_en": "Quench Of Wood Spirit",
+    "count": 1,
+    "ids": [
+      89
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000004
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        8
+      ]
+    ]
+  },
+  {
+    "base_id": 90,
+    "name_cn": "春雨",
+    "name_en": "Spring Rain",
+    "count": 1,
+    "ids": [
+      90
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000003
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        17
+      ]
+    ]
+  },
+  {
+    "base_id": 91,
+    "name_cn": "刚劲",
+    "name_en": "Vigorous",
+    "count": 1,
+    "ids": [
+      91
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000004
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        18
+      ]
+    ]
+  },
+  {
+    "base_id": 92,
+    "name_cn": "铸剑师",
+    "name_en": "Swordsmith",
+    "count": 1,
+    "ids": [
+      92
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000005
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        18,
+        4
+      ]
+    ]
+  },
+  {
+    "base_id": 93,
+    "name_cn": "剑锋锻造",
+    "name_en": "Blade Forging",
+    "count": 1,
+    "ids": [
+      93
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000005
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 94,
+    "name_cn": "剑纹雕琢",
+    "name_en": "Sword Pattern Carving",
+    "count": 1,
+    "ids": [
+      94
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000005
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 95,
+    "name_cn": "灵气凝铸",
+    "name_en": "Qi Forging",
+    "count": 1,
+    "ids": [
+      95
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000005
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 96,
+    "name_cn": "剑心淬炼",
+    "name_en": "Quench Of Sword Heart",
+    "count": 1,
+    "ids": [
+      96
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000005
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 97,
+    "name_cn": "生机之种",
+    "name_en": "Seed Of Vitality",
+    "count": 1,
+    "ids": [
+      97
+    ],
+    "phases": [
+      1
+    ],
+    "type": "sect-pool (sect [3])",
+    "field_7": [
+      3
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        2,
+        5
+      ]
+    ]
+  },
+  {
+    "base_id": 98,
+    "name_cn": "桃花印",
+    "name_en": "Peach Blossom Seal",
+    "count": 1,
+    "ids": [
+      98
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000003
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        20
+      ]
+    ]
+  },
+  {
+    "base_id": 99,
+    "name_cn": "水灵印记",
+    "name_en": "Mark Of Water Spirit",
+    "count": 1,
+    "ids": [
+      99
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000003
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 100,
+    "name_cn": "山崩",
+    "name_en": "Landslide",
+    "count": 1,
+    "ids": [
+      100
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000004
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        21
+      ]
+    ]
+  },
+  {
+    "base_id": 101,
+    "name_cn": "花舞",
+    "name_en": "Blossom Dance",
+    "count": 1,
+    "ids": [
+      101
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000003
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1,
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 104,
+    "name_cn": "算无遗策",
+    "name_en": "Perfectly Planned",
+    "count": 1,
+    "ids": [
+      104
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000005
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        12,
+        4
+      ]
+    ]
+  },
+  {
+    "base_id": 105,
+    "name_cn": "绛纱守护",
+    "name_en": "Crimson Yarn Guard",
+    "count": 1,
+    "ids": [
+      105
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000003
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        15
+      ]
+    ]
+  },
+  {
+    "base_id": 106,
+    "name_cn": "星月折扇",
+    "name_en": "Star Moon Folding Fan",
+    "count": 1,
+    "ids": [
+      106
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000005
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        23,
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 107,
+    "name_cn": "无中生有",
+    "name_en": "Out Of Nothing",
+    "count": 1,
+    "ids": [
+      107
+    ],
+    "phases": [
+      4
+    ],
+    "type": "sect-pool (sect [2])",
+    "field_7": [
+      2
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1,
+        2
+      ]
+    ]
+  },
+  {
+    "base_id": 108,
+    "name_cn": "瞒天过海",
+    "name_en": "Act Underhand",
+    "count": 1,
+    "ids": [
+      108
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000005
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        0
+      ]
+    ]
+  },
+  {
+    "base_id": 109,
+    "name_cn": "先天五行",
+    "name_en": "Innate Element",
+    "count": 1,
+    "ids": [
+      109
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000002
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 110,
+    "name_cn": "先天印记",
+    "name_en": "Innate Mark",
+    "count": 1,
+    "ids": [
+      110
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000002
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 111,
+    "name_cn": "先天灵阵",
+    "name_en": "Innate Spirit Formation",
+    "count": 1,
+    "ids": [
+      111
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000002
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 112,
+    "name_cn": "五行元灵",
+    "name_en": "Five Elements Anima",
+    "count": 1,
+    "ids": [
+      112
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000002
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 114,
+    "name_cn": "血脉威能",
+    "name_en": "Bloodline Power",
+    "count": 1,
+    "ids": [
+      114
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000002
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        28,
+        16
+      ]
+    ]
+  },
+  {
+    "base_id": 115,
+    "name_cn": "燃命之焰",
+    "name_en": "Flame of life",
+    "count": 1,
+    "ids": [
+      115
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000002
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        4,
+        6
+      ]
+    ]
+  },
+  {
+    "base_id": 121,
+    "name_cn": "无极卦盘",
+    "name_en": "Ultimate Hexagram Base",
+    "count": 1,
+    "ids": [
+      121
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000002
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        28
+      ]
+    ]
+  },
+  {
+    "base_id": 122,
+    "name_cn": "狂雷电闪",
+    "name_en": "Fury Thunder",
+    "count": 1,
+    "ids": [
+      122
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000002
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        29,
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 123,
+    "name_cn": "五行传承",
+    "name_en": "Inheritance of Five Elements",
+    "count": 1,
+    "ids": [
+      123
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000001
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        0,
+        31
+      ]
+    ]
+  },
+  {
+    "base_id": 124,
+    "name_cn": "双鸳逆克",
+    "name_en": "Overcome with each other",
+    "count": 1,
+    "ids": [
+      124
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000002
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        2,
+        32
+      ]
+    ]
+  },
+  {
+    "base_id": 125,
+    "name_cn": "猛虎之躯",
+    "name_en": "The Body of Fierce Tiger",
+    "count": 1,
+    "ids": [
+      125
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000004
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        120
+      ]
+    ]
+  },
+  {
+    "base_id": 126,
+    "name_cn": "火灵炼体",
+    "name_en": "Quench Of Fire Spirit",
+    "count": 1,
+    "ids": [
+      126
+    ],
+    "phases": [
+      2
+    ],
+    "type": "sect-pool (sect [3])",
+    "field_7": [
+      3
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        7
+      ]
+    ]
+  },
+  {
+    "base_id": 129,
+    "name_cn": "好奇心",
+    "name_en": "Curiosity",
+    "count": 1,
+    "ids": [
+      129
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000004
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        9
+      ]
+    ]
+  },
+  {
+    "base_id": 130,
+    "name_cn": "相生五灵阵",
+    "name_en": "Five Elements Generating Spirit Formation",
+    "count": 1,
+    "ids": [
+      130
+    ],
+    "phases": [
+      5
+    ],
+    "type": "orphan (no variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 131,
+    "name_cn": "无中生有",
+    "name_en": "无中生有",
+    "count": 1,
+    "ids": [
+      131
+    ],
+    "phases": [
+      4
+    ],
+    "type": "orphan (no variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 132,
+    "name_cn": "锟铻金环",
+    "name_en": "Kun Wu Metal Ring",
+    "count": 1,
+    "ids": [
+      132
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000004
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        38
+      ]
+    ]
+  },
+  {
+    "base_id": 133,
+    "name_cn": "五行润养",
+    "name_en": "Five Elements Infuse",
+    "count": 1,
+    "ids": [
+      133
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000003
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        15,
+        0
+      ]
+    ]
+  },
+  {
+    "base_id": 134,
+    "name_cn": "桃枝如意",
+    "name_en": "Peach Branch Ruyi",
+    "count": 1,
+    "ids": [
+      134
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000003
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 135,
+    "name_cn": "生机卦诀",
+    "name_en": "Vitality Hexagram",
+    "count": 1,
+    "ids": [
+      135
+    ],
+    "phases": [
+      2
+    ],
+    "type": "sect-pool (sect [2])",
+    "field_7": [
+      2
+    ],
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 136,
+    "name_cn": "秘印亲和",
+    "name_en": "Secret Seal Affinity",
+    "count": 1,
+    "ids": [
+      136
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000005
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        2
+      ]
+    ]
+  },
+  {
+    "base_id": 137,
+    "name_cn": "相生之火",
+    "name_en": "Fire Spirit Generation",
+    "count": 1,
+    "ids": [
+      137
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000005
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 138,
+    "name_cn": "五行爆炎",
+    "name_en": "Five Elements Explosion",
+    "count": 1,
+    "ids": [
+      138
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000005
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        4,
+        3,
+        0
+      ]
+    ]
+  },
+  {
+    "base_id": 139,
+    "name_cn": "焰魂归复",
+    "name_en": "Flame Soul Rebirth",
+    "count": 1,
+    "ids": [
+      139
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000005
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        15,
+        15
+      ]
+    ]
+  },
+  {
+    "base_id": 140,
+    "name_cn": "疾燃咒印",
+    "name_en": "Swift Burning Seal",
+    "count": 1,
+    "ids": [
+      140
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000005
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        18
+      ]
+    ]
+  },
+  {
+    "base_id": 141,
+    "name_cn": "计出万全",
+    "name_en": "Best Choice",
+    "count": 1,
+    "ids": [
+      141
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000005
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 142,
+    "name_cn": "以逸待劳",
+    "name_en": "Rest and Outwit",
+    "count": 1,
+    "ids": [
+      142
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000005
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        3,
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 147,
+    "name_cn": "身轻如燕",
+    "name_en": "Light as a Swallow (Claude translation)",
+    "count": 1,
+    "ids": [
+      147
+    ],
+    "phases": [
+      5
+    ],
+    "type": "sect-pool (sect [4])",
+    "field_7": [
+      4
+    ],
+    "field_8": null,
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        7
+      ]
+    ]
+  },
+  {
+    "base_id": 151,
+    "name_cn": "磨砺不止",
+    "name_en": "Unyielding Learning",
+    "count": 1,
+    "ids": [
+      151
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000001
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        7
+      ]
+    ]
+  },
+  {
+    "base_id": 152,
+    "name_cn": "锻体不息",
+    "name_en": "Unceasing Exercising",
+    "count": 1,
+    "ids": [
+      152
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000001
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        45
+      ]
+    ]
+  },
+  {
+    "base_id": 153,
+    "name_cn": "灵涌不竭",
+    "name_en": "Unbounded Qi",
+    "count": 1,
+    "ids": [
+      153
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000001
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        3,
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 154,
+    "name_cn": "生机不灭",
+    "name_en": "Undying Body",
+    "count": 1,
+    "ids": [
+      154
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000001
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "base_id": 155,
+    "name_cn": "逆境不弃",
+    "name_en": "Unyielding in Adversity (Claude translation)",
+    "count": 1,
+    "ids": [
+      155
+    ],
+    "phases": [
+      5
+    ],
+    "type": "orphan (no variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        43
+      ]
+    ]
+  },
+  {
+    "base_id": 156,
+    "name_cn": "疾驰不休",
+    "name_en": "Tireless Sprint (Claude translation)",
+    "count": 1,
+    "ids": [
+      156
+    ],
+    "phases": [
+      5
+    ],
+    "type": "orphan (no variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        44
+      ]
+    ]
+  },
+  {
+    "base_id": 169,
+    "name_cn": "传承不绝",
+    "name_en": "Endless Inheritance (Claude translation)",
+    "count": 1,
+    "ids": [
+      169
+    ],
+    "phases": [
+      5
+    ],
+    "type": "orphan (no variants)",
+    "field_7": null,
+    "field_8": null,
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        2
+      ]
+    ]
+  },
+  {
+    "base_id": 170,
+    "name_cn": "锻躯之道",
+    "name_en": "Forge Body",
+    "count": 1,
+    "ids": [
+      170
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000002
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        0
+      ]
+    ]
+  },
+  {
+    "base_id": 171,
+    "name_cn": "搏命之勇",
+    "name_en": "Courage to Fight",
+    "count": 1,
+    "ids": [
+      171
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000002
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        3,
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 172,
+    "name_cn": "盛气凌人",
+    "name_en": "Overwhelming Power",
+    "count": 1,
+    "ids": [
+      172
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000002
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        0,
+        70
+      ]
+    ]
+  },
+  {
+    "base_id": 173,
+    "name_cn": "猛攻之姿",
+    "name_en": "Stance of Fierce Attack",
+    "count": 1,
+    "ids": [
+      173
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000002
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 174,
+    "name_cn": "崩裂之拳",
+    "name_en": "Cracking Fist",
+    "count": 1,
+    "ids": [
+      174
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000002
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        0
+      ]
+    ]
+  },
+  {
+    "base_id": 177,
+    "name_cn": "修玄不泯",
+    "name_en": "Unwavering Soul",
+    "count": 1,
+    "ids": [
+      177
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000001
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "base_id": 178,
+    "name_cn": "阴晴圆缺",
+    "name_en": "The moon waxes and wanes",
+    "count": 1,
+    "ids": [
+      178
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000003
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1,
+        3,
+        8,
+        4
+      ]
+    ]
+  },
+  {
+    "base_id": 179,
+    "name_cn": "入冥",
+    "name_en": "Entering Styx",
+    "count": 1,
+    "ids": [
+      179
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000003
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 180,
+    "name_cn": "疯魔",
+    "name_en": "Gone Crazy",
+    "count": 1,
+    "ids": [
+      180
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000003
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        73
+      ]
+    ]
+  },
+  {
+    "base_id": 181,
+    "name_cn": "冥夜",
+    "name_en": "Styx Night",
+    "count": 1,
+    "ids": [
+      181
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000003
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        74
+      ]
+    ]
+  },
+  {
+    "base_id": 182,
+    "name_cn": "冥月蟾光",
+    "name_en": "Styx Moon's Glow",
+    "count": 1,
+    "ids": [
+      182
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000003
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        75
+      ]
+    ]
+  },
+  {
+    "base_id": 183,
+    "name_cn": "禅心锻身",
+    "name_en": "Zen Mind Forging Body",
+    "count": 1,
+    "ids": [
+      183
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000004
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1,
+        4
+      ]
+    ]
+  },
+  {
+    "base_id": 184,
+    "name_cn": "心体共鸣",
+    "name_en": "Mind-Body Resonance",
+    "count": 1,
+    "ids": [
+      184
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000004
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 185,
+    "name_cn": "冥心入玄",
+    "name_en": "Meditation of Xuan",
+    "count": 1,
+    "ids": [
+      185
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000004
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        81
+      ]
+    ]
+  },
+  {
+    "base_id": 186,
+    "name_cn": "记忆碎片",
+    "name_en": "Memory Fragment",
+    "count": 1,
+    "ids": [
+      186
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000004
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        5
+      ]
+    ]
+  },
+  {
+    "base_id": 187,
+    "name_cn": "万玄破魔掌",
+    "name_en": "Wan Xuan Demon Breaking Palm",
+    "count": 1,
+    "ids": [
+      187
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000004
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        82
+      ]
+    ]
+  },
+  {
+    "base_id": 189,
+    "name_cn": "悟剑天赋",
+    "name_en": "Swordplay Talent",
+    "count": 1,
+    "ids": [
+      189
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000006
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 190,
+    "name_cn": "观壁悟道",
+    "name_en": "Dao of Ruiying",
+    "count": 1,
+    "ids": [
+      190
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000006
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 191,
+    "name_cn": "八方来风",
+    "name_en": "Wind Rose",
+    "count": 1,
+    "ids": [
+      191
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000006
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        1,
+        7
+      ]
+    ]
+  },
+  {
+    "base_id": 192,
+    "name_cn": "剑招融汇",
+    "name_en": "Chengyun's Fusion Style",
+    "count": 1,
+    "ids": [
+      192
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000006
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 193,
+    "name_cn": "曳影剑阵",
+    "name_en": "Yeying Sword Formation",
+    "count": 1,
+    "ids": [
+      193
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000006
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        213
+      ]
+    ]
+  },
+  {
+    "base_id": 194,
+    "name_cn": "风行天上",
+    "name_en": "Wind in Sky",
+    "count": 1,
+    "ids": [
+      194
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000006
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        4,
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 195,
+    "name_cn": "灵卦自衍",
+    "name_en": "Spirit Hexagram Evolves",
+    "count": 1,
+    "ids": [
+      195
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000006
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 196,
+    "name_cn": "阴符玉简",
+    "name_en": "Jade Scroll of Yin Symbol",
+    "count": 1,
+    "ids": [
+      196
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000006
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        214
+      ]
+    ]
+  },
+  {
+    "base_id": 197,
+    "name_cn": "易卦自解",
+    "name_en": "Hexagrams Explain",
+    "count": 1,
+    "ids": [
+      197
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000006
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 198,
+    "name_cn": "孤虚金书",
+    "name_en": "Solitary Void Golden Scroll",
+    "count": 1,
+    "ids": [
+      198
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      2
+    ],
+    "field_8": [
+      2000006
+    ],
+    "has_field_4": false,
+    "has_field_10": true,
+    "other_params": [
+      [
+        215
+      ]
+    ]
+  },
+  {
+    "base_id": 199,
+    "name_cn": "五行玉瓶",
+    "name_en": "Five Elements Pure Vase",
+    "count": 1,
+    "ids": [
+      199
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000006
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 200,
+    "name_cn": "百草生息",
+    "name_en": "Herbs Flourish",
+    "count": 1,
+    "ids": [
+      200
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000006
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 201,
+    "name_cn": "天降甘霖",
+    "name_en": "Heavenly Rain",
+    "count": 1,
+    "ids": [
+      201
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000006
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        259
+      ]
+    ]
+  },
+  {
+    "base_id": 202,
+    "name_cn": "五行聚灵",
+    "name_en": "Five Elements Gather Qi",
+    "count": 1,
+    "ids": [
+      202
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000006
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 203,
+    "name_cn": "忘忧",
+    "name_en": "Forget Worries",
+    "count": 1,
+    "ids": [
+      203
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000006
+    ],
+    "has_field_4": true,
+    "has_field_10": true,
+    "other_params": [
+      [
+        218,
+        15
+      ]
+    ]
+  },
+  {
+    "base_id": 204,
+    "name_cn": "凡躯",
+    "name_en": "Mortal Body",
+    "count": 1,
+    "ids": [
+      204
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000005
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 205,
+    "name_cn": "拆招",
+    "name_en": "Counter Move",
+    "count": 1,
+    "ids": [
+      205
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000005
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        221
+      ]
+    ]
+  },
+  {
+    "base_id": 206,
+    "name_cn": "志坚",
+    "name_en": "Indomitable Will",
+    "count": 1,
+    "ids": [
+      206
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000005
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 207,
+    "name_cn": "转势",
+    "name_en": "Shift Stance",
+    "count": 1,
+    "ids": [
+      207
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000005
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        222
+      ]
+    ]
+  },
+  {
+    "base_id": 208,
+    "name_cn": "得炁",
+    "name_en": "Attain Qi",
+    "count": 1,
+    "ids": [
+      208
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000005
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 209,
+    "name_cn": "灵炁奔涌",
+    "name_en": "Surge of Qi",
+    "count": 1,
+    "ids": [
+      209
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      4
+    ],
+    "field_8": [
+      4000005
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 10093,
+    "name_cn": "锐利剑锋",
+    "name_en": "Sharp Blade",
+    "count": 1,
+    "ids": [
+      10093
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000005
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 10094,
+    "name_cn": "追击剑纹",
+    "name_en": "Chain Sword Pattern",
+    "count": 1,
+    "ids": [
+      10094
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000005
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        5
+      ]
+    ]
+  },
+  {
+    "base_id": 10095,
+    "name_cn": "聚灵凝铸",
+    "name_en": "Spiritage Forging",
+    "count": 1,
+    "ids": [
+      10095
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000005
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        2
+      ]
+    ]
+  },
+  {
+    "base_id": 10096,
+    "name_cn": "狂剑之心",
+    "name_en": "Unrestrained Sword Heart",
+    "count": 1,
+    "ids": [
+      10096
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000005
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1,
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 10109,
+    "name_cn": "先天五行•金",
+    "name_en": "Innate Element - Metal",
+    "count": 1,
+    "ids": [
+      10109
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000002
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 20093,
+    "name_cn": "稳固剑锋",
+    "name_en": "Stable Blade",
+    "count": 1,
+    "ids": [
+      20093
+    ],
+    "phases": [
+      2
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000005
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        2,
+        9
+      ]
+    ]
+  },
+  {
+    "base_id": 20094,
+    "name_cn": "蓄攻剑纹",
+    "name_en": "Charge Sword Pattern",
+    "count": 1,
+    "ids": [
+      20094
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000005
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 20095,
+    "name_cn": "御灵凝铸",
+    "name_en": "Spiritstat Forging",
+    "count": 1,
+    "ids": [
+      20095
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000005
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "base_id": 20096,
+    "name_cn": "云剑之心",
+    "name_en": "Cloud Sword Heart",
+    "count": 1,
+    "ids": [
+      20096
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000005
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1,
+        7
+      ]
+    ]
+  },
+  {
+    "base_id": 20109,
+    "name_cn": "先天五行•水",
+    "name_en": "Innate Element - Water",
+    "count": 1,
+    "ids": [
+      20109
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000002
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 30094,
+    "name_cn": "锐意剑纹",
+    "name_en": "Intense Sword Pattern",
+    "count": 1,
+    "ids": [
+      30094
+    ],
+    "phases": [
+      3
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000005
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        4,
+        2
+      ]
+    ]
+  },
+  {
+    "base_id": 30095,
+    "name_cn": "灵威凝铸",
+    "name_en": "Spiritual Power Forging",
+    "count": 1,
+    "ids": [
+      30095
+    ],
+    "phases": [
+      4
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000005
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "base_id": 30096,
+    "name_cn": "无极之心",
+    "name_en": "Ultimate Heart",
+    "count": 1,
+    "ids": [
+      30096
+    ],
+    "phases": [
+      5
+    ],
+    "type": "character-specific",
+    "field_7": [
+      1
+    ],
+    "field_8": [
+      1000005
+    ],
+    "has_field_4": true,
+    "has_field_10": false,
+    "other_params": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "base_id": 30109,
+    "name_cn": "先天五行•木",
+    "name_en": "Innate Element - Wood",
+    "count": 1,
+    "ids": [
+      30109
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000002
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 40109,
+    "name_cn": "先天五行•火",
+    "name_en": "Innate Element - Fire",
+    "count": 1,
+    "ids": [
+      40109
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000002
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  },
+  {
+    "base_id": 50109,
+    "name_cn": "先天五行•土",
+    "name_en": "Innate Element - Earth",
+    "count": 1,
+    "ids": [
+      50109
+    ],
+    "phases": [
+      1
+    ],
+    "type": "character-specific",
+    "field_7": [
+      3
+    ],
+    "field_8": [
+      3000002
+    ],
+    "has_field_4": false,
+    "has_field_10": false,
+    "other_params": [
+      []
+    ]
+  }
+]

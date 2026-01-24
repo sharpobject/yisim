@@ -1,0 +1,8 @@
+### 40602 - Mysterious Gates Devil Seal Tower
+  L1 CSV:  [hp=0 qi=3] Deal 25 [DMG] | Opponent cannot act for 1 turns
+  L1 IMPL: [hp=0 qi=3]  game.deal_damage(25); game.add_enemy_c_of_x(1, "cannot_act_stacks"); ✓
+  L2 CSV:  [hp=0 qi=3] Deal 32 [DMG] | Opponent cannot act for 1 turns
+  L2 IMPL: [hp=0 qi=3]  game.deal_damage(32); game.add_enemy_c_of_x(1, "cannot_act_stacks"); ✓
+  L3 CSV:  [hp=0 qi=3] Deal 32 [DMG] | Opponent cannot act for 2 turns
+  L3 IMPL: [hp=0 qi=3]  game.deal_damage(32); game.add_enemy_c_of_x(2, "cannot_act_stacks"); ✓
+

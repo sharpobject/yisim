@@ -1,0 +1,8 @@
+### 64503 - Red Gold Dragon Stick
+  L1 CSV:  [no cost] [Fist]: [Force]+4, gain 1 HP for every 5 [Physique] | [Stick]: 4 ATK × 2 (Gain 1 ATK for every 9 [Physique]) | [Switch Stance]
+  L1 IMPL: [no cost]  const me = game.players[0]; if (game.if_fist_stance()) { game.add_c_of_x(4, "force"); game.for_each_x_add_c_pct_y("physique", 20, "hp"); } else { const atk_amt = 4 + Math.floor(me.physique * 11.111112 / 100); for (let i = 0; i < 2; i++) { game.atk(atk_amt); } } game.switch_stance(); ✓
+  L2 CSV:  [no cost] [Fist]: [Force]+5, gain 1 HP for every 5 [Physique] | [Stick]: 7 ATK × 2 (Gain 1 ATK for every 9 [Physique]) | [Switch Stance]
+  L2 IMPL: [no cost]  const me = game.players[0]; if (game.if_fist_stance()) { game.add_c_of_x(5, "force"); game.for_each_x_add_c_pct_y("physique", 20, "hp"); } else { const atk_amt = 7 + Math.floor(me.physique * 11.111112 / 100); for (let i = 0; i < 2; i++) { game.atk(atk_amt); } } game.switch_stance(); ✓
+  L3 CSV:  [no cost] [Fist]: [Force]+6, gain 1 HP for every 5 [Physique] | [Stick]: 10 ATK × 2 (Gain 1 ATK for every 9 [Physique]) | [Switch Stance]
+  L3 IMPL: [no cost]  const me = game.players[0]; if (game.if_fist_stance()) { game.add_c_of_x(6, "force"); game.for_each_x_add_c_pct_y("physique", 20, "hp"); } else { const atk_amt = 10 + Math.floor(me.physique * 11.111112 / 100); for (let i = 0; i < 2; i++) { game.atk(atk_amt); } } game.switch_stance(); ✓
+

@@ -1,0 +1,8 @@
+### 64203 - Counter Move
+  L1 CSV:  [no cost] [DEF]+7 | Until the start of your next turn: | [Fist]: Reduce incoming [ATK] and [DMG] by 50% | [Stick]: Deal 6 [DMG] to the opponent each time you are attacked
+  L1 IMPL: [no cost]  game.increase_idx_def(0, 7); game.increase_idx_x_by_c(0, "counter_move_stacks", 1); ✓
+  L2 CSV:  [no cost] [DEF]+12 | Until the start of your next turn: | [Fist]: Reduce incoming [ATK] and [DMG] by 50% | [Stick]: Deal 6 [DMG] to the opponent each time you are attacked
+  L2 IMPL: [no cost]  game.increase_idx_def(0, 12); game.increase_idx_x_by_c(0, "counter_move_stacks", 1); ✓
+  L3 CSV:  [no cost] [DEF]+17 | Until the start of your next turn: | [Fist]: Reduce incoming [ATK] and [DMG] by 50% | [Stick]: Deal 6 [DMG] to the opponent each time you are attacked
+  L3 IMPL: [no cost]  game.increase_idx_def(0, 17); game.increase_idx_x_by_c(0, "counter_move_stacks", 1); ✓
+

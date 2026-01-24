@@ -1,0 +1,8 @@
+### 91506 - Xuanming Sword Intent Mantra
+  L1 CSV:  [hp=6 qi=0] [Sword Intent]+6 | For every 6 HP lost in this battle, add 1 more [Sword Intent]
+  L1 IMPL: [hp=6 qi=0]  game.increase_idx_x_by_c(0, "sword_intent", 6); game.for_each_x_add_c_pct_y("hp_lost", 16.666667, "sword_intent"); ✓
+  L2 CSV:  [hp=6 qi=0] [Sword Intent]+8 | For every 6 HP lost in this battle, add 1 more [Sword Intent]
+  L2 IMPL: [hp=6 qi=0]  game.increase_idx_x_by_c(0, "sword_intent", 8); game.for_each_x_add_c_pct_y("hp_lost", 16.666667, "sword_intent"); ✓
+  L3 CSV:  [hp=6 qi=0] [Sword Intent]+10 | For every 6 HP lost in this battle, add 1 more [Sword Intent]
+  L3 IMPL: [hp=6 qi=0]  game.increase_idx_x_by_c(0, "sword_intent", 10); game.for_each_x_add_c_pct_y("hp_lost", 16.666667, "sword_intent"); ✓
+

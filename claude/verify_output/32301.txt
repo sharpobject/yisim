@@ -1,0 +1,8 @@
+### 32301 - Ice Incantation
+  L1 CSV:  [no cost] Repeat 2 times: Opponent loses 4 HP
+  L1 IMPL: [no cost]  for (let i = 0; i < 2; i++) { game.reduce_enemy_c_of_x(4, "hp"); } ✓
+  L2 CSV:  [no cost] Repeat 3 times: Opponent loses 4 HP
+  L2 IMPL: [no cost]  for (let i = 0; i < 3; i++) { game.reduce_enemy_c_of_x(4, "hp"); } ✓
+  L3 CSV:  [no cost] Repeat 4 times: Opponent loses 4 HP
+  L3 IMPL: [no cost]  for (let i = 0; i < 4; i++) { game.reduce_enemy_c_of_x(4, "hp"); } ✓
+

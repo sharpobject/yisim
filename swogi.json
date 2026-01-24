@@ -955,7 +955,6 @@
 	},
 	"115051": {
 		"name": "Sword Intent Surge",
-		"qi_cost": 1,
 		"actions": [
 			["for_each_x_add_c_pct_y", "sword_intent", 80, "sword_intent"]
 		]
@@ -5047,13 +5046,17 @@
 	},
 	"231012": {
 		"actions": [
-			["add_c_of_x", 3, "increase_atk"],
+			["add_c_of_x", 2, "increase_atk"],
+			["increase_idx_max_hp", 0, 4],
+			["increase_idx_hp", 0, 4],
 			["activate_wood_spirit"]
 		]
 	},
 	"231013": {
 		"actions": [
-			["add_c_of_x", 4, "increase_atk"],
+			["add_c_of_x", 2, "increase_atk"],
+			["increase_idx_max_hp", 0, 8],
+			["increase_idx_hp", 0, 8],
 			["activate_wood_spirit"]
 		]
 	},
@@ -8509,6 +8512,25 @@
 			["chase"]
 		]
 	},
+	"604011": {
+		"name": "Waiting for Rabbit",
+		"actions": [
+			["def", 15],
+			["consumption"]
+		]
+	},
+	"604012": {
+		"actions": [
+			["def", 20],
+			["consumption"]
+		]
+	},
+	"604013": {
+		"actions": [
+			["def", 25],
+			["consumption"]
+		]
+	},
 	"605011": {
 		"name": "Mirroring Merpeople Pearl",
 		"actions": [
@@ -8888,24 +8910,27 @@
 	"614021": {
 		"name": "Cloud Sword - Pray Rain",
 		"actions": [
-			["rep", 3, ["atk", 3]],
+			["rep", 3, ["atk", 2]],
 			["add_c_of_x", 2, "regen"],
-			["qi", 1]
+			["qi", 1],
+			["cloud_hit", ["convert_x_to_y_up_to_c", "regen", "increase_atk", 2]]
 		],
 		"character": "sw3"
 	},
 	"614022": {
 		"actions": [
-			["rep", 4, ["atk", 3]],
+			["rep", 4, ["atk", 2]],
 			["add_c_of_x", 2, "regen"],
-			["qi", 1]
+			["qi", 1],
+			["cloud_hit", ["convert_x_to_y_up_to_c", "regen", "increase_atk", 3]]
 		]
 	},
 	"614023": {
 		"actions": [
-			["rep", 5, ["atk", 3]],
+			["rep", 5, ["atk", 2]],
 			["add_c_of_x", 2, "regen"],
-			["qi", 1]
+			["qi", 1],
+			["cloud_hit", ["convert_x_to_y_up_to_c", "regen", "increase_atk", 4]]
 		]
 	},
 	"614031": {
@@ -9033,6 +9058,34 @@
 			["qi", 4],
 			["chase"],
 			["post_action", ["heal", 1]]
+		]
+	},
+	"622021": {
+		"name": "Jade Scroll of Yin Symbol",
+		"actions": [
+			["qi", 1],
+			["add_enemy_c_of_x", 1, "weaken"],
+			["add_enemy_c_of_x", 2, "flaw"],
+			["continuous"],
+			["add_enemy_c_of_x", 1, "jade_scroll_of_yin_symbol_stacks"]
+		]
+	},
+	"622022": {
+		"actions": [
+			["qi", 1],
+			["add_enemy_c_of_x", 2, "weaken"],
+			["add_enemy_c_of_x", 2, "flaw"],
+			["continuous"],
+			["add_enemy_c_of_x", 1, "jade_scroll_of_yin_symbol_stacks"]
+		]
+	},
+	"622023": {
+		"actions": [
+			["qi", 1],
+			["add_enemy_c_of_x", 3, "weaken"],
+			["add_enemy_c_of_x", 2, "flaw"],
+			["continuous"],
+			["add_enemy_c_of_x", 1, "jade_scroll_of_yin_symbol_stacks"]
 		]
 	},
 	"623011": {
@@ -9226,6 +9279,54 @@
 		"actions": [
 			["do_fury_thunder", 3]
 		]
+	},
+	"625031": {
+		"name": "Solitary Void Golden Scroll",
+		"actions": [
+			["qi", 2],
+			["heal", 6]
+		]
+	},
+	"625032": {
+		"actions": [
+			["qi", 4],
+			["def", 6]
+		]
+	},
+	"625033": {
+		"actions": [
+			["qi", 4]
+		]
+	},
+	"625041": {
+		"name": "Face Isolation",
+		"actions": [
+			["add_enemy_c_of_x", 1, "face_isolation_stacks"],
+			["chase"]
+		]
+	},
+	"625042": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"625043": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"625051": {
+		"name": "Strike Vacuity",
+		"actions": [
+			["add_enemy_c_of_x", 1, "strike_vacuity_stacks"],
+			["chase"]
+		]
+	},
+	"625052": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"625053": {
+		"does_not_exist": true,
+		"actions": []
 	},
 	"632011": {
 		"name": "Wood Spirit - Peach Blossom Seal",
@@ -9599,23 +9700,26 @@
 	},
 	"644011": {
 		"name": "Crash Fist - Styx Night",
+		"hp_cost": 3,
 		"actions": [
-			["add_c_of_x", 2, "styx"],
+			["add_c_of_x", 3, "styx"],
 			["continuous"],
 			["add_c_of_x", 6, "crash_fist_stygian_night_stacks"]
 		],
 		"character": "dx3"
 	},
 	"644012": {
+		"hp_cost": 3,
 		"actions": [
-			["add_c_of_x", 3, "styx"],
+			["add_c_of_x", 4, "styx"],
 			["continuous"],
 			["add_c_of_x", 9, "crash_fist_stygian_night_stacks"]
 		]
 	},
 	"644013": {
+		"hp_cost": 3,
 		"actions": [
-			["add_c_of_x", 4, "styx"],
+			["add_c_of_x", 5, "styx"],
 			["continuous"],
 			["add_c_of_x", 12, "crash_fist_stygian_night_stacks"]
 		]
@@ -9798,6 +9902,14 @@
 			["exhaust"]
 		]
 	},
+	"701042": {
+		"does_not_exist": true,
+		"actions": []
+	},
+	"701043": {
+		"does_not_exist": true,
+		"actions": []
+	},
 	"701051": {
 		"name": "Xiaoyao - Breathless",
 		"actions": [
@@ -9829,11 +9941,15 @@
 		"does_not_exist": true,
 		"actions": []
 	},
-	"701042": {
+	"701071": {
+		"name": "Xiaoyao - Reproduction",
+		"actions": []
+	},
+	"701072": {
 		"does_not_exist": true,
 		"actions": []
 	},
-	"701043": {
+	"701073": {
 		"does_not_exist": true,
 		"actions": []
 	},
@@ -9952,6 +10068,22 @@
 			["chase"]
 		]
 	},
+	"714071": {
+		"name": "M - Diligent Sword",
+		"actions": [
+			["atk", 4]
+		]
+	},
+	"714072": {
+		"actions": [
+			["atk", 4]
+		]
+	},
+	"714073": {
+		"actions": [
+			["atk", 4]
+		]
+	},
 	"715011": {
 		"name": "Dragon Devours Clouds",
 		"actions": [
@@ -10039,6 +10171,38 @@
 		]
 	},
 	"715053": {
+		"actions": [
+			["def", 2]
+		]
+	},
+	"715061": {
+		"name": "M - Cloud Dance Rhythm",
+		"actions": [
+			["def", 2]
+		]
+	},
+	"715062": {
+		"actions": [
+			["def", 2]
+		]
+	},
+	"715063": {
+		"actions": [
+			["def", 2]
+		]
+	},
+	"715071": {
+		"name": "M - Unrestrained Sword Dragon Coiled",
+		"actions": [
+			["def", 2]
+		]
+	},
+	"715072": {
+		"actions": [
+			["def", 2]
+		]
+	},
+	"715073": {
 		"actions": [
 			["def", 2]
 		]
@@ -10169,6 +10333,31 @@
 			["add_c_of_x", 12, "m_dotted_around_stacks"]
 		]
 	},
+	"724071": {
+		"name": "M - Vitality Blossom",
+		"actions": [
+			["add_c_of_x", 10, "hp"],
+			["add_c_of_x", 10, "max_hp"],
+			["continuous"],
+			["add_c_of_x", 8, "m_vitality_blossom_stacks"]
+		]
+	},
+	"724072": {
+		"actions": [
+			["add_c_of_x", 15, "hp"],
+			["add_c_of_x", 15, "max_hp"],
+			["continuous"],
+			["add_c_of_x", 12, "m_vitality_blossom_stacks"]
+		]
+	},
+	"724073": {
+		"actions": [
+			["add_c_of_x", 20, "hp"],
+			["add_c_of_x", 20, "max_hp"],
+			["continuous"],
+			["add_c_of_x", 16, "m_vitality_blossom_stacks"]
+		]
+	},
 	"725011": {
 		"name": "Astral Move - Twin Swallows",
 		"actions": [
@@ -10286,6 +10475,55 @@
 		"actions": [
 			["atk", 5],
 			["add_c_of_x", 3, "star_power"]
+		]
+	},
+	"725061": {
+		"name": "M - Flower Sentient",
+		"actions": [
+			["qi", 3],
+			["add_enemy_c_of_x", 1, "internal_injury"],
+			["add_enemy_c_of_x", 3, "m_flower_sentient_stacks"]
+		]
+	},
+	"725062": {
+		"actions": [
+			["qi", 3],
+			["add_enemy_c_of_x", 2, "internal_injury"],
+			["add_enemy_c_of_x", 4, "m_flower_sentient_stacks"]
+		]
+	},
+	"725063": {
+		"actions": [
+			["qi", 3],
+			["add_enemy_c_of_x", 3, "internal_injury"],
+			["add_enemy_c_of_x", 5, "m_flower_sentient_stacks"]
+		]
+	},
+	"725071": {
+		"name": "M - Yin Yang Formation",
+		"actions": [
+			["for_each_x_add_y", "qi", "def"],
+			["for_each_x_add_y", "qi", "hp"],
+			["for_each_x_add_y", "hexagram", "def"],
+			["for_each_x_add_y", "hexagram", "hp"]
+		]
+	},
+	"725072": {
+		"actions": [
+			["qi", 1],
+			["for_each_x_add_y", "qi", "def"],
+			["for_each_x_add_y", "qi", "hp"],
+			["for_each_x_add_y", "hexagram", "def"],
+			["for_each_x_add_y", "hexagram", "hp"]
+		]
+	},
+	"725073": {
+		"actions": [
+			["qi", 2],
+			["for_each_x_add_y", "qi", "def"],
+			["for_each_x_add_y", "qi", "hp"],
+			["for_each_x_add_y", "hexagram", "def"],
+			["for_each_x_add_y", "hexagram", "hp"]
 		]
 	},
 	"733011": {
@@ -10466,6 +10704,74 @@
 			["metal_spirit", ["add_c_of_x", 1, "m_metal_spirit_needle_stacks"]]
 		]
 	},
+	"734061": {
+		"name": "M - Fire Spirit Seal",
+		"actions": [
+			["qi", 2],
+			["reduce_enemy_c_of_x", 3, "hp"],
+			["reduce_enemy_c_of_x", 3, "max_hp"],
+			["continuous"],
+			["add_c_of_x", 3, "m_fire_spirit_seal_stacks"]
+		],
+		"opening": [
+			["activate_fire_spirit"],
+			["activate_metal_spirit"]
+		]
+	},
+	"734062": {
+		"actions": [
+			["qi", 2],
+			["reduce_enemy_c_of_x", 6, "hp"],
+			["reduce_enemy_c_of_x", 6, "max_hp"],
+			["continuous"],
+			["add_c_of_x", 4, "m_fire_spirit_seal_stacks"]
+		],
+		"opening": [
+			["activate_fire_spirit"],
+			["activate_metal_spirit"]
+		]
+	},
+	"734063": {
+		"actions": [
+			["qi", 2],
+			["reduce_enemy_c_of_x", 9, "hp"],
+			["reduce_enemy_c_of_x", 9, "max_hp"],
+			["continuous"],
+			["add_c_of_x", 5, "m_fire_spirit_seal_stacks"]
+		],
+		"opening": [
+			["activate_fire_spirit"],
+			["activate_metal_spirit"]
+		]
+	},
+	"734071": {
+		"name": "M - Earth Spirit Formation",
+		"actions": [
+			["add_c_of_x", 1, "force_of_water"],
+			["activate_earth_spirit"],
+			["activate_water_spirit"],
+			["continuous"],
+			["add_c_of_x", 4, "m_earth_spirit_formation_stacks"]
+		]
+	},
+	"734072": {
+		"actions": [
+			["add_c_of_x", 1, "force_of_water"],
+			["activate_earth_spirit"],
+			["activate_water_spirit"],
+			["continuous"],
+			["add_c_of_x", 10, "m_earth_spirit_formation_stacks"]
+		]
+	},
+	"734073": {
+		"actions": [
+			["add_c_of_x", 1, "force_of_water"],
+			["activate_earth_spirit"],
+			["activate_water_spirit"],
+			["continuous"],
+			["add_c_of_x", 16, "m_earth_spirit_formation_stacks"]
+		]
+	},
 	"735011": {
 		"name": "Boulder Seal",
 		"actions": [
@@ -10606,6 +10912,34 @@
 			["activate_next_slots", 1]
 		]
 	},
+	"735071": {
+		"name": "M - Metal Spirit Seal",
+		"actions": [
+			["add_c_of_x", 8, "penetrate"],
+			["activate_metal_spirit"],
+			["activate_wood_spirit"],
+			["continuous"],
+			["add_c_of_x", 3, "m_metal_spirit_seal_stacks"]
+		]
+	},
+	"735072": {
+		"actions": [
+			["add_c_of_x", 12, "penetrate"],
+			["activate_metal_spirit"],
+			["activate_wood_spirit"],
+			["continuous"],
+			["add_c_of_x", 4, "m_metal_spirit_seal_stacks"]
+		]
+	},
+	"735073": {
+		"actions": [
+			["add_c_of_x", 16, "penetrate"],
+			["activate_metal_spirit"],
+			["activate_wood_spirit"],
+			["continuous"],
+			["add_c_of_x", 5, "m_metal_spirit_seal_stacks"]
+		]
+	},
 	"744011": {
 		"name": "M - Youthful Vigor",
 		"hp_cost": 2,
@@ -10689,6 +11023,28 @@
 			["exhaust_x_to_add_c_y", "agility", 2, "hp"]
 		]
 	},
+	"744051": {
+		"name": "M - Endless Entanglement",
+		"actions": [
+			["physique", 2],
+			["add_enemy_c_of_x", 2, "internal_injury"],
+			["add_c_of_x", 2, "internal_injury"]
+		]
+	},
+	"744052": {
+		"actions": [
+			["physique", 4],
+			["add_enemy_c_of_x", 3, "internal_injury"],
+			["add_c_of_x", 3, "internal_injury"]
+		]
+	},
+	"744053": {
+		"actions": [
+			["physique", 6],
+			["add_enemy_c_of_x", 4, "internal_injury"],
+			["add_c_of_x", 4, "internal_injury"]
+		]
+	},
 	"745011": {
 		"name": "M - Double Trouble",
 		"qi_cost": 1,
@@ -10758,6 +11114,45 @@
 	"745033": {
 		"actions": [
 			["atk", 9]
+		]
+	},
+	"745041": {
+		"name": "M - Magnanimous Righteousness",
+		"actions": [
+			["qi", 2],
+			["agility", 6]
+		]
+	},
+	"745042": {
+		"actions": [
+			["qi", 2],
+			["agility", 6]
+		]
+	},
+	"745043": {
+		"actions": [
+			["qi", 2],
+			["agility", 6]
+		]
+	},
+	"745051": {
+		"name": "M - Crash Fist Entangle",
+		"hp_cost": 4,
+		"actions": [
+			["add_enemy_c_of_x", 2, "wound"],
+			["rep", 2, ["atk", 3]]
+		]
+	},
+	"745052": {
+		"actions": [
+			["add_enemy_c_of_x", 2, "wound"],
+			["rep", 3, ["atk", 3]]
+		]
+	},
+	"745053": {
+		"actions": [
+			["add_enemy_c_of_x", 2, "wound"],
+			["rep", 4, ["atk", 3]]
 		]
 	},
 	"801011": {
@@ -12112,14 +12507,14 @@
 	},
 	"915041": {
 		"name": "Clear Heart Sword Formation",
-		"actions": ["do_clear_heart_sword_formation", 8],
+		"actions": ["do_clear_heart_sword_formation", 2],
 		"character": "sw5"
 	},
 	"915042": {
-		"actions": ["do_clear_heart_sword_formation", 11]
+		"actions": ["do_clear_heart_sword_formation", 7]
 	},
 	"915043": {
-		"actions": ["do_clear_heart_sword_formation", 14]
+		"actions": ["do_clear_heart_sword_formation", 12]
 	},
 	"915051": {
 		"name": "Cloud Sword - Starry Sky",
@@ -12208,7 +12603,8 @@
 	"915091": {
 		"name": "Heavenly Will - Earth Evil",
 		"actions": [
-			["qi", 2],
+			["qi", 4],
+			["add_c_of_x", 1, "smash_def"],
 			["add_c_of_x", 1, "heavenly_will_earth_evil_stacks"]
 		],
 		"marking": "ft"
@@ -12216,14 +12612,16 @@
 	"915092": {
 		"actions": [
 			["qi", 4],
-			["add_c_of_x", 1, "heavenly_will_earth_evil_stacks"]
+			["add_c_of_x", 2, "smash_def"],
+			["add_c_of_x", 2, "heavenly_will_earth_evil_stacks"]
 		],
 		"marking": "ft"
 	},
 	"915093": {
 		"actions": [
-			["qi", 6],
-			["add_c_of_x", 1, "heavenly_will_earth_evil_stacks"]
+			["qi", 4],
+			["add_c_of_x", 3, "smash_def"],
+			["add_c_of_x", 3, "heavenly_will_earth_evil_stacks"]
 		],
 		"marking": "ft"
 	},
@@ -12814,6 +13212,7 @@
 	},
 	"935071": {
 		"name": "Heavenly Marrow Dance Tune",
+		"qi_cost": 1,
 		"actions": [
 			["continuous"],
 			["add_c_of_x", 2, "increase_atk"],
@@ -12824,6 +13223,7 @@
 		"marking": "mu"
 	},
 	"935072": {
+		"qi_cost": 0,
 		"actions": [
 			["continuous"],
 			["add_c_of_x", 3, "increase_atk"],
@@ -12833,6 +13233,7 @@
 		]
 	},
 	"935073": {
+		"qi_cost": 0,
 		"actions": [
 			["continuous"],
 			["add_c_of_x", 4, "increase_atk"],
@@ -13058,25 +13459,46 @@
 	},
 	"944061": {
 		"name": "Continuous Tune",
-		"actions": [],
+		"actions": [
+			["add_c_of_x", 4, "agility"],
+			["add_c_of_x", 1, "continuous_tune_stacks"],
+			["continuous"]
+		],
 		"marking": "mu"
 	},
 	"944062": {
-		"actions": []
+		"actions": [
+			["add_c_of_x", 7, "agility"],
+			["add_c_of_x", 1, "continuous_tune_stacks"],
+			["continuous"]
+		]
 	},
 	"944063": {
-		"actions": []
+		"actions": [
+			["add_c_of_x", 10, "agility"],
+			["add_c_of_x", 1, "continuous_tune_stacks"],
+			["continuous"]
+		]
 	},
 	"944071": {
 		"name": "Mystic Snowdrop",
-		"actions": [],
+		"actions": [
+			["add_c_of_x", 5, "hp"],
+			["add_c_of_x", 2, "mystic_snowdrop_stacks"]
+		],
 		"marking": "pm"
 	},
 	"944072": {
-		"actions": []
+		"actions": [
+			["add_c_of_x", 10, "hp"],
+			["add_c_of_x", 2, "mystic_snowdrop_stacks"]
+		]
 	},
 	"944073": {
-		"actions": []
+		"actions": [
+			["add_c_of_x", 15, "hp"],
+			["add_c_of_x", 2, "mystic_snowdrop_stacks"]
+		]
 	},
 	"945011": {
 		"name": "Unceasing Universe",
@@ -13170,31 +13592,50 @@
 	},
 	"945061": {
 		"name": "Force Spiritage Formation",
-		"actions": [],
+		"actions": [
+			["add_c_of_x", 4, "max_force"],
+			["add_c_of_x", 2, "force_spiritage_formation_stacks"]
+		],
 		"marking": "fm"
 	},
 	"945062": {
-		"actions": []
+		"actions": [
+			["add_c_of_x", 4, "max_force"],
+			["add_c_of_x", 3, "force_spiritage_formation_stacks"]
+		]
 	},
 	"945063": {
-		"actions": []
+		"actions": [
+			["add_c_of_x", 4, "max_force"],
+			["add_c_of_x", 4, "force_spiritage_formation_stacks"]
+		]
 	},
 	"945071": {
 		"name": "Heavenly Will - Seizing",
-		"actions": [],
+		"actions": [
+			["atk", 10],
+			["add_c_of_x", 1, "heavenly_will_seizing_stacks"]
+		],
 		"marking": "ft"
 	},
 	"945072": {
-		"actions": []
+		"actions": [
+			["atk", 16],
+			["add_c_of_x", 1, "heavenly_will_seizing_stacks"]
+		]
 	},
 	"945073": {
-		"actions": []
+		"actions": [
+			["atk", 22],
+			["add_c_of_x", 1, "heavenly_will_seizing_stacks"]
+		]
 	},
 	"946011": {
 		"name": "Pangu Axe",
 		"actions": [
 			["atk", 30],
-			["add_enemy_c_of_x", 20, "pangu_axe_stacks"]
+			["add_enemy_c_of_x", 1, "metal_spirit_chokehold_stacks"],
+			["injured", ["add_enemy_c_of_x", 20, "pangu_axe_stacks"]]
 		]
 	},
 	"946012": {

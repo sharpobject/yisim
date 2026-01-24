@@ -1,0 +1,8 @@
+### 23101 - Wood Spirit Secret Seal
+  L1 CSV:  [no cost] Gain 2 stacks of [Increase ATK] | [Activate Wood Spirit]
+  L1 IMPL: [no cost]  game.add_c_of_x(2, "increase_atk"); game.activate_wood_spirit(); ✓
+  L2 CSV:  [no cost] Gain 2 stacks of [Increase ATK] | HP and Max HP+4 | [Activate Wood Spirit]
+  L2 IMPL: [no cost]  game.add_c_of_x(3, "increase_atk"); game.activate_wood_spirit(); ✓
+  L3 CSV:  [no cost] Gain 2 stacks of [Increase ATK] | HP and Max HP+8 | [Activate Wood Spirit]
+  L3 IMPL: [no cost]  game.add_c_of_x(4, "increase_atk"); game.activate_wood_spirit(); ✓
+

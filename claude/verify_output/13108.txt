@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 6 ATK | [Metal Spirit]: [Penetrate]+2
+  L1 IMPL: [no cost]  game.atk(6); if (game.if_metal_spirit()) { game.add_c_of_x(2, "penetrate"); } ✓
+  L2 CSV:  [no cost] 7 ATK | [Metal Spirit]: [Penetrate]+4
+  L2 IMPL: [no cost]  game.atk(7); if (game.if_metal_spirit()) { game.add_c_of_x(4, "penetrate"); } ✓
+  L3 CSV:  [no cost] 8 ATK | [Metal Spirit]: [Penetrate]+6
+  L3 IMPL: [no cost]  game.atk(8); if (game.if_metal_spirit()) { game.add_c_of_x(6, "penetrate"); } ✓

@@ -1,0 +1,506 @@
+[
+  {
+    "id": 1,
+    "title_cn": "时空漩涡",
+    "title_en": "Spacetime Vortex",
+    "title_tw": "時空漩渦",
+    "desc_cn": "踏入时空幻景，来自不同维度的大量信息呈现在你的眼前。时间有限，你决定：",
+    "desc_en": "Stepping into the Mirage, a large amount of information from different dimensions appears before your eyes. Time is limited, you decide:",
+    "desc_tw": "踏入時空幻景，來自不同維度的大量信息呈現在你的眼前。時間有限，你決定："
+  },
+  {
+    "id": 2,
+    "title_cn": "空间变幻",
+    "title_en": "Space Changes",
+    "title_tw": "空間變幻",
+    "desc_cn": "暮去朝来淘不住，遂令东海变桑田。随着修为的提升，你感到四周的空间开始随之变化。你决定：",
+    "desc_en": "As you improve your cultivation, you feel that the space around you begins to change accordingly. You decide:",
+    "desc_tw": "暮去朝來淘不住，遂令東海變桑田。隨着修為的提升，你感到四周的空間開始隨之變化。你決定："
+  },
+  {
+    "id": 3,
+    "title_cn": "术业专攻",
+    "title_en": "Major in",
+    "title_tw": "術業專攻",
+    "desc_cn": "闻道有先后，术业有专攻。恍惚中，你眼前浮现出当初学习门派招式和副职技能的记忆。你决定：",
+    "desc_en": "In a trance, you can see the memory of learning the techniques of the sect and the skills of side jobs.You decide:",
+    "desc_tw": "聞道有先後，術業有專攻。恍惚中，你眼前浮現出當初學習門派招式和副職技能的記憶。你決定："
+  },
+  {
+    "id": 4,
+    "title_cn": "休养生息",
+    "title_en": "Recuperate",
+    "title_tw": "休養生息",
+    "desc_cn": "在幻景中，你感到自己的命元在随时空变换而飞速流逝。为了能停留更久，你决定：",
+    "desc_en": "In the mirage, you feel your Destiny rapidly passing by with the changes of time and space. In order to stay longer, you have to decide:",
+    "desc_tw": "在幻景中，你感到自己的命元在隨時空變換而飛速流逝。為了能停留更久，你決定："
+  },
+  {
+    "id": 5,
+    "title_cn": "应急措施",
+    "title_en": "Emergency Measure",
+    "title_tw": "應急措施",
+    "desc_cn": "你忽然发现下一场战斗着实困难。为了顺利通过，你决定利用幻景强化自身，临时抱佛脚：",
+    "desc_en": "You suddenly realize that the next battle is really difficult. In order to pass smoothly, you have decided to use the mirage to strengthen yourself and take a last-minute approach:",
+    "desc_tw": "你忽然發現下一場戰鬥着實困難。為了順利通過，你決定利用幻景強化自身，臨時抱佛腳："
+  },
+  {
+    "id": 6,
+    "title_cn": "空间灵田",
+    "title_en": "Space Spiritual Field",
+    "title_tw": "空間靈田",
+    "desc_cn": "幻景中出现一片灵田，一位灵植师走过来说他可以赠送你一些植物。你的储纳空间有限，你决定：",
+    "desc_en": "A spiritual field appeared in the mirage, and a spiritual plant master walked over and said he could give you some plants as a gift. Your storage space is limited, so you decide:",
+    "desc_tw": "幻景中出現一片靈田，一位靈植師走過來說他可以贈送你一些植物。你的儲納空間有限，你決定："
+  },
+  {
+    "id": 7,
+    "title_cn": "未来已来",
+    "title_en": "The Future Has Arrived",
+    "title_tw": "未來已來",
+    "desc_cn": "你看到幻景中出现了对未来的预测：彼时天道之罅已被弥合，世间灵气再次充盈，且修为高者皆可突破入返虚。不管真假，你决定借机：",
+    "desc_en": "You see a prediction for the future appearing in the mirage: at that time, the cracks in the Heavenly Path have been bridged, the Qi in the world is once again filled, and those with high cultivation can break through into the Divinity Phase. Whether true or false, you decide to take the opportunity:",
+    "desc_tw": "你看到幻景中出現了對未來的預測：彼時天道之罅已被彌合，世間靈氣再次充盈，且修為高者皆可突破入返虛。不管真假，你決定借機："
+  },
+  {
+    "id": 8,
+    "title_cn": "修为何为",
+    "title_en": "What for Cultivation",
+    "title_tw": "修為何為",
+    "desc_cn": "随着修为不断提升，你逐渐开始感到迷茫：天道破碎，即使修为再高也无法修成正果，在这里进行无谓的争斗真的有意义吗？思考片刻，你下定决心：",
+    "desc_en": "As your cultivation continues to improve, you gradually begin to feel confused: the Heavenly Path is shattered, and even if your cultivation level is high, you cannot achieve the correct result. Is it really meaningful to engage in meaningless struggles here? After thinking for a moment, you make up your mind:",
+    "desc_tw": "隨着修為不斷提升，你逐漸開始感到迷茫：天道破碎，即使修為再高也無法修成正果，在這裏進行無謂的争鬥真的有意義嗎？思考片刻，你下定決心："
+  },
+  {
+    "id": 9,
+    "title_cn": "琴仙",
+    "title_en": "Musician Immortal",
+    "title_tw": "琴仙",
+    "desc_cn": "远处传来一阵悠扬的琴声，你朝琴声的方向望去，看到一位白衣老者，似乎就是江湖传闻中的逍遥仙。你决定：",
+    "desc_en": "A melodious sound of the qin can be heard in the distance. Looking towards the direction of the qin sound, you see an old man in white, who seems to be the rumored Carefree Immortal. You decide:",
+    "desc_tw": "遠處傳來一陣悠揚的琴聲，你朝琴聲的方向望去，看到一位白衣老者，似乎就是江湖傳聞中的逍遙仙。你決定："
+  },
+  {
+    "id": 10,
+    "title_cn": "乾坤坛",
+    "title_en": "Qiankun Altar",
+    "title_tw": "乾坤壇",
+    "desc_cn": "你在幻景中寻得一座奇异的祭坛，似是上古仙魔所用，名叫乾坤坛。你试着将两块石子放到上面，二者的大小形状竟然交换了。难道对卡牌也能生效？你决定：",
+    "desc_en": "You found a strange altar in the mirage, which seemed to be used by ancient immortals and demons, called Qiankun Altar. You tried putting two stones on top, and surprisingly, their sizes and shapes were swapped. Can it also work on cards? You decide:",
+    "desc_tw": "你在幻景中尋得一座奇異的祭壇，似是上古仙魔所用，名叫乾坤壇。你試着將兩塊石子放到上面，二者的大小形狀竟然交換了。難道對卡牌也能生效？你決定："
+  },
+  {
+    "id": 11,
+    "title_cn": "万卷书阁",
+    "title_en": "Shelf of Wisdom",
+    "title_tw": "萬卷書閣",
+    "desc_cn": "\n你于幻景中漫步，眼前突然出现一座阁楼，竟是此前仙府遗迹中的“万卷书阁”。意外的是，这次出现的是弈贤天尊得道前所用的原貌复制，因此拥有很多你没有见过的功效，你决定在此：\n ",
+    "desc_en": "As you stroll through the mirage, a loft suddenly appears in front of you, which is actually the \"Shelf of Wisdom\" from the Immortal Relics. Surprisingly, what appeared this time was a copy of the original appearance used by Immortal of YiXian before he reached the Dao, so it has many effects you have never seen before. You decide here:",
+    "desc_tw": "你於幻景中漫步，眼前突然出現一座閣樓，竟是此前仙府遺跡中的“萬卷書閣”。意外的是，這次出現的是弈賢天尊得道前所用的原貌複製，因此擁有很多你沒有見過的功效，你決定在此："
+  },
+  {
+    "id": 12,
+    "title_cn": "指点迷津",
+    "title_en": "Ariadne's Thread",
+    "title_tw": "指點迷津",
+    "desc_cn": "一位仙人幻影从天而降，自称常与弈贤天尊一起打牌，对世间所有套路了如指掌。他看你打牌时迟疑不决，便决定给你指点迷津。你决定索要哪种呢？",
+    "desc_en": "A Immortal‘s phantom descended from the sky, claiming to often play cards with the Immortal of YiXian and be familiar with all the tricks in the game. He watched you hesitate while playing cards, so he decided to give you some guidance. What kind do you decide to ask for?",
+    "desc_tw": "一位仙人幻影從天而降，自稱常與弈賢天尊一起打牌，對世間所有套路瞭如指掌。他看你打牌時遲疑不決，便決定給你指點迷津。你決定索要哪種呢？"
+  },
+  {
+    "id": 13,
+    "title_cn": "道韵预感",
+    "title_en": "Daoist Rhyme Omen",
+    "title_tw": "道韻預感",
+    "desc_cn": "随着画中幻景逐渐清晰，你对自己此番修炼的未来愈发拥有信心。忽然一阵灵光乍现，你决定：",
+    "desc_en": "As the mirage in the painting becomes clearer, you have more confidence in the future of your cultivation. All of a sudden with inspiration, You decide:",
+    "desc_tw": "隨着畫中幻景逐漸清晰，你對自己此番修煉的未來愈發擁有信心。忽然一陣靈光乍現，你決定："
+  },
+  {
+    "id": 14,
+    "title_cn": "复制之镜",
+    "title_en": "Mirror of Copy",
+    "title_tw": "複製之鏡",
+    "desc_cn": "你在幻景中找到了当年天元弈贤天尊和道友用过的棋牌室，并在一张椅子下方寻得一面奇特的镜子，竟有复制卡牌之功效。看来天尊当年没少出老千，不过你现在用用倒是无妨：",
+    "desc_en": "In mirage, you found the chess and card room that was used by Immortal of YiXian and his friends, and found a strange mirror under a chair, which has the effect of copying cards. It seems that the Immortal of YiXian did not give up cheating back then, but it doesn't matter if you try it now:",
+    "desc_tw": "你在幻景中找到了當年天元弈賢天尊和道友用過的棋牌室，並在一張椅子下方尋得一麵奇特的鏡子，竟有複製卡牌之功效。看來天尊當年沒少出老千，不過你現在用用倒是無妨："
+  },
+  {
+    "id": 15,
+    "title_cn": "占卦",
+    "title_en": "Divination",
+    "title_tw": "佔卦",
+    "desc_cn": "往者不可谏，来者犹可追。幻景中出现一位命理师，可为路遇之人指明未来道路。不过事在人为，你决定抽个签，根据结果为下一场战斗提前做好应对：",
+    "desc_en": "A fortune teller appears in the Mirage, which can point out the future path for those who meet. However, human effort is the decisive factor. You decide to draw a lot, and prepare for the next battle in advance according to the result:",
+    "desc_tw": "往者不可諫，來者猶可追。幻景中出現一位命理師，可為路遇之人指明未來道路。不過事在人為，你決定抽個簽，根據結果為下一場戰鬥提前做好應對："
+  },
+  {
+    "id": 16,
+    "title_cn": "玄冥玉壶",
+    "title_en": "Pot of Xuanming",
+    "title_tw": "玄冥玉壺",
+    "desc_cn": "一尊白色玉壶浮现在眼前，竟是仙府遗迹之一的玄冥玉壶。然壶中之水决不可饮，你决定倾水引炁，灌注丹田，但之后流向何处还需你的引导：",
+    "desc_en": "A white jade pot appeared before your eyes, which turned out to be the Pot of Xuanming, one of the Immortal Relics. However, the water in the pot must not be drunk. You decide to pour the water to draw Qi and fill your body, but you need to guide where it will flow:",
+    "desc_tw": "一尊白色玉壺浮現在眼前，竟是仙府遺跡之一的玄冥玉壺。然壺中之水決不可飲，你決定傾水引炁，灌注丹田，但之後流向何處還需你的引導："
+  },
+  {
+    "id": 17,
+    "title_cn": "乾坤推衍",
+    "title_en": "Qiankun Derivative",
+    "title_tw": "乾坤推衍",
+    "desc_cn": "你从画中世界找到一份《乾坤推衍图》的原件，才发现它原本的功效是在修炼时延伸思绪、辅助领悟，后来弈仙府建立，丹青画院才拿它开发出帮助战斗复盘的功能。你决定用它：",
+    "desc_en": "You found the original copy of the \"Qiankun Derivative Diagram\" in the world of the scroll, and only then did you realize that its original function was to extend your thoughts and assist in understanding during cultivation. Later, the Yi Xian Palace was established, and the Danqing Painting Academy used the diagram to develop the function of helping Battle Recap. You decide to use it to:",
+    "desc_tw": "你從畫中世界找到一份《乾坤推衍圖》的原件，才發現它原本的功效是在修煉時延伸思緒、輔助領悟，後來弈仙府建立，丹青畫院才拿它開發出幫助戰鬥複盤的功能。你決定用它："
+  },
+  {
+    "id": 18,
+    "title_cn": "道心调节",
+    "title_en": "Daoist Heart Regulation",
+    "title_tw": "道心調節",
+    "desc_cn": "在修炼中，你时常发觉自己领悟不到自己想要的招式，战斗发挥频频受阻。你决定调整方向，在幻景中尽快找到自己的路：",
+    "desc_en": "During cultivation, you often find that you can't understand the techniques you want, and your fight performance is frequently blocked. You decide to adjust your direction and find your way in the Mirage as soon as possible:",
+    "desc_tw": "在修煉中，你時常發覺自己領悟不到自己想要的招式，戰鬥發揮頻頻受阻。你決定調整方向，在幻景中盡快找到自己的路："
+  },
+  {
+    "id": 19,
+    "title_cn": "玄巳现身",
+    "title_en": "Appearance of Xuan Si",
+    "title_tw": "玄巳現身",
+    "desc_cn": "一蛇妖向你走来，自称西洲商贾，并提议和你做个交易。你认出他是偷命元的玄巳，不过反正是幻景假象，所以换点东西可能也不错。你最终决定：",
+    "desc_en": "A snake demon is walking towards you, claiming to be a merchant from the Western Continent and proposing to make a deal with you. You recognize him as Xuan Si who stole Destiny, but he is a Mirage anyway, so it may be good to change something. Your final decide:",
+    "desc_tw": "一蛇妖向你走來，自稱西洲商賈，並提議和你做個交易。你認出他是偷命元的玄巳，不過反正是幻景假象，所以換點東西可能也不錯。你最終決定："
+  },
+  {
+    "id": 20,
+    "title_cn": "画里乾坤",
+    "title_en": "The Universe in the Painting",
+    "title_tw": "畫裏乾坤",
+    "desc_cn": "你行走在时空幻景中，实在想不明白这画中世界的来由，和丹青画院又是什么关系。每次向画院长老询问，他们均讳莫如深，似乎有一段不能言说的往事。不过能肯定的是，那些画师借画笔修行，是其他宗门弟子都可以借鉴的方式。想到这里，你决定学习：",
+    "desc_en": "When you walk in the Spacetime Mirage, you really can't understand the origin of the world in this painting, and what is the relationship with the Danqing Painting Academy. Every time you ask the masters of the academy, they keep it a secret, as if there is an unspeakable past. Yet one truth remains clear: the painters here cultivate through their brushes—a method even disciples of other sects could learn from. With this realization, you resolve to study:",
+    "desc_tw": "你行走在時空幻景中，實在想不明白這畫中世界的來由，和丹青畫院又是什麼關係。每次向畫院長老詢問，他們均諱莫如深，似乎有一段不能言說的往事。不過能肯定的是，那些畫師借畫筆修行，是其他宗門弟子都可以借鑒的方式。想到這裏，你決定學習："
+  },
+  {
+    "id": 21,
+    "title_cn": "鲛珠",
+    "title_en": "Merpeople Pearls",
+    "title_tw": "鮫珠",
+    "desc_cn": "你来到幻景中的青烟郡，看到有鲛人向岸边村庄袭来。你将其击败，捍卫了一方安宁。清理战场时，你发现鲛人体内有鲛珠涌出，但受限于幻景法则，你只能拿一颗：",
+    "desc_en": "You arrive at Qingyan County within the Mirage, witnessing a Merpeople assaulting a coastal village. After defeating it, you secure peace for the region. While cleaning, you find Merpeople Pearls spilling from its body—but the Mirage laws allow you to claim only one:",
+    "desc_tw": "你來到幻景中的青煙郡，看到有鮫人向岸邊村莊襲來。你將其擊敗，捍衛了一方安寧。清理戰場時，你發現鮫人體內有鮫珠湧出，但受限於幻景法則，你隻能拿一顆："
+  },
+  {
+    "id": 22,
+    "title_cn": "暗谷鬼市",
+    "title_en": "Dark Valley",
+    "title_tw": "暗穀鬼市",
+    "desc_cn": "你跟随一群小妖来到暗谷，发现这里鬼市规模庞大，商贾来往络绎不绝，但货物价格高得吓人。不过这里是模拟出的幻景，随便拿就是了，大不了被发现就跑：",
+    "desc_en": "Following minor demons into Dark Valley, you discover a bustling ghost market with exorbitant prices. But since this is a simulated Mirage, you decide to grab goods freely. If caught, you’ll simply flee:",
+    "desc_tw": "你跟隨一群小妖來到暗穀，發現這裏鬼市規模龐大，商賈來往絡繹不絕，但貨物價格高得嚇人。不過這裏是模擬出的幻景，隨便拿就是了，大不了被發現就跑："
+  },
+  {
+    "id": 23,
+    "title_cn": "代价",
+    "title_en": "Cost",
+    "title_tw": "代價",
+    "desc_cn": "随着幻景中历练进程的推进，你的招式熟练度也在逐渐提升。也许你可以逼自己一把，强行获得更多提升。那么，代价是什么呢？",
+    "desc_en": "As your training in the Mirage progresses, your combat skills sharpen. You consider pushing harder for rapid growth—but what will be the cost?",
+    "desc_tw": "隨着幻景中曆練進程的推進，你的招式熟練度也在逐漸提升。也許你可以逼自己一把，強行獲得更多提升。那麼，代價是什麼呢？"
+  },
+  {
+    "id": 24,
+    "title_cn": "副职兼修",
+    "title_en": "Additional Side Job",
+    "title_tw": "副職兼修",
+    "desc_cn": "传闻三洲画师擅长触类旁通，用笔画些物件，便能借之感悟其他道行的奇术功法。这幻景既为丹青画院所画，亦有不少副职业信息充斥其间。你决定挑选一个进行学习：",
+    "desc_en": "Rumors claim painters of the Three Continents excel in cross-disciplinary techniques, channeling other Daoist arts through brushwork. Since this Mirage was painted by the Danqing Painting Academy, it brims with side jobs insights. You choose one to study:",
+    "desc_tw": "傳聞三洲畫師擅長觸類旁通，用筆畫些物件，便能借之感悟其他道行的奇術功法。這幻景既為丹青畫院所畫，亦有不少副職業信息充斥其間。你決定挑選一個進行學習："
+  },
+  {
+    "id": 25,
+    "title_cn": "招式专精",
+    "title_en": "Skill Specialization",
+    "title_tw": "招式專精",
+    "desc_cn": "随着修炼至化神期，你悟出的招式越来越多，但真正准备使用的寥寥无几。你决定确立计划，专注于其中几个，以便快速成型：",
+    "desc_en": "Having reached the Incarnation Phase, you’ve mastered numerous techniques but rarely use most. You resolve to focus on a select few for efficiency:",
+    "desc_tw": "隨着修煉至化神期，你悟出的招式越來越多，但真正準備使用的寥寥無幾。你決定確立計劃，專注於其中幾個，以便快速成型："
+  },
+  {
+    "id": 26,
+    "title_cn": "不忘初心",
+    "title_en": "Stay True",
+    "title_tw": "不忘初心",
+    "desc_cn": "随着境界的提升，你开始逐步抛弃低境界的招式。猛然间，你眼前浮现出一幅幅当初练功的画面，似乎是幻景在提醒你要记得来时的路。你意识到一些低境界招式仍然有用处，你决定：",
+    "desc_en": "As your cultivation ascends, you discard lower-phase skills—until visions of your early training surface in the Mirage, reminding you of their lingering value. You decide to retain some:",
+    "desc_tw": "隨着境界的提升，你開始逐步拋棄低境界的招式。猛然間，你眼前浮現出一幅幅當初練功的畫麵，似乎是幻景在提醒你要記得來時的路。你意識到一些低境界招式仍然有用處，你決定："
+  },
+  {
+    "id": 27,
+    "title_cn": "奇货可居",
+    "title_en": "Monopoly",
+    "title_tw": "奇貨可居",
+    "desc_cn": "物换星移，碧落浮沉。幻景将时间线重置至天道刚刚破碎之际，便见到无数修仙者心法失效、道心破碎。看到身边的你竟能施展自如，便有人携资财前来，希望换一些口诀回去学习。你决定：",
+    "desc_en": "The Mirage resets time to the shattering of the Heavenly Path. Witnessing cultivators lose their powers, you remain unaffected. Desperate, they offer treasures to learn from your techniques. You set your price:",
+    "desc_tw": "物換星移，碧落浮沉。幻景將時間線重置至天道剛剛破碎之際，便見到無數修仙者心法失效、道心破碎。看到身邊的你竟能施展自如，便有人攜資財前來，希望換一些口訣回去學習。你決定："
+  },
+  {
+    "id": 28,
+    "title_cn": "三洲旅人",
+    "title_en": "Tripath Traveler",
+    "title_tw": "三洲旅人",
+    "desc_cn": "在幻景中，你发现自己可以随心所欲地移动，随时穿梭于三洲各地。此时有道友邀请你前去观光，探索三洲大陆中鲜有人知的地点。你决定：",
+    "desc_en": "Within the Mirage, you traverse the Three Continents freely. A fellow Daoist fellows invite you to explore the hidden landmarks. You decide:",
+    "desc_tw": "在幻景中，你發現自己可以隨心所欲地移動，隨時穿梭於三洲各地。此時有道友邀請你前去觀光，探索三洲大陸中鮮有人知的地點。你決定："
+  },
+  {
+    "id": 29,
+    "title_cn": "又见逍遥",
+    "title_en": "Revisiting Xiaoyao",
+    "title_tw": "又見逍遙",
+    "desc_cn": "三洲史书记载，在远古洪荒密林中，有一宗门名曰逍遥，门人一师一徒，行事无拘无束；而其招式迅捷，随心而变。不过自从天魔大战以来，再没有世人见过他们一面，或言早已同殉天道。\n为了寻找逍遥派，你探遍时空幻景中的深谷幽林，终于找到了一座草庐，看到一老一少两位世外高人坐卧于前。你上前询问，二人却始终不语，只道与你有缘，许你看一本从未见过的秘籍。不过为确保不会外传，所以只能用一次：",
+    "desc_en": "Histories of the Three Continents speak of the Xiaoyao Sect—a reclusive duo of master and disciple, renowned for their unrestrained, adaptive techniques. Since the Battle of the Immortals and Evils, none have seen them.\nAfter scouring the Mirage, you find a thatched hut with two hermits. They remain silent but grant you a one-time glimpse of a secret manual—vanishing after use to prevent leaks:",
+    "desc_tw": "三洲史書記載，在遠古洪荒密林中，有一宗門名曰逍遙，門人一師一徒，行事無拘無束；而其招式迅捷，隨心而變。不過自從天魔大戰以來，再沒有世人見過他們一麵，或言早已同殉天道。\n為了尋找逍遙派，你探遍時空幻景中的深穀幽林，終於找到了一座草廬，看到一老一少兩位世外高人坐臥於前。你上前詢問，二人卻始終不語，隻道與你有緣，許你看一本從未見過的秘籍。不過為確保不會外傳，所以隻能用一次：\""
+  },
+  {
+    "id": 30,
+    "title_cn": "玄心命坊",
+    "title_en": "Life Shop",
+    "title_tw": "玄心命坊",
+    "desc_cn": "明明玄巳已被关押至弈仙府，你的眼前却又出现了一家名叫“玄心命坊”的店铺。虽是往日幻景，它那用命元换取资源的功效似乎仍保留了几分。你决定：",
+    "desc_en": "Although Xuan Si has been detained at the Yi Xian Palace, a shop called 'Life Shop' has appeared before your eyes. Although it is a Mirage of the past, its effect of exchanging Destiny for resources seems to have retained. You decide:",
+    "desc_tw": "明明玄巳已被關押至弈仙府，你的眼前卻又出現了一家名叫“玄心命坊”的店鋪。雖是往日幻景，它那用命元換取資源的功效似乎仍保留了幾分。你決定："
+  },
+  {
+    "id": 31,
+    "title_cn": "又见逍遥",
+    "title_en": "Revisiting Xiaoyao",
+    "title_tw": "又見逍遙",
+    "desc_cn": "三洲史书记载，在远古洪荒密林中，有一宗门名曰逍遥，门人一师一徒，行事无拘无束；而其招式迅捷，随心而变。不过自从天魔大战以来，再没有世人见过他们一面，或言早已同殉天道。\n为了寻找逍遥派，你探遍时空幻景中的深谷幽林，终于找到了一座草庐，看到一老一少两位世外高人坐卧于前。你上前询问，二人却始终不语，只道与你有缘，许你看一本从未见过的秘籍。不过为确保不会外传，所以只能用一次：",
+    "desc_en": "Histories of the Three Continents speak of the Xiaoyao Sect—a reclusive duo of master and disciple, renowned for their unrestrained, adaptive techniques. Since the Battle of the Immortals and Evils, none have seen them.\nAfter scouring the Mirage, you find a thatched hut with two hermits. They remain silent but grant you a one-time glimpse of a secret manual—vanishing after use to prevent leaks:",
+    "desc_tw": "三洲史書記載，在遠古洪荒密林中，有一宗門名曰逍遙，門人一師一徒，行事無拘無束；而其招式迅捷，隨心而變。不過自從天魔大戰以來，再沒有世人見過他們一麵，或言早已同殉天道。\n為了尋找逍遙派，你探遍時空幻景中的深穀幽林，終於找到了一座草廬，看到一老一少兩位世外高人坐臥於前。你上前詢問，二人卻始終不語，隻道與你有緣，許你看一本從未見過的秘籍。不過為確保不會外傳，所以隻能用一次："
+  },
+  {
+    "id": 32,
+    "title_cn": "又见逍遥",
+    "title_en": "Revisiting Xiaoyao",
+    "title_tw": "又見逍遙",
+    "desc_cn": "三洲史书记载，在远古洪荒密林中，有一宗门名曰逍遥，门人一师一徒，行事无拘无束；而其招式迅捷，随心而变。不过自从天魔大战以来，再没有世人见过他们一面，或言早已同殉天道。\n为了寻找逍遥派，你探遍时空幻景中的深谷幽林，终于找到了一座草庐，看到一老一少两位世外高人坐卧于前。你上前询问，二人却始终不语，只道与你有缘，许你看一本从未见过的秘籍。不过为确保不会外传，所以只能用一次：",
+    "desc_en": "Histories of the Three Continents speak of the Xiaoyao Sect—a reclusive duo of master and disciple, renowned for their unrestrained, adaptive techniques. Since the Battle of the Immortals and Evils, none have seen them.\nAfter scouring the Mirage, you find a thatched hut with two hermits. They remain silent but grant you a one-time glimpse of a secret manual—vanishing after use to prevent leaks:",
+    "desc_tw": "三洲史書記載，在遠古洪荒密林中，有一宗門名曰逍遙，門人一師一徒，行事無拘無束；而其招式迅捷，隨心而變。不過自從天魔大戰以來，再沒有世人見過他們一麵，或言早已同殉天道。\n為了尋找逍遙派，你探遍時空幻景中的深穀幽林，終於找到了一座草廬，看到一老一少兩位世外高人坐臥於前。你上前詢問，二人卻始終不語，隻道與你有緣，許你看一本從未見過的秘籍。不過為確保不會外傳，所以隻能用一次："
+  },
+  {
+    "id": 33,
+    "title_cn": "神笔",
+    "title_en": "Divine Brush",
+    "title_tw": "神筆",
+    "desc_cn": "你在幻景中捡到一只蘸了墨水的毛笔，不由自主地在空中挥舞起来。墨水扬洒而出，竟化为两篇招式图谱，果然为仙人法宝。时间有限，你只能带走一本：",
+    "desc_en": "You find an ink-drenched brush in the Mirage. Swiping it midair, ink splatters form two skill scrolls—clearly a Immortal artifact. You take one:",
+    "desc_tw": "你在幻景中撿到一隻蘸了墨水的毛筆，不由自主地在空中揮舞起來。墨水揚灑而出，竟化為兩篇招式圖譜，果然為仙人法寶。時間有限，你隻能帶走一本："
+  },
+  {
+    "id": 34,
+    "title_cn": "克敌机先",
+    "title_en": "True Strike",
+    "title_tw": "克敵機先",
+    "desc_cn": "黄沙四起，风烟弥漫。随着空间变幻，你意识到下一场战斗必是一场恶战。你决定先发制人，取得优势：",
+    "desc_en": "Amid swirling sand and shifting terrain, you brace for a brutal battle. Seizing initiative, you decide to strike first:",
+    "desc_tw": "黃沙四起，風煙彌漫。隨着空間變幻，你意識到下一場戰鬥必是一場惡戰。你決定先發製人，取得優勢："
+  },
+  {
+    "id": 35,
+    "title_cn": "翩若惊鸿",
+    "title_en": "Grace of the Divine",
+    "title_tw": "翩若驚鴻",
+    "desc_cn": "在时空幻景中，你看到上古仙人战斗时的英姿，一袭白衣潇洒自如，翩若惊鸿，婉若游龙，仿佛一招一式中都暗含灵动身法，可惜到如今几乎都已失传。受此启发，你决定对现有招式深入研习：",
+    "desc_en": "In the Mirage, you witness ancient immortals battling with ethereal grace—movements fluid as cranes, elusive as dragons. Inspired, you refine your own techniques:",
+    "desc_tw": "在時空幻景中，你看到上古仙人戰鬥時的英姿，一襲白衣瀟灑自如，翩若驚鴻，婉若遊龍，仿佛一招一式中都暗含靈動身法，可惜到如今幾乎都已失傳。受此啟發，你決定對現有招式深入研習："
+  },
+  {
+    "id": 36,
+    "title_cn": "丹砂之梦",
+    "title_en": "Elixir Dream",
+    "title_tw": "丹砂之夢",
+    "desc_cn": "高人炼丹砂，未念将朽骨。恍惚间，你看到四百多年前，鹤老尚年轻时于北洲游历、造炉炼丹的情形。观察一段时间后，你发现其所用炼丹炉竟能化万物灵气为素材，怪不得日后能研发出如此多的药方。你决定拿来试一试：",
+    "desc_en": "A vision reveals Elder Crane, centuries younger, crafting elixirs in the North Continent. His furnace transmutes spiritual energy into materials—a method explaining his later alchemical breakthroughs. You try to replicate it:",
+    "desc_tw": "高人煉丹砂，未念將朽骨。恍惚間，你看到四百多年前，鶴老尚年輕時於北洲遊曆、造爐煉丹的情形。觀察一段時間後，你發現其所用煉丹爐竟能化萬物靈氣為素材，怪不得日後能研發出如此多的藥方。你決定拿來試一試："
+  },
+  {
+    "id": 37,
+    "title_cn": "背水一战",
+    "title_en": "Last Stand",
+    "title_tw": "背水一戰",
+    "desc_cn": "画卷已尽，墨痕渐干。你忽然意识到本次幻景之旅即将走到尽头，接下来的战斗可能会是最后的一劫。为此，你决定用尽所有手边资源，全力一搏：",
+    "desc_en": "The scroll’s ink fades, signaling the Mirage’s end. Facing the final trial, you expend all resources for victory:",
+    "desc_tw": "畫卷已盡，墨痕漸幹。你忽然意識到本次幻景之旅即將走到盡頭，接下來的戰鬥可能會是最後的一劫。為此，你決定用盡所有手邊資源，全力一搏："
+  },
+  {
+    "id": 38,
+    "title_cn": "乐园",
+    "title_en": "Paradise",
+    "title_tw": "樂園",
+    "desc_cn": "你闭眼打坐，心中回忆着心法。再次睁开眼时，却发现已在弈仙府内。最开始你以为是退出了画中幻景，打听后才得知这是画中预测的千年后的弈仙府。此时仙凡已无差别，人人都可在这里修炼，学习最新的修仙秘籍。你决定加入其中：",
+    "desc_en": "Meditating within the Mirage, you awaken in Yi Xian Palace—not the real one, but a painted vision of its utopian future where mortals and immortals train equally. You decide to join them:",
+    "desc_tw": "你閉眼打坐，心中回憶着心法。再次睜開眼時，卻發現已在弈仙府內。最開始你以為是退出了畫中幻景，打聽後才得知這是畫中預測的千年後的弈仙府。此時仙凡已無差別，人人都可在這裏修煉，學習最新的修仙秘籍。你決定加入其中："
+  },
+  {
+    "id": 39,
+    "title_cn": "残魂",
+    "title_en": "Remnant Souls",
+    "title_tw": "殘魂",
+    "desc_cn": "一声咆哮传来，前方奔来一巨大魔物，其状如猿，白首赤足，竟是上古魔兽朱厌。你正准备逃跑，忽然一群战士赶到，与朱厌搏斗至暮时，又浴其血而舞，终唤来金乌将其击杀。然而这群战士因朱厌之血而魂魄受损，生死难料。你决定：",
+    "desc_en": "A roar heralds the arrival of Zhu Yan, an ancient white-headed ape demon. Warriors arrive, battling it until dusk, then dancing in its blood to summon the Golden Crow for its demise. But the warriors’ souls are tainted. You intervene:",
+    "desc_tw": "一聲咆哮傳來，前方奔來一巨大魔物，其狀如猿，白首赤足，竟是上古魔獸朱厭。你正準備逃跑，忽然一群戰士趕到，與朱厭搏鬥至暮時，又浴其血而舞，終喚來金烏將其擊殺。然而這群戰士因朱厭之血而魂魄受損，生死難料。你決定："
+  },
+  {
+    "id": 40,
+    "title_cn": "先天一炁",
+    "title_en": "Innate Air",
+    "title_tw": "先天一炁",
+    "desc_cn": "传说天道破碎之前，世间充盈着所谓“先天一炁”。后“先天一炁”化为清浊二灵气，这才幻化成天地间的万物生灵。你心中想着这段往事，便感到周遭有大量灵气开始奔涌。你抓住机会，吸取这股灵气：",
+    "desc_en": "Legends say Innate Air once permeated the world before splitting into yin-yang energies. Sensing surging spiritual energy, you try to absorb it:",
+    "desc_tw": "傳說天道破碎之前，世間充盈着所謂“先天一炁”。後“先天一炁”化為清濁二靈氣，這才幻化成天地間的萬物生靈。你心中想着這段往事，便感到周遭有大量靈氣開始奔湧。你抓住機會，吸取這股靈氣："
+  },
+  {
+    "id": 41,
+    "title_cn": "重五",
+    "title_en": "Double Fifth Festival",
+    "title_tw": "重五",
+    "desc_cn": "悬菖挂艾迎重五，角黍飞舟庆弈仙。灵河奔涌，鼓声雷动，龙舟齐发，去年重五佳节的庆祝画面复现在眼前。回想起当时的甜粽和咸粽之争，你决定这次站哪边呢？",
+    "desc_en": "Dragon boats race as drums thunder—a replay of last year’s Double Fifth Festival. Remembering the Sweet vs. Salty Zongzi debate, you pick a side:",
+    "desc_tw": "懸菖掛艾迎重五，角黍飛舟慶弈仙。靈河奔湧，鼓聲雷動，龍舟齊發，去年重五佳節的慶祝畫麵複現在眼前。回想起當時的甜粽和鹹粽之争，你決定這次站哪邊呢？"
+  },
+  {
+    "id": 42,
+    "title_cn": "星图画镜",
+    "title_en": "Mirror of Stars",
+    "title_tw": "星圖畫鏡",
+    "desc_cn": "星图画镜，乃当初天尊所创，可将世间万物幻化入镜中，供人随意取用。你在幻景中捡到多面类似的镜子，方才明白这“画镜”和“画境”说不定真有些关联。不过来不及细想，你准备选一枚镜子进行交换：",
+    "desc_en": "The Mirror of Stars was created by the Master in the past, which can transform all things in the world into the mirror for people to use freely. You found multiple similar mirrors in the mirage, and only then did you realize that there may be some connection between \"Mirror of Stars\" and \"Painting Realm\". Without much thought, you are ready to choose a mirror for exchange:",
+    "desc_tw": "星圖畫鏡，乃當初天尊所創，可將世間萬物幻化入鏡中，供人隨意取用。你在幻景中撿到多面類似的鏡子，方才明白這“畫鏡”和“畫境”說不定真有些關聯。不過來不及細想，你準備選一枚鏡子進行交換："
+  },
+  {
+    "id": 43,
+    "title_cn": "弈仙太学",
+    "title_en": "Yi Xian College",
+    "title_tw": "弈仙太學",
+    "desc_cn": "深入画中幻景，眼前出现一座大院，名叫“弈仙太学”。学院中人声鼎沸，有来自三洲各处的仙者向凡人义务传授自创技法，从炼丹制符到绘画种植等应有尽有。原来正是当年弈贤天尊开创的善举，才让三洲世界有了这些仙凡共享的副职业。你决定去报名学习一个：",
+    "desc_en": "Deep into the Mirage in the painting, there appears a large courtyard called \"Yi Xian College\". The college is bustling with people, with immortals from all over the three continents voluntarily imparting their own techniques to mortals, ranging from alchemy and fulu making to painting and planting. It turned out that it was the benevolent act initiated by Yi Xian Master back then that gave the Three Continents World these shared side jobs among immortals and mortals. You decide to sign up for one:",
+    "desc_tw": "深入畫中幻景，眼前出現一座大院，名叫“弈仙太學”。學院中人聲鼎沸，有來自三洲各處的仙者向凡人義務傳授自創技法，從煉丹製符到繪畫種植等應有盡有。原來正是當年弈賢天尊開創的善舉，才讓三洲世界有了這些仙凡共享的副職業。你決定去報名學習一個："
+  },
+  {
+    "id": 44,
+    "title_cn": "卡牌印刷机",
+    "title_en": "Card Printer",
+    "title_tw": "卡牌印刷機",
+    "desc_cn": "传说当年弈贤天尊首创弈仙牌时，既无活字印刷技术，又无天机谷之类的高人相助，仅凭自身灵气即可随手印出不同卡牌，供仙友玩乐。为了一探究竟，你在幻景中反复调整时空定位，终于找到一台天尊用过的印刷机，发现其竟然还有特殊功能。你准备用来：",
+    "desc_en": "Legends say that when Immortal of YiXian first created Yi Xian Cards, there was no movable-type printing, nor aid from sages like Tianji Valley. Relying solely on his Qi, he could effortlessly print different cards for his friends' amusement. To uncover the truth, you adjust spacetime coordinates repeatedly within the Mirage, finally discovering a printer once used by him—and find it still harbors unique functions. You prepare to use it for:",
+    "desc_tw": "傳說當年弈賢天尊首創弈仙牌時，既無活字印刷技術，又無天機谷之類的高人相助，僅憑自身靈氣即可隨手印出不同卡牌，供仙友玩樂。為了一探究竟，你在幻景中反複調整時空定位，終於找到一臺天尊用過的印刷機，發現其竟然還有特殊功能。你準備用來："
+  },
+  {
+    "id": 45,
+    "title_cn": "猜先",
+    "title_en": "Toss",
+    "title_tw": "猜先",
+    "desc_cn": "仙人好博弈,时下绿云中。你于幻景中围观仙人对弈，发现他们并非白先黑后，而是猜测对方手中棋子为阳数还是阴数：猜对则执白，反之则执黑。你有样学样，决定猜测下场战斗的先后顺序，并做出有效应对。不过需要注意，对方也会有所抉择：",
+    "desc_en": "You watch the Immortals playing chess in the Mirage, and find that they are not white first and black later, but guess whether the chess pieces in the opponent's hand are odd or even: if you guess correctly, you will play white; otherwise, you will play black. Learn from it, you decide to guess the order of the next battle, and make effective responses. However, it should be noted that the opponent may also make a choice:",
+    "desc_tw": "仙人好博弈,時下綠雲中。你於幻景中圍觀仙人對弈，發現他們並非白先黑後，而是猜測對方手中棋子為陽數還是陰數：猜對則執白，反之則執黑。你有樣學樣，決定猜測下場戰鬥的先後順序，並做出有效應對。不過需要注意，對方也會有所抉擇："
+  },
+  {
+    "id": 46,
+    "title_cn": "公平对决",
+    "title_en": "Fair Duel",
+    "title_tw": "公平對決",
+    "desc_cn": "“我来三洲只办三件事，公平，公平，还是（三洲粗口）公平！”一位长相有些粗俗的仙人闯入幻景，打断了你们的切磋。他主张大家公平较量，消除各方面的差距。你虽然大体认同，但切磋这种事好像也不能完全一样。你勉强答应先在一方面实现公平：",
+    "desc_en": "\"I came to the Three Continents for three things: Fairness! Fairness! And [Three Continents expletive] Fairness!\"\nA rough-looking immortal bursts into the Mirage, interrupting your battle. He insists on eliminating all advantages to ensure absolute equality. While you generally agree, you doubt sparring requires total uniformity. Reluctantly, you agree to equalize one aspect first:",
+    "desc_tw": "“我來三洲隻辦三件事，公平，公平，還是（三洲粗口）公平！”一位長相有些粗俗的仙人闖入幻景，打斷了你們的切磋。他主張大家公平較量，消除各方面的差距。你雖然大體認同，但切磋這種事好像也不能完全一樣。你勉強答應先在一方面實現公平："
+  },
+  {
+    "id": 47,
+    "title_cn": "副职专精",
+    "title_en": "Side Jobs Specialization",
+    "title_tw": "副職專精",
+    "desc_cn": "在幻景中，你看到各路副职门派的先人们筚路蓝缕，在三洲早期困局中开发出一系列有助于修行的招式，并逐步演化出今日百花齐放的局面。你决定效仿他们，选择一个目标进行精练：",
+    "desc_en": "Within the Mirage, you witness pioneers of various Side Jobs sects who trailblazed through the Three Continents' early struggles. They developed techniques to aid cultivation, gradually evolving into today’s diverse ecosystem. Inspired, you choose one specialization to refine:",
+    "desc_tw": "在幻景中，你看到各路副職門派的先人們篳路藍縷，在三洲早期困局中開發出一系列有助於修行的招式，並逐步演化出今日百花齊放的局面。你決定效仿他們，選擇一個目標進行精練："
+  },
+  {
+    "id": 48,
+    "title_cn": "仙人议事堂",
+    "title_en": "Immortals Conference Hall",
+    "title_tw": "仙人議事堂",
+    "desc_cn": "话说上古时期，为维护仙界稳定，仙人们建起一座府宅，名曰“仙人议事堂”。你走入观看，发现弈仙府修士都已被传送入此地。在团结的氛围中，你们竟不自觉地选择先放下斗争，为接下来共同修炼提些建议、指明方向。不过，仍要警惕群众里面有坏人......",
+    "desc_en": "In ancient times, in order to maintain stability in the immortal realm, immortals built a mansion called the \"Immortals Conference Hall\". You walked in to observe and found that the cultivators of YiXian Palace had been teleported into this place. In the atmosphere of unity, you unconsciously chose to let go of the struggle and provide some suggestions and directions for the next joint cultivation. However, you still need to be wary of bad guys among the masses .....",
+    "desc_tw": "話說上古時期，為維護仙界穩定，仙人們建起一座府宅，名曰“仙人議事堂”。你走入觀看，發現弈仙府修士都已被傳送入此地。在團結的氛圍中，你們竟不自覺地選擇先放下鬥争，為接下來共同修煉提些建議、指明方向。不過，仍要警惕群眾裏面有壞人......"
+  },
+  {
+    "id": 49,
+    "title_cn": "专注之心",
+    "title_en": "Focused Heart",
+    "title_tw": "專注之心",
+    "desc_cn": "幻景中一阵地动山摇，你抬头观看，原来又是一场仙魔之战，直至山崩地裂、日月无光。你吓得踉跄后退，不敢向上直视。邪魔伏诛后，有仙者从云端跃下，看到你的狼狈之态，连连感叹后世修仙者道心崩坏，缺乏贤者之姿。出于善意，她引导你抛弃恐慌，专注于眼前一项事物，方能道心稳固：",
+    "desc_en": "In the Mirage, a battlefield moves and rocks, and when you look up, it turns out to be another battle between immortals and demons, until the mountains collapse and the earth splits, and the sun and moon are devoid of light. You are so scared that you stumble back and dare not look up directly. After the suppression of evil demons, a immortal jumps down from the clouds and see your embarrassing state, repeatedly sighing that the Daoist heart of future cultivators are shattered and lacked the demeanor of a wise person. Out of goodwill, she guides you to abandon panic and focus on one thing in front of you, in order to have a focused heart:",
+    "desc_tw": "幻景中一陣地動山搖，你抬頭觀看，原來又是一場仙魔之戰，直至山崩地裂、日月無光。你嚇得踉蹌後退，不敢向上直視。邪魔伏誅後，有仙者從雲端躍下，看到你的狼狽之態，連連感歎後世修仙者道心崩壞，缺乏賢者之姿。出於善意，她引導你拋棄恐慌，專注於眼前一項事物，方能道心穩固："
+  },
+  {
+    "id": 50,
+    "title_cn": "神秘印记",
+    "title_en": "Mystery Seals",
+    "title_tw": "神秘印記",
+    "desc_cn": "你踏入一处神秘的未来幻景，并看到一块奇怪的石板。石板上有三个槽位，可以用来摆放旁边石架上的三枚奇怪印记：分别为黄、蓝、红色，可能对应三种战斗效果。你决定将一块印记放入一个槽位，试试效果：",
+    "desc_en": "You step into a mysterious future Mirage and discover a stone slab with three slots. Three strange seals—yellow, blue, and red—rest on a nearby shelf, likely corresponding to battle effects. You place one seal into a slot to test its power:",
+    "desc_tw": "你踏入一處神秘的未來幻景，並看到一塊奇怪的石板。石板上有三個槽位，可以用來擺放旁邊石架上的三枚奇怪印記：分別為黃、藍、紅色，可能對應三種戰鬥效果。你決定將一塊印記放入一個槽位，試試效果："
+  },
+  {
+    "id": 51,
+    "title_cn": "气运之战",
+    "title_en": "Battle of Fate",
+    "title_tw": "氣運之戰",
+    "desc_cn": "“我感觉到，全都回来了！”一阵鲜活的灵气从幻景中向你袭来，你却从中嗅到了熟悉的气息。“是气运，我加了气运！”近两年前经历过的的气运之战涌上心头，你回忆起气运的四种用法：",
+    "desc_en": "\"I feel it... all of it returning!\" Vibrant Qi surges from the Mirage, carrying a familiar energy. \"It’s Luck!\" Memories of the Battle of Fater from two years ago flood back. You recall four uses of the Luck:",
+    "desc_tw": "“我感覺到，全都回來了！”一陣鮮活的靈氣從幻景中向你襲來，你卻從中嗅到了熟悉的氣息。“是氣運，我加了氣運！”近兩年前經曆過的的氣運之戰湧上心頭，你回憶起氣運的四種用法："
+  },
+  {
+    "id": 52,
+    "title_cn": "逍遥神功",
+    "title_en": "Xiaoyao Divine Art",
+    "title_tw": "逍遙神功",
+    "desc_cn": "凭着上次的记忆，你再一次踏入逍遥谷。那一师一徒见了你依然不惊讶，随手又拿出一本秘籍，叫你阅读一遍后即可离去。你拿来试读，才发现这逍遥绝学可化天下武功为我所用，犹如北冥，大鱼小舟皆可容纳。你决定：",
+    "desc_en": "Guided by memory, you re-enter Xiaoyao Valley. The master-disciple duo hands you another manual without surprise, urging you to read once before leaving. As you study, you realize this art assimilates all martial techniques—like the North Sea, embracing both leviathans and skiffs. You decide:",
+    "desc_tw": "憑着上次的記憶，你再一次踏入逍遙谷。那一師一徒見了你依然不驚訝，隨手又拿出一本秘籍，叫你閱讀一遍後即可離去。你拿來試讀，才發現這逍遙絕學可化天下武功為我所用，猶如北冥，大魚小舟皆可容納。你決定："
+  },
+  {
+    "id": 53,
+    "title_cn": "宗门大比",
+    "title_en": "Sect Grand Competition",
+    "title_tw": "宗門大比",
+    "desc_cn": "恍惚间，你从幻景中看到了当年四大门派刚刚建成时的盛况。彼时众人修炼不得要领，筑基期者居多，却仍是一派其乐融融，交流切磋活动接踵而至。其中的宗门大比更是场面空前，胜者可以从四大宗门中自由挑选一本秘籍进行学习。你轻松通过了考验，并挑选奖励：",
+    "desc_en": "In a Mirage, you witness the four great sects' founding era. Most cultivators stagnated at Foundation Phase, yet camaraderie thrived with constant exchanges. The Sect Grand Competition climaxed this golden age—victors could choose one secret manual from any major sect. Having triumphed, you claim your reward:",
+    "desc_tw": "恍惚間，你從幻景中看到了當年四大門派剛剛建成時的盛況。彼時眾人修煉不得要領，築基期者居多，卻仍是一派其樂融融，交流切磋活動接踵而至。其中的宗門大比更是場面空前，勝者可以從四大宗門中自由挑選一本秘籍進行學習。你輕鬆通過了考驗，並挑選獎勵："
+  },
+  {
+    "id": 54,
+    "title_cn": "融汇复苏",
+    "title_en": "Fusion Revival",
+    "title_tw": "融彙複蘇",
+    "desc_cn": "自从仙府遗迹逐渐失效以来，当初修仙者们开发出的融汇招式已几近无人过问。但在幻景中，往日的记忆一一浮现，你开始复习起融汇招式的效果，但是否能在幻景中发挥作用，还需你自行判断：",
+    "desc_en": "As the Immortal Relics gradually lose power, the Fusion Moves once developed by cultivators have been nearly forgotten. But in the Mirage, memories of the past resurface. You begin reviewing fusion move effects, though whether they work in the Mirage requires your own judgment:",
+    "desc_tw": "自從仙府遺跡逐漸失效以來，當初修仙者們開發出的融彙招式已幾近無人過問。但在幻景中，往日的記憶一一浮現，你開始複習起融彙招式的效果，但是否能在幻景中發揮作用，還需你自行判斷："
+  },
+  {
+    "id": 55,
+    "title_cn": "成长试炼",
+    "title_en": "Growth Trial",
+    "title_tw": "成長試煉",
+    "desc_cn": "你在幻景中偶遇一位世外高人，其相貌普通，似乎与凡人别无二致，却已至仙人境界。他向你展示一件修炼用的绿色小瓶，其中的灵液可使一切灵植成长，辅助功力大成。他很想知道其对你所用卡牌中衍生的招式是否也有效果，你决定一试：",
+    "desc_en": "You encounter a reclusive master in the Mirage. Ordinary in appearance yet at Immortal-level cultivation, he shows you a small green vial containing spiritual liquid that accelerates the growth of all spirit plants. Curious if it affects moves derived from your cards, you decide to test it.",
+    "desc_tw": "你在幻景中偶遇一位世外高人，其相貌普通，似乎與凡人別無二致，卻已至仙人境界。他向你展示一件修煉用的綠色小瓶，其中的靈液可使一切靈植成長，輔助功力大成。他很想知道其對你所用卡牌中衍生的招式是否也有效果，你決定一試："
+  },
+  {
+    "id": 56,
+    "title_cn": "副职牌试炼",
+    "title_en": "Side Job Card Trial",
+    "title_tw": "副職牌試煉",
+    "desc_cn": "幻景中出现一位老者，自称专门掌管副职业的仙人。他指出你使用副职业卡牌时不得要领，若能在恰当的位置使用定能事半功倍。如果能按照他说的办，他就能给你分奖励：你发现他的要求有些故意刁难，但面对奖励，最好先忍一忍：",
+    "desc_en": "An elder claiming to oversee Side Jobs appears in the Mirage. He points out you've failed to grasp the essentials of Side Job cards – proper placement could double your results. Complying earns rewards, though his demands seem deliberately difficult. For the sake of rewards, you endure.",
+    "desc_tw": "幻景中出現一位老者，自稱專門掌管副職業的仙人。他指出你使用副職業卡牌時不得要領，若能在恰當的位置使用定能事半功倍。如果能按照他說的辦，他就能給你分獎勵：你發現他的要求有些故意刁難，但面對獎勵，最好先忍一忍："
+  }
+]

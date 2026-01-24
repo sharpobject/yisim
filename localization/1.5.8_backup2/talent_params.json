@@ -1,0 +1,4510 @@
+[
+  {
+    "field_1": 1,
+    "field_2": 1,
+    "desc": "锻体",
+    "field_6": 2,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 10001,
+    "field_2": 1,
+    "desc": "锻体",
+    "field_6": 3,
+    "otherParams": [
+      7
+    ]
+  },
+  {
+    "field_1": 20001,
+    "field_2": 1,
+    "desc": "锻体",
+    "field_6": 4,
+    "otherParams": [
+      10
+    ]
+  },
+  {
+    "field_1": 30001,
+    "field_2": 1,
+    "desc": "锻体",
+    "field_6": 5,
+    "otherParams": [
+      12
+    ]
+  },
+  {
+    "field_1": 2,
+    "field_2": 2,
+    "desc": "融会贯通",
+    "field_6": 2,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 10002,
+    "field_2": 2,
+    "desc": "融会贯通",
+    "field_6": 3,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20002,
+    "field_2": 2,
+    "desc": "融会贯通",
+    "field_6": 4,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30002,
+    "field_2": 2,
+    "desc": "融会贯通",
+    "field_6": 5,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 3,
+    "field_2": 3,
+    "desc": "戒备防守",
+    "field_4": 1,
+    "field_6": 2,
+    "otherParams": [
+      8
+    ]
+  },
+  {
+    "field_1": 4,
+    "field_2": 4,
+    "desc": "感悟丛生",
+    "field_6": 2,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 10004,
+    "field_2": 4,
+    "desc": "感悟丛生",
+    "field_6": 3,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20004,
+    "field_2": 4,
+    "desc": "感悟丛生",
+    "field_6": 4,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30004,
+    "field_2": 4,
+    "desc": "感悟丛生",
+    "field_6": 5,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 5,
+    "field_2": 5,
+    "desc": "善假于物",
+    "field_6": 2,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 10005,
+    "field_2": 5,
+    "desc": "善假于物",
+    "field_6": 3,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20005,
+    "field_2": 5,
+    "desc": "善假于物",
+    "field_6": 4,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30005,
+    "field_2": 5,
+    "desc": "善假于物",
+    "field_6": 5,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 6,
+    "field_2": 6,
+    "desc": "变换之道",
+    "field_6": 2,
+    "otherParams": [
+      6,
+      6
+    ]
+  },
+  {
+    "field_1": 10006,
+    "field_2": 6,
+    "desc": "变换之道",
+    "field_6": 3,
+    "otherParams": [
+      8,
+      8
+    ]
+  },
+  {
+    "field_1": 20006,
+    "field_2": 6,
+    "desc": "变换之道",
+    "field_6": 4,
+    "otherParams": [
+      10,
+      10
+    ]
+  },
+  {
+    "field_1": 30006,
+    "field_2": 6,
+    "desc": "变换之道",
+    "field_6": 5,
+    "otherParams": [
+      12,
+      12
+    ]
+  },
+  {
+    "field_1": 7,
+    "field_2": 7,
+    "desc": "云影化身",
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 1000001,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 8,
+    "field_2": 8,
+    "desc": "休养生息",
+    "field_6": 2,
+    "otherParams": [
+      14
+    ]
+  },
+  {
+    "field_1": 10008,
+    "field_2": 8,
+    "desc": "休养生息",
+    "field_6": 3,
+    "otherParams": [
+      18
+    ]
+  },
+  {
+    "field_1": 20008,
+    "field_2": 8,
+    "desc": "休养生息",
+    "field_6": 4,
+    "otherParams": [
+      24
+    ]
+  },
+  {
+    "field_1": 30008,
+    "field_2": 8,
+    "desc": "休养生息",
+    "field_6": 5,
+    "otherParams": [
+      30
+    ]
+  },
+  {
+    "field_1": 9,
+    "field_2": 9,
+    "desc": "云巅雷劫",
+    "field_6": 2,
+    "otherParams": [
+      14,
+      2
+    ]
+  },
+  {
+    "field_1": 10009,
+    "field_2": 9,
+    "desc": "云巅雷劫",
+    "field_6": 3,
+    "otherParams": [
+      14,
+      3
+    ]
+  },
+  {
+    "field_1": 20009,
+    "field_2": 9,
+    "desc": "云巅雷劫",
+    "field_6": 4,
+    "otherParams": [
+      14,
+      4
+    ]
+  },
+  {
+    "field_1": 30009,
+    "field_2": 9,
+    "desc": "云巅雷劫",
+    "field_6": 5,
+    "otherParams": [
+      14,
+      5
+    ]
+  },
+  {
+    "field_1": 10,
+    "field_2": 10,
+    "desc": "道韵传承",
+    "field_6": 2,
+    "otherParams": [
+      1,
+      0
+    ]
+  },
+  {
+    "field_1": 10010,
+    "field_2": 10,
+    "desc": "道韵传承",
+    "field_6": 3,
+    "otherParams": [
+      1,
+      1
+    ]
+  },
+  {
+    "field_1": 20010,
+    "field_2": 10,
+    "desc": "道韵传承",
+    "field_6": 4,
+    "otherParams": [
+      1,
+      1
+    ]
+  },
+  {
+    "field_1": 30010,
+    "field_2": 10,
+    "desc": "道韵传承",
+    "field_6": 5,
+    "otherParams": [
+      1,
+      2
+    ]
+  },
+  {
+    "field_1": 11,
+    "field_2": 11,
+    "desc": "博采众长",
+    "field_6": 5,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 12,
+    "field_2": 12,
+    "desc": "顿悟",
+    "field_6": 2,
+    "otherParams": [
+      2,
+      3
+    ]
+  },
+  {
+    "field_1": 10012,
+    "field_2": 12,
+    "desc": "顿悟",
+    "field_6": 3,
+    "otherParams": [
+      3,
+      3
+    ]
+  },
+  {
+    "field_1": 20012,
+    "field_2": 12,
+    "desc": "顿悟",
+    "field_6": 4,
+    "otherParams": [
+      4,
+      3
+    ]
+  },
+  {
+    "field_1": 30012,
+    "field_2": 12,
+    "desc": "顿悟",
+    "field_6": 5,
+    "otherParams": [
+      6,
+      3
+    ]
+  },
+  {
+    "field_1": 13,
+    "field_2": 13,
+    "desc": "储纳灵气",
+    "field_4": 1,
+    "field_6": 2,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 10013,
+    "field_2": 13,
+    "desc": "储纳灵气",
+    "field_4": 1,
+    "field_6": 3,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 20013,
+    "field_2": 13,
+    "desc": "储纳灵气",
+    "field_4": 1,
+    "field_6": 4,
+    "field_10": 1,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30013,
+    "field_2": 13,
+    "desc": "储纳灵气",
+    "field_4": 1,
+    "field_6": 5,
+    "field_10": 1,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 14,
+    "field_2": 14,
+    "desc": "云海连绵",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 1000001,
+    "field_10": 1,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 15,
+    "field_2": 15,
+    "desc": "灵猫踏云",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 1000004,
+    "field_10": 1,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 16,
+    "field_2": 16,
+    "desc": "剑韵修炼",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 1,
+    "otherParams": [
+      0,
+      1
+    ]
+  },
+  {
+    "field_1": 10016,
+    "field_2": 16,
+    "desc": "剑韵修炼",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 1,
+    "otherParams": [
+      1,
+      1
+    ]
+  },
+  {
+    "field_1": 20016,
+    "field_2": 16,
+    "desc": "剑韵修炼",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 1,
+    "otherParams": [
+      2,
+      1
+    ]
+  },
+  {
+    "field_1": 30016,
+    "field_2": 16,
+    "desc": "剑韵修炼",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "field_10": 1,
+    "otherParams": [
+      2,
+      2
+    ]
+  },
+  {
+    "field_1": 17,
+    "field_2": 17,
+    "desc": "云泉道茶",
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 1000001,
+    "field_10": 1,
+    "otherParams": [
+      1,
+      2
+    ]
+  },
+  {
+    "field_1": 18,
+    "field_2": 18,
+    "desc": "云雾变幻",
+    "field_6": 1,
+    "field_7": 1,
+    "field_8": 1000001
+  },
+  {
+    "field_1": 19,
+    "field_2": 19,
+    "desc": "血脉潜能",
+    "field_6": 1,
+    "field_7": 1,
+    "field_8": 1000002,
+    "otherParams": [
+      18,
+      12,
+      9
+    ]
+  },
+  {
+    "field_1": 20,
+    "field_2": 20,
+    "desc": "精进",
+    "field_6": 2
+  },
+  {
+    "field_1": 21,
+    "field_2": 21,
+    "desc": "冷静",
+    "field_6": 3,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 22,
+    "field_2": 22,
+    "desc": "炎舞",
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 1000002,
+    "field_10": 1,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 23,
+    "field_2": 23,
+    "desc": "崩雪",
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 1000002,
+    "field_10": 1,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 24,
+    "field_2": 24,
+    "desc": "龙脉传承",
+    "field_6": 1,
+    "field_7": 1,
+    "field_8": 1000003,
+    "otherParams": [
+      2,
+      2,
+      8
+    ]
+  },
+  {
+    "field_1": 25,
+    "field_2": 25,
+    "desc": "珊瑚剑",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 1000003,
+    "field_10": 1,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 26,
+    "field_2": 26,
+    "desc": "泪天镯",
+    "field_4": 1,
+    "field_6": 3,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 27,
+    "field_2": 27,
+    "desc": "龙鳞",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 1000003,
+    "otherParams": [
+      20,
+      0
+    ]
+  },
+  {
+    "field_1": 28,
+    "field_2": 28,
+    "desc": "灯灵觉醒",
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 2000003,
+    "otherParams": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "field_1": 29,
+    "field_2": 29,
+    "desc": "勤学苦练",
+    "field_6": 1,
+    "field_7": 2,
+    "field_8": 2000001,
+    "otherParams": [
+      8,
+      1,
+      6
+    ]
+  },
+  {
+    "field_1": 30,
+    "field_2": 30,
+    "desc": "卜卦",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 2,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 10030,
+    "field_2": 30,
+    "desc": "卜卦",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 2,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 20030,
+    "field_2": 30,
+    "desc": "卜卦",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 2,
+    "field_10": 1,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30030,
+    "field_2": 30,
+    "desc": "卜卦",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 2,
+    "field_10": 1,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 31,
+    "field_2": 31,
+    "desc": "观星",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 2,
+    "otherParams": [
+      18446744073709551610,
+      1
+    ]
+  },
+  {
+    "field_1": 10031,
+    "field_2": 31,
+    "desc": "观星",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 2,
+    "field_10": 1,
+    "otherParams": [
+      0,
+      1
+    ]
+  },
+  {
+    "field_1": 20031,
+    "field_2": 31,
+    "desc": "观星",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 2,
+    "otherParams": [
+      6,
+      1
+    ]
+  },
+  {
+    "field_1": 30031,
+    "field_2": 31,
+    "desc": "观星",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 2,
+    "field_10": 1,
+    "otherParams": [
+      12,
+      1
+    ]
+  },
+  {
+    "field_1": 32,
+    "field_2": 32,
+    "desc": "生机绽放",
+    "field_4": 1,
+    "field_6": 5
+  },
+  {
+    "field_1": 33,
+    "field_2": 33,
+    "desc": "北斗星盘",
+    "field_4": 1,
+    "field_6": 3,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 34,
+    "field_2": 34,
+    "desc": "七星灯",
+    "field_6": 3,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 35,
+    "field_2": 35,
+    "desc": "瓮中捉鳖",
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 2000002,
+    "field_10": 1,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 36,
+    "field_2": 36,
+    "desc": "聚灵卦",
+    "field_4": 1,
+    "field_6": 5,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 37,
+    "field_2": 37,
+    "desc": "先天灵躯",
+    "field_6": 1,
+    "field_7": 2,
+    "field_8": 2000003,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 38,
+    "field_2": 38,
+    "desc": "稳固防御",
+    "field_4": 1,
+    "field_6": 3,
+    "field_10": 1,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 39,
+    "field_2": 39,
+    "desc": "灯焰飞舞",
+    "field_6": 3,
+    "field_7": 2,
+    "field_8": 2000003,
+    "field_10": 1,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 40,
+    "field_2": 40,
+    "desc": "旋灯占卦",
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 2000003,
+    "field_10": 1,
+    "otherParams": [
+      7
+    ]
+  },
+  {
+    "field_1": 41,
+    "field_2": 41,
+    "desc": "枯木逢春",
+    "field_6": 5
+  },
+  {
+    "field_1": 42,
+    "field_2": 42,
+    "desc": "斩断俗尘",
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 2000001,
+    "otherParams": [
+      0
+    ]
+  },
+  {
+    "field_1": 43,
+    "field_2": 43,
+    "desc": "好奇心（旧）",
+    "field_6": 1,
+    "otherParams": [
+      10
+    ]
+  },
+  {
+    "field_1": 44,
+    "field_2": 44,
+    "desc": "猫爪",
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 1000004,
+    "field_10": 1,
+    "otherParams": [
+      8
+    ]
+  },
+  {
+    "field_1": 45,
+    "field_2": 45,
+    "desc": "猫魂庇佑",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 1000004
+  },
+  {
+    "field_1": 46,
+    "field_2": 46,
+    "desc": "灵猫乱剑",
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 1000004,
+    "field_10": 1,
+    "otherParams": [
+      9
+    ]
+  },
+  {
+    "field_1": 47,
+    "field_2": 47,
+    "desc": "剑灵极影",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "field_10": 1,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 48,
+    "field_2": 48,
+    "desc": "运筹帷幄",
+    "field_6": 1,
+    "field_7": 2,
+    "field_8": 2000004,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 50,
+    "field_2": 50,
+    "desc": "星爆术",
+    "field_6": 3,
+    "field_7": 2,
+    "field_8": 2000004,
+    "field_10": 1,
+    "otherParams": [
+      10,
+      2
+    ]
+  },
+  {
+    "field_1": 51,
+    "field_2": 51,
+    "field_4": 1,
+    "field_6": 4,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 52,
+    "field_2": 52,
+    "desc": "七星定魂",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 2000004,
+    "field_10": 1
+  },
+  {
+    "field_1": 53,
+    "field_2": 53,
+    "desc": "机缘造化",
+    "field_6": 2,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 10053,
+    "field_2": 53,
+    "desc": "机缘造化",
+    "field_6": 3,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 20053,
+    "field_2": 53,
+    "desc": "机缘造化",
+    "field_6": 4,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 30053,
+    "field_2": 53,
+    "desc": "机缘造化",
+    "field_6": 5,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 54,
+    "field_2": 54,
+    "desc": "云剑传承",
+    "field_6": 2,
+    "field_7": 1,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 10054,
+    "field_2": 54,
+    "desc": "云剑传承",
+    "field_6": 3,
+    "field_7": 1,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20054,
+    "field_2": 54,
+    "desc": "云剑传承",
+    "field_6": 4,
+    "field_7": 1,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30054,
+    "field_2": 54,
+    "desc": "云剑传承",
+    "field_6": 5,
+    "field_7": 1,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 55,
+    "field_2": 55,
+    "desc": "灵剑传承",
+    "field_6": 2,
+    "field_7": 1,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 10055,
+    "field_2": 55,
+    "desc": "灵剑传承",
+    "field_6": 3,
+    "field_7": 1,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20055,
+    "field_2": 55,
+    "desc": "灵剑传承",
+    "field_6": 4,
+    "field_7": 1,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30055,
+    "field_2": 55,
+    "desc": "灵剑传承",
+    "field_6": 5,
+    "field_7": 1,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 56,
+    "field_2": 56,
+    "desc": "斩道",
+    "field_6": 2,
+    "otherParams": [
+      6,
+      6
+    ]
+  },
+  {
+    "field_1": 10056,
+    "field_2": 56,
+    "desc": "斩道",
+    "field_6": 3,
+    "otherParams": [
+      7,
+      7
+    ]
+  },
+  {
+    "field_1": 20056,
+    "field_2": 56,
+    "desc": "斩道",
+    "field_6": 4,
+    "otherParams": [
+      8,
+      8
+    ]
+  },
+  {
+    "field_1": 30056,
+    "field_2": 56,
+    "desc": "斩道",
+    "field_6": 5,
+    "otherParams": [
+      10,
+      9
+    ]
+  },
+  {
+    "field_1": 57,
+    "field_2": 57,
+    "desc": "剑阵守护",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 1,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 10057,
+    "field_2": 57,
+    "desc": "剑阵守护",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 1,
+    "field_10": 1,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 20057,
+    "field_2": 57,
+    "desc": "剑阵守护",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 1,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 30057,
+    "field_2": 57,
+    "desc": "剑阵守护",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "field_10": 1,
+    "otherParams": [
+      9
+    ]
+  },
+  {
+    "field_1": 58,
+    "field_2": 58,
+    "desc": "星弈传承",
+    "field_6": 2,
+    "field_7": 2,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 10058,
+    "field_2": 58,
+    "desc": "星弈传承",
+    "field_6": 3,
+    "field_7": 2,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20058,
+    "field_2": 58,
+    "desc": "星弈传承",
+    "field_6": 4,
+    "field_7": 2,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30058,
+    "field_2": 58,
+    "desc": "星弈传承",
+    "field_6": 5,
+    "field_7": 2,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 59,
+    "field_2": 59,
+    "desc": "陨星淬体",
+    "field_6": 2,
+    "otherParams": [
+      4,
+      6
+    ]
+  },
+  {
+    "field_1": 10059,
+    "field_2": 59,
+    "desc": "陨星淬体",
+    "field_6": 3,
+    "otherParams": [
+      6,
+      9
+    ]
+  },
+  {
+    "field_1": 20059,
+    "field_2": 59,
+    "desc": "陨星淬体",
+    "field_6": 4,
+    "otherParams": [
+      8,
+      13
+    ]
+  },
+  {
+    "field_1": 30059,
+    "field_2": 59,
+    "desc": "陨星淬体",
+    "field_6": 5,
+    "otherParams": [
+      10,
+      17
+    ]
+  },
+  {
+    "field_1": 60,
+    "field_2": 60,
+    "desc": "木灵之躯",
+    "field_4": 1,
+    "field_6": 2,
+    "otherParams": [
+      10
+    ]
+  },
+  {
+    "field_1": 10060,
+    "field_2": 60,
+    "desc": "木灵之躯",
+    "field_4": 1,
+    "field_6": 3,
+    "otherParams": [
+      10
+    ]
+  },
+  {
+    "field_1": 20060,
+    "field_2": 60,
+    "desc": "木灵之躯",
+    "field_4": 1,
+    "field_6": 4,
+    "otherParams": [
+      15
+    ]
+  },
+  {
+    "field_1": 30060,
+    "field_2": 60,
+    "desc": "木灵之躯",
+    "field_4": 1,
+    "field_6": 5,
+    "otherParams": [
+      20
+    ]
+  },
+  {
+    "field_1": 61,
+    "field_2": 61,
+    "desc": "占星",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 2,
+    "field_8": 2000004,
+    "field_10": 1,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 62,
+    "field_2": 62,
+    "desc": "布星问卦",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 2000004,
+    "field_10": 1,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 63,
+    "field_2": 63,
+    "desc": "飞鸿踏雪",
+    "field_6": 2,
+    "field_7": 2,
+    "field_8": 2000001,
+    "field_10": 1,
+    "otherParams": [
+      12
+    ]
+  },
+  {
+    "field_1": 64,
+    "field_2": 64,
+    "desc": "雪羽清风",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 2,
+    "field_8": 2000001,
+    "field_10": 1,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 65,
+    "field_2": 65,
+    "desc": "雁影化身",
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 2000001
+  },
+  {
+    "field_1": 66,
+    "field_2": 66,
+    "desc": "剑不出鞘",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 1000001,
+    "field_10": 1,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 67,
+    "field_2": 67,
+    "desc": "炽火炎刃",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 1000002,
+    "field_10": 1,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 68,
+    "field_2": 68,
+    "desc": "流冰寒刃",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 1000002,
+    "field_10": 1,
+    "otherParams": [
+      1,
+      1
+    ]
+  },
+  {
+    "field_1": 69,
+    "field_2": 69,
+    "desc": "云之道",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 1,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 10069,
+    "field_2": 69,
+    "desc": "云之道",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 1,
+    "field_10": 1,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20069,
+    "field_2": 69,
+    "desc": "云之道",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 1,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30069,
+    "field_2": 69,
+    "desc": "云之道",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "field_10": 1,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 70,
+    "field_2": 70,
+    "desc": "狂之执念",
+    "field_6": 2,
+    "field_7": 1,
+    "otherParams": [
+      1,
+      0
+    ]
+  },
+  {
+    "field_1": 10070,
+    "field_2": 70,
+    "desc": "狂之执念",
+    "field_6": 3,
+    "field_7": 1,
+    "otherParams": [
+      2,
+      0
+    ]
+  },
+  {
+    "field_1": 20070,
+    "field_2": 70,
+    "desc": "狂之执念",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 1,
+    "field_10": 1,
+    "otherParams": [
+      1,
+      1
+    ]
+  },
+  {
+    "field_1": 30070,
+    "field_2": 70,
+    "desc": "狂之执念",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "field_10": 1,
+    "otherParams": [
+      2,
+      1
+    ]
+  },
+  {
+    "field_1": 71,
+    "field_2": 71,
+    "desc": "后发制人",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 2,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 10071,
+    "field_2": 71,
+    "desc": "后发制人",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 2,
+    "field_10": 1,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 20071,
+    "field_2": 71,
+    "desc": "后发制人",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 2,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 30071,
+    "field_2": 71,
+    "desc": "后发制人",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 2,
+    "field_10": 1,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 72,
+    "field_2": 72,
+    "desc": "易数化劫",
+    "field_6": 2,
+    "field_7": 2,
+    "otherParams": [
+      1,
+      0
+    ]
+  },
+  {
+    "field_1": 10072,
+    "field_2": 72,
+    "desc": "易数化劫",
+    "field_6": 3,
+    "field_7": 2,
+    "otherParams": [
+      2,
+      0
+    ]
+  },
+  {
+    "field_1": 20072,
+    "field_2": 72,
+    "desc": "易数化劫",
+    "field_6": 4,
+    "field_7": 2,
+    "otherParams": [
+      3,
+      1
+    ]
+  },
+  {
+    "field_1": 30072,
+    "field_2": 72,
+    "desc": "易数化劫",
+    "field_6": 5,
+    "field_7": 2,
+    "otherParams": [
+      5,
+      2
+    ]
+  },
+  {
+    "field_1": 74,
+    "field_2": 74,
+    "desc": "木灵传承",
+    "field_6": 2,
+    "field_7": 3,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 10074,
+    "field_2": 74,
+    "desc": "木灵传承",
+    "field_6": 3,
+    "field_7": 3,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20074,
+    "field_2": 74,
+    "desc": "木灵传承",
+    "field_6": 4,
+    "field_7": 3,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30074,
+    "field_2": 74,
+    "desc": "木灵传承",
+    "field_6": 5,
+    "field_7": 3,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 76,
+    "field_2": 76,
+    "desc": "火灵传承",
+    "field_6": 2,
+    "field_7": 3,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 10076,
+    "field_2": 76,
+    "desc": "火灵传承",
+    "field_6": 3,
+    "field_7": 3,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20076,
+    "field_2": 76,
+    "desc": "火灵传承",
+    "field_6": 4,
+    "field_7": 3,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30076,
+    "field_2": 76,
+    "desc": "火灵传承",
+    "field_6": 5,
+    "field_7": 3,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 77,
+    "field_2": 77,
+    "desc": "土灵传承",
+    "field_6": 2,
+    "field_7": 3,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 10077,
+    "field_2": 77,
+    "desc": "土灵传承",
+    "field_6": 3,
+    "field_7": 3,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20077,
+    "field_2": 77,
+    "desc": "土灵传承",
+    "field_6": 4,
+    "field_7": 3,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30077,
+    "field_2": 77,
+    "desc": "土灵传承",
+    "field_6": 5,
+    "field_7": 3,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 73,
+    "field_2": 73,
+    "desc": "金灵传承",
+    "field_6": 2,
+    "field_7": 3,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 10073,
+    "field_2": 73,
+    "desc": "金灵传承",
+    "field_6": 3,
+    "field_7": 3,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20073,
+    "field_2": 73,
+    "desc": "金灵传承",
+    "field_6": 4,
+    "field_7": 3,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30073,
+    "field_2": 73,
+    "desc": "金灵传承",
+    "field_6": 5,
+    "field_7": 3,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 75,
+    "field_2": 75,
+    "desc": "水灵传承",
+    "field_6": 2,
+    "field_7": 3,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 10075,
+    "field_2": 75,
+    "desc": "水灵传承",
+    "field_6": 3,
+    "field_7": 3,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20075,
+    "field_2": 75,
+    "desc": "水灵传承",
+    "field_6": 4,
+    "field_7": 3,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30075,
+    "field_2": 75,
+    "desc": "水灵传承",
+    "field_6": 5,
+    "field_7": 3,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 78,
+    "field_2": 78,
+    "desc": "舍身化道",
+    "field_6": 2,
+    "otherParams": [
+      2,
+      2
+    ]
+  },
+  {
+    "field_1": 10078,
+    "field_2": 78,
+    "desc": "舍身化道",
+    "field_6": 3,
+    "otherParams": [
+      3,
+      3
+    ]
+  },
+  {
+    "field_1": 20078,
+    "field_2": 78,
+    "desc": "舍身化道",
+    "field_6": 4,
+    "otherParams": [
+      4,
+      4
+    ]
+  },
+  {
+    "field_1": 30078,
+    "field_2": 78,
+    "desc": "舍身化道",
+    "field_6": 5,
+    "otherParams": [
+      5,
+      5
+    ]
+  },
+  {
+    "field_1": 79,
+    "field_2": 79,
+    "desc": "元灵沟通",
+    "field_4": 1,
+    "field_6": 2,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 10079,
+    "field_2": 79,
+    "desc": "元灵沟通",
+    "field_4": 1,
+    "field_6": 3,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 20079,
+    "field_2": 79,
+    "desc": "元灵沟通",
+    "field_4": 1,
+    "field_6": 4,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 30079,
+    "field_2": 79,
+    "desc": "元灵沟通",
+    "field_4": 1,
+    "field_6": 5,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 80,
+    "field_2": 80,
+    "desc": "战斗历练",
+    "field_6": 1,
+    "field_7": 3,
+    "field_8": 3000001,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 81,
+    "field_2": 81,
+    "desc": "悠然葫芦",
+    "field_6": 3,
+    "field_7": 3,
+    "field_8": 3000001,
+    "field_10": 1,
+    "otherParams": [
+      13
+    ]
+  },
+  {
+    "field_1": 82,
+    "field_2": 82,
+    "desc": "五行印记",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 3,
+    "field_8": 3000001,
+    "field_10": 1
+  },
+  {
+    "field_1": 83,
+    "field_2": 83,
+    "desc": "五行化身",
+    "field_6": 4,
+    "field_7": 3,
+    "field_8": 3000001
+  },
+  {
+    "field_1": 84,
+    "field_2": 84,
+    "desc": "五行凝炼",
+    "field_6": 5,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 85,
+    "field_2": 85,
+    "desc": "云剑唤雨",
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 1000003,
+    "field_10": 1,
+    "otherParams": [
+      15
+    ]
+  },
+  {
+    "field_1": 86,
+    "field_2": 86,
+    "desc": "九霄玲珑镯",
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 1000003,
+    "field_10": 1,
+    "otherParams": [
+      16
+    ]
+  },
+  {
+    "field_1": 87,
+    "field_2": 87,
+    "desc": "灵阵精通",
+    "field_6": 1
+  },
+  {
+    "field_1": 88,
+    "field_2": 88,
+    "desc": "土灵印记",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 3,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 89,
+    "field_2": 89,
+    "desc": "木灵炼体",
+    "field_6": 2,
+    "field_7": 3,
+    "field_8": 3000004,
+    "otherParams": [
+      8
+    ]
+  },
+  {
+    "field_1": 90,
+    "field_2": 90,
+    "desc": "春雨",
+    "field_6": 4,
+    "field_7": 3,
+    "field_8": 3000003,
+    "field_10": 1,
+    "otherParams": [
+      17
+    ]
+  },
+  {
+    "field_1": 91,
+    "field_2": 91,
+    "desc": "刚劲",
+    "field_6": 4,
+    "field_7": 3,
+    "field_8": 3000004,
+    "field_10": 1,
+    "otherParams": [
+      18
+    ]
+  },
+  {
+    "field_1": 92,
+    "field_2": 92,
+    "desc": "铸剑师",
+    "field_4": 1,
+    "field_6": 1,
+    "field_7": 1,
+    "field_8": 1000005,
+    "otherParams": [
+      18,
+      4
+    ]
+  },
+  {
+    "field_1": 93,
+    "field_2": 93,
+    "desc": "剑锋锻造",
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 1000005
+  },
+  {
+    "field_1": 10093,
+    "field_2": 10093,
+    "desc": "锐利剑锋",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 1000005,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 20093,
+    "field_2": 20093,
+    "desc": "稳固剑锋",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 1000005,
+    "otherParams": [
+      2,
+      9
+    ]
+  },
+  {
+    "field_1": 94,
+    "field_2": 94,
+    "desc": "剑纹雕琢",
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 1000005
+  },
+  {
+    "field_1": 10094,
+    "field_2": 10094,
+    "desc": "追击剑纹",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 1000005,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 20094,
+    "field_2": 20094,
+    "desc": "蓄攻剑纹",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 1000005,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 30094,
+    "field_2": 30094,
+    "desc": "锐意剑纹",
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 1000005,
+    "otherParams": [
+      4,
+      2
+    ]
+  },
+  {
+    "field_1": 95,
+    "field_2": 95,
+    "desc": "灵气凝铸",
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 1000005
+  },
+  {
+    "field_1": 10095,
+    "field_2": 10095,
+    "desc": "聚灵凝铸",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 1000005,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20095,
+    "field_2": 20095,
+    "desc": "御灵凝铸",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 1000005,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 30095,
+    "field_2": 30095,
+    "desc": "灵威凝铸",
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 1000005,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 96,
+    "field_2": 96,
+    "desc": "剑心淬炼",
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 1000005
+  },
+  {
+    "field_1": 10096,
+    "field_2": 10096,
+    "desc": "狂剑之心",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 1000005,
+    "otherParams": [
+      1,
+      3
+    ]
+  },
+  {
+    "field_1": 20096,
+    "field_2": 20096,
+    "desc": "云剑之心",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 1000005,
+    "otherParams": [
+      1,
+      7
+    ]
+  },
+  {
+    "field_1": 30096,
+    "field_2": 30096,
+    "desc": "无极之心",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 1000005,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 97,
+    "field_2": 97,
+    "desc": "生机之种",
+    "field_6": 1,
+    "field_7": 3,
+    "otherParams": [
+      2,
+      5
+    ]
+  },
+  {
+    "field_1": 98,
+    "field_2": 98,
+    "desc": "桃花印",
+    "field_6": 2,
+    "field_7": 3,
+    "field_8": 3000003,
+    "field_10": 1,
+    "otherParams": [
+      20
+    ]
+  },
+  {
+    "field_1": 99,
+    "field_2": 99,
+    "desc": "水灵印记",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 3,
+    "field_8": 3000003,
+    "field_10": 1,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 100,
+    "field_2": 100,
+    "desc": "山崩",
+    "field_6": 5,
+    "field_7": 3,
+    "field_8": 3000004,
+    "field_10": 1,
+    "otherParams": [
+      21
+    ]
+  },
+  {
+    "field_1": 101,
+    "field_2": 101,
+    "desc": "花舞",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 3,
+    "field_8": 3000003,
+    "field_10": 1,
+    "otherParams": [
+      1,
+      1
+    ]
+  },
+  {
+    "field_1": 102,
+    "field_2": 102,
+    "desc": "五行循环",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 3,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 10102,
+    "field_2": 102,
+    "desc": "五行循环",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 3,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 20102,
+    "field_2": 102,
+    "desc": "五行循环",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 3,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 30102,
+    "field_2": 102,
+    "desc": "五行循环",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 3,
+    "field_10": 1,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 103,
+    "field_2": 103,
+    "desc": "星蚀",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 2,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 10103,
+    "field_2": 103,
+    "desc": "星蚀",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 2,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 20103,
+    "field_2": 103,
+    "desc": "星蚀",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 2,
+    "field_10": 1,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30103,
+    "field_2": 103,
+    "desc": "星蚀",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 2,
+    "field_10": 1,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 104,
+    "field_2": 104,
+    "desc": "算无遗策",
+    "field_6": 1,
+    "field_7": 2,
+    "field_8": 2000005,
+    "otherParams": [
+      12,
+      4
+    ]
+  },
+  {
+    "field_1": 105,
+    "field_2": 105,
+    "desc": "绛纱守护",
+    "field_6": 2,
+    "field_7": 2,
+    "field_8": 2000003,
+    "otherParams": [
+      15
+    ]
+  },
+  {
+    "field_1": 106,
+    "field_2": 106,
+    "desc": "星月折扇",
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 2000005,
+    "field_10": 1,
+    "otherParams": [
+      23,
+      3
+    ]
+  },
+  {
+    "field_1": 107,
+    "field_2": 107,
+    "desc": "无中生有",
+    "field_6": 4,
+    "field_7": 2,
+    "otherParams": [
+      1,
+      2
+    ]
+  },
+  {
+    "field_1": 108,
+    "field_2": 108,
+    "desc": "瞒天过海",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 2000005,
+    "field_10": 1,
+    "otherParams": [
+      0
+    ]
+  },
+  {
+    "field_1": 109,
+    "field_2": 109,
+    "desc": "先天五行",
+    "field_6": 1,
+    "field_7": 3,
+    "field_8": 3000002
+  },
+  {
+    "field_1": 10109,
+    "field_2": 10109,
+    "desc": "先天五行•金",
+    "field_6": 1,
+    "field_7": 3,
+    "field_8": 3000002
+  },
+  {
+    "field_1": 20109,
+    "field_2": 20109,
+    "desc": "先天五行•水",
+    "field_6": 1,
+    "field_7": 3,
+    "field_8": 3000002
+  },
+  {
+    "field_1": 30109,
+    "field_2": 30109,
+    "desc": "先天五行•木",
+    "field_6": 1,
+    "field_7": 3,
+    "field_8": 3000002
+  },
+  {
+    "field_1": 40109,
+    "field_2": 40109,
+    "desc": "先天五行•火",
+    "field_6": 1,
+    "field_7": 3,
+    "field_8": 3000002
+  },
+  {
+    "field_1": 50109,
+    "field_2": 50109,
+    "desc": "先天五行•土",
+    "field_6": 1,
+    "field_7": 3,
+    "field_8": 3000002
+  },
+  {
+    "field_1": 110,
+    "field_2": 110,
+    "desc": "先天印记",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 3,
+    "field_8": 3000002
+  },
+  {
+    "field_1": 111,
+    "field_2": 111,
+    "desc": "先天灵阵",
+    "field_6": 3,
+    "field_7": 3,
+    "field_8": 3000002
+  },
+  {
+    "field_1": 112,
+    "field_2": 112,
+    "desc": "五行元灵",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 3,
+    "field_8": 3000002,
+    "field_10": 1
+  },
+  {
+    "field_1": 114,
+    "field_2": 114,
+    "desc": "血脉威能",
+    "field_6": 1,
+    "field_7": 2,
+    "field_8": 2000002,
+    "otherParams": [
+      28,
+      16
+    ]
+  },
+  {
+    "field_1": 115,
+    "field_2": 115,
+    "desc": "燃命之焰",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 2,
+    "field_8": 2000002,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 116,
+    "field_2": 116,
+    "desc": "剑阵传承",
+    "field_6": 2,
+    "field_7": 1,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 10116,
+    "field_2": 116,
+    "desc": "剑阵传承",
+    "field_6": 3,
+    "field_7": 1,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20116,
+    "field_2": 116,
+    "desc": "剑阵传承",
+    "field_6": 4,
+    "field_7": 1,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30116,
+    "field_2": 116,
+    "desc": "剑阵传承",
+    "field_6": 5,
+    "field_7": 1,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 117,
+    "field_2": 117,
+    "desc": "雷霆传承",
+    "field_6": 2,
+    "field_7": 2,
+    "otherParams": [
+      1,
+      0
+    ]
+  },
+  {
+    "field_1": 10117,
+    "field_2": 117,
+    "desc": "雷霆传承",
+    "field_6": 3,
+    "field_7": 2,
+    "otherParams": [
+      2,
+      0
+    ]
+  },
+  {
+    "field_1": 20117,
+    "field_2": 117,
+    "desc": "雷霆传承",
+    "field_6": 4,
+    "field_7": 2,
+    "otherParams": [
+      3,
+      10
+    ]
+  },
+  {
+    "field_1": 30117,
+    "field_2": 117,
+    "desc": "雷霆传承",
+    "field_6": 5,
+    "field_7": 2,
+    "otherParams": [
+      4,
+      10
+    ]
+  },
+  {
+    "field_1": 118,
+    "field_2": 118,
+    "desc": "稳固根基",
+    "field_6": 2,
+    "otherParams": [
+      1,
+      6
+    ]
+  },
+  {
+    "field_1": 10118,
+    "field_2": 118,
+    "desc": "稳固根基",
+    "field_6": 3,
+    "otherParams": [
+      1,
+      8
+    ]
+  },
+  {
+    "field_1": 20118,
+    "field_2": 118,
+    "desc": "稳固根基",
+    "field_6": 4,
+    "otherParams": [
+      2,
+      12
+    ]
+  },
+  {
+    "field_1": 30118,
+    "field_2": 118,
+    "desc": "稳固根基",
+    "field_6": 5,
+    "otherParams": [
+      3,
+      15
+    ]
+  },
+  {
+    "field_1": 119,
+    "field_2": 119,
+    "desc": "剑池问心",
+    "field_6": 2,
+    "field_7": 1,
+    "otherParams": [
+      4,
+      1
+    ]
+  },
+  {
+    "field_1": 10119,
+    "field_2": 119,
+    "desc": "剑池问心",
+    "field_6": 3,
+    "field_7": 1,
+    "otherParams": [
+      8,
+      2
+    ]
+  },
+  {
+    "field_1": 20119,
+    "field_2": 119,
+    "desc": "剑池问心",
+    "field_6": 4,
+    "field_7": 1,
+    "otherParams": [
+      9,
+      2
+    ]
+  },
+  {
+    "field_1": 30119,
+    "field_2": 119,
+    "desc": "剑池问心",
+    "field_6": 5,
+    "field_7": 1,
+    "otherParams": [
+      10,
+      3
+    ]
+  },
+  {
+    "field_1": 120,
+    "field_2": 120,
+    "desc": "妙手回春",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 2,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 10120,
+    "field_2": 120,
+    "desc": "妙手回春",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 2,
+    "field_10": 1,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 20120,
+    "field_2": 120,
+    "desc": "妙手回春",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 2,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 30120,
+    "field_2": 120,
+    "desc": "妙手回春",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 2,
+    "field_10": 1,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 121,
+    "field_2": 121,
+    "desc": "无极卦盘",
+    "field_6": 3,
+    "field_7": 2,
+    "field_8": 2000002,
+    "field_10": 1,
+    "otherParams": [
+      28
+    ]
+  },
+  {
+    "field_1": 122,
+    "field_2": 122,
+    "desc": "狂雷电闪",
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 2000002,
+    "field_10": 1,
+    "otherParams": [
+      29,
+      1
+    ]
+  },
+  {
+    "field_1": 123,
+    "field_2": 123,
+    "desc": "五行传承",
+    "field_6": 5,
+    "field_7": 3,
+    "field_8": 3000001,
+    "field_10": 1,
+    "otherParams": [
+      0,
+      31
+    ]
+  },
+  {
+    "field_1": 124,
+    "field_2": 124,
+    "desc": "双鸳逆克",
+    "field_6": 4,
+    "field_7": 3,
+    "field_8": 3000002,
+    "field_10": 1,
+    "otherParams": [
+      2,
+      32
+    ]
+  },
+  {
+    "field_1": 125,
+    "field_2": 125,
+    "desc": "猛虎之躯",
+    "field_4": 1,
+    "field_6": 1,
+    "field_7": 3,
+    "field_8": 3000004,
+    "otherParams": [
+      120
+    ]
+  },
+  {
+    "field_1": 126,
+    "field_2": 126,
+    "field_6": 2,
+    "field_7": 3,
+    "otherParams": [
+      7
+    ]
+  },
+  {
+    "field_1": 127,
+    "field_2": 127,
+    "desc": "相生相成",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 3,
+    "otherParams": [
+      0,
+      1
+    ]
+  },
+  {
+    "field_1": 10127,
+    "field_2": 127,
+    "desc": "相生相成",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 3,
+    "otherParams": [
+      0,
+      1
+    ]
+  },
+  {
+    "field_1": 20127,
+    "field_2": 127,
+    "desc": "相生相成",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 3,
+    "field_10": 1,
+    "otherParams": [
+      0,
+      2
+    ]
+  },
+  {
+    "field_1": 30127,
+    "field_2": 127,
+    "desc": "相生相成",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 3,
+    "field_10": 1,
+    "otherParams": [
+      0,
+      3
+    ]
+  },
+  {
+    "field_1": 128,
+    "field_2": 128,
+    "desc": "五行专一",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 3,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 10128,
+    "field_2": 128,
+    "desc": "五行专一",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 3,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 20128,
+    "field_2": 128,
+    "desc": "五行专一",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 3,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 30128,
+    "field_2": 128,
+    "desc": "五行专一",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 3,
+    "otherParams": [
+      6
+    ]
+  },
+  {
+    "field_1": 129,
+    "field_2": 129,
+    "desc": "好奇心",
+    "field_6": 1,
+    "field_7": 1,
+    "field_8": 1000004,
+    "otherParams": [
+      9
+    ]
+  },
+  {
+    "field_1": 130,
+    "field_2": 130,
+    "desc": "相生五灵阵",
+    "field_4": 1,
+    "field_6": 5
+  },
+  {
+    "field_1": 131,
+    "field_2": 131,
+    "desc": "无中生有",
+    "field_6": 4
+  },
+  {
+    "field_1": 132,
+    "field_2": 132,
+    "desc": "锟铻金环",
+    "field_6": 3,
+    "field_7": 3,
+    "field_8": 3000004,
+    "field_10": 1,
+    "otherParams": [
+      38
+    ]
+  },
+  {
+    "field_1": 133,
+    "field_2": 133,
+    "desc": "五行润养",
+    "field_6": 1,
+    "field_7": 3,
+    "field_8": 3000003,
+    "otherParams": [
+      15,
+      0
+    ]
+  },
+  {
+    "field_1": 134,
+    "field_2": 134,
+    "desc": "桃枝如意",
+    "field_4": 1,
+    "field_6": 1,
+    "field_7": 3,
+    "field_8": 3000003
+  },
+  {
+    "field_1": 135,
+    "field_2": 135,
+    "desc": "生机卦诀",
+    "field_6": 2,
+    "field_7": 2
+  },
+  {
+    "field_1": 136,
+    "field_2": 136,
+    "desc": "秘印亲和",
+    "field_6": 1,
+    "field_7": 3,
+    "field_8": 3000005,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 137,
+    "field_2": 137,
+    "desc": "相生之火",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 3,
+    "field_8": 3000005,
+    "field_10": 1,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 138,
+    "field_2": 138,
+    "desc": "五行爆炎",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 3,
+    "field_8": 3000005,
+    "field_10": 1,
+    "otherParams": [
+      4,
+      3,
+      0
+    ]
+  },
+  {
+    "field_1": 139,
+    "field_2": 139,
+    "desc": "焰魂归复",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 3,
+    "field_8": 3000005,
+    "field_10": 1,
+    "otherParams": [
+      15,
+      15
+    ]
+  },
+  {
+    "field_1": 140,
+    "field_2": 140,
+    "desc": "疾燃咒印",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 3,
+    "field_8": 3000005,
+    "field_10": 1,
+    "otherParams": [
+      18
+    ]
+  },
+  {
+    "field_1": 141,
+    "field_2": 141,
+    "desc": "计出万全",
+    "field_6": 3,
+    "field_7": 2,
+    "field_8": 2000005,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 142,
+    "field_2": 142,
+    "desc": "以逸待劳",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 2,
+    "field_8": 2000005,
+    "field_10": 1,
+    "otherParams": [
+      3,
+      3
+    ]
+  },
+  {
+    "field_1": 157,
+    "field_2": 157,
+    "desc": "晚霞",
+    "field_6": 2,
+    "field_7": 1,
+    "otherParams": [
+      47,
+      4,
+      0
+    ]
+  },
+  {
+    "field_1": 10157,
+    "field_2": 157,
+    "desc": "晚霞",
+    "field_6": 3,
+    "field_7": 1,
+    "otherParams": [
+      47,
+      4,
+      1
+    ]
+  },
+  {
+    "field_1": 20157,
+    "field_2": 157,
+    "desc": "晚霞",
+    "field_6": 4,
+    "field_7": 1,
+    "otherParams": [
+      47,
+      4,
+      2
+    ]
+  },
+  {
+    "field_1": 30157,
+    "field_2": 157,
+    "desc": "晚霞",
+    "field_6": 5,
+    "field_7": 1,
+    "otherParams": [
+      47,
+      4,
+      3
+    ]
+  },
+  {
+    "field_1": 158,
+    "field_2": 158,
+    "desc": "青龙剑阵",
+    "field_6": 2,
+    "field_7": 1,
+    "otherParams": [
+      48,
+      4,
+      0
+    ]
+  },
+  {
+    "field_1": 10158,
+    "field_2": 158,
+    "desc": "青龙剑阵",
+    "field_6": 3,
+    "field_7": 1,
+    "otherParams": [
+      48,
+      4,
+      1
+    ]
+  },
+  {
+    "field_1": 20158,
+    "field_2": 158,
+    "desc": "青龙剑阵",
+    "field_6": 4,
+    "field_7": 1,
+    "otherParams": [
+      48,
+      4,
+      2
+    ]
+  },
+  {
+    "field_1": 30158,
+    "field_2": 158,
+    "desc": "青龙剑阵",
+    "field_6": 5,
+    "field_7": 1,
+    "otherParams": [
+      48,
+      4,
+      3
+    ]
+  },
+  {
+    "field_1": 159,
+    "field_2": 159,
+    "desc": "百兽灵剑阵",
+    "field_6": 2,
+    "field_7": 1,
+    "otherParams": [
+      49,
+      5,
+      0
+    ]
+  },
+  {
+    "field_1": 10159,
+    "field_2": 159,
+    "desc": "百兽灵剑阵",
+    "field_6": 3,
+    "field_7": 1,
+    "otherParams": [
+      49,
+      5,
+      1
+    ]
+  },
+  {
+    "field_1": 20159,
+    "field_2": 159,
+    "desc": "百兽灵剑阵",
+    "field_6": 4,
+    "field_7": 1,
+    "otherParams": [
+      49,
+      5,
+      2
+    ]
+  },
+  {
+    "field_1": 30159,
+    "field_2": 159,
+    "desc": "百兽灵剑阵",
+    "field_6": 5,
+    "field_7": 1,
+    "otherParams": [
+      49,
+      5,
+      3
+    ]
+  },
+  {
+    "field_1": 160,
+    "field_2": 160,
+    "desc": "狂龙吞云",
+    "field_6": 2,
+    "field_7": 1,
+    "otherParams": [
+      50,
+      5,
+      0
+    ]
+  },
+  {
+    "field_1": 10160,
+    "field_2": 160,
+    "desc": "狂龙吞云",
+    "field_6": 3,
+    "field_7": 1,
+    "otherParams": [
+      50,
+      5,
+      1
+    ]
+  },
+  {
+    "field_1": 20160,
+    "field_2": 160,
+    "desc": "狂龙吞云",
+    "field_6": 4,
+    "field_7": 1,
+    "otherParams": [
+      50,
+      5,
+      2
+    ]
+  },
+  {
+    "field_1": 30160,
+    "field_2": 160,
+    "desc": "狂龙吞云",
+    "field_6": 5,
+    "field_7": 1,
+    "otherParams": [
+      50,
+      5,
+      3
+    ]
+  },
+  {
+    "field_1": 161,
+    "field_2": 161,
+    "desc": "灵卦术",
+    "field_6": 2,
+    "field_7": 2,
+    "otherParams": [
+      51,
+      4,
+      0
+    ]
+  },
+  {
+    "field_1": 10161,
+    "field_2": 161,
+    "desc": "灵卦术",
+    "field_6": 3,
+    "field_7": 2,
+    "otherParams": [
+      51,
+      4,
+      1
+    ]
+  },
+  {
+    "field_1": 20161,
+    "field_2": 161,
+    "desc": "灵卦术",
+    "field_6": 4,
+    "field_7": 2,
+    "otherParams": [
+      51,
+      4,
+      2
+    ]
+  },
+  {
+    "field_1": 30161,
+    "field_2": 161,
+    "desc": "灵卦术",
+    "field_6": 5,
+    "field_7": 2,
+    "otherParams": [
+      51,
+      4,
+      3
+    ]
+  },
+  {
+    "field_1": 162,
+    "field_2": 162,
+    "desc": "摘花飞叶",
+    "field_6": 2,
+    "field_7": 2,
+    "otherParams": [
+      52,
+      4,
+      0
+    ]
+  },
+  {
+    "field_1": 10162,
+    "field_2": 162,
+    "desc": "摘花飞叶",
+    "field_6": 3,
+    "field_7": 2,
+    "otherParams": [
+      52,
+      4,
+      1
+    ]
+  },
+  {
+    "field_1": 20162,
+    "field_2": 162,
+    "desc": "摘花飞叶",
+    "field_6": 4,
+    "field_7": 2,
+    "otherParams": [
+      52,
+      4,
+      2
+    ]
+  },
+  {
+    "field_1": 30162,
+    "field_2": 162,
+    "desc": "摘花飞叶",
+    "field_6": 5,
+    "field_7": 2,
+    "otherParams": [
+      52,
+      4,
+      3
+    ]
+  },
+  {
+    "field_1": 163,
+    "field_2": 163,
+    "desc": "双飞燕",
+    "field_6": 2,
+    "field_7": 2,
+    "otherParams": [
+      53,
+      5,
+      0
+    ]
+  },
+  {
+    "field_1": 10163,
+    "field_2": 163,
+    "desc": "双飞燕",
+    "field_6": 3,
+    "field_7": 2,
+    "otherParams": [
+      53,
+      5,
+      1
+    ]
+  },
+  {
+    "field_1": 20163,
+    "field_2": 163,
+    "desc": "双飞燕",
+    "field_6": 4,
+    "field_7": 2,
+    "otherParams": [
+      53,
+      5,
+      2
+    ]
+  },
+  {
+    "field_1": 30163,
+    "field_2": 163,
+    "desc": "双飞燕",
+    "field_6": 5,
+    "field_7": 2,
+    "otherParams": [
+      53,
+      5,
+      3
+    ]
+  },
+  {
+    "field_1": 164,
+    "field_2": 164,
+    "desc": "滴水穿石",
+    "field_6": 2,
+    "field_7": 2,
+    "otherParams": [
+      54,
+      5,
+      0
+    ]
+  },
+  {
+    "field_1": 10164,
+    "field_2": 164,
+    "desc": "滴水穿石",
+    "field_6": 3,
+    "field_7": 2,
+    "otherParams": [
+      54,
+      5,
+      1
+    ]
+  },
+  {
+    "field_1": 20164,
+    "field_2": 164,
+    "desc": "滴水穿石",
+    "field_6": 4,
+    "field_7": 2,
+    "otherParams": [
+      54,
+      5,
+      2
+    ]
+  },
+  {
+    "field_1": 30164,
+    "field_2": 164,
+    "desc": "滴水穿石",
+    "field_6": 5,
+    "field_7": 2,
+    "otherParams": [
+      54,
+      5,
+      3
+    ]
+  },
+  {
+    "field_1": 165,
+    "field_2": 165,
+    "desc": "野渡之印",
+    "field_6": 2,
+    "field_7": 3,
+    "otherParams": [
+      55,
+      4,
+      0
+    ]
+  },
+  {
+    "field_1": 10165,
+    "field_2": 165,
+    "desc": "野渡之印",
+    "field_6": 3,
+    "field_7": 3,
+    "otherParams": [
+      55,
+      4,
+      1
+    ]
+  },
+  {
+    "field_1": 20165,
+    "field_2": 165,
+    "desc": "野渡之印",
+    "field_6": 4,
+    "field_7": 3,
+    "otherParams": [
+      55,
+      4,
+      2
+    ]
+  },
+  {
+    "field_1": 30165,
+    "field_2": 165,
+    "desc": "野渡之印",
+    "field_6": 5,
+    "field_7": 3,
+    "otherParams": [
+      55,
+      4,
+      3
+    ]
+  },
+  {
+    "field_1": 166,
+    "field_2": 166,
+    "desc": "熔岩之印",
+    "field_6": 2,
+    "field_7": 3,
+    "otherParams": [
+      56,
+      4,
+      0
+    ]
+  },
+  {
+    "field_1": 10166,
+    "field_2": 166,
+    "desc": "熔岩之印",
+    "field_6": 3,
+    "field_7": 3,
+    "otherParams": [
+      56,
+      4,
+      1
+    ]
+  },
+  {
+    "field_1": 20166,
+    "field_2": 166,
+    "desc": "熔岩之印",
+    "field_6": 4,
+    "field_7": 3,
+    "otherParams": [
+      56,
+      4,
+      2
+    ]
+  },
+  {
+    "field_1": 30166,
+    "field_2": 166,
+    "desc": "熔岩之印",
+    "field_6": 5,
+    "field_7": 3,
+    "otherParams": [
+      56,
+      4,
+      3
+    ]
+  },
+  {
+    "field_1": 167,
+    "field_2": 167,
+    "desc": "滚石之印",
+    "field_6": 2,
+    "field_7": 3,
+    "otherParams": [
+      57,
+      5,
+      0
+    ]
+  },
+  {
+    "field_1": 10167,
+    "field_2": 167,
+    "desc": "滚石之印",
+    "field_6": 3,
+    "field_7": 3,
+    "otherParams": [
+      57,
+      5,
+      1
+    ]
+  },
+  {
+    "field_1": 20167,
+    "field_2": 167,
+    "desc": "滚石之印",
+    "field_6": 4,
+    "field_7": 3,
+    "otherParams": [
+      57,
+      5,
+      2
+    ]
+  },
+  {
+    "field_1": 30167,
+    "field_2": 167,
+    "desc": "滚石之印",
+    "field_6": 5,
+    "field_7": 3,
+    "otherParams": [
+      57,
+      5,
+      3
+    ]
+  },
+  {
+    "field_1": 168,
+    "field_2": 168,
+    "desc": "斩浪之印",
+    "field_6": 2,
+    "field_7": 3,
+    "otherParams": [
+      58,
+      5,
+      0
+    ]
+  },
+  {
+    "field_1": 10168,
+    "field_2": 168,
+    "desc": "斩浪之印",
+    "field_6": 3,
+    "field_7": 3,
+    "otherParams": [
+      58,
+      5,
+      1
+    ]
+  },
+  {
+    "field_1": 20168,
+    "field_2": 168,
+    "desc": "斩浪之印",
+    "field_6": 4,
+    "field_7": 3,
+    "otherParams": [
+      58,
+      5,
+      2
+    ]
+  },
+  {
+    "field_1": 30168,
+    "field_2": 168,
+    "desc": "斩浪之印",
+    "field_6": 5,
+    "field_7": 3,
+    "otherParams": [
+      58,
+      5,
+      3
+    ]
+  },
+  {
+    "field_1": 143,
+    "field_2": 143,
+    "desc": "崩拳传承",
+    "field_6": 2,
+    "field_7": 4,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 10143,
+    "field_2": 143,
+    "desc": "崩拳传承",
+    "field_6": 3,
+    "field_7": 4,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20143,
+    "field_2": 143,
+    "desc": "崩拳传承",
+    "field_6": 4,
+    "field_7": 4,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30143,
+    "field_2": 143,
+    "desc": "崩拳传承",
+    "field_6": 5,
+    "field_7": 4,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 144,
+    "field_2": 144,
+    "desc": "炼体传承",
+    "field_6": 2,
+    "field_7": 4,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 10144,
+    "field_2": 144,
+    "desc": "炼体传承",
+    "field_6": 3,
+    "field_7": 4,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20144,
+    "field_2": 144,
+    "desc": "炼体传承",
+    "field_6": 4,
+    "field_7": 4,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30144,
+    "field_2": 144,
+    "desc": "炼体传承",
+    "field_6": 5,
+    "field_7": 4,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 145,
+    "field_2": 145,
+    "desc": "气势充沛",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 4,
+    "otherParams": [
+      1,
+      0
+    ]
+  },
+  {
+    "field_1": 10145,
+    "field_2": 145,
+    "desc": "气势充沛",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 4,
+    "field_10": 1,
+    "otherParams": [
+      1,
+      1
+    ]
+  },
+  {
+    "field_1": 20145,
+    "field_2": 145,
+    "desc": "气势充沛",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 4,
+    "otherParams": [
+      1,
+      2
+    ]
+  },
+  {
+    "field_1": 30145,
+    "field_2": 145,
+    "desc": "气势充沛",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 4,
+    "field_10": 1,
+    "otherParams": [
+      1,
+      3
+    ]
+  },
+  {
+    "field_1": 146,
+    "field_2": 146,
+    "desc": "体修入道",
+    "field_6": 2,
+    "field_7": 4,
+    "otherParams": [
+      5,
+      2
+    ]
+  },
+  {
+    "field_1": 10146,
+    "field_2": 146,
+    "desc": "体修入道",
+    "field_6": 3,
+    "field_7": 4,
+    "otherParams": [
+      6,
+      3
+    ]
+  },
+  {
+    "field_1": 20146,
+    "field_2": 146,
+    "desc": "体修入道",
+    "field_6": 4,
+    "field_7": 4,
+    "otherParams": [
+      8,
+      4
+    ]
+  },
+  {
+    "field_1": 30146,
+    "field_2": 146,
+    "desc": "体修入道",
+    "field_6": 5,
+    "field_7": 4,
+    "field_10": 1,
+    "otherParams": [
+      12,
+      8
+    ]
+  },
+  {
+    "field_1": 147,
+    "field_2": 147,
+    "desc": "身轻如燕",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 4,
+    "field_10": 1,
+    "otherParams": [
+      7
+    ]
+  },
+  {
+    "field_1": 148,
+    "field_2": 148,
+    "desc": "血痕记忆",
+    "field_6": 2,
+    "field_7": 4,
+    "otherParams": [
+      2,
+      2
+    ]
+  },
+  {
+    "field_1": 10148,
+    "field_2": 148,
+    "desc": "血痕记忆",
+    "field_6": 3,
+    "field_7": 4,
+    "otherParams": [
+      3,
+      3
+    ]
+  },
+  {
+    "field_1": 20148,
+    "field_2": 148,
+    "desc": "血痕记忆",
+    "field_6": 4,
+    "field_7": 4,
+    "otherParams": [
+      5,
+      4
+    ]
+  },
+  {
+    "field_1": 30148,
+    "field_2": 148,
+    "desc": "血痕记忆",
+    "field_6": 5,
+    "field_7": 4,
+    "otherParams": [
+      6,
+      5
+    ]
+  },
+  {
+    "field_1": 149,
+    "field_2": 149,
+    "desc": "再生之躯",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 4,
+    "otherParams": [
+      1,
+      1
+    ]
+  },
+  {
+    "field_1": 10149,
+    "field_2": 149,
+    "desc": "再生之躯",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 4,
+    "field_10": 1,
+    "otherParams": [
+      1,
+      2
+    ]
+  },
+  {
+    "field_1": 20149,
+    "field_2": 149,
+    "desc": "再生之躯",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 4,
+    "otherParams": [
+      2,
+      4
+    ]
+  },
+  {
+    "field_1": 30149,
+    "field_2": 149,
+    "desc": "再生之躯",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 4,
+    "field_10": 1,
+    "otherParams": [
+      2,
+      6
+    ]
+  },
+  {
+    "field_1": 150,
+    "field_2": 150,
+    "desc": "冥心烙印",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 4,
+    "otherParams": [
+      1,
+      1
+    ]
+  },
+  {
+    "field_1": 10150,
+    "field_2": 150,
+    "desc": "冥心烙印",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 4,
+    "field_10": 1,
+    "otherParams": [
+      2,
+      2
+    ]
+  },
+  {
+    "field_1": 20150,
+    "field_2": 150,
+    "desc": "冥心烙印",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 4,
+    "otherParams": [
+      2,
+      2
+    ]
+  },
+  {
+    "field_1": 30150,
+    "field_2": 150,
+    "desc": "冥心烙印",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 4,
+    "field_10": 1,
+    "otherParams": [
+      3,
+      3
+    ]
+  },
+  {
+    "field_1": 175,
+    "field_2": 175,
+    "desc": "历战不屈",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 4,
+    "otherParams": [
+      2,
+      1
+    ]
+  },
+  {
+    "field_1": 10175,
+    "field_2": 175,
+    "desc": "历战不屈",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 4,
+    "otherParams": [
+      4,
+      1
+    ]
+  },
+  {
+    "field_1": 20175,
+    "field_2": 175,
+    "desc": "历战不屈",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 4,
+    "otherParams": [
+      7,
+      2
+    ]
+  },
+  {
+    "field_1": 30175,
+    "field_2": 175,
+    "desc": "历战不屈",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 4,
+    "otherParams": [
+      9,
+      4
+    ]
+  },
+  {
+    "field_1": 176,
+    "field_2": 176,
+    "desc": "筋骨健壮",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 4,
+    "otherParams": [
+      2,
+      10
+    ]
+  },
+  {
+    "field_1": 10176,
+    "field_2": 176,
+    "desc": "筋骨健壮",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 4,
+    "field_10": 1,
+    "otherParams": [
+      2,
+      9
+    ]
+  },
+  {
+    "field_1": 20176,
+    "field_2": 176,
+    "desc": "筋骨健壮",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 4,
+    "otherParams": [
+      3,
+      7
+    ]
+  },
+  {
+    "field_1": 30176,
+    "field_2": 176,
+    "desc": "筋骨健壮",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 4,
+    "otherParams": [
+      4,
+      6
+    ]
+  },
+  {
+    "field_1": 151,
+    "field_2": 151,
+    "desc": "磨砺不止",
+    "field_6": 1,
+    "field_7": 4,
+    "field_8": 4000001,
+    "otherParams": [
+      7
+    ]
+  },
+  {
+    "field_1": 152,
+    "field_2": 152,
+    "desc": "锻体不息",
+    "field_6": 2,
+    "field_7": 4,
+    "field_8": 4000001,
+    "field_10": 1,
+    "otherParams": [
+      45
+    ]
+  },
+  {
+    "field_1": 153,
+    "field_2": 153,
+    "desc": "灵涌不竭",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 4,
+    "field_8": 4000001,
+    "field_10": 1,
+    "otherParams": [
+      3,
+      1
+    ]
+  },
+  {
+    "field_1": 154,
+    "field_2": 154,
+    "desc": "生机不灭",
+    "field_6": 4,
+    "field_7": 4,
+    "field_8": 4000001,
+    "otherParams": [
+      4
+    ]
+  },
+  {
+    "field_1": 177,
+    "field_2": 177,
+    "desc": "修玄不泯",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 4,
+    "field_8": 4000001,
+    "field_10": 1,
+    "otherParams": [
+      1,
+      0
+    ]
+  },
+  {
+    "field_1": 155,
+    "field_2": 155,
+    "desc": "逆境不弃",
+    "field_6": 5,
+    "otherParams": [
+      43
+    ]
+  },
+  {
+    "field_1": 156,
+    "field_2": 156,
+    "desc": "疾驰不休",
+    "field_6": 5,
+    "otherParams": [
+      44
+    ]
+  },
+  {
+    "field_1": 169,
+    "field_2": 169,
+    "desc": "传承不绝",
+    "field_6": 5,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 170,
+    "field_2": 170,
+    "desc": "锻躯之道",
+    "field_6": 1,
+    "field_7": 4,
+    "field_8": 4000002,
+    "otherParams": [
+      0
+    ]
+  },
+  {
+    "field_1": 172,
+    "field_2": 172,
+    "desc": "盛气凌人",
+    "field_6": 2,
+    "field_7": 4,
+    "field_8": 4000002,
+    "field_10": 1,
+    "otherParams": [
+      0,
+      70
+    ]
+  },
+  {
+    "field_1": 171,
+    "field_2": 171,
+    "desc": "搏命之勇",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 4,
+    "field_8": 4000002,
+    "field_10": 1,
+    "otherParams": [
+      3,
+      1
+    ]
+  },
+  {
+    "field_1": 174,
+    "field_2": 174,
+    "desc": "崩裂之拳",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 4,
+    "field_8": 4000002,
+    "field_10": 1,
+    "otherParams": [
+      0
+    ]
+  },
+  {
+    "field_1": 173,
+    "field_2": 173,
+    "desc": "猛攻之姿",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 4,
+    "field_8": 4000002,
+    "field_10": 1,
+    "otherParams": [
+      0,
+      3
+    ]
+  },
+  {
+    "field_1": 178,
+    "field_2": 178,
+    "desc": "阴晴圆缺",
+    "field_4": 1,
+    "field_6": 1,
+    "field_7": 4,
+    "field_8": 4000003,
+    "otherParams": [
+      1,
+      3,
+      1,
+      3
+    ]
+  },
+  {
+    "field_1": 179,
+    "field_2": 179,
+    "desc": "入冥",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 4,
+    "field_8": 4000003,
+    "otherParams": [
+      0,
+      1
+    ]
+  },
+  {
+    "field_1": 180,
+    "field_2": 180,
+    "desc": "疯魔",
+    "field_6": 3,
+    "field_7": 4,
+    "field_8": 4000003,
+    "otherParams": [
+      73
+    ]
+  },
+  {
+    "field_1": 181,
+    "field_2": 181,
+    "desc": "冥夜",
+    "field_6": 4,
+    "field_7": 4,
+    "field_8": 4000003,
+    "otherParams": [
+      74
+    ]
+  },
+  {
+    "field_1": 182,
+    "field_2": 182,
+    "desc": "冥月蟾光",
+    "field_6": 5,
+    "field_7": 4,
+    "field_8": 4000003,
+    "otherParams": [
+      75
+    ]
+  },
+  {
+    "field_1": 183,
+    "field_2": 183,
+    "desc": "禅心锻身",
+    "field_4": 1,
+    "field_6": 1,
+    "field_7": 4,
+    "field_8": 4000004,
+    "otherParams": [
+      1,
+      4
+    ]
+  },
+  {
+    "field_1": 184,
+    "field_2": 184,
+    "desc": "心体共鸣",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 4,
+    "field_8": 4000004,
+    "field_10": 1,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 185,
+    "field_2": 185,
+    "desc": "冥心入玄",
+    "field_6": 4,
+    "field_7": 4,
+    "field_8": 4000004,
+    "field_10": 1,
+    "otherParams": [
+      81
+    ]
+  },
+  {
+    "field_1": 186,
+    "field_2": 186,
+    "desc": "记忆碎片",
+    "field_6": 3,
+    "field_7": 4,
+    "field_8": 4000004,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 187,
+    "field_2": 187,
+    "desc": "万玄破魔掌",
+    "field_6": 5,
+    "field_7": 4,
+    "field_8": 4000004,
+    "field_10": 1,
+    "otherParams": [
+      82
+    ]
+  },
+  {
+    "field_1": 188,
+    "field_2": 188,
+    "desc": "副职兼修",
+    "field_6": 2,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 10188,
+    "field_2": 188,
+    "desc": "副职兼修",
+    "field_6": 3,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 20188,
+    "field_2": 188,
+    "desc": "副职兼修",
+    "field_6": 4,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 30188,
+    "field_2": 188,
+    "desc": "副职兼修",
+    "field_6": 5,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 189,
+    "field_2": 189,
+    "desc": "悟剑天赋",
+    "field_6": 1,
+    "field_7": 1,
+    "field_8": 1000006
+  },
+  {
+    "field_1": 190,
+    "field_2": 190,
+    "desc": "观壁悟道",
+    "field_6": 3,
+    "field_7": 1,
+    "field_8": 1000006
+  },
+  {
+    "field_1": 191,
+    "field_2": 191,
+    "desc": "八方来风",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 1,
+    "field_8": 1000006,
+    "otherParams": [
+      1,
+      7
+    ]
+  },
+  {
+    "field_1": 192,
+    "field_2": 192,
+    "desc": "剑招融汇",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 1,
+    "field_8": 1000006
+  },
+  {
+    "field_1": 193,
+    "field_2": 193,
+    "desc": "曳影剑阵",
+    "field_6": 5,
+    "field_7": 1,
+    "field_8": 1000006,
+    "field_10": 1,
+    "otherParams": [
+      213
+    ]
+  },
+  {
+    "field_1": 199,
+    "field_2": 199,
+    "desc": "五行玉瓶",
+    "field_4": 1,
+    "field_6": 1,
+    "field_7": 3,
+    "field_8": 3000006
+  },
+  {
+    "field_1": 200,
+    "field_2": 200,
+    "desc": "百草生息",
+    "field_4": 1,
+    "field_6": 2,
+    "field_7": 3,
+    "field_8": 3000006,
+    "field_10": 1
+  },
+  {
+    "field_1": 201,
+    "field_2": 201,
+    "desc": "天降甘霖",
+    "field_6": 3,
+    "field_7": 3,
+    "field_8": 3000006,
+    "otherParams": [
+      259
+    ]
+  },
+  {
+    "field_1": 202,
+    "field_2": 202,
+    "desc": "五行聚灵",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 3,
+    "field_8": 3000006,
+    "field_10": 1
+  },
+  {
+    "field_1": 203,
+    "field_2": 203,
+    "desc": "忘忧",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 3,
+    "field_8": 3000006,
+    "field_10": 1,
+    "otherParams": [
+      218,
+      15
+    ]
+  },
+  {
+    "field_1": 204,
+    "field_2": 204,
+    "desc": "凡躯",
+    "field_6": 1,
+    "field_7": 4,
+    "field_8": 4000005
+  },
+  {
+    "field_1": 205,
+    "field_2": 205,
+    "desc": "拆招",
+    "field_6": 2,
+    "field_7": 4,
+    "field_8": 4000005,
+    "otherParams": [
+      221
+    ]
+  },
+  {
+    "field_1": 206,
+    "field_2": 206,
+    "desc": "志坚",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 4,
+    "field_8": 4000005
+  },
+  {
+    "field_1": 207,
+    "field_2": 207,
+    "desc": "转势",
+    "field_6": 4,
+    "field_7": 4,
+    "field_8": 4000005,
+    "otherParams": [
+      222
+    ]
+  },
+  {
+    "field_1": 208,
+    "field_2": 208,
+    "desc": "得炁",
+    "field_6": 5,
+    "field_7": 4,
+    "field_8": 4000005
+  },
+  {
+    "field_1": 209,
+    "field_2": 209,
+    "desc": "灵炁奔涌",
+    "field_4": 1,
+    "field_6": 5,
+    "field_7": 4,
+    "field_8": 4000005
+  },
+  {
+    "field_1": 194,
+    "field_2": 194,
+    "desc": "风行天上",
+    "field_6": 1,
+    "field_7": 2,
+    "field_8": 2000006,
+    "otherParams": [
+      4,
+      3
+    ]
+  },
+  {
+    "field_1": 195,
+    "field_2": 195,
+    "desc": "灵卦自衍",
+    "field_4": 1,
+    "field_6": 3,
+    "field_7": 2,
+    "field_8": 2000006,
+    "field_10": 1
+  },
+  {
+    "field_1": 196,
+    "field_2": 196,
+    "desc": "阴符玉简",
+    "field_6": 2,
+    "field_7": 2,
+    "field_8": 2000006,
+    "field_10": 1,
+    "otherParams": [
+      214
+    ]
+  },
+  {
+    "field_1": 197,
+    "field_2": 197,
+    "desc": "易卦自解",
+    "field_4": 1,
+    "field_6": 4,
+    "field_7": 2,
+    "field_8": 2000006,
+    "field_10": 1
+  },
+  {
+    "field_1": 198,
+    "field_2": 198,
+    "desc": "孤虚金书",
+    "field_6": 5,
+    "field_7": 2,
+    "field_8": 2000006,
+    "field_10": 1,
+    "otherParams": [
+      215
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+### 14407 - Styx Agility
+  L1 CSV:  [hp=1 qi=0] Gain 1 stack of [Decrease ATK] | [Agility]+10
+  L1 IMPL: [hp=1 qi=0]  game.add_c_of_x(1, "decrease_atk"); game.add_c_of_x(10, "agility"); ✓
+  L2 CSV:  [hp=3 qi=0] Gain 1 stack of [Decrease ATK] | [Agility]+14
+  L2 IMPL: [hp=3 qi=0]  game.add_c_of_x(1, "decrease_atk"); game.add_c_of_x(14, "agility"); ✓
+  L3 CSV:  [hp=5 qi=0] Gain 2 stacks of [Decrease ATK] | [Agility]+18
+  L3 IMPL: [hp=5 qi=0]  game.add_c_of_x(2, "decrease_atk"); game.add_c_of_x(18, "agility"); ✓
+

@@ -1,0 +1,8 @@
+### 64101 - Double Stick
+  L1 CSV:  [no cost] 6 ATK | [Fist]: Gain 1 DEF for every 5 [Physique] | [Stick]: Make an additional 1 ATK (Gain 1 ATK for every 6 [Physique]) | [Switch Stance]
+  L1 IMPL: [no cost]  game.atk(6); const me = game.players[0]; if (game.if_fist_stance()) { const def_amt = Math.floor(me.physique * 20 / 100); game.increase_idx_def(0, def_amt); } else { const atk_amt = 1 + Math.floor(me.physique * 16.666667 / 100); game.atk(atk_amt); } game.switch_stance(); ✓
+  L2 CSV:  [no cost] 9 ATK | [Fist]: Gain 1 DEF for every 5 [Physique] | [Stick]: Make an additional 1 ATK (Gain 1 ATK for every 6 [Physique]) | [Switch Stance]
+  L2 IMPL: [no cost]  game.atk(9); const me = game.players[0]; if (game.if_fist_stance()) { const def_amt = Math.floor(me.physique * 20 / 100); game.increase_idx_def(0, def_amt); } else { const atk_amt = 1 + Math.floor(me.physique * 16.666667 / 100); game.atk(atk_amt); } game.switch_stance(); ✓
+  L3 CSV:  [no cost] 12 ATK | [Fist]: Gain 1 DEF for every 5 [Physique] | [Stick]: Make an additional 1 ATK (Gain 1 ATK for every 6 [Physique]) | [Switch Stance]
+  L3 IMPL: [no cost]  game.atk(12); const me = game.players[0]; if (game.if_fist_stance()) { const def_amt = Math.floor(me.physique * 20 / 100); game.increase_idx_def(0, def_amt); } else { const atk_amt = 1 + Math.floor(me.physique * 16.666667 / 100); game.atk(atk_amt); } game.switch_stance(); ✓
+

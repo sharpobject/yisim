@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 2～10 ATK
+  L1 IMPL: [no cost]  game.atk_rand_range(2, 10); ✓
+  L2 CSV:  [no cost] 5～13 ATK
+  L2 IMPL: [no cost]  game.atk_rand_range(5, 13); ✓
+  L3 CSV:  [no cost] 8～16 ATK
+  L3 IMPL: [no cost]  game.atk_rand_range(8, 16); ✓

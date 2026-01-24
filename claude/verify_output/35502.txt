@@ -1,0 +1,8 @@
+### 35502 - Echo Formation
+  L1 CSV:  [no cost] If the first slot is a Continuous Card, then retrigger its effect
+  L1 IMPL: [no cost]  game.do_echo_formation_thing(0); ✓
+  L2 CSV:  [no cost] If the first slot is a Continuous Card, then retrigger its effect after [Upgrade] 1 time
+  L2 IMPL: [no cost]  game.do_echo_formation_thing(1); ✓
+  L3 CSV:  [no cost] If the first slot is a Continuous Card, then retrigger its effect after [Upgrade] 2 times
+  L3 IMPL: [no cost]  game.do_echo_formation_thing(2); ✓
+

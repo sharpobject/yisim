@@ -1,0 +1,8 @@
+### 34501 - Flying Brush
+  L1 CSV:  [no cost] [DEF]+6 | After playing the next card [Chase]
+  L1 IMPL: [no cost]  game.increase_idx_def(0, 6); game.add_c_of_x(1, "flying_brush_stacks"); ✓
+  L2 CSV:  [no cost] [DEF]+12 | After playing the next card [Chase]
+  L2 IMPL: [no cost]  game.increase_idx_def(0, 12); game.add_c_of_x(1, "flying_brush_stacks"); ✓
+  L3 CSV:  [no cost] [DEF]+18 | After playing the next card [Chase]
+  L3 IMPL: [no cost]  game.increase_idx_def(0, 18); game.add_c_of_x(1, "flying_brush_stacks"); ✓
+

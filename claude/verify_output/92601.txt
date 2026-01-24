@@ -1,0 +1,8 @@
+### 92601 - Heavenly Maiden White Jade Ring
+  L1 CSV:  [hp=0 qi=4] [Gather Qi] 6 | For the next 1 time when your HP ≤ 0, you will be resurrected and restored to 64 HP | (The number of times can be stacked)
+  L1 IMPL: [hp=0 qi=4]  game.add_c_of_x(1, "heavenly_maiden_white_jade_ring_stacks"); ✓
+  L2 CSV:  [no cost] CSV NOT FOUND
+  L2 IMPL: [hp=0 qi=4]   ✗COST
+  L3 CSV:  [no cost] CSV NOT FOUND
+  L3 IMPL: [hp=0 qi=4]   ✗COST
+

@@ -1,0 +1,8 @@
+### 37502 - Cycle of Fate
+  L1 CSV:  [no cost] HP and Max HP+8 | [Continuous] 4 [Times]: Before playing the card in the 4th or 5th slot, [Skip] it and trigger its [Opening] effect
+  L1 IMPL: [no cost]  game.add_c_of_x(8, "max_hp"); game.increase_idx_hp(0, 8); game.continuous(); game.add_c_of_x(4, "fate_reincarnates_stacks"); ✓
+  L2 CSV:  [no cost] HP and Max HP+12 | [Continuous] 6 [Times]: Before playing the card in the 4th or 5th slot, [Skip] it and trigger its [Opening] effect
+  L2 IMPL: [no cost]  game.add_c_of_x(12, "max_hp"); game.increase_idx_hp(0, 12); game.continuous(); game.add_c_of_x(6, "fate_reincarnates_stacks"); ✓
+  L3 CSV:  [no cost] HP and Max HP+16 | [Continuous] 8 [Times]: Before playing the card in the 4th or 5th slot, [Skip] it and trigger its [Opening] effect
+  L3 IMPL: [no cost]  game.add_c_of_x(16, "max_hp"); game.increase_idx_hp(0, 16); game.continuous(); game.add_c_of_x(8, "fate_reincarnates_stacks"); ✓
+

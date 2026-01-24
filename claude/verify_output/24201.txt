@@ -1,0 +1,8 @@
+### 24201 - Toxin Immunity
+  L1 CSV:  [no cost] HP and Max HP+5 | [Continuous]: At the end of your turn, heal 1 HP for each stack of [Debuff] (up to 6)
+  L1 IMPL: [no cost]  game.add_c_of_x(5, "max_hp"); game.increase_idx_hp(0, 5); game.continuous(); game.add_c_of_x(6, "toxin_immunity_stacks"); ✓
+  L2 CSV:  [no cost] HP and Max HP+9 | [Continuous]: At the end of your turn, heal 1 HP for each stack of [Debuff] (up to 9)
+  L2 IMPL: [no cost]  game.add_c_of_x(9, "max_hp"); game.increase_idx_hp(0, 9); game.continuous(); game.add_c_of_x(9, "toxin_immunity_stacks"); ✓
+  L3 CSV:  [no cost] HP and Max HP+13 | [Continuous]: At the end of your turn, heal 1 HP for each stack of [Debuff] (up to 12)
+  L3 IMPL: [no cost]  game.add_c_of_x(13, "max_hp"); game.increase_idx_hp(0, 13); game.continuous(); game.add_c_of_x(12, "toxin_immunity_stacks"); ✓
+

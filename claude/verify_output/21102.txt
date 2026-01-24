@@ -1,0 +1,8 @@
+### 21102 - Diligent Sword
+  L1 CSV:  [no cost] 6 ATK | Add 1 ATK for every 5 points of Cultivation
+  L1 IMPL: [no cost]  game.atk(6 + Math.floor(game.players[0].cultivation * 20 / 100)); ✓
+  L2 CSV:  [no cost] 6 ATK | Add 1 ATK for every 4 points of Cultivation
+  L2 IMPL: [no cost]  game.atk(6 + Math.floor(game.players[0].cultivation * 25 / 100)); ✓
+  L3 CSV:  [no cost] 6 ATK | Add 1 ATK for every 3 points of Cultivation
+  L3 IMPL: [no cost]  game.atk(6 + Math.floor(game.players[0].cultivation * 33.333334 / 100)); ✓
+

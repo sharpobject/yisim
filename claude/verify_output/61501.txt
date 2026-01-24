@@ -1,0 +1,8 @@
+### 61501 - Unrestrained Sword - Flame Dance
+  L1 CSV:  [no cost] 2 ATK | [Injured]: Apply 1 stacks of [Wound] | If you have played "Unrestrained Sword" card in this battle, [Chase]
+  L1 IMPL: [no cost]  game.atk(2); if (game.if_injured()) { game.add_enemy_c_of_x(1, "wound"); } if (game.players[0].unrestrained_sword_count >= 1) { game.chase(); } ✓
+  L2 CSV:  [no cost] 2 ATK | [Injured]: Apply 2 stacks of [Wound] | If you have played "Unrestrained Sword" card in this battle, [Chase]
+  L2 IMPL: [no cost]  game.atk(2); if (game.if_injured()) { game.add_enemy_c_of_x(2, "wound"); } if (game.players[0].unrestrained_sword_count >= 1) { game.chase(); } ✓
+  L3 CSV:  [no cost] 2 ATK | [Injured]: Apply 3 stacks of [Wound] | If you have played "Unrestrained Sword" card in this battle, [Chase]
+  L3 IMPL: [no cost]  game.atk(2); if (game.if_injured()) { game.add_enemy_c_of_x(3, "wound"); } if (game.players[0].unrestrained_sword_count >= 1) { game.chase(); } ✓
+

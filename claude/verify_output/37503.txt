@@ -1,0 +1,8 @@
+### 37503 - Heavenly Will - Comply
+  L1 CSV:  [no cost] [Qi]+2 | Lasts for 3 turns, when you add [DEF], HP or Max HP, add 40% more (Rounded up). | [Switch]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.add_c_of_x(3, "god_opportunity_conform_stacks"); ✓
+  L2 CSV:  [no cost] [Qi]+4 | Lasts for 3 turns, when you add [DEF], HP or Max HP, add 40% more (Rounded up). | [Switch]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 4); game.add_c_of_x(3, "god_opportunity_conform_stacks"); ✓
+  L3 CSV:  [no cost] [Qi]+6 | Lasts for 3 turns, when you add [DEF], HP or Max HP, add 40% more (Rounded up). | [Switch]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 6); game.add_c_of_x(3, "god_opportunity_conform_stacks"); ✓
+

@@ -1,0 +1,8 @@
+### 72406 - M - Dotted Around
+  L1 CSV:  [no cost] [Qi]+2 | [Star Power]+1 | When you add [Qi], add equal amount of [Star Power] (up to add 3 this way)
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.increase_idx_x_by_c(0, "star_power", 1); game.increase_idx_x_by_c(0, "m_dotted_around_stacks", 4); ✓
+  L2 CSV:  [no cost] [Qi]+2 | [Star Power]+1 | When you add [Qi], add equal amount of [Star Power] (up to add 5 this way)
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.increase_idx_x_by_c(0, "star_power", 2); game.increase_idx_x_by_c(0, "m_dotted_around_stacks", 6); ✓
+  L3 CSV:  [no cost] [Qi]+2 | [Star Power]+2 | When you add [Qi], add equal amount of [Star Power] (up to add 7 this way)
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.increase_idx_x_by_c(0, "star_power", 3); game.increase_idx_x_by_c(0, "m_dotted_around_stacks", 8); ✓
+

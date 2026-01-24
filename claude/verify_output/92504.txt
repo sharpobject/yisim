@@ -1,0 +1,8 @@
+### 92504 - Xuanming Thundercloud Tribulation
+  L1 CSV:  [hp=7 qi=0] Repeat 5 times: | You take 7 [DMG] (with a 10% chance to avoid each time), and the opponent takes 9 [DMG]
+  L1 IMPL: [hp=7 qi=0]  game.do_xuanming_thundercloud_tribulation(9); ✓
+  L2 CSV:  [hp=7 qi=0] Repeat 5 times: | You take 7 [DMG] (with a 10% chance to avoid each time), and the opponent takes 10 [DMG]
+  L2 IMPL: [hp=7 qi=0]  game.do_xuanming_thundercloud_tribulation(10); ✓
+  L3 CSV:  [hp=7 qi=0] Repeat 5 times: | You take 7 [DMG] (with a 10% chance to avoid each time), and the opponent takes 11 [DMG]
+  L3 IMPL: [hp=7 qi=0]  game.do_xuanming_thundercloud_tribulation(11); ✓
+

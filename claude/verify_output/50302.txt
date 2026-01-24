@@ -1,0 +1,8 @@
+### 50302 - Brocade Rat
+  L1 CSV:  [no cost] Lose 4 HP | [Continuous]: At the end of battle round, draw extra 1 card(s)
+  L1 IMPL: [no cost]  game.reduce_c_of_x(4, "hp"); game.continuous(); game.add_c_of_x(1, "brocade_rat_stacks"); ✓
+  L2 CSV:  [no cost] Lose 8 HP | [Continuous]: At the end of battle round, draw extra 2 card(s)
+  L2 IMPL: [no cost]  game.reduce_c_of_x(8, "hp"); game.continuous(); game.add_c_of_x(2, "brocade_rat_stacks"); ✓
+  L3 CSV:  [no cost] Lose 12 HP | [Continuous]: At the end of battle round, draw extra 3 card(s)
+  L3 IMPL: [no cost]  game.reduce_c_of_x(12, "hp"); game.continuous(); game.add_c_of_x(3, "brocade_rat_stacks"); ✓
+

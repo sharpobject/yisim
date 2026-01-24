@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] Qi+1 | [DEF]+1 | Apply 1 stack of [Internal injury]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 1); game.increase_idx_def(0, 1); game.add_enemy_c_of_x(1, "internal_injury"); ✓
+  L2 CSV:  [no cost] Qi+2 | [DEF]+2 | Apply 1 stack of [Internal injury]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.increase_idx_def(0, 2); game.add_enemy_c_of_x(1, "internal_injury"); ✓
+  L3 CSV:  [no cost] Qi+3 | [DEF]+3 | Apply 1 stack of [Internal injury]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.increase_idx_def(0, 3); game.add_enemy_c_of_x(1, "internal_injury"); ✓

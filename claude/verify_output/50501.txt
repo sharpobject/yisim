@@ -1,0 +1,8 @@
+### 50501 - Colorful Spirit Crane
+  L1 CSV:  [no cost] [Continuous]: Add [Qi] effect is multiplied by 2
+  L1 IMPL: [no cost]  game.continuous(); game.set_c_of_x(2, "colorful_spirit_crane_stacks"); ✓
+  L2 CSV:  [no cost] [Qi]+2 | [Continuous]: Add [Qi] effect is multiplied by 2
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.continuous(); game.set_c_of_x(2, "colorful_spirit_crane_stacks"); ✓
+  L3 CSV:  [no cost] [Qi]+4 | [Continuous]: Add [Qi] effect is multiplied by 2
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 4); game.continuous(); game.set_c_of_x(2, "colorful_spirit_crane_stacks"); ✓
+

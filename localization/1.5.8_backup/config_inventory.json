@@ -1,0 +1,121 @@
+{
+  "MentorLevelConfig": {
+    "sources": [
+      "asset_0.dat"
+    ],
+    "extracted": false,
+    "size": 1112
+  },
+  "PurchaseProductConfig": {
+    "sources": [
+      "asset_1.dat"
+    ],
+    "extracted": false,
+    "size": 1296
+  },
+  "CharacterAnimClipConfig": {
+    "sources": [
+      "asset_2.dat"
+    ],
+    "extracted": false,
+    "size": 68536
+  },
+  "DivinationCharacterConfig": {
+    "sources": [
+      "asset_3.dat"
+    ],
+    "extracted": false,
+    "size": 536
+  },
+  "YuanGuEventConfig": {
+    "sources": [
+      "asset_4.dat"
+    ],
+    "extracted": false,
+    "size": 1140
+  },
+  "CardFXConfig": {
+    "sources": [
+      "asset_5.dat"
+    ],
+    "extracted": false,
+    "size": 14832
+  },
+  "SceneSummonConfig": {
+    "sources": [
+      "asset_6.dat"
+    ],
+    "extracted": false,
+    "size": 888
+  },
+  "XianYuConfigR": {
+    "sources": [
+      "asset_7.dat"
+    ],
+    "extracted": false,
+    "size": 360
+  },
+  "PassportMissionConfig": {
+    "sources": [
+      "asset_8.dat"
+    ],
+    "extracted": false,
+    "size": 656
+  },
+  "DefeatEffectConfig": {
+    "sources": [
+      "asset_9.dat"
+    ],
+    "extracted": false,
+    "size": 216
+  },
+  "TalentConfig": {
+    "sources": [
+      "/tmp/TalentConfig.dat"
+    ],
+    "extracted": true,
+    "size": 13024
+  },
+  "TalentResonanceConfig": {
+    "sources": [
+      "/tmp/TalentResonanceConfig.dat"
+    ],
+    "extracted": true,
+    "size": 6120
+  },
+  "FateBranchConfig": {
+    "sources": [
+      "/tmp/FateBranchConfig.dat"
+    ],
+    "extracted": false,
+    "size": 3692
+  },
+  "CardConfig": {
+    "sources": [
+      "/tmp/CardConfig.dat"
+    ],
+    "extracted": true,
+    "size": 269748
+  },
+  "TA18TalentConfig": {
+    "sources": [
+      "/tmp/TA18TalentConfig.dat"
+    ],
+    "extracted": true,
+    "size": 808
+  },
+  "KeYinCardConfig": {
+    "sources": [
+      "/tmp/KeYinCardConfig.dat"
+    ],
+    "extracted": true,
+    "size": 41540
+  },
+  "SectTalentConfig": {
+    "sources": [
+      "/tmp/SectTalentConfig.dat"
+    ],
+    "extracted": true,
+    "size": 972
+  }
+}

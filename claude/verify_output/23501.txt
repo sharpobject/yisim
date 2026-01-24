@@ -1,0 +1,8 @@
+### 23501 - Fire Spirit - Burning Sky
+  L1 CSV:  [hp=0 qi=3] 3 ATK × 3 | [Fire Spirit]: For every 3 Max HP of the opponent has been reduced, this card add 1 ATK
+  L1 IMPL: [hp=0 qi=3]  game.do_fire_spirit_burning_sky(3); ✓
+  L2 CSV:  [hp=0 qi=2] 5 ATK × 3 | [Fire Spirit]: For every 3 Max HP of the opponent has been reduced, this card add 1 ATK
+  L2 IMPL: [hp=0 qi=2]  game.do_fire_spirit_burning_sky(5); ✓
+  L3 CSV:  [hp=0 qi=1] 7 ATK × 3 | [Fire Spirit]: For every 3 Max HP of the opponent has been reduced, this card add 1 ATK
+  L3 IMPL: [hp=0 qi=1]  game.do_fire_spirit_burning_sky(7); ✓
+

@@ -1,0 +1,8 @@
+### 40502 - Dark Crystal Heart Shield
+  L1 CSV:  [hp=0 qi=3] [DEF]+20 | Gain 2 stacks of [Guard Up]
+  L1 IMPL: [hp=0 qi=3]  game.increase_idx_def(0, 20); game.add_c_of_x(2, "guard_up"); ✓
+  L2 CSV:  [hp=0 qi=3] [DEF]+20 | Gain 3 stacks of [Guard Up]
+  L2 IMPL: [hp=0 qi=3]  game.increase_idx_def(0, 20); game.add_c_of_x(3, "guard_up"); ✓
+  L3 CSV:  [hp=0 qi=3] [DEF]+20 | Gain 4 stacks of [Guard Up]
+  L3 IMPL: [hp=0 qi=3]  game.increase_idx_def(0, 20); game.add_c_of_x(4, "guard_up"); ✓
+

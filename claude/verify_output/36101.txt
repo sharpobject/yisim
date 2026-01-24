@@ -1,0 +1,8 @@
+### 36101 - Sword Bamboo
+  L1 CSV:  [no cost] [Growth] | 6 ATK
+  L1 IMPL: [no cost]  game.atk(6); ✓
+  L2 CSV:  [no cost] [Growth] | 4 ATK × 2
+  L2 IMPL: [no cost]  for (let i = 0; i < 2; i++) { game.atk(4); } ✓
+  L3 CSV:  [no cost] 3 ATK × 3
+  L3 IMPL: [no cost]  for (let i = 0; i < 3; i++) { game.atk(3); } ✓
+

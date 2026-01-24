@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 7 ATK | Add 1 [DEF] for each 2 [Physique] (up to 8)
+  L1 IMPL: [no cost]  game.atk(7); game.for_each_x_add_c_pct_y_up_to_d("physique", 50, "def", 8); ✓
+  L2 CSV:  [no cost] 9 ATK | Add 1 [DEF] for each 2 [Physique] (up to 11)
+  L2 IMPL: [no cost]  game.atk(9); game.for_each_x_add_c_pct_y_up_to_d("physique", 50, "def", 11); ✓
+  L3 CSV:  [no cost] 11 ATK | Add 1 [DEF] for each 2 [Physique] (up to 14)
+  L3 IMPL: [no cost]  game.atk(11); game.for_each_x_add_c_pct_y_up_to_d("physique", 50, "def", 14); ✓

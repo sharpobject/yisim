@@ -1,0 +1,8 @@
+### 33302 - Craze Dance Tune
+  L1 CSV:  [no cost] [Continuous]: Both players' cards add 2 ATK
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(2, "craze_dance_tune_stacks"); game.add_enemy_c_of_x(2, "craze_dance_tune_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous]: Both players' cards add 4 ATK
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(4, "craze_dance_tune_stacks"); game.add_enemy_c_of_x(4, "craze_dance_tune_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous]: Both players' cards add 6 ATK
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(6, "craze_dance_tune_stacks"); game.add_enemy_c_of_x(6, "craze_dance_tune_stacks"); ✓
+

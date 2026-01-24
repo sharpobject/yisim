@@ -1,0 +1,8 @@
+### 32103 - Sharp Metal Fulu
+  L1 CSV:  [no cost] Deal 8 [DMG] | [Consumption]
+  L1 IMPL: [no cost]  game.deal_damage(8); game.consumption(); ✓
+  L2 CSV:  [no cost] Deal 11 [DMG] | [Consumption]
+  L2 IMPL: [no cost]  game.deal_damage(11); game.consumption(); ✓
+  L3 CSV:  [no cost] Deal 14 [DMG] | [Consumption]
+  L3 IMPL: [no cost]  game.deal_damage(14); game.consumption(); ✓
+

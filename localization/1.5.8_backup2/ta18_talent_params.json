@@ -1,0 +1,201 @@
+[
+  {
+    "field_1": 9001,
+    "field_2": 9001,
+    "desc": "启动资金",
+    "field_6": 1,
+    "otherParams": [
+      12,
+      1
+    ]
+  },
+  {
+    "field_1": 9002,
+    "field_2": 9002,
+    "desc": "天降横财",
+    "field_6": 2,
+    "otherParams": [
+      20
+    ]
+  },
+  {
+    "field_1": 19002,
+    "field_2": 9002,
+    "desc": "天降横财",
+    "field_6": 3,
+    "otherParams": [
+      30
+    ]
+  },
+  {
+    "field_1": 29002,
+    "field_2": 9002,
+    "desc": "天降横财",
+    "field_6": 4,
+    "otherParams": [
+      60
+    ]
+  },
+  {
+    "field_1": 39002,
+    "field_2": 9002,
+    "desc": "天降横财",
+    "field_6": 5,
+    "otherParams": [
+      220
+    ]
+  },
+  {
+    "field_1": 9003,
+    "field_2": 9003,
+    "desc": "炼化专精",
+    "field_6": 2,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 19003,
+    "field_2": 9003,
+    "desc": "炼化专精",
+    "field_6": 3,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 29003,
+    "field_2": 9003,
+    "desc": "炼化专精",
+    "field_6": 4,
+    "otherParams": [
+      3
+    ]
+  },
+  {
+    "field_1": 39003,
+    "field_2": 9003,
+    "desc": "炼化专精",
+    "field_6": 5,
+    "otherParams": [
+      5
+    ]
+  },
+  {
+    "field_1": 9004,
+    "field_2": 9004,
+    "desc": "炼丹天赋",
+    "field_6": 2,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 19004,
+    "field_2": 9004,
+    "desc": "炼丹天赋",
+    "field_6": 3,
+    "otherParams": [
+      1
+    ]
+  },
+  {
+    "field_1": 29004,
+    "field_2": 9004,
+    "desc": "炼丹天赋",
+    "field_6": 4,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 39004,
+    "field_2": 9004,
+    "desc": "炼丹天赋",
+    "field_6": 5,
+    "otherParams": [
+      2
+    ]
+  },
+  {
+    "field_1": 9005,
+    "field_2": 9005,
+    "desc": "符咒天赋",
+    "field_6": 2,
+    "otherParams": [
+      20
+    ]
+  },
+  {
+    "field_1": 19005,
+    "field_2": 9005,
+    "desc": "符咒天赋",
+    "field_6": 3,
+    "otherParams": [
+      20
+    ]
+  },
+  {
+    "field_1": 29005,
+    "field_2": 9005,
+    "desc": "符咒天赋",
+    "field_6": 4,
+    "otherParams": [
+      50
+    ]
+  },
+  {
+    "field_1": 39005,
+    "field_2": 9005,
+    "desc": "符咒天赋",
+    "field_6": 5,
+    "otherParams": [
+      50
+    ]
+  },
+  {
+    "field_1": 9006,
+    "field_2": 9006,
+    "desc": "法宝精通",
+    "field_6": 4,
+    "otherParams": [
+      50
+    ]
+  },
+  {
+    "field_1": 9007,
+    "field_2": 9007,
+    "desc": "镇店神兽",
+    "field_6": 2,
+    "otherParams": [
+      254
+    ]
+  },
+  {
+    "field_1": 19007,
+    "field_2": 9007,
+    "desc": "镇店神兽",
+    "field_6": 3,
+    "otherParams": [
+      255
+    ]
+  },
+  {
+    "field_1": 29007,
+    "field_2": 9007,
+    "desc": "镇店神兽",
+    "field_6": 4,
+    "otherParams": [
+      256
+    ]
+  },
+  {
+    "field_1": 39007,
+    "field_2": 9007,
+    "desc": "镇店神兽",
+    "field_6": 5,
+    "otherParams": [
+      257
+    ]
+  }
+]

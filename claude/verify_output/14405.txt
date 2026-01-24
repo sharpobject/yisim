@@ -1,0 +1,8 @@
+### 14405 - Crane Footwork
+  L1 CSV:  [no cost] HP+4 | Add 1 [Agility] (up to 10) for each 4 [Physique]
+  L1 IMPL: [no cost]  game.increase_idx_hp(0, 4); game.for_each_x_add_c_pct_y_up_to_d("physique", 25, "agility", 10); ✓
+  L2 CSV:  [no cost] HP+5 | Add 1 [Agility] (up to 13) for each 4 [Physique]
+  L2 IMPL: [no cost]  game.increase_idx_hp(0, 5); game.for_each_x_add_c_pct_y_up_to_d("physique", 25, "agility", 13); ✓
+  L3 CSV:  [no cost] HP+6 | Add 1 [Agility] (up to 16) for each 4 [Physique]
+  L3 IMPL: [no cost]  game.increase_idx_hp(0, 6); game.for_each_x_add_c_pct_y_up_to_d("physique", 25, "agility", 16); ✓
+

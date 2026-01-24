@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 6 ATK | [Metal Spirit]: For every 2 HP [Injured] by this card, gain 1 stack of [Penetrate] 
+  L1 IMPL: [no cost]  game.atk(6); if (game.if_metal_spirit()) { game.for_each_x_add_c_pct_y("damage_dealt_to_hp_by_atk", 50, "penetrate"); } ✓
+  L2 CSV:  [no cost] 9 ATK | [Metal Spirit]: For every 2 HP [Injured] by this card, gain 1 stack of [Penetrate] 
+  L2 IMPL: [no cost]  game.atk(9); if (game.if_metal_spirit()) { game.for_each_x_add_c_pct_y("damage_dealt_to_hp_by_atk", 50, "penetrate"); } ✓
+  L3 CSV:  [no cost] 12 ATK | [Metal Spirit]: For every 2 HP [Injured] by this card, gain 1 stack of [Penetrate] 
+  L3 IMPL: [no cost]  game.atk(12); if (game.if_metal_spirit()) { game.for_each_x_add_c_pct_y("damage_dealt_to_hp_by_atk", 50, "penetrate"); } ✓

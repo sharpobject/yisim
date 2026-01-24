@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Qi]+2 | HP+2 | [Wood Spirit]: For every 3 [Qi], gain 1 stack of [Increase ATK]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.increase_idx_hp(0, 2); if (game.if_wood_spirit()) { game.for_each_x_add_c_pct_y("qi", 33.333334, "increase_atk"); } ✓
+  L2 CSV:  [no cost] [Qi]+3 | HP+3 | [Wood Spirit]: For every 3 [Qi], gain 1 stack of [Increase ATK]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.increase_idx_hp(0, 3); if (game.if_wood_spirit()) { game.for_each_x_add_c_pct_y("qi", 33.333334, "increase_atk"); } ✓
+  L3 CSV:  [no cost] [Qi]+4 | HP+4 | [Wood Spirit]: For every 3 [Qi], gain 1 stack of [Increase ATK]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 4); game.increase_idx_hp(0, 4); if (game.if_wood_spirit()) { game.for_each_x_add_c_pct_y("qi", 33.333334, "increase_atk"); } ✓

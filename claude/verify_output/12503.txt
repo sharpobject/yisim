@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Qi]+1 | [Hexagram]+1 | If [Hexagram] is greater or equal to 3, [Chase]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 1); game.add_c_of_x(1, "hexagram"); if (game.players[0].hexagram >= 3) { game.chase(); } ✓
+  L2 CSV:  [no cost] [Qi]+2 | [Hexagram]+2 | If [Hexagram] is greater or equal to 3, [Chase]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.add_c_of_x(2, "hexagram"); if (game.players[0].hexagram >= 3) { game.chase(); } ✓
+  L3 CSV:  [no cost] [Qi]+3 | [Hexagram]+3 | If [Hexagram] is greater or equal to 3, [Chase]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.add_c_of_x(3, "hexagram"); if (game.players[0].hexagram >= 3) { game.chase(); } ✓

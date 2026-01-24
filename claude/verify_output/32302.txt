@@ -1,0 +1,8 @@
+### 32302 - Spirit Absorb Fulu
+  L1 CSV:  [no cost] [Qi]+2 | Opponent loses 1 [Qi] | [Consumption]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.reduce_enemy_c_of_x(1, "qi"); game.consumption(); ✓
+  L2 CSV:  [no cost] [Qi]+3 | Opponent loses 2 [Qi] | [Consumption]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.reduce_enemy_c_of_x(2, "qi"); game.consumption(); ✓
+  L3 CSV:  [no cost] [Qi]+4 | Opponent loses 3 [Qi] | [Consumption]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 4); game.reduce_enemy_c_of_x(3, "qi"); game.consumption(); ✓
+

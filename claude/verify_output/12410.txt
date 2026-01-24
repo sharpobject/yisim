@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] Apply 2 stacks of [Internal Injury] | Make the opponent's [Internal Injury] take effect once immediately
+  L1 IMPL: [no cost]  game.add_enemy_c_of_x(2, "internal_injury"); game.do_internal_injury(1); ✓
+  L2 CSV:  [no cost] Apply 3 stacks of [Internal Injury] | Make the opponent's [Internal Injury] take effect once immediately
+  L2 IMPL: [no cost]  game.add_enemy_c_of_x(3, "internal_injury"); game.do_internal_injury(1); ✓
+  L3 CSV:  [no cost] Apply 4 stacks of [Internal Injury] | Make the opponent's [Internal Injury] take effect once immediately
+  L3 IMPL: [no cost]  game.add_enemy_c_of_x(4, "internal_injury"); game.do_internal_injury(1); ✓

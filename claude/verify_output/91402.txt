@@ -1,0 +1,8 @@
+### 91402 - Contemplate Spirits Vitality Rhythm
+  L1 CSV:  [no cost] [Sword Intent]+3 | Max Hp+18 | Add 2 HP for each [Sword Intent]
+  L1 IMPL: [no cost]  game.increase_idx_x_by_c(0, "sword_intent", 3); game.add_c_of_x(18, "max_hp"); game.for_each_x_add_c_y("sword_intent", 2, "hp"); ✓
+  L2 CSV:  [no cost] [Sword Intent]+4 | Max Hp+24 | Add 2 HP for each [Sword Intent]
+  L2 IMPL: [no cost]  game.increase_idx_x_by_c(0, "sword_intent", 4); game.add_c_of_x(24, "max_hp"); game.for_each_x_add_c_y("sword_intent", 2, "hp"); ✓
+  L3 CSV:  [no cost] [Sword Intent]+5 | Max Hp+30 | Add 2 HP for each [Sword Intent]
+  L3 IMPL: [no cost]  game.increase_idx_x_by_c(0, "sword_intent", 5); game.add_c_of_x(30, "max_hp"); game.for_each_x_add_c_y("sword_intent", 2, "hp"); ✓
+

@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 5 ATK | The next 1 slot(s) in your deck [Become Star Point]
+  L1 IMPL: [no cost]  game.atk(5); game.become_star_point(1); ✓
+  L2 CSV:  [no cost] 8 ATK | The next 1 slot(s) in your deck [Become Star Point]
+  L2 IMPL: [no cost]  game.atk(8); game.become_star_point(1); ✓
+  L3 CSV:  [no cost] 8 ATK | The next 2 slot(s) in your deck [Become Star Point]
+  L3 IMPL: [no cost]  game.atk(8); game.become_star_point(2); ✓

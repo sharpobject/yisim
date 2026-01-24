@@ -1,0 +1,8 @@
+### 21602 - Secret Sword - Spirit Cloud
+  L1 CSV:  [no cost] 4 ATK | [Cloud Hit]: ATK+4 | Make an additional attack for each Qi
+  L1 IMPL: [no cost]  let atk_amt = 4; if (game.if_cloud_hit()) { atk_amt += 4; } const rep_amt = 1 + game.players[0].qi; for (let i = 0; i < rep_amt; i++) { game.atk(atk_amt); } ✓
+  L2 CSV:  [no cost] 6 ATK | [Cloud Hit]: ATK+6 | Make an additional attack for each Qi
+  L2 IMPL: [no cost]  let atk_amt = 6; if (game.if_cloud_hit()) { atk_amt += 6; } const rep_amt = 1 + game.players[0].qi; for (let i = 0; i < rep_amt; i++) { game.atk(atk_amt); } ✓
+  L3 CSV:  [no cost] 8 ATK | [Cloud Hit]: ATK+8 | Make an additional attack for each Qi
+  L3 IMPL: [no cost]  let atk_amt = 8; if (game.if_cloud_hit()) { atk_amt += 8; } const rep_amt = 1 + game.players[0].qi; for (let i = 0; i < rep_amt; i++) { game.atk(atk_amt); } ✓
+

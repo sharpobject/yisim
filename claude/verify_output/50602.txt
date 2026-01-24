@@ -1,0 +1,8 @@
+### 50602 - Nether Void Canine
+  L1 CSV:  [hp=0 qi=2] Deal 1 [DMG] | [Continuous]: The next card played by the opponent will be changed to Normal Attack until the end of the battle
+  L1 IMPL: [hp=0 qi=2]  game.deal_damage(1); game.continuous(); game.add_enemy_c_of_x(1, "nether_void_canine_stacks"); ✓
+  L2 CSV:  [hp=0 qi=1] Deal 5 [DMG] | [Continuous]: The next card played by the opponent will be changed to Normal Attack until the end of the battle
+  L2 IMPL: [hp=0 qi=1]  game.deal_damage(5); game.continuous(); game.add_enemy_c_of_x(1, "nether_void_canine_stacks"); ✓
+  L3 CSV:  [no cost] Deal 9 [DMG] | [Continuous]: The next card played by the opponent will be changed to Normal Attack until the end of the battle
+  L3 IMPL: [no cost]  game.deal_damage(9); game.continuous(); game.add_enemy_c_of_x(1, "nether_void_canine_stacks"); ✓
+

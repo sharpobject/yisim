@@ -1,0 +1,8 @@
+### 21302 - One Heart One Sword
+  L1 CSV:  [no cost] 6 ATK | This card receives a 4x bonus from [Sword Intent] and it is not affected by [Weakened]
+  L1 IMPL: [no cost]  game.add_c_of_x(3, "bonus_sword_intent_multiplier"); game.ignore_weaken(); game.atk(6); ✓
+  L2 CSV:  [no cost] 6 ATK | This card receives a 5x bonus from [Sword Intent] and it is not affected by [Weakened]
+  L2 IMPL: [no cost]  game.add_c_of_x(4, "bonus_sword_intent_multiplier"); game.ignore_weaken(); game.atk(6); ✓
+  L3 CSV:  [no cost] 6 ATK | This card receives a 6x bonus from [Sword Intent] and it is not affected by [Weakened]
+  L3 IMPL: [no cost]  game.add_c_of_x(5, "bonus_sword_intent_multiplier"); game.ignore_weaken(); game.atk(6); ✓
+

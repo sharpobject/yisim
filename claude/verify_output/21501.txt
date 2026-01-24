@@ -1,0 +1,8 @@
+### 21501 - Apex Sword Citta-Dharma
+  L1 CSV:  [no cost] [Continuous]: Add 2 stacks of [Sword Intent] at the start of your turn
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(2, "apex_sword_citta_dharma_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous]: Add 3 stacks of [Sword Intent] at the start of your turn
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(3, "apex_sword_citta_dharma_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous]: Add 4 stacks of [Sword Intent] at the start of your turn
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(4, "apex_sword_citta_dharma_stacks"); ✓
+

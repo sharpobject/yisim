@@ -1,0 +1,8 @@
+### 37104 - Examine Body
+  L1 CSV:  [no cost] The next card with ATK will make an additional 5 ATK after being played | [Opening]: Next 1 attack [Smash DEF]
+  L1 IMPL: [no cost] opening=[['add_c_of_x', 1, 'smash_def']] game.add_c_of_x(5, "observe_body_stacks"); ✓
+  L2 CSV:  [no cost] The next card with ATK will make an additional 8 ATK after being played | [Opening]: Next 1 attack [Smash DEF]
+  L2 IMPL: [no cost] opening=[['add_c_of_x', 1, 'smash_def']] game.add_c_of_x(8, "observe_body_stacks"); ✓
+  L3 CSV:  [no cost] The next card with ATK will make an additional 11 ATK after being played | [Opening]: Next 1 attack [Smash DEF]
+  L3 IMPL: [no cost] opening=[['add_c_of_x', 1, 'smash_def']] game.add_c_of_x(11, "observe_body_stacks"); ✓
+

@@ -1,0 +1,8 @@
+### 72503 - M - Shifting Stars
+  L1 CSV:  [no cost] The next slot [Become Star Point] | [Continuous]: After each "Astral Move" card is played, the next slot [Become Star Point] and make an addtional 2 ATK
+  L1 IMPL: [no cost]  game.become_star_point(1); game.continuous(); game.add_c_of_x(2, "m_shifting_stars_stacks"); ✓
+  L2 CSV:  [no cost] The next slot [Become Star Point] | [Continuous]: After each "Astral Move" card is played, the next slot [Become Star Point] and make an addtional 4 ATK
+  L2 IMPL: [no cost]  game.become_star_point(1); game.continuous(); game.add_c_of_x(4, "m_shifting_stars_stacks"); ✓
+  L3 CSV:  [no cost] The next slot [Become Star Point] | [Continuous]: After each "Astral Move" card is played, the next slot [Become Star Point] and make an addtional 6 ATK
+  L3 IMPL: [no cost]  game.become_star_point(1); game.continuous(); game.add_c_of_x(6, "m_shifting_stars_stacks"); ✓
+

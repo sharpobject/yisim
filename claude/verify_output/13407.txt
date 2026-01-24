@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 4 ATK | This card's attack will not trigger [Penetrate] | [Metal Spirit]: [Chase]
+  L1 IMPL: [no cost]  game.add_c_of_x(1, "disable_penetrate_stacks"); game.atk(4); if (game.if_metal_spirit()) { game.chase(); } ✓
+  L2 CSV:  [no cost] 8 ATK | This card's attack will not trigger [Penetrate] | [Metal Spirit]: [Chase]
+  L2 IMPL: [no cost]  game.add_c_of_x(1, "disable_penetrate_stacks"); game.atk(8); if (game.if_metal_spirit()) { game.chase(); } ✓
+  L3 CSV:  [no cost] 12 ATK | This card's attack will not trigger [Penetrate] | [Metal Spirit]: [Chase]
+  L3 IMPL: [no cost]  game.add_c_of_x(1, "disable_penetrate_stacks"); game.atk(12); if (game.if_metal_spirit()) { game.chase(); } ✓

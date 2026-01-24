@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=2 qi=0] 8 ATK | Cost 1 Qi: Make an additional 4 ATK
+  L1 IMPL: [hp=2 qi=0]  game.atk(8); if (game.players[0].qi >= 1) { game.reduce_c_of_x(1, "qi"); game.atk(4); } ✓
+  L2 CSV:  [hp=3 qi=0] 10 ATK | Cost 1 Qi: Make an additional 6 ATK
+  L2 IMPL: [hp=3 qi=0]  game.atk(10); if (game.players[0].qi >= 1) { game.reduce_c_of_x(1, "qi"); game.atk(6); } ✓
+  L3 CSV:  [hp=4 qi=0] 12 ATK | Cost 1 Qi: Make an additional 8 ATK
+  L3 IMPL: [hp=4 qi=0]  game.atk(12); if (game.players[0].qi >= 1) { game.reduce_c_of_x(1, "qi"); game.atk(8); } ✓

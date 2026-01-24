@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [DEF]+12 | [Earth Spirit]: The next 2 times your [DEF] is reduced, restore it immediately
+  L1 IMPL: [no cost]  game.increase_idx_def(0, 12); if (game.if_earth_spirit()) { game.add_c_of_x(2, "earth_spirit_combine_world_stacks"); } ✓
+  L2 CSV:  [no cost] [DEF]+12 | [Earth Spirit]: The next 3 times your [DEF] is reduced, restore it immediately
+  L2 IMPL: [no cost]  game.increase_idx_def(0, 12); if (game.if_earth_spirit()) { game.add_c_of_x(3, "earth_spirit_combine_world_stacks"); } ✓
+  L3 CSV:  [no cost] [DEF]+12 | [Earth Spirit]: The next 4 times your [DEF] is reduced, restore it immediately
+  L3 IMPL: [no cost]  game.increase_idx_def(0, 12); if (game.if_earth_spirit()) { game.add_c_of_x(4, "earth_spirit_combine_world_stacks"); } ✓

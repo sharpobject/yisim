@@ -1,0 +1,8 @@
+### 94301 - Star Sky Forge Bone
+  L1 CSV:  [no cost] [Physique]+3 | [Force]+2 | For every 5 [Physique], increase your next ATK by 1 (up to 5)
+  L1 IMPL: [no cost]  game.physique(3); game.add_c_of_x(2, "force"); game.for_each_x_add_c_pct_y_up_to_d("physique", 16.666667, "star_sky_forge_bone_stacks", 5); ✓
+  L2 CSV:  [no cost] [Physique]+4 | [Force]+2 | For every 5 [Physique], increase your next ATK by 1 (up to 8)
+  L2 IMPL: [no cost]  game.physique(4); game.add_c_of_x(2, "force"); game.for_each_x_add_c_pct_y_up_to_d("physique", 16.666667, "star_sky_forge_bone_stacks", 8); ✓
+  L3 CSV:  [no cost] [Physique]+5 | [Force]+2 | For every 5 [Physique], increase your next ATK by 1 (up to 11)
+  L3 IMPL: [no cost]  game.physique(5); game.add_c_of_x(2, "force"); game.for_each_x_add_c_pct_y_up_to_d("physique", 16.666667, "star_sky_forge_bone_stacks", 11); ✓
+

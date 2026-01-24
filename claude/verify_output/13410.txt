@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] HP and Max HP+2 | [Water Spirit]: You take 40% less ATK for 2 turn
+  L1 IMPL: [hp=0 qi=1]  game.add_c_of_x(2, "max_hp"); game.increase_idx_hp(0, 2); if (game.if_water_spirit()) { game.add_c_of_x(2, "water_spirit_dive_stacks"); } ✓
+  L2 CSV:  [hp=0 qi=1] HP and Max HP+7 | [Water Spirit]: You take 40% less ATK for 2 turn
+  L2 IMPL: [hp=0 qi=1]  game.add_c_of_x(7, "max_hp"); game.increase_idx_hp(0, 7); if (game.if_water_spirit()) { game.add_c_of_x(2, "water_spirit_dive_stacks"); } ✓
+  L3 CSV:  [hp=0 qi=1] HP and Max HP+12 | [Water Spirit]: You take 40% less ATK for 2 turn
+  L3 IMPL: [hp=0 qi=1]  game.add_c_of_x(12, "max_hp"); game.increase_idx_hp(0, 12); if (game.if_water_spirit()) { game.add_c_of_x(2, "water_spirit_dive_stacks"); } ✓

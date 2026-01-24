@@ -1,0 +1,8 @@
+### 32501 - Soul Requiem Fulu
+  L1 CSV:  [no cost] Opponent loses 15% of current HP and current Max HP | Opponent loses 2 [Qi] | [Consumption]
+  L1 IMPL: [no cost]  game.reduce_enemy_x_by_c_pct_enemy_y("hp", 15, "hp"); game.reduce_enemy_x_by_c_pct_enemy_y("max_hp", 15, "max_hp"); game.reduce_enemy_c_of_x(2, "qi"); game.consumption(); ✓
+  L2 CSV:  [no cost] Opponent loses 20% of current HP and current Max HP | Opponent loses 3 [Qi] | [Consumption]
+  L2 IMPL: [no cost]  game.reduce_enemy_x_by_c_pct_enemy_y("hp", 20, "hp"); game.reduce_enemy_x_by_c_pct_enemy_y("max_hp", 20, "max_hp"); game.reduce_enemy_c_of_x(3, "qi"); game.consumption(); ✓
+  L3 CSV:  [no cost] Opponent loses 25% of current HP and current Max HP | Opponent loses 4 [Qi] | [Consumption]
+  L3 IMPL: [no cost]  game.reduce_enemy_x_by_c_pct_enemy_y("hp", 25, "hp"); game.reduce_enemy_x_by_c_pct_enemy_y("max_hp", 25, "max_hp"); game.reduce_enemy_c_of_x(4, "qi"); game.consumption(); ✓
+

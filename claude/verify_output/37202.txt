@@ -1,0 +1,8 @@
+### 37202 - Heavenly Fortune - Shun Misfortune
+  L1 CSV:  [no cost] [Continuous] 2 [Times]: After playing a card without an [Opening] effect, add 3 [DEF] and 2 HP | [Switch]
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(2, "god_luck_avoid_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous] 3 [Times]: After playing a card without an [Opening] effect, add 3 [DEF] and 2 HP | [Switch]
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(3, "god_luck_avoid_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous] 4 [Times]: After playing a card without an [Opening] effect, add 3 [DEF] and 2 HP | [Switch]
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(4, "god_luck_avoid_stacks"); ✓
+

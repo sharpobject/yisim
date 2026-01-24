@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 7 ATK | [Metal Spirit]: Your next 1 attack will [Ignore DEF]
+  L1 IMPL: [no cost]  game.atk(7); if (game.if_metal_spirit()) { game.add_c_of_x(1, "ignore_def"); } ✓
+  L2 CSV:  [no cost] 10 ATK | [Metal Spirit]: Your next 2 attacks will [Ignore DEF]
+  L2 IMPL: [no cost]  game.atk(10); if (game.if_metal_spirit()) { game.add_c_of_x(2, "ignore_def"); } ✓
+  L3 CSV:  [no cost] 13 ATK | [Metal Spirit]: Your next 3 attacks will [Ignore DEF]
+  L3 IMPL: [no cost]  game.atk(13); if (game.if_metal_spirit()) { game.add_c_of_x(3, "ignore_def"); } ✓

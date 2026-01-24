@@ -1,0 +1,8 @@
+### 92508 - Entangling Thornbush
+  L1 CSV:  [no cost] Apply 1 [Entangled] (only effective on first play) | Apply 1 [Wound] | [Post Action]: 2 ATK × 2
+  L1 IMPL: [no cost]   ✓
+  L2 CSV:  [no cost] Apply 1 [Entangled] (only effective on first play) | Apply 1 [Wound] | [Post Action]: 5 ATK × 2
+  L2 IMPL: [no cost]   ✓
+  L3 CSV:  [no cost] Apply 1 [Entangled] (only effective on first play) | Apply 1 [Wound] | [Post Action]: 8 ATK × 2
+  L3 IMPL: [no cost]   ✓
+

@@ -1,0 +1,8 @@
+### 40601 - Void Split Spear
+  L1 CSV:  [hp=0 qi=3] 30 ATK | Opponent loses 4 [Destiny]
+  L1 IMPL: [hp=0 qi=3]  game.atk(30); game.reduce_enemy_c_of_x(4, "destiny"); ✓
+  L2 CSV:  [hp=0 qi=3] 35 ATK | Opponent loses 7 [Destiny]
+  L2 IMPL: [hp=0 qi=3]  game.atk(35); game.reduce_enemy_c_of_x(7, "destiny"); ✓
+  L3 CSV:  [hp=0 qi=3] 40 ATK | Opponent loses 10 [Destiny]
+  L3 IMPL: [hp=0 qi=3]  game.atk(40); game.reduce_enemy_c_of_x(10, "destiny"); ✓
+

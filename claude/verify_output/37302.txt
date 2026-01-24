@@ -1,0 +1,8 @@
+### 37302 - Heavenly Time - Recurring
+  L1 CSV:  [no cost] HP+4 | [Skip To] the card in your previous slot | [Consumption] | [Switch]
+  L1 IMPL: [no cost]  game.increase_idx_hp(0, 4); game.add_c_of_x(1, "skip_to_previous_card_stacks"); game.consumption(); ✓
+  L2 CSV:  [no cost] HP+8 | [Skip To] the card in your previous slot | [Consumption] | [Switch]
+  L2 IMPL: [no cost]  game.increase_idx_hp(0, 8); game.add_c_of_x(1, "skip_to_previous_card_stacks"); game.consumption(); ✓
+  L3 CSV:  [no cost] HP+12 | [Skip To] the card in your previous slot | [Consumption] | [Switch]
+  L3 IMPL: [no cost]  game.increase_idx_hp(0, 12); game.add_c_of_x(1, "skip_to_previous_card_stacks"); game.consumption(); ✓
+

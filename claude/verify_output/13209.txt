@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=2] Gain 2 stacks of [Force of Water] | [Water Spirit]: This card consumes 0 Qi
+  L1 IMPL: [hp=0 qi=2]  game.add_c_of_x(2, "force_of_water"); ✓
+  L2 CSV:  [hp=0 qi=2] Gain 3 stacks of [Force of Water] | [Water Spirit]: This card consumes 0 Qi
+  L2 IMPL: [hp=0 qi=2]  game.add_c_of_x(3, "force_of_water"); ✓
+  L3 CSV:  [hp=0 qi=2] Gain 4 stacks of [Force of Water] | [Water Spirit]: This card consumes 0 Qi
+  L3 IMPL: [hp=0 qi=2]  game.add_c_of_x(4, "force_of_water"); ✓

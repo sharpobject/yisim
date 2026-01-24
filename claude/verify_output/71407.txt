@@ -1,0 +1,8 @@
+### 71407 - M - Diligent Sword
+  L1 CSV:  [no cost] 6 ATK | The next 1 Sword card (excl. [Cloud] / [Unrestrained] / [Spirit] / [Formation]) gain [Chase] | Cultivation ≥ 85: the next 1 more such card gain [Chase]
+  L1 IMPL: [no cost]  const me = game.players[0]; game.atk(6); let amt = 1; if (me.cultivation >= 85) { amt = 2; } game.add_c_of_x(amt, "m_diligent_sword_stacks"); ✓
+  L2 CSV:  [no cost] 10 ATK | The next 1 Sword card (excl. [Cloud] / [Unrestrained] / [Spirit] / [Formation]) gain [Chase] | Cultivation ≥ 80: the next 1 more such card gain [Chase]
+  L2 IMPL: [no cost]  const me = game.players[0]; game.atk(10); let amt = 1; if (me.cultivation >= 80) { amt = 2; } game.add_c_of_x(amt, "m_diligent_sword_stacks"); ✓
+  L3 CSV:  [no cost] 14 ATK | The next 1 Sword card (excl. [Cloud] / [Unrestrained] / [Spirit] / [Formation]) gain [Chase] | Cultivation ≥ 75: the next 1 more such card gain [Chase]
+  L3 IMPL: [no cost]  const me = game.players[0]; game.atk(14); let amt = 1; if (me.cultivation >= 75) { amt = 2; } game.add_c_of_x(amt, "m_diligent_sword_stacks"); ✓
+

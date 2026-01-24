@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 6 ATK | [Earth Spirit]: If either you or your opponent have DEF greater than 0, increase ATK by 3
+  L1 IMPL: [no cost]  let atk_amt = 6; if (game.if_earth_spirit()) { if (game.if_either_has_def()) { atk_amt += 3; } } game.atk(atk_amt); ✓
+  L2 CSV:  [no cost] 7 ATK | [Earth Spirit]: If either you or your opponent have DEF greater than 0, increase ATK by 5
+  L2 IMPL: [no cost]  let atk_amt = 7; if (game.if_earth_spirit()) { if (game.if_either_has_def()) { atk_amt += 5; } } game.atk(atk_amt); ✓
+  L3 CSV:  [no cost] 8 ATK | [Earth Spirit]: If either you or your opponent have DEF greater than 0, increase ATK by 7
+  L3 IMPL: [no cost]  let atk_amt = 8; if (game.if_earth_spirit()) { if (game.if_either_has_def()) { atk_amt += 7; } } game.atk(atk_amt); ✓

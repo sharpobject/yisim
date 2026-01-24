@@ -1,0 +1,8 @@
+### 90606 - Shennong Ding
+  L1 CSV:  [no cost] [Qi]+4 | HP and Max HP + 16 | As long as this card is in your deck, at the end of battle you gain 2 Lv. 3 cards of Elixirist or Plant Master with [Absorb].
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 4); game.add_c_of_x("max_hp", 16); game.add_c_of_x("hp", 16); ✓
+  L2 CSV:  [no cost] CSV NOT FOUND
+  L2 IMPL: [no cost]   ✓
+  L3 CSV:  [no cost] CSV NOT FOUND
+  L3 IMPL: [no cost]   ✓
+

@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=2 qi=0] Costs up to 2 Qi: For each, gain 1 [Force] and add 3 ATK | 10 ATK
+  L1 IMPL: [hp=2 qi=0]  const me = game.players[0]; const qi_amt = Math.min(me.qi, 2); game.reduce_idx_x_by_c(0, "qi", qi_amt); game.increase_idx_force(0, qi_amt); const atk_amt = 10 + qi_amt * 3; game.atk(atk_amt); ✓
+  L2 CSV:  [hp=2 qi=0] Costs up to 3 Qi: For each, gain 1 [Force] and add 3 ATK | 11 ATK
+  L2 IMPL: [hp=2 qi=0]  const me = game.players[0]; const qi_amt = Math.min(me.qi, 3); game.reduce_idx_x_by_c(0, "qi", qi_amt); game.increase_idx_force(0, qi_amt); const atk_amt = 11 + qi_amt * 3; game.atk(atk_amt); ✓
+  L3 CSV:  [hp=2 qi=0] Costs up to 4 Qi: For each, gain 1 [Force] and add 3 ATK | 12 ATK
+  L3 IMPL: [hp=2 qi=0]  const me = game.players[0]; const qi_amt = Math.min(me.qi, 4); game.reduce_idx_x_by_c(0, "qi", qi_amt); game.increase_idx_force(0, qi_amt); const atk_amt = 12 + qi_amt * 3; game.atk(atk_amt); ✓

@@ -1,0 +1,8 @@
+### 90600 - Crimson Star
+  L1 CSV:  [no cost] Can fuse with some cards to stimulate the power of the other world
+  L1 IMPL: [no cost]   ✓
+  L2 CSV:  [no cost] CSV NOT FOUND
+  L2 IMPL: [no cost]   ✓
+  L3 CSV:  [no cost] CSV NOT FOUND
+  L3 IMPL: [no cost]   ✓
+

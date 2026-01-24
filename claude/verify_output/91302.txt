@@ -1,0 +1,8 @@
+### 91302 - Spiritstat Tune
+  L1 CSV:  [no cost] [Continuous]: Whenever you gain 1 [Qi], add 3 [DEF]
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(3, "spiritstat_tune_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous]: Whenever you gain 1 [Qi], add 4 [DEF]
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(4, "spiritstat_tune_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous]: Whenever you gain 1 [Qi], add 5 [DEF]
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(5, "spiritstat_tune_stacks"); ✓
+

@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 5 ATK | [Qi]+1 | The next time you play a [Five Elements] card, [Activate] the corresponding [Five Elements] first
+  L1 IMPL: [no cost]  game.atk(5); game.increase_idx_qi(0, 1); game.add_c_of_x(1, "cosmos_seal_stacks"); ✓
+  L2 CSV:  [no cost] 9 ATK | [Qi]+1 | The next time you play a [Five Elements] card, [Activate] the corresponding [Five Elements] first
+  L2 IMPL: [no cost]  game.atk(9); game.increase_idx_qi(0, 1); game.add_c_of_x(1, "cosmos_seal_stacks"); ✓
+  L3 CSV:  [no cost] 13 ATK | [Qi]+1 | The next time you play a [Five Elements] card, [Activate] the corresponding [Five Elements] first
+  L3 IMPL: [no cost]  game.atk(13); game.increase_idx_qi(0, 1); game.add_c_of_x(1, "cosmos_seal_stacks"); ✓

@@ -1,0 +1,8 @@
+### 93501 - Heavenly Marrow Gourd
+  L1 CSV:  [no cost] [Qi]+2 | HP and Max HP+3 | For the next 2 times after you play a Five Elements card, if the card's Five Elements have been activated, [Chase]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 1); game.increase_idx_hp(0, 3); game.add_c_of_x(2, "heavenly_marrow_gourd_stacks"); ✓
+  L2 CSV:  [no cost] [Qi]+3 | HP and Max HP+5 | For the next 2 times after you play a Five Elements card, if the card's Five Elements have been activated, [Chase]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.increase_idx_hp(0, 5); game.add_c_of_x(2, "heavenly_marrow_gourd_stacks"); ✓
+  L3 CSV:  [no cost] [Qi]+4 | HP and Max HP+7 | For the next 2 times after you play a Five Elements card, if the card's Five Elements have been activated, [Chase]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.increase_idx_hp(0, 7); game.add_c_of_x(2, "heavenly_marrow_gourd_stacks"); ✓
+

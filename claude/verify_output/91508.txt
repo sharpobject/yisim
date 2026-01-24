@@ -1,0 +1,8 @@
+### 91508 - Unrestrained Sword  - Divine
+  L1 CSV:  [no cost] [DEF]+4 | HP+4 | Trigger the effect of a random "Unrestrained Sword"
+  L1 IMPL: [no cost]  game.increase_idx_def(0, 4); game.increase_idx_hp(0, 4); game.trigger_random_unrestrained_card(1); ✓
+  L2 CSV:  [no cost] [DEF]+6 | HP+6 | Trigger the effect of a random "Unrestrained Sword"
+  L2 IMPL: [no cost]  game.increase_idx_def(0, 6); game.increase_idx_hp(0, 6); game.trigger_random_unrestrained_card(2); ✓
+  L3 CSV:  [no cost] [DEF]+8 | HP+8 | Trigger the effect of a random "Unrestrained Sword"
+  L3 IMPL: [no cost]  game.increase_idx_def(0, 8); game.increase_idx_hp(0, 8); game.trigger_random_unrestrained_card(3); ✓
+

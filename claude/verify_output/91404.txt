@@ -1,0 +1,8 @@
+### 91404 - Cloud Sword - Endless
+  L1 CSV:  [no cost] [Continuous]: Formation Master Card can be considered as Cloud Sword,  all Cloud Sword will make an additional 2 ATK after being played
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(2, "cloud_sword_endless_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous]: Formation Master Card can be considered as Cloud Sword,  all Cloud Sword will make an additional 3 ATK after being played
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(3, "cloud_sword_endless_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous]: Formation Master Card can be considered as Cloud Sword,  all Cloud Sword will make an additional 4 ATK after being played
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(4, "cloud_sword_endless_stacks"); ✓
+

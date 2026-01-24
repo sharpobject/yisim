@@ -1,0 +1,8 @@
+### 61502 - Sky Delicate Bracelet
+  L1 CSV:  [hp=0 qi=1] [DEF]+9 | Gain 1 stack of [Guard Up] | [Chase]
+  L1 IMPL: [hp=0 qi=1]  game.increase_idx_def(0, 9); game.add_c_of_x(1, "guard_up"); game.chase(); ✓
+  L2 CSV:  [hp=0 qi=1] [DEF]+9 | Gain 2 stacks of [Guard Up] | [Chase]
+  L2 IMPL: [hp=0 qi=1]  game.increase_idx_def(0, 9); game.add_c_of_x(2, "guard_up"); game.chase(); ✓
+  L3 CSV:  [hp=0 qi=1] [DEF]+9 | Gain 3 stacks of [Guard Up] | [Chase]
+  L3 IMPL: [hp=0 qi=1]  game.increase_idx_def(0, 9); game.add_c_of_x(3, "guard_up"); game.chase(); ✓
+

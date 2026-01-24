@@ -1,0 +1,8 @@
+### 31302 - Divine Power Elixir
+  L1 CSV:  [no cost] Gain 1 stack of [Increase ATK] | [Consumption]
+  L1 IMPL: [no cost]  game.add_c_of_x(1, "increase_atk"); game.consumption(); ✓
+  L2 CSV:  [no cost] Gain 2 stacks of [Increase ATK] | [Consumption]
+  L2 IMPL: [no cost]  game.add_c_of_x(2, "increase_atk"); game.consumption(); ✓
+  L3 CSV:  [no cost] Gain 3 stacks of [Increase ATK] | [Consumption]
+  L3 IMPL: [no cost]  game.add_c_of_x(3, "increase_atk"); game.consumption(); ✓
+

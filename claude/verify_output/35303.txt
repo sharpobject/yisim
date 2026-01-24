@@ -1,0 +1,8 @@
+### 35303 - Hexproof Formation
+  L1 CSV:  [no cost] Gain 3 stacks of [Hexproof] | If you have played a Continuous card in this battle, gain 10 [DEF]
+  L1 IMPL: [no cost]  game.add_c_of_x(3, "hexproof"); if (game.if_played_continuous()) { game.increase_idx_def(0, 10); } ✓
+  L2 CSV:  [no cost] Gain 4 stacks of [Hexproof] | If you have played a Continuous card in this battle, gain 14 [DEF]
+  L2 IMPL: [no cost]  game.add_c_of_x(4, "hexproof"); if (game.if_played_continuous()) { game.increase_idx_def(0, 14); } ✓
+  L3 CSV:  [no cost] Gain 5 stacks of [Hexproof] | If you have played a Continuous card in this battle, gain 18 [DEF]
+  L3 IMPL: [no cost]  game.add_c_of_x(5, "hexproof"); if (game.if_played_continuous()) { game.increase_idx_def(0, 18); } ✓
+

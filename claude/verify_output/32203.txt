@@ -1,0 +1,8 @@
+### 32203 - Mist Fulu
+  L1 CSV:  [no cost] [Qi]+1 | Deal 7 [DMG] | [Consumption]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 1); game.deal_damage(7); game.consumption(); ✓
+  L2 CSV:  [no cost] [Qi]+1 | Deal 11 [DMG] | [Consumption]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 1); game.deal_damage(11); game.consumption(); ✓
+  L3 CSV:  [no cost] [Qi]+1 | Deal 15 [DMG] | [Consumption]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 1); game.deal_damage(15); game.consumption(); ✓
+

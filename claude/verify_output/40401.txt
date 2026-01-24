@@ -1,0 +1,8 @@
+### 40401 - Cosmos Seal Divine Orb
+  L1 CSV:  [hp=0 qi=2] Deal 9 [DMG] | Apply 3 stacks of [Weakened]
+  L1 IMPL: [hp=0 qi=2]  game.deal_damage(9); game.add_enemy_c_of_x(3, "weaken"); ✓
+  L2 CSV:  [hp=0 qi=2] Deal 9 [DMG] | Apply 4 stacks of [Weakened]
+  L2 IMPL: [hp=0 qi=2]  game.deal_damage(9); game.add_enemy_c_of_x(4, "weaken"); ✓
+  L3 CSV:  [hp=0 qi=2] Deal 9 [DMG] | Apply 5 stacks of [Weakened]
+  L3 IMPL: [hp=0 qi=2]  game.deal_damage(9); game.add_enemy_c_of_x(5, "weaken"); ✓
+

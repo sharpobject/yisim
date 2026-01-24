@@ -1,0 +1,8 @@
+### 33402 - Nine Evil Ruptsprite
+  L1 CSV:  [no cost] Both players lose 3 [Qi]
+  L1 IMPL: [no cost]  game.reduce_c_of_x(3, "qi"); game.reduce_enemy_c_of_x(3, "qi"); ✓
+  L2 CSV:  [no cost] Both players lose 5 [Qi]
+  L2 IMPL: [no cost]  game.reduce_c_of_x(5, "qi"); game.reduce_enemy_c_of_x(5, "qi"); ✓
+  L3 CSV:  [no cost] Both players lose 7 [Qi]
+  L3 IMPL: [no cost]  game.reduce_c_of_x(7, "qi"); game.reduce_enemy_c_of_x(7, "qi"); ✓
+

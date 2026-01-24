@@ -1,0 +1,8 @@
+### 33502 - Apparition Confusion
+  L1 CSV:  [no cost] [Continuous]: Both players lose 4 HP when they attack
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(4, "apparition_confusion_stacks"); game.add_enemy_c_of_x(4, "apparition_confusion_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous]: Both players lose 5 HP when they attack
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(5, "apparition_confusion_stacks"); game.add_enemy_c_of_x(5, "apparition_confusion_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous]: Both players lose 6 HP when they attack
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(6, "apparition_confusion_stacks"); game.add_enemy_c_of_x(6, "apparition_confusion_stacks"); ✓
+

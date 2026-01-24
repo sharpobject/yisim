@@ -1,0 +1,8 @@
+### 94403 - Crash Fist - Star Seizing
+  L1 CSV:  [hp=6 qi=0] 12 ATK | If you [Injured] opponent with this card, you restore 60% of the damage inflicted as your own HP (also triggered in the next Crash Fist)
+  L1 IMPL: [hp=6 qi=0]  game.add_c_of_x(1, "this_card_crash_fist_star_seizing_stacks"); game.add_c_of_x(1, "crash_fist_star_seizing_stacks"); game.atk(12); ✓
+  L2 CSV:  [hp=6 qi=0] 16 ATK | If you [Injured] opponent with this card, you restore 60% of the damage inflicted as your own HP (also triggered in the next Crash Fist)
+  L2 IMPL: [hp=6 qi=0]  game.add_c_of_x(1, "this_card_crash_fist_star_seizing_stacks"); game.add_c_of_x(1, "crash_fist_star_seizing_stacks"); game.atk(16); ✓
+  L3 CSV:  [hp=6 qi=0] 20 ATK | If you [Injured] opponent with this card, you restore 60% of the damage inflicted as your own HP (also triggered in the next Crash Fist)
+  L3 IMPL: [hp=6 qi=0]  game.add_c_of_x(1, "this_card_crash_fist_star_seizing_stacks"); game.add_c_of_x(1, "crash_fist_star_seizing_stacks"); game.atk(20); ✓
+

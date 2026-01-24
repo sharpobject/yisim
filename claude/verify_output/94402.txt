@@ -1,0 +1,8 @@
+### 94402 - Crash Fist - Return to Xuan
+  L1 CSV:  [hp=6 qi=0] HP+12 | Gain 3 [Internal Injury] and [Regeneration] | [Continuous]：When Crash Fist costs HP, add it back
+  L1 IMPL: [hp=6 qi=0]  game.increase_idx_hp(0, 15); game.add_c_of_x(4, "internal_injury"); game.add_c_of_x(4, "regen"); game.continuous(); game.add_c_of_x(1, "crash_fist_return_to_xuan_stacks"); ✓
+  L2 CSV:  [hp=6 qi=0] HP+16 | Gain 4 [Internal Injury] and [Regeneration] | [Continuous]：When Crash Fist costs HP, add it back
+  L2 IMPL: [hp=6 qi=0]  game.increase_idx_hp(0, 20); game.add_c_of_x(6, "internal_injury"); game.add_c_of_x(6, "regen"); game.continuous(); game.add_c_of_x(1, "crash_fist_return_to_xuan_stacks"); ✓
+  L3 CSV:  [hp=6 qi=0] HP+20 | Gain 5 [Internal Injury] and [Regeneration] | [Continuous]：When Crash Fist costs HP, add it back
+  L3 IMPL: [hp=6 qi=0]  game.increase_idx_hp(0, 25); game.add_c_of_x(8, "internal_injury"); game.add_c_of_x(8, "regen"); game.continuous(); game.add_c_of_x(1, "crash_fist_return_to_xuan_stacks"); ✓
+

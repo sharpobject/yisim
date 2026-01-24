@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 9 ATK | [Earth Spirit]: Add 1 ATK for every 6 [DEF] you have been lost
+  L1 IMPL: [no cost]  let atk_amt = 9; if (game.if_earth_spirit()) { atk_amt += Math.floor(game.players[0].def_lost * 16.666667 / 100); } game.atk(atk_amt); ✓
+  L2 CSV:  [no cost] 9 ATK | [Earth Spirit]: Add 1 ATK for every 5 [DEF] you have been lost
+  L2 IMPL: [no cost]  let atk_amt = 9; if (game.if_earth_spirit()) { atk_amt += Math.floor(game.players[0].def_lost * 20 / 100); } game.atk(atk_amt); ✓
+  L3 CSV:  [no cost] 9 ATK | [Earth Spirit]: Add 1 ATK for every 4 [DEF] you have been lost
+  L3 IMPL: [no cost]  let atk_amt = 9; if (game.if_earth_spirit()) { atk_amt += Math.floor(game.players[0].def_lost * 25 / 100); } game.atk(atk_amt); ✓

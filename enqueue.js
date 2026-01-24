@@ -1,6 +1,6 @@
 import fs from 'fs';
 import readline from 'readline';
-import { swogi } from './gamestate_nolog';
+import { swogi } from './card_info.js';
 import parse_input from './parse_input';
 import db from './db_sqlite';
 

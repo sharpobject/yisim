@@ -1,0 +1,8 @@
+### 35201 - Scutturtle Formation
+  L1 CSV:  [no cost] [Continuous] 4 [Times]: At the end of your turn, add 3 [DEF]
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(4, "scutturtle_formation_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous] 6 [Times]: At the end of your turn, add 3 [DEF]
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(6, "scutturtle_formation_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous] 8 [Times]: At the end of your turn, add 3 [DEF]
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(8, "scutturtle_formation_stacks"); ✓
+

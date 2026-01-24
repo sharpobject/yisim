@@ -1,0 +1,8 @@
+### 23401 - Earth Spirit - Earthquake
+  L1 CSV:  [no cost] 6 ATK | [DEF]+6 | [Earth Spirit]: Halve the opponent's [Qi] and [DEF]
+  L1 IMPL: [no cost]  game.atk(6); game.increase_idx_def(0, 6); if (game.if_earth_spirit()) { game.reduce_enemy_x_by_c_pct_enemy_y("qi", 50, "qi"); game.reduce_enemy_x_by_c_pct_enemy_y("def", 50, "def"); } ✓
+  L2 CSV:  [no cost] 9 ATK | [DEF]+9 | [Earth Spirit]: Halve the opponent's [Qi] and [DEF]
+  L2 IMPL: [no cost]  game.atk(9); game.increase_idx_def(0, 9); if (game.if_earth_spirit()) { game.reduce_enemy_x_by_c_pct_enemy_y("qi", 50, "qi"); game.reduce_enemy_x_by_c_pct_enemy_y("def", 50, "def"); } ✓
+  L3 CSV:  [no cost] 12 ATK | [DEF]+12 | [Earth Spirit]: Halve the opponent's [Qi] and [DEF]
+  L3 IMPL: [no cost]  game.atk(12); game.increase_idx_def(0, 12); if (game.if_earth_spirit()) { game.reduce_enemy_x_by_c_pct_enemy_y("qi", 50, "qi"); game.reduce_enemy_x_by_c_pct_enemy_y("def", 50, "def"); } ✓
+

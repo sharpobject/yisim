@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] 4 ATK | [Smash DEF] | For each different [Five Elements] you have in your deck, this card adds 4 ATK
+  L1 IMPL: [hp=0 qi=1]  let atk_amt = 4; atk_amt += game.get_n_different_five_elements(0) * 4; game.add_c_of_x(1, "smash_def"); game.atk(atk_amt); ✓
+  L2 CSV:  [hp=0 qi=1] 7 ATK | [Smash DEF] | For each different [Five Elements] you have in your deck, this card adds 5 ATK
+  L2 IMPL: [hp=0 qi=1]  let atk_amt = 7; atk_amt += game.get_n_different_five_elements(0) * 5; game.add_c_of_x(1, "smash_def"); game.atk(atk_amt); ✓
+  L3 CSV:  [hp=0 qi=1] 10 ATK | [Smash DEF] | For each different [Five Elements] you have in your deck, this card adds 6 ATK
+  L3 IMPL: [hp=0 qi=1]  let atk_amt = 10; atk_amt += game.get_n_different_five_elements(0) * 6; game.add_c_of_x(1, "smash_def"); game.atk(atk_amt); ✓

@@ -1,0 +1,8 @@
+### 73503 - M - Water Spirit Billows
+  L1 CSV:  [hp=0 qi=2] Gain 3 [Force of Water]. | At the end of your turn, [Force of Water] triggers an additional time (lasts 2 turns) | [Water Spirit]: This card consumes 0 Qi
+  L1 IMPL: [hp=0 qi=2]  game.increase_idx_x_by_c(0, "force_of_water", 3); game.increase_idx_x_by_c(0, "m_water_spirit_billows_stacks", 2); ✓
+  L2 CSV:  [hp=0 qi=2] Gain 4 [Force of Water]. | At the end of your turn, [Force of Water] triggers an additional time (lasts 2 turns) | [Water Spirit]: This card consumes 0 Qi
+  L2 IMPL: [hp=0 qi=2]  game.increase_idx_x_by_c(0, "force_of_water", 4); game.increase_idx_x_by_c(0, "m_water_spirit_billows_stacks", 2); ✓
+  L3 CSV:  [hp=0 qi=2] Gain 5 [Force of Water]. | At the end of your turn, [Force of Water] triggers an additional time (lasts 2 turns) | [Water Spirit]: This card consumes 0 Qi
+  L3 IMPL: [hp=0 qi=2]  game.increase_idx_x_by_c(0, "force_of_water", 5); game.increase_idx_x_by_c(0, "m_water_spirit_billows_stacks", 2); ✓
+

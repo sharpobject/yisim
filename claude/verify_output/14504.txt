@@ -1,0 +1,8 @@
+### 14504 - Realm-Killing Palms
+  L1 CSV:  [no cost] 3 ATK (1 more ATK for each 4 [Physique] you have gained in this battle) | Make an additional ATK for each 25 [Physique]
+  L1 IMPL: [no cost]  const rep_amt = 1 + Math.floor(game.players[0].physique * 4 / 100); const atk_amt = 3 + Math.floor(game.players[0].physique_gained * 25 / 100); for (let i = 0; i < rep_amt; i++) { game.atk(atk_amt); } ✓
+  L2 CSV:  [no cost] 4 ATK (1 more ATK for each 3 [Physique] you have gained in this battle) | Make an additional ATK for each 25 [Physique]
+  L2 IMPL: [no cost]  const rep_amt = 1 + Math.floor(game.players[0].physique * 4 / 100); const atk_amt = 4 + Math.floor(game.players[0].physique_gained * 33.333334 / 100); for (let i = 0; i < rep_amt; i++) { game.atk(atk_amt); } ✓
+  L3 CSV:  [no cost] 5 ATK (1 more ATK for each 2 [Physique] you have gained in this battle) | Make an additional ATK for each 25 [Physique]
+  L3 IMPL: [no cost]  const rep_amt = 1 + Math.floor(game.players[0].physique * 4 / 100); const atk_amt = 5 + Math.floor(game.players[0].physique_gained * 50 / 100); for (let i = 0; i < rep_amt; i++) { game.atk(atk_amt); } ✓
+

@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 5 ATK | [Star Power]+1
+  L1 IMPL: [no cost]  game.atk(5); game.add_c_of_x(1, "star_power"); ✓
+  L2 CSV:  [no cost] 5 ATK | [Star Power]+2
+  L2 IMPL: [no cost]  game.atk(5); game.add_c_of_x(2, "star_power"); ✓
+  L3 CSV:  [no cost] 5 ATK | [Star Power]+3
+  L3 IMPL: [no cost]  game.atk(5); game.add_c_of_x(3, "star_power"); ✓

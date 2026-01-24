@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] [Force]+3 | [Agility]+6
+  L1 IMPL: [hp=0 qi=1]  game.add_c_of_x(3, "force"); game.add_c_of_x(6, "agility"); ✓
+  L2 CSV:  [hp=0 qi=1] [Force]+4 | [Agility]+6
+  L2 IMPL: [hp=0 qi=1]  game.add_c_of_x(4, "force"); game.add_c_of_x(6, "agility"); ✓
+  L3 CSV:  [hp=0 qi=1] [Force]+5 | [Agility]+6
+  L3 IMPL: [hp=0 qi=1]  game.add_c_of_x(5, "force"); game.add_c_of_x(6, "agility"); ✓

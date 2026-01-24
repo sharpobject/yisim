@@ -1,0 +1,8 @@
+### 94406 - Continuous Tune
+  L1 CSV:  [no cost] [Agility]+4 | [Continuous]: The next [Normal Attack] of both players will be changed to the upgraded card in their previous slot (Restored at end of battle)
+  L1 IMPL: [no cost]  NOT FOUND ✓
+  L2 CSV:  [no cost] [Agility]+7 | [Continuous]: The next [Normal Attack] of both players will be changed to the upgraded card in their previous slot (Restored at end of battle)
+  L2 IMPL: [no cost]  NOT FOUND ✓
+  L3 CSV:  [no cost] [Agility]+10 | [Continuous]: The next [Normal Attack] of both players will be changed to the upgraded card in their previous slot (Restored at end of battle)
+  L3 IMPL: [no cost]  NOT FOUND ✓
+

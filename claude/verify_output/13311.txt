@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] If the previous slot card has [Five Element Generating Interaction] with the next card, then [Activate] the [Five Elements] of the next card and trigger its effect (Up to Lv.1)
+  L1 IMPL: [no cost]  game.do_five_elements_circulation(1); ✓
+  L2 CSV:  [no cost] If the previous slot card has [Five Element Generating Interaction] with the next card, then [Activate] the [Five Elements] of the next card and trigger its effect (Up to Lv.2)
+  L2 IMPL: [no cost]  game.do_five_elements_circulation(2); ✓
+  L3 CSV:  [no cost] If the previous slot card has [Five Element Generating Interaction] with the next card, then [Activate] the [Five Elements] of the next card and trigger its effect (Up to Lv.3)
+  L3 IMPL: [no cost]  game.do_five_elements_circulation(3); ✓

@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Qi]+2 | [HP]+2
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.increase_idx_hp(0, 2); ✓
+  L2 CSV:  [no cost] [Qi]+2 | [HP]+6
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.increase_idx_hp(0, 6); ✓
+  L3 CSV:  [no cost] [Qi]+2 | [HP]+10
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.increase_idx_hp(0, 10); ✓

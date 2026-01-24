@@ -1,0 +1,2125 @@
+[
+  {
+    "id": 1,
+    "name_cn": "共鸣·云影化身",
+    "name_en": "Resonance: Shade Of Cloud",
+    "name_tw": "共鳴·雲影化身",
+    "desc_cn_template": "若自身命元≤{otherParams[0]}，每轮多加{otherParams[1]}次换牌机会。",
+    "desc_en_template": "If your Destiny ≤ {otherParams[0]}, add {otherParams[1]} more Exchange Card Chances per round.",
+    "desc_tw_template": "若自身命元≤{otherParams[0]}，每輪多加{otherParams[1]}次換牌機會。",
+    "params": [
+      50,
+      2
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "若自身命元≤50，每轮多加2次换牌机会。",
+    "desc_en": "If your Destiny ≤ 50, add 2 more Exchange Card Chances per round."
+  },
+  {
+    "id": 2,
+    "name_cn": "共鸣·云海连绵",
+    "name_en": "Resonance: Endurance As Cloud Sea",
+    "name_tw": "共鳴·雲海連綿",
+    "desc_cn_template": "战斗开始时，视作已用过{otherParams[0]}次“云剑”。\n到达化神期后：修为减{otherParams[1]}，随机获得{otherParams[1]}张“云剑”。",
+    "desc_en_template": "At the beginning of the battle, it is considered that the 'Cloud Sword' has been used {otherParams[0]} times.\nAfter reaching the Incarnation Phase: Lose {otherParams[1]} Cultivation and obtain {otherParams[1]} \"Cloud Sword\".",
+    "desc_tw_template": "戰鬥開始時，視作已用過{otherParams[0]}次“雲劍”。\n到達化神期後：修爲减{otherParams[1]}，隨機獲得{otherParams[1]}張“雲劍”。",
+    "params": [
+      2,
+      3
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "战斗开始时，视作已用过2次“云剑”。\n到达化神期后：修为减3，随机获得3张“云剑”。",
+    "desc_en": "At the beginning of the battle, it is considered that the 'Cloud Sword' has been used 2 times.\nAfter reaching the Incarnation Phase: Lose 3 Cultivation and obtain 3 \"Cloud Sword\"."
+  },
+  {
+    "id": 3,
+    "name_cn": "共鸣·剑不出鞘",
+    "name_en": "Resonance: Sword In Sheathed",
+    "name_tw": "共鳴·劍不出鞘",
+    "desc_cn_template": "第{effectRound}轮起生效：自身回合若未攻击则加{otherParams[0]}【KEYWORD_剑意】。",
+    "desc_en_template": "Effective from round {effectRound}: If you do not attack during your turn, gain {otherParams[0]} 【KEYWORD_剑意】 at the end of turn.",
+    "desc_tw_template": "第{effectRound}輪起生效：自身回合若未攻擊則加{otherParams[0]}【KEYWORD_剑意】。",
+    "params": [
+      1
+    ],
+    "effect_round": 8,
+    "relate_talent_id": null,
+    "desc_cn": "第8轮起生效：自身回合若未攻击则加1[剑意]。",
+    "desc_en": "Effective from round 8: If you do not attack during your turn, gain 1 [Sword Intent] at the end of turn."
+  },
+  {
+    "id": 4,
+    "name_cn": "共鸣·炎舞",
+    "name_en": "Resonance: Flame Dance",
+    "name_tw": "共鳴·炎舞",
+    "desc_cn_template": "到达化神期且{effectRound}轮后：修为减1，获得1张【2】。",
+    "desc_en_template": "After reaching the Incarnation Phase and round {effectRound}: Lose 1 Cultivation and gain 1 【2】.",
+    "desc_tw_template": "到達化神期且{effectRound}輪後：修爲减1，獲得1張【2】。",
+    "params": [
+      1
+    ],
+    "effect_round": 11,
+    "relate_talent_id": null,
+    "desc_cn": "到达化神期且11轮后：修为减1，获得1张[狂剑•炎舞]。",
+    "desc_en": "After reaching the Incarnation Phase and round 11: Lose 1 Cultivation and gain 1 [Unrestrained Sword - Flame Dance]."
+  },
+  {
+    "id": 5,
+    "name_cn": "共鸣·炽火炎刃",
+    "name_en": "Resonance: Fire Flame Blade",
+    "name_tw": "共鳴·熾火炎刃",
+    "desc_cn_template": "每次攻击时减对方{otherParams[0]}生命上限。\n第{effectRound}轮起生效：每场战斗首次使用有攻的牌后，追加{otherParams[1]}攻，若此攻击消耗【KEYWORD_剑意】，返还最多{otherParams[2]}【KEYWORD_剑意】。",
+    "desc_en_template": "Each of your attack reduces {otherParams[0]} Max HP of your opponent.\nEffective from round {effectRound}: After the first play of a card with ATK in each battle, make an additional {otherParams[1]} ATK, and if this ATK affected by 【KEYWORD_剑意】, a maximum of {otherParams[2]} 【KEYWORD_剑意】 will be returned.",
+    "desc_tw_template": "每次攻擊時减對方{otherParams[0]}生命上限。\n第{effectRound}輪起生效：每場戰鬥首次使用有攻的牌後，追加{otherParams[1]}攻，若此攻擊消耗【KEYWORD_剑意】，返還最多{otherParams[2]}【KEYWORD_剑意】。",
+    "params": [
+      2,
+      6,
+      5
+    ],
+    "effect_round": 8,
+    "relate_talent_id": null,
+    "desc_cn": "每次攻击时减对方2生命上限。\n第8轮起生效：每场战斗首次使用有攻的牌后，追加6攻，若此攻击消耗[剑意]，返还最多5[剑意]。",
+    "desc_en": "Each of your attack reduces 2 Max HP of your opponent.\nEffective from round 8: After the first play of a card with ATK in each battle, make an additional 6 ATK, and if this ATK affected by [Sword Intent], a maximum of 5 [Sword Intent] will be returned."
+  },
+  {
+    "id": 6,
+    "name_cn": "共鸣·流冰寒刃",
+    "name_en": "Resonance: Drift Ice Blade",
+    "name_tw": "共鳴·流冰寒刃",
+    "desc_cn_template": "回合开始时若防≤{otherParams[0]}则不会自然减半。\n第{effectRound}轮起生效：每次攻击后，自身下回合加{otherParams[1]}防。",
+    "desc_en_template": "If your DEF ≤ {otherParams[0]} at the beginning of your turn, it will not naturally halve.\nEffective from round {effectRound}: After each attack, add {otherParams[1]} DEF in the next round.",
+    "desc_tw_template": "回合開始時若防≤{otherParams[0]}則不會自然减半。\n第{effectRound}輪起生效：每次攻擊後，自身下回合加{otherParams[1]}防。",
+    "params": [
+      10,
+      1
+    ],
+    "effect_round": 11,
+    "relate_talent_id": null,
+    "desc_cn": "回合开始时若防≤10则不会自然减半。\n第11轮起生效：每次攻击后，自身下回合加1防。",
+    "desc_en": "If your DEF ≤ 10 at the beginning of your turn, it will not naturally halve.\nEffective from round 11: After each attack, add 1 DEF in the next round."
+  },
+  {
+    "id": 7,
+    "name_cn": "共鸣·珊瑚剑",
+    "name_en": "Resonance: Coral Sword",
+    "name_tw": "共鳴·珊瑚劍",
+    "desc_cn_template": "自身【KEYWORD_无视防御】的攻击多{otherParams[0]}攻。\n第{effectRound}轮起生效：每当触发【KEYWORD_再次行动】后，自身下1次攻击【KEYWORD_无视防御】。",
+    "desc_en_template": "Your attack with 【KEYWORD_无视防御】 add {otherParams[0]} ATK.\nEffective from round {effectRound}: Whenever you trigger 【KEYWORD_再次行动】, your next attack will 【KEYWORD_无视防御】.",
+    "desc_tw_template": "自身【KEYWORD_无视防御】的攻擊多{otherParams[0]}攻。\n第{effectRound}輪起生效：每當觸發【KEYWORD_再次行动】後，自身下1次攻擊【KEYWORD_无视防御】。",
+    "params": [
+      1
+    ],
+    "effect_round": 13,
+    "relate_talent_id": null,
+    "desc_cn": "自身[无视防御]的攻击多1攻。\n第13轮起生效：每当触发[再次行动]后，自身下1次攻击[无视防御]。",
+    "desc_en": "Your attack with [Ignore DEF] add 1 ATK.\nEffective from round 13: Whenever you trigger [Chase], your next attack will [Ignore DEF]."
+  },
+  {
+    "id": 8,
+    "name_cn": "共鸣·龙鳞",
+    "name_en": "Resonance: Dragon Scale",
+    "name_tw": "共鳴·龍鱗",
+    "desc_cn_template": "若自身命元≤{otherParams[0]}，战斗开始时加{otherParams[1]}防。",
+    "desc_en_template": "If your Destiny ≤ {otherParams[0]}, add {otherParams[1]} DEF at the beginning of the battle.",
+    "desc_tw_template": "若自身命元≤{otherParams[0]}，戰鬥開始時加{otherParams[1]}防。",
+    "params": [
+      50,
+      30
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "若自身命元≤50，战斗开始时加30防。",
+    "desc_en": "If your Destiny ≤ 50, add 30 DEF at the beginning of the battle."
+  },
+  {
+    "id": 9,
+    "name_cn": "共鸣·九霄玲珑镯",
+    "name_en": "Resonance: Sky Delicate Bracelet",
+    "name_tw": "共鳴·九霄玲瓏鐲",
+    "desc_cn_template": "第{effectRound}轮起生效：战斗开始时，升级卡组中前{otherParams[0]}张基础【KEYWORD_灵气】消耗为1的牌，战斗结束还原。",
+    "desc_en_template": "Effective from round {effectRound}: Upgrade your first 2 cards with 1 Qi cost in battle, and revert it after the battle.",
+    "desc_tw_template": "第{effectRound}輪起生效：戰鬥開始時，升級卡組中前{otherParams[0]}張基礎【KEYWORD_灵气】消耗爲1的牌，戰鬥結束還原。",
+    "params": [
+      2
+    ],
+    "effect_round": 14,
+    "relate_talent_id": null,
+    "desc_cn": "第14轮起生效：战斗开始时，升级卡组中前2张基础[灵气]消耗为1的牌，战斗结束还原。",
+    "desc_en": "Effective from round 14: Upgrade your first 2 cards with 1 Qi cost in battle, and revert it after the battle."
+  },
+  {
+    "id": 10,
+    "name_cn": "共鸣·灵猫踏云",
+    "name_en": "Resonance: Lithe As Cat",
+    "name_tw": "共鳴·靈猫踏雲",
+    "desc_cn_template": "使用“灵剑”后不会中断连续使用“云剑”计数，且下一张牌的【KEYWORD_连云】效果也可被触发。\n到达元婴期后：修为减{otherParams[0]}，随机获得{otherParams[0]}张“灵剑”（金丹期以上）。\n到达化神期后：修为减{otherParams[0]}，随机获得{otherParams[0]}张“灵剑”（元婴期以上）。",
+    "desc_en_template": "After play a \"Spirit Sword\", successive count of \"Cloud Sword\" played will not be reset, and the 【KEYWORD_连云】 effect of the next card can be triggered.\nAfter reaching the Immortality Phase: Lose {otherParams[0]} Cultivation and obtain {otherParams[0]} \"Spirit Sword\" (above Virtuoso Phase).\nAfter reaching the Incarnation Phase: Lose {otherParams[0]} Cultivation and obtain {otherParams[0]} \"Spirit Sword\" (above Immortality Phase).",
+    "desc_tw_template": "使用“靈劍”後不會中斷連續使用“雲劍”計數，且下一張牌的【KEYWORD_连云】效果也可被觸發。\n到達元嬰期後：修爲减{otherParams[0]}，隨機獲得{otherParams[0]}張“靈劍”（金丹期以上）。\n到達化神期後：修爲减{otherParams[0]}，隨機獲得{otherParams[0]}張“靈劍”（元嬰期以上）。",
+    "params": [
+      3
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "使用“灵剑”后不会中断连续使用“云剑”计数，且下一张牌的[连云]效果也可被触发。\n到达元婴期后：修为减3，随机获得3张“灵剑”（金丹期以上）。\n到达化神期后：修为减3，随机获得3张“灵剑”（元婴期以上）。",
+    "desc_en": "After play a \"Spirit Sword\", successive count of \"Cloud Sword\" played will not be reset, and the [Cloud Hit] effect of the next card can be triggered.\nAfter reaching the Immortality Phase: Lose 3 Cultivation and obtain 3 \"Spirit Sword\" (above Virtuoso Phase).\nAfter reaching the Incarnation Phase: Lose 3 Cultivation and obtain 3 \"Spirit Sword\" (above Immortality Phase)."
+  },
+  {
+    "id": 11,
+    "name_cn": "共鸣·猫爪",
+    "name_en": "Resonance: Cat Paw",
+    "name_tw": "共鳴·猫爪",
+    "desc_cn_template": "使用名字含“猫”的牌击伤对方后施加{otherParams[0]}层【KEYWORD_外伤】（每回合限1次）。\n第{effectRound}轮起生效：改为{otherParams[1]}层【KEYWORD_外伤】。",
+    "desc_en_template": "After play a card with the name \"cat\" to injure the opponent, apply {otherParams[0]} 【KEYWORD_外伤】 (limited to 1 time per turn).\nEffective from round {effectRound}: Change to apply {otherParams[1]} 【KEYWORD_外伤】.",
+    "desc_tw_template": "使用名字含“猫”的牌擊傷對方後施加{otherParams[0]}層【KEYWORD_外伤】（每回合限1次）。\n第{effectRound}輪起生效：改爲{otherParams[1]}層【KEYWORD_外傷】。",
+    "params": [
+      1,
+      2
+    ],
+    "effect_round": 14,
+    "relate_talent_id": null,
+    "desc_cn": "使用名字含“猫”的牌击伤对方后施加1层[外伤]（每回合限1次）。\n第14轮起生效：改为2层[外伤]。",
+    "desc_en": "After play a card with the name \"cat\" to injure the opponent, apply 1 [Wound] (limited to 1 time per turn).\nEffective from round 14: Change to apply 2 [Wound]."
+  },
+  {
+    "id": 12,
+    "name_cn": "共鸣·猫魂庇佑",
+    "name_en": "Resonance: Cat Soul Bless",
+    "name_tw": "共鳴·猫魂庇佑",
+    "desc_cn_template": "第{effectRound}轮起生效：每次战斗失败后，【TALENT_129】增加1次触发机会。",
+    "desc_en_template": "Effective from round {effectRound}: After each battle failure, 【TALENT_129】 increases one chance to trigger.",
+    "desc_tw_template": "第{effectRound}輪起生效：每次戰鬥失敗後，【TALENT_129】增加1次觸發機會。",
+    "params": [],
+    "effect_round": 3,
+    "relate_talent_id": null,
+    "desc_cn": "第3轮起生效：每次战斗失败后，[好奇心]增加1次触发机会。",
+    "desc_en": "Effective from round 3: After each battle failure, [Curiosity] increases one chance to trigger."
+  },
+  {
+    "id": 13,
+    "name_cn": "共鸣·铸剑师",
+    "name_en": "Resonance: Swordsmith",
+    "name_tw": "共鳴·鑄劍師",
+    "desc_cn_template": "第{effectRound}轮起生效：【TALENT_92】改为让【19】每轮加{otherParams[0]}攻，且取消次数上限。",
+    "desc_en_template": "Effective from round {effectRound}: 【TALENT_92】 allow the 【19】 to increase 2 ATK per round, and there is no longer an upper limit.",
+    "desc_tw_template": "第{effectRound}輪起生效：【TALENT_92】改爲讓【19】每輪加{otherParams[0]}攻，且取消次數上限。",
+    "params": [
+      2
+    ],
+    "effect_round": 9,
+    "relate_talent_id": null,
+    "desc_cn": "第9轮起生效：[铸剑师]改为让[澄心剑胚]每轮加2攻，且取消次数上限。",
+    "desc_en": "Effective from round 9: [Swordsmith] allow the [Clear Heart Sword Embryo] to increase 2 ATK per round, and there is no longer an upper limit."
+  },
+  {
+    "id": 14,
+    "name_cn": "共鸣·剑纹雕琢",
+    "name_en": "Resonance: Sword Pattern Carving",
+    "name_tw": "共鳴·劍紋雕琢",
+    "desc_cn_template": "第{effectRound}轮起生效：使用【19】后追加{otherParams[0]}攻。",
+    "desc_en_template": "Effective from round {effectRound}: After play 【19】, make an additional {otherParams[0]} ATK.",
+    "desc_tw_template": "第{effectRound}輪起生效：使用【19】後追加{otherParams[0]}攻。",
+    "params": [
+      5
+    ],
+    "effect_round": 13,
+    "relate_talent_id": null,
+    "desc_cn": "第13轮起生效：使用[澄心剑胚]后追加5攻。",
+    "desc_en": "Effective from round 13: After play [Clear Heart Sword Embryo], make an additional 5 ATK."
+  },
+  {
+    "id": 15,
+    "name_cn": "共鸣·灵气凝铸",
+    "name_en": "Resonance: Qi Forging",
+    "name_tw": "共鳴·靈氣凝鑄",
+    "desc_cn_template": "第7轮起生效：使用【19】时先加{otherParams[0]}【KEYWORD_灵气】。\n第16轮起生效：改为加{otherParams[1]}【KEYWORD_灵气】。",
+    "desc_en_template": "Effective from round 7: When playing【19】, add {otherParams[0]} 【KEYWORD_灵气】.\nEffective from round 16: Change to add {otherParams[1]} 【KEYWORD_灵气】.",
+    "desc_tw_template": "第7輪起生效：使用【19】時先加{otherParams[0]}【KEYWORD_灵气】。\n第16輪起生效：改爲加{otherParams[1]}【KEYWORD_灵气】。",
+    "params": [
+      1,
+      2
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "第7轮起生效：使用[澄心剑胚]时先加1[灵气]。\n第16轮起生效：改为加2[灵气]。",
+    "desc_en": "Effective from round 7: When playing[Clear Heart Sword Embryo], add 1 [Qi].\nEffective from round 16: Change to add 2 [Qi]."
+  },
+  {
+    "id": 16,
+    "name_cn": "共鸣·观壁悟道",
+    "name_en": "Resonance: Dao of Ruiying",
+    "name_tw": "共鳴·觀壁悟道",
+    "desc_cn_template": "遗忘【TALENT_189】中的金丹期牌（若自身已到金丹期，每遗忘1张减1修为），重新领悟境界更高的“剑”牌。",
+    "desc_en_template": "Forget the Virtuoso Phase card in 【TALENT_189】 (if you have reached the Virtuoso Phase, you lose 1 Cultivation for each forgot card), and re-comprehend the \"Sword\" card with a higher Phase.",
+    "desc_tw_template": "遺忘【TALENT_189】中的金丹期牌（若自身已到金丹期，每遺忘1張减1修爲），重新領悟境界更高的“劍”牌。",
+    "params": [
+      1
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "遗忘[悟剑天赋]中的金丹期牌（若自身已到金丹期，每遗忘1张减1修为），重新领悟境界更高的“剑”牌。",
+    "desc_en": "Forget the Virtuoso Phase card in [Swordplay Talent] (if you have reached the Virtuoso Phase, you lose 1 Cultivation for each forgot card), and re-comprehend the \"Sword\" card with a higher Phase."
+  },
+  {
+    "id": 17,
+    "name_cn": "共鸣·剑招融汇",
+    "name_en": "Resonance: Chengyun's Fusion Style",
+    "name_tw": "共鳴·劍招融匯",
+    "desc_cn_template": "到达筑基期后：修为减4，随机获得“云剑”“狂剑”“灵剑”“剑阵”牌各一张。\n到达化神期后：以上效果再生效一次。",
+    "desc_en_template": "After reaching the Foundation Phase: Lose 4 Cultivation and you can obtain a card each of \"Cloud Sword\", \"Unrestrained Sword\", \"Spirit Sword\" and \"Sword Formation\".\nAfter reaching the Incarnation Phase: The above effect will be triggered again.",
+    "desc_tw_template": "到達築基期後：修爲减4，隨機獲得“雲劍”“狂劍”“靈劍”“劍陣”牌各一張。\n到達化神期後：以上效果再生效一次。",
+    "params": [],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "到达筑基期后：修为减4，随机获得“云剑”“狂剑”“灵剑”“剑阵”牌各一张。\n到达化神期后：以上效果再生效一次。",
+    "desc_en": "After reaching the Foundation Phase: Lose 4 Cultivation and you can obtain a card each of \"Cloud Sword\", \"Unrestrained Sword\", \"Spirit Sword\" and \"Sword Formation\".\nAfter reaching the Incarnation Phase: The above effect will be triggered again."
+  },
+  {
+    "id": 18,
+    "name_cn": "共鸣·曳影剑阵",
+    "name_en": "Resonance: Yeying Sword Formation",
+    "name_tw": "共鳴·曳影劍陣",
+    "desc_cn_template": "第{effectRound}轮起生效：使用“剑阵”牌时加1【KEYWORD_灵气】（每回合限1次）。",
+    "desc_en_template": "Effective from round {effectRound}: When playing \"Sword Formation\" card, add 1 【KEYWORD_灵气】 (limited to 1 time per turn).",
+    "desc_tw_template": "第{effectRound}輪起生效：使用“劍陣”牌時加1【KEYWORD_灵气】（每回合限1次）。",
+    "params": [],
+    "effect_round": 6,
+    "relate_talent_id": null,
+    "desc_cn": "第6轮起生效：使用“剑阵”牌时加1[灵气]（每回合限1次）。",
+    "desc_en": "Effective from round 6: When playing \"Sword Formation\" card, add 1 [Qi] (limited to 1 time per turn)."
+  },
+  {
+    "id": 19,
+    "name_cn": "共鸣·勤学苦练",
+    "name_en": "Resonance: Study Hard",
+    "name_tw": "共鳴·勤學苦練",
+    "desc_cn_template": "合成卡牌时也会增加【TALENT_29】1次计数。",
+    "desc_en_template": "When synthesizing cards, the 【TALENT_29】 count will also be increased by 1.",
+    "desc_tw_template": "合成卡牌時也會增加【TALENT_29】1次計數。",
+    "params": [],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "合成卡牌时也会增加[勤学苦练]1次计数。",
+    "desc_en": "When synthesizing cards, the [Study Hard] count will also be increased by 1."
+  },
+  {
+    "id": 20,
+    "name_cn": "共鸣·雪羽清风",
+    "name_en": "Resonance: Birdie Wind",
+    "name_tw": "共鳴·雪羽清風",
+    "desc_cn_template": "战斗开始时生命上限+{otherParams[0]}。\n第{effectRound}轮起生效：每次加防时多加{otherParams[1]}点。",
+    "desc_en_template": "At the beginning of the battle, Max HP + {otherParams[0]}.\nEffective from round {effectRound}: Add {otherParams[1]} extra point each time you add DEF.",
+    "desc_tw_template": "戰鬥開始時生命上限+{otherParams[0]}。\n第{effectRound}輪起生效：每次加防時多加{otherParams[1]}點。",
+    "params": [
+      20,
+      1
+    ],
+    "effect_round": 15,
+    "relate_talent_id": null,
+    "desc_cn": "战斗开始时生命上限+20。\n第15轮起生效：每次加防时多加1点。",
+    "desc_en": "At the beginning of the battle, Max HP + 20.\nEffective from round 15: Add 1 extra point each time you add DEF."
+  },
+  {
+    "id": 21,
+    "name_cn": "共鸣·雁影化身",
+    "name_en": "Resonance: Avatar of Bird Shade",
+    "name_tw": "共鳴·雁影化身",
+    "desc_cn_template": "若自身命元≤{otherParams[0]}，战斗开始时升级卡组中前{otherParams[1]}张筑基期牌，战斗结束还原。",
+    "desc_en_template": "If your Destiny ≤ {otherParams[0]}, upgrade your first {otherParams[1]} Foundation Phase cards in battle, and revert it after the battle.",
+    "desc_tw_template": "若自身命元≤{otherParams[0]}，戰鬥開始時升級卡組中前{otherParams[1]}張築基期牌，戰鬥結束還原。",
+    "params": [
+      20,
+      2
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "若自身命元≤20，战斗开始时升级卡组中前2张筑基期牌，战斗结束还原。",
+    "desc_en": "If your Destiny ≤ 20, upgrade your first 2 Foundation Phase cards in battle, and revert it after the battle."
+  },
+  {
+    "id": 22,
+    "name_cn": "共鸣·瓮中捉鳖",
+    "name_en": "Resonance: Within Reach",
+    "name_tw": "共鳴·瓮中捉鱉",
+    "desc_cn_template": "第{effectRound}轮起生效：使用【5】时向对方施加1层【KEYWORD_内伤】和1层【KEYWORD_困缚】。",
+    "desc_en_template": "Effective from round {effectRound}: When playing 【5】, apply 1 【KEYWORD_内伤】 and 1 【KEYWORD_困缚】 to your opponent.",
+    "desc_tw_template": "第{effectRound}輪起生效：使用【5】時向對方施加1層【KEYWORD_内伤】和1層【KEYWORD_困缚】。",
+    "params": [],
+    "effect_round": 11,
+    "relate_talent_id": null,
+    "desc_cn": "第11轮起生效：使用[瓮中捉鳖]时向对方施加1层[内伤]和1层[困缚]。",
+    "desc_en": "Effective from round 11: When playing [Within Reach], apply 1 [Internal Injury] and 1 [Entangled] to your opponent."
+  },
+  {
+    "id": 23,
+    "name_cn": "共鸣·燃命之焰",
+    "name_en": "Resonance: Flame of life",
+    "name_tw": "共鳴·燃命之焰",
+    "desc_cn_template": "每轮开始时，自身减{otherParams[0]}命元（最低减至30），【TALENT_114】加{otherParams[1]}计数。",
+    "desc_en_template": "At the beginning of each round, you lose {otherParams[0]} Destiny (minimum to 30), and the count of 【TALENT_114】 will be increased by {otherParams[1]}.",
+    "desc_tw_template": "每輪開始時，自身减{otherParams[0]}命元（最低减至30），【TALENT_114】加{otherParams[1]}計數。",
+    "params": [
+      1,
+      8
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "每轮开始时，自身减1命元（最低减至30），[血脉威能]加8计数。",
+    "desc_en": "At the beginning of each round, you lose 1 Destiny (minimum to 30), and the count of [Bloodline Power] will be increased by 8."
+  },
+  {
+    "id": 24,
+    "name_cn": "共鸣·狂雷电闪",
+    "name_en": "Resonance: Fury Thunder",
+    "name_tw": "共鳴·狂雷電閃",
+    "desc_cn_template": "战斗开始时，升级卡组中第1张名字含“雷”的牌，战斗结束还原。\n第{effectRound}轮起生效：“第1张”改为“前2张”。",
+    "desc_en_template": "Upgrade your first card with \"Thunder\"  in its name in battle, and revert it after the battle.\nEffective from round {effectRound}: Changes \"first card\" to \"first 2 cards\".",
+    "desc_tw_template": "戰鬥開始時，升級卡組中第1張名字含“雷”的牌，戰鬥結束還原。\n第{effectRound}輪起生效：“第1張”改爲“前2張”。 ",
+    "params": [],
+    "effect_round": 13,
+    "relate_talent_id": null,
+    "desc_cn": "战斗开始时，升级卡组中第1张名字含“雷”的牌，战斗结束还原。\n第13轮起生效：“第1张”改为“前2张”。",
+    "desc_en": "Upgrade your first card with \"Thunder\"  in its name in battle, and revert it after the battle.\nEffective from round 13: Changes \"first card\" to \"first 2 cards\"."
+  },
+  {
+    "id": 25,
+    "name_cn": "共鸣·灯焰飞舞",
+    "name_en": "Resonance: Flame Flutter",
+    "name_tw": "共鳴·燈焰飛舞",
+    "desc_cn_template": "第{effectRound}轮起生效：每次对方获得【KEYWORD_内伤】时多加1层。",
+    "desc_en_template": "Effective from round {effectRound}: Each time your opponent gain 【KEYWORD_内伤】, an additional stack is added.",
+    "desc_tw_template": "第{effectRound}輪起生效：每次對方獲得【KEYWORD_内伤】時多加1層。",
+    "params": [],
+    "effect_round": 12,
+    "relate_talent_id": null,
+    "desc_cn": "第12轮起生效：每次对方获得[内伤]时多加1层。",
+    "desc_en": "Effective from round 12: Each time your opponent gain [Internal Injury], an additional stack is added."
+  },
+  {
+    "id": 26,
+    "name_cn": "共鸣·旋灯占卦",
+    "name_en": "Resonance: Rotary Divination Hexagram",
+    "name_tw": "共鳴·旋燈占卦",
+    "desc_cn_template": "第{effectRound}轮起生效：战斗开始时，升级卡组中第一张名字含“卦”且不超过元婴期的牌，战斗结束还原。",
+    "desc_en_template": "Effective from round {effectRound}: Upgrade your first \"Hexagram\" card (does not exceed the Immortality Phase) in battle, and revert it after the battle.",
+    "desc_tw_template": "第{effectRound}輪起生效：戰鬥開始時，升級卡組中第一張名字含“卦”且不超過元嬰期的牌，戰鬥結束還原。",
+    "params": [],
+    "effect_round": 4,
+    "relate_talent_id": null,
+    "desc_cn": "第4轮起生效：战斗开始时，升级卡组中第一张名字含“卦”且不超过元婴期的牌，战斗结束还原。",
+    "desc_en": "Effective from round 4: Upgrade your first \"Hexagram\" card (does not exceed the Immortality Phase) in battle, and revert it after the battle."
+  },
+  {
+    "id": 27,
+    "name_cn": "共鸣·绛纱守护",
+    "name_en": "Resonance: Crimson Yarn Guard",
+    "name_tw": "共鳴·絳紗守護",
+    "desc_cn_template": "命元+{otherParams[0]}。\n选择此共鸣后的下1次战斗若自身失败，受到的命元伤害变为0。",
+    "desc_en_template": "Destiny + {otherParams[0]}.\nIf you fail in the next battle after selecting this resonance, the Destiny damage you take will become 0.",
+    "desc_tw_template": "命元+{otherParams[0]}。\n選擇此共鳴後的下1次戰鬥若自身失敗，受到的命元傷害變爲0。",
+    "params": [
+      20
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "命元+20。\n选择此共鸣后的下1次战斗若自身失败，受到的命元伤害变为0。",
+    "desc_en": "Destiny + 20.\nIf you fail in the next battle after selecting this resonance, the Destiny damage you take will become 0."
+  },
+  {
+    "id": 28,
+    "name_cn": "共鸣·七星定魂",
+    "name_en": "Resonance: Heptastar Soulstat",
+    "name_tw": "共鳴·七星定魂",
+    "desc_cn_template": "若卡组第一格为空，仙命【TALENT_52】改为将【11】放入卡组第一格。\n第{effectRound}轮起生效：每当对方因【KEYWORD_灵气】不足或卡牌效果而无法行动时，向其施加{otherParams[0]}层【KEYWORD_内伤】。",
+    "desc_en_template": "If the first slot of deck is empty, 【TALENT_52】 will change to generate 【11】 to the first slot.\nEffective from round {effectRound}: Whenever your opponent is unable to act due to insufficient 【KEYWORD_灵气】 or card effect, apply {otherParams[0]} 【KEYWORD_内伤】 to them.",
+    "desc_tw_template": "若卡組第一格爲空，仙命【TALENT_52】改爲將【11】放入卡組第一格。\n第{effectRound}輪起生效：每當對方因【KEYWORD_灵气】不足或卡牌效果而無法行動時，向其施加{otherParams[0]}層【KEYWORD_内伤】。",
+    "params": [
+      1
+    ],
+    "effect_round": 10,
+    "relate_talent_id": null,
+    "desc_cn": "若卡组第一格为空，仙命[七星定魂]改为将[七星定魂]放入卡组第一格。\n第10轮起生效：每当对方因[灵气]不足或卡牌效果而无法行动时，向其施加1层[内伤]。",
+    "desc_en": "If the first slot of deck is empty, [Heptastar Soulstat] will change to generate [Heptastar Soulstat] to the first slot.\nEffective from round 10: Whenever your opponent is unable to act due to insufficient [Qi] or card effect, apply 1 [Internal Injury] to them."
+  },
+  {
+    "id": 29,
+    "name_cn": "共鸣·运筹帷幄",
+    "name_en": "Resonance: Strategize",
+    "name_tw": "共鳴·運籌帷幄",
+    "desc_cn_template": "每次炼化3级门派牌时，加{otherParams[0]}换牌机会。",
+    "desc_en_template": "Every time you Absorb a Level 3 Sect card, add {otherParams[0]} Exchange Card Chance.",
+    "desc_tw_template": "每次煉化3級門派牌時，加{otherParams[0]}換牌機會。",
+    "params": [
+      2
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "每次炼化3级门派牌时，加2换牌机会。",
+    "desc_en": "Every time you Absorb a Level 3 Sect card, add 2 Exchange Card Chance."
+  },
+  {
+    "id": 30,
+    "name_cn": "共鸣·布星问卦",
+    "name_en": "Resonance: Astral Divination Hexagram",
+    "name_tw": "共鳴·布星問卦",
+    "desc_cn_template": "第{effectRound}轮起生效：每回合首次加【KEYWORD_卦象】后再加1【KEYWORD_灵气】。\n到达化神期后：修为减{otherParams[0]}，随机获得{otherParams[0]}张星弈牌（金丹期以上）。",
+    "desc_en_template": "Effective from round {effectRound}: After adding 【KEYWORD_卦象】 for the first time in each turn, add 1 【KEYWORD_灵气】.\nAfter reaching the Incarnation Phase: Lose {otherParams[0]} Cultivation and obtain {otherParams[0]} \"Astral Move\" cards (Above Virtuoso Phase).",
+    "desc_tw_template": "第{effectRound}輪起生效：每回合首次加【KEYWORD_卦象】後再加1【KEYWORD_灵气】。\n到達化神期後：修爲减{otherParams[0]}，隨機獲得{otherParams[0]}張星弈牌（金丹期以上）。",
+    "params": [
+      2
+    ],
+    "effect_round": 6,
+    "relate_talent_id": null,
+    "desc_cn": "第6轮起生效：每回合首次加[卦象]后再加1[灵气]。\n到达化神期后：修为减2，随机获得2张星弈牌（金丹期以上）。",
+    "desc_en": "Effective from round 6: After adding [Hexagram] for the first time in each turn, add 1 [Qi].\nAfter reaching the Incarnation Phase: Lose 2 Cultivation and obtain 2 \"Astral Move\" cards (Above Virtuoso Phase)."
+  },
+  {
+    "id": 31,
+    "name_cn": "共鸣·星月折扇",
+    "name_en": "Resonance: Star Moon Folding Fan",
+    "name_tw": "共鳴·星月摺扇",
+    "desc_cn_template": "第{effectRound}轮起生效：卡组第4、5格默认成为【KEYWORD_星位】。",
+    "desc_en_template": "Effective from round {effectRound}: The 4th and 5th slots of your deck becomes 【KEYWORD_星位】.",
+    "desc_tw_template": "第{effectRound}輪起生效：卡組第4、5格默認成爲【KEYWORD_星位】。",
+    "params": [],
+    "effect_round": 7,
+    "relate_talent_id": null,
+    "desc_cn": "第7轮起生效：卡组第4、5格默认成为[星位]。",
+    "desc_en": "Effective from round 7: The 4th and 5th slots of your deck becomes [Star Point]."
+  },
+  {
+    "id": 32,
+    "name_cn": "共鸣·计出万全",
+    "name_en": "Resonance: Best Choice",
+    "name_tw": "共鳴·計出萬全",
+    "desc_cn_template": "使用最后1次换牌机会进行换牌时优先换到自身当前境界的牌。\n第{effectRound}轮起生效：触发仙命【TALENT_141】时换到的牌升至2级。",
+    "desc_en_template": "When you use the last Exchange Card Chance to change card, you will priority get the card of your Phase.\nEffective from round {effectRound}: Card obtained when triggering the Immortal Fate 【TALENT_141】 are upgraded to level 2.",
+    "desc_tw_template": "使用最後1次換牌機會進行換牌時優先換到自身當前境界的牌。\n第{effectRound}輪起生效：觸發仙命【TALENT_141】時換得的牌會升至2級。",
+    "params": [],
+    "effect_round": 12,
+    "relate_talent_id": null,
+    "desc_cn": "使用最后1次换牌机会进行换牌时优先换到自身当前境界的牌。\n第12轮起生效：触发仙命[计出万全]时换到的牌升至2级。",
+    "desc_en": "When you use the last Exchange Card Chance to change card, you will priority get the card of your Phase.\nEffective from round 12: Card obtained when triggering the Immortal Fate [Best Choice] are upgraded to level 2."
+  },
+  {
+    "id": 33,
+    "name_cn": "共鸣·以逸待劳",
+    "name_en": "Resonance: Rest and Outwit",
+    "name_tw": "共鳴·以逸待勞",
+    "desc_cn_template": "每当自身因【KEYWORD_灵气】不足而无法出牌时加{otherParams[0]}生命及上限。\n第{effectRound}轮起生效：【TALENT_142】触发时额外多加1【KEYWORD_灵气】、1【KEYWORD_卦象】和{otherParams[1]}生命及上限。",
+    "desc_en_template": "Whenever your are unable to play a card due to insufficient 【KEYWORD_灵气】, add {otherParams[0]} HP and Max HP.\nEffective from round {effectRound}: When 【TALENT_142】 is triggered, an additional 1 【KEYWORD_灵气】 , 1 【KEYWORD_卦象】, {otherParams[1]} HP and Max HP are added.",
+    "desc_tw_template": "每當自身因【KEYWORD_灵气】不足而無法出牌時加{otherParams[0]}生命及上限。\n第{effectRound}輪起生效：【TALENT_142】觸發時額外多加1【KEYWORD_靈氣】、1【KEYWORD_卦象】和{otherParams[1]}生命及上限。",
+    "params": [
+      3,
+      4
+    ],
+    "effect_round": 8,
+    "relate_talent_id": null,
+    "desc_cn": "每当自身因[灵气]不足而无法出牌时加3生命及上限。\n第8轮起生效：[以逸待劳]触发时额外多加1[灵气]、1[卦象]和4生命及上限。",
+    "desc_en": "Whenever your are unable to play a card due to insufficient [Qi], add 3 HP and Max HP.\nEffective from round 8: When [Rest and Outwit] is triggered, an additional 1 [Qi] , 1 [Hexagram], 4 HP and Max HP are added."
+  },
+  {
+    "id": 34,
+    "name_cn": "共鸣·五行印记",
+    "name_en": "Resonance: Mark Of Five Elements",
+    "name_tw": "共鳴·五行印記",
+    "desc_cn_template": "第{effectRound}轮起生效：每场战斗首次【KEYWORD_激活】五行时减{otherParams[0]}生命并【KEYWORD_再次行动】。",
+    "desc_en_template": "Effective from round {effectRound}: After the first 【KEYWORD_激活】 in each battle, you lose {otherParams[0]} HP and 【KEYWORD_再次行动】.",
+    "desc_tw_template": "第{effectRound}輪起生效：每場戰鬥首次【KEYWORD_激活】五行時减{otherParams[0]}生命幷【KEYWORD_再次行动】。",
+    "params": [
+      5
+    ],
+    "effect_round": 14,
+    "relate_talent_id": null,
+    "desc_cn": "第14轮起生效：每场战斗首次[激活]五行时减5生命并[再次行动]。",
+    "desc_en": "Effective from round 14: After the first [Activate] in each battle, you lose 5 HP and [Chase]."
+  },
+  {
+    "id": 35,
+    "name_cn": "共鸣·五行化身",
+    "name_en": "Resonance: Avater Of Five Elements",
+    "name_tw": "共鳴·五行化身",
+    "desc_cn_template": "若自身命元≤{otherParams[0]}，战斗开始时升级卡组中每种不同【KEYWORD_五行】的牌各1张（优先取靠前且可升级的牌），战斗结束还原。",
+    "desc_en_template": "If your Destiny ≤ {otherParams[0]}, upgrade first card of each different 【KEYWORD_五行】 in battle, and revert it after the battle.",
+    "desc_tw_template": "若自身命元≤{otherParams[0]}，戰鬥開始時升級卡組中每種不同【KEYWORD_五行】的牌各1張（優先取靠前且可升級的牌），戰鬥結束還原。",
+    "params": [
+      30
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "若自身命元≤30，战斗开始时升级卡组中每种不同[五行]的牌各1张（优先取靠前且可升级的牌），战斗结束还原。",
+    "desc_en": "If your Destiny ≤ 30, upgrade first card of each different [Five Elements] in battle, and revert it after the battle."
+  },
+  {
+    "id": 36,
+    "name_cn": "共鸣·五行传承",
+    "name_en": "Resonance: Inheritance of Five Elements",
+    "name_tw": "共鳴·五行傳承",
+    "desc_cn_template": "第{effectRound}轮起生效：每次使用五行牌时，若该牌的【KEYWORD_五行】已【KEYWORD_激活】则向对方造成{otherParams[0]}【KEYWORD_伤害】。\n第13轮起生效：改为{otherParams[1]}【KEYWORD_伤害】。",
+    "desc_en_template": "Effective from round {effectRound}: Every time you play a 【KEYWORD_五行】 card with Activated 【KEYWORD_五行】, you deal {otherParams[0]} 【KEYWORD_伤害】 to the opponent.\nEffective from round 13: Change to {otherParams[1]} 【KEYWORD_伤害】.",
+    "desc_tw_template": "第{effectRound}輪起生效：每次使用五行牌時，若該牌的【KEYWORD_五行】已【KEYWORD_激活】則向對方造成{otherParams[0]}【KEYWORD_伤害】。\n第13輪起生效：改爲{otherParams[1]}【KEYWORD_伤害】。",
+    "params": [
+      1,
+      3
+    ],
+    "effect_round": 3,
+    "relate_talent_id": null,
+    "desc_cn": "第3轮起生效：每次使用五行牌时，若该牌的[五行]已[激活]则向对方造成1[伤害]。\n第13轮起生效：改为3[伤害]。",
+    "desc_en": "Effective from round 3: Every time you play a [Five Elements] card with Activated [Five Elements], you deal 1 [DMG] to the opponent.\nEffective from round 13: Change to 3 [DMG]."
+  },
+  {
+    "id": 37,
+    "name_cn": "共鸣·先天五行",
+    "name_en": "Resonance: Innate Element",
+    "name_tw": "共鳴·先天五行",
+    "desc_cn_template": "选择此共鸣时将【TALENT_109】的先天五行设为卡组中的首个【KEYWORD_五行】（若无五行则随机）。\n到达化神期后：修为减{otherParams[0]}，随机获得{otherParams[0]}张先天五行所属的【KEYWORD_五行】牌。",
+    "desc_en_template": "When this resonance is selected, set the Innate Element of 【TALENT_109】 as the first 【KEYWORD_五行】 in your deck (if there are no 【KEYWORD_五行】, it will be random).\nAfter reaching the Incarnation Phase: Lose {otherParams[0]} Cultivation and obtain {otherParams[0]} cards with your Innate Element.",
+    "desc_tw_template": "選擇此共鳴時將【TALENT_109】的先天五行設爲卡組中的首個【KEYWORD_五行】（若無五行則隨機）。\n到達化神期後：修爲减{otherParams[0]}，隨機獲得{otherParams[0]}張先天五行所屬的【KEYWORD_五行】牌。",
+    "params": [
+      3
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "选择此共鸣时将[先天五行]的先天五行设为卡组中的首个[五行]（若无五行则随机）。\n到达化神期后：修为减3，随机获得3张先天五行所属的[五行]牌。",
+    "desc_en": "When this resonance is selected, set the Innate Element of [Innate Element] as the first [Five Elements] in your deck (if there are no [Five Elements], it will be random).\nAfter reaching the Incarnation Phase: Lose 3 Cultivation and obtain 3 cards with your Innate Element."
+  },
+  {
+    "id": 38,
+    "name_cn": "共鸣·先天印记",
+    "name_en": "Resonance: Innate Mark",
+    "name_tw": "共鳴·先天印記",
+    "desc_cn_template": "战斗开始时，激活先天五行相生的【KEYWORD_五行】和克制的【KEYWORD_五行】。",
+    "desc_en_template": "At the beginning of the battle, 【KEYWORD_激活】 the 【KEYWORD_五行】 have Generating Interaction and Overcoming Interaction with your Innate Element.",
+    "desc_tw_template": "戰鬥開始時，激活先天五行相生的【KEYWORD_五行】和克制的【KEYWORD_五行】。",
+    "params": [],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "战斗开始时，激活先天五行相生的[五行]和克制的[五行]。",
+    "desc_en": "At the beginning of the battle, [Activate] the [Five Elements] have Generating Interaction and Overcoming Interaction with your Innate Element."
+  },
+  {
+    "id": 39,
+    "name_cn": "共鸣·先天灵阵",
+    "name_en": "Resonance: Innate Spirit Formation",
+    "name_tw": "共鳴·先天靈陣",
+    "desc_cn_template": "第{effectRound}轮起生效：战斗开始时升级卡组中前{otherParams[0]}张【KEYWORD_五行】“灵阵”牌，战斗结束还原。",
+    "desc_en_template": "Effective from round {effectRound}: Upgrade your first {otherParams[0]} 【KEYWORD_五行】 Spirit Formation cards in battle, and revert it after the battle.",
+    "desc_tw_template": "第{effectRound}輪起生效：戰鬥開始時升級卡組中前{otherParams[0]}張【KEYWORD_五行】“靈陣”牌，戰鬥結束還原。",
+    "params": [
+      2
+    ],
+    "effect_round": 6,
+    "relate_talent_id": null,
+    "desc_cn": "第6轮起生效：战斗开始时升级卡组中前2张[五行]“灵阵”牌，战斗结束还原。",
+    "desc_en": "Effective from round 6: Upgrade your first 2 [Five Elements] Spirit Formation cards in battle, and revert it after the battle."
+  },
+  {
+    "id": 40,
+    "name_cn": "共鸣·水灵印记",
+    "name_en": "Resonance: Mark Of Water Spirit",
+    "name_tw": "共鳴·水靈印記",
+    "desc_cn_template": "修为减{otherParams[0]}，随机获得{otherParams[0]}张“水灵”牌。\n第{effectRound}轮起生效：战斗开始时，升级卡组中第1张“水灵”牌，战斗结束还原。",
+    "desc_en_template": "Lose {otherParams[0]} Cultivation and obtain {otherParams[0]} \"Water Spirit\" card.\nEffective from round {effectRound}: Upgrade your first \"Water Spirit\" card in battle, and revert it after the battle.",
+    "desc_tw_template": "修爲减{otherParams[0]}，隨機獲得{otherParams[0]}張“水靈”牌。\n第{effectRound}輪起生效：戰鬥開始時，升級卡組中第1張“水靈”牌，戰鬥結束還原。",
+    "params": [
+      1
+    ],
+    "effect_round": 13,
+    "relate_talent_id": null,
+    "desc_cn": "修为减1，随机获得1张“水灵”牌。\n第13轮起生效：战斗开始时，升级卡组中第1张“水灵”牌，战斗结束还原。",
+    "desc_en": "Lose 1 Cultivation and obtain 1 \"Water Spirit\" card.\nEffective from round 13: Upgrade your first \"Water Spirit\" card in battle, and revert it after the battle."
+  },
+  {
+    "id": 41,
+    "name_cn": "共鸣·花舞",
+    "name_en": "Resonance: Blossom Dance",
+    "name_tw": "共鳴·花舞",
+    "desc_cn_template": "到达化神期后：修为减1，获得1张2级【20】。",
+    "desc_en_template": "After reaching the Incarnation Phase: Lose 1 Cultivation and gain a Level 2 【20】.",
+    "desc_tw_template": "到達化神期後：修爲减1，獲得1張2級【20】。",
+    "params": [],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "到达化神期后：修为减1，获得1张2级[木灵•桃花印]。",
+    "desc_en": "After reaching the Incarnation Phase: Lose 1 Cultivation and gain a Level 2 [Wood Spirit - Peach Blossom Seal]."
+  },
+  {
+    "id": 42,
+    "name_cn": "共鸣·五行润养",
+    "name_en": "Resonance: Five Elements Infuse",
+    "name_tw": "共鳴·五行潤養",
+    "desc_cn_template": "第{effectRound}轮起生效：每轮开始时，卡组中每有2种不同【KEYWORD_五行】就永久加1生命上限。",
+    "desc_en_template": "Effective from round {effectRound}: At the beginning of each round, every 2 different 【KEYWORD_五行】 in your deck will permanently increase your Max HP by 1.",
+    "desc_tw_template": "第{effectRound}輪起生效：每輪開始時，卡組中每有2種不同【KEYWORD_五行】就永久加1生命上限。",
+    "params": [],
+    "effect_round": 7,
+    "relate_talent_id": null,
+    "desc_cn": "第7轮起生效：每轮开始时，卡组中每有2种不同[五行]就永久加1生命上限。",
+    "desc_en": "Effective from round 7: At the beginning of each round, every 2 different [Five Elements] in your deck will permanently increase your Max HP by 1."
+  },
+  {
+    "id": 43,
+    "name_cn": "共鸣·木灵炼体",
+    "name_en": "Resonance: Quench Of Wood Spirit",
+    "name_tw": "共鳴·木靈煉體",
+    "desc_cn_template": "“木灵”牌的每1【KEYWORD_灵气】消耗改为耗{otherParams[0]}生命。\n战斗开始时【KEYWORD_激活木灵】。",
+    "desc_en_template": "The cost of every 1 【KEYWORD_灵气】 in the \"Wood Spirit\" card changed to cost {otherParams[0]} HP.\nAt the beginning of the battle, 【KEYWORD_激活木灵】.",
+    "desc_tw_template": "“木靈”牌的每1【KEYWORD_灵气】消耗改爲耗{otherParams[0]}生命。\n戰鬥開始時【KEYWORD_激活木灵】。",
+    "params": [
+      3
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "“木灵”牌的每1[灵气]消耗改为耗3生命。\n战斗开始时[激活木灵]。",
+    "desc_en": "The cost of every 1 [Qi] in the \"Wood Spirit\" card changed to cost 3 HP.\nAt the beginning of the battle, [Activate Wood Spirit]."
+  },
+  {
+    "id": 44,
+    "name_cn": "共鸣·刚劲",
+    "name_en": "Resonance: Vigorous",
+    "name_tw": "共鳴·剛勁",
+    "desc_cn_template": "修为减{otherParams[0]}，随机获得{otherParams[0]}张“金灵”牌。\n第{effectRound}轮起生效：【18】攻击时拥有【KEYWORD_碎防】。",
+    "desc_en_template": "Lose {otherParams[0]} Cultivation and obtain {otherParams[0]} \"Metal Spirit\" card.\nEffective from round {effectRound}: Your 【18】 have 【KEYWORD_碎防】 when attacking.",
+    "desc_tw_template": "修爲减{otherParams[0]}，隨機獲得{otherParams[0]}張“金靈”牌。\n第{effectRound}輪起生效：【18】攻擊時擁有【KEYWORD_碎防】。",
+    "params": [
+      1
+    ],
+    "effect_round": 10,
+    "relate_talent_id": null,
+    "desc_cn": "修为减1，随机获得1张“金灵”牌。\n第10轮起生效：[金灵•刚劲]攻击时拥有[碎防]。",
+    "desc_en": "Lose 1 Cultivation and obtain 1 \"Metal Spirit\" card.\nEffective from round 10: Your [Metal Spirit - Vigorous] have [Smash DEF] when attacking."
+  },
+  {
+    "id": 45,
+    "name_cn": "共鸣·山崩",
+    "name_en": "Resonance: Landslide",
+    "name_tw": "共鳴·山崩",
+    "desc_cn_template": "修为减{otherParams[0]}，随机获得{otherParams[0]}张“土灵”牌。\n第{effectRound}轮起生效：战斗开始时获得{otherParams[1]}层[合八荒]效果（自身下次防减少时，立刻加回减少的防）",
+    "desc_en_template": "Lose {otherParams[0]} Cultivation and obtain {otherParams[0]} \"Earth Spirit\" card.\nEffective from round {effectRound}: At the beginning of the battle, gain {otherParams[1]} World Combine effect (The next time your DEF is reduced, restore it immediately)",
+    "desc_tw_template": "修爲减{otherParams[0]}，隨機獲得{otherParams[0]}張“土靈”牌。\n第{effectRound}輪起生效：戰鬥開始時獲得{otherParams[1]}層[合八荒]效果（自身下次防减少時，立刻加回减少的防）",
+    "params": [
+      1,
+      2
+    ],
+    "effect_round": 13,
+    "relate_talent_id": null,
+    "desc_cn": "修为减1，随机获得1张“土灵”牌。\n第13轮起生效：战斗开始时获得2层[合八荒]效果（自身下次防减少时，立刻加回减少的防）",
+    "desc_en": "Lose 1 Cultivation and obtain 1 \"Earth Spirit\" card.\nEffective from round 13: At the beginning of the battle, gain 2 World Combine effect (The next time your DEF is reduced, restore it immediately)"
+  },
+  {
+    "id": 46,
+    "name_cn": "共鸣·秘印亲和",
+    "name_en": "Resonance: Secret Seal Affinity",
+    "name_tw": "共鳴·秘印親和",
+    "desc_cn_template": "突破至金丹期和元婴期时，【TALENT_136】获得的“秘印”将优先取卡组首张牌的【KEYWORD_五行】，但自身额外减{otherParams[0]}生命上限。",
+    "desc_en_template": "When breaking through to the Virtuoso Phase or Immortality Phase, the \"Secret Seal\" obtained by 【TALENT_136】 will match the 【KEYWORD_五行】 of the first card in your deck, and you lose {otherParams[0]} Max HP.",
+    "desc_tw_template": "突破至金丹期和元嬰期時，【TALENT_136】獲得的“秘印”將優先取卡組首張牌的【KEYWORD_五行】，但自身額外减{otherParams[0]}生命上限。",
+    "params": [
+      3
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "突破至金丹期和元婴期时，[秘印亲和]获得的“秘印”将优先取卡组首张牌的[五行]，但自身额外减3生命上限。",
+    "desc_en": "When breaking through to the Virtuoso Phase or Immortality Phase, the \"Secret Seal\" obtained by [Secret Seal Affinity] will match the [Five Elements] of the first card in your deck, and you lose 3 Max HP."
+  },
+  {
+    "id": 47,
+    "name_cn": "共鸣·五行爆炎",
+    "name_en": "Resonance: Five Elements Explosion",
+    "name_tw": "共鳴·五行爆炎",
+    "desc_cn_template": "战斗中每次【KEYWORD_激活火灵】时，【TALENT_138】多减对方{otherParams[0]}生命及上限。\n第{effectRound}轮起生效：每当触发【TALENT_138】时额外多减对方{otherParams[1]}生命及上限。",
+    "desc_en_template": "When you 【KEYWORD_激活火灵】 in battle, 【TALENT_138】 reduce {otherParams[0]} more opponent's HP and Max HP.\nEffective from round {effectRound}: 【TALENT_138】 reduce an additional {otherParams[1]} opponent's HP and Max HP.",
+    "desc_tw_template": "戰鬥中每次【KEYWORD_激活火靈】時，【TALENT_138】多减對方{otherParams[0]}生命及上限。 \n第{effectRound}輪起生效：每當觸發【TALENT_138】時額外多减對方{otherParams[1]}生命及上限。",
+    "params": [
+      4,
+      2
+    ],
+    "effect_round": 12,
+    "relate_talent_id": null,
+    "desc_cn": "战斗中每次[激活火灵]时，[五行爆炎]多减对方4生命及上限。\n第12轮起生效：每当触发[五行爆炎]时额外多减对方2生命及上限。",
+    "desc_en": "When you [Activate Fire Spirit] in battle, [Five Elements Explosion] reduce 4 more opponent's HP and Max HP.\nEffective from round 12: [Five Elements Explosion] reduce an additional 2 opponent's HP and Max HP."
+  },
+  {
+    "id": 48,
+    "name_cn": "共鸣·焰魂归复",
+    "name_en": "Resonance: Flame Soul Rebirth",
+    "name_tw": "共鳴·焰魂歸複",
+    "desc_cn_template": "第{effectRound}轮起生效：战斗中因【TALENT_139】复活时额外加{otherParams[0]}生命及上限。",
+    "desc_en_template": "Effective from round {effectRound}: During the battle, {otherParams[0]} more HP and Max HP will be added when revived by 【TALENT_139】.",
+    "desc_tw_template": "第{effectRound}輪起生效：戰鬥中因【TALENT_139】復活時額外加{otherParams[0]}生命及上限。",
+    "params": [
+      10
+    ],
+    "effect_round": 13,
+    "relate_talent_id": null,
+    "desc_cn": "第13轮起生效：战斗中因[焰魂归复]复活时额外加10生命及上限。",
+    "desc_en": "Effective from round 13: During the battle, 10 more HP and Max HP will be added when revived by [Flame Soul Rebirth]."
+  },
+  {
+    "id": 49,
+    "name_cn": "共鸣·磨砺不止",
+    "name_en": "Resonance: Unyielding Learning",
+    "name_tw": "共鳴·磨礪不止",
+    "desc_cn_template": "每次损失命元时，【TALENT_151】的损失命元计数额外+{otherParams[0]}。\n第{effectRound}轮起生效：每次战败后加1【KEYWORD_体魄】上限。",
+    "desc_en_template": "Each time you lose Destiny, 【TALENT_151】 will add {otherParams[0]} more count of Destiny lost.\nEffective from round {effectRound}: After each defeat battle round, increase your 【KEYWORD_体魄】 Cap by 1.",
+    "desc_tw_template": "每次損失命元時，【TALENT_151】的損失命元計數額外+{otherParams[0]}。\n第{effectRound}輪起生效：每次戰敗後加1【KEYWORD_体魄】上限。",
+    "params": [
+      3
+    ],
+    "effect_round": 6,
+    "relate_talent_id": null,
+    "desc_cn": "每次损失命元时，[磨砺不止]的损失命元计数额外+3。\n第6轮起生效：每次战败后加1[体魄]上限。",
+    "desc_en": "Each time you lose Destiny, [Unyielding Learning] will add 3 more count of Destiny lost.\nEffective from round 6: After each defeat battle round, increase your [Phy.] Cap by 1."
+  },
+  {
+    "id": 50,
+    "name_cn": "共鸣·灵涌不竭",
+    "name_en": "Resonance: Unbounded Qi",
+    "name_tw": "共鳴·靈涌不竭",
+    "desc_cn_template": "仙命【TALENT_153】不再耗体魄，且对卡牌效果中的“耗X灵气”效果也可生效。\n第{effectRound}轮起生效：战斗中每次【KEYWORD_耗生命】后，加2生命。",
+    "desc_en_template": "【TALENT_153】 no longer spend the Physique, and can also have an effect on \"Cost X Qi\" in the card text.\nEffective from round {effectRound}: After each 【KEYWORD_耗生命】 in battle, add 2 HP.",
+    "desc_tw_template": "【TALENT_153】不再耗體魄，且對卡牌效果中的“耗X靈氣”效果也可生效。\n第{effectRound}輪起生效：戰鬥中每次【KEYWORD_耗生命】後，加2生命。",
+    "params": [],
+    "effect_round": 9,
+    "relate_talent_id": null,
+    "desc_cn": "仙命[灵涌不竭]不再耗体魄，且对卡牌效果中的“耗X灵气”效果也可生效。\n第9轮起生效：战斗中每次[耗生命]后，加2生命。",
+    "desc_en": "[Unbounded Qi] no longer spend the Physique, and can also have an effect on \"Cost X Qi\" in the card text.\nEffective from round 9: After each [HP cost] in battle, add 2 HP."
+  },
+  {
+    "id": 51,
+    "name_cn": "共鸣·修玄不泯",
+    "name_en": "Resonance: Unwavering Soul",
+    "name_tw": "共鳴·修玄不泯",
+    "desc_cn_template": "每场战斗结束时，自身每有{otherParams[0]}层【KEYWORD_负面状态】就加1【KEYWORD_体魄】。\n第{effectRound}轮起生效：每场战斗结束时，若自身【KEYWORD_负面状态】≥{otherParams[1]}层，永久加1生命上限。",
+    "desc_en_template": "At the end of each battle, for every {otherParams[0]} stacks of 【KEYWORD_负面状态】 you have, add 1 【KEYWORD_体魄】。\nEffective from round {effectRound}: At the end of each battle, if your 【KEYWORD_负面状态】 stacks ≥ {otherParams[1]}, permanently add 1 Max HP.",
+    "desc_tw_template": "每場戰鬥結束時，自身每有{otherParams[0]}層【KEYWORD_负面状态】就加1【KEYWORD_体魄】。\n第{effectRound}輪起生效：每場戰鬥結束時，若自身【KEYWORD_负面状态】≥{otherParams[1]}層，永久加1生命上限。",
+    "params": [
+      2,
+      9
+    ],
+    "effect_round": 9,
+    "relate_talent_id": null,
+    "desc_cn": "每场战斗结束时，自身每有2层[负面状态]就加1[体魄]。\n第9轮起生效：每场战斗结束时，若自身[负面状态]≥9层，永久加1生命上限。",
+    "desc_en": "At the end of each battle, for every 2 stacks of [Debuff] you have, add 1 [Phy.]。\nEffective from round 9: At the end of each battle, if your [Debuff] stacks ≥ 9, permanently add 1 Max HP."
+  },
+  {
+    "id": 52,
+    "name_cn": "共鸣·盛气凌人",
+    "name_en": "Resonance: Overwhelming Power",
+    "name_tw": "共鳴·盛氣淩人",
+    "desc_cn_template": "每场战斗首次加【KEYWORD_气势】时额外加{otherParams[0]}。\n第{effectRound}轮起生效：改为额外加{otherParams[1]}。",
+    "desc_en_template": "When you add 【KEYWORD_气势】 for the first time in each battle, add an extra {otherParams[0]}.\nEffective from round {effectRound}: Change to add an extra {otherParams[1]}.",
+    "desc_tw_template": "每場戰鬥首次加【KEYWORD_气势】時額外加{otherParams[0]}。\n第{effectRound}輪起生效：改爲額外加{otherParams[1]}。",
+    "params": [
+      1,
+      2
+    ],
+    "effect_round": 11,
+    "relate_talent_id": null,
+    "desc_cn": "每场战斗首次加[气势]时额外加1。\n第11轮起生效：改为额外加2。",
+    "desc_en": "When you add [Force] for the first time in each battle, add an extra 1.\nEffective from round 11: Change to add an extra 2."
+  },
+  {
+    "id": 53,
+    "name_cn": "共鸣·搏命之勇",
+    "name_en": "Resonance: Courage to Fight",
+    "name_tw": "共鳴·搏命之勇",
+    "desc_cn_template": "第{effectRound}轮起生效：自身每有1层【KEYWORD_外伤】，所有攻击多1攻。",
+    "desc_en_template": "Effective from round {effectRound}: For every stack of 【KEYWORD_外伤】 you have, all your ATK increase by 1.",
+    "desc_tw_template": "第{effectRound}輪起生效：自身每有1層【KEYWORD_外伤】，所有攻擊多1攻。",
+    "params": [],
+    "effect_round": 9,
+    "relate_talent_id": null,
+    "desc_cn": "第9轮起生效：自身每有1层[外伤]，所有攻击多1攻。",
+    "desc_en": "Effective from round 9: For every stack of [Wound] you have, all your ATK increase by 1."
+  },
+  {
+    "id": 54,
+    "name_cn": "共鸣·崩裂之拳",
+    "name_en": "Resonance: Cracking Fist",
+    "name_tw": "共鳴·崩裂之拳",
+    "desc_cn_template": "选择此共鸣及每次突破境界时：减1修为并获得1张该境界【KEYWORD_耗生命】的牌。\n仙命【TALENT_174】耗生命上限时，减对方等量生命上限。",
+    "desc_en_template": "Upon selecting this resonance and each time you breakthrough Phase: Lose 1 Cultivation and gain 1 cards with 【KEYWORD_耗生命】 of your Phase.\nWhen triggering 【TALENT_174】 to spend your Max HP, reduce the opponent's Max HP by an equal amount.",
+    "desc_tw_template": "選擇此共鳴及每次突破境界時：减1修爲幷獲得1張該境界【KEYWORD_耗生命】的牌。\n仙命【TALENT_174】耗生命上限時，减對方等量生命上限。",
+    "params": [],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "选择此共鸣及每次突破境界时：减1修为并获得1张该境界[耗生命]的牌。\n仙命[崩裂之拳]耗生命上限时，减对方等量生命上限。",
+    "desc_en": "Upon selecting this resonance and each time you breakthrough Phase: Lose 1 Cultivation and gain 1 cards with [HP cost] of your Phase.\nWhen triggering [Cracking Fist] to spend your Max HP, reduce the opponent's Max HP by an equal amount."
+  },
+  {
+    "id": 55,
+    "name_cn": "共鸣·入冥",
+    "name_en": "Resonance: Entering Styx",
+    "name_tw": "共鳴·入冥",
+    "desc_cn_template": "每场战斗首次获得【KEYWORD_冥】时多加{otherParams[0]}层。\n第{effectRound}轮起生效：改为多加{otherParams[1]}层。",
+    "desc_en_template": "When you add 【KEYWORD_冥】 for the first time in each battle, add an extra {otherParams[0]}.\nEffective from round {effectRound}: Change to add an extra {otherParams[1]}.",
+    "desc_tw_template": "每場戰鬥首次獲得【KEYWORD_冥】時多加{otherParams[0]}層。\n第{effectRound}輪起生效：改爲多加{otherParams[1]}層。",
+    "params": [
+      1,
+      2
+    ],
+    "effect_round": 13,
+    "relate_talent_id": null,
+    "desc_cn": "每场战斗首次获得[冥]时多加1层。\n第13轮起生效：改为多加2层。",
+    "desc_en": "When you add [Styx] for the first time in each battle, add an extra 1.\nEffective from round 13: Change to add an extra 2."
+  },
+  {
+    "id": 56,
+    "name_cn": "共鸣·疯魔",
+    "name_en": "Resonance: Gone Crazy",
+    "name_tw": "共鳴·瘋魔",
+    "desc_cn_template": "第{effectRound}轮起生效：战斗中每次加【KEYWORD_体魄】时多加{otherParams[0]}点。\n第11轮起生效：战斗开始时升级卡组中的【73】，战斗结束还原。",
+    "desc_en_template": "When you add 【KEYWORD_体魄】 in battle, add an extra {otherParams[0]}.\nEffective from round 11: Upgrade your 【73】 in battle, and revert it after the battle.",
+    "desc_tw_template": "第{effectRound}輪起生效：戰鬥中每次加【KEYWORD_体魄】時多加{otherParams[0]}點。\n第11輪起生效：戰鬥開始時升級卡組中的【73】，戰鬥結束還原。",
+    "params": [
+      1
+    ],
+    "effect_round": 5,
+    "relate_talent_id": null,
+    "desc_cn": "第5轮起生效：战斗中每次加[体魄]时多加1点。\n第11轮起生效：战斗开始时升级卡组中的[疯魔]，战斗结束还原。",
+    "desc_en": "When you add [Phy.] in battle, add an extra 1.\nEffective from round 11: Upgrade your [Gone Crazy] in battle, and revert it after the battle."
+  },
+  {
+    "id": 57,
+    "name_cn": "共鸣·冥月蟾光",
+    "name_en": "Resonance: Styx Moon's Glow",
+    "name_tw": "共鳴·冥月蟾光",
+    "desc_cn_template": "使用卡牌时若【KEYWORD_灵气】不足，可消耗自身的【KEYWORD_冥】代替【KEYWORD_灵气】。",
+    "desc_en_template": "When playing cards, if your 【KEYWORD_灵气】 is insufficient, you can use your 【KEYWORD_冥】 instead of 【KEYWORD_灵气】.",
+    "desc_tw_template": "使用卡牌時若【KEYWORD_灵气】不足，可消耗自身的【KEYWORD_冥】代替【KEYWORD_灵气】。",
+    "params": [],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "使用卡牌时若[灵气]不足，可消耗自身的[冥]代替[灵气]。",
+    "desc_en": "When playing cards, if your [Qi] is insufficient, you can use your [Styx] instead of [Qi]."
+  },
+  {
+    "id": 58,
+    "name_cn": "共鸣·心体共鸣",
+    "name_en": "Resonance: Mind-Body Resonance",
+    "name_tw": "共鳴·心體共鳴",
+    "desc_cn_template": "每场战斗开始时加{otherParams[0]}【KEYWORD_体魄】。\n第{effectRound}轮起生效：改为加{otherParams[1]}【KEYWORD_体魄】。",
+    "desc_en_template": "At the beginning of the battle, add {otherParams[0]} 【KEYWORD_体魄】.\nEffective from round {effectRound}: Change to add {otherParams[1]} 【KEYWORD_体魄】.",
+    "desc_tw_template": "每場戰鬥開始時加{otherParams[0]}【KEYWORD_体魄】。\n第{effectRound}輪起生效：改爲加{otherParams[1]}【KEYWORD_体魄】。",
+    "params": [
+      1,
+      4
+    ],
+    "effect_round": 12,
+    "relate_talent_id": null,
+    "desc_cn": "每场战斗开始时加1[体魄]。\n第12轮起生效：改为加4[体魄]。",
+    "desc_en": "At the beginning of the battle, add 1 [Phy.].\nEffective from round 12: Change to add 4 [Phy.]."
+  },
+  {
+    "id": 59,
+    "name_cn": "共鸣·记忆碎片",
+    "name_en": "Resonance: Memory Fragment",
+    "name_tw": "共鳴·記憶碎片",
+    "desc_cn_template": "仙命【TALENT_186】不再耗【KEYWORD_体魄】。",
+    "desc_en_template": "【TALENT_186】 no longer cost 【KEYWORD_体魄】.",
+    "desc_tw_template": "【TALENT_186】不再耗【KEYWORD_体魄】。",
+    "params": [],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "仙命[记忆碎片]不再耗[体魄]。",
+    "desc_en": "[Memory Fragment] no longer cost [Phy.]."
+  },
+  {
+    "id": 60,
+    "name_cn": "共鸣·万玄破魔掌",
+    "name_en": "Resonance: Wan Xuan Demon Breaking Palm",
+    "name_tw": "共鳴·萬玄破魔掌",
+    "desc_cn_template": "到达化神期且{effectRound}轮后：修为减1，获得1张【82】。",
+    "desc_en_template": "After reaching the Incarnation Phase and round {effectRound}: Lose 1 Cultivation and gain a 【82】.",
+    "desc_tw_template": "到達化神期且{effectRound}輪後：修爲减1，獲得1張【82】。",
+    "params": [],
+    "effect_round": 13,
+    "relate_talent_id": null,
+    "desc_cn": "到达化神期且13轮后：修为减1，获得1张[万玄破魔掌]。",
+    "desc_en": "After reaching the Incarnation Phase and round 13: Lose 1 Cultivation and gain a [Wan Xuan Demon Breaking Palm]."
+  },
+  {
+    "id": 61,
+    "name_cn": "共鸣·剑韵修炼",
+    "name_en": "Resonance: Sword Rhyme Cultivate",
+    "name_tw": "共鳴·劍韵修煉",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：每场战斗中首次耗尽【KEYWORD_剑意】时，返还所耗的一半【KEYWORD_剑意】。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: When your 【KEYWORD_剑意】 is exhausted for the first time in each battle, half of the 【KEYWORD_剑意】 consumed will be returned.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：每場戰鬥中首次耗盡【KEYWORD_剑意】時，返還所耗的一半【KEYWORD_剑意】。",
+    "params": [],
+    "effect_round": 10,
+    "relate_talent_id": 16,
+    "desc_cn": "突破时仙命选项必定包含[剑韵修炼]（选择1次后失效）。\n第10轮起生效：每场战斗中首次耗尽[剑意]时，返还所耗的一半[剑意]。",
+    "desc_en": "When breaking through, the option will inevitably include [Sword Rhyme Cultivate] (becomes invalid after being selected once).\nEffective from round 10: When your [Sword Intent] is exhausted for the first time in each battle, half of the [Sword Intent] consumed will be returned."
+  },
+  {
+    "id": 62,
+    "name_cn": "共鸣·灵剑传承",
+    "name_en": "Resonance: Inheritance of Spirit Sword",
+    "name_tw": "共鳴·靈劍傳承",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：每场战斗中首次使用“灵剑”时加{otherParams[0]}【KEYWORD_灵气】。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: When you play \"Spirit Sword\" for the first time in each battle, add {otherParams[0]} 【KEYWORD_灵气】.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：每場戰鬥中首次使用“靈劍”時加{otherParams[0]}【KEYWORD_灵气】。",
+    "params": [
+      2
+    ],
+    "effect_round": 11,
+    "relate_talent_id": 55,
+    "desc_cn": "突破时仙命选项必定包含[灵剑传承]（选择1次后失效）。\n第11轮起生效：每场战斗中首次使用“灵剑”时加2[灵气]。",
+    "desc_en": "When breaking through, the option will inevitably include [Inheritance of Spirit Sword] (becomes invalid after being selected once).\nEffective from round 11: When you play \"Spirit Sword\" for the first time in each battle, add 2 [Qi]."
+  },
+  {
+    "id": 63,
+    "name_cn": "共鸣·剑阵守护",
+    "name_en": "Resonance: Sword Formation Guard",
+    "name_tw": "共鳴·劍陣守護",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：自身每回合结束时，若有【KEYWORD_防】则再加{otherParams[0]}【KEYWORD_防】。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: At the end of each your turn, if you have 【KEYWORD_防】, add {otherParams[0]} 【KEYWORD_防】.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：自身每回合結束時，若有【KEYWORD_防】則再加{otherParams[0]}【KEYWORD_防】。",
+    "params": [
+      3
+    ],
+    "effect_round": 13,
+    "relate_talent_id": 57,
+    "desc_cn": "突破时仙命选项必定包含[剑阵守护]（选择1次后失效）。\n第13轮起生效：自身每回合结束时，若有[防]则再加3[防]。",
+    "desc_en": "When breaking through, the option will inevitably include [Sword Formation Guard] (becomes invalid after being selected once).\nEffective from round 13: At the end of each your turn, if you have [DEF], add 3 [DEF]."
+  },
+  {
+    "id": 64,
+    "name_cn": "共鸣·云之道",
+    "name_en": "Resonance: Rule Of The Cloud",
+    "name_tw": "共鳴·雲之道",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n战斗中每次触发仙命【TALENT_{relateTalentId}】时额外加1【KEYWORD_防】。\n第{effectRound}轮起生效：每次使用“云剑”时，获得1层[水月剑阵]效果（自身下1回合开始时【KEYWORD_防】不减半）。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEach time the Immortal Fate 【TALENT_{relateTalentId}】 is triggered in battle, gain an additional 1 【KEYWORD_防】.\nEffective from round {effectRound}: Every time you play a \"Cloud Sword\", gain 1 stack of [Moon Water Sword Formation] effect (your DEF will not be halved at the beginning of the next turn).",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n戰鬥中每次觸發仙命【TALENT_{relateTalentId}】時額外加1【KEYWORD_防】.\n第{effectRound}輪起生效：每次使用“雲劍”時，獲得1層[水月劍陣]效果（自身下1回合開始時【KEYWORD_防】不减半）。",
+    "params": [],
+    "effect_round": 8,
+    "relate_talent_id": 69,
+    "desc_cn": "突破时仙命选项必定包含[云之道]（选择1次后失效）。\n战斗中每次触发仙命[云之道]时额外加1[防]。\n第8轮起生效：每次使用“云剑”时，获得1层[水月剑阵]效果（自身下1回合开始时[防]不减半）。",
+    "desc_en": "When breaking through, the option will inevitably include [Rule Of The Cloud] (becomes invalid after being selected once).\nEach time the Immortal Fate [Rule Of The Cloud] is triggered in battle, gain an additional 1 [DEF].\nEffective from round 8: Every time you play a \"Cloud Sword\", gain 1 stack of [Moon Water Sword Formation] effect (your DEF will not be halved at the beginning of the next turn)."
+  },
+  {
+    "id": 65,
+    "name_cn": "共鸣·狂之执念",
+    "name_en": "Resonance: Mad Obsession",
+    "name_tw": "共鳴·狂之執念",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n到达化神期后：修为减{otherParams[0]}，随机获得{otherParams[0]}张“狂剑”。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nAfter reaching the Incarnation Phase: Lose {otherParams[0]} Cultivation and obtain {otherParams[0]} \"Unrestrained Sword\" cards.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n到達化神期後：修爲减{otherParams[0]}，隨機獲得{otherParams[0]}張“狂劍”。",
+    "params": [
+      1
+    ],
+    "effect_round": null,
+    "relate_talent_id": 70,
+    "desc_cn": "突破时仙命选项必定包含[狂之执念]（选择1次后失效）。\n到达化神期后：修为减1，随机获得1张“狂剑”。",
+    "desc_en": "When breaking through, the option will inevitably include [Mad Obsession] (becomes invalid after being selected once).\nAfter reaching the Incarnation Phase: Lose 1 Cultivation and obtain 1 \"Unrestrained Sword\" cards."
+  },
+  {
+    "id": 66,
+    "name_cn": "共鸣·剑池问心",
+    "name_en": "Resonance: Sword Pool The Heart Ask",
+    "name_tw": "共鳴·劍池問心",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：战斗开始时，将卡组中第一张2级“剑”牌升至3级，战斗结束还原。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: Upgrade your first level 2 \"Sword\" card in battle, and revert it after the battle.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：戰鬥開始時，將卡組中第一張2級“劍”牌升至3級，戰鬥結束還原。",
+    "params": [],
+    "effect_round": 12,
+    "relate_talent_id": 119,
+    "desc_cn": "突破时仙命选项必定包含[剑池问心]（选择1次后失效）。\n第12轮起生效：战斗开始时，将卡组中第一张2级“剑”牌升至3级，战斗结束还原。",
+    "desc_en": "When breaking through, the option will inevitably include [Sword Pool The Heart Ask] (becomes invalid after being selected once).\nEffective from round 12: Upgrade your first level 2 \"Sword\" card in battle, and revert it after the battle."
+  },
+  {
+    "id": 67,
+    "name_cn": "共鸣·卜卦",
+    "name_en": "Resonance: Divination",
+    "name_tw": "共鳴·卜卦",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：每场战斗中首次加【KEYWORD_卦象】时额外加{otherParams[0]}。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: When you add 【KEYWORD_卦象】 for the first time in each battle, add an extra {otherParams[0]}.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：每場戰鬥中首次加【KEYWORD_卦象】時額外加{otherParams[0]}。",
+    "params": [
+      1
+    ],
+    "effect_round": 11,
+    "relate_talent_id": 30,
+    "desc_cn": "突破时仙命选项必定包含[卜卦]（选择1次后失效）。\n第11轮起生效：每场战斗中首次加[卦象]时额外加1。",
+    "desc_en": "When breaking through, the option will inevitably include [Divination] (becomes invalid after being selected once).\nEffective from round 11: When you add [Hexagram] for the first time in each battle, add an extra 1."
+  },
+  {
+    "id": 68,
+    "name_cn": "共鸣·观星",
+    "name_en": "Resonance: Stargaze",
+    "name_tw": "共鳴·觀星",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：【KEYWORD_星力】对非【KEYWORD_星位】上的牌也有效。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: 【KEYWORD_星力】 is also effective to cards not on the 【KEYWORD_星位】.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：【KEYWORD_星力】對非【KEYWORD_星位】上的牌也有效。",
+    "params": [],
+    "effect_round": 6,
+    "relate_talent_id": 31,
+    "desc_cn": "突破时仙命选项必定包含[观星]（选择1次后失效）。\n第6轮起生效：[星力]对非[星位]上的牌也有效。",
+    "desc_en": "When breaking through, the option will inevitably include [Stargaze] (becomes invalid after being selected once).\nEffective from round 6: [Star Power] is also effective to cards not on the [Star Point]."
+  },
+  {
+    "id": 69,
+    "name_cn": "共鸣·后发制人",
+    "name_en": "Resonance: Post Strike",
+    "name_tw": "共鳴·後發制人",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：战斗开始时若自身为后手行动，则下1次的【KEYWORD_后招】效果可直接触发。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: If you are second player to take action at the beginning of the battle, the next 【KEYWORD_后招】 effect can be directly triggered.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：戰鬥開始時若自身爲後手行動，則下1次的【KEYWORD_后招】效果可直接觸發。",
+    "params": [],
+    "effect_round": 10,
+    "relate_talent_id": 71,
+    "desc_cn": "突破时仙命选项必定包含[后发制人]（选择1次后失效）。\n第10轮起生效：战斗开始时若自身为后手行动，则下1次的[后招]效果可直接触发。",
+    "desc_en": "When breaking through, the option will inevitably include [Post Strike] (becomes invalid after being selected once).\nEffective from round 10: If you are second player to take action at the beginning of the battle, the next [Post Action] effect can be directly triggered."
+  },
+  {
+    "id": 70,
+    "name_cn": "共鸣·星蚀",
+    "name_en": "Resonance: Astral Eclipse",
+    "name_tw": "共鳴·星蝕",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：每场战斗中对方首次获得任意【KEYWORD_负面状态】后，再加1层【KEYWORD_内伤】。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: After your opponent gains 【KEYWORD_负面状态】 for the first time in each battle, apply an additional 1 【KEYWORD_内伤】.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：每場戰鬥中對方首次獲得任意【KEYWORD_负面状态】後，再加1層【KEYWORD_内伤】。",
+    "params": [],
+    "effect_round": 13,
+    "relate_talent_id": 103,
+    "desc_cn": "突破时仙命选项必定包含[星蚀]（选择1次后失效）。\n第13轮起生效：每场战斗中对方首次获得任意[负面状态]后，再加1层[内伤]。",
+    "desc_en": "When breaking through, the option will inevitably include [Astral Eclipse] (becomes invalid after being selected once).\nEffective from round 13: After your opponent gains [Debuff] for the first time in each battle, apply an additional 1 [Internal Injury]."
+  },
+  {
+    "id": 71,
+    "name_cn": "共鸣·雷霆传承",
+    "name_en": "Resonance: Inheritance of Thunder",
+    "name_tw": "共鳴·雷霆傳承",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：使用名字含“雷”的牌时若【KEYWORD_卦象】不足，则耗【KEYWORD_灵气】代替【KEYWORD_卦象】来让随机结果取最优。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: If there are insufficient 【KEYWORD_卦象】 when using \"Thunder\" card, use 【KEYWORD_灵气】 instead of 【KEYWORD_卦象】 to achieve the best random result.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：使用名字含“雷”的牌時若【KEYWORD_卦象】不足，則耗【KEYWORD_灵气】代替【KEYWORD_卦象】來讓隨機結果取最優。",
+    "params": [],
+    "effect_round": 7,
+    "relate_talent_id": 117,
+    "desc_cn": "突破时仙命选项必定包含[雷霆传承]（选择1次后失效）。\n第7轮起生效：使用名字含“雷”的牌时若[卦象]不足，则耗[灵气]代替[卦象]来让随机结果取最优。",
+    "desc_en": "When breaking through, the option will inevitably include [Inheritance of Thunder] (becomes invalid after being selected once).\nEffective from round 7: If there are insufficient [Hexagram] when using \"Thunder\" card, use [Qi] instead of [Hexagram] to achieve the best random result."
+  },
+  {
+    "id": 72,
+    "name_cn": "共鸣·妙手回春",
+    "name_en": "Resonance: Rejuvenation",
+    "name_tw": "共鳴·妙手回春",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：自身回合开始时若生命少于上限的{otherParams[0]}%，回复上限{otherParams[1]}%的生命（每场战斗限触发1次）。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: If your HP is less than {otherParams[0]}% of Max HP at the beginning of your turn, restore {otherParams[1]}% HP of Max HP (triggered only once per battle).",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：自身回合開始時若生命少于上限的{otherParams[0]}%，回復上限{otherParams[1]}%的生命（每場戰鬥限觸發1次）。",
+    "params": [
+      50,
+      25
+    ],
+    "effect_round": 13,
+    "relate_talent_id": 120,
+    "desc_cn": "突破时仙命选项必定包含[妙手回春]（选择1次后失效）。\n第13轮起生效：自身回合开始时若生命少于上限的50%，回复上限25%的生命（每场战斗限触发1次）。",
+    "desc_en": "When breaking through, the option will inevitably include [Rejuvenation] (becomes invalid after being selected once).\nEffective from round 13: If your HP is less than 50% of Max HP at the beginning of your turn, restore 25% HP of Max HP (triggered only once per battle)."
+  },
+  {
+    "id": 73,
+    "name_cn": "共鸣·木灵传承",
+    "name_en": "Resonance: Inheritance of Wood Spirit",
+    "name_tw": "共鳴·木靈傳承",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：战斗中首次获得【KEYWORD_加攻】时多加{otherParams[0]}层。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: When you add 【KEYWORD_加攻】 for the first time in each battle, add an extra {otherParams[0]}.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：戰鬥中首次獲得【KEYWORD_加攻】時多加{otherParams[0]}層。",
+    "params": [
+      1
+    ],
+    "effect_round": 13,
+    "relate_talent_id": 74,
+    "desc_cn": "突破时仙命选项必定包含[木灵传承]（选择1次后失效）。\n第13轮起生效：战斗中首次获得[加攻]时多加1层。",
+    "desc_en": "When breaking through, the option will inevitably include [Inheritance of Wood Spirit] (becomes invalid after being selected once).\nEffective from round 13: When you add [Increase ATK] for the first time in each battle, add an extra 1."
+  },
+  {
+    "id": 74,
+    "name_cn": "共鸣·火灵传承",
+    "name_en": "Resonance: Inheritance of Fire Spirit",
+    "name_tw": "共鳴·火靈傳承",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：战斗开始时减对方{otherParams[0]}生命及上限。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: Reduce your opponent's {otherParams[0]} HP and Max HP at the beginning of the battle.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：戰鬥開始時减對方{otherParams[0]}生命及上限。",
+    "params": [
+      10
+    ],
+    "effect_round": 13,
+    "relate_talent_id": 76,
+    "desc_cn": "突破时仙命选项必定包含[火灵传承]（选择1次后失效）。\n第13轮起生效：战斗开始时减对方10生命及上限。",
+    "desc_en": "When breaking through, the option will inevitably include [Inheritance of Fire Spirit] (becomes invalid after being selected once).\nEffective from round 13: Reduce your opponent's 10 HP and Max HP at the beginning of the battle."
+  },
+  {
+    "id": 75,
+    "name_cn": "共鸣·土灵传承",
+    "name_en": "Resonance: Inheritance of Earth Spirit",
+    "name_tw": "共鳴·土靈傳承",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：战斗中首次加【KEYWORD_防】时多加{otherParams[0]}点。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: When you add 【KEYWORD_防】 for the first time in each battle, add an extra {otherParams[0]}.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：戰鬥中首次加【KEYWORD_防】時多加{otherParams[0]}點。",
+    "params": [
+      10
+    ],
+    "effect_round": 11,
+    "relate_talent_id": 77,
+    "desc_cn": "突破时仙命选项必定包含[土灵传承]（选择1次后失效）。\n第11轮起生效：战斗中首次加[防]时多加10点。",
+    "desc_en": "When breaking through, the option will inevitably include [Inheritance of Earth Spirit] (becomes invalid after being selected once).\nEffective from round 11: When you add [DEF] for the first time in each battle, add an extra 10."
+  },
+  {
+    "id": 76,
+    "name_cn": "共鸣·金灵传承",
+    "name_en": "Resonance: Inheritance of Metal Spirit",
+    "name_tw": "共鳴·金靈傳承",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：战斗开始时加{otherParams[0]}【KEYWORD_锋锐】。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: Gain {otherParams[0]} 【KEYWORD_锋锐】 at the beginning of the battle.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：戰鬥開始時加{otherParams[0]}【KEYWORD_锋锐】。",
+    "params": [
+      3
+    ],
+    "effect_round": 13,
+    "relate_talent_id": 73,
+    "desc_cn": "突破时仙命选项必定包含[金灵传承]（选择1次后失效）。\n第13轮起生效：战斗开始时加3[锋锐]。",
+    "desc_en": "When breaking through, the option will inevitably include [Inheritance of Metal Spirit] (becomes invalid after being selected once).\nEffective from round 13: Gain 3 [Penetrate] at the beginning of the battle."
+  },
+  {
+    "id": 77,
+    "name_cn": "共鸣·水灵传承",
+    "name_en": "Resonance: Inheritance of Water Spirit",
+    "name_tw": "共鳴·水靈傳承",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：战斗中首次加【KEYWORD_灵气】时多加{otherParams[0]}点。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: When you add 【KEYWORD_灵气】 for the first time in each battle, add an extra {otherParams[0]}.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：戰鬥中首次加【KEYWORD_灵气】時多加{otherParams[0]}點。",
+    "params": [
+      2
+    ],
+    "effect_round": 13,
+    "relate_talent_id": 75,
+    "desc_cn": "突破时仙命选项必定包含[水灵传承]（选择1次后失效）。\n第13轮起生效：战斗中首次加[灵气]时多加2点。",
+    "desc_en": "When breaking through, the option will inevitably include [Inheritance of Water Spirit] (becomes invalid after being selected once).\nEffective from round 13: When you add [Qi] for the first time in each battle, add an extra 2."
+  },
+  {
+    "id": 78,
+    "name_cn": "共鸣·五行专一",
+    "name_en": "Resonance: Concentrated Element",
+    "name_tw": "共鳴·五行專一",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：每轮开始时若卡组中有且仅有1种【KEYWORD_五行】，减1修为并随机获得1张该【KEYWORD_五行】的牌。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: At the beginning of each round, if there is only one type of 【KEYWORD_五行】 in your deck, lose 1 Cultivation and obtain 1 card of that 【KEYWORD_五行】.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：每輪開始時若卡組中有且僅有1種【KEYWORD_五行】，减1修爲幷隨機獲得1張該【KEYWORD_五行】的牌。",
+    "params": [],
+    "effect_round": 10,
+    "relate_talent_id": 128,
+    "desc_cn": "突破时仙命选项必定包含[五行专一]（选择1次后失效）。\n第10轮起生效：每轮开始时若卡组中有且仅有1种[五行]，减1修为并随机获得1张该[五行]的牌。",
+    "desc_en": "When breaking through, the option will inevitably include [Concentrated Element] (becomes invalid after being selected once).\nEffective from round 10: At the beginning of each round, if there is only one type of [Five Elements] in your deck, lose 1 Cultivation and obtain 1 card of that [Five Elements]."
+  },
+  {
+    "id": 79,
+    "name_cn": "共鸣·崩拳传承",
+    "name_en": "Resonance: Inheritance of Crash Fist",
+    "name_tw": "共鳴·崩拳傳承",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：每次使用“崩拳”时加{otherParams[0]}生命。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: Each time you play \"Crash Fist\" card, add {otherParams[0]} HP.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：每次使用“崩拳”時加{otherParams[0]}生命。",
+    "params": [
+      3
+    ],
+    "effect_round": 12,
+    "relate_talent_id": 143,
+    "desc_cn": "突破时仙命选项必定包含[崩拳传承]（选择1次后失效）。\n第12轮起生效：每次使用“崩拳”时加3生命。",
+    "desc_en": "When breaking through, the option will inevitably include [Inheritance of Crash Fist] (becomes invalid after being selected once).\nEffective from round 12: Each time you play \"Crash Fist\" card, add 3 HP."
+  },
+  {
+    "id": 80,
+    "name_cn": "共鸣·炼体传承",
+    "name_en": "Resonance: Inheritance of Physique Building",
+    "name_tw": "共鳴·煉體傳承",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：战斗开始时升级卡组中第1张加【KEYWORD_体魄】的牌，战斗结束还原。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: Upgrade your first card that add 【KEYWORD_体魄】 in battle, and revert it after the battle.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：戰鬥開始時升級卡組中第1張加【KEYWORD_体魄】的牌，戰鬥結束還原。",
+    "params": [],
+    "effect_round": 9,
+    "relate_talent_id": 144,
+    "desc_cn": "突破时仙命选项必定包含[炼体传承]（选择1次后失效）。\n第9轮起生效：战斗开始时升级卡组中第1张加[体魄]的牌，战斗结束还原。",
+    "desc_en": "When breaking through, the option will inevitably include [Inheritance of Physique Building] (becomes invalid after being selected once).\nEffective from round 9: Upgrade your first card that add [Phy.] in battle, and revert it after the battle."
+  },
+  {
+    "id": 81,
+    "name_cn": "共鸣·气势充沛",
+    "name_en": "Resonance: Full of Force",
+    "name_tw": "共鳴·氣勢充沛",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：战斗中加【KEYWORD_气势】超过上限时加1气势上限。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: When your 【KEYWORD_气势】 exceeds the Cap during battle increase the 【KEYWORD_气势】 Cap by 1.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：戰鬥中加【KEYWORD_气势】超過上限時加1氣勢上限。",
+    "params": [],
+    "effect_round": 8,
+    "relate_talent_id": 145,
+    "desc_cn": "突破时仙命选项必定包含[气势充沛]（选择1次后失效）。\n第8轮起生效：战斗中加[气势]超过上限时加1气势上限。",
+    "desc_en": "When breaking through, the option will inevitably include [Full of Force] (becomes invalid after being selected once).\nEffective from round 8: When your [Force] exceeds the Cap during battle increase the [Force] Cap by 1."
+  },
+  {
+    "id": 82,
+    "name_cn": "共鸣·筋骨健壮",
+    "name_en": "Resonance: Firmness Body",
+    "name_tw": "共鳴·筋骨健壯",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：战斗中加【KEYWORD_体魄】超过上限时，每点多加1生命。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: When your 【KEYWORD_体魄】 exceeds the Cap during battle, you gain 1 extra HP per point exceed.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：戰鬥中加【KEYWORD_体魄】超過上限時，每點多加1生命。",
+    "params": [],
+    "effect_round": 13,
+    "relate_talent_id": 176,
+    "desc_cn": "突破时仙命选项必定包含[筋骨健壮]（选择1次后失效）。\n第13轮起生效：战斗中加[体魄]超过上限时，每点多加1生命。",
+    "desc_en": "When breaking through, the option will inevitably include [Firmness Body] (becomes invalid after being selected once).\nEffective from round 13: When your [Phy.] exceeds the Cap during battle, you gain 1 extra HP per point exceed."
+  },
+  {
+    "id": 83,
+    "name_cn": "共鸣·冥心烙印",
+    "name_en": "Resonance: Mark of Dark Heart",
+    "name_tw": "共鳴·冥心烙印",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：自身每回合开始时因【KEYWORD_内伤】扣减生命时，加回{otherParams[0]}生命。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: At the beginning of each round, when you lose HP due to 【KEYWORD_内伤】, up to {otherParams[0]} HP will be added back.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：自身每回合開始時因【KEYWORD_内伤】扣减生命時，加回{otherParams[0]}生命。",
+    "params": [
+      2
+    ],
+    "effect_round": 10,
+    "relate_talent_id": 150,
+    "desc_cn": "突破时仙命选项必定包含[冥心烙印]（选择1次后失效）。\n第10轮起生效：自身每回合开始时因[内伤]扣减生命时，加回2生命。",
+    "desc_en": "When breaking through, the option will inevitably include [Mark of Dark Heart] (becomes invalid after being selected once).\nEffective from round 10: At the beginning of each round, when you lose HP due to [Internal Injury], up to 2 HP will be added back."
+  },
+  {
+    "id": 84,
+    "name_cn": "共鸣·历战不屈",
+    "name_en": "Resonance: Unbowed through battle",
+    "name_tw": "共鳴·曆戰不屈",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：战败受到的命元伤害减{otherParams[0]}。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: When you defeat in battle, the damage to your Destiny will decrease by {otherParams[0]}.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：戰敗受到的命元傷害减{otherParams[0]}。",
+    "params": [
+      2
+    ],
+    "effect_round": 6,
+    "relate_talent_id": 175,
+    "desc_cn": "突破时仙命选项必定包含[历战不屈]（选择1次后失效）。\n第6轮起生效：战败受到的命元伤害减2。",
+    "desc_en": "When breaking through, the option will inevitably include [Unbowed through battle] (becomes invalid after being selected once).\nEffective from round 6: When you defeat in battle, the damage to your Destiny will decrease by 2."
+  },
+  {
+    "id": 85,
+    "name_cn": "共鸣·感悟丛生",
+    "name_en": "Resonance: Mental Perception",
+    "name_tw": "共鳴·感悟叢生",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n到达化神期后：修为减{otherParams[0]}，抽{otherParams[0]}张化神期门派牌。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nAfter reaching the Incarnation Phase: Lose {otherParams[0]} Cultivation and draw {otherParams[0]} Incarnation Phase cards of your Sect.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n到達化神期後：修爲减{otherParams[0]}，抽{otherParams[0]}張化神期門派牌。",
+    "params": [
+      2
+    ],
+    "effect_round": null,
+    "relate_talent_id": 4,
+    "desc_cn": "突破时仙命选项必定包含[感悟丛生]（选择1次后失效）。\n到达化神期后：修为减2，抽2张化神期门派牌。",
+    "desc_en": "When breaking through, the option will inevitably include [Mental Perception] (becomes invalid after being selected once).\nAfter reaching the Incarnation Phase: Lose 2 Cultivation and draw 2 Incarnation Phase cards of your Sect."
+  },
+  {
+    "id": 86,
+    "name_cn": "共鸣·变换之道",
+    "name_en": "Resonance: The Way of Adaptation",
+    "name_tw": "共鳴·變換之道",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n每轮开始时若剩余换牌机会≥{otherParams[0]}，多加{otherParams[1]}次换牌机会。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nAt the beginning of each round, if your Exchange Card Chance ≥ {otherParams[0]}, add {otherParams[1]} more Exchange Card Chance.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n每輪開始時若剩餘換牌機會≥{otherParams[0]}，多加{otherParams[1]}次換牌機會。",
+    "params": [
+      10,
+      1
+    ],
+    "effect_round": null,
+    "relate_talent_id": 6,
+    "desc_cn": "突破时仙命选项必定包含[变换之道]（选择1次后失效）。\n每轮开始时若剩余换牌机会≥10，多加1次换牌机会。",
+    "desc_en": "When breaking through, the option will inevitably include [The Way of Adaptation] (becomes invalid after being selected once).\nAt the beginning of each round, if your Exchange Card Chance ≥ 10, add 1 more Exchange Card Chance."
+  },
+  {
+    "id": 87,
+    "name_cn": "共鸣·休养生息",
+    "name_en": "Resonance: Recuperate",
+    "name_tw": "共鳴·休養生息",
+    "desc_cn_template": "选择此共鸣时若自身命元＜{otherParams[0]}，加至{otherParams[0]}命元。\n突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。",
+    "desc_en_template": "When this resonance is selected, if your Destiny<{otherParams[0]}, add it to {otherParams[0]}.\nWhen breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).",
+    "desc_tw_template": "選擇此共鳴時若自身命元＜{otherParams[0]}，加至{otherParams[0]}命元。\n突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。",
+    "params": [
+      30
+    ],
+    "effect_round": null,
+    "relate_talent_id": 8,
+    "desc_cn": "选择此共鸣时若自身命元＜30，加至30命元。\n突破时仙命选项必定包含[休养生息]（选择1次后失效）。",
+    "desc_en": "When this resonance is selected, if your Destiny<30, add it to 30.\nWhen breaking through, the option will inevitably include [Recuperate] (becomes invalid after being selected once)."
+  },
+  {
+    "id": 88,
+    "name_cn": "共鸣·顿悟",
+    "name_en": "Resonance: Epiphany",
+    "name_tw": "共鳴·頓悟",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n突破境界所需修为减{otherParams[0]}。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nReduce {otherParams[0]} of Cultivation needed to break through Phase.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n突破境界所需修爲减{otherParams[0]}。",
+    "params": [
+      1
+    ],
+    "effect_round": null,
+    "relate_talent_id": 12,
+    "desc_cn": "突破时仙命选项必定包含[顿悟]（选择1次后失效）。\n突破境界所需修为减1。",
+    "desc_en": "When breaking through, the option will inevitably include [Epiphany] (becomes invalid after being selected once).\nReduce 1 of Cultivation needed to break through Phase."
+  },
+  {
+    "id": 89,
+    "name_cn": "共鸣·储纳灵气",
+    "name_en": "Resonance: Store Qi",
+    "name_tw": "共鳴·儲納靈氣",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：每次使用卡组第一格的牌时加{otherParams[0]}【KEYWORD_灵气】。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: When playing the card in your deck's first slot, add {otherParams[0]} 【KEYWORD_灵气】.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：每次使用卡組第一格的牌時加{otherParams[0]}【KEYWORD_灵气】。",
+    "params": [
+      1
+    ],
+    "effect_round": 10,
+    "relate_talent_id": 13,
+    "desc_cn": "突破时仙命选项必定包含[储纳灵气]（选择1次后失效）。\n第10轮起生效：每次使用卡组第一格的牌时加1[灵气]。",
+    "desc_en": "When breaking through, the option will inevitably include [Store Qi] (becomes invalid after being selected once).\nEffective from round 10: When playing the card in your deck's first slot, add 1 [Qi]."
+  },
+  {
+    "id": 90,
+    "name_cn": "共鸣·斩道",
+    "name_en": "Resonance: Shattered Dao",
+    "name_tw": "共鳴·斬道",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n选择【TALENT_{relateTalentId}】时所抽的牌至少包含{otherParams[0]}张自身境界的牌。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nWhen selecting 【TALENT_{relateTalentId}】, the cards drawn must contain at least {otherParams[0]} cards of your Phase.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n選擇【TALENT_{relateTalentId}】時所抽的牌至少包含{otherParams[0]}張自身境界的牌。",
+    "params": [
+      4
+    ],
+    "effect_round": null,
+    "relate_talent_id": 56,
+    "desc_cn": "突破时仙命选项必定包含[斩道]（选择1次后失效）。\n选择[斩道]时所抽的牌至少包含4张自身境界的牌。",
+    "desc_en": "When breaking through, the option will inevitably include [Shattered Dao] (becomes invalid after being selected once).\nWhen selecting [Shattered Dao], the cards drawn must contain at least 4 cards of your Phase."
+  },
+  {
+    "id": 91,
+    "name_cn": "共鸣·副职兼修",
+    "name_en": "Resonance: Additional Side Job",
+    "name_tw": "共鳴·副職兼修",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n到达化神期后：修为减{otherParams[0]}，抽{otherParams[0]}张化神期副职牌。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nAfter reaching the Incarnation Phase: Lose {otherParams[0]} Cultivation and draw {otherParams[0]} Incarnation Phase cards of your Side Job (or Additional Side Job).",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n到達化神期後：修爲减{otherParams[0]}，抽{otherParams[0]}張化神期副職牌。",
+    "params": [
+      2
+    ],
+    "effect_round": null,
+    "relate_talent_id": 188,
+    "desc_cn": "突破时仙命选项必定包含[副职兼修]（选择1次后失效）。\n到达化神期后：修为减2，抽2张化神期副职牌。",
+    "desc_en": "When breaking through, the option will inevitably include [Additional Side Job] (becomes invalid after being selected once).\nAfter reaching the Incarnation Phase: Lose 2 Cultivation and draw 2 Incarnation Phase cards of your Side Job (or Additional Side Job)."
+  },
+  {
+    "id": 92,
+    "name_cn": "共鸣·凡躯",
+    "name_en": "Resonance: Mortal Body",
+    "name_tw": "共鳴·凡軀",
+    "desc_cn_template": "第{effectRound}轮起生效：战斗开始时，升级卡组中前{otherParams[0]}张炼气期牌，战斗结束还原。",
+    "desc_en_template": "Effective from round {effectRound}: Upgrade your first {otherParams[0]} Meditation Phase cards in battle, and revert it after the battle.",
+    "desc_tw_template": "第{effectRound}輪起生效：戰鬥開始時，升級卡組中前{otherParams[0]}張煉氣期牌，戰鬥結束還原。",
+    "params": [
+      2
+    ],
+    "effect_round": 3,
+    "relate_talent_id": null,
+    "desc_cn": "第3轮起生效：战斗开始时，升级卡组中前2张炼气期牌，战斗结束还原。",
+    "desc_en": "Effective from round 3: Upgrade your first 2 Meditation Phase cards in battle, and revert it after the battle."
+  },
+  {
+    "id": 93,
+    "name_cn": "共鸣·拆招",
+    "name_en": "Resonance: Counter Move",
+    "name_tw": "共鳴·拆招",
+    "desc_cn_template": "第{effectRound}轮起生效：【221】的持续时间增加1回合。",
+    "desc_en_template": "Effective from round {effectRound}: Increase the duration of 【221】 by one turn.",
+    "desc_tw_template": "第{effectRound}輪起生效：【221】的持續時間增加1回合。",
+    "params": [],
+    "effect_round": 6,
+    "relate_talent_id": null,
+    "desc_cn": "第6轮起生效：[拆招]的持续时间增加1回合。",
+    "desc_en": "Effective from round 6: Increase the duration of [Counter Move] by one turn."
+  },
+  {
+    "id": 94,
+    "name_cn": "共鸣·转势",
+    "name_en": "Resonance: Shift Stance",
+    "name_tw": "共鳴·轉勢",
+    "desc_cn_template": "第{effectRound}轮起生效：每当切换【KEYWORD_架势】至拳时加{otherParams[0]}【KEYWORD_体魄】，每当切换【KEYWORD_架势】至棍时加{otherParams[1]}【KEYWORD_防】。",
+    "desc_en_template": "Effective from round {effectRound}: Add {otherParams[0]} 【KEYWORD_体魄】 whenever switching 【KEYWORD_架势】 to fist, and add {otherParams[1]} 【KEYWORD_防】 whenever switching 【KEYWORD_架势】 to stick.",
+    "desc_tw_template": "第{effectRound}輪起生效：每當切換【KEYWORD_架勢】至拳時加{otherParams[0]}【KEYWORD_體魄】，每當切換【KEYWORD_架勢】至棍時加{otherParams[1]}【KEYWORD_防】。",
+    "params": [
+      2,
+      5
+    ],
+    "effect_round": 6,
+    "relate_talent_id": null,
+    "desc_cn": "第6轮起生效：每当切换[架势]至拳时加2[体魄]，每当切换[架势]至棍时加5[防]。",
+    "desc_en": "Effective from round 6: Add 2 [Phy.] whenever switching [Stance] to fist, and add 5 [DEF] whenever switching [Stance] to stick."
+  },
+  {
+    "id": 95,
+    "name_cn": "共鸣·锻体",
+    "name_en": "Resonance: Bodybuilding",
+    "name_tw": "共鳴·鍛體",
+    "desc_cn_template": "突破时仙命选项必定包含【TALENT_{relateTalentId}】（选择1次后失效）。\n第{effectRound}轮起生效：每轮多加{otherParams[0]}生命上限。",
+    "desc_en_template": "When breaking through, the option will inevitably include 【TALENT_{relateTalentId}】 (becomes invalid after being selected once).\nEffective from round {effectRound}: At the beginning of each round, increase 1 more Max HP.",
+    "desc_tw_template": "突破時仙命選項必定包含【TALENT_{relateTalentId}】（選擇1次後失效）。\n第{effectRound}輪起生效：每輪多加{otherParams[0]}生命上限。",
+    "params": [
+      1
+    ],
+    "effect_round": 6,
+    "relate_talent_id": 1,
+    "desc_cn": "突破时仙命选项必定包含[锻体]（选择1次后失效）。\n第6轮起生效：每轮多加1生命上限。",
+    "desc_en": "When breaking through, the option will inevitably include [Bodybuilding] (becomes invalid after being selected once).\nEffective from round 6: At the beginning of each round, increase 1 more Max HP."
+  },
+  {
+    "id": 96,
+    "name_cn": "共鸣·狂剑之心",
+    "name_en": "Resonance: Unrestrained Sword Heart",
+    "name_tw": "共鳴·狂劍之心",
+    "desc_cn_template": "到达元婴期后：修为减{otherParams[0]}，随机获得{otherParams[0]}张“狂剑”。\n若战斗中使用过“狂剑·澄心”，战斗结束后减1修为，随机获得1张“狂剑”。",
+    "desc_en_template": "After reaching the Immortality Phase: Lose {otherParams[0]} Cultivation, and obtain {otherParams[0]} \"Unrestrained Sword\" cards.\nIf \"Unrestrained Sword - Clear Heart\" was played in the battle, lose 1 Cultivation after the battle, and obtain 1 \"Unrestrained Sword\".",
+    "desc_tw_template": "到達元嬰期後：修爲减{otherParams[0]}，隨機獲得{otherParams[0]}張“狂劍”。\n若戰鬥中使用過“狂劍·澄心”，戰鬥結束後减1修爲，隨機獲得1張“狂劍”。",
+    "params": [
+      2
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "到达元婴期后：修为减2，随机获得2张“狂剑”。\n若战斗中使用过“狂剑·澄心”，战斗结束后减1修为，随机获得1张“狂剑”。",
+    "desc_en": "After reaching the Immortality Phase: Lose 2 Cultivation, and obtain 2 \"Unrestrained Sword\" cards.\nIf \"Unrestrained Sword - Clear Heart\" was played in the battle, lose 1 Cultivation after the battle, and obtain 1 \"Unrestrained Sword\"."
+  },
+  {
+    "id": 97,
+    "name_cn": "共鸣·战斗历练",
+    "name_en": "Resonance: Battle Experience",
+    "name_tw": "共鳴·戰鬥歷練",
+    "desc_cn_template": "若自身剩余换牌机会≤{otherParams[0]}，战斗失败时加{otherParams[1]}换牌机会。",
+    "desc_en_template": "When you defeat in battle, if your remaining Exchange Card Chance ≤{otherParams[0]}, add {otherParams[1]} Exchange Card Chance.",
+    "desc_tw_template": "若自身剩餘換牌機會≤{otherParams[0]}，戰鬥失敗時加{otherParams[1]}換牌機會。",
+    "params": [
+      5,
+      2
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "若自身剩余换牌机会≤5，战斗失败时加2换牌机会。",
+    "desc_en": "When you defeat in battle, if your remaining Exchange Card Chance ≤5, add 2 Exchange Card Chance."
+  },
+  {
+    "id": 98,
+    "name_cn": "共鸣·相生之火",
+    "name_en": "Resonance: Fire Spirit Generation",
+    "name_tw": "共鳴·相生之火",
+    "desc_cn_template": "战斗开始时【KEYWORD_激活火灵】。\n到达元婴期后：修为减{otherParams[0]}，随机获得{otherParams[0]}张“火灵”牌。\n到达化神期后：修为减{otherParams[0]}，随机获得{otherParams[0]}张“火灵”牌。",
+    "desc_en_template": "At the beginning of the battle 【KEYWORD_激活火灵】.\nAfter reaching the Immortality Phase: Lose {otherParams[0]} Cultivation, and obtain {otherParams[0]} \"Fire Spirit\" cards.\nAfter reaching the Incarnation Phase: Lose {otherParams[0]} Cultivation, and obtain {otherParams[0]} \"Fire Spirit\" cards.",
+    "desc_tw_template": "戰鬥開始時【KEYWORD_激活火灵】。\n到達元嬰期後：修爲减{otherParams[0]}，隨機獲得{otherParams[0]}張“火靈”牌。\n到達化神期後：修爲减{otherParams[0]}，隨機獲得{otherParams[0]}張“火靈”牌。",
+    "params": [
+      2
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "战斗开始时[激活火灵]。\n到达元婴期后：修为减2，随机获得2张“火灵”牌。\n到达化神期后：修为减2，随机获得2张“火灵”牌。",
+    "desc_en": "At the beginning of the battle [Activate Fire Spirit].\nAfter reaching the Immortality Phase: Lose 2 Cultivation, and obtain 2 \"Fire Spirit\" cards.\nAfter reaching the Incarnation Phase: Lose 2 Cultivation, and obtain 2 \"Fire Spirit\" cards."
+  },
+  {
+    "id": 99,
+    "name_cn": "共鸣·灵猫乱剑",
+    "name_en": "Resonance: Spirit Cat Chaos Sword",
+    "name_tw": "共鳴·靈貓亂劍",
+    "desc_cn_template": "【9】的追加攻击次数取上限（无视手牌数量）。\n第{effectRound}轮起生效：若至少保留了{otherParams[0]}张手牌，战斗开始时升级【9】，战斗结束还原。",
+    "desc_en_template": "The additional attack count of 【9】 takes the maximum limit (regardless of how many cards are kept in hand).\nEffective from round {effectRound}: If at least {otherParams[0]} cards are kept in hand, 【9】 is upgraded at the start of battle and reverts at the end.",
+    "desc_tw_template": "【9】的追加攻擊次數取上限（無視手牌數量）。\n從第{effectRound}輪起生效：若至少保留了{otherParams[0]}張手牌，戰鬥開始時升級【9】，戰鬥結束後還原。",
+    "params": [
+      6
+    ],
+    "effect_round": 14,
+    "relate_talent_id": null,
+    "desc_cn": "[灵猫乱剑]的追加攻击次数取上限（无视手牌数量）。\n第14轮起生效：若至少保留了6张手牌，战斗开始时升级[灵猫乱剑]，战斗结束还原。",
+    "desc_en": "The additional attack count of [Spirit Cat Chaos Sword] takes the maximum limit (regardless of how many cards are kept in hand).\nEffective from round 14: If at least 6 cards are kept in hand, [Spirit Cat Chaos Sword] is upgraded at the start of battle and reverts at the end."
+  },
+  {
+    "id": 100,
+    "name_cn": "共鸣·无极卦盘",
+    "name_en": "Resonance: Ultimate Hexagram Base",
+    "name_tw": "共鳴·無極卦盤",
+    "desc_cn_template": "每次突破境界时，升级手牌或卡组中的【28】。",
+    "desc_en_template": "Upgrade 【28】 in your hand or deck each time you break through a Phase.",
+    "desc_tw_template": "每次突破境界時，升級手牌或卡組中的【28】。",
+    "params": [],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "每次突破境界时，升级手牌或卡组中的[无极卦盘]。",
+    "desc_en": "Upgrade [Ultimate Hexagram Base] in your hand or deck each time you break through a Phase."
+  },
+  {
+    "id": 101,
+    "name_cn": "共鸣·双鸳逆克",
+    "name_en": "Resonance: Overcome with each other",
+    "name_tw": "共鳴·雙鴛逆克",
+    "desc_cn_template": "到达化神期且{effectRound}轮后：修为减{otherParams[0]}，获得{otherParams[0]}张【32】。",
+    "desc_en_template": "After reaching the Incarnation Phase and after round {effectRound}: Lose {otherParams[0]} Cultivation and obtain {otherParams[0]} 【32】.",
+    "desc_tw_template": "到達化神期且{effectRound}輪後：修爲减{otherParams[0]}，獲得{otherParams[0]}張【32】。",
+    "params": [
+      2
+    ],
+    "effect_round": 12,
+    "relate_talent_id": null,
+    "desc_cn": "到达化神期且12轮后：修为减2，获得2张[双鸳逆克]。",
+    "desc_en": "After reaching the Incarnation Phase and after round 12: Lose 2 Cultivation and obtain 2 [Overcome with each other]."
+  },
+  {
+    "id": 102,
+    "name_cn": "共鸣·锻躯之道",
+    "name_en": "Resonance: Forge Body",
+    "name_tw": "共鳴·鍛軀之道",
+    "desc_cn_template": "炼化含加【KEYWORD_体魄】效果的牌时，自身加{otherParams[0]}【KEYWORD_体魄】（不超过上限）。",
+    "desc_en_template": "When Absorbing cards that contain the effect of adding 【KEYWORD_体魄】, gain {otherParams[0]} 【KEYWORD_体魄】 (not exceeding the upper limit).",
+    "desc_tw_template": "煉化含加【KEYWORD_体魄】效果的牌時，自身加{otherParams[0]}【KEYWORD_体魄】（不超過上限）。",
+    "params": [
+      2
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "炼化含加[体魄]效果的牌时，自身加2[体魄]（不超过上限）。",
+    "desc_en": "When Absorbing cards that contain the effect of adding [Phy.], gain 2 [Phy.] (not exceeding the upper limit)."
+  },
+  {
+    "id": 103,
+    "name_cn": "共鸣·阴晴圆缺",
+    "name_en": "Resonance: The moon waxes and wanes",
+    "name_tw": "共鳴·陰晴圓缺",
+    "desc_cn_template": "每当奇数轮开始时多加4换牌机会、2生命上限和2修为（奇数轮时选择此共鸣也会立刻触发1次）；每当偶数轮开始时少加3换牌机会、2生命上限和2修为。",
+    "desc_en_template": "At the start of each odd round, gain 4 more Exchange Card Chances, 2 more Max HP, and 2 more Cultivation (choosing this resonance during an odd round triggers once immediately); at the start of each even round, gain 3 less Exchange Card Chances, 2 less Max HP, and 2 less Cultivation.",
+    "desc_tw_template": "每當奇數輪開始時，增加4次換牌機會、2點生命上限和2點修為（在奇數輪選擇此共鳴會立即觸發1次）；每當偶數輪開始時，減少3次換牌機會、2點生命上限和2點修為。",
+    "params": [],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "每当奇数轮开始时多加4换牌机会、2生命上限和2修为（奇数轮时选择此共鸣也会立刻触发1次）；每当偶数轮开始时少加3换牌机会、2生命上限和2修为。",
+    "desc_en": "At the start of each odd round, gain 4 more Exchange Card Chances, 2 more Max HP, and 2 more Cultivation (choosing this resonance during an odd round triggers once immediately); at the start of each even round, gain 3 less Exchange Card Chances, 2 less Max HP, and 2 less Cultivation."
+  },
+  {
+    "id": 104,
+    "name_cn": "共鸣·云雾变幻",
+    "name_en": "Resonance: Shift As Cloud",
+    "name_tw": "共鳴·雲霧變幻",
+    "desc_cn_template": "换牌机会储存无上限。\n每轮开始时，若上一轮未使用【TALENT_18】换牌，额外加2换牌机会。",
+    "desc_en_template": "There is no upper limit to the number of stored Exchange Card Chances.\nAt the beginning of each round, if 【TALENT_18】 was not used for exchanging cards in the previous round, add 2 Exchange Card Chance.",
+    "desc_tw_template": "換牌機會儲存無上限。\n每輪開始時，若上一輪未使用【TALENT_18】換牌，額外加2次換牌機會。",
+    "params": [],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "换牌机会储存无上限。\n每轮开始时，若上一轮未使用[云雾变幻]换牌，额外加2换牌机会。",
+    "desc_en": "There is no upper limit to the number of stored Exchange Card Chances.\nAt the beginning of each round, if [Shift As Cloud] was not used for exchanging cards in the previous round, add 2 Exchange Card Chance."
+  },
+  {
+    "id": 105,
+    "name_cn": "共鸣·云泉道茶",
+    "name_en": "Resonance: Spring Course Tea",
+    "name_tw": "共鳴·雲泉道茶",
+    "desc_cn_template": "仙命【TALENT_17】还会额外向牌池中加入{otherParams[0]}张【1】。\n每当炼化【1】时生命上限+{otherParams[1]}，换牌机会+{otherParams[2]}。",
+    "desc_en_template": "The Immortal Fate 【TALENT_17】 will additionally add {otherParams[0]} 【1】 to your card pool.\nWhenever you Absorb 【1】, your Max HP + {otherParams[1]}, and your Exchange Card Chance + {otherParams[2]}.",
+    "desc_tw_template": "仙命【TALENT_17】還會額外向牌池中加入{otherParams[0]}張【1】。\n每當煉化【1】時生命上限+{otherParams[1]}，換牌機會+{otherParams[2]}。",
+    "params": [
+      6,
+      4,
+      4
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "仙命[云泉道茶]还会额外向牌池中加入6张[云泉道茶]。\n每当炼化[云泉道茶]时生命上限+4，换牌机会+4。",
+    "desc_en": "The Immortal Fate [Spring Course Tea] will additionally add 6 [Spring Course Tea] to your card pool.\nWhenever you Absorb [Spring Course Tea], your Max HP + 4, and your Exchange Card Chance + 4."
+  },
+  {
+    "id": 106,
+    "name_cn": "共鸣·血脉潜能",
+    "name_en": "Resonance: Bloodline Potential",
+    "name_tw": "共鳴·血脈潛能",
+    "desc_cn_template": "整局游戏限1次：战败时，若即将受到的命元伤害≥自身剩余命元，该次命元伤害变为0，然后仙命【TALENT_19】计数加{otherParams[0]}。",
+    "desc_en_template": "Once per game: When defeated, if the incoming Destiny damage ≥ your Destiny, that Destiny damage becomes 0, then the Immortal Fate 【TALENT_19】 count increases by {otherParams[0]}.",
+    "desc_tw_template": "整局遊戲限1次：戰敗時，若即將受到的命元傷害≥自身剩餘命元，該次命元傷害變為0，然後仙命【TALENT_19】計數加{otherParams[0]}。",
+    "params": [
+      30
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "整局游戏限1次：战败时，若即将受到的命元伤害≥自身剩余命元，该次命元伤害变为0，然后仙命[血脉潜能]计数加30。",
+    "desc_en": "Once per game: When defeated, if the incoming Destiny damage ≥ your Destiny, that Destiny damage becomes 0, then the Immortal Fate [Bloodline Potential] count increases by 30."
+  },
+  {
+    "id": 107,
+    "name_cn": "共鸣·崩雪",
+    "name_en": "Resonance: Avalanche",
+    "name_tw": "共鳴·崩雪",
+    "desc_cn_template": "到达元婴期后：修为减{otherParams[0]}，随机获得{otherParams[0]}张“云剑”。\n到达化神期后：修为减1，获得1张【3】。",
+    "desc_en_template": "After reaching the Immortality Phase: Lose {otherParams[0]} Cultivation and randomly obtain {otherParams[0]} \"Cloud Sword\".\nAfter reaching the Incarnation Phase: Lose 1 Cultivation and obtain 1 【3】.",
+    "desc_tw_template": "到達元嬰期後：修為減{otherParams[0]}，隨機獲得{otherParams[0]}張「雲劍」。\n到達化神期後：修為減1，獲得1張【3】。",
+    "params": [
+      2
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "到达元婴期后：修为减2，随机获得2张“云剑”。\n到达化神期后：修为减1，获得1张[云剑•崩雪]。",
+    "desc_en": "After reaching the Immortality Phase: Lose 2 Cultivation and randomly obtain 2 \"Cloud Sword\".\nAfter reaching the Incarnation Phase: Lose 1 Cultivation and obtain 1 [Cloud Sword - Avalanche]."
+  },
+  {
+    "id": 108,
+    "name_cn": "共鸣·龙脉传承",
+    "name_en": "Resonance: Inheritance of Dragonling",
+    "name_tw": "共鳴·龍脈傳承",
+    "desc_cn_template": "选择此共鸣时减{otherParams[0]}命元（最低减至1），根据选择时机触发一种效果：\n元婴期或之前选择：到达元婴期后获得1张【48】。\n化神期且{effectRound}轮开始前选择：获得1张【50】。\n化神期且{effectRound}轮开始后选择：修为减4，获得1张【79】。",
+    "desc_en_template": "When selecting this resonance, lose {otherParams[0]} Destiny (minimum reduced to 1), and trigger one of the following effects based on the timing of selection:\nIf selected at or before the Immortality Phase: After reaching the Immortality Phase, obtain 1 【48】.\nIf selected during the Incarnation Phase and before round {effectRound} begins: Obtain 1 【50】.\nIf selected during the Incarnation Phase and after round {effectRound} begins: Lose 4 Cul. and obtain 1 【79】.",
+    "desc_tw_template": "選擇此共鳴時減{otherParams[0]}命元（最低減至1），根據選擇時機觸發一種效果：\n元嬰期或之前選擇：到達元嬰期後獲得1張【48】。\n化神期且第{effectRound}輪開始前選擇：獲得1張【50】。\n化神期且第{effectRound}輪開始後選擇：修爲减4，獲得1張【79】。",
+    "params": [
+      10
+    ],
+    "effect_round": 17,
+    "relate_talent_id": null,
+    "desc_cn": "选择此共鸣时减10命元（最低减至1），根据选择时机触发一种效果：\n元婴期或之前选择：到达元婴期后获得1张[青龙剑阵]。\n化神期且17轮开始前选择：获得1张[狂龙吞云]。\n化神期且17轮开始后选择：修为减4，获得1张[龙]。",
+    "desc_en": "When selecting this resonance, lose 10 Destiny (minimum reduced to 1), and trigger one of the following effects based on the timing of selection:\nIf selected at or before the Immortality Phase: After reaching the Immortality Phase, obtain 1 [Azure Dragon Sword Formation].\nIf selected during the Incarnation Phase and before round 17 begins: Obtain 1 [Dragon Devours Clouds].\nIf selected during the Incarnation Phase and after round 17 begins: Lose 4 Cul. and obtain 1 [Loong]."
+  },
+  {
+    "id": 109,
+    "name_cn": "共鸣·唤雨",
+    "name_en": "Resonance: Pray Rain",
+    "name_tw": "共鳴·喚雨",
+    "desc_cn_template": "第{effectRound}轮起生效：使用【15】后，自身所有牌都视作“云剑”，直到战斗结束。",
+    "desc_en_template": "Effective from round {effectRound}: After playing 【15】, all of your cards can be regarded as \"Cloud Sword\" until the end of the battle.",
+    "desc_tw_template": "第{effectRound}輪起生效：使用【15】後，自身所有牌都視作“雲劍”，直到戰鬥結束。",
+    "params": [],
+    "effect_round": 9,
+    "relate_talent_id": null,
+    "desc_cn": "第9轮起生效：使用[云剑•唤雨]后，自身所有牌都视作“云剑”，直到战斗结束。",
+    "desc_en": "Effective from round 9: After playing [Cloud Sword - Pray Rain], all of your cards can be regarded as \"Cloud Sword\" until the end of the battle."
+  },
+  {
+    "id": 110,
+    "name_cn": "共鸣·好奇心",
+    "name_en": "Resonance: Curiosity",
+    "name_tw": "共鳴·好奇心",
+    "desc_cn_template": "每轮首次触发仙命【TALENT_129】时，获得的牌升至2级。",
+    "desc_en_template": "The first time you trigger the Immortal Fate 【TALENT_129】 each round, the card obtained is upgraded to level 2.",
+    "desc_tw_template": "每輪首次觸發仙命【TALENT_129】時，獲得的牌升至2級。",
+    "params": [],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "每轮首次触发仙命[好奇心]时，获得的牌升至2级。",
+    "desc_en": "The first time you trigger the Immortal Fate [Curiosity] each round, the card obtained is upgraded to level 2."
+  },
+  {
+    "id": 111,
+    "name_cn": "共鸣·剑锋锻造",
+    "name_en": "Resonance: Blade Forging",
+    "name_tw": "共鳴·劍鋒鍛造",
+    "desc_cn_template": "根据仙命【TALENT_93】的选择，附加额外效果：\n锐利：使用【19】攻击时，不受【KEYWORD_虚弱】和【KEYWORD_减攻】效果影响。\n稳固：使用【19】时获得1层[水月剑阵]效果（自身下1回合开始时【KEYWORD_防】不减半）。",
+    "desc_en_template": "Based on the selection of Immortal Fate 【TALENT_93】, additional effects are attached:\nSharpness: When using 【19】 to attack, it is not affected by 【KEYWORD_虚弱】 and 【KEYWORD_减攻】 effects.\nStable: When playing 【19】, gain 1 stack of [Moon Water Sword Formation] effect (your DEF will not be halved at the beginning of the next turn).",
+    "desc_tw_template": "根據仙命【TALENT_93】的選擇，附加額外效果：\n銳利：使用【19】攻擊時，不受【KEYWORD_虛弱】和【KEYWORD_减攻】效果影響。\n穩固：使用【19】時獲得1層[水月劍陣]效果（自身下1回合開始時【KEYWORD_防】不减半）。",
+    "params": [],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "根据仙命[剑锋锻造]的选择，附加额外效果：\n锐利：使用[澄心剑胚]攻击时，不受[虚弱]和[减攻]效果影响。\n稳固：使用[澄心剑胚]时获得1层[水月剑阵]效果（自身下1回合开始时[防]不减半）。",
+    "desc_en": "Based on the selection of Immortal Fate [Blade Forging], additional effects are attached:\nSharpness: When using [Clear Heart Sword Embryo] to attack, it is not affected by [Weakened] and [Decrease ATK] effects.\nStable: When playing [Clear Heart Sword Embryo], gain 1 stack of [Moon Water Sword Formation] effect (your DEF will not be halved at the beginning of the next turn)."
+  },
+  {
+    "id": 112,
+    "name_cn": "共鸣·悟剑天赋",
+    "name_en": "Resonance: Swordplay Talent",
+    "name_tw": "共鳴·悟劍天賦",
+    "desc_cn_template": "触发仙命【TALENT_189】时所获得牌升至2级，若为【KEYWORD_持续】牌则升至3级。",
+    "desc_en_template": "When triggering Immortal Fate 【TALENT_189】, the card obtained are upgraded to level 2. If it is a 【KEYWORD_持续】 card, it is upgraded to level 3.",
+    "desc_tw_template": "觸發仙命【TALENT_189】時所獲得牌升至2級，若爲【KEYWORD_持續】牌則升至3級。",
+    "params": [],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "触发仙命[悟剑天赋]时所获得牌升至2级，若为[持续]牌则升至3级。",
+    "desc_en": "When triggering Immortal Fate [Swordplay Talent], the card obtained are upgraded to level 2. If it is a [Continuous] card, it is upgraded to level 3."
+  },
+  {
+    "id": 113,
+    "name_cn": "共鸣·八方来风",
+    "name_en": "Resonance: Wind Rose",
+    "name_tw": "共鳴·八方來風",
+    "desc_cn_template": "战斗中和对方修为(加上【KEYWORD_速度】)相同时，自身优先行动。\n第{effectRound}轮起生效：【KEYWORD_速度】+{otherParams[0]}。",
+    "desc_en_template": "During battle, if your Cultivation (plus 【KEYWORD_速度】) is equal to your opponent's, you get priority action.\nEffective from round {effectRound}: 【KEYWORD_速度】 +{otherParams[0]}.",
+    "desc_tw_template": "戰鬥中和對方修爲(加上【KEYWORD_速度】)相同時，自身優先行動。\n第{effectRound}輪起生效：【KEYWORD_速度】+{otherParams[0]}。",
+    "params": [
+      3
+    ],
+    "effect_round": 8,
+    "relate_talent_id": null,
+    "desc_cn": "战斗中和对方修为(加上[速度])相同时，自身优先行动。\n第8轮起生效：[速度]+3。",
+    "desc_en": "During battle, if your Cultivation (plus [Speed]) is equal to your opponent's, you get priority action.\nEffective from round 8: [Speed] +3."
+  },
+  {
+    "id": 114,
+    "name_cn": "共鸣·飞鸿踏雪",
+    "name_en": "Resonance: Only Traces",
+    "name_tw": "共鳴·飛鴻踏雪",
+    "desc_cn_template": "仙命【TALENT_29】在第4次和第6次触发抽牌时，抽到的牌变为【12】。",
+    "desc_en_template": "On the 4th and 6th trigger Immortal Fate 【TALENT_29】 for drawing cards, the drawn card becomes 【12】.",
+    "desc_tw_template": "仙命【TALENT_29】在第4次和第6次觸發抽牌時，抽到的牌變爲【12】。",
+    "params": [],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "仙命[勤学苦练]在第4次和第6次触发抽牌时，抽到的牌变为[飞鸿踏雪]。",
+    "desc_en": "On the 4th and 6th trigger Immortal Fate [Study Hard] for drawing cards, the drawn card becomes [Only Traces]."
+  },
+  {
+    "id": 115,
+    "name_cn": "共鸣·斩断俗尘",
+    "name_en": "Resonance: Cut Off Mundane",
+    "name_tw": "共鳴·斬斷俗塵",
+    "desc_cn_template": "选择仙命【TALENT_42】后：删除手牌和卡组中最多{otherParams[0]}张炼气期牌，获得等量的元婴期或以上的随机牌（有概率出现2级牌或秘术牌）；若删除了不足{otherParams[0]}张牌，则每不足1张就减1修为抽1张牌。",
+    "desc_en_template": "After selecting Immortal Fate 【TALENT_42】: Remove up to {otherParams[0]} Meditation Phase cards from your hand and deck, and obtain an equal number of random Immortality Phase or higher cards (there is a chance to draw Level 2 cards or Secret Enchantment cards). If fewer than {otherParams[0]} cards are removed, lose 1 Cultivation and draw 1 card for each card short.",
+    "desc_tw_template": "選擇仙命【TALENT_42】後：删除手牌和卡組中最多{otherParams[0]}張煉氣期牌，獲得等量的元嬰期或以上的隨機牌（有概率出現2級牌或秘術牌）；若删除了不足{otherParams[0]}張牌，則每不足1張就减1修爲抽1張牌。",
+    "params": [
+      4
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "选择仙命[斩断俗尘]后：删除手牌和卡组中最多4张炼气期牌，获得等量的元婴期或以上的随机牌（有概率出现2级牌或秘术牌）；若删除了不足4张牌，则每不足1张就减1修为抽1张牌。",
+    "desc_en": "After selecting Immortal Fate [Cut Off Mundane]: Remove up to 4 Meditation Phase cards from your hand and deck, and obtain an equal number of random Immortality Phase or higher cards (there is a chance to draw Level 2 cards or Secret Enchantment cards). If fewer than 4 cards are removed, lose 1 Cultivation and draw 1 card for each card short."
+  },
+  {
+    "id": 116,
+    "name_cn": "共鸣·血脉威能",
+    "name_en": "Resonance: Bloodline Power",
+    "name_tw": "共鳴·血脈威能",
+    "desc_cn_template": "根据仙命【TALENT_114】已触发抽牌次数，附加1种效果：\n0～2次：每次战斗胜利时，【TALENT_114】计数额外加{otherParams[0]}。\n3～4次：每场战斗开始时获得1【KEYWORD_加攻】。\n5次及以上：每场战斗开始时获得2【KEYWORD_加攻】。",
+    "desc_en_template": "Based on the number of times Immortal Fate 【TALENT_114】 has triggered for drawing cards, attach one of the following effects:\n0 to 2 times: Each time you win a battle, the count of 【TALENT_114】 increases by an additional {otherParams[0]}.\n3 to 4 times: Gain 1 【KEYWORD_加攻】 at the start of each battle.\n5 times or more: Gain 2 【KEYWORD_加攻】 at the start of each battle.",
+    "desc_tw_template": "根據仙命【TALENT_114】已觸發抽牌次數，附加1種效果：\n0～2次：每次戰鬥勝利時，【TALENT_114】計數額外加{otherParams[0]}。\n3～4次：每場戰鬥開始時獲得1【KEYWORD_加攻】。\n5次及以上：每場戰鬥開始時獲得2【KEYWORD_加攻】。",
+    "params": [
+      4
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "根据仙命[血脉威能]已触发抽牌次数，附加1种效果：\n0～2次：每次战斗胜利时，[血脉威能]计数额外加4。\n3～4次：每场战斗开始时获得1[加攻]。\n5次及以上：每场战斗开始时获得2[加攻]。",
+    "desc_en": "Based on the number of times Immortal Fate [Bloodline Power] has triggered for drawing cards, attach one of the following effects:\n0 to 2 times: Each time you win a battle, the count of [Bloodline Power] increases by an additional 4.\n3 to 4 times: Gain 1 [Increase ATK] at the start of each battle.\n5 times or more: Gain 2 [Increase ATK] at the start of each battle."
+  },
+  {
+    "id": 117,
+    "name_cn": "共鸣·先天灵躯",
+    "name_en": "Resonance: Innate Spirit Body",
+    "name_tw": "共鳴·先天靈軀",
+    "desc_cn_template": "每次使用化神期牌时加1【KEYWORD_灵气】。",
+    "desc_en_template": "Each time you play an Incarnation Phase card, gain 1 【KEYWORD_灵气】.",
+    "desc_tw_template": "每次使用化神期牌時加1【KEYWORD_靈氣】。",
+    "params": [],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "每次使用化神期牌时加1[灵气]。",
+    "desc_en": "Each time you play an Incarnation Phase card, gain 1 [Qi]."
+  },
+  {
+    "id": 118,
+    "name_cn": "共鸣·灯灵觉醒",
+    "name_en": "Resonance: Lantern Spirit Awakening",
+    "name_tw": "共鳴·燈靈覺醒",
+    "desc_cn_template": "第{effectRound}轮起生效：仙命【TALENT_28】抽的牌变为【46】。",
+    "desc_en_template": "Effective from round {effectRound}: The draw card from Immortal Fate 【TALENT_28】 is changed to 【46】.",
+    "desc_tw_template": "第{effectRound}輪起生效：仙命【TALENT_28】的抽牌改爲獲得【46】。",
+    "params": [],
+    "effect_round": 12,
+    "relate_talent_id": null,
+    "desc_cn": "第12轮起生效：仙命[灯灵觉醒]抽的牌变为[道韵气息]。",
+    "desc_en": "Effective from round 12: The draw card from Immortal Fate [Lantern Spirit Awakening] is changed to [Daoist Rhyme Aura]."
+  },
+  {
+    "id": 119,
+    "name_cn": "共鸣·占星",
+    "name_en": "Resonance: Astrology",
+    "name_tw": "共鳴·占星",
+    "desc_cn_template": "第{effectRound}轮起生效：仙命【TALENT_61】描述中的“若星力为0”改为“若星力＜{otherParams[0]}”。",
+    "desc_en_template": "Effective from round {effectRound}, in the description of Immortal Fate 【TALENT_61】, \"if Star Power is 0\" is changed to \"if Star Power < {otherParams[0]}\".",
+    "desc_tw_template": "第{effectRound}輪起生效：仙命【TALENT_61】描述中的“若星力爲0”改爲“若星力＜{otherParams[0]}”。",
+    "params": [
+      5
+    ],
+    "effect_round": 7,
+    "relate_talent_id": null,
+    "desc_cn": "第7轮起生效：仙命[占星]描述中的“若星力为0”改为“若星力＜5”。",
+    "desc_en": "Effective from round 7, in the description of Immortal Fate [Astrology], \"if Star Power is 0\" is changed to \"if Star Power < 5\"."
+  },
+  {
+    "id": 120,
+    "name_cn": "共鸣·星爆术",
+    "name_en": "Resonance: Starburst",
+    "name_tw": "共鳴·星爆術",
+    "desc_cn_template": "第{effectRound}轮起生效：使用【10】时额外追加1次攻击（自身每回合限1次）。",
+    "desc_en_template": "Effective from round {effectRound}: When playing 【10】, make an additional attack (limited to once per turn).",
+    "desc_tw_template": "第{effectRound}輪起生效：使用【10】時額外追加1次攻擊（自身每回合限1次）。",
+    "params": [
+      0
+    ],
+    "effect_round": 11,
+    "relate_talent_id": null,
+    "desc_cn": "第11轮起生效：使用[星爆术]时额外追加1次攻击（自身每回合限1次）。",
+    "desc_en": "Effective from round 11: When playing [Starburst], make an additional attack (limited to once per turn)."
+  },
+  {
+    "id": 121,
+    "name_cn": "共鸣·算无遗策",
+    "name_en": "Resonance: Perfectly Planned",
+    "name_tw": "共鳴·算無遺策",
+    "desc_cn_template": "仙命【TALENT_104】炼化或置换【22】时的效果变为3倍。\n第{effectRound}轮起生效：使用【22】后，若自身命元>对方则加{otherParams[0]}【KEYWORD_防】，命元≤对方则【KEYWORD_再次行动】。",
+    "desc_en_template": "The effects of Immortal Fate 【TALENT_104】 when Absorb or Exchange 【22】 are tripled.\nEffective from round {effectRound}: After playing 【22】, if your Destiny > opponent's Destiny, gain {otherParams[0]} 【KEYWORD_防】; if your Destiny ≤ opponent's Destiny, you 【KEYWORD_再次行动】.",
+    "desc_tw_template": "仙命【TALENT_104】煉化或置換【22】時的效果變爲3倍。\n第{effectRound}輪起生效：使用【22】後，若自身命元>對方則加{otherParams[0]}【KEYWORD_防】，命元≤對方則【KEYWORD_再次行動】。",
+    "params": [
+      12
+    ],
+    "effect_round": 7,
+    "relate_talent_id": null,
+    "desc_cn": "仙命[算无遗策]炼化或置换[算无遗策]时的效果变为3倍。\n第7轮起生效：使用[算无遗策]后，若自身命元>对方则加12[防]，命元≤对方则[再次行动]。",
+    "desc_en": "The effects of Immortal Fate [Perfectly Planned] when Absorb or Exchange [Perfectly Planned] are tripled.\nEffective from round 7: After playing [Perfectly Planned], if your Destiny > opponent's Destiny, gain 12 [DEF]; if your Destiny ≤ opponent's Destiny, you [Chase]."
+  },
+  {
+    "id": 122,
+    "name_cn": "共鸣·瞒天过海",
+    "name_en": "Resonance: Act Underhand",
+    "name_tw": "共鳴·瞞天過海",
+    "desc_cn_template": "战斗结束时，保存剩余【KEYWORD_卦象】（最多{otherParams[0]}），下场战斗开始时获得保存的【KEYWORD_卦象】。",
+    "desc_en_template": "At the end of battle, save the remaining 【KEYWORD_卦象】 (up to {otherParams[0]}). At the start of the next battle, gain the saved 【KEYWORD_卦象】.",
+    "desc_tw_template": "戰鬥結束時，保存剩餘【KEYWORD_卦象】（最多{otherParams[0]}），下場戰鬥開始時獲得保存的【KEYWORD_卦象】。",
+    "params": [
+      8
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "战斗结束时，保存剩余[卦象]（最多8），下场战斗开始时获得保存的[卦象]。",
+    "desc_en": "At the end of battle, save the remaining [Hexagram] (up to 8). At the start of the next battle, gain the saved [Hexagram]."
+  },
+  {
+    "id": 123,
+    "name_cn": "共鸣·悠然葫芦",
+    "name_en": "Resonance: Gourd Of Leisurely",
+    "name_tw": "共鳴·悠然葫蘆",
+    "desc_cn_template": "将【13】替换为【258】。\n到达化神期且{effectRound}轮后：修为减1，获得1张【258】。",
+    "desc_en_template": "Replace 【13】 with 【258】.\nAfter reaching the Incarnation Phase and round {effectRound}: Lose 1 Cultivation and obtain 1 【258】.",
+    "desc_tw_template": "將【13】替換爲【258】。\n到達化神期且{effectRound}輪後：修爲减1，獲得1張【258】。",
+    "params": [],
+    "effect_round": 14,
+    "relate_talent_id": null,
+    "desc_cn": "将[悠然葫芦]替换为[水灵•悠然]。\n到达化神期且14轮后：修为减1，获得1张[水灵•悠然]。",
+    "desc_en": "Replace [Gourd Of Leisurely] with [Water Spirit -  Leisurely].\nAfter reaching the Incarnation Phase and round 14: Lose 1 Cultivation and obtain 1 [Water Spirit -  Leisurely]."
+  },
+  {
+    "id": 124,
+    "name_cn": "共鸣·五行元灵",
+    "name_en": "Resonance: Five Elements Anima",
+    "name_tw": "共鳴·五行元靈",
+    "desc_cn_template": "仙命【TALENT_112】描述中的“首次激活”改为“前2次激活”。",
+    "desc_en_template": "In the description of Immortal Fate 【TALENT_112】, \"for the first time\" is changed to \"for the first two time\".",
+    "desc_tw_template": "仙命【TALENT_112】描述中的“首次激活”改爲“前2次激活”。",
+    "params": [],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "仙命[五行元灵]描述中的“首次激活”改为“前2次激活”。",
+    "desc_en": "In the description of Immortal Fate [Five Elements Anima], \"for the first time\" is changed to \"for the first two time\"."
+  },
+  {
+    "id": 125,
+    "name_cn": "共鸣·桃花印",
+    "name_en": "Resonance: Peach Blossom Seal",
+    "name_tw": "共鳴·桃花印",
+    "desc_cn_template": "使用【20】后，【KEYWORD_升级】下{otherParams[0]}次使用的“木灵”牌（战斗结束还原）。\n第{effectRound}轮起生效：改为下{otherParams[1]}次。",
+    "desc_en_template": "After playing 【20】, 【KEYWORD_升级】 next {otherParams[0]} 'Wood Spirit' card before playing it (restore at the end of the battle). \nEffective from round {effectRound}: changes to the next {otherParams[1]} 'Wood Spirit' cards.",
+    "desc_tw_template": "使用【20】後，【KEYWORD_升级】下{otherParams[0]}次使用的“木靈”牌（戰鬥結束還原）。\n第{effectRound}輪起生效：改為下{otherParams[1]}次。",
+    "params": [
+      1,
+      3
+    ],
+    "effect_round": 13,
+    "relate_talent_id": null,
+    "desc_cn": "使用[木灵•桃花印]后，[升级]下1次使用的“木灵”牌（战斗结束还原）。\n第13轮起生效：改为下3次。",
+    "desc_en": "After playing [Wood Spirit - Peach Blossom Seal], [Upgrade] next 1 'Wood Spirit' card before playing it (restore at the end of the battle). \nEffective from round 13: changes to the next 3 'Wood Spirit' cards."
+  },
+  {
+    "id": 126,
+    "name_cn": "共鸣·春雨",
+    "name_en": "Resonance: Spring Rain",
+    "name_tw": "共鳴·春雨",
+    "desc_cn_template": "使用【KEYWORD_持续】或【KEYWORD_消耗】牌所需【KEYWORD_灵气】减1。\n第{effectRound}轮起生效：每次使用【KEYWORD_持续】或【KEYWORD_消耗】牌时加{otherParams[0]}生命及上限。",
+    "desc_en_template": "Reduce the required 【KEYWORD_灵气】 for playing 【KEYWORD_持续】 or 【KEYWORD_消耗】 cards by 1.\nEffective from round {effectRound}: Each time you play a 【KEYWORD_持续】 or 【KEYWORD_消耗】 card, gain {otherParams[0]} HP and Max HP.",
+    "desc_tw_template": "使用【KEYWORD_持續】或【KEYWORD_消耗】牌所需【KEYWORD_靈氣】减1。\n第{effectRound}輪起生效：每次使用【KEYWORD_持續】或【KEYWORD_消耗】牌時加{otherParams[0]}生命及上限。",
+    "params": [
+      7
+    ],
+    "effect_round": 12,
+    "relate_talent_id": null,
+    "desc_cn": "使用[持续]或[消耗]牌所需[灵气]减1。\n第12轮起生效：每次使用[持续]或[消耗]牌时加7生命及上限。",
+    "desc_en": "Reduce the required [Qi] for playing [Continuous] or [Consume] cards by 1.\nEffective from round 12: Each time you play a [Continuous] or [Consume] card, gain 7 HP and Max HP."
+  },
+  {
+    "id": 127,
+    "name_cn": "共鸣·猛虎之躯",
+    "name_en": "Resonance: The Body of Fierce Tiger",
+    "name_tw": "共鳴·猛虎之軀",
+    "desc_cn_template": "战斗开始时，自身每有{otherParams[0]}生命，就额外加1生命及上限（第{effectRound}轮起改为2生命及上限）。",
+    "desc_en_template": "At the beginning of battle, for every {otherParams[0]} HP you have, gain an additional 1 HP and Max HP (effective from round {effectRound}, this changes to 2 HP and Max HP).",
+    "desc_tw_template": "戰鬥開始時，自身每有{otherParams[0]}生命，就額外加1生命及上限（第{effectRound}輪起改爲2生命及上限）。",
+    "params": [
+      12
+    ],
+    "effect_round": 15,
+    "relate_talent_id": null,
+    "desc_cn": "战斗开始时，自身每有12生命，就额外加1生命及上限（第15轮起改为2生命及上限）。",
+    "desc_en": "At the beginning of battle, for every 12 HP you have, gain an additional 1 HP and Max HP (effective from round 15, this changes to 2 HP and Max HP)."
+  },
+  {
+    "id": 128,
+    "name_cn": "共鸣·锟铻金环",
+    "name_en": "Resonance: Kun Wu Metal Ring",
+    "name_tw": "共鳴·錕鋙金環",
+    "desc_cn_template": "第{effectRound}轮起生效：若【38】在卡组中，战斗开始时将其升级，战斗结束还原；若【38】在手牌中，则战斗开始时【KEYWORD_激活土灵】并【KEYWORD_激活金灵】。",
+    "desc_en_template": "Effective from round {effectRound}: Upgrade 【38】 in battle, and revert it after the battle; If 【38】 is in your hand, at the start of the battle 【KEYWORD_激活土灵】 and 【KEYWORD_激活金灵】.",
+    "desc_tw_template": "第{effectRound}輪起生效：若【38】在卡組中，戰鬥開始時將其升級，戰鬥結束還原；若【38】在手牌中，則戰鬥開始時【KEYWORD_激活土灵】並【KEYWORD_激活金灵】。",
+    "params": [],
+    "effect_round": 13,
+    "relate_talent_id": null,
+    "desc_cn": "第13轮起生效：若[锟铻金环]在卡组中，战斗开始时将其升级，战斗结束还原；若[锟铻金环]在手牌中，则战斗开始时[激活土灵]并[激活金灵]。",
+    "desc_en": "Effective from round 13: Upgrade [Kun Wu Metal Ring] in battle, and revert it after the battle; If [Kun Wu Metal Ring] is in your hand, at the start of the battle [Activate Earth Spirit] and [Activate Metal Spirit]."
+  },
+  {
+    "id": 129,
+    "name_cn": "共鸣·疾燃咒印",
+    "name_en": "Resonance: Swift Burning Seal",
+    "name_tw": "共鳴·疾燃咒印",
+    "desc_cn_template": "仙命【TALENT_140】从“每场战斗限1次”改为“每场战斗限2次”。",
+    "desc_en_template": "The Immortal Fate 【TALENT_140】 is changed from \"once per battle\" to \"twice per battle\".",
+    "desc_tw_template": "仙命【TALENT_140】從“每場戰鬥限1次”改爲“每場戰鬥限2次”。",
+    "params": [],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "仙命[疾燃咒印]从“每场战斗限1次”改为“每场战斗限2次”。",
+    "desc_en": "The Immortal Fate [Swift Burning Seal] is changed from \"once per battle\" to \"twice per battle\"."
+  },
+  {
+    "id": 130,
+    "name_cn": "共鸣·锻体不息",
+    "name_en": "Resonance: Unceasing Exercising",
+    "name_tw": "共鳴·鍛體不息",
+    "desc_cn_template": "每轮开始时额外加{otherParams[0]}【KEYWORD_体魄】上限和{otherParams[1]}【KEYWORD_体魄】，但自身无法用【KEYWORD_体魄】突破境界。\n到达金丹期后：修为减1，获得1张【45】。",
+    "desc_en_template": "At the start of each round, gain {otherParams[0]} more 【KEYWORD_体魄】 Cap and {otherParams[1]} 【KEYWORD_体魄】, but your 【KEYWORD_体魄】 can't be used as Cul. for breaking through.\nAfter reaching the Virtuoso Phase: Lose 1 Cultivation and obtain a 【45】.",
+    "desc_tw_template": "每輪開始時，會額外加{otherParams[0]}【KEYWORD_体魄】上限和{otherParams[1]}【KEYWORD_体魄】，但無法用【KEYWORD_体魄】來突破境界。\n到達金丹期後：修爲减1，獲得1張【45】。",
+    "params": [
+      3,
+      3
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "每轮开始时额外加3[体魄]上限和3[体魄]，但自身无法用[体魄]突破境界。\n到达金丹期后：修为减1，获得1张[锻体不息]。",
+    "desc_en": "At the start of each round, gain 3 more [Phy.] Cap and 3 [Phy.], but your [Phy.] can't be used as Cul. for breaking through.\nAfter reaching the Virtuoso Phase: Lose 1 Cultivation and obtain a [Unceasing Exercising]."
+  },
+  {
+    "id": 131,
+    "name_cn": "共鸣·生机不灭",
+    "name_en": "Resonance: Undying Body",
+    "name_tw": "共鳴·生機不滅",
+    "desc_cn_template": "【TALENT_154】可额外再触发1次。",
+    "desc_en_template": "Immortal Fate 【TALENT_154】 can be triggered an additional time.",
+    "desc_tw_template": "【TALENT_154】可額外再觸發1次。",
+    "params": [
+      0
+    ],
+    "effect_round": null,
+    "relate_talent_id": null,
+    "desc_cn": "[生机不灭]可额外再触发1次。",
+    "desc_en": "Immortal Fate [Undying Body] can be triggered an additional time."
+  },
+  {
+    "id": 132,
+    "name_cn": "共鸣·猛攻之姿",
+    "name_en": "Resonance: Stance of Fierce Attack",
+    "name_tw": "共鳴·猛攻之姿",
+    "desc_cn_template": "第{effectRound}轮起生效：每次使用名字含“掌”的牌后追加{otherParams[0]}攻。",
+    "desc_en_template": "Effective from round {effectRound}: After playing a card with \"Palm\" in its name, make an additional {otherParams[0]} ATK.",
+    "desc_tw_template": "第{effectRound}輪起生效：每次使用名字含“掌”的牌後追加{otherParams[0]}攻。",
+    "params": [
+      3
+    ],
+    "effect_round": 6,
+    "relate_talent_id": null,
+    "desc_cn": "第6轮起生效：每次使用名字含“掌”的牌后追加3攻。",
+    "desc_en": "Effective from round 6: After playing a card with \"Palm\" in its name, make an additional 3 ATK."
+  },
+  {
+    "id": 133,
+    "name_cn": "共鸣·冥夜",
+    "name_en": "Resonance: Styx Night",
+    "name_tw": "共鳴·冥夜",
+    "desc_cn_template": "若卡组中的【KEYWORD_持续】牌仅有【74】，其描述中“最多加X”的限制取消。\n第{effectRound}轮起生效：战斗开始时，升级卡组中前{otherParams[0]}张“崩拳”，战斗结束还原。",
+    "desc_en_template": "If the only 【KEYWORD_持续】 card in your deck is 【74】, remove the \"up to X\" limit from its description.\nEffective from round {effectRound}: At the start of battle, upgrade the first {otherParams[0]} \"Crushing Fist\" cards in your deck, revert them after the battle.",
+    "desc_tw_template": "若卡組中的【KEYWORD_持續】牌僅有【74】，其描述中“最多加X”的限制取消。\n第{effectRound}輪起生效：戰鬥開始時，升級卡組中前{otherParams[0]}張“崩拳”，戰鬥結束還原。",
+    "params": [
+      2
+    ],
+    "effect_round": 12,
+    "relate_talent_id": null,
+    "desc_cn": "若卡组中的[持续]牌仅有[崩拳·冥夜]，其描述中“最多加X”的限制取消。\n第12轮起生效：战斗开始时，升级卡组中前2张“崩拳”，战斗结束还原。",
+    "desc_en": "If the only [Continuous] card in your deck is [Crash Fist - Styx Night], remove the \"up to X\" limit from its description.\nEffective from round 12: At the start of battle, upgrade the first 2 \"Crushing Fist\" cards in your deck, revert them after the battle."
+  },
+  {
+    "id": 134,
+    "name_cn": "共鸣·禅心锻身",
+    "name_en": "Resonance: Zen Mind Forging Body",
+    "name_tw": "共鳴·禪心鍛身",
+    "desc_cn_template": "若卡组中含至少1张【0】，则战斗失败时也可触发【TALENT_183】。\n第{effectRound}轮起生效：【TALENT_183】描述中“最多加4次”的限制取消，且每次触发【TALENT_183】加体魄上限时多加1点。",
+    "desc_en_template": "If your deck contains at least 1 【0】, then even if you lose the battle, you can still trigger 【TALENT_183】.\nEffective from round {effectRound}: Remove the \"up to 4 times\" limit from  【TALENT_183】,  and an additional 1 [Physique] Cap is added for each trigger.",
+    "desc_tw_template": "若卡組中含至少1張【0】，則戰鬥失敗時也可觸發【TALENT_183】。\n第{effectRound}輪起生效：【TALENT_183】描述中“最多加4次”的限制取消，且每次觸發【TALENT_183】加體魄上限時多加1點。",
+    "params": [],
+    "effect_round": 9,
+    "relate_talent_id": null,
+    "desc_cn": "若卡组中含至少1张[普通攻击]，则战斗失败时也可触发[禅心锻身]。\n第9轮起生效：[禅心锻身]描述中“最多加4次”的限制取消，且每次触发[禅心锻身]加体魄上限时多加1点。",
+    "desc_en": "If your deck contains at least 1 [Normal Attack], then even if you lose the battle, you can still trigger [Zen Mind Forging Body].\nEffective from round 9: Remove the \"up to 4 times\" limit from  [Zen Mind Forging Body],  and an additional 1 [Physique] Cap is added for each trigger."
+  },
+  {
+    "id": 135,
+    "name_cn": "共鸣·冥心入玄",
+    "name_en": "Resonance: Meditation of Xuan",
+    "name_tw": "共鳴·冥心入玄",
+    "desc_cn_template": "第{effectRound}轮起生效：使用【81】后，双方在自身回合开始时触发的每层【KEYWORD_恢复】/【KEYWORD_内伤】效果从加/减1生命改为2生命。",
+    "desc_en_template": "Effective from round {effectRound}: After playing 【81】, each stack of 【KEYWORD_恢复】/【KEYWORD_内伤】 effect triggered at the start of both player's turn changes from add/lose 1 HP to 2 HP.",
+    "desc_tw_template": "第{effectRound}輪起生效：使用【81】後，雙方在自身回合開始時觸發的每層【KEYWORD_恢復】/【KEYWORD_內傷】效果從加/减1生命改爲2生命。",
+    "params": [],
+    "effect_round": 10,
+    "relate_talent_id": null,
+    "desc_cn": "第10轮起生效：使用[冥心入玄]后，双方在自身回合开始时触发的每层[恢复]/[内伤]效果从加/减1生命改为2生命。",
+    "desc_en": "Effective from round 10: After playing [Meditation of Xuan], each stack of [Regeneration]/[Internal Injury] effect triggered at the start of both player's turn changes from add/lose 1 HP to 2 HP."
+  },
+  {
+    "id": 136,
+    "name_cn": "共鸣·志坚",
+    "name_en": "Resonance: Indomitable Will",
+    "name_tw": "共鳴·志堅",
+    "desc_cn_template": "第{effectRound}轮起，仙命【TALENT_206】附加额外效果：\n【KEYWORD_拳】：受到的【KEYWORD_破绽】效果降低20%。自身回合开始时触发【KEYWORD_内伤】而减的生命降低50%。\n【KEYWORD_棍】：受到的【KEYWORD_虚弱】效果降低20%。自身的【KEYWORD_再次行动】即将被【KEYWORD_困缚】阻止时，改为减自身15生命而不被阻止。",
+    "desc_en_template": "Effective from round {effectRound}: Immortal Fate 【TALENT_206】 adds additional effects:\n【KEYWORD_拳】: Reduce the effect of 【KEYWORD_破绽】 by 20%. At the start of your turn, reduce the HP lost due to 【KEYWORD_内伤】 by 50%.\n【KEYWORD_棍】: Reduce the effect of 【KEYWORD_虚弱】 by 20%. When your 【KEYWORD_再次行动】 is about to be prevented by 【KEYWORD_困缚】, instead, reduce your HP by 15 without being prevented.",
+    "desc_tw_template": "第{effectRound}輪起，仙命【TALENT_206】附加額外效果：\n【KEYWORD_拳】：受到的【KEYWORD_破綻】效果降低20%。自身回合開始時觸發【KEYWORD_內傷】而减的生命降低50%。\n【KEYWORD_棍】：受到的【KEYWORD_虛弱】效果降低20%。自身的【KEYWORD_再次行動】即將被【KEYWORD_困縛】阻止時，改爲减自身15生命而不被阻止。",
+    "params": [],
+    "effect_round": 6,
+    "relate_talent_id": null,
+    "desc_cn": "第6轮起，仙命[志坚]附加额外效果：\n[拳]：受到的[破绽]效果降低20%。自身回合开始时触发[内伤]而减的生命降低50%。\n[棍]：受到的[虚弱]效果降低20%。自身的[再次行动]即将被[困缚]阻止时，改为减自身15生命而不被阻止。",
+    "desc_en": "Effective from round 6: Immortal Fate [Indomitable Will] adds additional effects:\n[Fist]: Reduce the effect of [Flaw] by 20%. At the start of your turn, reduce the HP lost due to [Internal Injury] by 50%.\n[Stick]: Reduce the effect of [Weakened] by 20%. When your [Chase] is about to be prevented by [Entangled], instead, reduce your HP by 15 without being prevented."
+  },
+  {
+    "id": 137,
+    "name_cn": "共鸣·得炁",
+    "name_en": "Resonance: Attain Qi",
+    "name_tw": "共鳴·得炁",
+    "desc_cn_template": "解除【TALENT_204】无法获得灵气和修为的限制（不再改加体魄），加回因【TALENT_204】而少加的修为。\n第{effectRound}轮起生效：每场战斗结束时若自身【KEYWORD_灵气】≥{otherParams[0]}，加1修为。",
+    "desc_en_template": "Remove the restriction from Immortal Fate 【TALENT_204】 that prevents you from gaining 【KEYWORD_灵气】 and Cultivation (no longer adds Physique), and restore the Cultivation that was missed due to 【TALENT_204】.\nEffective from round {effectRound}: At the end of each battle, if your 【KEYWORD_灵气】 ≥ {otherParams[0]}, gain 1 Cultivation.",
+    "desc_tw_template": "解除【TALENT_204】無法獲得靈氣和修爲的限制（不再改加體魄），加回因【TALENT_204】而少加的修爲。\n第{effectRound}輪起生效：每場戰鬥結束時若自身【KEYWORD_靈氣】≥{otherParams[0]}，加1修爲。",
+    "params": [
+      4
+    ],
+    "effect_round": 9,
+    "relate_talent_id": null,
+    "desc_cn": "解除[凡躯]无法获得灵气和修为的限制（不再改加体魄），加回因[凡躯]而少加的修为。\n第9轮起生效：每场战斗结束时若自身[灵气]≥4，加1修为。",
+    "desc_en": "Remove the restriction from Immortal Fate [Mortal Body] that prevents you from gaining [Qi] and Cultivation (no longer adds Physique), and restore the Cultivation that was missed due to [Mortal Body].\nEffective from round 9: At the end of each battle, if your [Qi] ≥ 4, gain 1 Cultivation."
+  }
+]

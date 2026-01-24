@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Hexagram]+2 | The next 1 slot in your deck [Become Star Point]
+  L1 IMPL: [no cost]  game.add_c_of_x(2, "hexagram"); game.become_star_point(1); ✓
+  L2 CSV:  [no cost] [Hexagram]+3 | The next 1 slot in your deck [Become Star Point]
+  L2 IMPL: [no cost]  game.add_c_of_x(3, "hexagram"); game.become_star_point(1); ✓
+  L3 CSV:  [no cost] [Hexagram]+4 | The next 1 slot in your deck [Become Star Point]
+  L3 IMPL: [no cost]  game.add_c_of_x(4, "hexagram"); game.become_star_point(1); ✓

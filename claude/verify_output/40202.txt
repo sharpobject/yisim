@@ -1,0 +1,8 @@
+### 40202 - Nameless Ancient Sword
+  L1 CSV:  [hp=0 qi=1] 11 ATK | If your HP is less than 12, this card's ATK is doubled
+  L1 IMPL: [hp=0 qi=1]  let atk_amt = 11; if (game.players[0].hp <= 11) { atk_amt += 11; } game.atk(atk_amt); ✓
+  L2 CSV:  [hp=0 qi=1] 15 ATK | If your HP is less than 12, this card's ATK is doubled
+  L2 IMPL: [hp=0 qi=1]  let atk_amt = 15; if (game.players[0].hp <= 11) { atk_amt += 15; } game.atk(atk_amt); ✓
+  L3 CSV:  [hp=0 qi=1] 19 ATK | If your HP is less than 12, this card's ATK is doubled
+  L3 IMPL: [hp=0 qi=1]  let atk_amt = 19; if (game.players[0].hp <= 11) { atk_amt += 19; } game.atk(atk_amt); ✓
+

@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Star Power]+1 (Add 1 more if this card is in the first slot) | [Continuous]: All the slots in you deck are [Star Point]
+  L1 IMPL: [no cost]  game.continuous(); game.do_polaris_citta_dharma(1); ✓
+  L2 CSV:  [no cost] [Star Power]+2 (Add 1 more if this card is in the first slot) | [Continuous]: All the slots in you deck are [Star Point]
+  L2 IMPL: [no cost]  game.continuous(); game.do_polaris_citta_dharma(2); ✓
+  L3 CSV:  [no cost] [Star Power]+3 (Add 1 more if this card is in the first slot) | [Continuous]: All the slots in you deck are [Star Point]
+  L3 IMPL: [no cost]  game.continuous(); game.do_polaris_citta_dharma(3); ✓

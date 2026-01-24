@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=4 qi=0] Transfer 1 stack of your random [Debuff] to the opponent (also triggered in the next Crash Fist) | 9 ATK
+  L1 IMPL: [hp=4 qi=0]  game.transfer_random_debuff(); game.atk(9); game.add_c_of_x(1, "crash_fist_truncate_stacks"); ✓
+  L2 CSV:  [hp=4 qi=0] Transfer 1 stack of your random [Debuff] to the opponent (also triggered in the next Crash Fist) | 13 ATK
+  L2 IMPL: [hp=4 qi=0]  game.transfer_random_debuff(); game.atk(13); game.add_c_of_x(1, "crash_fist_truncate_stacks"); ✓
+  L3 CSV:  [hp=4 qi=0] Transfer 1 stack of your random [Debuff] to the opponent (also triggered in the next Crash Fist) | 17 ATK
+  L3 IMPL: [hp=4 qi=0]  game.transfer_random_debuff(); game.atk(17); game.add_c_of_x(1, "crash_fist_truncate_stacks"); ✓

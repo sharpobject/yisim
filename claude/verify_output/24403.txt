@@ -1,0 +1,8 @@
+### 24403 - Styx Three Hit
+  L1 CSV:  [no cost] 2 ATK × 3 | 1 more ATK for each 30 Max HP
+  L1 IMPL: [no cost]  const atk_amt = 2 + Math.floor(game.players[0].max_hp * 3.333334 / 100); for (let i = 0; i < 3; i++) { game.atk(atk_amt); } ✓
+  L2 CSV:  [no cost] 2 ATK × 3 | 1 more ATK for each 22 Max HP
+  L2 IMPL: [no cost]  const atk_amt = 2 + Math.floor(game.players[0].max_hp * 4.545455 / 100); for (let i = 0; i < 3; i++) { game.atk(atk_amt); } ✓
+  L3 CSV:  [no cost] 2 ATK × 3 | 1 more ATK for each 16 Max HP
+  L3 IMPL: [no cost]  const atk_amt = 2 + Math.floor(game.players[0].max_hp * 6.25 / 100); for (let i = 0; i < 3; i++) { game.atk(atk_amt); } ✓
+

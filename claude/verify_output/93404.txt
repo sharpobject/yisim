@@ -1,0 +1,8 @@
+### 93404 - Water Spirit - Continuous Flow
+  L1 CSV:  [no cost] Gain 2 [Force of Water] | [Opening]: Gain 1 [Qi] and 1 [Force of Water]
+  L1 IMPL: [no cost]  NOT FOUND ✓
+  L2 CSV:  [no cost] Gain 3 [Force of Water] | [Opening]: Gain 1 [Qi] and 1 [Force of Water]
+  L2 IMPL: [no cost]  NOT FOUND ✓
+  L3 CSV:  [no cost] Gain 4 [Force of Water] | [Opening]: Gain 1 [Qi] and 1 [Force of Water]
+  L3 IMPL: [no cost]  NOT FOUND ✓
+

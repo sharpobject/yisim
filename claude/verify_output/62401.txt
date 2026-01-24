@@ -1,0 +1,8 @@
+### 62401 - Heptastar Soulstat
+  L1 CSV:  [no cost] Opponent loses 4 HP | Make the opponent unable to act for 1 turn
+  L1 IMPL: [no cost]  game.reduce_enemy_c_of_x(4, "hp"); game.add_enemy_c_of_x(1, "cannot_act_stacks"); ✓
+  L2 CSV:  [no cost] Opponent loses 9 HP | Make the opponent unable to act for 1 turn
+  L2 IMPL: [no cost]  game.reduce_enemy_c_of_x(9, "hp"); game.add_enemy_c_of_x(1, "cannot_act_stacks"); ✓
+  L3 CSV:  [no cost] Opponent loses 14 HP | Make the opponent unable to act for 1 turn
+  L3 IMPL: [no cost]  game.reduce_enemy_c_of_x(14, "hp"); game.add_enemy_c_of_x(1, "cannot_act_stacks"); ✓
+

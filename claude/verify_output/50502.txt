@@ -1,0 +1,8 @@
+### 50502 - Shadow Owl Rabbit
+  L1 CSV:  [no cost] [Continuous]: All cards gain [Chase] and you will lose 10 HP before the Chase
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(10, "shadow_owl_rabbit_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous]: All cards gain [Chase] and you will lose 8 HP before the Chase
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(8, "shadow_owl_rabbit_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous]: All cards gain [Chase] and you will lose 6 HP before the Chase
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(6, "shadow_owl_rabbit_stacks"); ✓
+

@@ -1,0 +1,8 @@
+### 35203 - Cure Formation
+  L1 CSV:  [no cost] HP+7 | If you have played a Continuous card in this battle, add 6 Max HP first
+  L1 IMPL: [no cost]  if (game.if_played_continuous()) { game.add_c_of_x(6, "max_hp"); } game.increase_idx_hp(0, 7); ✓
+  L2 CSV:  [no cost] HP+11 | If you have played a Continuous card in this battle, add 9 Max HP first
+  L2 IMPL: [no cost]  if (game.if_played_continuous()) { game.add_c_of_x(9, "max_hp"); } game.increase_idx_hp(0, 11); ✓
+  L3 CSV:  [no cost] HP+15 | If you have played a Continuous card in this battle, add 12 Max HP first
+  L3 IMPL: [no cost]  if (game.if_played_continuous()) { game.add_c_of_x(12, "max_hp"); } game.increase_idx_hp(0, 15); ✓
+

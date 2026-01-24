@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=2 qi=0] 9 ATK | Cost 1 Qi: This card gains [Smash DEF] and adds 4 ATK
+  L1 IMPL: [hp=2 qi=0]  let atk_amt = 9; if (game.players[0].qi >= 1) { game.reduce_c_of_x(1, "qi"); game.add_c_of_x(1, "smash_def"); atk_amt += 4; } game.atk(atk_amt); ✓
+  L2 CSV:  [hp=2 qi=0] 12 ATK | Cost 1 Qi: This card gains [Smash DEF] and adds 5 ATK
+  L2 IMPL: [hp=2 qi=0]  let atk_amt = 12; if (game.players[0].qi >= 1) { game.reduce_c_of_x(1, "qi"); game.add_c_of_x(1, "smash_def"); atk_amt += 5; } game.atk(atk_amt); ✓
+  L3 CSV:  [hp=2 qi=0] 15 ATK | Cost 1 Qi: This card gains [Smash DEF] and adds 6 ATK
+  L3 IMPL: [hp=2 qi=0]  let atk_amt = 15; if (game.players[0].qi >= 1) { game.reduce_c_of_x(1, "qi"); game.add_c_of_x(1, "smash_def"); atk_amt += 6; } game.atk(atk_amt); ✓

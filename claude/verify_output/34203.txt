@@ -1,0 +1,8 @@
+### 34203 - Gild The Lily
+  L1 CSV:  [no cost] 5 ATK × 2 | Opponent add 8 [DEF]
+  L1 IMPL: [no cost]  for (let i = 0; i < 2; i++) { game.atk(5); } game.add_enemy_c_of_x(8, "def"); ✓
+  L2 CSV:  [no cost] 7 ATK × 2 | Opponent add 8 [DEF]
+  L2 IMPL: [no cost]  for (let i = 0; i < 2; i++) { game.atk(7); } game.add_enemy_c_of_x(8, "def"); ✓
+  L3 CSV:  [no cost] 9 ATK × 2 | Opponent add 8 [DEF]
+  L3 IMPL: [no cost]  for (let i = 0; i < 2; i++) { game.atk(9); } game.add_enemy_c_of_x(8, "def"); ✓
+

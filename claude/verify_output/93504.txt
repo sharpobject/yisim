@@ -1,0 +1,8 @@
+### 93504 - Xuanming Heavenly Essence Destruction
+  L1 CSV:  [hp=5 qi=0] 10 ATK (1 more ATK for every 5 HP lost in this battle) | If there are no more than 2 types of [Five Elements] in your deck, [Chase]
+  L1 IMPL: [hp=5 qi=0]  game.atk(10 + Math.floor(game.players[0].hp_lost * 20 / 100)); if (game.get_n_different_five_elements(0) === 1) { game.chase(); } ✓
+  L2 CSV:  [hp=5 qi=0] 15 ATK (1 more ATK for every 5 HP lost in this battle) | If there are no more than 2 types of [Five Elements] in your deck, [Chase]
+  L2 IMPL: [hp=5 qi=0]  game.atk(15 + Math.floor(game.players[0].hp_lost * 20 / 100)); if (game.get_n_different_five_elements(0) === 1) { game.chase(); } ✓
+  L3 CSV:  [hp=5 qi=0] 20 ATK (1 more ATK for every 5 HP lost in this battle) | If there are no more than 2 types of [Five Elements] in your deck, [Chase]
+  L3 IMPL: [hp=5 qi=0]  game.atk(20 + Math.floor(game.players[0].hp_lost * 20 / 100)); if (game.get_n_different_five_elements(0) === 1) { game.chase(); } ✓
+

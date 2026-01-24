@@ -1,0 +1,8 @@
+### 34502 - Finishing Touch
+  L1 CSV:  [no cost] [Upgrade] next 3 cards when playing them (restored after the battle) | [Consumption]
+  L1 IMPL: [no cost]  game.add_c_of_x(3, "finishing_touch_stacks"); game.consumption(); ✓
+  L2 CSV:  [no cost] [Upgrade] next 4 cards when playing them (restored after the battle) | [Consumption]
+  L2 IMPL: [no cost]  game.add_c_of_x(4, "finishing_touch_stacks"); game.consumption(); ✓
+  L3 CSV:  [no cost] [Upgrade] next 5 cards when playing them (restored after the battle) | [Consumption]
+  L3 IMPL: [no cost]  game.add_c_of_x(5, "finishing_touch_stacks"); game.consumption(); ✓
+

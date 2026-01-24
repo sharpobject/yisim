@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Qi]+1 | HP+4 | [Activate Wood Spirit]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 1); game.increase_idx_hp(0, 4); game.activate_wood_spirit(); ✓
+  L2 CSV:  [no cost] [Qi]+2 | HP+4 | [Activate Wood Spirit]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.increase_idx_hp(0, 4); game.activate_wood_spirit(); ✓
+  L3 CSV:  [no cost] [Qi]+3 | HP+4 | [Activate Wood Spirit]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.increase_idx_hp(0, 4); game.activate_wood_spirit(); ✓

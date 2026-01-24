@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=2] Gain 3 stacks of [Force of Water] | [Water Spirit]: Add 6 HP and Max HP (for every stack of [Force of Water], increase by 1)
+  L1 IMPL: [hp=0 qi=2]  game.add_c_of_x(3, "force_of_water"); if (game.if_water_spirit()) { const amt = game.players[0].force_of_water + 6; game.add_c_of_x(amt, "max_hp"); game.increase_idx_hp(0, amt); } ✓
+  L2 CSV:  [hp=0 qi=2] Gain 4 stacks of [Force of Water] | [Water Spirit]: Add 8 HP and Max HP (for every stack of [Force of Water], increase by 1)
+  L2 IMPL: [hp=0 qi=2]  game.add_c_of_x(4, "force_of_water"); if (game.if_water_spirit()) { const amt = game.players[0].force_of_water + 8; game.add_c_of_x(amt, "max_hp"); game.increase_idx_hp(0, amt); } ✓
+  L3 CSV:  [hp=0 qi=2] Gain 5 stacks of [Force of Water] | [Water Spirit]: Add 10 HP and Max HP (for every stack of [Force of Water], increase by 1)
+  L3 IMPL: [hp=0 qi=2]  game.add_c_of_x(5, "force_of_water"); if (game.if_water_spirit()) { const amt = game.players[0].force_of_water + 10; game.add_c_of_x(amt, "max_hp"); game.increase_idx_hp(0, amt); } ✓

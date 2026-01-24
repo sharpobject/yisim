@@ -1,0 +1,8 @@
+### 37103 - Foretell Fate
+  L1 CSV:  [no cost] Opponent loses 6 HP | [Opening]: Opponent loses 2 HP
+  L1 IMPL: [no cost] opening=[['reduce_enemy_c_of_x', 2, 'hp']] game.reduce_enemy_c_of_x(6, "hp"); ✓
+  L2 CSV:  [no cost] Opponent loses 8 HP | [Opening]: Opponent loses 3 HP
+  L2 IMPL: [no cost] opening=[['reduce_enemy_c_of_x', 3, 'hp']] game.reduce_enemy_c_of_x(8, "hp"); ✓
+  L3 CSV:  [no cost] Opponent loses 10 HP | [Opening]: Opponent loses 4 HP
+  L3 IMPL: [no cost] opening=[['reduce_enemy_c_of_x', 4, 'hp']] game.reduce_enemy_c_of_x(10, "hp"); ✓
+

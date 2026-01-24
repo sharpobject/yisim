@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 10% chance to apply 2 stacks of [Flaw] | 6 ATK
+  L1 IMPL: [no cost]  if (game.if_c_pct(10)) { game.add_enemy_c_of_x(2, "flaw"); } game.atk(6); ✓
+  L2 CSV:  [no cost] 10% chance to apply 3 stacks of [Flaw] | 6 ATK
+  L2 IMPL: [no cost]  if (game.if_c_pct(10)) { game.add_enemy_c_of_x(3, "flaw"); } game.atk(6); ✓
+  L3 CSV:  [no cost] 10% chance to apply 4 stacks of [Flaw] | 6 ATK
+  L3 IMPL: [no cost]  if (game.if_c_pct(10)) { game.add_enemy_c_of_x(4, "flaw"); } game.atk(6); ✓

@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] Max HP+8 | HP+8～18
+  L1 IMPL: [hp=0 qi=1]  game.add_c_of_x(8, "max_hp"); game.heal_rand_range(8, 18); ✓
+  L2 CSV:  [hp=0 qi=1] Max HP+12 | HP+12～22
+  L2 IMPL: [hp=0 qi=1]  game.add_c_of_x(12, "max_hp"); game.heal_rand_range(12, 22); ✓
+  L3 CSV:  [hp=0 qi=1] Max HP+16 | HP+16～26
+  L3 IMPL: [hp=0 qi=1]  game.add_c_of_x(16, "max_hp"); game.heal_rand_range(16, 26); ✓

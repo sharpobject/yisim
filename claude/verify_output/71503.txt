@@ -1,0 +1,8 @@
+### 71503 - M - Cloud Sword Touch Sky
+  L1 CSV:  [no cost] 6 ATK | This card counts as 2 Cloud Sword | The next Cloud Sword gain [Chase]
+  L1 IMPL: [no cost]  game.atk(6); game.increase_idx_x_by_c(0, "cloud_sword_chain_count", 1); game.increase_idx_x_by_c(0, "cloud_sword_clear_heart_stacks", 1); ✓
+  L2 CSV:  [no cost] 8 ATK | This card counts as 3 Cloud Sword | The next Cloud Sword gain [Chase]
+  L2 IMPL: [no cost]  game.atk(8); game.increase_idx_x_by_c(0, "cloud_sword_chain_count", 2); game.increase_idx_x_by_c(0, "cloud_sword_clear_heart_stacks", 1); ✓
+  L3 CSV:  [no cost] 10 ATK | This card counts as 4 Cloud Sword | The next Cloud Sword gain [Chase]
+  L3 IMPL: [no cost]  game.atk(10); game.increase_idx_x_by_c(0, "cloud_sword_chain_count", 3); game.increase_idx_x_by_c(0, "cloud_sword_clear_heart_stacks", 1); ✓
+

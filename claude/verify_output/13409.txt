@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Qi]+2 | HP and Max HP+2 | [Water Spirit]: Add 1 stack of [Force of Water] for every 2 [Qi]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.add_c_of_x(2, "max_hp"); game.add_c_of_x(2, "hp"); if (game.if_water_spirit()) { game.for_each_x_add_c_pct_y("qi", 50, "force_of_water"); } ✓
+  L2 CSV:  [no cost] [Qi]+3 | HP and Max HP+3 | [Water Spirit]: Add 1 stack of [Force of Water] for every 2 [Qi]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.add_c_of_x(3, "max_hp"); game.add_c_of_x(3, "hp"); if (game.if_water_spirit()) { game.for_each_x_add_c_pct_y("qi", 50, "force_of_water"); } ✓
+  L3 CSV:  [no cost] [Qi]+4 | HP and Max HP+4 | [Water Spirit]: Add 1 stack of [Force of Water] for every 2 [Qi]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 4); game.add_c_of_x(4, "max_hp"); game.add_c_of_x(4, "hp"); if (game.if_water_spirit()) { game.for_each_x_add_c_pct_y("qi", 50, "force_of_water"); } ✓

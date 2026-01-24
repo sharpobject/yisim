@@ -1,0 +1,8 @@
+### 71403 - M - Raven Spirit Sword
+  L1 CSV:  [no cost] 4 ATK | Add 2 [DEF] for each [Qi] (up to 4) | If the number of Spirit Sword in the deck ≥ 3, [Chase]
+  L1 IMPL: [no cost]  game.atk(4); const me = game.players[0]; game.increase_idx_def(0, Math.max(me.qi * 2, 4)); if (game.spirit_sword_deck_count(3) === 3) { game.chase(); } ✓
+  L2 CSV:  [no cost] 8 ATK | Add 2 [DEF] for each [Qi] (up to 12) | If the number of Spirit Sword in the deck ≥ 2, [Chase]
+  L2 IMPL: [no cost]  game.atk(8); const me = game.players[0]; game.increase_idx_def(0, Math.max(me.qi * 2, 12)); if (game.spirit_sword_deck_count(2) === 2) { game.chase(); } ✓
+  L3 CSV:  [no cost] 12 ATK | Add 2 [DEF] for each [Qi] (up to 20) | If the number of Spirit Sword in the deck ≥ 1, [Chase]
+  L3 IMPL: [no cost]  game.atk(12); const me = game.players[0]; game.increase_idx_def(0, Math.max(me.qi * 2, 20)); if (game.spirit_sword_deck_count(1) === 1) { game.chase(); } ✓
+

@@ -1,0 +1,8 @@
+### 93301 - Kun Wu Molten Ring
+  L1 CSV:  [no cost] [Activate Fire Spirit] | [Activate Earth Spirit] | [Continuous]: Each time your opponent loses Max HP, they lose an additional 2; each time you gain [DEF], you gain an additional 2
+  L1 IMPL: [no cost]  game.activate_fire_spirit(); game.activate_earth_spirit(); game.continuous(); game.add_c_of_x(2, "kun_wu_molten_ring_stacks"); ✓
+  L2 CSV:  [no cost] [Activate Fire Spirit] | [Activate Earth Spirit] | [Continuous]: Each time your opponent loses Max HP, they lose an additional 3; each time you gain [DEF], you gain an additional 3
+  L2 IMPL: [no cost]  game.activate_fire_spirit(); game.activate_earth_spirit(); game.continuous(); game.add_c_of_x(3, "kun_wu_molten_ring_stacks"); ✓
+  L3 CSV:  [no cost] [Activate Fire Spirit] | [Activate Earth Spirit] | [Continuous]: Each time your opponent loses Max HP, they lose an additional 4; each time you gain [DEF], you gain an additional 4
+  L3 IMPL: [no cost]  game.activate_fire_spirit(); game.activate_earth_spirit(); game.continuous(); game.add_c_of_x(4, "kun_wu_molten_ring_stacks"); ✓
+

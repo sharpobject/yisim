@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [DEF]+4 | [Continuous]: Whenever you play an "Earth Spirit" card, add 2 [DEF]
+  L1 IMPL: [no cost]  game.increase_idx_def(0, 4); game.continuous(); game.add_c_of_x(2, "earth_spirit_formation_stacks"); ✓
+  L2 CSV:  [no cost] [DEF]+6 | [Continuous]: Whenever you play an "Earth Spirit" card, add 3 [DEF]
+  L2 IMPL: [no cost]  game.increase_idx_def(0, 6); game.continuous(); game.add_c_of_x(3, "earth_spirit_formation_stacks"); ✓
+  L3 CSV:  [no cost] [DEF]+8 | [Continuous]: Whenever you play an "Earth Spirit" card, add 4 [DEF]
+  L3 IMPL: [no cost]  game.increase_idx_def(0, 8); game.continuous(); game.add_c_of_x(4, "earth_spirit_formation_stacks"); ✓

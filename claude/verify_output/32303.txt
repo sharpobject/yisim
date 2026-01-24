@@ -1,0 +1,8 @@
+### 32303 - Miasma Fulu
+  L1 CSV:  [no cost] Apply 2 stacks of [Internal Injury] | [Consumption]
+  L1 IMPL: [no cost]  game.add_enemy_c_of_x(2, "internal_injury"); game.consumption(); ✓
+  L2 CSV:  [no cost] Apply 3 stacks of [Internal Injury] | [Consumption]
+  L2 IMPL: [no cost]  game.add_enemy_c_of_x(3, "internal_injury"); game.consumption(); ✓
+  L3 CSV:  [no cost] Apply 4 stacks of [Internal Injury] | [Consumption]
+  L3 IMPL: [no cost]  game.add_enemy_c_of_x(4, "internal_injury"); game.consumption(); ✓
+

@@ -1,0 +1,8 @@
+### 92502 - Star Moon Hexagram Fan
+  L1 CSV:  [no cost] [Continuous]: Whenever you gain 1 [Star Power] / [Hexagram] / [Qi], deal 3/3/2 [DMG] to the opponent
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(3, "star_moon_hexagram_fan_stacks"); ✓
+  L2 CSV:  [no cost] [Star Power]+1 | [Continuous]: Whenever you gain 1 [Star Power] / [Hexagram] / [Qi], deal 3/3/2 [DMG] to the opponent
+  L2 IMPL: [no cost]  game.add_c_of_x(1, "star_power"); game.continuous(); game.add_c_of_x(3, "star_moon_hexagram_fan_stacks"); ✓
+  L3 CSV:  [no cost] [Star Power]+2 | [Continuous]: Whenever you gain 1 [Star Power] / [Hexagram] / [Qi], deal 3/3/2 [DMG] to the opponent
+  L3 IMPL: [no cost]  game.add_c_of_x(2, "star_power"); game.continuous(); game.add_c_of_x(3, "star_moon_hexagram_fan_stacks"); ✓
+

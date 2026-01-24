@@ -1,0 +1,8 @@
+### 21503 - Unrestrained Sword - Twin Dragons
+  L1 CSV:  [no cost] 2 ATK | Next "Unrestrained Sword" will trigger twice
+  L1 IMPL: [no cost]  game.atk(2); game.add_c_of_x(1, "unrestrained_sword_twin_dragons_stacks"); ✓
+  L2 CSV:  [no cost] 8 ATK | Next "Unrestrained Sword" will trigger twice
+  L2 IMPL: [no cost]  game.atk(8); game.add_c_of_x(1, "unrestrained_sword_twin_dragons_stacks"); ✓
+  L3 CSV:  [no cost] 14 ATK | Next "Unrestrained Sword" will trigger twice
+  L3 IMPL: [no cost]  game.atk(14); game.add_c_of_x(1, "unrestrained_sword_twin_dragons_stacks"); ✓
+

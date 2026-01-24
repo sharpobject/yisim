@@ -1,0 +1,8 @@
+### 21601 - Remnant Cloud Sky Sealing Sword
+  L1 CSV:  [hp=0 qi=1] 8 ATK | Add 8 ATK for each "Cloud Sword" remaining in your hand
+  L1 IMPL: [hp=0 qi=1]  game.atk(8 + 8 * game.players[0].cloud_sword_hand_count); ✓
+  L2 CSV:  [hp=0 qi=1] 10 ATK | Add 10 ATK for each "Cloud Sword" remaining in your hand
+  L2 IMPL: [hp=0 qi=1]  game.atk(10 + 10 * game.players[0].cloud_sword_hand_count); ✓
+  L3 CSV:  [hp=0 qi=1] 12 ATK | Add 12 ATK for each "Cloud Sword" remaining in your hand
+  L3 IMPL: [hp=0 qi=1]  game.atk(12 + 12 * game.players[0].cloud_sword_hand_count); ✓
+

@@ -1,0 +1,8 @@
+### 40501 - Nether Seal Evil Signet
+  L1 CSV:  [hp=0 qi=3] Remove the opponent's all [DEF] and [Guard Up] | Deal 30 [DMG]
+  L1 IMPL: [hp=0 qi=3]  game.reduce_enemy_x_by_enemy_y("def", "def"); game.reduce_enemy_x_by_enemy_y("guard_up", "guard_up"); game.deal_damage(30); ✓
+  L2 CSV:  [hp=0 qi=3] Remove the opponent's all [DEF] and [Guard Up] | Deal 36 [DMG]
+  L2 IMPL: [hp=0 qi=3]  game.reduce_enemy_x_by_enemy_y("def", "def"); game.reduce_enemy_x_by_enemy_y("guard_up", "guard_up"); game.deal_damage(36); ✓
+  L3 CSV:  [hp=0 qi=3] Remove the opponent's all [DEF] and [Guard Up] | Deal 42 [DMG]
+  L3 IMPL: [hp=0 qi=3]  game.reduce_enemy_x_by_enemy_y("def", "def"); game.reduce_enemy_x_by_enemy_y("guard_up", "guard_up"); game.deal_damage(42); ✓
+

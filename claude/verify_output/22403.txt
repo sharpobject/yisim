@@ -1,0 +1,8 @@
+### 22403 - Thunder Citta-Dharma
+  L1 CSV:  [no cost] [Hexagram]+1 | [Continuous]: The card containing the name "Thunder" add 40% more ATK
+  L1 IMPL: [no cost]  game.add_c_of_x(1, "hexagram"); game.continuous(); game.add_c_of_x(40, "thunder_citta_dharma_stacks"); ✓
+  L2 CSV:  [no cost] [Hexagram]+2 | [Continuous]: The card containing the name "Thunder" add 50% more ATK
+  L2 IMPL: [no cost]  game.add_c_of_x(2, "hexagram"); game.continuous(); game.add_c_of_x(50, "thunder_citta_dharma_stacks"); ✓
+  L3 CSV:  [no cost] [Hexagram]+3 | [Continuous]: The card containing the name "Thunder" add 60% more ATK
+  L3 IMPL: [no cost]  game.add_c_of_x(3, "hexagram"); game.continuous(); game.add_c_of_x(60, "thunder_citta_dharma_stacks"); ✓
+

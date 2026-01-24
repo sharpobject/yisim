@@ -1,0 +1,8 @@
+### 64502 - Wan Xuan Demon Breaking Palm
+  L1 CSV:  [no cost] [Physique]+2 | For every 20 [Physique] convert 1 stack of [Debuff] to [Increase ATK] | 3 ATK×3
+  L1 IMPL: [no cost]  game.physique(2); game.for_each_x_convert_c_pct_debuff_to_y("physique", 5, "increase_atk"); for (let i = 0; i < 3; i++) { game.atk(3); } ✓
+  L2 CSV:  [no cost] [Physique]+3 | For every 20 [Physique] convert 1 stack of [Debuff] to [Increase ATK] | 3 ATK×4
+  L2 IMPL: [no cost]  game.physique(3); game.for_each_x_convert_c_pct_debuff_to_y("physique", 5, "increase_atk"); for (let i = 0; i < 4; i++) { game.atk(3); } ✓
+  L3 CSV:  [no cost] [Physique]+4 | For every 20 [Physique] convert 1 stack of [Debuff] to [Increase ATK] | 3 ATK×5
+  L3 IMPL: [no cost]  game.physique(4); game.for_each_x_convert_c_pct_debuff_to_y("physique", 5, "increase_atk"); for (let i = 0; i < 5; i++) { game.atk(3); } ✓
+

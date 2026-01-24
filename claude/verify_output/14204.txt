@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 5 ATK | [Physique]+2 | [Physique]≥15: [DEF]+4
+  L1 IMPL: [no cost]  game.atk(5); game.physique(2); if (game.players[0].physique >= 15) { game.increase_idx_def(0, 4); } ✓
+  L2 CSV:  [no cost] 7 ATK | [Physique]+2 | [Physique]≥15: [DEF]+6
+  L2 IMPL: [no cost]  game.atk(7); game.physique(2); if (game.players[0].physique >= 15) { game.increase_idx_def(0, 6); } ✓
+  L3 CSV:  [no cost] 9 ATK | [Physique]+2 | [Physique]≥15: [DEF]+8
+  L3 IMPL: [no cost]  game.atk(9); game.physique(2); if (game.players[0].physique >= 15) { game.increase_idx_def(0, 8); } ✓

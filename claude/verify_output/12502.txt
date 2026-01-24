@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] 16 ATK | [Star Point]: [Skip] opponent's next card
+  L1 IMPL: [hp=0 qi=1]  game.atk(16); if (game.if_star_point()) { game.add_enemy_c_of_x(1, "skip_next_card_stacks"); } ✓
+  L2 CSV:  [hp=0 qi=1] 22 ATK | [Star Point]: [Skip] opponent's next card
+  L2 IMPL: [hp=0 qi=1]  game.atk(22); if (game.if_star_point()) { game.add_enemy_c_of_x(1, "skip_next_card_stacks"); } ✓
+  L3 CSV:  [hp=0 qi=1] 28 ATK | [Star Point]: [Skip] opponent's next card
+  L3 IMPL: [hp=0 qi=1]  game.atk(28); if (game.if_star_point()) { game.add_enemy_c_of_x(1, "skip_next_card_stacks"); } ✓

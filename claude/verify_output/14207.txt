@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] 14 ATK | [Ignore DEF] | Gain 3 stacks of [Weakened]
+  L1 IMPL: [hp=0 qi=1]  game.increase_idx_x_by_c(0, "ignore_def", 1); game.atk(14); game.add_c_of_x(3, "weaken"); ✓
+  L2 CSV:  [hp=0 qi=1] 18 ATK | [Ignore DEF] | Gain 3 stacks of [Weakened]
+  L2 IMPL: [hp=0 qi=1]  game.increase_idx_x_by_c(0, "ignore_def", 1); game.atk(18); game.add_c_of_x(3, "weaken"); ✓
+  L3 CSV:  [hp=0 qi=1] 22 ATK | [Ignore DEF] | Gain 3 stacks of [Weakened]
+  L3 IMPL: [hp=0 qi=1]  game.increase_idx_x_by_c(0, "ignore_def", 1); game.atk(22); game.add_c_of_x(3, "weaken"); ✓

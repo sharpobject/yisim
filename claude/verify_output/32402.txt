@@ -1,0 +1,8 @@
+### 32402 - Distubing Fulu
+  L1 CSV:  [no cost] Apply 3 stacks of [Flaw] | [Consumption]
+  L1 IMPL: [no cost]  game.add_enemy_c_of_x(3, "flaw"); game.consumption(); ✓
+  L2 CSV:  [no cost] Apply 4 stacks of [Flaw] | [Consumption]
+  L2 IMPL: [no cost]  game.add_enemy_c_of_x(4, "flaw"); game.consumption(); ✓
+  L3 CSV:  [no cost] Apply 5 stacks of [Flaw] | [Consumption]
+  L3 IMPL: [no cost]  game.add_enemy_c_of_x(5, "flaw"); game.consumption(); ✓
+

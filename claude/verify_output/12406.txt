@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 5 ATK | 10% chance to [Chase]
+  L1 IMPL: [no cost]  game.atk(5); if (game.if_c_pct(10)) { game.chase(); } ✓
+  L2 CSV:  [no cost] 9 ATK | 10% chance to [Chase]
+  L2 IMPL: [no cost]  game.atk(9); if (game.if_c_pct(10)) { game.chase(); } ✓
+  L3 CSV:  [no cost] 13 ATK | 10% chance to [Chase]
+  L3 IMPL: [no cost]  game.atk(13); if (game.if_c_pct(10)) { game.chase(); } ✓

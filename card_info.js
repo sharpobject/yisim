@@ -267,6 +267,13 @@ export const ready = (async () => {
     let is_spirit_sword = function (card_id) {
         return swogi[card_id].name.includes("Spirit Sword");
     }
+    let is_plain_sword = function(card_id) {
+        return swogi[card_id].name.includes("Sword") &&
+            !(is_spirit_sword(card_id) ||
+                is_sword_formation(card_id) ||
+                is_cloud_sword(card_id) ||
+                is_unrestrained_sword(card_id));
+    }
     let is_cat = function (card_id) {
         return swogi[card_id].name.includes("Cat") &&
             (swogi[card_id].name.includes("Cat Paw") ||
@@ -332,6 +339,7 @@ export const ready = (async () => {
             is_thunder: is_thunder(card_id),
             is_seal: is_seal(card_id),
             is_spirit_sword: is_spirit_sword(card_id),
+            is_plain_sword: is_plain_sword(card_id),
             is_cat: is_cat(card_id),
             is_add_qi: is_add_qi,
             marking: marking,

@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [Continuous]: Whenever you gain a stack of [Hexagram], deal 3 [DMG] to the opponent
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(3, "hexagram_formacide_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous]: Whenever you gain a stack of [Hexagram], deal 4 [DMG] to the opponent
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(4, "hexagram_formacide_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous]: Whenever you gain a stack of [Hexagram], deal 5 [DMG] to the opponent
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(5, "hexagram_formacide_stacks"); ✓

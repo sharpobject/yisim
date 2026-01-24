@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 6 ATK | Reduce 1 stack of random [Debuff]
+  L1 IMPL: [no cost]  game.atk(6); game.reduce_random_debuff_by_c_n_times(1, 1); ✓
+  L2 CSV:  [no cost] 9 ATK | Reduce 1 stack of random [Debuff]
+  L2 IMPL: [no cost]  game.atk(9); game.reduce_random_debuff_by_c_n_times(1, 1); ✓
+  L3 CSV:  [no cost] 12 ATK | Reduce 1 stack of random [Debuff]
+  L3 IMPL: [no cost]  game.atk(12); game.reduce_random_debuff_by_c_n_times(1, 1); ✓

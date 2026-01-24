@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 4 ATK × 2 | 1 more ATK (up to 3) for each 6 [Physique]
+  L1 IMPL: [no cost]  const atk_amt = 4 + Math.min(Math.floor(game.players[0].physique * 16.666667 / 100), 3); for (let i = 0; i < 2; i++) { game.atk(atk_amt); } ✓
+  L2 CSV:  [no cost] 5 ATK × 2 | 1 more ATK (up to 5) for each 6 [Physique]
+  L2 IMPL: [no cost]  const atk_amt = 5 + Math.min(Math.floor(game.players[0].physique * 16.666667 / 100), 5); for (let i = 0; i < 2; i++) { game.atk(atk_amt); } ✓
+  L3 CSV:  [no cost] 6 ATK × 2 | 1 more ATK (up to 7) for each 6 [Physique]
+  L3 IMPL: [no cost]  const atk_amt = 6 + Math.min(Math.floor(game.players[0].physique * 16.666667 / 100), 7); for (let i = 0; i < 2; i++) { game.atk(atk_amt); } ✓

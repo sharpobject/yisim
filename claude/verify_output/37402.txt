@@ -1,0 +1,8 @@
+### 37402 - Heavenly Star - Guard
+  L1 CSV:  [no cost] [DEF]+4 | HP+4 | Trigger the 1 [Opening] effect in your deck before this card, twice. | [Switch]
+  L1 IMPL: [no cost]  game.increase_idx_def(0, 4); game.increase_idx_hp(0, 4); game.retrigger_next_opening(-1, 1, 2); ✓
+  L2 CSV:  [no cost] [DEF]+6 | HP+6 | Trigger the 1 [Opening] effect in your deck before this card, twice. | [Switch]
+  L2 IMPL: [no cost]  game.increase_idx_def(0, 6); game.increase_idx_hp(0, 6); game.retrigger_next_opening(-1, 1, 2); ✓
+  L3 CSV:  [no cost] [DEF]+8 | HP+8 | Trigger the 1 [Opening] effect in your deck before this card, twice. | [Switch]
+  L3 IMPL: [no cost]  game.increase_idx_def(0, 8); game.increase_idx_hp(0, 8); game.retrigger_next_opening(-1, 1, 2); ✓
+

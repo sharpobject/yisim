@@ -1,0 +1,8 @@
+### 36202 - Mystery Seed
+  L1 CSV:  [no cost] [Growth] | When left in hand, grows to a random variation plant before the start of the next round
+  L1 IMPL: [no cost]   ✓
+  L2 CSV:  [no cost] [Growth] | When left in hand, grows to a random variation plant before the start of the next round
+  L2 IMPL: [no cost]   ✓
+  L3 CSV:  [no cost] When left in hand, grows to a random variation plant before the start of the next round
+  L3 IMPL: [no cost]   ✓
+

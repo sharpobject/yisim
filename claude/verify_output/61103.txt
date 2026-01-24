@@ -1,0 +1,8 @@
+### 61103 - Clear Heart Sword Embryo
+  L1 CSV:  [no cost] 7 ATK | Effects according to your choice of Immortal Fate
+  L1 IMPL: [no cost]   ✓
+  L2 CSV:  [no cost] CSV NOT FOUND
+  L2 IMPL: [no cost]   ✓
+  L3 CSV:  [no cost] CSV NOT FOUND
+  L3 IMPL: [no cost]  game.do_clear_heart(); ✓
+

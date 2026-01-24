@@ -1,0 +1,8 @@
+### 36102 - Hard Bamboo
+  L1 CSV:  [no cost] [Growth] | [DEF]+4
+  L1 IMPL: [no cost]  game.increase_idx_def(0, 4); ✓
+  L2 CSV:  [no cost] [Growth] | [DEF]+6
+  L2 IMPL: [no cost]  game.increase_idx_def(0, 6); ✓
+  L3 CSV:  [no cost] [DEF]+8 | [Continuous]: At the end of each your turn, deal 1 [DMG] to your opponent for every 4 [DEF] you have
+  L3 IMPL: [no cost]  game.increase_idx_def(0, 8); game.continuous(); game.add_c_of_x(1, "hard_bamboo_stacks"); ✓
+

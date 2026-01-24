@@ -1,0 +1,8 @@
+### 74501 - M - Double Trouble
+  L1 CSV:  [hp=0 qi=1] 6 ATK × 2  |  Both players gain 2 [Internal Injury], 1 [Wound] and 1 [Weakened]
+  L1 IMPL: [hp=0 qi=1]  for (let i = 0; i < 2; i++) { game.atk(6); } game.increase_idx_debuff(0, "internal_injury", 2); game.increase_idx_debuff(1, "internal_injury", 2); game.increase_idx_debuff(0, "wound", 1); game.increase_idx_debuff(1, "wound", 1); game.increase_idx_debuff(0, "weaken", 1); game.increase_idx_debuff(1, "weaken", 1); ✓
+  L2 CSV:  [hp=0 qi=1] 8 ATK × 2  |  Both players gain 4 [Internal Injury], 1 [Wound] and 1 [Weakened]
+  L2 IMPL: [hp=0 qi=1]  for (let i = 0; i < 2; i++) { game.atk(8); } game.increase_idx_debuff(0, "internal_injury", 4); game.increase_idx_debuff(1, "internal_injury", 4); game.increase_idx_debuff(0, "wound", 1); game.increase_idx_debuff(1, "wound", 1); game.increase_idx_debuff(0, "weaken", 1); game.increase_idx_debuff(1, "weaken", 1); ✓
+  L3 CSV:  [hp=0 qi=1] 10 ATK × 2  |  Both players gain 6 [Internal Injury], 1 [Wound] and 1 [Weakened]
+  L3 IMPL: [hp=0 qi=1]  for (let i = 0; i < 2; i++) { game.atk(10); } game.increase_idx_debuff(0, "internal_injury", 6); game.increase_idx_debuff(1, "internal_injury", 6); game.increase_idx_debuff(0, "wound", 1); game.increase_idx_debuff(1, "wound", 1); game.increase_idx_debuff(0, "weaken", 1); game.increase_idx_debuff(1, "weaken", 1); ✓
+

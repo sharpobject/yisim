@@ -1,0 +1,8 @@
+### 21301 - Unrestrained Sword - Dragon Coiled
+  L1 CSV:  [no cost] [DEF]+6 | For each "Unrestrained Sword" you played in this battle, add 6 more [DEF]
+  L1 IMPL: [no cost]  const def_amt = 6 * (1 + game.players[0].unrestrained_sword_count); game.increase_idx_def(0, def_amt); ✓
+  L2 CSV:  [no cost] [DEF]+8 | For each "Unrestrained Sword" you played in this battle, add 8 more [DEF]
+  L2 IMPL: [no cost]  const def_amt = 8 * (1 + game.players[0].unrestrained_sword_count); game.increase_idx_def(0, def_amt); ✓
+  L3 CSV:  [no cost] [DEF]+10 | For each "Unrestrained Sword" you played in this battle, add 10 more [DEF]
+  L3 IMPL: [no cost]  const def_amt = 10 * (1 + game.players[0].unrestrained_sword_count); game.increase_idx_def(0, def_amt); ✓
+

@@ -1,0 +1,8 @@
+### 50301 - Black Earth Turtle
+  L1 CSV:  [no cost] [DEF]+4 | [Continuous]: At the beginning of your turn, [DEF] only lose 20% rather than 50% and add extra 2 [DEF]
+  L1 IMPL: [no cost]  game.increase_idx_def(0, 4); game.continuous(); game.add_c_of_x(2, "black_earth_turtle_stacks"); ✓
+  L2 CSV:  [no cost] [DEF]+8 | [Continuous]: At the beginning of your turn, [DEF] only lose 20% rather than 50% and add extra 3 [DEF]
+  L2 IMPL: [no cost]  game.increase_idx_def(0, 8); game.continuous(); game.add_c_of_x(3, "black_earth_turtle_stacks"); ✓
+  L3 CSV:  [no cost] [DEF]+12 | [Continuous]: At the beginning of your turn, [DEF] only lose 20% rather than 50% and add extra 4 [DEF]
+  L3 IMPL: [no cost]  game.increase_idx_def(0, 12); game.continuous(); game.add_c_of_x(4, "black_earth_turtle_stacks"); ✓
+

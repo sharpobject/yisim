@@ -1,0 +1,8 @@
+### 74404 - M - Standing Firm
+  L1 CSV:  [no cost] [Force]+2 | [DEF]+4 | Add 2 [DEF] for each [Force] | Add 2 HP for each [Agility] | [Agility] Decreased to 5
+  L1 IMPL: [no cost]  game.increase_idx_x_by_c(0, "force", 2); game.increase_idx_def(0, 4); game.for_each_x_add_c_y("force", 2, "def"); game.exhaust_x_to_add_c_y("agility", 2, "hp"); ✓
+  L2 CSV:  [no cost] [Force]+2 | [DEF]+4 | Add 3 [DEF] for each [Force] | Add 2 HP for each [Agility] | [Agility] Decreased to 5
+  L2 IMPL: [no cost]  game.increase_idx_x_by_c(0, "force", 2); game.increase_idx_def(0, 4); game.for_each_x_add_c_y("force", 3, "def"); game.exhaust_x_to_add_c_y("agility", 2, "hp"); ✓
+  L3 CSV:  [no cost] [Force]+2 | [DEF]+4 | Add 4 [DEF] for each [Force] | Add 2 HP for each [Agility] | [Agility] Decreased to 5
+  L3 IMPL: [no cost]  game.increase_idx_x_by_c(0, "force", 2); game.increase_idx_def(0, 4); game.for_each_x_add_c_y("force", 4, "def"); game.exhaust_x_to_add_c_y("agility", 2, "hp"); ✓
+

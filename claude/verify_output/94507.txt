@@ -1,0 +1,8 @@
+### 94507 - Heavenly Will - Seizing
+  L1 CSV:  [no cost] 10 ATK | Next 1 attack will transfer all [Debuff] from the opponent to yourself (gain 1 additional ATK for every [Debuff] transferred)
+  L1 IMPL: [no cost]  NOT FOUND ✓
+  L2 CSV:  [no cost] 16 ATK | Next 1 attack will transfer all [Debuff] from the opponent to yourself (gain 1 additional ATK for every [Debuff] transferred)
+  L2 IMPL: [no cost]  NOT FOUND ✓
+  L3 CSV:  [no cost] 22 ATK | Next 1 attack will transfer all [Debuff] from the opponent to yourself (gain 1 additional ATK for every [Debuff] transferred)
+  L3 IMPL: [no cost]  NOT FOUND ✓
+

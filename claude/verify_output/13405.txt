@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [DEF]+12 | [Earth Spirit]: Add 1 [DEF] for every 6 [DEF] you have been lost
+  L1 IMPL: [no cost]  let def_amt = 12; const me = game.players[0]; if (game.if_earth_spirit()) { def_amt += Math.floor(me.def_lost * 16.666667 / 100); } game.increase_idx_def(0, def_amt); ✓
+  L2 CSV:  [no cost] [DEF]+12 | [Earth Spirit]: Add 1 [DEF] for every 5 [DEF] you have been lost
+  L2 IMPL: [no cost]  let def_amt = 12; const me = game.players[0]; if (game.if_earth_spirit()) { def_amt += Math.floor(me.def_lost * 20 / 100); } game.increase_idx_def(0, def_amt); ✓
+  L3 CSV:  [no cost] [DEF]+12 | [Earth Spirit]: Add 1 [DEF] for every 4 [DEF] you have been lost
+  L3 IMPL: [no cost]  let def_amt = 12; const me = game.players[0]; if (game.if_earth_spirit()) { def_amt += Math.floor(me.def_lost * 25 / 100); } game.increase_idx_def(0, def_amt); ✓

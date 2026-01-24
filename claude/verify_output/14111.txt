@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 6 ATK (1 more ATK for each stack of [Force]) | Cost 1 Qi: [Force]+2
+  L1 IMPL: [no cost]  game.atk(6 + game.players[0].force); if (game.players[0].qi >= 1) { game.reduce_c_of_x(1, "qi"); game.add_c_of_x(2, "force"); } ✓
+  L2 CSV:  [no cost] 9 ATK (1 more ATK for each stack of [Force]) | Cost 1 Qi: [Force]+2
+  L2 IMPL: [no cost]  game.atk(9 + game.players[0].force); if (game.players[0].qi >= 1) { game.reduce_c_of_x(1, "qi"); game.add_c_of_x(2, "force"); } ✓
+  L3 CSV:  [no cost] 12 ATK (1 more ATK for each stack of [Force]) | Cost 1 Qi: [Force]+2
+  L3 IMPL: [no cost]  game.atk(12 + game.players[0].force); if (game.players[0].qi >= 1) { game.reduce_c_of_x(1, "qi"); game.add_c_of_x(2, "force"); } ✓

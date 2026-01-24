@@ -1,0 +1,8 @@
+### 90605 - Donghuang Zhong
+  L1 CSV:  [hp=0 qi=6] [Gather Qi] 6 | Starting from the first card in your deck up to this card, repeat the effect of each card that has already been played.
+  L1 IMPL: [hp=0 qi=6]  game.do_donghuang_zhong(); ✓
+  L2 CSV:  [no cost] CSV NOT FOUND
+  L2 IMPL: [hp=0 qi=6]   ✗COST
+  L3 CSV:  [no cost] CSV NOT FOUND
+  L3 IMPL: [hp=0 qi=6]   ✗COST
+

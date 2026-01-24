@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] 8 ATK | [Qi]+1 | Gain 1 stack of [Wound]
+  L1 IMPL: [no cost]  game.atk(8); game.increase_idx_qi(0, 1); game.add_c_of_x(1, "wound"); ✓
+  L2 CSV:  [no cost] 11 ATK | [Qi]+1 | Gain 1 stack of [Wound]
+  L2 IMPL: [no cost]  game.atk(11); game.increase_idx_qi(0, 1); game.add_c_of_x(1, "wound"); ✓
+  L3 CSV:  [no cost] 14 ATK | [Qi]+1 | Gain 1 stack of [Wound]
+  L3 IMPL: [no cost]  game.atk(14); game.increase_idx_qi(0, 1); game.add_c_of_x(1, "wound"); ✓

@@ -1,0 +1,8 @@
+### 61401 - Cloud Sword - Avalanche
+  L1 CSV:  [no cost] 4 ATK | [Cloud Hit]: For every successive "Cloud Sword" played before this card, add 4 more ATK
+  L1 IMPL: [no cost]  let atk_amt = 4; if (game.if_cloud_hit()) { atk_amt += 4 * game.players[0].cloud_sword_chain_count; } game.atk(atk_amt); ✓
+  L2 CSV:  [no cost] 4 ATK | [Cloud Hit]: For every successive "Cloud Sword" played before this card, add 5 more ATK
+  L2 IMPL: [no cost]  let atk_amt = 4; if (game.if_cloud_hit()) { atk_amt += 5 * game.players[0].cloud_sword_chain_count; } game.atk(atk_amt); ✓
+  L3 CSV:  [no cost] 4 ATK | [Cloud Hit]: For every successive "Cloud Sword" played before this card, add 6 more ATK
+  L3 IMPL: [no cost]  let atk_amt = 4; if (game.if_cloud_hit()) { atk_amt += 6 * game.players[0].cloud_sword_chain_count; } game.atk(atk_amt); ✓
+

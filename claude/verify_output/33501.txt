@@ -1,0 +1,8 @@
+### 33501 - Predicament for Immortals
+  L1 CSV:  [hp=0 qi=2] [Continuous]: Both players cannot trigger [Chase]
+  L1 IMPL: [hp=0 qi=2]  game.continuous(); game.add_c_of_x(1, "predicament_for_immortals_stacks"); game.add_enemy_c_of_x(1, "predicament_for_immortals_stacks"); ✓
+  L2 CSV:  [hp=0 qi=1] [Continuous]: Both players cannot trigger [Chase]
+  L2 IMPL: [hp=0 qi=1]  game.continuous(); game.add_c_of_x(1, "predicament_for_immortals_stacks"); game.add_enemy_c_of_x(1, "predicament_for_immortals_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous]: Both players cannot trigger [Chase]
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(1, "predicament_for_immortals_stacks"); game.add_enemy_c_of_x(1, "predicament_for_immortals_stacks"); ✓
+

@@ -1,0 +1,8 @@
+### 24602 - Return to Simplicity
+  L1 CSV:  [no cost] [Physique]+5 | [Continuous]: For each 5 [Physique] you have, add 1 ATK and 1 [Agility] in your Normal Attack
+  L1 IMPL: [no cost]  game.physique(5); game.continuous(); game.for_each_x_add_c_pct_y("physique", 20, "return_to_simplicity_stacks"); ✓
+  L2 CSV:  [no cost] [Physique]+10 | [Continuous]: For each 5 [Physique] you have, add 1 ATK and 1 [Agility] in your Normal Attack
+  L2 IMPL: [no cost]  game.physique(10); game.continuous(); game.for_each_x_add_c_pct_y("physique", 20, "return_to_simplicity_stacks"); ✓
+  L3 CSV:  [no cost] [Physique]+15 | [Continuous]: For each 5 [Physique] you have, add 1 ATK and 1 [Agility] in your Normal Attack
+  L3 IMPL: [no cost]  game.physique(15); game.continuous(); game.for_each_x_add_c_pct_y("physique", 20, "return_to_simplicity_stacks"); ✓
+

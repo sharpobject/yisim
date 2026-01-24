@@ -1,0 +1,6 @@
+  L1 CSV:  [no cost] [DEF]+2 | [Hexagram]+2
+  L1 IMPL: [no cost]  game.increase_idx_def(0, 2); game.add_c_of_x(2, "hexagram"); ✓
+  L2 CSV:  [no cost] [DEF]+2 | [Hexagram]+3
+  L2 IMPL: [no cost]  game.increase_idx_def(0, 2); game.add_c_of_x(3, "hexagram"); ✓
+  L3 CSV:  [no cost] [DEF]+2 | [Hexagram]+4
+  L3 IMPL: [no cost]  game.increase_idx_def(0, 2); game.add_c_of_x(4, "hexagram"); ✓

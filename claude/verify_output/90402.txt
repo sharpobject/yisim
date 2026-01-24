@@ -1,0 +1,8 @@
+### 90402 - Xuanming Regen Tune
+  L1 CSV:  [no cost] [Continuous]: Both players gain 11 HP and Max HP then lose 6 HP at the end of their turn
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(11, "xuanming_regen_tune_heal_stacks"); game.add_enemy_c_of_x(11, "xuanming_regen_tune_heal_stacks"); game.add_c_of_x(6, "xuanming_regen_tune_hurt_stacks"); game.add_enemy_c_of_x(6, "xuanming_regen_tune_hurt_stacks"); ✓
+  L2 CSV:  [no cost] [Continuous]: Both players gain 14 HP and Max HP then lose 7 HP at the end of their turn
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(14, "xuanming_regen_tune_heal_stacks"); game.add_enemy_c_of_x(14, "xuanming_regen_tune_heal_stacks"); game.add_c_of_x(7, "xuanming_regen_tune_hurt_stacks"); game.add_enemy_c_of_x(7, "xuanming_regen_tune_hurt_stacks"); ✓
+  L3 CSV:  [no cost] [Continuous]: Both players gain 17 HP and Max HP then lose 8 HP at the end of their turn
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(17, "xuanming_regen_tune_heal_stacks"); game.add_enemy_c_of_x(17, "xuanming_regen_tune_heal_stacks"); game.add_c_of_x(8, "xuanming_regen_tune_hurt_stacks"); game.add_enemy_c_of_x(8, "xuanming_regen_tune_hurt_stacks"); ✓
+

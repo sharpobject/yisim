@@ -1,0 +1,8 @@
+### 91507 - Shen Jian Ao Zhou
+  L1 CSV:  [no cost] 12 ATK | This card receives a 6x bonus from [Sword Intent] and 4x bonus from [Increase ATK] | [Smash DEF]
+  L1 IMPL: [no cost]  game.add_c_of_x(5, "bonus_sword_intent_multiplier"); let atk_amt = 12; atk_amt += 3 * game.players[0].increase_atk; game.smash_def(); game.atk(atk_amt); ✓
+  L2 CSV:  [no cost] CSV NOT FOUND
+  L2 IMPL: [no cost]   ✓
+  L3 CSV:  [no cost] CSV NOT FOUND
+  L3 IMPL: [no cost]   ✓
+

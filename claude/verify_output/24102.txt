@@ -1,0 +1,8 @@
+### 24102 - Endless Force
+  L1 CSV:  [no cost] [Continuous]: Whenever you have no [Force], gain 4 [Force]
+  L1 IMPL: [no cost]  game.continuous(); game.add_c_of_x(4, "endless_force_stacks"); if (game.players[0].force <= 0) { game.for_each_x_add_y("endless_force_stacks", "force"); } ✓
+  L2 CSV:  [no cost] [Continuous]: Whenever you have no [Force], gain 5 [Force]
+  L2 IMPL: [no cost]  game.continuous(); game.add_c_of_x(5, "endless_force_stacks"); if (game.players[0].force <= 0) { game.for_each_x_add_y("endless_force_stacks", "force"); } ✓
+  L3 CSV:  [no cost] [Continuous]: Whenever you have no [Force], gain 6 [Force]
+  L3 IMPL: [no cost]  game.continuous(); game.add_c_of_x(6, "endless_force_stacks"); if (game.players[0].force <= 0) { game.for_each_x_add_y("endless_force_stacks", "force"); } ✓
+

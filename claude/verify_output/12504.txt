@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] Repeat 5 Times:  | 30% chance to 8 ATK
+  L1 IMPL: [hp=0 qi=1]  for (let i = 0; i < 5; i++) { if (game.if_c_pct(30)) { game.atk(8); } } ✓
+  L2 CSV:  [hp=0 qi=1] Repeat 5 Times:  | 30% chance to 10 ATK
+  L2 IMPL: [hp=0 qi=1]  for (let i = 0; i < 5; i++) { if (game.if_c_pct(30)) { game.atk(10); } } ✓
+  L3 CSV:  [hp=0 qi=1] Repeat 5 Times:  | 30% chance to 12 ATK
+  L3 IMPL: [hp=0 qi=1]  for (let i = 0; i < 5; i++) { if (game.if_c_pct(30)) { game.atk(12); } } ✓

@@ -1,0 +1,8 @@
+### 23103 - Earth Spirit Secret Seal
+  L1 CSV:  [no cost] [DEF]+6 | Add 6 [DEF] in the next turn | [Activate Earth Spirit]
+  L1 IMPL: [no cost]  game.increase_idx_def(0, 6); game.next_turn_def(6); game.activate_earth_spirit(); ✓
+  L2 CSV:  [no cost] [DEF]+9 | Add 9 [DEF] in the next turn | [Activate Earth Spirit]
+  L2 IMPL: [no cost]  game.increase_idx_def(0, 9); game.next_turn_def(9); game.activate_earth_spirit(); ✓
+  L3 CSV:  [no cost] [DEF]+12 | Add 12 [DEF] in the next turn | [Activate Earth Spirit]
+  L3 IMPL: [no cost]  game.increase_idx_def(0, 12); game.next_turn_def(12); game.activate_earth_spirit(); ✓
+

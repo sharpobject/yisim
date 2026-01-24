@@ -1,0 +1,8 @@
+### 71405 - M - Spiritage Sword
+  L1 CSV:  [no cost] Play the rightmost [Regular Card] from hand that adds [Qi] (up to Lv.1), if it is an Immortality Phase card or lower: 3 ATK (1 more ATK for every point of [Qi])
+  L1 IMPL: [no cost]  game.do_m_spiritage_sword(1); ✓
+  L2 CSV:  [no cost] Play the rightmost [Regular Card] from hand that adds [Qi] (up to Lv.2), if it is an Immortality Phase card or lower: 5 ATK (1 more ATK for every point of [Qi])
+  L2 IMPL: [no cost]  game.do_m_spiritage_sword(2); ✓
+  L3 CSV:  [no cost] Play the rightmost [Regular Card] from hand that adds [Qi] (up to Lv.3), if it is an Immortality Phase card or lower: 7 ATK (1 more ATK for every point of [Qi])
+  L3 IMPL: [no cost]  game.do_m_spiritage_sword(3); ✓
+

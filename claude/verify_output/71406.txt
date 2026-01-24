@@ -1,0 +1,8 @@
+### 71406 - M - Flying Fang Sword
+  L1 CSV:  [hp=0 qi=1] 4 ATK | [Chase] | Return the [Sword Intent] used by this attack and add additional 1 [Sword Intent]
+  L1 IMPL: [hp=0 qi=1]  game.atk(4); game.chase(); game.regain_sword_intent(); game.add_c_of_x(1, "sword_intent"); ✓
+  L2 CSV:  [hp=0 qi=1] 4 ATK | [Chase] | Return the [Sword Intent] used by this attack and add additional 2 [Sword Intent]
+  L2 IMPL: [hp=0 qi=1]  game.atk(4); game.chase(); game.regain_sword_intent(); game.add_c_of_x(2, "sword_intent"); ✓
+  L3 CSV:  [hp=0 qi=1] 4 ATK | [Chase] | Return the [Sword Intent] used by this attack and add additional 3 [Sword Intent]
+  L3 IMPL: [hp=0 qi=1]  game.atk(4); game.chase(); game.regain_sword_intent(); game.add_c_of_x(3, "sword_intent"); ✓
+

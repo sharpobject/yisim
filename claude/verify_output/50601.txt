@@ -1,0 +1,8 @@
+### 50601 - Void The Spirit Consumer
+  L1 CSV:  [hp=0 qi=1] [Continuous]: At the beginning of your turn, steal 1 [Qi] from the opponent
+  L1 IMPL: [hp=0 qi=1]  game.continuous(); game.add_c_of_x(1, "void_the_spirit_consumer_stacks"); ✓
+  L2 CSV:  [hp=0 qi=1] [Continuous]: At the beginning of your turn, steal 2 [Qi] from the opponent
+  L2 IMPL: [hp=0 qi=1]  game.continuous(); game.add_c_of_x(2, "void_the_spirit_consumer_stacks"); ✓
+  L3 CSV:  [hp=0 qi=1] [Continuous]: At the beginning of your turn, steal 3 [Qi] from the opponent
+  L3 IMPL: [hp=0 qi=1]  game.continuous(); game.add_c_of_x(3, "void_the_spirit_consumer_stacks"); ✓
+

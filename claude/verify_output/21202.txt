@@ -1,0 +1,8 @@
+### 21202 - Giant Ape Spirit Sword
+  L1 CSV:  [hp=0 qi=2] 6 ATK | Gain 3 stacks of [Increase ATK]
+  L1 IMPL: [hp=0 qi=2]  game.atk(6); game.add_c_of_x(3, "increase_atk"); ✓
+  L2 CSV:  [hp=0 qi=2] 6 ATK | Gain 4 stacks of [Increase ATK]
+  L2 IMPL: [hp=0 qi=2]  game.atk(6); game.add_c_of_x(4, "increase_atk"); ✓
+  L3 CSV:  [hp=0 qi=2] 6 ATK | Gain 5 stacks of [Increase ATK]
+  L3 IMPL: [hp=0 qi=2]  game.atk(6); game.add_c_of_x(5, "increase_atk"); ✓
+

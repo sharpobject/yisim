@@ -1,0 +1,8 @@
+### 90403 - Xuanming Clouds
+  L1 CSV:  [hp=3 qi=0] Repeat 2 times, each time randomly choosing one of the following effects: | Drain 6 HP from the opponent, apply 2 [Weakened], or gain 1 [Guard Up].
+  L1 IMPL: [hp=3 qi=0]  for (let i = 0; i < 2; i++) { switch (game.random_int(3)) { case 0: game.reduce_enemy_c_of_x(6, "hp"); game.increase_idx_hp(0, 6); break; case 1: game.add_enemy_c_of_x(2, "weaken"); break; case 2: game.add_c_of_x(1, "guard_up"); break; } } ✓
+  L2 CSV:  [hp=6 qi=0] Repeat 3 times, each time randomly choosing one of the following effects: | Drain 6 HP from the opponent, apply 2 [Weakened], or gain 1 [Guard Up].
+  L2 IMPL: [hp=6 qi=0]  for (let i = 0; i < 3; i++) { switch (game.random_int(3)) { case 0: game.reduce_enemy_c_of_x(6, "hp"); game.increase_idx_hp(0, 6); break; case 1: game.add_enemy_c_of_x(2, "weaken"); break; case 2: game.add_c_of_x(1, "guard_up"); break; } } ✓
+  L3 CSV:  [hp=9 qi=0] Repeat 4 times, each time randomly choosing one of the following effects: | Drain 6 HP from the opponent, apply 2 [Weakened], or gain 1 [Guard Up].
+  L3 IMPL: [hp=9 qi=0]  for (let i = 0; i < 4; i++) { switch (game.random_int(3)) { case 0: game.reduce_enemy_c_of_x(6, "hp"); game.increase_idx_hp(0, 6); break; case 1: game.add_enemy_c_of_x(2, "weaken"); break; case 2: game.add_c_of_x(1, "guard_up"); break; } } ✓
+

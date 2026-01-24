@@ -1,0 +1,8 @@
+### 23403 - Earth Spirit - Rhythm Metal
+  L1 CSV:  [no cost] [Earth Spirit]: [DEF]+10, then lose all [DEF] and add it back | [Metal Spirit]: Add 1 stack of [Penetrate] for every 4 [DEF] you have been lost
+  L1 IMPL: [no cost]  game.do_earth_spirit_rhythm_metal(10); ✓
+  L2 CSV:  [no cost] [Earth Spirit]: [DEF]+15, then lose all [DEF] and add it back | [Metal Spirit]: Add 1 stack of [Penetrate] for every 4 [DEF] you have been lost
+  L2 IMPL: [no cost]  game.do_earth_spirit_rhythm_metal(15); ✓
+  L3 CSV:  [no cost] [Earth Spirit]: [DEF]+20, then lose all [DEF] and add it back | [Metal Spirit]: Add 1 stack of [Penetrate] for every 4 [DEF] you have been lost
+  L3 IMPL: [no cost]  game.do_earth_spirit_rhythm_metal(20); ✓
+

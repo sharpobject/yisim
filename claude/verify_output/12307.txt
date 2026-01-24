@@ -1,0 +1,6 @@
+  L1 CSV:  [hp=0 qi=1] 6 ATK | If the opponent has [Debuff], then apply 2 stacks of [Internal Injury]
+  L1 IMPL: [hp=0 qi=1]  game.atk(6); if (game.if_enemy_has_debuff()) { game.add_enemy_c_of_x(2, "internal_injury"); } ✓
+  L2 CSV:  [hp=0 qi=1] 6 ATK | If the opponent has [Debuff], then apply 3 stacks of [Internal Injury]
+  L2 IMPL: [hp=0 qi=1]  game.atk(6); if (game.if_enemy_has_debuff()) { game.add_enemy_c_of_x(3, "internal_injury"); } ✓
+  L3 CSV:  [hp=0 qi=1] 6 ATK | If the opponent has [Debuff], then apply 4 stacks of [Internal Injury]
+  L3 IMPL: [hp=0 qi=1]  game.atk(6); if (game.if_enemy_has_debuff()) { game.add_enemy_c_of_x(4, "internal_injury"); } ✓

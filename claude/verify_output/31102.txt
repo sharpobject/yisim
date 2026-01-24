@@ -1,0 +1,8 @@
+### 31102 - Fundamental Elixir
+  L1 CSV:  [no cost] [Qi]+2 | [DEF]+3 | [Consumption]
+  L1 IMPL: [no cost]  game.increase_idx_qi(0, 2); game.increase_idx_def(0, 3); game.consumption(); ✓
+  L2 CSV:  [no cost] [Qi]+3 | [DEF]+5 | [Consumption]
+  L2 IMPL: [no cost]  game.increase_idx_qi(0, 3); game.increase_idx_def(0, 5); game.consumption(); ✓
+  L3 CSV:  [no cost] [Qi]+4 | [DEF]+7 | [Consumption]
+  L3 IMPL: [no cost]  game.increase_idx_qi(0, 4); game.increase_idx_def(0, 7); game.consumption(); ✓
+
