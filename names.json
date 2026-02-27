@@ -3104,5 +3104,95 @@
         "id": 946011,
         "name": "Pangu Axe",
         "namecn": "盘古斧"
+    },
+    {
+        "id": "D11011",
+        "name": "Dream - Qi Perfusion",
+        "namecn": "梦·灵气灌注"
+    },
+    {
+        "id": "D11021",
+        "name": "Dream - Cloud Sword Pierce the Star",
+        "namecn": "梦·云剑点星"
+    },
+    {
+        "id": "D11031",
+        "name": "Dream - Cloud Sword - Riddle",
+        "namecn": "梦·云剑极意"
+    },
+    {
+        "id": "D11041",
+        "name": "Dream - Flying Fang Sword",
+        "namecn": "梦·飞牙剑"
+    },
+    {
+        "id": "D11051",
+        "name": "Dream - Cloud Dance Rhythm",
+        "namecn": "梦·云舞诀"
+    },
+    {
+        "id": "D11061",
+        "name": "Dream - Unrestrained Sword One",
+        "namecn": "梦·狂剑一式"
+    },
+    {
+        "id": "D11071",
+        "name": "Dream - CentiBird Spirit Sword Rhythm",
+        "namecn": "梦·百鸟灵剑诀"
+    },
+    {
+        "id": "D11081",
+        "name": "Dream - Dharma Spirit Sword",
+        "namecn": "梦·万法归灵剑"
+    },
+    {
+        "id": "D11091",
+        "name": "Dream - Unrestrained Sword Zero",
+        "namecn": "梦·狂剑零式"
+    },
+    {
+        "id": "D11101",
+        "name": "Dream - Consonance Sword Formation",
+        "namecn": "梦·灵犀剑阵"
+    },
+    {
+        "id": "D11111",
+        "name": "Dream - Cloud Sword - Touch Earth",
+        "namecn": "梦·云剑厚土"
+    },
+    {
+        "id": "D11121",
+        "name": "Dream - Reflexive Sword",
+        "namecn": "梦·反身剑"
+    },
+    {
+        "id": "D11131",
+        "name": "Dream - Rule Sky Sword Formation",
+        "namecn": "梦·御空剑阵"
+    },
+    {
+        "id": "D11141",
+        "name": "Dream - Giant Roc Spirit Sword",
+        "namecn": "梦·巨鹏灵剑"
+    },
+    {
+        "id": "D11151",
+        "name": "Dream - Earth Evil Sword",
+        "namecn": "梦·地煞剑"
+    },
+    {
+        "id": "D11161",
+        "name": "Dream - Cloud Sword - Softheart",
+        "namecn": "梦·云剑柔心"
+    },
+    {
+        "id": "D11171",
+        "name": "Dream - Contemplate Spirits Rhythm",
+        "namecn": "梦·凝意诀"
+    },
+    {
+        "id": "D11181",
+        "name": "Dream - Cloud Sword - Spirit Coercion",
+        "namecn": "梦·云剑汇灵"
     }
 ]

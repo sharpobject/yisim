@@ -4870,23 +4870,20 @@ card_actions["213013"] = (game) => {
 
 // One Heart One Sword
 card_actions["213021"] = (game) => {
-    game.add_c_of_x(3, "bonus_sword_intent_multiplier");
     game.ignore_weaken();
-    game.atk(6);
+    game.atk(6 + game.players[0].sword_intent * 3);
 }
 
 // 213022
 card_actions["213022"] = (game) => {
-    game.add_c_of_x(4, "bonus_sword_intent_multiplier");
     game.ignore_weaken();
-    game.atk(6);
+    game.atk(6 + game.players[0].sword_intent * 4);
 }
 
 // 213023
 card_actions["213023"] = (game) => {
-    game.add_c_of_x(5, "bonus_sword_intent_multiplier");
     game.ignore_weaken();
-    game.atk(6);
+    game.atk(6 + game.players[0].sword_intent * 5);
 }
 
 // Synergy Sword Formation
@@ -9241,8 +9238,7 @@ card_actions["615023"] = (game) => {
 
 // Yeying Sword Formation
 card_actions["615031"] = (game) => {
-    const me = game.players[0];
-    const reps = 3 + game.sword_formation_deck_count(2, me.currently_triggering_card_idx);
+    const reps = 2 + game.sword_formation_deck_count(3, -1);
     let def_amt = 0;
     for (let i = 0; i < reps; i++) {
         game.atk(2);
@@ -9255,8 +9251,7 @@ card_actions["615031"] = (game) => {
 
 // 615032
 card_actions["615032"] = (game) => {
-    const me = game.players[0];
-    const reps = 3 + game.sword_formation_deck_count(3, me.currently_triggering_card_idx);
+    const reps = 2 + game.sword_formation_deck_count(4, -1);
     let def_amt = 0;
     for (let i = 0; i < reps; i++) {
         game.atk(2);
@@ -9269,8 +9264,7 @@ card_actions["615032"] = (game) => {
 
 // 615033
 card_actions["615033"] = (game) => {
-    const me = game.players[0];
-    const reps = 4 + game.sword_formation_deck_count(3, me.currently_triggering_card_idx);
+    const reps = 3 + game.sword_formation_deck_count(4, -1);
     let def_amt = 0;
     for (let i = 0; i < reps; i++) {
         game.atk(2);
@@ -10750,7 +10744,7 @@ card_actions["724051"] = (game) => {
     game.increase_idx_x_by_c(0, "hexagram", 2);
     const me = game.players[0];
     const amt = 1 + Math.floor(me.hexagram / 3);
-    game.increase_idx_x_by_c(0, "m_earth_hexagram_stacks", amt);
+    game.increase_idx_x_by_c(0, "finishing_touch_stacks", amt);
 }
 
 // 724052
@@ -10759,7 +10753,7 @@ card_actions["724052"] = (game) => {
     game.increase_idx_x_by_c(0, "hexagram", 3);
     const me = game.players[0];
     const amt = 1 + Math.floor(me.hexagram / 3);
-    game.increase_idx_x_by_c(0, "m_earth_hexagram_stacks", amt);
+    game.increase_idx_x_by_c(0, "finishing_touch_stacks", amt);
 }
 
 // 724053
@@ -10768,7 +10762,7 @@ card_actions["724053"] = (game) => {
     game.increase_idx_x_by_c(0, "hexagram", 4);
     const me = game.players[0];
     const amt = 1 + Math.floor(me.hexagram / 3);
-    game.increase_idx_x_by_c(0, "m_earth_hexagram_stacks", amt);
+    game.increase_idx_x_by_c(0, "finishing_touch_stacks", amt);
 }
 
 // M - Dotted Around
@@ -12978,11 +12972,9 @@ card_actions["915063"] = (game) => {
 
 // Shen Jian Ao Zhou
 card_actions["915071"] = (game) => {
-    game.add_c_of_x(5, "bonus_sword_intent_multiplier");
-    let atk_amt = 12;
-    atk_amt += 3 * game.players[0].increase_atk;
+    const me = game.players[0];
     game.smash_def();
-    game.atk(atk_amt);
+    game.atk(12 + me.sword_intent * 5 + me.increase_atk * 3);
 }
 
 // 915072
@@ -14277,4 +14269,684 @@ card_actions["946013"] = (game) => {
 
 }
 
+// Dream - Qi Perfusion
+card_actions["D11011"] = (game) => {
+    game.increase_idx_qi(0, 1);
+    game.add_c_of_x(5, "next_attack_deals_extra");
+}
+
+// D11012
+card_actions["D11012"] = (game) => {
+    game.increase_idx_qi(0, 1);
+    game.add_c_of_x(7, "next_attack_deals_extra");
+}
+
+// D11013
+card_actions["D11013"] = (game) => {
+    game.increase_idx_qi(0, 1);
+    game.add_c_of_x(10, "next_attack_deals_extra");
+}
+
+// D11014
+card_actions["D11014"] = (game) => {
+    game.increase_idx_qi(0, 1);
+    game.add_c_of_x(2, "increase_atk");
+}
+
+// D11015
+card_actions["D11015"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.add_c_of_x(3, "increase_atk");
+}
+
+// Dream - Cloud Sword Pierce the Star
+card_actions["D11021"] = (game) => {
+    game.increase_idx_qi(0, 2);
+}
+
+// D11022
+card_actions["D11022"] = (game) => {
+    game.increase_idx_qi(0, 2);
+}
+
+// D11023
+card_actions["D11023"] = (game) => {
+    game.increase_idx_qi(0, 2);
+}
+
+// D11024
+card_actions["D11024"] = (game) => {
+    game.increase_idx_qi(0, 2);
+}
+
+// D11025
+card_actions["D11025"] = (game) => {
+    game.increase_idx_qi(0, 3);
+}
+
+// Dream - Cloud Sword - Riddle
+card_actions["D11031"] = (game) => {
+    game.atk(6);
+    game.add_c_of_x(1, "cloud_sea");
+    if (game.if_cloud_hit()) {
+        game.increase_idx_x_by_c(0, "sword_intent", 2);
+    }
+}
+
+// D11032
+card_actions["D11032"] = (game) => {
+    game.atk(8);
+    game.add_c_of_x(1, "cloud_sea");
+    if (game.if_cloud_hit()) {
+        game.increase_idx_x_by_c(0, "sword_intent", 2);
+    }
+}
+
+// D11033
+card_actions["D11033"] = (game) => {
+    game.atk(6);
+    game.add_c_of_x(1, "cloud_sea");
+    if (game.if_cloud_hit()) {
+        game.increase_idx_x_by_c(0, "sword_intent", game.players[0].cloud_sword_chain_count);
+    }
+}
+
+// D11034
+card_actions["D11034"] = (game) => {
+    game.atk(10);
+    game.add_c_of_x(2, "cloud_sea");
+    if (game.if_cloud_hit()) {
+        game.increase_idx_x_by_c(0, "sword_intent", game.players[0].cloud_sword_chain_count);
+    }
+}
+
+// D11035
+card_actions["D11035"] = (game) => {
+    game.atk(4);
+    game.add_c_of_x(2, "cloud_sea");
+    if (game.if_cloud_hit()) {
+        game.increase_idx_x_by_c(0, "sword_intent", 2 * game.players[0].cloud_sword_chain_count);
+    }
+}
+
+// Dream - Flying Fang Sword
+card_actions["D11041"] = (game) => {
+    game.atk(6);
+    game.regain_sword_intent();
+}
+
+// D11042
+card_actions["D11042"] = (game) => {
+    game.atk(8);
+    game.regain_sword_intent();
+}
+
+// D11043
+card_actions["D11043"] = (game) => {
+    game.atk(10);
+    game.regain_sword_intent();
+}
+
+// D11044
+card_actions["D11044"] = (game) => {
+    game.rep(2, () => { game.atk(4); });
+    game.regain_sword_intent();
+}
+
+// D11045
+card_actions["D11045"] = (game) => {
+    game.rep(3, () => { game.atk(4); });
+    game.regain_sword_intent();
+}
+
+// Dream - Cloud Dance Rhythm
+card_actions["D11051"] = (game) => {
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_x_by_c(0, "sword_intent", 2);
+}
+
+// D11052
+card_actions["D11052"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_x_by_c(0, "sword_intent", 2);
+}
+
+// D11053
+card_actions["D11053"] = (game) => {
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_x_by_c(0, "sword_intent", 2);
+}
+
+// D11054
+card_actions["D11054"] = (game) => {
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_x_by_c(0, "sword_intent", 2);
+    game.increase_idx_x_by_c(0, "unrestrained_sword_count", Math.floor(game.players[0].sword_intent / 4));
+}
+
+// D11055
+card_actions["D11055"] = (game) => {
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_x_by_c(0, "sword_intent", 2);
+    game.increase_idx_x_by_c(0, "unrestrained_sword_count", 1 + Math.floor(game.players[0].sword_intent / 4));
+}
+
+// Dream - Unrestrained Sword One
+card_actions["D11061"] = (game) => {
+    game.atk(6);
+    const steal_hp = game.players[0].unrestrained_sword_count * 1;
+    game.increase_idx_max_hp(0, 10);
+    if (steal_hp > 0) {
+        game.reduce_idx_hp(1, steal_hp);
+        game.increase_idx_hp(0, steal_hp);
+    }
+}
+
+// D11062
+card_actions["D11062"] = (game) => {
+    game.atk(8);
+    const steal_hp = game.players[0].unrestrained_sword_count * 1;
+    game.increase_idx_max_hp(0, 10);
+    if (steal_hp > 0) {
+        game.reduce_idx_hp(1, steal_hp);
+        game.increase_idx_hp(0, steal_hp);
+    }
+}
+
+// D11063
+card_actions["D11063"] = (game) => {
+    game.atk(10);
+    const steal_hp = game.players[0].unrestrained_sword_count * 1;
+    game.increase_idx_max_hp(0, 10);
+    if (steal_hp > 0) {
+        game.reduce_idx_hp(1, steal_hp);
+        game.increase_idx_hp(0, steal_hp);
+    }
+}
+
+// D11064
+card_actions["D11064"] = (game) => {
+    game.atk(10);
+    const steal_hp = game.players[0].unrestrained_sword_count * 2;
+    game.increase_idx_max_hp(0, 15);
+    if (steal_hp > 0) {
+        game.reduce_idx_hp(1, steal_hp);
+        game.increase_idx_hp(0, steal_hp);
+    }
+}
+
+// D11065
+card_actions["D11065"] = (game) => {
+    game.atk(10);
+    const steal_hp = game.players[0].unrestrained_sword_count * 3;
+    game.increase_idx_max_hp(0, 20);
+    if (steal_hp > 0) {
+        game.reduce_idx_hp(1, steal_hp);
+        game.increase_idx_hp(0, steal_hp);
+    }
+}
+
+// Dream - CentiBird Spirit Sword Rhythm
+card_actions["D11071"] = (game) => {
+    game.increase_idx_qi(0, 1);
+    game.increase_idx_x_by_c(0, "sword_qi", 2);
+}
+
+// D11072
+card_actions["D11072"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_x_by_c(0, "sword_qi", 2);
+}
+
+// D11073
+card_actions["D11073"] = (game) => {
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_x_by_c(0, "sword_qi", 2);
+}
+
+// D11074
+card_actions["D11074"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_x_by_c(0, "sword_qi", Math.floor(game.players[0].total_qi_gained / 2));
+}
+
+// D11075
+card_actions["D11075"] = (game) => {
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_x_by_c(0, "sword_qi", Math.floor(game.players[0].total_qi_gained / 2));
+}
+
+// Dream - Dharma Spirit Sword
+card_actions["D11081"] = (game) => {
+    game.atk(3);
+    game.increase_idx_x_by_c(0, "sword_qi", 1);
+}
+
+// D11082
+card_actions["D11082"] = (game) => {
+    game.atk(5);
+    game.increase_idx_x_by_c(0, "sword_qi", 1);
+}
+
+// D11083
+card_actions["D11083"] = (game) => {
+    game.atk(5);
+    game.increase_idx_x_by_c(0, "sword_qi", 2);
+}
+
+// D11084
+card_actions["D11084"] = (game) => {
+    game.atk(5);
+    game.increase_idx_x_by_c(0, "sword_qi", 2);
+    game.exhaust_x_to_add_y("qi", "sword_qi");
+}
+
+// D11085
+card_actions["D11085"] = (game) => {
+    game.atk(10);
+    game.increase_idx_x_by_c(0, "sword_qi", 2);
+    game.exhaust_x_to_add_y("qi", "sword_qi");
+}
+
+// Dream - Unrestrained Sword Zero
+card_actions["D11091"] = (game) => {
+    const me = game.players[0];
+    const usc = me.unrestrained_sword_count;
+    game.increase_idx_hp(0, 6);
+    if (usc > 0) {
+        game.increase_idx_hp(0, 1 * usc);
+    }
+}
+
+// D11092
+card_actions["D11092"] = (game) => {
+    const me = game.players[0];
+    const usc = me.unrestrained_sword_count;
+    game.increase_idx_hp(0, 7);
+    if (usc > 0) {
+        game.increase_idx_hp(0, 2 * usc);
+    }
+}
+
+// D11093
+card_actions["D11093"] = (game) => {
+    const me = game.players[0];
+    const usc = me.unrestrained_sword_count;
+    game.increase_idx_hp(0, 8);
+    if (usc > 0) {
+        game.increase_idx_hp(0, 3 * usc);
+    }
+}
+
+// D11094
+card_actions["D11094"] = (game) => {
+    const me = game.players[0];
+    const usc = me.unrestrained_sword_count;
+    game.increase_idx_hp(0, 8);
+    if (usc > 0) {
+        game.increase_idx_hp(0, 2 * usc);
+        game.increase_idx_x_by_c(0, "sword_intent", usc);
+    }
+}
+
+// D11095
+card_actions["D11095"] = (game) => {
+    const me = game.players[0];
+    const usc = me.unrestrained_sword_count;
+    game.increase_idx_hp(0, 8);
+    if (usc > 0) {
+        game.increase_idx_hp(0, 4 * usc);
+        game.increase_idx_x_by_c(0, "sword_intent", usc);
+    }
+}
+
+// Dream - Consonance Sword Formation
+card_actions["D11101"] = (game) => {
+    game.increase_idx_def(0, 4);
+    game.continuous();
+    game.increase_idx_x_by_c(0, "dream_consonance_qi_gives_def_stacks", 1);
+}
+
+// D11102
+card_actions["D11102"] = (game) => {
+    game.increase_idx_def(0, 4);
+    game.continuous();
+    game.increase_idx_x_by_c(0, "dream_consonance_qi_gives_def_stacks", 2);
+}
+
+// D11103
+card_actions["D11103"] = (game) => {
+    game.increase_idx_def(0, 4);
+    game.continuous();
+    game.increase_idx_x_by_c(0, "dream_consonance_qi_gives_def_stacks", 2);
+    game.increase_idx_x_by_c(0, "dream_consonance_sword_intent_gives_def_stacks", 1);
+}
+
+// D11104
+card_actions["D11104"] = (game) => {
+    game.increase_idx_def(0, 4);
+    game.continuous();
+    game.increase_idx_x_by_c(0, "dream_consonance_qi_gives_def_stacks", 3);
+    game.increase_idx_x_by_c(0, "dream_consonance_sword_intent_gives_def_stacks", 2);
+}
+
+// D11105
+card_actions["D11105"] = (game) => {
+    game.increase_idx_def(0, 4);
+    game.continuous();
+    game.increase_idx_x_by_c(0, "dream_consonance_qi_gives_def_stacks", 4);
+    game.increase_idx_x_by_c(0, "dream_consonance_sword_intent_gives_def_stacks", 3);
+}
+
+// Dream - Cloud Sword - Touch Earth
+card_actions["D11111"] = (game) => {
+    game.increase_idx_def(0, 6);
+    game.add_c_of_x(1, "cloud_sea");
+    if (game.if_cloud_hit()) {
+        game.for_each_x_add_c_y("cloud_sword_chain_count", 1, "def");
+    }
+}
+
+// D11112
+card_actions["D11112"] = (game) => {
+    game.increase_idx_def(0, 9);
+    game.add_c_of_x(1, "cloud_sea");
+    if (game.if_cloud_hit()) {
+        game.for_each_x_add_c_y("cloud_sword_chain_count", 1, "def");
+    }
+}
+
+// D11113
+card_actions["D11113"] = (game) => {
+    game.increase_idx_def(0, 9);
+    game.add_c_of_x(2, "cloud_sea");
+    if (game.if_cloud_hit()) {
+        game.for_each_x_add_c_y("cloud_sword_chain_count", 2, "def");
+    }
+}
+
+// D11114
+card_actions["D11114"] = (game) => {
+    game.increase_idx_def(0, 9);
+    game.add_c_of_x(2, "cloud_sea");
+    game.add_c_of_x(1, "moon_water_sword_formation_stacks");
+    if (game.if_cloud_hit()) {
+        game.for_each_x_add_c_y("cloud_sword_chain_count", 3, "def");
+    }
+}
+
+// D11115
+card_actions["D11115"] = (game) => {
+    game.increase_idx_def(0, 12);
+    game.add_c_of_x(2, "cloud_sea");
+    game.add_c_of_x(2, "moon_water_sword_formation_stacks");
+    if (game.if_cloud_hit()) {
+        game.for_each_x_add_c_y("cloud_sword_chain_count", 3, "def");
+    }
+}
+
+// Dream - Reflexive Sword
+card_actions["D11121"] = (game) => {
+    game.atk(4);
+    game.increase_idx_def(0, 6);
+}
+
+// D11122
+card_actions["D11122"] = (game) => {
+    game.atk(6);
+    game.increase_idx_def(0, 6);
+}
+
+// D11123
+card_actions["D11123"] = (game) => {
+    const bonus = game.players[0].played_sword_count * 1;
+    game.atk(6 + bonus);
+    game.increase_idx_def(0, 6 + bonus);
+}
+
+// D11124
+card_actions["D11124"] = (game) => {
+    const bonus = game.players[0].played_sword_count * 2;
+    game.atk(6 + bonus);
+    game.increase_idx_def(0, 6 + bonus);
+}
+
+// D11125
+card_actions["D11125"] = (game) => {
+    const bonus = game.players[0].played_sword_count * 3;
+    game.atk(6 + bonus);
+    game.increase_idx_def(0, 6 + bonus);
+}
+
+// Dream - Rule Sky Sword Formation
+card_actions["D11131"] = (game) => {
+    const deck_count = game.sword_formation_deck_count(99, -1);
+    game.deal_damage(5 + 1 * deck_count);
+}
+
+// D11132
+card_actions["D11132"] = (game) => {
+    const deck_count = game.sword_formation_deck_count(99, -1);
+    game.deal_damage(5 + 2 * deck_count);
+}
+
+// D11133
+card_actions["D11133"] = (game) => {
+    const deck_count = game.sword_formation_deck_count(99, -1);
+    game.deal_damage(6 + 3 * deck_count);
+}
+
+// D11134
+card_actions["D11134"] = (game) => {
+    const me = game.players[0];
+    const deck_count = game.sword_formation_deck_count(99, -1);
+    game.deal_damage(4 + 1 * me.played_sword_formation_count);
+    if (deck_count >= 2) {
+        game.chase();
+    }
+}
+
+// D11135
+card_actions["D11135"] = (game) => {
+    const me = game.players[0];
+    const deck_count = game.sword_formation_deck_count(99, -1);
+    game.deal_damage(8 + 1 * me.played_sword_formation_count);
+    if (deck_count >= 2) {
+        game.chase();
+    }
+}
+
+// Dream - Giant Roc Spirit Sword
+card_actions["D11141"] = (game) => {
+    game.atk(5);
+    game.increase_idx_qi(0, 1);
+}
+
+// D11142
+card_actions["D11142"] = (game) => {
+    game.atk(7);
+    game.increase_idx_qi(0, 1);
+}
+
+// D11143
+card_actions["D11143"] = (game) => {
+    game.atk(9);
+    game.increase_idx_qi(0, 1);
+}
+
+// D11144
+card_actions["D11144"] = (game) => {
+    game.atk(2);
+    game.increase_idx_qi(0, 1);
+    if (game.players[0].qi > 1) {
+        game.chase();
+    }
+}
+
+// D11145
+card_actions["D11145"] = (game) => {
+    game.atk(2);
+    game.increase_idx_qi(0, 2);
+    if (game.players[0].qi > 2) {
+        game.chase();
+    }
+}
+
+// Dream - Earth Evil Sword
+card_actions["D11151"] = (game) => {
+    game.atk(1);
+    const dmg = game.players[0].damage_dealt_to_hp_by_this_card_atk;
+    if (dmg > 0) {
+        game.add_enemy_c_of_x(Math.min(dmg, 2), "internal_injury");
+    }
+}
+
+// D11152
+card_actions["D11152"] = (game) => {
+    game.atk(1);
+    const dmg = game.players[0].damage_dealt_to_hp_by_this_card_atk;
+    if (dmg > 0) {
+        game.add_enemy_c_of_x(Math.min(dmg, 3), "internal_injury");
+    }
+}
+
+// D11153
+card_actions["D11153"] = (game) => {
+    game.atk(2);
+    const dmg = game.players[0].damage_dealt_to_hp_by_this_card_atk;
+    if (dmg > 0) {
+        game.add_enemy_c_of_x(Math.min(dmg, 4), "internal_injury");
+    }
+}
+
+// D11154
+card_actions["D11154"] = (game) => {
+    game.rep(2, () => { game.atk(1); });
+    const dmg = game.players[0].damage_dealt_to_hp_by_this_card_atk;
+    if (dmg > 0) {
+        game.add_enemy_c_of_x(Math.min(dmg, 5), "internal_injury");
+    }
+}
+
+// D11155
+card_actions["D11155"] = (game) => {
+    game.rep(2, () => { game.atk(1); });
+    const dmg = game.players[0].damage_dealt_to_hp_by_this_card_atk;
+    if (dmg > 0) {
+        game.add_enemy_c_of_x(dmg, "internal_injury");
+    }
+}
+
+// Dream - Cloud Sword - Softheart
+card_actions["D11161"] = (game) => {
+    game.increase_idx_def(0, 4);
+    game.continuous();
+    game.increase_idx_x_by_c(0, "dream_cloud_sword_softheart_gain_def", 1);
+}
+
+// D11162
+card_actions["D11162"] = (game) => {
+    game.increase_idx_def(0, 8);
+    game.continuous();
+    game.increase_idx_x_by_c(0, "dream_cloud_sword_softheart_gain_def", 1);
+}
+
+// D11163
+card_actions["D11163"] = (game) => {
+    game.increase_idx_def(0, 4);
+    game.continuous();
+    game.increase_idx_x_by_c(0, "dream_cloud_sword_softheart_gain_def", 2);
+}
+
+// D11164
+card_actions["D11164"] = (game) => {
+    game.increase_idx_def(0, 4);
+    game.continuous();
+    game.increase_idx_x_by_c(0, "dream_cloud_sword_softheart_gain_def", 3);
+    game.increase_idx_x_by_c(0, "dream_cloud_sword_softheart_sword_formation_gives_cloud_sea", 1);
+}
+
+// D11165
+card_actions["D11165"] = (game) => {
+    game.increase_idx_def(0, 4);
+    game.continuous();
+    game.increase_idx_x_by_c(0, "dream_cloud_sword_softheart_gain_def", 5);
+    game.increase_idx_x_by_c(0, "dream_cloud_sword_softheart_sword_formation_gives_cloud_sea", 1);
+}
+
+// Dream - Contemplate Spirits Rhythm
+card_actions["D11171"] = (game) => {
+    game.increase_idx_x_by_c(0, "sword_intent", 3);
+}
+
+// D11172
+card_actions["D11172"] = (game) => {
+    game.increase_idx_x_by_c(0, "sword_intent", 4);
+}
+
+// D11173
+card_actions["D11173"] = (game) => {
+    game.increase_idx_x_by_c(0, "sword_intent", 5);
+}
+
+// D11174
+card_actions["D11174"] = (game) => {
+    game.increase_idx_x_by_c(0, "next_attack_double_sword_intent_and_increase_atk", 1);
+    const me = game.players[0];
+    if (me.sword_intent >= 3 || me.increase_atk >= 3) {
+        game.chase();
+    }
+}
+
+// D11175
+card_actions["D11175"] = (game) => {
+    game.increase_idx_x_by_c(0, "sword_intent", 1);
+    game.increase_idx_x_by_c(0, "next_attack_double_sword_intent_and_increase_atk", 1);
+    const me = game.players[0];
+    if (me.sword_intent >= 3 || me.increase_atk >= 3) {
+        game.chase();
+    }
+}
+
+// Dream - Cloud Sword - Spirit Coercion
+card_actions["D11181"] = (game) => {
+    const hits = 1 + (game.players[0].qi > 0 ? 1 : 0);
+    for (let i = 0; i < hits; i++) {
+        game.atk(4);
+    }
+}
+
+// D11182
+card_actions["D11182"] = (game) => {
+    const hits = 1 + (game.players[0].qi > 0 ? 1 : 0);
+    for (let i = 0; i < hits; i++) {
+        game.atk(5);
+    }
+}
+
+// D11183
+card_actions["D11183"] = (game) => {
+    const hits = 1 + (game.players[0].qi > 0 ? 1 : 0);
+    for (let i = 0; i < hits; i++) {
+        game.atk(6);
+    }
+}
+
+// D11184
+card_actions["D11184"] = (game) => {
+    const me = game.players[0];
+    const hits = 1 + Math.floor(me.qi / 2);
+    for (let i = 0; i < hits; i++) {
+        game.atk(3);
+    }
+}
+
+// D11185
+card_actions["D11185"] = (game) => {
+    const me = game.players[0];
+    const hits = 1 + Math.floor(me.qi / 2);
+    for (let i = 0; i < hits; i++) {
+        game.atk(4);
+    }
+}
 

@@ -4520,21 +4520,18 @@
 	"213021": {
 		"name": "One Heart One Sword",
 		"actions": [
-			["add_c_of_x", 3, "bonus_sword_intent_multiplier"],
 			["ignore_weaken"],
 			["atk", 6]
 		]
 	},
 	"213022": {
 		"actions": [
-			["add_c_of_x", 4, "bonus_sword_intent_multiplier"],
 			["ignore_weaken"],
 			["atk", 6]
 		]
 	},
 	"213023": {
 		"actions": [
-			["add_c_of_x", 5, "bonus_sword_intent_multiplier"],
 			["ignore_weaken"],
 			["atk", 6]
 		]
@@ -9068,7 +9065,8 @@
 			["add_enemy_c_of_x", 2, "flaw"],
 			["continuous"],
 			["add_enemy_c_of_x", 1, "jade_scroll_of_yin_symbol_stacks"]
-		]
+		],
+		"character": "he6"
 	},
 	"622022": {
 		"actions": [
@@ -9285,7 +9283,8 @@
 		"actions": [
 			["qi", 2],
 			["heal", 6]
-		]
+		],
+		"character": "he6"
 	},
 	"625032": {
 		"actions": [
@@ -9303,7 +9302,8 @@
 		"actions": [
 			["add_enemy_c_of_x", 1, "face_isolation_stacks"],
 			["chase"]
-		]
+		],
+		"character": "he6"
 	},
 	"625042": {
 		"does_not_exist": true,
@@ -9318,7 +9318,8 @@
 		"actions": [
 			["add_enemy_c_of_x", 1, "strike_vacuity_stacks"],
 			["chase"]
-		]
+		],
+		"character": "he6"
 	},
 	"625052": {
 		"does_not_exist": true,
@@ -12561,8 +12562,6 @@
 	"915071": {
 		"name": "Shen Jian Ao Zhou",
 		"actions": [
-			["add_c_of_x", 5, "bonus_sword_intent_multiplier"],
-			["for_each_x_add_c_y", "increase_atk", 3, "bonus_atk_amt"],
 			["smash_def"],
 			["atk", 12]
 		]
@@ -13645,5 +13644,295 @@
 	"946013": {
 		"does_not_exist": true,
 		"actions": []
+	},
+	"D11011": {
+		"name": "Dream - Qi Perfusion",
+		"actions": [["qi", 1], ["add_c_of_x", 5, "next_attack_deals_extra"]]
+	},
+	"D11012": {
+		"actions": [["qi", 1], ["add_c_of_x", 7, "next_attack_deals_extra"]]
+	},
+	"D11013": {
+		"actions": [["qi", 1], ["add_c_of_x", 10, "next_attack_deals_extra"]]
+	},
+	"D11014": {
+		"actions": [["qi", 1], ["add_c_of_x", 2, "increase_atk"]]
+	},
+	"D11015": {
+		"actions": [["qi", 2], ["add_c_of_x", 3, "increase_atk"]]
+	},
+	"D11021": {
+		"name": "Dream - Cloud Sword Pierce the Star",
+		"actions": [["qi", 2]]
+	},
+	"D11022": {
+		"actions": [["qi", 2]]
+	},
+	"D11023": {
+		"actions": [["qi", 2]]
+	},
+	"D11024": {
+		"actions": [["qi", 2]]
+	},
+	"D11025": {
+		"actions": [["qi", 3]]
+	},
+	"D11031": {
+		"name": "Dream - Cloud Sword - Riddle",
+		"actions": [["atk", 6], ["add_c_of_x", 1, "cloud_sea"], ["cloud_hit", ["sword_intent", 2]]]
+	},
+	"D11032": {
+		"actions": [["atk", 8], ["add_c_of_x", 1, "cloud_sea"], ["cloud_hit", ["sword_intent", 2]]]
+	},
+	"D11033": {
+		"actions": [["atk", 6], ["add_c_of_x", 1, "cloud_sea"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 1, "sword_intent"]]]
+	},
+	"D11034": {
+		"actions": [["atk", 10], ["add_c_of_x", 2, "cloud_sea"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 1, "sword_intent"]]]
+	},
+	"D11035": {
+		"actions": [["atk", 4], ["add_c_of_x", 2, "cloud_sea"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 2, "sword_intent"]]]
+	},
+	"D11041": {
+		"name": "Dream - Flying Fang Sword",
+		"actions": [["atk", 6], ["regain_sword_intent"]]
+	},
+	"D11042": {
+		"actions": [["atk", 8], ["regain_sword_intent"]]
+	},
+	"D11043": {
+		"actions": [["atk", 10], ["regain_sword_intent"]]
+	},
+	"D11044": {
+		"actions": [["rep", 2, ["atk", 4]], ["regain_sword_intent"]]
+	},
+	"D11045": {
+		"actions": [["rep", 3, ["atk", 4]], ["regain_sword_intent"]]
+	},
+	"D11051": {
+		"name": "Dream - Cloud Dance Rhythm",
+		"actions": [["qi", 1], ["sword_intent", 2]]
+	},
+	"D11052": {
+		"actions": [["qi", 2], ["sword_intent", 2]]
+	},
+	"D11053": {
+		"actions": [["qi", 3], ["sword_intent", 2]]
+	},
+	"D11054": {
+		"actions": [["qi", 3], ["sword_intent", 2]]
+	},
+	"D11055": {
+		"actions": [["qi", 3], ["sword_intent", 2]]
+	},
+	"D11061": {
+		"name": "Dream - Unrestrained Sword One",
+		"actions": [["atk", 6]]
+	},
+	"D11062": {
+		"actions": [["atk", 8]]
+	},
+	"D11063": {
+		"actions": [["atk", 10]]
+	},
+	"D11064": {
+		"actions": [["atk", 10]]
+	},
+	"D11065": {
+		"actions": [["atk", 10]]
+	},
+	"D11071": {
+		"name": "Dream - CentiBird Spirit Sword Rhythm",
+		"actions": [["qi", 1]]
+	},
+	"D11072": {
+		"actions": [["qi", 2]]
+	},
+	"D11073": {
+		"actions": [["qi", 3]]
+	},
+	"D11074": {
+		"actions": [["qi", 2]]
+	},
+	"D11075": {
+		"actions": [["qi", 3]]
+	},
+	"D11101": {
+		"name": "Dream - Consonance Sword Formation",
+		"actions": [["def", 4], ["continuous"]]
+	},
+	"D11102": {
+		"actions": [["def", 4], ["continuous"]]
+	},
+	"D11103": {
+		"actions": [["def", 4], ["continuous"]]
+	},
+	"D11104": {
+		"actions": [["def", 4], ["continuous"]]
+	},
+	"D11105": {
+		"actions": [["def", 4], ["continuous"]]
+	},
+	"D11091": {
+		"name": "Dream - Unrestrained Sword Zero",
+		"actions": [["hp", 6]]
+	},
+	"D11092": {
+		"actions": [["hp", 7]]
+	},
+	"D11093": {
+		"actions": [["hp", 8]]
+	},
+	"D11094": {
+		"actions": [["hp", 8]]
+	},
+	"D11095": {
+		"actions": [["hp", 8]]
+	},
+	"D11081": {
+		"name": "Dream - Dharma Spirit Sword",
+		"actions": [["atk", 3]]
+	},
+	"D11082": {
+		"actions": [["atk", 5]]
+	},
+	"D11083": {
+		"actions": [["atk", 5]]
+	},
+	"D11084": {
+		"actions": [["atk", 5]]
+	},
+	"D11085": {
+		"actions": [["atk", 10]]
+	},
+	"D11111": {
+		"name": "Dream - Cloud Sword - Touch Earth",
+		"actions": [["def", 6], ["add_c_of_x", 1, "cloud_sea"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 1, "def"]]]
+	},
+	"D11112": {
+		"actions": [["def", 9], ["add_c_of_x", 1, "cloud_sea"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 1, "def"]]]
+	},
+	"D11113": {
+		"actions": [["def", 9], ["add_c_of_x", 2, "cloud_sea"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 2, "def"]]]
+	},
+	"D11114": {
+		"actions": [["def", 9], ["add_c_of_x", 2, "cloud_sea"], ["add_c_of_x", 1, "moon_water_sword_formation_stacks"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 3, "def"]]]
+	},
+	"D11115": {
+		"actions": [["def", 12], ["add_c_of_x", 2, "cloud_sea"], ["add_c_of_x", 2, "moon_water_sword_formation_stacks"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 3, "def"]]]
+	},
+	"D11121": {
+		"name": "Dream - Reflexive Sword",
+		"actions": [["atk", 4], ["def", 6]]
+	},
+	"D11122": {
+		"actions": [["atk", 6], ["def", 6]]
+	},
+	"D11123": {
+		"actions": [["atk", 6], ["def", 6]]
+	},
+	"D11124": {
+		"actions": [["atk", 6], ["def", 6]]
+	},
+	"D11125": {
+		"actions": [["atk", 6], ["def", 6]]
+	},
+	"D11131": {
+		"name": "Dream - Rule Sky Sword Formation",
+		"actions": [["deal_damage", 5]]
+	},
+	"D11132": {
+		"actions": [["deal_damage", 5]]
+	},
+	"D11133": {
+		"actions": [["deal_damage", 6]]
+	},
+	"D11134": {
+		"actions": [["deal_damage", 4]]
+	},
+	"D11135": {
+		"actions": [["deal_damage", 8]]
+	},
+	"D11141": {
+		"name": "Dream - Giant Roc Spirit Sword",
+		"actions": [["atk", 5], ["qi", 1]]
+	},
+	"D11142": {
+		"actions": [["atk", 7], ["qi", 1]]
+	},
+	"D11143": {
+		"actions": [["atk", 9], ["qi", 1]]
+	},
+	"D11144": {
+		"actions": [["atk", 2], ["qi", 1]]
+	},
+	"D11145": {
+		"actions": [["atk", 2], ["qi", 2]]
+	},
+	"D11151": {
+		"name": "Dream - Earth Evil Sword",
+		"actions": [["atk", 1], ["add_enemy_c_of_x", 2, "internal_injury"]]
+	},
+	"D11152": {
+		"actions": [["atk", 1], ["add_enemy_c_of_x", 3, "internal_injury"]]
+	},
+	"D11153": {
+		"actions": [["atk", 2], ["add_enemy_c_of_x", 4, "internal_injury"]]
+	},
+	"D11154": {
+		"actions": [["rep", 2, ["atk", 1]], ["add_enemy_c_of_x", 5, "internal_injury"]]
+	},
+	"D11155": {
+		"actions": [["rep", 2, ["atk", 1]], ["add_enemy_c_of_x", 99, "internal_injury"]]
+	},
+	"D11161": {
+		"name": "Dream - Cloud Sword - Softheart",
+		"actions": [["increase_idx_def", 0, 4], ["continuous"], ["increase_idx_x_by_c", 0, "dream_cloud_sword_softheart_gain_def", 1]]
+	},
+	"D11162": {
+		"actions": [["increase_idx_def", 0, 8], ["continuous"], ["increase_idx_x_by_c", 0, "dream_cloud_sword_softheart_gain_def", 1]]
+	},
+	"D11163": {
+		"actions": [["increase_idx_def", 0, 4], ["continuous"], ["increase_idx_x_by_c", 0, "dream_cloud_sword_softheart_gain_def", 2]]
+	},
+	"D11164": {
+		"actions": [["increase_idx_def", 0, 4], ["continuous"], ["increase_idx_x_by_c", 0, "dream_cloud_sword_softheart_gain_def", 3], ["increase_idx_x_by_c", 0, "dream_cloud_sword_softheart_sword_formation_gives_cloud_sea", 1]]
+	},
+	"D11165": {
+		"actions": [["increase_idx_def", 0, 4], ["continuous"], ["increase_idx_x_by_c", 0, "dream_cloud_sword_softheart_gain_def", 5], ["increase_idx_x_by_c", 0, "dream_cloud_sword_softheart_sword_formation_gives_cloud_sea", 1]]
+	},
+	"D11171": {
+		"name": "Dream - Contemplate Spirits Rhythm",
+		"actions": [["sword_intent", 3]]
+	},
+	"D11172": {
+		"actions": [["sword_intent", 4]]
+	},
+	"D11173": {
+		"actions": [["sword_intent", 5]]
+	},
+	"D11174": {
+		"actions": [["increase_idx_x_by_c", 0, "next_attack_double_sword_intent_and_increase_atk", 1]]
+	},
+	"D11175": {
+		"actions": [["sword_intent", 1], ["increase_idx_x_by_c", 0, "next_attack_double_sword_intent_and_increase_atk", 1]]
+	},
+	"D11181": {
+		"name": "Dream - Cloud Sword - Spirit Coercion",
+		"actions": [["atk", 4]]
+	},
+	"D11182": {
+		"actions": [["atk", 5]]
+	},
+	"D11183": {
+		"actions": [["atk", 6]]
+	},
+	"D11184": {
+		"actions": [["atk", 3]],
+		"opening": [["add_c_of_x", 2, "cloud_sea"]]
+	},
+	"D11185": {
+		"actions": [["atk", 4]],
+		"opening": [["add_c_of_x", 2, "cloud_sea"]]
 	}
 }
