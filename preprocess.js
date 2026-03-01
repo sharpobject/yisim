@@ -138,7 +138,7 @@ const deps = {
         "HAS_INNATE_WOOD",
         "HAS_ACTIVATE_ANY",
         "HAS_HERBS_FLOURISH",
-        "13101", "23101", "63201", "63302", "93601", "73401"],
+        "13101", "23101", "63201", "63302", "63502", "93601", "73401"],
     HAS_ACTIVATE_FIRE: ["activate_fire_spirit_stacks",
         "HAS_INNATE_FIRE",
         "HAS_ACTIVATE_ANY",
@@ -342,6 +342,7 @@ const deps = {
         "HAS_STEP_MOON_INTO_CLOUD",
         "HAS_M_LIGHT_SWORD",
         "HAS_CLOUD_SEA",
+        "HAS_CLOUD_SWORD_USED_COUNT",
         "11102", "11103", "11201", "11202", "11203", "11302",
         "11304", "11401", "11402", "11501", "11502", "21201",
         "21602", "61101", "61401", "71402", "71503", "71504",
@@ -1115,6 +1116,9 @@ const deps = {
     HAS_PLAYED_SWORD_FORMATION_COUNT: [
         "played_sword_formation_count",
         "D11134", "D11135"],
+    HAS_CLOUD_SWORD_USED_COUNT: [
+        "cloud_sword_used_count",
+        "D11035", "D11115"],
     HAS_DREAM_CLOUD_SWORD_SOFTHEART_GAIN_DEF: [
         "dream_cloud_sword_softheart_gain_def",
         "D1116"],

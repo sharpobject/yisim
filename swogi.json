@@ -9615,6 +9615,7 @@
 		"name": "Overwhelming Power",
 		"hp_cost": 2,
 		"actions": [
+			["def", 4],
 			["add_c_of_x", 2, "force"],
 			["continuous"],
 			["add_c_of_x", 2, "overwhelming_power_stacks"]
@@ -9623,6 +9624,7 @@
 	},
 	"642022": {
 		"actions": [
+			["def", 5],
 			["add_c_of_x", 3, "force"],
 			["continuous"],
 			["add_c_of_x", 2, "overwhelming_power_stacks"]
@@ -9630,6 +9632,7 @@
 	},
 	"642023": {
 		"actions": [
+			["def", 6],
 			["add_c_of_x", 4, "force"],
 			["continuous"],
 			["add_c_of_x", 2, "overwhelming_power_stacks"]
@@ -9777,7 +9780,7 @@
 	"645011": {
 		"name": "Styx Moon's Glow",
 		"actions": [
-			["physique", 1],
+			["physique", 3],
 			["add_c_of_x", 2, "styx"],
 			["add_c_of_x", 10, "agility"]
 		],
@@ -9785,14 +9788,14 @@
 	},
 	"645012": {
 		"actions": [
-			["physique", 2],
+			["physique", 4],
 			["add_c_of_x", 3, "styx"],
 			["add_c_of_x", 11, "agility"]
 		]
 	},
 	"645013": {
 		"actions": [
-			["physique", 3],
+			["physique", 5],
 			["add_c_of_x", 4, "styx"],
 			["add_c_of_x", 12, "agility"]
 		]
@@ -13685,13 +13688,13 @@
 		"actions": [["atk", 8], ["add_c_of_x", 1, "cloud_sea"], ["cloud_hit", ["sword_intent", 2]]]
 	},
 	"D11033": {
-		"actions": [["atk", 6], ["add_c_of_x", 1, "cloud_sea"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 1, "sword_intent"]]]
+		"actions": [["atk", 8], ["add_c_of_x", 1, "cloud_sea"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 1, "sword_intent"]]]
 	},
 	"D11034": {
-		"actions": [["atk", 10], ["add_c_of_x", 2, "cloud_sea"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 1, "sword_intent"]]]
+		"actions": [["atk", 4], ["add_c_of_x", 2, "cloud_sea"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 2, "sword_intent"]]]
 	},
 	"D11035": {
-		"actions": [["atk", 4], ["add_c_of_x", 2, "cloud_sea"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 2, "sword_intent"]]]
+		"actions": [["atk", 8], ["add_c_of_x", 2, "cloud_sea"], ["for_each_x_add_c_y", "cloud_sword_used_count", 2, "sword_intent"]]
 	},
 	"D11041": {
 		"name": "Dream - Flying Fang Sword",
@@ -13819,7 +13822,7 @@
 		"actions": [["def", 9], ["add_c_of_x", 2, "cloud_sea"], ["add_c_of_x", 1, "moon_water_sword_formation_stacks"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 3, "def"]]]
 	},
 	"D11115": {
-		"actions": [["def", 12], ["add_c_of_x", 2, "cloud_sea"], ["add_c_of_x", 2, "moon_water_sword_formation_stacks"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 3, "def"]]]
+		"actions": [["def", 12], ["add_c_of_x", 2, "cloud_sea"], ["add_c_of_x", 2, "moon_water_sword_formation_stacks"], ["for_each_x_add_c_y", "cloud_sword_used_count", 3, "def"]]
 	},
 	"D11121": {
 		"name": "Dream - Reflexive Sword",

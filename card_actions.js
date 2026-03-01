@@ -9842,8 +9842,9 @@ card_actions["635013"] = (game) => {
 
 // Forget Worries
 card_actions["635021"] = (game) => {
-    game.increase_idx_max_hp(0, 12);
-    game.increase_idx_hp(0, 12);
+    const add_hp = 12 + game.players[0].activate_wood_spirit_stacks * 2;
+    game.increase_idx_max_hp(0, add_hp);
+    game.increase_idx_hp(0, add_hp);
     game.increase_idx_x_by_c(0, "guard_up", 2);
     game.increase_idx_x_by_c(1, "guard_up", 2);
     game.reduce_idx_x_by_c(0, "internal_injury", 2);
@@ -9866,8 +9867,9 @@ card_actions["635021"] = (game) => {
 
 // 635022
 card_actions["635022"] = (game) => {
-    game.increase_idx_max_hp(0, 18);
-    game.increase_idx_hp(0, 18);
+    const add_hp = 18 + game.players[0].activate_wood_spirit_stacks * 2;
+    game.increase_idx_max_hp(0, add_hp);
+    game.increase_idx_hp(0, add_hp);
     game.increase_idx_x_by_c(0, "guard_up", 2);
     game.increase_idx_x_by_c(1, "guard_up", 2);
     game.reduce_idx_x_by_c(0, "internal_injury", 3);
@@ -9890,8 +9892,9 @@ card_actions["635022"] = (game) => {
 
 // 635023
 card_actions["635023"] = (game) => {
-    game.increase_idx_max_hp(0, 24);
-    game.increase_idx_hp(0, 24);
+    const add_hp = 24 + game.players[0].activate_wood_spirit_stacks * 2;
+    game.increase_idx_max_hp(0, add_hp);
+    game.increase_idx_hp(0, add_hp);
     game.increase_idx_x_by_c(0, "guard_up", 2);
     game.increase_idx_x_by_c(1, "guard_up", 2);
     game.reduce_idx_x_by_c(0, "internal_injury", 4);
@@ -9977,6 +9980,7 @@ card_actions["642013"] = (game) => {
 
 // Overwhelming Power
 card_actions["642021"] = (game) => {
+    game.increase_idx_def(0, 4);
     game.add_c_of_x(2, "force");
     game.continuous();
     game.add_c_of_x(2, "overwhelming_power_stacks");
@@ -9984,6 +9988,7 @@ card_actions["642021"] = (game) => {
 
 // 642022
 card_actions["642022"] = (game) => {
+    game.increase_idx_def(0, 5);
     game.add_c_of_x(3, "force");
     game.continuous();
     game.add_c_of_x(2, "overwhelming_power_stacks");
@@ -9991,6 +9996,7 @@ card_actions["642022"] = (game) => {
 
 // 642023
 card_actions["642023"] = (game) => {
+    game.increase_idx_def(0, 6);
     game.add_c_of_x(4, "force");
     game.continuous();
     game.add_c_of_x(2, "overwhelming_power_stacks");
@@ -10154,21 +10160,21 @@ card_actions["644033"] = (game) => {
 
 // Stygian Moon's Changuang
 card_actions["645011"] = (game) => {
-    game.physique(1);
+    game.physique(3);
     game.add_c_of_x(2, "styx");
     game.add_c_of_x(10, "agility");
 }
 
 // 645012
 card_actions["645012"] = (game) => {
-    game.physique(2);
+    game.physique(4);
     game.add_c_of_x(3, "styx");
     game.add_c_of_x(11, "agility");
 }
 
 // 645013
 card_actions["645013"] = (game) => {
-    game.physique(3);
+    game.physique(5);
     game.add_c_of_x(4, "styx");
     game.add_c_of_x(12, "agility");
 }
@@ -14344,7 +14350,7 @@ card_actions["D11032"] = (game) => {
 
 // D11033
 card_actions["D11033"] = (game) => {
-    game.atk(6);
+    game.atk(8);
     game.add_c_of_x(1, "cloud_sea");
     if (game.if_cloud_hit()) {
         game.increase_idx_x_by_c(0, "sword_intent", game.players[0].cloud_sword_chain_count);
@@ -14353,19 +14359,20 @@ card_actions["D11033"] = (game) => {
 
 // D11034
 card_actions["D11034"] = (game) => {
-    game.atk(10);
+    game.atk(4);
     game.add_c_of_x(2, "cloud_sea");
     if (game.if_cloud_hit()) {
-        game.increase_idx_x_by_c(0, "sword_intent", game.players[0].cloud_sword_chain_count);
+        game.increase_idx_x_by_c(0, "sword_intent", 2 * game.players[0].cloud_sword_chain_count);
     }
 }
 
 // D11035
 card_actions["D11035"] = (game) => {
-    game.atk(4);
+    game.atk(8);
     game.add_c_of_x(2, "cloud_sea");
-    if (game.if_cloud_hit()) {
-        game.increase_idx_x_by_c(0, "sword_intent", 2 * game.players[0].cloud_sword_chain_count);
+    const add_sword_intent = 2 * game.players[0].cloud_sword_used_count;
+    if (add_sword_intent > 0) {
+        game.increase_idx_x_by_c(0, "sword_intent", add_sword_intent);
     }
 }
 
@@ -14680,9 +14687,7 @@ card_actions["D11115"] = (game) => {
     game.increase_idx_def(0, 12);
     game.add_c_of_x(2, "cloud_sea");
     game.add_c_of_x(2, "moon_water_sword_formation_stacks");
-    if (game.if_cloud_hit()) {
-        game.for_each_x_add_c_y("cloud_sword_chain_count", 3, "def");
-    }
+    game.for_each_x_add_c_y("cloud_sword_used_count", 3, "def");
 }
 
 // Dream - Reflexive Sword

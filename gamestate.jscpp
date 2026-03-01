@@ -301,6 +301,9 @@ export class Player {
 #ifdef HAS_CLOUD_SWORD_CHAIN_COUNT
         this.cloud_sword_chain_count = 0;
 #endif // HAS_CLOUD_SWORD_CHAIN_COUNT
+#ifdef HAS_CLOUD_SWORD_USED_COUNT
+        this.cloud_sword_used_count = 0;
+#endif // HAS_CLOUD_SWORD_USED_COUNT
 #ifdef HAS_CLOUD_SEA
         this.cloud_sea = 0;
 #endif // HAS_CLOUD_SEA
@@ -2496,6 +2499,9 @@ export class GameState {
         if (this.is_cloud_sword(card_id)) {
             me.cloud_sword_chain_count += 1;
             this.log("incremented cloud_sword_chain_count to " + me.cloud_sword_chain_count);
+#ifdef HAS_CLOUD_SWORD_USED_COUNT
+            me.cloud_sword_used_count += 1;
+#endif // HAS_CLOUD_SWORD_USED_COUNT
 #ifdef HAS_STEP_MOON_INTO_CLOUD
             this.do_step_moon_into_cloud(card_id);
 #endif // HAS_STEP_MOON_INTO_CLOUD
@@ -2508,6 +2514,9 @@ export class GameState {
                 me.cloud_sea -= 1;
                 me.cloud_sword_chain_count += 1;
                 this.log("consumed 1 cloud_sea, incremented cloud_sword_chain_count to " + me.cloud_sword_chain_count);
+#ifdef HAS_CLOUD_SWORD_USED_COUNT
+                me.cloud_sword_used_count += 1;
+#endif // HAS_CLOUD_SWORD_USED_COUNT
             } else
 #endif // HAS_CLOUD_SEA
 #ifdef HAS_ENDURANCE_AS_CLOUD_SEA
@@ -5309,6 +5318,12 @@ export class GameState {
             const excess_amt = me.force - me.max_force;
             me.force = me.max_force;
             this.increase_idx_def(idx, excess_amt);
+#ifdef HAS_OVERWHELMING_POWER
+            if (me.overwhelming_power_stacks > 0) {
+                const dmg = me.overwhelming_power_stacks * excess_amt;
+                this.deal_damage_inner(dmg, false, idx);
+            }
+#endif // HAS_OVERWHELMING_POWER
         }
 #ifdef HAS_SURGE_OF_QI
         if (me.surge_of_qi_stacks > 0 && me.stance_is_fist) {
