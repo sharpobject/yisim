@@ -280,6 +280,9 @@ export const ready = (async () => {
                 swogi[card_id].name.includes("Cat Chaos") ||
                 swogi[card_id].name.includes("Bronze Cat"));
     }
+    let is_snake = function (card_id) {
+        return swogi[card_id].name.includes("Snake");
+    }
     function with_default(x, default_val) {
         if (x === undefined) {
             return default_val;
@@ -340,6 +343,7 @@ export const ready = (async () => {
             is_spirit_sword: is_spirit_sword(card_id),
             is_sword: is_sword(card_id),
             is_cat: is_cat(card_id),
+            is_snake: is_snake(card_id),
             is_add_qi: is_add_qi,
             marking: marking,
             is_salty: is_salty,

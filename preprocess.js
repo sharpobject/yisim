@@ -47,7 +47,10 @@ const deps = {
         "40301", "60301", "60507", "60601", "62303", "62503",
         "63502", "64301", "70105", "72502", "74501", "92401",
         "92404", "92507", "94402", "72506", "74405",
-        "D11151", "D11152", "D11153", "D11154", "D11155"],
+        "D1115",
+        "D1206",
+        "D1213",
+        "D1216"],
     HAS_MARK_OF_DARK_HEART: ["HAS_P2_MARK_OF_DARK_HEART",
         "HAS_P3_MARK_OF_DARK_HEART",
         "HAS_P4_MARK_OF_DARK_HEART",
@@ -77,13 +80,15 @@ const deps = {
         "HAS_COURAGE_TO_FIGHT",
         "14107", "14308", "14506", "22401", "24501", "24502",
         "32202", "33403", "34301", "60302", "60503", "60602",
-        "61501", "63502", "64301", "74501", "74505", "92404", "92508"],
+        "61501", "63502", "64301", "74501", "74505", "92404", "92508",
+        "D1216"],
     HAS_DECREASE_ATK: [
         "HAS_EVERY_DEBUFF",
         "HAS_ANTHOMANIA_FORMATION",
         "decrease_atk",
         "14407", "14506", "22401", "24501", "32202", "33403",
-        "34301", "63502", "64301", "92404"],
+        "34301", "63502", "64301", "92404",
+        "D12164", "D12165"],
     HAS_IGNORE_DECREASE_ATK: ["14506", "ignore_decrease_atk"],
     HAS_WEAKEN: [
         "weaken",
@@ -92,7 +97,9 @@ const deps = {
         "12208", "12402", "14207", "14506", "22102", "22401",
         "24501", "24502", "32202", "32403", "32503", "33403",
         "34301", "40401", "60504", "62202", "63502", "64301",
-        "70106", "74501", "90403", "92404", "92507"],
+        "70106", "74501", "90403", "92404", "92507",
+        "D12133",
+        "D1216"],
     HAS_IGNORE_WEAKEN: ["14506", "21302", "ignore_weaken"],
     HAS_FLAW: [
         "flaw",
@@ -349,7 +356,9 @@ const deps = {
     HAS_POST_ACTION: [
         "12112", "12211", "12310", "12311", "12409", "12506",
         "22202", "62201", "72501", "72502", "72504", "92301",
-        "92503", "90605"],
+        "92503", "90605",
+        "D1206", "D1207", "D1208",
+        "D1216"],
     HAS_EXCHANGE_CARD_CHANCE: ["HAS_THREE_TAILED_CAT"],
     HAS_CLOUD_SWORD_SOFTHEART_AND_FRIENDS: [
         "HAS_CLOUD_SWORD_SOFTHEART",
@@ -383,7 +392,7 @@ const deps = {
     HAS_BONUS_FORCE: ["14506"],
     HAS_DAMAGE_DEALT_TO_HP_BY_THIS_CARD_ATK: [
         "HAS_CRASH_FIST_STAR_SEIZING", "13402", "13404",
-        "D11151", "D11152", "D11153", "D11154", "D11155"],
+        "D1115"],
     HAS_CRASH_FIST_STAR_SEIZING: [
         "this_card_crash_fist_star_seizing_stacks",
         "crash_fist_star_seizing_stacks",
@@ -605,7 +614,8 @@ const deps = {
         "HAS_FLAW",
         "HAS_THUNDER_CITTA_DHARMA",
         "HAS_M_SINKING_QI",
-        "HAS_COUNTER_MOVE"],
+        "HAS_COUNTER_MOVE",
+        "HAS_DREAM_REPEL_CITTA_DHARMA"],
     HAS_AGILITY: ["agility",
         "HAS_CRASH_FIST_BLINK",
         "HAS_ELUSIVE_FOOTWORK",
@@ -695,6 +705,8 @@ const deps = {
         "vitality_blossom_stacks", "22201", "HAS_M_VITALITY_BLOSSOM"],
     HAS_HUNTER_HUNTING_HUNTER: [
         "hunter_hunting_hunter_stacks", "12507"],
+    HAS_PLAYED_POST_ACTION_COUNT: [
+        "played_post_action_count", "D1207"],
     HAS_REPEL_CITTA_DHARMA: [
         "repel_citta_dharma_stacks", "12408"],
     HAS_HEXAGRAM_FORMACIDE: [
@@ -705,7 +717,8 @@ const deps = {
         "stillness_citta_dharma_stacks", "12209"],
     HAS_HP_GAINED: [
         "HAS_CHASE_IF_HP_GAINED",
-        "12309", "23301", "73404", "74401", "92301"],
+        "12309", "23301", "73404", "74401", "92301",
+        "D1206"],
     HAS_STAR_POWER: [
         "HAS_STARGAZE",
         "HAS_ULTIMATE_POLARIS_HEXAGRAM_BASE",
@@ -714,21 +727,27 @@ const deps = {
         "HAS_PROPITIOUS_OMEN",
         "HAS_STAR_TRAIL_DIVINATION",
         "HAS_THOUSAND_STAR_EXPLOSION",
+        "HAS_DREAM_SHIFTING_STARS",
+        "HAS_DREAM_DOTTED_AROUND_COUNTDOWN",
+        "HAS_DREAM_DOTTED_AROUND_PER_TURN",
         "12102", "12201", "12301", "22202", "22402", "22503",
         "62101", "62302", "62501", "72406", "72505", "92502",
-        "92503"],
+        "92503",
+        "D1201", "D1202", "D1214"],
     HAS_STAR_POINT: [
         "HAS_STAR_POWER",
         "HAS_STAR_MOON_FOLDING_FAN",
         "HAS_REDUCE_QI_COST_ON_STAR_POINT",
         "HAS_POLARIS_CITTA_DHARMA",
         "HAS_IF_STAR_POINT",
-        "HAS_BECOME_STAR_POINT"],
+        "HAS_BECOME_STAR_POINT",
+        "HAS_DREAM_SHIFTING_STARS"],
     HAS_IF_STAR_POINT: [
         "12103", "12104", "12202", "12203", "12302", "12401",
         "12402", "12502", "72501", "72505", "92509"],
     HAS_BECOME_STAR_POINT: [
-        "12101", "12205", "12301", "62101", "92201", "92501"],
+        "12101", "12205", "12301", "62101", "92201", "92501",
+        "D1202"],
     HAS_POLARIS_CITTA_DHARMA: ["12501"],
     HAS_THOUSAND_STAR_EXPLOSION: ["92402"],
     HAS_STAR_TRAIL_DIVINATION: ["12405"],
@@ -750,7 +769,10 @@ const deps = {
         "12105", "12106", "12107", "12204", "12205", "12303",
         "12305", "12306", "12404", "12503", "22101", "22403",
         "22601", "62101", "62301", "62403", "72401", "72403",
-        "92501"],
+        "92501",
+        "D1202", "D1203",
+        "D1211", "D1212",
+        "D1217"],
     HAS_RAND_RANGE: [
         "HAS_THUNDER_AND_LIGHTNING",
         "12108", "12109", "12111", "12206", "12207", "12305",
@@ -809,8 +831,7 @@ const deps = {
         "11211", "11410", "21301", "61501", "71501", "91301",
         "91401",
         "D11054", "D11055",
-        "D11061", "D11062", "D11063", "D11064", "D11065",
-        "D11091", "D11092", "D11093", "D11094", "D11095"],
+        "D1106", "D1109"],
     HAS_SWORD_INTENT: [
         "sword_intent",
         "sword_intent_to_lose",
@@ -823,10 +844,9 @@ const deps = {
         "11210", "11305", "11407", "11505", "21302", "21401",
         "61102", "71401", "71402", "71406", "91301", "91402",
         "91506", "91507",
-        "D11051", "D11052", "D11053", "D11054", "D11055",
-        "D11031", "D11032", "D11033", "D11034", "D11035",
+        "D1105", "D1103",
         "D11094", "D11095",
-        "D11171", "D11172", "D11173", "D11174", "D11175"],
+        "D1117"],
     INCREASE_MAX_HP_DISPATCH: [
         "HAS_HEAVENLY_WILL_COMPLY"],
     INCREASE_IDX_DEF_DISPATCH: [
@@ -843,7 +863,9 @@ const deps = {
         "HAS_WILD_CROSSING_SEAL",
         "HAS_STAR_MOON_HEXAGRAM_FAN",
         "HAS_SPIRITSTAT_TUNE",
-        "HAS_DREAM_CONSONANCE_QI_GIVES_DEF"],
+        "HAS_DREAM_CONSONANCE_QI_GIVES_DEF",
+        "HAS_DREAM_YIN_YANG_FORMATION_DEF",
+        "HAS_DREAM_YIN_YANG_FORMATION_HP"],
     INCREASE_IDX_DEBUFF_DISPATCH: [
         "HAS_ZONGZI_MODE",
         "HAS_GAIN_EXTRA_DEBUFF",
@@ -861,7 +883,9 @@ const deps = {
     INCREASE_IDX_HEXAGRAM_DISPATCH: [
         "HAS_ASTROLOGY",
         "HAS_HEXAGRAM_FORMACIDE",
-        "HAS_STAR_MOON_HEXAGRAM_FAN"],
+        "HAS_STAR_MOON_HEXAGRAM_FAN",
+        "HAS_DREAM_YIN_YANG_FORMATION_DEF",
+        "HAS_DREAM_YIN_YANG_FORMATION_HP"],
     INCREASE_IDX_STAR_POWER_DISPATCH: [
         "HAS_STAR_MOON_HEXAGRAM_FAN"],
     REDUCE_IDX_DEF_DISPATCH: [
@@ -1019,39 +1043,66 @@ const deps = {
 
     // dream cards
     HAS_CHECK_ADJACENT_BEFORE: [
-        "HAS_DREAM_QI_PERFUSION_GUARANTEE_INJURED"],
+        "HAS_DREAM_QI_PERFUSION_GUARANTEE_INJURED",
+        "HAS_DREAM_SHIFTING_STARS_GAIN_STAR_POWER_BEFORE_PLAYING_ADJACENT"],
     HAS_CHECK_ADJACENT_AFTER: [
         "HAS_DREAM_CLOUD_SWORD_PIERCE_THE_STAR"],
     HAS_DREAM_QI_PERFUSION_GUARANTEE_INJURED: [
         "dream_qi_perfusion_guarantee_injured",
         "D11013", "D11014", "D11015"],
     HAS_DREAM_CLOUD_SWORD_PIERCE_THE_STAR: [
-        "D11021", "D11022", "D11023", "D11024", "D11025"],
+        "D1102"],
+    HAS_DREAM_SHIFTING_STARS: [
+        "D1210"],
+    HAS_DREAM_SHIFTING_STARS_GAIN_STAR_POWER_BEFORE_PLAYING_ADJACENT: [
+        "D12104", "D12105"],
+    HAS_SNAKE_SHADOW: [
+        "snake_shadow",
+        "D12134", "D12135"],
+    HAS_SNAKE_CARD_USED: [
+        "snake_card_used",
+        "D12134", "D12135"],
+    HAS_DREAM_DOTTED_AROUND_COUNTDOWN: [
+        "dream_dotted_around_countdown",
+        "D12151", "D12152", "D12153", "D12154"],
+    HAS_DREAM_DOTTED_AROUND_PER_TURN: [
+        "dream_dotted_around_per_turn",
+        "can_trigger_dream_dotted_around",
+        "D12155"],
     HAS_CLOUD_SEA: [
         "cloud_sea",
         "HAS_DREAM_CLOUD_SWORD_SOFTHEART_SWORD_FORMATION_GIVES_CLOUD_SEA",
-        "D11031", "D11032", "D11033", "D11034", "D11035",
-        "D11111", "D11112", "D11113", "D11114", "D11115",
+        "D1103", "D1111",
         "D11184", "D11185"],
     HAS_DREAM_FLYING_FANG_SWORD: [
-        "D11041", "D11042", "D11043", "D11044", "D11045"],
+        "D1104"],
     HAS_TOTAL_QI_GAINED: [
-        "total_qi_gained"],
+        "total_qi_gained",
+        "HAS_DREAM_CENTIBIRD"],
     HAS_DREAM_CENTIBIRD: [
-        "D11071", "D11072", "D11073", "D11074", "D11075",
-        "HAS_SWORD_QI",
-        "HAS_TOTAL_QI_GAINED"],
+        "D1107"],
     HAS_DREAM_DHARMA_SPIRIT_SWORD: [
-        "D11081", "D11082", "D11083", "D11084", "D11085"],
+        "D1108"],
     HAS_SWORD_QI: [
         "sword_qi",
-        "HAS_DREAM_DHARMA_SPIRIT_SWORD"],
+        "HAS_DREAM_DHARMA_SPIRIT_SWORD",
+        "HAS_DREAM_CENTIBIRD"],
     HAS_DREAM_CONSONANCE_QI_GIVES_DEF: [
         "dream_consonance_qi_gives_def_stacks",
-        "D11101", "D11102", "D11103", "D11104", "D11105"],
+        "D1110"],
     HAS_DREAM_CONSONANCE_SWORD_INTENT_GIVES_DEF: [
         "dream_consonance_sword_intent_gives_def_stacks",
         "D11103", "D11104", "D11105"],
+    HAS_DREAM_YIN_YANG_FORMATION_DEF: [
+        "dream_yin_yang_formation_def_stacks",
+        "D1204"],
+    HAS_DREAM_YIN_YANG_FORMATION_HP: [
+        "dream_yin_yang_formation_hp_stacks",
+        "D12043", "D12044", "D12045"],
+    HAS_DREAM_REVITALIZED: [
+        "dream_revitalized_played_count",
+        "dream_revitalized_doublings",
+        "D1218"],
     HAS_DREAM_UNRESTRAINED_SWORD_ZERO: [
         "dream_unrestrained_sword_zero_stacks",
         "D11094", "D11095"],
@@ -1066,13 +1117,17 @@ const deps = {
         "D11134", "D11135"],
     HAS_DREAM_CLOUD_SWORD_SOFTHEART_GAIN_DEF: [
         "dream_cloud_sword_softheart_gain_def",
-        "D11161", "D11162", "D11163", "D11164", "D11165"],
+        "D1116"],
     HAS_DREAM_CLOUD_SWORD_SOFTHEART_SWORD_FORMATION_GIVES_CLOUD_SEA: [
         "dream_cloud_sword_softheart_sword_formation_gives_cloud_sea",
         "D11164", "D11165"],
     HAS_NEXT_ATTACK_DOUBLE_SWORD_INTENT_AND_INCREASE_ATK: [
         "next_attack_double_sword_intent_and_increase_atk",
         "D11174", "D11175"],
+    HAS_DREAM_REPEL_CITTA_DHARMA: [
+        "dream_repel_citta_dharma_stacks",
+        "can_dream_repel_citta_dharma",
+        "D1209"],
 
 };
 

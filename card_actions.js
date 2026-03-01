@@ -1330,7 +1330,7 @@ card_actions["121103"] = (game) => {
     }
 }
 
-// Striding Into the Wind
+// Wild Horses Part the Mane
 card_actions["121111"] = (game) => {
     for (let i = 0; i < 2; i++) {
         game.atk(3);
@@ -2059,7 +2059,7 @@ card_actions["124093"] = (game) => {
     }
 }
 
-// Extremely Suspicious
+// Snake in Reflection
 card_actions["124101"] = (game) => {
     game.add_enemy_c_of_x(2, "internal_injury");
     game.do_internal_injury(1);
@@ -7019,7 +7019,7 @@ card_actions["342023"] = (game) => {
     game.increase_idx_qi(0, 4);
 }
 
-// Gild The Lily
+// Paint Feet on Snake
 card_actions["342031"] = (game) => {
     for (let i = 0; i < 2; i++) {
         game.atk(5);
@@ -8385,7 +8385,7 @@ card_actions["406013"] = (game) => {
     game.reduce_enemy_c_of_x(10, "destiny");
 }
 
-// Mysterious Gates Devil Seal Tower
+// Qimen Monster-Locking Tower
 card_actions["406021"] = (game) => {
     game.deal_damage(25);
     game.add_enemy_c_of_x(1, "cannot_act_stacks");
@@ -8559,7 +8559,7 @@ card_actions["504023"] = (game) => {
     game.add_c_of_x(20, "ashes_phoenix_stacks");
 }
 
-// Three Tailed Cat
+// Three-tailed Huan
 card_actions["504031"] = (game) => {
     game.add_c_of_x(1, "exchange_card_chance");
     game.continuous();
@@ -9121,8 +9121,8 @@ card_actions["614021"] = (game) => {
     for (let i = 0; i < 3; i++) {
         game.atk(2);
     }
-    game.add_c_of_x(2, "regen");
     game.increase_idx_qi(0, 1);
+    game.add_c_of_x(2, "regen");
     if (game.if_cloud_hit()) {
         const convert_amt = Math.min(game.players[0].regen, 2);
         game.reduce_c_of_x(convert_amt, "regen");
@@ -9135,8 +9135,8 @@ card_actions["614022"] = (game) => {
     for (let i = 0; i < 4; i++) {
         game.atk(2);
     }
-    game.add_c_of_x(2, "regen");
     game.increase_idx_qi(0, 1);
+    game.add_c_of_x(2, "regen");
     if (game.if_cloud_hit()) {
         const convert_amt = Math.min(game.players[0].regen, 3);
         game.reduce_c_of_x(convert_amt, "regen");
@@ -9149,8 +9149,8 @@ card_actions["614023"] = (game) => {
     for (let i = 0; i < 5; i++) {
         game.atk(2);
     }
-    game.add_c_of_x(2, "regen");
     game.increase_idx_qi(0, 1);
+    game.add_c_of_x(2, "regen");
     if (game.if_cloud_hit()) {
         const convert_amt = Math.min(game.players[0].regen, 4);
         game.reduce_c_of_x(convert_amt, "regen");
@@ -13252,21 +13252,21 @@ card_actions["925013"] = (game) => {
 // Star Moon Hexagram Fan
 card_actions["925021"] = (game) => {
     game.continuous();
-    game.add_c_of_x(1, "star_moon_hexagram_fan_stacks");
+    game.add_c_of_x(3, "star_moon_hexagram_fan_stacks");
 }
 
 // 925022
 card_actions["925022"] = (game) => {
     game.add_c_of_x(1, "star_power");
     game.continuous();
-    game.add_c_of_x(1, "star_moon_hexagram_fan_stacks");
+    game.add_c_of_x(3, "star_moon_hexagram_fan_stacks");
 }
 
 // 925023
 card_actions["925023"] = (game) => {
     game.add_c_of_x(2, "star_power");
     game.continuous();
-    game.add_c_of_x(1, "star_moon_hexagram_fan_stacks");
+    game.add_c_of_x(3, "star_moon_hexagram_fan_stacks");
 }
 
 // Great Galaxy
@@ -14948,5 +14948,749 @@ card_actions["D11185"] = (game) => {
     for (let i = 0; i < hits; i++) {
         game.atk(4);
     }
+}
+
+// Dream - Astral Move - Block
+card_actions["D12011"] = (game) => {
+    game.atk(6);
+    game.increase_idx_def(0, 2);
+    if (game.if_star_point()) {
+        game.for_each_x_add_c_y("star_power", 2, "def");
+    }
+}
+
+// D12012
+card_actions["D12012"] = (game) => {
+    game.atk(8);
+    game.increase_idx_def(0, 2);
+    if (game.if_star_point()) {
+        game.for_each_x_add_c_y("star_power", 2, "def");
+    }
+}
+
+// D12013
+card_actions["D12013"] = (game) => {
+    game.atk(10);
+    game.increase_idx_def(0, 2);
+    if (game.if_star_point()) {
+        game.for_each_x_add_c_y("star_power", 2, "def");
+    }
+}
+
+// D12014
+card_actions["D12014"] = (game) => {
+    for (let i = 0; i < 2; i++) {
+        game.atk(6);
+    }
+    game.increase_idx_def(0, 2);
+    if (game.if_star_point()) {
+        game.for_each_x_add_c_y("star_power", 3, "def");
+    }
+}
+
+// D12015
+card_actions["D12015"] = (game) => {
+    for (let i = 0; i < 3; i++) {
+        game.atk(4);
+    }
+    game.increase_idx_def(0, 2);
+    if (game.if_star_point()) {
+        game.for_each_x_add_c_y("star_power", 4, "def");
+    }
+}
+
+// Dream - Star Trail Divination
+card_actions["D12021"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_max_hp(0, 2);
+    game.increase_idx_hp(0, 2);
+    game.exhaust_x_to_add_c_y("hexagram", 1, "star_power");
+}
+
+// D12022
+card_actions["D12022"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_max_hp(0, 4);
+    game.increase_idx_hp(0, 4);
+    game.exhaust_x_to_add_c_y("hexagram", 1, "star_power");
+}
+
+// D12023
+card_actions["D12023"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_max_hp(0, 6);
+    game.increase_idx_hp(0, 6);
+    game.exhaust_x_to_add_c_y("hexagram", 1, "star_power");
+}
+
+// D12024
+card_actions["D12024"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_max_hp(0, 4);
+    game.increase_idx_hp(0, 4);
+    const exhausted = game.exhaust_x("hexagram");
+    game.add_c_of_x(exhausted, "star_power");
+    game.become_star_point(Math.min(exhausted, game.players[0].cards.length));
+}
+
+// D12025
+card_actions["D12025"] = (game) => {
+    game.increase_idx_qi(0, 4);
+    game.increase_idx_max_hp(0, 4);
+    game.increase_idx_hp(0, 4);
+    const exhausted = game.exhaust_x("hexagram");
+    game.add_c_of_x(exhausted, "star_power");
+    game.become_star_point(Math.min(exhausted, game.players[0].cards.length));
+}
+
+// Dream - Thunder And Lightning
+card_actions["D12031"] = (game) => {
+    const bonus = game.players[0].hexagram;
+    game.atk(6 + bonus);
+}
+
+// D12032
+card_actions["D12032"] = (game) => {
+    const bonus = game.players[0].hexagram;
+    game.atk(8 + bonus);
+}
+
+// D12033
+card_actions["D12033"] = (game) => {
+    const bonus = game.players[0].hexagram;
+    for (let i = 0; i < 2; i++) {
+        game.atk(1 + bonus);
+    }
+}
+
+// D12034
+card_actions["D12034"] = (game) => {
+    const bonus = game.players[0].hexagram;
+    for (let i = 0; i < 3; i++) {
+        game.atk(1 + bonus);
+    }
+}
+
+// D12035
+card_actions["D12035"] = (game) => {
+    const bonus = game.players[0].hexagram;
+    for (let i = 0; i < 4; i++) {
+        game.atk(1 + bonus);
+    }
+}
+
+// Dream - Yin Yang Formation
+card_actions["D12041"] = (game) => {
+    game.increase_idx_def(0, 4);
+    game.continuous();
+    game.increase_idx_x_by_c(0, "dream_yin_yang_formation_def_stacks", 1);
+}
+
+// D12042
+card_actions["D12042"] = (game) => {
+    game.continuous();
+    game.increase_idx_x_by_c(0, "dream_yin_yang_formation_def_stacks", 2);
+}
+
+// D12043
+card_actions["D12043"] = (game) => {
+    game.continuous();
+    game.increase_idx_x_by_c(0, "dream_yin_yang_formation_def_stacks", 1);
+    game.increase_idx_x_by_c(0, "dream_yin_yang_formation_hp_stacks", 1);
+}
+
+// D12044
+card_actions["D12044"] = (game) => {
+    game.continuous();
+    game.increase_idx_x_by_c(0, "dream_yin_yang_formation_def_stacks", 2);
+    game.increase_idx_x_by_c(0, "dream_yin_yang_formation_hp_stacks", 2);
+}
+
+// D12045
+card_actions["D12045"] = (game) => {
+    game.increase_idx_max_hp(0, 10);
+    game.continuous();
+    game.increase_idx_x_by_c(0, "dream_yin_yang_formation_def_stacks", 2);
+    game.increase_idx_x_by_c(0, "dream_yin_yang_formation_hp_stacks", 3);
+}
+
+// Dream - Falling Thunder
+card_actions["D12051"] = (game) => {
+    let debuffs = Math.min(game.get_debuff_count(1), 2);
+    game.atk(6 + debuffs * 5);
+    game.reduce_random_debuff_by_c_n_times(1, debuffs);
+}
+
+// D12052
+card_actions["D12052"] = (game) => {
+    let debuffs = Math.min(game.get_debuff_count(1), 2);
+    game.atk(8 + debuffs * 5);
+    game.reduce_random_debuff_by_c_n_times(1, debuffs);
+}
+
+// D12053
+card_actions["D12053"] = (game) => {
+    let debuffs = Math.min(game.get_debuff_count(1), 2);
+    game.atk(10 + debuffs * 5);
+    game.reduce_random_debuff_by_c_n_times(1, debuffs);
+}
+
+// D12054
+card_actions["D12054"] = (game) => {
+    let debuffs = Math.min(game.get_debuff_count(1), 3);
+    game.atk(12 + debuffs * 6);
+    game.reduce_random_debuff_by_c_n_times(1, debuffs);
+}
+
+// D12055
+card_actions["D12055"] = (game) => {
+    let debuffs = Math.min(game.get_debuff_count(1), 4);
+    game.atk(14 + debuffs * 6);
+    game.reduce_random_debuff_by_c_n_times(1, debuffs);
+}
+
+// Dream - Flower Sentient
+card_actions["D12061"] = (game) => {
+    game.add_enemy_c_of_x(1, "internal_injury");
+    if (game.if_post_action()) {
+        game.increase_idx_hp(0, 4);
+    }
+}
+
+// D12062
+card_actions["D12062"] = (game) => {
+    game.add_enemy_c_of_x(1, "internal_injury");
+    if (game.if_post_action()) {
+        game.increase_idx_hp(0, 8);
+    }
+}
+
+// D12063
+card_actions["D12063"] = (game) => {
+    game.add_enemy_c_of_x(1, "internal_injury");
+    if (game.if_post_action()) {
+        game.increase_idx_hp(0, 12);
+    }
+}
+
+// D12064
+card_actions["D12064"] = (game) => {
+    game.add_enemy_c_of_x(1, "internal_injury");
+    game.increase_idx_hp(0, 5);
+    if (game.if_post_action()) {
+        const injuries = Math.floor(game.players[0].hp_gained / 5);
+        if (injuries > 0) {
+            game.add_enemy_c_of_x(injuries, "internal_injury");
+        }
+    }
+}
+
+// D12065
+card_actions["D12065"] = (game) => {
+    game.add_enemy_c_of_x(1, "internal_injury");
+    game.increase_idx_hp(0, 5);
+    if (game.if_post_action()) {
+        const injuries = Math.floor(game.players[0].hp_gained / 4);
+        if (injuries > 0) {
+            game.add_enemy_c_of_x(injuries, "internal_injury");
+        }
+    }
+}
+
+// Dream - Hunter Hunting Hunter
+card_actions["D12071"] = (game) => {
+    const me = game.players[0];
+    game.atk(6);
+    if (!me.can_post_action[me.currently_playing_card_idx]) {
+        game.reverse_card_play_direction();
+    }
+    if (me.played_post_action_count > 0) {
+        game.atk(2);
+    }
+}
+
+// D12072
+card_actions["D12072"] = (game) => {
+    const me = game.players[0];
+    game.atk(7);
+    if (!me.can_post_action[me.currently_playing_card_idx]) {
+        game.reverse_card_play_direction();
+    }
+    if (me.played_post_action_count > 0) {
+        game.atk(3);
+    }
+}
+
+// D12073
+card_actions["D12073"] = (game) => {
+    const me = game.players[0];
+    game.atk(8);
+    if (!me.can_post_action[me.currently_playing_card_idx]) {
+        game.reverse_card_play_direction();
+    }
+    if (me.played_post_action_count > 0) {
+        game.atk(4);
+    }
+}
+
+// D12074
+card_actions["D12074"] = (game) => {
+    const me = game.players[0];
+    game.atk(4);
+    if (!me.can_post_action[me.currently_playing_card_idx]) {
+        game.reverse_card_play_direction();
+    }
+    for (let i = 0; i < me.played_post_action_count; i++) {
+        game.atk(4);
+    }
+}
+
+// D12075
+card_actions["D12075"] = (game) => {
+    const me = game.players[0];
+    game.atk(5);
+    game.reverse_card_play_direction();
+    for (let i = 0; i < me.played_post_action_count; i++) {
+        game.atk(5);
+    }
+}
+
+// Dream - Drag Moon In Sea
+card_actions["D12081"] = (game) => {
+    if (game.if_post_action()) {
+        for (let i = 0; i < 2; i++) {
+            game.atk(7);
+        }
+    }
+}
+
+// D12082
+card_actions["D12082"] = (game) => {
+    if (game.if_post_action()) {
+        for (let i = 0; i < 2; i++) {
+            game.atk(9);
+        }
+    }
+}
+
+// D12083
+card_actions["D12083"] = (game) => {
+    if (game.if_post_action()) {
+        for (let i = 0; i < 2; i++) {
+            game.atk(11);
+        }
+    }
+}
+
+// D12084
+card_actions["D12084"] = (game) => {
+    game.chase();
+    if (game.if_post_action()) {
+        const me = game.players[0];
+        let bonus = 0;
+        if (me.currently_triggering_card_idx > 7 - 5) {
+            bonus = 4;
+        }
+        for (let i = 0; i < 2; i++) {
+            game.atk(1 + bonus);
+        }
+    }
+}
+
+// D12085
+card_actions["D12085"] = (game) => {
+    game.chase();
+    if (game.if_post_action()) {
+        const me = game.players[0];
+        let bonus = 0;
+        if (me.currently_triggering_card_idx > 7 - 5) {
+            bonus = 7;
+        }
+        for (let i = 0; i < 2; i++) {
+            game.atk(1 + bonus);
+        }
+    }
+}
+
+// Dream - Repel Citta-Dharma
+card_actions["D12091"] = (game) => {
+    game.increase_idx_max_hp(0, 3);
+    game.increase_idx_hp(0, 3);
+    game.add_c_of_x(1, "dream_repel_citta_dharma_stacks");
+}
+
+// D12092
+card_actions["D12092"] = (game) => {
+    game.increase_idx_max_hp(0, 5);
+    game.increase_idx_hp(0, 5);
+    game.add_c_of_x(1, "dream_repel_citta_dharma_stacks");
+}
+
+// D12093
+card_actions["D12093"] = (game) => {
+    game.increase_idx_max_hp(0, 7);
+    game.increase_idx_hp(0, 7);
+    game.add_c_of_x(1, "dream_repel_citta_dharma_stacks");
+}
+
+// D12094
+card_actions["D12094"] = (game) => {
+    game.increase_idx_max_hp(0, 3);
+    game.increase_idx_hp(0, 3);
+    game.add_c_of_x(2, "dream_repel_citta_dharma_stacks");
+}
+
+// D12095
+card_actions["D12095"] = (game) => {
+    game.increase_idx_max_hp(0, 8);
+    game.increase_idx_hp(0, 8);
+    game.add_c_of_x(2, "dream_repel_citta_dharma_stacks");
+}
+
+// Dream - Shifting Stars
+card_actions["D12101"] = (game) => {
+    game.increase_idx_qi(0, 1);
+    game.add_c_of_x(1, "star_power");
+}
+
+// D12102
+card_actions["D12102"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.add_c_of_x(1, "star_power");
+}
+
+// D12103
+card_actions["D12103"] = (game) => {
+    game.increase_idx_qi(0, 3);
+    game.add_c_of_x(1, "star_power");
+}
+
+// D12104
+card_actions["D12104"] = (game) => {
+    game.increase_idx_qi(0, 3);
+}
+
+// D12105
+card_actions["D12105"] = (game) => {
+    game.increase_idx_qi(0, 3);
+    game.add_c_of_x(1, "star_power");
+}
+
+// Dream - Flame Hexagram
+card_actions["D12111"] = (game) => {
+    const hexagram = game.exhaust_x("hexagram");
+    game.reduce_idx_hp(1, 6 + hexagram * 3);
+}
+
+// D12112
+card_actions["D12112"] = (game) => {
+    const hexagram = game.exhaust_x("hexagram");
+    game.reduce_idx_hp(1, 8 + hexagram * 3);
+}
+
+// D12113
+card_actions["D12113"] = (game) => {
+    const hexagram = game.exhaust_x("hexagram");
+    game.reduce_idx_hp(1, 10 + hexagram * 3);
+}
+
+// D12114
+card_actions["D12114"] = (game) => {
+    const hexagram = game.exhaust_x("hexagram");
+    game.reduce_idx_hp(1, 10 + hexagram * 4);
+}
+
+// D12115
+card_actions["D12115"] = (game) => {
+    const hexagram = game.exhaust_x("hexagram");
+    game.reduce_idx_hp(1, 10 + hexagram * 5);
+}
+
+// Dream - Dance Of The Dragonfly
+card_actions["D12121"] = (game) => {
+    game.atk(2);
+    game.add_c_of_x(2, "hexagram");
+}
+
+// D12122
+card_actions["D12122"] = (game) => {
+    game.atk(4);
+    game.add_c_of_x(2, "hexagram");
+}
+
+// D12123
+card_actions["D12123"] = (game) => {
+    game.atk(6);
+    game.add_c_of_x(2, "hexagram");
+}
+
+// D12124
+card_actions["D12124"] = (game) => {
+    game.atk(1);
+    game.add_c_of_x(1, "hexagram");
+    if (game.players[0].hexagram > 1) {
+        game.chase();
+    }
+}
+
+// D12125
+card_actions["D12125"] = (game) => {
+    game.atk(5);
+    game.add_c_of_x(1, "hexagram");
+    if (game.players[0].hexagram > 1) {
+        game.chase();
+    }
+}
+
+// Dream - Snake in Reflection
+card_actions["D12131"] = (game) => {
+    game.increase_idx_max_hp(0, 2);
+    game.increase_idx_hp(0, 2);
+    game.add_enemy_c_of_x(1, "internal_injury");
+}
+
+// D12132
+card_actions["D12132"] = (game) => {
+    game.increase_idx_max_hp(0, 4);
+    game.increase_idx_hp(0, 4);
+    game.add_enemy_c_of_x(1, "internal_injury");
+}
+
+// D12133
+card_actions["D12133"] = (game) => {
+    game.increase_idx_max_hp(0, 2);
+    game.increase_idx_hp(0, 2);
+    game.add_enemy_c_of_x(1, "internal_injury");
+    game.add_enemy_c_of_x(1, "weaken");
+}
+
+// D12134
+card_actions["D12134"] = (game) => {
+    game.increase_idx_max_hp(0, 2);
+    game.increase_idx_hp(0, 2);
+    game.add_enemy_c_of_x(1, "snake_shadow");
+    if (game.players[0].snake_card_used > 0) {
+        game.chase();
+    }
+}
+
+// D12135
+card_actions["D12135"] = (game) => {
+    game.increase_idx_max_hp(0, 6);
+    game.increase_idx_hp(0, 6);
+    game.add_enemy_c_of_x(1, "snake_shadow");
+    if (game.players[0].snake_card_used > 0) {
+        game.chase();
+    }
+}
+
+// Dream - Qi Therapy
+card_actions["D12141"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_max_hp(0, 10);
+    game.increase_idx_hp(0, 2);
+}
+
+// D12142
+card_actions["D12142"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_max_hp(0, 10);
+    game.increase_idx_hp(0, 4);
+}
+
+// D12143
+card_actions["D12143"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_max_hp(0, 10);
+    game.increase_idx_hp(0, 6);
+}
+
+// D12144
+card_actions["D12144"] = (game) => {
+    game.increase_idx_qi(0, 2);
+    game.increase_idx_max_hp(0, 15);
+    const me = game.players[0];
+    game.increase_idx_hp(0, 2 * me.qi + 3 * me.star_power);
+}
+
+// D12145
+card_actions["D12145"] = (game) => {
+    game.increase_idx_qi(0, 3);
+    game.increase_idx_max_hp(0, 20);
+    const me = game.players[0];
+    game.increase_idx_hp(0, 2 * me.qi + 3 * me.star_power);
+}
+
+// Dream - Dotted Around
+card_actions["D12151"] = (game) => {
+    game.players[0].dream_dotted_around_countdown += 1;
+}
+
+// D12152
+card_actions["D12152"] = (game) => {
+    game.increase_idx_qi(0, 1);
+    game.players[0].dream_dotted_around_countdown += 1;
+}
+
+// D12153
+card_actions["D12153"] = (game) => {
+    game.players[0].dream_dotted_around_countdown += 2;
+}
+
+// D12154
+card_actions["D12154"] = (game) => {
+    game.players[0].dream_dotted_around_countdown += 3;
+}
+
+// D12155
+card_actions["D12155"] = (game) => {
+    game.players[0].dream_dotted_around_per_turn += 1;
+}
+
+// Dream - White Snake
+card_actions["D12161"] = (game) => {
+    const pool = ["internal_injury", "weaken", "wound"];
+    game.atk(3);
+    let times = 1;
+    if (game.if_post_action()) {
+        times += 1;
+    }
+    game.used_randomness = true;
+    for (let i = 0; i < times; i++) {
+        const debuff = pool[Math.floor(Math.random() * pool.length)];
+        game.add_enemy_c_of_x(1, debuff);
+    }
+}
+
+// D12162
+card_actions["D12162"] = (game) => {
+    const pool = ["internal_injury", "weaken", "wound"];
+    game.atk(5);
+    let times = 1;
+    if (game.if_post_action()) {
+        times += 1;
+    }
+    game.used_randomness = true;
+    for (let i = 0; i < times; i++) {
+        const debuff = pool[Math.floor(Math.random() * pool.length)];
+        game.add_enemy_c_of_x(1, debuff);
+    }
+}
+
+// D12163
+card_actions["D12163"] = (game) => {
+    const pool = ["internal_injury", "weaken", "wound"];
+    game.atk(5);
+    let times = 1;
+    if (game.if_post_action()) {
+        times += 2;
+    }
+    game.used_randomness = true;
+    for (let i = 0; i < times; i++) {
+        const debuff = pool[Math.floor(Math.random() * pool.length)];
+        game.add_enemy_c_of_x(1, debuff);
+    }
+}
+
+// D12164
+card_actions["D12164"] = (game) => {
+    const pool = ["internal_injury", "weaken", "wound", "decrease_atk"];
+    game.atk(5);
+    let times = 2;
+    if (game.if_post_action()) {
+        times += 2;
+    }
+    game.used_randomness = true;
+    for (let i = 0; i < times; i++) {
+        const debuff = pool[Math.floor(Math.random() * pool.length)];
+        game.add_enemy_c_of_x(1, debuff);
+    }
+}
+
+// D12165
+card_actions["D12165"] = (game) => {
+    const pool = ["internal_injury", "weaken", "wound", "decrease_atk"];
+    game.atk(5);
+    let times = 3;
+    if (game.if_post_action()) {
+        times += 2;
+    }
+    game.used_randomness = true;
+    for (let i = 0; i < times; i++) {
+        const debuff = pool[Math.floor(Math.random() * pool.length)];
+        game.add_enemy_c_of_x(1, debuff);
+    }
+}
+
+// Dream - Heaven Hexagram
+card_actions["D12171"] = (game) => {
+    game.add_c_of_x(2, "hexagram");
+    game.consumption();
+}
+
+// D12172
+card_actions["D12172"] = (game) => {
+    game.add_c_of_x(3, "hexagram");
+    game.consumption();
+}
+
+// D12173
+card_actions["D12173"] = (game) => {
+    game.add_c_of_x(4, "hexagram");
+    game.consumption();
+}
+
+// D12174
+card_actions["D12174"] = (game) => {
+    game.add_c_of_x(1, "hexagram");
+    game.chase();
+    game.consumption();
+}
+
+// D12175
+card_actions["D12175"] = (game) => {
+    game.add_c_of_x(2, "hexagram");
+    game.chase();
+    game.consumption();
+}
+
+// Dream - Revitalized
+card_actions["D12181"] = (game) => {
+    const me = game.players[0];
+    me.dream_revitalized_doublings = Math.min(1, me.dream_revitalized_played_count);
+    game.atk(5);
+    me.dream_revitalized_played_count += 1;
+}
+
+// D12182
+card_actions["D12182"] = (game) => {
+    const me = game.players[0];
+    me.dream_revitalized_doublings = Math.min(1, me.dream_revitalized_played_count);
+    game.atk(6);
+    me.dream_revitalized_played_count += 1;
+}
+
+// D12183
+card_actions["D12183"] = (game) => {
+    const me = game.players[0];
+    me.dream_revitalized_doublings = Math.min(1, me.dream_revitalized_played_count);
+    game.atk(8);
+    me.dream_revitalized_played_count += 1;
+}
+
+// D12184
+card_actions["D12184"] = (game) => {
+    const me = game.players[0];
+    me.dream_revitalized_doublings = Math.min(1, me.dream_revitalized_played_count);
+    game.atk(10);
+    me.dream_revitalized_played_count += 1;
+}
+
+// D12185
+card_actions["D12185"] = (game) => {
+    const me = game.players[0];
+    me.dream_revitalized_doublings = me.dream_revitalized_played_count;
+    game.atk(12);
+    me.dream_revitalized_played_count += 1;
 }
 

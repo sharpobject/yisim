@@ -269,6 +269,9 @@ export class Player {
 #ifdef HAS_WOUND
         this.wound = 0;
 #endif // HAS_WOUND
+#ifdef HAS_SNAKE_SHADOW
+        this.snake_shadow = 0;
+#endif // HAS_SNAKE_SHADOW
 
 
         // cloud sword sect normal cards
@@ -282,6 +285,16 @@ export class Player {
 #ifdef HAS_UNRESTRAINED_SWORD_COUNT
         this.unrestrained_sword_count = 0;
 #endif // HAS_UNRESTRAINED_SWORD_COUNT
+#ifdef HAS_SNAKE_CARD_USED
+        this.snake_card_used = 0;
+#endif // HAS_SNAKE_CARD_USED
+#ifdef HAS_DREAM_DOTTED_AROUND_COUNTDOWN
+        this.dream_dotted_around_countdown = 0;
+#endif // HAS_DREAM_DOTTED_AROUND_COUNTDOWN
+#ifdef HAS_DREAM_DOTTED_AROUND_PER_TURN
+        this.dream_dotted_around_per_turn = 0;
+        this.can_trigger_dream_dotted_around = true;
+#endif // HAS_DREAM_DOTTED_AROUND_PER_TURN
 #ifdef HAS_CLOUD_SWORD_SOFTHEART
         this.cloud_sword_softheart_stacks = 0;
 #endif // HAS_CLOUD_SWORD_SOFTHEART
@@ -312,6 +325,16 @@ export class Player {
 #ifdef HAS_DREAM_CONSONANCE_SWORD_INTENT_GIVES_DEF
         this.dream_consonance_sword_intent_gives_def_stacks = 0;
 #endif // HAS_DREAM_CONSONANCE_SWORD_INTENT_GIVES_DEF
+#ifdef HAS_DREAM_YIN_YANG_FORMATION_DEF
+        this.dream_yin_yang_formation_def_stacks = 0;
+#endif // HAS_DREAM_YIN_YANG_FORMATION_DEF
+#ifdef HAS_DREAM_YIN_YANG_FORMATION_HP
+        this.dream_yin_yang_formation_hp_stacks = 0;
+#endif // HAS_DREAM_YIN_YANG_FORMATION_HP
+#ifdef HAS_DREAM_REVITALIZED
+        this.dream_revitalized_played_count = 0;
+        this.dream_revitalized_doublings = 0;
+#endif // HAS_DREAM_REVITALIZED
 #ifdef HAS_DREAM_UNRESTRAINED_SWORD_ZERO
         this.dream_unrestrained_sword_zero_stacks = 0;
 #endif // HAS_DREAM_UNRESTRAINED_SWORD_ZERO
@@ -401,10 +424,17 @@ export class Player {
 #ifdef HAS_REPEL_CITTA_DHARMA
         this.repel_citta_dharma_stacks = 0;
 #endif // HAS_REPEL_CITTA_DHARMA
+#ifdef HAS_DREAM_REPEL_CITTA_DHARMA
+        this.dream_repel_citta_dharma_stacks = 0;
+        this.can_dream_repel_citta_dharma = 0;
+#endif // HAS_DREAM_REPEL_CITTA_DHARMA
         this.card_play_direction = 1;
 #ifdef HAS_HUNTER_HUNTING_HUNTER
         this.hunter_hunting_hunter_stacks = 0;
 #endif // HAS_HUNTER_HUNTING_HUNTER
+#ifdef HAS_PLAYED_POST_ACTION_COUNT
+        this.played_post_action_count = 0;
+#endif // HAS_PLAYED_POST_ACTION_COUNT
 
 
         // heptastar sect secret enchantment cards
@@ -1624,6 +1654,16 @@ export class Player {
             this.is_star_point[5] = true;
         }
 #endif // HAS_STAR_POINT
+#ifdef HAS_DREAM_SHIFTING_STARS
+        for (let i = 0; i < n_cards; i++) {
+            if (this.cards[i][0] === 'D' && this.cards[i].slice(0, 5) === "D1210") {
+                const prev = (i - 1 + n_cards) % n_cards;
+                const next = (i + 1) % n_cards;
+                this.is_star_point[prev] = true;
+                this.is_star_point[next] = true;
+            }
+        }
+#endif // HAS_DREAM_SHIFTING_STARS
 #ifdef HAS_SKIP_ONE_PLAY
         if (swogi[this.cards[n_cards - 1]].name === "Space Spiritual Field") {
             this.skip_one_play[n_cards - 1] = true;
@@ -3357,15 +3397,41 @@ export class GameState {
 #ifdef HAS_CHECK_ADJACENT_AFTER
         this.check_adjacent_effects_after_card(idx);
 #endif // HAS_CHECK_ADJACENT_AFTER
+#ifdef HAS_DREAM_DOTTED_AROUND_PER_TURN
+        if (p0.dream_dotted_around_per_turn > 0 && p0.can_trigger_dream_dotted_around && !p0.is_star_point[idx]) {
+            p0.can_trigger_dream_dotted_around = false;
+            this.increase_idx_qi(0, p0.dream_dotted_around_per_turn);
+            this.increase_idx_star_power(0, p0.dream_dotted_around_per_turn);
+        }
+#endif // HAS_DREAM_DOTTED_AROUND_PER_TURN
+#ifdef HAS_DREAM_DOTTED_AROUND_COUNTDOWN
+        if (p0.dream_dotted_around_countdown > 0 && !p0.is_star_point[idx]) {
+            p0.dream_dotted_around_countdown -= 1;
+            this.increase_idx_qi(0, 1);
+            this.increase_idx_star_power(0, 1);
+        }
+#endif // HAS_DREAM_DOTTED_AROUND_COUNTDOWN
 #ifdef HAS_CLOUD_SWORD_CHAIN_COUNT
         this.do_cloud_sword_chain_count(card_id);
 #endif // HAS_CLOUD_SWORD_CHAIN_COUNT
 #ifdef HAS_UNRESTRAINED_SWORD_COUNT
         this.do_unrestrained_sword_count(card_id);
 #endif // HAS_UNRESTRAINED_SWORD_COUNT
+#ifdef HAS_SNAKE_CARD_USED
+        if (swogi[card_id].is_snake) {
+            p0.snake_card_used += 1;
+        }
+#endif // HAS_SNAKE_CARD_USED
 #ifdef HAS_ZONGZI_MODE
         this.do_sweet_zongzi_count(card_id);
 #endif // HAS_ZONGZI_MODE
+#ifdef HAS_PLAYED_POST_ACTION_COUNT
+#ifdef HAS_POST_ACTION
+        if (is_post_action(card_id)) {
+            p0.played_post_action_count += 1;
+        }
+#endif // HAS_POST_ACTION
+#endif // HAS_PLAYED_POST_ACTION_COUNT
 #ifdef HAS_CHASE_IF_HP_GAINED
         if (p0.chase_if_hp_gained > 0) {
             if (p0.hp_gained > 0) {
@@ -4378,6 +4444,9 @@ export class GameState {
 #ifdef HAS_FIVE_ELEMENTS_GATHER_QI
         me.can_trigger_five_elements_gather_qi = true;
 #endif // HAS_FIVE_ELEMENTS_GATHER_QI
+#ifdef HAS_DREAM_DOTTED_AROUND_PER_TURN
+        me.can_trigger_dream_dotted_around = true;
+#endif // HAS_DREAM_DOTTED_AROUND_PER_TURN
 #ifdef HAS_METAL_SPIRIT_IRON_BONE
         this.reduce_idx_x_by_c(0, "metal_spirit_iron_bone_stacks", 1);
 #endif // HAS_METAL_SPIRIT_IRON_BONE
@@ -4387,6 +4456,9 @@ export class GameState {
 #ifdef HAS_EVERYTHING_GOES_WAY
         this.reduce_idx_x_by_c(0, "everything_goes_way_stacks", 1);
 #endif // HAS_EVERYTHING_GOES_WAY
+#ifdef HAS_DREAM_REPEL_CITTA_DHARMA
+        this.reduce_idx_x_by_c(0, "dream_repel_citta_dharma_stacks", 1);
+#endif // HAS_DREAM_REPEL_CITTA_DHARMA
 #ifdef HAS_HEAVENLY_WILL_COMPLY
         this.reduce_idx_x_by_c(0, "god_opportunity_conform_stacks", 1);
 #endif // HAS_HEAVENLY_WILL_COMPLY
@@ -4855,9 +4927,6 @@ export class GameState {
             dmg -= dmg_to_def;
         }
 #endif // HAS_LEAF_SHIELD_FLOWER
-#ifdef HAS_HP_LOST
-        me.hp_lost += dmg;
-#endif // HAS_HP_LOST
         me.hp -= dmg;
         this.log("reduced player " + idx +" hp by " + dmg + " to " + me.hp);
 #ifdef HAS_PANGU_AXE
@@ -4882,12 +4951,6 @@ export class GameState {
             this.increase_idx_x_by_c(idx, "agility", 1);
         }
 #endif // HAS_STYX_NIGHT_FOOTWORK
-#ifdef HAS_BAD_OMEN
-        if (me.bad_omen_stacks > 0) {
-            this.reduce_idx_x_by_c(idx, "bad_omen_stacks", 1);
-            this.increase_idx_debuff(idx, "wound", 1);
-        }
-#endif // HAS_BAD_OMEN
 #ifdef HAS_BIRDIE_WIND
         for (let i=0; i<me.birdie_wind_stacks; i++) {
             this.increase_idx_def(idx, 1);
@@ -4899,12 +4962,21 @@ export class GameState {
             this.increase_idx_def(idx, dmg);
         }
 #endif // HAS_FROZEN_SNOW_LOTUS
+#ifdef HAS_BAD_OMEN
+        if (me.bad_omen_stacks > 0) {
+            this.reduce_idx_x_by_c(idx, "bad_omen_stacks", 1);
+            this.increase_idx_debuff(idx, "wound", 1);
+        }
+#endif // HAS_BAD_OMEN
 #ifdef HAS_XUANMING_FORCEAGE_FORMATION
         if (me.xuanming_forceage_formation_stacks > 0) {
             this.reduce_idx_x_by_c(idx, "xuanming_forceage_formation_stacks", 1);
             this.increase_idx_x_by_c(idx, "increase_atk", 1);
         }
 #endif // HAS_XUANMING_FORCEAGE_FORMATION
+#ifdef HAS_HP_LOST
+        me.hp_lost += dmg;
+#endif // HAS_HP_LOST
         return dmg;
     }
     reduce_idx_max_hp(idx, amt) {
@@ -5149,11 +5221,23 @@ export class GameState {
             return;
         }
         const me = this.players[idx];
+#ifdef HAS_ZONGZI_MODE
+        if (me.mixed_grain_zongzi_stacks > 0) {
+            amt += 1;
+            this.increase_idx_hp(idx, me.mixed_grain_zongzi_stacks);
+        }
+#endif // HAS_ZONGZI_MODE
 #ifdef HAS_COLORFUL_SPIRIT_CRANE
         if (me.colorful_spirit_crane_stacks > 0) {
             amt *= 2;
         }
 #endif // HAS_COLORFUL_SPIRIT_CRANE
+#ifdef HAS_MORTAL_BODY
+        if (me.mortal_body_stacks > 0) {
+            this.increase_idx_physique(idx, amt);
+            return;
+        }
+#endif // HAS_MORTAL_BODY
 #ifdef HAS_M_DOTTED_AROUND
         if (me.m_dotted_around_stacks > 0) {
             const star_power_amt = Math.min(amt, me.m_dotted_around_stacks);
@@ -5161,18 +5245,11 @@ export class GameState {
             this.reduce_idx_x_by_c(idx, "m_dotted_around_stacks", star_power_amt);
         }
 #endif // HAS_M_DOTTED_AROUND
-#ifdef HAS_MORTAL_BODY
-        if (me.mortal_body_stacks > 0) {
-            this.increase_idx_physique(idx, amt);
-            return;
-        }
-#endif // HAS_MORTAL_BODY
-#ifdef HAS_ZONGZI_MODE
-        if (me.mixed_grain_zongzi_stacks > 0) {
-            amt += 1;
-            this.increase_idx_hp(idx, me.mixed_grain_zongzi_stacks);
-        }
-#endif // HAS_ZONGZI_MODE
+        me.qi += amt;
+#ifdef HAS_TOTAL_QI_GAINED
+        me.total_qi_gained += amt;
+#endif // HAS_TOTAL_QI_GAINED
+        this.log("gained " + amt + " qi. Now have " + me.qi + " qi");
 #ifdef HAS_STILLNESS_CITTA_DHARMA
         if (me.stillness_citta_dharma_stacks > 0) {
             this.increase_idx_hp(idx, amt * me.stillness_citta_dharma_stacks);
@@ -5183,6 +5260,16 @@ export class GameState {
             this.increade_idx_x_by_c(idx, "def", amt * me.spiritstat_tune_stacks);
         }
 #endif // HAS_SPIRITSTAT_TUNE
+#ifdef HAS_DREAM_YIN_YANG_FORMATION_HP
+        if (me.dream_yin_yang_formation_hp_stacks > 0) {
+            this.increase_idx_hp(idx, amt * me.dream_yin_yang_formation_hp_stacks);
+        }
+#endif // HAS_DREAM_YIN_YANG_FORMATION_HP
+#ifdef HAS_DREAM_YIN_YANG_FORMATION_DEF
+        if (me.dream_yin_yang_formation_def_stacks > 0) {
+            this.increase_idx_def(idx, amt * me.dream_yin_yang_formation_def_stacks);
+        }
+#endif // HAS_DREAM_YIN_YANG_FORMATION_DEF
 #ifdef HAS_DREAM_CONSONANCE_QI_GIVES_DEF
         if (me.dream_consonance_qi_gives_def_stacks > 0) {
             this.increase_idx_def(idx, amt * me.dream_consonance_qi_gives_def_stacks);
@@ -5194,22 +5281,17 @@ export class GameState {
             this.increase_idx_hexagram(idx, hexagram_amt);
         }
 #endif // HAS_SPIRITUAL_DIVINATION
+#ifdef HAS_STAR_MOON_HEXAGRAM_FAN
+        if (me.star_moon_hexagram_fan_stacks > 0) {
+            const dmg = Math.floor(amt * me.star_moon_hexagram_fan_stacks * 2 / 3);
+            this.deal_damage_inner(dmg, false, idx);
+        }
+#endif // HAS_STAR_MOON_HEXAGRAM_FAN
 #ifdef HAS_WILD_CROSSING_SEAL
         if (me.wild_crossing_seal_stacks > 0 && idx === 0) {
             this.do_wild_crossing_seal_chase();
         }
 #endif // HAS_WILD_CROSSING_SEAL
-#ifdef HAS_STAR_MOON_HEXAGRAM_FAN
-        if (me.star_moon_hexagram_fan_stacks > 0) {
-            const dmg = amt * 2 * me.star_moon_hexagram_fan_stacks;
-            this.deal_damage_inner(dmg, false, idx);
-        }
-#endif // HAS_STAR_MOON_HEXAGRAM_FAN
-        me.qi += amt;
-#ifdef HAS_TOTAL_QI_GAINED
-        me.total_qi_gained += amt;
-#endif // HAS_TOTAL_QI_GAINED
-        this.log("gained " + amt + " qi. Now have " + me.qi + " qi");
     }
     increase_idx_force(idx, amt) {
         if (amt === 0) {
@@ -5373,9 +5455,19 @@ export class GameState {
             this.deal_damage_inner(dmg, false, idx);
         }
 #endif // HAS_HEXAGRAM_FORMACIDE
+#ifdef HAS_DREAM_YIN_YANG_FORMATION_HP
+        if (me.dream_yin_yang_formation_hp_stacks > 0) {
+            this.increase_idx_hp(idx, amt * me.dream_yin_yang_formation_hp_stacks);
+        }
+#endif // HAS_DREAM_YIN_YANG_FORMATION_HP
+#ifdef HAS_DREAM_YIN_YANG_FORMATION_DEF
+        if (me.dream_yin_yang_formation_def_stacks > 0) {
+            this.increase_idx_def(idx, amt * me.dream_yin_yang_formation_def_stacks);
+        }
+#endif // HAS_DREAM_YIN_YANG_FORMATION_DEF
 #ifdef HAS_STAR_MOON_HEXAGRAM_FAN
         if (me.star_moon_hexagram_fan_stacks > 0) {
-            const dmg = amt * 3 * me.star_moon_hexagram_fan_stacks;
+            const dmg = amt * me.star_moon_hexagram_fan_stacks;
             this.deal_damage_inner(dmg, false, idx);
         }
 #endif // HAS_STAR_MOON_HEXAGRAM_FAN
@@ -5389,7 +5481,7 @@ export class GameState {
         me.star_power += amt;
 #ifdef HAS_STAR_MOON_HEXAGRAM_FAN
         if (me.star_moon_hexagram_fan_stacks > 0) {
-            const dmg = amt * 3 * me.star_moon_hexagram_fan_stacks;
+            const dmg = amt * me.star_moon_hexagram_fan_stacks;
             this.deal_damage_inner(dmg, false, idx);
         }
 #endif // HAS_STAR_MOON_HEXAGRAM_FAN
@@ -5408,6 +5500,11 @@ export class GameState {
             return;
         }
 #endif // HAS_ZONGZI_MODE
+#ifdef HAS_SNAKE_SHADOW
+        if (me.snake_shadow > 0 && (x === "internal_injury" || x === "weaken" || x === "wound")) {
+            amt += me.snake_shadow;
+        }
+#endif // HAS_SNAKE_SHADOW
 #ifdef HAS_GAIN_EXTRA_DEBUFF
 #ifdef HAS_STYX
         if (x !== "styx")
@@ -5614,6 +5711,9 @@ export class GameState {
 #ifdef HAS_PCT_MULTIPLIER
         let pct_multiplier = 100;
 #endif // HAS_PCT_MULTIPLIER
+#ifdef HAS_DREAM_REPEL_CITTA_DHARMA
+        let dream_repel_reflect = 0;
+#endif // HAS_DREAM_REPEL_CITTA_DHARMA
         let min_dmg = 1;
         const me = this.players[my_idx];
         const enemy = this.players[enemy_idx];
@@ -5798,6 +5898,12 @@ export class GameState {
             dmg -= me.decrease_atk;
 #endif //HAS_IGNORE_DECREASE_ATK
 #endif //HAS_DECREASE_ATK
+#ifdef HAS_DREAM_REVITALIZED
+            for (let i = 0; i < me.dream_revitalized_doublings; i++) {
+                dmg *= 2;
+            }
+            me.dream_revitalized_doublings = 0;
+#endif //HAS_DREAM_REVITALIZED
 #ifdef HAS_MAJESTIC_QI
             if (me.majestic_qi_stacks > 0) {
                 this.reduce_idx_x_by_c(my_idx, "majestic_qi_stacks", 1);
@@ -5891,6 +5997,15 @@ export class GameState {
             pct_multiplier -= 50;
         }
 #endif // HAS_COUNTER_MOVE
+#ifdef HAS_DREAM_REPEL_CITTA_DHARMA
+        if (enemy.dream_repel_citta_dharma_stacks > 0) {
+            dream_repel_reflect = Math.ceil(dmg * 30 / 100);
+            if (is_atk && dream_repel_reflect < 1) {
+                dream_repel_reflect = 1;
+            }
+            pct_multiplier -= 30;
+        }
+#endif // HAS_DREAM_REPEL_CITTA_DHARMA
 #ifdef HAS_PCT_MULTIPLIER
         dmg = Math.floor(dmg * pct_multiplier / 100);
 #endif // HAS_PCT_MULTIPLIER
@@ -5994,18 +6109,25 @@ export class GameState {
                 this.do_dark_star_bat();
 #endif // HAS_DARK_STAR_BAT
             }
-#ifdef HAS_RESONANCE_CAT_PAW
-            if (me.this_atk_injured) {
-                this.do_resonance_cat_paw();
-            }
-#endif // HAS_RESONANCE_CAT_PAW
 #ifdef HAS_HEAVENLY_WILL_EARTH_EVIL
             if (me.heavenly_will_earth_evil_stacks > 0) {
                 this.reduce_idx_x_by_c(0, "heavenly_will_earth_evil_stacks", 1);
                 this.increase_idx_def(0, damage_actually_dealt_to_hp);
             }
 #endif // HAS_HEAVENLY_WILL_EARTH_EVIL
+#ifdef HAS_RESONANCE_CAT_PAW
+            if (me.this_atk_injured) {
+                this.do_resonance_cat_paw();
+            }
+#endif // HAS_RESONANCE_CAT_PAW
         }
+#ifdef HAS_DREAM_REPEL_CITTA_DHARMA
+        if (dream_repel_reflect > 0 && me.can_dream_repel_citta_dharma === 0) {
+            me.can_dream_repel_citta_dharma = 1;
+            this.reduce_idx_hp(my_idx, dream_repel_reflect, false);
+            me.can_dream_repel_citta_dharma = 0;
+        }
+#endif // HAS_DREAM_REPEL_CITTA_DHARMA
     }
     deal_damage(dmg) {
         this.deal_damage_inner(dmg, false, 0);
@@ -7902,6 +8024,14 @@ export class GameState {
             me.dream_qi_perfusion_guarantee_injured += 1;
         }
 #endif // HAS_DREAM_QI_PERFUSION_GUARANTEE_INJURED
+#ifdef HAS_DREAM_SHIFTING_STARS_GAIN_STAR_POWER_BEFORE_PLAYING_ADJACENT
+        if (prev_card === "D12104" || prev_card === "D12105") {
+            this.add_c_of_x(1, "star_power");
+        }
+        if (next_card === "D12104" || next_card === "D12105") {
+            this.add_c_of_x(1, "star_power");
+        }
+#endif // HAS_DREAM_SHIFTING_STARS_GAIN_STAR_POWER_BEFORE_PLAYING_ADJACENT
     }
 #endif // HAS_CHECK_ADJACENT_BEFORE
 #ifdef HAS_CHECK_ADJACENT_AFTER
