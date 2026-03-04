@@ -283,6 +283,17 @@ export const ready = (async () => {
     let is_snake = function (card_id) {
         return swogi[card_id].name.includes("Snake");
     }
+    let is_spirit_seal_or_formation = function (card_id) {
+        const name = swogi[card_id].name;
+        return name.includes("Spirit Seal") || name.includes("Spirit Formation") || name.includes("Spiritage Formation");
+    }
+    let is_explanatory_hexagram = function (card_id) {
+        const name = swogi[card_id].name;
+        return name === "Zhen Hexagram" || name === "Earth Hexagram" ||
+            name === "Wind Hexagram" || name === "Mountain Hexagram" ||
+            name === "Water Hexagram" || name === "Lake Hexagram" ||
+            name === "Flame Hexagram" || name === "Heaven Hexagram";
+    }
     function with_default(x, default_val) {
         if (x === undefined) {
             return default_val;
@@ -344,6 +355,8 @@ export const ready = (async () => {
             is_sword: is_sword(card_id),
             is_cat: is_cat(card_id),
             is_snake: is_snake(card_id),
+            is_explanatory_hexagram: is_explanatory_hexagram(card_id),
+            is_spirit_seal_or_formation: is_spirit_seal_or_formation(card_id),
             is_add_qi: is_add_qi,
             marking: marking,
             is_salty: is_salty,

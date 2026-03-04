@@ -13247,8 +13247,8 @@
 	"935081": {
 		"name": "Cosmos Brush",
 		"actions": [
-			["increase_idx_qi", 0, 2],
-			["increase_idx_def", 0, 2],
+			["qi", 2],
+			["def", 2],
 			["activate_next_slots", 1],
 			["chase"]
 		],
@@ -13256,16 +13256,16 @@
 	},
 	"935082": {
 		"actions": [
-			["increase_idx_qi", 0, 3],
-			["increase_idx_def", 0, 4],
+			["qi", 3],
+			["def", 4],
 			["activate_next_slots", 1],
 			["chase"]
 		]
 	},
 	"935083": {
 		"actions": [
-			["increase_idx_qi", 0, 4],
-			["increase_idx_def", 0, 6],
+			["qi", 4],
+			["def", 6],
 			["activate_next_slots", 1],
 			["chase"]
 		]
@@ -14034,6 +14034,22 @@
 	"D12065": {
 		"actions": [["add_enemy_c_of_x", 1, "internal_injury"], ["hp", 5], ["post_action", ["add_enemy_c_of_x", "hp_gained/4", "internal_injury"]]]
 	},
+	"D12071": {
+		"name": "Dream - Hunter Hunting Hunter",
+		"actions": [["atk", 6], ["reverse_card_play_direction"]]
+	},
+	"D12072": {
+		"actions": [["atk", 7], ["reverse_card_play_direction"]]
+	},
+	"D12073": {
+		"actions": [["atk", 8], ["reverse_card_play_direction"]]
+	},
+	"D12074": {
+		"actions": [["atk", 4], ["reverse_card_play_direction"]]
+	},
+	"D12075": {
+		"actions": [["atk", 5], ["reverse_card_play_direction"]]
+	},
 	"D12081": {
 		"name": "Dream - Drag Moon In Sea",
 		"actions": [["post_action", ["rep", 2, ["atk", 7]]]]
@@ -14209,5 +14225,317 @@
 	},
 	"D12185": {
 		"actions": [["atk", 12], ["add_c_of_x", 1, "dream_revitalized_played_count"]]
+	},
+	"D13011": {
+		"name": "Dream - Metal Spirit Formation",
+		"actions": [["activate_metal_spirit"], ["add_c_of_x", 6, "penetrate"]]
+	},
+	"D13012": {
+		"actions": [["activate_metal_spirit"], ["add_c_of_x", 8, "penetrate"]]
+	},
+	"D13013": {
+		"actions": [["activate_metal_spirit"], ["add_c_of_x", 10, "penetrate"]]
+	},
+	"D13014": {
+		"actions": [["activate_metal_spirit"], ["add_c_of_x", 4, "penetrate"], ["continuous"], ["add_c_of_x", 4, "gain_penetrate_on_chase_stacks"]]
+	},
+	"D13015": {
+		"actions": [["activate_metal_spirit"], ["add_c_of_x", 4, "penetrate"], ["continuous"], ["add_c_of_x", 6, "gain_penetrate_on_chase_stacks"]]
+	},
+	"D13021": {
+		"name": "Dream - Cosmos Seal",
+		"actions": [["qi", 1], ["atk", 4]]
+	},
+	"D13022": {
+		"actions": [["qi", 1], ["atk", 6]]
+	},
+	"D13023": {
+		"actions": [["qi", 1], ["atk", 8]]
+	},
+	"D13024": {
+		"actions": [["qi", 2], ["atk", 10]]
+	},
+	"D13025": {
+		"actions": [["qi", 3], ["atk", 12]]
+	},
+	"D13031": {
+		"name": "Dream - Water Spirit Billows",
+		"actions": [["qi", 1], ["add_c_of_x", 1, "force_of_water"]]
+	},
+	"D13032": {
+		"actions": [["qi", 1], ["max_hp", 2], ["hp", 2], ["add_c_of_x", 1, "force_of_water"]]
+	},
+	"D13033": {
+		"actions": [["qi", 1], ["max_hp", 2], ["hp", 2], ["add_c_of_x", 2, "force_of_water"]]
+	},
+	"D13034": {
+		"actions": [["qi", 1], ["add_c_of_x", 2, "force_of_water"]]
+	},
+	"D13035": {
+		"actions": [["qi", 1], ["add_c_of_x", 3, "force_of_water"]]
+	},
+	"D13041": {
+		"name": "Dream - Five Elements Fleche",
+		"actions": [[]]
+	},
+	"D13042": {
+		"actions": [[]]
+	},
+	"D13043": {
+		"actions": [[]]
+	},
+	"D13044": {
+		"actions": [[]]
+	},
+	"D13045": {
+		"actions": [[]]
+	},
+	"D13051": {
+		"name": "Dream - Ultimate World Formation",
+		"actions": [[]]
+	},
+	"D13052": {
+		"actions": [[]]
+	},
+	"D13053": {
+		"actions": [[]]
+	},
+	"D13054": {
+		"actions": [[]]
+	},
+	"D13055": {
+		"actions": [[]]
+	},
+	"D13061": {
+		"name": "Dream - Water Spirit Spring",
+		"actions": [[]],
+		"opening": [
+			["qi", 1]
+		]
+	},
+	"D13062": {
+		"actions": [[]],
+		"opening": [
+			["qi", 1]
+		]
+	},
+	"D13063": {
+		"actions": [[]],
+		"opening": [
+			["qi", 1]
+		]
+	},
+	"D13064": {
+		"actions": [[]],
+		"opening": [
+			["qi", 2]
+		]
+	},
+	"D13065": {
+		"actions": [[]],
+		"opening": [
+			["qi", 2]
+		]
+	},
+	"D13071": {
+		"name": "Dream - Wood Spirit Willow Leaf",
+		"actions": [["hp", 6], ["for_each_x_add_y", "force_of_water", "next_attack_deals_extra"]]
+	},
+	"D13072": {
+		"actions": [["hp", 8], ["for_each_x_add_y", "force_of_water", "next_attack_deals_extra"]]
+	},
+	"D13073": {
+		"actions": [["hp", 10], ["for_each_x_add_y", "force_of_water", "next_attack_deals_extra"]]
+	},
+	"D13074": {
+		"actions": [["hp", 2], ["for_each_x_add_c_pct_y_up_to_d", "force_of_water", 33.333334, "increase_atk", 3],
+			["if_x_at_least_c_do", "force_of_water", 1, ["chase"]],
+			["if_x_at_least_c_do", "increase_atk", 1, ["chase"]]]
+	},
+	"D13075": {
+		"actions": [["hp", 2], ["for_each_x_add_c_pct_y_up_to_d", "force_of_water", 50, "increase_atk", 3],
+			["if_x_at_least_c_do", "force_of_water", 1, ["chase"]],
+			["if_x_at_least_c_do", "increase_atk", 1, ["chase"]]]
+	},
+	"D13081": {
+		"name": "Dream - Wood Spirit Formation",
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 3, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
+	},
+	"D13082": {
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 4, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
+	},
+	"D13083": {
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 5, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
+	},
+	"D13084": {
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 1, "wood_thorn"], ["add_c_of_x", 5, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
+	},
+	"D13085": {
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 1, "wood_thorn"], ["add_c_of_x", 3, "convert_increase_atk_to_wood_thorn"]]
+	},
+	"D13091": {
+		"name": "Dream - Fire Spirit Heart Fire",
+		"actions": [["atk", 6]]
+	},
+	"D13092": {
+		"actions": [["atk", 8]]
+	},
+	"D13093": {
+		"actions": [["atk", 10]]
+	},
+	"D13094": {
+		"actions": [["atk", 10]]
+	},
+	"D13095": {
+		"actions": [["atk", 10]]
+	},
+	"D13101": {
+		"name": "Dream - Fire Spirit Flash Fire",
+		"actions": [[]]
+	},
+	"D13102": {
+		"actions": [[]]
+	},
+	"D13103": {
+		"actions": [[]]
+	},
+	"D13104": {
+		"actions": [[]]
+	},
+	"D13105": {
+		"actions": [[]]
+	},
+	"D13111": {
+		"name": "Dream - Metal Spirit Iron Bone",
+		"actions": [["def", 8]]
+	},
+	"D13112": {
+		"actions": [["def", 11]]
+	},
+	"D13113": {
+		"actions": [["def", 14]]
+	},
+	"D13114": {
+		"actions": [["def", 6]]
+	},
+	"D13115": {
+		"actions": [["def", 6]]
+	},
+	"D13121": {
+		"name": "Dream - Metal Spirit Sharp",
+		"actions": [["atk", 2]]
+	},
+	"D13122": {
+		"actions": [["atk", 4]]
+	},
+	"D13123": {
+		"actions": [["atk", 4]]
+	},
+	"D13124": {
+		"actions": [["atk", 6]]
+	},
+	"D13125": {
+		"actions": [["atk", 6]]
+	},
+	"D13131": {
+		"name": "Dream - Earth Spirit Steep",
+		"actions": [["def", 6]]
+	},
+	"D13132": {
+		"actions": [["def", 8]]
+	},
+	"D13133": {
+		"actions": [["def", 10]]
+	},
+	"D13134": {
+		"actions": [["def", 10]]
+	},
+	"D13135": {
+		"actions": [["def", 16]]
+	},
+	"D13141": {
+		"name": "Dream - Five Elements Heavenly Marrow Rhythm",
+		"actions": [["max_hp", 2], ["hp", 2], ["continuous"],
+			["add_c_of_x", 1, "dream_heavenly_marrow_limited_stacks"]]
+	},
+	"D13142": {
+		"actions": [["max_hp", 4], ["hp", 4], ["continuous"],
+			["add_c_of_x", 1, "dream_heavenly_marrow_limited_stacks"]]
+	},
+	"D13143": {
+		"actions": [["continuous"],
+			["add_c_of_x", 2, "dream_heavenly_marrow_limited_stacks"]]
+	},
+	"D13144": {
+		"actions": [["continuous"],
+			["add_c_of_x", 1, "dream_heavenly_marrow_unlimited_stacks"]]
+	},
+	"D13145": {
+		"actions": [["continuous"],
+			["add_c_of_x", 1, "dream_heavenly_marrow_unlimited_stacks"]]
+	},
+	"D13151": {
+		"name": "Dream - Wood Spirit Bud",
+		"actions": [["rep", 2, ["atk", 3]]]
+	},
+	"D13152": {
+		"actions": [["rep", 2, ["atk", 4]]]
+	},
+	"D13153": {
+		"actions": [["rep", 2, ["atk", 5]]]
+	},
+	"D13154": {
+		"actions": [["rep", 3, ["atk", 3]]]
+	},
+	"D13155": {
+		"actions": [["rep", 4, ["atk", 3]]]
+	},
+	"D13161": {
+		"name": "Dream - Fire Spirit Flame Eater",
+		"actions": [["qi", 1], ["reduce_enemy_c_of_x", 4, "hp"], ["reduce_enemy_c_of_x", 4, "max_hp"]]
+	},
+	"D13162": {
+		"actions": [["qi", 1], ["reduce_enemy_c_of_x", 6, "hp"], ["reduce_enemy_c_of_x", 6, "max_hp"]]
+	},
+	"D13163": {
+		"actions": [["qi", 3]]
+	},
+	"D13164": {
+		"actions": [["qi", 3]]
+	},
+	"D13165": {
+		"actions": [["qi", 4]]
+	},
+	"D13171": {
+		"name": "Dream - Fire Spirit Formation",
+		"actions": [["activate_fire_spirit"], ["add_c_of_x", 2, "def"], ["reduce_enemy_c_of_x", 6, "hp"], ["reduce_enemy_c_of_x", 6, "max_hp"]]
+	},
+	"D13172": {
+		"actions": [["activate_fire_spirit"], ["add_c_of_x", 3, "def"], ["reduce_enemy_c_of_x", 8, "hp"], ["reduce_enemy_c_of_x", 8, "max_hp"]]
+	},
+	"D13173": {
+		"actions": [["activate_fire_spirit"], ["add_c_of_x", 4, "def"], ["reduce_enemy_c_of_x", 10, "hp"], ["reduce_enemy_c_of_x", 10, "max_hp"]]
+	},
+	"D13174": {
+		"actions": [["activate_fire_spirit"], ["add_c_of_x", 6, "def"], ["reduce_enemy_c_of_x", 6, "hp"], ["reduce_enemy_c_of_x", 6, "max_hp"], ["continuous"], ["add_c_of_x", 3, "dream_fire_formation_stacks"]]
+	},
+	"D13175": {
+		"actions": [["activate_fire_spirit"], ["add_c_of_x", 6, "def"], ["reduce_enemy_c_of_x", 6, "hp"], ["reduce_enemy_c_of_x", 6, "max_hp"], ["continuous"], ["add_c_of_x", 4, "dream_fire_formation_stacks"]]
+	},
+	"D13181": {
+		"name": "Dream - Earth Spirit Cliff",
+		"actions": [["add_c_of_x", 7, "def"]]
+	},
+	"D13182": {
+		"actions": [["add_c_of_x", 9, "def"]]
+	},
+	"D13183": {
+		"actions": [["add_c_of_x", 12, "def"]]
+	},
+	"D13184": {
+		"actions": [["add_c_of_x", 10, "def"]]
+	},
+	"D13185": {
+		"actions": [["add_c_of_x", 15, "def"]]
 	}
 }
