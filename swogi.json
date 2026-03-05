@@ -1221,7 +1221,7 @@
 		]
 	},
 	"121111": {
-		"name": "Striding Into the Wind",
+		"name": "Wild Horses Part the Mane",
 		"qi_cost": 1,
 		"actions": [
 			["rep", 2, ["atk", 3]],
@@ -1875,7 +1875,7 @@
 		]
 	},
 	"124101": {
-		"name": "Extremely Suspicious",
+		"name": "Snake in Reflection",
 		"actions": [
 			["add_enemy_c_of_x", 2, "internal_injury"],
 			["do_internal_injury", 1]
@@ -4520,21 +4520,18 @@
 	"213021": {
 		"name": "One Heart One Sword",
 		"actions": [
-			["add_c_of_x", 3, "bonus_sword_intent_multiplier"],
 			["ignore_weaken"],
 			["atk", 6]
 		]
 	},
 	"213022": {
 		"actions": [
-			["add_c_of_x", 4, "bonus_sword_intent_multiplier"],
 			["ignore_weaken"],
 			["atk", 6]
 		]
 	},
 	"213023": {
 		"actions": [
-			["add_c_of_x", 5, "bonus_sword_intent_multiplier"],
 			["ignore_weaken"],
 			["atk", 6]
 		]
@@ -6683,7 +6680,7 @@
 		]
 	},
 	"342031": {
-		"name": "Gild The Lily",
+		"name": "Paint Feet on Snake",
 		"actions": [
 			["rep", 2, ["atk", 5]],
 			["add_enemy_c_of_x", 8, "def"]
@@ -8089,7 +8086,7 @@
 		]
 	},
 	"406021": {
-		"name": "Mysterious Gates Devil Seal Tower",
+		"name": "Qimen Monster-Locking Tower",
 		"qi_cost": 3,
 		"actions": [
 			["deal_damage", 25],
@@ -8273,7 +8270,7 @@
 		]
 	},
 	"504031": {
-		"name": "Three Tailed Cat",
+		"name": "Three-tailed Huan",
 		"actions": [
 			["add_c_of_x", 1, "exchange_card_chance"],
 			["continuous"],
@@ -8911,8 +8908,8 @@
 		"name": "Cloud Sword - Pray Rain",
 		"actions": [
 			["rep", 3, ["atk", 2]],
-			["add_c_of_x", 2, "regen"],
 			["qi", 1],
+			["add_c_of_x", 2, "regen"],
 			["cloud_hit", ["convert_x_to_y_up_to_c", "regen", "increase_atk", 2]]
 		],
 		"character": "sw3"
@@ -8920,16 +8917,16 @@
 	"614022": {
 		"actions": [
 			["rep", 4, ["atk", 2]],
-			["add_c_of_x", 2, "regen"],
 			["qi", 1],
+			["add_c_of_x", 2, "regen"],
 			["cloud_hit", ["convert_x_to_y_up_to_c", "regen", "increase_atk", 3]]
 		]
 	},
 	"614023": {
 		"actions": [
 			["rep", 5, ["atk", 2]],
-			["add_c_of_x", 2, "regen"],
 			["qi", 1],
+			["add_c_of_x", 2, "regen"],
 			["cloud_hit", ["convert_x_to_y_up_to_c", "regen", "increase_atk", 4]]
 		]
 	},
@@ -9068,7 +9065,8 @@
 			["add_enemy_c_of_x", 2, "flaw"],
 			["continuous"],
 			["add_enemy_c_of_x", 1, "jade_scroll_of_yin_symbol_stacks"]
-		]
+		],
+		"character": "he6"
 	},
 	"622022": {
 		"actions": [
@@ -9285,7 +9283,8 @@
 		"actions": [
 			["qi", 2],
 			["heal", 6]
-		]
+		],
+		"character": "he6"
 	},
 	"625032": {
 		"actions": [
@@ -9303,7 +9302,8 @@
 		"actions": [
 			["add_enemy_c_of_x", 1, "face_isolation_stacks"],
 			["chase"]
-		]
+		],
+		"character": "he6"
 	},
 	"625042": {
 		"does_not_exist": true,
@@ -9318,7 +9318,8 @@
 		"actions": [
 			["add_enemy_c_of_x", 1, "strike_vacuity_stacks"],
 			["chase"]
-		]
+		],
+		"character": "he6"
 	},
 	"625052": {
 		"does_not_exist": true,
@@ -9614,6 +9615,7 @@
 		"name": "Overwhelming Power",
 		"hp_cost": 2,
 		"actions": [
+			["def", 4],
 			["add_c_of_x", 2, "force"],
 			["continuous"],
 			["add_c_of_x", 2, "overwhelming_power_stacks"]
@@ -9622,6 +9624,7 @@
 	},
 	"642022": {
 		"actions": [
+			["def", 5],
 			["add_c_of_x", 3, "force"],
 			["continuous"],
 			["add_c_of_x", 2, "overwhelming_power_stacks"]
@@ -9629,6 +9632,7 @@
 	},
 	"642023": {
 		"actions": [
+			["def", 6],
 			["add_c_of_x", 4, "force"],
 			["continuous"],
 			["add_c_of_x", 2, "overwhelming_power_stacks"]
@@ -9776,7 +9780,7 @@
 	"645011": {
 		"name": "Styx Moon's Glow",
 		"actions": [
-			["physique", 1],
+			["physique", 3],
 			["add_c_of_x", 2, "styx"],
 			["add_c_of_x", 10, "agility"]
 		],
@@ -9784,14 +9788,14 @@
 	},
 	"645012": {
 		"actions": [
-			["physique", 2],
+			["physique", 4],
 			["add_c_of_x", 3, "styx"],
 			["add_c_of_x", 11, "agility"]
 		]
 	},
 	"645013": {
 		"actions": [
-			["physique", 3],
+			["physique", 5],
 			["add_c_of_x", 4, "styx"],
 			["add_c_of_x", 12, "agility"]
 		]
@@ -12561,8 +12565,6 @@
 	"915071": {
 		"name": "Shen Jian Ao Zhou",
 		"actions": [
-			["add_c_of_x", 5, "bonus_sword_intent_multiplier"],
-			["for_each_x_add_c_y", "increase_atk", 3, "bonus_atk_amt"],
 			["smash_def"],
 			["atk", 12]
 		]
@@ -13245,8 +13247,8 @@
 	"935081": {
 		"name": "Cosmos Brush",
 		"actions": [
-			["increase_idx_qi", 0, 2],
-			["increase_idx_def", 0, 2],
+			["qi", 2],
+			["def", 2],
 			["activate_next_slots", 1],
 			["chase"]
 		],
@@ -13254,16 +13256,16 @@
 	},
 	"935082": {
 		"actions": [
-			["increase_idx_qi", 0, 3],
-			["increase_idx_def", 0, 4],
+			["qi", 3],
+			["def", 4],
 			["activate_next_slots", 1],
 			["chase"]
 		]
 	},
 	"935083": {
 		"actions": [
-			["increase_idx_qi", 0, 4],
-			["increase_idx_def", 0, 6],
+			["qi", 4],
+			["def", 6],
 			["activate_next_slots", 1],
 			["chase"]
 		]
@@ -13645,5 +13647,895 @@
 	"946013": {
 		"does_not_exist": true,
 		"actions": []
+	},
+	"D11011": {
+		"name": "Dream - Qi Perfusion",
+		"actions": [["qi", 1], ["add_c_of_x", 5, "next_attack_deals_extra"]]
+	},
+	"D11012": {
+		"actions": [["qi", 1], ["add_c_of_x", 7, "next_attack_deals_extra"]]
+	},
+	"D11013": {
+		"actions": [["qi", 1], ["add_c_of_x", 10, "next_attack_deals_extra"]]
+	},
+	"D11014": {
+		"actions": [["qi", 1], ["add_c_of_x", 2, "increase_atk"]]
+	},
+	"D11015": {
+		"actions": [["qi", 2], ["add_c_of_x", 3, "increase_atk"]]
+	},
+	"D11021": {
+		"name": "Dream - Cloud Sword Pierce the Star",
+		"actions": [["qi", 2]]
+	},
+	"D11022": {
+		"actions": [["qi", 2]]
+	},
+	"D11023": {
+		"actions": [["qi", 2]]
+	},
+	"D11024": {
+		"actions": [["qi", 2]]
+	},
+	"D11025": {
+		"actions": [["qi", 3]]
+	},
+	"D11031": {
+		"name": "Dream - Cloud Sword - Riddle",
+		"actions": [["atk", 6], ["add_c_of_x", 1, "cloud_sea"], ["cloud_hit", ["sword_intent", 2]]]
+	},
+	"D11032": {
+		"actions": [["atk", 8], ["add_c_of_x", 1, "cloud_sea"], ["cloud_hit", ["sword_intent", 2]]]
+	},
+	"D11033": {
+		"actions": [["atk", 8], ["add_c_of_x", 1, "cloud_sea"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 1, "sword_intent"]]]
+	},
+	"D11034": {
+		"actions": [["atk", 4], ["add_c_of_x", 2, "cloud_sea"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 2, "sword_intent"]]]
+	},
+	"D11035": {
+		"actions": [["atk", 8], ["add_c_of_x", 2, "cloud_sea"], ["for_each_x_add_c_y", "cloud_sword_used_count", 2, "sword_intent"]]
+	},
+	"D11041": {
+		"name": "Dream - Flying Fang Sword",
+		"actions": [["atk", 6], ["regain_sword_intent"]]
+	},
+	"D11042": {
+		"actions": [["atk", 8], ["regain_sword_intent"]]
+	},
+	"D11043": {
+		"actions": [["atk", 10], ["regain_sword_intent"]]
+	},
+	"D11044": {
+		"actions": [["rep", 2, ["atk", 4]], ["regain_sword_intent"]]
+	},
+	"D11045": {
+		"actions": [["rep", 3, ["atk", 4]], ["regain_sword_intent"]]
+	},
+	"D11051": {
+		"name": "Dream - Cloud Dance Rhythm",
+		"actions": [["qi", 1], ["sword_intent", 2]]
+	},
+	"D11052": {
+		"actions": [["qi", 2], ["sword_intent", 2]]
+	},
+	"D11053": {
+		"actions": [["qi", 3], ["sword_intent", 2]]
+	},
+	"D11054": {
+		"actions": [["qi", 3], ["sword_intent", 2]]
+	},
+	"D11055": {
+		"actions": [["qi", 3], ["sword_intent", 2]]
+	},
+	"D11061": {
+		"name": "Dream - Unrestrained Sword One",
+		"actions": [["atk", 6]]
+	},
+	"D11062": {
+		"actions": [["atk", 8]]
+	},
+	"D11063": {
+		"actions": [["atk", 10]]
+	},
+	"D11064": {
+		"actions": [["atk", 10]]
+	},
+	"D11065": {
+		"actions": [["atk", 10]]
+	},
+	"D11071": {
+		"name": "Dream - CentiBird Spirit Sword Rhythm",
+		"actions": [["qi", 1], ["sword_qi", 2]]
+	},
+	"D11072": {
+		"actions": [["qi", 2], ["sword_qi", 2]]
+	},
+	"D11073": {
+		"actions": [["qi", 3], ["sword_qi", 2]]
+	},
+	"D11074": {
+		"actions": [["qi", 2], ["for_each_x_add_c_y", "total_qi_gained", 0.5, "sword_qi"]]
+	},
+	"D11075": {
+		"actions": [["qi", 3], ["for_each_x_add_c_y", "total_qi_gained", 0.5, "sword_qi"]]
+	},
+	"D11101": {
+		"name": "Dream - Consonance Sword Formation",
+		"actions": [["def", 4], ["continuous"], ["increase_idx_x_by_c", 0, "dream_consonance_qi_gives_def_stacks", 1]]
+	},
+	"D11102": {
+		"actions": [["def", 4], ["continuous"], ["increase_idx_x_by_c", 0, "dream_consonance_qi_gives_def_stacks", 2]]
+	},
+	"D11103": {
+		"actions": [["def", 4], ["continuous"], ["increase_idx_x_by_c", 0, "dream_consonance_qi_gives_def_stacks", 2], ["increase_idx_x_by_c", 0, "dream_consonance_sword_intent_gives_def_stacks", 1]]
+	},
+	"D11104": {
+		"actions": [["def", 4], ["continuous"], ["increase_idx_x_by_c", 0, "dream_consonance_qi_gives_def_stacks", 3], ["increase_idx_x_by_c", 0, "dream_consonance_sword_intent_gives_def_stacks", 2]]
+	},
+	"D11105": {
+		"actions": [["def", 4], ["continuous"], ["increase_idx_x_by_c", 0, "dream_consonance_qi_gives_def_stacks", 4], ["increase_idx_x_by_c", 0, "dream_consonance_sword_intent_gives_def_stacks", 3]]
+	},
+	"D11091": {
+		"name": "Dream - Unrestrained Sword Zero",
+		"actions": [["hp", 6]]
+	},
+	"D11092": {
+		"actions": [["hp", 7]]
+	},
+	"D11093": {
+		"actions": [["hp", 8]]
+	},
+	"D11094": {
+		"actions": [["hp", 8]]
+	},
+	"D11095": {
+		"actions": [["hp", 8]]
+	},
+	"D11081": {
+		"name": "Dream - Dharma Spirit Sword",
+		"actions": [["atk", 3]]
+	},
+	"D11082": {
+		"actions": [["atk", 5]]
+	},
+	"D11083": {
+		"actions": [["atk", 5]]
+	},
+	"D11084": {
+		"actions": [["atk", 5]]
+	},
+	"D11085": {
+		"actions": [["atk", 10]]
+	},
+	"D11111": {
+		"name": "Dream - Cloud Sword - Touch Earth",
+		"actions": [["def", 6], ["add_c_of_x", 1, "cloud_sea"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 1, "def"]]]
+	},
+	"D11112": {
+		"actions": [["def", 9], ["add_c_of_x", 1, "cloud_sea"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 1, "def"]]]
+	},
+	"D11113": {
+		"actions": [["def", 9], ["add_c_of_x", 2, "cloud_sea"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 2, "def"]]]
+	},
+	"D11114": {
+		"actions": [["def", 9], ["add_c_of_x", 2, "cloud_sea"], ["add_c_of_x", 1, "moon_water_sword_formation_stacks"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 3, "def"]]]
+	},
+	"D11115": {
+		"actions": [["def", 12], ["add_c_of_x", 2, "cloud_sea"], ["add_c_of_x", 2, "moon_water_sword_formation_stacks"], ["for_each_x_add_c_y", "cloud_sword_used_count", 3, "def"]]
+	},
+	"D11121": {
+		"name": "Dream - Reflexive Sword",
+		"actions": [["atk", 4], ["def", 6]]
+	},
+	"D11122": {
+		"actions": [["atk", 6], ["def", 6]]
+	},
+	"D11123": {
+		"actions": [["atk", 6], ["def", 6]]
+	},
+	"D11124": {
+		"actions": [["atk", 6], ["def", 6]]
+	},
+	"D11125": {
+		"actions": [["atk", 6], ["def", 6]]
+	},
+	"D11131": {
+		"name": "Dream - Rule Sky Sword Formation",
+		"actions": [["deal_damage", 5]]
+	},
+	"D11132": {
+		"actions": [["deal_damage", 5]]
+	},
+	"D11133": {
+		"actions": [["deal_damage", 6]]
+	},
+	"D11134": {
+		"actions": [["deal_damage", 4]]
+	},
+	"D11135": {
+		"actions": [["deal_damage", 8]]
+	},
+	"D11141": {
+		"name": "Dream - Giant Roc Spirit Sword",
+		"actions": [["atk", 5], ["qi", 1]]
+	},
+	"D11142": {
+		"actions": [["atk", 7], ["qi", 1]]
+	},
+	"D11143": {
+		"actions": [["atk", 9], ["qi", 1]]
+	},
+	"D11144": {
+		"actions": [["atk", 2], ["qi", 1]]
+	},
+	"D11145": {
+		"actions": [["atk", 2], ["qi", 2]]
+	},
+	"D11151": {
+		"name": "Dream - Earth Evil Sword",
+		"actions": [["atk", 1], ["add_enemy_c_of_x", 2, "internal_injury"]]
+	},
+	"D11152": {
+		"actions": [["atk", 1], ["add_enemy_c_of_x", 3, "internal_injury"]]
+	},
+	"D11153": {
+		"actions": [["atk", 2], ["add_enemy_c_of_x", 4, "internal_injury"]]
+	},
+	"D11154": {
+		"actions": [["rep", 2, ["atk", 1]], ["add_enemy_c_of_x", 5, "internal_injury"]]
+	},
+	"D11155": {
+		"actions": [["rep", 2, ["atk", 1]], ["add_enemy_c_of_x", 99, "internal_injury"]]
+	},
+	"D11161": {
+		"name": "Dream - Cloud Sword - Softheart",
+		"actions": [["increase_idx_def", 0, 4], ["continuous"], ["increase_idx_x_by_c", 0, "dream_cloud_sword_softheart_gain_def", 1]]
+	},
+	"D11162": {
+		"actions": [["increase_idx_def", 0, 8], ["continuous"], ["increase_idx_x_by_c", 0, "dream_cloud_sword_softheart_gain_def", 1]]
+	},
+	"D11163": {
+		"actions": [["increase_idx_def", 0, 4], ["continuous"], ["increase_idx_x_by_c", 0, "dream_cloud_sword_softheart_gain_def", 2]]
+	},
+	"D11164": {
+		"actions": [["increase_idx_def", 0, 4], ["continuous"], ["increase_idx_x_by_c", 0, "dream_cloud_sword_softheart_gain_def", 3], ["increase_idx_x_by_c", 0, "dream_cloud_sword_softheart_sword_formation_gives_cloud_sea", 1]]
+	},
+	"D11165": {
+		"actions": [["increase_idx_def", 0, 4], ["continuous"], ["increase_idx_x_by_c", 0, "dream_cloud_sword_softheart_gain_def", 5], ["increase_idx_x_by_c", 0, "dream_cloud_sword_softheart_sword_formation_gives_cloud_sea", 1]]
+	},
+	"D11171": {
+		"name": "Dream - Contemplate Spirits Rhythm",
+		"actions": [["sword_intent", 3]]
+	},
+	"D11172": {
+		"actions": [["sword_intent", 4]]
+	},
+	"D11173": {
+		"actions": [["sword_intent", 5]]
+	},
+	"D11174": {
+		"actions": [["increase_idx_x_by_c", 0, "next_attack_double_sword_intent_and_increase_atk", 1]]
+	},
+	"D11175": {
+		"actions": [["sword_intent", 1], ["increase_idx_x_by_c", 0, "next_attack_double_sword_intent_and_increase_atk", 1]]
+	},
+	"D11181": {
+		"name": "Dream - Cloud Sword - Spirit Coercion",
+		"actions": [["atk", 4]]
+	},
+	"D11182": {
+		"actions": [["atk", 5]]
+	},
+	"D11183": {
+		"actions": [["atk", 6]]
+	},
+	"D11184": {
+		"actions": [["atk", 3]],
+		"opening": [["add_c_of_x", 2, "cloud_sea"]]
+	},
+	"D11185": {
+		"actions": [["atk", 4]],
+		"opening": [["add_c_of_x", 2, "cloud_sea"]]
+	},
+	"D12011": {
+		"name": "Dream - Astral Move - Block",
+		"actions": [["atk", 6], ["def", 2], ["star_point", ["for_each_x_add_c_y", "star_power", 2, "def"]]]
+	},
+	"D12012": {
+		"actions": [["atk", 8], ["def", 2], ["star_point", ["for_each_x_add_c_y", "star_power", 2, "def"]]]
+	},
+	"D12013": {
+		"actions": [["atk", 10], ["def", 2], ["star_point", ["for_each_x_add_c_y", "star_power", 2, "def"]]]
+	},
+	"D12014": {
+		"actions": [["rep", 2, ["atk", 6]], ["def", 2], ["star_point", ["for_each_x_add_c_y", "star_power", 3, "def"]]]
+	},
+	"D12015": {
+		"actions": [["rep", 3, ["atk", 4]], ["def", 2], ["star_point", ["for_each_x_add_c_y", "star_power", 4, "def"]]]
+	},
+	"D12021": {
+		"name": "Dream - Star Trail Divination",
+		"actions": [["qi", 2], ["hp", 2], ["max_hp", 2], ["exhaust_x_to_add_c_y", "hexagram", 1, "star_power"]]
+	},
+	"D12022": {
+		"actions": [["qi", 2], ["hp", 4], ["max_hp", 4], ["exhaust_x_to_add_c_y", "hexagram", 1, "star_power"]]
+	},
+	"D12023": {
+		"actions": [["qi", 2], ["hp", 6], ["max_hp", 6], ["exhaust_x_to_add_c_y", "hexagram", 1, "star_power"]]
+	},
+	"D12024": {
+		"actions": [["qi", 2], ["hp", 4], ["max_hp", 4], ["exhaust_x_to_add_c_y", "hexagram", 1, "star_power"]]
+	},
+	"D12025": {
+		"actions": [["qi", 4], ["hp", 4], ["max_hp", 4], ["exhaust_x_to_add_c_y", "hexagram", 1, "star_power"]]
+	},
+	"D12031": {
+		"name": "Dream - Thunder And Lightning",
+		"actions": [["atk", 6]]
+	},
+	"D12032": {
+		"actions": [["atk", 8]]
+	},
+	"D12033": {
+		"actions": [["rep", 2, ["atk", 1]]]
+	},
+	"D12034": {
+		"actions": [["rep", 3, ["atk", 1]]]
+	},
+	"D12035": {
+		"actions": [["rep", 4, ["atk", 1]]]
+	},
+	"D12041": {
+		"name": "Dream - Yin Yang Formation",
+		"actions": [["def", 4], ["continuous"], ["increase_idx_x_by_c", 0, "dream_yin_yang_formation_def_stacks", 1]]
+	},
+	"D12042": {
+		"actions": [["continuous"], ["increase_idx_x_by_c", 0, "dream_yin_yang_formation_def_stacks", 2]]
+	},
+	"D12043": {
+		"actions": [["continuous"], ["increase_idx_x_by_c", 0, "dream_yin_yang_formation_def_stacks", 1], ["increase_idx_x_by_c", 0, "dream_yin_yang_formation_hp_stacks", 1]]
+	},
+	"D12044": {
+		"actions": [["continuous"], ["increase_idx_x_by_c", 0, "dream_yin_yang_formation_def_stacks", 2], ["increase_idx_x_by_c", 0, "dream_yin_yang_formation_hp_stacks", 2]]
+	},
+	"D12045": {
+		"actions": [["max_hp", 10], ["continuous"], ["increase_idx_x_by_c", 0, "dream_yin_yang_formation_def_stacks", 2], ["increase_idx_x_by_c", 0, "dream_yin_yang_formation_hp_stacks", 3]]
+	},
+	"D12051": {
+		"name": "Dream - Falling Thunder",
+		"actions": [["atk", 6], ["reduce_random_debuff", 1, 2]]
+	},
+	"D12052": {
+		"actions": [["atk", 8], ["reduce_random_debuff", 1, 2]]
+	},
+	"D12053": {
+		"actions": [["atk", 10], ["reduce_random_debuff", 1, 2]]
+	},
+	"D12054": {
+		"actions": [["atk", 12], ["reduce_random_debuff", 1, 3]]
+	},
+	"D12055": {
+		"actions": [["atk", 14], ["reduce_random_debuff", 1, 4]]
+	},
+	"D12061": {
+		"name": "Dream - Flower Sentient",
+		"actions": [["add_enemy_c_of_x", 1, "internal_injury"], ["post_action", ["hp", 4]]]
+	},
+	"D12062": {
+		"actions": [["add_enemy_c_of_x", 1, "internal_injury"], ["post_action", ["hp", 8]]]
+	},
+	"D12063": {
+		"actions": [["add_enemy_c_of_x", 1, "internal_injury"], ["post_action", ["hp", 12]]]
+	},
+	"D12064": {
+		"actions": [["add_enemy_c_of_x", 1, "internal_injury"], ["hp", 5], ["post_action", ["add_enemy_c_of_x", "hp_gained/5", "internal_injury"]]]
+	},
+	"D12065": {
+		"actions": [["add_enemy_c_of_x", 1, "internal_injury"], ["hp", 5], ["post_action", ["add_enemy_c_of_x", "hp_gained/4", "internal_injury"]]]
+	},
+	"D12071": {
+		"name": "Dream - Hunter Hunting Hunter",
+		"actions": [["atk", 6], ["reverse_card_play_direction"]]
+	},
+	"D12072": {
+		"actions": [["atk", 7], ["reverse_card_play_direction"]]
+	},
+	"D12073": {
+		"actions": [["atk", 8], ["reverse_card_play_direction"]]
+	},
+	"D12074": {
+		"actions": [["atk", 4], ["reverse_card_play_direction"]]
+	},
+	"D12075": {
+		"actions": [["atk", 5], ["reverse_card_play_direction"]]
+	},
+	"D12081": {
+		"name": "Dream - Drag Moon In Sea",
+		"actions": [["post_action", ["rep", 2, ["atk", 7]]]]
+	},
+	"D12082": {
+		"actions": [["post_action", ["rep", 2, ["atk", 9]]]]
+	},
+	"D12083": {
+		"actions": [["post_action", ["rep", 2, ["atk", 11]]]]
+	},
+	"D12084": {
+		"actions": [["chase"], ["post_action", ["rep", 2, ["atk", 1]]]]
+	},
+	"D12085": {
+		"actions": [["chase"], ["post_action", ["rep", 2, ["atk", 1]]]]
+	},
+	"D12091": {
+		"name": "Dream - Repel Citta-Dharma",
+		"actions": [["max_hp", 3], ["hp", 3], ["add_c_of_x", 1, "dream_repel_citta_dharma_stacks"]]
+	},
+	"D12092": {
+		"actions": [["max_hp", 5], ["hp", 5], ["add_c_of_x", 1, "dream_repel_citta_dharma_stacks"]]
+	},
+	"D12093": {
+		"actions": [["max_hp", 7], ["hp", 7], ["add_c_of_x", 1, "dream_repel_citta_dharma_stacks"]]
+	},
+	"D12094": {
+		"actions": [["max_hp", 3], ["hp", 3], ["add_c_of_x", 2, "dream_repel_citta_dharma_stacks"]]
+	},
+	"D12095": {
+		"actions": [["max_hp", 8], ["hp", 8], ["add_c_of_x", 2, "dream_repel_citta_dharma_stacks"]]
+	},
+	"D12101": {
+		"name": "Dream - Shifting Stars",
+		"actions": [["qi", 1], ["star_power", 1]]
+	},
+	"D12102": {
+		"actions": [["qi", 2], ["star_power", 1]]
+	},
+	"D12103": {
+		"actions": [["qi", 3], ["star_power", 1]]
+	},
+	"D12104": {
+		"actions": [["qi", 3]]
+	},
+	"D12105": {
+		"actions": [["qi", 3], ["star_power", 1]]
+	},
+	"D12111": {
+		"name": "Dream - Flame Hexagram",
+		"actions": [["reduce_enemy_hp", 6], ["exhaust_x_scale", "hexagram", 3, "reduce_enemy_hp"]]
+	},
+	"D12112": {
+		"actions": [["reduce_enemy_hp", 8], ["exhaust_x_scale", "hexagram", 3, "reduce_enemy_hp"]]
+	},
+	"D12113": {
+		"actions": [["reduce_enemy_hp", 10], ["exhaust_x_scale", "hexagram", 3, "reduce_enemy_hp"]]
+	},
+	"D12114": {
+		"actions": [["reduce_enemy_hp", 10], ["exhaust_x_scale", "hexagram", 4, "reduce_enemy_hp"]]
+	},
+	"D12115": {
+		"actions": [["reduce_enemy_hp", 10], ["exhaust_x_scale", "hexagram", 5, "reduce_enemy_hp"]]
+	},
+	"D12121": {
+		"name": "Dream - Dance Of The Dragonfly",
+		"actions": [["atk", 2], ["hexagram", 2]]
+	},
+	"D12122": {
+		"actions": [["atk", 4], ["hexagram", 2]]
+	},
+	"D12123": {
+		"actions": [["atk", 6], ["hexagram", 2]]
+	},
+	"D12124": {
+		"actions": [["atk", 1], ["hexagram", 1], ["chase_if_hexagram_gt", 1]]
+	},
+	"D12125": {
+		"actions": [["atk", 5], ["hexagram", 1], ["chase_if_hexagram_gt", 1]]
+	},
+	"D12131": {
+		"name": "Dream - Snake in Reflection",
+		"actions": [["max_hp", 2], ["hp", 2], ["add_enemy_c_of_x", 1, "internal_injury"]]
+	},
+	"D12132": {
+		"actions": [["max_hp", 4], ["hp", 4], ["add_enemy_c_of_x", 1, "internal_injury"]]
+	},
+	"D12133": {
+		"actions": [["max_hp", 2], ["hp", 2], ["add_enemy_c_of_x", 1, "internal_injury"], ["add_enemy_c_of_x", 1, "weaken"]]
+	},
+	"D12134": {
+		"actions": [["max_hp", 2], ["hp", 2], ["add_enemy_c_of_x", 1, "snake_shadow"], ["chase_if_snake_card_used"]]
+	},
+	"D12135": {
+		"actions": [["max_hp", 6], ["hp", 6], ["add_enemy_c_of_x", 1, "snake_shadow"], ["chase_if_snake_card_used"]]
+	},
+	"D12141": {
+		"name": "Dream - Qi Therapy",
+		"actions": [["qi", 2], ["max_hp", 10], ["hp", 2]]
+	},
+	"D12142": {
+		"actions": [["qi", 2], ["max_hp", 10], ["hp", 4]]
+	},
+	"D12143": {
+		"actions": [["qi", 2], ["max_hp", 10], ["hp", 6]]
+	},
+	"D12144": {
+		"actions": [["qi", 2], ["max_hp", 15], ["for_each_x_add_c_y", "qi", 2, "hp"], ["for_each_x_add_c_y", "star_power", 3, "hp"]]
+	},
+	"D12145": {
+		"actions": [["qi", 3], ["max_hp", 20], ["for_each_x_add_c_y", "qi", 2, "hp"], ["for_each_x_add_c_y", "star_power", 3, "hp"]]
+	},
+	"D12151": {
+		"name": "Dream - Dotted Around",
+		"actions": [["continuous"], ["add_c_of_x", 1, "dream_dotted_around_countdown"]]
+	},
+	"D12152": {
+		"actions": [["qi", 1], ["continuous"], ["add_c_of_x", 1, "dream_dotted_around_countdown"]]
+	},
+	"D12153": {
+		"actions": [["continuous"], ["add_c_of_x", 2, "dream_dotted_around_countdown"]]
+	},
+	"D12154": {
+		"actions": [["continuous"], ["add_c_of_x", 3, "dream_dotted_around_countdown"]]
+	},
+	"D12155": {
+		"actions": [["continuous"], ["add_c_of_x", 1, "dream_dotted_around_per_turn"]]
+	},
+	"D12161": {
+		"name": "Dream - White Snake",
+		"actions": [["atk", 3], ["random_debuff", 1, 1], ["post_action", ["random_debuff", 1, 1]]]
+	},
+	"D12162": {
+		"actions": [["atk", 5], ["random_debuff", 1, 1], ["post_action", ["random_debuff", 1, 1]]]
+	},
+	"D12163": {
+		"actions": [["atk", 5], ["random_debuff", 1, 1], ["post_action", ["random_debuff", 1, 2]]]
+	},
+	"D12164": {
+		"actions": [["atk", 5], ["random_debuff", 1, 2], ["post_action", ["random_debuff", 1, 2]]]
+	},
+	"D12165": {
+		"actions": [["atk", 5], ["random_debuff", 1, 3], ["post_action", ["random_debuff", 1, 2]]]
+	},
+	"D12171": {
+		"name": "Dream - Heaven Hexagram",
+		"actions": [["hexagram", 2], ["consumption"]]
+	},
+	"D12172": {
+		"actions": [["hexagram", 3], ["consumption"]]
+	},
+	"D12173": {
+		"actions": [["hexagram", 4], ["consumption"]]
+	},
+	"D12174": {
+		"actions": [["hexagram", 1], ["chase"], ["consumption"]]
+	},
+	"D12175": {
+		"actions": [["hexagram", 2], ["chase"], ["consumption"]]
+	},
+	"D12181": {
+		"name": "Dream - Revitalized",
+		"actions": [["atk", 5], ["add_c_of_x", 1, "dream_revitalized_played_count"]]
+	},
+	"D12182": {
+		"actions": [["atk", 6], ["add_c_of_x", 1, "dream_revitalized_played_count"]]
+	},
+	"D12183": {
+		"actions": [["atk", 8], ["add_c_of_x", 1, "dream_revitalized_played_count"]]
+	},
+	"D12184": {
+		"actions": [["atk", 10], ["add_c_of_x", 1, "dream_revitalized_played_count"]]
+	},
+	"D12185": {
+		"actions": [["atk", 12], ["add_c_of_x", 1, "dream_revitalized_played_count"]]
+	},
+	"D13011": {
+		"name": "Dream - Metal Spirit Formation",
+		"actions": [["activate_metal_spirit"], ["add_c_of_x", 6, "penetrate"]]
+	},
+	"D13012": {
+		"actions": [["activate_metal_spirit"], ["add_c_of_x", 8, "penetrate"]]
+	},
+	"D13013": {
+		"actions": [["activate_metal_spirit"], ["add_c_of_x", 10, "penetrate"]]
+	},
+	"D13014": {
+		"actions": [["activate_metal_spirit"], ["add_c_of_x", 4, "penetrate"], ["continuous"], ["add_c_of_x", 4, "gain_penetrate_on_chase_stacks"]]
+	},
+	"D13015": {
+		"actions": [["activate_metal_spirit"], ["add_c_of_x", 4, "penetrate"], ["continuous"], ["add_c_of_x", 6, "gain_penetrate_on_chase_stacks"]]
+	},
+	"D13021": {
+		"name": "Dream - Cosmos Seal",
+		"actions": [["qi", 1], ["atk", 4]]
+	},
+	"D13022": {
+		"actions": [["qi", 1], ["atk", 6]]
+	},
+	"D13023": {
+		"actions": [["qi", 1], ["atk", 8]]
+	},
+	"D13024": {
+		"actions": [["qi", 2], ["atk", 10]]
+	},
+	"D13025": {
+		"actions": [["qi", 3], ["atk", 12]]
+	},
+	"D13031": {
+		"name": "Dream - Water Spirit Billows",
+		"actions": [["qi", 1], ["add_c_of_x", 1, "force_of_water"]]
+	},
+	"D13032": {
+		"actions": [["qi", 1], ["max_hp", 2], ["hp", 2], ["add_c_of_x", 1, "force_of_water"]]
+	},
+	"D13033": {
+		"actions": [["qi", 1], ["max_hp", 2], ["hp", 2], ["add_c_of_x", 2, "force_of_water"]]
+	},
+	"D13034": {
+		"actions": [["qi", 1], ["add_c_of_x", 2, "force_of_water"]]
+	},
+	"D13035": {
+		"actions": [["qi", 1], ["add_c_of_x", 3, "force_of_water"]]
+	},
+	"D13041": {
+		"name": "Dream - Five Elements Fleche",
+		"actions": [[]]
+	},
+	"D13042": {
+		"actions": [[]]
+	},
+	"D13043": {
+		"actions": [[]]
+	},
+	"D13044": {
+		"actions": [[]]
+	},
+	"D13045": {
+		"actions": [[]]
+	},
+	"D13051": {
+		"name": "Dream - Ultimate World Formation",
+		"actions": [[]]
+	},
+	"D13052": {
+		"actions": [[]]
+	},
+	"D13053": {
+		"actions": [[]]
+	},
+	"D13054": {
+		"actions": [[]]
+	},
+	"D13055": {
+		"actions": [[]]
+	},
+	"D13061": {
+		"name": "Dream - Water Spirit Spring",
+		"actions": [[]],
+		"opening": [
+			["qi", 1]
+		]
+	},
+	"D13062": {
+		"actions": [[]],
+		"opening": [
+			["qi", 1]
+		]
+	},
+	"D13063": {
+		"actions": [[]],
+		"opening": [
+			["qi", 1]
+		]
+	},
+	"D13064": {
+		"actions": [[]],
+		"opening": [
+			["qi", 2]
+		]
+	},
+	"D13065": {
+		"actions": [[]],
+		"opening": [
+			["qi", 2]
+		]
+	},
+	"D13071": {
+		"name": "Dream - Wood Spirit Willow Leaf",
+		"actions": [["hp", 6], ["for_each_x_add_y", "force_of_water", "next_attack_deals_extra"]]
+	},
+	"D13072": {
+		"actions": [["hp", 8], ["for_each_x_add_y", "force_of_water", "next_attack_deals_extra"]]
+	},
+	"D13073": {
+		"actions": [["hp", 10], ["for_each_x_add_y", "force_of_water", "next_attack_deals_extra"]]
+	},
+	"D13074": {
+		"actions": [["hp", 2], ["for_each_x_add_c_pct_y_up_to_d", "force_of_water", 33.333334, "increase_atk", 3],
+			["if_x_at_least_c_do", "force_of_water", 1, ["chase"]],
+			["if_x_at_least_c_do", "increase_atk", 1, ["chase"]]]
+	},
+	"D13075": {
+		"actions": [["hp", 2], ["for_each_x_add_c_pct_y_up_to_d", "force_of_water", 50, "increase_atk", 3],
+			["if_x_at_least_c_do", "force_of_water", 1, ["chase"]],
+			["if_x_at_least_c_do", "increase_atk", 1, ["chase"]]]
+	},
+	"D13081": {
+		"name": "Dream - Wood Spirit Formation",
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 3, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
+	},
+	"D13082": {
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 4, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
+	},
+	"D13083": {
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 5, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
+	},
+	"D13084": {
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 1, "wood_thorn"], ["add_c_of_x", 5, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
+	},
+	"D13085": {
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 1, "wood_thorn"], ["add_c_of_x", 3, "convert_increase_atk_to_wood_thorn"]]
+	},
+	"D13091": {
+		"name": "Dream - Fire Spirit Heart Fire",
+		"actions": [["atk", 6]]
+	},
+	"D13092": {
+		"actions": [["atk", 8]]
+	},
+	"D13093": {
+		"actions": [["atk", 10]]
+	},
+	"D13094": {
+		"actions": [["atk", 10]]
+	},
+	"D13095": {
+		"actions": [["atk", 10]]
+	},
+	"D13101": {
+		"name": "Dream - Fire Spirit Flash Fire",
+		"actions": [[]]
+	},
+	"D13102": {
+		"actions": [[]]
+	},
+	"D13103": {
+		"actions": [[]]
+	},
+	"D13104": {
+		"actions": [[]]
+	},
+	"D13105": {
+		"actions": [[]]
+	},
+	"D13111": {
+		"name": "Dream - Metal Spirit Iron Bone",
+		"actions": [["def", 8]]
+	},
+	"D13112": {
+		"actions": [["def", 11]]
+	},
+	"D13113": {
+		"actions": [["def", 14]]
+	},
+	"D13114": {
+		"actions": [["def", 6]]
+	},
+	"D13115": {
+		"actions": [["def", 6]]
+	},
+	"D13121": {
+		"name": "Dream - Metal Spirit Sharp",
+		"actions": [["atk", 2]]
+	},
+	"D13122": {
+		"actions": [["atk", 4]]
+	},
+	"D13123": {
+		"actions": [["atk", 4]]
+	},
+	"D13124": {
+		"actions": [["atk", 6]]
+	},
+	"D13125": {
+		"actions": [["atk", 6]]
+	},
+	"D13131": {
+		"name": "Dream - Earth Spirit Steep",
+		"actions": [["def", 6]]
+	},
+	"D13132": {
+		"actions": [["def", 8]]
+	},
+	"D13133": {
+		"actions": [["def", 10]]
+	},
+	"D13134": {
+		"actions": [["def", 10]]
+	},
+	"D13135": {
+		"actions": [["def", 16]]
+	},
+	"D13141": {
+		"name": "Dream - Five Elements Heavenly Marrow Rhythm",
+		"actions": [["max_hp", 2], ["hp", 2], ["continuous"],
+			["add_c_of_x", 1, "dream_heavenly_marrow_limited_stacks"]]
+	},
+	"D13142": {
+		"actions": [["max_hp", 4], ["hp", 4], ["continuous"],
+			["add_c_of_x", 1, "dream_heavenly_marrow_limited_stacks"]]
+	},
+	"D13143": {
+		"actions": [["continuous"],
+			["add_c_of_x", 2, "dream_heavenly_marrow_limited_stacks"]]
+	},
+	"D13144": {
+		"actions": [["continuous"],
+			["add_c_of_x", 1, "dream_heavenly_marrow_unlimited_stacks"]]
+	},
+	"D13145": {
+		"actions": [["continuous"],
+			["add_c_of_x", 1, "dream_heavenly_marrow_unlimited_stacks"]]
+	},
+	"D13151": {
+		"name": "Dream - Wood Spirit Bud",
+		"actions": [["rep", 2, ["atk", 3]]]
+	},
+	"D13152": {
+		"actions": [["rep", 2, ["atk", 4]]]
+	},
+	"D13153": {
+		"actions": [["rep", 2, ["atk", 5]]]
+	},
+	"D13154": {
+		"actions": [["rep", 3, ["atk", 3]]]
+	},
+	"D13155": {
+		"actions": [["rep", 4, ["atk", 3]]]
+	},
+	"D13161": {
+		"name": "Dream - Fire Spirit Flame Eater",
+		"actions": [["qi", 1], ["reduce_enemy_c_of_x", 4, "hp"], ["reduce_enemy_c_of_x", 4, "max_hp"]]
+	},
+	"D13162": {
+		"actions": [["qi", 1], ["reduce_enemy_c_of_x", 6, "hp"], ["reduce_enemy_c_of_x", 6, "max_hp"]]
+	},
+	"D13163": {
+		"actions": [["qi", 3]]
+	},
+	"D13164": {
+		"actions": [["qi", 3]]
+	},
+	"D13165": {
+		"actions": [["qi", 4]]
+	},
+	"D13171": {
+		"name": "Dream - Fire Spirit Formation",
+		"actions": [["activate_fire_spirit"], ["add_c_of_x", 2, "def"], ["reduce_enemy_c_of_x", 6, "hp"], ["reduce_enemy_c_of_x", 6, "max_hp"]]
+	},
+	"D13172": {
+		"actions": [["activate_fire_spirit"], ["add_c_of_x", 3, "def"], ["reduce_enemy_c_of_x", 8, "hp"], ["reduce_enemy_c_of_x", 8, "max_hp"]]
+	},
+	"D13173": {
+		"actions": [["activate_fire_spirit"], ["add_c_of_x", 4, "def"], ["reduce_enemy_c_of_x", 10, "hp"], ["reduce_enemy_c_of_x", 10, "max_hp"]]
+	},
+	"D13174": {
+		"actions": [["activate_fire_spirit"], ["add_c_of_x", 6, "def"], ["reduce_enemy_c_of_x", 6, "hp"], ["reduce_enemy_c_of_x", 6, "max_hp"], ["continuous"], ["add_c_of_x", 3, "dream_fire_formation_stacks"]]
+	},
+	"D13175": {
+		"actions": [["activate_fire_spirit"], ["add_c_of_x", 6, "def"], ["reduce_enemy_c_of_x", 6, "hp"], ["reduce_enemy_c_of_x", 6, "max_hp"], ["continuous"], ["add_c_of_x", 4, "dream_fire_formation_stacks"]]
+	},
+	"D13181": {
+		"name": "Dream - Earth Spirit Cliff",
+		"actions": [["add_c_of_x", 7, "def"]]
+	},
+	"D13182": {
+		"actions": [["add_c_of_x", 9, "def"]]
+	},
+	"D13183": {
+		"actions": [["add_c_of_x", 12, "def"]]
+	},
+	"D13184": {
+		"actions": [["add_c_of_x", 10, "def"]]
+	},
+	"D13185": {
+		"actions": [["add_c_of_x", 15, "def"]]
 	}
 }

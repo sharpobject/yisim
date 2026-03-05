@@ -315,8 +315,9 @@
     },
     {
         "id": 121111,
-        "name": "Striding Into the Wind",
-        "namecn": "野马分鬃"
+        "name": "Wild Horses Part the Mane",
+        "namecn": "野马分鬃",
+        "namealta": "Striding Into the Wind"
     },
     {
         "id": 121121,
@@ -485,8 +486,9 @@
     },
     {
         "id": 124101,
-        "name": "Extremely Suspicious",
-        "namecn": "杯弓蛇影"
+        "name": "Snake in Reflection",
+        "namecn": "杯弓蛇影",
+        "namealta": "Extremely Suspicious"
     },
     {
         "id": 125011,
@@ -1560,8 +1562,9 @@
     },
     {
         "id": 342031,
-        "name": "Gild The Lily",
-        "namecn": "画蛇添足"
+        "name": "Paint Feet on Snake",
+        "namecn": "画蛇添足",
+        "namealta": "Gild The Lily"
     },
     {
         "id": 343011,
@@ -1923,8 +1926,9 @@
     },
     {
         "id": 406021,
-        "name": "Mysterious Gates Devil Seal Tower",
-        "namecn": "奇门锁妖塔"
+        "name": "Qimen Monster-Locking Tower",
+        "namecn": "奇门锁妖塔",
+        "namealta": "Mysterious Gates Devil Seal Tower"
     },
     {
         "id": 501011,
@@ -1968,8 +1972,9 @@
     },
     {
         "id": 504031,
-        "name": "Three Tailed Cat",
-        "namecn": "三尾讙"
+        "name": "Three-tailed Huan",
+        "namecn": "三尾讙",
+        "namealta": "Three Tailed Cat"
     },
     {
         "id": 505011,
@@ -3104,5 +3109,365 @@
         "id": 946011,
         "name": "Pangu Axe",
         "namecn": "盘古斧"
+    },
+    {
+        "id": "D11011",
+        "name": "Dream - Qi Perfusion",
+        "namecn": "梦·灵气灌注"
+    },
+    {
+        "id": "D11021",
+        "name": "Dream - Cloud Sword Pierce the Star",
+        "namecn": "梦·云剑点星"
+    },
+    {
+        "id": "D11031",
+        "name": "Dream - Cloud Sword - Riddle",
+        "namecn": "梦·云剑极意"
+    },
+    {
+        "id": "D11041",
+        "name": "Dream - Flying Fang Sword",
+        "namecn": "梦·飞牙剑"
+    },
+    {
+        "id": "D11051",
+        "name": "Dream - Cloud Dance Rhythm",
+        "namecn": "梦·云舞诀"
+    },
+    {
+        "id": "D11061",
+        "name": "Dream - Unrestrained Sword One",
+        "namecn": "梦·狂剑一式"
+    },
+    {
+        "id": "D11071",
+        "name": "Dream - CentiBird Spirit Sword Rhythm",
+        "namecn": "梦·百鸟灵剑诀"
+    },
+    {
+        "id": "D11081",
+        "name": "Dream - Dharma Spirit Sword",
+        "namecn": "梦·万法归灵剑"
+    },
+    {
+        "id": "D11091",
+        "name": "Dream - Unrestrained Sword Zero",
+        "namecn": "梦·狂剑零式"
+    },
+    {
+        "id": "D11101",
+        "name": "Dream - Consonance Sword Formation",
+        "namecn": "梦·灵犀剑阵"
+    },
+    {
+        "id": "D11111",
+        "name": "Dream - Cloud Sword - Touch Earth",
+        "namecn": "梦·云剑厚土"
+    },
+    {
+        "id": "D11121",
+        "name": "Dream - Reflexive Sword",
+        "namecn": "梦·反身剑"
+    },
+    {
+        "id": "D11131",
+        "name": "Dream - Rule Sky Sword Formation",
+        "namecn": "梦·御空剑阵"
+    },
+    {
+        "id": "D11141",
+        "name": "Dream - Giant Roc Spirit Sword",
+        "namecn": "梦·巨鹏灵剑"
+    },
+    {
+        "id": "D11151",
+        "name": "Dream - Earth Evil Sword",
+        "namecn": "梦·地煞剑"
+    },
+    {
+        "id": "D11161",
+        "name": "Dream - Cloud Sword - Softheart",
+        "namecn": "梦·云剑柔心"
+    },
+    {
+        "id": "D11171",
+        "name": "Dream - Contemplate Spirits Rhythm",
+        "namecn": "梦·凝意诀"
+    },
+    {
+        "id": "D11181",
+        "name": "Dream - Cloud Sword - Spirit Coercion",
+        "namecn": "梦·云剑汇灵"
+    },
+    {
+        "id": "D12011",
+        "name": "Dream - Astral Move - Block",
+        "namecn": "梦·星弈挡"
+    },
+    {
+        "id": "D12021",
+        "name": "Dream - Star Trail Divination",
+        "namecn": "梦·星轨推衍"
+    },
+    {
+        "id": "D12031",
+        "name": "Dream - Thunder And Lightning",
+        "namecn": "梦·轰雷掣电"
+    },
+    {
+        "id": "D12041",
+        "name": "Dream - Yin Yang Formation",
+        "namecn": "梦·两仪阵"
+    },
+    {
+        "id": "D12051",
+        "name": "Dream - Falling Thunder",
+        "namecn": "梦·落雷术"
+    },
+    {
+        "id": "D12061",
+        "name": "Dream - Flower Sentient",
+        "namecn": "梦·落花有意"
+    },
+    {
+        "id": "D12071",
+        "name": "Dream - Hunter Hunting Hunter",
+        "namecn": "梦·黄雀在后"
+    },
+    {
+        "id": "D12081",
+        "name": "Dream - Drag Moon In Sea",
+        "namecn": "梦·海底捞月"
+    },
+    {
+        "id": "D12091",
+        "name": "Dream - Repel Citta-Dharma",
+        "namecn": "梦·反震心法"
+    },
+    {
+        "id": "D12101",
+        "name": "Dream - Shifting Stars",
+        "namecn": "梦·斗转星移"
+    },
+    {
+        "id": "D12111",
+        "name": "Dream - Flame Hexagram",
+        "namecn": "梦·离卦"
+    },
+    {
+        "id": "D12121",
+        "name": "Dream - Dance Of The Dragonfly",
+        "namecn": "梦·蜻蜓点水"
+    },
+    {
+        "id": "D12131",
+        "name": "Dream - Snake in Reflection",
+        "namecn": "梦·杯弓蛇影"
+    },
+    {
+        "id": "D12141",
+        "name": "Dream - Qi Therapy",
+        "namecn": "梦·气疗术"
+    },
+    {
+        "id": "D12151",
+        "name": "Dream - Dotted Around",
+        "namecn": "梦·星罗棋布"
+    },
+    {
+        "id": "D12161",
+        "name": "Dream - White Snake",
+        "namecn": "梦·白蛇吐信"
+    },
+    {
+        "id": "D12171",
+        "name": "Dream - Heaven Hexagram",
+        "namecn": "梦·乾卦"
+    },
+    {
+        "id": "D12181",
+        "name": "Dream - Revitalized",
+        "namecn": "梦·枯木逢春"
+    },
+    {
+        "id": "D13011",
+        "name": "Dream - Metal Spirit Formation",
+        "namecn": "梦·金灵阵"
+    },
+    {
+        "id": "D13021",
+        "name": "Dream - Cosmos Seal",
+        "namecn": "梦·浑天印"
+    },
+    {
+        "id": "D13031",
+        "name": "Dream - Water Spirit Billows",
+        "namecn": "梦·水灵波澜"
+    },
+    {
+        "id": "D13041",
+        "name": "Dream - Five Elements Fleche",
+        "namecn": "梦·五行刺"
+    },
+    {
+        "id": "D13051",
+        "name": "Dream - Ultimate World Formation",
+        "namecn": "梦·混元无极阵"
+    },
+    {
+        "id": "D13061",
+        "name": "Dream - Water Spirit Spring",
+        "namecn": "梦·水灵泉涌"
+    },
+    {
+        "id": "D13071",
+        "name": "Dream - Wood Spirit Willow Leaf",
+        "namecn": "梦·木灵柳纷飞"
+    },
+    {
+        "id": "D13081",
+        "name": "Dream - Wood Spirit Formation",
+        "namecn": "梦·木灵阵"
+    },
+    {
+        "id": "D13091",
+        "name": "Dream - Fire Spirit Heart Fire",
+        "namecn": "梦·火灵灼心"
+    },
+    {
+        "id": "D13101",
+        "name": "Dream - Fire Spirit Flash Fire",
+        "namecn": "梦·火灵瞬燃"
+    },
+    {
+        "id": "D13111",
+        "name": "Dream - Metal Spirit Iron Bone",
+        "namecn": "梦·金灵铁骨"
+    },
+    {
+        "id": "D13121",
+        "name": "Dream - Metal Spirit Sharp",
+        "namecn": "梦·金灵锋芒"
+    },
+    {
+        "id": "D13131",
+        "name": "Dream - Earth Spirit Steep",
+        "namecn": "梦·土灵绝壁"
+    },
+    {
+        "id": "D13141",
+        "name": "Dream - Five Elements Heavenly Marrow Rhythm",
+        "namecn": "梦·五行天髓诀"
+    },
+    {
+        "id": "D13151",
+        "name": "Dream - Wood Spirit Bud",
+        "namecn": "梦·木灵芽"
+    },
+    {
+        "id": "D13161",
+        "name": "Dream - Fire Spirit Flame Eater",
+        "namecn": "梦·火灵聚炎"
+    },
+    {
+        "id": "D13171",
+        "name": "Dream - Fire Spirit Formation",
+        "namecn": "梦·火灵阵"
+    },
+    {
+        "id": "D13181",
+        "name": "Dream - Earth Spirit Cliff",
+        "namecn": "梦·土灵断崖"
+    },
+    {
+        "id": "D14011",
+        "name": "Dream - Elusive Footwork",
+        "namecn": "梦·灵玄迷踪步"
+    },
+    {
+        "id": "D14021",
+        "name": "Dream - Shura Roar",
+        "namecn": "梦·修罗吼"
+    },
+    {
+        "id": "D14031",
+        "name": "Dream - Crash Fist Block",
+        "namecn": "梦·崩拳封"
+    },
+    {
+        "id": "D14041",
+        "name": "Dream - Exercise Soul",
+        "namecn": "梦·锻神开海"
+    },
+    {
+        "id": "D14051",
+        "name": "Dream - Surging Waves",
+        "namecn": "梦·冲霄破浪"
+    },
+    {
+        "id": "D14061",
+        "name": "Dream - Crash Fist Blitz",
+        "namecn": "梦·崩拳突"
+    },
+    {
+        "id": "D14071",
+        "name": "Dream - Exercise Tendons",
+        "namecn": "梦·锻筋"
+    },
+    {
+        "id": "D14081",
+        "name": "Dream - Crash Fist Bounce",
+        "namecn": "梦·崩拳弹"
+    },
+    {
+        "id": "D14091",
+        "name": "Dream - Styx Agility",
+        "namecn": "梦·冥影身法"
+    },
+    {
+        "id": "D14101",
+        "name": "Dream - Vigorous Force",
+        "namecn": "梦·朝气蓬勃"
+    },
+    {
+        "id": "D14111",
+        "name": "Dream - Mountain-Cleaving Palms",
+        "namecn": "梦·劈山掌"
+    },
+    {
+        "id": "D14121",
+        "name": "Dream - Crash Footwork",
+        "namecn": "梦·崩天步"
+    },
+    {
+        "id": "D14131",
+        "name": "Dream - Windward Palms",
+        "namecn": "梦·迎风掌"
+    },
+    {
+        "id": "D14141",
+        "name": "Dream - Crash Fist Continue",
+        "namecn": "梦·崩拳连崩"
+    },
+    {
+        "id": "D14151",
+        "name": "Dream - Bearing the Load",
+        "namecn": "梦·荷重前行"
+    },
+    {
+        "id": "D14161",
+        "name": "Dream - Gather Intense Force",
+        "namecn": "梦·威震四方"
+    },
+    {
+        "id": "D14171",
+        "name": "Dream - Majestic Qi",
+        "namecn": "梦·气若悬河"
+    },
+    {
+        "id": "D14181",
+        "name": "Dream - Overwhelming Force",
+        "namecn": "梦·磅礴之势"
     }
 ]

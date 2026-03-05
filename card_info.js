@@ -137,6 +137,9 @@ export const ready = (async () => {
     const valid_markings_list = ["no_marking", "el", "fu", "mu", "pa", "fm", "pm", "ft", "sw", "he", "fe", "dx", "talisman", "spiritual_pet"];
     const valid_markings = new Set(valid_markings_list);
     function get_marking(card_id) {
+        if (card_id.startsWith("D")) {
+            card_id = card_id.substring(1);
+        }
         const prefix = card_id.substring(0, 2);
         let marking = PREFIX_TO_MARKING[prefix];
         if (marking === "check") {
@@ -267,12 +270,8 @@ export const ready = (async () => {
     let is_spirit_sword = function (card_id) {
         return swogi[card_id].name.includes("Spirit Sword");
     }
-    let is_plain_sword = function(card_id) {
-        return swogi[card_id].name.includes("Sword") &&
-            !(is_spirit_sword(card_id) ||
-                is_sword_formation(card_id) ||
-                is_cloud_sword(card_id) ||
-                is_unrestrained_sword(card_id));
+    let is_sword = function(card_id) {
+        return swogi[card_id].name.includes("Sword");
     }
     let is_cat = function (card_id) {
         return swogi[card_id].name.includes("Cat") &&
@@ -280,6 +279,20 @@ export const ready = (async () => {
                 swogi[card_id].name.includes("Cat Claw") ||
                 swogi[card_id].name.includes("Cat Chaos") ||
                 swogi[card_id].name.includes("Bronze Cat"));
+    }
+    let is_snake = function (card_id) {
+        return swogi[card_id].name.includes("Snake");
+    }
+    let is_spirit_seal_or_formation = function (card_id) {
+        const name = swogi[card_id].name;
+        return name.includes("Spirit Seal") || name.includes("Spirit Formation") || name.includes("Spiritage Formation");
+    }
+    let is_explanatory_hexagram = function (card_id) {
+        const name = swogi[card_id].name;
+        return name === "Zhen Hexagram" || name === "Earth Hexagram" ||
+            name === "Wind Hexagram" || name === "Mountain Hexagram" ||
+            name === "Water Hexagram" || name === "Lake Hexagram" ||
+            name === "Flame Hexagram" || name === "Heaven Hexagram";
     }
     function with_default(x, default_val) {
         if (x === undefined) {
@@ -339,8 +352,11 @@ export const ready = (async () => {
             is_thunder: is_thunder(card_id),
             is_seal: is_seal(card_id),
             is_spirit_sword: is_spirit_sword(card_id),
-            is_plain_sword: is_plain_sword(card_id),
+            is_sword: is_sword(card_id),
             is_cat: is_cat(card_id),
+            is_snake: is_snake(card_id),
+            is_explanatory_hexagram: is_explanatory_hexagram(card_id),
+            is_spirit_seal_or_formation: is_spirit_seal_or_formation(card_id),
             is_add_qi: is_add_qi,
             marking: marking,
             is_salty: is_salty,
