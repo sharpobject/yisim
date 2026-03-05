@@ -50,7 +50,8 @@ const deps = {
         "D1115",
         "D1206",
         "D1213",
-        "D1216"],
+        "D1216",
+        "D1402"],
     HAS_MARK_OF_DARK_HEART: ["HAS_P2_MARK_OF_DARK_HEART",
         "HAS_P3_MARK_OF_DARK_HEART",
         "HAS_P4_MARK_OF_DARK_HEART",
@@ -578,9 +579,10 @@ const deps = {
         "lying_drunk_stacks", "24202"],
     HAS_ENDLESS_FORCE: [
         "endless_force_stacks", "24102"],
-    HAS_MAJESTIC_QI: ["majestic_qi_stacks", "14309"],
+    HAS_MAJESTIC_QI: ["majestic_qi_stacks", "14309",
+        "D14171", "D14172", "D14173", "D14174"],
     HAS_EXERCISE_BONES: ["exercise_bones_stacks", "14304"],
-    HAS_PHYSIQUE_GAINED: ["physique_gained", "14504"],
+    HAS_PHYSIQUE_GAINED: ["physique_gained", "14504", "D1411"],
     HAS_HP_LOST: ["hp_lost", "HAS_CRASH_FIST_SHOCKED",
         "90401", "90405", "91506", "93504", "94503"],
     HAS_CRASH_CITTA_DHARMA: ["crash_citta_dharma_stacks", "14401"],
@@ -597,8 +599,8 @@ const deps = {
         "14102", "14303"],
     HAS_CRASH_FIST_POKE: ["later_crash_fist_poke_stacks",
         "crash_fist_poke_stacks",
-        "14101", "14303", "74503"],
-    HAS_CRASH_FIST_CONTINUE: ["14403"],
+        "14101", "14303", "74503", "D1403", "D1406"],
+    HAS_CRASH_FIST_CONTINUE: ["14403", "D14144", "D14145"],
     HAS_FORCE: ["force", "max_force",
         "HAS_FULL_OF_FORCE",
         "HAS_CRASH_CITTA_DHARMA",
@@ -608,7 +610,9 @@ const deps = {
         "HAS_SOUL_OVERWHELMING_PALM",
         "14110", "14111", "14208", "14309", "14310", "14311",
         "14401", "14409", "14410", "14507", "14508", "24102",
-        "24302", "64202", "74404", "94301", "94501", "94504"],
+        "24302", "64202", "74404", "94301", "94501", "94504",
+        "D14114", "D14115",
+        "D1416", "D1417", "D1418"],
     HAS_SOUL_OVERWHELMING_PALM: ["94502"],
     HAS_THUNDER_CITTA_DHARMA: [
         "thunder_citta_dharma_stacks", "22403"],
@@ -628,7 +632,9 @@ const deps = {
         "HAS_RETURN_TO_SIMPLICITY",
         "14301", "14310", "14405", "14406", "14407", "14409",
         "14410", "14501", "14503", "14508", "24202", "24501",
-        "64501", "74404", "94401", "94404", "94501", "94504"],
+        "64501", "74404", "94401", "94404", "94501", "94504",
+        "D1405", "D1406", "D14094", "D14095", "D1412",
+        "D14184", "D14185"],
     HAS_PLAYED_CARD_COUNT: ["played_card_count",
         "73501", "71506"],
     HAS_WILD_CROSSING_SEAL: ["wild_crossing_seal_stacks", "73401"],
@@ -818,7 +824,8 @@ const deps = {
         "14104", "14106", "14204", "14205", "14304", "14305",
         "14306", "14404", "14405", "14503", "14504", "24101",
         "24401", "24501", "24602", "64201", "64301", "64402",
-        "64501", "64502", "94301", "94501", "94505"],
+        "64501", "64502", "94301", "94501", "94505",
+        "D1402", "D1404", "D1407", "D1411", "D1418"],
     HAS_HAND_COUNT: [
         "hand_count",
         "HAS_PACT_OF_EQUILIBRIUM",
@@ -908,7 +915,8 @@ const deps = {
         "HAS_EARTH_SPIRIT_COMBINE_WORLD"],
     REDUCE_IDX_FORCE_DISPATCH: [
         "HAS_OVERWHELMING_POWER",
-        "HAS_ENDLESS_FORCE"],
+        "HAS_ENDLESS_FORCE",
+        "HAS_TOTAL_FORCE_LOST"],
     HAS_BONUS_ATK_AMT: [
         "HAS_CRASH_FIST_STYX_NIGHT",
         "HAS_CRASH_FIST_POKE"],
@@ -916,7 +924,8 @@ const deps = {
         "HAS_CRASH_FIST_BLITZ",
         "HAS_CRASH_FIST_INCH_FORCE",
         "HAS_CRASH_FIST_STAR_SEIZING",
-        "HAS_CRASH_FIST_POKE"],
+        "HAS_CRASH_FIST_POKE",
+        "HAS_DREAM_CRASH_FIST_CONTINUE"],
     HAS_PRE_CRASH_FIST: [
         "HAS_CRASH_FIST_STYX_NIGHT",
         "HAS_CRASH_FIST_POKE",
@@ -929,7 +938,8 @@ const deps = {
         "HAS_CRASH_FIST_STAR_SEIZING",
         "HAS_CRASH_FIST_BLINK",
         "HAS_CRASH_FIST_SHOCKED",
-        "HAS_M_CRASH_FIST_ENTANGLE"],
+        "HAS_M_CRASH_FIST_ENTANGLE",
+        "HAS_DREAM_CRASH_FIST_CONTINUE"],
     HAS_RESONANCE_WITHIN_REACH: ["resonance_within_reach_stacks"],
     HAS_HEAVENLY_MARROW_DANCE_TUNE: [
         "heavenly_marrow_dance_tune_stacks", "93507"],
@@ -1059,7 +1069,8 @@ const deps = {
     HAS_CHECK_ADJACENT_BEFORE: [
         "HAS_DREAM_QI_PERFUSION_GUARANTEE_INJURED",
         "HAS_DREAM_SHIFTING_STARS_GAIN_STAR_POWER_BEFORE_PLAYING_ADJACENT",
-        "HAS_DREAM_COSMOS_SEAL_ADJACENT"],
+        "HAS_DREAM_COSMOS_SEAL_ADJACENT",
+        "HAS_DREAM_CRASH_FOOTWORK"],
     HAS_CHECK_ADJACENT_AFTER: [
         "HAS_DREAM_CLOUD_SWORD_PIERCE_THE_STAR"],
     HAS_DREAM_QI_PERFUSION_GUARANTEE_INJURED: [
@@ -1159,7 +1170,8 @@ const deps = {
         "convert_increase_atk_to_wood_thorn",
         "D13085"],
     HAS_TIMES_MAX_HP_REDUCED: ["D1309"],
-    HAS_TOTAL_DEF_GAINED: ["D13104", "D13105"],
+    HAS_TOTAL_DEF_GAINED: ["D13104", "D13105", "D14033", "D14034", "D14035",
+        "D14131", "D14132", "D14133", "D14134"],
     HAS_HEXAGRAMS_EXPLAIN: ["hexagrams_explain_stacks"],
     HAS_TOTAL_PENETRATE_GAINED: ["D1311"],
     HAS_TOTAL_FORCE_OF_WATER_GAINED: ["D1311"],
@@ -1173,6 +1185,37 @@ const deps = {
     HAS_DREAM_HEAVENLY_MARROW_UNLIMITED: [
         "dream_heavenly_marrow_unlimited_stacks",
         "D13144", "D13145"],
+    HAS_DREAM_ELUSIVE_FOOTWORK: [
+        "dream_elusive_footwork_stacks",
+        "D1401"],
+    HAS_DREAM_CRASH_FIST_BOUNCE_STACKS: [
+        "dream_crash_fist_bounce_stacks",
+        "D14081", "D14082", "D14083", "D14084"],
+    HAS_DREAM_CRASH_FIST_BOUNCE_PERMANENT: [
+        "dream_crash_fist_bounce_permanent",
+        "D14085"],
+    HAS_DREAM_STYX_AGILITY_PASSIVE: [
+        "D14094", "D14095"],
+    HAS_TOTAL_FORCE_LOST: [
+        "total_force_lost",
+        "D1410"],
+    HAS_TOTAL_DEBUFF_LOST: [
+        "total_debuff_lost",
+        "D1410"],
+    HAS_DREAM_CRASH_FOOTWORK: [
+        "dream_crash_footwork_fake_crash_fist",
+        "D1412"],
+    HAS_DREAM_CRASH_FIST_CONTINUE: [
+        "dream_crash_fist_continue_bonus_atk",
+        "this_card_dream_crash_fist_continue_bonus_atk",
+        "D14141", "D14142", "D14143"],
+    HAS_DREAM_BEARING_LOAD_PASSIVE: [
+        "D14153", "D14154", "D14155"],
+    HAS_DREAM_GATHER_INTENSE_FORCE: [
+        "D1416"],
+    HAS_DREAM_MAJESTIC_QI_PERMANENT: [
+        "dream_majestic_qi_permanent",
+        "D14175"],
 };
 
 const implies = {};

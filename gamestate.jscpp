@@ -1670,7 +1670,32 @@ export class Player {
 #endif // HAS_DREAM_FIRE_FORMATION
 
         // duan xuan sect dream cards
-
+#ifdef HAS_DREAM_ELUSIVE_FOOTWORK
+        this.dream_elusive_footwork_stacks = 0;
+        this.dream_elusive_footwork_reflect_cap = 1;
+        this.dream_elusive_footwork_trigger_count = 0;
+#endif // HAS_DREAM_ELUSIVE_FOOTWORK
+#ifdef HAS_DREAM_CRASH_FIST_BOUNCE_STACKS
+        this.dream_crash_fist_bounce_stacks = 0;
+#endif // HAS_DREAM_CRASH_FIST_BOUNCE_STACKS
+#ifdef HAS_DREAM_CRASH_FIST_BOUNCE_PERMANENT
+        this.dream_crash_fist_bounce_permanent = 0;
+#endif // HAS_DREAM_CRASH_FIST_BOUNCE_PERMANENT
+#ifdef HAS_TOTAL_FORCE_LOST
+        this.total_force_lost = 0;
+#endif // HAS_TOTAL_FORCE_LOST
+#ifdef HAS_TOTAL_DEBUFF_LOST
+        this.total_debuff_lost = 0;
+#endif // HAS_TOTAL_DEBUFF_LOST
+#ifdef HAS_DREAM_CRASH_FOOTWORK
+        this.dream_crash_footwork_fake_crash_fist = 0;
+#endif // HAS_DREAM_CRASH_FOOTWORK
+#ifdef HAS_DREAM_CRASH_FIST_CONTINUE
+        this.dream_crash_fist_continue_bonus_atk = 0;
+#endif // HAS_DREAM_CRASH_FIST_CONTINUE
+#ifdef HAS_DREAM_MAJESTIC_QI_PERMANENT
+        this.dream_majestic_qi_permanent = 0;
+#endif // HAS_DREAM_MAJESTIC_QI_PERMANENT
 
     }
     reset_can_play() {
@@ -2892,6 +2917,9 @@ export class GameState {
 #ifdef HAS_CRASH_FOOTWORK
             this.players[0].crash_footwork_stacks > 0 ||
 #endif // HAS_CRASH_FOOTWORK
+#ifdef HAS_DREAM_CRASH_FOOTWORK
+            this.players[0].dream_crash_footwork_fake_crash_fist > 0 ||
+#endif // HAS_DREAM_CRASH_FOOTWORK
         is_crash_fist(card_id));
     }
     get_debuff_count(idx) {
@@ -2969,8 +2997,11 @@ export class GameState {
 #ifdef HAS_M_CRASH_FIST_ENTANGLE
         this.for_each_x_add_y("m_crash_fist_entangle_stacks", "this_card_m_crash_fist_entangle_stacks");
 #endif // HAS_M_CRASH_FIST_ENTANGLE
+#ifdef HAS_DREAM_CRASH_FIST_CONTINUE
+        me.this_card_dream_crash_fist_continue_bonus_atk = me.dream_crash_fist_continue_bonus_atk;
+#endif // HAS_DREAM_CRASH_FIST_CONTINUE
 #ifdef HAS_CRASH_FIST_CONTINUE
-        if (swogi[card_id].name !== "Crash Fist - Continue")
+        if (!swogi[card_id].is_crash_fist_continue)
 #endif // HAS_CRASH_FIST_CONTINUE
         {
 #ifdef HAS_CRASH_FIST_BLOCK
@@ -3003,6 +3034,9 @@ export class GameState {
 #ifdef HAS_CRASH_FIST_STAR_SEIZING
             me.crash_fist_star_seizing_stacks = 0;
 #endif // HAS_CRASH_FIST_STAR_SEIZING
+#ifdef HAS_DREAM_CRASH_FIST_CONTINUE
+            me.dream_crash_fist_continue_bonus_atk = 0;
+#endif // HAS_DREAM_CRASH_FIST_CONTINUE
         }
     }
 #endif // HAS_PRE_CRASH_FIST
@@ -3027,7 +3061,7 @@ export class GameState {
 #ifdef HAS_CRASH_FIST_POKE
         if (me.this_trigger_directly_attacked
 #ifdef HAS_CRASH_FIST_CONTINUE
-            && swogi[card_id].name !== "Crash Fist - Continue"
+            && !swogi[card_id].is_crash_fist_continue
 #endif // HAS_CRASH_FIST_CONTINUE
         ) {
             me.crash_fist_poke_stacks = 0;
@@ -3035,6 +3069,14 @@ export class GameState {
         me.crash_fist_poke_stacks += me.later_crash_fist_poke_stacks;
         me.later_crash_fist_poke_stacks = 0;
 #endif // HAS_CRASH_FIST_POKE
+#ifdef HAS_DREAM_CRASH_FIST_CONTINUE
+        if (me.this_card_dream_crash_fist_continue_bonus_atk > 0) {
+            const bonus = me.this_card_dream_crash_fist_continue_bonus_atk;
+            me.this_card_dream_crash_fist_continue_bonus_atk = 0;
+            this.atk(bonus);
+            this.atk(bonus);
+        }
+#endif // HAS_DREAM_CRASH_FIST_CONTINUE
     }
 #endif // HAS_POST_CRASH_FIST
 #ifdef HAS_CRASH_FIST_SHOCKED
@@ -3657,6 +3699,9 @@ export class GameState {
         const me = this.players[0];
         me.this_card_chases = 0;
         me.currently_playing_card_idx = idx;
+#ifdef HAS_DREAM_CRASH_FOOTWORK
+        me.dream_crash_footwork_fake_crash_fist = 0;
+#endif // HAS_DREAM_CRASH_FOOTWORK
         let plays = 1;
 #ifdef HAS_UNRESTRAINED_SWORD_TWIN_DRAGONS
         if (me.unrestrained_sword_twin_dragons_stacks > 0) {
@@ -3674,10 +3719,26 @@ export class GameState {
 #endif // HAS_STRIKE_TWICE
 #ifdef HAS_CRASH_FIST_DOUBLE
         if (me.crash_fist_double_stacks > 0) {
-            if (this.is_crash_fist(card_id)) {
+            let is_crash_fist_for_double = this.is_crash_fist(card_id);
+#ifdef HAS_DREAM_CRASH_FOOTWORK
+            if (!is_crash_fist_for_double) {
+                const prev_card = me.cards[this.get_prev_idx(idx)];
+                const next_card = me.cards[this.get_next_idx(idx)];
+                // L1-L5: card after D1412 counts as crash fist
+                if (prev_card === "D14121" || prev_card === "D14122" || prev_card === "D14123" ||
+                    prev_card === "D14124" || prev_card === "D14125") {
+                    is_crash_fist_for_double = true;
+                }
+                // L4-L5: card before D1412 also counts as crash fist
+                if (next_card === "D14124" || next_card === "D14125") {
+                    is_crash_fist_for_double = true;
+                }
+            }
+#endif // HAS_DREAM_CRASH_FOOTWORK
+            if (is_crash_fist_for_double) {
                 plays += 1;
 #ifdef HAS_CRASH_FIST_CONTINUE
-                if (swogi[card_id].name !== "Crash Fist - Continue")
+                if (!swogi[card_id].is_crash_fist_continue)
 #endif // HAS_CRASH_FIST_CONTINUE
                 {
                     this.reduce_idx_x_by_c(0, "crash_fist_double_stacks", 1);
@@ -3807,7 +3868,16 @@ export class GameState {
             this.reduce_idx_x_by_c(0, "moon_water_sword_formation_stacks", 1);
         }
 #endif // HAS_MOON_WATER_SWORD_FORMATION
+#ifdef HAS_DREAM_BEARING_LOAD_PASSIVE
+        const def_before_decay = me.def;
+#endif // HAS_DREAM_BEARING_LOAD_PASSIVE
         this.for_each_x_reduce_c_pct_y("def", def_decay, "def");
+#ifdef HAS_DREAM_BEARING_LOAD_PASSIVE
+        const def_lost = def_before_decay - me.def;
+        if (def_lost > 0) {
+            this.heal(def_lost);
+        }
+#endif // HAS_DREAM_BEARING_LOAD_PASSIVE
 #ifdef HAS_BLACK_EARTH_TURTLE
         if (me.black_earth_turtle_stacks > 0) {
             this.for_each_x_add_y("black_earth_turtle_stacks", "def");
@@ -4503,6 +4573,9 @@ export class GameState {
 #ifdef HAS_ELUSIVE_FOOTWORK
         me.elusive_footwork_triggered = false;
 #endif // HAS_ELUSIVE_FOOTWORK
+#ifdef HAS_DREAM_ELUSIVE_FOOTWORK
+        me.dream_elusive_footwork_trigger_count = 0;
+#endif // HAS_DREAM_ELUSIVE_FOOTWORK
 #ifdef HAS_STYX_NIGHT_FOOTWORK
         me.styx_night_footwork_triggered = false;
         enemy.styx_night_footwork_triggered = false;
@@ -4810,7 +4883,7 @@ export class GameState {
                                 this.heal(hp_cost);
                                 this.log("player 0 healed " + hp_cost + " hp from crash fist bounce");
 #ifdef HAS_CRASH_FIST_CONTINUE
-                                if (swogi[card_id].name !== "Crash Fist - Continue")
+                                if (!swogi[card_id].is_crash_fist_continue)
 #endif // HAS_CRASH_FIST_CONTINUE
                                 {
                                     me.crash_fist_bounce_stacks = 0;
@@ -4826,6 +4899,17 @@ export class GameState {
                         }
                     }
 #endif // HAS_REFUND_HP_COST
+#ifdef HAS_DREAM_CRASH_FIST_BOUNCE_PERMANENT
+                    if (orig_hp_cost > 0 && me.dream_crash_fist_bounce_permanent > 0) {
+                        this.increase_idx_def(0, orig_hp_cost);
+                    }
+#endif // HAS_DREAM_CRASH_FIST_BOUNCE_PERMANENT
+#ifdef HAS_DREAM_CRASH_FIST_BOUNCE_STACKS
+                    if (orig_hp_cost > 0 && me.dream_crash_fist_bounce_stacks > 0) {
+                        me.dream_crash_fist_bounce_stacks--;
+                        this.increase_idx_def(0, orig_hp_cost);
+                    }
+#endif // HAS_DREAM_CRASH_FIST_BOUNCE_STACKS
                 }
                 if (hp_cost === undefined && qi_cost === 0) {
                     this.log("player 0 is playing " + format_card(card_id));
@@ -5159,6 +5243,11 @@ export class GameState {
         }
         const reduced_amt = Math.min(amt, me.force);
         me.force -= reduced_amt;
+#ifdef HAS_TOTAL_FORCE_LOST
+        if (idx === 0) {
+            me.total_force_lost += reduced_amt;
+        }
+#endif // HAS_TOTAL_FORCE_LOST
 #ifdef HAS_OVERWHELMING_POWER
         if (me.overwhelming_power_stacks > 0) {
             const dmg = me.overwhelming_power_stacks * reduced_amt;
@@ -5640,19 +5729,6 @@ export class GameState {
             return;
         }
         const me = this.players[idx];
-#ifdef HAS_ZONGZI_MODE
-        if (me.fresh_fruit_zongzi_stacks > 0 &&
-            (x === "internal_injury" || x === "indigestion")) {
-            this.reduce_idx_x_by_c(idx, "fresh_fruit_zongzi_stacks", 1);
-            this.increase_idx_x_by_c(idx, "regen", amt);
-            return;
-        }
-#endif // HAS_ZONGZI_MODE
-#ifdef HAS_SNAKE_SHADOW
-        if (me.snake_shadow > 0 && (x === "internal_injury" || x === "weaken" || x === "wound")) {
-            amt += me.snake_shadow;
-        }
-#endif // HAS_SNAKE_SHADOW
 #ifdef HAS_GAIN_EXTRA_DEBUFF
 #ifdef HAS_STYX
         if (x !== "styx")
@@ -5662,16 +5738,16 @@ export class GameState {
             me.gain_extra_debuff = 0;
         }
 #endif // HAS_GAIN_EXTRA_DEBUFF
-#ifdef HAS_HEXPROOF
-        const to_sub = Math.min(amt, me.hexproof);
-        if (to_sub > 0) {
-            this.reduce_idx_x_by_c(idx, "hexproof", to_sub);
-            amt -= to_sub;
+#ifdef HAS_M_FLOWER_SENTIENT
+        if (me.m_flower_sentient_stacks > 0 && x === "internal_injury") {
+            amt += 2;
         }
-        if (amt === 0) {
-            return;
+#endif // HAS_M_FLOWER_SENTIENT
+#ifdef HAS_SNAKE_SHADOW
+        if (me.snake_shadow > 0 && (x === "internal_injury" || x === "weaken" || x === "wound")) {
+            amt += me.snake_shadow;
         }
-#endif // HAS_HEXPROOF
+#endif // HAS_SNAKE_SHADOW
 #ifdef HAS_INDOMITABLE_WILL
         if (me.indomitable_will_stacks > 0) {
             if (me.stance_is_fist) {
@@ -5685,20 +5761,46 @@ export class GameState {
             }
         }
 #endif // HAS_INDOMITABLE_WILL
+#ifdef HAS_ZONGZI_MODE
+        if (me.fresh_fruit_zongzi_stacks > 0 &&
+            (x === "internal_injury" || x === "indigestion")) {
+            this.reduce_idx_x_by_c(idx, "fresh_fruit_zongzi_stacks", 1);
+            this.increase_idx_x_by_c(idx, "regen", amt);
+            return;
+        }
+#endif // HAS_ZONGZI_MODE
+#ifdef HAS_HEXPROOF
+        const to_sub = Math.min(amt, me.hexproof);
+        if (to_sub > 0) {
+            this.reduce_idx_x_by_c(idx, "hexproof", to_sub);
+            amt -= to_sub;
+        }
+        if (amt === 0) {
+            return;
+        }
+#endif // HAS_HEXPROOF
+        me[x] += amt;
+        this.log("gained " + amt + " " + x + ". Now have " + me[x] + " " + x);
 #ifdef HAS_UNWAVERING_SOUL
         for (let i=0; i<me.unwavering_soul_stacks; i++) {
             this.increase_idx_hp(idx, amt);
         }
 #endif // HAS_UNWAVERING_SOUL
-#ifdef HAS_STYX
-        if (x === "styx") {
-            if (me.character === "dx3") {
-                this.increase_idx_hp(idx, amt * 3);
-            } else {
-                this.reduce_idx_hp(idx, amt * 3, false);
-            }
+#ifdef HAS_MYSTIC_SNOWDROP
+        if (me.mystic_snowdrop_stacks > 0) {
+            this.reduce_idx_x_by_c(idx, "mystic_snowdrop_stacks", 1);
+            this.increase_idx_x_by_c(1 - idx, x, amt);
         }
-#endif // HAS_STYX
+#endif // HAS_MYSTIC_SNOWDROP
+#ifdef HAS_DREAM_ELUSIVE_FOOTWORK
+        if (idx === 0
+            && me.dream_elusive_footwork_stacks > 0
+            && me.dream_elusive_footwork_trigger_count < me.dream_elusive_footwork_stacks) {
+            me.dream_elusive_footwork_trigger_count += 1;
+            const reflect_amt = Math.min(amt, me.dream_elusive_footwork_reflect_cap);
+            this.increase_idx_debuff(1, x, reflect_amt);
+        }
+#endif // HAS_DREAM_ELUSIVE_FOOTWORK
 #ifdef HAS_M_RUTHLESS_WATER
         if (me.m_ruthless_water_stacks > 0
             && x !== "internal_injury"
@@ -5710,19 +5812,15 @@ export class GameState {
             this.increase_idx_x_by_c(idx, "internal_injury", ii_amt);
         }
 #endif // HAS_M_RUTHLESS_WATER
-#ifdef HAS_M_FLOWER_SENTIENT
-        if (me.m_flower_sentient_stacks > 0 && x === "internal_injury") {
-            amt += 2;
+#ifdef HAS_STYX
+        if (x === "styx") {
+            if (me.character === "dx3") {
+                this.increase_idx_hp(idx, amt * 3);
+            } else {
+                this.reduce_idx_hp(idx, amt * 3, false);
+            }
         }
-#endif // HAS_M_FLOWER_SENTIENT
-        me[x] += amt;
-        this.log("gained " + amt + " " + x + ". Now have " + me[x] + " " + x);
-#ifdef HAS_MYSTIC_SNOWDROP
-        if (me.mystic_snowdrop_stacks > 0) {
-            this.reduce_idx_x_by_c(idx, "mystic_snowdrop_stacks", 1);
-            this.increase_idx_x_by_c(1 - idx, x, amt);
-        }
-#endif // HAS_MYSTIC_SNOWDROP
+#endif // HAS_STYX
     }
     increase_idx_x_by_c(idx, x, c) {
         if (c === 0) {
@@ -5857,10 +5955,26 @@ export class GameState {
         if (me[x] < 0) {
             me[x] = 0;
         }
+#ifdef HAS_TOTAL_DEBUFF_LOST
+        if (idx === 0 && is_debuff(x)) {
+            me.total_debuff_lost += prev_x - me[x];
+        }
+#endif // HAS_TOTAL_DEBUFF_LOST
         if (prev_x !== me[x] || c !== 1) {
             this.log("lost " + c + " " + x + ". Now have " + me[x] + " " + x);
         }
     }
+#ifdef HAS_DREAM_GATHER_INTENSE_FORCE
+    has_dream_gather_intense_force(idx) {
+        const me = this.players[idx];
+        for (let i = 0; i < me.cards.length; i++) {
+            if (me.cards[i].startsWith("D1416")) {
+                return true;
+            }
+        }
+        return false;
+    }
+#endif // HAS_DREAM_GATHER_INTENSE_FORCE
     deal_damage_inner(dmg, is_atk, my_idx, is_extra) {
         const enemy_idx = 1 - my_idx;
 #ifdef HAS_IGNORE_DEF
@@ -5959,6 +6073,15 @@ export class GameState {
 #ifdef HAS_BONUS_ATK_AMT
             dmg += me.bonus_atk_amt;
 #endif // HAS_BONUS_ATK_AMT
+#ifdef HAS_DREAM_STYX_AGILITY_PASSIVE
+            if (!is_extra) {
+                const next_idx = this.get_next_idx(me.currently_triggering_card_idx);
+                const next_card = me.cards[next_idx];
+                if (next_card === "D14094" || next_card === "D14095") {
+                    dmg += Math.floor(this.get_debuff_count(0) * 0.5);
+                }
+            }
+#endif // HAS_DREAM_STYX_AGILITY_PASSIVE
 #ifdef HAS_NEXT_ATTACK_DEALS_EXTRA
             if (me.next_attack_deals_extra > 0) {
                 dmg += me.next_attack_deals_extra;
@@ -6071,18 +6194,30 @@ export class GameState {
                 this.increase_idx_force(my_idx, 1);
             }
 #endif //HAS_MAJESTIC_QI
+#ifdef HAS_DREAM_MAJESTIC_QI_PERMANENT
+            if (me.dream_majestic_qi_permanent > 0) {
+                this.increase_idx_force(my_idx, 1);
+            }
+#endif // HAS_DREAM_MAJESTIC_QI_PERMANENT
 #ifdef HAS_FORCE
             let force = me.force;
 #ifdef HAS_BONUS_FORCE
             force += me.bonus_force_amt;
 #endif // HAS_BONUS_FORCE
-            this.reduce_c_of_x(1, "force");
-            pct_multiplier += 10 * force;
 #ifdef HAS_CRASH_FIST_INCH_FORCE
             if (me.this_card_crash_fist_inch_force_stacks > 0) {
-                pct_multiplier += 10 * force;
+                force *= 2;
             }
 #endif // HAS_CRASH_FIST_INCH_FORCE
+            this.reduce_c_of_x(1, "force");
+#ifdef HAS_DREAM_GATHER_INTENSE_FORCE
+            if (this.has_dream_gather_intense_force(my_idx)) {
+                dmg += force;
+            } else
+#endif // HAS_DREAM_GATHER_INTENSE_FORCE
+            {
+                pct_multiplier += 10 * force;
+            }
 #endif // HAS_FORCE
 #ifdef HAS_WATER_SPIRIT_DIVE
             if (enemy.water_spirit_dive_stacks > 0) {
@@ -7217,6 +7352,11 @@ export class GameState {
             this.reduce_idx_x_by_c(0, x, this.players[0][x] - c);
         }
     }
+    set_x_up_to_c(x, c) {
+        if (this.players[0][x] < c) {
+            this.increase_idx_x_by_c(0, x, c - this.players[0][x]);
+        }
+    }
     do_echo_formation_thing(upgrade_amt) {
         const first_slot_id = this.players[0].cards[0];
         if (swogi[first_slot_id].is_continuous) {
@@ -8232,6 +8372,22 @@ export class GameState {
             this.activate_element_of_card(me.cards[idx]);
         }
 #endif // HAS_DREAM_COSMOS_SEAL_ADJACENT
+#ifdef HAS_DREAM_CRASH_FOOTWORK
+        {
+            const card_at_idx = me.cards[idx];
+            let fake = 0;
+            // L1-L5: card after D1412 counts as crash fist (prev_card is D1412)
+            if (prev_card === "D14121" || prev_card === "D14122" || prev_card === "D14123" ||
+                prev_card === "D14124" || prev_card === "D14125") {
+                fake = 1;
+            }
+            // L4-L5 only: card before D1412 also counts as crash fist (next_card is D1412)
+            if (next_card === "D14124" || next_card === "D14125") {
+                fake = 1;
+            }
+            me.dream_crash_footwork_fake_crash_fist = fake;
+        }
+#endif // HAS_DREAM_CRASH_FOOTWORK
     }
 #endif // HAS_CHECK_ADJACENT_BEFORE
 #ifdef HAS_CHECK_ADJACENT_AFTER

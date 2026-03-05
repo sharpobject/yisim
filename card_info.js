@@ -219,7 +219,10 @@ export const ready = (async () => {
         return swogi[card_id].name.includes("Sword Formation");
     }
     let is_crash_fist = function (card_id) {
-        return swogi[card_id].name.includes("Crash Fist");
+        return swogi[card_id].name.includes("Crash Fist") || card_id.startsWith("D1412");
+    }
+    let is_crash_fist_continue = function (card_id) {
+        return swogi[card_id].name === "Crash Fist - Continue" || card_id === "D14144" || card_id === "D14145";
     }
     let is_wood_spirit = function (card_id) {
         return swogi[card_id].name.includes("Wood Spirit");
@@ -341,6 +344,7 @@ export const ready = (async () => {
             is_cloud_sword: is_cloud_sword(card_id),
             is_sword_formation: is_sword_formation(card_id),
             is_crash_fist: is_crash_fist(card_id),
+            is_crash_fist_continue: is_crash_fist_continue(card_id),
             is_wood_spirit: is_wood_spirit(card_id),
             is_fire_spirit: is_fire_spirit(card_id),
             is_earth_spirit: is_earth_spirit(card_id),
