@@ -287,7 +287,7 @@ phase_templates = {}
 def load_phase_templates():
     global phase_templates
     for phase in range(1, 6):
-        path = f'phase{phase}.png'
+        path = f'upgrade_templates/phase{phase}.png'
         if os.path.exists(path):
             phase_templates[phase] = cv2.imread(path)
 
