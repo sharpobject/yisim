@@ -14244,19 +14244,19 @@
 	},
 	"D13021": {
 		"name": "Dream - Cosmos Seal",
-		"actions": [["qi", 1], ["atk", 4]]
+		"actions": [["qi", 1], ["deal_damage", 4]]
 	},
 	"D13022": {
-		"actions": [["qi", 1], ["atk", 6]]
+		"actions": [["qi", 1], ["deal_damage", 6]]
 	},
 	"D13023": {
-		"actions": [["qi", 1], ["atk", 8]]
+		"actions": [["qi", 1], ["deal_damage", 8]]
 	},
 	"D13024": {
-		"actions": [["qi", 2], ["atk", 10]]
+		"actions": [["qi", 2], ["deal_damage", 10]]
 	},
 	"D13025": {
-		"actions": [["qi", 3], ["atk", 12]]
+		"actions": [["qi", 3], ["deal_damage", 12]]
 	},
 	"D13031": {
 		"name": "Dream - Water Spirit Billows",
@@ -14359,19 +14359,19 @@
 	},
 	"D13081": {
 		"name": "Dream - Wood Spirit Formation",
-		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 3, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["continuous"], ["add_c_of_x", 3, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
 	},
 	"D13082": {
-		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 4, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["continuous"], ["add_c_of_x", 4, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
 	},
 	"D13083": {
-		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 5, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["continuous"], ["add_c_of_x", 5, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
 	},
 	"D13084": {
-		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 1, "wood_thorn"], ["add_c_of_x", 5, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 1, "wood_thorn"], ["continuous"], ["add_c_of_x", 5, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
 	},
 	"D13085": {
-		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 1, "wood_thorn"], ["add_c_of_x", 3, "convert_increase_atk_to_wood_thorn"]]
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 1, "wood_thorn"], ["continuous"], ["add_c_of_x", 3, "convert_increase_atk_to_wood_thorn"]]
 	},
 	"D13091": {
 		"name": "Dream - Fire Spirit Heart Fire",
@@ -14537,5 +14537,323 @@
 	},
 	"D13185": {
 		"actions": [["add_c_of_x", 15, "def"]]
+	},
+	"D14011": {
+		"name": "Dream - Elusive Footwork",
+		"actions": [["qi", 1], ["continuous"], ["add_c_of_x", 1, "dream_elusive_footwork_stacks"]]
+	},
+	"D14012": {
+		"actions": [["qi", 1], ["continuous"], ["add_c_of_x", 1, "dream_elusive_footwork_stacks"]]
+	},
+	"D14013": {
+		"actions": [["qi", 1], ["continuous"], ["add_c_of_x", 1, "dream_elusive_footwork_stacks"]]
+	},
+	"D14014": {
+		"actions": [["qi", 1], ["continuous"], ["add_c_of_x", 2, "dream_elusive_footwork_stacks"]]
+	},
+	"D14015": {
+		"actions": [["qi", 3], ["continuous"], ["add_c_of_x", 2, "dream_elusive_footwork_stacks"], ["set_x_up_to_c", "dream_elusive_footwork_reflect_cap", 2]]
+	},
+	"D14021": {
+		"name": "Dream - Shura Roar",
+		"actions": [["physique", 2], ["add_c_of_x", 2, "internal_injury"], ["add_enemy_c_of_x", 2, "internal_injury"]]
+	},
+	"D14022": {
+		"actions": [["physique", 2], ["add_c_of_x", 3, "internal_injury"], ["add_enemy_c_of_x", 3, "internal_injury"]]
+	},
+	"D14023": {
+		"actions": [["physique", 3], ["add_c_of_x", 3, "internal_injury"], ["add_enemy_c_of_x", 3, "internal_injury"]]
+	},
+	"D14024": {
+		"actions": [["physique", 3]]
+	},
+	"D14025": {
+		"actions": [["physique", 4]]
+	},
+	"D14031": {
+		"name": "Dream - Crash Fist Block",
+		"hp_cost": 3,
+		"actions": [["def", 12], ["add_c_of_x", 2, "later_crash_fist_poke_stacks"]]
+	},
+	"D14032": {
+		"hp_cost": 3,
+		"actions": [["def", 14], ["add_c_of_x", 3, "later_crash_fist_poke_stacks"]]
+	},
+	"D14033": {
+		"hp_cost": 6,
+		"actions": [["def", 18]]
+	},
+	"D14034": {
+		"hp_cost": 6,
+		"actions": [["def", 18]]
+	},
+	"D14035": {
+		"hp_cost": 6,
+		"actions": [["def", 18]]
+	},
+	"D14041": {
+		"name": "Dream - Exercise Soul",
+		"actions": [["atk", 5], ["def", 2], ["physique", 2]]
+	},
+	"D14042": {
+		"actions": [["atk", 6], ["def", 3], ["physique", 3]]
+	},
+	"D14043": {
+		"actions": [["atk", 7], ["def", 4], ["physique", 4]]
+	},
+	"D14044": {
+		"actions": [["atk", 2], ["def", 2], ["physique", 2]]
+	},
+	"D14045": {
+		"actions": [["atk", 4], ["def", 4], ["physique", 4]]
+	},
+	"D14051": {
+		"name": "Dream - Surging Waves",
+		"actions": [["qi", 2], ["add_c_of_x", 4, "agility"], ["consumption"]]
+	},
+	"D14052": {
+		"actions": [["qi", 2], ["add_c_of_x", 4, "agility"], ["consumption"]]
+	},
+	"D14053": {
+		"actions": [["qi", 2], ["add_c_of_x", 4, "agility"], ["consumption"]]
+	},
+	"D14054": {
+		"actions": [["qi", 2], ["add_c_of_x", 4, "agility"], ["consumption"]]
+	},
+	"D14055": {
+		"actions": [["qi", 2], ["add_c_of_x", 6, "agility"], ["consumption"]]
+	},
+	"D14061": {
+		"name": "Dream - Crash Fist Blitz",
+		"hp_cost": 4,
+		"actions": [["atk", 10]]
+	},
+	"D14062": {
+		"hp_cost": 4,
+		"actions": [["atk", 10]]
+	},
+	"D14063": {
+		"hp_cost": 4,
+		"actions": [["atk", 10]]
+	},
+	"D14064": {
+		"hp_cost": 4,
+		"actions": [["atk", 13]]
+	},
+	"D14065": {
+		"hp_cost": 4,
+		"actions": [["atk", 13]]
+	},
+	"D14071": {
+		"name": "Dream - Exercise Tendons",
+		"actions": [["physique", 2], ["def", 7]]
+	},
+	"D14072": {
+		"actions": [["physique", 2], ["def", 10]]
+	},
+	"D14073": {
+		"actions": [["physique", 3]]
+	},
+	"D14074": {
+		"actions": [["physique", 3]]
+	},
+	"D14075": {
+		"actions": [["physique", 4]]
+	},
+	"D14081": {
+		"name": "Dream - Crash Fist Bounce",
+		"hp_cost": 4,
+		"actions": [["def", 8], ["continuous"], ["add_c_of_x", 2, "dream_crash_fist_bounce_stacks"]]
+	},
+	"D14082": {
+		"hp_cost": 4,
+		"actions": [["def", 12], ["continuous"], ["add_c_of_x", 2, "dream_crash_fist_bounce_stacks"]]
+	},
+	"D14083": {
+		"hp_cost": 4,
+		"actions": [["def", 12], ["continuous"], ["add_c_of_x", 3, "dream_crash_fist_bounce_stacks"]]
+	},
+	"D14084": {
+		"hp_cost": 4,
+		"actions": [["def", 14], ["continuous"], ["add_c_of_x", 4, "dream_crash_fist_bounce_stacks"]]
+	},
+	"D14085": {
+		"hp_cost": 4,
+		"actions": [["def", 14], ["continuous"], ["add_c_of_x", 1, "dream_crash_fist_bounce_permanent"]]
+	},
+	"D14091": {
+		"name": "Dream - Styx Agility",
+		"hp_cost": 4,
+		"actions": [["atk", 5], ["atk", 5]]
+	},
+	"D14092": {
+		"hp_cost": 4,
+		"actions": [["atk", 6], ["atk", 6]]
+	},
+	"D14093": {
+		"hp_cost": 4,
+		"actions": [["atk", 7], ["atk", 7]]
+	},
+	"D14094": {
+		"hp_cost": 4,
+		"actions": [["atk", 1], ["atk", 1], ["add_c_of_x", 10, "agility"]]
+	},
+	"D14095": {
+		"hp_cost": 4,
+		"actions": [["atk", 3], ["atk", 3], ["add_c_of_x", 12, "agility"]]
+	},
+	"D14101": {
+		"name": "Dream - Vigorous Force",
+		"actions": [["atk", 6]]
+	},
+	"D14102": {
+		"actions": [["atk", 8]]
+	},
+	"D14103": {
+		"actions": [["atk", 10]]
+	},
+	"D14104": {
+		"actions": [["atk", 7]]
+	},
+	"D14105": {
+		"actions": [["atk", 12]]
+	},
+	"D14111": {
+		"name": "Dream - Mountain-Cleaving Palms",
+		"hp_cost": 2,
+		"actions": [["atk", 8]]
+	},
+	"D14112": {
+		"hp_cost": 2,
+		"actions": [["atk", 10]]
+	},
+	"D14113": {
+		"hp_cost": 2,
+		"actions": [["atk", 12]]
+	},
+	"D14114": {
+		"hp_cost": 2,
+		"actions": [["atk", 10]]
+	},
+	"D14115": {
+		"hp_cost": 2,
+		"actions": [["atk", 10]]
+	},
+	"D14121": {
+		"name": "Dream - Crash Footwork",
+		"actions": [["def", 8], ["add_c_of_x", 2, "agility"]]
+	},
+	"D14122": {
+		"actions": [["def", 11], ["add_c_of_x", 2, "agility"]]
+	},
+	"D14123": {
+		"actions": [["def", 14], ["add_c_of_x", 2, "agility"]]
+	},
+	"D14124": {
+		"actions": [["def", 8], ["add_c_of_x", 4, "agility"]]
+	},
+	"D14125": {
+		"actions": [["def", 8], ["add_c_of_x", 8, "agility"]]
+	},
+	"D14131": {
+		"name": "Dream - Windward Palms",
+		"actions": [["atk", 3], ["atk", 3]]
+	},
+	"D14132": {
+		"actions": [["atk", 4], ["atk", 4]]
+	},
+	"D14133": {
+		"actions": [["atk", 5], ["atk", 5]]
+	},
+	"D14134": {
+		"actions": [["atk", 5], ["atk", 5]]
+	},
+	"D14135": {
+		"actions": [["atk", 4], ["atk", 4]]
+	},
+	"D14141": {
+		"name": "Dream - Crash Fist Continue",
+		"hp_cost": 4,
+		"actions": [["atk", 3], ["atk", 3]]
+	},
+	"D14142": {
+		"hp_cost": 4,
+		"actions": [["atk", 4], ["atk", 4]]
+	},
+	"D14143": {
+		"hp_cost": 4,
+		"actions": [["atk", 5], ["atk", 5]]
+	},
+	"D14144": {
+		"hp_cost": 6,
+		"actions": [["atk", 6], ["atk", 6]]
+	},
+	"D14145": {
+		"hp_cost": 6,
+		"actions": [["atk", 9], ["atk", 9]]
+	},
+	"D14151": {
+		"name": "Dream - Bearing the Load",
+		"actions": [["def", 7]]
+	},
+	"D14152": {
+		"actions": [["def", 10]]
+	},
+	"D14153": {
+		"actions": [["def", 10]]
+	},
+	"D14154": {
+		"actions": [["def", 16]]
+	},
+	"D14155": {
+		"actions": [["def", 16]]
+	},
+	"D14161": {
+		"name": "Dream - Gather Intense Force",
+		"actions": [["heal", 2], ["add_c_of_x", 3, "force"]]
+	},
+	"D14162": {
+		"actions": [["heal", 4], ["add_c_of_x", 3, "force"]]
+	},
+	"D14163": {
+		"actions": [["heal", 6], ["add_c_of_x", 3, "force"]]
+	},
+	"D14164": {
+		"actions": [["add_c_of_x", 4, "max_force"], ["add_c_of_x", 5, "force"]]
+	},
+	"D14165": {
+		"actions": [["add_c_of_x", 5, "max_force"], ["add_c_of_x", 8, "force"]]
+	},
+	"D14171": {
+		"name": "Dream - Majestic Qi",
+		"actions": [["qi", 2], ["add_c_of_x", 1, "force"], ["continuous"], ["add_c_of_x", 2, "majestic_qi_stacks"]]
+	},
+	"D14172": {
+		"actions": [["qi", 2], ["add_c_of_x", 1, "force"], ["continuous"], ["add_c_of_x", 3, "majestic_qi_stacks"]]
+	},
+	"D14173": {
+		"actions": [["qi", 2], ["add_c_of_x", 1, "force"], ["continuous"], ["add_c_of_x", 4, "majestic_qi_stacks"]]
+	},
+	"D14174": {
+		"actions": [["qi", 3], ["add_c_of_x", 1, "force"], ["continuous"], ["add_c_of_x", 5, "majestic_qi_stacks"]]
+	},
+	"D14175": {
+		"actions": [["qi", 3], ["add_c_of_x", 1, "force"], ["continuous"]]
+	},
+	"D14181": {
+		"name": "Dream - Overwhelming Force",
+		"actions": [["physique", 2], ["heal", 6]]
+	},
+	"D14182": {
+		"actions": [["physique", 3], ["heal", 8]]
+	},
+	"D14183": {
+		"actions": [["physique", 4], ["heal", 10]]
+	},
+	"D14184": {
+		"actions": [["add_c_of_x", 5, "agility"]]
+	},
+	"D14185": {
+		"actions": [["add_c_of_x", 5, "agility"]]
 	}
 }
