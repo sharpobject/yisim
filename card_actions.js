@@ -1,3 +1,4 @@
+import { swogi } from './card_info.js';
 export const card_actions = {};
 export const card_opening = {};
 
@@ -4800,24 +4801,21 @@ card_actions["145073"] = (game) => {
 card_actions["145081"] = (game) => {
     game.atk(10);
     game.increase_idx_hp(0, 4);
-    game.add_c_of_x(4, "agility");
-    game.for_each_x_add_c_y("force", 2, "agility");
+    game.add_c_of_x(4 + game.players[0].force * 2, "agility");
 }
 
 // 145082
 card_actions["145082"] = (game) => {
     game.atk(12);
     game.increase_idx_hp(0, 6);
-    game.add_c_of_x(5, "agility");
-    game.for_each_x_add_c_y("force", 2, "agility");
+    game.add_c_of_x(5 + game.players[0].force * 2, "agility");
 }
 
 // 145083
 card_actions["145083"] = (game) => {
     game.atk(14);
     game.increase_idx_hp(0, 8);
-    game.add_c_of_x(6, "agility");
-    game.for_each_x_add_c_y("force", 2, "agility");
+    game.add_c_of_x(6 + game.players[0].force * 2, "agility");
 }
 
 // Rhyme Spirit Sword
@@ -14468,13 +14466,13 @@ card_actions["D11043"] = (game) => {
 
 // D11044
 card_actions["D11044"] = (game) => {
-    game.rep(2, () => { game.atk(4); });
+    for (let i = 0; i < 2; i++) { game.atk(4); }
     game.regain_sword_intent();
 }
 
 // D11045
 card_actions["D11045"] = (game) => {
-    game.rep(3, () => { game.atk(4); });
+    for (let i = 0; i < 3; i++) { game.atk(4); }
     game.regain_sword_intent();
 }
 
@@ -14898,7 +14896,7 @@ card_actions["D11153"] = (game) => {
 
 // D11154
 card_actions["D11154"] = (game) => {
-    game.rep(2, () => { game.atk(1); });
+    for (let i = 0; i < 2; i++) { game.atk(1); }
     const dmg = game.players[0].damage_dealt_to_hp_by_this_card_atk;
     if (dmg > 0) {
         game.add_enemy_c_of_x(Math.min(dmg, 5), "internal_injury");
@@ -14907,7 +14905,7 @@ card_actions["D11154"] = (game) => {
 
 // D11155
 card_actions["D11155"] = (game) => {
-    game.rep(2, () => { game.atk(1); });
+    for (let i = 0; i < 2; i++) { game.atk(1); }
     const dmg = game.players[0].damage_dealt_to_hp_by_this_card_atk;
     if (dmg > 0) {
         game.add_enemy_c_of_x(dmg, "internal_injury");
@@ -15195,35 +15193,35 @@ card_actions["D12045"] = (game) => {
 card_actions["D12051"] = (game) => {
     let debuffs = Math.min(game.get_debuff_count(1), 2);
     game.atk(6 + debuffs * 5);
-    game.reduce_random_debuff_by_c_n_times(1, debuffs);
+    game.reduce_idx_random_debuff_by_c_n_times(1, 1, debuffs);
 }
 
 // D12052
 card_actions["D12052"] = (game) => {
     let debuffs = Math.min(game.get_debuff_count(1), 2);
     game.atk(8 + debuffs * 5);
-    game.reduce_random_debuff_by_c_n_times(1, debuffs);
+    game.reduce_idx_random_debuff_by_c_n_times(1, 1, debuffs);
 }
 
 // D12053
 card_actions["D12053"] = (game) => {
     let debuffs = Math.min(game.get_debuff_count(1), 2);
     game.atk(10 + debuffs * 5);
-    game.reduce_random_debuff_by_c_n_times(1, debuffs);
+    game.reduce_idx_random_debuff_by_c_n_times(1, 1, debuffs);
 }
 
 // D12054
 card_actions["D12054"] = (game) => {
     let debuffs = Math.min(game.get_debuff_count(1), 3);
     game.atk(12 + debuffs * 6);
-    game.reduce_random_debuff_by_c_n_times(1, debuffs);
+    game.reduce_idx_random_debuff_by_c_n_times(1, 1, debuffs);
 }
 
 // D12055
 card_actions["D12055"] = (game) => {
     let debuffs = Math.min(game.get_debuff_count(1), 4);
     game.atk(14 + debuffs * 6);
-    game.reduce_random_debuff_by_c_n_times(1, debuffs);
+    game.reduce_idx_random_debuff_by_c_n_times(1, 1, debuffs);
 }
 
 // Dream - Flower Sentient
@@ -15600,27 +15598,32 @@ card_actions["D12145"] = (game) => {
 
 // Dream - Dotted Around
 card_actions["D12151"] = (game) => {
+    game.continuous();
     game.players[0].dream_dotted_around_countdown += 1;
 }
 
 // D12152
 card_actions["D12152"] = (game) => {
     game.increase_idx_qi(0, 1);
+    game.continuous();
     game.players[0].dream_dotted_around_countdown += 1;
 }
 
 // D12153
 card_actions["D12153"] = (game) => {
+    game.continuous();
     game.players[0].dream_dotted_around_countdown += 2;
 }
 
 // D12154
 card_actions["D12154"] = (game) => {
+    game.continuous();
     game.players[0].dream_dotted_around_countdown += 3;
 }
 
 // D12155
 card_actions["D12155"] = (game) => {
+    game.continuous();
     game.players[0].dream_dotted_around_per_turn += 1;
 }
 
@@ -15808,31 +15811,31 @@ card_actions["D13015"] = (game) => {
 // Dream - Cosmos Seal
 card_actions["D13021"] = (game) => {
     game.increase_idx_qi(0, 1);
-    game.atk(4);
+    game.deal_damage(4);
 }
 
 // D13022
 card_actions["D13022"] = (game) => {
     game.increase_idx_qi(0, 1);
-    game.atk(6);
+    game.deal_damage(6);
 }
 
 // D13023
 card_actions["D13023"] = (game) => {
     game.increase_idx_qi(0, 1);
-    game.atk(8);
+    game.deal_damage(8);
 }
 
 // D13024
 card_actions["D13024"] = (game) => {
     game.increase_idx_qi(0, 2);
-    game.atk(10);
+    game.deal_damage(10);
 }
 
 // D13025
 card_actions["D13025"] = (game) => {
     game.increase_idx_qi(0, 3);
-    game.atk(12);
+    game.deal_damage(12);
 }
 
 // Dream - Water Spirit Billows
@@ -16048,6 +16051,7 @@ card_actions["D13075"] = (game) => {
 card_actions["D13081"] = (game) => {
     game.activate_wood_spirit();
     game.increase_idx_qi(0, 1);
+    game.continuous();
     game.add_c_of_x(3, "dream_wood_spirit_formation_attack_steal_hp_stacks");
 }
 
@@ -16055,6 +16059,7 @@ card_actions["D13081"] = (game) => {
 card_actions["D13082"] = (game) => {
     game.activate_wood_spirit();
     game.increase_idx_qi(0, 1);
+    game.continuous();
     game.add_c_of_x(4, "dream_wood_spirit_formation_attack_steal_hp_stacks");
 }
 
@@ -16062,6 +16067,7 @@ card_actions["D13082"] = (game) => {
 card_actions["D13083"] = (game) => {
     game.activate_wood_spirit();
     game.increase_idx_qi(0, 1);
+    game.continuous();
     game.add_c_of_x(5, "dream_wood_spirit_formation_attack_steal_hp_stacks");
 }
 
@@ -16070,6 +16076,7 @@ card_actions["D13084"] = (game) => {
     game.activate_wood_spirit();
     game.increase_idx_qi(0, 1);
     game.add_c_of_x(1, "wood_thorn");
+    game.continuous();
     game.add_c_of_x(5, "dream_wood_spirit_formation_attack_steal_hp_stacks");
 }
 
@@ -16078,6 +16085,7 @@ card_actions["D13085"] = (game) => {
     game.activate_wood_spirit();
     game.increase_idx_qi(0, 1);
     game.add_c_of_x(1, "wood_thorn");
+    game.continuous();
     game.add_c_of_x(3, "convert_increase_atk_to_wood_thorn");
 }
 
@@ -16967,30 +16975,35 @@ card_actions["D14165"] = (game) => {
 card_actions["D14171"] = (game) => {
     game.increase_idx_qi(0, 2);
     game.add_c_of_x(1, "force");
+    game.continuous();
     game.add_c_of_x(2, "majestic_qi_stacks");
 }
 
 card_actions["D14172"] = (game) => {
     game.increase_idx_qi(0, 2);
     game.add_c_of_x(1, "force");
+    game.continuous();
     game.add_c_of_x(3, "majestic_qi_stacks");
 }
 
 card_actions["D14173"] = (game) => {
     game.increase_idx_qi(0, 2);
     game.add_c_of_x(1, "force");
+    game.continuous();
     game.add_c_of_x(4, "majestic_qi_stacks");
 }
 
 card_actions["D14174"] = (game) => {
     game.increase_idx_qi(0, 3);
     game.add_c_of_x(1, "force");
+    game.continuous();
     game.add_c_of_x(5, "majestic_qi_stacks");
 }
 
 card_actions["D14175"] = (game) => {
     game.increase_idx_qi(0, 3);
     game.add_c_of_x(1, "force");
+    game.continuous();
     game.add_c_of_x(1, "dream_majestic_qi_permanent");
 }
 

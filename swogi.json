@@ -14244,19 +14244,19 @@
 	},
 	"D13021": {
 		"name": "Dream - Cosmos Seal",
-		"actions": [["qi", 1], ["atk", 4]]
+		"actions": [["qi", 1], ["deal_damage", 4]]
 	},
 	"D13022": {
-		"actions": [["qi", 1], ["atk", 6]]
+		"actions": [["qi", 1], ["deal_damage", 6]]
 	},
 	"D13023": {
-		"actions": [["qi", 1], ["atk", 8]]
+		"actions": [["qi", 1], ["deal_damage", 8]]
 	},
 	"D13024": {
-		"actions": [["qi", 2], ["atk", 10]]
+		"actions": [["qi", 2], ["deal_damage", 10]]
 	},
 	"D13025": {
-		"actions": [["qi", 3], ["atk", 12]]
+		"actions": [["qi", 3], ["deal_damage", 12]]
 	},
 	"D13031": {
 		"name": "Dream - Water Spirit Billows",
@@ -14359,19 +14359,19 @@
 	},
 	"D13081": {
 		"name": "Dream - Wood Spirit Formation",
-		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 3, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["continuous"], ["add_c_of_x", 3, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
 	},
 	"D13082": {
-		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 4, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["continuous"], ["add_c_of_x", 4, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
 	},
 	"D13083": {
-		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 5, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["continuous"], ["add_c_of_x", 5, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
 	},
 	"D13084": {
-		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 1, "wood_thorn"], ["add_c_of_x", 5, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 1, "wood_thorn"], ["continuous"], ["add_c_of_x", 5, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
 	},
 	"D13085": {
-		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 1, "wood_thorn"], ["add_c_of_x", 3, "convert_increase_atk_to_wood_thorn"]]
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 1, "wood_thorn"], ["continuous"], ["add_c_of_x", 3, "convert_increase_atk_to_wood_thorn"]]
 	},
 	"D13091": {
 		"name": "Dream - Fire Spirit Heart Fire",
@@ -14826,16 +14826,16 @@
 	},
 	"D14171": {
 		"name": "Dream - Majestic Qi",
-		"actions": [["qi", 2], ["add_c_of_x", 1, "force"], ["add_c_of_x", 2, "majestic_qi_stacks"], ["continuous"]]
+		"actions": [["qi", 2], ["add_c_of_x", 1, "force"], ["continuous"], ["add_c_of_x", 2, "majestic_qi_stacks"]]
 	},
 	"D14172": {
-		"actions": [["qi", 2], ["add_c_of_x", 1, "force"], ["add_c_of_x", 3, "majestic_qi_stacks"], ["continuous"]]
+		"actions": [["qi", 2], ["add_c_of_x", 1, "force"], ["continuous"], ["add_c_of_x", 3, "majestic_qi_stacks"]]
 	},
 	"D14173": {
-		"actions": [["qi", 2], ["add_c_of_x", 1, "force"], ["add_c_of_x", 4, "majestic_qi_stacks"], ["continuous"]]
+		"actions": [["qi", 2], ["add_c_of_x", 1, "force"], ["continuous"], ["add_c_of_x", 4, "majestic_qi_stacks"]]
 	},
 	"D14174": {
-		"actions": [["qi", 3], ["add_c_of_x", 1, "force"], ["add_c_of_x", 5, "majestic_qi_stacks"], ["continuous"]]
+		"actions": [["qi", 3], ["add_c_of_x", 1, "force"], ["continuous"], ["add_c_of_x", 5, "majestic_qi_stacks"]]
 	},
 	"D14175": {
 		"actions": [["qi", 3], ["add_c_of_x", 1, "force"], ["continuous"]]

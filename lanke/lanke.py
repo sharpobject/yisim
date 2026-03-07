@@ -13,6 +13,13 @@ import easyocr
 window = None
 reader = easyocr.Reader(['en'])  # Initialize EasyOCR
 talent_name_to_attr = json.load(open('talents.json'))
+pure_vase_element_to_card = {
+    "Five Elements Pure Vase Wood": "131011",
+    "Five Elements Pure Vase Fire": "131031",
+    "Five Elements Pure Vase Earth": "131051",
+    "Five Elements Pure Vase Metal": "131071",
+    "Five Elements Pure Vase Water": "131091",
+}
 
 def capture_window(window_title, idx=0):
     global window
@@ -74,16 +81,37 @@ def preprocess_card_image(roi, multiplier=2):
     mask_inv = cv2.bitwise_not(mask)
     return mask_inv
 
-def load_card_templates(template_dir: str) -> Dict[str, np.ndarray]:
-    templates = {}
+def load_card_templates(template_dir: str, target_shape=None):
+    """Load templates and build a matrix for fast matching.
+    Returns (template_names, template_matrix) where template_matrix has shape
+    (N, pixels) with each row being a normalized template vector."""
+    raw_templates = {}
     for filename in os.listdir(template_dir):
         if filename.endswith('.png'):
             card_name = os.path.splitext(filename)[0]
             image_path = os.path.join(template_dir, filename)
             image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
             if image is not None:
-                templates[card_name] = image
-    return templates
+                raw_templates[card_name] = image
+    if not raw_templates:
+        return [], None
+    # Determine target shape from first template if not specified
+    if target_shape is None:
+        target_shape = next(iter(raw_templates.values())).shape
+    template_names = []
+    vectors = []
+    for card_name, image in raw_templates.items():
+        if image.shape != target_shape:
+            image = cv2.resize(image, (target_shape[1], target_shape[0]))
+        vec = image.astype(np.float32).flatten()
+        vec = vec - vec.mean()
+        norm = np.linalg.norm(vec)
+        if norm > 0:
+            vec = vec / norm
+        template_names.append(card_name)
+        vectors.append(vec)
+    template_matrix = np.stack(vectors)
+    return template_names, template_matrix
 
 def load_upgrade_templates(template_dir: str):
     upgrade_templates = {}
@@ -115,22 +143,17 @@ def load_talent_templates(base_dir: str):
                         position_templates[talent_name] = image
         talent_templates.append(position_templates)
 
-def find_best_match(card_image: np.ndarray, templates: Dict[str, np.ndarray]) -> Tuple[str, float]:
-    best_match = None
-    best_score = float('-inf')
-
-    for card_name, template in templates.items():
-        if template.shape != card_image.shape:
-            template = cv2.resize(template, card_image.shape[::-1])
-
-        result = cv2.matchTemplate(card_image, template, cv2.TM_CCOEFF_NORMED)
-        _, max_val, _, _ = cv2.minMaxLoc(result)
-
-        if max_val > best_score:
-            best_score = max_val
-            best_match = card_name
-
-    return best_match, best_score
+def find_best_match(card_image: np.ndarray, template_names, template_matrix) -> Tuple[str, float]:
+    if template_matrix is None or len(template_names) == 0:
+        return None, 0.0
+    vec = card_image.astype(np.float32).flatten()
+    vec = vec - vec.mean()
+    norm = np.linalg.norm(vec)
+    if norm > 0:
+        vec = vec / norm
+    scores = template_matrix @ vec
+    best_idx = np.argmax(scores)
+    return template_names[best_idx], float(scores[best_idx])
 
 def intt(x):
     try:
@@ -236,30 +259,53 @@ def detect_talents(image: np.ndarray, talent_templates: List[Dict[str, np.ndarra
 
     return detected_talents
 
-def detect_card(image, x, y, width, height, templates, upgrade_templates, card_idx, filename, preprocess=True):
-    # save the image for debugging
-    cv2.imwrite(f'{filename}_card_{card_idx}.png', image)
-    # print the dimensions and the x,y,w,h of the card
-    #print(f"Card {card_idx}: x={x}, y={y}, width={width}, height={height}")
-    # print the image dimensions
-    #print(f"Image dimensions: {image.shape}")
+def detect_card(image, x, y, width, height, templates, upgrade_templates, card_idx, filename, preprocess=True, save=True):
     card_roi = image[y:y+height, x:x+width]
-    # save the card roi for debugging
-    cv2.imwrite(f'{filename}_card_{card_idx}_roi.png', card_roi)
     if preprocess:
         card_preprocessed = preprocess_card_image(card_roi)
     else:
         card_preprocessed = card_roi
 
-    cv2.imwrite(f'{filename}_card_{card_idx}_preprocessed.png', card_preprocessed)
+    if save:
+        cv2.imwrite(f'{filename}_card_{card_idx}.png', image)
+        cv2.imwrite(f'{filename}_card_{card_idx}_roi.png', card_roi)
+        cv2.imwrite(f'{filename}_card_{card_idx}_preprocessed.png', card_preprocessed)
 
-    height = 30
-    y += 200
-    card_roi = image[y:y+height, x:x+width]
+    template_names, template_matrix = templates
+    best_match, score = find_best_match(card_preprocessed, template_names, template_matrix)
 
-    best_match, score = find_best_match(card_preprocessed, templates)
-    upgrade_level = detect_upgrade_level(card_roi, upgrade_templates)
-    return best_match, score, upgrade_level
+    # Region below card art contains both level dots (regular) and phase indicator (dream)
+    indicator_roi = image[y+200:y+245, x:x+width]
+    if best_match and best_match.startswith("Dream "):
+        upgrade_level = detect_dream_phase(indicator_roi)
+    else:
+        upgrade_level = detect_upgrade_level(indicator_roi[:30], upgrade_templates)
+    return best_match, score, upgrade_level, card_roi, card_preprocessed
+
+
+phase_templates = {}
+def load_phase_templates():
+    global phase_templates
+    for phase in range(1, 6):
+        path = f'phase{phase}.png'
+        if os.path.exists(path):
+            phase_templates[phase] = cv2.imread(path)
+
+def detect_dream_phase(indicator_roi):
+    """Detect dream card phase by template matching against phase color images."""
+    # Phase region is the bottom 25px of the indicator ROI
+    phase_roi = indicator_roi[20:]
+    best_phase = 1
+    best_score = float('-inf')
+    for phase, template in phase_templates.items():
+        if template.shape != phase_roi.shape:
+            template = cv2.resize(template, (phase_roi.shape[1], phase_roi.shape[0]))
+        result = cv2.matchTemplate(phase_roi, template, cv2.TM_CCOEFF_NORMED)
+        _, max_val, _, _ = cv2.minMaxLoc(result)
+        if max_val > best_score:
+            best_score = max_val
+            best_phase = phase
+    return best_phase
 
 
 def get_info(filename, n_hand_cards):
@@ -301,24 +347,27 @@ def get_info(filename, n_hand_cards):
 
     talents = detect_talents(image, talent_templates, filename)
 
-    deck = []
-    problems = 0
-    total_score = 0
     best_total_score = 0
     best_deck = []
     best_problems = 0
     best_dy = 0
-    for dy in [6, 0]:
+    best_rois = []
+    best_preprocessed = []
+    for dy in [6, 0, 8.5, 9.5]:
         deck = []
         total_score = 0
         problems = 0
+        rois = []
+        preprocessed = []
         for i in range(8):
             x = card_x + i * card_horizontal_interval
             this_x = x * 2
-            this_y = int(card_y * 2) + dy * 2
+            this_y = int(card_y * 2) + int(dy * 2)
             this_width = card_width * 2
             this_height = card_height * 2
-            best_match, score, upgrade_level = detect_card(image, this_x, this_y, this_width, this_height, templates, upgrade_templates, "deck"+str(i+1), filename_trimmed)
+            best_match, score, upgrade_level, card_roi, card_prep = detect_card(image, this_x, this_y, this_width, this_height, templates, upgrade_templates, "deck"+str(i+1), filename_trimmed, save=False)
+            rois.append(card_roi)
+            preprocessed.append(card_prep)
             if score < 0.3:
                 best_match = "Normal Attack"
                 upgrade_level = 1
@@ -333,9 +382,21 @@ def get_info(filename, n_hand_cards):
             best_deck = deck
             best_problems = problems
             best_dy = dy
+            best_rois = rois
+            best_preprocessed = preprocessed
     problems = best_problems
     deck = best_deck
     print("best dy was " + str(best_dy))
+    for i in range(8):
+        cv2.imwrite(f'{filename_trimmed}_card_deck{i+1}_roi.png', best_rois[i])
+        cv2.imwrite(f'{filename_trimmed}_card_deck{i+1}_preprocessed.png', best_preprocessed[i])
+        # Save phase indicator strip (for dream cards)
+        x = card_x + i * card_horizontal_interval
+        this_x = int(x * 2)
+        this_y = int(card_y * 2) + int(best_dy * 2)
+        this_width = card_width * 2
+        phase_roi = image[this_y + 220:this_y + 245, this_x:this_x + this_width]
+        #cv2.imwrite(f'{filename_trimmed}_card_deck{i+1}_phase.png', phase_roi)
     print(f"Total score: {best_total_score}")
     hand_cards = detect_hand_cards(image, n_hand_cards, templates)
     health = intt(health)
@@ -357,6 +418,10 @@ def get_info(filename, n_hand_cards):
         ret['max_physique'] = max_physique_n
     for i, talent in enumerate(talents, 1):
         if talent:
+            if talent in pure_vase_element_to_card:
+                ret['five_elements_pure_vase_stacks'] = 1
+                ret.setdefault('five_elements_pure_vase_cards', []).append(pure_vase_element_to_card[talent])
+                continue
             if talent not in talent_name_to_attr:
                 print(f"Unknown talent: {talent}")
                 problems += 1
@@ -377,27 +442,23 @@ def load_card_positions(file_path):
     with open(file_path, 'r') as f:
         return json.load(f)
 
-def rotate_image(image, angle):
+def rotate_and_crop(image, angle, crop_x, crop_y, crop_w, crop_h):
+    """Rotate image and extract a small crop, without materializing the full rotated image."""
     height, width = image.shape[:2]
     center = (width // 2, height // 2)
-    rotation_matrix = cv2.getRotationMatrix2D(center, angle, 1.0)
+    M = cv2.getRotationMatrix2D(center, angle, 1.0)
 
-    abs_cos = abs(rotation_matrix[0, 0])
-    abs_sin = abs(rotation_matrix[0, 1])
+    abs_cos = abs(M[0, 0])
+    abs_sin = abs(M[0, 1])
     new_width = int(height * abs_sin + width * abs_cos)
     new_height = int(height * abs_cos + width * abs_sin)
 
-    rotation_matrix[0, 2] += new_width / 2 - center[0]
-    rotation_matrix[1, 2] += new_height / 2 - center[1]
+    M[0, 2] += new_width / 2 - center[0] - crop_x
+    M[1, 2] += new_height / 2 - center[1] - crop_y
 
-    rotated = cv2.warpAffine(image, rotation_matrix, (new_width, new_height), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=(0, 0, 0))
-    # save the rotated image
-    cv2.imwrite('rotated.png', rotated)
-    return rotated, rotation_matrix
+    return cv2.warpAffine(image, M, (crop_w, crop_h), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=(0, 0, 0))
 
 def detect_hand_cards(image, hand_size, templates):
-    #preprocess the entire image
-    #image = preprocess_card_image(image)
     hand_cards = []
     card_width, card_height = 40, 220
     for card_index in range(1, hand_size + 1):
@@ -406,13 +467,12 @@ def detect_hand_cards(image, hand_size, templates):
             x, y = position['x'], position['y']
             angle = position['angle']
 
-            # Rotate the image
-            rotated_image, rotation_matrix= rotate_image(image, angle)
-
             x //= 2
             y //= 2
 
-            best_match, score, upgrade_level = detect_card(rotated_image, x, y, card_width, card_height, templates, upgrade_templates, card_index, f"hand{card_index}")
+            # Crop enough for both the card ROI and the upgrade level strip below it
+            cropped = rotate_and_crop(image, angle, x, y, card_width, card_height + 30)
+            best_match, score, upgrade_level, _, _ = detect_card(cropped, 0, 0, card_width, card_height, templates, upgrade_templates, card_index, f"hand{card_index}")
             print(f"Hand card {card_index}: {best_match} (Score: {score:.2f}, Level: {upgrade_level})")
 
             hand_cards.append(f"{best_match} {upgrade_level}")
@@ -426,6 +486,7 @@ def main(hand_size, use_previous_screenshot=False, card_template_dir='card_templ
     templates = load_card_templates(card_template_dir)
     upgrade_templates = load_upgrade_templates('upgrade_templates')
     load_talent_templates('talent_templates')
+    load_phase_templates()
     card_positions = load_card_positions('card_positions.json')
 
     for x in range(2):

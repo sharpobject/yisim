@@ -1161,7 +1161,11 @@ export class Player {
 #endif // HAS_HERBS_FLOURISH
 #ifdef HAS_FIVE_ELEMENTS_GATHER_QI
         this.five_elements_gather_qi_stacks = 0;
-        this.can_trigger_five_elements_gather_qi = true;
+        this.five_elements_gather_qi_wood = 1;
+        this.five_elements_gather_qi_fire = 1;
+        this.five_elements_gather_qi_earth = 1;
+        this.five_elements_gather_qi_metal = 1;
+        this.five_elements_gather_qi_water = 1;
 #endif // HAS_FIVE_ELEMENTS_GATHER_QI
 
 
@@ -2681,6 +2685,17 @@ export class GameState {
         return false;
     }
 #endif // HAS_DREAM_DHARMA_SPIRIT_SWORD
+#ifdef HAS_DREAM_BEARING_LOAD_PASSIVE
+    has_dream_bearing_load_in_deck() {
+        const me = this.players[0];
+        for (let i = 0; i < me.cards.length; i++) {
+            if (swogi[me.cards[i]].name === "Dream - Bearing the Load") {
+                return true;
+            }
+        }
+        return false;
+    }
+#endif // HAS_DREAM_BEARING_LOAD_PASSIVE
     do_sword_qi(card_id) {
         const me = this.players[0];
         if (me.sword_qi <= 0) {
@@ -3880,7 +3895,7 @@ export class GameState {
         this.for_each_x_reduce_c_pct_y("def", def_decay, "def");
 #ifdef HAS_DREAM_BEARING_LOAD_PASSIVE
         const def_lost = def_before_decay - me.def;
-        if (def_lost > 0) {
+        if (def_lost > 0 && this.has_dream_bearing_load_in_deck()) {
             this.heal(def_lost);
         }
 #endif // HAS_DREAM_BEARING_LOAD_PASSIVE
@@ -4377,7 +4392,7 @@ export class GameState {
     do_nether_void_canine(card_idx) {
         if (this.players[0].nether_void_canine_stacks > 0) {
             const exising_id = this.players[0].cards[card_idx];
-            const existing_upgrade_level = exising_id.substring(exising_id.length-1);
+            const existing_upgrade_level = exising_id.startsWith("D") ? "1" : exising_id.substring(exising_id.length-1);
             const new_id = "60101" + existing_upgrade_level;
             this.log("Nether Void Canine is replacing " + format_card(exising_id) + " with " + format_card(new_id));
             this.players[0].cards[card_idx] = new_id;
@@ -4598,9 +4613,6 @@ export class GameState {
 #ifdef HAS_RESONANCE_CAT_PAW
         me.can_trigger_resonance_cat_paw = true;
 #endif // HAS_RESONANCE_CAT_PAW
-#ifdef HAS_FIVE_ELEMENTS_GATHER_QI
-        me.can_trigger_five_elements_gather_qi = true;
-#endif // HAS_FIVE_ELEMENTS_GATHER_QI
 #ifdef HAS_DREAM_DOTTED_AROUND_PER_TURN
         me.can_trigger_dream_dotted_around = true;
 #endif // HAS_DREAM_DOTTED_AROUND_PER_TURN
@@ -5599,10 +5611,17 @@ export class GameState {
         }
 #endif // HAS_HERBS_FLOURISH
 #ifdef HAS_FIVE_ELEMENTS_GATHER_QI
-        if (me.five_elements_gather_qi_stacks > 0 &&
-            me.can_trigger_five_elements_gather_qi) {
-            this.increase_idx_qi(idx, me.five_elements_gather_qi_stacks);
-            me.can_trigger_five_elements_gather_qi = false;
+        if (me.five_elements_gather_qi_stacks > 0) {
+            let gather_qi_flag = null;
+            if (x === "activate_wood_spirit_stacks") gather_qi_flag = "five_elements_gather_qi_wood";
+            else if (x === "activate_fire_spirit_stacks") gather_qi_flag = "five_elements_gather_qi_fire";
+            else if (x === "activate_earth_spirit_stacks") gather_qi_flag = "five_elements_gather_qi_earth";
+            else if (x === "activate_metal_spirit_stacks") gather_qi_flag = "five_elements_gather_qi_metal";
+            else if (x === "activate_water_spirit_stacks") gather_qi_flag = "five_elements_gather_qi_water";
+            if (me[gather_qi_flag] > 0) {
+                me[gather_qi_flag] = 0;
+                this.increase_idx_qi(idx, me.five_elements_gather_qi_stacks);
+            }
         }
 #endif // HAS_FIVE_ELEMENTS_GATHER_QI
         me[x] += amt;
@@ -6701,14 +6720,14 @@ export class GameState {
     // detect whether the game outcome actually depends on randomness.
     // in cases where the player has 2 debuffs and this effect clears
     // both, it's not really random - the order doesn't matter.
-    reduce_random_debuff_by_c_n_times(c,n) {
+    reduce_idx_random_debuff_by_c_n_times(idx, c, n) {
         if (n === 0) {
             return;
         }
         let my_debuff_names = [];
         let my_debuff_stack_counts = [];
         let necessary_times = 0;
-        const me = this.players[0];
+        const me = this.players[idx];
         for (let i=0; i<DEBUFF_NAMES.length; i++) {
             if (me[DEBUFF_NAMES[i]] > 0) {
                 my_debuff_names.push(DEBUFF_NAMES[i]);
@@ -6726,38 +6745,17 @@ export class GameState {
             if (my_debuff_names.length === 0) {
                 break;
             }
-            /*
-            // if internal injury is active, reduce it by c
-            if (me.internal_injury > 0) {
-                this.reduce_idx_x_by_c(0, "internal_injury", c);
-                // get the index of internal injury
-                const debuff_idx = my_debuff_names.indexOf("internal_injury");
-                if (me.internal_injury === 0) {
-                    my_debuff_names.splice(debuff_idx, 1);
-                    my_debuff_stack_counts.splice(debuff_idx, 1);
-                }
-                continue;
-            }
-            // if flaw is active, reduce it by c
-            if (me.flaw > 0) {
-                this.reduce_idx_x_by_c(0, "flaw", c);
-                // get the index of flaw
-                const debuff_idx = my_debuff_names.indexOf("flaw");
-                if (me.flaw === 0) {
-                    my_debuff_names.splice(debuff_idx, 1);
-                    my_debuff_stack_counts.splice(debuff_idx, 1);
-                }
-                continue;
-            }
-            */
             let debuff_idx = Math.floor(Math.random() * my_debuff_names.length);
             let debuff_name = my_debuff_names[debuff_idx];
-            this.reduce_idx_x_by_c(0, debuff_name, c);
+            this.reduce_idx_x_by_c(idx, debuff_name, c);
             if (me[debuff_name] === 0) {
                 my_debuff_names.splice(debuff_idx, 1);
                 my_debuff_stack_counts.splice(debuff_idx, 1);
             }
         }
+    }
+    reduce_random_debuff_by_c_n_times(c, n) {
+        this.reduce_idx_random_debuff_by_c_n_times(0, c, n);
     }
     transfer_random_debuff() {
         let my_debuff_names = [];
@@ -7359,9 +7357,12 @@ export class GameState {
     do_echo_formation_thing(upgrade_amt) {
         const first_slot_id = this.players[0].cards[0];
         if (swogi[first_slot_id].is_continuous) {
-            const existing_upgrade_level = first_slot_id.substring(first_slot_id.length-1);
-            const new_upgrade_level = Math.min(3, parseInt(existing_upgrade_level) + upgrade_amt);
-            const new_card_id = first_slot_id.substring(0, first_slot_id.length-1) + new_upgrade_level;
+            let new_card_id = first_slot_id;
+            if (!first_slot_id.startsWith("D")) {
+                const existing_upgrade_level = first_slot_id.substring(first_slot_id.length-1);
+                const new_upgrade_level = Math.min(3, parseInt(existing_upgrade_level) + upgrade_amt);
+                new_card_id = first_slot_id.substring(0, first_slot_id.length-1) + new_upgrade_level;
+            }
             this.log("triggering " + format_card(new_card_id));
             this.trigger_card(new_card_id, this.players[0].currently_playing_card_idx);
         }
@@ -7459,9 +7460,12 @@ export class GameState {
         const next_id = me.cards[next_idx];
         if (this.cards_have_generating_interaction(prev_id, next_id)) {
             this.activate_element_of_card(next_id);
-            const next_upgrade_level = parseInt(next_id.substring(next_id.length-1));
-            upgrade_level = Math.min(upgrade_level, next_upgrade_level);
-            const new_id = next_id.substring(0, next_id.length-1) + upgrade_level;
+            let new_id = next_id;
+            if (!next_id.startsWith("D")) {
+                const next_upgrade_level = parseInt(next_id.substring(next_id.length-1));
+                upgrade_level = Math.min(upgrade_level, next_upgrade_level);
+                new_id = next_id.substring(0, next_id.length-1) + upgrade_level;
+            }
             this.log("triggering " + format_card(new_id));
             this.trigger_card(new_id, idx);
         }
