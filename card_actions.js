@@ -8428,18 +8428,33 @@ card_actions["405033"] = (game) => {
 card_actions["406011"] = (game) => {
     game.atk(30);
     game.reduce_enemy_c_of_x(4, "destiny");
+    const enemy = game.players[1];
+    if (enemy.destiny <= 0) {
+        enemy.hp = 0;
+        enemy.got_void_split_speared = true;
+    }
 }
 
 // 406012
 card_actions["406012"] = (game) => {
     game.atk(35);
     game.reduce_enemy_c_of_x(7, "destiny");
+    const enemy = game.players[1];
+    if (enemy.destiny <= 0) {
+        enemy.hp = 0;
+        enemy.got_void_split_speared = true;
+    }
 }
 
 // 406013
 card_actions["406013"] = (game) => {
     game.atk(40);
     game.reduce_enemy_c_of_x(10, "destiny");
+    const enemy = game.players[1];
+    if (enemy.destiny <= 0) {
+        enemy.hp = 0;
+        enemy.got_void_split_speared = true;
+    }
 }
 
 // Qimen Monster-Locking Tower
@@ -12447,7 +12462,7 @@ card_actions["903013"] = (game) => {
 card_actions["904011"] = (game) => {
     const amt =  Math.floor(game.players[0].hp_lost/4) + 20;
     game.add_c_of_x(amt, "max_hp");
-    game.increase_idx_hp(0, amt, true);
+    game.increase_idx_hp(0, amt);
     game.consumption();
 }
 
@@ -12455,7 +12470,7 @@ card_actions["904011"] = (game) => {
 card_actions["904012"] = (game) => {
     const amt =  Math.floor(game.players[0].hp_lost/4) + 25;
     game.add_c_of_x(amt, "max_hp");
-    game.increase_idx_hp(0, amt, true);
+    game.increase_idx_hp(0, amt);
     game.consumption();
 }
 
@@ -12463,7 +12478,7 @@ card_actions["904012"] = (game) => {
 card_actions["904013"] = (game) => {
     const amt =  Math.floor(game.players[0].hp_lost/4) + 30;
     game.add_c_of_x(amt, "max_hp");
-    game.increase_idx_hp(0, amt, true);
+    game.increase_idx_hp(0, amt);
     game.consumption();
 }
 
@@ -12571,21 +12586,21 @@ card_actions["904043"] = (game) => {
 
 // Xuanming Snowdrop
 card_actions["904051"] = (game) => {
-    game.increase_idx_hp(0, 9, true);
+    game.increase_idx_hp(0, 9);
     game.increase_idx_def(0, 12);
     game.for_each_x_add_c_pct_y("hp_lost", 33.333334, "next_turn_def");
 }
 
 // 904052
 card_actions["904052"] = (game) => {
-    game.increase_idx_hp(0, 9, true);
+    game.increase_idx_hp(0, 9);
     game.increase_idx_def(0, 17);
     game.for_each_x_add_c_pct_y("hp_lost", 33.333334, "next_turn_def");
 }
 
 // 904053
 card_actions["904053"] = (game) => {
-    game.increase_idx_hp(0, 9, true);
+    game.increase_idx_hp(0, 9);
     game.increase_idx_def(0, 22);
     game.for_each_x_add_c_pct_y("hp_lost", 33.333334, "next_turn_def");
 }

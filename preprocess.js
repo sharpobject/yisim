@@ -259,6 +259,7 @@ const deps = {
         "heavenly_maiden_white_jade_ring_stacks", "92601"],
     HAS_CANNOT_ACT: ["cannot_act_stacks", "heptastar_soulstat_stacks",
         "23502", "40602", "62401", "63502"],
+    HAS_LAST_STAND: ["can_last_stand", "not_dead_yet"],
     HAS_REVIVE: ["HAS_ASHES_PHOENIX", "HAS_FLAME_SOUL_REBIRTH",
         "HAS_HEAVENLY_MAIDEN_WHITE_JADE_RING"],
     HAS_SHADOW_OWL_RABBIT: ["shadow_owl_rabbit_stacks", "50502"],
@@ -1216,6 +1217,12 @@ const deps = {
     HAS_DREAM_MAJESTIC_QI_PERMANENT: [
         "dream_majestic_qi_permanent",
         "D14175"],
+    HAS_ANY_REVIVE_OR_PANGU_AXE: [
+        "HAS_REVIVE",
+        "HAS_PANGU_AXE",
+        "HAS_VOID_SPLIT_SPEAR",
+    ],
+    HAS_VOID_SPLIT_SPEAR: ["40601"],
 };
 
 const implies = {};

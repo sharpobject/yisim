@@ -799,6 +799,9 @@ export class Player {
 #ifdef HAS_CAREFREE_GUQIN
         this.carefree_guqin_stacks = 0;
 #endif // HAS_CAREFREE_GUQIN
+#ifdef HAS_VOID_SPLIT_SPEAR
+        this.got_void_split_speared = false;
+#endif // HAS_VOID_SPLIT_SPEAR
 
 
         // spiritual pet cards
@@ -826,6 +829,10 @@ export class Player {
 #ifdef HAS_ASHES_PHOENIX
         this.ashes_phoenix_stacks = 0;
 #endif // HAS_ASHES_PHOENIX
+#ifdef HAS_LAST_STAND
+        this.can_last_stand = 0;
+        this.not_dead_yet = 0;
+#endif // HAS_LAST_STAND
 #ifdef HAS_THREE_TAILED_CAT
         this.three_tailed_cat_stacks = 0;
 #endif // HAS_THREE_TAILED_CAT
@@ -1060,7 +1067,6 @@ export class Player {
 #endif // HAS_FIRE_SPIRIT_GENERATION
 #ifdef HAS_FLAME_SOUL_REBIRTH
         this.flame_soul_rebirth_stacks = 0;
-        this.flame_soul_rebirth_reviving = false;
 #endif // HAS_FLAME_SOUL_REBIRTH
 #ifdef HAS_FIVE_ELEMENTS_EXPLOSION
         this.five_elements_explosion_stacks = 0;
@@ -5058,7 +5064,9 @@ export class GameState {
 #ifdef HAS_SURGE_OF_QI
         me.surge_of_qi_gain_agility_triggered = false;
 #endif // HAS_SURGE_OF_QI
-        // TODO: decrement unbeaten_in_desperate_combat
+#ifdef HAS_LAST_STAND
+        me.not_dead_yet = 0;
+#endif // HAS_LAST_STAND
         if (this.check_for_death()) {
             return;
         }
@@ -5135,14 +5143,6 @@ export class GameState {
 #endif // HAS_LEAF_SHIELD_FLOWER
         me.hp -= dmg;
         this.log("reduced player " + idx +" hp by " + dmg + " to " + me.hp);
-#ifdef HAS_PANGU_AXE
-        if (me.hp <= 0 && me.pangu_axe_stacks > 0) {
-            const stacks = me.pangu_axe_stacks;
-            me.destiny -= stacks;
-            me.pangu_axe_stacks = 0;
-            this.log("pangu axe: reduced player " + idx + " destiny by " + stacks + " to " + me.destiny);
-        }
-#endif // HAS_PANGU_AXE
 #ifdef HAS_ELUSIVE_FOOTWORK
         if (me.elusive_footwork_stacks > 0 && idx === 0 && !me.elusive_footwork_triggered) {
             me.elusive_footwork_triggered = true;
@@ -5203,12 +5203,7 @@ export class GameState {
         me.times_max_hp_reduced += 1;
 #endif // HAS_TIMES_MAX_HP_REDUCED
 #ifdef HAS_KUN_WU_MOLTEN_RING
-#ifdef HAS_FLAME_SOUL_REBIRTH
-        if (!me.flame_soul_rebirth_reviving)
-#endif // HAS_FLAME_SOUL_REBIRTH
-        {
-            amt += this.players[1-idx].kun_wu_molten_ring_stacks;
-        }
+        amt += this.players[1-idx].kun_wu_molten_ring_stacks;
 #endif // HAS_KUN_WU_MOLTEN_RING
         const reduced_amt = Math.min(amt, me.max_hp);
         me.max_hp -= reduced_amt;
@@ -5219,14 +5214,6 @@ export class GameState {
             this.log("reducing hp to max_hp of " + me.max_hp);
             me.hp = me.max_hp;
         }
-#ifdef HAS_PANGU_AXE
-        if (me.hp <= 0 && me.pangu_axe_stacks > 0) {
-            const stacks = me.pangu_axe_stacks;
-            me.destiny -= stacks;
-            me.pangu_axe_stacks = 0;
-            this.log("pangu axe: reduced player " + idx + " destiny by " + stacks + " to " + me.destiny);
-        }
-#endif // HAS_PANGU_AXE
         this.log("reduced player " + idx + " max_hp by " + amt + " to " + me.max_hp);
     }
     reduce_idx_force(idx, amt) {
@@ -5270,19 +5257,14 @@ export class GameState {
         }
         const me = this.players[idx];
 #ifdef HAS_HEAVENLY_WILL_COMPLY
-#ifdef HAS_FLAME_SOUL_REBIRTH
-        if (!me.flame_soul_rebirth_reviving)
-#endif // HAS_FLAME_SOUL_REBIRTH
-        {
-            if (me.god_opportunity_conform_stacks > 0) {
-                amt = Math.ceil(amt * 14 / 10);
-            }
+        if (me.god_opportunity_conform_stacks > 0) {
+            amt = Math.ceil(amt * 14 / 10);
         }
 #endif // HAS_HEAVENLY_WILL_COMPLY
         me.max_hp += amt;
         this.log("increased player " + idx + " max_hp by " + amt + " to " + me.max_hp);
     }
-    increase_idx_hp(idx, amt, heal_while_dead) {
+    increase_idx_hp(idx, amt) {
         const me = this.players[idx];
         if (amt === 0) {
             return 0;
@@ -5295,10 +5277,6 @@ export class GameState {
         }
 #endif // HAS_ZONGZI_MODE
         const prev_hp = me.hp;
-        if (prev_hp <= 0 && !heal_while_dead) {
-            this.log("refusing to heal a dead player");
-            return 0;
-        }
 #ifdef HAS_METAL_SPIRIT_CHOKEHOLD
         if (me.metal_spirit_chokehold_stacks > 0) {
             this.log("refusing to heal a player with metal_spirit_chokehold_stacks");
@@ -5333,13 +5311,8 @@ export class GameState {
         }
 #endif // HAS_P5_REJUVENATION
 #ifdef HAS_HEAVENLY_WILL_COMPLY
-#ifdef HAS_FLAME_SOUL_REBIRTH
-        if (!me.flame_soul_rebirth_reviving)
-#endif // HAS_FLAME_SOUL_REBIRTH
-        {
-            if (me.god_opportunity_conform_stacks > 0) {
-                amt = Math.ceil(amt * 14 / 10);
-            }
+        if (me.god_opportunity_conform_stacks > 0) {
+            amt = Math.ceil(amt * 14 / 10);
         }
 #endif // HAS_HEAVENLY_WILL_COMPLY
 #ifdef HAS_HEAVENLY_WILL_DEFY
@@ -6863,64 +6836,90 @@ export class GameState {
     check_for_death() {
         const me = this.players[0];
         const enemy = this.players[1];
-        while (me.hp <= 0 ||
-            me.destiny <= 0 ||
-            enemy.hp <= 0 ||
-            enemy.destiny <= 0) {
-            this.check_idx_for_death(0);
-            this.check_idx_for_death(1);
-            if (this.game_over) {
-                return true;
-            }
+#ifdef HAS_ANY_REVIVE_OR_PANGU_AXE
+        let me_revived = this.check_idx_for_revive(0);
+        let enemy_revived = this.check_idx_for_revive(1);
+        while (me_revived || enemy_revived) {
+            me_revived = this.check_idx_for_revive(0);
+            enemy_revived = this.check_idx_for_revive(1);
         }
-        return false;
-    }
-    check_idx_for_death(idx) {
-        const me = this.players[idx];
-        if (me.destiny <= 0) {
-            me.hp = 0;
+#endif // HAS_ANY_REVIVE_OR_PANGU_AXE
+#ifdef HAS_LAST_STAND
+        if (this.check_last_stand(0) && me.hp <= enemy.hp) {
+            return false;
+        }
+        if (this.check_last_stand(1) && enemy.hp <= me.hp) {
+            return false;
+        }
+#endif // HAS_LAST_STAND
+        if (me.hp <= 0 || enemy.hp <= 0) {
             this.game_over = true;
-            this.log("player " + idx + " has died of destiny loss");
             return true;
         }
-        while (me.hp <= 0) {
-#ifdef HAS_ASHES_PHOENIX
-            if (me.ashes_phoenix_stacks > 0) {
-                const amt = me.ashes_phoenix_stacks;
-                this.reduce_idx_x_by_c(idx, "ashes_phoenix_stacks", amt);
-                const heal_amt = amt - me.hp;
-                this.increase_idx_max_hp(idx, amt);
-                this.increase_idx_hp(idx, heal_amt, true);
-                me.just_revived = true;
-            } else
-#endif // HAS_ASHES_PHOENIX
-#ifdef HAS_FLAME_SOUL_REBIRTH
-            if (me.flame_soul_rebirth_stacks > 0) {
-                this.reduce_idx_x_by_c(idx, "flame_soul_rebirth_stacks", 1);
-                me.flame_soul_rebirth_reviving = true;
-                this.set_idx_c_of_x(idx, 15, "max_hp");
-                const heal_amt = 15 - me.hp;
-                this.increase_idx_hp(idx, heal_amt, true);
-                me.flame_soul_rebirth_reviving = false;
-                me.just_revived = true;
-            } else
-#endif // HAS_FLAME_SOUL_REBIRTH
-#ifdef HAS_HEAVENLY_MAIDEN_WHITE_JADE_RING
-            if (me.heavenly_maiden_white_jade_ring_stacks > 0) {
-                this.reduce_idx_x_by_c(idx, "heavenly_maiden_white_jade_ring_stacks", 1);
-                const heal_amt = 64 - me.hp;
-                this.increase_idx_hp(idx, heal_amt, true);
-                me.just_revived = true;
-            } else
-#endif // HAS_HEAVENLY_MAIDEN_WHITE_JADE_RING
-            {
-                this.game_over = true;
-                this.log("player " + idx + " has died of hp loss");
-                return true;
-            }
-        }
         return false;
     }
+#ifdef HAS_LAST_STAND
+    check_last_stand(idx) {
+        const me = this.players[idx];
+        if (me.hp <= 0 && me.can_last_stand > 0) {
+            this.set_idx_c_of_x(idx, 0, "can_last_stand");
+            this.increase_idx_x_by_c(idx, "not_dead_yet", 1);
+        }
+        return me.not_dead_yet > 0;
+    }
+#endif // HAS_LAST_STAND
+#ifdef HAS_ANY_REVIVE_OR_PANGU_AXE
+    check_idx_for_revive(idx) {
+        const me = this.players[idx];
+        let ret = false;
+#ifdef HAS_PANGU_AXE
+        if (me.hp <= 0 && me.pangu_axe_stacks > 0) {
+            const stacks = me.pangu_axe_stacks;
+            me.destiny -= stacks;
+            me.pangu_axe_stacks = 0;
+            this.log("pangu axe: reduced player " + idx + " destiny by " + stacks + " to " + me.destiny);
+        }
+#endif // HAS_PANGU_AXE
+#ifdef HAS_VOID_SPLIT_SPEAR
+        if (me.got_void_split_speared) {
+            this.log("player " + idx + " has died of void split spearing");
+            return ret;
+        }
+#endif // HAS_VOID_SPLIT_SPEAR
+#ifdef HAS_FLAME_SOUL_REBIRTH
+        if (me.hp <= 0 && me.flame_soul_rebirth_stacks > 0) {
+            this.reduce_idx_x_by_c(idx, "flame_soul_rebirth_stacks", 1);
+            me.max_hp = 15;
+            me.hp = 15;
+            this.log("player " + idx + " revived via flame soul rebirth, max_hp and hp are now 15");
+            me.just_revived = true;
+            ret = true;
+        }
+#endif // HAS_FLAME_SOUL_REBIRTH
+#ifdef HAS_ASHES_PHOENIX
+        if (me.hp <= 0 && me.ashes_phoenix_stacks > 0) {
+            const amt = me.ashes_phoenix_stacks;
+            this.reduce_idx_x_by_c(idx, "ashes_phoenix_stacks", amt);
+            const heal_amt = amt - me.hp;
+            this.increase_idx_max_hp(idx, amt);
+            this.increase_idx_hp(idx, heal_amt);
+            me.just_revived = true;
+            ret = true;
+        }
+#endif // HAS_ASHES_PHOENIX
+#ifdef HAS_HEAVENLY_MAIDEN_WHITE_JADE_RING
+        if (me.hp <= 0 && me.heavenly_maiden_white_jade_ring_stacks > 0) {
+            this.reduce_idx_x_by_c(idx, "heavenly_maiden_white_jade_ring_stacks", 1);
+            const heal_amt = 64 - me.hp;
+            this.increase_idx_hp(idx, heal_amt);
+            me.just_revived = true;
+            ret = true;
+        }
+#endif // HAS_HEAVENLY_MAIDEN_WHITE_JADE_RING
+        // TODO: hexagram revive sigil
+        return ret;
+    }
+#endif // HAS_ANY_REVIVE_OR_PANGU_AXE
     set_c_up_to_x(c, x) {
         const current_value = this.players[0][x];
         if (current_value < c) {
@@ -7857,7 +7856,7 @@ export class GameState {
 #endif // HAS_CHENGYUNS_FUSION_STYLE
 #ifdef HAS_M_UNRESTRAINED_SWORD_DRAGON_COILED
         {
-            var i_have_usdc = false;
+            let i_have_usdc = false;
             let idx = 0;
             while (idx >= 0 && idx < me.cards.length) {
                 const card_id = me.cards[idx];
@@ -8226,7 +8225,7 @@ export class GameState {
 #ifdef HAS_M_SPIRITAGE_SWORD
     do_m_spiritage_sword(max_level) {
         const me = this.players[0];
-        var card_id_to_play = undefined;
+        let card_id_to_play = undefined;
         for (let i = 0; i < me.hand_cards.length; i++) {
             const hand_id = me.hand_cards[i];
             if (this.is_regular_card(hand_id)) {
