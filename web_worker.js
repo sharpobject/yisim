@@ -1,9 +1,10 @@
-// At the very top of web_worker.js
-// If the files export named exports
+// Static imports for card data (needed by specialized gamestate code)
+import { swogi, SECTS, format_card, CRASH_FIST_CARDS, ready as card_info_ready } from './card_info.js';
+// Full gamestate with logging, used for replaying winning combos
 import { GameState as GameStateWithLog, Player as PlayerWithLog, ready as gamestate_ready } from './gamestate_full_ui.js';
-//import { GameState, Player } from './gamestate_full_nolog_ui.js';
-const GameState = GameStateWithLog;
-const Player = PlayerWithLog;
+
+let SpecializedGameState = null;
+let SpecializedPlayer = null;
 
 function next_permutation(arr) {
     let i = arr.length - 1;
@@ -34,6 +35,19 @@ function next_permutation(arr) {
 // receive a GameState and return a list of most-winning decks
 self.onmessage = async (event) => {
     await gamestate_ready;
+    await card_info_ready;
+
+    // Handle init message: compile specialized gamestate code
+    if (event.data.type === 'init') {
+        const factory = new Function('swogi', 'SECTS', 'format_card', 'CRASH_FIST_CARDS',
+            event.data.code);
+        const exports = factory(swogi, SECTS, format_card, CRASH_FIST_CARDS);
+        SpecializedGameState = exports.GameState;
+        SpecializedPlayer = exports.Player;
+        postMessage({ type: 'init_done' });
+        return;
+    }
+
     const worker_idx = event.data.worker_idx;
     const players = event.data.players;
     const my_idx = event.data.my_idx;
@@ -48,8 +62,13 @@ self.onmessage = async (event) => {
     let best_winning_margin = -99999;
     let best_winrate = 0.8;
     let best_hp = -99999;
-    const a = new Player();
-    const b = new Player();
+
+    // Use specialized (faster, nolog) classes for brute force if available
+    const FastGameState = SpecializedGameState || GameStateWithLog;
+    const FastPlayer = SpecializedPlayer || PlayerWithLog;
+
+    const a = new FastPlayer();
+    const b = new FastPlayer();
     const alog = new PlayerWithLog();
     const blog = new PlayerWithLog();
     if (event.data.just_run) {
@@ -77,9 +96,7 @@ self.onmessage = async (event) => {
         do {
             var winrate = 0;
             try_idx += 1;
-            //console.log("try_idx: " + try_idx);
-            //os.exit(1);
-            let game = new GameState(a, b);
+            let game = new FastGameState(a, b);
             for (let key in players[my_idx]) {
                 game.players[my_idx][key] = players[my_idx][key];
             }
@@ -94,12 +111,12 @@ self.onmessage = async (event) => {
             } else {
                 game.sim_n_turns(64);
             }
-            
+
             if (game.used_randomness && game.winner === my_idx && false) {
                 var win_count = game.winner === my_idx ? 1 : 0;
                 var total_count = 1;
                 for(var qq=0; qq<20; qq++) {
-                    let game = new GameState(a, b);
+                    let game = new FastGameState(a, b);
                     for (let key in players[my_idx]) {
                         game.players[my_idx][key] = players[my_idx][key];
                     }
@@ -118,25 +135,7 @@ self.onmessage = async (event) => {
                 winrate = game.winner === my_idx ? 1 : 0;
             }
             if (game.winner === my_idx && !game.used_randomness) {
-            //if (game.players[enemy_idx].hp > 8599 && !game.used_randomness) {
-            //if (game.winner === my_idx && !game.used_randomness) {
-            //if (combo[0] == "633011" && combo[2] == "135072") {
-            //if (!game.used_randomness) {
-            //if (winrate >= best_winrate) {
                 best_winrate = winrate;
-                // const hp = game.players[my_idx].hp;
-                //if (hp > best_hp) {
-                //    winning_decks.length = 0;
-                //    winning_margins.length = 0;
-                //    winning_logs.length = 0;
-                //}
-                //best_hp = hp;
-                //const winning_margin = game.players[my_idx].hp - game.players[enemy_idx].hp - 1000 * game.turns_taken;
-                // console.log({
-                //     myHP: game.players[my_idx].hp,
-                //     enemyHP: game.players[enemy_idx].hp,
-                //     turns: game.turns_taken
-                // })
                 const myHP = game.players[my_idx].hp;
                 const enemyHP = game.players[enemy_idx].hp;
                 const turns = game.turns_taken;
@@ -154,6 +153,7 @@ self.onmessage = async (event) => {
                         enemyHP,
                         turns,
                     }
+                    // Replay winning combo with full logging
                     let game_with_log = new GameStateWithLog(alog, blog);
                     for (let key in players[my_idx]) {
                         game_with_log.players[my_idx][key] = players[my_idx][key];

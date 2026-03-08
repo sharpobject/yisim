@@ -1,5 +1,11 @@
 import { guess_character, ready as gamestate_ready } from "./gamestate_full_ui.js";
 import { swogi, format_card, ready as card_info_ready } from './card_info.js';
+import { specializeGamestate } from './preprocess_browser.js';
+import gamestateSource from './gamestate.jscpp?raw';
+
+// Track active workers for HMR cleanup and console access
+let activeWorkers = [];
+window.__workers = activeWorkers;
 
 export function combinationCount(n, k) {
     if (k < 0 || k > n) return 0;
@@ -63,16 +69,18 @@ export async function do_riddle(riddle, handler) {
     const enemy_cards = riddle.players[enemy_idx].cards;
     riddle.best_winning_margin = -99999;
     riddle.try_idx = 0;
-    // const preprocessor_config = {};
-    // for (let player of riddle.players) {
-    //     for (let key in player) {
-    //         preprocessor_config[key] = true;
-    //     }
-    //     for (let card_id of player.cards) {
-    //         preprocessor_config[card_id.slice(0, 5)] = true;
-    //     }
-    // }
-    // preprocess_plz(preprocessor_config);
+
+    // Build preprocessor config from riddle data
+    const preprocessor_config = {};
+    for (let player of riddle.players) {
+        for (let key in player) {
+            preprocessor_config[key] = true;
+        }
+        for (let card_id of player.cards) {
+            preprocessor_config[card_id.slice(0, 5)] = true;
+        }
+    }
+    const specializedCode = specializeGamestate(gamestateSource, preprocessor_config);
 
     const numCores = Math.max(1, Math.floor(0.8 * navigator.hardwareConcurrency));
     const workers = [];
@@ -81,12 +89,27 @@ export async function do_riddle(riddle, handler) {
     for (let i = 0; i < numCores; i++) {
         const worker = new Worker(new URL('./web_worker.js', import.meta.url), { type: 'module' });
         workers.push(worker);
+        activeWorkers.push(worker);
         messages_outstanding.push(0);
-        // Add error event listener to each worker
         worker.addEventListener('error', (event) => {
             console.error(`Error in worker ${i}:`, event.message);
         });
     }
+
+    // Send specialized code to all workers and wait for init
+    const initPromises = workers.map((worker, i) => {
+        return new Promise(resolve => {
+            const handler = (event) => {
+                if (event.data.type === 'init_done') {
+                    worker.removeEventListener('message', handler);
+                    resolve();
+                }
+            };
+            worker.addEventListener('message', handler);
+            worker.postMessage({ type: 'init', code: specializedCode });
+        });
+    });
+    await Promise.all(initPromises);
 
     function createMessageHandler(workers) {
         const messageQueue = [];
@@ -206,5 +229,14 @@ export async function do_riddle(riddle, handler) {
     for (let i = 0; i < numCores; i++) {
         workers[i].terminate();
     }
-    // console.log("try_idx: " + riddle.try_idx);
+    activeWorkers = activeWorkers.filter(w => !workers.includes(w));
+}
+
+if (import.meta.hot) {
+    import.meta.hot.dispose(() => {
+        for (const worker of activeWorkers) {
+            worker.terminate();
+        }
+        activeWorkers = [];
+    });
 }
