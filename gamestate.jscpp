@@ -2685,6 +2685,17 @@ export class GameState {
         }
     }
 #endif // HAS_BEAST_SPIRIT_SWORD_FORMATION
+#ifdef HAS_DREAM_BEARING_LOAD_PASSIVE
+    has_dream_bearing_load_in_deck() {
+        const me = this.players[0];
+        for (let i = 0; i < me.cards.length; i++) {
+            if (swogi[me.cards[i]].name === "Dream - Bearing the Load") {
+                return true;
+            }
+        }
+        return false;
+    }
+#endif // HAS_DREAM_BEARING_LOAD_PASSIVE
 #ifdef HAS_SWORD_QI
 #ifdef HAS_DREAM_DHARMA_SPIRIT_SWORD
     has_dharma_spirit_sword_in_deck() {
@@ -2697,17 +2708,6 @@ export class GameState {
         return false;
     }
 #endif // HAS_DREAM_DHARMA_SPIRIT_SWORD
-#ifdef HAS_DREAM_BEARING_LOAD_PASSIVE
-    has_dream_bearing_load_in_deck() {
-        const me = this.players[0];
-        for (let i = 0; i < me.cards.length; i++) {
-            if (swogi[me.cards[i]].name === "Dream - Bearing the Load") {
-                return true;
-            }
-        }
-        return false;
-    }
-#endif // HAS_DREAM_BEARING_LOAD_PASSIVE
     do_sword_qi(card_id) {
         const me = this.players[0];
         if (me.sword_qi <= 0) {
@@ -4601,6 +4601,14 @@ export class GameState {
     sim_turn() {
         const me = this.players[0];
         const enemy = this.players[1];
+        // TODO: reset gained_hp_this_turn here if we ever add it
+#ifdef HAS_XUANMING_RECURRING
+        me.xuanming_recurring_hp = me.next_xuanming_recurring_hp;
+        me.next_xuanming_recurring_hp = me.hp;
+#endif // HAS_XUANMING_RECURRING
+#ifdef HAS_RESONANCE_REJUVENATION
+        this.do_resonance_rejuvenation();
+#endif // HAS_RESONANCE_REJUVENATION
         me.chases = 0;
         me.this_turn_attacked = false;
 #ifdef HAS_ELUSIVE_FOOTWORK
@@ -4628,9 +4636,6 @@ export class GameState {
 #ifdef HAS_DREAM_DOTTED_AROUND_PER_TURN
         me.can_trigger_dream_dotted_around = true;
 #endif // HAS_DREAM_DOTTED_AROUND_PER_TURN
-#ifdef HAS_RESONANCE_REJUVENATION
-        this.do_resonance_rejuvenation();
-#endif // HAS_RESONANCE_REJUVENATION
 #ifdef HAS_EVERYTHING_GOES_WAY
         this.reduce_idx_x_by_c(0, "everything_goes_way_stacks", 1);
 #endif // HAS_EVERYTHING_GOES_WAY
@@ -4649,10 +4654,6 @@ export class GameState {
 #ifdef HAS_DREAM_REPEL_CITTA_DHARMA
         this.reduce_idx_x_by_c(0, "dream_repel_citta_dharma_stacks", 1);
 #endif // HAS_DREAM_REPEL_CITTA_DHARMA
-#ifdef HAS_XUANMING_RECURRING
-        me.xuanming_recurring_hp = me.next_xuanming_recurring_hp;
-        me.next_xuanming_recurring_hp = me.hp;
-#endif // HAS_XUANMING_RECURRING
 #ifdef HAS_DREAM_EARTH_SPIRIT_STEEP
         if (me.dream_earth_spirit_steep_stacks > 0) {
             me.dream_earth_spirit_steep_stacks -= 1;
