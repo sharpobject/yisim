@@ -28,6 +28,9 @@ export function format_card(card_id) {
 }
 export const SECTS = ["sw", "he", "fe", "dx"];
 export const CRASH_FIST_CARDS = [[], [], [], []];
+export const NO_STANCE = 0;
+export const FIST_STANCE = 1;
+export const STICK_STANCE = -1;
 
 export const ready = (async () => {
     if (typeof process !== 'undefined' && process.versions && process.versions.node) {

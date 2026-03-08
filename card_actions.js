@@ -9992,7 +9992,8 @@ card_actions["641011"] = (game) => {
     if (game.if_fist_stance()) {
         const def_amt = Math.floor(me.physique * 20 / 100);
         game.increase_idx_def(0, def_amt);
-    } else {
+    }
+    if (game.if_stick_stance()) {
         const atk_amt = 1 + Math.floor(me.physique * 16.666667 / 100);
         game.atk(atk_amt);
     }
@@ -10006,7 +10007,8 @@ card_actions["641012"] = (game) => {
     if (game.if_fist_stance()) {
         const def_amt = Math.floor(me.physique * 20 / 100);
         game.increase_idx_def(0, def_amt);
-    } else {
+    }
+    if (game.if_stick_stance()) {
         const atk_amt = 1 + Math.floor(me.physique * 16.666667 / 100);
         game.atk(atk_amt);
     }
@@ -10020,7 +10022,8 @@ card_actions["641013"] = (game) => {
     if (game.if_fist_stance()) {
         const def_amt = Math.floor(me.physique * 20 / 100);
         game.increase_idx_def(0, def_amt);
-    } else {
+    }
+    if (game.if_stick_stance()) {
         const atk_amt = 1 + Math.floor(me.physique * 16.666667 / 100);
         game.atk(atk_amt);
     }
@@ -10200,7 +10203,8 @@ card_actions["644031"] = (game) => {
     game.add_c_of_x(8, "agility");
     if (game.if_fist_stance()) {
         game.add_c_of_x(4, "agility");
-    } else {
+    }
+    if (game.if_stick_stance()) {
         game.atk(8);
     }
     game.switch_stance();
@@ -10211,7 +10215,8 @@ card_actions["644032"] = (game) => {
     game.add_c_of_x(8, "agility");
     if (game.if_fist_stance()) {
         game.add_c_of_x(6, "agility");
-    } else {
+    }
+    if (game.if_stick_stance()) {
         game.atk(12);
     }
     game.switch_stance();
@@ -10222,7 +10227,8 @@ card_actions["644033"] = (game) => {
     game.add_c_of_x(8, "agility");
     if (game.if_fist_stance()) {
         game.add_c_of_x(8, "agility");
-    } else {
+    }
+    if (game.if_stick_stance()) {
         game.atk(16);
     }
     game.switch_stance();
@@ -10282,7 +10288,8 @@ card_actions["645031"] = (game) => {
     if (game.if_fist_stance()) {
         game.add_c_of_x(4, "force");
         game.for_each_x_add_c_pct_y("physique", 20, "hp");
-    } else {
+    }
+    if (game.if_stick_stance()) {
         const atk_amt = 4 + Math.floor(me.physique * 11.111112 / 100);
         for (let i = 0; i < 2; i++) {
             game.atk(atk_amt);
@@ -10297,7 +10304,8 @@ card_actions["645032"] = (game) => {
     if (game.if_fist_stance()) {
         game.add_c_of_x(5, "force");
         game.for_each_x_add_c_pct_y("physique", 20, "hp");
-    } else {
+    }
+    if (game.if_stick_stance()) {
         const atk_amt = 7 + Math.floor(me.physique * 11.111112 / 100);
         for (let i = 0; i < 2; i++) {
             game.atk(atk_amt);
@@ -10312,7 +10320,8 @@ card_actions["645033"] = (game) => {
     if (game.if_fist_stance()) {
         game.add_c_of_x(6, "force");
         game.for_each_x_add_c_pct_y("physique", 20, "hp");
-    } else {
+    }
+    if (game.if_stick_stance()) {
         const atk_amt = 10 + Math.floor(me.physique * 11.111112 / 100);
         for (let i = 0; i < 2; i++) {
             game.atk(atk_amt);

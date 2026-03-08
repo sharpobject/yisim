@@ -1,4 +1,4 @@
-import { swogi, SECTS, format_card, CRASH_FIST_CARDS, ready } from './card_info.js';
+import { swogi, SECTS, format_card, CRASH_FIST_CARDS, NO_STANCE, FIST_STANCE, STICK_STANCE, ready } from './card_info.js';
 export { ready };
 let keys = Object.keys(swogi);
 keys.sort();
@@ -1246,9 +1246,9 @@ export class Player {
         this.surge_of_qi_stacks = 0;
         this.surge_of_qi_gain_agility_triggered = false;
 #endif // HAS_SURGE_OF_QI
-#ifdef HAS_STANCE_IS_FIST
-        this.stance_is_fist = true;
-#endif // HAS_STANCE_IS_FIST
+#ifdef HAS_STANCE
+        this.stance = NO_STANCE;
+#endif // HAS_STANCE
 #ifdef HAS_MORTAL_BODY
         this.mortal_body_stacks = 0;
 #endif // HAS_MORTAL_BODY
@@ -1791,6 +1791,18 @@ export class Player {
         this.xuanming_recurring_hp = this.hp;
         this.next_xuanming_recurring_hp = this.hp;
 #endif // HAS_XUANMING_RECURRING
+#ifdef HAS_STANCE
+#ifdef HAS_MORTAL_BODY
+        if (this.mortal_body_stacks > 0) {
+            this.stance = FIST_STANCE;
+        }
+#endif // HAS_MORTAL_BODY
+#ifdef HAS_SURGE_OF_QI
+        if (this.surge_of_qi_stacks > 0) {
+            this.stance = FIST_STANCE;
+        }
+#endif // HAS_SURGE_OF_QI
+#endif // HAS_STANCE
         this.reset_can_play();
     }
 }
@@ -3644,7 +3656,7 @@ export class GameState {
 #ifdef HAS_RESONANCE_INDOMITABLE_WILL
             if (do_entangle &&
                 me.resonance_indomitable_will_stacks > 0 &&
-                !me.stance_is_fist
+                me.stance === STICK_STANCE
             ) {
                 do_entangle = false;
                 this.reduce_idx_hp(0, 15);
@@ -3660,7 +3672,7 @@ export class GameState {
                 me.chases += 1;
                 this.log("incremented chases to " + me.chases);
 #ifdef HAS_SURGE_OF_QI
-                if (me.surge_of_qi_stacks > 0 && !me.stance_is_fist) {
+                if (me.surge_of_qi_stacks > 0 && me.stance === STICK_STANCE) {
                     this.increase_idx_qi(0, 1);
                     this.increase_idx_hp(0, 2);
                 }
@@ -3978,7 +3990,7 @@ export class GameState {
 #ifdef HAS_RESONANCE_INDOMITABLE_WILL
             if (is_start_of_turn &&
                 me.resonance_indomitable_will_stacks > 0 &&
-                me.stance_is_fist
+                me.stance === FIST_STANCE
             ) {
                 amt = Math.floor(amt * 0.5);
             }
@@ -4167,10 +4179,10 @@ export class GameState {
         let ret = 0;
         let me = this.players[0];
         let enemy = this.players[1];
-        if (me.indomitable_will_stacks > 0 && !me.stance_is_fist) {
+        if (me.indomitable_will_stacks > 0 && me.stance === STICK_STANCE) {
             ret += 1;
         }
-        if (enemy.indomitable_will_stacks > 0 && enemy.stance_is_fist) {
+        if (enemy.indomitable_will_stacks > 0 && enemy.stance === FIST_STANCE) {
             ret -= 1;
         }
         return ret;
@@ -5532,7 +5544,7 @@ export class GameState {
 #endif // HAS_OVERWHELMING_POWER
         }
 #ifdef HAS_SURGE_OF_QI
-        if (me.surge_of_qi_stacks > 0 && me.stance_is_fist && !me.surge_of_qi_gain_agility_triggered) {
+        if (me.surge_of_qi_stacks > 0 && me.stance === FIST_STANCE && !me.surge_of_qi_gain_agility_triggered) {
             me.surge_of_qi_gain_agility_triggered = true;
             this.increase_idx_x_by_c(idx, "agility", 2);
         }
@@ -5742,7 +5754,7 @@ export class GameState {
 #endif // HAS_SNAKE_SHADOW
 #ifdef HAS_INDOMITABLE_WILL
         if (me.indomitable_will_stacks > 0) {
-            if (me.stance_is_fist) {
+            if (me.stance === FIST_STANCE) {
                 if (x === "wound") {
                     amt -= 1;
                 }
@@ -6230,7 +6242,7 @@ export class GameState {
 #endif // HAS_JADE_SCROLL_OF_YIN_SYMBOL_STACKS
 #ifdef HAS_RESONANCE_INDOMITABLE_WILL
                 if (me.resonance_indomitable_will_stacks > 0 &&
-                    !me.stance_is_fist
+                    me.stance === STICK_STANCE
                 ) {
                     pct_multiplier += 20;
                 }
@@ -6250,7 +6262,7 @@ export class GameState {
 #endif // HAS_JADE_SCROLL_OF_YIN_SYMBOL_STACKS
 #ifdef HAS_RESONANCE_INDOMITABLE_WILL
                 if (enemy.resonance_indomitable_will_stacks > 0 &&
-                    enemy.stance_is_fist
+                    enemy.stance === FIST_STANCE
                 ) {
                     pct_multiplier -= 20;
                 }
@@ -6281,7 +6293,7 @@ export class GameState {
         }
 #ifdef HAS_COUNTER_MOVE
         if (enemy.counter_move_stacks > 0 &&
-            enemy.stance_is_fist) {
+            enemy.stance === FIST_STANCE) {
             pct_multiplier -= 50;
         }
 #endif // HAS_COUNTER_MOVE
@@ -6452,7 +6464,7 @@ export class GameState {
 #endif // HAS_THROW_PETALS
 #ifdef HAS_COUNTER_MOVE
         if (enemy.counter_move_stacks > 0 &&
-            !enemy.stance_is_fist) {
+            enemy.stance === STICK_STANCE) {
             this.deal_damage_inner(6, false, 0);
         }
 #endif // HAS_COUNTER_MOVE
@@ -6499,13 +6511,15 @@ export class GameState {
     }
 #endif // HAS_CLOUD_SWORD_CHAIN_COUNT
     if_fist_stance() {
-        return this.players[0].stance_is_fist;
+        return this.players[0].stance === FIST_STANCE;
     }
     if_stick_stance() {
-        return !this.players[0].stance_is_fist;
+        return this.players[0].stance === STICK_STANCE;
     }
     switch_stance() {
-        this.players[0].stance_is_fist = !this.players[0].stance_is_fist;
+#ifdef HAS_STANCE
+        this.players[0].stance = -this.players[0].stance;
+#endif // HAS_STANCE
     }
     if_injured() {
         return this.players[0].this_atk_injured;

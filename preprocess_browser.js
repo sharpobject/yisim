@@ -60,8 +60,11 @@ export function specializeGamestate(gamestateSource, config) {
     const out = [];
     for (let line of lines) {
         const trimmed = line.trim();
-        // Remove the import line
+        // Replace the import line with stance constants (other imports are passed as function args)
         if (trimmed.startsWith('import ') && trimmed.includes('card_info')) {
+            out.push('const NO_STANCE = 0;');
+            out.push('const FIST_STANCE = 1;');
+            out.push('const STICK_STANCE = -1;');
             continue;
         }
         // Remove export { ready };

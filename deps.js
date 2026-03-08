@@ -946,10 +946,11 @@ export const deps = {
     HAS_RESONANCE_STORE_QI: ["resonance_store_qi_stacks"],
     HAS_RESONANCE_SWORD_FORMATION_GUARD: [
         "resonance_sword_formation_guard_stacks"],
-    HAS_STANCE_IS_FIST: ["stance_is_fist",
+    HAS_STANCE: ["stance",
         "HAS_SURGE_OF_QI", "HAS_MORTAL_BODY",
         "HAS_RESONANCE_INDOMITABLE_WILL",
-        "HAS_INDOMITABLE_WILL"],
+        "HAS_INDOMITABLE_WILL",
+        "HAS_COUNTER_MOVE"],
     HAS_SURGE_OF_QI: ["surge_of_qi_stacks"],
     HAS_MORTAL_BODY: ["mortal_body_stacks"],
     HAS_RESONANCE_INDOMITABLE_WILL: ["resonance_indomitable_will_stacks"],
