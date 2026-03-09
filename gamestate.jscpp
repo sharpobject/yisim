@@ -1,4 +1,5 @@
 import { swogi, SECTS, format_card, CRASH_FIST_CARDS, NO_STANCE, FIST_STANCE, STICK_STANCE, ready } from './card_info.js';
+import seedrandom from 'seedrandom';
 export { ready };
 let keys = Object.keys(swogi);
 keys.sort();
@@ -1350,6 +1351,9 @@ export class Player {
 #ifdef HAS_PREVENT_ANTI_CHASE
         this.prevent_anti_chase = 0;
 #endif // HAS_PREVENT_ANTI_CHASE
+#ifdef HAS_CURSED_MERPEOPLE_PEARL
+        this.triggering_cursed_merpeople_pearl = 0;
+#endif // HAS_CURSED_MERPEOPLE_PEARL
 #ifdef HAS_XUANMING_FORCEAGE_FORMATION
         this.xuanming_forceage_formation_stacks = 0;
 #endif // HAS_XUANMING_FORCEAGE_FORMATION
@@ -1807,7 +1811,7 @@ export class Player {
     }
 }
 export class GameState {
-    constructor(a, b) {
+    constructor(a, b, seed) {
         this.indentation = "";
         if (a === undefined) {
             a = new Player();
@@ -1822,6 +1826,7 @@ export class GameState {
         this.players = [a, b];
         this.output = [];
         this.used_randomness = false;
+        this.rng = seedrandom(seed);
     }
     crash() {
         this.dump();
@@ -2565,7 +2570,6 @@ export class GameState {
         const me = this.players[0];
         if (this.is_unrestrained_sword(card_id)) {
             this.players[0].unrestrained_sword_count += 1;
-            this.log("incremented unrestrained_sword_count to " + this.players[0].unrestrained_sword_count);
 #ifdef HAS_UNRESTRAINED_SWORD_CLEAR_HEART
             this.reduce_idx_x_by_c(0, "unrestrained_sword_clear_heart_stacks", 1);
 #endif // HAS_UNRESTRAINED_SWORD_CLEAR_HEART
@@ -2607,7 +2611,6 @@ export class GameState {
         // if this card has "Cloud Sword" in the name, increment cloud_sword_chain_count
         if (this.is_cloud_sword(card_id)) {
             me.cloud_sword_chain_count += 1;
-            this.log("incremented cloud_sword_chain_count to " + me.cloud_sword_chain_count);
 #ifdef HAS_CLOUD_SWORD_USED_COUNT
             me.cloud_sword_used_count += 1;
 #endif // HAS_CLOUD_SWORD_USED_COUNT
@@ -2634,7 +2637,6 @@ export class GameState {
 #endif // HAS_ENDURANCE_AS_CLOUD_SEA
             if (me.cloud_sword_chain_count > 0) {
                 me.cloud_sword_chain_count = 0;
-                this.log("reset cloud_sword_chain_count to 0");
             }
         }
     }
@@ -2689,7 +2691,8 @@ export class GameState {
     has_dream_bearing_load_in_deck() {
         const me = this.players[0];
         for (let i = 0; i < me.cards.length; i++) {
-            if (swogi[me.cards[i]].name === "Dream - Bearing the Load") {
+            const id = me.cards[i];
+            if (id === "D14153" || id === "D14154" || id === "D14155") {
                 return true;
             }
         }
@@ -3387,6 +3390,10 @@ export class GameState {
     }
 #endif // HAS_GOD_LUCK_AVOID
     just_do_the_card_and_nothing_else(card) {
+        if (!card.card_actions) {
+            this.log("WARNING: no card_actions for card " + card.name);
+            return;
+        }
         card.card_actions(this);
     }
     trigger_card(card_id, idx) {
@@ -3537,9 +3544,9 @@ export class GameState {
 #endif // HAS_HUNTER_HUNTING_HUNTER
 #ifdef HAS_SPIRITUAL_HUNTER
 #ifdef HAS_POST_ACTION
-            if (me.spiritual_hunter_stacks > 0 && is_post_action(card_id)) {
-                this.log("Attacking for " + me.spiritual_hunter_stacks + " from spiritual hunter.");
-                this.atk(me.spiritual_hunter_stacks, true);
+            if (p0.spiritual_hunter_stacks > 0 && is_post_action(card_id)) {
+                this.log("Attacking for " + p0.spiritual_hunter_stacks + " from spiritual hunter.");
+                this.atk(p0.spiritual_hunter_stacks, true);
             }
 #endif // HAS_POST_ACTION
 #endif // HAS_SPIRITUAL_HUNTER
@@ -3955,7 +3962,7 @@ export class GameState {
     do_xuanming_regen_tune() {
         const me = this.players[0];
         if (me.xuanming_regen_tune_heal_stacks > 0) {
-            this.increase_idx_max_hp(me.xuanming_regen_tune_heal_stacks);
+            this.increase_idx_max_hp(0, me.xuanming_regen_tune_heal_stacks);
             this.heal(me.xuanming_regen_tune_heal_stacks);
         }
         if (me.xuanming_regen_tune_hurt_stacks > 0) {
@@ -5110,7 +5117,7 @@ export class GameState {
         me.def_lost += reduced_amt;
 #endif // HAS_DEF_LOST
         me.def -= reduced_amt;
-        this.log("reduced player " + idx + " def by " + reduced_amt + " to " + me.def);
+        this.log("lost " + amt + " def. Now have " + me.def + " def");
 #ifdef HAS_EARTH_SPIRIT_CLIFF
         if (me.earth_spirit_cliff_stacks > 0) {
             this.reduce_idx_x_by_c(idx, "earth_spirit_cliff_stacks", 1);
@@ -5266,7 +5273,7 @@ export class GameState {
             this.deal_damage_inner(dmg, false, idx);
         }
 #endif // HAS_OVERWHELMING_POWER
-        this.log("reduced player " + idx + " force by " + reduced_amt + " to " + me.force);
+        this.log("lost " + amt + " force. Now have " + me.force + " force");
 #ifdef HAS_ENDLESS_FORCE
         if (me.force === 0) {
             const endless_force_stacks = me.endless_force_stacks;
@@ -5287,7 +5294,7 @@ export class GameState {
         }
 #endif // HAS_HEAVENLY_WILL_COMPLY
         me.max_hp += amt;
-        this.log("increased player " + idx + " max_hp by " + amt + " to " + me.max_hp);
+        this.log("gained " + amt + " max_hp. Now have " + me.max_hp + " max_hp");
     }
     increase_idx_hp(idx, amt) {
         const me = this.players[idx];
@@ -5480,7 +5487,7 @@ export class GameState {
 #endif // HAS_STILLNESS_CITTA_DHARMA
 #ifdef HAS_SPIRITSTAT_TUNE
         if (me.spiritstat_tune_stacks > 0) {
-            this.increade_idx_x_by_c(idx, "def", amt * me.spiritstat_tune_stacks);
+            this.increase_idx_x_by_c(idx, "def", amt * me.spiritstat_tune_stacks);
         }
 #endif // HAS_SPIRITSTAT_TUNE
 #ifdef HAS_DREAM_YIN_YANG_FORMATION_HP
@@ -5727,7 +5734,7 @@ export class GameState {
             this.deal_damage_inner(dmg, false, idx);
         }
 #endif // HAS_STAR_MOON_HEXAGRAM_FAN
-        this.log("gained " + amt + " star power. Now have " + me.star_power + " star power");
+        this.log("gained " + amt + " star_power. Now have " + me.star_power + " star_power");
     }
     increase_idx_debuff(idx, x, amt) {
         if (amt === 0) {
@@ -5774,6 +5781,9 @@ export class GameState {
             return;
         }
 #endif // HAS_ZONGZI_MODE
+        if (amt <= 0) {
+            return;
+        }
 #ifdef HAS_HEXPROOF
         const to_sub = Math.min(amt, me.hexproof);
         if (to_sub > 0) {
@@ -6760,7 +6770,7 @@ export class GameState {
             if (my_debuff_names.length === 0) {
                 break;
             }
-            let debuff_idx = Math.floor(Math.random() * my_debuff_names.length);
+            let debuff_idx = Math.floor(this.rng() * my_debuff_names.length);
             let debuff_name = my_debuff_names[debuff_idx];
             this.reduce_idx_x_by_c(idx, debuff_name, c);
             if (me[debuff_name] === 0) {
@@ -6786,7 +6796,7 @@ export class GameState {
         if (my_debuff_names.length > 1) {
             this.used_randomness = true;
         }
-        let debuff_idx = Math.floor(Math.random() * my_debuff_names.length);
+        let debuff_idx = Math.floor(this.rng() * my_debuff_names.length);
         let debuff_name = my_debuff_names[debuff_idx];
         this.reduce_idx_x_by_c(0, debuff_name, 1);
         this.increase_idx_debuff(1, debuff_name, 1);
@@ -6965,20 +6975,22 @@ export class GameState {
         if (this.players[idx].hexagram > 0) {
             this.reduce_idx_x_by_c(idx, "hexagram", 1);
 #ifdef HAS_TRIGGERED_HEXAGRAM_COUNT
-            this.increase_idx_x_by_c(idx, "triggered_hexagram_count", 1);
+            this.players[idx].triggered_hexagram_count += 1;
 #endif // HAS_TRIGGERED_HEXAGRAM_COUNT
             return true;
         }
         return false;
     }
+#ifdef HAS_RAND_RANGE
     rand_range(lo_inclusive, hi_inclusive) {
         if (this.trigger_hexagram(0)) {
             return hi_inclusive;
         }
         this.used_randomness = true;
         const extent = hi_inclusive - lo_inclusive + 1;
-        return lo_inclusive + Math.floor(Math.random() * extent);
+        return lo_inclusive + Math.floor(this.rng() * extent);
     }
+#endif // HAS_RAND_RANGE
 #ifdef HAS_CHORD_IN_TUNE
     do_chord_in_tune_thing() {
         if (this.players[0].has_played_musician_card > 0) {
@@ -7005,7 +7017,7 @@ export class GameState {
         const arr = CRASH_FIST_CARDS[upgrade_level];
         const playing_idx = this.players[0].currently_playing_card_idx;
         for (let i=0; i<5; i++) {
-            const crash_idx = Math.floor(Math.random() * arr.length);
+            const crash_idx = Math.floor(this.rng() * arr.length);
             const card_id = arr[crash_idx];
             this.log("triggering " + format_card(card_id));
             this.trigger_card(card_id, playing_idx);
@@ -7323,7 +7335,7 @@ export class GameState {
             return true;
         }
         this.used_randomness = true;
-        return Math.random() < c / 100;
+        return this.rng() < c / 100;
     }
     do_fire_spirit_blazing_praerie(amt) {
         const enemy = this.players[1];
@@ -7530,14 +7542,6 @@ export class GameState {
     reverse_card_play_direction() {
         this.players[0].card_play_direction *= -1;
     }
-#ifdef HAS_METAL_SPIRIT_CHARGE
-    do_metal_spirit_charge(amt) {
-        if (this.if_metal_spirit()) {
-            amt += Math.floor(this.players[0].def / 4);
-        }
-        this.increase_idx_penetrate(0, amt);
-    }
-#endif // HAS_METAL_SPIRIT_CHARGE
     idx_has_debuff(idx) {
         const me = this.players[idx];
 #ifdef HAS_INTERNAL_INJURY
@@ -7587,6 +7591,7 @@ export class GameState {
     reduce_enemy_max_hp(amt) {
         this.reduce_idx_x_by_c(1, "max_hp", amt);
     }
+#ifdef HAS_RAND_RANGE
     def_rand_range(lo_inclusive, hi_inclusive) {
         const amt = this.rand_range(lo_inclusive, hi_inclusive);
         this.increase_idx_def(0, amt);
@@ -7607,6 +7612,7 @@ export class GameState {
         const amt = this.rand_range(lo_inclusive, hi_inclusive);
         this.deal_damage(amt);
     }
+#endif // HAS_RAND_RANGE
 #ifdef HAS_STAR_TRAIL_DIVINATION
     do_star_trail_divination(def, sp, qi, hp) {
         this.increase_idx_def(0, def);
@@ -7747,10 +7753,12 @@ export class GameState {
         }
         this.deal_damage(atk_amt);
     }
+#ifdef HAS_RAND_RANGE
     add_enemy_rand_range_of_x(lo_inclusive, hi_inclusive, x) {
         const amt = this.rand_range(lo_inclusive, hi_inclusive);
         this.add_enemy_c_of_x(amt, x);
     }
+#endif // HAS_RAND_RANGE
     set_enemy_c_of_x(c, x) {
         const current_value = this.players[1][x];
         if (current_value > c) {
@@ -8185,7 +8193,7 @@ export class GameState {
     }
     random_int(n) {
         this.used_randomness = true;
-        return Math.floor(Math.random() * n);
+        return Math.floor(this.rng() * n);
     }
     spirit_sword_deck_count(max_n) {
         const me = this.players[0];

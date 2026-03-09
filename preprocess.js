@@ -3,7 +3,7 @@
 import { preprocessJavaScript } from './preprocessor.js';
 import fs from 'fs';
 import { execSync } from 'child_process';
-import { deps } from './deps.js';
+import { deps, config_implies_config } from './deps.js';
 
 // HAS_SHADOW_OWL_REISHI -> HAS_FLYING_BRUSH
 
@@ -52,6 +52,13 @@ export function preprocess_plz(config) {
                     for (let implies_key of implies[key]) {
                         if (defines[implies_key] === undefined) {
                             new_defines[implies_key] = true;
+                        }
+                    }
+                }
+                if (config_implies_config[key] !== undefined) {
+                    for (let implied_key of config_implies_config[key]) {
+                        if (defines[implied_key] === undefined) {
+                            new_defines[implied_key] = true;
                         }
                     }
                 }
