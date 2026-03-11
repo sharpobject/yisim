@@ -1,7 +1,6 @@
 #!/usr/bin/env bun
 
-import { preprocess_plz } from './preprocess.js';
-import { preprocessJavaScript } from './preprocessor.js';
+import { preprocess_to_string } from './preprocess.js';
 import { swogi, SECTS, format_card, CRASH_FIST_CARDS, ready as card_info_ready } from './card_info.js';
 import { guess_character, ready as full_ready } from './gamestate_full.js';
 import seedrandom from 'seedrandom';
@@ -208,13 +207,7 @@ while (true) {
 
     // Preprocess for this riddle's cards/talents
     const config = build_preprocessor_config(riddle);
-    const orig_log = console.log;
-    console.log = () => {};
-    preprocess_plz(config);
-    console.log = orig_log;
-
-    // Build specialized factory in-process
-    const preprocessed = fs.readFileSync('gamestate.js', 'utf8');
+    const preprocessed = preprocess_to_string(config);
     let factory;
     try {
         factory = makeFactory(preprocessed);

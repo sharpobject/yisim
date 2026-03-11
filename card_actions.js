@@ -8924,7 +8924,6 @@ card_actions["605053"] = (game) => {
 // Cursed Merpeople Pearl
 card_actions["605061"] = (game) => {
     if (game.players[0].triggering_cursed_merpeople_pearl > 0) {
-        game.log("cannot loop copy");
         return;
     }
     game.players[0].triggering_cursed_merpeople_pearl += 1;
@@ -8936,7 +8935,6 @@ card_actions["605061"] = (game) => {
 // 605062
 card_actions["605062"] = (game) => {
     if (game.players[0].triggering_cursed_merpeople_pearl > 0) {
-        game.log("cannot loop copy");
         return;
     }
     game.players[0].triggering_cursed_merpeople_pearl += 1;
@@ -8950,7 +8948,6 @@ card_actions["605062"] = (game) => {
 // 605063
 card_actions["605063"] = (game) => {
     if (game.players[0].triggering_cursed_merpeople_pearl > 0) {
-        game.log("cannot loop copy");
         return;
     }
     game.players[0].triggering_cursed_merpeople_pearl += 1;
@@ -12718,8 +12715,13 @@ card_actions["906023"] = (game) => {
 
 // Fuxi Guqin
 card_actions["906031"] = (game) => {
+    if (game.players[0].triggering_fuxi_guqin > 0) {
+        return;
+    }
+    game.players[0].triggering_fuxi_guqin += 1;
     game.trigger_next_enemy_card();
     game.add_enemy_c_of_x(1, "skip_next_card_stacks");
+    game.players[0].triggering_fuxi_guqin -= 1;
 }
 
 // 906032

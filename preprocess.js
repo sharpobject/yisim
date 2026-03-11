@@ -19,21 +19,9 @@ for (let x in deps) {
     }
 }
 
+const sourceCode = fs.readFileSync("gamestate.jscpp", 'utf8');
 
-// Define the features we want to enable
-// const defines = {};
-// for (let x in deps) {
-//     defines[x] = true;
-// }
-
-// Get the input file from command line arguments
-// const args = process.argv.slice(2);
-// if (args.length !== 1) {
-//     console.error('Usage: node preprocess.js <input-file>');
-//     process.exit(1);
-// }
-
-export function preprocess_plz(config) {
+export function resolve_defines(config) {
     const defines = {};
     const visited = {};
     let go = true;
@@ -46,7 +34,6 @@ export function preprocess_plz(config) {
                     continue;
                 }
                 visited[key] = true;
-                console.log("I'm visiting " + key);
                 go = true;
                 if (implies[key] !== undefined) {
                     for (let implies_key of implies[key]) {
@@ -68,11 +55,17 @@ export function preprocess_plz(config) {
             defines[new_key] = true;
         }
     }
+    return defines;
+}
+
+export function preprocess_to_string(config) {
+    const defines = resolve_defines(config);
+    return preprocessJavaScript(sourceCode, defines);
+}
+
+export function preprocess_plz(config) {
+    const defines = resolve_defines(config);
     console.log(defines);
-    // for (let key in deps) {
-    //     defines[key] = true;
-    // }
-    const sourceCode = fs.readFileSync("gamestate.jscpp", 'utf8');
     const processedCode = preprocessJavaScript(sourceCode, defines);
     fs.writeFileSync("gamestate.js", processedCode);
     execSync("make clean");
@@ -84,7 +77,6 @@ export function make_full_gamestate() {
     for (let key in deps) {
         defines[key] = true;
     }
-    const sourceCode = fs.readFileSync("gamestate.jscpp", 'utf8');
     const processedCode = preprocessJavaScript(sourceCode, defines);
     fs.writeFileSync("gamestate_full.js", processedCode);
 }

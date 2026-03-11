@@ -270,6 +270,7 @@ export const deps = {
         "devouring_ancient_vine_stacks", "36504"],
     HAS_SKIP_TO_PREVIOUS_CARD: ["skip_to_previous_card_stacks",
         "37302", "90301"],
+    HAS_FUXI_GUQIN: ["90603"],
     HAS_SKIP_NEXT_CARD: ["skip_next_card_stacks",
         "12502", "35503", "37301", "70101", "80406", "90603"],
     HAS_CYCLE_OF_FATE: ["fate_reincarnates_stacks", "37502"],

@@ -1354,6 +1354,9 @@ export class Player {
 #ifdef HAS_CURSED_MERPEOPLE_PEARL
         this.triggering_cursed_merpeople_pearl = 0;
 #endif // HAS_CURSED_MERPEOPLE_PEARL
+#ifdef HAS_FUXI_GUQIN
+        this.triggering_fuxi_guqin = 0;
+#endif // HAS_FUXI_GUQIN
 #ifdef HAS_XUANMING_FORCEAGE_FORMATION
         this.xuanming_forceage_formation_stacks = 0;
 #endif // HAS_XUANMING_FORCEAGE_FORMATION
@@ -1808,6 +1811,20 @@ export class Player {
 #endif // HAS_SURGE_OF_QI
 #endif // HAS_STANCE
         this.reset_can_play();
+    }
+    get_next_playable_idx(idx) {
+        const len = this.cards.length;
+        const incr = this.card_play_direction;
+        for (let i=0; i<len; i++) {
+            idx = (idx + len + incr) % len;
+            if (this.can_play[idx]) {
+                return idx;
+            }
+        }
+        // all cards consumed: replace current with normal attack
+        this.can_play[idx] = true;
+        this.cards[idx] = "601011";
+        return idx;
     }
 }
 export class GameState {
@@ -3827,24 +3844,9 @@ export class GameState {
         idx = (idx + len - incr) % len;
         return idx;
     }
-    get_next_playable_idx(idx) {
-        const me = this.players[0];
-        const len = me.cards.length;
-        const incr = me.card_play_direction;
-        for (let i=0; i<len; i++) {
-            idx = (idx + len + incr) % len;
-            if (me.can_play[idx]) {
-                return idx;
-            }
-        }
-    }
     advance_next_card_index() {
         const me = this.players[0];
-        me.next_card_index = this.get_next_playable_idx(me.next_card_index);
-    }
-    can_play_a_card() {
-        const me = this.players[0];
-        return me.next_card_index < me.cards.length && me.can_play[me.next_card_index];
+        me.next_card_index = me.get_next_playable_idx(me.next_card_index);
     }
     gain_qi_to_afford_card(gather_qi) {
 #ifdef HAS_GATHER_QI
@@ -4586,7 +4588,7 @@ export class GameState {
                     found = true;
                     break;
                 }
-                idx_to_which_to_skip = this.get_next_playable_idx(idx_to_which_to_skip);
+                idx_to_which_to_skip = me.get_next_playable_idx(idx_to_which_to_skip);
             }
             if (found) {
                 while (me.next_card_index !== idx_to_which_to_skip) {
@@ -4778,12 +4780,6 @@ export class GameState {
                 this.log("chase!!");
             }
             action_idx += 1;
-            if (!this.can_play_a_card()) {
-                this.log("can't play any card :( converting slot 0 to normal");
-                me.can_play[0] = true;
-                me.next_card_index = 0;
-                me.cards[0] = "601011";
-            }
             this.do_skip_next_card();
 #ifdef HAS_SKIP_ONE_PLAY
             while (me.skip_one_play[me.next_card_index]) {
@@ -5347,12 +5343,6 @@ export class GameState {
             amt = Math.ceil(amt * 14 / 10);
         }
 #endif // HAS_HEAVENLY_WILL_COMPLY
-#ifdef HAS_HEAVENLY_WILL_DEFY
-        if (me.god_opportunity_reversal_stacks > 0) {
-            const dmg_amt = Math.floor(amt / 2);
-            this.deal_damage_inner(dmg_amt, false, idx);
-        }
-#endif // HAS_HEAVENLY_WILL_DEFY
 #ifdef HAS_WILD_CROSSING_SEAL
         if (me.wild_crossing_seal_stacks > 0 && idx === 0) {
             this.do_wild_crossing_seal_chase();
@@ -5382,6 +5372,14 @@ export class GameState {
         }
 #endif // HAS_BIRDIE_WIND
         this.log("healed " + amt + " hp. Went from " + prev_hp + " to " + me.hp);
+#ifdef HAS_HEAVENLY_WILL_DEFY
+        if (me.god_opportunity_reversal_stacks > 0) {
+            const dmg_amt = Math.floor(amt / 2);
+            if (dmg_amt > 0) {
+                this.deal_damage_inner(dmg_amt, false, idx);
+            }
+        }
+#endif // HAS_HEAVENLY_WILL_DEFY
     }
     reduce_my_hp(dmg) {
         return this.reduce_idx_hp(0, dmg, false);
@@ -5411,17 +5409,19 @@ export class GameState {
             amt = Math.ceil(amt * 14 / 10);
         }
 #endif // HAS_HEAVENLY_WILL_COMPLY
-#ifdef HAS_HEAVENLY_WILL_DEFY
-        if (me.god_opportunity_reversal_stacks > 0) {
-            const dmg_amt = Math.floor(amt / 2);
-            this.deal_damage_inner(dmg_amt, false, idx);
-        }
-#endif // HAS_HEAVENLY_WILL_DEFY
         me.def += amt;
 #ifdef HAS_TOTAL_DEF_GAINED
         me.total_def_gained += amt;
 #endif // HAS_TOTAL_DEF_GAINED
         this.log("gained " + amt + " def. Now have " + me.def + " def");
+#ifdef HAS_HEAVENLY_WILL_DEFY
+        if (me.god_opportunity_reversal_stacks > 0) {
+            const dmg_amt = Math.floor(amt / 2);
+            if (dmg_amt > 0) {
+                this.deal_damage_inner(dmg_amt, false, idx);
+            }
+        }
+#endif // HAS_HEAVENLY_WILL_DEFY
     }
     increase_idx_penetrate(idx, amt) {
         if (amt === 0) {
@@ -6659,7 +6659,7 @@ export class GameState {
         this.reduce_idx_x_by_c(1, x, c);
     }
     reduce_enemy_x_by_c_pct_enemy_y(x, c, y) {
-        const to_lose = Math.ceil(this.players[1][y] * c / 100);
+        const to_lose = Math.max(0, Math.ceil(this.players[1][y] * c / 100));
         this.reduce_idx_x_by_c(1, x, to_lose);
     }
     reduce_enemy_x_by_enemy_y(x, y) {
@@ -6997,7 +6997,7 @@ export class GameState {
             this.chase();
             return;
         }
-        const next_idx = this.get_next_playable_idx(this.players[0].currently_playing_card_idx);
+        const next_idx = this.players[0].get_next_playable_idx(this.players[0].currently_playing_card_idx);
         const next_id = this.players[0].cards[next_idx];
         if (swogi[next_id].marking === "mu") {
             this.chase();
@@ -7530,12 +7530,15 @@ export class GameState {
     }
 #endif // HAS_EARTH_SPIRIT_DUST
     do_frozen_blood_lotus(times) {
+        const me = this.players[0];
         for (let i=0; i<times; i++) {
-            let amt = 10;
-            if (this.players[0].hp <= 10) {
-                amt = this.players[0].hp - 1;
+            if (me.hp > 1) {
+                let amt = 10;
+                if (me.hp <= 10) {
+                    amt = me.hp - 1;
+                }
+                this.reduce_idx_x_by_c(0, "hp", amt);
             }
-            this.reduce_idx_x_by_c(0, "hp", amt);
         }
         this.increase_idx_x_by_c(0, "guard_up", times);
     }
@@ -8019,12 +8022,15 @@ export class GameState {
         this.players[0].is_triggering_donghuang_zhong -= 1;
     }
 #endif // HAS_DONGHUANG_ZHONG
+#ifdef HAS_FUXI_GUQIN
     trigger_next_enemy_card() {
-        const idx = this.players[1].next_card_index;
-        const card_id = this.players[1].cards[idx];
+        const enemy = this.players[1];
+        const idx = enemy.get_next_playable_idx(enemy.next_card_index);
+        const card_id = enemy.cards[idx];
         this.log("triggering enemy card: " + format_card(card_id));
         this.trigger_card(card_id, this.players[0].currently_triggering_card_idx);
     }
+#endif // HAS_FUXI_GUQIN
     trigger_next_card() {
         let idx = this.players[0].currently_playing_card_idx;
         const next_idx = this.get_next_idx(idx);
