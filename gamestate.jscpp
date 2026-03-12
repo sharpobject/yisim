@@ -4054,7 +4054,7 @@ export class GameState {
         const amt = this.players[0].nuwa_stone_stacks;
         if (amt > 0) {
             this.reduce_c_of_x(1, "nuwa_stone_stacks");
-            this.heal(this.players[0].hp);
+            this.heal(Math.max(0, this.players[0].hp));
         }
     }
 #endif // HAS_NUWA_STONE
@@ -7696,7 +7696,7 @@ export class GameState {
         if (this.if_wood_spirit()) {
             this.heal(heal_amt);
         }
-        const hp_to_reduce = Math.ceil(this.players[0].hp / 2);
+        const hp_to_reduce = Math.ceil(Math.max(0, this.players[0].hp) / 2);
         if (this.if_fire_spirit()) {
             this.reduce_idx_hp(0, hp_to_reduce);
             this.atk(1 + hp_to_reduce);
@@ -8061,7 +8061,7 @@ export class GameState {
     }
 #endif // HAS_XUANMING_THUNDERCLOUD_TRIBULATION
     do_xuanming_requiem_fulu(my_hp_loss_pct, fixed_hp_loss) {
-        const my_hp_loss = Math.ceil(this.players[0].hp * my_hp_loss_pct / 100);
+        const my_hp_loss = Math.ceil(Math.max(0, this.players[0].hp) * my_hp_loss_pct / 100);
         this.reduce_idx_hp(0, my_hp_loss);
         this.reduce_enemy_hp(my_hp_loss + fixed_hp_loss);
         this.reduce_enemy_max_hp(my_hp_loss + fixed_hp_loss);
