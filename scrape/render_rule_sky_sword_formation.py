@@ -33,15 +33,18 @@ addressable sprite-loading plumbing.
 from __future__ import annotations
 
 import argparse
+import json
 import math
 import re
 import ctypes
 import subprocess
 import unicodedata
+import hashlib
+from collections.abc import Callable, Iterable
 from dataclasses import dataclass
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 import UnityPy
 
 from card_data import (
@@ -72,6 +75,12 @@ MKS_SO_PATH = RENDER_CACHE_DIR / "libmagic_kernel_sharp.so"
 TMP_FONT_BUNDLE = ROOT / "YiXianPai/YiXianPai_Data/StreamingAssets/aa/StandaloneLinux64/6cca45594ab0a2c34be6caab06d1f8c6.bundle"
 DEFAULT_TMP_FONT_PATH_ID = -8666073828371201828
 HUIWEN_TMP_FONT_PATH_ID = 2000889227418753794
+TEXT_RENDERER = "sdf"
+TEXT_RENDERERS = ("sdf", "otf")
+SDF_DISTANCE_SCALE_NORMAL = 1.0
+SDF_DISTANCE_SCALE_BOLD = 1.0
+SDF_ISOLATED_EXTRA_PAD = 10
+ISOLATED_SDF_CACHE_VERSION = 4
 
 CARD_SIZE = (300.0, 508.0)
 PREFAB_CARD_FACE = (168.0, 285.0)
@@ -158,6 +167,9 @@ def child_rect(parent: PixelRect, parent_ui_size: tuple[float, float], rect: Uni
 
 
 ART_RECT = cardface_rect_to_frame(UnityRect((0.5, 0.5), (10.0, 48.0), (125.0, 150.0)))
+ART_SCALE = 1.001422084521948
+ART_OFFSET_X_UI = -0.09205882369925211
+ART_OFFSET_Y_UI = -0.03182882018845394
 QI_ICON_RECT = cardface_rect_to_frame(
     UnityRect((0.0, 1.0), (18.0, -22.0), (34.4144134521, 34.4144134521))
 )
@@ -167,7 +179,12 @@ QI_LABEL_RECT = child_rect(
     UnityRect((0.5, 0.5), (0.5, 0.0), (41.4144134521, 34.4144134521)),
 )
 QI_ICON_DRAW_RECT = QI_ICON_RECT.translated(0.0, -1.0)
-HP_ICON_DRAW_RECT = QI_ICON_DRAW_RECT.expanded(3.25, 0.0)
+HP_ICON_RECT = cardface_rect_to_frame(
+    UnityRect((0.0, 1.0), (18.0, -22.0), (40.0900001526, 33.7690010071))
+)
+HP_ICON_DRAW_RECT = HP_ICON_RECT
+HP_ICON_TINT = (1.0, 0.8254716992, 0.8254716992, 1.0)
+CARD_OUTPUT_BLEED_X_UI = max(0.0, -HP_ICON_DRAW_RECT.left)
 VERTICAL_NAME_RECT = cardface_rect_to_frame(
     UnityRect((0.0, 1.0), (23.6000003815, -92.1999969482), (25.0, 120.0))
 )
@@ -184,8 +201,10 @@ EN_TITLE_RECT = child_rect(
     UnityRect((0.0, 1.0), (77.0, -16.0), (120.0, 28.0)),
 )
 
-DESC_TEXT_DRAW_RECT_EN = DESC_RECT.translated(-0.08740619886848097, -1.2405589386906428)
-DESC_TEXT_DRAW_RECT_CJK = DESC_RECT.translated(0.5744326767405602, -1.6437780077879998)
+DESC_TEXT_DRAW_RECT_EN = DESC_RECT.translated(0.8126833572395623, 1.8731626620095925)
+DESC_TEXT_DRAW_RECT_CJK = DESC_RECT.translated(0.5744326767405602, 1.011374107932542)
+DESC_LAYOUT_RECT_EN = DESC_RECT.translated(-0.08740619886848097, 1.4175855117404319)
+DESC_LAYOUT_RECT_CJK = DESC_TEXT_DRAW_RECT_CJK
 DESC_WRAP_INSET_X = 0.0
 EN_TITLE_BG_DRAW_RECT = EN_TITLE_BG_RECT
 EN_TITLE_DRAW_RECT = EN_TITLE_RECT.translated(0.0, 3.0)
@@ -203,8 +222,34 @@ LEVEL_NAMES = {
 
 TOKEN_RE = re.compile(r"(\[[^\]]+\]|\d+|[A-Za-z]+|\s+|.)")
 CJK_RE = re.compile(r"[\u3400-\u9fff]")
-CJK_CLOSING_PUNCTUATION = {"”", "」", "』", "）", "】", "》", "〉", "’"}
-LINE_START_FORBIDDEN_PUNCTUATION = {"[", "{", "（", "【", "《", "〈", "“", "‘", "「", "『"}
+CJK_FULL_WIDTH_PUNCTUATION = {
+    "，",
+    "。",
+    "、",
+    "：",
+    "；",
+    "？",
+    "！",
+    "“",
+    "”",
+    "‘",
+    "’",
+    "（",
+    "）",
+    "【",
+    "】",
+    "《",
+    "》",
+    "〈",
+    "〉",
+    "「",
+    "」",
+    "『",
+    "』",
+}
+CJK_OPENING_PUNCTUATION = {"（", "【", "《", "〈", "“", "‘", "「", "『"}
+LINE_START_FORBIDDEN_PUNCTUATION = {"[", "{"}
+LINE_END_FORBIDDEN_PUNCTUATION = CJK_OPENING_PUNCTUATION
 BODY_TEXT_COLOR = (61, 57, 53)
 CONTINUOUS_COLOR = (0xB2, 0x1D, 0x81)
 INJURED_ATTACK_COLOR = (0x9D, 0x10, 0x22)
@@ -243,6 +288,9 @@ DEFAULT_OUTLINE_MATERIAL = {
     "underlay_offset_x": 0.5,
     "underlay_offset_y": -0.5,
     "underlay_color": (0.0, 0.0, 0.0, 0.20392157137393951),
+    # Serialized on the material, but the Unity material keyword set is only
+    # OUTLINE_ON. TMP's underlay pass is inactive without UNDERLAY_ON.
+    "underlay_enabled": False,
     "scale_ratio_c": 0.34166666865348816,
 }
 DEFAULT_ATLAS_MATERIAL = {
@@ -267,7 +315,7 @@ HUIWEN_OUTLINE_MATERIAL = {
     "outline_width": 0.4000000059604645,
     "outline_softness": 0.0,
     "gradient_scale": 3.0,
-    "scale_ratio_a": 0.6133333444595337,
+    "scale_ratio_a": 0.6130268573760986,
     "weight_normal": 0.0,
     "weight_bold": 0.75,
     "face_color": (1.0, 1.0, 1.0),
@@ -277,6 +325,7 @@ HUIWEN_OUTLINE_MATERIAL = {
     "underlay_offset_x": 0.0,
     "underlay_offset_y": 0.0,
     "underlay_color": (0.0, 0.0, 0.0, 0.5),
+    "underlay_enabled": False,
     "scale_ratio_c": 0.2083333283662796,
 }
 TITLE_FONT_COLOR = (0.8588235378265381, 0.8588235378265381, 0.8588235378265381)
@@ -298,34 +347,73 @@ ANIMA_DIGIT_SCALE_X = 1.07
 ANIMA_DIGIT_SCALE_Y = 0.94
 ANIMA_DIGIT_OFFSET_X = 0.5
 ANIMA_DIGIT_OFFSET_Y = 0.25
+QI_ICON_SCALE = 1.0008057020731886
+QI_ICON_OFFSET_X_UI = -0.12769639345461417
+QI_ICON_OFFSET_Y_UI = 0.7372986965004059
+QI_DIGIT_FONT_SIZE_UI = 28.8449109354962
+QI_DIGIT_SCALE_X = 1.001759114865247
+QI_DIGIT_SCALE_Y = 0.9591710014525825
+QI_DIGIT_OFFSET_X = 0.036068902928897355
+QI_DIGIT_OFFSET_Y = -0.48511498013103743
+QI_DIGIT_FACE_DILATE = 0.5273610944678632
+QI_DIGIT_OUTLINE_WIDTH = 0.4183877831138458
+QI_DIGIT_DISTANCE_SCALE = 1.0147642048750347
+QI_DIGIT_FACE_DISTANCE_SCALE = 3.308406981452679
+QI_DIGIT_OUTLINE_DISTANCE_SCALE = 3.1494289229419365
 HP_DIGIT_SCALE_X = 0.92
 HP_DIGIT_SCALE_Y = 0.94
 HP_DIGIT_OFFSET_X = 0.0
 HP_DIGIT_OFFSET_Y = 0.25
-TITLE_FONT_SIZE_MAX_UI = 13.5
+TITLE_FONT_SIZE_MAX_UI = 14.56875284433342
 TITLE_FONT_SIZE_MIN_UI = 10.0
-TITLE_LINE_SPACING = -2.0
-TITLE_GLYPH_SCALE_EN = 1.025
+TITLE_WRAP_FONT_SIZE_MAX_UI = 14.25
+TITLE_TWO_LINE_MAX_SCALE = 0.8334215347837868
+TITLE_LINE_SPACING = 2.3012257089082526
+TITLE_CHARACTER_SPACING_EN = -3.7700981175200186
+TITLE_GLYPH_SCALE_EN = 1.1404085973558389
+TITLE_RECT_OFFSET_X_UI = -0.034971895036527895
+TITLE_RECT_WIDTH_SCALE = 1.0041974547473036
+TITLE_OFFSET_X_UI = -1.0506263503372113
+TITLE_OFFSET_Y_UI = 0.09712161096106693
+TITLE_SINGLE_LINE_OFFSET_Y_UI = 0.42
+TITLE_SINGLE_LINE_SCALE = 0.9941755847635919
+TITLE_FACE_DILATE = 0.2090065665925679
+TITLE_OUTLINE_WIDTH = 0.43900004618261096
+TITLE_DISTANCE_SCALE = 1.0558865146164804
+TITLE_FACE_DISTANCE_SCALE = 2.2009971710995266
+TITLE_OUTLINE_DISTANCE_SCALE = 1.580999819486321
 DESC_FONT_SIZE_MAX_UI = 20.0
 DESC_FONT_SIZE_MAX_EN_UI = 16.0
 DESC_FONT_SIZE_MIN_UI = 12.0
-DESC_CHARACTER_SPACING_EN = -1.7914233019245518
+DESC_CHARACTER_SPACING_EN = -2.351297241738103
+DESC_LAYOUT_CHARACTER_SPACING_EN = -1.7914233019245518
 DESC_CHARACTER_SPACING_CJK = 1.8936616714342625
-DESC_GLYPH_SCALE_EN = 1.001468481818466
+DESC_BLOCK_SCALE_EN = 1.0032253814165486
+DESC_BLOCK_SCALE_CJK = 1.0
+DESC_GLYPH_SCALE_EN = 1.0
 DESC_GLYPH_SCALE_CJK = 0.9967916566135181
-DESC_FIXED_LINE_OFFSET_Y_EN_UI = 2.6581444504310747
-DESC_FIXED_LINE_OFFSET_Y_CJK_UI = 2.6551521157205418
-DESC_FACE_DILATE_EN_NORMAL = 0.03855153853000065
-DESC_FACE_DILATE_EN_BOLD = -0.10512826733185415
+DESC_FACE_DILATE_EN_NORMAL = -0.051993628472797856
+DESC_FACE_DILATE_EN_BOLD = -0.04002735604645256
 DESC_FACE_DILATE_CJK_NORMAL = -0.000293767427539617
 DESC_FACE_DILATE_CJK_BOLD = -4.897105441768699e-05
+DESC_SDF_DISTANCE_SCALE_EN_NORMAL = 2.0
+DESC_SDF_DISTANCE_SCALE_EN_BOLD = 2.0
+DESC_SDF_DISTANCE_SCALE_CJK_NORMAL = DESC_SDF_DISTANCE_SCALE_EN_NORMAL
+DESC_SDF_DISTANCE_SCALE_CJK_BOLD = DESC_SDF_DISTANCE_SCALE_EN_BOLD
 DREAM_DESC_OFFSET_Y_UI = 0.0
 DREAM_DESC_LINE_SPACING = -12.0
-VERTICAL_NAME_FONT_SIZE_UI = 20.0
-VERTICAL_NAME_LINE_GAP_UI = 0.0
-VERTICAL_NAME_OFFSET_Y_UI = 0.0
-DREAM_VERTICAL_NAME_OFFSET_Y_UI = -4.0
-VERTICAL_NAME_SLOT_HEIGHT_UI = 20.5
+VERTICAL_NAME_FONT_SIZE_UI = 18.156028642800912
+VERTICAL_NAME_LINE_GAP_UI = -0.17364423725807782
+VERTICAL_NAME_OFFSET_X_UI = 0.02867320274363877
+VERTICAL_NAME_OFFSET_Y_UI = 4.7650312726046335
+DREAM_VERTICAL_NAME_OFFSET_Y_UI = -7.826987024998088
+VERTICAL_NAME_SLOT_HEIGHT_UI = 20.512251449250936
+VERTICAL_NAME_GLYPH_SCALE = 1.088768345464635
+VERTICAL_NAME_FACE_DILATE = 0.31696039008946836
+VERTICAL_NAME_OUTLINE_WIDTH = 0.49218453372502824
+VERTICAL_NAME_DISTANCE_SCALE = 1.3611748823227159
+VERTICAL_NAME_FACE_DISTANCE_SCALE = 2.2
+VERTICAL_NAME_OUTLINE_DISTANCE_SCALE = 1.58
 DEFAULT_FONT_ADVANCES = {
     "+": 15.0,
     "0": 15.0,
@@ -377,128 +465,38 @@ def desc_line_spacing(locale_suffix: str, is_dream: bool = False) -> float:
     return DESC_LINE_SPACING_EN if locale_suffix == "en" else DESC_LINE_SPACING_CJK
 
 
-def desc_fixed_line_offset_ui(locale_suffix: str) -> float:
-    return DESC_FIXED_LINE_OFFSET_Y_EN_UI if locale_suffix == "en" else DESC_FIXED_LINE_OFFSET_Y_CJK_UI
-
-
 def desc_face_dilates(locale_suffix: str) -> tuple[float, float]:
     if locale_suffix == "en":
         return DESC_FACE_DILATE_EN_NORMAL, DESC_FACE_DILATE_EN_BOLD
     return DESC_FACE_DILATE_CJK_NORMAL, DESC_FACE_DILATE_CJK_BOLD
 
 
-@dataclass(frozen=True)
-class DescriptionStyle:
-    rect: PixelRect
-    glyph_scale: float
-    char_spacing: float
-    line_spacing: float
-    fixed_line_offset: float
-    normal_face_dilate: float
-    bold_face_dilate: float
+def desc_sdf_distance_scales(locale_suffix: str) -> tuple[float, float]:
+    if locale_suffix == "en":
+        return DESC_SDF_DISTANCE_SCALE_EN_NORMAL, DESC_SDF_DISTANCE_SCALE_EN_BOLD
+    return DESC_SDF_DISTANCE_SCALE_CJK_NORMAL, DESC_SDF_DISTANCE_SCALE_CJK_BOLD
 
 
-DESC_GROUP_STYLES_EN: dict[tuple[int, int], DescriptionStyle] = {
-    (1, 0): DescriptionStyle(
-        rect=DESC_RECT.translated(0.2662313972092861, 0.006890329470316036),
-        glyph_scale=1.0097827360100955,
-        char_spacing=-2.9206905486715082,
-        line_spacing=-4.9529518407920765,
-        fixed_line_offset=1.3310520793108709,
-        normal_face_dilate=-0.09337863948680239,
-        bold_face_dilate=-0.016979653743006903,
-    ),
-    (2, 0): DescriptionStyle(
-        rect=DESC_RECT.translated(0.2526105423335931, 0.025267808849738546),
-        glyph_scale=1.0129141719859827,
-        char_spacing=-2.901151746837599,
-        line_spacing=-4.787246942537729,
-        fixed_line_offset=1.2183925914946447,
-        normal_face_dilate=-0.043439701415128165,
-        bold_face_dilate=-0.06070288139777832,
-    ),
-    (2, 1): DescriptionStyle(
-        rect=DESC_RECT.translated(0.15598870902729928, 0.0015710518999591647),
-        glyph_scale=1.0111662253627824,
-        char_spacing=-2.8568051612912035,
-        line_spacing=-4.6334976086191455,
-        fixed_line_offset=1.0293761120041753,
-        normal_face_dilate=-0.08563293938005352,
-        bold_face_dilate=-0.025694572157604605,
-    ),
-    (3, 0): DescriptionStyle(
-        rect=DESC_RECT.translated(0.07413663887310831, 0.08752570659082932),
-        glyph_scale=1.0077699628801338,
-        char_spacing=-2.92132043308044,
-        line_spacing=-4.546174015362379,
-        fixed_line_offset=0.8310934029740475,
-        normal_face_dilate=-0.040139870101944475,
-        bold_face_dilate=-0.05667900425242179,
-    ),
-    (3, 1): DescriptionStyle(
-        rect=DESC_RECT.translated(-0.05319154493470608, 0.12329193141470297),
-        glyph_scale=1.0070440654498956,
-        char_spacing=-2.858284576439883,
-        line_spacing=-4.6605171923017314,
-        fixed_line_offset=0.6962627536712882,
-        normal_face_dilate=-0.02830589904579816,
-        bold_face_dilate=-0.09750469163503185,
-    ),
-    (3, 2): DescriptionStyle(
-        rect=DESC_RECT.translated(0.09680523586072867, 0.0352001432926961),
-        glyph_scale=1.010062185221565,
-        char_spacing=-2.8650884249219426,
-        line_spacing=-4.823438396130484,
-        fixed_line_offset=0.7582635769667199,
-        normal_face_dilate=-0.041841606326500136,
-        bold_face_dilate=-0.06547234541892799,
-    ),
-    (4, 0): DescriptionStyle(
-        rect=DESC_RECT.translated(-0.03593750413938427, 0.11844534843508692),
-        glyph_scale=1.0061951740068305,
-        char_spacing=-2.8594444156072725,
-        line_spacing=-4.694867439988668,
-        fixed_line_offset=0.9560735190863694,
-        normal_face_dilate=-0.05642826503798186,
-        bold_face_dilate=-0.017743816533011957,
-    ),
-    (4, 1): DescriptionStyle(
-        rect=DESC_RECT.translated(0.09503011808483043, 0.07549684713104941),
-        glyph_scale=1.00426276126279,
-        char_spacing=-2.774907741349656,
-        line_spacing=-4.891881168948058,
-        fixed_line_offset=1.2522307234100887,
-        normal_face_dilate=0.0014604620071501778,
-        bold_face_dilate=-0.02195978202483368,
-    ),
+def desc_layout_character_spacing(locale_suffix: str) -> float:
+    if locale_suffix == "en":
+        return DESC_LAYOUT_CHARACTER_SPACING_EN
+    return DESC_CHARACTER_SPACING_CJK
+
+
+DESC_LAYOUT_CHARACTER_SPACING_BY_GROUP_EN: dict[tuple[int, int], float] = {
 }
 
 
-def description_style_for_group(
+def desc_layout_character_spacing_for_group(
     locale_suffix: str,
     description: str,
-    rows: list[str],
+    wrapped_lines: list[tuple[list[str], bool]],
     is_dream: bool = False,
-) -> DescriptionStyle:
-    if locale_suffix == "en" and not is_dream:
-        tuned = DESC_GROUP_STYLES_EN.get((len(rows), description.count("\n")))
-        if tuned is not None:
-            return tuned
-    rect = DESC_TEXT_DRAW_RECT_EN if locale_suffix == "en" else DESC_TEXT_DRAW_RECT_CJK
-    if is_dream:
-        rect = rect.translated(0.0, DREAM_DESC_OFFSET_Y_UI)
-    glyph_scale = DESC_GLYPH_SCALE_EN if locale_suffix == "en" else DESC_GLYPH_SCALE_CJK
-    char_spacing = DESC_CHARACTER_SPACING_EN if locale_suffix == "en" else DESC_CHARACTER_SPACING_CJK
-    normal_face_dilate, bold_face_dilate = desc_face_dilates(locale_suffix)
-    return DescriptionStyle(
-        rect=rect,
-        glyph_scale=glyph_scale,
-        char_spacing=char_spacing,
-        line_spacing=desc_line_spacing(locale_suffix, is_dream=is_dream),
-        fixed_line_offset=desc_fixed_line_offset_ui(locale_suffix),
-        normal_face_dilate=normal_face_dilate,
-        bold_face_dilate=bold_face_dilate,
-    )
+) -> float:
+    if locale_suffix != "en" or is_dream:
+        return desc_layout_character_spacing(locale_suffix)
+    key = (len(wrapped_lines), description.count("\n"))
+    return DESC_LAYOUT_CHARACTER_SPACING_BY_GROUP_EN.get(key, DESC_LAYOUT_CHARACTER_SPACING_EN)
 
 
 @dataclass(frozen=True)
@@ -538,6 +536,8 @@ class TmpGlyph:
 
 class TmpFont:
     def __init__(self, font_asset_path_id: int, atlas_path: Path) -> None:
+        self.font_asset_path_id = font_asset_path_id
+        self.atlas_path = atlas_path
         self.atlas = Image.open(atlas_path).convert("RGBA").getchannel("A")
         self.glyphs: dict[str, TmpGlyph] = {}
         env = UnityPy.load(str(TMP_FONT_BUNDLE))
@@ -570,6 +570,145 @@ class TmpFont:
                 advance=float(metrics["m_HorizontalAdvance"]),
             )
         self.space_advance = self.glyphs.get(" ", TmpGlyph(0, 0, 0, 0, 0, 0, 15.0)).advance
+        self._isolated_sdf_cache: dict[tuple[object, ...], tuple[Image.Image, tuple[int, int, int, int]]] = {}
+
+    def isolated_glyph_sdf(
+        self,
+        char: str,
+        glyph: TmpGlyph,
+        crop_pad: int,
+        extra_pad: int,
+        isolate_fringe: int,
+        extrapolate: int,
+        tight: bool = False,
+        seed_largest_only: bool = False,
+    ) -> tuple[Image.Image, tuple[int, int, int, int]]:
+        """Return an isolated padded glyph SDF crop and adjusted glyph box.
+
+        This is deliberately a pixel-translation-only derived atlas cell: the
+        original atlas pixels are copied into a larger crop and the synthetic
+        fringe is generated once for this glyph/padding configuration.  Later
+        render passes still sample the derived cell at their final scale.
+        """
+
+        key = (
+            ISOLATED_SDF_CACHE_VERSION,
+            self.font_asset_path_id,
+            self.atlas_path.name,
+            ord(char),
+            glyph.x,
+            glyph.y,
+            glyph.width,
+            glyph.height,
+            crop_pad,
+            extra_pad,
+            isolate_fringe,
+            extrapolate,
+            tight,
+            seed_largest_only,
+        )
+        cached = self._isolated_sdf_cache.get(key)
+        if cached is not None:
+            image, glyph_box = cached
+            return image.copy(), glyph_box
+
+        cache_id = hashlib.sha1(repr(key).encode("utf-8")).hexdigest()
+        cache_dir = RENDER_CACHE_DIR / "isolated_sdf"
+        png_path = cache_dir / f"{cache_id}.png"
+        json_path = cache_dir / f"{cache_id}.json"
+        if png_path.exists() and json_path.exists():
+            try:
+                data = json.loads(json_path.read_text(encoding="utf-8"))
+                glyph_box = tuple(int(value) for value in data["glyph_box"])
+                if len(glyph_box) == 4:
+                    image = Image.open(png_path).convert("L")
+                    result = (image, glyph_box)
+                    self._isolated_sdf_cache[key] = result
+                    return image.copy(), glyph_box
+            except Exception:
+                pass
+
+        glyph_left = glyph.x
+        glyph_top = self.atlas.height - glyph.y - glyph.height
+        glyph_right = glyph.x + glyph.width
+        glyph_bottom = self.atlas.height - glyph.y
+
+        if tight:
+            atlas_pixels = self.atlas.load()
+            seeds = {
+                (x, y)
+                for y in range(max(0, glyph_top), min(self.atlas.height, glyph_bottom))
+                for x in range(max(0, glyph_left), min(self.atlas.width, glyph_right))
+                if atlas_pixels[x, y] >= 128
+            }
+            if not seeds:
+                seeds = {
+                    (x, y)
+                    for y in range(max(0, glyph_top), min(self.atlas.height, glyph_bottom))
+                    for x in range(max(0, glyph_left), min(self.atlas.width, glyph_right))
+                    if atlas_pixels[x, y] >= 64
+                }
+
+            seen: set[tuple[int, int]] = set()
+            largest: list[tuple[int, int]] = []
+            for seed in seeds:
+                if seed in seen:
+                    continue
+                stack = [seed]
+                component: list[tuple[int, int]] = []
+                seen.add(seed)
+                while stack:
+                    px, py = stack.pop()
+                    component.append((px, py))
+                    for nx in (px - 1, px, px + 1):
+                        for ny in (py - 1, py, py + 1):
+                            if (nx, ny) in seeds and (nx, ny) not in seen:
+                                seen.add((nx, ny))
+                                stack.append((nx, ny))
+                if len(component) > len(largest):
+                    largest = component
+
+            if largest:
+                source_pad = max(1, isolate_fringe)
+                left = max(0, min(x for x, _ in largest) - source_pad)
+                top = max(0, min(y for _, y in largest) - source_pad)
+                right = min(self.atlas.width, max(x for x, _ in largest) + source_pad + 1)
+                bottom = min(self.atlas.height, max(y for _, y in largest) + source_pad + 1)
+            else:
+                left = max(0, glyph_left - crop_pad)
+                top = max(0, glyph_top - crop_pad)
+                right = min(self.atlas.width, glyph_right + crop_pad)
+                bottom = min(self.atlas.height, glyph_bottom + crop_pad)
+        else:
+            left = max(0, glyph_left - crop_pad)
+            top = max(0, glyph_top - crop_pad)
+            right = min(self.atlas.width, glyph_right + crop_pad)
+            bottom = min(self.atlas.height, glyph_bottom + crop_pad)
+        sdf = self.atlas.crop((left, top, right, bottom))
+        glyph_box = (
+            glyph_left - left,
+            glyph_top - top,
+            glyph_right - left,
+            glyph_bottom - top,
+        )
+        if extra_pad > 0:
+            padded = Image.new("L", (sdf.width + extra_pad * 2, sdf.height + extra_pad * 2), 0)
+            padded.paste(sdf, (extra_pad, extra_pad))
+            sdf = padded
+            glyph_box = (
+                glyph_box[0] + extra_pad,
+                glyph_box[1] + extra_pad,
+                glyph_box[2] + extra_pad,
+                glyph_box[3] + extra_pad,
+            )
+        sdf = isolate_sdf_component(sdf, glyph_box, isolate_fringe, extrapolate, seed_largest_only=seed_largest_only)
+
+        cache_dir.mkdir(parents=True, exist_ok=True)
+        sdf.save(png_path, optimize=True, compress_level=9)
+        json_path.write_text(json.dumps({"glyph_box": glyph_box}, separators=(",", ":")), encoding="utf-8")
+        result = (sdf, glyph_box)
+        self._isolated_sdf_cache[key] = result
+        return sdf.copy(), glyph_box
 
     @staticmethod
     def character_spacing_px(character_spacing: float, font_size: int) -> float:
@@ -596,6 +735,11 @@ class TmpFont:
         spacing = line_spacing * font_size * 0.01
         return max(1, round(face_line_height + spacing))
 
+    def text_line_height_float(self, font_size: float, line_spacing: float = 0.0) -> float:
+        face_line_height = self.line_height * font_size / self.point_size
+        spacing = line_spacing * font_size * 0.01
+        return max(1.0, face_line_height + spacing)
+
     @staticmethod
     def tmp_spacing_height(font_size: int, spacing: float) -> int:
         return max(0, math.ceil(spacing * font_size * 0.01))
@@ -611,68 +755,124 @@ class TmpFont:
         bold: bool = False,
         trim: bool = True,
         isolate_bleed: bool = False,
+        glyph_scale_x: float = 1.0,
+        glyph_scale_y: float = 1.0,
+        isolate_fringe_px: int | None = None,
+        tight_isolate: bool = False,
+        line_phase_x: float = 0.0,
+        line_phase_y: float = 0.0,
+        sdf_distance_scale_normal: float | None = None,
+        sdf_distance_scale_bold: float | None = None,
+        sdf_face_distance_scale_normal: float | None = None,
+        sdf_face_distance_scale_bold: float | None = None,
+        sdf_outline_distance_scale_normal: float | None = None,
+        sdf_outline_distance_scale_bold: float | None = None,
     ) -> Image.Image:
         scale = font_size / self.point_size
+        x_scale = scale * glyph_scale_x
+        y_scale = scale * glyph_scale_y
         spacing = self.character_spacing_px(character_spacing, font_size)
-        pad = max(4, round(font_size * 0.25))
+        pad = max(4, round(font_size * 0.25 * max(glyph_scale_x, glyph_scale_y)))
+        if isolate_bleed:
+            pad += math.ceil(SDF_ISOLATED_EXTRA_PAD * max(x_scale, y_scale))
         cursor = pad
-        baseline = pad + round(27.0 * scale)
-        width = self.text_width(text, font_size, character_spacing) + pad * 2
-        height = round(42.0 * scale) + pad * 2
+        baseline = pad + round(27.0 * y_scale)
+        width = round(self.text_width_float(text, font_size, character_spacing) * glyph_scale_x) + pad * 2
+        height = round(42.0 * y_scale) + pad * 2
         result = Image.new("RGBA", (max(1, width), max(1, height)), (0, 0, 0, 0))
 
         for char in text:
             glyph = self.glyphs.get(char)
             if glyph is None or glyph.width == 0 or glyph.height == 0:
-                cursor += self.space_advance * scale + spacing
+                cursor += self.space_advance * x_scale + spacing * glyph_scale_x
                 continue
             active_material = material or DEFAULT_ATLAS_MATERIAL
             crop_pad = tmp_glyph_padding(active_material, bold)
-            left = max(0, glyph.x - crop_pad)
-            top = max(0, self.atlas.height - glyph.y - glyph.height - crop_pad)
-            right = min(self.atlas.width, glyph.x + glyph.width + crop_pad)
-            bottom = min(self.atlas.height, self.atlas.height - glyph.y + crop_pad)
-            sdf = self.atlas.crop((left, top, right, bottom))
+            extra_pad = SDF_ISOLATED_EXTRA_PAD if isolate_bleed else 0
+            effective_crop_pad = crop_pad + extra_pad
             if isolate_bleed:
-                glyph_box = (
-                    glyph.x - left,
-                    self.atlas.height - glyph.y - glyph.height - top,
-                    glyph.x + glyph.width - left,
-                    self.atlas.height - glyph.y - top,
-                )
-                sdf = isolate_sdf_component(sdf, glyph_box, crop_pad)
-            sdf = magic_kernel_sharp_resize_l(
-                sdf,
-                (max(1, round(sdf.width * scale)), max(1, round(sdf.height * scale))),
+                isolate_fringe = crop_pad if isolate_fringe_px is None else isolate_fringe_px
+                sdf, glyph_box = self.isolated_glyph_sdf(
+                    char,
+                    glyph,
+                    crop_pad,
+            extra_pad,
+            isolate_fringe,
+            max(0, effective_crop_pad - isolate_fringe),
+            tight=tight_isolate,
+            seed_largest_only=tight_isolate,
+        )
+            else:
+                left = max(0, glyph.x - crop_pad)
+                top = max(0, self.atlas.height - glyph.y - glyph.height - crop_pad)
+                right = min(self.atlas.width, glyph.x + glyph.width + crop_pad)
+                bottom = min(self.atlas.height, self.atlas.height - glyph.y + crop_pad)
+                sdf = self.atlas.crop((left, top, right, bottom))
+                glyph_box = (crop_pad, crop_pad, crop_pad + glyph.width, crop_pad + glyph.height)
+            glyph_left = cursor + (glyph.bearing_x - glyph_box[0]) * x_scale
+            glyph_top = baseline - (glyph.bearing_y + glyph_box[1]) * y_scale
+            glyph_left_i = math.floor(glyph_left + line_phase_x)
+            glyph_top_i = math.floor(glyph_top + line_phase_y)
+            sdf_source = sdf
+            sampled_size = (max(1, round(sdf.width * x_scale)), max(1, round(sdf.height * y_scale)))
+            sample_phase_x = (glyph_left + line_phase_x) - glyph_left_i
+            sample_phase_y = (glyph_top + line_phase_y) - glyph_top_i
+            sdf = sample_sdf_bilinear_offset(
+                sdf_source,
+                sampled_size,
+                sample_phase_x,
+                sample_phase_y,
             )
-            glyph_left = cursor + (glyph.bearing_x - crop_pad) * scale
-            glyph_top = baseline - (glyph.bearing_y + crop_pad) * scale
 
-            fill_alpha, outline_alpha, underlay = tmp_sdf_alphas(sdf, active_material, font_size, bold=bold)
-            if underlay is not None:
-                underlay_alpha, underlay_offset = underlay
+            alpha_font_size = shader_font_size or font_size
+            fill_alpha, outline_alpha = tmp_sdf_alphas(
+                sdf,
+                active_material,
+                alpha_font_size,
+                bold=bold,
+                sdf_distance_scale_normal=sdf_distance_scale_normal,
+                sdf_distance_scale_bold=sdf_distance_scale_bold,
+                sdf_face_distance_scale_normal=sdf_face_distance_scale_normal,
+                sdf_face_distance_scale_bold=sdf_face_distance_scale_bold,
+                sdf_outline_distance_scale_normal=sdf_outline_distance_scale_normal,
+                sdf_outline_distance_scale_bold=sdf_outline_distance_scale_bold,
+            )
+            underlay_offset = tmp_sdf_underlay_offset(active_material, alpha_font_size)
+            if underlay_offset is not None:
+                underlay_sdf = sample_sdf_bilinear_offset(
+                    sdf_source,
+                    sampled_size,
+                    sample_phase_x + underlay_offset[0],
+                    sample_phase_y + underlay_offset[1],
+                )
+                underlay_alpha = tmp_sdf_underlay(underlay_sdf, active_material, alpha_font_size)
                 color = active_material.get("underlay_color", (0.0, 0.0, 0.0, 0.0))
                 underlay_color = rgb_from_unit((color[0], color[1], color[2]))
                 underlay_layer = Image.new("RGBA", sdf.size, (*underlay_color, 255))
                 underlay_layer.putalpha(underlay_alpha)
-                alpha_composite_subpixel(
+                alpha_composite_text(
                     result,
                     underlay_layer,
-                    (glyph_left + underlay_offset[0], glyph_top + underlay_offset[1]),
+                    (glyph_left_i, glyph_top_i),
                 )
             if outline_alpha is not None:
                 outline_color = rgb_from_unit(active_material["outline_color"])
                 outline = Image.new("RGBA", sdf.size, (*outline_color, 255))
                 outline.putalpha(outline_alpha)
-                alpha_composite_subpixel(result, outline, (glyph_left, glyph_top))
+                alpha_composite_text(result, outline, (glyph_left_i, glyph_top_i))
 
             face = Image.new("RGBA", sdf.size, (*fill, 255))
             face.putalpha(fill_alpha)
-            alpha_composite_subpixel(result, face, (glyph_left, glyph_top))
-            cursor += glyph.advance * scale + spacing
+            alpha_composite_text(result, face, (glyph_left_i, glyph_top_i))
+            cursor += glyph.advance * x_scale + spacing * glyph_scale_x
 
         if trim:
             return result.crop(result.getbbox() or (0, 0, 1, 1))
+        if isolate_bleed and SDF_ISOLATED_EXTRA_PAD > 0:
+            inset_x = math.ceil(SDF_ISOLATED_EXTRA_PAD * x_scale)
+            inset_y = math.ceil(SDF_ISOLATED_EXTRA_PAD * y_scale)
+            if result.width > inset_x * 2 and result.height > inset_y * 2:
+                return result.crop((inset_x, inset_y, result.width - inset_x, result.height - inset_y))
         return result
 
     def render_rich_line(
@@ -684,6 +884,12 @@ class TmpFont:
         trim: bool = True,
         normal_face_dilate: float | None = None,
         bold_face_dilate: float | None = None,
+        sdf_distance_scale_normal: float | None = None,
+        sdf_distance_scale_bold: float | None = None,
+        sdf_face_distance_scale_normal: float | None = None,
+        sdf_face_distance_scale_bold: float | None = None,
+        sdf_outline_distance_scale_normal: float | None = None,
+        sdf_outline_distance_scale_bold: float | None = None,
     ) -> Image.Image:
         scale = font_size / self.point_size
         spacing = self.character_spacing_px(character_spacing, font_size)
@@ -715,16 +921,28 @@ class TmpFont:
                 right = min(self.atlas.width, glyph.x + glyph.width + crop_pad)
                 bottom = min(self.atlas.height, self.atlas.height - glyph.y + crop_pad)
                 sdf = self.atlas.crop((left, top, right, bottom))
-                sdf = magic_kernel_sharp_resize_l(
+                sdf = sample_sdf_bilinear(
                     sdf,
                     (max(1, round(sdf.width * scale)), max(1, round(sdf.height * scale))),
                 )
                 glyph_left = cursor + (glyph.bearing_x - crop_pad) * scale
                 glyph_top = baseline - (glyph.bearing_y + crop_pad) * scale
-                fill_alpha, _, _ = tmp_sdf_alphas(sdf, active_material, font_size, bold=bold)
+                alpha_font_size = shader_font_size or font_size
+                fill_alpha, _ = tmp_sdf_alphas(
+                    sdf,
+                    active_material,
+                    alpha_font_size,
+                    bold=bold,
+                    sdf_distance_scale_normal=sdf_distance_scale_normal,
+                    sdf_distance_scale_bold=sdf_distance_scale_bold,
+                    sdf_face_distance_scale_normal=sdf_face_distance_scale_normal,
+                    sdf_face_distance_scale_bold=sdf_face_distance_scale_bold,
+                    sdf_outline_distance_scale_normal=sdf_outline_distance_scale_normal,
+                    sdf_outline_distance_scale_bold=sdf_outline_distance_scale_bold,
+                )
                 face = Image.new("RGBA", sdf.size, (*fill, 255))
                 face.putalpha(fill_alpha)
-                alpha_composite_subpixel(result, face, (glyph_left, glyph_top))
+                alpha_composite_text(result, face, (glyph_left, glyph_top))
                 cursor += glyph.advance * scale + spacing
             if visible.strip():
                 previous_visible = visible
@@ -826,6 +1044,196 @@ def font(size: int) -> ImageFont.FreeTypeFont:
     return ImageFont.truetype(str(FONT_PATH), size=size)
 
 
+def material_outline_width_px(material: dict[str, object], font_size: int) -> int:
+    outline_width = float(material.get("outline_width", 0.0))
+    scale_ratio = float(material.get("scale_ratio_a", 1.0))
+    gradient_scale = float(material.get("gradient_scale", 3.0))
+    if outline_width <= 0.0:
+        return 0
+    return max(1, round(outline_width * scale_ratio * gradient_scale * font_size / DEFAULT_FONT_POINT_SIZE))
+
+
+def set_text_renderer(name: str) -> None:
+    if name not in TEXT_RENDERERS:
+        raise ValueError(f"Unknown text renderer {name!r}; expected one of {TEXT_RENDERERS}")
+    global TEXT_RENDERER
+    TEXT_RENDERER = name
+
+
+def set_sdf_distance_scale(normal: float | None = None, bold: float | None = None) -> None:
+    global SDF_DISTANCE_SCALE_NORMAL, SDF_DISTANCE_SCALE_BOLD
+    if normal is not None:
+        SDF_DISTANCE_SCALE_NORMAL = float(normal)
+    if bold is not None:
+        SDF_DISTANCE_SCALE_BOLD = float(bold)
+
+
+def set_english_title_render_params(
+    font_size_max_ui: float | None = None,
+    two_line_max_scale: float | None = None,
+    single_line_scale: float | None = None,
+    rect_offset_x_ui: float | None = None,
+    rect_width_scale: float | None = None,
+    offset_x_ui: float | None = None,
+    offset_y_ui: float | None = None,
+    glyph_scale: float | None = None,
+    char_spacing: float | None = None,
+    line_spacing: float | None = None,
+    face_dilate: float | None = None,
+    outline_width: float | None = None,
+    distance_scale: float | None = None,
+    face_distance_scale: float | None = None,
+    outline_distance_scale: float | None = None,
+) -> None:
+    global TITLE_FONT_SIZE_MAX_UI, TITLE_OFFSET_X_UI, TITLE_OFFSET_Y_UI
+    global TITLE_TWO_LINE_MAX_SCALE, TITLE_SINGLE_LINE_SCALE, TITLE_RECT_OFFSET_X_UI, TITLE_RECT_WIDTH_SCALE
+    global TITLE_GLYPH_SCALE_EN, TITLE_CHARACTER_SPACING_EN, TITLE_LINE_SPACING
+    global TITLE_FACE_DILATE, TITLE_OUTLINE_WIDTH, TITLE_DISTANCE_SCALE
+    global TITLE_FACE_DISTANCE_SCALE, TITLE_OUTLINE_DISTANCE_SCALE
+    if font_size_max_ui is not None:
+        TITLE_FONT_SIZE_MAX_UI = float(font_size_max_ui)
+    if two_line_max_scale is not None:
+        TITLE_TWO_LINE_MAX_SCALE = float(two_line_max_scale)
+    if single_line_scale is not None:
+        TITLE_SINGLE_LINE_SCALE = float(single_line_scale)
+    if rect_offset_x_ui is not None:
+        TITLE_RECT_OFFSET_X_UI = float(rect_offset_x_ui)
+    if rect_width_scale is not None:
+        TITLE_RECT_WIDTH_SCALE = float(rect_width_scale)
+    if offset_x_ui is not None:
+        TITLE_OFFSET_X_UI = float(offset_x_ui)
+    if offset_y_ui is not None:
+        TITLE_OFFSET_Y_UI = float(offset_y_ui)
+    if glyph_scale is not None:
+        TITLE_GLYPH_SCALE_EN = float(glyph_scale)
+    if char_spacing is not None:
+        TITLE_CHARACTER_SPACING_EN = float(char_spacing)
+    if line_spacing is not None:
+        TITLE_LINE_SPACING = float(line_spacing)
+    if face_dilate is not None:
+        TITLE_FACE_DILATE = float(face_dilate)
+    if outline_width is not None:
+        TITLE_OUTLINE_WIDTH = float(outline_width)
+    if distance_scale is not None:
+        TITLE_DISTANCE_SCALE = float(distance_scale)
+        TITLE_FACE_DISTANCE_SCALE = float(distance_scale)
+        TITLE_OUTLINE_DISTANCE_SCALE = float(distance_scale)
+    if face_distance_scale is not None:
+        TITLE_FACE_DISTANCE_SCALE = float(face_distance_scale)
+    if outline_distance_scale is not None:
+        TITLE_OUTLINE_DISTANCE_SCALE = float(outline_distance_scale)
+
+
+def set_art_transform(
+    scale: float | None = None,
+    dx_ui: float | None = None,
+    dy_ui: float | None = None,
+) -> None:
+    global ART_SCALE, ART_OFFSET_X_UI, ART_OFFSET_Y_UI
+    if scale is not None:
+        ART_SCALE = float(scale)
+    if dx_ui is not None:
+        ART_OFFSET_X_UI = float(dx_ui)
+    if dy_ui is not None:
+        ART_OFFSET_Y_UI = float(dy_ui)
+
+
+def set_qi_cost_render_params(
+    icon_scale: float | None = None,
+    icon_dx_ui: float | None = None,
+    icon_dy_ui: float | None = None,
+    digit_font_size_ui: float | None = None,
+    digit_scale_x: float | None = None,
+    digit_scale_y: float | None = None,
+    digit_dx_ui: float | None = None,
+    digit_dy_ui: float | None = None,
+    digit_face_dilate: float | None = None,
+    digit_outline_width: float | None = None,
+    digit_distance_scale: float | None = None,
+    digit_face_distance_scale: float | None = None,
+    digit_outline_distance_scale: float | None = None,
+) -> None:
+    global QI_ICON_SCALE, QI_ICON_OFFSET_X_UI, QI_ICON_OFFSET_Y_UI
+    global QI_DIGIT_FONT_SIZE_UI, QI_DIGIT_SCALE_X, QI_DIGIT_SCALE_Y
+    global QI_DIGIT_OFFSET_X, QI_DIGIT_OFFSET_Y
+    global QI_DIGIT_FACE_DILATE, QI_DIGIT_OUTLINE_WIDTH, QI_DIGIT_DISTANCE_SCALE
+    global QI_DIGIT_FACE_DISTANCE_SCALE, QI_DIGIT_OUTLINE_DISTANCE_SCALE
+    if icon_scale is not None:
+        QI_ICON_SCALE = float(icon_scale)
+    if icon_dx_ui is not None:
+        QI_ICON_OFFSET_X_UI = float(icon_dx_ui)
+    if icon_dy_ui is not None:
+        QI_ICON_OFFSET_Y_UI = float(icon_dy_ui)
+    if digit_font_size_ui is not None:
+        QI_DIGIT_FONT_SIZE_UI = float(digit_font_size_ui)
+    if digit_scale_x is not None:
+        QI_DIGIT_SCALE_X = float(digit_scale_x)
+    if digit_scale_y is not None:
+        QI_DIGIT_SCALE_Y = float(digit_scale_y)
+    if digit_dx_ui is not None:
+        QI_DIGIT_OFFSET_X = float(digit_dx_ui)
+    if digit_dy_ui is not None:
+        QI_DIGIT_OFFSET_Y = float(digit_dy_ui)
+    if digit_face_dilate is not None:
+        QI_DIGIT_FACE_DILATE = float(digit_face_dilate)
+    if digit_outline_width is not None:
+        QI_DIGIT_OUTLINE_WIDTH = float(digit_outline_width)
+    if digit_distance_scale is not None:
+        QI_DIGIT_DISTANCE_SCALE = float(digit_distance_scale)
+        QI_DIGIT_FACE_DISTANCE_SCALE = float(digit_distance_scale)
+        QI_DIGIT_OUTLINE_DISTANCE_SCALE = float(digit_distance_scale)
+    if digit_face_distance_scale is not None:
+        QI_DIGIT_FACE_DISTANCE_SCALE = float(digit_face_distance_scale)
+    if digit_outline_distance_scale is not None:
+        QI_DIGIT_OUTLINE_DISTANCE_SCALE = float(digit_outline_distance_scale)
+
+
+def set_vertical_name_render_params(
+    font_size_ui: float | None = None,
+    slot_height_ui: float | None = None,
+    line_gap_ui: float | None = None,
+    offset_x_ui: float | None = None,
+    offset_y_ui: float | None = None,
+    dream_offset_y_ui: float | None = None,
+    glyph_scale: float | None = None,
+    face_dilate: float | None = None,
+    outline_width: float | None = None,
+    distance_scale: float | None = None,
+    face_distance_scale: float | None = None,
+    outline_distance_scale: float | None = None,
+) -> None:
+    global VERTICAL_NAME_FONT_SIZE_UI, VERTICAL_NAME_SLOT_HEIGHT_UI, VERTICAL_NAME_LINE_GAP_UI
+    global VERTICAL_NAME_OFFSET_X_UI, VERTICAL_NAME_OFFSET_Y_UI, DREAM_VERTICAL_NAME_OFFSET_Y_UI
+    global VERTICAL_NAME_GLYPH_SCALE, VERTICAL_NAME_FACE_DILATE, VERTICAL_NAME_OUTLINE_WIDTH
+    global VERTICAL_NAME_DISTANCE_SCALE, VERTICAL_NAME_FACE_DISTANCE_SCALE, VERTICAL_NAME_OUTLINE_DISTANCE_SCALE
+    if font_size_ui is not None:
+        VERTICAL_NAME_FONT_SIZE_UI = float(font_size_ui)
+    if slot_height_ui is not None:
+        VERTICAL_NAME_SLOT_HEIGHT_UI = float(slot_height_ui)
+    if line_gap_ui is not None:
+        VERTICAL_NAME_LINE_GAP_UI = float(line_gap_ui)
+    if offset_x_ui is not None:
+        VERTICAL_NAME_OFFSET_X_UI = float(offset_x_ui)
+    if offset_y_ui is not None:
+        VERTICAL_NAME_OFFSET_Y_UI = float(offset_y_ui)
+    if dream_offset_y_ui is not None:
+        DREAM_VERTICAL_NAME_OFFSET_Y_UI = float(dream_offset_y_ui)
+    if glyph_scale is not None:
+        VERTICAL_NAME_GLYPH_SCALE = float(glyph_scale)
+    if face_dilate is not None:
+        VERTICAL_NAME_FACE_DILATE = float(face_dilate)
+    if outline_width is not None:
+        VERTICAL_NAME_OUTLINE_WIDTH = float(outline_width)
+    if distance_scale is not None:
+        VERTICAL_NAME_DISTANCE_SCALE = float(distance_scale)
+        VERTICAL_NAME_FACE_DISTANCE_SCALE = float(distance_scale)
+        VERTICAL_NAME_OUTLINE_DISTANCE_SCALE = float(distance_scale)
+    if face_distance_scale is not None:
+        VERTICAL_NAME_FACE_DISTANCE_SCALE = float(face_distance_scale)
+    if outline_distance_scale is not None:
+        VERTICAL_NAME_OUTLINE_DISTANCE_SCALE = float(outline_distance_scale)
+
+
 def scaled_font(size: int, render_scale: float) -> ImageFont.FreeTypeFont:
     return font(max(1, round(size * render_scale)))
 
@@ -870,6 +1278,10 @@ def scaled_signed_float(value: float, render_scale: float) -> float:
 
 def scaled_ui_font_size(value: float, render_scale: float) -> int:
     return max(1, round(value * _scale()[1] * render_scale))
+
+
+def scaled_ui_font_size_float(value: float, render_scale: float) -> float:
+    return max(1.0, value * _scale()[1] * render_scale)
 
 
 def scaled_description_font_size(value: float, render_scale: float) -> int:
@@ -917,45 +1329,65 @@ def tmp_glyph_padding(material: dict[str, object], bold: bool = False) -> int:
     return max(2, int(round(padding + style + 0.5)))
 
 
-def isolate_sdf_component(sdf_alpha: Image.Image, glyph_box: tuple[int, int, int, int], fringe: int) -> Image.Image:
+def isolate_sdf_component(
+    sdf_alpha: Image.Image,
+    glyph_box: tuple[int, int, int, int],
+    fringe: int,
+    extrapolate: int = 0,
+    seed_largest_only: bool = False,
+) -> Image.Image:
     """Remove neighboring atlas glyph bleed while preserving the glyph fringe.
 
     TMP expands glyph UVs by material padding.  That works when the atlas packer
-    leaves a clean SDF fringe; the Huiwen digit cell for "1" has disconnected
-    remnants from adjacent glyphs inside the expanded crop.  Keep only high-SDF
-    components intersecting the real glyph rect, then dilate enough to retain the
-    intended face/outline distance field around that component.
+    leaves a clean SDF fringe.  Some Yi Xian atlas cells include neighboring
+    glyph remnants inside the expanded crop, and those remnants can be connected
+    through antialias pixels.  Seed only from high-SDF pixels inside the real TMP
+    glyph rect, then dilate those seeds enough to retain a small real SDF fringe.
+    When more padding is needed for outline rendering, synthesize it from that
+    clean fringe instead of copying neighboring atlas pixels back in.
     """
 
-    high = sdf_alpha.point(lambda v: 255 if v >= 64 else 0)
-    width, height = high.size
-    pixels = high.load()
     gx0, gy0, gx1, gy1 = glyph_box
-    keep: set[tuple[int, int]] = set()
-    seen: set[tuple[int, int]] = set()
-
-    for y in range(height):
-        for x in range(width):
-            if pixels[x, y] == 0 or (x, y) in seen:
-                continue
-            stack = [(x, y)]
-            component: list[tuple[int, int]] = []
-            seen.add((x, y))
-            touches_glyph = False
-            while stack:
-                px, py = stack.pop()
-                component.append((px, py))
-                if gx0 <= px < gx1 and gy0 <= py < gy1:
-                    touches_glyph = True
-                for nx, ny in ((px - 1, py), (px + 1, py), (px, py - 1), (px, py + 1)):
-                    if 0 <= nx < width and 0 <= ny < height and pixels[nx, ny] and (nx, ny) not in seen:
-                        seen.add((nx, ny))
-                        stack.append((nx, ny))
-            if touches_glyph:
-                keep.update(component)
+    pixels = sdf_alpha.load()
+    width, height = sdf_alpha.size
+    keep: set[tuple[int, int]] = {
+        (x, y)
+        for y in range(max(0, gy0), min(height, gy1))
+        for x in range(max(0, gx0), min(width, gx1))
+        if pixels[x, y] >= 128
+    }
+    if not keep:
+        keep = {
+            (x, y)
+            for y in range(max(0, gy0), min(height, gy1))
+            for x in range(max(0, gx0), min(width, gx1))
+            if pixels[x, y] >= 64
+        }
 
     if not keep:
         return sdf_alpha
+
+    if seed_largest_only:
+        seen: set[tuple[int, int]] = set()
+        largest: set[tuple[int, int]] = set()
+        for seed in keep:
+            if seed in seen:
+                continue
+            stack = [seed]
+            component: set[tuple[int, int]] = set()
+            seen.add(seed)
+            while stack:
+                px, py = stack.pop()
+                component.add((px, py))
+                for nx in (px - 1, px, px + 1):
+                    for ny in (py - 1, py, py + 1):
+                        if (nx, ny) in keep and (nx, ny) not in seen:
+                            seen.add((nx, ny))
+                            stack.append((nx, ny))
+            if len(component) > len(largest):
+                largest = component
+        if largest:
+            keep = largest
 
     mask = Image.new("L", sdf_alpha.size, 0)
     mask_pixels = mask.load()
@@ -967,6 +1399,38 @@ def isolate_sdf_component(sdf_alpha: Image.Image, glyph_box: tuple[int, int, int
 
     cleaned = Image.new("L", sdf_alpha.size, 0)
     cleaned.paste(sdf_alpha, mask=mask)
+    if extrapolate <= 0:
+        return cleaned
+
+    cleaned_pixels = cleaned.load()
+    valid: set[tuple[int, int]] = {
+        (x, y)
+        for y in range(height)
+        for x in range(width)
+        if mask_pixels[x, y] != 0
+    }
+    frontier = set(valid)
+    falloff = 48
+    for _ in range(extrapolate):
+        additions: dict[tuple[int, int], int] = {}
+        for x, y in frontier:
+            base = cleaned_pixels[x, y]
+            if base <= falloff:
+                continue
+            value = base - falloff
+            for yy in range(max(0, y - 1), min(height, y + 2)):
+                for xx in range(max(0, x - 1), min(width, x + 2)):
+                    if (xx, yy) in valid:
+                        continue
+                    key = (xx, yy)
+                    if value > additions.get(key, 0):
+                        additions[key] = value
+        if not additions:
+            break
+        frontier = set(additions)
+        valid.update(frontier)
+        for (x, y), value in additions.items():
+            cleaned_pixels[x, y] = value
     return cleaned
 
 
@@ -1003,6 +1467,45 @@ def keep_largest_alpha_component(image: Image.Image, threshold: int = 1) -> Imag
     keep_pixels = keep.load()
     for x, y in largest:
         keep_pixels[x, y] = 255
+    result = Image.new("RGBA", image.size, (0, 0, 0, 0))
+    result.paste(image, mask=keep)
+    return result.crop(result.getbbox() or (0, 0, 1, 1))
+
+
+def keep_alpha_near_strong_component(image: Image.Image, seed_threshold: int = 64, pad: int = 3) -> Image.Image:
+    alpha = image.getchannel("A")
+    seed = alpha.point(lambda value: 255 if value >= seed_threshold else 0)
+    width, height = seed.size
+    pixels = seed.load()
+    seen: set[tuple[int, int]] = set()
+    largest: list[tuple[int, int]] = []
+
+    for y in range(height):
+        for x in range(width):
+            if pixels[x, y] == 0 or (x, y) in seen:
+                continue
+            stack = [(x, y)]
+            component: list[tuple[int, int]] = []
+            seen.add((x, y))
+            while stack:
+                px, py = stack.pop()
+                component.append((px, py))
+                for nx, ny in ((px - 1, py), (px + 1, py), (px, py - 1), (px, py + 1)):
+                    if 0 <= nx < width and 0 <= ny < height and pixels[nx, ny] and (nx, ny) not in seen:
+                        seen.add((nx, ny))
+                        stack.append((nx, ny))
+            if len(component) > len(largest):
+                largest = component
+
+    if not largest:
+        return image
+
+    keep = Image.new("L", image.size, 0)
+    keep_pixels = keep.load()
+    for x, y in largest:
+        keep_pixels[x, y] = 255
+    if pad > 0:
+        keep = keep.filter(ImageFilter.MaxFilter(pad * 2 + 1))
     result = Image.new("RGBA", image.size, (0, 0, 0, 0))
     result.paste(image, mask=keep)
     return result.crop(result.getbbox() or (0, 0, 1, 1))
@@ -1091,6 +1594,25 @@ def alpha_composite_subpixel(canvas: Image.Image, image: Image.Image, xy: tuple[
     canvas.alpha_composite(shifted, (ix, iy))
 
 
+def alpha_composite_text(canvas: Image.Image, image: Image.Image, xy: tuple[float, float]) -> None:
+    if TEXT_RENDERER == "sdf":
+        canvas.alpha_composite(image, (round(xy[0]), round(xy[1])))
+        return
+    alpha_composite_subpixel(canvas, image, xy)
+
+
+def composite_card_art(canvas: Image.Image, art: Image.Image, render_scale: float) -> None:
+    x0, y0, x1, y1 = scaled_box_float(ART_RECT, render_scale)
+    center_x = (x0 + x1) / 2.0 + scaled_signed_float(ART_OFFSET_X_UI, render_scale)
+    center_y = (y0 + y1) / 2.0 + scaled_signed_float(ART_OFFSET_Y_UI, render_scale)
+    scale_x = ((x1 - x0) * ART_SCALE) / art.width
+    scale_y = ((y1 - y0) * ART_SCALE) / art.height
+    dx = center_x - art.width * scale_x / 2.0
+    dy = center_y - art.height * scale_y / 2.0
+    layer = magic_kernel_sharp_resample_translate(art, canvas.size, scale_x, scale_y, dx, dy)
+    canvas.alpha_composite(layer)
+
+
 def magic_kernel(value: float) -> float:
     x = abs(value)
     if x <= 0.5:
@@ -1159,6 +1681,19 @@ def magic_kernel_sharp_lib() -> ctypes.CDLL | None:
             u8_ptr,
         ]
         lib.mks_shift_rgba.restype = ctypes.c_int
+        lib.mks_resample_translate_rgba.argtypes = [
+            u8_ptr,
+            ctypes.c_int,
+            ctypes.c_int,
+            ctypes.c_int,
+            ctypes.c_int,
+            ctypes.c_double,
+            ctypes.c_double,
+            ctypes.c_double,
+            ctypes.c_double,
+            u8_ptr,
+        ]
+        lib.mks_resample_translate_rgba.restype = ctypes.c_int
         _MKS_LIB = lib
         return lib
     except (OSError, subprocess.SubprocessError):
@@ -1230,6 +1765,63 @@ def sharp_2021_axis_c(image: Image.Image, axis: str) -> Image.Image | None:
     if result != 0:
         return None
     return image_from_rgba_buffer(output_buffer, (width, height))
+
+
+def magic_kernel_sharp_resample_translate_c(
+    image: Image.Image,
+    target_size: tuple[int, int],
+    scale_x: float,
+    scale_y: float,
+    dx: float,
+    dy: float,
+) -> Image.Image | None:
+    lib = magic_kernel_sharp_lib()
+    if lib is None:
+        return None
+    source = image.convert("RGBA")
+    source_width, source_height = source.size
+    target_width, target_height = target_size
+    if source_width <= 0 or source_height <= 0 or target_width <= 0 or target_height <= 0:
+        return None
+    source_bytes = source.tobytes()
+    source_buffer = (ctypes.c_uint8 * len(source_bytes)).from_buffer_copy(source_bytes)
+    output_buffer = (ctypes.c_uint8 * (target_width * target_height * 4))()
+    result = lib.mks_resample_translate_rgba(
+        source_buffer,
+        source_width,
+        source_height,
+        target_width,
+        target_height,
+        scale_x,
+        scale_y,
+        dx,
+        dy,
+        output_buffer,
+    )
+    if result != 0:
+        return None
+    return image_from_rgba_buffer(output_buffer, target_size)
+
+
+def magic_kernel_sharp_resample_translate(
+    image: Image.Image,
+    target_size: tuple[int, int],
+    scale_x: float,
+    scale_y: float,
+    dx: float,
+    dy: float,
+) -> Image.Image:
+    c_result = magic_kernel_sharp_resample_translate_c(image, target_size, scale_x, scale_y, dx, dy)
+    if c_result is not None:
+        return c_result
+    source = image.convert("RGBA")
+    scaled = magic_kernel_sharp_resize(
+        source,
+        (max(1, round(source.width * scale_x)), max(1, round(source.height * scale_y))),
+    )
+    canvas = Image.new("RGBA", target_size, (0, 0, 0, 0))
+    alpha_composite_subpixel(canvas, scaled, (dx, dy))
+    return canvas
 
 
 def resample_axis_magic_kernel_py(image: Image.Image, target_size: int, axis: str) -> Image.Image:
@@ -1332,12 +1924,66 @@ def magic_kernel_sharp_resize_l(image: Image.Image, size: tuple[int, int]) -> Im
     return magic_kernel_sharp_resize(rgba, size).getchannel("R")
 
 
+def sample_sdf_bilinear(sdf_alpha: Image.Image, size: tuple[int, int]) -> Image.Image:
+    """Sample a TMP SDF glyph crop like a shader texture lookup.
+
+    This is intentionally not Magic Kernel or sharpening.  TMP samples the
+    distance field texture bilinearly at the final glyph pixels, then applies
+    the SDF threshold.  Reconstruction filters make the distance ramp wider and
+    visibly blur the final text.
+    """
+
+    return sample_sdf_bilinear_offset(sdf_alpha, size, 0.0, 0.0)
+
+
+def sample_sdf_bilinear_offset(
+    sdf_alpha: Image.Image,
+    size: tuple[int, int],
+    dest_offset_x: float = 0.0,
+    dest_offset_y: float = 0.0,
+) -> Image.Image:
+    source = sdf_alpha.convert("L")
+    if source.size == size and dest_offset_x == 0.0 and dest_offset_y == 0.0:
+        return source.copy()
+    out_width, out_height = size
+    out = Image.new("L", (max(1, out_width), max(1, out_height)), 0)
+    src = source.load()
+    dst = out.load()
+    scale_x = out_width / source.width
+    scale_y = out_height / source.height
+
+    for y in range(out_height):
+        sy = (y + 0.5 - dest_offset_y) / scale_y - 0.5
+        y0 = math.floor(sy)
+        y1 = y0 + 1
+        fy = sy - y0
+        y0 = min(source.height - 1, max(0, y0))
+        y1 = min(source.height - 1, max(0, y1))
+        for x in range(out_width):
+            sx = (x + 0.5 - dest_offset_x) / scale_x - 0.5
+            x0 = math.floor(sx)
+            x1 = x0 + 1
+            fx = sx - x0
+            x0 = min(source.width - 1, max(0, x0))
+            x1 = min(source.width - 1, max(0, x1))
+            top = src[x0, y0] * (1.0 - fx) + src[x1, y0] * fx
+            bottom = src[x0, y1] * (1.0 - fx) + src[x1, y1] * fx
+            dst[x, y] = clamp_byte(top * (1.0 - fy) + bottom * fy)
+    return out
+
+
 def tmp_sdf_alphas(
     sdf_alpha: Image.Image,
     material: dict[str, object],
     font_size: int,
     bold: bool = False,
-) -> tuple[Image.Image, Image.Image | None, tuple[Image.Image, tuple[int, int]] | None]:
+    sdf_distance_scale_normal: float | None = None,
+    sdf_distance_scale_bold: float | None = None,
+    sdf_face_distance_scale_normal: float | None = None,
+    sdf_face_distance_scale_bold: float | None = None,
+    sdf_outline_distance_scale_normal: float | None = None,
+    sdf_outline_distance_scale_bold: float | None = None,
+) -> tuple[Image.Image, Image.Image | None]:
     """Evaluate TMP's distance-field face/outline model for a CPU image.
 
     This mirrors the TextMeshPro Mobile/Distance Field shader's core pixel
@@ -1354,40 +2000,55 @@ def tmp_sdf_alphas(
     scale_ratio = float(material["scale_ratio_a"])
     font_weight = float(material["weight_bold"] if bold else material["weight_normal"]) / 4.0
     gradient_scale = float(material["gradient_scale"])
-    distance_scale = max(1.0, gradient_scale * font_size / DEFAULT_FONT_POINT_SIZE)
-    softness = float(material.get("outline_softness", 0.0)) * scale_ratio * distance_scale
-    distance_scale = distance_scale / (1.0 + softness)
+    base_distance_scale = max(1.0, gradient_scale * font_size / DEFAULT_FONT_POINT_SIZE)
+    normal_distance_scale = SDF_DISTANCE_SCALE_NORMAL if sdf_distance_scale_normal is None else sdf_distance_scale_normal
+    bold_distance_scale = SDF_DISTANCE_SCALE_BOLD if sdf_distance_scale_bold is None else sdf_distance_scale_bold
+    legacy_distance_scale = bold_distance_scale if bold else normal_distance_scale
+    face_distance_scale = (
+        sdf_face_distance_scale_bold if bold else sdf_face_distance_scale_normal
+    )
+    outline_distance_scale = (
+        sdf_outline_distance_scale_bold if bold else sdf_outline_distance_scale_normal
+    )
+    face_distance_scale = base_distance_scale * (
+        legacy_distance_scale if face_distance_scale is None else face_distance_scale
+    )
+    outline_distance_scale = base_distance_scale * (
+        legacy_distance_scale if outline_distance_scale is None else outline_distance_scale
+    )
+    softness = float(material.get("outline_softness", 0.0)) * scale_ratio
+    face_distance_scale = face_distance_scale / (1.0 + softness * face_distance_scale)
+    outline_distance_scale = outline_distance_scale / (1.0 + softness * outline_distance_scale)
     weight = (font_weight + float(material["face_dilate"])) * scale_ratio * 0.5
-    bias = (0.5 - weight) * distance_scale - 0.5
     outline_width = float(material["outline_width"])
-    outline = outline_width * scale_ratio * 0.5 * distance_scale
+    face_bias = (0.5 - weight) * face_distance_scale - 0.5
+    outline_bias = (0.5 - weight) * outline_distance_scale - 0.5
+    face_outline = outline_width * scale_ratio * 0.5 * face_distance_scale
+    outline_outline = outline_width * scale_ratio * 0.5 * outline_distance_scale
 
-    def saturate_alpha(px: int, threshold: float) -> int:
+    def saturate_alpha(px: int, distance_scale: float, threshold: float) -> int:
         return max(0, min(255, round(((px / 255.0) * distance_scale - threshold) * 255)))
 
-    underlay = tmp_sdf_underlay(sdf_alpha, material, font_size)
     if outline_width <= 0:
-        face = sdf_alpha.point(lambda px: saturate_alpha(px, bias))
-        return face, None, underlay
-    face = sdf_alpha.point(lambda px: saturate_alpha(px, bias + outline))
-    outline_alpha = sdf_alpha.point(lambda px: saturate_alpha(px, bias - outline))
-    return face, outline_alpha, underlay
+        face = sdf_alpha.point(lambda px: saturate_alpha(px, face_distance_scale, face_bias))
+        return face, None
+    face = sdf_alpha.point(lambda px: saturate_alpha(px, face_distance_scale, face_bias + face_outline))
+    outline_alpha = sdf_alpha.point(
+        lambda px: saturate_alpha(px, outline_distance_scale, outline_bias - outline_outline)
+    )
+    return face, outline_alpha
 
 
 def tmp_sdf_underlay(
     sdf_alpha: Image.Image,
     material: dict[str, object],
     font_size: int,
-) -> tuple[Image.Image, tuple[int, int]] | None:
+) -> Image.Image | None:
     alpha = float(material.get("underlay_color", (0.0, 0.0, 0.0, 0.0))[3])
-    if alpha <= 0.0:
+    if alpha <= 0.0 or not bool(material.get("underlay_enabled", alpha > 0.0)):
         return None
-    offset_x = float(material.get("underlay_offset_x", 0.0))
-    offset_y = float(material.get("underlay_offset_y", 0.0))
     dilate = float(material.get("underlay_dilate", 0.0))
     softness = float(material.get("underlay_softness", 0.0))
-    if offset_x == 0.0 and offset_y == 0.0 and dilate == 0.0 and softness == 0.0:
-        return None
 
     scale_ratio = float(material.get("scale_ratio_c", 0.0))
     gradient_scale = float(material["gradient_scale"])
@@ -1401,11 +2062,315 @@ def tmp_sdf_underlay(
         value = max(0, min(255, round(((px / 255.0) * distance_scale - bias) * 255)))
         return round(value * alpha)
 
+    return sdf_alpha.point(saturate_underlay)
+
+
+def tmp_sdf_underlay_offset(
+    material: dict[str, object],
+    font_size: int,
+) -> tuple[float, float] | None:
+    alpha = float(material.get("underlay_color", (0.0, 0.0, 0.0, 0.0))[3])
+    if alpha <= 0.0 or not bool(material.get("underlay_enabled", alpha > 0.0)):
+        return None
+    offset_x = float(material.get("underlay_offset_x", 0.0))
+    offset_y = float(material.get("underlay_offset_y", 0.0))
+    dilate = float(material.get("underlay_dilate", 0.0))
+    softness = float(material.get("underlay_softness", 0.0))
+    if offset_x == 0.0 and offset_y == 0.0:
+        return (0.0, 0.0)
+
+    scale_ratio = float(material.get("scale_ratio_c", 0.0))
+    gradient_scale = float(material["gradient_scale"])
     offset_scale = gradient_scale * scale_ratio * font_size / DEFAULT_FONT_POINT_SIZE
     # TMP's underlay Y value is expressed in UV space; negative serialized Y
     # moves the visible copy downward in image coordinates.
-    offset = (round(offset_x * offset_scale), round(-offset_y * offset_scale))
-    return sdf_alpha.point(saturate_underlay), offset
+    return (offset_x * offset_scale, -offset_y * offset_scale)
+
+
+def vector_line_image(
+    text: str,
+    font_asset: "TmpFont",
+    font_size: int,
+    fill: tuple[int, int, int],
+    material: dict[str, object] | None = None,
+    character_spacing: float = 0.0,
+    bold: bool = False,
+    trim: bool = True,
+    glyph_scale: float = 1.0,
+) -> Image.Image:
+    effective_size = max(1, round(font_size * glyph_scale))
+    fnt = font(effective_size)
+    metrics_scale = effective_size / font_asset.point_size
+    spacing = font_asset.character_spacing_px(character_spacing, effective_size)
+    pad = max(4, round(effective_size * 0.25))
+    cursor = float(pad)
+    baseline = pad + round(27.0 * metrics_scale)
+    width = font_asset.text_width(text, effective_size, character_spacing) + pad * 2
+    height = round(42.0 * metrics_scale) + pad * 2
+    result = Image.new("RGBA", (max(1, width), max(1, height)), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(result)
+    active_material = material or DEFAULT_ATLAS_MATERIAL
+    stroke_width = material_outline_width_px(active_material, effective_size)
+    stroke_fill = rgb_from_unit(active_material.get("outline_color", (0.0, 0.0, 0.0)))
+    if bold and stroke_width == 0:
+        stroke_width = max(1, round(effective_size / 42))
+        stroke_fill = fill
+
+    for char in text:
+        glyph = font_asset.glyphs.get(char)
+        advance = glyph.advance if glyph else font_asset.space_advance
+        draw.text(
+            (cursor, baseline),
+            char,
+            font=fnt,
+            fill=fill,
+            anchor="ls",
+            stroke_width=stroke_width,
+            stroke_fill=stroke_fill,
+        )
+        cursor += advance * metrics_scale + spacing
+
+    if trim:
+        return result.crop(result.getbbox() or (0, 0, 1, 1))
+    return result
+
+
+def vector_rich_line_image(
+    tokens: list[str],
+    font_asset: "TmpFont",
+    font_size: int,
+    character_spacing: float = 0.0,
+    trim: bool = True,
+    glyph_scale: float = 1.0,
+) -> Image.Image:
+    effective_size = max(1, round(font_size * glyph_scale))
+    fnt = font(effective_size)
+    metrics_scale = effective_size / font_asset.point_size
+    spacing = font_asset.character_spacing_px(character_spacing, effective_size)
+    pad = max(4, round(effective_size * 0.25))
+    baseline = pad + round(27.0 * metrics_scale)
+    visible_text = "".join(display_token(token) for token in tokens)
+    width = font_asset.text_width(visible_text, effective_size, character_spacing) + pad * 2
+    height = round(42.0 * metrics_scale) + pad * 2
+    result = Image.new("RGBA", (max(1, width), max(1, height)), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(result)
+    cursor = float(pad)
+    previous_visible = ""
+
+    for token in tokens:
+        visible = display_token(token)
+        fill, _, _ = token_style(token, previous_visible)
+        bold = token_is_keyword(token)
+        stroke_width = max(1, round(effective_size / 42)) if bold else 0
+        for char in visible:
+            glyph = font_asset.glyphs.get(char)
+            advance = glyph.advance if glyph else font_asset.space_advance
+            draw.text(
+                (cursor, baseline),
+                char,
+                font=fnt,
+                fill=fill,
+                anchor="ls",
+                stroke_width=stroke_width,
+                stroke_fill=fill,
+            )
+            cursor += advance * metrics_scale + spacing
+        if visible.strip():
+            previous_visible = visible
+
+    if trim:
+        return result.crop(result.getbbox() or (0, 0, 1, 1))
+    return result
+
+
+def sdf_line_image(
+    text: str,
+    font_asset: "TmpFont",
+    font_size: int,
+    fill: tuple[int, int, int],
+    material: dict[str, object] | None = None,
+    character_spacing: float = 0.0,
+    shader_font_size: int | None = None,
+    bold: bool = False,
+    trim: bool = True,
+    isolate_bleed: bool = False,
+    isolate_fringe_px: int | None = None,
+    tight_isolate: bool = False,
+    glyph_scale: float = 1.0,
+    line_phase_x: float = 0.0,
+    line_phase_y: float = 0.0,
+    sdf_distance_scale_normal: float | None = None,
+    sdf_distance_scale_bold: float | None = None,
+    sdf_face_distance_scale_normal: float | None = None,
+    sdf_face_distance_scale_bold: float | None = None,
+    sdf_outline_distance_scale_normal: float | None = None,
+    sdf_outline_distance_scale_bold: float | None = None,
+) -> Image.Image:
+    effective_size = max(1, round(font_size * glyph_scale))
+    effective_shader_size = None
+    if shader_font_size is not None:
+        effective_shader_size = max(1, round(shader_font_size * glyph_scale))
+    return font_asset.render_line(
+        text,
+        effective_size,
+        fill,
+        material=material,
+        character_spacing=character_spacing,
+        shader_font_size=effective_shader_size,
+        bold=bold,
+        trim=trim,
+        isolate_bleed=isolate_bleed,
+        isolate_fringe_px=isolate_fringe_px,
+        tight_isolate=tight_isolate,
+        line_phase_x=line_phase_x,
+        line_phase_y=line_phase_y,
+        sdf_distance_scale_normal=sdf_distance_scale_normal,
+        sdf_distance_scale_bold=sdf_distance_scale_bold,
+        sdf_face_distance_scale_normal=sdf_face_distance_scale_normal,
+        sdf_face_distance_scale_bold=sdf_face_distance_scale_bold,
+        sdf_outline_distance_scale_normal=sdf_outline_distance_scale_normal,
+        sdf_outline_distance_scale_bold=sdf_outline_distance_scale_bold,
+    )
+
+
+def sdf_rich_line_image(
+    tokens: list[str],
+    font_asset: "TmpFont",
+    font_size: int,
+    character_spacing: float = 0.0,
+    shader_font_size: int | None = None,
+    trim: bool = True,
+    normal_face_dilate: float | None = None,
+    bold_face_dilate: float | None = None,
+    glyph_scale: float = 1.0,
+    sdf_distance_scale_normal: float | None = None,
+    sdf_distance_scale_bold: float | None = None,
+    sdf_face_distance_scale_normal: float | None = None,
+    sdf_face_distance_scale_bold: float | None = None,
+    sdf_outline_distance_scale_normal: float | None = None,
+    sdf_outline_distance_scale_bold: float | None = None,
+) -> Image.Image:
+    effective_size = max(1, round(font_size * glyph_scale))
+    effective_shader_size = None
+    if shader_font_size is not None:
+        effective_shader_size = max(1, round(shader_font_size * glyph_scale))
+    return font_asset.render_rich_line(
+        tokens,
+        effective_size,
+        character_spacing,
+        shader_font_size=effective_shader_size,
+        trim=trim,
+        normal_face_dilate=normal_face_dilate,
+        bold_face_dilate=bold_face_dilate,
+        sdf_distance_scale_normal=sdf_distance_scale_normal,
+        sdf_distance_scale_bold=sdf_distance_scale_bold,
+        sdf_face_distance_scale_normal=sdf_face_distance_scale_normal,
+        sdf_face_distance_scale_bold=sdf_face_distance_scale_bold,
+        sdf_outline_distance_scale_normal=sdf_outline_distance_scale_normal,
+        sdf_outline_distance_scale_bold=sdf_outline_distance_scale_bold,
+    )
+
+
+def text_line_image(
+    text: str,
+    font_asset: "TmpFont",
+    font_size: int,
+    fill: tuple[int, int, int],
+    material: dict[str, object] | None = None,
+    character_spacing: float = 0.0,
+    shader_font_size: int | None = None,
+    trim: bool = True,
+    isolate_bleed: bool = False,
+    isolate_fringe_px: int | None = None,
+    tight_isolate: bool = False,
+    glyph_scale: float = 1.0,
+    line_phase_x: float = 0.0,
+    line_phase_y: float = 0.0,
+    sdf_distance_scale_normal: float | None = None,
+    sdf_distance_scale_bold: float | None = None,
+    sdf_face_distance_scale_normal: float | None = None,
+    sdf_face_distance_scale_bold: float | None = None,
+    sdf_outline_distance_scale_normal: float | None = None,
+    sdf_outline_distance_scale_bold: float | None = None,
+) -> Image.Image:
+    if TEXT_RENDERER == "otf":
+        return vector_line_image(
+            text,
+            font_asset,
+            font_size,
+            fill,
+            material=material,
+            character_spacing=character_spacing,
+            trim=trim,
+            glyph_scale=glyph_scale,
+        )
+    return sdf_line_image(
+        text,
+        font_asset,
+        font_size,
+        fill,
+        material=material,
+        character_spacing=character_spacing,
+        shader_font_size=shader_font_size,
+        trim=trim,
+        isolate_bleed=isolate_bleed,
+        isolate_fringe_px=isolate_fringe_px,
+        tight_isolate=tight_isolate,
+        glyph_scale=glyph_scale,
+        line_phase_x=line_phase_x,
+        line_phase_y=line_phase_y,
+        sdf_distance_scale_normal=sdf_distance_scale_normal,
+        sdf_distance_scale_bold=sdf_distance_scale_bold,
+        sdf_face_distance_scale_normal=sdf_face_distance_scale_normal,
+        sdf_face_distance_scale_bold=sdf_face_distance_scale_bold,
+        sdf_outline_distance_scale_normal=sdf_outline_distance_scale_normal,
+        sdf_outline_distance_scale_bold=sdf_outline_distance_scale_bold,
+    )
+
+
+def rich_line_image(
+    tokens: list[str],
+    font_asset: "TmpFont",
+    font_size: int,
+    character_spacing: float = 0.0,
+    shader_font_size: int | None = None,
+    trim: bool = True,
+    normal_face_dilate: float | None = None,
+    bold_face_dilate: float | None = None,
+    glyph_scale: float = 1.0,
+    sdf_distance_scale_normal: float | None = None,
+    sdf_distance_scale_bold: float | None = None,
+    sdf_face_distance_scale_normal: float | None = None,
+    sdf_face_distance_scale_bold: float | None = None,
+    sdf_outline_distance_scale_normal: float | None = None,
+    sdf_outline_distance_scale_bold: float | None = None,
+) -> Image.Image:
+    if TEXT_RENDERER == "otf":
+        return vector_rich_line_image(
+            tokens,
+            font_asset,
+            font_size,
+            character_spacing,
+            trim=trim,
+            glyph_scale=glyph_scale,
+        )
+    return sdf_rich_line_image(
+        tokens,
+        font_asset,
+        font_size,
+        character_spacing,
+        shader_font_size=shader_font_size,
+        trim=trim,
+        glyph_scale=glyph_scale,
+        normal_face_dilate=normal_face_dilate,
+        bold_face_dilate=bold_face_dilate,
+        sdf_distance_scale_normal=sdf_distance_scale_normal,
+        sdf_distance_scale_bold=sdf_distance_scale_bold,
+        sdf_face_distance_scale_normal=sdf_face_distance_scale_normal,
+        sdf_face_distance_scale_bold=sdf_face_distance_scale_bold,
+        sdf_outline_distance_scale_normal=sdf_outline_distance_scale_normal,
+        sdf_outline_distance_scale_bold=sdf_outline_distance_scale_bold,
+    )
 
 
 def text_width(draw: ImageDraw.ImageDraw, text: str, fnt: ImageFont.FreeTypeFont) -> int:
@@ -1431,7 +2396,7 @@ def default_tmp_text_width_float_spaced(character_spacing: float):
 
 
 def is_full_width_char(char: str) -> bool:
-    return unicodedata.east_asian_width(char) in {"F", "W"}
+    return char in CJK_FULL_WIDTH_PUNCTUATION or unicodedata.east_asian_width(char) in {"F", "W"}
 
 
 def default_tmp_cell_width_float_spaced(character_spacing: float):
@@ -1454,7 +2419,28 @@ def default_tmp_cell_width_float_spaced(character_spacing: float):
     return measure
 
 
+def default_tmp_cjk_cell_width_float_spaced(character_spacing: float):
+    def measure(
+        _draw: ImageDraw.ImageDraw,
+        text: str,
+        fnt: ImageFont.FreeTypeFont,
+        token: str = "",
+    ) -> float:
+        del token
+        font_asset = default_tmp_font()
+        scale = fnt.size / font_asset.point_size
+        spacing = font_asset.character_spacing_px(character_spacing, fnt.size)
+        cell_units = 30.0 * len(text)
+        width = cell_units * scale
+        if len(text) > 1:
+            width += (len(text) - 1) * spacing
+        return width
+
+    return measure
+
+
 def desc_wrap_width_fn(locale_suffix: str, character_spacing: float):
+    del locale_suffix
     return default_tmp_cell_width_float_spaced(character_spacing)
 
 
@@ -1587,17 +2573,7 @@ def last_space_index(tokens: list[str]) -> int:
 
 
 def split_cjk_overflow_row(row: list[str], next_token: str) -> tuple[list[str], list[str], bool]:
-    """Avoid TMP-unlike breaks around CJK closing punctuation.
-
-    TextMeshPro's CJK line-breaking table keeps a closing quote with the
-    preceding glyph and avoids ending a line immediately after that pair.  This
-    matters for quoted card names such as “云剑” and “剑阵”.
-    """
-
-    if row and display_token(next_token) in CJK_CLOSING_PUNCTUATION and len(row) >= 1:
-        return row[:-1], row[-1:] + [next_token], True
-    if len(row) >= 2 and display_token(row[-1]) in CJK_CLOSING_PUNCTUATION:
-        return row[:-2], row[-2:], False
+    del next_token
     if len(row) >= 2 and re.fullmatch(r"\d+", display_token(row[-1])):
         return row[:-1], row[-1:], False
     return row, [], False
@@ -1659,11 +2635,35 @@ def wrap_rich_line(
 
     if row:
         rows.append(trim_space_tokens(row))
-    return split_hyphen_prefix_suffix_rows(avoid_forbidden_line_start(rows)) or [[]]
+    return split_hyphen_prefix_suffix_rows(avoid_forbidden_line_edges(rows, max_width, tokens_width)) or [[]]
 
 
-def avoid_forbidden_line_start(rows: list[list[str]]) -> list[list[str]]:
+def avoid_forbidden_line_edges(
+    rows: list[list[str]],
+    max_width: int,
+    tokens_width: Callable[[list[str]], float],
+) -> list[list[str]]:
     fixed_rows = [trim_space_tokens(row) for row in rows if trim_space_tokens(row)]
+    index = 0
+    while index < len(fixed_rows) - 1:
+        row = fixed_rows[index]
+        if not row or display_token(row[-1]) not in LINE_END_FORBIDDEN_PUNCTUATION:
+            index += 1
+            continue
+        fixed_rows[index] = trim_space_tokens(row[:-1])
+        fixed_rows[index + 1] = trim_space_tokens([row[-1]] + fixed_rows[index + 1])
+        while (
+            fixed_rows[index + 1]
+            and index + 2 < len(fixed_rows)
+            and tokens_width(fixed_rows[index + 1]) > max_width
+        ):
+            fixed_rows[index + 2] = trim_space_tokens([fixed_rows[index + 1].pop()] + fixed_rows[index + 2])
+        index += 1
+    index = 0
+    while index < len(fixed_rows) - 1:
+        while fixed_rows[index] and tokens_width(fixed_rows[index]) > max_width:
+            fixed_rows[index + 1] = trim_space_tokens([fixed_rows[index].pop()] + fixed_rows[index + 1])
+        index += 1
     index = 1
     while index < len(fixed_rows):
         row = fixed_rows[index]
@@ -1787,6 +2787,22 @@ def colorize_alpha(image: Image.Image, color: tuple[int, int, int], alpha: int) 
     return result
 
 
+def multiply_rgba(image: Image.Image, color: tuple[float, float, float, float]) -> Image.Image:
+    icon = image.convert("RGBA")
+    r, g, b, a = icon.split()
+    cr, cg, cb, ca = color
+    icon.putalpha(a.point(lambda v: round(v * ca)))
+    return Image.merge(
+        "RGBA",
+        (
+            r.point(lambda v: round(v * cr)),
+            g.point(lambda v: round(v * cg)),
+            b.point(lambda v: round(v * cb)),
+            icon.getchannel("A"),
+        ),
+    )
+
+
 def _sdf_alpha(alpha: Image.Image, threshold: int, softness: int) -> Image.Image:
     low = threshold - softness
     high = threshold + softness
@@ -1808,10 +2824,14 @@ def huiwen_digit_cache_path(
         RENDER_CACHE_DIR
         / "huiwen_digits"
         / (
-            f"digit_{ord(digit):x}_ui{cache_key_float(font_size_ui)}"
+            f"digit_directsdf_clean11_largestseed_no_underlay_{ord(digit):x}_ui{cache_key_float(font_size_ui)}"
             f"_scale{cache_key_float(render_scale)}"
             f"_xs{cache_key_float(scale_x)}"
-            f"_ys{cache_key_float(scale_y)}.png"
+            f"_ys{cache_key_float(scale_y)}"
+            f"_fd{cache_key_float(QI_DIGIT_FACE_DILATE)}"
+            f"_ow{cache_key_float(QI_DIGIT_OUTLINE_WIDTH)}"
+            f"_fds{cache_key_float(QI_DIGIT_FACE_DISTANCE_SCALE)}"
+            f"_ods{cache_key_float(QI_DIGIT_OUTLINE_DISTANCE_SCALE)}.png"
         )
     )
 
@@ -1825,24 +2845,25 @@ def _render_clean_huiwen_digit_image(
 ) -> Image.Image:
     font_size_px = scaled_ui_font_size(font_size_ui, render_scale)
     shader_font_size = scaled_ui_font_size(font_size_ui, 1.0)
+    material = dict(HUIWEN_OUTLINE_MATERIAL)
+    material["face_dilate"] = QI_DIGIT_FACE_DILATE
+    material["outline_width"] = QI_DIGIT_OUTLINE_WIDTH
     image = huiwen_tmp_font().render_line(
         digit,
         font_size_px,
         fill=(255, 255, 255),
-        material=HUIWEN_OUTLINE_MATERIAL,
+        material=material,
         shader_font_size=shader_font_size,
         bold=True,
         isolate_bleed=True,
+        isolate_fringe_px=2,
+        tight_isolate=True,
+        glyph_scale_x=scale_x,
+        glyph_scale_y=scale_y,
+        sdf_face_distance_scale_bold=QI_DIGIT_FACE_DISTANCE_SCALE,
+        sdf_outline_distance_scale_bold=QI_DIGIT_OUTLINE_DISTANCE_SCALE,
     )
-    image = keep_largest_alpha_component(image)
-    if scale_x != 1.0 or scale_y != 1.0:
-        image = magic_kernel_sharp_resize(
-            image,
-            (
-                max(1, round(image.width * scale_x)),
-                max(1, round(image.height * scale_y)),
-            ),
-        )
+    image = keep_alpha_near_strong_component(image, seed_threshold=96, pad=5)
     return image
 
 
@@ -2105,6 +3126,67 @@ def wrap_display_text_with_gaps(
     return rows
 
 
+def wrap_description_text_with_layout_spacing(
+    draw: ImageDraw.ImageDraw,
+    description: str,
+    locale_suffix: str,
+    is_dream: bool,
+    body_font: ImageFont.FreeTypeFont,
+    wrap_width: float,
+) -> tuple[float, list[tuple[list[str], bool]]]:
+    layout_character_spacing = desc_layout_character_spacing(locale_suffix)
+    wrapped_lines = wrap_display_text_with_gaps(
+        draw,
+        description,
+        body_font,
+        wrap_width,
+        width_fn=desc_wrap_width_fn(locale_suffix, layout_character_spacing),
+        token_gap_width=default_tmp_font().character_spacing_px(layout_character_spacing, body_font.size),
+    )
+    tuned_layout_spacing = desc_layout_character_spacing_for_group(
+        locale_suffix,
+        description,
+        wrapped_lines,
+        is_dream=is_dream,
+    )
+    if tuned_layout_spacing == layout_character_spacing:
+        return layout_character_spacing, wrapped_lines
+    wrapped_lines = wrap_display_text_with_gaps(
+        draw,
+        description,
+        body_font,
+        wrap_width,
+        width_fn=desc_wrap_width_fn(locale_suffix, tuned_layout_spacing),
+        token_gap_width=default_tmp_font().character_spacing_px(tuned_layout_spacing, body_font.size),
+    )
+    return tuned_layout_spacing, wrapped_lines
+
+
+def fit_description_font_size_without_reflow(
+    wrapped_lines: list[tuple[list[str], bool]],
+    font_size: int,
+    min_font_size: int,
+    line_spacing: float,
+    paragraph_spacing: float,
+    top: float,
+    bottom: float,
+    render_scale: float,
+) -> tuple[int, int, int]:
+    body_size = font_size
+    line_height = default_tmp_font().text_line_height(body_size, line_spacing)
+    paragraph_gap = default_tmp_font().tmp_spacing_height(body_size, paragraph_spacing)
+    font_step = max(1, round(render_scale))
+    while (
+        top + rich_lines_height(wrapped_lines, line_height, paragraph_gap)
+        > desc_vertical_fit_bottom(bottom, render_scale)
+        and body_size > min_font_size
+    ):
+        body_size -= font_step
+        line_height = default_tmp_font().text_line_height(body_size, line_spacing)
+        paragraph_gap = default_tmp_font().tmp_spacing_height(body_size, paragraph_spacing)
+    return body_size, line_height, paragraph_gap
+
+
 def draw_centered_rich_lines(
     draw: ImageDraw.ImageDraw,
     box: tuple[int, int, int, int],
@@ -2179,9 +3261,10 @@ def draw_tmp_centered_rich_lines_with_gaps(
     shader_font_size: int | None = None,
     glyph_scale: float = 1.0,
     ignore_descenders_for_layout: bool = False,
-    fixed_line_offset_y: float = 0.0,
     normal_face_dilate: float | None = None,
     bold_face_dilate: float | None = None,
+    sdf_distance_scale_normal: float | None = None,
+    sdf_distance_scale_bold: float | None = None,
 ) -> None:
     left, top, right, bottom = box
     total_height = rich_lines_height(rows, line_height, paragraph_gap)
@@ -2197,6 +3280,8 @@ def draw_tmp_centered_rich_lines_with_gaps(
             trim=False,
             normal_face_dilate=normal_face_dilate,
             bold_face_dilate=bold_face_dilate,
+            sdf_distance_scale_normal=sdf_distance_scale_normal,
+            sdf_distance_scale_bold=sdf_distance_scale_bold,
         )
         layout_bbox = layout_image.getbbox()
         if layout_bbox is not None:
@@ -2204,50 +3289,42 @@ def draw_tmp_centered_rich_lines_with_gaps(
             layout_raw_y_offset = round((line_height - layout_height) / 2 - layout_bbox[1])
     for row, has_gap in rows:
         if ignore_descenders_for_layout:
-            image = default_tmp_font().render_rich_line(
+            image = rich_line_image(
                 row,
+                default_tmp_font(),
                 font_size,
                 character_spacing,
                 shader_font_size=shader_font_size,
                 trim=False,
                 normal_face_dilate=normal_face_dilate,
                 bold_face_dilate=bold_face_dilate,
+                glyph_scale=glyph_scale,
+                sdf_distance_scale_normal=sdf_distance_scale_normal,
+                sdf_distance_scale_bold=sdf_distance_scale_bold,
             )
-            if glyph_scale != 1.0:
-                image = magic_kernel_sharp_resize(
-                    image,
-                    (
-                        max(1, round(image.width * glyph_scale)),
-                        max(1, round(image.height * glyph_scale)),
-                    ),
-                )
-            alpha_composite_subpixel(
+            alpha_composite_text(
                 canvas,
                 image,
                 (
                     center_x - image.width / 2,
-                    y + layout_raw_y_offset + fixed_line_offset_y,
+                    y + layout_raw_y_offset,
                 ),
             )
         else:
-            image = default_tmp_font().render_rich_line(
+            image = rich_line_image(
                 row,
+                default_tmp_font(),
                 font_size,
                 character_spacing,
                 shader_font_size=shader_font_size,
                 trim=False,
                 normal_face_dilate=normal_face_dilate,
                 bold_face_dilate=bold_face_dilate,
+                glyph_scale=glyph_scale,
+                sdf_distance_scale_normal=sdf_distance_scale_normal,
+                sdf_distance_scale_bold=sdf_distance_scale_bold,
             )
-            if glyph_scale != 1.0:
-                image = magic_kernel_sharp_resize(
-                    image,
-                    (
-                        max(1, round(image.width * glyph_scale)),
-                        max(1, round(image.height * glyph_scale)),
-                    ),
-                )
-            alpha_composite_subpixel(
+            alpha_composite_text(
                 canvas,
                 image,
                 (
@@ -2268,22 +3345,22 @@ def fitted_description_rows(
     draw = ImageDraw.Draw(scratch)
     font_size_ui = DESC_FONT_SIZE_MAX_EN_UI if locale_suffix == "en" else DESC_FONT_SIZE_MAX_UI
     body_font = font(scaled_description_font_size(font_size_ui, render_scale))
-    desc_rect = DESC_TEXT_DRAW_RECT_EN if locale_suffix == "en" else DESC_TEXT_DRAW_RECT_CJK
+    layout_desc_rect = DESC_LAYOUT_RECT_EN if locale_suffix == "en" else DESC_LAYOUT_RECT_CJK
     if is_dream:
-        desc_rect = desc_rect.translated(0.0, DREAM_DESC_OFFSET_Y_UI)
-    left, top, right, bottom = scaled_box(desc_rect, render_scale)
+        layout_desc_rect = layout_desc_rect.translated(0.0, DREAM_DESC_OFFSET_Y_UI)
+    left, top, right, bottom = scaled_box(layout_desc_rect, render_scale)
     wrap_width = (right - left) - round(DESC_WRAP_INSET_X * 2 * render_scale)
     desc_character_spacing = DESC_CHARACTER_SPACING_EN if locale_suffix == "en" else DESC_CHARACTER_SPACING_CJK
     line_spacing = desc_line_spacing(locale_suffix, is_dream=is_dream)
     line_height = default_tmp_font().text_line_height(body_font.size, line_spacing)
     paragraph_gap = default_tmp_font().tmp_spacing_height(body_font.size, DESC_PARAGRAPH_SPACING)
-    wrapped_lines = wrap_display_text_with_gaps(
+    layout_character_spacing, wrapped_lines = wrap_description_text_with_layout_spacing(
         draw,
         description,
+        locale_suffix,
+        is_dream,
         body_font,
         wrap_width,
-        width_fn=desc_wrap_width_fn(locale_suffix, desc_character_spacing),
-        token_gap_width=default_tmp_font().character_spacing_px(desc_character_spacing, body_font.size),
     )
 
     min_body_size = scaled_description_font_size(DESC_FONT_SIZE_MIN_UI, render_scale)
@@ -2300,85 +3377,264 @@ def fitted_description_rows(
         body_font = font(body_font.size - font_step)
         line_height = default_tmp_font().text_line_height(body_font.size, line_spacing)
         paragraph_gap = default_tmp_font().tmp_spacing_height(body_font.size, DESC_PARAGRAPH_SPACING)
-        wrapped_lines = wrap_display_text_with_gaps(
+        layout_character_spacing, wrapped_lines = wrap_description_text_with_layout_spacing(
             draw,
             description,
+            locale_suffix,
+            is_dream,
             body_font,
             wrap_width,
-            width_fn=desc_wrap_width_fn(locale_suffix, desc_character_spacing),
-            token_gap_width=default_tmp_font().character_spacing_px(desc_character_spacing, body_font.size),
         )
 
     return body_font.size, ["".join(display_token(token) for token in row).strip() for row, _ in wrapped_lines]
 
 
+def fitted_english_title_rows(
+    title: str,
+    render_scale: float = 2.0,
+) -> tuple[float, list[str]]:
+    """Return the English title font size and wrapped rows used by the card renderer."""
+    title_draw_rect = english_title_draw_rect()
+    left, top, right, bottom = scaled_box_float(title_draw_rect, render_scale)
+    title_font_size, fitted_lines, _ = fit_english_title(
+        title,
+        scaled_ui_font_size_float(TITLE_FONT_SIZE_MAX_UI, render_scale),
+        scaled_ui_font_size_float(TITLE_FONT_SIZE_MIN_UI, render_scale),
+        right - left,
+        bottom - top,
+        TITLE_CHARACTER_SPACING_EN,
+    )
+    return title_font_size, fitted_lines
+
+
+def fit_english_title(
+    title: str,
+    max_font_size: float,
+    min_font_size: float,
+    max_width: float,
+    max_height: float,
+    character_spacing: float,
+) -> tuple[float, list[str], float]:
+    """Approximate TMP auto-size for the English card title."""
+    font_asset = default_tmp_font()
+    wrap_font_size = min(max_font_size, max_font_size * TITLE_WRAP_FONT_SIZE_MAX_UI / TITLE_FONT_SIZE_MAX_UI)
+    lines = wrap_plain_line_tmp(title, wrap_font_size, max_width, character_spacing)
+    if len(lines) <= 2:
+        base_size = max_font_size
+        if len(lines) == 1:
+            base_size *= TITLE_SINGLE_LINE_SCALE
+        else:
+            base_size = min(base_size, max(min_font_size, base_size * TITLE_TWO_LINE_MAX_SCALE))
+
+        max_line_width = max(
+            font_asset.text_width_float(line, base_size, character_spacing) * TITLE_GLYPH_SCALE_EN
+            for line in lines
+        )
+        line_height = font_asset.text_line_height_float(base_size, TITLE_LINE_SPACING)
+        width_scale = max_width / max_line_width if max_line_width > 0 else 1.0
+        height_scale = max_height / (len(lines) * line_height) if line_height > 0 else 1.0
+        fit_scale = min(1.0, width_scale, height_scale)
+        fitted_size = max(min_font_size, base_size * fit_scale)
+        return fitted_size, lines, font_asset.text_line_height_float(fitted_size, TITLE_LINE_SPACING)
+
+    fixed_lines = None
+
+    def fit_at(size: float) -> tuple[bool, list[str], float]:
+        candidate_lines = fixed_lines or wrap_plain_line_tmp(title, size, max_width, character_spacing)
+        line_height = font_asset.text_line_height_float(size, TITLE_LINE_SPACING)
+        max_line_width = max(
+            font_asset.text_width_float(line, size, character_spacing) * TITLE_GLYPH_SCALE_EN
+            for line in candidate_lines
+        )
+        ok = len(candidate_lines) <= 2 and len(candidate_lines) * line_height <= max_height and max_line_width <= max_width
+        return ok, candidate_lines, line_height
+
+    ok, lines, line_height = fit_at(max_font_size)
+    if ok:
+        return max_font_size, lines, line_height
+
+    low = min_font_size
+    high = max_font_size
+    best_size = min_font_size
+    best_lines = wrap_plain_line_tmp(title, min_font_size, max_width, character_spacing)[:2]
+    best_line_height = font_asset.text_line_height_float(min_font_size, TITLE_LINE_SPACING)
+    for _ in range(14):
+        mid = (low + high) / 2.0
+        ok, candidate_lines, candidate_line_height = fit_at(mid)
+        if ok:
+            best_size = mid
+            best_lines = candidate_lines
+            best_line_height = candidate_line_height
+            low = mid
+        else:
+            high = mid
+    return best_size, best_lines, best_line_height
+
+
+def english_title_draw_rect() -> PixelRect:
+    rect = EN_TITLE_DRAW_RECT
+    if TITLE_RECT_WIDTH_SCALE != 1.0 or TITLE_RECT_OFFSET_X_UI != 0.0:
+        center_x, center_y = rect.center
+        center_x += TITLE_RECT_OFFSET_X_UI
+        half_width = rect.width * TITLE_RECT_WIDTH_SCALE / 2
+        rect = PixelRect(center_x - half_width, rect.top, center_x + half_width, rect.bottom)
+    return rect.translated(TITLE_OFFSET_X_UI, TITLE_OFFSET_Y_UI)
+
+
+def fit_english_title_in_rect(
+    title: str,
+    rect: tuple[float, float, float, float],
+    render_scale: float,
+    character_spacing: float,
+) -> tuple[float, list[str], float]:
+    left, top, right, bottom = rect
+    return fit_english_title(
+        title,
+        scaled_ui_font_size_float(TITLE_FONT_SIZE_MAX_UI, render_scale),
+        scaled_ui_font_size_float(TITLE_FONT_SIZE_MIN_UI, render_scale),
+        right - left,
+        bottom - top,
+        character_spacing,
+    )
+
+
 def draw_tmp_centered_stroked_lines(
     canvas: Image.Image,
-    box: tuple[int, int, int, int],
+    box: tuple[float, float, float, float],
     lines: list[str],
-    font_size: int,
+    font_size: float,
     fill: tuple[int, int, int],
     material: dict[str, object],
-    line_height: int,
+    line_height: float,
     character_spacing: float = 0.0,
-    shader_font_size: int | None = None,
+    shader_font_size: float | None = None,
     glyph_scale: float = 1.0,
+    sdf_distance_scale: float | None = None,
+    sdf_face_distance_scale: float | None = None,
+    sdf_outline_distance_scale: float | None = None,
 ) -> None:
     left, top, right, bottom = box
     total_height = len(lines) * line_height
-    y = top + max(0, (bottom - top - total_height) // 2)
-    center_x = (left + right) // 2
+    y = top + max(0.0, (bottom - top - total_height) / 2.0)
+    center_x = (left + right) / 2.0
     font_asset = default_tmp_font()
     for line in lines:
-        image = font_asset.render_line(
+        probe = text_line_image(
             line,
+            font_asset,
             font_size,
             fill,
             material=material,
             character_spacing=character_spacing,
             shader_font_size=shader_font_size,
             trim=False,
+            glyph_scale=glyph_scale,
+            sdf_distance_scale_normal=sdf_distance_scale,
+            sdf_distance_scale_bold=sdf_distance_scale,
+            sdf_face_distance_scale_normal=sdf_face_distance_scale,
+            sdf_face_distance_scale_bold=sdf_face_distance_scale,
+            sdf_outline_distance_scale_normal=sdf_outline_distance_scale,
+            sdf_outline_distance_scale_bold=sdf_outline_distance_scale,
         )
-        if glyph_scale != 1.0:
-            image = magic_kernel_sharp_resize(
-                image,
-                (
-                    max(1, round(image.width * glyph_scale)),
-                    max(1, round(image.height * glyph_scale)),
-                ),
-            )
-        canvas.alpha_composite(
-            image,
-            (
-                round(center_x - image.width / 2),
-                round(y + (line_height - image.height) / 2),
-            ),
+        x_float = center_x - probe.width / 2
+        y_float = y + (line_height - probe.height) / 2
+        x_int = math.floor(x_float)
+        y_int = math.floor(y_float)
+        image = text_line_image(
+            line,
+            font_asset,
+            font_size,
+            fill,
+            material=material,
+            character_spacing=character_spacing,
+            shader_font_size=shader_font_size,
+            trim=False,
+            glyph_scale=glyph_scale,
+            line_phase_x=x_float - x_int,
+            line_phase_y=y_float - y_int,
+            sdf_distance_scale_normal=sdf_distance_scale,
+            sdf_distance_scale_bold=sdf_distance_scale,
+            sdf_face_distance_scale_normal=sdf_face_distance_scale,
+            sdf_face_distance_scale_bold=sdf_face_distance_scale,
+            sdf_outline_distance_scale_normal=sdf_outline_distance_scale,
+            sdf_outline_distance_scale_bold=sdf_outline_distance_scale,
         )
+        canvas.alpha_composite(image, (x_int, y_int))
         y += line_height
 
 
 def draw_tmp_vertical_stroked(
     canvas: Image.Image,
-    box: tuple[int, int, int, int],
+    box: tuple[float, float, float, float],
     text: str,
     font_size: int,
     fill: tuple[int, int, int],
     material: dict[str, object],
-    line_gap: int,
+    line_gap: float,
     shader_font_size: int | None = None,
-    y_offset: int = 0,
+    x_offset: float = 0.0,
+    y_offset: float = 0.0,
+    glyph_scale: float = 1.0,
+    sdf_distance_scale: float | None = None,
+    sdf_face_distance_scale: float | None = None,
+    sdf_outline_distance_scale: float | None = None,
 ) -> None:
     left, top, right, bottom = box
-    center_x = (left + right) // 2
-    slot_height = max(1, round(VERTICAL_NAME_SLOT_HEIGHT_UI * font_size / VERTICAL_NAME_FONT_SIZE_UI))
-    chars = [
-        default_tmp_font().render_line(char, font_size, fill, material=material, shader_font_size=shader_font_size)
-        for char in text
-    ]
-    total_height = len(chars) * slot_height + max(0, len(chars) - 1) * line_gap
-    y = top + max(0, (bottom - top - total_height) // 2) + y_offset
-    for image in chars:
-        canvas.alpha_composite(image, (round(center_x - image.width / 2), round(y + (slot_height - image.height) / 2)))
+    center_x = (left + right) / 2.0 + x_offset
+    slot_height = max(1.0, VERTICAL_NAME_SLOT_HEIGHT_UI * font_size / VERTICAL_NAME_FONT_SIZE_UI)
+    char_entries = []
+    for index, char in enumerate(text):
+        probe = text_line_image(
+            char,
+            default_tmp_font(),
+            font_size,
+            fill,
+            material=material,
+            shader_font_size=shader_font_size,
+            trim=False,
+            isolate_bleed=True,
+            isolate_fringe_px=2,
+            glyph_scale=glyph_scale,
+            sdf_distance_scale_normal=sdf_distance_scale,
+            sdf_distance_scale_bold=sdf_distance_scale,
+            sdf_face_distance_scale_normal=sdf_face_distance_scale,
+            sdf_face_distance_scale_bold=sdf_face_distance_scale,
+            sdf_outline_distance_scale_normal=sdf_outline_distance_scale,
+            sdf_outline_distance_scale_bold=sdf_outline_distance_scale,
+        )
+        char_entries.append((char, probe))
+    total_height = len(char_entries) * slot_height + max(0, len(char_entries) - 1) * line_gap
+    y = top + max(0.0, (bottom - top - total_height) / 2.0) + y_offset
+    if len(char_entries) >= 6:
+        six_line_height = 6 * slot_height + 5 * line_gap
+        six_line_y = top + max(0.0, (bottom - top - six_line_height) / 2.0) + y_offset
+        y = max(y, six_line_y)
+    for char, probe in char_entries:
+        x_float = center_x - probe.width / 2
+        y_float = y + (slot_height - probe.height) / 2
+        x_int = math.floor(x_float)
+        y_int = math.floor(y_float)
+        image = text_line_image(
+            char,
+            default_tmp_font(),
+            font_size,
+            fill,
+            material=material,
+            shader_font_size=shader_font_size,
+            trim=False,
+            isolate_bleed=True,
+            isolate_fringe_px=2,
+            glyph_scale=glyph_scale,
+            line_phase_x=x_float - x_int,
+            line_phase_y=y_float - y_int,
+            sdf_distance_scale_normal=sdf_distance_scale,
+            sdf_distance_scale_bold=sdf_distance_scale,
+            sdf_face_distance_scale_normal=sdf_face_distance_scale,
+            sdf_face_distance_scale_bold=sdf_face_distance_scale,
+            sdf_outline_distance_scale_normal=sdf_outline_distance_scale,
+            sdf_outline_distance_scale_bold=sdf_outline_distance_scale,
+        )
+        canvas.alpha_composite(image, (x_int, y_int))
         y += slot_height + line_gap
 
 
@@ -2417,6 +3673,7 @@ def rich_lines_have_crowded_orphan_stat_line(rows: list[tuple[list[str], bool]],
 def art_for(card_id: int) -> Image.Image:
     candidates = [
         TEXTURE_DIR / f"Card_{card_id}.png",
+        TEXTURE_DIR / "Card_Default.png",
         TEXTURE_DIR / "Card_1000025.png",
     ]
     for path in candidates:
@@ -2431,6 +3688,14 @@ FUSION_ART_INPUTS = {
     160: (8000011, 155),
     185: (1000020, 5000005),
 }
+FUSION_LEFT_MASK_RIGHT_EXPAND_PX = 2
+FUSION_LINE_TEXTURE = TEXTURE_DIR / "Img_卡牌融合.png"
+FUSION_LINE_POS_UI = (-3.5, -12.899999618530273)
+FUSION_LINE_SIZE_UI = (82.0, 207.0)
+
+
+def fusion_line_texture() -> Image.Image:
+    return Image.open(FUSION_LINE_TEXTURE).convert("RGBA")
 
 
 def mixed_card_art(left_card_id: int, right_card_id: int) -> Image.Image:
@@ -2440,29 +3705,61 @@ def mixed_card_art(left_card_id: int, right_card_id: int) -> Image.Image:
         right = magic_kernel_sharp_resize(right, left.size)
     width, height = left.size
 
-    def shifted(image: Image.Image, dx: int, dy: int) -> Image.Image:
+    def shifted(image: Image.Image, dx: float, dy: float) -> Image.Image:
         layer = Image.new("RGBA", image.size, (0, 0, 0, 0))
-        layer.alpha_composite(image, (dx, dy))
+        alpha_composite_subpixel(layer, image, (dx, dy))
         return layer
 
-    # CardItem only loads the two sprites into the MixedCardFace prefab; the
-    # diagonal clipping geometry lives in the prefab data.  These offsets match
-    # that prefab presentation: both input faces are slightly recentered under a
-    # steeper diagonal mask instead of being split down the middle of each art.
-    left = shifted(left, -18, 0)
-    right = shifted(right, -20, 0)
+    # CardItem's MixedCardFace prefab does not draw an explicit polygon split.
+    # It has two 120x180 mask roots rotated -20 degrees.  Each child art image
+    # is counter-rotated +20 degrees, so the card art remains upright while the
+    # mask rectangles produce the diagonal boundary.
+    ui_width, ui_height = 125.0, 150.0
+    px_per_ui_x = width / ui_width
+    px_per_ui_y = height / ui_height
+    root_angle = math.radians(-20.0)
+    cos_a = math.cos(root_angle)
+    sin_a = math.sin(root_angle)
+
+    def rotated_child_center(root_pos: tuple[float, float], child_pos: tuple[float, float]) -> tuple[float, float]:
+        x, y = child_pos
+        return (
+            root_pos[0] + x * cos_a - y * sin_a,
+            root_pos[1] + x * sin_a + y * cos_a,
+        )
+
+    left_center = rotated_child_center((-55.0, 20.0), (30.0, -5.0))
+    right_center = rotated_child_center((60.0, -15.0), (-30.0, 5.0))
+    left = shifted(left, left_center[0] * px_per_ui_x, -left_center[1] * px_per_ui_y)
+    right = shifted(right, right_center[0] * px_per_ui_x, -right_center[1] * px_per_ui_y)
     result = Image.new("RGBA", left.size, (0, 0, 0, 0))
     left_mask = Image.new("L", left.size, 0)
     right_mask = Image.new("L", left.size, 0)
     left_px = left_mask.load()
     right_px = right_mask.load()
+    mask_half_w, mask_half_h = 60.0, 90.0
+
+    def in_rotated_mask(ux: float, uy: float, center: tuple[float, float]) -> bool:
+        dx = ux - center[0]
+        dy = uy - center[1]
+        local_x = dx * cos_a + dy * sin_a
+        local_y = -dx * sin_a + dy * cos_a
+        return abs(local_x) <= mask_half_w and abs(local_y) <= mask_half_h
+
     for y in range(height):
-        split_x = round(width * 0.62 - width * 0.34 * (y / max(1, height - 1)))
+        ui_y = ui_height / 2.0 - (y + 0.5) / px_per_ui_y
         for x in range(width):
-            if x <= split_x:
+            ui_x = (x + 0.5) / px_per_ui_x - ui_width / 2.0
+            if in_rotated_mask(ui_x, ui_y, (-55.0, 20.0)):
                 left_px[x, y] = 255
-            if x >= split_x - 1:
+            if in_rotated_mask(ui_x, ui_y, (60.0, -15.0)):
                 right_px[x, y] = 255
+
+    for dx in range(1, FUSION_LEFT_MASK_RIGHT_EXPAND_PX + 1):
+        shifted_mask = Image.new("L", left_mask.size, 0)
+        shifted_mask.paste(left_mask, (dx, 0))
+        left_mask = ImageChops.lighter(left_mask, shifted_mask)
+
     result.alpha_composite(left)
     result.putalpha(left_mask)
     right_layer = Image.new("RGBA", left.size, (0, 0, 0, 0))
@@ -2470,11 +3767,20 @@ def mixed_card_art(left_card_id: int, right_card_id: int) -> Image.Image:
     right_layer.putalpha(right_mask)
     result.alpha_composite(right_layer)
 
-    divider = ImageDraw.Draw(result)
-    top_x = round(width * 0.62)
-    bottom_x = round(width * 0.28)
-    divider.line((top_x, 0, bottom_x, height), fill=(25, 21, 21, 255), width=max(5, round(width * 0.045)))
-    divider.line((top_x + 2, 0, bottom_x + 2, height), fill=(66, 55, 50, 180), width=max(1, round(width * 0.014)))
+    line = fusion_line_texture()
+    line_width = FUSION_LINE_SIZE_UI[0] * px_per_ui_x
+    line_height = FUSION_LINE_SIZE_UI[1] * px_per_ui_y
+    line_center_x = width / 2.0 + FUSION_LINE_POS_UI[0] * px_per_ui_x
+    line_center_y = height / 2.0 - FUSION_LINE_POS_UI[1] * px_per_ui_y
+    line_layer = magic_kernel_sharp_resample_translate(
+        line,
+        result.size,
+        line_width / line.width,
+        line_height / line.height,
+        line_center_x - line_width / 2.0,
+        line_center_y - line_height / 2.0,
+    )
+    result.alpha_composite(line_layer)
     return result
 
 
@@ -2483,6 +3789,10 @@ def art_for_config(card: dict[str, object], ref_id: str | None = None) -> Image.
     rarity = int(card["rarity"])
     base_id = card_base_id(card_id)
     override = int(card["overrideSpriteId"])
+    new_card_fusion_inputs = card.get("_new_card_fusion_ingredients")
+    if new_card_fusion_inputs is not None:
+        left_card_id, right_card_id = new_card_fusion_inputs
+        return mixed_card_art(int(left_card_id), int(right_card_id))
     fusion_inputs = FUSION_ART_INPUTS.get(base_id)
     if fusion_inputs is not None:
         return mixed_card_art(*fusion_inputs)
@@ -2506,6 +3816,28 @@ def art_for_config(card: dict[str, object], ref_id: str | None = None) -> Image.
                 image = image.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
             return image
     raise FileNotFoundError(f"No card art found for {card_id}")
+
+
+def new_card_art_override_id(card_id: int) -> int:
+    candidates = [
+        card_id,
+        card_base_id(card_id),
+        card_id % 1_000_000,
+        card_id % 10_000,
+        card_id % 1_000,
+        card_id % 100,
+    ]
+    for candidate in candidates:
+        if candidate and (TEXTURE_DIR / f"Card_{candidate}.png").exists():
+            return candidate
+    return 0
+
+
+def new_card_art_source_id(row: dict[str, object]) -> int:
+    explicit_source = row.get("art_source_id")
+    if explicit_source is not None:
+        return int(explicit_source)
+    return 0
 
 
 def dream_art() -> Image.Image:
@@ -2541,9 +3873,7 @@ def render_card(level: CardLevel, locale: LocaleText, render_scale: float = 1.0)
     output_size = scaled_size(CARD_SIZE, render_scale)
     frame = magic_kernel_sharp_resize(frame, output_size)
     canvas = Image.new("RGBA", output_size, (0, 0, 0, 0))
-    x0, y0, x1, y1 = scaled_box(ART_RECT, render_scale)
-    art = magic_kernel_sharp_resize(art, (x1 - x0, y1 - y0))
-    canvas.alpha_composite(art, (x0, y0))
+    composite_card_art(canvas, art, render_scale)
     canvas.alpha_composite(frame)
 
     sx0, sy0, sx1, sy1 = scaled_box(SECT_EMBLEM_RECT, render_scale)
@@ -2552,7 +3882,7 @@ def render_card(level: CardLevel, locale: LocaleText, render_scale: float = 1.0)
 
     draw = ImageDraw.Draw(canvas)
 
-    title_left, title_top, title_right, title_bottom = scaled_box(EN_TITLE_DRAW_RECT, render_scale)
+    title_left, title_top, title_right, title_bottom = scaled_box(english_title_draw_rect(), render_scale)
     title_font = font(scaled_ui_font_size(TITLE_FONT_SIZE_MAX_UI, render_scale))
     vertical_font = font(scaled_ui_font_size(VERTICAL_NAME_FONT_SIZE_UI, render_scale))
     body_font = font(
@@ -2567,6 +3897,9 @@ def render_card(level: CardLevel, locale: LocaleText, render_scale: float = 1.0)
     title_fill = rgb_from_unit(
         multiply_unit_rgb(TITLE_FONT_COLOR, DEFAULT_OUTLINE_MATERIAL["face_color"])
     )
+    vertical_material = dict(DEFAULT_OUTLINE_MATERIAL)
+    vertical_material["face_dilate"] = VERTICAL_NAME_FACE_DILATE
+    vertical_material["outline_width"] = VERTICAL_NAME_OUTLINE_WIDTH
 
     if QI_COST > 0:
         icon_left, icon_top, icon_right, icon_bottom = scaled_box(QI_ICON_DRAW_RECT, render_scale)
@@ -2585,10 +3918,15 @@ def render_card(level: CardLevel, locale: LocaleText, render_scale: float = 1.0)
         locale.chinese_title,
         vertical_font.size,
         fill=title_fill,
-        material=DEFAULT_OUTLINE_MATERIAL,
-        line_gap=scaled_signed_px(VERTICAL_NAME_LINE_GAP_UI, render_scale),
+        material=vertical_material,
+        line_gap=scaled_signed_float(VERTICAL_NAME_LINE_GAP_UI, render_scale),
         shader_font_size=vertical_shader_size,
-        y_offset=scaled_signed_px(VERTICAL_NAME_OFFSET_Y_UI, render_scale),
+        x_offset=scaled_signed_float(VERTICAL_NAME_OFFSET_X_UI, render_scale),
+        y_offset=scaled_signed_float(VERTICAL_NAME_OFFSET_Y_UI, render_scale),
+        glyph_scale=VERTICAL_NAME_GLYPH_SCALE,
+        sdf_distance_scale=VERTICAL_NAME_DISTANCE_SCALE,
+        sdf_face_distance_scale=VERTICAL_NAME_FACE_DISTANCE_SCALE,
+        sdf_outline_distance_scale=VERTICAL_NAME_OUTLINE_DISTANCE_SCALE,
     )
 
     if locale.suffix == "en":
@@ -2598,19 +3936,26 @@ def render_card(level: CardLevel, locale: LocaleText, render_scale: float = 1.0)
         draw = ImageDraw.Draw(canvas)
         title_character_spacing = -2.0
         title_lines = wrap_plain_line_tmp(locale.title, title_font.size, title_right - title_left, title_character_spacing)
+        fitted_title_lines = title_lines
         min_title_size = scaled_ui_font_size(TITLE_FONT_SIZE_MIN_UI, render_scale)
         title_line_height = default_tmp_font().text_line_height(title_font.size, TITLE_LINE_SPACING)
         while (
-            (len(title_lines) > 2 or len(title_lines) * title_line_height > title_bottom - title_top)
+            (len(fitted_title_lines) > 2 or len(fitted_title_lines) * title_line_height > title_bottom - title_top)
             and title_font.size > min_title_size
         ):
             title_font = font(title_font.size - 1)
             title_shader_size = max(1, round(title_font.size / render_scale))
+            fitted_title_lines = wrap_plain_line_tmp(
+                locale.title,
+                title_font.size,
+                title_right - title_left,
+                title_character_spacing,
+            )
             title_line_height = default_tmp_font().text_line_height(title_font.size, TITLE_LINE_SPACING)
         draw_tmp_centered_stroked_lines(
             canvas,
-            scaled_box(EN_TITLE_DRAW_RECT, render_scale),
-            title_lines,
+            scaled_box(english_title_draw_rect(), render_scale),
+            fitted_title_lines,
             title_font.size,
             fill=title_fill,
             material=DEFAULT_OUTLINE_MATERIAL,
@@ -2618,6 +3963,9 @@ def render_card(level: CardLevel, locale: LocaleText, render_scale: float = 1.0)
             character_spacing=title_character_spacing,
             shader_font_size=title_shader_size,
             glyph_scale=TITLE_GLYPH_SCALE_EN,
+            sdf_distance_scale=TITLE_DISTANCE_SCALE,
+            sdf_face_distance_scale=TITLE_FACE_DISTANCE_SCALE,
+            sdf_outline_distance_scale=TITLE_OUTLINE_DISTANCE_SCALE,
         )
 
     description = locale.description.replace("{def}", f"[color:#9A6212|{level.defense}]")
@@ -2627,16 +3975,17 @@ def render_card(level: CardLevel, locale: LocaleText, render_scale: float = 1.0)
     wrap_width = (right - left) - round(DESC_WRAP_INSET_X * 2 * render_scale)
     desc_character_spacing = DESC_CHARACTER_SPACING_EN if locale.suffix == "en" else DESC_CHARACTER_SPACING_CJK
     line_spacing = desc_line_spacing(locale.suffix)
-    paragraph_gap = default_tmp_font().tmp_spacing_height(body_font.size, DESC_PARAGRAPH_SPACING)
     normal_face_dilate, bold_face_dilate = desc_face_dilates(locale.suffix)
+    normal_distance_scale, bold_distance_scale = desc_sdf_distance_scales(locale.suffix)
     line_height = default_tmp_font().text_line_height(body_font.size, line_spacing)
-    wrapped_lines = wrap_display_text_with_gaps(
+    paragraph_gap = default_tmp_font().tmp_spacing_height(body_font.size, DESC_PARAGRAPH_SPACING)
+    layout_character_spacing, wrapped_lines = wrap_description_text_with_layout_spacing(
         draw,
         description,
+        locale.suffix,
+        False,
         body_font,
         wrap_width,
-        width_fn=desc_wrap_width_fn(locale.suffix, desc_character_spacing),
-        token_gap_width=default_tmp_font().character_spacing_px(desc_character_spacing, body_font.size),
     )
 
     min_body_size = scaled_description_font_size(DESC_FONT_SIZE_MIN_UI, render_scale)
@@ -2654,13 +4003,13 @@ def render_card(level: CardLevel, locale: LocaleText, render_scale: float = 1.0)
         body_shader_size = max(1, round(body_font.size / render_scale))
         line_height = default_tmp_font().text_line_height(body_font.size, line_spacing)
         paragraph_gap = default_tmp_font().tmp_spacing_height(body_font.size, DESC_PARAGRAPH_SPACING)
-        wrapped_lines = wrap_display_text_with_gaps(
+        layout_character_spacing, wrapped_lines = wrap_description_text_with_layout_spacing(
             draw,
             description,
+            locale.suffix,
+            False,
             body_font,
             wrap_width,
-            width_fn=desc_wrap_width_fn(locale.suffix, desc_character_spacing),
-            token_gap_width=default_tmp_font().character_spacing_px(desc_character_spacing, body_font.size),
         )
 
     draw_tmp_centered_rich_lines_with_gaps(
@@ -2673,10 +4022,11 @@ def render_card(level: CardLevel, locale: LocaleText, render_scale: float = 1.0)
         character_spacing=desc_character_spacing,
         shader_font_size=body_shader_size,
         glyph_scale=DESC_GLYPH_SCALE_EN if locale.suffix == "en" else DESC_GLYPH_SCALE_CJK,
-        ignore_descenders_for_layout=True,
-        fixed_line_offset_y=scaled_signed_float(desc_fixed_line_offset_ui(locale.suffix), render_scale),
         normal_face_dilate=normal_face_dilate,
         bold_face_dilate=bold_face_dilate,
+        sdf_distance_scale_normal=normal_distance_scale,
+        sdf_distance_scale_bold=bold_distance_scale,
+        ignore_descenders_for_layout=True,
     )
 
     return canvas
@@ -2694,9 +4044,7 @@ def render_dream_card(level: DreamCardLevel, locale: LocaleText, render_scale: f
     output_size = scaled_size(CARD_SIZE, render_scale)
     frame = magic_kernel_sharp_resize(frame, output_size)
     canvas = Image.new("RGBA", output_size, (0, 0, 0, 0))
-    x0, y0, x1, y1 = scaled_box(ART_RECT, render_scale)
-    art = magic_kernel_sharp_resize(art, (x1 - x0, y1 - y0))
-    canvas.alpha_composite(art, (x0, y0))
+    composite_card_art(canvas, art, render_scale)
     canvas.alpha_composite(frame)
 
     draw = ImageDraw.Draw(canvas)
@@ -2713,6 +4061,9 @@ def render_dream_card(level: DreamCardLevel, locale: LocaleText, render_scale: f
     title_fill = rgb_from_unit(
         multiply_unit_rgb(TITLE_FONT_COLOR, DEFAULT_OUTLINE_MATERIAL["face_color"])
     )
+    vertical_material = dict(DEFAULT_OUTLINE_MATERIAL)
+    vertical_material["face_dilate"] = VERTICAL_NAME_FACE_DILATE
+    vertical_material["outline_width"] = VERTICAL_NAME_OUTLINE_WIDTH
 
     draw_tmp_vertical_stroked(
         canvas,
@@ -2720,37 +4071,52 @@ def render_dream_card(level: DreamCardLevel, locale: LocaleText, render_scale: f
         locale.chinese_title,
         vertical_font.size,
         fill=title_fill,
-        material=DEFAULT_OUTLINE_MATERIAL,
-        line_gap=scaled_signed_px(VERTICAL_NAME_LINE_GAP_UI, render_scale),
+        material=vertical_material,
+        line_gap=scaled_signed_float(VERTICAL_NAME_LINE_GAP_UI, render_scale),
         shader_font_size=vertical_shader_size,
-        y_offset=scaled_signed_px(DREAM_VERTICAL_NAME_OFFSET_Y_UI, render_scale),
+        x_offset=scaled_signed_float(VERTICAL_NAME_OFFSET_X_UI, render_scale),
+        y_offset=scaled_signed_float(DREAM_VERTICAL_NAME_OFFSET_Y_UI, render_scale),
+        glyph_scale=VERTICAL_NAME_GLYPH_SCALE,
+        sdf_distance_scale=VERTICAL_NAME_DISTANCE_SCALE,
+        sdf_face_distance_scale=VERTICAL_NAME_FACE_DISTANCE_SCALE,
+        sdf_outline_distance_scale=VERTICAL_NAME_OUTLINE_DISTANCE_SCALE,
     )
 
     if locale.suffix == "en":
-        title_left, title_top, title_right, title_bottom = scaled_box(EN_TITLE_DRAW_RECT, render_scale)
+        title_left, title_top, title_right, title_bottom = scaled_box(english_title_draw_rect(), render_scale)
         bg_left, bg_top, bg_right, bg_bottom = scaled_box(EN_TITLE_BG_DRAW_RECT, render_scale)
         bg = magic_kernel_sharp_resize(en_title_bg(), (bg_right - bg_left, bg_bottom - bg_top))
         canvas.alpha_composite(bg, (bg_left, bg_top))
         title_character_spacing = -2.0
         title_lines = wrap_plain_line_tmp(locale.title, title_font.size, title_right - title_left, title_character_spacing)
+        fitted_title_lines = title_lines
         min_title_size = scaled_ui_font_size(TITLE_FONT_SIZE_MIN_UI, render_scale)
         title_line_height = default_tmp_font().text_line_height(title_font.size, TITLE_LINE_SPACING)
         while (
-            (len(title_lines) > 2 or len(title_lines) * title_line_height > title_bottom - title_top)
+            (len(fitted_title_lines) > 2 or len(fitted_title_lines) * title_line_height > title_bottom - title_top)
             and title_font.size > min_title_size
         ):
             title_font = font(title_font.size - 1)
+            fitted_title_lines = wrap_plain_line_tmp(
+                locale.title,
+                title_font.size,
+                title_right - title_left,
+                title_character_spacing,
+            )
             title_line_height = default_tmp_font().text_line_height(title_font.size, TITLE_LINE_SPACING)
         draw_tmp_centered_stroked_lines(
             canvas,
-            scaled_box(EN_TITLE_DRAW_RECT, render_scale),
-            title_lines,
+            scaled_box(english_title_draw_rect(), render_scale),
+            fitted_title_lines,
             title_font.size,
             fill=title_fill,
             material=DEFAULT_OUTLINE_MATERIAL,
             line_height=title_line_height,
             character_spacing=title_character_spacing,
             glyph_scale=TITLE_GLYPH_SCALE_EN,
+            sdf_distance_scale=TITLE_DISTANCE_SCALE,
+            sdf_face_distance_scale=TITLE_FACE_DISTANCE_SCALE,
+            sdf_outline_distance_scale=TITLE_OUTLINE_DISTANCE_SCALE,
         )
 
     description = dream_description(level, locale)
@@ -2763,16 +4129,17 @@ def render_dream_card(level: DreamCardLevel, locale: LocaleText, render_scale: f
     wrap_width = (right - left) - round(DESC_WRAP_INSET_X * 2 * render_scale)
     desc_character_spacing = DESC_CHARACTER_SPACING_EN if locale.suffix == "en" else DESC_CHARACTER_SPACING_CJK
     line_spacing = desc_line_spacing(locale.suffix, is_dream=True)
-    paragraph_gap = default_tmp_font().tmp_spacing_height(body_font.size, DESC_PARAGRAPH_SPACING)
     normal_face_dilate, bold_face_dilate = desc_face_dilates(locale.suffix)
+    normal_distance_scale, bold_distance_scale = desc_sdf_distance_scales(locale.suffix)
     line_height = default_tmp_font().text_line_height(body_font.size, line_spacing)
-    wrapped_lines = wrap_display_text_with_gaps(
+    paragraph_gap = default_tmp_font().tmp_spacing_height(body_font.size, DESC_PARAGRAPH_SPACING)
+    layout_character_spacing, wrapped_lines = wrap_description_text_with_layout_spacing(
         draw,
         description,
+        locale.suffix,
+        True,
         body_font,
         wrap_width,
-        width_fn=desc_wrap_width_fn(locale.suffix, desc_character_spacing),
-        token_gap_width=default_tmp_font().character_spacing_px(desc_character_spacing, body_font.size),
     )
 
     min_body_size = scaled_description_font_size(DESC_FONT_SIZE_MIN_UI, render_scale)
@@ -2790,13 +4157,13 @@ def render_dream_card(level: DreamCardLevel, locale: LocaleText, render_scale: f
         body_shader_size = max(1, round(body_font.size / render_scale))
         line_height = default_tmp_font().text_line_height(body_font.size, line_spacing)
         paragraph_gap = default_tmp_font().tmp_spacing_height(body_font.size, DESC_PARAGRAPH_SPACING)
-        wrapped_lines = wrap_display_text_with_gaps(
+        layout_character_spacing, wrapped_lines = wrap_description_text_with_layout_spacing(
             draw,
             description,
+            locale.suffix,
+            True,
             body_font,
             wrap_width,
-            width_fn=desc_wrap_width_fn(locale.suffix, desc_character_spacing),
-            token_gap_width=default_tmp_font().character_spacing_px(desc_character_spacing, body_font.size),
         )
 
     draw_tmp_centered_rich_lines_with_gaps(
@@ -2809,15 +4176,350 @@ def render_dream_card(level: DreamCardLevel, locale: LocaleText, render_scale: f
         character_spacing=desc_character_spacing,
         shader_font_size=body_shader_size,
         glyph_scale=DESC_GLYPH_SCALE_EN if locale.suffix == "en" else DESC_GLYPH_SCALE_CJK,
-        ignore_descenders_for_layout=True,
-        fixed_line_offset_y=scaled_signed_float(desc_fixed_line_offset_ui(locale.suffix), render_scale),
         normal_face_dilate=normal_face_dilate,
         bold_face_dilate=bold_face_dilate,
+        sdf_distance_scale_normal=normal_distance_scale,
+        sdf_distance_scale_bold=bold_distance_scale,
+        ignore_descenders_for_layout=True,
     )
     return canvas
 
 
-def render_config_card(ref_id: str, card: dict[str, object], locale_suffix: str, render_scale: float = 1.0) -> Image.Image:
+def draw_config_description(
+    canvas: Image.Image,
+    card: dict[str, object],
+    locale_suffix: str,
+    render_scale: float,
+    is_dream: bool,
+    offset: tuple[float, float] = (0.0, 0.0),
+    layout_render_scale: float | None = None,
+    description_override: str | None = None,
+    description_single_row: bool = False,
+) -> None:
+    layout_scale = layout_render_scale if layout_render_scale is not None else render_scale
+    final_from_layout = render_scale / layout_scale
+    draw = ImageDraw.Draw(canvas)
+    body_font = font(
+        scaled_description_font_size(
+            DESC_FONT_SIZE_MAX_EN_UI if locale_suffix == "en" else DESC_FONT_SIZE_MAX_UI,
+            layout_scale,
+        )
+    )
+    description = description_override if description_override is not None else render_description_text(int(card["id"]), locale_suffix)
+    desc_rect = DESC_TEXT_DRAW_RECT_EN if locale_suffix == "en" else DESC_TEXT_DRAW_RECT_CJK
+    if is_dream:
+        desc_rect = desc_rect.translated(0.0, DREAM_DESC_OFFSET_Y_UI)
+    layout_desc_rect = DESC_LAYOUT_RECT_EN if locale_suffix == "en" else DESC_LAYOUT_RECT_CJK
+    if is_dream:
+        layout_desc_rect = layout_desc_rect.translated(0.0, DREAM_DESC_OFFSET_Y_UI)
+    layout_box = scaled_box_float(layout_desc_rect, layout_scale)
+    left, top, right, bottom = layout_box
+    wrap_width = (right - left) - round(DESC_WRAP_INSET_X * 2 * layout_scale)
+    desc_character_spacing = DESC_CHARACTER_SPACING_EN if locale_suffix == "en" else DESC_CHARACTER_SPACING_CJK
+    line_spacing = desc_line_spacing(locale_suffix, is_dream=is_dream)
+    desc_glyph_scale = DESC_GLYPH_SCALE_EN if locale_suffix == "en" else DESC_GLYPH_SCALE_CJK
+    normal_face_dilate, bold_face_dilate = desc_face_dilates(locale_suffix)
+    normal_distance_scale, bold_distance_scale = desc_sdf_distance_scales(locale_suffix)
+    line_height = default_tmp_font().text_line_height(body_font.size, line_spacing)
+    paragraph_gap = default_tmp_font().tmp_spacing_height(body_font.size, DESC_PARAGRAPH_SPACING)
+    if description_single_row:
+        layout_character_spacing = desc_layout_character_spacing(locale_suffix)
+        wrapped_lines = [(text_to_tokens(description), False)]
+    else:
+        layout_character_spacing, wrapped_lines = wrap_description_text_with_layout_spacing(
+            draw,
+            description,
+            locale_suffix,
+            is_dream,
+            body_font,
+            wrap_width,
+        )
+
+    min_body_size = scaled_description_font_size(DESC_FONT_SIZE_MIN_UI, layout_scale)
+    font_step = max(1, round(layout_scale))
+    while (
+        (
+            top + rich_lines_height(wrapped_lines, line_height, paragraph_gap)
+            > desc_vertical_fit_bottom(bottom, layout_scale)
+            or rich_lines_rendered_max_width(wrapped_lines, body_font.size, desc_character_spacing) > wrap_width
+            or rich_lines_have_crowded_orphan_stat_line(wrapped_lines, locale_suffix)
+        )
+        and body_font.size > min_body_size
+    ):
+        body_font = font(body_font.size - font_step)
+        line_height = default_tmp_font().text_line_height(body_font.size, line_spacing)
+        paragraph_gap = default_tmp_font().tmp_spacing_height(body_font.size, DESC_PARAGRAPH_SPACING)
+        if description_single_row:
+            layout_character_spacing = desc_layout_character_spacing(locale_suffix)
+            wrapped_lines = [(text_to_tokens(description), False)]
+        else:
+            layout_character_spacing, wrapped_lines = wrap_description_text_with_layout_spacing(
+                draw,
+                description,
+                locale_suffix,
+                is_dream,
+                body_font,
+                wrap_width,
+            )
+
+    final_desc_box = scaled_box_float(desc_rect, render_scale)
+    final_desc_box = (
+        final_desc_box[0] + offset[0],
+        final_desc_box[1] + offset[1],
+        final_desc_box[2] + offset[0],
+        final_desc_box[3] + offset[1],
+    )
+    final_font_size = max(1, round(body_font.size * final_from_layout))
+    final_line_height = max(1.0, line_height * final_from_layout)
+    final_paragraph_gap = paragraph_gap * final_from_layout
+    final_shader_size = max(1, round(final_font_size / render_scale))
+    block_scale = DESC_BLOCK_SCALE_EN if locale_suffix == "en" else DESC_BLOCK_SCALE_CJK
+    text_canvas = canvas if abs(block_scale - 1.0) < 1e-6 else Image.new("RGBA", canvas.size, (0, 0, 0, 0))
+    draw_tmp_centered_rich_lines_with_gaps(
+        text_canvas,
+        final_desc_box,
+        wrapped_lines,
+        final_font_size,
+        final_line_height,
+        final_paragraph_gap,
+        character_spacing=desc_character_spacing,
+        shader_font_size=final_shader_size,
+        glyph_scale=desc_glyph_scale,
+        normal_face_dilate=normal_face_dilate,
+        bold_face_dilate=bold_face_dilate,
+        sdf_distance_scale_normal=normal_distance_scale,
+        sdf_distance_scale_bold=bold_distance_scale,
+        ignore_descenders_for_layout=True,
+    )
+    if text_canvas is not canvas:
+        center_x = (final_desc_box[0] + final_desc_box[2]) / 2.0
+        center_y = (final_desc_box[1] + final_desc_box[3]) / 2.0
+        scaled_text = magic_kernel_sharp_resample_translate(
+            text_canvas,
+            canvas.size,
+            block_scale,
+            block_scale,
+            center_x * (1.0 - block_scale),
+            center_y * (1.0 - block_scale),
+        )
+        canvas.alpha_composite(scaled_text)
+
+
+def config_card_titles(ref_id: str, card: dict[str, object], locale_suffix: str) -> tuple[str, str]:
+    new_card_name = card.get("_new_card_name_cn")
+    if new_card_name is not None:
+        return str(new_card_name), str(new_card_name)
+    if ref_id == "906001":
+        return (
+            localized_term("Relic4OptionTitle_6", locale_suffix, "赤贯星"),
+            localized_term("Relic4OptionTitle_6", "zh", "赤贯星"),
+        )
+    stale_reference_titles = {
+        "906011": {"en": "Nüwa Stone", "zh": "女娲石", "tw": "女媧石"},
+        "906021": {"en": "Haotian Pagoda", "zh": "昊天塔", "tw": "昊天塔"},
+        "906051": {"en": "Donghuang Zhong", "zh": "东皇钟", "tw": "東皇鐘"},
+        "916011": {"en": "Xuan-Yuan Sword", "zh": "轩辕剑", "tw": "軒轅劍"},
+    }
+    if ref_id in stale_reference_titles:
+        titles = stale_reference_titles[ref_id]
+        return titles.get(locale_suffix, titles["en"]), titles["zh"]
+    return card_name(int(card["id"]), locale_suffix), card_name(int(card["id"]), "zh")
+
+
+def draw_config_titles(
+    canvas: Image.Image,
+    ref_id: str,
+    card: dict[str, object],
+    locale_suffix: str,
+    render_scale: float,
+    is_dream: bool,
+    offset: tuple[float, float] = (0.0, 0.0),
+    layout_render_scale: float | None = None,
+    vertical_name_override: str | None = None,
+) -> None:
+    layout_scale = layout_render_scale if layout_render_scale is not None else render_scale
+    final_from_layout = render_scale / layout_scale
+    display_title, vertical_title = config_card_titles(ref_id, card, locale_suffix)
+    if vertical_name_override is not None:
+        vertical_title = vertical_name_override
+    vertical_font = font(scaled_ui_font_size(VERTICAL_NAME_FONT_SIZE_UI, layout_scale))
+    title_fill = rgb_from_unit(
+        multiply_unit_rgb(TITLE_FONT_COLOR, DEFAULT_OUTLINE_MATERIAL["face_color"])
+    )
+    vertical_material = dict(DEFAULT_OUTLINE_MATERIAL)
+    vertical_material["face_dilate"] = VERTICAL_NAME_FACE_DILATE
+    vertical_material["outline_width"] = VERTICAL_NAME_OUTLINE_WIDTH
+
+    vertical_offset = DREAM_VERTICAL_NAME_OFFSET_Y_UI if is_dream else VERTICAL_NAME_OFFSET_Y_UI
+    vbox = scaled_box_float(VERTICAL_NAME_RECT, render_scale)
+    final_vertical_size = max(1, round(vertical_font.size * final_from_layout))
+    final_vertical_shader_size = max(1, round(final_vertical_size / render_scale))
+    draw_tmp_vertical_stroked(
+        canvas,
+        (vbox[0] + offset[0], vbox[1] + offset[1], vbox[2] + offset[0], vbox[3] + offset[1]),
+        vertical_title,
+        final_vertical_size,
+        fill=title_fill,
+        material=vertical_material,
+        line_gap=scaled_signed_float(VERTICAL_NAME_LINE_GAP_UI, render_scale),
+        shader_font_size=final_vertical_shader_size,
+        x_offset=scaled_signed_float(VERTICAL_NAME_OFFSET_X_UI, render_scale),
+        y_offset=scaled_signed_float(vertical_offset, render_scale),
+        glyph_scale=VERTICAL_NAME_GLYPH_SCALE,
+        sdf_distance_scale=VERTICAL_NAME_DISTANCE_SCALE,
+        sdf_face_distance_scale=VERTICAL_NAME_FACE_DISTANCE_SCALE,
+        sdf_outline_distance_scale=VERTICAL_NAME_OUTLINE_DISTANCE_SCALE,
+    )
+
+    if locale_suffix != "en":
+        return
+
+    title_draw_rect = english_title_draw_rect()
+    title_material = dict(DEFAULT_OUTLINE_MATERIAL)
+    title_material["face_dilate"] = TITLE_FACE_DILATE
+    title_material["outline_width"] = TITLE_OUTLINE_WIDTH
+    layout_title_left, layout_title_top, layout_title_right, layout_title_bottom = scaled_box_float(title_draw_rect, layout_scale)
+    title_character_spacing = TITLE_CHARACTER_SPACING_EN
+    title_font_size, fitted_title_lines, title_line_height = fit_english_title_in_rect(
+        display_title,
+        (layout_title_left, layout_title_top, layout_title_right, layout_title_bottom),
+        layout_scale,
+        title_character_spacing,
+    )
+
+    title_left, title_top, title_right, title_bottom = scaled_box_float(title_draw_rect, render_scale)
+    if len(fitted_title_lines) == 1:
+        title_single_line_offset_y = scaled_signed_float(TITLE_SINGLE_LINE_OFFSET_Y_UI, render_scale)
+        title_top += title_single_line_offset_y
+        title_bottom += title_single_line_offset_y
+    final_title_size = max(1.0, title_font_size * final_from_layout)
+    final_title_line_height = max(1.0, title_line_height * final_from_layout)
+    final_title_shader_size = max(1.0, final_title_size / render_scale)
+    draw_tmp_centered_stroked_lines(
+        canvas,
+        (
+            title_left + offset[0],
+            title_top + offset[1],
+            title_right + offset[0],
+            title_bottom + offset[1],
+        ),
+        fitted_title_lines,
+        final_title_size,
+        fill=title_fill,
+        material=title_material,
+        line_height=final_title_line_height,
+        character_spacing=title_character_spacing,
+        shader_font_size=final_title_shader_size,
+        glyph_scale=TITLE_GLYPH_SCALE_EN,
+        sdf_distance_scale=TITLE_DISTANCE_SCALE,
+        sdf_face_distance_scale=TITLE_FACE_DISTANCE_SCALE,
+        sdf_outline_distance_scale=TITLE_OUTLINE_DISTANCE_SCALE,
+    )
+
+
+def draw_config_text(
+    canvas: Image.Image,
+    ref_id: str,
+    card: dict[str, object],
+    locale_suffix: str,
+    render_scale: float,
+    is_dream: bool,
+    offset: tuple[float, float] = (0.0, 0.0),
+    layout_render_scale: float | None = None,
+) -> None:
+    draw_config_cost_digits(canvas, card, render_scale, offset=offset)
+    draw_config_titles(
+        canvas,
+        ref_id,
+        card,
+        locale_suffix,
+        render_scale,
+        is_dream,
+        offset=offset,
+        layout_render_scale=layout_render_scale,
+    )
+    draw_config_description(
+        canvas,
+        card,
+        locale_suffix,
+        render_scale,
+        is_dream,
+        offset=offset,
+        layout_render_scale=layout_render_scale,
+    )
+
+
+def config_cost_info(card: dict[str, object]) -> tuple[int, bool] | None:
+    if int(card["hpCost"]) > 0:
+        return int(card["hpCost"]), True
+    if int(card["anima"]) < 0:
+        return abs(int(card["anima"])), False
+    return None
+
+
+def draw_config_cost_digits(
+    canvas: Image.Image,
+    card: dict[str, object],
+    render_scale: float,
+    offset: tuple[float, float] = (0.0, 0.0),
+) -> None:
+    cost = config_cost_info(card)
+    if cost is None:
+        return
+    cost_value, cost_is_hp = cost
+    digit_font_size = ANIMA_FONT_SIZE_UI if cost_is_hp else QI_DIGIT_FONT_SIZE_UI
+    digit_scale_x = HP_DIGIT_SCALE_X if cost_is_hp else QI_DIGIT_SCALE_X
+    digit_scale_y = HP_DIGIT_SCALE_Y if cost_is_hp else QI_DIGIT_SCALE_Y
+    digit_offset_x = HP_DIGIT_OFFSET_X if cost_is_hp else QI_DIGIT_OFFSET_X
+    digit_offset_y = HP_DIGIT_OFFSET_Y if cost_is_hp else QI_DIGIT_OFFSET_Y
+    digit = huiwen_number_image(str(cost_value), digit_font_size, render_scale, digit_scale_x, digit_scale_y)
+    label_center = (QI_LABEL_RECT.center[0] * render_scale, QI_LABEL_RECT.center[1] * render_scale)
+    digit_x = label_center[0] - digit.width / 2 + scaled_signed_float(digit_offset_x, render_scale) + offset[0]
+    digit_y = label_center[1] - digit.height / 2 + scaled_signed_float(digit_offset_y, render_scale) + offset[1]
+    alpha_composite_subpixel(canvas, digit, (digit_x, digit_y))
+
+
+def draw_config_cost_icon(
+    canvas: Image.Image,
+    cost_is_hp: bool,
+    render_scale: float,
+    offset: tuple[float, float] = (0.0, 0.0),
+) -> None:
+    cost_icon = hp_icon() if cost_is_hp else qi_icon()
+    icon_rect = HP_ICON_DRAW_RECT if cost_is_hp else QI_ICON_DRAW_RECT
+    x0, y0, x1, y1 = scaled_box_float(icon_rect, render_scale)
+    x0 += offset[0]
+    x1 += offset[0]
+    y0 += offset[1]
+    y1 += offset[1]
+    if cost_is_hp:
+        cost_icon = multiply_rgba(cost_icon, HP_ICON_TINT)
+        icon_left, icon_top, icon_right, icon_bottom = round(x0), round(y0), round(x1), round(y1)
+        icon = magic_kernel_sharp_resize(cost_icon, (icon_right - icon_left, icon_bottom - icon_top))
+        canvas.alpha_composite(icon, (icon_left, icon_top))
+        return
+
+    center_x = (x0 + x1) / 2.0 + scaled_signed_float(QI_ICON_OFFSET_X_UI, render_scale)
+    center_y = (y0 + y1) / 2.0 + scaled_signed_float(QI_ICON_OFFSET_Y_UI, render_scale)
+    scale_x = ((x1 - x0) * QI_ICON_SCALE) / cost_icon.width
+    scale_y = ((y1 - y0) * QI_ICON_SCALE) / cost_icon.height
+    dx = center_x - cost_icon.width * scale_x / 2.0
+    dy = center_y - cost_icon.height * scale_y / 2.0
+    layer = magic_kernel_sharp_resample_translate(cost_icon, canvas.size, scale_x, scale_y, dx, dy)
+    canvas.alpha_composite(layer)
+
+
+def render_config_card(
+    ref_id: str,
+    card: dict[str, object],
+    locale_suffix: str,
+    render_scale: float = 1.0,
+    skip_description: bool = False,
+    skip_text: bool = False,
+    description_override: str | None = None,
+    description_single_row: bool = False,
+    vertical_name_override: str | None = None,
+) -> Image.Image:
     level_name = LEVEL_NAMES[int(card["level"])]
     is_dream = int(card["subcategory"]) == 14
     if is_dream:
@@ -2827,191 +4529,285 @@ def render_config_card(ref_id: str, card: dict[str, object], locale_suffix: str,
     frame = Image.open(TEXTURE_DIR / frame_name).convert("RGBA")
     art = art_for_config(card, ref_id)
 
+    cost = config_cost_info(card)
+    bleed_x = math.ceil(CARD_OUTPUT_BLEED_X_UI * render_scale)
+
     output_size = scaled_size(CARD_SIZE, render_scale)
     frame = magic_kernel_sharp_resize(frame, output_size)
-    canvas = Image.new("RGBA", output_size, (0, 0, 0, 0))
-    x0, y0, x1, y1 = scaled_box(ART_RECT, render_scale)
-    art = magic_kernel_sharp_resize(art, (x1 - x0, y1 - y0))
-    canvas.alpha_composite(art, (x0, y0))
-    canvas.alpha_composite(frame)
+    base = Image.new("RGBA", output_size, (0, 0, 0, 0))
+    composite_card_art(base, art, render_scale)
+    base.alpha_composite(frame)
 
     if not is_dream:
         emblem = bottom_emblem_for(card)
         if emblem is not None:
             sx0, sy0, sx1, sy1 = scaled_box(SECT_EMBLEM_RECT, render_scale)
             emblem = magic_kernel_sharp_resize(emblem, (sx1 - sx0, sy1 - sy0))
-            canvas.alpha_composite(tint_alpha(emblem, 150), (sx0, sy0))
-
-    draw = ImageDraw.Draw(canvas)
-    title_font = font(scaled_ui_font_size(TITLE_FONT_SIZE_MAX_UI, render_scale))
-    vertical_font = font(scaled_ui_font_size(VERTICAL_NAME_FONT_SIZE_UI, render_scale))
-    body_font = font(
-        scaled_description_font_size(
-            DESC_FONT_SIZE_MAX_EN_UI if locale_suffix == "en" else DESC_FONT_SIZE_MAX_UI,
-            render_scale,
-        )
-    )
-    title_shader_size = max(1, round(title_font.size / render_scale))
-    vertical_shader_size = max(1, round(vertical_font.size / render_scale))
-    body_shader_size = max(1, round(body_font.size / render_scale))
-    title_fill = rgb_from_unit(
-        multiply_unit_rgb(TITLE_FONT_COLOR, DEFAULT_OUTLINE_MATERIAL["face_color"])
-    )
-
-    cost_value = 0
-    cost_icon = None
-    cost_is_hp = int(card["hpCost"]) > 0
-    if cost_is_hp:
-        cost_value = int(card["hpCost"])
-        cost_icon = hp_icon()
-    elif int(card["anima"]) < 0:
-        cost_value = abs(int(card["anima"]))
-        cost_icon = qi_icon()
-    if cost_value > 0 and cost_icon is not None:
-        icon_rect = HP_ICON_DRAW_RECT if cost_is_hp else QI_ICON_DRAW_RECT
-        digit_scale_x = HP_DIGIT_SCALE_X if cost_is_hp else ANIMA_DIGIT_SCALE_X
-        digit_scale_y = HP_DIGIT_SCALE_Y if cost_is_hp else ANIMA_DIGIT_SCALE_Y
-        digit_offset_x = HP_DIGIT_OFFSET_X if cost_is_hp else ANIMA_DIGIT_OFFSET_X
-        digit_offset_y = HP_DIGIT_OFFSET_Y if cost_is_hp else ANIMA_DIGIT_OFFSET_Y
-        icon_left, icon_top, icon_right, icon_bottom = scaled_box(icon_rect, render_scale)
-        icon = magic_kernel_sharp_resize(cost_icon, (icon_right - icon_left, icon_bottom - icon_top))
-        canvas.alpha_composite(icon, (icon_left, icon_top))
-        digit = huiwen_number_image(str(cost_value), ANIMA_FONT_SIZE_UI, render_scale, digit_scale_x, digit_scale_y)
-        label_center = scaled_point(QI_LABEL_RECT.center, render_scale)
-        digit_x = round(label_center[0] - digit.width / 2) + scaled_signed_px(digit_offset_x, render_scale)
-        digit_y = round(label_center[1] - digit.height / 2) + scaled_signed_px(digit_offset_y, render_scale)
-        canvas.alpha_composite(digit, (digit_x, digit_y))
-        draw = ImageDraw.Draw(canvas)
-
-    if ref_id == "906001":
-        display_title = localized_term("Relic4OptionTitle_6", locale_suffix, "赤贯星")
-        vertical_title = localized_term("Relic4OptionTitle_6", "zh", "赤贯星")
-    else:
-        display_title = card_name(int(card["id"]), locale_suffix)
-        vertical_title = card_name(int(card["id"]), "zh")
-
-    vertical_offset = DREAM_VERTICAL_NAME_OFFSET_Y_UI if is_dream else VERTICAL_NAME_OFFSET_Y_UI
-    draw_tmp_vertical_stroked(
-        canvas,
-        scaled_box(VERTICAL_NAME_RECT, render_scale),
-        vertical_title,
-        vertical_font.size,
-        fill=title_fill,
-        material=DEFAULT_OUTLINE_MATERIAL,
-        line_gap=scaled_signed_px(VERTICAL_NAME_LINE_GAP_UI, render_scale),
-        shader_font_size=vertical_shader_size,
-        y_offset=scaled_signed_px(vertical_offset, render_scale),
-    )
+            base.alpha_composite(tint_alpha(emblem, 150), (sx0, sy0))
 
     if locale_suffix == "en":
-        title_left, title_top, title_right, title_bottom = scaled_box(EN_TITLE_DRAW_RECT, render_scale)
         bg_left, bg_top, bg_right, bg_bottom = scaled_box(EN_TITLE_BG_DRAW_RECT, render_scale)
         bg = magic_kernel_sharp_resize(en_title_bg(), (bg_right - bg_left, bg_bottom - bg_top))
-        canvas.alpha_composite(bg, (bg_left, bg_top))
-        title_character_spacing = -2.0
-        title_lines = wrap_plain_line_tmp(display_title, title_font.size, title_right - title_left, title_character_spacing)
-        min_title_size = scaled_ui_font_size(TITLE_FONT_SIZE_MIN_UI, render_scale)
-        title_line_height = default_tmp_font().text_line_height(title_font.size, TITLE_LINE_SPACING)
-        while (
-            (len(title_lines) > 2 or len(title_lines) * title_line_height > title_bottom - title_top)
-            and title_font.size > min_title_size
-        ):
-            title_font = font(title_font.size - 1)
-            title_shader_size = max(1, round(title_font.size / render_scale))
-            title_line_height = default_tmp_font().text_line_height(title_font.size, TITLE_LINE_SPACING)
-        draw_tmp_centered_stroked_lines(
+        base.alpha_composite(bg, (bg_left, bg_top))
+
+    if bleed_x:
+        canvas = Image.new("RGBA", (output_size[0] + bleed_x * 2, output_size[1]), (0, 0, 0, 0))
+        canvas.alpha_composite(base, (bleed_x, 0))
+        draw_offset = (float(bleed_x), 0.0)
+    else:
+        canvas = base
+        draw_offset = (0.0, 0.0)
+
+    if cost is not None:
+        cost_value, cost_is_hp = cost
+        draw_config_cost_icon(canvas, cost_is_hp, render_scale, offset=draw_offset)
+        if not skip_text:
+            draw_config_cost_digits(canvas, card, render_scale, offset=draw_offset)
+
+    if not skip_text:
+        draw_config_titles(
             canvas,
-            scaled_box(EN_TITLE_DRAW_RECT, render_scale),
-            title_lines,
-            title_font.size,
-            fill=title_fill,
-            material=DEFAULT_OUTLINE_MATERIAL,
-            line_height=title_line_height,
-            character_spacing=title_character_spacing,
-            shader_font_size=title_shader_size,
-            glyph_scale=TITLE_GLYPH_SCALE_EN,
+            ref_id,
+            card,
+            locale_suffix,
+            render_scale,
+            is_dream,
+            offset=draw_offset,
+            vertical_name_override=vertical_name_override,
         )
-
-    description = render_description_text(int(card["id"]), locale_suffix)
-    _, base_description_rows = fitted_description_rows(description, locale_suffix, render_scale, is_dream=is_dream)
-    desc_style = description_style_for_group(locale_suffix, description, base_description_rows, is_dream=is_dream)
-    desc_rect = desc_style.rect
-    desc_box = scaled_box_float(desc_rect, render_scale)
-    left, top, right, bottom = desc_box
-    wrap_width = (right - left) - round(DESC_WRAP_INSET_X * 2 * render_scale)
-    desc_character_spacing = desc_style.char_spacing
-    line_spacing = desc_style.line_spacing
-    line_height = default_tmp_font().text_line_height(body_font.size, line_spacing)
-    paragraph_gap = default_tmp_font().tmp_spacing_height(body_font.size, DESC_PARAGRAPH_SPACING)
-    normal_face_dilate = desc_style.normal_face_dilate
-    bold_face_dilate = desc_style.bold_face_dilate
-    wrapped_lines = wrap_display_text_with_gaps(
-        draw,
-        description,
-        body_font,
-        wrap_width,
-        width_fn=desc_wrap_width_fn(locale_suffix, desc_character_spacing),
-        token_gap_width=default_tmp_font().character_spacing_px(desc_character_spacing, body_font.size),
-    )
-
-    min_body_size = scaled_description_font_size(DESC_FONT_SIZE_MIN_UI, render_scale)
-    font_step = max(1, round(render_scale))
-    while (
-        (
-            top + rich_lines_height(wrapped_lines, line_height, paragraph_gap)
-            > desc_vertical_fit_bottom(bottom, render_scale)
-            or rich_lines_rendered_max_width(wrapped_lines, body_font.size, desc_character_spacing) > wrap_width
-            or rich_lines_have_crowded_orphan_stat_line(wrapped_lines, locale_suffix)
+    if not skip_description and not skip_text:
+        draw_config_description(
+            canvas,
+            card,
+            locale_suffix,
+            render_scale,
+            is_dream,
+            offset=draw_offset,
+            description_override=description_override,
+            description_single_row=description_single_row,
         )
-        and body_font.size > min_body_size
-    ):
-        body_font = font(body_font.size - font_step)
-        body_shader_size = max(1, round(body_font.size / render_scale))
-        line_height = default_tmp_font().text_line_height(body_font.size, line_spacing)
-        paragraph_gap = default_tmp_font().tmp_spacing_height(body_font.size, DESC_PARAGRAPH_SPACING)
-        wrapped_lines = wrap_display_text_with_gaps(
-            draw,
-            description,
-            body_font,
-            wrap_width,
-            width_fn=desc_wrap_width_fn(locale_suffix, desc_character_spacing),
-            token_gap_width=default_tmp_font().character_spacing_px(desc_character_spacing, body_font.size),
-        )
-
-    draw_tmp_centered_rich_lines_with_gaps(
-        canvas,
-        desc_box,
-        wrapped_lines,
-        body_font.size,
-        line_height,
-        paragraph_gap,
-        character_spacing=desc_character_spacing,
-        shader_font_size=body_shader_size,
-        glyph_scale=desc_style.glyph_scale,
-        ignore_descenders_for_layout=True,
-        fixed_line_offset_y=scaled_signed_float(desc_style.fixed_line_offset, render_scale),
-        normal_face_dilate=normal_face_dilate,
-        bold_face_dilate=bold_face_dilate,
-    )
     return canvas
 
 
-def render_card_for_label(label: str, render_scale: float = 1.0) -> Image.Image:
+NEW_CARD_VALUE_COLORS = {
+    "attack": "#9D1022",
+    "randomAttack": "#9D1022",
+    "def": "#9A6212",
+    "randomDef": "#9A6212",
+    "anima": "#2C81BF",
+    "jianYi": "#CF3521",
+}
+
+
+def render_new_card_template_value(key: str, value: object) -> str:
+    placeholder = key[1:-1] if key.startswith("{") and key.endswith("}") else key
+    rendered = str(value)
+    color = NEW_CARD_VALUE_COLORS.get(placeholder)
+    if color is None:
+        return rendered
+    return f"[color:{color}|{rendered}]"
+
+
+def render_new_card_description(level_row: dict[str, object]) -> str:
+    text = str(level_row["desc_cn_template"]).replace("\\n", "\n")
+    values = level_row.get("template_values", {})
+    if not isinstance(values, dict):
+        raise TypeError("template_values must be an object for new-card level row")
+    for key, value in sorted(values.items(), key=lambda item: len(str(item[0])), reverse=True):
+        text = text.replace(str(key), render_new_card_template_value(str(key), value))
+    return text
+
+
+def new_card_level_id(base_card_id: int, level_row: dict[str, object]) -> int:
+    rarity = int(level_row.get("level", 1)) - 1
+    return base_card_id + rarity * 10000
+
+
+def new_card_to_config(row: dict[str, object], level_row: dict[str, object]) -> dict[str, object]:
+    base_card_id = int(row["id"])
+    card_id = new_card_level_id(base_card_id, level_row)
+    existing = card_by_id().get(card_id) or card_by_id().get(base_card_id)
+    if existing is not None:
+        card = dict(existing)
+    else:
+        card = {
+            "id": card_id,
+            "name": row["name_cn"],
+            "desc": level_row["desc_cn_template"],
+            "sect": 0,
+            "career": 0,
+            "level": int(row["phase"]),
+            "anima": 0,
+            "attack": 0,
+            "attackCount": 0,
+            "def": 0,
+            "damage": 0,
+            "actionAgain": False,
+            "cardType": 0,
+            "rarity": 0,
+            "hpCost": 0,
+            "physique": 0,
+            "linkageId": 0,
+            "chargeQi": 0,
+            "overrideSpriteId": 0,
+            "subcategory": 0,
+            "owner": 0,
+            "hidden": True,
+            "otherParams": [],
+            "seasonMechanics": [],
+            "obsolete": False,
+        }
+    card["id"] = card_id
+    card["name"] = str(row["name_cn"])
+    card["desc"] = str(level_row["desc_cn_template"]).replace("\\n", "\n")
+    card["level"] = int(row["phase"])
+    card["rarity"] = int(level_row.get("level", 1)) - 1
+    card["hpCost"] = int(level_row.get("hp_cost", 0) or 0)
+    card["anima"] = -int(level_row.get("qi_cost", 0) or 0)
+    fusion_ingredients = row.get("fusion_ingredients")
+    if fusion_ingredients is not None:
+        if (
+            not isinstance(fusion_ingredients, list)
+            or len(fusion_ingredients) != 2
+        ):
+            raise TypeError(f"fusion_ingredients must be a 2-item array for new card {base_card_id}")
+        card["_new_card_fusion_ingredients"] = [int(fusion_ingredients[0]), int(fusion_ingredients[1])]
+        card["overrideSpriteId"] = 0
+    else:
+        art_override = new_card_art_source_id(row)
+        if art_override:
+            card["overrideSpriteId"] = art_override
+        else:
+            card["overrideSpriteId"] = int(card.get("overrideSpriteId", 0) or 0)
+    card["_new_card_name_cn"] = str(row["name_cn"])
+    return card
+
+
+def output_path_for_new_card(
+    row: dict[str, object],
+    level_row: dict[str, object],
+    locale_suffix: str,
+    output_subdir: str,
+) -> Path:
+    base_card_id = int(row["id"])
+    level = int(level_row.get("level", 1))
+    return OUTPUT_DIR / "custom" / output_subdir / f"{base_card_id}_{locale_suffix}_{level}.png"
+
+
+def render_new_card_rows(
+    rows: Iterable[dict[str, object]],
+    locale_suffix: str,
+    output_subdir: str,
+    render_scale: float = 1.0,
+    selected_level: int | None = 1,
+) -> list[Path]:
+    outputs: list[Path] = []
+    for row in rows:
+        levels = row.get("levels", [])
+        if not isinstance(levels, list):
+            raise TypeError(f"levels must be an array for new card {row.get('id')}")
+        for level_row in levels:
+            if not isinstance(level_row, dict):
+                raise TypeError(f"level row must be an object for new card {row.get('id')}")
+            if selected_level is not None and int(level_row.get("level", 0)) != selected_level:
+                continue
+            card = new_card_to_config(row, level_row)
+            description = render_new_card_description(level_row)
+            image = render_config_card(
+                str(row["id"]),
+                card,
+                locale_suffix,
+                render_scale=render_scale,
+                description_override=description,
+            )
+            output = output_path_for_new_card(row, level_row, locale_suffix, output_subdir)
+            output.parent.mkdir(parents=True, exist_ok=True)
+            save_png(image, output)
+            outputs.append(output)
+    return outputs
+
+
+def render_card_for_label(
+    label: str,
+    render_scale: float = 1.0,
+    skip_description: bool = False,
+    description_override: str | None = None,
+    description_single_row: bool = False,
+    vertical_name_override: str | None = None,
+) -> Image.Image:
     ref_id, locale_suffix = label.split("_", 1)
-    resolved = resolve_reference(ref_id)
-    if resolved.card_id is not None and not ref_id.startswith("l"):
-        return render_config_card(ref_id, card_by_id()[resolved.card_id], locale_suffix, render_scale)
-    if ref_id.startswith("D"):
-        level = next(card_level for card_level in DREAM_CARD_LEVELS if card_level.ref_id == ref_id)
-        locale = next(locale_text for locale_text in DREAM_LOCALES if locale_text.suffix == locale_suffix)
-        return render_dream_card(level, locale, render_scale=render_scale)
     if ref_id.startswith("l"):
         level_num = int(ref_id.removeprefix("l"))
-    else:
-        level_num = NORMAL_REF_TO_LEVEL[ref_id]
+        level = next(card_level for card_level in CARD_LEVELS if card_level.level == level_num)
+        return render_config_card(
+            ref_id,
+            card_by_id()[level.card_id],
+            locale_suffix,
+            render_scale,
+            skip_description=skip_description,
+            skip_text=skip_description,
+            description_override=description_override,
+            description_single_row=description_single_row,
+            vertical_name_override=vertical_name_override,
+        )
+    resolved = resolve_reference(ref_id)
+    if resolved.card_id is not None and not ref_id.startswith("l"):
+        return render_config_card(
+            ref_id,
+            card_by_id()[resolved.card_id],
+            locale_suffix,
+            render_scale,
+            skip_description=skip_description,
+            skip_text=skip_description,
+            description_override=description_override,
+            description_single_row=description_single_row,
+            vertical_name_override=vertical_name_override,
+        )
+    level_num = NORMAL_REF_TO_LEVEL[ref_id]
     level = next(card_level for card_level in CARD_LEVELS if card_level.level == level_num)
     locale = next(locale_text for locale_text in LOCALES if locale_text.suffix == locale_suffix)
     return render_card(level, locale, render_scale=render_scale)
+
+
+def draw_config_text_for_label(
+    canvas: Image.Image,
+    label: str,
+    render_scale: float,
+    offset: tuple[float, float] = (0.0, 0.0),
+    layout_render_scale: float | None = None,
+) -> bool:
+    bleed_offset = (offset[0] + CARD_OUTPUT_BLEED_X_UI * render_scale, offset[1])
+    ref_id, locale_suffix = label.split("_", 1)
+    if ref_id.startswith("l"):
+        level_num = int(ref_id.removeprefix("l"))
+        level = next(card_level for card_level in CARD_LEVELS if card_level.level == level_num)
+        card = card_by_id()[level.card_id]
+        draw_config_text(
+            canvas,
+            ref_id,
+            card,
+            locale_suffix,
+            render_scale,
+            is_dream=False,
+            offset=bleed_offset,
+            layout_render_scale=layout_render_scale,
+        )
+        return True
+    resolved = resolve_reference(ref_id)
+    if resolved.card_id is None:
+        return False
+    card = card_by_id()[resolved.card_id]
+    draw_config_text(
+        canvas,
+        ref_id,
+        card,
+        locale_suffix,
+        render_scale,
+        is_dream=int(card["subcategory"]) == 14,
+        offset=bleed_offset,
+        layout_render_scale=layout_render_scale,
+    )
+    return True
 
 
 def output_path_for_label(label: str) -> Path:
@@ -3026,12 +4822,60 @@ def output_path_for_label(label: str) -> Path:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--label", help="render one card label, e.g. 115061_en, l1_zh, or D11131_en")
+    parser.add_argument(
+        "--new-cards-json",
+        type=Path,
+        help="render custom card rows from scrape/new_cards_data.json-style input",
+    )
+    parser.add_argument("--new-cards-locale", default="zh", choices=["zh", "en", "tw"])
+    parser.add_argument("--new-cards-output-subdir", default="hidden_pool_expansion_cards_zh")
+    parser.add_argument(
+        "--new-cards-level",
+        default="1",
+        help="which nested new-card level to render, or 'all'",
+    )
+    parser.add_argument("--description-override", help="override rules text for this render only")
+    parser.add_argument("--vertical-name-override", help="override the vertical Chinese card name for this render only")
+    parser.add_argument(
+        "--description-single-row",
+        action="store_true",
+        help="render description override as one unwrapped row",
+    )
     parser.add_argument("--render-scale", type=float, default=1.0)
+    parser.add_argument(
+        "--text-renderer",
+        choices=TEXT_RENDERERS,
+        default=TEXT_RENDERER,
+        help="default text rasterizer; sdf uses the game TMP atlas/materials, otf uses extracted DefaultFont.otf",
+    )
     args = parser.parse_args()
+    set_text_renderer(args.text_renderer)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    if args.new_cards_json:
+        rows = json.loads(args.new_cards_json.read_text(encoding="utf-8"))
+        if not isinstance(rows, list):
+            raise TypeError("--new-cards-json must contain a JSON array")
+        selected_level = None if args.new_cards_level == "all" else int(args.new_cards_level)
+        outputs = render_new_card_rows(
+            rows,
+            args.new_cards_locale,
+            args.new_cards_output_subdir,
+            render_scale=args.render_scale,
+            selected_level=selected_level,
+        )
+        for output in outputs:
+            print(output.relative_to(ROOT))
+        return
+
     if args.label:
-        image = render_card_for_label(args.label, render_scale=args.render_scale)
+        image = render_card_for_label(
+            args.label,
+            render_scale=args.render_scale,
+            description_override=args.description_override,
+            description_single_row=args.description_single_row,
+            vertical_name_override=args.vertical_name_override,
+        )
         output = output_path_for_label(args.label)
         save_png(image, output)
         print(output.relative_to(ROOT))
@@ -3039,14 +4883,16 @@ def main() -> None:
 
     for level in CARD_LEVELS:
         for locale in LOCALES:
-            image = render_card(level, locale)
-            output = OUTPUT_DIR / f"rule_sky_sword_formation_l{level.level}_{locale.suffix}.png"
+            label = f"l{level.level}_{locale.suffix}"
+            image = render_card_for_label(label)
+            output = output_path_for_label(label)
             save_png(image, output)
             print(output.relative_to(ROOT))
     for level in DREAM_CARD_LEVELS:
         for locale in DREAM_LOCALES:
-            image = render_dream_card(level, locale)
-            output = OUTPUT_DIR / f"{level.ref_id}_{locale.suffix}.png"
+            label = f"{level.ref_id}_{locale.suffix}"
+            image = render_card_for_label(label)
+            output = output_path_for_label(label)
             save_png(image, output)
             print(output.relative_to(ROOT))
 

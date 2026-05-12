@@ -6,18 +6,21 @@ from __future__ import annotations
 import argparse
 import json
 import math
+from io import BytesIO
 from functools import lru_cache
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
-from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageOps, ImageStat
+from PIL import Image, ImageChops, ImageCms, ImageDraw, ImageFilter, ImageOps, ImageStat
 
 from render_rule_sky_sword_formation import (
+    CARD_OUTPUT_BLEED_X_UI,
     CARD_LEVELS,
     DREAM_CARD_LEVELS,
     DREAM_LOCALES,
     LOCALES,
     magic_kernel_sharp_resize,
+    magic_kernel_sharp_resample_translate,
     render_card,
     render_card_for_label,
     render_dream_card,
@@ -31,13 +34,15 @@ RENDER_ROOT = ROOT / "extracted_assets" / VERSION / "rendered_cards" / "rule_sky
 EXAMPLE_ROOT = ROOT / "rssf_examples"
 DEFAULT_OUTPUT_DIR = RENDER_ROOT / "diffs"
 ART_REGION = (0.20, 0.10, 0.91, 0.60)
+DISPLAY_PROFILE_PATH = ROOT / "color_profiles" / "display_from_screenshot.icc"
+CARD_REFERENCE_OFFSET_X = 1
 
 
 @dataclass(frozen=True)
 class Transform:
     scale: float
-    dx: int
-    dy: int
+    dx: float
+    dy: float
     score: float
 
 
@@ -45,16 +50,60 @@ def load_rgba(path: Path) -> Image.Image:
     return Image.open(path).convert("RGBA")
 
 
+@lru_cache(maxsize=1)
+def display_profile() -> ImageCms.ImageCmsProfile | None:
+    if not DISPLAY_PROFILE_PATH.exists():
+        return None
+    return ImageCms.ImageCmsProfile(str(DISPLAY_PROFILE_PATH))
+
+
+@lru_cache(maxsize=1)
+def srgb_profile() -> ImageCms.ImageCmsProfile:
+    return ImageCms.createProfile("sRGB")
+
+
+def load_reference_rgba(path: Path) -> Image.Image:
+    """Load a screenshot/reference image into sRGB RGBA for comparison.
+
+    Old masked card references were exported without their macOS display ICC
+    profile.  When that happens under rssf_examples/orig_*, interpret their
+    RGB values using the extracted display profile before converting to sRGB.
+    New untouched screenshots with an embedded profile use their own profile.
+    """
+    image = Image.open(path)
+    icc = image.info.get("icc_profile")
+    source_profile = ImageCms.ImageCmsProfile(BytesIO(icc)) if icc else None
+    if source_profile is None and EXAMPLE_ROOT in path.resolve().parents:
+        source_profile = display_profile()
+    if source_profile is None:
+        return image.convert("RGBA")
+    return ImageCms.profileToProfile(
+        image.convert("RGBA"),
+        source_profile,
+        srgb_profile(),
+        outputMode="RGBA",
+    )
+
+
+def pad_card_reference_for_output(image: Image.Image) -> Image.Image:
+    bleed_x = max(0, round(CARD_OUTPUT_BLEED_X_UI))
+    if bleed_x == 0 and CARD_REFERENCE_OFFSET_X == 0:
+        return image
+    padded = Image.new("RGBA", (image.width + bleed_x * 2, image.height), (0, 0, 0, 0))
+    padded.alpha_composite(image, (bleed_x + CARD_REFERENCE_OFFSET_X, 0))
+    return padded
+
+
+def load_card_reference_rgba(path: Path) -> Image.Image:
+    return pad_card_reference_for_output(load_reference_rgba(path))
+
+
 def alpha_mask(image: Image.Image, threshold: int = 16) -> Image.Image:
     return image.getchannel("A").point(lambda v: 255 if v >= threshold else 0)
 
 
-def transform_source(source: Image.Image, target_size: tuple[int, int], scale: float, dx: int, dy: int) -> Image.Image:
-    resized_size = (max(1, round(source.width * scale)), max(1, round(source.height * scale)))
-    resized = magic_kernel_sharp_resize(source, resized_size)
-    canvas = Image.new("RGBA", target_size, (0, 0, 0, 0))
-    canvas.alpha_composite(resized, (dx, dy))
-    return canvas
+def transform_source(source: Image.Image, target_size: tuple[int, int], scale: float, dx: float, dy: float) -> Image.Image:
+    return magic_kernel_sharp_resample_translate(source, target_size, scale, scale, dx, dy)
 
 
 def transform_mask(source: Image.Image, target_size: tuple[int, int], scale: float, dx: int, dy: int) -> Image.Image:
@@ -516,8 +565,8 @@ def load_saved_transforms(summary_path: Path) -> dict[str, Transform]:
             raw = item["transform"]
             transforms[item["label"]] = Transform(
                 scale=float(raw["scale"]),
-                dx=int(raw["dx"]),
-                dy=int(raw["dy"]),
+                dx=float(raw["dx"]),
+                dy=float(raw["dy"]),
                 score=float(raw.get("score", 0.0)),
             )
         except (KeyError, TypeError, ValueError):
@@ -553,7 +602,7 @@ def grouped_normal_level_transforms(
         if not level_pairs:
             continue
         source_targets = [
-            (search_source_for_pair(generated, label), load_rgba(example))
+            (search_source_for_pair(generated, label), load_card_reference_rgba(example))
             for example, generated, label in level_pairs
         ]
         transform = dlib_art_search_transform_many(source_targets, f"l{level}", dlib_calls)
@@ -571,7 +620,7 @@ def compare_pair(
     dlib_calls: int,
     saved_transform: Transform | None = None,
 ) -> dict[str, object]:
-    target = load_rgba(example)
+    target = load_card_reference_rgba(example)
     # Find placement at normal screenshot size, then apply the same transform to
     # a 2x render and downsample only after placement.  This keeps font
     # rasterization smoother while leaving the provided screenshot untouched.
@@ -587,8 +636,8 @@ def compare_pair(
         source_hi,
         target_hi_size,
         transform.scale,
-        round(transform.dx * render_scale),
-        round(transform.dy * render_scale),
+        transform.dx * render_scale,
+        transform.dy * render_scale,
     )
     generated_downscaled = magic_kernel_sharp_resize(generated_hi, target.size)
     diff = bug_diff(generated_downscaled, target)

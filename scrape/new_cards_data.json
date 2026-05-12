@@ -1,0 +1,4578 @@
+[
+  {
+    "id": 1000088,
+    "name_cn": "御灵心法",
+    "phase": 2,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[持续]：每加1[灵气]时加{otherParams[0]}[防]，每失去1[灵气]时加{otherParams[1]}[防]",
+        "template_values": {
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[持续]：每加1[灵气]时加{otherParams[0]}[防]，每失去1[灵气]时加{otherParams[1]}[防]",
+        "template_values": {
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[持续]：每加1[灵气]时加{otherParams[0]}[防]，每失去1[灵气]时加{otherParams[1]}[防]",
+        "template_values": {
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "2"
+        }
+      }
+    ]
+  },
+  {
+    "id": 1000089,
+    "name_cn": "丹雀灵剑",
+    "phase": 3,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n再耗1[灵气]：追加{otherParams[0]}攻",
+        "template_values": {
+          "{attack}": "6",
+          "{attackCount}": "2",
+          "{otherParams[0]}": "6"
+        },
+        "qi_cost": 1
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n再耗1[灵气]：追加{otherParams[0]}攻",
+        "template_values": {
+          "{attack}": "8",
+          "{attackCount}": "2",
+          "{otherParams[0]}": "6"
+        },
+        "qi_cost": 1
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n再耗1[灵气]：追加{otherParams[0]}攻",
+        "template_values": {
+          "{attack}": "10",
+          "{attackCount}": "2",
+          "{otherParams[0]}": "6"
+        },
+        "qi_cost": 1
+      }
+    ]
+  },
+  {
+    "id": 1000090,
+    "name_cn": "飞豹灵剑",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻\\n[剑气]+{otherParams[0]}\\n每有1[灵气]或[剑气]加{otherParams[1]}[身法]（最多加{otherParams[2]}）",
+        "template_values": {
+          "{attack}": "2",
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "2",
+          "{otherParams[2]}": "10"
+        },
+        "qi_cost": 1
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻\\n[剑气]+{otherParams[0]}\\n每有1[灵气]或[剑气]加{otherParams[1]}[身法]（最多加{otherParams[2]}）",
+        "template_values": {
+          "{attack}": "3",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "2",
+          "{otherParams[2]}": "10"
+        },
+        "qi_cost": 1
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻\\n[剑气]+{otherParams[0]}\\n每有1[灵气]或[剑气]加{otherParams[1]}[身法]（最多加{otherParams[2]}）",
+        "template_values": {
+          "{attack}": "4",
+          "{otherParams[0]}": "4",
+          "{otherParams[1]}": "2",
+          "{otherParams[2]}": "10"
+        },
+        "qi_cost": 1
+      }
+    ]
+  },
+  {
+    "id": 1000091,
+    "name_cn": "云剑•裂空",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n此牌受双倍[加攻]和[剑意]加成\\n[连云]：此牌多{otherParams[0]}攻且获得[碎防]",
+        "template_values": {
+          "{attack}": "3",
+          "{attackCount}": "2",
+          "{otherParams[0]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n此牌受双倍[加攻]和[剑意]加成\\n[连云]：此牌多{otherParams[0]}攻且获得[碎防]",
+        "template_values": {
+          "{attack}": "4",
+          "{attackCount}": "2",
+          "{otherParams[0]}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n此牌受双倍[加攻]和[剑意]加成\\n[连云]：此牌多{otherParams[0]}攻且获得[碎防]",
+        "template_values": {
+          "{attack}": "5",
+          "{attackCount}": "2",
+          "{otherParams[0]}": "3"
+        }
+      }
+    ]
+  },
+  {
+    "id": 1000092,
+    "name_cn": "灵枢剑阵",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n[防]+{def}\\n{attack}攻（每有{otherParams[0]}[灵气]多1攻）\\n{attack}攻（每有{otherParams[1]}[防]多1攻）",
+        "template_values": {
+          "{anima}": "1",
+          "{def}": "1",
+          "{attack}": "1",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n[防]+{def}\\n{attack}攻（每有{otherParams[0]}[灵气]多1攻）\\n{attack}攻（每有{otherParams[1]}[防]多1攻）",
+        "template_values": {
+          "{anima}": "2",
+          "{def}": "2",
+          "{attack}": "1",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "1"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n[防]+{def}\\n{attack}攻（每有{otherParams[0]}[灵气]多1攻）\\n{attack}攻（每有{otherParams[1]}[防]多1攻）",
+        "template_values": {
+          "{anima}": "3",
+          "{def}": "3",
+          "{attack}": "1",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": 1000093,
+    "name_cn": "云剑•追风",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻\\n获得{otherParams[0]}层[加攻]\\n若本场战斗已触发过[再次行动]，则[再次行动]\\n[连云]：此牌不耗[灵气]",
+        "template_values": {
+          "{attack}": "1",
+          "{otherParams[0]}": "1"
+        },
+        "qi_cost": 1
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻\\n获得{otherParams[0]}层[加攻]\\n若本场战斗已触发过[再次行动]，则[再次行动]\\n[连云]：此牌不耗[灵气]",
+        "template_values": {
+          "{attack}": "6",
+          "{otherParams[0]}": "1"
+        },
+        "qi_cost": 1
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻\\n获得{otherParams[0]}层[加攻]\\n若本场战斗已触发过[再次行动]，则[再次行动]\\n[连云]：此牌不耗[灵气]",
+        "template_values": {
+          "{attack}": "6",
+          "{otherParams[0]}": "2"
+        },
+        "qi_cost": 1
+      }
+    ]
+  },
+  {
+    "id": 1000094,
+    "name_cn": "迅影飞剑",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻（不触发[剑意]）\\n[先机]：[剑意]+{otherParams[0]}\\n[剑意]>0则[再次行动]",
+        "template_values": {
+          "{attack}": "4",
+          "{otherParams[0]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻（不触发[剑意]）\\n[先机]：[剑意]+{otherParams[0]}\\n[剑意]>0则[再次行动]",
+        "template_values": {
+          "{attack}": "5",
+          "{otherParams[0]}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻（不触发[剑意]）\\n[先机]：[剑意]+{otherParams[0]}\\n[剑意]>0则[再次行动]",
+        "template_values": {
+          "{attack}": "6",
+          "{otherParams[0]}": "3"
+        }
+      }
+    ]
+  },
+  {
+    "id": 1000095,
+    "name_cn": "剑影结界",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n[防]+{def}\\n本场战斗中自身每攻击过1次加{otherParams[0]}[防]",
+        "template_values": {
+          "{attack}": "3",
+          "{attackCount}": "2",
+          "{def}": "2",
+          "{otherParams[0]}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n[防]+{def}\\n本场战斗中自身每攻击过1次加{otherParams[0]}[防]",
+        "template_values": {
+          "{attack}": "3",
+          "{attackCount}": "3",
+          "{def}": "2",
+          "{otherParams[0]}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n[防]+{def}\\n本场战斗中自身每攻击过1次加{otherParams[0]}[防]",
+        "template_values": {
+          "{attack}": "3",
+          "{attackCount}": "4",
+          "{def}": "2",
+          "{otherParams[0]}": "2"
+        }
+      }
+    ]
+  },
+  {
+    "id": 1000096,
+    "name_cn": "极•云剑柔心",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "生命上限+{otherParams[0]}\\n[再次行动]\\n[持续]：每次使用“云剑”时加{otherParams[1]}生命",
+        "template_values": {
+          "{otherParams[0]}": "20",
+          "{otherParams[1]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "生命上限+{otherParams[0]}\\n[再次行动]\\n[持续]：每次使用“云剑”时加{otherParams[1]}生命",
+        "template_values": {
+          "{otherParams[0]}": "30",
+          "{otherParams[1]}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "生命上限+{otherParams[0]}\\n[再次行动]\\n[持续]：每次使用“云剑”时加{otherParams[1]}生命",
+        "template_values": {
+          "{otherParams[0]}": "40",
+          "{otherParams[1]}": "3"
+        }
+      }
+    ],
+    "art_source_id": 1000026
+  },
+  {
+    "id": 1000097,
+    "name_cn": "极•暗鸦灵剑",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻\\n[灵气]+{anima}\\n每剩余1点灵气加{otherParams[0]}[防]",
+        "template_values": {
+          "{attack}": "6",
+          "{anima}": "1",
+          "{otherParams[0]}": "4"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻\\n[灵气]+{anima}\\n每剩余1点灵气加{otherParams[0]}[防]",
+        "template_values": {
+          "{attack}": "6",
+          "{anima}": "2",
+          "{otherParams[0]}": "4"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻\\n[灵气]+{anima}\\n每剩余1点灵气加{otherParams[0]}[防]",
+        "template_values": {
+          "{attack}": "6",
+          "{anima}": "3",
+          "{otherParams[0]}": "4"
+        }
+      }
+    ],
+    "art_source_id": 1000020
+  },
+  {
+    "id": 260,
+    "name_cn": "幻•暗鸦灵剑",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻\\n每点[灵气]加{otherParams[0]}[防]（最多{otherParams[2]}）\\n卡组中灵剑数量≥{otherParams[1]}时[再次行动]",
+        "template_values": {
+          "{attack}": "4",
+          "{otherParams[0]}": "2",
+          "{otherParams[2]}": "4",
+          "{otherParams[1]}": "3"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻\\n每点[灵气]加{otherParams[0]}[防]（最多{otherParams[2]}）\\n卡组中灵剑数量≥{otherParams[1]}时[再次行动]",
+        "template_values": {
+          "{attack}": "8",
+          "{otherParams[0]}": "2",
+          "{otherParams[2]}": "12",
+          "{otherParams[1]}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻\\n每点[灵气]加{otherParams[0]}[防]（最多{otherParams[2]}）\\n卡组中灵剑数量≥{otherParams[1]}时[再次行动]",
+        "template_values": {
+          "{attack}": "12",
+          "{otherParams[0]}": "2",
+          "{otherParams[2]}": "20",
+          "{otherParams[1]}": "1"
+        }
+      }
+    ],
+    "art_source_id": 1000020
+  },
+  {
+    "id": 261,
+    "name_cn": "幻•轻剑",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻\\n[灵气]+{anima}\\n此牌算作云剑和狂剑（使用下张牌时也附带此效果）",
+        "template_values": {
+          "{attack}": "8",
+          "{anima}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻\\n[灵气]+{anima}\\n此牌算作云剑和狂剑（使用下张牌时也附带此效果）",
+        "template_values": {
+          "{attack}": "10",
+          "{anima}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻\\n[灵气]+{anima}\\n此牌算作云剑和狂剑（使用下张牌时也附带此效果）",
+        "template_values": {
+          "{attack}": "12",
+          "{anima}": "3"
+        }
+      }
+    ],
+    "art_source_id": 1000004
+  },
+  {
+    "id": 262,
+    "name_cn": "幻•引气剑",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "使用手牌最右侧加[灵气]的[常规牌]（最高{otherParams[0]}级），若为元婴期及以下则追加{attack}攻（每点[灵气]多1攻）",
+        "template_values": {
+          "{otherParams[0]}": "1",
+          "{attack}": "3"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "使用手牌最右侧加[灵气]的[常规牌]（最高{otherParams[0]}级），若为元婴期及以下则追加{attack}攻（每点[灵气]多1攻）",
+        "template_values": {
+          "{otherParams[0]}": "2",
+          "{attack}": "5"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "使用手牌最右侧加[灵气]的[常规牌]（最高{otherParams[0]}级），若为元婴期及以下则追加{attack}攻（每点[灵气]多1攻）",
+        "template_values": {
+          "{otherParams[0]}": "3",
+          "{attack}": "7"
+        }
+      }
+    ],
+    "art_source_id": 1000024
+  },
+  {
+    "id": 263,
+    "name_cn": "幻•飞牙剑",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻\\n[再次行动]\\n返还此牌所耗[剑意]并额外加{otherParams[0]}",
+        "template_values": {
+          "{attack}": "4",
+          "{otherParams[0]}": "1"
+        },
+        "qi_cost": 1
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻\\n[再次行动]\\n返还此牌所耗[剑意]并额外加{otherParams[0]}",
+        "template_values": {
+          "{attack}": "4",
+          "{otherParams[0]}": "2"
+        },
+        "qi_cost": 1
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻\\n[再次行动]\\n返还此牌所耗[剑意]并额外加{otherParams[0]}",
+        "template_values": {
+          "{attack}": "4",
+          "{otherParams[0]}": "3"
+        },
+        "qi_cost": 1
+      }
+    ],
+    "art_source_id": 1000021
+  },
+  {
+    "id": 323,
+    "name_cn": "幻•勤拙剑",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻\\n下{otherParams[0]}次使用云剑、狂剑、灵剑、剑阵以外的剑牌后[再次行动]\\n修为≥{otherParams[1]}：改为下{otherParams[2]}次",
+        "template_values": {
+          "{attack}": "6",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "85",
+          "{otherParams[2]}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻\\n下{otherParams[0]}次使用云剑、狂剑、灵剑、剑阵以外的剑牌后[再次行动]\\n修为≥{otherParams[1]}：改为下{otherParams[2]}次",
+        "template_values": {
+          "{attack}": "10",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "80",
+          "{otherParams[2]}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻\\n下{otherParams[0]}次使用云剑、狂剑、灵剑、剑阵以外的剑牌后[再次行动]\\n修为≥{otherParams[1]}：改为下{otherParams[2]}次",
+        "template_values": {
+          "{attack}": "14",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "75",
+          "{otherParams[2]}": "2"
+        }
+      }
+    ],
+    "art_source_id": 1000054
+  },
+  {
+    "id": 264,
+    "name_cn": "幻•云剑探云",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻\\n此牌算作{otherParams[0]}次云剑\\n下张云剑获得[再次行动]",
+        "template_values": {
+          "{attack}": "6",
+          "{otherParams[0]}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻\\n此牌算作{otherParams[0]}次云剑\\n下张云剑获得[再次行动]",
+        "template_values": {
+          "{attack}": "8",
+          "{otherParams[0]}": "3"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻\\n此牌算作{otherParams[0]}次云剑\\n下张云剑获得[再次行动]",
+        "template_values": {
+          "{attack}": "10",
+          "{otherParams[0]}": "4"
+        }
+      }
+    ],
+    "art_source_id": 1000001
+  },
+  {
+    "id": 288,
+    "name_cn": "幻•云剑无锋",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[连云]：{attack}攻（本场战斗每攻击过一次多{otherParams[0]}攻）",
+        "template_values": {
+          "{attack}": "6",
+          "{otherParams[0]}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[连云]：{attack}攻（本场战斗每攻击过一次多{otherParams[0]}攻）",
+        "template_values": {
+          "{attack}": "12",
+          "{otherParams[0]}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[连云]：{attack}攻（本场战斗每攻击过一次多{otherParams[0]}攻）",
+        "template_values": {
+          "{attack}": "12",
+          "{otherParams[0]}": "3"
+        }
+      }
+    ],
+    "art_source_id": 1000014
+  },
+  {
+    "id": 309,
+    "name_cn": "幻•云舞诀",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n[防]+{def}\\n[剑意]+{jianYi}\\n每用过1张牌再加1[剑意]",
+        "template_values": {
+          "{anima}": "2",
+          "{def}": "4",
+          "{jianYi}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n[防]+{def}\\n[剑意]+{jianYi}\\n每用过1张牌再加1[剑意]",
+        "template_values": {
+          "{anima}": "3",
+          "{def}": "6",
+          "{jianYi}": "3"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n[防]+{def}\\n[剑意]+{jianYi}\\n每用过1张牌再加1[剑意]",
+        "template_values": {
+          "{anima}": "4",
+          "{def}": "8",
+          "{jianYi}": "4"
+        }
+      }
+    ],
+    "art_source_id": 1000031
+  },
+  {
+    "id": 312,
+    "name_cn": "幻•狂剑盘龙",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[防]+{def}\\n每用过一次剑阵下回合就加{otherParams[0]}[防]\\n只要在卡组中，卡组中的所有狂剑[常规牌]也算作剑阵",
+        "template_values": {
+          "{def}": "12",
+          "{otherParams[0]}": "3"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[防]+{def}\\n每用过一次剑阵下回合就加{otherParams[0]}[防]\\n只要在卡组中，卡组中的所有狂剑[常规牌]也算作剑阵",
+        "template_values": {
+          "{def}": "16",
+          "{otherParams[0]}": "4"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[防]+{def}\\n每用过一次剑阵下回合就加{otherParams[0]}[防]\\n只要在卡组中，卡组中的所有狂剑[常规牌]也算作剑阵",
+        "template_values": {
+          "{def}": "20",
+          "{otherParams[0]}": "5"
+        }
+      }
+    ],
+    "art_source_id": 1000049
+  },
+  {
+    "id": 325,
+    "name_cn": "幻•灵犀剑阵",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[防]+{def}\\n每有{otherParams[0]}[防]就加1[灵气]",
+        "template_values": {
+          "{def}": "6",
+          "{otherParams[0]}": "4"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[防]+{def}\\n每有{otherParams[0]}[防]就加1[灵气]",
+        "template_values": {
+          "{def}": "10",
+          "{otherParams[0]}": "4"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[防]+{def}\\n每有{otherParams[0]}[防]就加1[灵气]",
+        "template_values": {
+          "{def}": "14",
+          "{otherParams[0]}": "4"
+        }
+      }
+    ],
+    "art_source_id": 1000033
+  },
+  {
+    "id": 122,
+    "name_cn": "云剑•龙泉",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n[击伤]：[升级]下{otherParams[0]}次使用的牌（战斗结束还原）\\n[连云]：[再次行动]",
+        "template_values": {
+          "{attack}": "2",
+          "{attackCount}": "2",
+          "{otherParams[0]}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n[击伤]：[升级]下{otherParams[0]}次使用的牌（战斗结束还原）\\n[连云]：[再次行动]",
+        "template_values": {
+          "{attack}": "2",
+          "{attackCount}": "2",
+          "{otherParams[0]}": "3"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n[击伤]：[升级]下{otherParams[0]}次使用的牌（战斗结束还原）\\n[连云]：[再次行动]",
+        "template_values": {
+          "{attack}": "2",
+          "{attackCount}": "2",
+          "{otherParams[0]}": "4"
+        }
+      }
+    ],
+    "fusion_ingredients": [
+      1,
+      1000042
+    ]
+  },
+  {
+    "id": 123,
+    "name_cn": "云剑•雪影飞",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻\\n[连云]：每连续用过1次“云剑”此牌多攻击1次并加1[灵气]",
+        "template_values": {
+          "{attack}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻\\n[连云]：每连续用过1次“云剑”此牌多攻击1次并加1[灵气]",
+        "template_values": {
+          "{attack}": "3"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻\\n[连云]：每连续用过1次“云剑”此牌多攻击1次并加1[灵气]",
+        "template_values": {
+          "{attack}": "4"
+        }
+      }
+    ],
+    "fusion_ingredients": [
+      3,
+      1000043
+    ]
+  },
+  {
+    "id": 124,
+    "name_cn": "百鸟玲珑镯",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "获得{otherParams[1]}层[护体]\\n令“灵剑”牌的灵气消耗减{otherParams[0]}\\n[再次行动]",
+        "template_values": {
+          "{otherParams[1]}": "1",
+          "{otherParams[0]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n获得{otherParams[1]}层[护体]\\n令“灵剑”牌的灵气消耗减{otherParams[0]}\\n[再次行动]",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[1]}": "1",
+          "{otherParams[0]}": "1"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n获得{otherParams[1]}层[护体]\\n令“灵剑”牌的灵气消耗减{otherParams[0]}\\n[再次行动]",
+        "template_values": {
+          "{anima}": "4",
+          "{otherParams[1]}": "1",
+          "{otherParams[0]}": "1"
+        }
+      }
+    ],
+    "fusion_ingredients": [
+      16,
+      1000065
+    ]
+  },
+  {
+    "id": 125,
+    "name_cn": "狂剑•猫爪",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n[无视防御]\\n每用过1次“狂剑”追加1次攻击\\n（使用此牌算作2次“狂剑”）",
+        "template_values": {
+          "{attack}": "5",
+          "{attackCount}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n[无视防御]\\n每用过1次“狂剑”追加1次攻击\\n（使用此牌算作2次“狂剑”）",
+        "template_values": {
+          "{attack}": "7",
+          "{attackCount}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n[无视防御]\\n每用过1次“狂剑”追加1次攻击\\n（使用此牌算作2次“狂剑”）",
+        "template_values": {
+          "{attack}": "9",
+          "{attackCount}": "2"
+        }
+      }
+    ],
+    "fusion_ingredients": [
+      8,
+      1000035
+    ]
+  },
+  {
+    "id": 126,
+    "name_cn": "澄心剑阵",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[防]+{def}\\n继承金丹和元婴仙命对澄心剑胚的加成\\n若卡组含{otherParams[0]}张以上“剑阵”则[再次行动]",
+        "template_values": {
+          "{def}": "2",
+          "{otherParams[0]}": "4"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[防]+{def}\\n继承金丹和元婴仙命对澄心剑胚的加成\\n若卡组含{otherParams[0]}张以上“剑阵”则[再次行动]",
+        "template_values": {
+          "{def}": "7",
+          "{otherParams[0]}": "4"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[防]+{def}\\n继承金丹和元婴仙命对澄心剑胚的加成\\n若卡组含{otherParams[0]}张以上“剑阵”则[再次行动]",
+        "template_values": {
+          "{def}": "12",
+          "{otherParams[0]}": "4"
+        }
+      }
+    ],
+    "fusion_ingredients": [
+      1000025,
+      1000064
+    ]
+  },
+  {
+    "id": 388,
+    "name_cn": "百鸟曳影诀",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n[持续]：每失去1[灵气]时加1[剑气]",
+        "template_values": {
+          "{anima}": "3"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n[持续]：每失去1[灵气]时加1[剑气]",
+        "template_values": {
+          "{anima}": "4"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n[持续]：每失去1[灵气]时加1[剑气]",
+        "template_values": {
+          "{anima}": "6"
+        }
+      }
+    ],
+    "fusion_ingredients": [
+      1000065,
+      213
+    ]
+  },
+  {
+    "id": 47,
+    "name_cn": "云剑·晚霞",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[剑意]+{jianYi}\\n[连云]：每连续用过1次“云剑”多加{otherParams[0]}[剑意]",
+        "template_values": {
+          "{jianYi}": "2",
+          "{otherParams[0]}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[剑意]+{jianYi}\\n[连云]：每连续用过1次“云剑”多加{otherParams[0]}[剑意]",
+        "template_values": {
+          "{jianYi}": "4",
+          "{otherParams[0]}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[剑意]+{jianYi}\\n[连云]：每连续用过1次“云剑”多加{otherParams[0]}[剑意]",
+        "template_values": {
+          "{jianYi}": "6",
+          "{otherParams[0]}": "2"
+        }
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "name_cn": "青龙剑阵",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[防]+{def}\\n每有{otherParams[0]}[防]就加1[剑意]",
+        "template_values": {
+          "{def}": "8",
+          "{otherParams[0]}": "3"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[防]+{def}\\n每有{otherParams[0]}[防]就加1[剑意]",
+        "template_values": {
+          "{def}": "12",
+          "{otherParams[0]}": "3"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[防]+{def}\\n每有{otherParams[0]}[防]就加1[剑意]",
+        "template_values": {
+          "{def}": "16",
+          "{otherParams[0]}": "3"
+        }
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "name_cn": "百兽灵剑阵",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n[持续]：每回合首次使用“灵剑”或“剑阵”牌后，每剩1点灵气向对方造成1伤害",
+        "template_values": {
+          "{anima}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n[持续]：每回合首次使用“灵剑”或“剑阵”牌后，每剩1点灵气向对方造成1伤害",
+        "template_values": {
+          "{anima}": "3"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n[持续]：每回合首次使用“灵剑”或“剑阵”牌后，每剩1点灵气向对方造成1伤害",
+        "template_values": {
+          "{anima}": "4"
+        }
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "name_cn": "狂龙吞云",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[持续]：狂剑可算作云剑，云剑可算作狂剑",
+        "template_values": {}
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "算作用过{otherParams[0]}次狂剑\\n[持续]：狂剑可算作云剑，云剑可算作狂剑",
+        "template_values": {
+          "{otherParams[0]}": "1"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "算作用过{otherParams[0]}次狂剑\\n[持续]：狂剑可算作云剑，云剑可算作狂剑",
+        "template_values": {
+          "{otherParams[0]}": "2"
+        }
+      }
+    ]
+  },
+  {
+    "id": 4000090,
+    "name_cn": "望星诀",
+    "phase": 2,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n[防]+{def}\\n后{otherParams[0]}格[成为星位]",
+        "template_values": {
+          "{anima}": "2",
+          "{def}": "2",
+          "{otherParams[0]}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n[防]+{def}\\n后{otherParams[0]}格[成为星位]",
+        "template_values": {
+          "{anima}": "2",
+          "{def}": "4",
+          "{otherParams[0]}": "3"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n[防]+{def}\\n后{otherParams[0]}格[成为星位]",
+        "template_values": {
+          "{anima}": "2",
+          "{def}": "6",
+          "{otherParams[0]}": "4"
+        }
+      }
+    ]
+  },
+  {
+    "id": 4000091,
+    "name_cn": "犀牛望月",
+    "phase": 3,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}~{randomAttack}攻\\n生命及上限+{otherParams[0]}~{otherParams[1]}\\n返还此牌触发的[卦象]",
+        "template_values": {
+          "{attack}": "1",
+          "{randomAttack}": "7",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "7"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}~{randomAttack}攻\\n生命及上限+{otherParams[0]}~{otherParams[1]}\\n返还此牌触发的[卦象]",
+        "template_values": {
+          "{attack}": "1",
+          "{randomAttack}": "9",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "9"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}~{randomAttack}攻\\n生命及上限+{otherParams[0]}~{otherParams[1]}\\n返还此牌触发的[卦象]",
+        "template_values": {
+          "{attack}": "1",
+          "{randomAttack}": "11",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "11"
+        }
+      }
+    ]
+  },
+  {
+    "id": 4000092,
+    "name_cn": "伤魂咒阵",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n[持续]{otherParams[0]}次：攻击或受到攻击时，向对方施加{otherParams[1]}层[内伤]",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n[持续]{otherParams[0]}次：攻击或受到攻击时，向对方施加{otherParams[1]}层[内伤]",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[0]}": "5",
+          "{otherParams[1]}": "1"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n[持续]{otherParams[0]}次：攻击或受到攻击时，向对方施加{otherParams[1]}层[内伤]",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[0]}": "7",
+          "{otherParams[1]}": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": 4000093,
+    "name_cn": "星弈•长",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻\\n[星力]+{otherParams[0]}\\n[星位]：生命及上限+{otherParams[1]}（每有1[星力]多加{otherParams[2]}）",
+        "template_values": {
+          "{attack}": "2",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "4",
+          "{otherParams[2]}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻\\n[星力]+{otherParams[0]}\\n[星位]：生命及上限+{otherParams[1]}（每有1[星力]多加{otherParams[2]}）",
+        "template_values": {
+          "{attack}": "2",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "6",
+          "{otherParams[2]}": "3"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻\\n[星力]+{otherParams[0]}\\n[星位]：生命及上限+{otherParams[1]}（每有1[星力]多加{otherParams[2]}）",
+        "template_values": {
+          "{attack}": "2",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "8",
+          "{otherParams[2]}": "4"
+        }
+      }
+    ]
+  },
+  {
+    "id": 4000094,
+    "name_cn": "星弈•劫争",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻\\n[灵气]+{anima}\\n自身[灵气]＞对方则施加{otherParams[0]}层[破绽]\\n[星位]：[再次行动]",
+        "template_values": {
+          "{attack}": "1",
+          "{anima}": "1",
+          "{otherParams[0]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻\\n[灵气]+{anima}\\n自身[灵气]＞对方则施加{otherParams[0]}层[破绽]\\n[星位]：[再次行动]",
+        "template_values": {
+          "{attack}": "3",
+          "{anima}": "2",
+          "{otherParams[0]}": "1"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻\\n[灵气]+{anima}\\n自身[灵气]＞对方则施加{otherParams[0]}层[破绽]\\n[星位]：[再次行动]",
+        "template_values": {
+          "{attack}": "5",
+          "{anima}": "3",
+          "{otherParams[0]}": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": 4000095,
+    "name_cn": "灵蛇绕柱",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "施加{otherParams[0]}层[内伤]\\n对方每有1层[负面状态]自身加{otherParams[1]}[身法]（最多加{otherParams[2]}）",
+        "template_values": {
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "3",
+          "{otherParams[2]}": "10"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "施加{otherParams[0]}层[内伤]\\n对方每有1层[负面状态]自身加{otherParams[1]}[身法]（最多加{otherParams[2]}）",
+        "template_values": {
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "3",
+          "{otherParams[2]}": "12"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "施加{otherParams[0]}层[内伤]\\n对方每有1层[负面状态]自身加{otherParams[1]}[身法]（最多加{otherParams[2]}）",
+        "template_values": {
+          "{otherParams[0]}": "4",
+          "{otherParams[1]}": "3",
+          "{otherParams[2]}": "15"
+        }
+      }
+    ]
+  },
+  {
+    "id": 4000096,
+    "name_cn": "折枝点穴",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "自身每次攻击时施加{otherParams[0]}层[内伤]，持续{otherParams[1]}回合\\n{attack}攻（随机攻击{otherParams[2]}～{otherParams[3]}次）",
+        "template_values": {
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "2",
+          "{attack}": "1",
+          "{otherParams[2]}": "2",
+          "{otherParams[3]}": "3"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "自身每次攻击时施加{otherParams[0]}层[内伤]，持续{otherParams[1]}回合\\n{attack}攻（随机攻击{otherParams[2]}～{otherParams[3]}次）",
+        "template_values": {
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "2",
+          "{attack}": "1",
+          "{otherParams[2]}": "3",
+          "{otherParams[3]}": "4"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "自身每次攻击时施加{otherParams[0]}层[内伤]，持续{otherParams[1]}回合\\n{attack}攻（随机攻击{otherParams[2]}～{otherParams[3]}次）",
+        "template_values": {
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "2",
+          "{attack}": "1",
+          "{otherParams[2]}": "4",
+          "{otherParams[3]}": "5"
+        }
+      }
+    ]
+  },
+  {
+    "id": 4000097,
+    "name_cn": "弯弓射虎",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[先机]：生命及上限+{otherParams[0]}\\n[后招]：{attack}攻（每加过{otherParams[1]}生命多1攻）\\n{otherParams[2]}%概率[再次行动]",
+        "template_values": {
+          "{otherParams[0]}": "16",
+          "{attack}": "8",
+          "{otherParams[1]}": "4",
+          "{otherParams[2]}": "10"
+        },
+        "qi_cost": 1
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[先机]：生命及上限+{otherParams[0]}\\n[后招]：{attack}攻（每加过{otherParams[1]}生命多1攻）\\n{otherParams[2]}%概率[再次行动]",
+        "template_values": {
+          "{otherParams[0]}": "24",
+          "{attack}": "8",
+          "{otherParams[1]}": "4",
+          "{otherParams[2]}": "10"
+        },
+        "qi_cost": 1
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[先机]：生命及上限+{otherParams[0]}\\n[后招]：{attack}攻（每加过{otherParams[1]}生命多1攻）\\n{otherParams[2]}%概率[再次行动]",
+        "template_values": {
+          "{otherParams[0]}": "32",
+          "{attack}": "8",
+          "{otherParams[1]}": "4",
+          "{otherParams[2]}": "10"
+        },
+        "qi_cost": 1
+      }
+    ]
+  },
+  {
+    "id": 4000098,
+    "name_cn": "极·静气心法",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "生命上限+{otherParams[1]}\\n[再次行动]\\n[持续]：每加1点灵气时加{otherParams[0]}生命",
+        "template_values": {
+          "{otherParams[1]}": "20",
+          "{otherParams[0]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "生命上限+{otherParams[1]}\\n[再次行动]\\n[持续]：每加1点灵气时加{otherParams[0]}生命",
+        "template_values": {
+          "{otherParams[1]}": "20",
+          "{otherParams[0]}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "生命上限+{otherParams[1]}\\n[再次行动]\\n[持续]：每加1点灵气时加{otherParams[0]}生命",
+        "template_values": {
+          "{otherParams[1]}": "20",
+          "{otherParams[0]}": "3"
+        }
+      }
+    ],
+    "art_source_id": 4000027
+  },
+  {
+    "id": 4000099,
+    "name_cn": "极·两仪阵",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n卦象+{guaXiang}\\n每点[卦象]加{otherParams[0]}[防]和{otherParams[1]}生命",
+        "template_values": {
+          "{anima}": "2",
+          "{guaXiang}": "1",
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n卦象+{guaXiang}\\n每点[卦象]加{otherParams[0]}[防]和{otherParams[1]}生命",
+        "template_values": {
+          "{anima}": "2",
+          "{guaXiang}": "2",
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n卦象+{guaXiang}\\n每点[卦象]加{otherParams[0]}[防]和{otherParams[1]}生命",
+        "template_values": {
+          "{anima}": "2",
+          "{guaXiang}": "3",
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "2"
+        }
+      }
+    ],
+    "art_source_id": 4000040
+  },
+  {
+    "id": 265,
+    "name_cn": "幻•斩草除根",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "令对方生命上限减至其当前生命减{otherParams[0]}（耗尽[灵气]/[卦象]，每点多减{otherParams[1]}/{otherParams[2]}）",
+        "template_values": {
+          "{otherParams[0]}": "8",
+          "{otherParams[1]}": "3",
+          "{otherParams[2]}": "3"
+        },
+        "qi_cost": 1
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "令对方生命上限减至其当前生命减{otherParams[0]}（耗尽[灵气]/[卦象]，每点多减{otherParams[1]}/{otherParams[2]}）",
+        "template_values": {
+          "{otherParams[0]}": "8",
+          "{otherParams[1]}": "4",
+          "{otherParams[2]}": "3"
+        },
+        "qi_cost": 1
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "令对方生命上限减至其当前生命减{otherParams[0]}（耗尽[灵气]/[卦象]，每点多减{otherParams[1]}/{otherParams[2]}）",
+        "template_values": {
+          "{otherParams[0]}": "8",
+          "{otherParams[1]}": "4",
+          "{otherParams[2]}": "4"
+        },
+        "qi_cost": 1
+      }
+    ],
+    "art_source_id": 4000019
+  },
+  {
+    "id": 266,
+    "name_cn": "幻•流水无情",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "施加{otherParams[0]}层[内伤]\\n[持续]：对方每获得1层[内伤]以外的[负面状态]就获得{otherParams[1]}层[内伤]",
+        "template_values": {
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "1"
+        },
+        "qi_cost": 1
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "施加{otherParams[0]}层[内伤]\\n[持续]：对方每获得1层[内伤]以外的[负面状态]就获得{otherParams[1]}层[内伤]",
+        "template_values": {
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "1"
+        },
+        "qi_cost": 1
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "施加{otherParams[0]}层[内伤]\\n[持续]：对方每获得1层[内伤]以外的[负面状态]就获得{otherParams[1]}层[内伤]",
+        "template_values": {
+          "{otherParams[0]}": "5",
+          "{otherParams[1]}": "1"
+        },
+        "qi_cost": 1
+      }
+    ],
+    "art_source_id": 4000022
+  },
+  {
+    "id": 307,
+    "name_cn": "幻•坤卦",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[防]+{def}\\n[卦象]+{guaXiang}\\n[升级]下1张使用的牌，每有{otherParams[0]}点[卦象]就多[升级]1张（战斗结束还原）",
+        "template_values": {
+          "{def}": "2",
+          "{guaXiang}": "2",
+          "{otherParams[0]}": "3"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[防]+{def}\\n[卦象]+{guaXiang}\\n[升级]下1张使用的牌，每有{otherParams[0]}点[卦象]就多[升级]1张（战斗结束还原）",
+        "template_values": {
+          "{def}": "4",
+          "{guaXiang}": "3",
+          "{otherParams[0]}": "3"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[防]+{def}\\n[卦象]+{guaXiang}\\n[升级]下1张使用的牌，每有{otherParams[0]}点[卦象]就多[升级]1张（战斗结束还原）",
+        "template_values": {
+          "{def}": "6",
+          "{guaXiang}": "4",
+          "{otherParams[0]}": "3"
+        }
+      }
+    ],
+    "art_source_id": 4000002
+  },
+  {
+    "id": 268,
+    "name_cn": "幻•星罗棋布",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n[星力]+{otherParams[0]}\\n之后加[灵气]时加等量[星力]（累计最多加{otherParams[1]}）",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "3"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n[星力]+{otherParams[0]}\\n之后加[灵气]时加等量[星力]（累计最多加{otherParams[1]}）",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "5"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n[星力]+{otherParams[0]}\\n之后加[灵气]时加等量[星力]（累计最多加{otherParams[1]}）",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "7"
+        }
+      }
+    ],
+    "art_source_id": 4000008
+  },
+  {
+    "id": 324,
+    "name_cn": "幻•生机绽放",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "生命及上限+{otherParams[0]}\\n[持续]：自身每回合结束时先加{otherParams[1]}生命（超过上限部分加等量上限），然后减{otherParams[1]}生命",
+        "template_values": {
+          "{otherParams[0]}": "10",
+          "{otherParams[1]}": "8"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "生命及上限+{otherParams[0]}\\n[持续]：自身每回合结束时先加{otherParams[1]}生命（超过上限部分加等量上限），然后减{otherParams[1]}生命",
+        "template_values": {
+          "{otherParams[0]}": "15",
+          "{otherParams[1]}": "12"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "生命及上限+{otherParams[0]}\\n[持续]：自身每回合结束时先加{otherParams[1]}生命（超过上限部分加等量上限），然后减{otherParams[1]}生命",
+        "template_values": {
+          "{otherParams[0]}": "20",
+          "{otherParams[1]}": "16"
+        }
+      }
+    ],
+    "art_source_id": 4000048
+  },
+  {
+    "id": 269,
+    "name_cn": "幻•斗转星移",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "后一格[成为星位]\\n[持续]：每次使用“星弈”牌后，使后一格[成为星位]，并追加{otherParams[1]}攻",
+        "template_values": {
+          "{otherParams[1]}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "后一格[成为星位]\\n[持续]：每次使用“星弈”牌后，使后一格[成为星位]，并追加{otherParams[1]}攻",
+        "template_values": {
+          "{otherParams[1]}": "4"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "后一格[成为星位]\\n[持续]：每次使用“星弈”牌后，使后一格[成为星位]，并追加{otherParams[1]}攻",
+        "template_values": {
+          "{otherParams[1]}": "6"
+        }
+      }
+    ],
+    "art_source_id": 4000023
+  },
+  {
+    "id": 294,
+    "name_cn": "幻•飞星刺",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻\\n[星力]+{otherParams[0]}\\n若不在[星位]则[再次行动]",
+        "template_values": {
+          "{attack}": "5",
+          "{otherParams[0]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻\\n[星力]+{otherParams[0]}\\n若不在[星位]则[再次行动]",
+        "template_values": {
+          "{attack}": "9",
+          "{otherParams[0]}": "1"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻\\n[星力]+{otherParams[0]}\\n若不在[星位]则[再次行动]",
+        "template_values": {
+          "{attack}": "9",
+          "{otherParams[0]}": "2"
+        }
+      }
+    ],
+    "art_source_id": 4000024
+  },
+  {
+    "id": 298,
+    "name_cn": "幻•藕断丝连",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻\\n获得{otherParams[0]}层[恢复]\\n生命上限+{otherParams[1]}（每层[恢复]多加1）\\n[后招]：改为加生命及上限",
+        "template_values": {
+          "{attack}": "6",
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "9"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻\\n获得{otherParams[0]}层[恢复]\\n生命上限+{otherParams[1]}（每层[恢复]多加1）\\n[后招]：改为加生命及上限",
+        "template_values": {
+          "{attack}": "6",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "12"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻\\n获得{otherParams[0]}层[恢复]\\n生命上限+{otherParams[1]}（每层[恢复]多加1）\\n[后招]：改为加生命及上限",
+        "template_values": {
+          "{attack}": "6",
+          "{otherParams[0]}": "4",
+          "{otherParams[1]}": "15"
+        }
+      }
+    ],
+    "art_source_id": 4000013
+  },
+  {
+    "id": 289,
+    "name_cn": "幻•落花有意",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n施加{otherParams[0]}层[内伤]\\n对方每次获得[内伤]时多加2层，持续{otherParams[1]}回合",
+        "template_values": {
+          "{anima}": "3",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "3"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n施加{otherParams[0]}层[内伤]\\n对方每次获得[内伤]时多加2层，持续{otherParams[1]}回合",
+        "template_values": {
+          "{anima}": "3",
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "4"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n施加{otherParams[0]}层[内伤]\\n对方每次获得[内伤]时多加2层，持续{otherParams[1]}回合",
+        "template_values": {
+          "{anima}": "3",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "5"
+        }
+      }
+    ],
+    "art_source_id": 4000021
+  },
+  {
+    "id": 320,
+    "name_cn": "幻•两仪阵",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "每点[灵气]或[卦象]加{otherParams[0]}[防]和生命\\n交换自身的[灵气]和[卦象]",
+        "template_values": {
+          "{otherParams[0]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n每点[灵气]或[卦象]加{otherParams[0]}[防]和生命\\n交换自身的[灵气]和[卦象]",
+        "template_values": {
+          "{anima}": "1",
+          "{otherParams[0]}": "1"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n每点[灵气]或[卦象]加{otherParams[0]}[防]和生命\\n交换自身的[灵气]和[卦象]",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[0]}": "1"
+        }
+      }
+    ],
+    "art_source_id": 4000040
+  },
+  {
+    "id": 127,
+    "name_cn": "瑞雪迎春",
+    "phase": 3,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻（每加过{otherParams[0]}生命多1攻）\\n[灵气]+{anima}\\n[后招]：[再次行动]",
+        "template_values": {
+          "{attack}": "4",
+          "{otherParams[0]}": "4",
+          "{anima}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻（每加过{otherParams[0]}生命多1攻）\\n[灵气]+{anima}\\n[再次行动]\\n[后招]：生命+{otherParams[1]}",
+        "template_values": {
+          "{attack}": "4",
+          "{otherParams[0]}": "4",
+          "{anima}": "1",
+          "{otherParams[1]}": "1"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻（每加过{otherParams[0]}生命多1攻）\\n[灵气]+{anima}\\n[再次行动]\\n[后招]：生命+{otherParams[1]}",
+        "template_values": {
+          "{attack}": "4",
+          "{otherParams[0]}": "3",
+          "{anima}": "1",
+          "{otherParams[1]}": "3"
+        }
+      }
+    ],
+    "fusion_ingredients": [
+      12,
+      4000042
+    ]
+  },
+  {
+    "id": 128,
+    "name_cn": "天元无极盘",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[持续]：自身每回合开始时加1[卦象]和1[星力]",
+        "template_values": {}
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "后{otherParams[0]}格[成为星位]\\n[持续]：自身每回合开始时加1[卦象]和1[星力]",
+        "template_values": {
+          "{otherParams[0]}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "后{otherParams[0]}格[成为星位]\\n[持续]：自身每回合开始时加1[卦象]和1[星力]",
+        "template_values": {
+          "{otherParams[0]}": "4"
+        }
+      }
+    ],
+    "fusion_ingredients": [
+      28,
+      4000045
+    ]
+  },
+  {
+    "id": 129,
+    "name_cn": "灯影蚀焰",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "施加{otherParams[0]}层[内伤]\\n重复{otherParams[1]}次：{otherParams[2]}%概率令对方的[内伤]立刻生效一次",
+        "template_values": {
+          "{otherParams[0]}": "4",
+          "{otherParams[1]}": "3",
+          "{otherParams[2]}": "30"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "施加{otherParams[0]}层[内伤]\\n重复{otherParams[1]}次：{otherParams[2]}%概率令对方的[内伤]立刻生效一次",
+        "template_values": {
+          "{otherParams[0]}": "5",
+          "{otherParams[1]}": "3",
+          "{otherParams[2]}": "30"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "施加{otherParams[0]}层[内伤]\\n重复{otherParams[1]}次：{otherParams[2]}%概率令对方的[内伤]立刻生效一次",
+        "template_values": {
+          "{otherParams[0]}": "6",
+          "{otherParams[1]}": "3",
+          "{otherParams[2]}": "30"
+        }
+      }
+    ],
+    "fusion_ingredients": [
+      6,
+      4000059
+    ]
+  },
+  {
+    "id": 130,
+    "name_cn": "千星天爆",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻（每有1点[星力]多{otherParams[0]}攻）\\n自身[星力]减半",
+        "template_values": {
+          "{attack}": "6",
+          "{otherParams[0]}": "4"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻（每有1点[星力]多{otherParams[0]}攻）\\n自身[星力]减半",
+        "template_values": {
+          "{attack}": "6",
+          "{otherParams[0]}": "5"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻（每有1点[星力]多{otherParams[0]}攻）\\n自身[星力]减半",
+        "template_values": {
+          "{attack}": "6",
+          "{otherParams[0]}": "6"
+        }
+      }
+    ],
+    "fusion_ingredients": [
+      10,
+      4000062
+    ]
+  },
+  {
+    "id": 131,
+    "name_cn": "星月六爻扇",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[持续]：每加1[星力]/[卦象]/[灵气]时向对方造成3/3/2[伤害]",
+        "template_values": {}
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[星力]+{otherParams[1]}\\n[持续]：每加1[星力]/[卦象]/[灵气]时向对方造成3/3/2[伤害]",
+        "template_values": {
+          "{otherParams[1]}": "1"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[星力]+{otherParams[1]}\\n[持续]：每加1[星力]/[卦象]/[灵气]时向对方造成3/3/2[伤害]",
+        "template_values": {
+          "{otherParams[1]}": "2"
+        }
+      }
+    ],
+    "fusion_ingredients": [
+      23,
+      4000014
+    ]
+  },
+  {
+    "id": 389,
+    "name_cn": "星弈•治孤",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n[星位]：施加{otherParams[0]}层[虚弱]\\n[开局]：[相邻]格[成为星位]，若为空格则放入\"星弈•飞\"",
+        "template_values": {
+          "{anima}": "3",
+          "{otherParams[0]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n[星位]：施加{otherParams[0]}层[虚弱]和{otherParams[1]}层[破绽]\\n[开局]：[相邻]格[成为星位]，若为空格则放入\"星弈•飞\"",
+        "template_values": {
+          "{anima}": "4",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n[星位]：施加{otherParams[0]}层[虚弱]和{otherParams[1]}层[破绽]\\n[开局]：[相邻]格[成为星位]，若为空格则放入\"星弈•飞\"",
+        "template_values": {
+          "{anima}": "5",
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "2"
+        }
+      }
+    ],
+    "fusion_ingredients": [
+      4000038,
+      215
+    ]
+  },
+  {
+    "id": 51,
+    "name_cn": "灵卦术",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[持续]：每加1点灵气时加1[卦象]",
+        "template_values": {}
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[卦象]+{guaXiang}\\n[持续]：每加1点灵气时加1[卦象]",
+        "template_values": {
+          "{guaXiang}": "1"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[卦象]+{guaXiang}\\n[持续]：每加1点灵气时加1[卦象]",
+        "template_values": {
+          "{guaXiang}": "3"
+        }
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "name_cn": "摘花飞叶",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[持续]：每次攻击对方或被对方攻击后，向对方施加1层[内伤]",
+        "template_values": {},
+        "qi_cost": 1
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n[持续]：每次攻击对方或被对方攻击后，向对方施加1层[内伤]",
+        "template_values": {
+          "{anima}": "1"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n[持续]：每次攻击对方或被对方攻击后，向对方施加1层[内伤]",
+        "template_values": {
+          "{anima}": "3"
+        }
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "name_cn": "星弈·双飞燕",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻\\n[再次行动]\\n[星位]：此牌多{otherParams[0]}攻\\n[后招]：追加1次攻击",
+        "template_values": {
+          "{attack}": "4",
+          "{otherParams[0]}": "4"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻\\n[再次行动]\\n[星位]：此牌多{otherParams[0]}攻\\n[后招]：追加1次攻击",
+        "template_values": {
+          "{attack}": "5",
+          "{otherParams[0]}": "6"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻\\n[再次行动]\\n[星位]：此牌多{otherParams[0]}攻\\n[后招]：追加1次攻击",
+        "template_values": {
+          "{attack}": "6",
+          "{otherParams[0]}": "8"
+        }
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "name_cn": "滴水穿石",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻\\n对方有[负面状态]则[再次行动]\\n[后招]：施加{otherParams[0]}层[内伤]",
+        "template_values": {
+          "{attack}": "1",
+          "{otherParams[0]}": "6"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻\\n对方有[负面状态]则[再次行动]\\n[后招]：施加{otherParams[0]}层[内伤]",
+        "template_values": {
+          "{attack}": "1",
+          "{otherParams[0]}": "8"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻\\n对方有[负面状态]则[再次行动]\\n[后招]：施加{otherParams[0]}层[内伤]",
+        "template_values": {
+          "{attack}": "1",
+          "{otherParams[0]}": "10"
+        }
+      }
+    ]
+  },
+  {
+    "id": 7000094,
+    "name_cn": "镇印心法",
+    "phase": 2,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "造成{otherParams[0]}[伤害]\\n[持续]：每次[激活][五行]时，向对方造成{otherParams[1]}[伤害]",
+        "template_values": {
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "3"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "造成{otherParams[0]}[伤害]\\n[持续]：每次[激活][五行]时，向对方造成{otherParams[1]}[伤害]",
+        "template_values": {
+          "{otherParams[0]}": "4",
+          "{otherParams[1]}": "4"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "造成{otherParams[0]}[伤害]\\n[持续]：每次[激活][五行]时，向对方造成{otherParams[1]}[伤害]",
+        "template_values": {
+          "{otherParams[0]}": "5",
+          "{otherParams[1]}": "5"
+        }
+      }
+    ]
+  },
+  {
+    "id": 7000095,
+    "name_cn": "五行灵击",
+    "phase": 3,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻（每剩余1[灵气]多1攻）\\n卡组中每有1种不同[五行]此牌少耗1[灵气]",
+        "template_values": {
+          "{attack}": "15"
+        },
+        "qi_cost": 5
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻（每剩余1[灵气]多1攻）\\n卡组中每有1种不同[五行]此牌少耗1[灵气]",
+        "template_values": {
+          "{attack}": "19"
+        },
+        "qi_cost": 5
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻（每剩余1[灵气]多1攻）\\n卡组中每有1种不同[五行]此牌少耗1[灵气]",
+        "template_values": {
+          "{attack}": "23"
+        },
+        "qi_cost": 5
+      }
+    ]
+  },
+  {
+    "id": 7000096,
+    "name_cn": "土灵·遁地",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[防]+{def}\\n[土灵]：[再次行动]",
+        "template_values": {
+          "{def}": "4"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[防]+{def}\\n[土灵]：[再次行动]",
+        "template_values": {
+          "{def}": "8"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[防]+{def}\\n[土灵]：[再次行动]",
+        "template_values": {
+          "{def}": "12"
+        }
+      }
+    ]
+  },
+  {
+    "id": 7000097,
+    "name_cn": "木灵·春风拂",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[木灵]：自身每次攻击时加{otherParams[0]}生命及上限，持续{otherParams[1]}回合\\n{attack}攻×{attackCount}\\n[灵气]+{anima}",
+        "template_values": {
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "3",
+          "{attack}": "1",
+          "{attackCount}": "2",
+          "{anima}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[木灵]：自身每次攻击时加{otherParams[0]}生命及上限，持续{otherParams[1]}回合\\n{attack}攻×{attackCount}\\n[灵气]+{anima}",
+        "template_values": {
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "3",
+          "{attack}": "1",
+          "{attackCount}": "3",
+          "{anima}": "3"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[木灵]：自身每次攻击时加{otherParams[0]}生命及上限，持续{otherParams[1]}回合\\n{attack}攻×{attackCount}\\n[灵气]+{anima}",
+        "template_values": {
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "3",
+          "{attack}": "1",
+          "{attackCount}": "4",
+          "{anima}": "4"
+        }
+      }
+    ]
+  },
+  {
+    "id": 7000098,
+    "name_cn": "火灵·焚脉诀",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n加至{otherParams[0]}层[加攻]，每加1层减自身{otherParams[1]}生命上限\\n[火灵]：每有1层[加攻]，减对方{otherParams[2]}生命及上限",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "6",
+          "{otherParams[2]}": "3"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n加至{otherParams[0]}层[加攻]，每加1层减自身{otherParams[1]}生命上限\\n[火灵]：每有1层[加攻]，减对方{otherParams[2]}生命及上限",
+        "template_values": {
+          "{anima}": "3",
+          "{otherParams[0]}": "4",
+          "{otherParams[1]}": "6",
+          "{otherParams[2]}": "3"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n加至{otherParams[0]}层[加攻]，每加1层减自身{otherParams[1]}生命上限\\n[火灵]：每有1层[加攻]，减对方{otherParams[2]}生命及上限",
+        "template_values": {
+          "{anima}": "4",
+          "{otherParams[0]}": "5",
+          "{otherParams[1]}": "6",
+          "{otherParams[2]}": "3"
+        }
+      }
+    ]
+  },
+  {
+    "id": 7000099,
+    "name_cn": "金灵·回锋刃",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n[金灵]：此牌每次攻击消耗[锋锐]后，返还{otherParams[0]}%的[锋锐]",
+        "template_values": {
+          "{attack}": "6",
+          "{attackCount}": "2",
+          "{otherParams[0]}": "60"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n[金灵]：此牌每次攻击消耗[锋锐]后，返还{otherParams[0]}%的[锋锐]",
+        "template_values": {
+          "{attack}": "5",
+          "{attackCount}": "3",
+          "{otherParams[0]}": "60"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n[金灵]：此牌每次攻击消耗[锋锐]后，返还{otherParams[0]}%的[锋锐]",
+        "template_values": {
+          "{attack}": "4",
+          "{attackCount}": "4",
+          "{otherParams[0]}": "60"
+        }
+      }
+    ]
+  },
+  {
+    "id": 7000100,
+    "name_cn": "水灵·乘风浪",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[水势]+{otherParams[0]}\\n生命及上限+{otherParams[1]}\\n[水灵]：每有1[水势]或[灵气]加2[身法]（最多加{otherParams[2]}）",
+        "template_values": {
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "2",
+          "{otherParams[2]}": "10"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[水势]+{otherParams[0]}\\n生命及上限+{otherParams[1]}\\n[水灵]：每有1[水势]或[灵气]加2[身法]（最多加{otherParams[2]}）",
+        "template_values": {
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "3",
+          "{otherParams[2]}": "10"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[水势]+{otherParams[0]}\\n生命及上限+{otherParams[1]}\\n[水灵]：每有1[水势]或[灵气]加2[身法]（最多加{otherParams[2]}）",
+        "template_values": {
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "4",
+          "{otherParams[2]}": "10"
+        }
+      }
+    ]
+  },
+  {
+    "id": 7000101,
+    "name_cn": "混元化灵",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n卡组中每有1种[五行]就多加1[灵气]\\n[被动]：卡组中视作多{otherParams[0]}种[五行]（不超过5种）",
+        "template_values": {
+          "{anima}": "1",
+          "{otherParams[0]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n卡组中每有1种[五行]就多加1[灵气]\\n[被动]：卡组中视作多{otherParams[0]}种[五行]（不超过5种）",
+        "template_values": {
+          "{anima}": "3",
+          "{otherParams[0]}": "1"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n卡组中每有1种[五行]就多加1[灵气]\\n[被动]：卡组中视作多{otherParams[0]}种[五行]（不超过5种）",
+        "template_values": {
+          "{anima}": "5",
+          "{otherParams[0]}": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": 7000104,
+    "name_cn": "极·水灵阵",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[再次行动]\\n[持续]：每次使用“水灵”牌时加{otherParams[0]}[灵气]",
+        "template_values": {
+          "{otherParams[0]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n[再次行动]\\n[持续]：每次使用“水灵”牌时加{otherParams[0]}[灵气]",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[0]}": "1"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n[再次行动]\\n[持续]：每次使用“水灵”牌时加{otherParams[0]}[灵气]",
+        "template_values": {
+          "{anima}": "4",
+          "{otherParams[0]}": "1"
+        }
+      }
+    ],
+    "art_source_id": 7000029
+  },
+  {
+    "id": 7000105,
+    "name_cn": "极·木灵巡林",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[木刺]+{otherParams[0]}\\n{attack}攻×{attackCount}\\n[木灵]：若已加过生命则[再次行动]",
+        "template_values": {
+          "{otherParams[0]}": "1",
+          "{attack}": "1",
+          "{attackCount}": "2"
+        },
+        "qi_cost": 1
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[木刺]+{otherParams[0]}\\n{attack}攻×{attackCount}\\n[木灵]：若已加过生命则[再次行动]",
+        "template_values": {
+          "{otherParams[0]}": "1",
+          "{attack}": "1",
+          "{attackCount}": "3"
+        },
+        "qi_cost": 1
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[木刺]+{otherParams[0]}\\n{attack}攻×{attackCount}\\n[木灵]：若已加过生命则[再次行动]",
+        "template_values": {
+          "{otherParams[0]}": "1",
+          "{attack}": "1",
+          "{attackCount}": "4"
+        },
+        "qi_cost": 1
+      }
+    ],
+    "art_source_id": 7000028
+  },
+  {
+    "id": 270,
+    "name_cn": "幻•火灵聚炎",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n对方减{otherParams[1]}生命及上限\\n[火灵]：耗{otherParams[0]}[灵气]令下1张火灵或土灵牌连续生效两次",
+        "template_values": {
+          "{anima}": "3",
+          "{otherParams[1]}": "4",
+          "{otherParams[0]}": "4"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n对方减{otherParams[1]}生命及上限\\n[火灵]：耗{otherParams[0]}[灵气]令下1张火灵或土灵牌连续生效两次",
+        "template_values": {
+          "{anima}": "4",
+          "{otherParams[1]}": "6",
+          "{otherParams[0]}": "4"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n对方减{otherParams[1]}生命及上限\\n[火灵]：耗{otherParams[0]}[灵气]令下1张火灵或土灵牌连续生效两次",
+        "template_values": {
+          "{anima}": "5",
+          "{otherParams[1]}": "8",
+          "{otherParams[0]}": "4"
+        }
+      }
+    ],
+    "art_source_id": 7000021
+  },
+  {
+    "id": 272,
+    "name_cn": "幻•木灵复苏",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n回复至自身上回合开始时的生命（最多加{otherParams[1]}）\\n[木灵]：若已加过生命则获得{otherParams[0]}层[加攻]",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[1]}": "15",
+          "{otherParams[0]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n回复至自身上回合开始时的生命（最多加{otherParams[1]}）\\n[木灵]：若已加过生命则获得{otherParams[0]}层[加攻]",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[1]}": "15",
+          "{otherParams[0]}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n回复至自身上回合开始时的生命（最多加{otherParams[1]}）\\n[木灵]：若已加过生命则获得{otherParams[0]}层[加攻]",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[1]}": "15",
+          "{otherParams[0]}": "3"
+        }
+      }
+    ],
+    "art_source_id": 7000018
+  },
+  {
+    "id": 273,
+    "name_cn": "幻•金灵针",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻（[无视防御]）\\n[锋锐]+{otherParams[0]}\\n[金灵]：下次触发[锋锐]后，返还触发的[锋锐]",
+        "template_values": {
+          "{attack}": "6",
+          "{otherParams[0]}": "4"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻（[无视防御]）\\n[锋锐]+{otherParams[0]}\\n[金灵]：下次触发[锋锐]后，返还触发的[锋锐]",
+        "template_values": {
+          "{attack}": "6",
+          "{otherParams[0]}": "7"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻（[无视防御]）\\n[锋锐]+{otherParams[0]}\\n[金灵]：下次触发[锋锐]后，返还触发的[锋锐]",
+        "template_values": {
+          "{attack}": "6",
+          "{otherParams[0]}": "10"
+        }
+      }
+    ],
+    "art_source_id": 7000002
+  },
+  {
+    "id": 317,
+    "name_cn": "幻•土灵阵",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "获得{otherParams[0]}层[水势]\\n[激活土灵]、[激活水灵]\\n[持续]：自身回合结束时，每有1层[水势]加1[防]（最多{otherParams[1]}）",
+        "template_values": {
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "4"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "获得{otherParams[0]}层[水势]\\n[激活土灵]、[激活水灵]\\n[持续]：自身回合结束时，每有1层[水势]加1[防]（最多{otherParams[1]}）",
+        "template_values": {
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "10"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "获得{otherParams[0]}层[水势]\\n[激活土灵]、[激活水灵]\\n[持续]：自身回合结束时，每有1层[水势]加1[防]（最多{otherParams[1]}）",
+        "template_values": {
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "16"
+        }
+      }
+    ],
+    "art_source_id": 7000023
+  },
+  {
+    "id": 315,
+    "name_cn": "幻•火灵印",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n对方减{otherParams[1]}生命及上限，之后的加[锋锐]效果改为每点减对方2生命及上限，持续{otherParams[0]}回合\\n[开局]：[激活火灵]、[激活金灵]",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[1]}": "3",
+          "{otherParams[0]}": "3"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n对方减{otherParams[1]}生命及上限，之后的加[锋锐]效果改为每点减对方2生命及上限，持续{otherParams[0]}回合\\n[开局]：[激活火灵]、[激活金灵]",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[1]}": "6",
+          "{otherParams[0]}": "4"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n对方减{otherParams[1]}生命及上限，之后的加[锋锐]效果改为每点减对方2生命及上限，持续{otherParams[0]}回合\\n[开局]：[激活火灵]、[激活金灵]",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[1]}": "9",
+          "{otherParams[0]}": "5"
+        }
+      }
+    ],
+    "art_source_id": 7000009
+  },
+  {
+    "id": 271,
+    "name_cn": "幻•水灵波澜",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "获得{otherParams[0]}层[水势]\\n自身回合结束时[水势]额外触发一次，持续{otherParams[1]}回合\\n[水灵]：此牌不耗[灵气]",
+        "template_values": {
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "2"
+        },
+        "qi_cost": 2
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "获得{otherParams[0]}层[水势]\\n自身回合结束时[水势]额外触发一次，持续{otherParams[1]}回合\\n[水灵]：此牌不耗[灵气]",
+        "template_values": {
+          "{otherParams[0]}": "4",
+          "{otherParams[1]}": "2"
+        },
+        "qi_cost": 2
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "获得{otherParams[0]}层[水势]\\n自身回合结束时[水势]额外触发一次，持续{otherParams[1]}回合\\n[水灵]：此牌不耗[灵气]",
+        "template_values": {
+          "{otherParams[0]}": "5",
+          "{otherParams[1]}": "2"
+        },
+        "qi_cost": 2
+      }
+    ],
+    "art_source_id": 7000019
+  },
+  {
+    "id": 295,
+    "name_cn": "幻•五行流转",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n若前后两格存在[五行相生]，则[激活]后一格的[五行]并[再次行动]\\n本场战斗每[激活]过一次[五行]加{otherParams[0]}[防]",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[0]}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n若前后两格存在[五行相生]，则[激活]后一格的[五行]并[再次行动]\\n本场战斗每[激活]过一次[五行]加{otherParams[0]}[防]",
+        "template_values": {
+          "{anima}": "3",
+          "{otherParams[0]}": "4"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n若前后两格存在[五行相生]，则[激活]后一格的[五行]并[再次行动]\\n本场战斗每[激活]过一次[五行]加{otherParams[0]}[防]",
+        "template_values": {
+          "{anima}": "4",
+          "{otherParams[0]}": "6"
+        }
+      }
+    ],
+    "art_source_id": 7000067
+  },
+  {
+    "id": 274,
+    "name_cn": "幻•土灵群山",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[防]+{def}\\n自身[防]减半，每减1点造成1[伤害]\\n[土灵]：下回合开始时加回本次减的[防]",
+        "template_values": {
+          "{def}": "10"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[防]+{def}\\n自身[防]减半，每减1点造成1[伤害]\\n[土灵]：下回合开始时加回本次减的[防]",
+        "template_values": {
+          "{def}": "15"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[防]+{def}\\n自身[防]减半，每减1点造成1[伤害]\\n[土灵]：下回合开始时加回本次减的[防]",
+        "template_values": {
+          "{def}": "20"
+        }
+      }
+    ],
+    "art_source_id": 7000024
+  },
+  {
+    "id": 292,
+    "name_cn": "幻•浑天印",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻\\n[灵气]+{anima}\\n[激活]后{otherParams[0]}格的[五行]\\n只要在卡组中，卡组视作多{otherParams[1]}种[五行]（不可叠加）",
+        "template_values": {
+          "{attack}": "5",
+          "{anima}": "1",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻\\n[灵气]+{anima}\\n[激活]后{otherParams[0]}格的[五行]\\n只要在卡组中，卡组视作多{otherParams[1]}种[五行]（不可叠加）",
+        "template_values": {
+          "{attack}": "8",
+          "{anima}": "2",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻\\n[灵气]+{anima}\\n[激活]后{otherParams[0]}格的[五行]\\n只要在卡组中，卡组视作多{otherParams[1]}种[五行]（不可叠加）",
+        "template_values": {
+          "{attack}": "11",
+          "{anima}": "3",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "2"
+        }
+      }
+    ],
+    "art_source_id": 7000014
+  },
+  {
+    "id": 316,
+    "name_cn": "幻•金灵印",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[锋锐]+{otherParams[1]}\\n[激活金灵]、[激活木灵]\\n之后的加生命效果改为加[锋锐]，持续{otherParams[0]}回合",
+        "template_values": {
+          "{otherParams[1]}": "8",
+          "{otherParams[0]}": "3"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[锋锐]+{otherParams[1]}\\n[激活金灵]、[激活木灵]\\n之后的加生命效果改为加[锋锐]，持续{otherParams[0]}回合",
+        "template_values": {
+          "{otherParams[1]}": "12",
+          "{otherParams[0]}": "4"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[锋锐]+{otherParams[1]}\\n[激活金灵]、[激活木灵]\\n之后的加生命效果改为加[锋锐]，持续{otherParams[0]}回合",
+        "template_values": {
+          "{otherParams[1]}": "16",
+          "{otherParams[0]}": "5"
+        }
+      }
+    ],
+    "art_source_id": 7000001
+  },
+  {
+    "id": 132,
+    "name_cn": "天髓葫芦",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n生命及上限+{otherParams[0]}\\n下{otherParams[1]}次使用五行牌后，若该牌的五行已激活则[再次行动]",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n生命及上限+{otherParams[0]}\\n下{otherParams[1]}次使用五行牌后，若该牌的五行已激活则[再次行动]",
+        "template_values": {
+          "{anima}": "3",
+          "{otherParams[0]}": "5",
+          "{otherParams[1]}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n生命及上限+{otherParams[0]}\\n下{otherParams[1]}次使用五行牌后，若该牌的五行已激活则[再次行动]",
+        "template_values": {
+          "{anima}": "4",
+          "{otherParams[0]}": "7",
+          "{otherParams[1]}": "2"
+        }
+      }
+    ],
+    "fusion_ingredients": [
+      13,
+      7000073
+    ]
+  },
+  {
+    "id": 133,
+    "name_cn": "混元逆克阵",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[持续]：每当使用一张[五行]牌时，若[五行克制]后一格的牌，则[激活]后者的[五行]并加{otherParams[0]}[灵气]和{otherParams[1]}[防]",
+        "template_values": {
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "6"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[持续]：每当使用一张[五行]牌时，若[五行克制]后一格的牌，则[激活]后者的[五行]并加{otherParams[0]}[灵气]和{otherParams[1]}[防]",
+        "template_values": {
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "8"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[持续]：每当使用一张[五行]牌时，若[五行克制]后一格的牌，则[激活]后者的[五行]并加{otherParams[0]}[灵气]和{otherParams[1]}[防]",
+        "template_values": {
+          "{otherParams[0]}": "4",
+          "{otherParams[1]}": "10"
+        }
+      }
+    ],
+    "fusion_ingredients": [
+      32,
+      7000058
+    ]
+  },
+  {
+    "id": 134,
+    "name_cn": "木灵•万物生",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "生命及上限+{otherParams[0]}\\n[木灵]：[再次行动]\\n[持续]：自身每回合开始时获得{otherParams[1]}层[加攻]",
+        "template_values": {
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "1"
+        },
+        "qi_cost": 1
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "生命及上限+{otherParams[0]}\\n[木灵]：[再次行动]\\n[持续]：自身每回合开始时获得{otherParams[1]}层[加攻]",
+        "template_values": {
+          "{otherParams[0]}": "9",
+          "{otherParams[1]}": "1"
+        },
+        "qi_cost": 1
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "生命及上限+{otherParams[0]}\\n[木灵]：[再次行动]\\n[持续]：自身每回合开始时获得{otherParams[1]}层[加攻]",
+        "template_values": {
+          "{otherParams[0]}": "15",
+          "{otherParams[1]}": "1"
+        },
+        "qi_cost": 1
+      }
+    ],
+    "fusion_ingredients": [
+      17,
+      7000043
+    ]
+  },
+  {
+    "id": 135,
+    "name_cn": "锟铻熔火环",
+    "phase": 3,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[激活火灵]\\n[激活土灵]\\n[持续]：每次减对方生命上限时多减{otherParams[0]}点；每次加自身[防]时多加{otherParams[0]}点",
+        "template_values": {
+          "{otherParams[0]}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[激活火灵]\\n[激活土灵]\\n[持续]：每次减对方生命上限时多减{otherParams[0]}点；每次加自身[防]时多加{otherParams[0]}点",
+        "template_values": {
+          "{otherParams[0]}": "3"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[激活火灵]\\n[激活土灵]\\n[持续]：每次减对方生命上限时多减{otherParams[0]}点；每次加自身[防]时多加{otherParams[0]}点",
+        "template_values": {
+          "{otherParams[0]}": "4"
+        }
+      }
+    ],
+    "fusion_ingredients": [
+      38,
+      7000009
+    ]
+  },
+  {
+    "id": 136,
+    "name_cn": "水火交融",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "获得{otherParams[0]}层[水势]\\n[激活水灵]\\n[激活火灵]\\n[再次行动]",
+        "template_values": {
+          "{otherParams[0]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "获得{otherParams[0]}层[水势]\\n[激活水灵]\\n[激活火灵]\\n[再次行动]",
+        "template_values": {
+          "{otherParams[0]}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "获得{otherParams[0]}层[水势]\\n[激活水灵]\\n[激活火灵]\\n[再次行动]",
+        "template_values": {
+          "{otherParams[0]}": "3"
+        }
+      }
+    ],
+    "fusion_ingredients": [
+      7000072,
+      7000038
+    ]
+  },
+  {
+    "id": 390,
+    "name_cn": "五行忘忧梦",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "生命及上限+{otherParams[0]}\\n使用五行玉瓶中第一格牌的效果",
+        "template_values": {
+          "{otherParams[0]}": "6"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "生命及上限+{otherParams[0]}\\n使用五行玉瓶中第一格牌的效果",
+        "template_values": {
+          "{otherParams[0]}": "12"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "生命及上限+{otherParams[0]}\\n使用五行玉瓶中第一格牌的效果",
+        "template_values": {
+          "{otherParams[0]}": "18"
+        }
+      }
+    ],
+    "fusion_ingredients": [
+      7000067,
+      218
+    ]
+  },
+  {
+    "id": 55,
+    "name_cn": "野渡之印",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n下1次加生命或灵气后[再次行动]\\n[开局]：[激活水灵]、[激活木灵]",
+        "template_values": {
+          "{anima}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n下1次加生命或灵气后[再次行动]\\n[开局]：[激活水灵]、[激活木灵]",
+        "template_values": {
+          "{anima}": "4"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n下1次加生命或灵气后[再次行动]\\n[开局]：[激活水灵]、[激活木灵]",
+        "template_values": {
+          "{anima}": "6"
+        }
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "name_cn": "熔岩之印",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "减对方{otherParams[0]}生命及上限（自身每有{otherParams[1]}防就多减1点）\\n[开局]：[激活火灵]、[激活土灵]",
+        "template_values": {
+          "{otherParams[0]}": "10",
+          "{otherParams[1]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "减对方{otherParams[0]}生命及上限（自身每有{otherParams[1]}防就多减1点）\\n[开局]：[激活火灵]、[激活土灵]",
+        "template_values": {
+          "{otherParams[0]}": "15",
+          "{otherParams[1]}": "1"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "减对方{otherParams[0]}生命及上限（自身每有{otherParams[1]}防就多减1点）\\n[开局]：[激活火灵]、[激活土灵]",
+        "template_values": {
+          "{otherParams[0]}": "20",
+          "{otherParams[1]}": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "name_cn": "滚石之印",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[防]+{def}（每用过1张牌多{otherParams[0]}）\\n[再次行动]\\n[开局]：[激活土灵]、[激活金灵]",
+        "template_values": {
+          "{def}": "2",
+          "{otherParams[0]}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[防]+{def}（每用过1张牌多{otherParams[0]}）\\n[再次行动]\\n[开局]：[激活土灵]、[激活金灵]",
+        "template_values": {
+          "{def}": "3",
+          "{otherParams[0]}": "3"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[防]+{def}（每用过1张牌多{otherParams[0]}）\\n[再次行动]\\n[开局]：[激活土灵]、[激活金灵]",
+        "template_values": {
+          "{def}": "4",
+          "{otherParams[0]}": "4"
+        }
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "name_cn": "斩浪之印",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n每有1点[灵气]加{otherParams[0]}[锋锐]\\n[开局]：[激活金灵]、[激活水灵]",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[0]}": "3"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n每有1点[灵气]加{otherParams[0]}[锋锐]\\n[开局]：[激活金灵]、[激活水灵]",
+        "template_values": {
+          "{anima}": "3",
+          "{otherParams[0]}": "3"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n每有1点[灵气]加{otherParams[0]}[锋锐]\\n[开局]：[激活金灵]、[激活水灵]",
+        "template_values": {
+          "{anima}": "4",
+          "{otherParams[0]}": "3"
+        }
+      }
+    ]
+  },
+  {
+    "id": 10000097,
+    "name_cn": "金刚捣硾",
+    "phase": 2,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻\\n[防]+{def}\\n最多耗{otherParams[0]}[灵气]：每耗1[灵气]此牌多{otherParams[1]}攻和{otherParams[2]}[防]",
+        "template_values": {
+          "{attack}": "7",
+          "{def}": "4",
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "3",
+          "{otherParams[2]}": "3"
+        },
+        "hp_cost": 4
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻\\n[防]+{def}\\n最多耗{otherParams[0]}[灵气]：每耗1[灵气]此牌多{otherParams[1]}攻和{otherParams[2]}[防]",
+        "template_values": {
+          "{attack}": "11",
+          "{def}": "4",
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "3",
+          "{otherParams[2]}": "3"
+        },
+        "hp_cost": 4
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻\\n[防]+{def}\\n最多耗{otherParams[0]}[灵气]：每耗1[灵气]此牌多{otherParams[1]}攻和{otherParams[2]}[防]",
+        "template_values": {
+          "{attack}": "15",
+          "{def}": "4",
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "3",
+          "{otherParams[2]}": "3"
+        },
+        "hp_cost": 4
+      }
+    ]
+  },
+  {
+    "id": 10000090,
+    "name_cn": "醉拳架势",
+    "phase": 3,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[体魄]+{physique}\\n生命+{otherParams[0]}\\n获得{otherParams[1]}层[破绽]\\n[持续]：每失去1层[破绽]就获得{otherParams[2]}层[加攻]",
+        "template_values": {
+          "{physique}": "3",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "2",
+          "{otherParams[2]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[体魄]+{physique}\\n生命+{otherParams[0]}\\n获得{otherParams[1]}层[破绽]\\n[持续]：每失去1层[破绽]就获得{otherParams[2]}层[加攻]",
+        "template_values": {
+          "{physique}": "4",
+          "{otherParams[0]}": "5",
+          "{otherParams[1]}": "3",
+          "{otherParams[2]}": "1"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[体魄]+{physique}\\n生命+{otherParams[0]}\\n获得{otherParams[1]}层[破绽]\\n[持续]：每失去1层[破绽]就获得{otherParams[2]}层[加攻]",
+        "template_values": {
+          "{physique}": "5",
+          "{otherParams[0]}": "7",
+          "{otherParams[1]}": "4",
+          "{otherParams[2]}": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": 10000091,
+    "name_cn": "玄灵愈体",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n获得{otherParams[0]}层[内伤]\\n自身每有1[灵气]或1层[负面状态]就加{otherParams[1]}生命及上限",
+        "template_values": {
+          "{anima}": "3",
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n获得{otherParams[0]}层[内伤]\\n自身每有1[灵气]或1层[负面状态]就加{otherParams[1]}生命及上限",
+        "template_values": {
+          "{anima}": "5",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "1"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n获得{otherParams[0]}层[内伤]\\n自身每有1[灵气]或1层[负面状态]就加{otherParams[1]}生命及上限",
+        "template_values": {
+          "{anima}": "7",
+          "{otherParams[0]}": "4",
+          "{otherParams[1]}": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": 10000092,
+    "name_cn": "凌空飞扫",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻（每有1[灵气]多{otherParams[0]}攻）\\n最多耗{otherParams[1]}[灵气]：每耗1点加{otherParams[2]}[身法]并减{otherParams[3]}层[负面状态]",
+        "template_values": {
+          "{attack}": "5",
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "2",
+          "{otherParams[2]}": "5",
+          "{otherParams[3]}": "1"
+        },
+        "hp_cost": 6
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻（每有1[灵气]多{otherParams[0]}攻）\\n最多耗{otherParams[1]}[灵气]：每耗1点加{otherParams[2]}[身法]并减{otherParams[3]}层[负面状态]",
+        "template_values": {
+          "{attack}": "10",
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "2",
+          "{otherParams[2]}": "5",
+          "{otherParams[3]}": "1"
+        },
+        "hp_cost": 6
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻（每有1[灵气]多{otherParams[0]}攻）\\n最多耗{otherParams[1]}[灵气]：每耗1点加{otherParams[2]}[身法]并减{otherParams[3]}层[负面状态]",
+        "template_values": {
+          "{attack}": "15",
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "2",
+          "{otherParams[2]}": "5",
+          "{otherParams[3]}": "1"
+        },
+        "hp_cost": 6
+      }
+    ]
+  },
+  {
+    "id": 10000093,
+    "name_cn": "崩拳·碎骨",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "此牌[耗生命]时向对方造成等量[伤害]（下一张[崩拳]也附加此效果）\\n{attack}攻×{attackCount}\\n[碎防]",
+        "template_values": {
+          "{attack}": "4",
+          "{attackCount}": "2"
+        },
+        "hp_cost": 8
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "此牌[耗生命]时向对方造成等量[伤害]（下一张[崩拳]也附加此效果）\\n{attack}攻×{attackCount}\\n[碎防]",
+        "template_values": {
+          "{attack}": "4",
+          "{attackCount}": "3"
+        },
+        "hp_cost": 8
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "此牌[耗生命]时向对方造成等量[伤害]（下一张[崩拳]也附加此效果）\\n{attack}攻×{attackCount}\\n[碎防]",
+        "template_values": {
+          "{attack}": "4",
+          "{attackCount}": "4"
+        },
+        "hp_cost": 8
+      }
+    ]
+  },
+  {
+    "id": 10000094,
+    "name_cn": "万魂破军",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "每用过1次[耗生命]的牌就加{otherParams[0]}[气势]\\n{attack}攻（每有1[气势]多1攻）",
+        "template_values": {
+          "{otherParams[0]}": "1",
+          "{attack}": "10"
+        },
+        "hp_cost": 8
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "每用过1次[耗生命]的牌就加{otherParams[0]}[气势]\\n{attack}攻（每有1[气势]多1攻）",
+        "template_values": {
+          "{otherParams[0]}": "1",
+          "{attack}": "16"
+        },
+        "hp_cost": 8
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "每用过1次[耗生命]的牌就加{otherParams[0]}[气势]\\n{attack}攻（每有1[气势]多1攻）",
+        "template_values": {
+          "{otherParams[0]}": "1",
+          "{attack}": "22"
+        },
+        "hp_cost": 8
+      }
+    ]
+  },
+  {
+    "id": 10000095,
+    "name_cn": "血影遁术",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "生命+{otherParams[0]}\\n[身法]+{otherParams[1]}\\n下1次使用[耗生命]的牌时每耗1生命就加1[身法]",
+        "template_values": {
+          "{otherParams[0]}": "4",
+          "{otherParams[1]}": "8"
+        },
+        "hp_cost": 8
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "生命+{otherParams[0]}\\n[身法]+{otherParams[1]}\\n下1次使用[耗生命]的牌时每耗1生命就加1[身法]",
+        "template_values": {
+          "{otherParams[0]}": "10",
+          "{otherParams[1]}": "8"
+        },
+        "hp_cost": 8
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "生命+{otherParams[0]}\\n[身法]+{otherParams[1]}\\n下1次使用[耗生命]的牌时每耗1生命就加1[身法]",
+        "template_values": {
+          "{otherParams[0]}": "16",
+          "{otherParams[1]}": "8"
+        },
+        "hp_cost": 8
+      }
+    ]
+  },
+  {
+    "id": 10000096,
+    "name_cn": "锻灵指",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n[灵气]+{anima}\\n[体魄]+{physique}（每有{otherParams[0]}[灵气]多加1[体魄]）",
+        "template_values": {
+          "{attack}": "1",
+          "{attackCount}": "3",
+          "{anima}": "2",
+          "{physique}": "2",
+          "{otherParams[0]}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n[灵气]+{anima}\\n[体魄]+{physique}（每有{otherParams[0]}[灵气]多加1[体魄]）",
+        "template_values": {
+          "{attack}": "1",
+          "{attackCount}": "4",
+          "{anima}": "3",
+          "{physique}": "3",
+          "{otherParams[0]}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n[灵气]+{anima}\\n[体魄]+{physique}（每有{otherParams[0]}[灵气]多加1[体魄]）",
+        "template_values": {
+          "{attack}": "1",
+          "{attackCount}": "5",
+          "{anima}": "4",
+          "{physique}": "4",
+          "{otherParams[0]}": "2"
+        }
+      }
+    ]
+  },
+  {
+    "id": 10000098,
+    "name_cn": "极·崩天步",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[身法]+{otherParams[0]}\\n[持续]：所有牌都可算作“崩拳”",
+        "template_values": {
+          "{otherParams[0]}": "10"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n[身法]+{otherParams[0]}\\n[持续]：所有牌都可算作“崩拳”",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[0]}": "10"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n[身法]+{otherParams[0]}\\n[持续]：所有牌都可算作“崩拳”",
+        "template_values": {
+          "{anima}": "4",
+          "{otherParams[0]}": "10"
+        }
+      }
+    ],
+    "art_source_id": 10000026
+  },
+  {
+    "id": 10000099,
+    "name_cn": "极·迎风掌",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n每有{otherParams[0]}[体魄]多1攻",
+        "template_values": {
+          "{attack}": "4",
+          "{attackCount}": "2",
+          "{otherParams[0]}": "6"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[体魄]+{physique}\\n{attack}攻×{attackCount}\\n每有{otherParams[0]}[体魄]多1攻",
+        "template_values": {
+          "{physique}": "3",
+          "{attack}": "4",
+          "{attackCount}": "2",
+          "{otherParams[0]}": "6"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[体魄]+{physique}\\n{attack}攻×{attackCount}\\n每有{otherParams[0]}[体魄]多1攻",
+        "template_values": {
+          "{physique}": "6",
+          "{attack}": "4",
+          "{attackCount}": "2",
+          "{otherParams[0]}": "6"
+        }
+      }
+    ],
+    "art_source_id": 10000028
+  },
+  {
+    "id": 275,
+    "name_cn": "幻•血气方刚",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n本场战斗每加过{otherParams[0]}生命就追加1次攻击",
+        "template_values": {
+          "{attack}": "6",
+          "{attackCount}": "2",
+          "{otherParams[0]}": "24"
+        },
+        "hp_cost": 2
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n本场战斗每加过{otherParams[0]}生命就追加1次攻击",
+        "template_values": {
+          "{attack}": "6",
+          "{attackCount}": "2",
+          "{otherParams[0]}": "18"
+        },
+        "hp_cost": 2
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n本场战斗每加过{otherParams[0]}生命就追加1次攻击",
+        "template_values": {
+          "{attack}": "6",
+          "{attackCount}": "2",
+          "{otherParams[0]}": "14"
+        },
+        "hp_cost": 2
+      }
+    ],
+    "art_source_id": 10000012
+  },
+  {
+    "id": 277,
+    "name_cn": "幻•锻骨",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[持续]：加[体魄]时若超过上限，每点加{otherParams[0]}生命并造成{otherParams[1]}[伤害]",
+        "template_values": {
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[持续]：加[体魄]时若超过上限，每点加{otherParams[0]}生命并造成{otherParams[1]}[伤害]",
+        "template_values": {
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "1"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[持续]：加[体魄]时若超过上限，每点加{otherParams[0]}生命并造成{otherParams[1]}[伤害]",
+        "template_values": {
+          "{otherParams[0]}": "4",
+          "{otherParams[1]}": "1"
+        }
+      }
+    ],
+    "art_source_id": 10000027
+  },
+  {
+    "id": 278,
+    "name_cn": "幻•气沉丹田",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n生命+{otherParams[0]}\\n使用下{otherParams[1]}张牌攻击时，每点[灵气]增加10%的攻",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[0]}": "6",
+          "{otherParams[1]}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n生命+{otherParams[0]}\\n使用下{otherParams[1]}张牌攻击时，每点[灵气]增加10%的攻",
+        "template_values": {
+          "{anima}": "3",
+          "{otherParams[0]}": "7",
+          "{otherParams[1]}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n生命+{otherParams[0]}\\n使用下{otherParams[1]}张牌攻击时，每点[灵气]增加10%的攻",
+        "template_values": {
+          "{anima}": "3",
+          "{otherParams[0]}": "7",
+          "{otherParams[1]}": "3"
+        }
+      }
+    ],
+    "art_source_id": 10000032
+  },
+  {
+    "id": 291,
+    "name_cn": "幻•岿然不动",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[氣勢]+{otherParams[0]}\\n[防]+{def}\\n每有1[氣勢]加{otherParams[1]}[防]\\n每有1[身法]加{otherParams[2]}生命\\n[身法]減至5",
+        "template_values": {
+          "{otherParams[0]}": "2",
+          "{def}": "4",
+          "{otherParams[1]}": "2",
+          "{otherParams[2]}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[氣勢]+{otherParams[0]}\\n[防]+{def}\\n每有1[氣勢]加{otherParams[1]}[防]\\n每有1[身法]加{otherParams[2]}生命\\n[身法]減至5",
+        "template_values": {
+          "{otherParams[0]}": "2",
+          "{def}": "4",
+          "{otherParams[1]}": "3",
+          "{otherParams[2]}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[氣勢]+{otherParams[0]}\\n[防]+{def}\\n每有1[氣勢]加{otherParams[1]}[防]\\n每有1[身法]加{otherParams[2]}生命\\n[身法]減至5",
+        "template_values": {
+          "{otherParams[0]}": "2",
+          "{def}": "4",
+          "{otherParams[1]}": "4",
+          "{otherParams[2]}": "2"
+        }
+      }
+    ],
+    "art_source_id": 10000021
+  },
+  {
+    "id": 318,
+    "name_cn": "幻•死缠烂打",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[体魄]+{physique}\\n双方各加{otherParams[0]}层[内伤]\\n每有{otherParams[1]}点[体魄]，就令双方下回合开始时的[内伤]额外生效一次",
+        "template_values": {
+          "{physique}": "2",
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "30"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[体魄]+{physique}\\n双方各加{otherParams[0]}层[内伤]\\n每有{otherParams[1]}点[体魄]，就令双方下回合开始时的[内伤]额外生效一次",
+        "template_values": {
+          "{physique}": "4",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "30"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[体魄]+{physique}\\n双方各加{otherParams[0]}层[内伤]\\n每有{otherParams[1]}点[体魄]，就令双方下回合开始时的[内伤]额外生效一次",
+        "template_values": {
+          "{physique}": "6",
+          "{otherParams[0]}": "4",
+          "{otherParams[1]}": "30"
+        }
+      }
+    ],
+    "art_source_id": 10000054
+  },
+  {
+    "id": 296,
+    "name_cn": "幻•双鬼拍门",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n双方各加{otherParams[0]}层[内伤]、{otherParams[1]}层[外伤]和{otherParams[2]}层[虚弱]",
+        "template_values": {
+          "{attack}": "6",
+          "{attackCount}": "2",
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "1",
+          "{otherParams[2]}": "1"
+        },
+        "qi_cost": 1
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n双方各加{otherParams[0]}层[内伤]、{otherParams[1]}层[外伤]和{otherParams[2]}层[虚弱]",
+        "template_values": {
+          "{attack}": "8",
+          "{attackCount}": "2",
+          "{otherParams[0]}": "4",
+          "{otherParams[1]}": "1",
+          "{otherParams[2]}": "1"
+        },
+        "qi_cost": 1
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n双方各加{otherParams[0]}层[内伤]、{otherParams[1]}层[外伤]和{otherParams[2]}层[虚弱]",
+        "template_values": {
+          "{attack}": "10",
+          "{attackCount}": "2",
+          "{otherParams[0]}": "6",
+          "{otherParams[1]}": "1",
+          "{otherParams[2]}": "1"
+        },
+        "qi_cost": 1
+      }
+    ],
+    "art_source_id": 10000030
+  },
+  {
+    "id": 297,
+    "name_cn": "幻•罗刹扑",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n将对方所有[负面状态]转为[外伤]\\n{attack}攻\\n下{otherParams[0]}次攻击[无视防御]",
+        "template_values": {
+          "{anima}": "1",
+          "{attack}": "12",
+          "{otherParams[0]}": "3"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n将对方所有[负面状态]转为[外伤]\\n{attack}攻\\n下{otherParams[0]}次攻击[无视防御]",
+        "template_values": {
+          "{anima}": "1",
+          "{attack}": "18",
+          "{otherParams[0]}": "4"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n将对方所有[负面状态]转为[外伤]\\n{attack}攻\\n下{otherParams[0]}次攻击[无视防御]",
+        "template_values": {
+          "{anima}": "1",
+          "{attack}": "24",
+          "{otherParams[0]}": "5"
+        }
+      }
+    ],
+    "art_source_id": 10000008
+  },
+  {
+    "id": 308,
+    "name_cn": "幻•崩拳戳",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻\\n每有{otherParams[0]}点[体魄]，下张崩拳多1攻",
+        "template_values": {
+          "{attack}": "12",
+          "{otherParams[0]}": "8"
+        },
+        "hp_cost": 3
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻\\n每有{otherParams[0]}点[体魄]，下张崩拳多1攻",
+        "template_values": {
+          "{attack}": "12",
+          "{otherParams[0]}": "7"
+        },
+        "hp_cost": 3
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻\\n每有{otherParams[0]}点[体魄]，下张崩拳多1攻",
+        "template_values": {
+          "{attack}": "12",
+          "{otherParams[0]}": "6"
+        },
+        "hp_cost": 3
+      }
+    ],
+    "art_source_id": 10000001
+  },
+  {
+    "id": 310,
+    "name_cn": "幻•浩然正气",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n[身法]+{otherParams[2]}\\n自身减最多{otherParams[0]}层[负面状态]，每减1层再加{otherParams[1]}[身法]和1[气势]",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[2]}": "6",
+          "{otherParams[0]}": "4",
+          "{otherParams[1]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n[身法]+{otherParams[2]}\\n自身减最多{otherParams[0]}层[负面状态]，每减1层再加{otherParams[1]}[身法]和1[气势]",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[2]}": "6",
+          "{otherParams[0]}": "6",
+          "{otherParams[1]}": "1"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n[身法]+{otherParams[2]}\\n自身减最多{otherParams[0]}层[负面状态]，每减1层再加{otherParams[1]}[身法]和1[气势]",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[2]}": "6",
+          "{otherParams[0]}": "8",
+          "{otherParams[1]}": "1"
+        }
+      }
+    ],
+    "art_source_id": 10000023
+  },
+  {
+    "id": 319,
+    "name_cn": "幻•崩拳缠",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "施加{otherParams[0]}层[外伤]\\n{attack}攻×{attackCount}\\n使用下张崩拳后，追加{attack}攻×2",
+        "template_values": {
+          "{otherParams[0]}": "2",
+          "{attack}": "3",
+          "{attackCount}": "2"
+        },
+        "hp_cost": 4
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "施加{otherParams[0]}层[外伤]\\n{attack}攻×{attackCount}\\n使用下张崩拳后，追加{attack}攻×2",
+        "template_values": {
+          "{otherParams[0]}": "2",
+          "{attack}": "3",
+          "{attackCount}": "3"
+        },
+        "hp_cost": 4
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "施加{otherParams[0]}层[外伤]\\n{attack}攻×{attackCount}\\n使用下张崩拳后，追加{attack}攻×2",
+        "template_values": {
+          "{otherParams[0]}": "2",
+          "{attack}": "3",
+          "{attackCount}": "4"
+        },
+        "hp_cost": 4
+      }
+    ],
+    "art_source_id": 10000014
+  },
+  {
+    "id": 137,
+    "name_cn": "浩荡不息",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻\\n[体魄]+{physique}\\n生命+{otherParams[0]}\\n[气势]+{otherParams[1]}\\n[身法]+{otherParams[2]}",
+        "template_values": {
+          "{attack}": "9",
+          "{physique}": "3",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "3",
+          "{otherParams[2]}": "10"
+        },
+        "qi_cost": 2
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻\\n[体魄]+{physique}\\n生命+{otherParams[0]}\\n[气势]+{otherParams[1]}\\n[身法]+{otherParams[2]}",
+        "template_values": {
+          "{attack}": "9",
+          "{physique}": "4",
+          "{otherParams[0]}": "4",
+          "{otherParams[1]}": "4",
+          "{otherParams[2]}": "10"
+        },
+        "qi_cost": 2
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻\\n[体魄]+{physique}\\n生命+{otherParams[0]}\\n[气势]+{otherParams[1]}\\n[身法]+{otherParams[2]}",
+        "template_values": {
+          "{attack}": "9",
+          "{physique}": "5",
+          "{otherParams[0]}": "5",
+          "{otherParams[1]}": "5",
+          "{otherParams[2]}": "10"
+        },
+        "qi_cost": 2
+      }
+    ],
+    "fusion_ingredients": [
+      45,
+      10000052
+    ]
+  },
+  {
+    "id": 138,
+    "name_cn": "玄心盛气掌",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "每有1种不同的[负面状态]加{otherParams[0]}[气势]\\n{attack}攻（每有1[气势]多{otherParams[1]}攻）",
+        "template_values": {
+          "{otherParams[0]}": "2",
+          "{attack}": "8",
+          "{otherParams[1]}": "2"
+        },
+        "hp_cost": 2
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "每有1种不同的[负面状态]加{otherParams[0]}[气势]\\n{attack}攻（每有1[气势]多{otherParams[1]}攻）",
+        "template_values": {
+          "{otherParams[0]}": "3",
+          "{attack}": "10",
+          "{otherParams[1]}": "2"
+        },
+        "hp_cost": 2
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "每有1种不同的[负面状态]加{otherParams[0]}[气势]\\n{attack}攻（每有1[气势]多{otherParams[1]}攻）",
+        "template_values": {
+          "{otherParams[0]}": "4",
+          "{attack}": "12",
+          "{otherParams[1]}": "2"
+        },
+        "hp_cost": 2
+      }
+    ],
+    "fusion_ingredients": [
+      70,
+      10000068
+    ]
+  },
+  {
+    "id": 139,
+    "name_cn": "冥夜迷踪步",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[冥]+{otherParams[0]}\\n[身法]+{otherParams[1]}\\n[持续]：每回合首次失去生命时加1[身法]和1[灵气]",
+        "template_values": {
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[冥]+{otherParams[0]}\\n[身法]+{otherParams[1]}\\n[持续]：每回合首次失去生命时加1[身法]和1[灵气]",
+        "template_values": {
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "3"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[冥]+{otherParams[0]}\\n[身法]+{otherParams[1]}\\n[持续]：每回合首次失去生命时加1[身法]和1[灵气]",
+        "template_values": {
+          "{otherParams[0]}": "4",
+          "{otherParams[1]}": "4"
+        }
+      }
+    ],
+    "fusion_ingredients": [
+      74,
+      10000050
+    ]
+  },
+  {
+    "id": 140,
+    "name_cn": "崩拳•返玄",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "生命+{otherParams[0]}\\n获得{otherParams[1]}层[内伤]和[恢复]\\n[持续]：使用崩拳时加回所耗生命",
+        "template_values": {
+          "{otherParams[0]}": "12",
+          "{otherParams[1]}": "3"
+        },
+        "hp_cost": 6
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "生命+{otherParams[0]}\\n获得{otherParams[1]}层[内伤]和[恢复]\\n[持续]：使用崩拳时加回所耗生命",
+        "template_values": {
+          "{otherParams[0]}": "16",
+          "{otherParams[1]}": "4"
+        },
+        "hp_cost": 6
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "生命+{otherParams[0]}\\n获得{otherParams[1]}层[内伤]和[恢复]\\n[持续]：使用崩拳时加回所耗生命",
+        "template_values": {
+          "{otherParams[0]}": "20",
+          "{otherParams[1]}": "5"
+        },
+        "hp_cost": 6
+      }
+    ],
+    "fusion_ingredients": [
+      81,
+      10000003
+    ]
+  },
+  {
+    "id": 391,
+    "name_cn": "闪转腾挪",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[身法]+{otherParams[0]}\\n[被动]（不可叠加）：每加1[身法]时，额外加1[防]",
+        "template_values": {
+          "{otherParams[0]}": "8"
+        },
+        "hp_cost": 4
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[身法]+{otherParams[0]}\\n[被动]（不可叠加）：每加1[身法]时，额外加1[防]",
+        "template_values": {
+          "{otherParams[0]}": "10"
+        },
+        "hp_cost": 4
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[身法]+{otherParams[0]}\\n[被动]（不可叠加）：每加1[身法]时，额外加1[防]",
+        "template_values": {
+          "{otherParams[0]}": "12"
+        },
+        "hp_cost": 4
+      }
+    ],
+    "fusion_ingredients": [
+      222,
+      10000045
+    ]
+  },
+  {
+    "id": 392,
+    "name_cn": "冯虚御风",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "生命+{otherParams[0]}\\n[身法]+{otherParams[1]}\\n[持续]：每加1[身法]时，向对方造成1[伤害]",
+        "template_values": {
+          "{otherParams[0]}": "5",
+          "{otherParams[1]}": "5"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "生命+{otherParams[0]}\\n[身法]+{otherParams[1]}\\n[持续]：每加1[身法]时，向对方造成1[伤害]",
+        "template_values": {
+          "{otherParams[0]}": "10",
+          "{otherParams[1]}": "5"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "生命+{otherParams[0]}\\n[身法]+{otherParams[1]}\\n[持续]：每加1[身法]时，向对方造成1[伤害]",
+        "template_values": {
+          "{otherParams[0]}": "15",
+          "{otherParams[1]}": "5"
+        }
+      }
+    ],
+    "fusion_ingredients": [
+      383,
+      10000050
+    ]
+  },
+  {
+    "id": 336,
+    "name_cn": "玄灵附身",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n获得{otherParams[0]}层[加攻]和{otherParams[0]}层[减攻]\\n自身每有1层[负面状态]加1[身法]",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[0]}": "3"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n获得{otherParams[0]}层[加攻]和{otherParams[0]}层[减攻]\\n自身每有1层[负面状态]加1[身法]",
+        "template_values": {
+          "{anima}": "3",
+          "{otherParams[0]}": "4"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n获得{otherParams[0]}层[加攻]和{otherParams[0]}层[减攻]\\n自身每有1层[负面状态]加1[身法]",
+        "template_values": {
+          "{anima}": "4",
+          "{otherParams[0]}": "5"
+        }
+      }
+    ]
+  },
+  {
+    "id": 337,
+    "name_cn": "崩拳•伏虎",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻\\n[防]+{def}\\n每有1[防]向对方造成1[伤害]（使用下1张崩拳后也附加此效果）",
+        "template_values": {
+          "{attack}": "5",
+          "{def}": "5"
+        },
+        "hp_cost": 5
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻\\n[防]+{def}\\n每有1[防]向对方造成1[伤害]（使用下1张崩拳后也附加此效果）",
+        "template_values": {
+          "{attack}": "7",
+          "{def}": "7"
+        },
+        "hp_cost": 5
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻\\n[防]+{def}\\n每有1[防]向对方造成1[伤害]（使用下1张崩拳后也附加此效果）",
+        "template_values": {
+          "{attack}": "9",
+          "{def}": "9"
+        },
+        "hp_cost": 5
+      }
+    ]
+  },
+  {
+    "id": 338,
+    "name_cn": "瞬影击",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[身法]+{otherParams[0]}\\n[跳过]自身下{otherParams[1]}张[耗生命]的牌，此法[跳过]的牌仍会[耗生命]，每耗1生命向对方造成{otherParams[2]}[伤害]",
+        "template_values": {
+          "{otherParams[0]}": "8",
+          "{otherParams[1]}": "2",
+          "{otherParams[2]}": "2"
+        },
+        "hp_cost": 2
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[身法]+{otherParams[0]}\\n[跳过]自身下{otherParams[1]}张[耗生命]的牌，此法[跳过]的牌仍会[耗生命]，每耗1生命向对方造成{otherParams[2]}[伤害]",
+        "template_values": {
+          "{otherParams[0]}": "8",
+          "{otherParams[1]}": "3",
+          "{otherParams[2]}": "2"
+        },
+        "hp_cost": 3
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[身法]+{otherParams[0]}\\n[跳过]自身下{otherParams[1]}张[耗生命]的牌，此法[跳过]的牌仍会[耗生命]，每耗1生命向对方造成{otherParams[2]}[伤害]",
+        "template_values": {
+          "{otherParams[0]}": "8",
+          "{otherParams[1]}": "4",
+          "{otherParams[2]}": "2"
+        },
+        "hp_cost": 4
+      }
+    ]
+  },
+  {
+    "id": 339,
+    "name_cn": "逍遥无影拳",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻×{attackCount}（卡组中每有1张普通攻击就多攻击1次）\\n此牌每次攻击时加{otherParams[0]}[体魄]和{otherParams[1]}[身法]",
+        "template_values": {
+          "{attack}": "2",
+          "{attackCount}": "4",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻×{attackCount}（卡组中每有1张普通攻击就多攻击1次）\\n此牌每次攻击时加{otherParams[0]}[体魄]和{otherParams[1]}[身法]",
+        "template_values": {
+          "{attack}": "2",
+          "{attackCount}": "5",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "1"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻×{attackCount}（卡组中每有1张普通攻击就多攻击1次）\\n此牌每次攻击时加{otherParams[0]}[体魄]和{otherParams[1]}[身法]",
+        "template_values": {
+          "{attack}": "2",
+          "{attackCount}": "6",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "name_cn": "龙",
+    "phase": 6,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "获得{otherParams[0]}层[加攻]\\n获得{otherParams[1]}层[护体]\\n[持续]：[再次行动]不会被其他效果阻止，且每回合触发次数上限+{otherParams[2]}",
+        "template_values": {
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "2",
+          "{otherParams[2]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "获得{otherParams[0]}层[加攻]\\n获得{otherParams[1]}层[护体]\\n[持续]：[再次行动]不会被其他效果阻止，且每回合触发次数上限+{otherParams[2]}",
+        "template_values": {
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "3",
+          "{otherParams[2]}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "获得{otherParams[0]}层[加攻]\\n获得{otherParams[1]}层[护体]\\n[持续]：[再次行动]不会被其他效果阻止，且每回合触发次数上限+{otherParams[2]}",
+        "template_values": {
+          "{otherParams[0]}": "4",
+          "{otherParams[1]}": "4",
+          "{otherParams[2]}": "3"
+        }
+      }
+    ]
+  },
+  {
+    "id": 258,
+    "name_cn": "水灵•悠然",
+    "phase": 3,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n生命及上限+{otherParams[0]}\\n若已激活任意[五行]则[再次行动]",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[0]}": "3"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n生命及上限+{otherParams[0]}\\n若已激活任意[五行]则[再次行动]",
+        "template_values": {
+          "{anima}": "3",
+          "{otherParams[0]}": "6"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n生命及上限+{otherParams[0]}\\n若已激活任意[五行]则[再次行动]",
+        "template_values": {
+          "{anima}": "4",
+          "{otherParams[0]}": "9"
+        }
+      }
+    ],
+    "art_source_id": 13
+  },
+  {
+    "id": 331,
+    "name_cn": "云剑•潜龙",
+    "phase": 2,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻\\n此牌及下{otherParams[0]}张使用的牌同时视作云剑和狂剑\\n[连云]：改为下{otherParams[1]}张",
+        "template_values": {
+          "{attack}": "7",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻\\n此牌及下{otherParams[0]}张使用的牌同时视作云剑和狂剑\\n[连云]：改为下{otherParams[1]}张",
+        "template_values": {
+          "{attack}": "11",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "3"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻\\n此牌及下{otherParams[0]}张使用的牌同时视作云剑和狂剑\\n[连云]：改为下{otherParams[1]}张",
+        "template_values": {
+          "{attack}": "15",
+          "{otherParams[0]}": "1",
+          "{otherParams[1]}": "4"
+        }
+      }
+    ]
+  },
+  {
+    "id": 332,
+    "name_cn": "玲珑剑阵",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[灵气]+{anima}\\n每有1[灵气]向对方造成{otherParams[0]}[伤害]\\n每有1[灵气]下回合开始时加{otherParams[1]}[防]",
+        "template_values": {
+          "{anima}": "2",
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "1"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[灵气]+{anima}\\n每有1[灵气]向对方造成{otherParams[0]}[伤害]\\n每有1[灵气]下回合开始时加{otherParams[1]}[防]",
+        "template_values": {
+          "{anima}": "3",
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "1"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[灵气]+{anima}\\n每有1[灵气]向对方造成{otherParams[0]}[伤害]\\n每有1[灵气]下回合开始时加{otherParams[1]}[防]",
+        "template_values": {
+          "{anima}": "4",
+          "{otherParams[0]}": "2",
+          "{otherParams[1]}": "1"
+        }
+      }
+    ]
+  },
+  {
+    "id": 371,
+    "name_cn": "定风波",
+    "phase": 3,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻×{attackCount}（每[激活]过1次[五行]，再多攻击1次）",
+        "template_values": {
+          "{attack}": "3",
+          "{attackCount}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻×{attackCount}（每[激活]过1次[五行]，再多攻击1次）",
+        "template_values": {
+          "{attack}": "4",
+          "{attackCount}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻×{attackCount}（每[激活]过1次[五行]，再多攻击1次）",
+        "template_values": {
+          "{attack}": "5",
+          "{attackCount}": "2"
+        }
+      }
+    ]
+  },
+  {
+    "id": 373,
+    "name_cn": "木灵斩",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻（每加过1次生命多{otherParams[0]}攻）\\n[木灵]：每[击伤]{otherParams[1]}生命加1生命",
+        "template_values": {
+          "{attack}": "10",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "3"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻（每加过1次生命多{otherParams[0]}攻）\\n[木灵]：每[击伤]{otherParams[1]}生命加1生命",
+        "template_values": {
+          "{attack}": "16",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "3"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻（每加过1次生命多{otherParams[0]}攻）\\n[木灵]：每[击伤]{otherParams[1]}生命加1生命",
+        "template_values": {
+          "{attack}": "22",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "3"
+        }
+      }
+    ]
+  },
+  {
+    "id": 374,
+    "name_cn": "火灵斩",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻（每减过对方1次生命上限多{otherParams[0]}攻）\\n[火灵]：每[击伤]{otherParams[1]}生命，减对方1生命及上限",
+        "template_values": {
+          "{attack}": "10",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "5"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻（每减过对方1次生命上限多{otherParams[0]}攻）\\n[火灵]：每[击伤]{otherParams[1]}生命，减对方1生命及上限",
+        "template_values": {
+          "{attack}": "16",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "5"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻（每减过对方1次生命上限多{otherParams[0]}攻）\\n[火灵]：每[击伤]{otherParams[1]}生命，减对方1生命及上限",
+        "template_values": {
+          "{attack}": "22",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "5"
+        }
+      }
+    ]
+  },
+  {
+    "id": 375,
+    "name_cn": "土灵斩",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻（每加过1次防多{otherParams[0]}攻）\\n[土灵]：每[击伤]{otherParams[1]}生命加1防",
+        "template_values": {
+          "{attack}": "10",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "3"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻（每加过1次防多{otherParams[0]}攻）\\n[土灵]：每[击伤]{otherParams[1]}生命加1防",
+        "template_values": {
+          "{attack}": "16",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "3"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻（每加过1次防多{otherParams[0]}攻）\\n[土灵]：每[击伤]{otherParams[1]}生命加1防",
+        "template_values": {
+          "{attack}": "22",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "3"
+        }
+      }
+    ]
+  },
+  {
+    "id": 376,
+    "name_cn": "金灵斩",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻（每加过1次[锋锐]多{otherParams[0]}攻）\\n[金灵]：每[击伤]{otherParams[1]}生命加1[锋锐]",
+        "template_values": {
+          "{attack}": "10",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "4"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻（每加过1次[锋锐]多{otherParams[0]}攻）\\n[金灵]：每[击伤]{otherParams[1]}生命加1[锋锐]",
+        "template_values": {
+          "{attack}": "16",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "4"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻（每加过1次[锋锐]多{otherParams[0]}攻）\\n[金灵]：每[击伤]{otherParams[1]}生命加1[锋锐]",
+        "template_values": {
+          "{attack}": "22",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "4"
+        }
+      }
+    ]
+  },
+  {
+    "id": 377,
+    "name_cn": "水灵斩",
+    "phase": 5,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻（每加过1次[灵气]或[水势]多{otherParams[0]}攻）\\n[水灵]：每[击伤]{otherParams[1]}生命获得1层[水势]",
+        "template_values": {
+          "{attack}": "10",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "5"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻（每加过1次[灵气]或[水势]多{otherParams[0]}攻）\\n[水灵]：每[击伤]{otherParams[1]}生命获得1层[水势]",
+        "template_values": {
+          "{attack}": "16",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "5"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻（每加过1次[灵气]或[水势]多{otherParams[0]}攻）\\n[水灵]：每[击伤]{otherParams[1]}生命获得1层[水势]",
+        "template_values": {
+          "{attack}": "22",
+          "{otherParams[0]}": "3",
+          "{otherParams[1]}": "5"
+        }
+      }
+    ]
+  },
+  {
+    "id": 381,
+    "name_cn": "灵羽",
+    "phase": 2,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n[灵气]+{anima}\\n[体魄]+{physique}\\n[身法]+{otherParams[0]}",
+        "template_values": {
+          "{attack}": "2",
+          "{attackCount}": "2",
+          "{anima}": "1",
+          "{physique}": "1",
+          "{otherParams[0]}": "5"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n[灵气]+{anima}\\n[体魄]+{physique}\\n[身法]+{otherParams[0]}",
+        "template_values": {
+          "{attack}": "2",
+          "{attackCount}": "3",
+          "{anima}": "2",
+          "{physique}": "1",
+          "{otherParams[0]}": "6"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "{attack}攻×{attackCount}\\n[灵气]+{anima}\\n[体魄]+{physique}\\n[身法]+{otherParams[0]}",
+        "template_values": {
+          "{attack}": "2",
+          "{attackCount}": "4",
+          "{anima}": "3",
+          "{physique}": "1",
+          "{otherParams[0]}": "7"
+        }
+      }
+    ]
+  },
+  {
+    "id": 382,
+    "name_cn": "气旋掌",
+    "phase": 3,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "每有{otherParams[0]}[体魄]加1[灵气]\\n{attack}攻×{attackCount}（每有1[灵气]多1攻）",
+        "template_values": {
+          "{otherParams[0]}": "15",
+          "{attack}": "2",
+          "{attackCount}": "2"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "每有{otherParams[0]}[体魄]加1[灵气]\\n{attack}攻×{attackCount}（每有1[灵气]多1攻）",
+        "template_values": {
+          "{otherParams[0]}": "15",
+          "{attack}": "4",
+          "{attackCount}": "2"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "每有{otherParams[0]}[体魄]加1[灵气]\\n{attack}攻×{attackCount}（每有1[灵气]多1攻）",
+        "template_values": {
+          "{otherParams[0]}": "15",
+          "{attack}": "6",
+          "{attackCount}": "2"
+        }
+      }
+    ]
+  },
+  {
+    "id": 383,
+    "name_cn": "御风飞闪",
+    "phase": 4,
+    "levels": [
+      {
+        "level": 1,
+        "desc_cn_template": "[身法]+{otherParams[0]}\\n每有1[身法]向对方造成1[伤害]",
+        "template_values": {
+          "{otherParams[0]}": "8"
+        }
+      },
+      {
+        "level": 2,
+        "desc_cn_template": "[身法]+{otherParams[0]}\\n每有1[身法]向对方造成1[伤害]",
+        "template_values": {
+          "{otherParams[0]}": "10"
+        }
+      },
+      {
+        "level": 3,
+        "desc_cn_template": "[身法]+{otherParams[0]}\\n每有1[身法]向对方造成1[伤害]",
+        "template_values": {
+          "{otherParams[0]}": "12"
+        }
+      }
+    ]
+  }
+]

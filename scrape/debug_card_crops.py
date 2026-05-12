@@ -11,6 +11,7 @@ from collections import deque
 from PIL import Image, ImageDraw
 
 import render_rule_sky_sword_formation as renderer
+from align_card_diffs import load_card_reference_rgba
 from png_io import save_png
 
 
@@ -39,7 +40,7 @@ REFRESH_RULE_CENTER_CACHE = False
 
 CROPS = {
     "qi": (0, 0, 105, 105),
-    "title": (60, 0, 385, 135),
+    "title": (85, 0, 410, 135),
     "rules": (35, 300, 385, 660),
     "vname": (20, 45, 115, 365),
 }
@@ -55,6 +56,10 @@ def source_path(label: str) -> Path:
     level = ref_id[1]
     capture_id = {"1": "115061", "2": "115062", "3": "115063"}[level]
     return EXAMPLE_ROOT / f"orig_{locale}" / f"{capture_id}.png"
+
+
+def source_image(label: str) -> Image.Image:
+    return load_card_reference_rgba(source_path(label))
 
 
 def load_rule_center_cache() -> dict[str, int]:
@@ -114,7 +119,7 @@ def transformed_layout_rule_center_x(label: str) -> int | None:
 
 def write_crop(label: str, name: str, box: tuple[int, int, int, int], scale: int = 4) -> Path:
     generated = Image.open(DIFF_ROOT / f"{label}_generated_downscaled.png").convert("RGBA")
-    target = Image.open(source_path(label)).convert("RGBA")
+    target = source_image(label)
     width = (box[2] - box[0]) * scale
     height = (box[3] - box[1]) * scale
     output = Image.new("RGBA", (width * 2 + 8, height), (30, 30, 30, 255))
@@ -173,6 +178,61 @@ def text_mask(image: Image.Image, box: tuple[int, int, int, int], kind: str, lab
         mask = clean_rules_mask(mask)
         if label.startswith("D"):
             mask = clean_dream_rules_mask(mask, label)
+    elif kind == "title":
+        mask = clean_title_mask(mask)
+    return mask
+
+
+def clean_title_mask(mask: Image.Image) -> Image.Image:
+    """Remove leftover cost-icon fragments from the left edge of title crops."""
+    width, height = mask.size
+    pixels = mask.load()
+    for y in range(height):
+        for x in range(min(18, width)):
+            pixels[x, y] = 0
+    for y in range(min(78, height), height):
+        for x in range(width):
+            pixels[x, y] = 0
+    seen = bytearray(width * height)
+    remove: list[list[tuple[int, int]]] = []
+
+    for start_y in range(height):
+        for start_x in range(width):
+            index = start_y * width + start_x
+            if seen[index] or not pixels[start_x, start_y]:
+                continue
+            queue: deque[tuple[int, int]] = deque([(start_x, start_y)])
+            seen[index] = 1
+            component: list[tuple[int, int]] = []
+            x0 = x1 = start_x
+            y0 = y1 = start_y
+            touches_left = False
+
+            while queue:
+                x, y = queue.popleft()
+                component.append((x, y))
+                x0 = min(x0, x)
+                x1 = max(x1, x)
+                y0 = min(y0, y)
+                y1 = max(y1, y)
+                touches_left = touches_left or x == 0
+                for nx, ny in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)):
+                    if nx < 0 or ny < 0 or nx >= width or ny >= height:
+                        continue
+                    next_index = ny * width + nx
+                    if seen[next_index] or not pixels[nx, ny]:
+                        continue
+                    seen[next_index] = 1
+                    queue.append((nx, ny))
+
+            component_width = x1 - x0 + 1
+            component_height = y1 - y0 + 1
+            if touches_left and component_width < 45 and component_height > 8:
+                remove.append(component)
+
+    for component in remove:
+        for x, y in component:
+            pixels[x, y] = 0
     return mask
 
 
@@ -300,6 +360,75 @@ def row_boxes(
             x0, y0, x1, y1 = trim_detached_edge_islands(pixels, x0, y0, x1, y1)
             x0, y0, x1, y1 = trim_sparse_edge_columns(pixels, x0, y0, x1, y1)
         if y1 - y0 >= min_height and x1 - x0 >= 3:
+            boxes.append((x0, y0, x1, y1))
+    return boxes
+
+
+def connected_component_boxes(mask: Image.Image, min_pixels: int = 3) -> list[tuple[int, int, int, int, int]]:
+    width, height = mask.size
+    pixels = mask.load()
+    seen = bytearray(width * height)
+    boxes: list[tuple[int, int, int, int, int]] = []
+    for start_y in range(height):
+        for start_x in range(width):
+            index = start_y * width + start_x
+            if seen[index] or not pixels[start_x, start_y]:
+                continue
+            queue: deque[tuple[int, int]] = deque([(start_x, start_y)])
+            seen[index] = 1
+            x0 = x1 = start_x
+            y0 = y1 = start_y
+            area = 0
+            while queue:
+                x, y = queue.popleft()
+                area += 1
+                x0 = min(x0, x)
+                x1 = max(x1, x)
+                y0 = min(y0, y)
+                y1 = max(y1, y)
+                for nx, ny in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)):
+                    if nx < 0 or ny < 0 or nx >= width or ny >= height:
+                        continue
+                    next_index = ny * width + nx
+                    if seen[next_index] or not pixels[nx, ny]:
+                        continue
+                    seen[next_index] = 1
+                    queue.append((nx, ny))
+            if area >= min_pixels:
+                boxes.append((x0, y0, x1 + 1, y1 + 1, area))
+    return boxes
+
+
+def title_row_boxes(mask: Image.Image) -> list[tuple[int, int, int, int]]:
+    """Cluster title glyph components by vertical center so descenders stay with their row."""
+    components = [
+        box
+        for box in connected_component_boxes(mask, min_pixels=4)
+        if box[2] - box[0] >= 2 and box[3] - box[1] >= 4
+    ]
+    if not components:
+        return []
+
+    clusters: list[list[tuple[int, int, int, int, int]]] = []
+    for component in sorted(components, key=lambda box: ((box[1] + box[3]) / 2.0, box[0])):
+        cy = (component[1] + component[3]) / 2.0
+        if not clusters:
+            clusters.append([component])
+            continue
+        last_cluster = clusters[-1]
+        last_cy = sum((box[1] + box[3]) / 2.0 for box in last_cluster) / len(last_cluster)
+        if abs(cy - last_cy) <= 16:
+            last_cluster.append(component)
+        else:
+            clusters.append([component])
+
+    boxes: list[tuple[int, int, int, int]] = []
+    for cluster in clusters:
+        x0 = min(box[0] for box in cluster)
+        y0 = min(box[1] for box in cluster)
+        x1 = max(box[2] for box in cluster)
+        y1 = max(box[3] for box in cluster)
+        if x1 - x0 >= 3 and y1 - y0 >= 7:
             boxes.append((x0, y0, x1, y1))
     return boxes
 
@@ -527,7 +656,7 @@ def draw_scaled_boxes(draw: ImageDraw.ImageDraw, boxes: list[tuple[int, int, int
 
 def write_box_overlay(label: str, name: str, box: tuple[int, int, int, int], scale: int = 4) -> Path:
     generated = Image.open(DIFF_ROOT / f"{label}_generated_downscaled.png").convert("RGBA")
-    target = Image.open(source_path(label)).convert("RGBA")
+    target = source_image(label)
     width = (box[2] - box[0]) * scale
     height = (box[3] - box[1]) * scale
     output = Image.new("RGBA", (width * 2 + 8, height), (30, 30, 30, 255))
@@ -541,16 +670,20 @@ def write_box_overlay(label: str, name: str, box: tuple[int, int, int, int], sca
         merge_gap = 3
     min_height = 5 if kind == "vname" else 7
 
-    for index, (image, caption) in enumerate(((generated, "generated"), (target, "screenshot"))):
+    side_boxes: list[tuple[str, list[tuple[int, int, int, int]]]] = []
+    for image, caption in ((generated, "generated"), (target, "screenshot")):
         crop = image.crop(box).resize((width, height), Image.Resampling.NEAREST)
         mask = text_mask(image, box, kind, label=label)
-        boxes = row_boxes(
-            mask,
-            min_pixels=min_pixels,
-            merge_gap=merge_gap,
-            min_height=min_height,
-            trim_edges=kind == "rules",
-        )
+        if kind == "title":
+            boxes = title_row_boxes(mask)
+        else:
+            boxes = row_boxes(
+                mask,
+                min_pixels=min_pixels,
+                merge_gap=merge_gap,
+                min_height=min_height,
+                trim_edges=kind == "rules",
+            )
         if kind == "rules":
             boxes = filter_rule_row_boxes(
                 boxes,
@@ -563,9 +696,17 @@ def write_box_overlay(label: str, name: str, box: tuple[int, int, int, int], sca
             boxes = filter_title_row_boxes(boxes, (box[2] - box[0], box[3] - box[1]), label)
         elif kind == "vname":
             boxes = filter_vname_row_boxes(boxes, (box[2] - box[0], box[3] - box[1]), label)
+        side_boxes.append((caption, boxes))
+
+    for index, (image, caption) in enumerate(((generated, "generated"), (target, "screenshot"))):
+        crop = image.crop(box).resize((width, height), Image.Resampling.NEAREST)
         draw = ImageDraw.Draw(crop)
         draw.text((4, 4), caption, fill=(255, 0, 0, 255))
-        draw_scaled_boxes(draw, boxes, scale, (0, 255, 255) if index == 0 else (255, 220, 0))
+        if index == 0:
+            draw_scaled_boxes(draw, side_boxes[0][1], scale, (0, 255, 255))
+        else:
+            draw_scaled_boxes(draw, side_boxes[0][1], scale, (0, 255, 255))
+            draw_scaled_boxes(draw, side_boxes[1][1], scale, (255, 220, 0))
         output.alpha_composite(crop, (index * (width + 8), 0))
 
     path = DIFF_ROOT / f"debug_{label}_{name}_boxes_x{scale}.png"
@@ -576,11 +717,12 @@ def write_box_overlay(label: str, name: str, box: tuple[int, int, int, int], sca
 def main() -> None:
     global REFRESH_RULE_CENTER_CACHE
     parser = argparse.ArgumentParser()
+    parser.add_argument("labels", nargs="*")
     parser.add_argument("--refresh-centers", action="store_true")
     args = parser.parse_args()
     REFRESH_RULE_CENTER_CACHE = args.refresh_centers
 
-    labels = (
+    default_labels = (
         "l1_zh",
         "l1_en",
         "l2_zh",
@@ -598,6 +740,7 @@ def main() -> None:
         "D11135_zh",
         "D11135_en",
     )
+    labels = tuple(args.labels) or default_labels
     for label in labels:
         for name, box in CROPS.items():
             print(write_crop(label, name, box).relative_to(ROOT))

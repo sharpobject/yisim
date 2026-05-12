@@ -18,6 +18,7 @@ from align_card_diffs import (
     bug_diff,
     generated_card_for_label,
     initial_transform_from_alpha,
+    load_card_reference_rgba,
     load_rgba,
     load_saved_transforms,
     pair_for_label,
@@ -25,7 +26,21 @@ from align_card_diffs import (
     transform_source,
 )
 from png_io import save_png
-from render_rule_sky_sword_formation import magic_kernel_sharp_resize
+from render_rule_sky_sword_formation import (
+    TEXT_RENDERER,
+    TEXT_RENDERERS,
+    draw_config_text_for_label,
+    magic_kernel_sharp_resize,
+    render_card_for_label,
+    set_text_renderer,
+)
+
+
+def generated_card_without_config_text(label: str, render_scale: float):
+    try:
+        return render_card_for_label(label, render_scale=render_scale, skip_description=True)
+    except (KeyError, StopIteration, ValueError):
+        return generated_card_for_label(label, render_scale)
 
 
 def labels_from_examples() -> list[str]:
@@ -55,7 +70,7 @@ def dream_phase_group(label: str) -> tuple[str, str] | None:
 
 def fallback_transform(label: str, saved: dict[str, Transform]) -> tuple[Transform, str]:
     example, generated, parsed = pair_for_label(label)
-    target = load_rgba(example)
+    target = load_card_reference_rgba(example)
     search_source = load_rgba(generated) if generated.exists() else generated_card_for_label(parsed, 1.0)
     transform = saved.get(parsed)
     if transform is not None:
@@ -111,23 +126,30 @@ def build_compare_outputs(
     compare_only: bool,
 ) -> tuple[dict[str, object], list[tuple[object, Path]]]:
     example, generated, parsed = pair_for_label(label)
-    target = load_rgba(example)
+    target = load_card_reference_rgba(example)
     learned = learned_transform(parsed, saved)
     if learned is None:
         transform, alignment = fallback_transform(parsed, saved)
     else:
         transform, alignment = learned
 
-    source_hi = generated_card_for_label(parsed, render_scale)
+    source_hi = generated_card_without_config_text(parsed, render_scale)
     target_hi_size = (round(target.width * render_scale), round(target.height * render_scale))
     generated_hi = transform_source(
         source_hi,
         target_hi_size,
         transform.scale,
-        round(transform.dx * render_scale),
-        round(transform.dy * render_scale),
+        transform.dx * render_scale,
+        transform.dy * render_scale,
     )
     generated_downscaled = magic_kernel_sharp_resize(generated_hi, target.size)
+    draw_config_text_for_label(
+        generated_downscaled,
+        parsed,
+        transform.scale,
+        offset=(transform.dx, transform.dy),
+        layout_render_scale=render_scale,
+    )
     diff = bug_diff(generated_downscaled, target)
     panel = side_by_side(generated_downscaled, target, diff, parsed)
 
@@ -170,14 +192,14 @@ def prepare_postprocess_job(
     compare_only: bool,
 ) -> tuple[dict[str, object], object, object, Transform, list[Path]]:
     example, generated, parsed = pair_for_label(label)
-    target = load_rgba(example)
+    target = load_card_reference_rgba(example)
     learned = learned_transform(parsed, saved)
     if learned is None:
         transform, alignment = fallback_transform(parsed, saved)
     else:
         transform, alignment = learned
 
-    source_hi = generated_card_for_label(parsed, render_scale)
+    source_hi = generated_card_without_config_text(parsed, render_scale)
 
     output_dir.mkdir(parents=True, exist_ok=True)
     aligned_path = output_dir / f"{parsed}_generated_downscaled.png"
@@ -221,10 +243,17 @@ def postprocess_and_save(
         source_hi,
         target_hi_size,
         transform.scale,
-        round(transform.dx * float(result["render_scale"])),
-        round(transform.dy * float(result["render_scale"])),
+        transform.dx * float(result["render_scale"]),
+        transform.dy * float(result["render_scale"]),
     )
     generated_downscaled = magic_kernel_sharp_resize(generated_hi, target.size)
+    draw_config_text_for_label(
+        generated_downscaled,
+        str(result["label"]),
+        transform.scale,
+        offset=(transform.dx, transform.dy),
+        layout_render_scale=float(result["render_scale"]),
+    )
     diff = bug_diff(generated_downscaled, target)
     panel = side_by_side(generated_downscaled, target, diff, str(result["label"]))
 
@@ -275,6 +304,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("labels", nargs="*", help="specific labels to diff, e.g. 115011_en")
     parser.add_argument("--contains", help="only diff labels containing this substring")
+    parser.add_argument("--locale", choices=("zh", "en"), help="only diff examples for one locale")
     parser.add_argument(
         "--fast-png",
         action="store_true",
@@ -305,12 +335,21 @@ def main() -> None:
         default=1,
         help="experimental: number of whole-card diff worker threads",
     )
+    parser.add_argument(
+        "--text-renderer",
+        choices=TEXT_RENDERERS,
+        default=TEXT_RENDERER,
+        help="default text rasterizer; sdf uses the game TMP atlas/materials, otf uses extracted DefaultFont.otf",
+    )
     args = parser.parse_args()
+    set_text_renderer(args.text_renderer)
 
     output_dir = DEFAULT_OUTPUT_DIR
     summary_path = output_dir / "fast_alignment_summary.json"
     saved = load_saved_transforms(output_dir / "alignment_summary.json")
     labels = args.labels or labels_from_examples()
+    if args.locale:
+        labels = [label for label in labels if label.endswith(f"_{args.locale}")]
     if args.contains:
         labels = [label for label in labels if args.contains in label]
     results = []

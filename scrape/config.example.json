@@ -1,0 +1,34 @@
+{
+  "app_id": 1948800,
+  "login_url": "https://p3.gate.darksungame.com/auth/login",
+  "app_version_url": "https://p3.gate.darksungame.com/serverConfig/appVersion?platform=1&unityPlatform=1",
+  "app_version": "1.6.5",
+  "resource_version": "1.6.0",
+  "game_version": "001.0006.0014",
+  "device_id": "",
+  "device_id_path": ".device_id",
+  "ticket_command": ["./steam_ticket"],
+  "ticket_file": "",
+  "login_payload": {
+    "steamEncryptedTicket": "{ticket_b64}",
+    "steamAuthTicket": null,
+    "steamOwnerId": null,
+    "loginType": 1,
+    "autoCreate": false,
+    "extra": {
+      "appVersion": "{app_version}",
+      "resourceVersion": "{resource_version}",
+      "gameVersion": "{game_version}",
+      "deviceId": "{device_id}",
+      "routeIndex": 0,
+      "serverId": 1,
+      "platform": 1,
+      "unityPlatform": 1
+    }
+  },
+  "headers": {
+    "User-Agent": "YiXianPai/automation"
+  },
+  "token_json_path": ["data", "access_token"],
+  "token_output_path": ".access_token"
+}

@@ -17,7 +17,7 @@ import render_rule_sky_sword_formation as renderer
 from align_card_diffs import (
     DEFAULT_OUTPUT_DIR,
     Transform,
-    load_rgba,
+    load_card_reference_rgba,
     load_saved_transforms,
     pair_for_label,
     transform_source,
@@ -35,12 +35,8 @@ class Candidate:
     locale: str
     offset_x: float
     offset_y: float
-    glyph_scale: float
-    char_spacing: float
-    line_spacing: float
-    fixed_line_offset: float
-    normal_face_dilate: float = 0.0
-    bold_face_dilate: float = 0.0
+    block_scale: float
+    character_spacing: float
 
 
 def labels_for_locale(locale: str) -> list[str]:
@@ -52,8 +48,11 @@ def labels_for_locale(locale: str) -> list[str]:
 
 def rules_crop_pixel_difference(generated: Image.Image, target: Image.Image) -> float:
     """Sum RGB disagreement across the fixed rules text crop."""
-    generated_crop = generated.crop(RULE_CROP).convert("RGB")
-    target_crop = target.crop(RULE_CROP).convert("RGB")
+    bleed_x = max(0, round(renderer.CARD_OUTPUT_BLEED_X_UI))
+    x0, y0, x1, y1 = RULE_CROP
+    crop = (x0 + bleed_x, y0, x1 + bleed_x, y1)
+    generated_crop = generated.crop(crop).convert("RGB")
+    target_crop = target.crop(crop).convert("RGB")
     difference = ImageChops.difference(generated_crop, target_crop)
     return sum(ImageStat.Stat(difference).sum[:3])
 
@@ -61,25 +60,13 @@ def rules_crop_pixel_difference(generated: Image.Image, target: Image.Image) -> 
 def apply_candidate(candidate: Candidate) -> None:
     base = renderer.DESC_RECT
     if candidate.locale == "en":
-        # The production renderer may contain per-line-count tuned overrides.
-        # Tuning must bypass those overrides or every candidate in that group
-        # renders with the already-baked style instead of the candidate values.
-        renderer.DESC_GROUP_STYLES_EN.clear()
         renderer.DESC_TEXT_DRAW_RECT_EN = base.translated(candidate.offset_x, candidate.offset_y)
-        renderer.DESC_GLYPH_SCALE_EN = candidate.glyph_scale
-        renderer.DESC_CHARACTER_SPACING_EN = candidate.char_spacing
-        renderer.DESC_FACE_DILATE_EN_NORMAL = candidate.normal_face_dilate
-        renderer.DESC_FACE_DILATE_EN_BOLD = candidate.bold_face_dilate
-        renderer.DESC_LINE_SPACING_EN = candidate.line_spacing
-        renderer.DESC_FIXED_LINE_OFFSET_Y_EN_UI = candidate.fixed_line_offset
+        renderer.DESC_BLOCK_SCALE_EN = candidate.block_scale
+        renderer.DESC_CHARACTER_SPACING_EN = candidate.character_spacing
     else:
         renderer.DESC_TEXT_DRAW_RECT_CJK = base.translated(candidate.offset_x, candidate.offset_y)
-        renderer.DESC_GLYPH_SCALE_CJK = candidate.glyph_scale
-        renderer.DESC_CHARACTER_SPACING_CJK = candidate.char_spacing
-        renderer.DESC_FACE_DILATE_CJK_NORMAL = candidate.normal_face_dilate
-        renderer.DESC_FACE_DILATE_CJK_BOLD = candidate.bold_face_dilate
-        renderer.DESC_LINE_SPACING_CJK = candidate.line_spacing
-        renderer.DESC_FIXED_LINE_OFFSET_Y_CJK_UI = candidate.fixed_line_offset
+        renderer.DESC_BLOCK_SCALE_CJK = candidate.block_scale
+        renderer.DESC_CHARACTER_SPACING_CJK = candidate.character_spacing
 
 
 def evaluate(
@@ -93,16 +80,23 @@ def evaluate(
 
     def score_label(label: str) -> tuple[float, str]:
         target = targets[label]
-        source_hi = renderer.render_card_for_label(label, RENDER_SCALE)
+        source_hi = renderer.render_card_for_label(label, RENDER_SCALE, skip_description=True)
         target_hi_size = (round(target.width * RENDER_SCALE), round(target.height * RENDER_SCALE))
         generated_hi = transform_source(
             source_hi,
             target_hi_size,
             transform.scale,
-            round(transform.dx * RENDER_SCALE),
-            round(transform.dy * RENDER_SCALE),
+            transform.dx * RENDER_SCALE,
+            transform.dy * RENDER_SCALE,
         )
         generated = renderer.magic_kernel_sharp_resize(generated_hi, target.size)
+        renderer.draw_config_text_for_label(
+            generated,
+            label,
+            transform.scale,
+            offset=(transform.dx, transform.dy),
+            layout_render_scale=RENDER_SCALE,
+        )
         p_loss = rules_crop_pixel_difference(generated, target)
         return p_loss, label
 
@@ -130,28 +124,42 @@ def evaluate(
 def search_bounds(locale: str) -> tuple[list[float], list[float]]:
     if locale == "en":
         return (
-            [-1.0, 0.0, 0.995, -3.2, -7.5, 0.5, -0.25, -0.25],
-            [1.0, 2.8, 1.030, -1.0, -4.5, 3.0, 0.35, 0.35],
+            [
+                renderer.DESC_TEXT_DRAW_RECT_EN.left - renderer.DESC_RECT.left - 0.6,
+                renderer.DESC_TEXT_DRAW_RECT_EN.top - renderer.DESC_RECT.top - 0.8,
+                renderer.DESC_BLOCK_SCALE_EN - 0.04,
+                renderer.DESC_CHARACTER_SPACING_EN - 0.8,
+            ],
+            [
+                renderer.DESC_TEXT_DRAW_RECT_EN.left - renderer.DESC_RECT.left + 0.6,
+                renderer.DESC_TEXT_DRAW_RECT_EN.top - renderer.DESC_RECT.top + 0.8,
+                renderer.DESC_BLOCK_SCALE_EN + 0.04,
+                renderer.DESC_CHARACTER_SPACING_EN + 0.4,
+            ],
         )
     return (
-        [-1.0, -2.8, 0.985, 0.0, -7.5, 0.5, -0.25, -0.25],
-        [1.0, 0.8, 1.010, 1.8, -4.5, 3.0, 0.35, 0.35],
+        [
+            renderer.DESC_TEXT_DRAW_RECT_CJK.left - renderer.DESC_RECT.left - 0.6,
+            renderer.DESC_TEXT_DRAW_RECT_CJK.top - renderer.DESC_RECT.top - 0.8,
+            renderer.DESC_BLOCK_SCALE_CJK - 0.04,
+            renderer.DESC_CHARACTER_SPACING_CJK - 0.8,
+        ],
+        [
+            renderer.DESC_TEXT_DRAW_RECT_CJK.left - renderer.DESC_RECT.left + 0.6,
+            renderer.DESC_TEXT_DRAW_RECT_CJK.top - renderer.DESC_RECT.top + 0.8,
+            renderer.DESC_BLOCK_SCALE_CJK + 0.04,
+            renderer.DESC_CHARACTER_SPACING_CJK + 0.4,
+        ],
     )
 
 
 def candidate_from_vector(locale: str, values: list[float] | tuple[float, ...]) -> Candidate:
-    normal_face_dilate = float(values[6]) if len(values) > 6 else 0.0
-    bold_face_dilate = float(values[7]) if len(values) > 7 else 0.0
     return Candidate(
         locale=locale,
         offset_x=float(values[0]),
         offset_y=float(values[1]),
-        glyph_scale=float(values[2]),
-        char_spacing=float(values[3]),
-        line_spacing=float(values[4]),
-        fixed_line_offset=float(values[5]),
-        normal_face_dilate=normal_face_dilate,
-        bold_face_dilate=bold_face_dilate,
+        block_scale=float(values[2]),
+        character_spacing=float(values[3]),
     )
 
 
@@ -166,7 +174,7 @@ def main() -> None:
         default="",
         help=(
             "Override search bounds as comma-separated lower values followed by upper values. "
-            "Both locales use 8 dimensions including normal_face_dilate and bold_face_dilate."
+            "Both locales use 4 dimensions: rect dx, rect dy, uniform text block scale, character spacing."
         ),
     )
     parser.add_argument(
@@ -175,7 +183,14 @@ def main() -> None:
         default=[],
         help="Restrict tuning to one or more labels such as 115021_zh. Defaults to the locale's full set.",
     )
+    parser.add_argument(
+        "--text-renderer",
+        choices=renderer.TEXT_RENDERERS,
+        default=renderer.TEXT_RENDERER,
+        help="default text rasterizer; sdf uses the game TMP atlas/materials, otf uses extracted DefaultFont.otf",
+    )
     args = parser.parse_args()
+    renderer.set_text_renderer(args.text_renderer)
 
     labels = args.label or labels_for_locale(args.locale)
     bad_labels = [label for label in labels if not label.endswith(f"_{args.locale}")]
@@ -186,7 +201,7 @@ def main() -> None:
     targets: dict[str, Image.Image] = {}
     for label in labels:
         example, _, parsed = pair_for_label(label)
-        targets[parsed] = load_rgba(example)
+        targets[parsed] = load_card_reference_rgba(example)
 
     results: list[dict[str, object]] = []
     cache: dict[tuple[float, ...], float] = {}
@@ -217,7 +232,7 @@ def main() -> None:
 
     if args.bounds:
         values = [float(part.strip()) for part in args.bounds.split(",")]
-        expected = 16
+        expected = 8
         if len(values) != expected:
             raise SystemExit(f"--bounds requires exactly {expected} comma-separated floats for {args.locale}")
         midpoint = expected // 2

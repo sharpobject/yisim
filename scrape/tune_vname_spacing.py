@@ -24,11 +24,11 @@ def boxes_for_image(image: Image.Image, label: str) -> list[tuple[int, int, int,
 
 
 def reference_boxes(label: str) -> list[tuple[int, int, int, int]]:
-    return boxes_for_image(Image.open(crops.source_path(label)).convert("RGBA"), label)
+    return boxes_for_image(align.load_card_reference_rgba(crops.source_path(label)), label)
 
 
 def generated_downscaled(label: str, render_scale: float) -> Image.Image:
-    target = Image.open(crops.source_path(label)).convert("RGBA")
+    target = align.load_card_reference_rgba(crops.source_path(label))
     transform = align.load_saved_transforms(crops.DIFF_ROOT / "alignment_summary.json")[label]
     align.generated_card_for_label.cache_clear()
     source_hi = align.generated_card_for_label(label, render_scale)
@@ -37,8 +37,8 @@ def generated_downscaled(label: str, render_scale: float) -> Image.Image:
         source_hi,
         target_hi_size,
         transform.scale,
-        round(transform.dx * render_scale),
-        round(transform.dy * render_scale),
+        transform.dx * render_scale,
+        transform.dy * render_scale,
     )
     return align.magic_kernel_sharp_resize(generated_hi, target.size)
 

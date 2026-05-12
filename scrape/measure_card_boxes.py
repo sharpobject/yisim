@@ -27,17 +27,22 @@ DREAM_LABELS = [
 
 def boxes_for(label: str, kind: str, screenshot: bool) -> list[tuple[int, int, int, int]]:
     box = crops.CROPS[kind]
-    path = crops.source_path(label) if screenshot else crops.DIFF_ROOT / f"{label}_generated_downscaled.png"
-    image = Image.open(path).convert("RGBA")
+    if screenshot:
+        image = crops.source_image(label)
+    else:
+        image = Image.open(crops.DIFF_ROOT / f"{label}_generated_downscaled.png").convert("RGBA")
     merge_gap = 4 if kind == "vname" else (1 if label.startswith("D") else 3)
     mask = crops.text_mask(image, box, kind, label=label)
-    boxes = crops.row_boxes(
-        mask,
-        min_pixels=3 if kind == "vname" else 10,
-        merge_gap=merge_gap,
-        min_height=5 if kind == "vname" else 7,
-        trim_edges=kind == "rules",
-    )
+    if kind == "title":
+        boxes = crops.title_row_boxes(mask)
+    else:
+        boxes = crops.row_boxes(
+            mask,
+            min_pixels=3 if kind == "vname" else 10,
+            merge_gap=merge_gap,
+            min_height=5 if kind == "vname" else 7,
+            trim_edges=kind == "rules",
+        )
     crop_size = (box[2] - box[0], box[3] - box[1])
     if kind == "rules":
         return crops.filter_rule_row_boxes(

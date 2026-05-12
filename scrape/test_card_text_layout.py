@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+import json
 import unittest
+from pathlib import Path
 
-from card_data import card_by_id, render_description_text, resolve_reference
-from render_rule_sky_sword_formation import fitted_description_rows
+from card_data import card_by_id, card_name, render_description_text, resolve_reference
+from render_rule_sky_sword_formation import fitted_description_rows, fitted_english_title_rows, render_new_card_description
 
 
 def description_rows(label: str) -> list[str]:
@@ -16,7 +18,60 @@ def description_rows(label: str) -> list[str]:
     return rows
 
 
+def english_title_rows(card_id: int) -> list[str]:
+    _, rows = fitted_english_title_rows(card_name(card_id, "en"))
+    return rows
+
+
+def new_card_description_rows(card_id: int, level: int, locale: str = "zh") -> list[str]:
+    rows = json.loads((Path(__file__).resolve().parent / "new_cards_data.json").read_text())
+    row = next(row for row in rows if int(row["id"]) == card_id)
+    level_row = next(level_row for level_row in row["levels"] if int(level_row["level"]) == level)
+    _, fitted_rows = fitted_description_rows(render_new_card_description(level_row), locale)
+    return fitted_rows
+
+
 class CardTextLayoutTests(unittest.TestCase):
+    def test_english_title_rows(self) -> None:
+        expected_by_card_id = {
+            1000001: ["Cloud Sword -", "Touch Sky"],
+            1000003: ["Cloud Sword -", "Touch Earth"],
+            1000017: ["Contemplate", "Spirits Rhythm"],
+            1000046: ["Mirror Flower", "Sword Formation"],
+            1000039: ["Cloud Sword -", "Flash Wind"],
+            1000040: ["Cloud Sword - Moon", "Shade"],
+            1000035: ["Unrestrained Sword", "- Two"],
+            1000042: ["Cloud Sword -", "Dragon Roam"],
+            1000060: ["Cloud Sword - Step", "Lightly"],
+            1000043: ["Flying Spirit", "Shade Sword"],
+            1000045: ["Dharma Spirit", "Sword"],
+            1000044: ["Sword Intent Surge"],
+            1000025: ["Rule Sky Sword", "Formation"],
+            1000064: ["Chain Sword", "Formation"],
+            1000066: ["Unrestrained Sword", "- Zero"],
+        }
+        for card_id, expected in expected_by_card_id.items():
+            with self.subTest(card_id=card_id, title=card_name(card_id, "en")):
+                self.assertEqual(english_title_rows(card_id), expected)
+
+    def test_sword_intent_quantities_are_not_zero(self) -> None:
+        expected_by_card_id = {
+            1000031: "Sword Intent]+[color:#CF3521|2]",
+            1010031: "Sword Intent]+[color:#CF3521|3]",
+            1020031: "Sword Intent]+[color:#CF3521|4]",
+            1000010: "Sword Intent]+[color:#CF3521|2]",
+            1010010: "Sword Intent]+[color:#CF3521|3]",
+            1020010: "Sword Intent]+[color:#CF3521|4]",
+            1000050: "Sword Intent]+[color:#CF3521|2]",
+            1010050: "Sword Intent]+[color:#CF3521|3]",
+            1020050: "Sword Intent]+[color:#CF3521|4]",
+        }
+        for card_id, expected in expected_by_card_id.items():
+            with self.subTest(card_id=card_id):
+                rendered = render_description_text(card_id, "en")
+                self.assertIn(expected, rendered)
+                self.assertNotIn("Sword Intent]+[color:#CF3521|0]", rendered)
+
     def test_unrestrained_sword_one_en(self) -> None:
         expected_by_level = {
             "112111_en": ("5 ATK", "2"),
@@ -467,6 +522,26 @@ class CardTextLayoutTests(unittest.TestCase):
                         "Add 1 DEF for",
                         "each 2 Physique",
                         final_line,
+                    ],
+                )
+
+    def test_hidden_pool_beast_spirit_sword_formation_zh(self) -> None:
+        expected_by_level = {
+            1: "灵气+2",
+            2: "灵气+3",
+            3: "灵气+4",
+        }
+        for level, anima_line in expected_by_level.items():
+            with self.subTest(level=level):
+                self.assertEqual(
+                    new_card_description_rows(49, level),
+                    [
+                        anima_line,
+                        "持续：每回合首次",
+                        "使用“灵剑”或",
+                        "“剑阵”牌后，每",
+                        "剩1点灵气向对方",
+                        "造成1伤害",
                     ],
                 )
 

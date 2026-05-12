@@ -124,11 +124,12 @@ def protobuf_card_values() -> dict[int, dict[str, int]]:
 def cards() -> list[dict[str, Any]]:
     global _CARDS
     if _CARDS is None:
-        _CARDS = json.loads(CARD_CONFIG_PATH.read_text(encoding="utf-8"))
+        loaded_cards = json.loads(CARD_CONFIG_PATH.read_text(encoding="utf-8"))
         pb_values = protobuf_card_values()
-        for card in _CARDS:
+        for card in loaded_cards:
             for key, value in pb_values.get(int(card["id"]), {}).items():
                 card.setdefault(key, value)
+        _CARDS = loaded_cards
     return _CARDS
 
 
@@ -294,6 +295,7 @@ def resolve_reference(ref_id: str) -> ResolvedReference:
     rarity = int(ref_id[5]) - 1
 
     hidden_reference_cards = {
+        "21401": 1000050,
         "91301": 151,
         "91302": 185,
         "91401": 125,
