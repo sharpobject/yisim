@@ -10,7 +10,7 @@ from PIL import Image, ImageDraw
 
 VERSION = "001.0006.0014"
 ROOT = Path(__file__).resolve().parent
-TEXTURE_DIR = ROOT / "extracted_assets" / VERSION / "textures"
+TEXTURE_DIR = ROOT / "renderer_assets" / "textures"
 OUTPUT_DIR = ROOT / "extracted_assets" / VERSION / "rendered_cards" / "rule_sky_sword_formation" / "dream_frames"
 
 LEVELS = ("LianQi", "ZhuJi", "JinDan", "YuanYing", "HuaShen", "FanXu")

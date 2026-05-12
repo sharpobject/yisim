@@ -45,7 +45,6 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
-import UnityPy
 
 from card_data import (
     card_base_id,
@@ -58,23 +57,20 @@ from card_data import (
 from png_io import save_png
 
 
-UnityPy.config.FALLBACK_UNITY_VERSION = "2020.3.49f1"
-
-
 VERSION = "001.0006.0014"
 ROOT = Path(__file__).resolve().parent
-ASSET_ROOT = ROOT / "extracted_assets" / VERSION
+ASSET_ROOT = ROOT / "renderer_assets"
 TEXTURE_DIR = ASSET_ROOT / "textures"
-FONT_PATH = ASSET_ROOT / "fonts" / "DefaultFont.otf"
+FONT_DIR = ASSET_ROOT / "fonts"
+FONT_PATH = FONT_DIR / "DefaultFont.otf"
 HUIWEN_ATLAS_PATH = TEXTURE_DIR / "Huiwen SDF Atlas.png"
 DEFAULT_ATLAS_PATH = TEXTURE_DIR / "DefaultFont SDF Atlas.png"
-OUTPUT_DIR = ASSET_ROOT / "rendered_cards" / "rule_sky_sword_formation"
+DEFAULT_TMP_FONT_JSON = FONT_DIR / "DefaultFont_tmp_font.json"
+HUIWEN_TMP_FONT_JSON = FONT_DIR / "Huiwen_tmp_font.json"
+OUTPUT_DIR = ROOT / "extracted_assets" / VERSION / "rendered_cards" / "rule_sky_sword_formation"
 RENDER_CACHE_DIR = OUTPUT_DIR / ".cache"
 MKS_C_PATH = ROOT / "magic_kernel_sharp.c"
 MKS_SO_PATH = RENDER_CACHE_DIR / "libmagic_kernel_sharp.so"
-TMP_FONT_BUNDLE = ROOT / "YiXianPai/YiXianPai_Data/StreamingAssets/aa/StandaloneLinux64/6cca45594ab0a2c34be6caab06d1f8c6.bundle"
-DEFAULT_TMP_FONT_PATH_ID = -8666073828371201828
-HUIWEN_TMP_FONT_PATH_ID = 2000889227418753794
 TEXT_RENDERER = "sdf"
 TEXT_RENDERERS = ("sdf", "otf")
 SDF_DISTANCE_SCALE_NORMAL = 1.0
@@ -535,39 +531,27 @@ class TmpGlyph:
 
 
 class TmpFont:
-    def __init__(self, font_asset_path_id: int, atlas_path: Path) -> None:
-        self.font_asset_path_id = font_asset_path_id
+    def __init__(self, font_json_path: Path, atlas_path: Path) -> None:
+        self.font_json_path = font_json_path
         self.atlas_path = atlas_path
         self.atlas = Image.open(atlas_path).convert("RGBA").getchannel("A")
         self.glyphs: dict[str, TmpGlyph] = {}
-        env = UnityPy.load(str(TMP_FONT_BUNDLE))
-        data = None
-        for obj in env.objects:
-            if obj.path_id == font_asset_path_id:
-                data = obj.read_typetree()
-                break
-        if data is None:
-            raise RuntimeError(f"TMP font asset {font_asset_path_id} not found")
-        face_info = data["m_FaceInfo"]
-        self.point_size = float(face_info["m_PointSize"])
-        self.line_height = float(face_info["m_LineHeight"])
-        self.ascent_line = float(face_info["m_AscentLine"])
-        self.descent_line = float(face_info["m_DescentLine"])
-        glyph_table = {glyph["m_Index"]: glyph for glyph in data["m_GlyphTable"]}
-        for char in data["m_CharacterTable"]:
-            glyph = glyph_table.get(char["m_GlyphIndex"])
-            if glyph is None:
-                continue
-            rect = glyph["m_GlyphRect"]
-            metrics = glyph["m_Metrics"]
-            self.glyphs[chr(char["m_Unicode"])] = TmpGlyph(
-                x=int(rect["m_X"]),
-                y=int(rect["m_Y"]),
-                width=int(rect["m_Width"]),
-                height=int(rect["m_Height"]),
-                bearing_x=float(metrics["m_HorizontalBearingX"]),
-                bearing_y=float(metrics["m_HorizontalBearingY"]),
-                advance=float(metrics["m_HorizontalAdvance"]),
+        with open(font_json_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        face_info = data["face_info"]
+        self.point_size = float(face_info["point_size"])
+        self.line_height = float(face_info["line_height"])
+        self.ascent_line = float(face_info["ascent_line"])
+        self.descent_line = float(face_info["descent_line"])
+        for unicode_str, g in data["glyphs"].items():
+            self.glyphs[chr(int(unicode_str))] = TmpGlyph(
+                x=int(g["x"]),
+                y=int(g["y"]),
+                width=int(g["width"]),
+                height=int(g["height"]),
+                bearing_x=float(g["bearing_x"]),
+                bearing_y=float(g["bearing_y"]),
+                advance=float(g["advance"]),
             )
         self.space_advance = self.glyphs.get(" ", TmpGlyph(0, 0, 0, 0, 0, 0, 15.0)).advance
         self._isolated_sdf_cache: dict[tuple[object, ...], tuple[Image.Image, tuple[int, int, int, int]]] = {}
@@ -593,7 +577,7 @@ class TmpFont:
 
         key = (
             ISOLATED_SDF_CACHE_VERSION,
-            self.font_asset_path_id,
+            self.font_json_path.name,
             self.atlas_path.name,
             ord(char),
             glyph.x,
@@ -959,14 +943,14 @@ _HUIWEN_TMP_FONT: TmpFont | None = None
 def default_tmp_font() -> TmpFont:
     global _DEFAULT_TMP_FONT
     if _DEFAULT_TMP_FONT is None:
-        _DEFAULT_TMP_FONT = TmpFont(DEFAULT_TMP_FONT_PATH_ID, DEFAULT_ATLAS_PATH)
+        _DEFAULT_TMP_FONT = TmpFont(DEFAULT_TMP_FONT_JSON, DEFAULT_ATLAS_PATH)
     return _DEFAULT_TMP_FONT
 
 
 def huiwen_tmp_font() -> TmpFont:
     global _HUIWEN_TMP_FONT
     if _HUIWEN_TMP_FONT is None:
-        _HUIWEN_TMP_FONT = TmpFont(HUIWEN_TMP_FONT_PATH_ID, HUIWEN_ATLAS_PATH)
+        _HUIWEN_TMP_FONT = TmpFont(HUIWEN_TMP_FONT_JSON, HUIWEN_ATLAS_PATH)
     return _HUIWEN_TMP_FONT
 
 
