@@ -141,6 +141,23 @@ export const ready = (async () => {
     const valid_markings = new Set(valid_markings_list);
     function get_marking(card_id) {
         if (card_id.startsWith("D")) {
+            if (card_id[1] === "2") {
+                const dream_side_job_marking = {
+                    "1": "el",
+                    "2": "fu",
+                    "3": "mu",
+                    "4": "pa",
+                    "5": "fm",
+                    "6": "pm",
+                    "7": "ft",
+                }[card_id[2]];
+                if (dream_side_job_marking !== undefined) {
+                    return dream_side_job_marking;
+                }
+            }
+            if (card_id[1] === "3") {
+                return "no_marking";
+            }
             card_id = card_id.substring(1);
         }
         const prefix = card_id.substring(0, 2);
@@ -222,10 +239,10 @@ export const ready = (async () => {
         return swogi[card_id].name.includes("Sword Formation");
     }
     let is_crash_fist = function (card_id) {
-        return swogi[card_id].name.includes("Crash Fist") || card_id.startsWith("D1412");
+        return swogi[card_id].name.includes("Crash Fist") || card_id.startsWith("D1412") || card_id.startsWith("D1419");
     }
     let is_crash_fist_continue = function (card_id) {
-        return swogi[card_id].name === "Crash Fist - Continue" || card_id === "D14144" || card_id === "D14145";
+        return swogi[card_id].name === "Crash Fist - Continue";
     }
     let is_wood_spirit = function (card_id) {
         return swogi[card_id].name.includes("Wood Spirit");

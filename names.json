@@ -1,1836 +1,2365 @@
 [
     {
         "id": 111011,
+        "other_id": 1000001,
         "name": "Cloud Sword - Touch Sky",
         "namecn": "云剑·探云"
     },
     {
         "id": 111021,
+        "other_id": 1000002,
         "name": "Cloud Sword - Fleche",
         "namecn": "云剑·飞刺"
     },
     {
         "id": 111031,
+        "other_id": 1000003,
         "name": "Cloud Sword - Touch Earth",
         "namecn": "云剑·厚土"
     },
     {
         "id": 111041,
+        "other_id": 1000004,
         "name": "Light Sword",
         "namecn": "轻剑"
     },
     {
         "id": 111051,
+        "other_id": 1000005,
         "name": "Guard Qi",
         "namecn": "护身灵气"
     },
     {
         "id": 111061,
+        "other_id": 1000006,
         "name": "Qi Perfusion",
         "namecn": "灵气灌注"
     },
     {
         "id": 111071,
+        "other_id": 1000007,
         "name": "Giant Tiger Spirit Sword",
         "namecn": "巨虎灵剑"
     },
     {
         "id": 111081,
+        "other_id": 1000009,
         "name": "Thunder Sword",
         "namecn": "震雷剑"
     },
     {
         "id": 111091,
+        "other_id": 1000010,
         "name": "Sword Slash",
         "namecn": "剑劈"
     },
     {
         "id": 111101,
+        "other_id": 1000012,
         "name": "Sword Defence",
         "namecn": "剑挡"
     },
     {
         "id": 111111,
+        "other_id": 1000021,
         "name": "Flying Fang Sword",
         "namecn": "飞牙剑"
     },
     {
         "id": 111121,
+        "other_id": 1000013,
         "name": "Wind Sword",
         "namecn": "骤风剑"
     },
     {
         "id": 112011,
+        "other_id": 1000016,
         "name": "Cloud Sword - Reguard",
         "namecn": "云剑·回守"
     },
     {
         "id": 112021,
+        "other_id": 1000015,
         "name": "Cloud Sword - Riddle",
         "namecn": "云剑·极意"
     },
     {
         "id": 112031,
+        "other_id": 1000014,
         "name": "Cloud Sword - Conceal",
         "namecn": "云剑·无锋"
     },
     {
         "id": 112041,
+        "other_id": 1000018,
         "name": "Transforming Spirits Rhythm",
         "namecn": "化灵诀"
     },
     {
         "id": 112051,
+        "other_id": 1000024,
         "name": "Spiritage Sword",
         "namecn": "引气剑"
     },
     {
         "id": 112061,
+        "other_id": 1000019,
         "name": "Giant Whale Spirit Sword",
         "namecn": "巨鲸灵剑"
     },
     {
         "id": 112071,
+        "other_id": 1000017,
         "name": "Contemplate Spirits Rhythm",
         "namecn": "凝意诀"
     },
     {
         "id": 112081,
+        "other_id": 1000033,
         "name": "Consonance Sword Formation",
         "namecn": "灵犀剑阵"
     },
     {
         "id": 112091,
+        "other_id": 1000030,
         "name": "Earth Evil Sword",
         "namecn": "地煞剑"
     },
     {
         "id": 112101,
+        "other_id": 1000011,
         "name": "Form-Intention Sword",
         "namecn": "形意剑"
     },
     {
         "id": 112111,
+        "other_id": 1000022,
         "name": "Unrestrained Sword - One",
         "namecn": "狂剑·一式"
     },
     {
         "id": 113011,
+        "other_id": 1000026,
         "name": "Cloud Sword - Softheart",
         "namecn": "云剑·柔心",
         "namealta": "柔云心法"
     },
     {
         "id": 113021,
+        "other_id": 1000028,
         "name": "Cloud Sword - Necessity",
         "namecn": "云剑·无妄"
     },
     {
         "id": 113031,
+        "other_id": 1000027,
         "name": "Cloud Sword - Pierce the Star",
         "namecn": "云剑·点星"
     },
     {
         "id": 113041,
+        "other_id": 1000063,
         "name": "Cloud Sword - Spirit Coercion",
         "namecn": "云剑·汇灵"
     },
     {
         "id": 113051,
+        "other_id": 1000031,
         "name": "Cloud Dance Rhythm",
         "namecn": "云舞诀"
     },
     {
         "id": 113061,
+        "other_id": 1000020,
         "name": "Raven Spirit Sword",
         "namecn": "暗鸦灵剑"
     },
     {
         "id": 113071,
+        "other_id": 1000023,
         "name": "Burst Sword",
         "namecn": "破气剑"
     },
     {
         "id": 113081,
+        "other_id": 1000029,
         "name": "Giant Roc Spirit Sword",
         "namecn": "巨鹏灵剑"
     },
     {
         "id": 113091,
+        "other_id": 1000008,
         "name": "Reflexive Sword",
         "namecn": "反身剑"
     },
     {
         "id": 113101,
+        "other_id": 1000046,
         "name": "Mirror Flower Sword Formation",
         "namecn": "镜花剑阵"
     },
     {
         "id": 113111,
+        "other_id": 1000032,
         "name": "Tri-Peak Sword",
         "namecn": "三峰剑"
     },
     {
         "id": 114011,
+        "other_id": 1000039,
         "name": "Cloud Sword - Flash Wind",
         "namecn": "云剑·闪风"
     },
     {
         "id": 114021,
+        "other_id": 1000040,
         "name": "Cloud Sword - Moon Shade",
         "namecn": "云剑·月影"
     },
     {
         "id": 114031,
+        "other_id": 1000034,
         "name": "Spirit Gather Citta-Dharma",
         "namecn": "聚灵心法"
     },
     {
         "id": 114041,
+        "other_id": 1000065,
         "name": "CentiBird Spirit Sword Rhythm",
-        "namecn": "白鸟灵剑诀"
+        "namecn": "百鸟灵剑诀"
     },
     {
         "id": 114051,
+        "other_id": 1000059,
         "name": "Egret Spirit Sword",
         "namecn": "白鹭灵剑"
     },
     {
         "id": 114061,
+        "other_id": 1000036,
         "name": "Giant Kun Spirit Sword",
         "namecn": "巨鲲灵剑"
     },
     {
         "id": 114071,
+        "other_id": 1000038,
         "name": "Inspiration Sword",
         "namecn": "灵感剑"
     },
     {
         "id": 114081,
+        "other_id": 1000037,
         "name": "Flow Cloud Chaos Sword",
         "namecn": "流云乱剑"
     },
     {
         "id": 114091,
+        "other_id": 1000041,
         "name": "Moon Water Sword Formation",
         "namecn": "水月剑阵"
     },
     {
         "id": 114101,
+        "other_id": 1000035,
         "name": "Unrestrained Sword - Two",
         "namecn": "狂剑·二式"
     },
     {
         "id": 115011,
+        "other_id": 1000042,
         "name": "Cloud Sword - Dragon Roam",
         "namecn": "云剑·游龙"
     },
     {
         "id": 115021,
+        "other_id": 1000060,
         "name": "Cloud Sword - Step Lightly",
         "namecn": "云剑·凌波"
     },
     {
         "id": 115031,
+        "other_id": 1000043,
         "name": "Flying Spirit Shade Sword",
         "namecn": "飞灵闪影剑"
     },
     {
         "id": 115041,
+        "other_id": 1000045,
         "name": "Dharma Spirit Sword",
         "namecn": "万法归灵剑"
     },
     {
         "id": 115051,
+        "other_id": 1000044,
         "name": "Sword Intent Surge",
         "namecn": "剑意激荡"
     },
     {
         "id": 115061,
+        "other_id": 1000025,
         "name": "Rule Sky Sword Formation",
         "namecn": "御空剑阵"
     },
     {
         "id": 115071,
+        "other_id": 1000064,
         "name": "Chain Sword Formation",
         "namecn": "连环剑阵"
     },
     {
         "id": 115081,
+        "other_id": 1000066,
         "name": "Unrestrained Sword - Zero",
         "namecn": "狂剑·零式"
     },
     {
         "id": 121011,
+        "other_id": 4000023,
         "name": "Shifting Stars",
         "namecn": "斗转星移"
     },
     {
         "id": 121021,
+        "other_id": 4000008,
         "name": "Dotted Around",
         "namecn": "星罗棋布"
     },
     {
         "id": 121031,
+        "other_id": 4000011,
         "name": "Astral Move - Block",
         "namecn": "星弈·挡"
     },
     {
         "id": 121041,
+        "other_id": 4000010,
         "name": "Astral Move - Flank",
         "namecn": "星弈·夹"
     },
     {
         "id": 121051,
+        "other_id": 4000003,
         "name": "Zhen Hexagram",
         "namecn": "震卦",
         "namealta": "☳"
     },
     {
         "id": 121061,
+        "other_id": 4000002,
         "name": "Earth Hexagram",
         "namecn": "坤卦",
         "namealta": "☷"
     },
     {
         "id": 121071,
+        "other_id": 4000001,
         "name": "Wind Hexagram",
         "namecn": "巽卦",
         "namealta": "☴"
     },
     {
         "id": 121081,
+        "other_id": 4000004,
         "name": "Palm Thunder",
         "namecn": "掌心雷"
     },
     {
         "id": 121091,
+        "other_id": 4000005,
         "name": "White Crane Bright Wings",
         "namecn": "白鹤亮翅"
     },
     {
         "id": 121101,
+        "other_id": 4000061,
         "name": "Sparrow's Tail",
         "namecn": "揽雀尾"
     },
     {
         "id": 121111,
+        "other_id": 4000006,
         "name": "Wild Horses Part the Mane",
         "namecn": "野马分鬃",
         "namealta": "Striding Into the Wind"
     },
     {
         "id": 121121,
+        "other_id": 4000013,
         "name": "Incessant",
         "namecn": "藕断丝连"
     },
     {
         "id": 122011,
+        "other_id": 4000024,
         "name": "Astral Fleche",
         "namecn": "飞星刺"
     },
     {
         "id": 122021,
+        "other_id": 4000028,
         "name": "Astral Move - Point",
         "namecn": "星弈·点"
     },
     {
         "id": 122031,
+        "other_id": 4000009,
         "name": "Astral Move - Stand",
         "namecn": "星弈·立"
     },
     {
         "id": 122041,
+        "other_id": 4000016,
         "name": "Mountain Hexagram",
         "namecn": "艮卦",
         "namealta": "☶"
     },
     {
         "id": 122051,
+        "other_id": 4000015,
         "name": "Water Hexagram",
         "namecn": "坎卦",
         "namealta": "☵"
     },
     {
         "id": 122061,
+        "other_id": 4000030,
         "name": "Falling Thunder",
         "namecn": "落雷术"
     },
     {
         "id": 122071,
+        "other_id": 4000019,
         "name": "Cutting Weeds",
         "namecn": "斩草除根"
     },
     {
         "id": 122081,
+        "other_id": 4000020,
         "name": "Golden Rooster Independence",
         "namecn": "金鸡独立"
     },
     {
         "id": 122091,
+        "other_id": 4000027,
         "name": "Stillness Citta-Dharma",
         "namecn": "静气心法"
     },
     {
         "id": 122101,
+        "other_id": 4000021,
         "name": "Flower Sentient",
         "namecn": "落花有意"
     },
     {
         "id": 122111,
+        "other_id": 4000018,
         "name": "Imposing",
         "namecn": "气贯长虹"
     },
     {
         "id": 123011,
+        "other_id": 4000032,
         "name": "Starry Moon",
         "namecn": "众星拱月"
     },
     {
         "id": 123021,
+        "other_id": 4000029,
         "name": "Astral Move - Hit",
         "namecn": "星弈·打"
     },
     {
         "id": 123031,
+        "other_id": 4000025,
         "name": "Lake Hexagram",
         "namecn": "兑卦",
         "namealta": "☱"
     },
     {
         "id": 123041,
+        "other_id": 4000031,
         "name": "White Snake",
         "namecn": "白蛇吐信"
     },
     {
         "id": 123051,
+        "other_id": 4000068,
         "name": "Thunder Hexagram Rhythm",
         "namecn": "御雷卦诀"
     },
     {
         "id": 123061,
+        "other_id": 4000040,
         "name": "Yin Yang Formation",
         "namecn": "两仪阵"
     },
     {
         "id": 123071,
+        "other_id": 4000022,
         "name": "Ruthless Water",
         "namecn": "流水无情"
     },
     {
         "id": 123081,
+        "other_id": 4000017,
         "name": "Qi Therapy",
         "namecn": "气疗术"
     },
     {
         "id": 123091,
+        "other_id": 4000042,
         "name": "Revitalized",
         "namecn": "枯木逢春"
     },
     {
         "id": 123101,
+        "other_id": 4000043,
         "name": "Hunter Becomes Preyer",
         "namecn": "螳螂捕蝉"
     },
     {
         "id": 123111,
+        "other_id": 4000033,
         "name": "Drag Moon In Sea",
         "namecn": "海底捞月"
     },
     {
         "id": 124011,
+        "other_id": 4000038,
         "name": "Astral Move - Fly",
         "namecn": "星弈·飞"
     },
     {
         "id": 124021,
+        "other_id": 4000039,
         "name": "Astral Move - Tiger",
         "namecn": "星弈·虎"
     },
     {
         "id": 124031,
+        "other_id": 4000014,
         "name": "Hexagram Formacide",
         "namecn": "六爻绝阵"
     },
     {
         "id": 124041,
+        "other_id": 4000034,
         "name": "Flame Hexagram",
         "namecn": "离卦",
         "namealta": "☲"
     },
     {
         "id": 124051,
+        "other_id": 4000062,
         "name": "Star Trail Divination",
         "namecn": "星轨推衍"
     },
     {
         "id": 124061,
+        "other_id": 4000035,
         "name": "Dance Of The Dragonfly",
         "namecn": "蜻蜓点水"
     },
     {
         "id": 124071,
+        "other_id": 4000063,
         "name": "Thunder And Lighting",
         "namecn": "轰雷掣电",
         "namealta": "Thunder And Lightning"
     },
     {
         "id": 124081,
+        "other_id": 4000037,
         "name": "Repel Citta-Dharma",
         "namecn": "反震心法"
     },
     {
         "id": 124091,
+        "other_id": 4000036,
         "name": "Escape Plan",
         "namecn": "金蝉脱壳"
     },
     {
         "id": 124101,
+        "other_id": 4000059,
         "name": "Snake in Reflection",
         "namecn": "杯弓蛇影",
         "namealta": "Extremely Suspicious"
     },
     {
         "id": 125011,
+        "other_id": 4000045,
         "name": "Polaris Citta-Dharma",
         "namecn": "天元心法"
     },
     {
         "id": 125021,
+        "other_id": 4000044,
         "name": "Astral Move - Cide",
         "namecn": "星弈·断"
     },
     {
         "id": 125031,
+        "other_id": 4000026,
         "name": "Heaven Hexagram",
         "namecn": "乾卦",
         "namealta": "☰"
     },
     {
         "id": 125041,
+        "other_id": 4000046,
         "name": "Five Thunders",
         "namecn": "五雷轰顶"
     },
     {
         "id": 125051,
+        "other_id": 4000041,
         "name": "Strike Twice",
         "namecn": "梅开二度"
     },
     {
         "id": 125061,
+        "other_id": 4000060,
         "name": "Great Spirit",
         "namecn": "气吞山河"
     },
     {
         "id": 125071,
+        "other_id": 4000066,
         "name": "Hunter Hunting Hunter",
         "namecn": "黄雀在后"
     },
     {
         "id": 125081,
+        "other_id": 4000067,
         "name": "Propitious Omen",
         "namecn": "紫气东来"
     },
     {
         "id": 131011,
+        "other_id": 7000003,
         "name": "Wood Spirit Seal",
         "namecn": "木灵印"
     },
     {
         "id": 131021,
+        "other_id": 7000004,
         "name": "Wood Spirit - Bud",
         "namecn": "木灵·芽"
     },
     {
         "id": 131031,
+        "other_id": 7000009,
         "name": "Fire Spirit Seal",
         "namecn": "火灵印"
     },
     {
         "id": 131041,
+        "other_id": 7000010,
         "name": "Fire Spirit - Rush",
         "namecn": "火灵·窜"
     },
     {
         "id": 131051,
+        "other_id": 7000011,
         "name": "Earth Spirit Seal",
         "namecn": "土灵印"
     },
     {
         "id": 131061,
+        "other_id": 7000013,
         "name": "Earth Spirit - Smash",
         "namecn": "土灵·碎"
     },
     {
         "id": 131071,
+        "other_id": 7000001,
         "name": "Metal Spirit Seal",
         "namecn": "金灵印"
     },
     {
         "id": 131081,
+        "other_id": 7000002,
         "name": "Metal Spirit - Needle",
         "namecn": "金灵·针"
     },
     {
         "id": 131091,
+        "other_id": 7000006,
         "name": "Water Spirit Seal",
         "namecn": "水灵印"
     },
     {
         "id": 131101,
+        "other_id": 7000007,
         "name": "Water Spirit - Waves",
         "namecn": "水灵·涛"
     },
     {
         "id": 131111,
+        "other_id": 7000060,
         "name": "Five Elements Fleche",
         "namecn": "五行刺"
     },
     {
         "id": 132011,
+        "other_id": 7000018,
         "name": "Wood Spirit - Recovery",
         "namecn": "木灵·复苏"
     },
     {
         "id": 132021,
+        "other_id": 7000017,
         "name": "Wood Spirit - Sparse Shadow",
         "namecn": "木灵·疏影"
     },
     {
         "id": 132031,
+        "other_id": 7000021,
         "name": "Fire Spirit - Flame Eater",
         "namecn": "火灵·聚炎"
     },
     {
         "id": 132041,
+        "other_id": 7000022,
         "name": "Fire Spirit - Scarlet Flame",
         "namecn": "火灵·赤焰"
     },
     {
         "id": 132051,
+        "other_id": 7000023,
         "name": "Earth Spirit Formation",
         "namecn": "土灵阵"
     },
     {
         "id": 132061,
+        "other_id": 7000024,
         "name": "Earth Spirit - Mountains",
         "namecn": "土灵·群山"
     },
     {
         "id": 132071,
+        "other_id": 7000016,
         "name": "Metal Spirit Formation",
         "namecn": "金灵阵"
     },
     {
         "id": 132081,
+        "other_id": 7000015,
         "name": "Metal Spirit - Heart Pierce",
         "namecn": "金灵·穿心"
     },
     {
         "id": 132091,
+        "other_id": 7000019,
         "name": "Water Spirit - Billows",
         "namecn": "水灵·波澜"
     },
     {
         "id": 132101,
+        "other_id": 7000037,
         "name": "Water Spirit - Turbulent",
         "namecn": "水灵·汹涌"
     },
     {
         "id": 132111,
+        "other_id": 7000014,
         "name": "Cosmos Seal",
         "namecn": "浑天印"
     },
     {
         "id": 133011,
+        "other_id": 7000036,
         "name": "Wood Spirit Formation",
         "namecn": "木灵阵"
     },
     {
         "id": 133021,
+        "other_id": 7000028,
         "name": "Wood Spirit - Forest Guard",
         "namecn": "木灵·巡林"
     },
     {
         "id": 133031,
+        "other_id": 7000031,
         "name": "Fire Spirit Formation",
         "namecn": "火灵阵"
     },
     {
         "id": 133041,
+        "other_id": 7000032,
         "name": "Fire Spirit - Blast",
         "namecn": "火灵·轰爆"
     },
     {
         "id": 133051,
+        "other_id": 7000012,
         "name": "Earth Spirit - Dust",
         "namecn": "土灵·扬尘"
     },
     {
         "id": 133061,
+        "other_id": 7000062,
         "name": "Earth Spirit - Cliff",
         "namecn": "土灵·断崖"
     },
     {
         "id": 133071,
+        "other_id": 7000025,
         "name": "Metal Spirit - Charge",
         "namecn": "金灵·蓄锐"
     },
     {
         "id": 133081,
+        "other_id": 7000026,
         "name": "Metal Spirit - Sharp",
         "namecn": "金灵·锋芒"
     },
     {
         "id": 133091,
+        "other_id": 7000029,
         "name": "Water Spirit Formation",
         "namecn": "水灵阵"
     },
     {
         "id": 133101,
+        "other_id": 7000059,
         "name": "Water Spirit - Spring",
         "namecn": "水灵·泉涌"
     },
     {
         "id": 133111,
+        "other_id": 7000067,
         "name": "Five Elements Circulation",
         "namecn": "五行流转"
     },
     {
         "id": 134011,
+        "other_id": 7000061,
         "name": "Wood Spirit - Fragrant",
         "namecn": "木灵·暗香"
     },
     {
         "id": 134021,
+        "other_id": 7000027,
         "name": "Wood Spirit - Thorn",
         "namecn": "木灵·玫刺"
     },
     {
         "id": 134031,
+        "other_id": 7000038,
         "name": "Fire Spirit - Flash Fire",
         "namecn": "火灵·瞬燃"
     },
     {
         "id": 134041,
+        "other_id": 7000039,
         "name": "Fire Spirit - Heart Fire",
         "namecn": "火灵·灼心"
     },
     {
         "id": 134051,
+        "other_id": 7000040,
         "name": "Earth Spirit - Steep",
         "namecn": "土灵·绝壁"
     },
     {
         "id": 134061,
+        "other_id": 7000033,
         "name": "Earth Spirit - Quicksand",
         "namecn": "土灵·流沙"
     },
     {
         "id": 134071,
+        "other_id": 7000034,
         "name": "Metal Spirit - Shuttle",
         "namecn": "金灵·飞梭"
     },
     {
         "id": 134081,
+        "other_id": 7000035,
         "name": "Metal Spirit - Iron Bone",
         "namecn": "金灵·铁骨"
     },
     {
         "id": 134091,
+        "other_id": 7000030,
         "name": "Water Spirit - Great Waves",
         "namecn": "水灵·腾浪"
     },
     {
         "id": 134101,
+        "other_id": 7000020,
         "name": "Water Spirit - Dive",
         "namecn": "水灵·潜遁"
     },
     {
         "id": 134111,
+        "other_id": 7000066,
         "name": "World Smash",
         "namecn": "混元碎击"
     },
     {
         "id": 135011,
+        "other_id": 7000043,
         "name": "Wood Spirit - Willow Leaf",
         "namecn": "木灵·柳纷飞"
     },
     {
         "id": 135021,
+        "other_id": 7000056,
         "name": "Fire Spirit - Blazing Prairie",
         "namecn": "火灵·烈燎原"
     },
     {
         "id": 135031,
+        "other_id": 7000053,
         "name": "Earth Spirit - Combine World",
         "namecn": "土灵·合八荒"
     },
     {
         "id": 135041,
+        "other_id": 7000042,
         "name": "Metal Spirit - Giant Tripod",
         "namecn": "金灵·巨鼎落"
     },
     {
         "id": 135051,
+        "other_id": 7000057,
         "name": "Water Spirit - Combine Rivers",
         "namecn": "水灵·纳百川"
     },
     {
         "id": 135061,
+        "other_id": 7000058,
         "name": "Ultimate World Formation",
         "namecn": "混元无极阵"
     },
     {
         "id": 135071,
+        "other_id": 7000073,
         "name": "Five Elements Heavenly Marrow Rhythm",
         "namecn": "五行天髓诀"
     },
     {
         "id": 141011,
+        "other_id": 10000001,
         "name": "Crash Fist - Poke",
         "namecn": "崩拳·戳"
     },
     {
         "id": 141021,
+        "other_id": 10000002,
         "name": "Crash Fist - Block",
         "namecn": "崩拳·封"
     },
     {
         "id": 141031,
+        "other_id": 10000003,
         "name": "Crash Fist - Bounce",
         "namecn": "崩拳·弹"
     },
     {
         "id": 141041,
+        "other_id": 10000004,
         "name": "Exercise Fist",
         "namecn": "锻拳"
     },
     {
         "id": 141051,
+        "other_id": 10000005,
         "name": "Mountain-Cleaving Palms",
         "namecn": "劈山掌"
     },
     {
         "id": 141061,
+        "other_id": 10000006,
         "name": "Embracing Qi Technique",
         "namecn": "抱气法"
     },
     {
         "id": 141071,
+        "other_id": 10000008,
         "name": "Rakshasa Pouncing",
         "namecn": "罗刹扑"
     },
     {
         "id": 141081,
+        "other_id": 10000007,
         "name": "Sky-Piercing Claw",
         "namecn": "破空爪"
     },
     {
         "id": 141091,
+        "other_id": 10000009,
         "name": "Mountain Falling",
         "namecn": "千斤坠"
     },
     {
         "id": 141101,
+        "other_id": 10000010,
         "name": "Gather Force",
         "namecn": "起势"
     },
     {
         "id": 141111,
+        "other_id": 10000011,
         "name": "Vigorous Force",
         "namecn": "朝气蓬勃"
     },
     {
         "id": 141121,
+        "other_id": 10000012,
         "name": "Youthful Vigor",
         "namecn": "血气方刚"
     },
     {
         "id": 142011,
+        "other_id": 10000013,
         "name": "Crash Fist - Shake",
         "namecn": "崩拳·撼"
     },
     {
         "id": 142021,
+        "other_id": 10000014,
         "name": "Crash Fist - Entangle",
         "namecn": "崩拳·缠"
     },
     {
         "id": 142031,
+        "other_id": 10000015,
         "name": "Crash Fist - Blitz",
         "namecn": "崩拳·突"
     },
     {
         "id": 142041,
+        "other_id": 10000016,
         "name": "Exercise Tendons",
         "namecn": "锻筋"
     },
     {
         "id": 142051,
+        "other_id": 10000017,
         "name": "Detect-Horse Palms",
         "namecn": "探马掌"
     },
     {
         "id": 142061,
+        "other_id": 10000018,
         "name": "Gale Shadow Claw",
         "namecn": "风冥爪"
     },
     {
         "id": 142071,
+        "other_id": 10000019,
         "name": "Ghost Howling",
         "namecn": "夜鬼啸"
     },
     {
         "id": 142081,
+        "other_id": 10000021,
         "name": "Standing Firm",
         "namecn": "岿然不动"
     },
     {
         "id": 142091,
+        "other_id": 10000022,
         "name": "Strong Force",
         "namecn": "势大力沉"
     },
     {
         "id": 142101,
+        "other_id": 10000032,
         "name": "Sinking Qi",
         "namecn": "气沉丹田"
     },
     {
         "id": 142111,
+        "other_id": 10000023,
         "name": "Magnanimous Righteousness",
         "namecn": "浩然正气"
     },
     {
         "id": 143011,
+        "other_id": 10000026,
         "name": "Crash Footwork",
         "namecn": "崩天步"
     },
     {
         "id": 143021,
+        "other_id": 10000024,
         "name": "Crash Fist - Truncate",
         "namecn": "崩拳·截脉"
     },
     {
         "id": 143031,
+        "other_id": 10000036,
         "name": "Crash Fist - Subdue Dragon",
         "namecn": "崩拳·降龙"
     },
     {
         "id": 143041,
+        "other_id": 10000027,
         "name": "Exercise Bones",
         "namecn": "锻骨"
     },
     {
         "id": 143051,
+        "other_id": 10000031,
         "name": "Bearing the Load",
         "namecn": "荷重前行"
     },
     {
         "id": 143061,
+        "other_id": 10000028,
         "name": "Windward Palms",
         "namecn": "迎风掌"
     },
     {
         "id": 143071,
+        "other_id": 10000029,
         "name": "Tiger Pouncing",
         "namecn": "饿虎扑食"
     },
     {
         "id": 143081,
+        "other_id": 10000030,
         "name": "Double Trouble",
         "namecn": "双鬼拍门"
     },
     {
         "id": 143091,
+        "other_id": 10000020,
         "name": "Majestic Qi",
         "namecn": "气若悬河"
     },
     {
         "id": 143101,
+        "other_id": 10000034,
         "name": "Sailing through Sky",
         "namecn": "踏破九霄"
     },
     {
         "id": 143111,
+        "other_id": 10000033,
         "name": "Mighty Force",
         "namecn": "势如破竹"
     },
     {
         "id": 144011,
+        "other_id": 10000044,
         "name": "Crash Citta-Dharma",
         "namecn": "崩灭心法"
     },
     {
         "id": 144021,
+        "other_id": 10000025,
         "name": "Crash Fist - Inch Force",
         "namecn": "崩拳·寸劲"
     },
     {
         "id": 144031,
+        "other_id": 10000035,
         "name": "Crash Fist - Continue",
         "namecn": "崩拳·连崩"
     },
     {
         "id": 144041,
+        "other_id": 10000037,
         "name": "Exercise Marrow",
         "namecn": "锻髓"
     },
     {
         "id": 144051,
+        "other_id": 10000038,
         "name": "Crane Footwork",
         "namecn": "鹤步"
     },
     {
         "id": 144061,
+        "other_id": 10000050,
         "name": "Elusive Footwork",
         "namecn": "灵玄迷踪步"
     },
     {
         "id": 144071,
+        "other_id": 10000039,
         "name": "Styx Agility",
         "namecn": "冥影身法"
     },
     {
         "id": 144081,
+        "other_id": 10000040,
         "name": "Soul Seizing",
         "namecn": "玄手夺魂"
     },
     {
         "id": 144091,
+        "other_id": 10000042,
         "name": "Surging Waves",
         "namecn": "冲霄破浪"
     },
     {
         "id": 144101,
+        "other_id": 10000043,
         "name": "Overwhelming Force",
         "namecn": "磅礴之势"
     },
     {
         "id": 145011,
+        "other_id": 10000045,
         "name": "Crash Fist - Blink",
         "namecn": "崩拳·闪击"
     },
     {
         "id": 145021,
+        "other_id": 10000046,
         "name": "Crash Fist - Shocked",
         "namecn": "崩拳·惊触"
     },
     {
         "id": 145031,
+        "other_id": 10000048,
         "name": "Exercise Soul",
         "namecn": "锻神开海"
     },
     {
         "id": 145041,
+        "other_id": 10000047,
         "name": "Realm-Killing Palms",
         "namecn": "百杀破境掌"
     },
     {
         "id": 145051,
+        "other_id": 10000041,
         "name": "Shura Roar",
         "namecn": "修罗吼"
     },
     {
         "id": 145061,
+        "other_id": 10000068,
         "name": "Soul Cleaving",
         "namecn": "玄心斩魄"
     },
     {
         "id": 145071,
+        "other_id": 10000051,
         "name": "Gather Intense Force",
         "namecn": "威震四方"
     },
     {
         "id": 145081,
+        "other_id": 10000052,
         "name": "Vast Universe",
         "namecn": "天地浩荡"
     },
     {
         "id": 211011,
+        "other_id": 1000047,
         "name": "Rhyme Spirit Sword",
         "namecn": "韵灵剑"
     },
     {
         "id": 211021,
+        "other_id": 1000054,
         "name": "Diligent Sword",
         "namecn": "勤拙剑"
     },
     {
         "id": 212011,
+        "other_id": 1000048,
         "name": "Cloud Sword - Dawn",
         "namecn": "云剑·拂晓"
     },
     {
         "id": 212021,
+        "other_id": 1000055,
         "name": "Giant Ape Spirit Sword",
         "namecn": "巨猿灵剑"
     },
     {
         "id": 213011,
+        "other_id": 1000049,
         "name": "Unrestrained Sword - Dragon Coiled",
         "namecn": "狂剑·盘龙"
     },
     {
         "id": 213021,
+        "other_id": 1000056,
         "name": "One Heart One Sword",
         "namecn": "一心一剑"
     },
     {
         "id": 213031,
+        "other_id": 1000062,
         "name": "Synergy Sword Formation",
         "namecn": "合势剑阵"
     },
     {
         "id": 214011,
+        "other_id": 1000050,
         "name": "Sword Intent Flow",
         "namecn": "剑意流转"
     },
     {
         "id": 214021,
+        "other_id": 1000051,
         "name": "Emptiness Sword Formation",
         "namecn": "溟空剑阵诀"
     },
     {
         "id": 215011,
+        "other_id": 1000053,
         "name": "Apex Sword Citta-Dharma",
         "namecn": "凌剑心法"
     },
     {
         "id": 215021,
+        "other_id": 1000057,
         "name": "Step Moon Into Cloud",
         "namecn": "步月登云"
     },
     {
         "id": 215031,
+        "other_id": 1000061,
         "name": "Unrestrained Sword - Twin Dragons",
         "namecn": "狂剑·双龙"
     },
     {
         "id": 216011,
+        "other_id": 1000052,
         "name": "Remnant Cloud Sky Sealing Sword",
         "namecn": "残云封天剑",
         "namealta": "Remnant Cloud Phocosky Sword"
     },
     {
         "id": 216021,
+        "other_id": 1000058,
         "name": "Secret Sword - Spirit Cloud",
         "namecn": "秘剑·灵云"
     },
     {
         "id": 221011,
+        "other_id": 4000047,
         "name": "Hexagrams Spirit Resurrection",
         "namecn": "卦灵返生"
     },
     {
         "id": 221021,
+        "other_id": 4000053,
         "name": "Throwing Stones For Directions",
         "namecn": "投石问路"
     },
     {
         "id": 222011,
+        "other_id": 4000048,
         "name": "Vitality Blossom",
         "namecn": "生机绽放"
     },
     {
         "id": 222021,
+        "other_id": 4000054,
         "name": "Star Born Rhythm",
         "namecn": "星衍诀"
     },
     {
         "id": 223011,
+        "other_id": 4000050,
         "name": "Sun And Moon For Glory",
         "namecn": "日月争辉"
     },
     {
         "id": 223021,
+        "other_id": 4000055,
         "name": "All-Or-Nothing",
         "namecn": "一掷乾坤"
     },
     {
         "id": 224011,
+        "other_id": 4000056,
         "name": "Flowers And Water",
         "namecn": "落花流水"
     },
     {
         "id": 224021,
+        "other_id": 4000051,
         "name": "Astral Move - Dragon Slay",
         "namecn": "星弈·屠龙"
     },
     {
         "id": 224031,
+        "other_id": 4000064,
         "name": "Thunder Citta-Dharma",
         "namecn": "雷霆心法"
     },
     {
         "id": 225011,
+        "other_id": 4000057,
         "name": "Thin On The Ground",
         "namecn": "铁树开花"
     },
     {
         "id": 225021,
+        "other_id": 4000049,
         "name": "Preemptive Strike",
         "namecn": "先发制人"
     },
     {
         "id": 225031,
+        "other_id": 4000065,
         "name": "Meteorite Meteor",
         "namecn": "流星天陨"
     },
     {
         "id": 226011,
+        "other_id": 4000058,
         "name": "Destiny Catastrophe",
         "namecn": "天命劫"
     },
     {
         "id": 226021,
+        "other_id": 4000052,
         "name": "Covert Shift",
         "namecn": "移花接木"
     },
     {
         "id": 231011,
+        "other_id": 7000068,
         "name": "Wood Spirit Secret Seal",
         "namecn": "木灵秘印"
     },
     {
         "id": 231021,
+        "other_id": 7000069,
         "name": "Fire Spirit Secret Seal",
         "namecn": "火灵秘印"
     },
     {
         "id": 231031,
+        "other_id": 7000070,
         "name": "Earth Spirit Secret Seal",
         "namecn": "土灵秘印"
     },
     {
         "id": 231041,
+        "other_id": 7000071,
         "name": "Metal Spirit Secret Seal",
         "namecn": "金灵秘印"
     },
     {
         "id": 231051,
+        "other_id": 7000072,
         "name": "Water Spirit Secret Seal",
         "namecn": "水灵秘印"
     },
     {
         "id": 232011,
+        "other_id": 7000063,
         "name": "Metal Spirit - Chokehold",
         "namecn": "金灵·封喉"
     },
     {
         "id": 232021,
+        "other_id": 7000048,
         "name": "Water Spirit - Rhythm Wood",
         "namecn": "水灵·润木"
     },
     {
         "id": 232031,
+        "other_id": 7000049,
         "name": "Fire Spirit - Rhythm Earth",
         "namecn": "火灵·窑土"
     },
     {
         "id": 233011,
+        "other_id": 7000064,
         "name": "Wood Spirit - Vine",
         "namecn": "木灵·藤蔓"
     },
     {
         "id": 233021,
+        "other_id": 7000050,
         "name": "Metal Spirit - Rhythm Water",
         "namecn": "金灵·凝水"
     },
     {
         "id": 233031,
+        "other_id": 7000055,
         "name": "Five Elements Escape",
         "namecn": "五行遁术"
     },
     {
         "id": 234011,
+        "other_id": 7000046,
         "name": "Earth Spirit - Earthquake",
         "namecn": "土灵·撼地"
     },
     {
         "id": 234021,
+        "other_id": 7000051,
         "name": "Wood Spirit - Rhythm Fire",
         "namecn": "木灵·燃火"
     },
     {
         "id": 234031,
+        "other_id": 7000047,
         "name": "Earth Spirit - Rhythm Metal",
         "namecn": "土灵·韵金"
     },
     {
         "id": 235011,
+        "other_id": 7000045,
         "name": "Fire Spirit - Burning Sky",
         "namecn": "火灵·焚天焱"
     },
     {
         "id": 235021,
+        "other_id": 7000044,
         "name": "Water Spirit - Tsunami",
         "namecn": "水灵·海龙啸"
     },
     {
         "id": 236011,
+        "other_id": 7000052,
         "name": "Five Elements Spirit Blast",
         "namecn": "五行灵爆术"
     },
     {
         "id": 236021,
+        "other_id": 7000065,
         "name": "Five Elements Blossom",
         "namecn": "五行绽放"
     },
     {
         "id": 241011,
+        "other_id": 10000054,
         "name": "Endless Entanglement",
         "namecn": "死缠烂打"
     },
     {
         "id": 241021,
+        "other_id": 10000053,
         "name": "Endless Force",
         "namecn": "气势不绝"
     },
     {
         "id": 242011,
+        "other_id": 10000055,
         "name": "Toxin Immunity",
         "namecn": "百毒不侵"
     },
     {
         "id": 242021,
+        "other_id": 10000056,
         "name": "Lying Drunk",
         "namecn": "醉卧逍遥"
     },
     {
+        "id": 243011,
+        "other_id": 10000058,
+        "name": "Herbal Bath",
+        "namecn": "灵草药浴",
+        "non_playable": true
+    },
+    {
         "id": 243021,
+        "other_id": 10000061,
         "name": "Break Pots and Sink Boats",
         "namecn": "破釜沉舟"
     },
     {
         "id": 244011,
+        "other_id": 10000057,
         "name": "Strength Driven Mad",
-        "namecn": "类别"
+        "namecn": "力若疯魔"
     },
     {
         "id": 244021,
+        "other_id": 10000060,
         "name": "Crash Fist - Double",
         "namecn": "崩拳·双影"
     },
     {
         "id": 244031,
+        "other_id": 10000067,
         "name": "Styx Three Hit",
         "namecn": "幽冥三点手"
     },
     {
         "id": 245011,
+        "other_id": 10000062,
         "name": "Break Cocoon",
         "namecn": "破茧化蝶"
     },
     {
         "id": 245021,
+        "other_id": 10000064,
         "name": "Eerie Melody Buries Soul",
         "namecn": "鬼音葬魂"
     },
     {
         "id": 246011,
+        "other_id": 10000065,
         "name": "Endless Crash",
         "namecn": "无尽崩绝"
     },
     {
         "id": 246021,
+        "other_id": 10000066,
         "name": "Return to Simplicity",
         "namecn": "返璞归真"
     },
     {
         "id": 311011,
+        "other_id": 2000003,
         "name": "Earth Spirit Elixir",
         "namecn": "地灵丹"
     },
     {
         "id": 311021,
+        "other_id": 2000002,
         "name": "Fundamental Elixir",
         "namecn": "培元丹"
     },
     {
         "id": 311031,
+        "other_id": 2000001,
         "name": "Small Recover Elixir",
         "namecn": "小还丹"
     },
     {
         "id": 312011,
+        "other_id": 2000005,
         "name": "Cloud Elixir",
         "namecn": "飞云丹"
     },
     {
         "id": 312021,
+        "other_id": 2000004,
         "name": "Exorcism Elixir",
         "namecn": "驱邪丹"
     },
     {
+        "id": 312031,
+        "other_id": 2000006,
+        "name": "Bodybuilding Elixir",
+        "namecn": "锻体丹",
+        "non_playable": true
+    },
+    {
         "id": 313011,
+        "other_id": 2000007,
         "name": "Healing Elixir",
         "namecn": "疗伤丹"
     },
     {
         "id": 313021,
+        "other_id": 2000008,
         "name": "Divine Power Elixir",
         "namecn": "神力丹"
     },
     {
+        "id": 313031,
+        "other_id": 2000009,
+        "name": "Resurrection Elixir",
+        "namecn": "还魂丹",
+        "non_playable": true
+    },
+    {
         "id": 314011,
+        "other_id": 2000011,
         "name": "Great Recover Elixir",
         "namecn": "大还丹"
     },
     {
         "id": 314021,
+        "other_id": 2000010,
         "name": "Spiritage Elixir",
         "namecn": "聚灵丹"
     },
     {
+        "id": 314031,
+        "other_id": 2000012,
+        "name": "Talent Elixir",
+        "namecn": "洗髓丹",
+        "non_playable": true
+    },
+    {
         "id": 315011,
+        "other_id": 2000013,
         "name": "Ice Spirit Guard Elixir",
         "namecn": "冰灵护体丹"
     },
     {
+        "id": 315021,
+        "other_id": 2000014,
+        "name": "Great Bodybuilding Elixir",
+        "namecn": "锻体玄丹",
+        "non_playable": true
+    },
+    {
+        "id": 315031,
+        "other_id": 2000015,
+        "name": "Enlightenment Elixir",
+        "namecn": "悟道丹",
+        "non_playable": true
+    },
+    {
         "id": 321011,
+        "other_id": 3000001,
         "name": "Thunder Fulu",
         "namecn": "奔雷符"
     },
     {
         "id": 321021,
+        "other_id": 3000002,
         "name": "Guard Spirit Fulu",
         "namecn": "护灵符"
     },
     {
         "id": 321031,
+        "other_id": 3000003,
         "name": "Sharp Metal Fulu",
         "namecn": "锐金符"
     },
     {
         "id": 322011,
+        "other_id": 3000005,
         "name": "Fire Cloud Fulu",
         "namecn": "火云符"
     },
     {
         "id": 322021,
+        "other_id": 3000006,
         "name": "Calm Incantation",
         "namecn": "清心咒"
     },
     {
         "id": 322031,
+        "other_id": 3000004,
         "name": "Mist Fulu",
         "namecn": "水气符"
     },
     {
         "id": 323011,
+        "other_id": 3000009,
         "name": "Ice Incantation",
         "namecn": "寒冰咒"
     },
     {
         "id": 323021,
+        "other_id": 3000007,
         "name": "Spirit Absorb Fulu",
         "namecn": "吸灵符"
     },
     {
         "id": 323031,
+        "other_id": 3000008,
         "name": "Miasma Fulu",
         "namecn": "瘴气符"
     },
     {
         "id": 324011,
+        "other_id": 3000010,
         "name": "Spiritage Incantation",
         "namecn": "聚气咒"
     },
     {
         "id": 324021,
-        "name": "Distubing Fulu",
+        "other_id": 3000011,
+        "name": "Disturbing Fulu",
         "namecn": "扰心符",
-        "namealta": "Disturbing Fulu"
+        "namealta": "Distubing Fulu"
     },
     {
         "id": 324031,
+        "other_id": 3000012,
         "name": "Weaken Fulu",
         "namecn": "弱体符"
     },
     {
         "id": 325011,
+        "other_id": 3000014,
         "name": "Soul Requiem Fulu",
         "namecn": "镇魂封元符"
     },
     {
         "id": 325021,
+        "other_id": 3000013,
         "name": "Divine Walk Fulu",
         "namecn": "千里神行符"
     },
     {
         "id": 325031,
+        "other_id": 3000015,
         "name": "Thousand Evil Incantation",
         "namecn": "万邪入体咒",
         "namealta": "Thousand Evils Incantation"
     },
     {
         "id": 331011,
+        "other_id": 5000001,
         "name": "Cracking Voice",
         "namecn": "破音"
     },
     {
         "id": 331021,
+        "other_id": 5000002,
         "name": "Earth Tune",
         "namecn": "土行曲"
     },
     {
         "id": 331031,
+        "other_id": 5000003,
         "name": "Carefree Tune",
         "namecn": "逍遥曲"
     },
     {
         "id": 332011,
+        "other_id": 5000006,
         "name": "Kindness Tune",
         "namecn": "慈念曲"
     },
     {
         "id": 332021,
+        "other_id": 5000005,
         "name": "Illusion Tune",
         "namecn": "幻音曲"
     },
     {
         "id": 332031,
+        "other_id": 5000004,
         "name": "Sky Spirit Tune",
         "namecn": "天灵曲"
     },
     {
         "id": 333011,
+        "other_id": 5000007,
         "name": "Heartbroken Tune",
         "namecn": "断肠曲"
     },
     {
         "id": 333021,
+        "other_id": 5000008,
         "name": "Craze Dance Tune",
         "namecn": "狂舞曲"
     },
     {
         "id": 333031,
+        "other_id": 5000009,
         "name": "Tremolo",
         "namecn": "轮指连音"
     },
     {
         "id": 334011,
+        "other_id": 5000010,
         "name": "Regen Tune",
         "namecn": "回春曲"
     },
     {
         "id": 334021,
+        "other_id": 5000011,
         "name": "Nine Evil Ruptsprite",
         "namecn": "九煞破灵曲",
         "namealta": "Nine Evils Ruptsprite"
     },
     {
         "id": 334031,
+        "other_id": 5000012,
         "name": "Concentric Tune",
         "namecn": "同心曲"
     },
     {
         "id": 335011,
+        "other_id": 5000015,
         "name": "Predicament for Immortals",
         "namecn": "天音困仙曲"
     },
     {
         "id": 335021,
+        "other_id": 5000013,
         "name": "Apparition Confusion",
         "namecn": "幽绪乱心曲"
     },
     {
         "id": 335031,
+        "other_id": 5000014,
         "name": "Chord In Tune",
         "namecn": "转弦合调"
     },
     {
         "id": 341011,
+        "other_id": 6000001,
         "name": "Toning",
         "namecn": "调色"
     },
     {
         "id": 341021,
+        "other_id": 6000003,
         "name": "Grinding Ink",
         "namecn": "研墨"
     },
     {
+        "id": 341031,
+        "other_id": 6000002,
+        "name": "Practice Writing",
+        "namecn": "练笔",
+        "non_playable": true
+    },
+    {
         "id": 342011,
+        "other_id": 6000004,
         "name": "Pen Walks Dragon Snake",
         "namecn": "笔走龙蛇"
     },
     {
         "id": 342021,
+        "other_id": 6000005,
         "name": "Feed On Illusions",
         "namecn": "画饼充饥"
     },
     {
         "id": 342031,
+        "other_id": 6000006,
         "name": "Paint Feet on Snake",
         "namecn": "画蛇添足",
         "namealta": "Gild The Lily"
     },
     {
         "id": 343011,
+        "other_id": 6000007,
         "name": "Splash Ink",
         "namecn": "挥毫泼墨"
     },
     {
         "id": 343021,
+        "other_id": 6000008,
         "name": "Inspiration",
         "namecn": "灵感迸发"
     },
     {
+        "id": 343031,
+        "other_id": 6000009,
+        "name": "Ask Dao By Paint",
+        "namecn": "以画入道",
+        "non_playable": true
+    },
+    {
         "id": 344011,
+        "other_id": 6000011,
         "name": "Divine Brush",
         "namecn": "神来之笔"
     },
     {
         "id": 344021,
+        "other_id": 6000014,
         "name": "Falling Paper Clouds",
         "namecn": "落纸云烟"
     },
     {
+        "id": 344031,
+        "other_id": 6000010,
+        "name": "Reason By Analogy",
+        "namecn": "触类旁通",
+        "non_playable": true
+    },
+    {
         "id": 345011,
+        "other_id": 6000012,
         "name": "Flying Brush",
         "namecn": "运笔如飞"
     },
     {
         "id": 345021,
+        "other_id": 6000013,
         "name": "Finishing Touch",
         "namecn": "画龙点睛"
     },
     {
+        "id": 345031,
+        "other_id": 6000015,
+        "name": "Wonderful Strokes",
+        "namecn": "妙笔生花",
+        "non_playable": true
+    },
+    {
         "id": 351011,
+        "other_id": 8000001,
         "name": "Thunderphilia Formation",
         "namecn": "引雷阵"
     },
     {
         "id": 351021,
+        "other_id": 8000002,
         "name": "Fraccide Formation",
         "namecn": "碎杀阵"
     },
     {
         "id": 351031,
+        "other_id": 8000003,
         "name": "Impact Formation",
         "namecn": "冲击阵纹"
     },
     {
         "id": 352011,
+        "other_id": 8000004,
         "name": "Scutturtle Formation",
         "namecn": "龟甲阵"
     },
     {
         "id": 352021,
+        "other_id": 8000005,
         "name": "Cacopoisonous Formation",
         "namecn": "邪蛊阵"
     },
     {
         "id": 352031,
+        "other_id": 8000006,
         "name": "Cure Formation",
         "namecn": "疗愈阵纹"
     },
     {
         "id": 353011,
+        "other_id": 8000007,
         "name": "Spiritage Formation",
         "namecn": "聚灵阵"
     },
     {
         "id": 353021,
+        "other_id": 8000008,
         "name": "Endless Sword Formation",
         "namecn": "周天剑阵"
     },
     {
         "id": 353031,
+        "other_id": 8000009,
         "name": "Hexproof Formation",
         "namecn": "辟邪阵纹"
     },
     {
         "id": 354011,
+        "other_id": 8000011,
         "name": "Heavenly Spirit Forceage Formation",
         "namecn": "天罡聚力阵"
     },
     {
         "id": 354021,
+        "other_id": 8000010,
         "name": "Octgates Lock Formation",
         "namecn": "八门金锁阵"
     },
     {
         "id": 354031,
+        "other_id": 8000016,
         "name": "Motionless Tutelary Formation",
         "namecn": "不动金刚阵"
     },
     {
         "id": 355011,
+        "other_id": 8000013,
         "name": "Anthomania Formation",
         "namecn": "万花迷魂阵"
     },
     {
         "id": 355021,
+        "other_id": 8000012,
         "name": "Echo Formation",
         "namecn": "回响阵纹"
     },
     {
         "id": 355031,
+        "other_id": 8000014,
         "name": "Meru Formation",
         "namecn": "须弥阵纹"
     },
     {
         "id": 361011,
+        "other_id": 9000003,
         "name": "Sword Bamboo",
         "namecn": "剑枝竹"
     },
     {
         "id": 361021,
-        "name": "Hard Bamboo",
-        "namecn": "硬枝竹"
+        "other_id": 9000001,
+        "name": "Origin Herb",
+        "namecn": "归元草",
+        "non_playable": true
+    },
+    {
+        "id": 361031,
+        "other_id": 9000002,
+        "name": "Shuttle Orchid",
+        "namecn": "金梭兰",
+        "non_playable": true
+    },
+    {
+        "id": 362011,
+        "other_id": 9000008,
+        "name": "Divine Power Grass",
+        "namecn": "神力草",
+        "non_playable": true
     },
     {
         "id": 362021,
+        "other_id": 9000006,
         "name": "Mystery Seed",
         "namecn": "神秘种子"
     },
     {
         "id": 362031,
+        "other_id": 9000009,
         "name": "Leaf Shield Flower",
         "namecn": "叶盾花"
     },
     {
         "id": 362041,
+        "other_id": 9000018,
         "name": "Leaf Blade Flower",
         "namecn": "叶刃花"
     },
     {
+        "id": 362051,
+        "other_id": 9000016,
+        "name": "Rock Herb",
+        "namecn": "归岩草",
+        "non_playable": true
+    },
+    {
+        "id": 362061,
+        "other_id": 9000021,
+        "name": "Fire Orchid",
+        "namecn": "火梭兰",
+        "non_playable": true
+    },
+    {
+        "id": 362071,
+        "other_id": 9000022,
+        "name": "Lose Power Grass",
+        "namecn": "失力草",
+        "non_playable": true
+    },
+    {
+        "id": 362081,
+        "other_id": 9000027,
+        "name": "Hard Bamboo",
+        "namecn": "硬枝竹"
+    },
+    {
         "id": 363011,
+        "other_id": 9000005,
         "name": "Qi-seeking Sunflower",
         "namecn": "向灵葵"
     },
     {
         "id": 363021,
+        "other_id": 9000017,
         "name": "Qi-corrupting Sunflower",
         "namecn": "邪灵葵"
     },
     {
+        "id": 363031,
+        "other_id": 9000004,
+        "name": "Healing Chamomile",
+        "namecn": "愈甘菊",
+        "non_playable": true
+    },
+    {
+        "id": 363041,
+        "other_id": 9000007,
+        "name": "Spiritual Plant Watering",
+        "namecn": "灵植浇灌",
+        "non_playable": true
+    },
+    {
+        "id": 363051,
+        "other_id": 9000023,
+        "name": "Clear Chamomile",
+        "namecn": "清甘菊",
+        "non_playable": true
+    },
+    {
         "id": 364011,
+        "other_id": 9000013,
         "name": "Frozen Snow Lotus",
         "namecn": "冰封雪莲"
     },
     {
         "id": 364021,
+        "other_id": 9000026,
         "name": "Detoxific Purple Fern",
         "namecn": "清肠紫蕨"
     },
     {
         "id": 364031,
+        "other_id": 9000020,
         "name": "Frozen Blood Lotus",
         "namecn": "冰封血莲"
     },
     {
+        "id": 364041,
+        "other_id": 9000010,
+        "name": "Flying Owl Reishi",
+        "namecn": "飞枭灵芝",
+        "non_playable": true
+    },
+    {
+        "id": 364051,
+        "other_id": 9000012,
+        "name": "Toxic Purple Fern",
+        "namecn": "穿肠紫蕨",
+        "non_playable": true
+    },
+    {
+        "id": 364061,
+        "other_id": 9000024,
+        "name": "Shadow Owl Reishi",
+        "namecn": "影枭灵芝",
+        "non_playable": true
+    },
+    {
+        "id": 365011,
+        "other_id": 9000014,
+        "name": "Mysterious Dao Fruit",
+        "namecn": "玄韵道果",
+        "non_playable": true
+    },
+    {
         "id": 365021,
+        "other_id": 9000015,
         "name": "Space Spiritual Field",
         "namecn": "空间灵田"
     },
     {
         "id": 365031,
+        "other_id": 9000011,
         "name": "Entangling Ancient Vine",
         "namecn": "缚仙古藤"
     },
     {
         "id": 365041,
+        "other_id": 9000019,
         "name": "Devouring Ancient Vine",
         "namecn": "噬仙古藤"
     },
     {
+        "id": 365051,
+        "other_id": 9000025,
+        "name": "Demonic Dao Fruit",
+        "namecn": "魔韵道果",
+        "non_playable": true
+    },
+    {
         "id": 371011,
+        "other_id": 11000004,
         "name": "Heavenly Decree - Attack",
         "namecn": "天谕·攻",
         "namealta": "God Saying - Attack"
     },
     {
         "id": 371021,
+        "other_id": 11000003,
         "name": "Heavenly Decree - Defend",
         "namecn": "天谕·守",
         "namealta": "God Saying - Defend"
     },
     {
         "id": 371031,
+        "other_id": 11000001,
         "name": "Foretell Fate",
         "namecn": "卜命",
         "namealta": "Learn Fortune"
     },
     {
         "id": 371041,
+        "other_id": 11000022,
         "name": "Examine Body",
         "namecn": "察体",
         "namealta": "Observe Body"
     },
     {
         "id": 372011,
+        "other_id": 11000008,
         "name": "Heavenly Fortune - Seek Fortune",
         "namecn": "天运·趋吉",
         "namealta": "God Luck - Approach"
     },
     {
         "id": 372021,
+        "other_id": 11000007,
         "name": "Heavenly Fortune - Shun Misfortune",
         "namecn": "天运·避凶",
         "namealta": "God Luck - Avoid"
     },
     {
         "id": 372031,
+        "other_id": 11000009,
         "name": "Detect Qi",
         "namecn": "探灵"
     },
     {
         "id": 372041,
+        "other_id": 11000023,
         "name": "Bad Omen",
         "namecn": "凶象"
     },
     {
         "id": 373011,
+        "other_id": 11000011,
         "name": "Heavenly Time - Fleeting",
         "namecn": "天命·飞逝",
         "namealta": "God Fate - Flies"
     },
     {
         "id": 373021,
+        "other_id": 11000012,
         "name": "Heavenly Time - Recurring",
         "namecn": "天命·重现",
         "namealta": "God Fate - Reborn"
     },
     {
         "id": 373031,
+        "other_id": 11000024,
         "name": "Disaster of Bloodshed",
         "namecn": "血光之灾"
     },
     {
         "id": 373041,
+        "other_id": 11000005,
         "name": "Lucky Start",
         "namecn": "吉运初显",
         "namealta": "Good Omen"
     },
     {
         "id": 374011,
+        "other_id": 11000013,
         "name": "Everything Goes Your Way",
         "namecn": "万事如意",
         "namealta": "Everything Goes Way"
     },
     {
         "id": 374021,
+        "other_id": 11000026,
         "name": "Heavenly Star - Guard",
         "namecn": "天星·御心",
         "namealta": "God Star - Promotion"
     },
     {
         "id": 374031,
+        "other_id": 11000025,
         "name": "Heavenly Star - Pull",
         "namecn": "天星·牵引",
         "namealta": "God Star - Traction"
     },
     {
         "id": 374041,
+        "other_id": 11000014,
         "name": "Everything is Unadvisable",
         "namecn": "诸事不宜",
         "namealta": "Nothing Is Appropriate"
     },
     {
         "id": 375011,
+        "other_id": 11000018,
         "name": "Envelop In Disaster",
         "namecn": "厄劫缠身",
         "namealta": "Calamity Plaguin",
@@ -1838,442 +2367,678 @@
     },
     {
         "id": 375021,
+        "other_id": 11000021,
         "name": "Cycle of Fate",
         "namecn": "命运轮回",
         "namealta": "Fate Reincarnates"
     },
     {
         "id": 375031,
+        "other_id": 11000019,
         "name": "Heavenly Will - Comply",
         "namecn": "天机·顺应",
         "namealta": "God's Opportunity - Conform"
     },
     {
         "id": 375041,
+        "other_id": 11000020,
         "name": "Heavenly Will - Defy",
         "namecn": "天机·逆施",
         "namealta": "God's Opportunity - Reversal"
     },
     {
         "id": 401011,
+        "other_id": 99000100,
         "name": "Black Silver Armor",
         "namecn": "玄银甲"
     },
     {
         "id": 401021,
+        "other_id": 99000107,
         "name": "Thorns Spear",
         "namecn": "刺尖枪"
     },
     {
         "id": 402011,
+        "other_id": 99000101,
         "name": "Dew Jade Vase",
         "namecn": "玉露瓶"
     },
     {
         "id": 402021,
+        "other_id": 99000108,
         "name": "Nameless Ancient Sword",
         "namecn": "无名古剑"
     },
     {
         "id": 403011,
+        "other_id": 99000102,
         "name": "Fire Soul Refinement Flag",
         "namecn": "天火炼魂旗"
     },
     {
         "id": 403021,
+        "other_id": 99000109,
         "name": "Requiem Jade Lotus",
         "namecn": "养魂玉莲"
     },
     {
         "id": 403031,
+        "other_id": 99000112,
         "name": "Blood Crystal of Wolf King",
         "namecn": "狼皇血晶"
     },
     {
         "id": 404011,
+        "other_id": 99000103,
         "name": "Cosmos Seal Divine Orb",
         "namecn": "混元封神珠"
     },
     {
         "id": 404021,
+        "other_id": 99000110,
         "name": "Metal Tri-Thorn Spear",
         "namecn": "金元三尖枪"
     },
     {
         "id": 404031,
+        "other_id": 99000113,
         "name": "Carefree Guqin",
         "namecn": "逍遥古琴"
     },
     {
         "id": 405011,
+        "other_id": 99000104,
         "name": "Nether Seal Evil Signet",
         "namecn": "九冥镇魔印"
     },
     {
         "id": 405021,
+        "other_id": 99000106,
         "name": "Dark Crystal Heart Shield",
         "namecn": "玄晶护心镜"
     },
     {
         "id": 405031,
+        "other_id": 99000114,
         "name": "Bow of Hunting Owl",
         "namecn": "猎枭古弓"
     },
     {
         "id": 406011,
+        "other_id": 99000105,
         "name": "Void Split Spear",
         "namecn": "裂虚界元枪"
     },
     {
         "id": 406021,
+        "other_id": 99000111,
         "name": "Qimen Monster-Locking Tower",
         "namecn": "奇门锁妖塔",
         "namealta": "Mysterious Gates Devil Seal Tower"
     },
     {
+        "id": 406031,
+        "other_id": 99000213,
+        "name": "Myriad Manifestations Seed",
+        "namecn": "万象道种"
+    },
+    {
         "id": 501011,
+        "other_id": 99000200,
         "name": "Break Sky Eagle",
         "namecn": "破空雕"
     },
     {
         "id": 501021,
+        "other_id": 99000208,
         "name": "Fat Immortal Raccoon",
         "namecn": "胖仙狸"
     },
     {
         "id": 502011,
+        "other_id": 99000201,
         "name": "Dark Star Bat",
         "namecn": "暗星蝙蝠"
     },
     {
         "id": 502021,
+        "other_id": 99000209,
         "name": "Lonely Night Wolf",
         "namecn": "孤夜狼"
     },
     {
         "id": 503011,
+        "other_id": 99000202,
         "name": "Black Earth Turtle",
         "namecn": "地玄龟"
     },
     {
         "id": 503021,
+        "other_id": 99000203,
         "name": "Brocade Rat",
         "namecn": "锦毛鼠"
     },
     {
         "id": 504011,
+        "other_id": 99000205,
         "name": "Scarlet-Eye The Sky Consumer",
         "namecn": "吞天赤眼兽"
     },
     {
         "id": 504021,
+        "other_id": 99000207,
         "name": "Ashes Phoenix",
         "namecn": "浴火凤凰"
     },
     {
         "id": 504031,
+        "other_id": 99000212,
         "name": "Three-tailed Huan",
         "namecn": "三尾讙",
         "namealta": "Three Tailed Cat"
     },
     {
         "id": 505011,
+        "other_id": 99000204,
         "name": "Colorful Spirit Crane",
         "namecn": "七彩灵鹤"
     },
     {
         "id": 505021,
+        "other_id": 99000210,
         "name": "Shadow Owl Rabbit",
         "namecn": "影枭兔"
     },
     {
         "id": 506011,
+        "other_id": 99000206,
         "name": "Void The Spirit Consumer",
         "namecn": "噬灵虚兽"
     },
     {
         "id": 506021,
+        "other_id": 99000211,
         "name": "Nether Void Canine",
         "namecn": "幽冥虚魂犬"
     },
     {
+        "id": 506031,
+        "other_id": 99000214,
+        "name": "Nameless White Deer",
+        "namecn": "无名白鹿"
+    },
+    {
         "id": 601011,
+        "other_id": 286,
         "name": "Normal Attack",
         "namecn": "普通攻击"
     },
     {
         "id": 601021,
+        "other_id": 78,
         "name": "Leaping the Dragon Gate",
         "namecn": "鱼跃龙门"
     },
     {
+        "id": 601031,
+        "other_id": -90001,
+        "name": "Deviation Syndrome",
+        "namecn": "走火入魔",
+        "non_playable": true
+    },
+    {
+        "id": 601041,
+        "other_id": 99000001,
+        "name": "Treasures Appear",
+        "namecn": "重宝现世",
+        "non_playable": true
+    },
+    {
+        "id": 601051,
+        "other_id": 99000002,
+        "name": "Spirit Pet Mastered",
+        "namecn": "灵宠认主",
+        "non_playable": true
+    },
+    {
+        "id": 601061,
+        "other_id": 99000003,
+        "name": "Inheritance of the Secret Enchantment",
+        "namecn": "秘术传承",
+        "non_playable": true
+    },
+    {
+        "id": 601071,
+        "other_id": 330,
+        "name": "Hidden Weapon",
+        "namecn": "暗器"
+    },
+    {
+        "id": 601081,
+        "other_id": 71,
+        "name": "Rakshasa Pouncing",
+        "namecn": "罗刹扑"
+    },
+    {
+        "id": 601091,
+        "other_id": 72,
+        "name": "Sky-Piercing Claw",
+        "namecn": "破空爪"
+    },
+    {
         "id": 602011,
+        "other_id": 41,
         "name": "Firecracker",
         "namecn": "爆竹"
     },
     {
         "id": 603011,
+        "other_id": 39,
         "name": "Demonic Qi Haunt",
         "namecn": "魔气缠身"
     },
     {
         "id": 603021,
+        "other_id": 76,
         "name": "Magic Dragon's Paw",
         "namecn": "魔龙之爪"
     },
     {
         "id": 603031,
+        "other_id": 80,
         "name": "Firework",
         "namecn": "烟花"
     },
     {
+        "id": 603041,
+        "other_id": 27,
+        "name": "At Own Pace",
+        "namecn": "自在随心",
+        "non_playable": true
+    },
+    {
         "id": 605011,
+        "other_id": 67,
         "name": "Mirroring Merpeople Pearl",
         "namecn": "镜像鲛珠"
     },
     {
         "id": 605021,
+        "other_id": 65,
         "name": "Qi-Gathering Merpeople Pearl",
         "namecn": "聚灵鲛珠"
     },
     {
         "id": 605031,
+        "other_id": 62,
         "name": "Frenzied Merpeople Pearl",
         "namecn": "狂化鲛珠"
     },
     {
         "id": 605041,
+        "other_id": 63,
         "name": "Bewildering Merpeople Pearl",
         "namecn": "迷惘鲛珠"
     },
     {
         "id": 605051,
+        "other_id": 66,
         "name": "Crystallized Merpeople Pearl",
         "namecn": "结晶鲛珠"
     },
     {
         "id": 605061,
+        "other_id": 60,
         "name": "Cursed Merpeople Pearl",
         "namecn": "魔化鲛珠"
     },
     {
         "id": 605071,
+        "other_id": 61,
         "name": "Abyssal Merpeople Pearl",
         "namecn": "深渊鲛珠"
     },
     {
         "id": 605081,
+        "other_id": 64,
         "name": "Multicolored Merpeople Pearl",
         "namecn": "五彩鲛珠"
     },
     {
         "id": 605091,
+        "other_id": 68,
         "name": "Sneak Merpeople Pearl",
         "namecn": "潜袭鲛珠"
     },
     {
         "id": 605101,
+        "other_id": 69,
         "name": "Blood-cultivated Merpeople Pearl",
         "namecn": "血修鲛珠"
     },
     {
         "id": 606011,
+        "other_id": 40,
         "name": "Demonic Qi Burst",
         "namecn": "魔气爆发"
     },
     {
         "id": 606021,
+        "other_id": 77,
         "name": "Demonic Dragon's Chaotic Dance",
         "namecn": "魔龙乱舞"
     },
     {
         "id": 606031,
+        "other_id": 79,
         "name": "Loong",
         "namecn": "龙"
     },
     {
         "id": 611011,
+        "other_id": 36,
         "name": "Cloud Sword - Flying Sand",
         "namecn": "云剑·飞砂"
     },
     {
         "id": 611021,
+        "other_id": 37,
         "name": "Bronze Cat",
         "namecn": "青铜猫"
     },
     {
         "id": 611031,
+        "other_id": 19,
         "name": "Clear Heart Sword Embryo",
         "namecn": "澄心剑胚"
     },
     {
+        "id": 611041,
+        "other_id": 33,
+        "name": "Dried small fish",
+        "namecn": "小鱼干",
+        "non_playable": true
+    },
+    {
+        "id": 611051,
+        "other_id": 34,
+        "name": "Catnip",
+        "namecn": "猫薄荷",
+        "non_playable": true
+    },
+    {
+        "id": 611061,
+        "other_id": 35,
+        "name": "Cat Teaser",
+        "namecn": "逗猫棒",
+        "non_playable": true
+    },
+    {
         "id": 612011,
+        "other_id": 8,
         "name": "Cloud Sword - Cat Paw",
         "namecn": "云剑·猫爪"
     },
     {
         "id": 614011,
+        "other_id": 3,
         "name": "Cloud Sword - Avalanche",
         "namecn": "云剑·崩雪"
     },
     {
         "id": 614021,
+        "other_id": 15,
         "name": "Cloud Sword - Pray Rain",
         "namecn": "云剑·唤雨"
     },
     {
         "id": 614031,
+        "other_id": 9,
         "name": "Spirit Cat Chaos Sword",
         "namecn": "灵猫乱剑"
     },
     {
         "id": 615011,
+        "other_id": 2,
         "name": "Unrestrained Sword - Flame Dance",
         "namecn": "狂剑·炎舞"
     },
     {
         "id": 615021,
+        "other_id": 16,
         "name": "Sky Delicate Bracelet",
         "namecn": "九霄玲珑镯"
     },
     {
         "id": 615031,
+        "other_id": 213,
         "name": "Yeying Sword Formation",
         "namecn": "曳影剑阵"
     },
     {
+        "id": 615041,
+        "other_id": 1,
+        "name": "Spring Course Tea",
+        "namecn": "云泉道茶",
+        "non_playable": true
+    },
+    {
         "id": 621011,
+        "other_id": 22,
         "name": "Perfectly Planned",
         "namecn": "算无遗策"
     },
     {
         "id": 622011,
+        "other_id": 12,
         "name": "Only Traces",
         "namecn": "飞鸿踏雪"
     },
     {
+        "id": 622021,
+        "other_id": 214,
+        "name": "Jade Scroll of Yin Symbol",
+        "namecn": "阴符玉简"
+    },
+    {
         "id": 623011,
+        "other_id": 28,
         "name": "Ultimate Hexagram Base",
         "namecn": "无极卦盘"
     },
     {
         "id": 623021,
+        "other_id": 10,
         "name": "Starburst",
         "namecn": "星爆术"
     },
     {
         "id": 623031,
+        "other_id": 6,
         "name": "Flame Flutter",
         "namecn": "灯焰飞舞"
     },
     {
         "id": 624011,
+        "other_id": 11,
         "name": "Heptastar Soulstat",
         "namecn": "七星定魂"
     },
     {
         "id": 624021,
+        "other_id": 5,
         "name": "Within Reach",
         "namecn": "瓮中捉鳖"
     },
     {
         "id": 624031,
+        "other_id": 7,
         "name": "Rotary Divination Hexagram",
         "namecn": "旋灯占卦"
     },
     {
         "id": 625011,
+        "other_id": 23,
         "name": "Star Moon Folding Fan",
         "namecn": "星月折扇"
     },
     {
         "id": 625021,
+        "other_id": 29,
         "name": "Fury Thunder",
         "namecn": "狂雷电闪"
     },
     {
+        "id": 625031,
+        "other_id": 215,
+        "name": "Solitary Void Golden Scroll",
+        "namecn": "孤虚金书"
+    },
+    {
+        "id": 625041,
+        "other_id": 216,
+        "name": "Face Isolation",
+        "namecn": "背孤"
+    },
+    {
+        "id": 625051,
+        "other_id": 217,
+        "name": "Strike Vacuity",
+        "namecn": "击虚"
+    },
+    {
         "id": 632011,
+        "other_id": 20,
         "name": "Wood Spirit - Peach Blossom Seal",
         "namecn": "木灵·桃花印"
     },
     {
         "id": 633011,
+        "other_id": 38,
         "name": "Kun Wu Metal Ring",
         "namecn": "锟铻金环"
     },
     {
         "id": 633021,
+        "other_id": 13,
         "name": "Gourd Of Leisurely",
         "namecn": "悠然葫芦"
     },
     {
+        "id": 633031,
+        "other_id": 259,
+        "name": "Heavenly Rain",
+        "namecn": "天降甘霖",
+        "non_playable": true
+    },
+    {
         "id": 634011,
+        "other_id": 18,
         "name": "Metal Spirit - Vigorous",
         "namecn": "金灵·刚劲"
     },
     {
         "id": 634021,
+        "other_id": 32,
         "name": "Overcome with each other",
         "namecn": "双鸳逆克"
     },
     {
         "id": 634031,
+        "other_id": 17,
         "name": "Water Spirit - Spring Rain",
         "namecn": "水灵·春雨"
     },
     {
         "id": 635011,
+        "other_id": 21,
         "name": "Earth Spirit - Landslide",
         "namecn": "土灵·山崩"
     },
     {
         "id": 635021,
+        "other_id": 218,
         "name": "Forget Worries",
         "namecn": "忘忧"
     },
     {
+        "id": 635031,
+        "other_id": 31,
+        "name": "Inheritance of Five Elements",
+        "namecn": "五行传承",
+        "non_playable": true
+    },
+    {
         "id": 641011,
+        "other_id": 219,
         "name": "Double Stick",
         "namecn": "双节棍"
     },
     {
         "id": 642011,
+        "other_id": 45,
         "name": "Unceasing Exercising",
         "namecn": "锻体不息"
     },
     {
         "id": 642021,
+        "other_id": 70,
         "name": "Overwhelming Power",
         "namecn": "盛气凌人"
     },
     {
         "id": 642031,
+        "other_id": 221,
         "name": "Counter Move",
         "namecn": "拆招"
     },
     {
+        "id": 642041,
+        "other_id": 381,
+        "name": "Spirit Feather",
+        "namecn": "灵羽"
+    },
+    {
         "id": 643011,
+        "other_id": 73,
         "name": "Gone Crazy",
         "namecn": "疯魔"
     },
     {
+        "id": 643021,
+        "other_id": 382,
+        "name": "Cyclone Palm",
+        "namecn": "气旋掌"
+    },
+    {
         "id": 644011,
+        "other_id": 74,
         "name": "Crash Fist - Styx Night",
         "namecn": "崩拳·冥夜",
         "namealta": "Crash Fist - Stygian Night"
     },
     {
         "id": 644021,
+        "other_id": 81,
         "name": "Meditation of Xuan",
         "namecn": "冥心入玄"
     },
     {
         "id": 644031,
+        "other_id": 222,
         "name": "Shift Stance",
         "namecn": "转势"
     },
     {
+        "id": 644041,
+        "other_id": 383,
+        "name": "Wind-Riding Flash",
+        "namecn": "御风飞闪"
+    },
+    {
         "id": 645011,
+        "other_id": 75,
         "name": "Styx Moon's Glow",
         "namecn": "冥月蟾光",
         "namealta": "Stygian Moon's Changuang",
@@ -2281,1193 +3046,1840 @@
     },
     {
         "id": 645021,
+        "other_id": 82,
         "name": "Wan Xuan Demon Breaking Palm",
         "namecn": "万玄破魔掌"
     },
     {
         "id": 645031,
+        "other_id": 220,
         "name": "Red Gold Dragon Stick",
         "namecn": "赤金盘龙棍"
     },
     {
         "id": 701011,
+        "other_id": 280,
         "name": "Xiaoyao - Formless",
         "namecn": "逍遥·无相"
     },
     {
         "id": 701021,
+        "other_id": 281,
         "name": "Xiaoyao - Seamless",
         "namecn": "逍遥·无隙"
     },
     {
         "id": 701031,
+        "other_id": 285,
         "name": "Xiaoyao - Lawless",
         "namecn": "逍遥·无律"
     },
     {
         "id": 701041,
+        "other_id": 284,
         "name": "Xiaoyao - Irreversible",
         "namecn": "逍遥·无回"
     },
     {
         "id": 701051,
+        "other_id": 282,
         "name": "Xiaoyao - Breathless",
         "namecn": "逍遥·无息"
     },
     {
         "id": 701061,
+        "other_id": 283,
         "name": "Xiaoyao - Imbalance",
         "namecn": "逍遥·无衡"
     },
     {
+        "id": 701071,
+        "other_id": 322,
+        "name": "Xiaoyao - Reproduction",
+        "namecn": "逍遥·复刻"
+    },
+    {
+        "id": 712011,
+        "other_id": 331,
+        "name": "Cloud Sword - Hidden Loong",
+        "namecn": "云剑·潜龙"
+    },
+    {
         "id": 714011,
+        "other_id": 48,
         "name": "Azure Dragon Sword Formation",
         "namecn": "青龙剑阵"
     },
     {
         "id": 714021,
+        "other_id": 47,
         "name": "Cloud Sword - Sunset Glow",
         "namecn": "云剑·晚霞"
     },
     {
         "id": 714031,
+        "other_id": 260,
         "name": "M - Raven Spirit Sword",
         "namecn": "幻·暗鸦灵剑"
     },
     {
         "id": 714041,
+        "other_id": 261,
         "name": "M - Light Sword",
         "namecn": "幻·轻剑"
     },
     {
         "id": 714051,
+        "other_id": 262,
         "name": "M - Spiritage Sword",
         "namecn": "幻·引气剑"
     },
     {
         "id": 714061,
+        "other_id": 263,
         "name": "M - Flying Fang Sword",
         "namecn": "幻·飞牙剑"
     },
     {
+        "id": 714071,
+        "other_id": 323,
+        "name": "M - Diligent Sword",
+        "namecn": "幻·勤拙剑"
+    },
+    {
+        "id": 714081,
+        "other_id": 332,
+        "name": "Exquisite Sword Formation",
+        "namecn": "玲珑剑阵"
+    },
+    {
         "id": 715011,
+        "other_id": 50,
         "name": "Dragon Devours Clouds",
         "namecn": "狂龙吞云"
     },
     {
         "id": 715021,
+        "other_id": 49,
         "name": "Beast Spirit Sword Formation",
         "namecn": "百兽灵剑阵"
     },
     {
         "id": 715031,
+        "other_id": 264,
         "name": "M - Cloud Sword Touch Sky",
         "namecn": "幻·云剑探云"
     },
     {
         "id": 715041,
+        "other_id": 288,
         "name": "M - Cloud Sword Conceal",
         "namecn": "幻·云剑无锋"
     },
     {
         "id": 715051,
+        "other_id": 325,
         "name": "M - Consonance Sword Formation",
         "namecn": "幻·灵犀剑阵"
     },
     {
+        "id": 715061,
+        "other_id": 309,
+        "name": "M - Cloud Dance Rhythm",
+        "namecn": "幻·云舞诀"
+    },
+    {
+        "id": 715071,
+        "other_id": 312,
+        "name": "M - Unrestrained Sword Dragon Coiled",
+        "namecn": "幻·狂剑盘龙"
+    },
+    {
         "id": 724011,
+        "other_id": 51,
         "name": "Spiritual Divination",
         "namecn": "灵卦术"
     },
     {
         "id": 724021,
+        "other_id": 52,
         "name": "Throw Petals",
         "namecn": "摘花飞叶"
     },
     {
         "id": 724031,
+        "other_id": 265,
         "name": "M - Cutting Weeds",
         "namecn": "幻·斩草除根"
     },
     {
         "id": 724041,
+        "other_id": 266,
         "name": "M - Ruthless Water",
         "namecn": "幻·流水无情"
     },
     {
         "id": 724051,
+        "other_id": 307,
         "name": "M - Earth Hexagram",
         "namecn": "幻·坤卦"
     },
     {
         "id": 724061,
+        "other_id": 268,
         "name": "M - Dotted Around",
         "namecn": "幻·星罗棋布"
     },
     {
+        "id": 724071,
+        "other_id": 324,
+        "name": "M - Vitality Blossom",
+        "namecn": "幻·生机绽放"
+    },
+    {
         "id": 725011,
+        "other_id": 53,
         "name": "Astral Move - Twin Swallows",
         "namecn": "星弈·双飞燕"
     },
     {
         "id": 725021,
+        "other_id": 54,
         "name": "Water Drop Erosion",
         "namecn": "滴水穿石"
     },
     {
         "id": 725031,
+        "other_id": 269,
         "name": "M - Shifting Stars",
         "namecn": "幻·斗转星移"
     },
     {
         "id": 725041,
+        "other_id": 298,
         "name": "M - Incessant",
         "namecn": "幻·藕断丝连"
     },
     {
         "id": 725051,
+        "other_id": 294,
         "name": "M - Astral Fleche",
         "namecn": "幻·飞星刺"
     },
     {
+        "id": 725061,
+        "other_id": 289,
+        "name": "M - Flower Sentient",
+        "namecn": "幻·落花有意"
+    },
+    {
+        "id": 725071,
+        "other_id": 320,
+        "name": "M - Yin Yang Formation",
+        "namecn": "幻·两仪阵"
+    },
+    {
         "id": 733011,
+        "other_id": 258,
         "name": "Water Spirit -  Leisurely",
         "namecn": "水灵·悠然"
     },
     {
+        "id": 733021,
+        "other_id": 371,
+        "name": "Settle the Storm",
+        "namecn": "定风波"
+    },
+    {
         "id": 734011,
+        "other_id": 55,
         "name": "Wild Crossing Seal",
         "namecn": "野渡之印"
     },
     {
         "id": 734021,
+        "other_id": 56,
         "name": "Lava Seal",
         "namecn": "熔岩之印"
     },
     {
         "id": 734031,
+        "other_id": 270,
         "name": "M - Fire Spirit Flame Eater",
         "namecn": "幻·火灵聚炎"
     },
     {
         "id": 734041,
+        "other_id": 272,
         "name": "M - Wood Spirit Recovery",
         "namecn": "幻·木灵复苏"
     },
     {
         "id": 734051,
+        "other_id": 273,
         "name": "M - Metal Spirit Needle",
         "namecn": "幻·金灵针"
     },
     {
+        "id": 734061,
+        "other_id": 315,
+        "name": "M - Fire Spirit Seal",
+        "namecn": "幻·火灵印"
+    },
+    {
+        "id": 734071,
+        "other_id": 317,
+        "name": "M - Earth Spirit Formation",
+        "namecn": "幻·土灵阵"
+    },
+    {
         "id": 735011,
+        "other_id": 57,
         "name": "Boulder Seal",
         "namecn": "滚石之印"
     },
     {
         "id": 735021,
+        "other_id": 58,
         "name": "Wave Cutter Seal",
         "namecn": "斩浪之印"
     },
     {
         "id": 735031,
+        "other_id": 271,
         "name": "M - Water Spirit Billows",
         "namecn": "幻·水灵波澜"
     },
     {
         "id": 735041,
+        "other_id": 295,
         "name": "M - Five Elements Circulation",
         "namecn": "幻·五行流转"
     },
     {
         "id": 735051,
+        "other_id": 274,
         "name": "M - Earth Spirit Mountains",
         "namecn": "幻·土灵群山"
     },
     {
         "id": 735061,
+        "other_id": 292,
         "name": "M - Cosmos Seal",
         "namecn": "幻·浑天印"
     },
     {
+        "id": 735071,
+        "other_id": 316,
+        "name": "M - Metal Spirit Seal",
+        "namecn": "幻·金灵印"
+    },
+    {
+        "id": 735081,
+        "other_id": 373,
+        "name": "Wood Spirit Slash",
+        "namecn": "木灵斩"
+    },
+    {
+        "id": 735091,
+        "other_id": 374,
+        "name": "Fire Spirit Slash",
+        "namecn": "火灵斩"
+    },
+    {
+        "id": 735101,
+        "other_id": 375,
+        "name": "Earth Spirit Slash",
+        "namecn": "土灵斩"
+    },
+    {
+        "id": 735111,
+        "other_id": 376,
+        "name": "Metal Spirit Slash",
+        "namecn": "金灵斩"
+    },
+    {
+        "id": 735121,
+        "other_id": 377,
+        "name": "Water Spirit Slash",
+        "namecn": "水灵斩"
+    },
+    {
+        "id": 736011,
+        "other_id": 372,
+        "name": "Settle the Storm - Unseal",
+        "namecn": "定风波·解封"
+    },
+    {
         "id": 744011,
+        "other_id": 275,
         "name": "M - Youthful Vigor",
         "namecn": "幻·血气方刚"
     },
     {
         "id": 744021,
+        "other_id": 277,
         "name": "M - Exercise Bones",
         "namecn": "幻·锻骨"
     },
     {
         "id": 744031,
+        "other_id": 278,
         "name": "M - Sinking Qi",
         "namecn": "幻·气沉丹田"
     },
     {
         "id": 744041,
+        "other_id": 291,
         "name": "M - Standing Firm",
         "namecn": "幻·岿然不动"
     },
     {
+        "id": 744051,
+        "other_id": 318,
+        "name": "M - Endless Entanglement",
+        "namecn": "幻·死缠烂打"
+    },
+    {
+        "id": 744061,
+        "other_id": 336,
+        "name": "Dark Spirit Possession",
+        "namecn": "玄灵附身"
+    },
+    {
+        "id": 744071,
+        "other_id": 337,
+        "name": "Crash Fist - Tiger Subdue",
+        "namecn": "崩拳·伏虎"
+    },
+    {
         "id": 745011,
+        "other_id": 296,
         "name": "M - Double Trouble",
         "namecn": "幻·双鬼拍门"
     },
     {
         "id": 745021,
+        "other_id": 297,
         "name": "M - Rakshasa Pouncing",
         "namecn": "幻·罗刹扑"
     },
     {
         "id": 745031,
+        "other_id": 308,
         "name": "M - Crash Fist Poke",
         "namecn": "幻·崩拳戳"
     },
     {
+        "id": 745041,
+        "other_id": 310,
+        "name": "M - Magnanimous Righteousness",
+        "namecn": "幻·浩然正气"
+    },
+    {
+        "id": 745051,
+        "other_id": 319,
+        "name": "M - Crash Fist Entangle",
+        "namecn": "幻·崩拳缠"
+    },
+    {
+        "id": 745061,
+        "other_id": 338,
+        "name": "Instant Shadow Strike",
+        "namecn": "瞬影击"
+    },
+    {
+        "id": 745071,
+        "other_id": 339,
+        "name": "Carefree Shadowless Fist",
+        "namecn": "逍遥无影拳"
+    },
+    {
         "id": 801011,
+        "other_id": 99,
         "name": "Mushroom Zongzi",
         "namecn": "香菇粽"
     },
     {
         "id": 801021,
+        "other_id": 85,
         "name": "Honey Zongzi",
         "namecn": "蜂蜜粽"
     },
     {
         "id": 801031,
+        "other_id": 98,
         "name": "Salted Meat Zongzi",
         "namecn": "咸肉粽"
     },
     {
         "id": 801041,
+        "other_id": 83,
         "name": "Red Bean Zongzi",
         "namecn": "红豆粽"
     },
     {
         "id": 801051,
+        "other_id": 84,
         "name": "Jujube Zongzi",
         "namecn": "红枣粽"
     },
     {
         "id": 801061,
+        "other_id": 100,
         "name": "Fresh Meat Zongzi",
         "namecn": "鲜肉粽"
     },
     {
         "id": 801071,
+        "other_id": 113,
         "name": "Pure Rice Zongzi",
         "namecn": "白粽"
     },
     {
         "id": 802011,
+        "other_id": 87,
         "name": "Candied Jujube Zongzi",
         "namecn": "蜜枣粽"
     },
     {
         "id": 802021,
+        "other_id": 102,
         "name": "Spicy Zongzi",
         "namecn": "麻辣粽"
     },
     {
         "id": 802031,
+        "other_id": 101,
         "name": "Roasted Meat Zongzi",
         "namecn": "烧肉粽"
     },
     {
         "id": 802041,
+        "other_id": 86,
         "name": "Mung Bean Zongzi",
-        "namecn": "绿豆酥"
+        "namecn": "绿豆粽"
     },
     {
         "id": 802051,
+        "other_id": 103,
         "name": "Preserved Meat Zongzi",
         "namecn": "腊肉粽"
     },
     {
         "id": 802061,
+        "other_id": 88,
         "name": "Jujube Paste Zongzi",
         "namecn": "枣泥粽"
     },
     {
         "id": 803011,
+        "other_id": 89,
         "name": "Alkaline Water Zongzi",
         "namecn": "碱水粽"
     },
     {
         "id": 803021,
+        "other_id": 90,
         "name": "Lotus Seeds Zongzi",
         "namecn": "莲子粽"
     },
     {
         "id": 803031,
+        "other_id": 91,
         "name": "Bean Paste Zongzi",
         "namecn": "豆沙粽"
     },
     {
         "id": 803041,
+        "other_id": 104,
         "name": "Sour Bamboo Shoots Zongzi",
         "namecn": "酸笋粽"
     },
     {
         "id": 803051,
+        "other_id": 105,
         "name": "Chestnut Zongzi",
         "namecn": "板栗粽"
     },
     {
         "id": 803061,
+        "other_id": 106,
         "name": "Pungent Zongzi",
         "namecn": "香辣粽"
     },
     {
         "id": 804011,
+        "other_id": 92,
         "name": "Preserved Fruit Zongzi",
         "namecn": "蜜饯果粽"
     },
     {
         "id": 804021,
+        "other_id": 93,
         "name": "Crystal Ice Zongzi",
         "namecn": "水晶冰粽"
     },
     {
         "id": 804031,
+        "other_id": 94,
         "name": "Fresh Fruit Zongzi",
         "namecn": "鲜果宝粽"
     },
     {
         "id": 804041,
+        "other_id": 107,
         "name": "Salted Egg Yolk Zongzi",
         "namecn": "咸蛋黄粽"
     },
     {
         "id": 804051,
+        "other_id": 108,
         "name": "Seafood Zongzi",
         "namecn": "海鲜肉粽"
     },
     {
         "id": 804061,
+        "other_id": 109,
         "name": "Pickled Mustard Zongzi",
         "namecn": "梅菜肉粽"
     },
     {
         "id": 804071,
+        "other_id": 303,
         "name": "Osmanthus Zongzi",
         "namecn": "桂花香粽"
     },
     {
         "id": 804081,
+        "other_id": 306,
         "name": "Ham Zongzi",
         "namecn": "火腿肉粽"
     },
     {
         "id": 805011,
+        "other_id": 95,
         "name": "Mixed Grain Zongzi",
         "namecn": "八宝杂粮粽"
     },
     {
         "id": 805021,
+        "other_id": 96,
         "name": "Spirit Zongzi",
         "namecn": "仙风归灵粽"
     },
     {
         "id": 805031,
+        "other_id": 97,
         "name": "Water Combined Zongzi",
         "namecn": "百川琉璃粽"
     },
     {
         "id": 805041,
+        "other_id": 110,
         "name": "Assorted Meat Zongzi",
         "namecn": "秘制三鲜粽"
     },
     {
         "id": 805051,
+        "other_id": 111,
         "name": "Double Plum Zongzi",
         "namecn": "梅香玉露粽"
     },
     {
         "id": 805061,
+        "other_id": 112,
         "name": "Shura Zongzi",
         "namecn": "修罗镇魂粽"
     },
     {
         "id": 805071,
+        "other_id": 301,
         "name": "Heavenly Delicacy Zongzi",
         "namecn": "天髓珍馐粽"
     },
     {
         "id": 805081,
+        "other_id": 302,
         "name": "Various Cate Zongzi",
         "namecn": "缤纷玉馔粽"
     },
     {
+        "id": 901001,
+        "other_id": 155,
+        "name": "Xuanming Waters",
+        "namecn": "玄冥之水",
+        "non_playable": true
+    },
+    {
         "id": 903011,
+        "other_id": 162,
         "name": "Xuanming Recurring",
         "namecn": "玄冥重现"
     },
     {
         "id": 904011,
+        "other_id": 156,
         "name": "Xuanming Recover Elixir",
         "namecn": "玄冥大还丹"
     },
     {
         "id": 904021,
+        "other_id": 158,
         "name": "Xuanming Regen Tune",
         "namecn": "玄冥回春曲"
     },
     {
         "id": 904031,
+        "other_id": 159,
         "name": "Xuanming Clouds",
         "namecn": "玄冥云烟"
     },
     {
         "id": 904041,
+        "other_id": 160,
         "name": "Xuanming Forceage Formation",
         "namecn": "玄冥聚力阵"
     },
     {
         "id": 904051,
+        "other_id": 161,
         "name": "Xuanming Snowdrop",
         "namecn": "玄冥雪莲"
     },
     {
         "id": 905011,
+        "other_id": 157,
         "name": "Xuanming Requiem Fulu",
         "namecn": "玄冥镇魂符"
     },
     {
         "id": 906001,
-        "name": "Crimson Star",
-        "namecn": "赤贯星"
+        "other_id": 182,
+        "name": "Firmament Rift",
+        "namecn": "苍穹裂隙",
+        "namealta": "Crimson Star",
+        "namealtb": "赤贯星"
     },
     {
         "id": 906011,
-        "name": "Nüwa Stone",
-        "namecn": "女娲石",
-        "namealta": "Nuwa Stone"
+        "other_id": 175,
+        "name": "Sky-Mending Stone",
+        "namecn": "五色补天石",
+        "namealta": "Nüwa Stone",
+        "namealtb": "Nuwa Stone",
+        "namealtc": "女娲石"
     },
     {
         "id": 906021,
-        "name": "Haotian Pagoda",
-        "namecn": "昊天塔"
+        "other_id": 176,
+        "name": "Soul-Locking Pagoda",
+        "namecn": "灵墟锁魂塔",
+        "namealta": "Haotian Pagoda",
+        "namealtb": "昊天塔"
     },
     {
         "id": 906031,
-        "name": "Fuxi Guqin",
-        "namecn": "伏羲琴"
+        "other_id": 177,
+        "name": "Heart-Commanding Zither",
+        "namecn": "灵韵御心琴",
+        "namealta": "Fuxi Guqin",
+        "namealtb": "伏羲琴"
     },
     {
         "id": 906041,
-        "name": "Kongtong Seal",
-        "namecn": "崆峒印"
+        "other_id": 178,
+        "name": "Long-Living Seal",
+        "namecn": "五帝长生印",
+        "namealta": "Kongtong Seal",
+        "namealtb": "崆峒印"
     },
     {
         "id": 906051,
-        "name": "Donghuang Zhong",
-        "namecn": "东皇钟"
+        "other_id": 179,
+        "name": "Chaos-Suppressing Bell",
+        "namecn": "鸿蒙镇天钟",
+        "namealta": "Donghuang Zhong",
+        "namealtb": "东皇钟"
     },
     {
         "id": 906061,
-        "name": "Shennong Ding",
-        "namecn": "神农鼎"
+        "other_id": 180,
+        "name": "Divine-Refining Cauldron",
+        "namecn": "百草神炼鼎",
+        "namealta": "Shennong Ding",
+        "namealtb": "神农鼎"
     },
     {
         "id": 906071,
-        "name": "Spirit Fusion Pot",
-        "namecn": "炼妖壶"
+        "other_id": 181,
+        "name": "Life-Transforming Vessel",
+        "namecn": "幽冥化生壶",
+        "namealta": "Spirit Fusion Pot",
+        "namealtb": "炼妖壶"
     },
     {
         "id": 913011,
+        "other_id": 151,
         "name": "Unrestrained Sword - Nebula Cloud",
         "namecn": "狂剑·星云"
     },
     {
         "id": 913021,
+        "other_id": 185,
         "name": "Spiritstat Tune",
         "namecn": "御灵曲"
     },
     {
         "id": 914011,
+        "other_id": 125,
         "name": "Unrestrained Sword - Cat Claw",
         "namecn": "狂剑·猫爪"
     },
     {
         "id": 914021,
+        "other_id": 183,
         "name": "Contemplate Spirits Vitality Rhythm",
         "namecn": "凝意生机诀"
     },
     {
         "id": 914031,
+        "other_id": 184,
         "name": "Cloud Sword - Clarity",
         "namecn": "云剑·空明"
     },
     {
         "id": 914041,
+        "other_id": 187,
         "name": "Cloud Sword - Endless",
         "namecn": "云剑·周天"
     },
     {
         "id": 914051,
+        "other_id": 188,
         "name": "Sword Spirit Sunflower",
         "namecn": "剑灵葵"
     },
     {
         "id": 915011,
+        "other_id": 122,
         "name": "Cloud Sword - Dragon Spring",
         "namecn": "云剑·龙泉"
     },
     {
         "id": 915021,
+        "other_id": 123,
         "name": "Cloud Sword - Flying Snow Shade",
         "namecn": "云剑·雪影飞"
     },
     {
         "id": 915031,
+        "other_id": 124,
         "name": "CentiBird Delicate Bracelet",
         "namecn": "百鸟玲珑镯"
     },
     {
         "id": 915041,
+        "other_id": 126,
         "name": "Clear Heart Sword Formation",
         "namecn": "澄心剑阵"
     },
     {
         "id": 915051,
+        "other_id": 141,
         "name": "Cloud Sword - Starry Sky",
         "namecn": "云剑·星空"
     },
     {
         "id": 915061,
+        "other_id": 163,
         "name": "Xuanming Sword Intent Mantra",
         "namecn": "玄冥剑意诀"
     },
     {
         "id": 915071,
-        "name": "Shen Jian Ao Zhou",
-        "namecn": "神剑傲州"
+        "other_id": 167,
+        "name": "Heavenly Edge of Ten-Thousand Calamities",
+        "namecn": "万劫天锋",
+        "namealta": "Shen Jian Ao Zhou",
+        "namealtb": "神剑傲州"
     },
     {
         "id": 915081,
+        "other_id": 186,
         "name": "Unrestrained Sword  - Divine",
         "namecn": "狂剑·降神"
     },
     {
         "id": 915091,
+        "other_id": 189,
         "name": "Heavenly Will - Earth Evil",
         "namecn": "天机·地煞"
     },
     {
+        "id": 915101,
+        "other_id": 388,
+        "name": "CentiBird Swift Shadow Art",
+        "namecn": "百鸟曳影诀"
+    },
+    {
         "id": 916011,
-        "name": "Xuan-Yuan Sword",
-        "namecn": "轩辕剑"
+        "other_id": 171,
+        "name": "Mountain-Splitting Sword",
+        "namecn": "首山定岳剑",
+        "namealta": "Xuan-Yuan Sword",
+        "namealtb": "轩辕剑"
     },
     {
         "id": 922011,
+        "other_id": 142,
         "name": "Astral Move - Extend",
         "namecn": "星弈·拆"
     },
     {
         "id": 923011,
+        "other_id": 127,
         "name": "Traces Revitalized",
         "namecn": "瑞雪迎春"
     },
     {
         "id": 924011,
+        "other_id": 129,
         "name": "Suspicious Flame Flutter",
         "namecn": "灯影蚀焰"
     },
     {
         "id": 924021,
+        "other_id": 130,
         "name": "Thousand Star Explosion",
         "namecn": "千星天爆"
     },
     {
         "id": 924031,
+        "other_id": 192,
         "name": "Thunderbolt Tune",
         "namecn": "春雷霹雳曲"
     },
     {
         "id": 924041,
+        "other_id": 193,
         "name": "Fleeting Glimpse",
         "namecn": "浮光掠影"
     },
     {
         "id": 924051,
+        "other_id": 194,
         "name": "Yin Yang Tutelary Formation",
         "namecn": "两仪金刚阵"
     },
     {
         "id": 925011,
+        "other_id": 128,
         "name": "Ultimate Polaris Hexagram Base",
         "namecn": "天元无极盘"
     },
     {
         "id": 925021,
+        "other_id": 131,
         "name": "Star Moon Hexagram Fan",
         "namecn": "星月六爻扇"
     },
     {
         "id": 925031,
+        "other_id": 152,
         "name": "Great Galaxy",
         "namecn": "气吞星河"
     },
     {
         "id": 925041,
+        "other_id": 164,
         "name": "Xuanming Thundercloud Tribulation",
         "namecn": "玄冥雷云劫"
     },
     {
         "id": 925051,
-        "name": "Die Ling Shen Ying",
-        "namecn": "蝶灵神影"
+        "other_id": 168,
+        "name": "Dream Butterfly Wandering Immortal",
+        "namecn": "梦蝶游仙",
+        "namealta": "Die Ling Shen Ying",
+        "namealtb": "蝶灵神影"
     },
     {
         "id": 925061,
+        "other_id": 190,
         "name": "Spiritual Hunter",
         "namecn": "灵雀在后"
     },
     {
         "id": 925071,
+        "other_id": 191,
         "name": "Hexagrams Generating Evils",
         "namecn": "卦衍万邪"
     },
     {
         "id": 925081,
+        "other_id": 195,
         "name": "Entangling Thornbush",
         "namecn": "缚仙棘"
     },
     {
         "id": 925091,
+        "other_id": 196,
         "name": "Astral Move - Jump",
         "namecn": "星弈·跳"
     },
     {
+        "id": 925101,
+        "other_id": 389,
+        "name": "Astral Move - Rescue",
+        "namecn": "星弈·治孤"
+    },
+    {
         "id": 926011,
-        "name": "Heavenly Maiden White Jade Ring",
-        "namecn": "天女白玉轮"
+        "other_id": 172,
+        "name": "Flowing-Light Wheel",
+        "namecn": "九天流光轮",
+        "namealta": "Heavenly Maiden White Jade Ring",
+        "namealtb": "天女白玉轮"
     },
     {
         "id": 932011,
+        "other_id": 153,
         "name": "Cosmos Fleche",
         "namecn": "浑星刺"
     },
     {
         "id": 933011,
+        "other_id": 135,
         "name": "Kun Wu Molten Ring",
         "namecn": "锟铻熔火环"
     },
     {
         "id": 933021,
+        "other_id": 198,
         "name": "Fire Spirit - Blazing Flame",
         "namecn": "火灵·耀炎"
     },
     {
         "id": 934011,
+        "other_id": 136,
         "name": "Harmony of Water and Fire",
         "namecn": "水火交融"
     },
     {
         "id": 934021,
+        "other_id": 143,
         "name": "Metal Spirit - Meteor",
         "namecn": "金灵·流星"
     },
     {
         "id": 934031,
+        "other_id": 201,
         "name": "Wood Spirit Forceage Formation",
         "namecn": "木灵天罡阵"
     },
     {
         "id": 934041,
+        "other_id": 203,
         "name": "Water Spirit - Continuous Flow",
         "namecn": "水灵·川流"
     },
     {
         "id": 935011,
+        "other_id": 132,
         "name": "Heavenly Marrow Gourd",
         "namecn": "天髓葫芦"
     },
     {
         "id": 935021,
+        "other_id": 133,
         "name": "Ultimate Overcome Formation",
         "namecn": "混元逆克阵"
     },
     {
         "id": 935031,
+        "other_id": 134,
         "name": "Wood Spirit - All Things Grow",
         "namecn": "木灵·万物生"
     },
     {
         "id": 935041,
+        "other_id": 165,
         "name": "Xuanming Heavenly Essence Destruction",
         "namecn": "玄冥天髓灭"
     },
     {
         "id": 935051,
-        "name": "Pi Yun Zhui Yue",
-        "namecn": "披云追月"
+        "other_id": 169,
+        "name": "Cloud-Piercing Wind-Rider",
+        "namecn": "穿云御风",
+        "namealta": "Pi Yun Zhui Yue",
+        "namealtb": "披云追月"
     },
     {
         "id": 935061,
+        "other_id": 197,
         "name": "Five Elements Guard",
         "namecn": "五行护身"
     },
     {
         "id": 935071,
+        "other_id": 199,
         "name": "Heavenly Marrow Dance Tune",
         "namecn": "天髓狂舞曲"
     },
     {
         "id": 935081,
+        "other_id": 200,
         "name": "Cosmos Brush",
         "namecn": "浑天运笔"
     },
     {
         "id": 935091,
+        "other_id": 202,
         "name": "Five Elements Spiritual Field",
         "namecn": "五行灵田"
     },
     {
+        "id": 935101,
+        "other_id": 390,
+        "name": "Five Elements Carefree Dream",
+        "namecn": "五行忘忧梦"
+    },
+    {
         "id": 936011,
-        "name": "Kunlun Mirror",
-        "namecn": "昆仑镜"
+        "other_id": 173,
+        "name": "Chrono-Revert Mirror",
+        "namecn": "瑶光溯时镜",
+        "namealta": "Kunlun Mirror",
+        "namealtb": "昆仑镜"
     },
     {
         "id": 943011,
+        "other_id": 154,
         "name": "Star Sky Forge Bone",
         "namecn": "星辰锻骨诀"
     },
     {
         "id": 944011,
+        "other_id": 139,
         "name": "Styx Night Footwork",
         "namecn": "冥夜迷踪步"
     },
     {
         "id": 944021,
+        "other_id": 140,
         "name": "Crash Fist - Return to Xuan",
         "namecn": "崩拳·返玄"
     },
     {
         "id": 944031,
+        "other_id": 144,
         "name": "Crash Fist - Star Seizing",
         "namecn": "崩拳·夺星"
     },
     {
         "id": 944041,
+        "other_id": 204,
         "name": "Cloud Footwork",
         "namecn": "踏鹤飞云"
     },
     {
         "id": 944051,
+        "other_id": 205,
         "name": "Spiritage And Exercise",
         "namecn": "灵气锻身"
     },
     {
         "id": 944061,
+        "other_id": 206,
         "name": "Continuous Tune",
         "namecn": "逍遥连音曲"
     },
     {
         "id": 944071,
+        "other_id": 209,
         "name": "Mystic Snowdrop",
         "namecn": "玄域雪莲"
     },
     {
+        "id": 944081,
+        "other_id": 392,
+        "name": "Riding the Wind",
+        "namecn": "冯虚御风"
+    },
+    {
         "id": 945011,
+        "other_id": 137,
         "name": "Unceasing Universe",
         "namecn": "浩荡不息"
     },
     {
         "id": 945021,
+        "other_id": 138,
         "name": "Soul Overwhelming Palm",
         "namecn": "玄心盛气掌"
     },
     {
         "id": 945031,
+        "other_id": 166,
         "name": "Xuanming Boundary-Breaking Palms",
         "namecn": "玄冥破境掌"
     },
     {
         "id": 945041,
-        "name": "Jiu Qi Po Xiao",
-        "namecn": "九气破霄"
+        "other_id": 170,
+        "name": "Profound Truth Shatters Illusion",
+        "namecn": "玄真破妄",
+        "namealta": "Jiu Qi Po Xiao",
+        "namealtb": "九气破霄"
     },
     {
         "id": 945051,
+        "other_id": 207,
         "name": "Exercise To The Utmost",
         "namecn": "锻龙诀"
     },
     {
         "id": 945061,
+        "other_id": 208,
         "name": "Force Spiritage Formation",
         "namecn": "势灵阵"
     },
     {
         "id": 945071,
+        "other_id": 210,
         "name": "Heavenly Will - Seizing",
         "namecn": "天机·返蛊"
     },
     {
+        "id": 945081,
+        "other_id": 391,
+        "name": "Dodge and Weave",
+        "namecn": "闪转腾挪"
+    },
+    {
         "id": 946011,
-        "name": "Pangu Axe",
-        "namecn": "盘古斧"
+        "other_id": 174,
+        "name": "Heaven-Cleaving Axe",
+        "namecn": "裂穹开天斧",
+        "namealta": "Pangu Axe",
+        "namealtb": "盘古斧"
     },
     {
         "id": "D11011",
+        "other_id": 1000067,
         "name": "Dream - Qi Perfusion",
         "namecn": "梦·灵气灌注"
     },
     {
         "id": "D11021",
+        "other_id": 1000069,
         "name": "Dream - Cloud Sword Pierce the Star",
         "namecn": "梦·云剑点星"
     },
     {
         "id": "D11031",
+        "other_id": 1000070,
         "name": "Dream - Cloud Sword - Riddle",
         "namecn": "梦·云剑极意"
     },
     {
         "id": "D11041",
+        "other_id": 1000071,
         "name": "Dream - Flying Fang Sword",
         "namecn": "梦·飞牙剑"
     },
     {
         "id": "D11051",
+        "other_id": 1000072,
         "name": "Dream - Cloud Dance Rhythm",
         "namecn": "梦·云舞诀"
     },
     {
         "id": "D11061",
+        "other_id": 1000073,
         "name": "Dream - Unrestrained Sword One",
         "namecn": "梦·狂剑一式"
     },
     {
         "id": "D11071",
+        "other_id": 1000074,
         "name": "Dream - CentiBird Spirit Sword Rhythm",
         "namecn": "梦·百鸟灵剑诀"
     },
     {
         "id": "D11081",
+        "other_id": 1000075,
         "name": "Dream - Dharma Spirit Sword",
         "namecn": "梦·万法归灵剑"
     },
     {
         "id": "D11091",
+        "other_id": 1000076,
         "name": "Dream - Unrestrained Sword Zero",
         "namecn": "梦·狂剑零式"
     },
     {
         "id": "D11101",
+        "other_id": 1000077,
         "name": "Dream - Consonance Sword Formation",
         "namecn": "梦·灵犀剑阵"
     },
     {
         "id": "D11111",
+        "other_id": 1000078,
         "name": "Dream - Cloud Sword - Touch Earth",
         "namecn": "梦·云剑厚土"
     },
     {
         "id": "D11121",
+        "other_id": 1000079,
         "name": "Dream - Reflexive Sword",
         "namecn": "梦·反身剑"
     },
     {
         "id": "D11131",
+        "other_id": 1000080,
         "name": "Dream - Rule Sky Sword Formation",
         "namecn": "梦·御空剑阵"
     },
     {
         "id": "D11141",
+        "other_id": 1000081,
         "name": "Dream - Giant Roc Spirit Sword",
         "namecn": "梦·巨鹏灵剑"
     },
     {
         "id": "D11151",
+        "other_id": 1000082,
         "name": "Dream - Earth Evil Sword",
         "namecn": "梦·地煞剑"
     },
     {
         "id": "D11161",
+        "other_id": 1000083,
         "name": "Dream - Cloud Sword - Softheart",
         "namecn": "梦·云剑柔心"
     },
     {
         "id": "D11171",
+        "other_id": 1000085,
         "name": "Dream - Contemplate Spirits Rhythm",
         "namecn": "梦·凝意诀"
     },
     {
         "id": "D11181",
+        "other_id": 1000086,
         "name": "Dream - Cloud Sword - Spirit Coercion",
         "namecn": "梦·云剑汇灵"
     },
     {
+        "id": "D11191",
+        "other_id": 1000084,
+        "name": "Dream - Spiritage Sword",
+        "namecn": "梦·引气剑"
+    },
+    {
+        "id": "D11201",
+        "other_id": 1000087,
+        "name": "Dream - Unrestrained Sword Two",
+        "namecn": "梦·狂剑二式"
+    },
+    {
         "id": "D12011",
+        "other_id": 4000069,
         "name": "Dream - Astral Move - Block",
         "namecn": "梦·星弈挡"
     },
     {
         "id": "D12021",
+        "other_id": 4000070,
         "name": "Dream - Star Trail Divination",
         "namecn": "梦·星轨推衍"
     },
     {
         "id": "D12031",
+        "other_id": 4000071,
         "name": "Dream - Thunder And Lightning",
         "namecn": "梦·轰雷掣电"
     },
     {
         "id": "D12041",
+        "other_id": 4000072,
         "name": "Dream - Yin Yang Formation",
         "namecn": "梦·两仪阵"
     },
     {
         "id": "D12051",
+        "other_id": 4000073,
         "name": "Dream - Falling Thunder",
         "namecn": "梦·落雷术"
     },
     {
         "id": "D12061",
+        "other_id": 4000074,
         "name": "Dream - Flower Sentient",
         "namecn": "梦·落花有意"
     },
     {
         "id": "D12071",
+        "other_id": 4000075,
         "name": "Dream - Hunter Hunting Hunter",
         "namecn": "梦·黄雀在后"
     },
     {
         "id": "D12081",
+        "other_id": 4000076,
         "name": "Dream - Drag Moon In Sea",
         "namecn": "梦·海底捞月"
     },
     {
         "id": "D12091",
+        "other_id": 4000078,
         "name": "Dream - Repel Citta-Dharma",
         "namecn": "梦·反震心法"
     },
     {
         "id": "D12101",
+        "other_id": 4000079,
         "name": "Dream - Shifting Stars",
         "namecn": "梦·斗转星移"
     },
     {
         "id": "D12111",
+        "other_id": 4000080,
         "name": "Dream - Flame Hexagram",
         "namecn": "梦·离卦"
     },
     {
         "id": "D12121",
+        "other_id": 4000081,
         "name": "Dream - Dance Of The Dragonfly",
         "namecn": "梦·蜻蜓点水"
     },
     {
         "id": "D12131",
+        "other_id": 4000082,
         "name": "Dream - Snake in Reflection",
         "namecn": "梦·杯弓蛇影"
     },
     {
         "id": "D12141",
+        "other_id": 4000083,
         "name": "Dream - Qi Therapy",
         "namecn": "梦·气疗术"
     },
     {
         "id": "D12151",
+        "other_id": 4000084,
         "name": "Dream - Dotted Around",
         "namecn": "梦·星罗棋布"
     },
     {
         "id": "D12161",
+        "other_id": 4000085,
         "name": "Dream - White Snake",
         "namecn": "梦·白蛇吐信"
     },
     {
         "id": "D12171",
+        "other_id": 4000086,
         "name": "Dream - Heaven Hexagram",
         "namecn": "梦·乾卦"
     },
     {
         "id": "D12181",
+        "other_id": 4000087,
         "name": "Dream - Revitalized",
         "namecn": "梦·枯木逢春"
     },
     {
+        "id": "D12191",
+        "other_id": 4000088,
+        "name": "Dream - Thunder Hexagram Rhythm",
+        "namecn": "梦·御雷卦诀"
+    },
+    {
+        "id": "D12201",
+        "other_id": 4000089,
+        "name": "Dream - Astral Move Point",
+        "namecn": "梦·星弈点"
+    },
+    {
         "id": "D13011",
+        "other_id": 7000074,
         "name": "Dream - Metal Spirit Formation",
         "namecn": "梦·金灵阵"
     },
     {
         "id": "D13021",
+        "other_id": 7000075,
         "name": "Dream - Cosmos Seal",
         "namecn": "梦·浑天印"
     },
     {
         "id": "D13031",
+        "other_id": 7000076,
         "name": "Dream - Water Spirit Billows",
         "namecn": "梦·水灵波澜"
     },
     {
         "id": "D13041",
+        "other_id": 7000077,
         "name": "Dream - Five Elements Fleche",
         "namecn": "梦·五行刺"
     },
     {
         "id": "D13051",
+        "other_id": 7000078,
         "name": "Dream - Ultimate World Formation",
         "namecn": "梦·混元无极阵"
     },
     {
         "id": "D13061",
+        "other_id": 7000079,
         "name": "Dream - Water Spirit Spring",
         "namecn": "梦·水灵泉涌"
     },
     {
         "id": "D13071",
+        "other_id": 7000080,
         "name": "Dream - Wood Spirit Willow Leaf",
         "namecn": "梦·木灵柳纷飞"
     },
     {
         "id": "D13081",
+        "other_id": 7000081,
         "name": "Dream - Wood Spirit Formation",
         "namecn": "梦·木灵阵"
     },
     {
         "id": "D13091",
+        "other_id": 7000082,
         "name": "Dream - Fire Spirit Heart Fire",
         "namecn": "梦·火灵灼心"
     },
     {
         "id": "D13101",
+        "other_id": 7000083,
         "name": "Dream - Fire Spirit Flash Fire",
         "namecn": "梦·火灵瞬燃"
     },
     {
         "id": "D13111",
+        "other_id": 7000084,
         "name": "Dream - Metal Spirit Iron Bone",
         "namecn": "梦·金灵铁骨"
     },
     {
         "id": "D13121",
+        "other_id": 7000085,
         "name": "Dream - Metal Spirit Sharp",
         "namecn": "梦·金灵锋芒"
     },
     {
         "id": "D13131",
+        "other_id": 7000086,
         "name": "Dream - Earth Spirit Steep",
         "namecn": "梦·土灵绝壁"
     },
     {
         "id": "D13141",
+        "other_id": 7000087,
         "name": "Dream - Five Elements Heavenly Marrow Rhythm",
         "namecn": "梦·五行天髓诀"
     },
     {
         "id": "D13151",
+        "other_id": 7000088,
         "name": "Dream - Wood Spirit Bud",
         "namecn": "梦·木灵芽"
     },
     {
         "id": "D13161",
+        "other_id": 7000089,
         "name": "Dream - Fire Spirit Flame Eater",
         "namecn": "梦·火灵聚炎"
     },
     {
         "id": "D13171",
+        "other_id": 7000090,
         "name": "Dream - Fire Spirit Formation",
         "namecn": "梦·火灵阵"
     },
     {
         "id": "D13181",
+        "other_id": 7000091,
         "name": "Dream - Earth Spirit Cliff",
         "namecn": "梦·土灵断崖"
     },
     {
+        "id": "D13191",
+        "other_id": 7000093,
+        "name": "Dream - World Smash",
+        "namecn": "梦·混元碎击"
+    },
+    {
+        "id": "D13201",
+        "other_id": 7000103,
+        "name": "Dream - Water Spirit Turbulent",
+        "namecn": "梦·水灵汹涌"
+    },
+    {
         "id": "D14011",
+        "other_id": 10000069,
         "name": "Dream - Elusive Footwork",
         "namecn": "梦·灵玄迷踪步"
     },
     {
         "id": "D14021",
+        "other_id": 10000070,
         "name": "Dream - Shura Roar",
         "namecn": "梦·修罗吼"
     },
     {
         "id": "D14031",
+        "other_id": 10000071,
         "name": "Dream - Crash Fist Block",
         "namecn": "梦·崩拳封"
     },
     {
         "id": "D14041",
+        "other_id": 10000072,
         "name": "Dream - Exercise Soul",
         "namecn": "梦·锻神开海"
     },
     {
         "id": "D14051",
+        "other_id": 10000073,
         "name": "Dream - Surging Waves",
         "namecn": "梦·冲霄破浪"
     },
     {
         "id": "D14061",
+        "other_id": 10000074,
         "name": "Dream - Crash Fist Blitz",
         "namecn": "梦·崩拳突"
     },
     {
         "id": "D14071",
+        "other_id": 10000075,
         "name": "Dream - Exercise Tendons",
         "namecn": "梦·锻筋"
     },
     {
         "id": "D14081",
+        "other_id": 10000076,
         "name": "Dream - Crash Fist Bounce",
         "namecn": "梦·崩拳弹"
     },
     {
         "id": "D14091",
+        "other_id": 10000077,
         "name": "Dream - Styx Agility",
         "namecn": "梦·冥影身法"
     },
     {
         "id": "D14101",
+        "other_id": 10000078,
         "name": "Dream - Vigorous Force",
         "namecn": "梦·朝气蓬勃"
     },
     {
         "id": "D14111",
+        "other_id": 10000079,
         "name": "Dream - Mountain-Cleaving Palms",
         "namecn": "梦·劈山掌"
     },
     {
         "id": "D14121",
+        "other_id": 10000080,
         "name": "Dream - Crash Footwork",
         "namecn": "梦·崩天步"
     },
     {
         "id": "D14131",
+        "other_id": 10000081,
         "name": "Dream - Windward Palms",
         "namecn": "梦·迎风掌"
     },
     {
         "id": "D14141",
+        "other_id": 10000089,
         "name": "Dream - Crash Fist Continue",
         "namecn": "梦·崩拳连崩"
     },
     {
         "id": "D14151",
+        "other_id": 10000083,
         "name": "Dream - Bearing the Load",
         "namecn": "梦·荷重前行"
     },
     {
         "id": "D14161",
+        "other_id": 10000084,
         "name": "Dream - Gather Intense Force",
         "namecn": "梦·威震四方"
     },
     {
         "id": "D14171",
+        "other_id": 10000085,
         "name": "Dream - Majestic Qi",
         "namecn": "梦·气若悬河"
     },
     {
         "id": "D14181",
+        "other_id": 10000086,
         "name": "Dream - Overwhelming Force",
         "namecn": "梦·磅礴之势"
+    },
+    {
+        "id": "D14191",
+        "other_id": 10000087,
+        "name": "Dream - Exercise Fist",
+        "namecn": "梦·锻拳"
+    },
+    {
+        "id": "D14201",
+        "other_id": 10000088,
+        "name": "Dream - Standing Firm",
+        "namecn": "梦·岿然不动"
+    },
+    {
+        "id": "D21014",
+        "other_id": 344,
+        "name": "Dream - Cloud Elixir",
+        "namecn": "梦·飞云丹"
+    },
+    {
+        "id": "D21024",
+        "other_id": 345,
+        "name": "Dream - Great Recover Elixir",
+        "namecn": "梦·大还丹"
+    },
+    {
+        "id": "D22015",
+        "other_id": 342,
+        "name": "Dream - Calm Incantation",
+        "namecn": "梦·清心咒"
+    },
+    {
+        "id": "D22024",
+        "other_id": 351,
+        "name": "Dream - Ice Incantation",
+        "namecn": "梦·寒冰咒"
+    },
+    {
+        "id": "D22034",
+        "other_id": 379,
+        "name": "Dream - Sharp Metal Fulu",
+        "namecn": "梦·锐金符"
+    },
+    {
+        "id": "D22045",
+        "other_id": 387,
+        "name": "Dream - Weaken Fulu",
+        "namecn": "梦·弱体符"
+    },
+    {
+        "id": "D23015",
+        "other_id": 340,
+        "name": "Dream - Craze Dance Tune",
+        "namecn": "梦·狂舞曲"
+    },
+    {
+        "id": "D23024",
+        "other_id": 346,
+        "name": "Dream - Chord In Tune",
+        "namecn": "梦·转弦合调"
+    },
+    {
+        "id": "D23035",
+        "other_id": 348,
+        "name": "Dream - Predicament for Immortals",
+        "namecn": "梦·天音困仙曲"
+    },
+    {
+        "id": "D23045",
+        "other_id": 378,
+        "name": "Dream - Nine Evil Ruptsprite",
+        "namecn": "梦·九煞破灵曲"
+    },
+    {
+        "id": "D24014",
+        "other_id": 341,
+        "name": "Dream - Divine Brush",
+        "namecn": "梦·神来之笔"
+    },
+    {
+        "id": "D24025",
+        "other_id": 384,
+        "name": "Dream - Finishing Touch",
+        "namecn": "梦·画龙点睛",
+        "non_playable": true
+    },
+    {
+        "id": "D24034",
+        "other_id": 386,
+        "name": "Dream - Wonderful Strokes",
+        "namecn": "梦·妙笔生花",
+        "non_playable": true
+    },
+    {
+        "id": "D25015",
+        "other_id": 334,
+        "name": "Dream - Motionless Tutelary Formation",
+        "namecn": "梦·不动金刚阵"
+    },
+    {
+        "id": "D25024",
+        "other_id": 349,
+        "name": "Dream - Echo Formation",
+        "namecn": "梦·回响阵纹"
+    },
+    {
+        "id": "D26014",
+        "other_id": 333,
+        "name": "Dream - Frozen Snow Lotus",
+        "namecn": "梦·冰封雪莲"
+    },
+    {
+        "id": "D26024",
+        "other_id": 343,
+        "name": "Dream - Entangling Ancient Vine",
+        "namecn": "梦·缚仙古藤"
+    },
+    {
+        "id": "D26035",
+        "other_id": 350,
+        "name": "Dream - Space Spiritual Field",
+        "namecn": "梦·空间灵田"
+    },
+    {
+        "id": "D26045",
+        "other_id": 385,
+        "name": "Dream - Flying Owl Reishi",
+        "namecn": "梦·飞枭灵芝",
+        "non_playable": true
+    },
+    {
+        "id": "D27015",
+        "other_id": 335,
+        "name": "Dream - Heavenly Time Recurring",
+        "namecn": "梦·天命重现"
+    },
+    {
+        "id": "D27024",
+        "other_id": 369,
+        "name": "Dream - Envelop In Disaster",
+        "namecn": "梦·厄劫缠身"
+    },
+    {
+        "id": "D30015",
+        "other_id": 347,
+        "name": "Dream - At Own Pace",
+        "namecn": "梦·自在随心",
+        "non_playable": true
     }
 ]

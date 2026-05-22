@@ -3,6 +3,7 @@
 import { preprocessJavaScript } from './preprocessor.js';
 import fs from 'fs';
 import { execSync } from 'child_process';
+import { pathToFileURL } from 'url';
 import { deps, config_implies_config } from './deps.js';
 
 // HAS_SHADOW_OWL_REISHI -> HAS_FLYING_BRUSH
@@ -63,6 +64,14 @@ export function preprocess_to_string(config) {
     return preprocessJavaScript(sourceCode, defines);
 }
 
+export function preprocess_full_to_string() {
+    const defines = {};
+    for (let key in deps) {
+        defines[key] = true;
+    }
+    return preprocessJavaScript(sourceCode, defines);
+}
+
 export function preprocess_plz(config) {
     const defines = resolve_defines(config);
     console.log(defines);
@@ -73,12 +82,9 @@ export function preprocess_plz(config) {
 }
 
 export function make_full_gamestate() {
-    const defines = {};
-    for (let key in deps) {
-        defines[key] = true;
-    }
-    const processedCode = preprocessJavaScript(sourceCode, defines);
-    fs.writeFileSync("gamestate_full.js", processedCode);
+    fs.writeFileSync("gamestate_full.js", preprocess_full_to_string());
 }
 
-make_full_gamestate();
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+    make_full_gamestate();
+}
