@@ -3858,28 +3858,28 @@
 		"name": "Double Trouble",
 		"qi_cost": 1,
 		"actions": [
-			["add_enemy_c_of_x", 1, "internal_injury"],
-			["add_enemy_c_of_x", 1, "wound"],
 			["add_c_of_x", 1, "internal_injury"],
+			["add_enemy_c_of_x", 1, "internal_injury"],
 			["add_c_of_x", 1, "wound"],
+			["add_enemy_c_of_x", 1, "wound"],
 			["rep", 2, ["atk", 6]]
 		]
 	},
 	"143082": {
 		"actions": [
-			["add_enemy_c_of_x", 2, "internal_injury"],
-			["add_enemy_c_of_x", 1, "wound"],
 			["add_c_of_x", 2, "internal_injury"],
+			["add_enemy_c_of_x", 2, "internal_injury"],
 			["add_c_of_x", 1, "wound"],
+			["add_enemy_c_of_x", 1, "wound"],
 			["rep", 2, ["atk", 7]]
 		]
 	},
 	"143083": {
 		"actions": [
-			["add_enemy_c_of_x", 2, "internal_injury"],
-			["add_enemy_c_of_x", 2, "wound"],
 			["add_c_of_x", 2, "internal_injury"],
+			["add_enemy_c_of_x", 2, "internal_injury"],
 			["add_c_of_x", 2, "wound"],
+			["add_enemy_c_of_x", 2, "wound"],
 			["rep", 2, ["atk", 8]]
 		]
 	},
@@ -4317,7 +4317,7 @@
 				["add_enemy_c_of_x", 2, "wound"]],
 			["if_x_at_least_c_do", "styx", 1,
 				["add_enemy_c_of_x", 2, "styx"]],
-			["for_each_x_add_y", "debuff", "bonus_force_amt"],
+			["debuffs_count_as_force"],
 			["ignore_weaken"],
 			["ignore_decrease_atk"],
 			["atk", 8]
@@ -4339,7 +4339,7 @@
 				["add_enemy_c_of_x", 2, "wound"]],
 			["if_x_at_least_c_do", "styx", 1,
 				["add_enemy_c_of_x", 2, "styx"]],
-			["for_each_x_add_y", "debuff", "bonus_force_amt"],
+			["debuffs_count_as_force"],
 			["ignore_weaken"],
 			["ignore_decrease_atk"],
 			["atk", 14]
@@ -4361,7 +4361,7 @@
 				["add_enemy_c_of_x", 2, "wound"]],
 			["if_x_at_least_c_do", "styx", 1,
 				["add_enemy_c_of_x", 2, "styx"]],
-			["for_each_x_add_y", "debuff", "bonus_force_amt"],
+			["debuffs_count_as_force"],
 			["ignore_weaken"],
 			["ignore_decrease_atk"],
 			["atk", 20]
@@ -5604,8 +5604,7 @@
 			["for_each_x_reduce_c_pct_y", "wound", 100, "wound"],
 			["for_each_x_reduce_c_pct_y", "styx", 100, "styx"],
 			["for_each_x_add_y", "bonus_def_amt", "physique"],
-			["for_each_x_add_y", "bonus_def_amt", "hp"],
-			["physique", 0]
+			["for_each_x_add_y", "bonus_def_amt", "hp"]
 		]
 	},
 	"245012": {
@@ -5620,8 +5619,7 @@
 			["for_each_x_reduce_c_pct_y", "wound", 100, "wound"],
 			["for_each_x_reduce_c_pct_y", "styx", 100, "styx"],
 			["for_each_x_add_y", "bonus_def_amt", "physique"],
-			["for_each_x_add_y", "bonus_def_amt", "hp"],
-			["physique", 0]
+			["for_each_x_add_y", "bonus_def_amt", "hp"]
 		]
 	},
 	"245013": {
@@ -5636,8 +5634,7 @@
 			["for_each_x_reduce_c_pct_y", "wound", 100, "wound"],
 			["for_each_x_reduce_c_pct_y", "styx", 100, "styx"],
 			["for_each_x_add_y", "bonus_def_amt", "physique"],
-			["for_each_x_add_y", "bonus_def_amt", "hp"],
-			["physique", 0]
+			["for_each_x_add_y", "bonus_def_amt", "hp"]
 		]
 	},
 	"245021": {
@@ -8390,6 +8387,16 @@
 		"name": "Nameless White Deer",
 		"actions": [
 			["add_c_of_x", 2, "qi"]
+		]
+	},
+	"506032": {
+		"actions": [
+			["add_c_of_x", 4, "qi"]
+		]
+	},
+	"506033": {
+		"actions": [
+			["add_c_of_x", 6, "qi"]
 		]
 	},
 	"601011": {

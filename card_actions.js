@@ -671,19 +671,25 @@ card_actions["113093"] = (game) => {
 // Mirror Flower Sword Formation
 card_actions["113101"] = (game) => {
     game.increase_idx_def(0, 3);
-    game.atk(game.players[0].def);
+    if (game.players[0].def > 0) {
+        game.atk(game.players[0].def);
+    }
 }
 
 // 113102
 card_actions["113102"] = (game) => {
     game.increase_idx_def(0, 5);
-    game.atk(game.players[0].def);
+    if (game.players[0].def > 0) {
+        game.atk(game.players[0].def);
+    }
 }
 
 // 113103
 card_actions["113103"] = (game) => {
     game.increase_idx_def(0, 8);
-    game.atk(game.players[0].def);
+    if (game.players[0].def > 0) {
+        game.atk(game.players[0].def);
+    }
 }
 
 // Tri-Peak Sword
@@ -760,6 +766,7 @@ card_actions["114031"] = (game) => {
     game.increase_idx_qi(0, 1);
     game.continuous();
     game.add_c_of_x(1, "spirit_gather_citta_dharma_stacks");
+    game.players[0].spirit_gather_citta_dharma_odd_gives_qi = true;
 }
 
 // 114032
@@ -4268,10 +4275,10 @@ card_actions["143073"] = (game) => {
 
 // Double Trouble
 card_actions["143081"] = (game) => {
-    game.add_enemy_c_of_x(1, "internal_injury");
-    game.add_enemy_c_of_x(1, "wound");
     game.add_c_of_x(1, "internal_injury");
+    game.add_enemy_c_of_x(1, "internal_injury");
     game.add_c_of_x(1, "wound");
+    game.add_enemy_c_of_x(1, "wound");
     for (let i = 0; i < 2; i++) {
         game.atk(6);
     }
@@ -4279,10 +4286,10 @@ card_actions["143081"] = (game) => {
 
 // 143082
 card_actions["143082"] = (game) => {
-    game.add_enemy_c_of_x(2, "internal_injury");
-    game.add_enemy_c_of_x(1, "wound");
     game.add_c_of_x(2, "internal_injury");
+    game.add_enemy_c_of_x(2, "internal_injury");
     game.add_c_of_x(1, "wound");
+    game.add_enemy_c_of_x(1, "wound");
     for (let i = 0; i < 2; i++) {
         game.atk(7);
     }
@@ -4290,10 +4297,10 @@ card_actions["143082"] = (game) => {
 
 // 143083
 card_actions["143083"] = (game) => {
-    game.add_enemy_c_of_x(2, "internal_injury");
-    game.add_enemy_c_of_x(2, "wound");
     game.add_c_of_x(2, "internal_injury");
+    game.add_enemy_c_of_x(2, "internal_injury");
     game.add_c_of_x(2, "wound");
+    game.add_enemy_c_of_x(2, "wound");
     for (let i = 0; i < 2; i++) {
         game.atk(8);
     }
@@ -4730,7 +4737,7 @@ card_actions["145061"] = (game) => {
     if (game.players[0].styx >= 1) {
         game.add_enemy_c_of_x(2, "styx");
     }
-    game.for_each_x_add_y("debuff", "bonus_force_amt");
+    game.players[0].debuffs_count_as_force = true;
     game.ignore_weaken();
     game.ignore_decrease_atk();
     game.atk(8);
@@ -4759,7 +4766,7 @@ card_actions["145062"] = (game) => {
     if (game.players[0].styx >= 1) {
         game.add_enemy_c_of_x(2, "styx");
     }
-    game.for_each_x_add_y("debuff", "bonus_force_amt");
+    game.players[0].debuffs_count_as_force = true;
     game.ignore_weaken();
     game.ignore_decrease_atk();
     game.atk(14);
@@ -4788,7 +4795,7 @@ card_actions["145063"] = (game) => {
     if (game.players[0].styx >= 1) {
         game.add_enemy_c_of_x(2, "styx");
     }
-    game.for_each_x_add_y("debuff", "bonus_force_amt");
+    game.players[0].debuffs_count_as_force = true;
     game.ignore_weaken();
     game.ignore_decrease_atk();
     game.atk(20);
@@ -8310,19 +8317,34 @@ card_actions["403023"] = (game) => {
 
 // Blood Crystal of Wolf King
 card_actions["403031"] = (game) => {
-    game.for_each_x_reduce_c_pct_y("hp", 15, "hp");
+    const hp_loss = Math.ceil(game.players[0].hp * 15 / 100);
+    if (hp_loss < 0) {
+        game.increase_idx_hp(0, -hp_loss);
+    } else {
+        game.reduce_idx_hp(0, hp_loss);
+    }
     game.add_c_of_x(4, "increase_atk");
 }
 
 // 403032
 card_actions["403032"] = (game) => {
-    game.for_each_x_reduce_c_pct_y("hp", 15, "hp");
+    const hp_loss = Math.ceil(game.players[0].hp * 15 / 100);
+    if (hp_loss < 0) {
+        game.increase_idx_hp(0, -hp_loss);
+    } else {
+        game.reduce_idx_hp(0, hp_loss);
+    }
     game.add_c_of_x(5, "increase_atk");
 }
 
 // 403033
 card_actions["403033"] = (game) => {
-    game.for_each_x_reduce_c_pct_y("hp", 15, "hp");
+    const hp_loss = Math.ceil(game.players[0].hp * 15 / 100);
+    if (hp_loss < 0) {
+        game.increase_idx_hp(0, -hp_loss);
+    } else {
+        game.reduce_idx_hp(0, hp_loss);
+    }
     game.add_c_of_x(6, "increase_atk");
 }
 
@@ -8457,8 +8479,11 @@ card_actions["406011"] = (game) => {
     game.atk(30);
     const enemy = game.players[1];
     enemy.destiny -= 4;
+    enemy.direct_destiny_lost += 4;
     if (enemy.destiny <= 0) {
-        enemy.hp = 0;
+        if (enemy.hp > 0) {
+            enemy.hp = 0;
+        }
         enemy.got_void_split_speared = true;
         if (enemy.is_mirror) {
             game.destiny_damage = game.calculate_destiny_damage(0, 1);
@@ -8472,8 +8497,11 @@ card_actions["406012"] = (game) => {
     game.atk(35);
     const enemy = game.players[1];
     enemy.destiny -= 7;
+    enemy.direct_destiny_lost += 7;
     if (enemy.destiny <= 0) {
-        enemy.hp = 0;
+        if (enemy.hp > 0) {
+            enemy.hp = 0;
+        }
         enemy.got_void_split_speared = true;
         if (enemy.is_mirror) {
             game.destiny_damage = game.calculate_destiny_damage(0, 1);
@@ -8487,8 +8515,11 @@ card_actions["406013"] = (game) => {
     game.atk(40);
     const enemy = game.players[1];
     enemy.destiny -= 10;
+    enemy.direct_destiny_lost += 10;
     if (enemy.destiny <= 0) {
-        enemy.hp = 0;
+        if (enemy.hp > 0) {
+            enemy.hp = 0;
+        }
         enemy.got_void_split_speared = true;
         if (enemy.is_mirror) {
             game.destiny_damage = game.calculate_destiny_damage(0, 1);
@@ -8829,6 +8860,14 @@ card_actions["506023"] = (game) => {
 // Nameless White Deer
 card_actions["506031"] = (game) => {
     game.increase_idx_qi(0, 2);
+}
+
+card_actions["506032"] = (game) => {
+    game.increase_idx_qi(0, 4);
+}
+
+card_actions["506033"] = (game) => {
+    game.increase_idx_qi(0, 6);
 }
 
 // Normal Attack

@@ -295,7 +295,8 @@ export const deps = {
         "12502", "35503", "37301", "70101", "80406", "90603", "D2702"],
     HAS_CYCLE_OF_FATE: ["fate_reincarnates_stacks", "37502"],
     HAS_ASTRAL_MOVE_JUMP: ["astral_move_jump_stacks", "92509"],
-    HAS_SKIP_ONE_PLAY: ["36502", "D2603", "D2702"],
+    HAS_SKIP_ONE_PLAY: ["36502", "D2603"],
+    HAS_SKIP_ONE_PLAY_DREAM_PENGUIN: ["skip_one_play_dream_penguin", "D2702"],
     HAS_WATER_SPIRIT_COST_0_QI: ["13209", "73503"],
     HAS_REDUCE_QI_COST_ON_STAR_POINT: [
         "reduce_qi_cost_on_star_point_stacks", "62501"],
@@ -419,7 +420,7 @@ export const deps = {
     HAS_P3_SWORD_FORMATION_GUARD: ["p3_sword_formation_guard_stacks"],
     HAS_P4_SWORD_FORMATION_GUARD: ["p4_sword_formation_guard_stacks"],
     HAS_P5_SWORD_FORMATION_GUARD: ["p5_sword_formation_guard_stacks"],
-    HAS_BONUS_FORCE: ["14506"],
+    HAS_DEBUFFS_COUNT_AS_FORCE: ["debuffs_count_as_force", "14506"],
     HAS_DAMAGE_DEALT_TO_HP_BY_THIS_CARD_ATK: [
         "HAS_CRASH_FIST_STAR_SEIZING", "13402", "13404",
         "D11151", "D11152", "D11153", "D11154", "D11155",
@@ -645,7 +646,7 @@ export const deps = {
         "HAS_ENDLESS_FORCE",
         "HAS_MAJESTIC_QI",
         "HAS_SOUL_OVERWHELMING_PALM",
-        "HAS_BONUS_FORCE",
+        "HAS_DEBUFFS_COUNT_AS_FORCE",
         "14110", "14111", "14208", "14309", "14310", "14311",
         "14401", "14409", "14410", "14507", "14508", "24102",
         "24302", "64202", "64503", "74404", "74504", "94301", "94501", "94504", "94506",
