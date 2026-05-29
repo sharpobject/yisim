@@ -1,6 +1,7 @@
 // HAS_SHADOW_OWL_REISHI -> HAS_FLYING_BRUSH
 
 export const deps = {
+    HAS_REPLAY_RANDOM_OUTCOMES: ["REPLAY_RANDOM_OUTCOMES"],
     HAS_BAD_OMEN: ["37204", "bad_omen_stacks"],
     HAS_PLANT_START_PERMANENT_BUFFS: [
         "origin_herb_stacks", "shuttle_orchid_stacks", "healing_chamomile_stacks",
@@ -349,7 +350,7 @@ export const deps = {
         "13110", "13209", "13210", "13409", "13505", "23105",
         "23502", "73407", "73503", "93401", "D13031", "D13032", "D13033", "D13034", "D13035", "D13061", "D13062", "D13063", "D13064", "D13065", "D13071", "D13072", "D13073", "D13074", "D13075", "D13121", "D13122", "D13123", "D13124", "D13125", "D13201", "D13202", "D13203", "D13204", "D13205"],
     HAS_METAL_SPIRIT_RHYTHM_WATER: ["23302"],
-    HAS_HARD_BAMBOO: ["hard_bamboo_stacks", "36102"],
+    HAS_HARD_BAMBOO: ["hard_bamboo_stacks", "36208"],
     HAS_XUANMING_REGEN_TUNE: [
         "xuanming_regen_tune_heal_stacks",
         "xuanming_regen_tune_hurt_stacks", "90402"],
@@ -843,7 +844,8 @@ export const deps = {
     HAS_RAND_RANGE: [
         "HAS_THUNDER_AND_LIGHTNING",
         "12108", "12109", "12111", "12206", "12207", "12305",
-        "12308", "22102", "22302", "32101", "34201", "62303", "92404"],
+        "12308", "22102", "22302", "32101", "34201", "62303", "92404",
+        "D12191", "D12192", "D12193", "D12194", "D12195"],
     HAS_IF_C_PCT: [
         "HAS_XUANMING_THUNDERCLOUD_TRIBULATION",
         "HAS_THUNDERBOLT_TUNE",
@@ -1316,8 +1318,8 @@ export const deps = {
         "dream_crash_footwork_fake_crash_fist",
         "D14121", "D14122", "D14123", "D14124", "D14125"],
     HAS_DREAM_CRASH_FIST_CONTINUE: [
-        "dream_crash_fist_continue_bonus_atk",
-        "this_card_dream_crash_fist_continue_bonus_atk",
+        "dream_crash_fist_continue_count",
+        "this_card_dream_crash_fist_continue_count",
         "D14141", "D14142", "D14143", "D14144", "D14145"],
     HAS_DREAM_EXERCISE_FIST_PHYSIQUE: [
         "later_dream_exercise_fist_physique_stacks",

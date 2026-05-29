@@ -8323,19 +8323,19 @@
 		"name": "Shadow Owl Rabbit",
 		"actions": [
 			["continuous"],
-			["add_c_of_x", 10, "shadow_owl_rabbit_stacks"]
+			["set_c_of_x", 10, "shadow_owl_rabbit_stacks"]
 		]
 	},
 	"505022": {
 		"actions": [
 			["continuous"],
-			["add_c_of_x", 8, "shadow_owl_rabbit_stacks"]
+			["set_c_of_x", 8, "shadow_owl_rabbit_stacks"]
 		]
 	},
 	"505023": {
 		"actions": [
 			["continuous"],
-			["add_c_of_x", 6, "shadow_owl_rabbit_stacks"]
+			["set_c_of_x", 6, "shadow_owl_rabbit_stacks"]
 		]
 	},
 	"506011": {
@@ -14293,7 +14293,8 @@
 		"actions": [["atk_rand_range", 9, 18], ["for_each_x_add_y", "dream_lost_hexagram_count", "hexagram"], ["consumption"]]
 	},
 	"D12195": {
-		"actions": [["atk_rand_range", 1, 8], ["add_c_of_x", 1, "dream_thunder_hexagram_rhythm_stacks"]]
+		"is_continuous": true,
+		"actions": [["atk_rand_range", 1, 8], ["continuous"], ["add_c_of_x", 1, "dream_thunder_hexagram_rhythm_stacks"]]
 	},
 	"D12201": {
 		"name": "Dream - Astral Move Point",
@@ -14341,7 +14342,7 @@
 		"actions": [["qi", 3], ["deal_damage", 10]]
 	},
 	"D13025": {
-		"actions": [["qi", 3], ["deal_damage", 12]]
+		"actions": [["trigger_replay_card"]]
 	},
 	"D13031": {
 		"name": "Dream - Water Spirit Billows",

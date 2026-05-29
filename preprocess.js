@@ -64,10 +64,14 @@ export function preprocess_to_string(config) {
     return preprocessJavaScript(sourceCode, defines);
 }
 
-export function preprocess_full_to_string() {
+export function preprocess_full_to_string(extraDefines = {}) {
     const defines = {};
     for (let key in deps) {
         defines[key] = true;
+    }
+    delete defines.HAS_REPLAY_RANDOM_OUTCOMES;
+    for (let key in extraDefines) {
+        defines[key] = extraDefines[key];
     }
     return preprocessJavaScript(sourceCode, defines);
 }
