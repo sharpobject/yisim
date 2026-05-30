@@ -138,6 +138,12 @@
         "namecn": "狂剑·一式"
     },
     {
+        "id": 112121,
+        "other_id": 1000088,
+        "name": "Spirit Command Citta-Dharma",
+        "namecn": "御灵心法"
+    },
+    {
         "id": 113011,
         "other_id": 1000026,
         "name": "Cloud Sword - Softheart",
@@ -205,6 +211,12 @@
         "namecn": "三峰剑"
     },
     {
+        "id": 113121,
+        "other_id": 1000089,
+        "name": "Vermilion Sparrow Spirit Sword",
+        "namecn": "丹雀灵剑"
+    },
+    {
         "id": 114011,
         "other_id": 1000039,
         "name": "Cloud Sword - Flash Wind",
@@ -265,6 +277,18 @@
         "namecn": "狂剑·二式"
     },
     {
+        "id": 114111,
+        "other_id": 1000090,
+        "name": "Flying Leopard Spirit Sword",
+        "namecn": "飞豹灵剑"
+    },
+    {
+        "id": 114121,
+        "other_id": 1000091,
+        "name": "Cloud Sword - Rend Sky",
+        "namecn": "云剑·裂空"
+    },
+    {
         "id": 115011,
         "other_id": 1000042,
         "name": "Cloud Sword - Dragon Roam",
@@ -311,6 +335,30 @@
         "other_id": 1000066,
         "name": "Unrestrained Sword - Zero",
         "namecn": "狂剑·零式"
+    },
+    {
+        "id": 115091,
+        "other_id": 1000092,
+        "name": "Spirit Pivot Sword Formation",
+        "namecn": "灵枢剑阵"
+    },
+    {
+        "id": 115101,
+        "other_id": 1000094,
+        "name": "Swift Shadow Flying Sword",
+        "namecn": "迅影飞剑"
+    },
+    {
+        "id": 115111,
+        "other_id": 1000095,
+        "name": "Sword Shadow Barrier",
+        "namecn": "剑影结界"
+    },
+    {
+        "id": 115121,
+        "other_id": 1000098,
+        "name": "Cloud Sword - Chase Wind",
+        "namecn": "云剑·追风"
     },
     {
         "id": 121011,
@@ -457,6 +505,12 @@
         "namecn": "气贯长虹"
     },
     {
+        "id": 122121,
+        "other_id": 4000090,
+        "name": "Star Gazing Rhythm",
+        "namecn": "望星诀"
+    },
+    {
         "id": 123011,
         "other_id": 4000032,
         "name": "Starry Moon",
@@ -524,6 +578,12 @@
         "namecn": "海底捞月"
     },
     {
+        "id": 123121,
+        "other_id": 4000091,
+        "name": "Rhinoceros Gazing at the Moon",
+        "namecn": "犀牛望月"
+    },
+    {
         "id": 124011,
         "other_id": 4000038,
         "name": "Astral Move - Fly",
@@ -587,6 +647,18 @@
         "namealta": "Extremely Suspicious"
     },
     {
+        "id": 124111,
+        "other_id": 4000092,
+        "name": "Soul Wound Curse Formation",
+        "namecn": "伤魂咒阵"
+    },
+    {
+        "id": 124121,
+        "other_id": 4000093,
+        "name": "Astral Move - Extend",
+        "namecn": "星弈·长"
+    },
+    {
         "id": 125011,
         "other_id": 4000045,
         "name": "Polaris Citta-Dharma",
@@ -634,6 +706,31 @@
         "other_id": 4000067,
         "name": "Propitious Omen",
         "namecn": "紫气东来"
+    },
+    {
+        "id": 125091,
+        "other_id": 4000094,
+        "name": "Astral Move - Ko Fight",
+        "namecn": "星弈·劫争"
+    },
+    {
+        "id": 125101,
+        "other_id": 4000095,
+        "name": "Spirit Snake Coiling Pillar",
+        "namecn": "灵蛇绕柱"
+    },
+    {
+        "id": 125111,
+        "other_id": 4000096,
+        "name": "Branch Break Acupressure",
+        "namecn": "折枝点穴",
+        "namealt": "Branch Break Pressure Point"
+    },
+    {
+        "id": 125121,
+        "other_id": 4000097,
+        "name": "Drawing the Bow at the Tiger",
+        "namecn": "弯弓射虎"
     },
     {
         "id": 131011,
@@ -768,6 +865,12 @@
         "namecn": "浑天印"
     },
     {
+        "id": 132121,
+        "other_id": 7000094,
+        "name": "Seal Suppression Citta-Dharma",
+        "namecn": "镇印心法"
+    },
+    {
         "id": 133011,
         "other_id": 7000036,
         "name": "Wood Spirit Formation",
@@ -832,6 +935,12 @@
         "other_id": 7000067,
         "name": "Five Elements Circulation",
         "namecn": "五行流转"
+    },
+    {
+        "id": 133121,
+        "other_id": 7000095,
+        "name": "Five Elements Spirit Strike",
+        "namecn": "五行灵击"
     },
     {
         "id": 134011,
@@ -900,6 +1009,12 @@
         "namecn": "混元碎击"
     },
     {
+        "id": 134121,
+        "other_id": 7000096,
+        "name": "Earth Spirit - Burrow",
+        "namecn": "土灵·遁地"
+    },
+    {
         "id": 135011,
         "other_id": 7000043,
         "name": "Wood Spirit - Willow Leaf",
@@ -940,6 +1055,37 @@
         "other_id": 7000073,
         "name": "Five Elements Heavenly Marrow Rhythm",
         "namecn": "五行天髓诀"
+    },
+    {
+        "id": 135081,
+        "other_id": 7000097,
+        "name": "Wood Spirit - Spring Breeze",
+        "namecn": "木灵·春风拂"
+    },
+    {
+        "id": 135091,
+        "other_id": 7000098,
+        "name": "Fire Spirit - Vein Burn Rhythm",
+        "namecn": "火灵·焚脉诀"
+    },
+    {
+        "id": 135101,
+        "other_id": 7000099,
+        "name": "Metal Spirit - Returning Edge",
+        "namecn": "金灵·回锋刃"
+    },
+    {
+        "id": 135111,
+        "other_id": 7000100,
+        "name": "Water Spirit - Ride the Waves",
+        "namecn": "水灵·乘风浪"
+    },
+    {
+        "id": 135121,
+        "other_id": 7000101,
+        "name": "Primordial Spirit Transmutation",
+        "namecn": "混元化灵",
+        "namealt": "Cosmos Spirit Transmutation"
     },
     {
         "id": 141011,
@@ -1080,6 +1226,12 @@
         "namecn": "浩然正气"
     },
     {
+        "id": 142121,
+        "other_id": 10000097,
+        "name": "Vajra Smash",
+        "namecn": "金刚捣硾"
+    },
+    {
         "id": 143011,
         "other_id": 10000026,
         "name": "Crash Footwork",
@@ -1146,6 +1298,12 @@
         "namecn": "势如破竹"
     },
     {
+        "id": 143121,
+        "other_id": 10000090,
+        "name": "Drunken Fist Stance",
+        "namecn": "醉拳架势"
+    },
+    {
         "id": 144011,
         "other_id": 10000044,
         "name": "Crash Citta-Dharma",
@@ -1206,6 +1364,18 @@
         "namecn": "磅礴之势"
     },
     {
+        "id": 144111,
+        "other_id": 10000091,
+        "name": "Mystic Spirit Healing",
+        "namecn": "玄灵愈体"
+    },
+    {
+        "id": 144121,
+        "other_id": 10000092,
+        "name": "Aerial Sweep",
+        "namecn": "凌空飞扫"
+    },
+    {
         "id": 145011,
         "other_id": 10000045,
         "name": "Crash Fist - Blink",
@@ -1252,6 +1422,30 @@
         "other_id": 10000052,
         "name": "Vast Universe",
         "namecn": "天地浩荡"
+    },
+    {
+        "id": 145091,
+        "other_id": 10000093,
+        "name": "Crash Fist - Shatter",
+        "namecn": "崩拳·碎骨"
+    },
+    {
+        "id": 145101,
+        "other_id": 10000094,
+        "name": "Thousand Souls Strike",
+        "namecn": "万魂破军"
+    },
+    {
+        "id": 145111,
+        "other_id": 10000095,
+        "name": "Blood Shadow Escape",
+        "namecn": "血影遁术"
+    },
+    {
+        "id": 145121,
+        "other_id": 10000096,
+        "name": "Spirit Forging Finger",
+        "namecn": "锻灵指"
     },
     {
         "id": 211011,

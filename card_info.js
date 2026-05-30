@@ -338,6 +338,7 @@ export const ready = (async () => {
         const character = with_default(swogi[card_id].character, with_default(swogi[base_id].character, undefined));
         const decrease_qi_cost_by_x = with_default(swogi[card_id].decrease_qi_cost_by_x, with_default(swogi[base_id].decrease_qi_cost_by_x, undefined));
         const water_spirit_cost_0_qi = with_default(swogi[card_id].water_spirit_cost_0_qi, with_default(swogi[base_id].water_spirit_cost_0_qi, undefined));
+        const cloud_hit_cost_0_qi = with_default(swogi[card_id].cloud_hit_cost_0_qi, with_default(swogi[base_id].cloud_hit_cost_0_qi, undefined));
         const is_salty = with_default(swogi[card_id].is_salty, with_default(swogi[base_id].is_salty, undefined));
         const is_sweet = with_default(swogi[card_id].is_sweet, with_default(swogi[base_id].is_sweet, undefined));
         const marking = with_default(swogi[card_id].marking, with_default(swogi[base_id].marking, undefined));
@@ -354,6 +355,7 @@ export const ready = (async () => {
             hp_cost: hp_cost,
             decrease_qi_cost_by_x: decrease_qi_cost_by_x,
             water_spirit_cost_0_qi: water_spirit_cost_0_qi,
+            cloud_hit_cost_0_qi: cloud_hit_cost_0_qi,
             gather_qi: gather_qi,
             card_actions: card_actions[card_id],
             opening: swogi[card_id].opening,

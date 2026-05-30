@@ -431,6 +431,28 @@
 			["atk", 10]
 		]
 	},
+	"112121": {
+		"name": "Spirit Command Citta-Dharma",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "spirit_command_citta_dharma_qi_gain_def_stacks"],
+			["add_c_of_x", 1, "spirit_command_citta_dharma_qi_loss_def_stacks"]
+		]
+	},
+	"112122": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "spirit_command_citta_dharma_qi_gain_def_stacks"],
+			["add_c_of_x", 2, "spirit_command_citta_dharma_qi_loss_def_stacks"]
+		]
+	},
+	"112123": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "spirit_command_citta_dharma_qi_gain_def_stacks"],
+			["add_c_of_x", 2, "spirit_command_citta_dharma_qi_loss_def_stacks"]
+		]
+	},
 	"113011": {
 		"name": "Cloud Sword - Softheart",
 		"actions": [
@@ -653,6 +675,25 @@
 			["rep", 3, ["atk", 5]]
 		]
 	},
+	"113121": {
+		"name": "Vermilion Sparrow Spirit Sword",
+		"qi_cost": 1,
+		"actions": [
+			["rep", 2, ["atk", 6]]
+		]
+	},
+	"113122": {
+		"qi_cost": 1,
+		"actions": [
+			["rep", 2, ["atk", 8]]
+		]
+	},
+	"113123": {
+		"qi_cost": 1,
+		"actions": [
+			["rep", 2, ["atk", 10]]
+		]
+	},
 	"114011": {
 		"name": "Cloud Sword - Flash Wind",
 		"actions": [
@@ -858,6 +899,29 @@
 			["rep", 1, ["atk", 9]]
 		]
 	},
+	"114111": {
+		"name": "Flying Leopard Spirit Sword",
+		"qi_cost": 1,
+		"actions": []
+	},
+	"114112": {
+		"qi_cost": 1,
+		"actions": []
+	},
+	"114113": {
+		"qi_cost": 1,
+		"actions": []
+	},
+	"114121": {
+		"name": "Cloud Sword - Rend Sky",
+		"actions": []
+	},
+	"114122": {
+		"actions": []
+	},
+	"114123": {
+		"actions": []
+	},
 	"115011": {
 		"name": "Cloud Sword - Dragon Roam",
 		"actions": [
@@ -1026,6 +1090,73 @@
 		"actions": [
 			["continuous"],
 			["add_c_of_x", 70, "unrestrained_sword_zero_stacks"]
+		]
+	},
+	"115091": {
+		"name": "Spirit Pivot Sword Formation",
+		"actions": [
+			["qi", 1],
+			["def", 1]
+		]
+	},
+	"115092": {
+		"actions": [
+			["qi", 2],
+			["def", 2]
+		]
+	},
+	"115093": {
+		"actions": [
+			["qi", 3],
+			["def", 3]
+		]
+	},
+	"115101": {
+		"name": "Swift Shadow Flying Sword",
+		"actions": []
+	},
+	"115102": {
+		"actions": []
+	},
+	"115103": {
+		"actions": []
+	},
+	"115111": {
+		"name": "Sword Shadow Barrier",
+		"actions": []
+	},
+	"115112": {
+		"actions": []
+	},
+	"115113": {
+		"actions": []
+	},
+	"115121": {
+		"name": "Cloud Sword - Chase Wind",
+		"qi_cost": 1,
+		"cloud_hit_cost_0_qi": true,
+		"actions": [
+			["def", 4],
+			["add_c_of_x", 2, "cloud_sea"],
+			["chase"]
+		]
+	},
+	"115122": {
+		"qi_cost": 1,
+		"cloud_hit_cost_0_qi": true,
+		"actions": [
+			["def", 8],
+			["add_c_of_x", 2, "cloud_sea"],
+			["chase"]
+		]
+	},
+	"115123": {
+		"qi_cost": 1,
+		"cloud_hit_cost_0_qi": true,
+		"actions": [
+			["def", 12],
+			["add_c_of_x", 2, "cloud_sea"],
+			["chase"]
 		]
 	},
 	"121011": {
@@ -1474,6 +1605,28 @@
 			["post_action", ["heal", 12]]
 		]
 	},
+	"122121": {
+		"name": "Star Gazing Rhythm",
+		"actions": [
+			["qi", 2],
+			["def", 2],
+			["become_star_point", 2]
+		]
+	},
+	"122122": {
+		"actions": [
+			["qi", 2],
+			["def", 4],
+			["become_star_point", 3]
+		]
+	},
+	"122123": {
+		"actions": [
+			["qi", 2],
+			["def", 6],
+			["become_star_point", 4]
+		]
+	},
 	"123011": {
 		"name": "Starry Moon",
 		"actions": [
@@ -1696,6 +1849,22 @@
 			["chase"]
 		]]
 	},
+	"123121": {
+		"name": "Rhinoceros Gazing at the Moon",
+		"actions": [
+			["atk_rand_range", 1, 7]
+		]
+	},
+	"123122": {
+		"actions": [
+			["atk_rand_range", 1, 9]
+		]
+	},
+	"123123": {
+		"actions": [
+			["atk_rand_range", 1, 11]
+		]
+	},
 	"124011": {
 		"name": "Astral Move - Fly",
 		"qi_cost": 1,
@@ -1893,6 +2062,50 @@
 			["do_internal_injury", 1]
 		]
 	},
+	"124111": {
+		"name": "Soul Wound Curse Formation",
+		"actions": [
+			["qi", 2],
+			["continuous"],
+			["add_c_of_x", 3, "soul_wound_curse_formation_stacks"]
+		]
+	},
+	"124112": {
+		"actions": [
+			["qi", 2],
+			["continuous"],
+			["add_c_of_x", 5, "soul_wound_curse_formation_stacks"]
+		]
+	},
+	"124113": {
+		"actions": [
+			["qi", 2],
+			["continuous"],
+			["add_c_of_x", 7, "soul_wound_curse_formation_stacks"]
+		]
+	},
+	"124121": {
+		"name": "Astral Move - Extend",
+		"actions": [
+			["atk", 2],
+			["star_power", 1],
+			["heal", 4]
+		]
+	},
+	"124122": {
+		"actions": [
+			["atk", 2],
+			["star_power", 1],
+			["heal", 6]
+		]
+	},
+	"124123": {
+		"actions": [
+			["atk", 2],
+			["star_power", 1],
+			["heal", 8]
+		]
+	},
 	"125011": {
 		"name": "Polaris Citta-Dharma",
 		"actions": [
@@ -2053,6 +2266,91 @@
 		"actions": [
 			["qi", 2],
 			["do_propitious_omen", 7]
+		]
+	},
+	"125091": {
+		"name": "Astral Move - Ko Fight",
+		"actions": [
+			["atk", 1],
+			["qi", 1],
+			["if_x_greater_than_enemy_x_do", "qi", ["add_enemy_c_of_x", 1, "flaw"]],
+			["star_point", ["chase"]]
+		]
+	},
+	"125092": {
+		"actions": [
+			["atk", 3],
+			["qi", 2],
+			["if_x_greater_than_enemy_x_do", "qi", ["add_enemy_c_of_x", 1, "flaw"]],
+			["star_point", ["chase"]]
+		]
+	},
+	"125093": {
+		"actions": [
+			["atk", 5],
+			["qi", 3],
+			["if_x_greater_than_enemy_x_do", "qi", ["add_enemy_c_of_x", 1, "flaw"]],
+			["star_point", ["chase"]]
+		]
+	},
+	"125101": {
+		"name": "Spirit Snake Coiling Pillar",
+		"actions": [
+			["injure", 1],
+			["def", 1]
+		]
+	},
+	"125102": {
+		"actions": [
+			["injure", 2],
+			["def", 2]
+		]
+	},
+	"125103": {
+		"actions": [
+			["injure", 3],
+			["def", 3]
+		]
+	},
+	"125111": {
+		"name": "Branch Break Acupressure",
+		"actions": []
+	},
+	"125112": {
+		"actions": []
+	},
+	"125113": {
+		"actions": []
+	},
+	"125121": {
+		"name": "Drawing the Bow at the Tiger",
+		"qi_cost": 1,
+		"actions": [
+			["add_c_of_x", 16, "max_hp"],
+			["heal", 16],
+			["post_action", ["for_each_x_add_c_pct_y", "hp_gained", 25, "bonus_atk_amt"]],
+			["post_action", ["atk", 8]],
+			["if_c_pct_do", 10, ["chase"]]
+		]
+	},
+	"125122": {
+		"qi_cost": 1,
+		"actions": [
+			["add_c_of_x", 24, "max_hp"],
+			["heal", 24],
+			["post_action", ["for_each_x_add_c_pct_y", "hp_gained", 25, "bonus_atk_amt"]],
+			["post_action", ["atk", 8]],
+			["if_c_pct_do", 10, ["chase"]]
+		]
+	},
+	"125123": {
+		"qi_cost": 1,
+		"actions": [
+			["add_c_of_x", 32, "max_hp"],
+			["heal", 32],
+			["post_action", ["for_each_x_add_c_pct_y", "hp_gained", 25, "bonus_atk_amt"]],
+			["post_action", ["atk", 8]],
+			["if_c_pct_do", 10, ["chase"]]
 		]
 	},
 	"131011": {
@@ -2526,6 +2824,25 @@
 			["add_c_of_x", 1, "cosmos_seal_stacks"]
 		]
 	},
+	"132121": {
+		"name": "Seal Suppression Citta-Dharma",
+		"actions": [
+			["damage", 3],
+			["continuous"]
+		]
+	},
+	"132122": {
+		"actions": [
+			["damage", 4],
+			["continuous"]
+		]
+	},
+	"132123": {
+		"actions": [
+			["damage", 5],
+			["continuous"]
+		]
+	},
 	"133011": {
 		"name": "Wood Spirit Formation",
 		"actions": [
@@ -2773,6 +3090,28 @@
 			["do_five_elements_circulation", 3]
 		]
 	},
+	"133121": {
+		"name": "Five Elements Spirit Strike",
+		"qi_cost": 5,
+		"decrease_qi_cost_by_x": "different_five_elements",
+		"actions": [
+			["atk", 15]
+		]
+	},
+	"133122": {
+		"qi_cost": 5,
+		"decrease_qi_cost_by_x": "different_five_elements",
+		"actions": [
+			["atk", 19]
+		]
+	},
+	"133123": {
+		"qi_cost": 5,
+		"decrease_qi_cost_by_x": "different_five_elements",
+		"actions": [
+			["atk", 23]
+		]
+	},
 	"134011": {
 		"name": "Wood Spirit - Fragrant",
 		"actions": [
@@ -3018,6 +3357,25 @@
 			["atk", 10]
 		]
 	},
+	"134121": {
+		"name": "Earth Spirit - Burrow",
+		"actions": [
+			["def", 4],
+			["earth_spirit", ["chase"]]
+		]
+	},
+	"134122": {
+		"actions": [
+			["def", 8],
+			["earth_spirit", ["chase"]]
+		]
+	},
+	"134123": {
+		"actions": [
+			["def", 12],
+			["earth_spirit", ["chase"]]
+		]
+	},
 	"135011": {
 		"name": "Wood Spirit - Willow Leaf",
 		"qi_cost": 1,
@@ -3178,6 +3536,131 @@
 			["continuous"],
 			["if_x_at_most_c_do", "different_five_elements", 1,
 				["add_c_of_x", 3, "five_elements_heavenly_marrow_rhythm_stacks"]]
+		]
+	},
+	"135081": {
+		"name": "Wood Spirit - Spring Breeze",
+		"actions": [
+			["rep", 2, ["atk", 1]],
+			["qi", 2]
+		]
+	},
+	"135082": {
+		"actions": [
+			["rep", 3, ["atk", 1]],
+			["qi", 3]
+		]
+	},
+	"135083": {
+		"actions": [
+			["rep", 4, ["atk", 1]],
+			["qi", 4]
+		]
+	},
+	"135091": {
+		"name": "Fire Spirit - Vein Burn Rhythm",
+		"actions": [
+			["qi", 3],
+			["set_c_up_to_x", 2, "increase_atk"],
+			["fire_spirit", [
+				["for_each_x_reduce_enemy_c_y", "increase_atk", 2, "hp"],
+				["for_each_x_reduce_enemy_c_y", "increase_atk", 2, "max_hp"]
+			]]
+		]
+	},
+	"135092": {
+		"actions": [
+			["qi", 3],
+			["set_c_up_to_x", 3, "increase_atk"],
+			["fire_spirit", [
+				["for_each_x_reduce_enemy_c_y", "increase_atk", 2, "hp"],
+				["for_each_x_reduce_enemy_c_y", "increase_atk", 2, "max_hp"]
+			]]
+		]
+	},
+	"135093": {
+		"actions": [
+			["qi", 3],
+			["set_c_up_to_x", 4, "increase_atk"],
+			["fire_spirit", [
+				["for_each_x_reduce_enemy_c_y", "increase_atk", 2, "hp"],
+				["for_each_x_reduce_enemy_c_y", "increase_atk", 2, "max_hp"]
+			]]
+		]
+	},
+	"135101": {
+		"name": "Metal Spirit - Returning Edge",
+		"actions": [
+			["atk", 6],
+			["atk", 6]
+		]
+	},
+	"135102": {
+		"actions": [
+			["atk", 5],
+			["atk", 5],
+			["atk", 5]
+		]
+	},
+	"135103": {
+		"actions": [
+			["atk", 4],
+			["atk", 4],
+			["atk", 4],
+			["atk", 4]
+		]
+	},
+	"135111": {
+		"name": "Water Spirit - Ride the Waves",
+		"actions": [
+			["add_c_of_x", 1, "force_of_water"],
+			["add_c_of_x", 2, "max_hp"],
+			["heal", 2]
+		]
+	},
+	"135112": {
+		"actions": [
+			["add_c_of_x", 2, "force_of_water"],
+			["add_c_of_x", 3, "max_hp"],
+			["heal", 3]
+		]
+	},
+	"135113": {
+		"actions": [
+			["add_c_of_x", 3, "force_of_water"],
+			["add_c_of_x", 4, "max_hp"],
+			["heal", 4]
+		]
+	},
+	"135121": {
+		"name": "Primordial Spirit Transmutation",
+		"actions": [
+			["qi", 1],
+			["activate_wood_spirit"],
+			["activate_fire_spirit"],
+			["activate_earth_spirit"],
+			["activate_metal_spirit"],
+			["activate_water_spirit"]
+		]
+	},
+	"135122": {
+		"actions": [
+			["qi", 3],
+			["activate_wood_spirit"],
+			["activate_fire_spirit"],
+			["activate_earth_spirit"],
+			["activate_metal_spirit"],
+			["activate_water_spirit"]
+		]
+	},
+	"135123": {
+		"actions": [
+			["qi", 5],
+			["activate_wood_spirit"],
+			["activate_fire_spirit"],
+			["activate_earth_spirit"],
+			["activate_metal_spirit"],
+			["activate_water_spirit"]
 		]
 	},
 	"141011": {
@@ -3699,6 +4182,28 @@
 			["add_c_of_x", 4, "hexproof"]
 		]
 	},
+	"142121": {
+		"name": "Vajra Smash",
+		"hp_cost": 4,
+		"actions": [
+			["atk", 7],
+			["def", 4]
+		]
+	},
+	"142122": {
+		"hp_cost": 4,
+		"actions": [
+			["atk", 11],
+			["def", 4]
+		]
+	},
+	"142123": {
+		"hp_cost": 4,
+		"actions": [
+			["atk", 15],
+			["def", 4]
+		]
+	},
 	"143011": {
 		"name": "Crash Footwork",
 		"actions": [
@@ -3954,6 +4459,28 @@
 			["atk", 12]
 		]
 	},
+	"143121": {
+		"name": "Drunken Fist Stance",
+		"actions": [
+			["continuous"],
+			["physique", 2]
+		],
+		"is_continuous": true
+	},
+	"143122": {
+		"actions": [
+			["continuous"],
+			["physique", 3]
+		],
+		"is_continuous": true
+	},
+	"143123": {
+		"actions": [
+			["continuous"],
+			["physique", 4]
+		],
+		"is_continuous": true
+	},
 	"144011": {
 		"name": "Crash Citta-Dharma",
 		"actions": [
@@ -4181,6 +4708,38 @@
 			["def", 0],
 			["deal_damage", 0],
 			["add_c_of_x", 7, "agility"]
+		]
+	},
+	"144111": {
+		"name": "Mystic Spirit Healing",
+		"actions": []
+	},
+	"144112": {
+		"actions": []
+	},
+	"144113": {
+		"actions": []
+	},
+	"144121": {
+		"name": "Aerial Sweep",
+		"hp_cost": 6,
+		"actions": [
+			["atk", 7],
+			["add_c_of_x", 3, "agility"]
+		]
+	},
+	"144122": {
+		"hp_cost": 6,
+		"actions": [
+			["atk", 12],
+			["add_c_of_x", 3, "agility"]
+		]
+	},
+	"144123": {
+		"hp_cost": 6,
+		"actions": [
+			["atk", 17],
+			["add_c_of_x", 3, "agility"]
 		]
 	},
 	"145011": {
@@ -4413,6 +4972,79 @@
 			["heal", 8],
 			["add_c_of_x", 6, "agility"],
 			["for_each_x_add_c_y", "force", 2, "agility"]
+		]
+	},
+	"145091": {
+		"name": "Crash Fist - Shatter",
+		"hp_cost": 8,
+		"actions": []
+	},
+	"145092": {
+		"hp_cost": 8,
+		"actions": []
+	},
+	"145093": {
+		"hp_cost": 8,
+		"actions": []
+	},
+	"145101": {
+		"name": "Thousand Souls Strike",
+		"hp_cost": 8,
+		"actions": [
+			["force", 1],
+			["atk", 10]
+		]
+	},
+	"145102": {
+		"hp_cost": 8,
+		"actions": [
+			["force", 1],
+			["atk", 16]
+		]
+	},
+	"145103": {
+		"hp_cost": 8,
+		"actions": [
+			["force", 1],
+			["atk", 22]
+		]
+	},
+	"145111": {
+		"name": "Blood Shadow Escape",
+		"hp_cost": 8,
+		"actions": [
+			["heal", 4],
+			["agility", 8]
+		]
+	},
+	"145112": {
+		"hp_cost": 8,
+		"actions": [
+			["heal", 10],
+			["agility", 8]
+		]
+	},
+	"145113": {
+		"hp_cost": 8,
+		"actions": [
+			["heal", 16],
+			["agility", 8]
+		]
+	},
+	"145121": {
+		"name": "Spirit Forging Finger",
+		"actions": [
+			["physique", 0]
+		]
+	},
+	"145122": {
+		"actions": [
+			["physique", 0]
+		]
+	},
+	"145123": {
+		"actions": [
+			["physique", 0]
 		]
 	},
 	"211011": {
