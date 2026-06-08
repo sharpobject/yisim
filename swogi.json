@@ -1927,19 +1927,22 @@
 		"name": "Flame Hexagram",
 		"actions": [
 			["add_c_of_x", 3, "hexagram"],
-			["reduce_enemy_c_of_x", 2, "max_hp"]
+			["reduce_enemy_c_of_x", 3, "hp"],
+			["reduce_enemy_c_of_x", 3, "max_hp"]
 		]
 	},
 	"124042": {
 		"actions": [
 			["add_c_of_x", 4, "hexagram"],
+			["reduce_enemy_c_of_x", 4, "hp"],
 			["reduce_enemy_c_of_x", 4, "max_hp"]
 		]
 	},
 	"124043": {
 		"actions": [
 			["add_c_of_x", 5, "hexagram"],
-			["reduce_enemy_c_of_x", 6, "max_hp"]
+			["reduce_enemy_c_of_x", 5, "hp"],
+			["reduce_enemy_c_of_x", 5, "max_hp"]
 		]
 	},
 	"124051": {
@@ -2074,14 +2077,14 @@
 		"actions": [
 			["qi", 2],
 			["continuous"],
-			["add_c_of_x", 5, "soul_wound_curse_formation_stacks"]
+			["add_c_of_x", 4, "soul_wound_curse_formation_stacks"]
 		]
 	},
 	"124113": {
 		"actions": [
 			["qi", 2],
 			["continuous"],
-			["add_c_of_x", 7, "soul_wound_curse_formation_stacks"]
+			["add_c_of_x", 5, "soul_wound_curse_formation_stacks"]
 		]
 	},
 	"124121": {
@@ -2827,19 +2830,19 @@
 	"132121": {
 		"name": "Seal Suppression Citta-Dharma",
 		"actions": [
-			["damage", 3],
+			["damage", 6],
 			["continuous"]
 		]
 	},
 	"132122": {
 		"actions": [
-			["damage", 4],
+			["damage", 7],
 			["continuous"]
 		]
 	},
 	"132123": {
 		"actions": [
-			["damage", 5],
+			["damage", 8],
 			["continuous"]
 		]
 	},
@@ -3614,28 +3617,28 @@
 		"name": "Water Spirit - Ride the Waves",
 		"actions": [
 			["add_c_of_x", 1, "force_of_water"],
-			["add_c_of_x", 2, "max_hp"],
-			["heal", 2]
+			["add_c_of_x", 4, "max_hp"],
+			["heal", 4]
 		]
 	},
 	"135112": {
 		"actions": [
 			["add_c_of_x", 2, "force_of_water"],
-			["add_c_of_x", 3, "max_hp"],
-			["heal", 3]
+			["add_c_of_x", 6, "max_hp"],
+			["heal", 6]
 		]
 	},
 	"135113": {
 		"actions": [
 			["add_c_of_x", 3, "force_of_water"],
-			["add_c_of_x", 4, "max_hp"],
-			["heal", 4]
+			["add_c_of_x", 8, "max_hp"],
+			["heal", 8]
 		]
 	},
 	"135121": {
 		"name": "Primordial Spirit Transmutation",
 		"actions": [
-			["qi", 1],
+			["qi", 2],
 			["activate_wood_spirit"],
 			["activate_fire_spirit"],
 			["activate_earth_spirit"],
@@ -3645,7 +3648,7 @@
 	},
 	"135122": {
 		"actions": [
-			["qi", 3],
+			["qi", 4],
 			["activate_wood_spirit"],
 			["activate_fire_spirit"],
 			["activate_earth_spirit"],
@@ -3655,7 +3658,7 @@
 	},
 	"135123": {
 		"actions": [
-			["qi", 5],
+			["qi", 6],
 			["activate_wood_spirit"],
 			["activate_fire_spirit"],
 			["activate_earth_spirit"],
@@ -4724,21 +4727,21 @@
 		"name": "Aerial Sweep",
 		"hp_cost": 6,
 		"actions": [
-			["atk", 7],
+			["atk", 8],
 			["add_c_of_x", 3, "agility"]
 		]
 	},
 	"144122": {
 		"hp_cost": 6,
 		"actions": [
-			["atk", 12],
+			["atk", 13],
 			["add_c_of_x", 3, "agility"]
 		]
 	},
 	"144123": {
 		"hp_cost": 6,
 		"actions": [
-			["atk", 17],
+			["atk", 18],
 			["add_c_of_x", 3, "agility"]
 		]
 	},
@@ -9596,13 +9599,13 @@
 	"614032": {
 		"actions": [
 			["for_each_x_up_to_c_add_y", "hand_count", 3, "bonus_rep_amt"],
-			["rep", 3, ["atk", 2]]
+			["rep", 3, ["atk", 1]]
 		]
 	},
 	"614033": {
 		"actions": [
 			["for_each_x_up_to_c_add_y", "hand_count", 3, "bonus_rep_amt"],
-			["rep", 4, ["atk", 2]]
+			["rep", 4, ["atk", 1]]
 		]
 	},
 	"615011": {
@@ -10310,6 +10313,19 @@
 			["def", 17]
 		]
 	},
+	"642041": {
+		"name": "Spirit Feather",
+		"actions": [["atk", 2], ["atk", 2], ["qi", 1], ["physique", 1], ["add_c_of_x", 5, "agility"]],
+		"character": "dx6"
+	},
+	"642042": {
+		"name": "Spirit Feather",
+		"actions": [["atk", 2], ["atk", 2], ["atk", 2], ["qi", 2], ["physique", 1], ["add_c_of_x", 6, "agility"]]
+	},
+	"642043": {
+		"name": "Spirit Feather",
+		"actions": [["atk", 2], ["atk", 2], ["atk", 2], ["atk", 2], ["qi", 3], ["physique", 1], ["add_c_of_x", 7, "agility"]]
+	},
 	"643011": {
 		"name": "Gone Crazy",
 		"actions": [
@@ -10356,6 +10372,19 @@
 			["for_each_x_up_to_c_add_y", "bonus_def_amt", 20, "physique"],
 			["physique", 0]
 		]
+	},
+	"643021": {
+		"name": "Cyclone Palm", "qi_cost": 1,
+		"actions": [["if_x_at_least_c_do", "physique", 15, ["qi", 1]], ["for_each_x_add_y", "qi", "bonus_atk_amt"], ["atk", 2], ["atk", 2]],
+		"character": "dx6"
+	},
+	"643022": {
+		"name": "Cyclone Palm", "qi_cost": 1,
+		"actions": [["if_x_at_least_c_do", "physique", 15, ["qi", 1]], ["for_each_x_add_y", "qi", "bonus_atk_amt"], ["atk", 4], ["atk", 4]]
+	},
+	"643023": {
+		"name": "Cyclone Palm", "qi_cost": 1,
+		"actions": [["if_x_at_least_c_do", "physique", 15, ["qi", 1]], ["for_each_x_add_y", "qi", "bonus_atk_amt"], ["atk", 6], ["atk", 6]]
 	},
 	"644011": {
 		"name": "Crash Fist - Styx Night",
@@ -10431,6 +10460,19 @@
 			["if_stick_stance", ["atk", 16]],
 			["switch_stance"]
 		]
+	},
+	"644041": {
+		"name": "Wind-Riding Flash",
+		"actions": [["add_c_of_x", 8, "agility"], ["for_each_x_add_y", "agility", "damage"]],
+		"character": "dx6"
+	},
+	"644042": {
+		"name": "Wind-Riding Flash",
+		"actions": [["add_c_of_x", 10, "agility"], ["for_each_x_add_y", "agility", "damage"]]
+	},
+	"644043": {
+		"name": "Wind-Riding Flash",
+		"actions": [["add_c_of_x", 12, "agility"], ["for_each_x_add_y", "agility", "damage"]]
 	},
 	"645011": {
 		"name": "Styx Moon's Glow",

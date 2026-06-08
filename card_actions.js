@@ -2075,14 +2075,14 @@ card_actions["124111"] = (game) => {
 card_actions["124112"] = (game) => {
     game.increase_idx_qi(0, 2);
     game.continuous();
-    game.add_c_of_x(5, "soul_wound_curse_formation_stacks");
+    game.add_c_of_x(4, "soul_wound_curse_formation_stacks");
 }
 
 // 124113
 card_actions["124113"] = (game) => {
     game.increase_idx_qi(0, 2);
     game.continuous();
-    game.add_c_of_x(7, "soul_wound_curse_formation_stacks");
+    game.add_c_of_x(5, "soul_wound_curse_formation_stacks");
 }
 
 // Spirit Command Citta-Dharma
@@ -2358,7 +2358,8 @@ card_actions["124033"] = (game) => {
 // Flame Hexagram
 card_actions["124041"] = (game) => {
     game.add_c_of_x(3, "hexagram");
-    game.reduce_enemy_c_of_x(2, "max_hp");
+    game.reduce_enemy_hp(3);
+    game.reduce_enemy_c_of_x(3, "max_hp");
     if (game.players[0].hexagrams_explain_stacks > 0) {
         game.add_c_of_x(1, "hexagram");
     }
@@ -2367,6 +2368,7 @@ card_actions["124041"] = (game) => {
 // 124042
 card_actions["124042"] = (game) => {
     game.add_c_of_x(4, "hexagram");
+    game.reduce_enemy_hp(4);
     game.reduce_enemy_c_of_x(4, "max_hp");
     if (game.players[0].hexagrams_explain_stacks > 0) {
         game.add_c_of_x(1, "hexagram");
@@ -2376,7 +2378,8 @@ card_actions["124042"] = (game) => {
 // 124043
 card_actions["124043"] = (game) => {
     game.add_c_of_x(5, "hexagram");
-    game.reduce_enemy_c_of_x(6, "max_hp");
+    game.reduce_enemy_hp(5);
+    game.reduce_enemy_c_of_x(5, "max_hp");
     if (game.players[0].hexagrams_explain_stacks > 0) {
         game.add_c_of_x(1, "hexagram");
     }
@@ -3377,23 +3380,23 @@ card_actions["132113"] = (game) => {
 
 // Seal Suppression Citta-Dharma
 card_actions["132121"] = (game) => {
-    game.deal_damage(3);
+    game.deal_damage(6);
     game.continuous();
-    game.add_c_of_x(3, "seal_suppression_citta_dharma_stacks");
+    game.add_c_of_x(2, "seal_suppression_citta_dharma_stacks");
 }
 
 // 132122
 card_actions["132122"] = (game) => {
-    game.deal_damage(4);
+    game.deal_damage(7);
     game.continuous();
-    game.add_c_of_x(4, "seal_suppression_citta_dharma_stacks");
+    game.add_c_of_x(3, "seal_suppression_citta_dharma_stacks");
 }
 
 // 132123
 card_actions["132123"] = (game) => {
-    game.deal_damage(5);
+    game.deal_damage(8);
     game.continuous();
-    game.add_c_of_x(5, "seal_suppression_citta_dharma_stacks");
+    game.add_c_of_x(4, "seal_suppression_citta_dharma_stacks");
 }
 
 // Wood Spirit Formation
@@ -4122,7 +4125,7 @@ card_actions["135043"] = (game) => {
 // Wood Spirit - Spring Breeze
 card_actions["135081"] = (game) => {
     if (game.if_wood_spirit()) {
-        game.add_c_of_x(3, "wood_spirit_spring_breeze_stacks");
+        game.add_c_of_x(4, "wood_spirit_spring_breeze_stacks");
     }
     game.atk(1);
     game.atk(1);
@@ -4132,7 +4135,7 @@ card_actions["135081"] = (game) => {
 // 135082
 card_actions["135082"] = (game) => {
     if (game.if_wood_spirit()) {
-        game.add_c_of_x(3, "wood_spirit_spring_breeze_stacks");
+        game.add_c_of_x(4, "wood_spirit_spring_breeze_stacks");
     }
     game.atk(1);
     game.atk(1);
@@ -4143,7 +4146,7 @@ card_actions["135082"] = (game) => {
 // 135083
 card_actions["135083"] = (game) => {
     if (game.if_wood_spirit()) {
-        game.add_c_of_x(3, "wood_spirit_spring_breeze_stacks");
+        game.add_c_of_x(4, "wood_spirit_spring_breeze_stacks");
     }
     game.atk(1);
     game.atk(1);
@@ -4295,8 +4298,8 @@ card_actions["135073"] = (game) => {
 // Water Spirit - Ride the Waves
 card_actions["135111"] = (game) => {
     game.add_c_of_x(1, "force_of_water");
-    game.add_c_of_x(2, "max_hp");
-    game.increase_idx_hp(0, 2);
+    game.add_c_of_x(4, "max_hp");
+    game.increase_idx_hp(0, 4);
     if (game.if_water_spirit()) {
         game.add_c_of_x(Math.min((game.players[0].force_of_water + game.players[0].qi) * 2, 10), "agility");
     }
@@ -4305,8 +4308,8 @@ card_actions["135111"] = (game) => {
 // 135112
 card_actions["135112"] = (game) => {
     game.add_c_of_x(2, "force_of_water");
-    game.add_c_of_x(3, "max_hp");
-    game.increase_idx_hp(0, 3);
+    game.add_c_of_x(6, "max_hp");
+    game.increase_idx_hp(0, 6);
     if (game.if_water_spirit()) {
         game.add_c_of_x(Math.min((game.players[0].force_of_water + game.players[0].qi) * 2, 10), "agility");
     }
@@ -4315,8 +4318,8 @@ card_actions["135112"] = (game) => {
 // 135113
 card_actions["135113"] = (game) => {
     game.add_c_of_x(3, "force_of_water");
-    game.add_c_of_x(4, "max_hp");
-    game.increase_idx_hp(0, 4);
+    game.add_c_of_x(8, "max_hp");
+    game.increase_idx_hp(0, 8);
     if (game.if_water_spirit()) {
         game.add_c_of_x(Math.min((game.players[0].force_of_water + game.players[0].qi) * 2, 10), "agility");
     }
@@ -4326,7 +4329,7 @@ card_actions["135113"] = (game) => {
 card_actions["135121"] = (game) => {
     const me = game.players[0];
     const idx = me.currently_playing_card_idx;
-    game.increase_idx_qi(0, 1 + game.get_n_different_five_elements(0));
+    game.increase_idx_qi(0, 2 + game.get_n_different_five_elements(0));
     game.activate_element_of_card(me.cards[game.get_prev_idx(idx)]);
     game.activate_element_of_card(me.cards[game.get_next_idx(idx)]);
 }
@@ -4335,7 +4338,7 @@ card_actions["135121"] = (game) => {
 card_actions["135122"] = (game) => {
     const me = game.players[0];
     const idx = me.currently_playing_card_idx;
-    game.increase_idx_qi(0, 3 + game.get_n_different_five_elements(0));
+    game.increase_idx_qi(0, 4 + game.get_n_different_five_elements(0));
     game.activate_element_of_card(me.cards[game.get_prev_idx(idx)]);
     game.activate_element_of_card(me.cards[game.get_next_idx(idx)]);
 }
@@ -4344,7 +4347,7 @@ card_actions["135122"] = (game) => {
 card_actions["135123"] = (game) => {
     const me = game.players[0];
     const idx = me.currently_playing_card_idx;
-    game.increase_idx_qi(0, 5 + game.get_n_different_five_elements(0));
+    game.increase_idx_qi(0, 6 + game.get_n_different_five_elements(0));
     game.activate_element_of_card(me.cards[game.get_prev_idx(idx)]);
     game.activate_element_of_card(me.cards[game.get_next_idx(idx)]);
 }
@@ -5406,7 +5409,7 @@ card_actions["144113"] = (game) => {
 
 // Aerial Sweep
 card_actions["144121"] = (game) => {
-    game.atk(7 + game.players[0].qi);
+    game.atk(8 + game.players[0].qi);
     const qi_cost = Math.min(game.players[0].qi, 2);
     if (qi_cost > 0) {
         game.reduce_idx_x_by_c(0, "qi", qi_cost);
@@ -5417,7 +5420,7 @@ card_actions["144121"] = (game) => {
 
 // 144122
 card_actions["144122"] = (game) => {
-    game.atk(12 + game.players[0].qi);
+    game.atk(13 + game.players[0].qi);
     const qi_cost = Math.min(game.players[0].qi, 2);
     if (qi_cost > 0) {
         game.reduce_idx_x_by_c(0, "qi", qi_cost);
@@ -5428,7 +5431,7 @@ card_actions["144122"] = (game) => {
 
 // 144123
 card_actions["144123"] = (game) => {
-    game.atk(17 + game.players[0].qi);
+    game.atk(18 + game.players[0].qi);
     const qi_cost = Math.min(game.players[0].qi, 2);
     if (qi_cost > 0) {
         game.reduce_idx_x_by_c(0, "qi", qi_cost);
@@ -10295,13 +10298,13 @@ card_actions["614031"] = (game) => {
 // 614032
 card_actions["614032"] = (game) => {
     game.for_each_x_up_to_c_add_y("hand_count", 3, "bonus_rep_amt");
-    game.atk_replay_count_or_default(2, 3 + game.players[0].bonus_rep_amt);
+    game.atk_replay_count_or_default(1, 3 + game.players[0].bonus_rep_amt);
 }
 
 // 614033
 card_actions["614033"] = (game) => {
     game.for_each_x_up_to_c_add_y("hand_count", 3, "bonus_rep_amt");
-    game.atk_replay_count_or_default(2, 4 + game.players[0].bonus_rep_amt);
+    game.atk_replay_count_or_default(1, 4 + game.players[0].bonus_rep_amt);
 }
 
 // Unrestrained Sword - Flame Dance
@@ -17761,6 +17764,72 @@ card_actions["D14015"] = (game) => {
     game.continuous();
     game.add_c_of_x(2, "dream_elusive_footwork_stacks");
     game.set_x_up_to_c("dream_elusive_footwork_reflect_cap", 2);
+}
+
+// Spirit Feather
+card_actions["642041"] = (game) => {
+    game.atk(2);
+    game.atk(2);
+    game.increase_idx_qi(0, 1);
+    game.physique(1);
+    game.add_c_of_x(5, "agility");
+}
+
+card_actions["642042"] = (game) => {
+    game.atk(2);
+    game.atk(2);
+    game.atk(2);
+    game.increase_idx_qi(0, 2);
+    game.physique(1);
+    game.add_c_of_x(6, "agility");
+}
+
+card_actions["642043"] = (game) => {
+    game.atk(2);
+    game.atk(2);
+    game.atk(2);
+    game.atk(2);
+    game.increase_idx_qi(0, 3);
+    game.physique(1);
+    game.add_c_of_x(7, "agility");
+}
+
+// Cyclone Palm
+card_actions["643021"] = (game) => {
+    game.increase_idx_qi(0, Math.floor(game.players[0].physique / 15));
+    const atk = 2 + game.players[0].qi;
+    game.atk(atk);
+    game.atk(atk);
+}
+
+card_actions["643022"] = (game) => {
+    game.increase_idx_qi(0, Math.floor(game.players[0].physique / 15));
+    const atk = 4 + game.players[0].qi;
+    game.atk(atk);
+    game.atk(atk);
+}
+
+card_actions["643023"] = (game) => {
+    game.increase_idx_qi(0, Math.floor(game.players[0].physique / 15));
+    const atk = 6 + game.players[0].qi;
+    game.atk(atk);
+    game.atk(atk);
+}
+
+// Wind-Riding Flash
+card_actions["644041"] = (game) => {
+    game.add_c_of_x(8, "agility");
+    game.deal_damage(game.players[0].agility);
+}
+
+card_actions["644042"] = (game) => {
+    game.add_c_of_x(10, "agility");
+    game.deal_damage(game.players[0].agility);
+}
+
+card_actions["644043"] = (game) => {
+    game.add_c_of_x(12, "agility");
+    game.deal_damage(game.players[0].agility);
 }
 
 // Dream - Shura Roar

@@ -27,6 +27,7 @@ export const CHARACTER_ID_TO_NAME = {
     "dx3": "Ye Mingming",
     "dx4": "Ji Fangsheng",
     "dx5": "Li Man",
+    "dx6": "Ling Yu",
 }
 const is_unrestrained_sword = function(card_id) {
     return swogi[card_id].is_unrestrained_sword;
@@ -1334,6 +1335,13 @@ export class Player {
 #ifdef HAS_MORTAL_BODY
         this.mortal_body_stacks = 0;
 #endif // HAS_MORTAL_BODY
+#ifdef HAS_WIND_SPIRIT_FORGING
+        this.wind_spirit_forging_stacks = 0;
+        this.wind_spirit_forging_gained = 0;
+#endif // HAS_WIND_SPIRIT_FORGING
+#ifdef HAS_BECOME_THE_TEMPEST
+        this.become_the_tempest_stacks = 0;
+#endif // HAS_BECOME_THE_TEMPEST
 #ifdef HAS_INDOMITABLE_WILL
         this.indomitable_will_stacks = 0;
 #endif // HAS_INDOMITABLE_WILL
@@ -2416,6 +2424,9 @@ export class GameState {
             this.increase_idx_x_by_c(idx, "regen", 1);
         }
 #endif // HAS_P2_MARK_OF_DARK_HEART
+#ifdef HAS_BECOME_THE_TEMPEST
+        me.speed += 3 * me.become_the_tempest_stacks;
+#endif // HAS_BECOME_THE_TEMPEST
     }
     apply_p3_fates_setup(idx) {
         const me = this.players[idx];
@@ -3010,11 +3021,6 @@ export class GameState {
         if (round <= 9) {
             damage -= 1;
         }
-#ifdef HAS_FLAME_OF_LIFE
-        if (this.has_flame_of_life(winner)) {
-            damage += 4;
-        }
-#endif // HAS_FLAME_OF_LIFE
 #ifdef HAS_KINDNESS_TUNE
         if (loser.kindness_tune_stacks > 0 && !loser.is_mirror) {
             damage -= loser.kindness_tune_stacks;
@@ -5675,11 +5681,11 @@ export class GameState {
                     this.reduce_idx_x_by_c(0, "qi", qi_cost);
                     this.log("player 0 spent " + qi_cost + " qi to play " + format_card(card_id));
                 }
-                    if (hp_cost !== undefined) {
-                        if (hp_cost > 0) {
+                if (hp_cost !== undefined) {
+                    if (hp_cost > 0) {
 #ifdef HAS_CRACKING_FIST
-                            if (me.cracking_fist_stacks > 0) {
-                                this.reduce_idx_max_hp(0, hp_cost);
+                        if (me.cracking_fist_stacks > 0) {
+                            this.reduce_idx_max_hp(0, hp_cost);
                         } else
 #endif // HAS_CRACKING_FIST
                         {
@@ -6403,6 +6409,13 @@ export class GameState {
         me.total_qi_gained += amt;
 #endif // HAS_TOTAL_QI_GAINED
         this.log("gained " + amt + " qi. Now have " + me.qi + " qi");
+#ifdef HAS_WIND_SPIRIT_FORGING
+        if (me.wind_spirit_forging_stacks > 0 && me.wind_spirit_forging_gained < 5) {
+            const physique_amt = Math.min(amt, 5 - me.wind_spirit_forging_gained);
+            me.wind_spirit_forging_gained += physique_amt;
+            this.increase_idx_physique(idx, physique_amt);
+        }
+#endif // HAS_WIND_SPIRIT_FORGING
 #ifdef HAS_STILLNESS_CITTA_DHARMA
         if (me.stillness_citta_dharma_stacks > 0) {
             this.increase_idx_hp(idx, amt * me.stillness_citta_dharma_stacks);
@@ -8072,9 +8085,9 @@ export class GameState {
 #ifdef HAS_FLAME_SOUL_REBIRTH
         if (me.hp <= 0 && me.flame_soul_rebirth_stacks > 0) {
             this.reduce_idx_x_by_c(idx, "flame_soul_rebirth_stacks", 1);
-            me.max_hp = 10;
-            me.hp = 10;
-            this.log("player " + idx + " revived via flame soul rebirth, max_hp and hp are now 10");
+            me.max_hp = 15;
+            me.hp = 15;
+            this.log("player " + idx + " revived via flame soul rebirth, max_hp and hp are now 15");
             me.just_revived = true;
             ret = true;
         }
@@ -9898,6 +9911,8 @@ export const FATE_TO_CHARACTER_OR_SECT = {
     surge_of_qi_stacks: "dx5",
     mortal_body_stacks: "dx5",
     indomitable_will_stacks: "dx5",
+    wind_spirit_forging_stacks: "dx6",
+    become_the_tempest_stacks: "dx6",
     p2_firmness_body_stacks: "dx",
     p3_firmness_body_stacks: "dx",
     p4_firmness_body_stacks: "dx",
