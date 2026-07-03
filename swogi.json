@@ -431,6 +431,28 @@
 			["atk", 10]
 		]
 	},
+	"112121": {
+		"name": "Spirit Command Citta-Dharma",
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "spirit_command_citta_dharma_qi_gain_def_stacks"],
+			["add_c_of_x", 1, "spirit_command_citta_dharma_qi_loss_def_stacks"]
+		]
+	},
+	"112122": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 2, "spirit_command_citta_dharma_qi_gain_def_stacks"],
+			["add_c_of_x", 2, "spirit_command_citta_dharma_qi_loss_def_stacks"]
+		]
+	},
+	"112123": {
+		"actions": [
+			["continuous"],
+			["add_c_of_x", 3, "spirit_command_citta_dharma_qi_gain_def_stacks"],
+			["add_c_of_x", 2, "spirit_command_citta_dharma_qi_loss_def_stacks"]
+		]
+	},
 	"113011": {
 		"name": "Cloud Sword - Softheart",
 		"actions": [
@@ -653,6 +675,25 @@
 			["rep", 3, ["atk", 5]]
 		]
 	},
+	"113121": {
+		"name": "Vermilion Sparrow Spirit Sword",
+		"qi_cost": 1,
+		"actions": [
+			["rep", 2, ["atk", 6]]
+		]
+	},
+	"113122": {
+		"qi_cost": 1,
+		"actions": [
+			["rep", 2, ["atk", 8]]
+		]
+	},
+	"113123": {
+		"qi_cost": 1,
+		"actions": [
+			["rep", 2, ["atk", 10]]
+		]
+	},
 	"114011": {
 		"name": "Cloud Sword - Flash Wind",
 		"actions": [
@@ -858,6 +899,29 @@
 			["rep", 1, ["atk", 9]]
 		]
 	},
+	"114111": {
+		"name": "Flying Leopard Spirit Sword",
+		"qi_cost": 1,
+		"actions": []
+	},
+	"114112": {
+		"qi_cost": 1,
+		"actions": []
+	},
+	"114113": {
+		"qi_cost": 1,
+		"actions": []
+	},
+	"114121": {
+		"name": "Cloud Sword - Rend Sky",
+		"actions": []
+	},
+	"114122": {
+		"actions": []
+	},
+	"114123": {
+		"actions": []
+	},
 	"115011": {
 		"name": "Cloud Sword - Dragon Roam",
 		"actions": [
@@ -1026,6 +1090,73 @@
 		"actions": [
 			["continuous"],
 			["add_c_of_x", 70, "unrestrained_sword_zero_stacks"]
+		]
+	},
+	"115091": {
+		"name": "Spirit Pivot Sword Formation",
+		"actions": [
+			["qi", 1],
+			["def", 1]
+		]
+	},
+	"115092": {
+		"actions": [
+			["qi", 2],
+			["def", 2]
+		]
+	},
+	"115093": {
+		"actions": [
+			["qi", 3],
+			["def", 3]
+		]
+	},
+	"115101": {
+		"name": "Swift Shadow Flying Sword",
+		"actions": []
+	},
+	"115102": {
+		"actions": []
+	},
+	"115103": {
+		"actions": []
+	},
+	"115111": {
+		"name": "Sword Shadow Barrier",
+		"actions": []
+	},
+	"115112": {
+		"actions": []
+	},
+	"115113": {
+		"actions": []
+	},
+	"115121": {
+		"name": "Cloud Sword - Chase Wind",
+		"qi_cost": 1,
+		"cloud_hit_cost_0_qi": true,
+		"actions": [
+			["def", 4],
+			["add_c_of_x", 2, "cloud_sea"],
+			["chase"]
+		]
+	},
+	"115122": {
+		"qi_cost": 1,
+		"cloud_hit_cost_0_qi": true,
+		"actions": [
+			["def", 8],
+			["add_c_of_x", 2, "cloud_sea"],
+			["chase"]
+		]
+	},
+	"115123": {
+		"qi_cost": 1,
+		"cloud_hit_cost_0_qi": true,
+		"actions": [
+			["def", 12],
+			["add_c_of_x", 2, "cloud_sea"],
+			["chase"]
 		]
 	},
 	"121011": {
@@ -1474,6 +1605,28 @@
 			["post_action", ["heal", 12]]
 		]
 	},
+	"122121": {
+		"name": "Star Gazing Rhythm",
+		"actions": [
+			["qi", 2],
+			["def", 2],
+			["become_star_point", 2]
+		]
+	},
+	"122122": {
+		"actions": [
+			["qi", 2],
+			["def", 4],
+			["become_star_point", 3]
+		]
+	},
+	"122123": {
+		"actions": [
+			["qi", 2],
+			["def", 6],
+			["become_star_point", 4]
+		]
+	},
 	"123011": {
 		"name": "Starry Moon",
 		"actions": [
@@ -1696,6 +1849,22 @@
 			["chase"]
 		]]
 	},
+	"123121": {
+		"name": "Rhinoceros Gazing at the Moon",
+		"actions": [
+			["atk_rand_range", 1, 7]
+		]
+	},
+	"123122": {
+		"actions": [
+			["atk_rand_range", 1, 9]
+		]
+	},
+	"123123": {
+		"actions": [
+			["atk_rand_range", 1, 11]
+		]
+	},
 	"124011": {
 		"name": "Astral Move - Fly",
 		"qi_cost": 1,
@@ -1758,19 +1927,22 @@
 		"name": "Flame Hexagram",
 		"actions": [
 			["add_c_of_x", 3, "hexagram"],
-			["reduce_enemy_c_of_x", 2, "max_hp"]
+			["reduce_enemy_c_of_x", 3, "hp"],
+			["reduce_enemy_c_of_x", 3, "max_hp"]
 		]
 	},
 	"124042": {
 		"actions": [
 			["add_c_of_x", 4, "hexagram"],
+			["reduce_enemy_c_of_x", 4, "hp"],
 			["reduce_enemy_c_of_x", 4, "max_hp"]
 		]
 	},
 	"124043": {
 		"actions": [
 			["add_c_of_x", 5, "hexagram"],
-			["reduce_enemy_c_of_x", 6, "max_hp"]
+			["reduce_enemy_c_of_x", 5, "hp"],
+			["reduce_enemy_c_of_x", 5, "max_hp"]
 		]
 	},
 	"124051": {
@@ -1891,6 +2063,50 @@
 		"actions": [
 			["add_enemy_c_of_x", 4, "internal_injury"],
 			["do_internal_injury", 1]
+		]
+	},
+	"124111": {
+		"name": "Soul Wound Curse Formation",
+		"actions": [
+			["qi", 2],
+			["continuous"],
+			["add_c_of_x", 3, "soul_wound_curse_formation_stacks"]
+		]
+	},
+	"124112": {
+		"actions": [
+			["qi", 2],
+			["continuous"],
+			["add_c_of_x", 4, "soul_wound_curse_formation_stacks"]
+		]
+	},
+	"124113": {
+		"actions": [
+			["qi", 2],
+			["continuous"],
+			["add_c_of_x", 5, "soul_wound_curse_formation_stacks"]
+		]
+	},
+	"124121": {
+		"name": "Astral Move - Extend",
+		"actions": [
+			["atk", 2],
+			["star_power", 1],
+			["heal", 4]
+		]
+	},
+	"124122": {
+		"actions": [
+			["atk", 2],
+			["star_power", 1],
+			["heal", 6]
+		]
+	},
+	"124123": {
+		"actions": [
+			["atk", 2],
+			["star_power", 1],
+			["heal", 8]
 		]
 	},
 	"125011": {
@@ -2053,6 +2269,91 @@
 		"actions": [
 			["qi", 2],
 			["do_propitious_omen", 7]
+		]
+	},
+	"125091": {
+		"name": "Astral Move - Ko Fight",
+		"actions": [
+			["atk", 1],
+			["qi", 1],
+			["if_x_greater_than_enemy_x_do", "qi", ["add_enemy_c_of_x", 1, "flaw"]],
+			["star_point", ["chase"]]
+		]
+	},
+	"125092": {
+		"actions": [
+			["atk", 3],
+			["qi", 2],
+			["if_x_greater_than_enemy_x_do", "qi", ["add_enemy_c_of_x", 1, "flaw"]],
+			["star_point", ["chase"]]
+		]
+	},
+	"125093": {
+		"actions": [
+			["atk", 5],
+			["qi", 3],
+			["if_x_greater_than_enemy_x_do", "qi", ["add_enemy_c_of_x", 1, "flaw"]],
+			["star_point", ["chase"]]
+		]
+	},
+	"125101": {
+		"name": "Spirit Snake Coiling Pillar",
+		"actions": [
+			["injure", 1],
+			["def", 1]
+		]
+	},
+	"125102": {
+		"actions": [
+			["injure", 2],
+			["def", 2]
+		]
+	},
+	"125103": {
+		"actions": [
+			["injure", 3],
+			["def", 3]
+		]
+	},
+	"125111": {
+		"name": "Branch Break Acupressure",
+		"actions": []
+	},
+	"125112": {
+		"actions": []
+	},
+	"125113": {
+		"actions": []
+	},
+	"125121": {
+		"name": "Drawing the Bow at the Tiger",
+		"qi_cost": 1,
+		"actions": [
+			["add_c_of_x", 16, "max_hp"],
+			["heal", 16],
+			["post_action", ["for_each_x_add_c_pct_y", "hp_gained", 25, "bonus_atk_amt"]],
+			["post_action", ["atk", 8]],
+			["if_c_pct_do", 10, ["chase"]]
+		]
+	},
+	"125122": {
+		"qi_cost": 1,
+		"actions": [
+			["add_c_of_x", 24, "max_hp"],
+			["heal", 24],
+			["post_action", ["for_each_x_add_c_pct_y", "hp_gained", 25, "bonus_atk_amt"]],
+			["post_action", ["atk", 8]],
+			["if_c_pct_do", 10, ["chase"]]
+		]
+	},
+	"125123": {
+		"qi_cost": 1,
+		"actions": [
+			["add_c_of_x", 32, "max_hp"],
+			["heal", 32],
+			["post_action", ["for_each_x_add_c_pct_y", "hp_gained", 25, "bonus_atk_amt"]],
+			["post_action", ["atk", 8]],
+			["if_c_pct_do", 10, ["chase"]]
 		]
 	},
 	"131011": {
@@ -2526,6 +2827,25 @@
 			["add_c_of_x", 1, "cosmos_seal_stacks"]
 		]
 	},
+	"132121": {
+		"name": "Seal Suppression Citta-Dharma",
+		"actions": [
+			["damage", 6],
+			["continuous"]
+		]
+	},
+	"132122": {
+		"actions": [
+			["damage", 7],
+			["continuous"]
+		]
+	},
+	"132123": {
+		"actions": [
+			["damage", 8],
+			["continuous"]
+		]
+	},
 	"133011": {
 		"name": "Wood Spirit Formation",
 		"actions": [
@@ -2773,6 +3093,28 @@
 			["do_five_elements_circulation", 3]
 		]
 	},
+	"133121": {
+		"name": "Five Elements Spirit Strike",
+		"qi_cost": 5,
+		"decrease_qi_cost_by_x": "different_five_elements",
+		"actions": [
+			["atk", 15]
+		]
+	},
+	"133122": {
+		"qi_cost": 5,
+		"decrease_qi_cost_by_x": "different_five_elements",
+		"actions": [
+			["atk", 19]
+		]
+	},
+	"133123": {
+		"qi_cost": 5,
+		"decrease_qi_cost_by_x": "different_five_elements",
+		"actions": [
+			["atk", 23]
+		]
+	},
 	"134011": {
 		"name": "Wood Spirit - Fragrant",
 		"actions": [
@@ -3018,6 +3360,25 @@
 			["atk", 10]
 		]
 	},
+	"134121": {
+		"name": "Earth Spirit - Burrow",
+		"actions": [
+			["def", 4],
+			["earth_spirit", ["chase"]]
+		]
+	},
+	"134122": {
+		"actions": [
+			["def", 8],
+			["earth_spirit", ["chase"]]
+		]
+	},
+	"134123": {
+		"actions": [
+			["def", 12],
+			["earth_spirit", ["chase"]]
+		]
+	},
 	"135011": {
 		"name": "Wood Spirit - Willow Leaf",
 		"qi_cost": 1,
@@ -3178,6 +3539,131 @@
 			["continuous"],
 			["if_x_at_most_c_do", "different_five_elements", 1,
 				["add_c_of_x", 3, "five_elements_heavenly_marrow_rhythm_stacks"]]
+		]
+	},
+	"135081": {
+		"name": "Wood Spirit - Spring Breeze",
+		"actions": [
+			["rep", 2, ["atk", 1]],
+			["qi", 2]
+		]
+	},
+	"135082": {
+		"actions": [
+			["rep", 3, ["atk", 1]],
+			["qi", 3]
+		]
+	},
+	"135083": {
+		"actions": [
+			["rep", 4, ["atk", 1]],
+			["qi", 4]
+		]
+	},
+	"135091": {
+		"name": "Fire Spirit - Vein Burn Rhythm",
+		"actions": [
+			["qi", 3],
+			["set_c_up_to_x", 2, "increase_atk"],
+			["fire_spirit", [
+				["for_each_x_reduce_enemy_c_y", "increase_atk", 2, "hp"],
+				["for_each_x_reduce_enemy_c_y", "increase_atk", 2, "max_hp"]
+			]]
+		]
+	},
+	"135092": {
+		"actions": [
+			["qi", 3],
+			["set_c_up_to_x", 3, "increase_atk"],
+			["fire_spirit", [
+				["for_each_x_reduce_enemy_c_y", "increase_atk", 2, "hp"],
+				["for_each_x_reduce_enemy_c_y", "increase_atk", 2, "max_hp"]
+			]]
+		]
+	},
+	"135093": {
+		"actions": [
+			["qi", 3],
+			["set_c_up_to_x", 4, "increase_atk"],
+			["fire_spirit", [
+				["for_each_x_reduce_enemy_c_y", "increase_atk", 2, "hp"],
+				["for_each_x_reduce_enemy_c_y", "increase_atk", 2, "max_hp"]
+			]]
+		]
+	},
+	"135101": {
+		"name": "Metal Spirit - Returning Edge",
+		"actions": [
+			["atk", 6],
+			["atk", 6]
+		]
+	},
+	"135102": {
+		"actions": [
+			["atk", 5],
+			["atk", 5],
+			["atk", 5]
+		]
+	},
+	"135103": {
+		"actions": [
+			["atk", 4],
+			["atk", 4],
+			["atk", 4],
+			["atk", 4]
+		]
+	},
+	"135111": {
+		"name": "Water Spirit - Ride the Waves",
+		"actions": [
+			["add_c_of_x", 1, "force_of_water"],
+			["add_c_of_x", 4, "max_hp"],
+			["heal", 4]
+		]
+	},
+	"135112": {
+		"actions": [
+			["add_c_of_x", 2, "force_of_water"],
+			["add_c_of_x", 6, "max_hp"],
+			["heal", 6]
+		]
+	},
+	"135113": {
+		"actions": [
+			["add_c_of_x", 3, "force_of_water"],
+			["add_c_of_x", 8, "max_hp"],
+			["heal", 8]
+		]
+	},
+	"135121": {
+		"name": "Primordial Spirit Transmutation",
+		"actions": [
+			["qi", 2],
+			["activate_wood_spirit"],
+			["activate_fire_spirit"],
+			["activate_earth_spirit"],
+			["activate_metal_spirit"],
+			["activate_water_spirit"]
+		]
+	},
+	"135122": {
+		"actions": [
+			["qi", 4],
+			["activate_wood_spirit"],
+			["activate_fire_spirit"],
+			["activate_earth_spirit"],
+			["activate_metal_spirit"],
+			["activate_water_spirit"]
+		]
+	},
+	"135123": {
+		"actions": [
+			["qi", 6],
+			["activate_wood_spirit"],
+			["activate_fire_spirit"],
+			["activate_earth_spirit"],
+			["activate_metal_spirit"],
+			["activate_water_spirit"]
 		]
 	},
 	"141011": {
@@ -3699,6 +4185,28 @@
 			["add_c_of_x", 4, "hexproof"]
 		]
 	},
+	"142121": {
+		"name": "Vajra Smash",
+		"hp_cost": 4,
+		"actions": [
+			["atk", 7],
+			["def", 4]
+		]
+	},
+	"142122": {
+		"hp_cost": 4,
+		"actions": [
+			["atk", 11],
+			["def", 4]
+		]
+	},
+	"142123": {
+		"hp_cost": 4,
+		"actions": [
+			["atk", 15],
+			["def", 4]
+		]
+	},
 	"143011": {
 		"name": "Crash Footwork",
 		"actions": [
@@ -3858,28 +4366,28 @@
 		"name": "Double Trouble",
 		"qi_cost": 1,
 		"actions": [
-			["add_enemy_c_of_x", 1, "internal_injury"],
-			["add_enemy_c_of_x", 1, "wound"],
 			["add_c_of_x", 1, "internal_injury"],
+			["add_enemy_c_of_x", 1, "internal_injury"],
 			["add_c_of_x", 1, "wound"],
+			["add_enemy_c_of_x", 1, "wound"],
 			["rep", 2, ["atk", 6]]
 		]
 	},
 	"143082": {
 		"actions": [
-			["add_enemy_c_of_x", 2, "internal_injury"],
-			["add_enemy_c_of_x", 1, "wound"],
 			["add_c_of_x", 2, "internal_injury"],
+			["add_enemy_c_of_x", 2, "internal_injury"],
 			["add_c_of_x", 1, "wound"],
+			["add_enemy_c_of_x", 1, "wound"],
 			["rep", 2, ["atk", 7]]
 		]
 	},
 	"143083": {
 		"actions": [
-			["add_enemy_c_of_x", 2, "internal_injury"],
-			["add_enemy_c_of_x", 2, "wound"],
 			["add_c_of_x", 2, "internal_injury"],
+			["add_enemy_c_of_x", 2, "internal_injury"],
 			["add_c_of_x", 2, "wound"],
+			["add_enemy_c_of_x", 2, "wound"],
 			["rep", 2, ["atk", 8]]
 		]
 	},
@@ -3953,6 +4461,28 @@
 			["for_each_x_add_c_y", "bonus_def_amt", 3, "bonus_atk_amt"],
 			["atk", 12]
 		]
+	},
+	"143121": {
+		"name": "Drunken Fist Stance",
+		"actions": [
+			["continuous"],
+			["physique", 2]
+		],
+		"is_continuous": true
+	},
+	"143122": {
+		"actions": [
+			["continuous"],
+			["physique", 3]
+		],
+		"is_continuous": true
+	},
+	"143123": {
+		"actions": [
+			["continuous"],
+			["physique", 4]
+		],
+		"is_continuous": true
 	},
 	"144011": {
 		"name": "Crash Citta-Dharma",
@@ -4183,6 +4713,38 @@
 			["add_c_of_x", 7, "agility"]
 		]
 	},
+	"144111": {
+		"name": "Mystic Spirit Healing",
+		"actions": []
+	},
+	"144112": {
+		"actions": []
+	},
+	"144113": {
+		"actions": []
+	},
+	"144121": {
+		"name": "Aerial Sweep",
+		"hp_cost": 6,
+		"actions": [
+			["atk", 8],
+			["add_c_of_x", 3, "agility"]
+		]
+	},
+	"144122": {
+		"hp_cost": 6,
+		"actions": [
+			["atk", 13],
+			["add_c_of_x", 3, "agility"]
+		]
+	},
+	"144123": {
+		"hp_cost": 6,
+		"actions": [
+			["atk", 18],
+			["add_c_of_x", 3, "agility"]
+		]
+	},
 	"145011": {
 		"name": "Crash Fist - Blink",
 		"hp_cost": 7,
@@ -4317,7 +4879,7 @@
 				["add_enemy_c_of_x", 2, "wound"]],
 			["if_x_at_least_c_do", "styx", 1,
 				["add_enemy_c_of_x", 2, "styx"]],
-			["for_each_x_add_y", "debuff", "bonus_force_amt"],
+			["debuffs_count_as_force"],
 			["ignore_weaken"],
 			["ignore_decrease_atk"],
 			["atk", 8]
@@ -4339,7 +4901,7 @@
 				["add_enemy_c_of_x", 2, "wound"]],
 			["if_x_at_least_c_do", "styx", 1,
 				["add_enemy_c_of_x", 2, "styx"]],
-			["for_each_x_add_y", "debuff", "bonus_force_amt"],
+			["debuffs_count_as_force"],
 			["ignore_weaken"],
 			["ignore_decrease_atk"],
 			["atk", 14]
@@ -4361,7 +4923,7 @@
 				["add_enemy_c_of_x", 2, "wound"]],
 			["if_x_at_least_c_do", "styx", 1,
 				["add_enemy_c_of_x", 2, "styx"]],
-			["for_each_x_add_y", "debuff", "bonus_force_amt"],
+			["debuffs_count_as_force"],
 			["ignore_weaken"],
 			["ignore_decrease_atk"],
 			["atk", 20]
@@ -4413,6 +4975,79 @@
 			["heal", 8],
 			["add_c_of_x", 6, "agility"],
 			["for_each_x_add_c_y", "force", 2, "agility"]
+		]
+	},
+	"145091": {
+		"name": "Crash Fist - Shatter",
+		"hp_cost": 8,
+		"actions": []
+	},
+	"145092": {
+		"hp_cost": 8,
+		"actions": []
+	},
+	"145093": {
+		"hp_cost": 8,
+		"actions": []
+	},
+	"145101": {
+		"name": "Thousand Souls Strike",
+		"hp_cost": 8,
+		"actions": [
+			["force", 1],
+			["atk", 10]
+		]
+	},
+	"145102": {
+		"hp_cost": 8,
+		"actions": [
+			["force", 1],
+			["atk", 16]
+		]
+	},
+	"145103": {
+		"hp_cost": 8,
+		"actions": [
+			["force", 1],
+			["atk", 22]
+		]
+	},
+	"145111": {
+		"name": "Blood Shadow Escape",
+		"hp_cost": 8,
+		"actions": [
+			["heal", 4],
+			["agility", 8]
+		]
+	},
+	"145112": {
+		"hp_cost": 8,
+		"actions": [
+			["heal", 10],
+			["agility", 8]
+		]
+	},
+	"145113": {
+		"hp_cost": 8,
+		"actions": [
+			["heal", 16],
+			["agility", 8]
+		]
+	},
+	"145121": {
+		"name": "Spirit Forging Finger",
+		"actions": [
+			["physique", 0]
+		]
+	},
+	"145122": {
+		"actions": [
+			["physique", 0]
+		]
+	},
+	"145123": {
+		"actions": [
+			["physique", 0]
 		]
 	},
 	"211011": {
@@ -5604,8 +6239,7 @@
 			["for_each_x_reduce_c_pct_y", "wound", 100, "wound"],
 			["for_each_x_reduce_c_pct_y", "styx", 100, "styx"],
 			["for_each_x_add_y", "bonus_def_amt", "physique"],
-			["for_each_x_add_y", "bonus_def_amt", "hp"],
-			["physique", 0]
+			["for_each_x_add_y", "bonus_def_amt", "hp"]
 		]
 	},
 	"245012": {
@@ -5620,8 +6254,7 @@
 			["for_each_x_reduce_c_pct_y", "wound", 100, "wound"],
 			["for_each_x_reduce_c_pct_y", "styx", 100, "styx"],
 			["for_each_x_add_y", "bonus_def_amt", "physique"],
-			["for_each_x_add_y", "bonus_def_amt", "hp"],
-			["physique", 0]
+			["for_each_x_add_y", "bonus_def_amt", "hp"]
 		]
 	},
 	"245013": {
@@ -5636,8 +6269,7 @@
 			["for_each_x_reduce_c_pct_y", "wound", 100, "wound"],
 			["for_each_x_reduce_c_pct_y", "styx", 100, "styx"],
 			["for_each_x_add_y", "bonus_def_amt", "physique"],
-			["for_each_x_add_y", "bonus_def_amt", "hp"],
-			["physique", 0]
+			["for_each_x_add_y", "bonus_def_amt", "hp"]
 		]
 	},
 	"245021": {
@@ -7128,18 +7760,18 @@
 			["rep", 3, ["atk", 3]]
 		]
 	},
-	"361021": {
+	"362081": {
 		"name": "Hard Bamboo",
 		"actions": [
 			["def", 4]
 		]
 	},
-	"361022": {
+	"362082": {
 		"actions": [
 			["def", 6]
 		]
 	},
-	"361023": {
+	"362083": {
 		"actions": [
 			["def", 8],
 			["continuous"],
@@ -8105,6 +8737,16 @@
 			["add_enemy_c_of_x", 2, "cannot_act_stacks"]
 		]
 	},
+	"406031": {
+		"name": "Myriad Manifestations Seed",
+		"actions": []
+	},
+	"406032": {
+		"actions": []
+	},
+	"406033": {
+		"actions": []
+	},
 	"501011": {
 		"name": "Break Sky Eagle",
 		"actions": [
@@ -8316,19 +8958,19 @@
 		"name": "Shadow Owl Rabbit",
 		"actions": [
 			["continuous"],
-			["add_c_of_x", 10, "shadow_owl_rabbit_stacks"]
+			["set_c_of_x", 10, "shadow_owl_rabbit_stacks"]
 		]
 	},
 	"505022": {
 		"actions": [
 			["continuous"],
-			["add_c_of_x", 8, "shadow_owl_rabbit_stacks"]
+			["set_c_of_x", 8, "shadow_owl_rabbit_stacks"]
 		]
 	},
 	"505023": {
 		"actions": [
 			["continuous"],
-			["add_c_of_x", 6, "shadow_owl_rabbit_stacks"]
+			["set_c_of_x", 6, "shadow_owl_rabbit_stacks"]
 		]
 	},
 	"506011": {
@@ -8374,6 +9016,22 @@
 			["deal_damage", 9],
 			["continuous"],
 			["add_enemy_c_of_x", 1, "nether_void_canine_stacks"]
+		]
+	},
+	"506031": {
+		"name": "Nameless White Deer",
+		"actions": [
+			["add_c_of_x", 2, "qi"]
+		]
+	},
+	"506032": {
+		"actions": [
+			["add_c_of_x", 4, "qi"]
+		]
+	},
+	"506033": {
+		"actions": [
+			["add_c_of_x", 6, "qi"]
 		]
 	},
 	"601011": {
@@ -8941,13 +9599,13 @@
 	"614032": {
 		"actions": [
 			["for_each_x_up_to_c_add_y", "hand_count", 3, "bonus_rep_amt"],
-			["rep", 3, ["atk", 2]]
+			["rep", 3, ["atk", 1]]
 		]
 	},
 	"614033": {
 		"actions": [
 			["for_each_x_up_to_c_add_y", "hand_count", 3, "bonus_rep_amt"],
-			["rep", 4, ["atk", 2]]
+			["rep", 4, ["atk", 1]]
 		]
 	},
 	"615011": {
@@ -9655,6 +10313,19 @@
 			["def", 17]
 		]
 	},
+	"642041": {
+		"name": "Spirit Feather",
+		"actions": [["atk", 2], ["atk", 2], ["qi", 1], ["physique", 1], ["add_c_of_x", 5, "agility"]],
+		"character": "dx6"
+	},
+	"642042": {
+		"name": "Spirit Feather",
+		"actions": [["atk", 2], ["atk", 2], ["atk", 2], ["qi", 2], ["physique", 1], ["add_c_of_x", 6, "agility"]]
+	},
+	"642043": {
+		"name": "Spirit Feather",
+		"actions": [["atk", 2], ["atk", 2], ["atk", 2], ["atk", 2], ["qi", 3], ["physique", 1], ["add_c_of_x", 7, "agility"]]
+	},
 	"643011": {
 		"name": "Gone Crazy",
 		"actions": [
@@ -9701,6 +10372,19 @@
 			["for_each_x_up_to_c_add_y", "bonus_def_amt", 20, "physique"],
 			["physique", 0]
 		]
+	},
+	"643021": {
+		"name": "Cyclone Palm", "qi_cost": 1,
+		"actions": [["if_x_at_least_c_do", "physique", 15, ["qi", 1]], ["for_each_x_add_y", "qi", "bonus_atk_amt"], ["atk", 2], ["atk", 2]],
+		"character": "dx6"
+	},
+	"643022": {
+		"name": "Cyclone Palm", "qi_cost": 1,
+		"actions": [["if_x_at_least_c_do", "physique", 15, ["qi", 1]], ["for_each_x_add_y", "qi", "bonus_atk_amt"], ["atk", 4], ["atk", 4]]
+	},
+	"643023": {
+		"name": "Cyclone Palm", "qi_cost": 1,
+		"actions": [["if_x_at_least_c_do", "physique", 15, ["qi", 1]], ["for_each_x_add_y", "qi", "bonus_atk_amt"], ["atk", 6], ["atk", 6]]
 	},
 	"644011": {
 		"name": "Crash Fist - Styx Night",
@@ -9777,6 +10461,19 @@
 			["switch_stance"]
 		]
 	},
+	"644041": {
+		"name": "Wind-Riding Flash",
+		"actions": [["add_c_of_x", 8, "agility"], ["for_each_x_add_y", "agility", "damage"]],
+		"character": "dx6"
+	},
+	"644042": {
+		"name": "Wind-Riding Flash",
+		"actions": [["add_c_of_x", 10, "agility"], ["for_each_x_add_y", "agility", "damage"]]
+	},
+	"644043": {
+		"name": "Wind-Riding Flash",
+		"actions": [["add_c_of_x", 12, "agility"], ["for_each_x_add_y", "agility", "damage"]]
+	},
 	"645011": {
 		"name": "Styx Moon's Glow",
 		"actions": [
@@ -9804,7 +10501,6 @@
 		"name": "Wan Xuan Demon Breaking Palm",
 		"actions": [
 			["physique", 2],
-			["for_each_x_convert_c_pct_debuff_to_y", "physique", 5, "increase_atk"],
 			["rep", 3, ["atk", 3]]
 		],
 		"character": "dx4"
@@ -9812,14 +10508,12 @@
 	"645022": {
 		"actions": [
 			["physique", 3],
-			["for_each_x_convert_c_pct_debuff_to_y", "physique", 5, "increase_atk"],
 			["rep", 4, ["atk", 3]]
 		]
 	},
 	"645023": {
 		"actions": [
 			["physique", 4],
-			["for_each_x_convert_c_pct_debuff_to_y", "physique", 5, "increase_atk"],
 			["rep", 5, ["atk", 3]]
 		]
 	},
@@ -12150,7 +12844,8 @@
 		"name": "Crimson Star",
 		"actions": [[]]
 	},
-	"906002": {
+	"901001": {
+		"marking": "no_marking",
 		"does_not_exist": true,
 		"actions": []
 	},
@@ -13792,6 +14487,22 @@
 	"D11095": {
 		"actions": [["hp", 8]]
 	},
+	"D11201": {
+		"name": "Dream - Unrestrained Sword Two",
+		"actions": [["atk", 4], ["hp", 2], ["add_c_of_x", 1, "unrestrained_sword_count"]]
+	},
+	"D11202": {
+		"actions": [["atk", 4], ["hp", 4], ["add_c_of_x", 1, "unrestrained_sword_count"]]
+	},
+	"D11203": {
+		"actions": [["atk", 4], ["hp", 6], ["add_c_of_x", 1, "unrestrained_sword_count"]]
+	},
+	"D11204": {
+		"actions": [["atk", 2], ["continuous"], ["add_c_of_x", 1, "dream_unrestrained_sword_two_stacks"]]
+	},
+	"D11205": {
+		"actions": [["atk", 7], ["continuous"], ["add_c_of_x", 1, "dream_unrestrained_sword_two_stacks"]]
+	},
 	"D11081": {
 		"name": "Dream - Dharma Spirit Sword",
 		"actions": [["atk", 3]]
@@ -13819,10 +14530,10 @@
 		"actions": [["def", 9], ["add_c_of_x", 2, "cloud_sea"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 2, "def"]]]
 	},
 	"D11114": {
-		"actions": [["def", 9], ["add_c_of_x", 2, "cloud_sea"], ["add_c_of_x", 1, "moon_water_sword_formation_stacks"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 3, "def"]]]
+		"actions": [["def", 9], ["add_c_of_x", 3, "cloud_sea"], ["add_c_of_x", 1, "moon_water_sword_formation_stacks"], ["cloud_hit", ["for_each_x_add_c_y", "cloud_sword_chain_count", 3, "def"]]]
 	},
 	"D11115": {
-		"actions": [["def", 12], ["add_c_of_x", 2, "cloud_sea"], ["add_c_of_x", 2, "moon_water_sword_formation_stacks"], ["for_each_x_add_c_y", "cloud_sword_used_count", 3, "def"]]
+		"actions": [["def", 12], ["add_c_of_x", 3, "cloud_sea"], ["add_c_of_x", 3, "moon_water_sword_formation_stacks"], ["for_each_x_add_c_y", "cloud_sword_used_count", 3, "def"]]
 	},
 	"D11121": {
 		"name": "Dream - Reflexive Sword",
@@ -13842,10 +14553,10 @@
 	},
 	"D11131": {
 		"name": "Dream - Rule Sky Sword Formation",
-		"actions": [["deal_damage", 5]]
+		"actions": [["deal_damage", 6]]
 	},
 	"D11132": {
-		"actions": [["deal_damage", 5]]
+		"actions": [["deal_damage", 6]]
 	},
 	"D11133": {
 		"actions": [["deal_damage", 6]]
@@ -13883,7 +14594,7 @@
 		"actions": [["atk", 2], ["add_enemy_c_of_x", 4, "internal_injury"]]
 	},
 	"D11154": {
-		"actions": [["rep", 2, ["atk", 1]], ["add_enemy_c_of_x", 5, "internal_injury"]]
+		"actions": [["rep", 2, ["atk", 1]], ["add_enemy_c_of_x", 6, "internal_injury"]]
 	},
 	"D11155": {
 		"actions": [["rep", 2, ["atk", 1]], ["add_enemy_c_of_x", 99, "internal_injury"]]
@@ -13902,7 +14613,7 @@
 		"actions": [["increase_idx_def", 0, 4], ["continuous"], ["increase_idx_x_by_c", 0, "dream_cloud_sword_softheart_gain_def", 3], ["increase_idx_x_by_c", 0, "dream_cloud_sword_softheart_sword_formation_gives_cloud_sea", 1]]
 	},
 	"D11165": {
-		"actions": [["increase_idx_def", 0, 4], ["continuous"], ["increase_idx_x_by_c", 0, "dream_cloud_sword_softheart_gain_def", 5], ["increase_idx_x_by_c", 0, "dream_cloud_sword_softheart_sword_formation_gives_cloud_sea", 1]]
+		"actions": [["increase_idx_def", 0, 4], ["add_c_of_x", 2, "moon_water_sword_formation_stacks"], ["continuous"], ["increase_idx_x_by_c", 0, "dream_cloud_sword_softheart_gain_def", 5], ["increase_idx_x_by_c", 0, "dream_cloud_sword_softheart_sword_formation_gives_cloud_sea", 1]]
 	},
 	"D11171": {
 		"name": "Dream - Contemplate Spirits Rhythm",
@@ -13931,12 +14642,28 @@
 		"actions": [["atk", 6]]
 	},
 	"D11184": {
-		"actions": [["atk", 3]],
+		"actions": [["atk", 4]],
 		"opening": [["add_c_of_x", 2, "cloud_sea"]]
 	},
 	"D11185": {
-		"actions": [["atk", 4]],
+		"actions": [["atk", 5]],
 		"opening": [["add_c_of_x", 2, "cloud_sea"]]
+	},
+	"D11191": {
+		"name": "Dream - Spiritage Sword",
+		"actions": [["qi", 2], ["sword_qi", 1], ["consumption"]]
+	},
+	"D11192": {
+		"actions": [["qi", 2], ["sword_qi", 2], ["consumption"]]
+	},
+	"D11193": {
+		"actions": [["qi", 2], ["sword_qi", 3], ["consumption"]]
+	},
+	"D11194": {
+		"actions": [["qi", 1], ["continuous"], ["increase_idx_x_by_c", 0, "dream_spiritage_sword_sword_qi_stacks", 1]]
+	},
+	"D11195": {
+		"actions": [["qi", 3], ["continuous"], ["increase_idx_x_by_c", 0, "dream_spiritage_sword_sword_qi_stacks", 1]]
 	},
 	"D12011": {
 		"name": "Dream - Astral Move - Block",
@@ -13997,10 +14724,10 @@
 		"actions": [["continuous"], ["increase_idx_x_by_c", 0, "dream_yin_yang_formation_def_stacks", 1], ["increase_idx_x_by_c", 0, "dream_yin_yang_formation_hp_stacks", 1]]
 	},
 	"D12044": {
-		"actions": [["continuous"], ["increase_idx_x_by_c", 0, "dream_yin_yang_formation_def_stacks", 2], ["increase_idx_x_by_c", 0, "dream_yin_yang_formation_hp_stacks", 2]]
+		"actions": [["continuous"], ["increase_idx_x_by_c", 0, "dream_yin_yang_formation_def_stacks", 1], ["increase_idx_x_by_c", 0, "dream_yin_yang_formation_hp_stacks", 2]]
 	},
 	"D12045": {
-		"actions": [["max_hp", 10], ["continuous"], ["increase_idx_x_by_c", 0, "dream_yin_yang_formation_def_stacks", 2], ["increase_idx_x_by_c", 0, "dream_yin_yang_formation_hp_stacks", 3]]
+		"actions": [["continuous"], ["increase_idx_x_by_c", 0, "dream_yin_yang_formation_def_stacks", 2], ["increase_idx_x_by_c", 0, "dream_yin_yang_formation_hp_stacks", 3]]
 	},
 	"D12051": {
 		"name": "Dream - Falling Thunder",
@@ -14074,7 +14801,7 @@
 		"actions": [["max_hp", 5], ["hp", 5], ["add_c_of_x", 1, "dream_repel_citta_dharma_stacks"]]
 	},
 	"D12093": {
-		"actions": [["max_hp", 7], ["hp", 7], ["add_c_of_x", 1, "dream_repel_citta_dharma_stacks"]]
+		"actions": [["max_hp", 6], ["hp", 6], ["add_c_of_x", 1, "dream_repel_citta_dharma_stacks"]]
 	},
 	"D12094": {
 		"actions": [["max_hp", 3], ["hp", 3], ["add_c_of_x", 2, "dream_repel_citta_dharma_stacks"]]
@@ -14226,6 +14953,39 @@
 	"D12185": {
 		"actions": [["atk", 12], ["add_c_of_x", 1, "dream_revitalized_played_count"]]
 	},
+	"D12191": {
+		"name": "Dream - Thunder Hexagram Rhythm",
+		"actions": [["atk_rand_range", 1, 10], ["for_each_x_add_y", "dream_lost_hexagram_count", "hexagram"], ["consumption"]]
+	},
+	"D12192": {
+		"actions": [["atk_rand_range", 3, 12], ["for_each_x_add_y", "dream_lost_hexagram_count", "hexagram"], ["consumption"]]
+	},
+	"D12193": {
+		"actions": [["atk_rand_range", 5, 14], ["for_each_x_add_y", "dream_lost_hexagram_count", "hexagram"], ["consumption"]]
+	},
+	"D12194": {
+		"actions": [["atk_rand_range", 9, 18], ["for_each_x_add_y", "dream_lost_hexagram_count", "hexagram"], ["consumption"]]
+	},
+	"D12195": {
+		"is_continuous": true,
+		"actions": [["atk_rand_range", 1, 8], ["continuous"], ["add_c_of_x", 1, "dream_thunder_hexagram_rhythm_stacks"]]
+	},
+	"D12201": {
+		"name": "Dream - Astral Move Point",
+		"actions": [["atk", 5], ["star_point", ["add_enemy_c_of_x", 1, "internal_injury"]]]
+	},
+	"D12202": {
+		"actions": [["atk", 3], ["star_point", ["add_enemy_c_of_x", 2, "internal_injury"]]]
+	},
+	"D12203": {
+		"actions": [["atk", 3], ["star_point", ["add_enemy_c_of_x", 3, "internal_injury"]]]
+	},
+	"D12204": {
+		"actions": [["atk", 5], ["star_power", 1]]
+	},
+	"D12205": {
+		"actions": [["atk", 5], ["star_power", 2]]
+	},
 	"D13011": {
 		"name": "Dream - Metal Spirit Formation",
 		"actions": [["activate_metal_spirit"], ["add_c_of_x", 6, "penetrate"]]
@@ -14240,23 +15000,23 @@
 		"actions": [["activate_metal_spirit"], ["add_c_of_x", 4, "penetrate"], ["continuous"], ["add_c_of_x", 4, "gain_penetrate_on_chase_stacks"]]
 	},
 	"D13015": {
-		"actions": [["activate_metal_spirit"], ["add_c_of_x", 4, "penetrate"], ["continuous"], ["add_c_of_x", 6, "gain_penetrate_on_chase_stacks"]]
+		"actions": [["activate_metal_spirit"], ["add_c_of_x", 6, "penetrate"], ["continuous"], ["add_c_of_x", 6, "gain_penetrate_on_chase_stacks"]]
 	},
 	"D13021": {
 		"name": "Dream - Cosmos Seal",
-		"actions": [["qi", 1], ["atk", 4]]
+		"actions": [["qi", 1], ["deal_damage", 5]]
 	},
 	"D13022": {
-		"actions": [["qi", 1], ["atk", 6]]
+		"actions": [["qi", 1], ["deal_damage", 7]]
 	},
 	"D13023": {
-		"actions": [["qi", 1], ["atk", 8]]
+		"actions": [["qi", 1], ["deal_damage", 9]]
 	},
 	"D13024": {
-		"actions": [["qi", 2], ["atk", 10]]
+		"actions": [["qi", 3], ["deal_damage", 10]]
 	},
 	"D13025": {
-		"actions": [["qi", 3], ["atk", 12]]
+		"actions": [["trigger_replay_card"]]
 	},
 	"D13031": {
 		"name": "Dream - Water Spirit Billows",
@@ -14279,7 +15039,7 @@
 		"actions": [[]]
 	},
 	"D13042": {
-		"actions": [[]]
+		"actions": [["atk", 6], ["for_each_x_add_c_y", "n_different_five_elements", 2, "def"]]
 	},
 	"D13043": {
 		"actions": [[]]
@@ -14353,25 +15113,25 @@
 			["if_x_at_least_c_do", "increase_atk", 1, ["chase"]]]
 	},
 	"D13075": {
-		"actions": [["hp", 2], ["for_each_x_add_c_pct_y_up_to_d", "force_of_water", 50, "increase_atk", 3],
+		"actions": [["hp", 2], ["for_each_x_add_c_pct_y_up_to_d", "force_of_water", 50, "increase_atk", 4],
 			["if_x_at_least_c_do", "force_of_water", 1, ["chase"]],
 			["if_x_at_least_c_do", "increase_atk", 1, ["chase"]]]
 	},
 	"D13081": {
 		"name": "Dream - Wood Spirit Formation",
-		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 3, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["continuous"], ["add_c_of_x", 3, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
 	},
 	"D13082": {
-		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 4, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["continuous"], ["add_c_of_x", 4, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
 	},
 	"D13083": {
-		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 5, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["continuous"], ["add_c_of_x", 5, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
 	},
 	"D13084": {
-		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 1, "wood_thorn"], ["add_c_of_x", 5, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 1, "wood_thorn"], ["continuous"], ["add_c_of_x", 5, "dream_wood_spirit_formation_attack_steal_hp_stacks"]]
 	},
 	"D13085": {
-		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 1, "wood_thorn"], ["add_c_of_x", 3, "convert_increase_atk_to_wood_thorn"]]
+		"actions": [["activate_wood_spirit"], ["qi", 1], ["add_c_of_x", 1, "wood_thorn"], ["continuous"], ["add_c_of_x", 4, "convert_increase_atk_to_wood_thorn"]]
 	},
 	"D13091": {
 		"name": "Dream - Fire Spirit Heart Fire",
@@ -14468,7 +15228,7 @@
 	},
 	"D13144": {
 		"actions": [["continuous"],
-			["add_c_of_x", 1, "dream_heavenly_marrow_unlimited_stacks"]]
+			["add_c_of_x", 3, "dream_heavenly_marrow_limited_stacks"]]
 	},
 	"D13145": {
 		"actions": [["continuous"],
@@ -14511,10 +15271,10 @@
 		"actions": [["activate_fire_spirit"], ["add_c_of_x", 2, "def"], ["reduce_enemy_c_of_x", 6, "hp"], ["reduce_enemy_c_of_x", 6, "max_hp"]]
 	},
 	"D13172": {
-		"actions": [["activate_fire_spirit"], ["add_c_of_x", 3, "def"], ["reduce_enemy_c_of_x", 8, "hp"], ["reduce_enemy_c_of_x", 8, "max_hp"]]
+		"actions": [["activate_fire_spirit"], ["add_c_of_x", 2, "def"], ["reduce_enemy_c_of_x", 8, "hp"], ["reduce_enemy_c_of_x", 8, "max_hp"]]
 	},
 	"D13173": {
-		"actions": [["activate_fire_spirit"], ["add_c_of_x", 4, "def"], ["reduce_enemy_c_of_x", 10, "hp"], ["reduce_enemy_c_of_x", 10, "max_hp"]]
+		"actions": [["activate_fire_spirit"], ["add_c_of_x", 2, "def"], ["reduce_enemy_c_of_x", 10, "hp"], ["reduce_enemy_c_of_x", 10, "max_hp"]]
 	},
 	"D13174": {
 		"actions": [["activate_fire_spirit"], ["add_c_of_x", 6, "def"], ["reduce_enemy_c_of_x", 6, "hp"], ["reduce_enemy_c_of_x", 6, "max_hp"], ["continuous"], ["add_c_of_x", 3, "dream_fire_formation_stacks"]]
@@ -14537,5 +15297,613 @@
 	},
 	"D13185": {
 		"actions": [["add_c_of_x", 15, "def"]]
+	},
+	"D13191": {
+		"name": "Dream - World Smash",
+		"actions": [["qi", 1], ["atk", 2]]
+	},
+	"D13192": {
+		"actions": [["qi", 1], ["atk", 4]]
+	},
+	"D13193": {
+		"actions": [["qi", 1], ["atk", 6]]
+	},
+	"D13194": {
+		"actions": [["qi", 1], ["atk", 8]]
+	},
+	"D13195": {
+		"actions": [["qi", 1], ["atk", 1]]
+	},
+	"D13201": {
+		"name": "Dream - Water Spirit Turbulent",
+		"actions": [["atk", 5]]
+	},
+	"D13202": {
+		"actions": [["atk", 7]]
+	},
+	"D13203": {
+		"actions": [["atk", 9]]
+	},
+	"D13204": {
+		"actions": [["atk", 5]]
+	},
+	"D13205": {
+		"actions": [["atk", 10]]
+	},
+	"D14011": {
+		"name": "Dream - Elusive Footwork",
+		"actions": [["qi", 1], ["continuous"], ["add_c_of_x", 1, "dream_elusive_footwork_stacks"]]
+	},
+	"D14012": {
+		"actions": [["qi", 1], ["continuous"], ["add_c_of_x", 1, "dream_elusive_footwork_stacks"]]
+	},
+	"D14013": {
+		"actions": [["qi", 1], ["continuous"], ["add_c_of_x", 1, "dream_elusive_footwork_stacks"]]
+	},
+	"D14014": {
+		"actions": [["qi", 1], ["continuous"], ["add_c_of_x", 2, "dream_elusive_footwork_stacks"]]
+	},
+	"D14015": {
+		"actions": [["qi", 3], ["continuous"], ["add_c_of_x", 2, "dream_elusive_footwork_stacks"], ["set_x_up_to_c", "dream_elusive_footwork_reflect_cap", 2]]
+	},
+	"D14021": {
+		"name": "Dream - Shura Roar",
+		"actions": [["physique", 2], ["add_c_of_x", 2, "internal_injury"], ["add_enemy_c_of_x", 2, "internal_injury"]]
+	},
+	"D14022": {
+		"actions": [["physique", 2], ["add_c_of_x", 3, "internal_injury"], ["add_enemy_c_of_x", 3, "internal_injury"]]
+	},
+	"D14023": {
+		"actions": [["physique", 3], ["add_c_of_x", 3, "internal_injury"], ["add_enemy_c_of_x", 3, "internal_injury"]]
+	},
+	"D14024": {
+		"actions": [["physique", 3]]
+	},
+	"D14025": {
+		"actions": [["physique", 4]]
+	},
+	"D14031": {
+		"name": "Dream - Crash Fist Block",
+		"hp_cost": 3,
+		"actions": [["def", 12], ["add_c_of_x", 2, "later_crash_fist_poke_stacks"]]
+	},
+	"D14032": {
+		"hp_cost": 3,
+		"actions": [["def", 14], ["add_c_of_x", 3, "later_crash_fist_poke_stacks"]]
+	},
+	"D14033": {
+		"hp_cost": 6,
+		"actions": [["def", 18]]
+	},
+	"D14034": {
+		"hp_cost": 6,
+		"actions": [["def", 18]]
+	},
+	"D14035": {
+		"hp_cost": 6,
+		"actions": [["def", 18]]
+	},
+	"D14041": {
+		"name": "Dream - Exercise Soul",
+		"actions": [["atk", 5], ["def", 2], ["physique", 2]]
+	},
+	"D14042": {
+		"actions": [["atk", 6], ["def", 2], ["physique", 3]]
+	},
+	"D14043": {
+		"actions": [["atk", 7], ["def", 2], ["physique", 4]]
+	},
+	"D14044": {
+		"actions": [["atk", 2], ["def", 2], ["physique", 1]]
+	},
+	"D14045": {
+		"actions": [["atk", 5], ["def", 5], ["physique", 2]]
+	},
+	"D14051": {
+		"name": "Dream - Surging Waves",
+		"actions": [["qi", 2], ["add_c_of_x", 4, "agility"], ["consumption"]]
+	},
+	"D14052": {
+		"actions": [["qi", 2], ["add_c_of_x", 4, "agility"], ["consumption"]]
+	},
+	"D14053": {
+		"actions": [["qi", 2], ["add_c_of_x", 4, "agility"], ["consumption"]]
+	},
+	"D14054": {
+		"actions": [["qi", 2], ["add_c_of_x", 4, "agility"], ["consumption"]]
+	},
+	"D14055": {
+		"actions": [["qi", 2], ["add_c_of_x", 6, "agility"], ["consumption"]]
+	},
+	"D14061": {
+		"name": "Dream - Crash Fist Blitz",
+		"hp_cost": 4,
+		"actions": [["atk", 10]]
+	},
+	"D14062": {
+		"hp_cost": 4,
+		"actions": [["atk", 10]]
+	},
+	"D14063": {
+		"hp_cost": 4,
+		"actions": [["atk", 10]]
+	},
+	"D14064": {
+		"hp_cost": 4,
+		"actions": [["atk", 13]]
+	},
+	"D14065": {
+		"hp_cost": 4,
+		"actions": [["atk", 13]]
+	},
+	"D14071": {
+		"name": "Dream - Exercise Tendons",
+		"actions": [["physique", 2], ["def", 7]]
+	},
+	"D14072": {
+		"actions": [["physique", 2], ["def", 10]]
+	},
+	"D14073": {
+		"actions": [["physique", 3]]
+	},
+	"D14074": {
+		"actions": [["physique", 3]]
+	},
+	"D14075": {
+		"actions": [["physique", 4]]
+	},
+	"D14081": {
+		"name": "Dream - Crash Fist Bounce",
+		"hp_cost": 4,
+		"actions": [["def", 8], ["continuous"], ["add_c_of_x", 2, "dream_crash_fist_bounce_stacks"]]
+	},
+	"D14082": {
+		"hp_cost": 4,
+		"actions": [["def", 12], ["continuous"], ["add_c_of_x", 2, "dream_crash_fist_bounce_stacks"]]
+	},
+	"D14083": {
+		"hp_cost": 4,
+		"actions": [["def", 12], ["continuous"], ["add_c_of_x", 3, "dream_crash_fist_bounce_stacks"]]
+	},
+	"D14084": {
+		"hp_cost": 4,
+		"actions": [["def", 14], ["continuous"], ["add_c_of_x", 4, "dream_crash_fist_bounce_stacks"]]
+	},
+	"D14085": {
+		"hp_cost": 4,
+		"actions": [["def", 14], ["continuous"], ["add_c_of_x", 1, "dream_crash_fist_bounce_permanent"]]
+	},
+	"D14091": {
+		"name": "Dream - Styx Agility",
+		"hp_cost": 4,
+		"actions": [["atk", 5], ["atk", 5]]
+	},
+	"D14092": {
+		"hp_cost": 4,
+		"actions": [["atk", 6], ["atk", 6]]
+	},
+	"D14093": {
+		"hp_cost": 4,
+		"actions": [["atk", 7], ["atk", 7]]
+	},
+	"D14094": {
+		"hp_cost": 4,
+		"actions": [["atk", 1], ["atk", 1], ["add_c_of_x", 10, "agility"]]
+	},
+	"D14095": {
+		"hp_cost": 4,
+		"actions": [["atk", 3], ["atk", 3], ["add_c_of_x", 12, "agility"]]
+	},
+	"D14101": {
+		"name": "Dream - Vigorous Force",
+		"actions": [["atk", 6]]
+	},
+	"D14102": {
+		"actions": [["atk", 8]]
+	},
+	"D14103": {
+		"actions": [["atk", 10]]
+	},
+	"D14104": {
+		"actions": [["atk", 7]]
+	},
+	"D14105": {
+		"actions": [["atk", 12]]
+	},
+	"D14111": {
+		"name": "Dream - Mountain-Cleaving Palms",
+		"hp_cost": 2,
+		"actions": [["atk", 8]]
+	},
+	"D14112": {
+		"hp_cost": 2,
+		"actions": [["atk", 10]]
+	},
+	"D14113": {
+		"hp_cost": 2,
+		"actions": [["atk", 12]]
+	},
+	"D14114": {
+		"hp_cost": 2,
+		"actions": [["atk", 10]]
+	},
+	"D14115": {
+		"hp_cost": 2,
+		"actions": [["atk", 10]]
+	},
+	"D14121": {
+		"name": "Dream - Crash Footwork",
+		"actions": [["def", 8], ["add_c_of_x", 2, "agility"]]
+	},
+	"D14122": {
+		"actions": [["def", 11], ["add_c_of_x", 2, "agility"]]
+	},
+	"D14123": {
+		"actions": [["def", 14], ["add_c_of_x", 2, "agility"]]
+	},
+	"D14124": {
+		"actions": [["def", 8], ["add_c_of_x", 4, "agility"]]
+	},
+	"D14125": {
+		"actions": [["def", 8], ["add_c_of_x", 8, "agility"]]
+	},
+	"D14131": {
+		"name": "Dream - Windward Palms",
+		"actions": [["atk", 3], ["atk", 3]]
+	},
+	"D14132": {
+		"actions": [["atk", 4], ["atk", 4]]
+	},
+	"D14133": {
+		"actions": [["atk", 5], ["atk", 5]]
+	},
+	"D14134": {
+		"actions": [["atk", 5], ["atk", 5]]
+	},
+	"D14135": {
+		"actions": [["atk", 4], ["atk", 4]]
+	},
+	"D14141": {
+		"name": "Dream - Crash Fist Continue",
+		"hp_cost": 2,
+		"actions": [["atk", 3], ["atk", 3]]
+	},
+	"D14142": {
+		"hp_cost": 2,
+		"actions": [["atk", 4], ["atk", 4]]
+	},
+	"D14143": {
+		"hp_cost": 2,
+		"actions": [["atk", 5], ["atk", 5]]
+	},
+	"D14144": {
+		"hp_cost": 2,
+		"actions": [["atk", 6], ["atk", 6]]
+	},
+	"D14145": {
+		"hp_cost": 2,
+		"actions": [["atk", 9], ["atk", 9]]
+	},
+	"D14151": {
+		"name": "Dream - Bearing the Load",
+		"actions": [["def", 7]]
+	},
+	"D14152": {
+		"actions": [["def", 10]]
+	},
+	"D14153": {
+		"actions": [["def", 10]]
+	},
+	"D14154": {
+		"actions": [["def", 16]]
+	},
+	"D14155": {
+		"actions": [["def", 16]]
+	},
+	"D14161": {
+		"name": "Dream - Gather Intense Force",
+		"actions": [["heal", 2], ["add_c_of_x", 3, "force"]]
+	},
+	"D14162": {
+		"actions": [["heal", 4], ["add_c_of_x", 3, "force"]]
+	},
+	"D14163": {
+		"actions": [["heal", 6], ["add_c_of_x", 3, "force"]]
+	},
+	"D14164": {
+		"actions": [["add_c_of_x", 4, "max_force"], ["add_c_of_x", 5, "force"]]
+	},
+	"D14165": {
+		"actions": [["add_c_of_x", 5, "max_force"], ["add_c_of_x", 8, "force"]]
+	},
+	"D14171": {
+		"name": "Dream - Majestic Qi",
+		"actions": [["qi", 2], ["add_c_of_x", 1, "force"], ["continuous"], ["add_c_of_x", 2, "majestic_qi_stacks"]]
+	},
+	"D14172": {
+		"actions": [["qi", 2], ["add_c_of_x", 1, "force"], ["continuous"], ["add_c_of_x", 3, "majestic_qi_stacks"]]
+	},
+	"D14173": {
+		"actions": [["qi", 2], ["add_c_of_x", 1, "force"], ["continuous"], ["add_c_of_x", 4, "majestic_qi_stacks"]]
+	},
+	"D14174": {
+		"actions": [["qi", 3], ["add_c_of_x", 1, "force"], ["continuous"], ["add_c_of_x", 5, "majestic_qi_stacks"]]
+	},
+	"D14175": {
+		"actions": [["qi", 3], ["add_c_of_x", 1, "force"], ["continuous"]]
+	},
+	"D14181": {
+		"name": "Dream - Overwhelming Force",
+		"actions": [["physique", 2], ["heal", 6]]
+	},
+	"D14182": {
+		"actions": [["physique", 3], ["heal", 8]]
+	},
+	"D14183": {
+		"actions": [["physique", 4], ["heal", 10]]
+	},
+	"D14184": {
+		"actions": [["add_c_of_x", 5, "agility"], ["physique", 1]]
+	},
+	"D14185": {
+		"actions": [["add_c_of_x", 5, "agility"], ["physique", 1]]
+	},
+	"D14191": {
+		"name": "Dream - Exercise Fist",
+		"hp_cost": 2,
+		"actions": [["atk", 6], ["physique", 2]]
+	},
+	"D14192": {
+		"hp_cost": 2,
+		"actions": [["atk", 8], ["physique", 2]]
+	},
+	"D14193": {
+		"hp_cost": 2,
+		"actions": [["atk", 10], ["physique", 2]]
+	},
+	"D14194": {
+		"hp_cost": 2,
+		"actions": [["atk", 5], ["atk", 5], ["physique", 0]]
+	},
+	"D14195": {
+		"hp_cost": 2,
+		"actions": [["atk", 7], ["atk", 7], ["physique", 0]]
+	},
+	"D14201": {
+		"name": "Dream - Standing Firm",
+		"actions": [["def", 3], ["continuous"], ["add_c_of_x", 2, "dream_standing_firm_def_damage"]]
+	},
+	"D14202": {
+		"actions": [["def", 6], ["continuous"], ["add_c_of_x", 2, "dream_standing_firm_def_damage"]]
+	},
+	"D14203": {
+		"actions": [["def", 9], ["continuous"], ["add_c_of_x", 2, "dream_standing_firm_def_damage"]]
+	},
+	"D14204": {
+		"actions": [["def", 9], ["continuous"], ["add_c_of_x", 40, "dream_standing_firm_def_hp_damage_pct"]]
+	},
+	"D14205": {
+		"actions": [["def", 12], ["continuous"], ["add_c_of_x", 50, "dream_standing_firm_def_hp_damage_pct"]]
+	},
+	"D21011": {"name": "Dream - Cloud Elixir", "does_not_exist": true, "actions": []},
+	"D21012": {"does_not_exist": true, "actions": []},
+	"D21013": {"does_not_exist": true, "actions": []},
+	"D21014": {
+		"name": "Dream - Cloud Elixir",
+		"actions": [["qi", 1], ["continuous"], ["add_c_of_x", 1, "dream_cloud_elixir_stacks"]]
+	},
+	"D21015": {
+		"name": "Dream - Cloud Elixir",
+		"actions": [["qi", 3], ["continuous"], ["add_c_of_x", 1, "dream_cloud_elixir_stacks"]]
+	},
+	"D21021": {"name": "Dream - Great Recover Elixir", "does_not_exist": true, "actions": []},
+	"D21022": {"does_not_exist": true, "actions": []},
+	"D21023": {"does_not_exist": true, "actions": []},
+	"D21024": {
+		"name": "Dream - Great Recover Elixir",
+		"actions": [["max_hp", 10], ["heal", 10], ["continuous"], ["add_c_of_x", 4, "dream_great_recover_elixir_stacks"]]
+	},
+	"D21025": {
+		"name": "Dream - Great Recover Elixir",
+		"actions": [["max_hp", 15], ["heal", 15], ["continuous"], ["add_c_of_x", 8, "dream_great_recover_elixir_stacks"]]
+	},
+	"D22011": {"name": "Dream - Calm Incantation", "does_not_exist": true, "actions": []},
+	"D22012": {"does_not_exist": true, "actions": []},
+	"D22013": {"does_not_exist": true, "actions": []},
+	"D22014": {"does_not_exist": true, "actions": []},
+	"D22015": {
+		"name": "Dream - Calm Incantation",
+		"actions": [
+			["qi", 3],
+			["reduce_c_of_x", 4, "internal_injury"],
+			["reduce_c_of_x", 4, "weaken"],
+			["reduce_c_of_x", 4, "flaw"],
+			["reduce_c_of_x", 4, "decrease_atk"],
+			["reduce_c_of_x", 4, "entangle"],
+			["reduce_c_of_x", 4, "wound"],
+			["reduce_c_of_x", 4, "styx"],
+			["add_c_of_x", 4, "hexproof"]
+		]
+	},
+	"D22021": {"name": "Dream - Ice Incantation", "does_not_exist": true, "actions": []},
+	"D22022": {"does_not_exist": true, "actions": []},
+	"D22023": {"does_not_exist": true, "actions": []},
+	"D22024": {
+		"name": "Dream - Ice Incantation",
+		"actions": [["rep", 2, ["reduce_enemy_c_of_x", 5, "hp"]], ["add_enemy_c_of_x", 1, "prevent_gain_def_stacks"], ["add_enemy_c_of_x", 1, "prevent_gain_hp_stacks"]]
+	},
+	"D22025": {
+		"name": "Dream - Ice Incantation",
+		"actions": [["rep", 3, ["reduce_enemy_c_of_x", 5, "hp"]]]
+	},
+	"D22031": {"name": "Dream - Sharp Metal Fulu", "does_not_exist": true, "actions": []},
+	"D22032": {"does_not_exist": true, "actions": []},
+	"D22033": {"does_not_exist": true, "actions": []},
+	"D22034": {
+		"name": "Dream - Sharp Metal Fulu",
+		"actions": [["deal_damage", 13]]
+	},
+	"D22035": {
+		"name": "Dream - Sharp Metal Fulu",
+		"actions": [["deal_damage", 18]]
+	},
+	"D22041": {"name": "Dream - Weaken Fulu", "does_not_exist": true, "actions": []},
+	"D22042": {"does_not_exist": true, "actions": []},
+	"D22043": {"does_not_exist": true, "actions": []},
+	"D22044": {"does_not_exist": true, "actions": []},
+	"D22045": {
+		"name": "Dream - Weaken Fulu",
+		"actions": [["add_enemy_c_of_x", 1, "weaken"], ["chase"], ["consumption"]]
+	},
+	"D23011": {"name": "Dream - Craze Dance Tune", "does_not_exist": true, "actions": []},
+	"D23012": {"does_not_exist": true, "actions": []},
+	"D23013": {"does_not_exist": true, "actions": []},
+	"D23014": {"does_not_exist": true, "actions": []},
+	"D23015": {
+		"name": "Dream - Craze Dance Tune",
+		"actions": [["add_c_of_x", 2, "dream_craze_dance_tune_pending_stacks"], ["add_enemy_c_of_x", 2, "dream_craze_dance_tune_pending_stacks"]]
+	},
+	"D23021": {"name": "Dream - Chord In Tune", "does_not_exist": true, "actions": []},
+	"D23022": {"does_not_exist": true, "actions": []},
+	"D23023": {"does_not_exist": true, "actions": []},
+	"D23024": {
+		"name": "Dream - Chord In Tune",
+		"actions": [["qi", 1], ["add_c_of_x", 1, "prevent_anti_chase"]]
+	},
+	"D23025": {
+		"name": "Dream - Chord In Tune",
+		"actions": [["qi", 2], ["add_c_of_x", 1, "prevent_anti_chase"]]
+	},
+	"D23031": {"name": "Dream - Predicament for Immortals", "does_not_exist": true, "actions": []},
+	"D23032": {"does_not_exist": true, "actions": []},
+	"D23033": {"does_not_exist": true, "actions": []},
+	"D23034": {"does_not_exist": true, "actions": []},
+	"D23035": {
+		"name": "Dream - Predicament for Immortals",
+		"actions": [["reduce_c_of_x", 5, "hp"]]
+	},
+	"D23041": {"name": "Dream - Nine Evil Ruptsprite", "does_not_exist": true, "actions": []},
+	"D23042": {"does_not_exist": true, "actions": []},
+	"D23043": {"does_not_exist": true, "actions": []},
+	"D23044": {"does_not_exist": true, "actions": []},
+	"D23045": {
+		"name": "Dream - Nine Evil Ruptsprite",
+		"actions": [["reduce_c_of_x", 4, "qi"], ["reduce_enemy_c_of_x", 4, "qi"]]
+	},
+	"D24011": {"name": "Dream - Divine Brush", "does_not_exist": true, "actions": []},
+	"D24012": {"does_not_exist": true, "actions": []},
+	"D24013": {"does_not_exist": true, "actions": []},
+	"D24014": {
+		"name": "Dream - Divine Brush",
+		"actions": [["def", 2]]
+	},
+	"D24015": {
+		"name": "Dream - Divine Brush",
+		"actions": [["def", 10]]
+	},
+	"D24021": {"name": "Dream - Finishing Touch", "does_not_exist": true, "actions": []},
+	"D24022": {"does_not_exist": true, "actions": []},
+	"D24023": {"does_not_exist": true, "actions": []},
+	"D24024": {"does_not_exist": true, "actions": []},
+	"D24025": {
+		"name": "Dream - Finishing Touch",
+		"actions": []
+	},
+	"D24031": {"name": "Dream - Wonderful Strokes", "does_not_exist": true, "actions": []},
+	"D24032": {"does_not_exist": true, "actions": []},
+	"D24033": {"does_not_exist": true, "actions": []},
+	"D24034": {
+		"name": "Dream - Wonderful Strokes",
+		"actions": []
+	},
+	"D24035": {
+		"name": "Dream - Wonderful Strokes",
+		"actions": []
+	},
+	"D25011": {"name": "Dream - Motionless Tutelary Formation", "does_not_exist": true, "actions": []},
+	"D25012": {"does_not_exist": true, "actions": []},
+	"D25013": {"does_not_exist": true, "actions": []},
+	"D25014": {"does_not_exist": true, "actions": []},
+	"D25015": {
+		"name": "Dream - Motionless Tutelary Formation",
+		"actions": [["max_hp", 20], ["heal", 20], ["add_c_of_x", 1, "cannot_act_stacks"]]
+	},
+	"D25021": {"name": "Dream - Echo Formation", "does_not_exist": true, "actions": []},
+	"D25022": {"does_not_exist": true, "actions": []},
+	"D25023": {"does_not_exist": true, "actions": []},
+	"D25024": {
+		"name": "Dream - Echo Formation",
+		"actions": [["do_dream_echo_formation_thing"]]
+	},
+	"D25025": {
+		"name": "Dream - Echo Formation",
+		"actions": [["max_hp", 6], ["heal", 6], ["do_dream_echo_formation_thing"]]
+	},
+	"D26011": {"name": "Dream - Frozen Snow Lotus", "does_not_exist": true, "actions": []},
+	"D26012": {"does_not_exist": true, "actions": []},
+	"D26013": {"does_not_exist": true, "actions": []},
+	"D26014": {
+		"name": "Dream - Frozen Snow Lotus",
+		"actions": [["def", 10], ["add_c_of_x", 1, "guard_up"]]
+	},
+	"D26015": {
+		"name": "Dream - Frozen Snow Lotus",
+		"actions": [["def", 10], ["add_c_of_x", 1, "guard_up"]]
+	},
+	"D26021": {"name": "Dream - Entangling Ancient Vine", "does_not_exist": true, "actions": []},
+	"D26022": {"does_not_exist": true, "actions": []},
+	"D26023": {"does_not_exist": true, "actions": []},
+	"D26024": {
+		"name": "Dream - Entangling Ancient Vine",
+		"actions": [["add_enemy_c_of_x", 1, "wound"], ["add_c_of_x", 2, "smash_def"], ["add_enemy_c_of_x", 1, "entangle"]]
+	},
+	"D26025": {
+		"name": "Dream - Entangling Ancient Vine",
+		"actions": [["add_enemy_c_of_x", 2, "wound"], ["add_c_of_x", 2, "smash_def"], ["add_enemy_c_of_x", 1, "entangle"]]
+	},
+	"D26031": {"name": "Dream - Space Spiritual Field", "does_not_exist": true, "actions": []},
+	"D26032": {"does_not_exist": true, "actions": []},
+	"D26033": {"does_not_exist": true, "actions": []},
+	"D26034": {"does_not_exist": true, "actions": []},
+	"D26035": {
+		"name": "Dream - Space Spiritual Field",
+		"actions": [[]]
+	},
+	"D26041": {"name": "Dream - Flying Owl Reishi", "does_not_exist": true, "actions": []},
+	"D26042": {"does_not_exist": true, "actions": []},
+	"D26043": {"does_not_exist": true, "actions": []},
+	"D26044": {"does_not_exist": true, "actions": []},
+	"D26045": {
+		"name": "Dream - Flying Owl Reishi",
+		"actions": []
+	},
+	"D27011": {"name": "Dream - Heavenly Time Recurring", "does_not_exist": true, "actions": []},
+	"D27012": {"does_not_exist": true, "actions": []},
+	"D27013": {"does_not_exist": true, "actions": []},
+	"D27014": {"does_not_exist": true, "actions": []},
+	"D27015": {
+		"name": "Dream - Heavenly Time Recurring",
+		"actions": [["reduce_c_of_x", 2, "hp"], ["add_enemy_c_of_x", 1, "skip_to_previous_card_stacks"]]
+	},
+	"D27021": {"name": "Dream - Envelop In Disaster", "does_not_exist": true, "actions": []},
+	"D27022": {"does_not_exist": true, "actions": []},
+	"D27023": {"does_not_exist": true, "actions": []},
+	"D27024": {
+		"name": "Dream - Envelop In Disaster",
+		"actions": [["add_enemy_c_of_x", 1, "internal_injury"]],
+		"opening": [["downgrade_enemy_card_or_skip"]]
+	},
+	"D27025": {
+		"name": "Dream - Envelop In Disaster",
+		"actions": [["add_enemy_c_of_x", 3, "internal_injury"]],
+		"opening": [["downgrade_enemy_card_or_skip"]]
+	},
+	"D30011": {"name": "Dream - At Own Pace", "does_not_exist": true, "actions": []},
+	"D30012": {"does_not_exist": true, "actions": []},
+	"D30013": {"does_not_exist": true, "actions": []},
+	"D30014": {"does_not_exist": true, "actions": []},
+	"D30015": {
+		"name": "Dream - At Own Pace",
+		"actions": []
 	}
 }

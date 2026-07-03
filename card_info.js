@@ -28,6 +28,9 @@ export function format_card(card_id) {
 }
 export const SECTS = ["sw", "he", "fe", "dx"];
 export const CRASH_FIST_CARDS = [[], [], [], []];
+export const NO_STANCE = 0;
+export const FIST_STANCE = 1;
+export const STICK_STANCE = -1;
 
 export const ready = (async () => {
     if (typeof process !== 'undefined' && process.versions && process.versions.node) {
@@ -138,6 +141,23 @@ export const ready = (async () => {
     const valid_markings = new Set(valid_markings_list);
     function get_marking(card_id) {
         if (card_id.startsWith("D")) {
+            if (card_id[1] === "2") {
+                const dream_side_job_marking = {
+                    "1": "el",
+                    "2": "fu",
+                    "3": "mu",
+                    "4": "pa",
+                    "5": "fm",
+                    "6": "pm",
+                    "7": "ft",
+                }[card_id[2]];
+                if (dream_side_job_marking !== undefined) {
+                    return dream_side_job_marking;
+                }
+            }
+            if (card_id[1] === "3") {
+                return "no_marking";
+            }
             card_id = card_id.substring(1);
         }
         const prefix = card_id.substring(0, 2);
@@ -219,7 +239,10 @@ export const ready = (async () => {
         return swogi[card_id].name.includes("Sword Formation");
     }
     let is_crash_fist = function (card_id) {
-        return swogi[card_id].name.includes("Crash Fist");
+        return swogi[card_id].name.includes("Crash Fist") || card_id.startsWith("D1412") || card_id.startsWith("D1419");
+    }
+    let is_crash_fist_continue = function (card_id) {
+        return swogi[card_id].name === "Crash Fist - Continue";
     }
     let is_wood_spirit = function (card_id) {
         return swogi[card_id].name.includes("Wood Spirit");
@@ -315,6 +338,7 @@ export const ready = (async () => {
         const character = with_default(swogi[card_id].character, with_default(swogi[base_id].character, undefined));
         const decrease_qi_cost_by_x = with_default(swogi[card_id].decrease_qi_cost_by_x, with_default(swogi[base_id].decrease_qi_cost_by_x, undefined));
         const water_spirit_cost_0_qi = with_default(swogi[card_id].water_spirit_cost_0_qi, with_default(swogi[base_id].water_spirit_cost_0_qi, undefined));
+        const cloud_hit_cost_0_qi = with_default(swogi[card_id].cloud_hit_cost_0_qi, with_default(swogi[base_id].cloud_hit_cost_0_qi, undefined));
         const is_salty = with_default(swogi[card_id].is_salty, with_default(swogi[base_id].is_salty, undefined));
         const is_sweet = with_default(swogi[card_id].is_sweet, with_default(swogi[base_id].is_sweet, undefined));
         const marking = with_default(swogi[card_id].marking, with_default(swogi[base_id].marking, undefined));
@@ -331,6 +355,7 @@ export const ready = (async () => {
             hp_cost: hp_cost,
             decrease_qi_cost_by_x: decrease_qi_cost_by_x,
             water_spirit_cost_0_qi: water_spirit_cost_0_qi,
+            cloud_hit_cost_0_qi: cloud_hit_cost_0_qi,
             gather_qi: gather_qi,
             card_actions: card_actions[card_id],
             opening: swogi[card_id].opening,
@@ -341,6 +366,7 @@ export const ready = (async () => {
             is_cloud_sword: is_cloud_sword(card_id),
             is_sword_formation: is_sword_formation(card_id),
             is_crash_fist: is_crash_fist(card_id),
+            is_crash_fist_continue: is_crash_fist_continue(card_id),
             is_wood_spirit: is_wood_spirit(card_id),
             is_fire_spirit: is_fire_spirit(card_id),
             is_earth_spirit: is_earth_spirit(card_id),

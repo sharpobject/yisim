@@ -19,10 +19,10 @@ function parse_input(json) {
 
   const deck_slots = jsonData.deck_slots || 8;
   while (jsonData.a.cards.length < deck_slots) {
-    jsonData.a.cards.push('normal attack');
+    jsonData.a.cards.push('601011');
   }
   while (jsonData.b.cards.length < deck_slots) {
-    jsonData.b.cards.push('normal attack');
+    jsonData.b.cards.push('601011');
   }
 
   // jsonData.a.cards = jsonData.a.cards.map(card_name_to_id_fuzzy);

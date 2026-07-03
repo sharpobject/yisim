@@ -1,0 +1,193 @@
+# All new cards a returning ranked player needs to learn
+# (Each card has 3 levels.)
+
+================================================================================
+CHARACTER-SPECIFIC FUSION CARDS (24)
+================================================================================
+
+-- Cloud Spirit (云灵剑宗) --
+122: 云剑·龙泉 / Cloud Sword - Dragon Spring (Mu Yifeng)
+123: 云剑·雪影飞 / Cloud Sword - Flying Snow Shade (Yan Xue)
+124: 百鸟玲珑镯 / CentiBird Delicate Bracelet (Long Yao)
+125: 狂剑·猫爪 / Unrestrained Sword - Cat Claw (Lin Xiaoyue)
+126: 澄心剑阵 / Clear Heart Sword Formation (Lu Jianxin)
+388: 百鸟曳影诀 / CentiBird Swift Shadow Art (Li Chengyun)
+
+-- Heptastar (七星门) --
+127: 瑞雪迎春 / Traces Revitalized (Tan Shuyan)
+128: 天元无极盘 / Ultimate Polaris Hexagram Base (Yan Chen)
+129: 灯影蚀焰 / Suspicious Flame Flutter (Yao Ling)
+130: 千星天爆 / Thousand Star Explosion (Jiang Ximing)
+131: 星月六爻扇 / Star Moon Hexagram Fan (Wu Ce)
+389: 星弈·治孤 / Astral Move - Rescue (Feng Xu)
+
+-- Five Elements (五行门) --
+132: 天髓葫芦 / Heavenly Marrow Gourd (Wu Xingzhi)
+133: 混元逆克阵 / Ultimate Overcome Formation (Du Lingyuan)
+134: 木灵·万物生 / Wood Spirit - All Things Grow (Hua Qinrui)
+135: 锟铻熔火环 / Kun Wu Molten Ring (Mu Hu)
+136: 水火交融 / Harmony of Water and Fire (Nangong Sheng)
+390: 五行忘忧梦 / Five Elements Carefree Dream (Qi Wangyou)
+
+-- Duan Xuan (断玄宗) --
+137: 浩荡不息 / Unceasing Universe (Xiao Bu)
+138: 玄心盛气掌 / Soul Overwhelming Palm (Tu Kui)
+139: 冥夜迷踪步 / Styx Night Footwork (Ye Mingming)
+140: 崩拳·返玄 / Crash Fist - Return to Xuan (Ji Fangsheng)
+391: 闪转腾挪 / Dodge and Weave (Li Man)
+392: 冯虚御风 / Riding the Wind (Ling Yu)
+
+================================================================================
+SPACETIME MIRAGE CARDS (幻) (40)
+================================================================================
+
+260: 幻·暗鸦灵剑 / M - Raven Spirit Sword
+261: 幻·轻剑 / M - Light Sword
+262: 幻·引气剑 / M - Spiritage Sword
+263: 幻·飞牙剑 / M - Flying Fang Sword
+264: 幻·云剑探云 / M - Cloud Sword Touch Sky
+265: 幻·斩草除根 / M - Cutting Weeds
+266: 幻·流水无情 / M - Ruthless Water
+268: 幻·星罗棋布 / M - Dotted Around
+269: 幻·斗转星移 / M - Shifting Stars
+270: 幻·火灵聚炎 / M - Fire Spirit Flame Eater
+271: 幻·水灵波澜 / M - Water Spirit Billows
+272: 幻·木灵复苏 / M - Wood Spirit Recovery
+273: 幻·金灵针 / M - Metal Spirit Needle
+274: 幻·土灵群山 / M - Earth Spirit Mountains
+275: 幻·血气方刚 / M - Youthful Vigor
+277: 幻·锻骨 / M - Exercise Bones
+278: 幻·气沉丹田 / M - Sinking Qi
+288: 幻·云剑无锋 / M - Cloud Sword Conceal
+289: 幻·落花有意 / M - Flower Sentient
+291: 幻·岿然不动 / M - Standing Firm
+292: 幻·浑天印 / M - Cosmos Seal
+294: 幻·飞星刺 / M - Astral Fleche
+295: 幻·五行流转 / M - Five Elements Circulation
+296: 幻·双鬼拍门 / M - Double Trouble
+297: 幻·罗刹扑 / M - Rakshasa Pouncing
+298: 幻·藕断丝连 / M - Incessant
+307: 幻·坤卦 / M - Earth Hexagram
+308: 幻·崩拳戳 / M - Crash Fist Poke
+309: 幻·云舞诀 / M - Cloud Dance Rhythm
+310: 幻·浩然正气 / M - Magnanimous Righteousness
+312: 幻·狂剑盘龙 / M - Unrestrained Sword Dragon Coiled
+315: 幻·火灵印 / M - Fire Spirit Seal
+316: 幻·金灵印 / M - Metal Spirit Seal
+317: 幻·土灵阵 / M - Earth Spirit Formation
+318: 幻·死缠烂打 / M - Endless Entanglement
+319: 幻·崩拳缠 / M - Crash Fist Entangle
+320: 幻·两仪阵 / M - Yin Yang Formation
+323: 幻·勤拙剑 / M - Diligent Sword
+324: 幻·生机绽放 / M - Vitality Blossom
+325: 幻·灵犀剑阵 / M - Consonance Sword Formation
+
+================================================================================
+LEGENDARY CARDS (16)
+================================================================================
+
+47: 云剑·晚霞 / Cloud Sword - Sunset Glow
+48: 青龙剑阵 / Azure Dragon Sword Formation
+49: 百兽灵剑阵 / Beast Spirit Sword Formation
+50: 狂龙吞云 / Dragon Devours Clouds
+51: 灵卦术 / Spiritual Divination
+52: 摘花飞叶 / Throw Petals
+53: 星弈·双飞燕 / Astral Move - Twin Swallows
+54: 滴水穿石 / Water Drop Erosion
+55: 野渡之印 / Wild Crossing Seal
+56: 熔岩之印 / Lava Seal
+57: 滚石之印 / Boulder Seal
+58: 斩浪之印 / Wave Cutter Seal
+336: 玄灵附身 / Dark Spirit Possession
+337: 崩拳·伏虎 / Crash Fist - Tiger Subdue
+338: 瞬影击 / Instant Shadow Strike
+339: 逍遥无影拳 / Carefree Shadowless Fist
+
+================================================================================
+LOONG (1)
+================================================================================
+
+79: 龙 / Loong
+
+================================================================================
+NEW CHARACTER: LING YU (聆羽) - CHARACTER CARDS (3)
+================================================================================
+
+381: 灵羽 / Spirit Feather
+382: 气旋掌 / Cyclone Palm
+383: 御风飞闪 / Wind-Riding Flash
+
+================================================================================
+NEW SECT CARDS (32 regular + 8 ultimate = 40)
+================================================================================
+
+-- Cloud Spirit (云灵剑宗) --
+1000088: 御灵心法 / Spirit Command Citta-Dharma
+1000089: 丹雀灵剑 / Vermilion Sparrow Spirit Sword
+1000090: 飞豹灵剑 / Flying Leopard Spirit Sword
+1000091: 云剑·裂空 / Cloud Sword - Rend Sky
+1000092: 灵枢剑阵 / Spirit Pivot Sword Formation
+1000093: 云剑·追风 / Cloud Sword - Chase Wind
+1000094: 迅影飞剑 / Swift Shadow Flying Sword
+1000095: 剑影结界 / Sword Shadow Barrier
+1000096: 极·云剑柔心 / Ultimate: Cloud Sword - Softheart
+1000097: 极·暗鸦灵剑 / Ultimate: Raven Spirit Sword
+
+-- Heptastar (七星门) --
+4000090: 望星诀 / Star Gazing Rhythm
+4000091: 犀牛望月 / Rhinoceros Gazing at the Moon
+4000092: 伤魂咒阵 / Soul Wound Curse Formation
+4000093: 星弈·长 / Astral Move - Extend
+4000094: 星弈·劫争 / Astral Move - Ko Fight
+4000095: 灵蛇绕柱 / Spirit Snake Coiling Pillar
+4000096: 折枝点穴 / Branch Break Pressure Point
+4000097: 弯弓射虎 / Drawing the Bow at the Tiger
+4000098: 极·静气心法 / Ultimate: Stillness Citta-Dharma
+4000099: 极·两仪阵 / Ultimate: Yin Yang Formation
+
+-- Five Elements (五行门) --
+7000094: 镇印心法 / Seal Suppression Citta-Dharma
+7000095: 五行灵击 / Five Elements Spirit Strike
+7000096: 土灵·遁地 / Earth Spirit - Burrow
+7000097: 木灵·春风拂 / Wood Spirit - Spring Breeze
+7000098: 火灵·焚脉诀 / Fire Spirit - Vein Burn Rhythm
+7000099: 金灵·回锋刃 / Metal Spirit - Returning Edge
+7000100: 水灵·乘风浪 / Water Spirit - Ride the Waves
+7000101: 混元化灵 / Cosmos Spirit Transmutation
+7000104: 极·水灵阵 / Ultimate: Water Spirit Formation
+7000105: 极·木灵巡林 / Ultimate: Wood Spirit - Forest Guard
+
+-- Duan Xuan (断玄宗) --
+10000090: 醉拳架势 / Drunken Fist Stance
+10000091: 玄灵愈体 / Mystic Spirit Healing
+10000092: 凌空飞扫 / Aerial Sweep
+10000093: 崩拳·碎骨 / Crash Fist - Shatter
+10000094: 万魂破军 / Thousand Souls Strike
+10000095: 血影遁术 / Blood Shadow Escape
+10000096: 锻灵指 / Spirit Forging Finger
+10000097: 金刚捣硾 / Vajra Smash
+10000098: 极·崩天步 / Ultimate: Crash Footwork
+10000099: 极·迎风掌 / Ultimate: Windward Palms
+
+================================================================================
+FIVE ELEMENTS SLASH CARDS (5)
+================================================================================
+
+373: 木灵斩 / Wood Spirit Slash
+374: 火灵斩 / Fire Spirit Slash
+375: 土灵斩 / Earth Spirit Slash
+376: 金灵斩 / Metal Spirit Slash
+377: 水灵斩 / Water Spirit Slash
+
+================================================================================
+OTHER RECENT CARDS (4)
+================================================================================
+
+258: 水灵·悠然 / Water Spirit - Leisurely
+331: 云剑·潜龙 / Cloud Sword - Hidden Loong
+332: 玲珑剑阵 / Exquisite Sword Formation
+371: 定风波 / Settle the Storm
+
+================================================================================
+TOTAL: 133 new base cards x 3 levels each = 399 card variants. Good luck!
+================================================================================

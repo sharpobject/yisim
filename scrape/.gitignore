@@ -1,0 +1,10 @@
+config.json
+.access_token
+.device_id
+.login_response.json
+steam_credentials.env
+.venv/
+__pycache__/
+*.pyc
+tools/
+extracted_assets/

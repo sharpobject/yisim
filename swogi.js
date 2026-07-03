@@ -238,7 +238,12 @@ async function do_riddle(riddle) {
             preprocessor_config[key] = true;
         }
         for (let card_id of player.cards) {
-            preprocessor_config[card_id.slice(0, 5)] = true;
+            if (card_id[0] >= '0' && card_id[0] <= '9') {
+                preprocessor_config[card_id.slice(0, 5)] = true;
+            } else {
+                preprocessor_config[card_id] = true;
+                preprocessor_config[card_id.slice(0, 5)] = true;
+            }
         }
     }
     preprocess_plz(preprocessor_config);
@@ -3000,8 +3005,8 @@ riddles["255"] = async () => {
                 "God Star - Traction 3",
                 "Plaguin 3",
                 "Plaguin 2",
-                "Extremely Suspicious 3",
-                "Extremely Suspicious 3",
+                "Snake in Reflection 3",
+                "Snake in Reflection 3",
                 "Disaster of Bloodshed 3",
                 "Disaster of Bloodshed 2",
                 "Disaster of Bloodshed 2",
@@ -4193,7 +4198,7 @@ riddles["271"] = async () => {
                 "God Star Traction 2",
                 "Strike Twice 2",
                 "Astral Move Cide 3",
-                "Extremely Suspicious 3",
+                "Snake in Reflection 3",
                 "Strike Twice 3",
                 "Within Reach",
                 "Disaster of Bloodshed 2",
@@ -4225,7 +4230,7 @@ riddles["272"] = async () => {
                 "Heartbroken Tune 3",
                 "Polaris Citta-Dharma",
                 "Chord In Tune 3",
-                "Extremely Suspicious",
+                "Snake in Reflection",
                 "Astral Move Cide",
                 "Strike Twice",
                 "Within Reach",
@@ -4278,11 +4283,11 @@ riddles["273"] = async () => {
             "round": 18,
             "cards": [
                 "God Star Traction 3",
-                "Extremely Suspicious 2",
+                "Snake in Reflection 2",
                 "Fate Reincarnates",
                 "Disaster of Bloodshed 2",
                 "Disaster of Bloodshed 2",
-                "Extremely Suspicious",
+                "Snake in Reflection",
                 "Strike Twice 2",
                 "Within Reach"
             ]
@@ -4385,7 +4390,7 @@ riddles["275"] = async () => {
                 "Disaster of Bloodshed 2",
                 "Disaster of Bloodshed 2",
                 "Strike Twice",
-                "Extremely Suspicious 2",
+                "Snake in Reflection 2",
                 "Within Reach"
             ]
         },
@@ -4448,7 +4453,7 @@ riddles["276"] = async () => {
             "cards": [
                 "God Star Traction 2",
                 "Calamity Plaguin 2",
-                "Extremely Suspicious 2",
+                "Snake in Reflection 2",
                 "Within Reach",
                 "Strike Twice 2",
                 "Astral Move Cide",
@@ -4484,7 +4489,7 @@ riddles["277"] = async () => {
             "cards": [
                 "God Star Traction",
                 "Calamity Plaguin 2",
-                "Extremely Suspicious 3",
+                "Snake in Reflection 3",
                 "Within Reach",
                 "Strike Twice",
                 "Disaster of Bloodshed 2",
@@ -4555,7 +4560,7 @@ riddles["278"] = async () => {
                 "Strike Twice 2",
                 "Concentric Tune 3",
                 "Within Reach 1",
-                "Extremely Suspicious 2",
+                "Snake in Reflection 2",
                 "Normal Attack 1"
             ]
         }
@@ -4586,7 +4591,7 @@ riddles["279"] = async () => {
                 "God Star Traction 2",
                 "Calamity Plaguin 1",
                 "Calamity Plaguin 1",
-                "Extremely Suspicious 2",
+                "Snake in Reflection 2",
                 "Within Reach 1",
                 "Astral Move Cide 2",
                 "God Fate Reborn 2",
@@ -4797,7 +4802,7 @@ riddles["283"] = async () => {
                 "Predicament for Immortals 1",
                 "Heartbroken Tune 3",
                 "Flower Sentient 2",
-                "Extremely Suspicious 2",
+                "Snake in Reflection 2",
                 "Strike Twice 1",
                 "Within Reach 1",
                 "Ruthless Water 3",
@@ -4815,7 +4820,7 @@ riddles["283"] = async () => {
                 "Hunter Hunting Hunter 3",
                 "Normal Attack 1",
                 "Escape Plan 2",
-                "Extremely Suspicious 1",
+                "Snake in Reflection 1",
                 "Heaven Hexagram 2",
                 "Hunter Becomes Preyer 3",
                 "Exorcism Elixir 2"
@@ -4954,10 +4959,10 @@ riddles["286"] = async () => {
             "round": 18,
             "cards": [
                 "Calamity Plaguin 1",
-                "Extremely Suspicious 1",
+                "Snake in Reflection 1",
                 "Disaster of Bloodshed 2",
                 "Disaster of Bloodshed 1",
-                "Extremely Suspicious 1",
+                "Snake in Reflection 1",
                 "Within Reach 1",
                 "God Fate Flies 2",
                 "Detect Qi 2"
@@ -5269,7 +5274,7 @@ riddles["292"] = async () => {
                 "Chord In Tune 2",
                 "Predicament for Immortals 3",
                 "Heartbroken Tune 3",
-                "Extremely Suspicious 1",
+                "Snake in Reflection 1",
                 "Concentric Tune 2",
                 "Strike Twice 2",
                 "Within Reach 1",
@@ -5320,7 +5325,7 @@ riddles["293"] = async () => {
             "cards": [
                 "Fate Reincarnates 2",
                 "Calamity Plaguin 2",
-                "Extremely Suspicious 2",
+                "Snake in Reflection 2",
                 "Detect Qi 2",
                 "Disaster of Bloodshed 1",
                 "Within Reach 1",
@@ -5444,7 +5449,7 @@ riddles["295"] = async () => {
                 "God Star Traction 1",
                 "Calamity Plaguin 1",
                 "Ruthless Water 2",
-                "Extremely Suspicious 1",
+                "Snake in Reflection 1",
                 "Within Reach 1",
                 "God Fate Reborn 1",
                 "Disaster of Bloodshed 1",
@@ -5480,7 +5485,7 @@ riddles["296"] = async () => {
                 "God Star Traction 2",
                 "Calamity Plaguin 1",
                 "Calamity Plaguin 1",
-                "Extremely Suspicious 1",
+                "Snake in Reflection 1",
                 "Within Reach 1",
                 "Disaster of Bloodshed 2",
                 "Disaster of Bloodshed 1",
@@ -5601,7 +5606,7 @@ riddles["298"] = async () => {
                 "God Star Traction 3",
                 "Calamity Plaguin 2",
                 "Calamity Plaguin 1",
-                "Extremely Suspicious 2",
+                "Snake in Reflection 2",
                 "Within Reach 1",
                 "Disaster of Bloodshed 2",
                 "Disaster of Bloodshed 1",
@@ -5635,7 +5640,7 @@ riddles["299"] = async () => {
                 "God Star Traction 2",
                 "Calamity Plaguin 2",
                 "Calamity Plaguin 1",
-                "Extremely Suspicious 2",
+                "Snake in Reflection 2",
                 "Within Reach 1",
                 "God Fate Reborn 2",
                 "Disaster of Bloodshed 2",
@@ -5740,7 +5745,7 @@ riddles["301"] = async () => {
                 "Calamity Plaguin 1",
                 "Calamity Plaguin 1",
                 "Disaster of Bloodshed 2",
-                "Extremely Suspicious 2",
+                "Snake in Reflection 2",
                 "Within Reach 1"
             ]
         },
@@ -5787,10 +5792,10 @@ riddles["302"] = async () => {
             "cards": [
                 "Heartbroken Tune 2",
                 "Chord In Tune 1",
-                "Extremely Suspicious 1",
+                "Snake in Reflection 1",
                 "Concentric Tune 1",
                 "Within Reach 1",
-                "Extremely Suspicious 1",
+                "Snake in Reflection 1",
                 "Heartbroken Tune 1",
                 "Propitious Omen 2"
             ]
@@ -5858,7 +5863,7 @@ riddles["303"] = async () => {
                 "Predicament for Immortals 3",
                 "Concentric Tune 3",
                 "Strike Twice 1",
-                "Extremely Suspicious 3",
+                "Snake in Reflection 3",
                 "Within Reach 1",
                 "Normal Attack 1"
             ]
@@ -6015,8 +6020,8 @@ riddles["306"] = async () => {
                 "Divine Walk Fulu 1",
                 "Miasma Fulu 3",
                 "Flower Sentient 1",
-                "Extremely Suspicious 1",
-                "Extremely Suspicious 1",
+                "Snake in Reflection 1",
+                "Snake in Reflection 1",
                 "Strike Twice 1",
                 "Thousand Evil Incantation 2",
                 "Within Reach 1"
@@ -6047,12 +6052,12 @@ riddles["307"] = async () => {
             "round": 17,
             "cards": [
                 "God Star Traction 3",
-                "Extremely Suspicious 2",
+                "Snake in Reflection 2",
                 "Astral Move Cide 2",
                 "Disaster of Bloodshed 3",
                 "Disaster of Bloodshed 1",
                 "Great Spirit 2",
-                "Extremely Suspicious 1",
+                "Snake in Reflection 1",
                 "Within Reach 1"
             ]
         },
@@ -6096,7 +6101,7 @@ riddles["308"] = async () => {
             "round": 18,
             "cards": [
                 "God's Opportunity Conform 2",
-                "Extremely Suspicious 3",
+                "Snake in Reflection 3",
                 "Fate Reincarnates 2",
                 "Disaster of Bloodshed 2",
                 "Disaster of Bloodshed 2",
@@ -6240,8 +6245,8 @@ riddles["310"] = async () => {
                 "Strike Twice 1",
                 "Concentric Tune 2",
                 "Within Reach 1",
-                "Extremely Suspicious 2",
-                "Extremely Suspicious 2"
+                "Snake in Reflection 2",
+                "Snake in Reflection 2"
             ],
             "talents": [
                 "Bloodline Power",
@@ -6610,6 +6615,7 @@ riddles["420"] = async () => {
     if (my_idx == 1) {
         players = [villain, hero];
     }
+    //return await do_riddle({players: players, my_idx: my_idx, just_run: true});
     return await do_riddle({players: players, my_idx: my_idx});
 }
 await riddles["420"]();
