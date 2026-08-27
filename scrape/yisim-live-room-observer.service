@@ -1,0 +1,18 @@
+[Unit]
+Description=Yi Xian Pai ranked and Dao Mindset Lin Xiaoyue live observer
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/sharpobject/repos/yisim/scrape
+ExecStart=/home/sharpobject/repos/yisim/scrape/.venv-live-observer/bin/python -u /home/sharpobject/repos/yisim/scrape/live_room_observer.py --poll-seconds 4 --room-limit 0 --max-room-age-seconds 20 --sort-type 3 --min-dao-score 0 --min-ranked-score 3000 --max-targets-per-room 4 --steam-accounts sharpobject_tea_01,sharpobject_tea_03,sharpobject_tea_04,sharpobject_tea_05 --server-id 2 --observable-characters-file /home/sharpobject/.config/yisim/live-observer-characters.json
+ExecReload=/bin/kill -USR1 $MAINPID
+Restart=always
+RestartSec=15
+UMask=0077
+StandardOutput=append:/home/sharpobject/repos/yisim/scrape/data/live-observer/service.log
+StandardError=append:/home/sharpobject/repos/yisim/scrape/data/live-observer/service.log
+
+[Install]
+WantedBy=default.target
