@@ -6,6 +6,7 @@ import {
   decodeMessage, decorateCards, cardLabel, cardCanUpgrade, cardConfigInfo, switchCardForHand, steamDumpPath,
   talentInfo, fateStrategyInfo, keYinCardInfo,
 } from "../scripts/decode_live_observation.mjs";
+import { assertRecordingRegression } from "./recording_regressions.mjs";
 
 const [inputPath, outputPath = path.join(path.dirname(new URL(import.meta.url).pathname), "replay-data.js")] = process.argv.slice(2);
 if (!inputPath) throw new Error("usage: build_data.mjs CAPTURE.jsonl [OUTPUT.js]");
@@ -764,179 +765,46 @@ function advanceSyntheticRoundForCardAction() {
 }
 
 function moveCard(action) {
-  const hand = state.privatePlayer?.hand;
-  const deck = state.privatePlayer?.deck;
-  if (!hand || !deck) {
-    recordCardTransitionIssue("private hand or deck is unavailable", action);
-    return;
-  }
-  const source = action.sourcePosition === 0 ? hand : action.sourcePosition === 1 ? deck : null;
-  if (!source || action.sourceIndex < 0 || action.sourceIndex >= source.length) {
-    recordCardTransitionIssue("source position or index is invalid", action);
-    return;
-  }
-  const card = source[action.sourceIndex];
-  if (!numericCardId(card)) {
-    recordCardTransitionIssue("source slot is empty", action);
-    return;
-  }
-
-  if (action.destinationPosition === 1) {
-    if (action.destinationIndex < 0 || action.destinationIndex >= deck.length) {
-      recordCardTransitionIssue("destination deck index is invalid", action);
-      return;
-    }
-    if (action.sourcePosition === 0) {
-      hand.splice(action.sourceIndex, 1);
-      const displaced = deck[action.destinationIndex];
-      const combined = combinationResultId(card, displaced);
-      if (combined) {
-        deck[action.destinationIndex] = combined;
-        addCultivation(1);
-      }
-      else {
-        deck[action.destinationIndex] = card;
-        if (displaced) hand.push(switchCardForHand(displaced));
-      }
-    } else {
-      const displaced = deck[action.destinationIndex];
-      const combined = combinationResultId(card, displaced);
-      if (combined) {
-        deck[action.destinationIndex] = combined;
-        deck[action.sourceIndex] = 0;
-        addCultivation(1);
-      } else {
-        deck[action.destinationIndex] = card;
-        deck[action.sourceIndex] = displaced;
-      }
-    }
-    return;
-  }
-
-  if (action.destinationPosition === 0) {
-    if (action.sourcePosition === 1) {
-      deck[action.sourceIndex] = 0;
-      const handCard = switchCardForHand(card);
-      if (action.destinationIndex < 0 || action.destinationIndex >= hand.length) hand.push(handCard);
-      else hand.splice(action.destinationIndex, 0, handCard);
-    } else if (action.destinationIndex >= 0 && action.destinationIndex < hand.length && action.destinationIndex !== action.sourceIndex) {
-      const destinationCard = hand[action.destinationIndex];
-      const combined = combinationResultId(card, destinationCard);
-      if (combined) {
-        hand[action.destinationIndex] = combined;
-        hand.splice(action.sourceIndex, 1);
-        addCultivation(1);
-      } else {
-        recordCardTransitionIssue("hand-to-hand move is not a legal combination", action, {
-          sourceCard: numericCardId(card),
-          destinationCard: numericCardId(destinationCard),
-        });
-      }
-    } else if (action.sourcePosition === 0 && action.destinationIndex !== action.sourceIndex) {
-      recordCardTransitionIssue("destination hand index is invalid", action);
-    }
-  } else {
-    recordCardTransitionIssue("destination position is invalid", action);
+  const step = { type: "MoveCardReq", details: action };
+  const cultivationDelta = recordedCultivationDelta(state.privatePlayer, step);
+  if (applyRecordedCardStep(state.privatePlayer, step, (id) => id, recordCardTransitionIssue)) {
+    addCultivation(cultivationDelta);
   }
 }
 
 function insertCard(action) {
-  const hand = state.privatePlayer?.hand;
-  const deck = state.privatePlayer?.deck;
-  if (!hand || !deck) {
-    recordCardTransitionIssue("private hand or deck is unavailable", action);
-    return;
-  }
-  const source = action.sourcePosition === 0 ? hand : action.sourcePosition === 1 ? deck : null;
-  if (!source || action.sourceIndex < 0 || action.sourceIndex >= source.length) {
-    recordCardTransitionIssue("insert source position or index is invalid", action);
-    return;
-  }
-  const card = source[action.sourceIndex];
-  if (!numericCardId(card)) {
-    recordCardTransitionIssue("insert source slot is empty", action);
-    return;
-  }
-  const target = action.destinationIndex;
-  const unlocked = state.privatePlayer.unlockedDeckSlots ?? deck.length;
-  if (target < 0 || target >= unlocked) {
-    recordCardTransitionIssue("insert destination is outside the unlocked deck", action);
-    return;
-  }
-  if (action.sourcePosition === 0) hand.splice(action.sourceIndex, 1);
-  else deck[action.sourceIndex] = 0;
-
-  if (action.insertionDirection === 1) {
-    let gap = -1;
-    for (let index = target; index >= 0; index -= 1) {
-      if (!deck[index]) { gap = index; break; }
-    }
-    for (let index = gap + 1; index <= target; index += 1) {
-      if (index === 0) hand.push(switchCardForHand(deck[index]));
-      else deck[index - 1] = deck[index];
-    }
-  } else if (action.insertionDirection === 2) {
-    let gap = unlocked;
-    for (let index = target; index < unlocked; index += 1) {
-      if (!deck[index]) { gap = index; break; }
-    }
-    for (let index = gap - 1; index >= target; index -= 1) {
-      if (index + 1 >= unlocked) hand.push(switchCardForHand(deck[index]));
-      else deck[index + 1] = deck[index];
-    }
-  }
-  deck[target] = card;
-}
-
-function cardInfoLocation(card, { matchIdentity = false } = {}) {
-  if (!card || !state.privatePlayer) return null;
-  const match = /^(-?\d+)/.exec(String(card.id));
-  const id = match ? Number(match[1]) : 0;
-  const position = Number.parseInt(String(card.position), 10);
-  const list = arrayForPosition(position);
-  const reportedIndex = Number(card.index);
-  let index = reportedIndex;
-  if (matchIdentity && list && !sameCardIdentity(list[index], id)) {
-    const candidates = list.map((entry, candidateIndex) => sameCardIdentity(entry, id) ? candidateIndex : -1)
-      .filter((candidateIndex) => candidateIndex >= 0)
-      .sort((first, second) => Math.abs(first - reportedIndex) - Math.abs(second - reportedIndex));
-    index = candidates[0] ?? -1;
-  }
-  return { list, index, id };
+  applyRecordedCardStep(
+    state.privatePlayer,
+    { type: "InsertCardReq", details: action },
+    (id) => id,
+    recordCardTransitionIssue,
+  );
 }
 
 function replaceCard(action) {
   if (!String(action.result).startsWith("1 ")) return;
-  writeInternalExchangeStats(nextExchangeStats(
-    internalExchangeStats(),
-    "exchange",
-    action.targetCard?.id,
-    action.newCard?.id,
+  const applied = applyRecordedCardStep(
+    state.privatePlayer,
+    { type: "ReplaceCardResp", details: action },
+    (id) => id,
+    recordCardTransitionIssue,
+  );
+  if (applied) writeInternalExchangeStats(nextExchangeStats(
+    internalExchangeStats(), "exchange", action.targetCard?.id, action.newCard?.id,
   ));
-  const old = cardInfoLocation(action.targetCard, { matchIdentity: true });
-  const next = cardInfoLocation(action.newCard);
-  if (!old?.list || !next?.list) return;
-  if (old.index < 0 || old.index >= old.list.length) return;
-  old.list.splice(old.index, 1);
-  const insertionIndex = Math.max(0, Math.min(next.list.length, next.index));
-  next.list.splice(insertionIndex, 0, next.id);
 }
 
 function refineCard(action) {
   if (!action.result) return;
+  const applied = applyRecordedCardStep(
+    state.privatePlayer,
+    { type: "RefineCardResp", details: action },
+    (id) => id,
+    recordCardTransitionIssue,
+  );
+  if (!applied) return;
   writeInternalExchangeStats(nextExchangeStats(internalExchangeStats(), "absorb", action.targetCard?.id));
-  const target = cardInfoLocation(action.targetCard, { matchIdentity: true });
-  if (!target?.list || target.index < 0 || target.index >= target.list.length) return;
   addCultivation(refineCultivationDelta(action.targetCard?.id));
-  if (Number.parseInt(String(action.targetCard.position), 10) === 0) target.list.splice(target.index, 1);
-  else target.list[target.index] = 0;
-  for (const resultCard of action.resultingCards ?? []) {
-    const result = cardInfoLocation(resultCard);
-    if (result?.list && result.index >= 0 && result.index < result.list.length) {
-      const existingCard = result.list[result.index];
-      if (existingCard) result.list[result.index] = upgradedCardId(existingCard);
-    }
-  }
 }
 
 function describe(type, decoded, direction) {
@@ -1211,6 +1079,7 @@ function humanAction(type, decoded, before) {
         actorCharacterEnglish: who.characterEnglish,
         actorCharacterChinese: who.characterChinese,
         delta,
+        sourceSequence: Number(currentEventMeta?.sequence) || 0,
       });
     }
     if (changes.length) actions.push(destinyAction(changes, pendingBattleRound));
@@ -1338,6 +1207,14 @@ function apply(type, decoded) {
       // private uid must not make that public player the replay's viewpoint.
       state.targetUid = decoded.private.uid || state.targetUid;
     }
+  } else if (type === "CardOperationResp") {
+    const sourcePosition = Number(decoded.otherParams?.[0]);
+    const destinationPosition = Number(decoded.otherParams?.[2]);
+    const cultivationDelta = sourcePosition === 0 && destinationPosition === 6 ? 1
+      : sourcePosition === 6 && destinationPosition === 0 ? -1 : 0;
+    if (applyRecordedCardStep(state.privatePlayer, { type, details: decoded })) {
+      addCultivation(cultivationDelta);
+    }
   } else if (type === "LifeRankStatus") {
     for (const update of decoded.players) {
       if (!state.players[update.uid]) state.players[update.uid] = { uid: update.uid, username: profiles.get(update.uid)?.username ?? update.uid };
@@ -1433,6 +1310,10 @@ function visibleState() {
     unlockedDeckSlots: state.privatePlayer.unlockedDeckSlots,
     exchangesRemaining: state.privatePlayer.exchangesRemaining,
     exchangeLimit: state.privatePlayer.exchangeLimit,
+    cardStorage: {
+      199: (state.privatePlayer.cardStorage?.[199]
+        ?? state.privatePlayer.talentData?.[199]?.commonParams ?? []).map((id) => rememberCard(id)),
+    },
     selectedFateStrategies: (state.privatePlayer.fateStrategies?.strategies ?? [])
       .map((selection) => selection.selected)
       .filter((id) => id > 0)
@@ -1722,6 +1603,66 @@ function normalizeInitialSteps(inputSteps) {
 
 normalizeInitialSteps(logicalSteps);
 
+const rawLifeRankEvents = steps.flatMap((step, rawIndex) => step.type === "LifeRankStatus"
+  ? [{ step, rawIndex }]
+  : []);
+
+function rawExactLifeDeltaEvent(uid, postBattleLife, expectedDelta, priorStatus, nextStatus, battleStep) {
+  return rawLifeRankEvents
+    .filter(({ step }) => Number(step.sequence) > Number(priorStatus?.sequence ?? 0)
+      && Number(step.sequence) < Number(nextStatus?.sequence ?? Infinity)
+      && Number(step.state?.players?.[uid]?.life) === Number(postBattleLife))
+    .filter(({ step, rawIndex }) => {
+      const beforeLife = Number(steps[rawIndex - 1]?.state?.players?.[uid]?.life);
+      return Number.isFinite(beforeLife)
+        && Number(step.state.players[uid].life) - beforeLife === Number(expectedDelta);
+    })
+    .sort((first, second) =>
+      Math.abs(Number(first.step.sequence) - Number(battleStep.sequence))
+      - Math.abs(Number(second.step.sequence) - Number(battleStep.sequence)))[0] ?? null;
+}
+
+function rawPublicBattleLifeEvent(uid, result, deck, infuseGain, priorStatus, nextStatus, battleStep) {
+  const maximumGain = maximumBattleDestinyGain(deck);
+  return rawLifeRankEvents
+    .filter(({ step }) => Number(step.sequence) > Number(priorStatus?.sequence ?? 0)
+      && Number(step.sequence) < Number(nextStatus?.sequence ?? Infinity))
+    .map(({ step, rawIndex }) => {
+      const beforeLife = Number(steps[rawIndex - 1]?.state?.players?.[uid]?.life);
+      const afterLife = Number(step.state?.players?.[uid]?.life);
+      const delta = afterLife - beforeLife;
+      const battleDelta = result === "loss" && infuseGain > 0 ? delta - infuseGain : delta;
+      return { step, rawIndex, beforeLife, afterLife, delta, battleDelta };
+    })
+    .filter((entry) => Number.isFinite(entry.beforeLife) && Number.isFinite(entry.afterLife)
+      && (result === "loss" ? entry.battleDelta < 0 : entry.delta > 0 && maximumGain > 0))
+    .sort((first, second) =>
+      Math.abs(Number(first.step.sequence) - Number(battleStep.sequence))
+        - Math.abs(Number(second.step.sequence) - Number(battleStep.sequence))
+      || Number(first.step.sequence) - Number(second.step.sequence))[0] ?? null;
+}
+
+function visibleTalentCounter(player, talentId) {
+  const value = (player?.talents ?? [])
+    .find((entry) => numericCardId(entry?.id ?? entry) === talentId)?.runtime?.value;
+  return Number(value);
+}
+
+function fiveElementsInfuseGain(player) {
+  const before = visibleTalentCounter(player?.lastRound, 133);
+  const after = visibleTalentCounter(player, 133);
+  return Number.isFinite(before) && Number.isFinite(after) && after > before ? after - before : 0;
+}
+
+function maximumBattleDestinyGain(deck = []) {
+  // Dew Jade Vase can be reached repeatedly as the deck cycles, so its exact
+  // gain requires the battle trace. Its presence permits a positive result;
+  // without it, current-season battle rules do not increase the owner's
+  // Destiny during battle.
+  return deck.some((value) => [99000101, 99010101, 99020101].includes(numericCardId(value)))
+    ? Infinity : 0;
+}
+
 function attachBattleRounds(inputSteps) {
   for (let battleIndex = 0; battleIndex < inputSteps.length; battleIndex += 1) {
     const battleStep = inputSteps[battleIndex];
@@ -1732,10 +1673,17 @@ function attachBattleRounds(inputSteps) {
     const nextStatus = followingStatuses.find((step) => Number(step.details?.round) > round)
       ?? followingStatuses.find((step) => Number(step.details?.round) === round && step.details?.ended)
       ?? followingStatuses.findLast((step) => Number(step.details?.round) === round);
-    const beforePlayers = battleStep.state?.players ?? {};
-    const afterPlayers = nextStatus?.state?.players ?? {};
+    const rawPriorStatus = steps.findLast((step) => step.type === "GameStatus"
+      && Number(step.sequence) < Number(battleStep.sequence)
+      && Number(step.state?.round) === round);
+    const rawNextStatus = steps.find((step) => step.type === "GameStatus"
+      && Number(step.sequence) > Number(battleStep.sequence)
+      && (Number(step.state?.round) > round || step.state?.ended));
+    const beforePlayers = rawPriorStatus?.state?.players ?? battleStep.state?.players ?? {};
+    const afterPlayers = rawNextStatus?.state?.players ?? nextStatus?.state?.players ?? {};
     const authoritativeWinner = battleStep.details?.winnerUid || "";
     const authoritativeFirst = battleStep.details?.firstPlayerUid || "";
+    const reportedDestinyDamage = Math.abs(Number(battleStep.details?.destinyDamage ?? 0));
     const rows = {};
     for (const player of Object.values(afterPlayers)) {
       const lastRound = player.lastRound;
@@ -1743,12 +1691,50 @@ function attachBattleRounds(inputSteps) {
       if (!lastRound || !opponentUid || beforePlayers[opponentUid]?.nextOpponent !== player.uid || beforePlayers[player.uid]?.settled) continue;
       const oldWins = Number(beforePlayers[player.uid]?.wins ?? 0);
       const oldLosses = Number(beforePlayers[player.uid]?.losses ?? 0);
-      const lifeBefore = Number(lastRound.life ?? player.life ?? 0);
-      const lifeAfter = Number(player.life ?? lifeBefore);
       let result = "draw";
       if (Number(player.wins ?? 0) > oldWins) result = "win";
       else if (Number(player.losses ?? 0) > oldLosses) result = "loss";
-      else if (lifeAfter < lifeBefore) result = "loss";
+      const preBattleLife = Number(beforePlayers[player.uid]?.life ?? player.life ?? 0);
+      const infuseGain = fiveElementsInfuseGain(player);
+      let battleLifeEvent = rawPublicBattleLifeEvent(
+        player.uid,
+        result,
+        lastRound.deck,
+        infuseGain,
+        rawPriorStatus,
+        rawNextStatus,
+        battleStep,
+      );
+      // Some server versions batch both the battle result and the next
+      // round's Five Elements Infuse into the following GameStatus without an
+      // intervening LifeRankStatus. Its public life delta is the net of those
+      // two effects; the talent counter supplies the exact Infuse component.
+      const nextStatusObservedDelta = Number(player.life) - preBattleLife;
+      if (!battleLifeEvent && result === "loss" && infuseGain > 0
+        && nextStatusObservedDelta - infuseGain < 0 && rawNextStatus) {
+        battleLifeEvent = {
+          step: rawNextStatus,
+          beforeLife: preBattleLife,
+          afterLife: Number(player.life),
+          delta: nextStatusObservedDelta,
+          battleDelta: nextStatusObservedDelta - infuseGain,
+        };
+      }
+      const hasSettlementBoundary = Boolean(battleLifeEvent);
+      const lifeBefore = hasSettlementBoundary ? battleLifeEvent.beforeLife : preBattleLife;
+      const lastRoundLife = Number(lastRound.life);
+      let lifeAfter = hasSettlementBoundary
+        ? battleLifeEvent.beforeLife + battleLifeEvent.battleDelta
+        : Number.isFinite(lastRoundLife) && lastRoundLife !== preBattleLife
+          ? lastRoundLife : Number(player.life ?? preBattleLife);
+      // A winner cannot lose Destiny as a consequence of the battle. Older
+      // server builds could immediately apply an AI breakthrough/choice cost
+      // (notably around Build Good Karma) while leaving lastRound.life at the
+      // pre-battle value. Keep that post-battle cost out of the modal.
+      if (!hasSettlementBoundary && result === "win" && lifeAfter < lifeBefore) lifeAfter = lifeBefore;
+      const maximumGain = maximumBattleDestinyGain(lastRound.deck);
+      if (lifeAfter - lifeBefore > maximumGain) lifeAfter = lifeBefore + maximumGain;
+      if (result === "draw" && lifeAfter < lifeBefore) result = "loss";
       rows[player.uid] = {
         uid: player.uid,
         opponentUid,
@@ -1766,6 +1752,11 @@ function attachBattleRounds(inputSteps) {
         maxPhysique: Number(lastRound.permanentBuffCounters?.[10024] ?? 0),
         lifeBefore,
         lifeDelta: lifeAfter - lifeBefore,
+        lifeEventSequence: hasSettlementBoundary && lifeAfter !== lifeBefore
+          ? Number(battleLifeEvent.step.sequence) || 0 : 0,
+        lifeEventObservedDelta: hasSettlementBoundary ? battleLifeEvent.delta : 0,
+        postBattleDestinyDelta: hasSettlementBoundary
+          ? battleLifeEvent.delta - battleLifeEvent.battleDelta : 0,
         result,
         first: false,
         talents: lastRound.talents ?? [],
@@ -1790,6 +1781,31 @@ function attachBattleRounds(inputSteps) {
       const opponent = recordedPlayers.find((candidate) => candidate.uid !== player.uid);
       const lastRound = player.lastRound;
       if (!opponent || !lastRound) continue;
+      const postBattleLife = Number(player.life ?? lastRound.life ?? 0);
+      const reportedDelta = postBattleLife - Number(lastRound.life ?? player.life ?? 0);
+      const innerDemon = beforePlayers[player.uid]?.nextOpponent !== opponent.uid;
+      const maximumGain = maximumBattleDestinyGain(lastRound.deck);
+      let authoritativeDelta = reportedDelta;
+      if (innerDemon) authoritativeDelta = 0;
+      else if (player.uid === authoritativeWinner) {
+        // BattleResult.public can already contain an immediately following
+        // Destiny cost. Winners do not lose Destiny in battle; only Dew Jade
+        // Vase can make their battle delta positive.
+        authoritativeDelta = reportedDelta > 0 && maximumGain > 0 ? reportedDelta : 0;
+      } else if (maximumGain === 0 && reportedDestinyDamage > 0) {
+        // For an ordinary real loser, destinyDamage is the battle component
+        // even if public.life has already incorporated a later effect.
+        authoritativeDelta = -reportedDestinyDamage;
+      }
+      const exactLifeEvent = rawExactLifeDeltaEvent(
+        player.uid,
+        postBattleLife,
+        authoritativeDelta,
+        rawPriorStatus,
+        rawNextStatus,
+        battleStep,
+      );
+      const lifeEventSequence = Number(exactLifeEvent?.step.sequence) || 0;
       rememberCharacter(player);
       authoritativeRows[player.uid] = {
         uid: player.uid,
@@ -1807,8 +1823,10 @@ function attachBattleRounds(inputSteps) {
         physique: Number(lastRound.permanentBuffCounters?.[10023] ?? 0),
         maxPhysique: Number(lastRound.permanentBuffCounters?.[10024] ?? 0),
         lifeBefore: Number(lastRound.life ?? player.life ?? 0),
-        lifeDelta: Number(player.life ?? lastRound.life ?? 0) - Number(lastRound.life ?? player.life ?? 0),
+        lifeDelta: authoritativeDelta,
+        lifeEventSequence,
         result: player.uid === authoritativeWinner ? "win" : "loss",
+        ...(innerDemon ? { innerDemon: true } : {}),
         first: player.uid === authoritativeFirst,
         talents: (lastRound.talents ?? []).map((id) => ({ id: rememberTalent(numericCardId(id)), runtime: null })),
         fateStrategies: (lastRound.fateStrategies ?? []).map((id) => ({
@@ -1848,64 +1866,93 @@ function attachBattleRounds(inputSteps) {
 attachBattleRounds(logicalSteps);
 
 function associateBattleDestinyActions(inputSteps) {
-  for (let stepIndex = 0; stepIndex < inputSteps.length; stepIndex += 1) {
-    const step = inputSteps[stepIndex];
-    if (step.battle) continue;
-    const actions = step.humanActions ?? [];
+  const consumedLifeEvents = new Map();
+  const replacementLifeEvents = new Map();
+  const cleanChange = ({ sourceSequence: _sourceSequence, ...change }) => change;
+  const consumeKey = (sequence, uid, delta) => `${Number(sequence)}:${uid}:${Number(delta)}`;
+
+  for (const step of inputSteps.filter((candidate) => candidate.battle)) {
+    const originalDestinyChanges = (step.humanActions ?? [])
+      .filter((action) => action.kind === "destiny")
+      .flatMap((action) => action.changes ?? []);
+    const changesByUid = new Map();
+    for (const matchup of step.battle.matchups ?? []) {
+      for (const player of Object.values(matchup.players ?? {})) {
+        const delta = Number(player.lifeDelta);
+        const lifeEventSequence = Number(player.lifeEventSequence) || 0;
+        const lifeEventObservedDelta = Number(player.lifeEventObservedDelta);
+        const postBattleDestinyDelta = Number(player.postBattleDestinyDelta);
+        delete player.lifeEventSequence;
+        delete player.lifeEventObservedDelta;
+        delete player.postBattleDestinyDelta;
+        const statePlayer = step.state?.players?.[player.uid];
+        const hasSeparateSameStepChange = originalDestinyChanges.some((change) =>
+          change.actorUid === player.uid && Number(change.delta) !== delta);
+        if (statePlayer && Number.isFinite(Number(player.lifeBefore)) && !hasSeparateSameStepChange) {
+          statePlayer.life = Number(player.lifeBefore) + delta;
+        }
+        if (!delta || changesByUid.has(player.uid)) continue;
+        changesByUid.set(player.uid, {
+          actorUid: player.uid,
+          actorUsername: player.username,
+          actorCharacterEnglish: catalog.characters[player.characterId]?.nameEnglish || player.character,
+          actorCharacterChinese: catalog.characters[player.characterId]?.nameChinese || player.character,
+          delta,
+        });
+        if (lifeEventSequence > 0) {
+          const observedDelta = Number.isFinite(lifeEventObservedDelta)
+            ? lifeEventObservedDelta : delta;
+          const key = consumeKey(lifeEventSequence, player.uid, observedDelta);
+          consumedLifeEvents.set(key, (consumedLifeEvents.get(key) ?? 0) + 1);
+          if (postBattleDestinyDelta) {
+            const replacements = replacementLifeEvents.get(key) ?? [];
+            replacements.push(postBattleDestinyDelta);
+            replacementLifeEvents.set(key, replacements);
+          }
+        }
+      }
+    }
+    const battleChanges = [...changesByUid.values()];
+    const otherActions = (step.humanActions ?? []).filter((action) => action.kind !== "destiny");
+    const unmatchedOriginal = [...originalDestinyChanges];
+    for (const battleChange of battleChanges) {
+      const matchIndex = unmatchedOriginal.findIndex((change) =>
+        change.actorUid === battleChange.actorUid && Number(change.delta) === Number(battleChange.delta));
+      if (matchIndex >= 0) unmatchedOriginal.splice(matchIndex, 1);
+    }
+    const separateSameStep = unmatchedOriginal.length
+      ? destinyAction(unmatchedOriginal.map(cleanChange), 0) : null;
+    step.humanActions = [
+      ...otherActions,
+      ...(battleChanges.length ? [destinyAction(battleChanges, step.battle.round)] : []),
+      ...(separateSameStep ? [separateSameStep] : []),
+    ];
+  }
+
+  for (const step of inputSteps.filter((candidate) => !candidate.battle)) {
     const rewrittenActions = [];
-    for (const action of actions) {
+    for (const action of step.humanActions ?? []) {
       if (action.kind !== "destiny" || !(action.changes?.length)) {
         rewrittenActions.push(action);
         continue;
       }
-      const negativeChanges = action.changes.filter((change) => Number(change.delta) < 0);
-      if (!negativeChanges.length) {
-        rewrittenActions.push(action);
-        continue;
-      }
-      const reportedRound = Number(action.round);
-      const stateRound = Number(step.state?.round);
-      const candidateRounds = new Set(reportedRound > 0
-        ? [reportedRound]
-        : [stateRound, stateRound - 1].filter((round) => round > 0));
-      const candidates = inputSteps
-        .map((candidate, index) => ({ candidate, index }))
-        .filter(({ candidate }) => candidate.battle
-          && candidateRounds.has(Number(candidate.battle.round)))
-        .sort((first, second) =>
-          Math.abs(first.index - stepIndex) - Math.abs(second.index - stepIndex));
-      let match = null;
-      for (const entry of candidates) {
-        const battleLosses = new Map();
-        for (const matchup of entry.candidate.battle.matchups ?? []) {
-          for (const player of Object.values(matchup.players ?? {})) {
-            if (Number(player.lifeDelta) >= 0) continue;
-            battleLosses.set(`${player.uid}:${Number(player.lifeDelta)}`, true);
-          }
+      const remaining = [];
+      for (const change of action.changes) {
+        const key = consumeKey(change.sourceSequence, change.actorUid, change.delta);
+        const count = consumedLifeEvents.get(key) ?? 0;
+        if (count > 0) {
+          if (count === 1) consumedLifeEvents.delete(key);
+          else consumedLifeEvents.set(key, count - 1);
+          const replacements = replacementLifeEvents.get(key) ?? [];
+          const replacementDelta = replacements.shift();
+          if (replacements.length) replacementLifeEvents.set(key, replacements);
+          else replacementLifeEvents.delete(key);
+          if (replacementDelta) remaining.push({ ...cleanChange(change), delta: replacementDelta });
+        } else {
+          remaining.push(cleanChange(change));
         }
-        const matched = reportedRound > 0
-          ? negativeChanges
-          : negativeChanges.filter((change) =>
-            battleLosses.has(`${change.actorUid}:${Number(change.delta)}`));
-        if (!matched.length) continue;
-        if (!match || matched.length > match.matched.length) match = { ...entry, matched };
-        if (matched.length === negativeChanges.length) break;
       }
-      if (!match) {
-        rewrittenActions.push(action);
-        continue;
-      }
-      const matchedKeys = new Set(match.matched.map((change) =>
-        `${change.actorUid}:${Number(change.delta)}`));
-      const remaining = action.changes.filter((change) =>
-        !matchedKeys.has(`${change.actorUid}:${Number(change.delta)}`));
-      match.candidate.humanActions ??= [];
-      match.candidate.humanActions.push(destinyAction(match.matched, match.candidate.battle.round));
-      for (const change of match.matched) {
-        const player = match.candidate.state?.players?.[change.actorUid];
-        if (player && Number.isFinite(Number(player.life))) player.life = Number(player.life) + Number(change.delta);
-      }
-      if (remaining.length) rewrittenActions.push(destinyAction(remaining, action.round));
+      if (remaining.length) rewrittenActions.push(destinyAction(remaining, 0));
     }
     step.humanActions = rewrittenActions;
   }
@@ -1914,10 +1961,15 @@ function associateBattleDestinyActions(inputSteps) {
 
 associateBattleDestinyActions(logicalSteps);
 
-function applyRecordedCardStep(privatePlayer, step, wrap = (id) => id) {
-  const hand = privatePlayer.hand;
-  const deck = privatePlayer.deck;
-  if (!hand || !deck) return;
+function applyRecordedCardStep(privatePlayer, step, wrap = (id) => id, reportIssue = null) {
+  const hand = privatePlayer?.hand;
+  const deck = privatePlayer?.deck;
+  const action = step.details ?? {};
+  const issue = (reason, extra = {}) => {
+    reportIssue?.(reason, action, extra);
+    return false;
+  };
+  if (!hand || !deck) return issue("private hand or deck is unavailable");
   const idOf = (entry) => entry && typeof entry === "object" ? entry.id : entry;
   const isEmpty = (entry) => entry && typeof entry === "object"
     ? Number(entry.id) === 0 && entry.id != null
@@ -1949,6 +2001,43 @@ function applyRecordedCardStep(privatePlayer, step, wrap = (id) => id) {
     if (entry && typeof entry === "object") return { ...entry, id: switchedId };
     return switchedId;
   };
+  if (step.type === "CardOperationResp" && Number(action.operation) === 1 && Number(action.useCase) === 6) {
+    privatePlayer.cardStorage ??= {};
+    const storage = privatePlayer.cardStorage[199] ??= (
+      privatePlayer.talentData?.[199]?.commonParams ?? [0, 0, 0]
+    ).map((id) => wrap(id));
+    while (storage.length < 3) storage.push(wrap(0));
+    const sourcePosition = Number(action.otherParams?.[0]);
+    const sourceIndex = Number(action.otherParams?.[1]);
+    const destinationPosition = Number(action.otherParams?.[2]);
+    const destinationIndex = Number(action.otherParams?.[3]);
+    const source = sourcePosition === 0 ? hand : sourcePosition === 6 ? storage : null;
+    if (!source || sourceIndex < 0 || sourceIndex >= source.length || isEmpty(source[sourceIndex])) {
+      return issue("card-storage source is invalid");
+    }
+    const card = source[sourceIndex];
+    if (sourcePosition === 0 && destinationPosition === 6) {
+      if (destinationIndex < 0 || destinationIndex >= storage.length) return issue("card-storage destination is invalid");
+      hand.splice(sourceIndex, 1);
+      const displaced = storage[destinationIndex];
+      storage[destinationIndex] = card;
+      if (!isEmpty(displaced)) hand.push(displaced);
+      return true;
+    }
+    if (sourcePosition === 6 && destinationPosition === 0) {
+      storage[sourceIndex] = wrap(0);
+      hand.push(card);
+      return true;
+    }
+    if (sourcePosition === 6 && destinationPosition === 6) {
+      if (destinationIndex < 0 || destinationIndex >= storage.length) return issue("card-storage destination is invalid");
+      const displaced = storage[destinationIndex];
+      storage[destinationIndex] = card;
+      storage[sourceIndex] = displaced;
+      return true;
+    }
+    return issue("card-storage positions are invalid");
+  }
   const location = (card, matchIdentity = false) => {
     const position = Number.parseInt(String(card?.position), 10);
     const list = position === 0 ? hand : position === 1 ? deck : null;
@@ -1976,18 +2065,27 @@ function applyRecordedCardStep(privatePlayer, step, wrap = (id) => id) {
   if (step.type === "ReplaceCardResp" && String(step.details?.result).startsWith("1 ")) {
     const old = location(step.details.targetCard, true);
     const next = location(step.details.newCard);
-    if (!old.list || !next.list || old.index < 0 || old.index >= old.list.length) return;
+    if (!old.list || !next.list || old.index < 0 || old.index >= old.list.length) {
+      return issue("exchange card location is invalid");
+    }
     const removed = old.list[old.index];
     if (removed && typeof removed === "object" && removed.id == null) removed.id = old.id;
     old.list.splice(old.index, 1);
     next.list.splice(Math.max(0, Math.min(next.list.length, next.index)), 0, wrap(next.id));
-    return;
+    return true;
   }
   if (step.type === "RefineCardResp" && step.details?.result) {
     const target = location(step.details.targetCard, true);
-    if (!target.list || target.index < 0 || target.index >= target.list.length) return;
+    if (!target.list || target.index < 0 || target.index >= target.list.length) {
+      return issue("refine target location is invalid");
+    }
     const removed = target.list[target.index];
     if (removed && typeof removed === "object" && removed.id == null) removed.id = target.id;
+    // Clicking Daoist Rhyme Aura opens the choice. The card is not consumed
+    // until that choice resolves, and an intervening PlayerData snapshot still
+    // contains it. Treating the click like an ordinary absorb makes the
+    // start-of-round solver invent one additional draw.
+    if (target.id === 46) return true;
     if (Number.parseInt(String(step.details.targetCard?.position), 10) === 0) target.list.splice(target.index, 1);
     else target.list[target.index] = wrap(0);
     for (const resultCard of step.details.resultingCards ?? []) {
@@ -1996,17 +2094,19 @@ function applyRecordedCardStep(privatePlayer, step, wrap = (id) => id) {
         result.list[result.index] = upgraded(result.list[result.index]);
       }
     }
-    return;
+    return true;
   }
-  const action = step.details ?? {};
-  if (step.type !== "MoveCardReq" && step.type !== "InsertCardReq") return;
+  if (step.type !== "MoveCardReq" && step.type !== "InsertCardReq") return false;
   const source = action.sourcePosition === 0 ? hand : action.sourcePosition === 1 ? deck : null;
-  if (!source || action.sourceIndex < 0 || action.sourceIndex >= source.length) return;
+  if (!source || action.sourceIndex < 0 || action.sourceIndex >= source.length) {
+    return issue("source position or index is invalid");
+  }
   const card = source[action.sourceIndex];
+  if (isEmpty(card)) return issue("source slot is empty");
   if (step.type === "InsertCardReq") {
     const target = action.destinationIndex;
     const unlocked = privatePlayer.unlockedDeckSlots ?? deck.length;
-    if (target < 0 || target >= unlocked) return;
+    if (target < 0 || target >= unlocked) return issue("insert destination is outside the unlocked deck");
     if (action.sourcePosition === 0) hand.splice(action.sourceIndex, 1);
     else deck[action.sourceIndex] = wrap(0);
     if (action.insertionDirection === 1) {
@@ -2023,10 +2123,12 @@ function applyRecordedCardStep(privatePlayer, step, wrap = (id) => id) {
       }
     }
     deck[target] = card;
-    return;
+    return true;
   }
   if (action.destinationPosition === 1) {
-    if (action.destinationIndex < 0 || action.destinationIndex >= deck.length) return;
+    if (action.destinationIndex < 0 || action.destinationIndex >= deck.length) {
+      return issue("destination deck index is invalid");
+    }
     if (action.sourcePosition === 0) {
       const displaced = deck[action.destinationIndex];
       if (canCombine(card, displaced)) {
@@ -2036,7 +2138,10 @@ function applyRecordedCardStep(privatePlayer, step, wrap = (id) => id) {
       else {
         deck[action.destinationIndex] = card;
         hand.splice(action.sourceIndex, 1);
-        if (!isEmpty(displaced)) hand.push(switchedForHand(displaced));
+        // SWITCH changes face when the player directly moves that deck card
+        // into hand. A different hand card replacing it in an occupied deck
+        // slot merely displaces it; the server preserves the current face.
+        if (!isEmpty(displaced)) hand.push(displaced);
       }
     } else {
       const displaced = deck[action.destinationIndex];
@@ -2048,12 +2153,14 @@ function applyRecordedCardStep(privatePlayer, step, wrap = (id) => id) {
         deck[action.sourceIndex] = displaced;
       }
     }
+    return true;
   } else if (action.destinationPosition === 0) {
     if (action.sourcePosition === 1) {
       deck[action.sourceIndex] = wrap(0);
       const handCard = switchedForHand(card);
       if (action.destinationIndex < 0 || action.destinationIndex >= hand.length) hand.push(handCard);
       else hand.splice(action.destinationIndex, 0, handCard);
+      return true;
     } else if (action.destinationIndex >= 0 && action.destinationIndex < hand.length && action.destinationIndex !== action.sourceIndex) {
       const destinationCard = hand[action.destinationIndex];
       // A same-zone drag onto another card is the client's combine gesture.
@@ -2081,14 +2188,24 @@ function applyRecordedCardStep(privatePlayer, step, wrap = (id) => id) {
         card.combinedOrigins = [card.origin, destinationCard.origin].filter((origin) => origin != null);
         hand[action.destinationIndex] = card;
         hand.splice(action.sourceIndex, 1);
-        return;
+        return true;
       }
       if (canCombine(card, destinationCard)) {
         hand[action.destinationIndex] = combinedEntry(card, destinationCard);
         hand.splice(action.sourceIndex, 1);
+        return true;
       }
+      return issue("hand-to-hand move is not a legal combination", {
+        sourceCard: numericCardId(idOf(card)),
+        destinationCard: numericCardId(idOf(destinationCard)),
+      });
     }
+    if (action.sourcePosition === 0 && action.destinationIndex !== action.sourceIndex) {
+      return issue("destination hand index is invalid");
+    }
+    return true;
   }
+  return issue("destination position is invalid");
 }
 
 function recordedCultivationDelta(privatePlayer, step) {
@@ -2106,8 +2223,20 @@ function recordedCultivationDelta(privatePlayer, step) {
   return canUpgradeTogether(sourceId, destinationId) ? 1 : 0;
 }
 
+function explicitChoiceCardCount(info) {
+  const english = String(info?.descriptionEnglish ?? "");
+  const chinese = String(info?.descriptionChinese ?? "");
+  const counts = [
+    ...english.matchAll(/(?:Deal|Draw)\s+(\d+)\s+[^.\n]*Card/gi),
+    ...english.matchAll(/Gain\s+(\d+)\s+【/gi),
+    ...chinese.matchAll(/抽\s*(\d+)\s*张/g),
+    ...chinese.matchAll(/获得\s*(\d+)\s*张/g),
+  ].map((match) => Number(match[1])).filter((count) => count > 0);
+  return counts.length ? Math.max(...counts) : 0;
+}
+
 function ensureShopEntrySteps(inputSteps) {
-  const cardMutationTypes = new Set(["MoveCardReq", "InsertCardReq", "ReplaceCardResp", "RefineCardResp"]);
+  const cardMutationTypes = new Set(["MoveCardReq", "InsertCardReq", "ReplaceCardResp", "RefineCardResp", "CardOperationResp"]);
   const restorePlayerDataCards = (step, expectedRound) => {
     const disclosed = step.type === "PlayerData" ? step.details?.private : null;
     const visible = step.state?.privatePlayer;
@@ -2138,16 +2267,39 @@ function ensureShopEntrySteps(inputSteps) {
     const firstCardActionIndex = inputSteps.findIndex((step, stepIndex) =>
       stepIndex > battleIndex && stepIndex < preparationLimit && cardMutationTypes.has(step.type));
     const preActionLimit = firstCardActionIndex < 0 ? preparationLimit : firstCardActionIndex;
+    const isAuthoritativeStateStep = (step) => ["GameStatus", "PlayerData"].includes(step.type)
+      || (step.type === "SimpleClientPact" && step.description?.startsWith("Authoritative game snapshot"));
     for (let stepIndex = battleIndex + 1; stepIndex < preActionLimit; stepIndex += 1) {
       restorePlayerDataCards(inputSteps[stepIndex], round + 1);
     }
-    const isAuthoritativeStateStep = (step) => ["GameStatus", "PlayerData"].includes(step.type)
-      || (step.type === "SimpleClientPact" && step.description?.startsWith("Authoritative game snapshot"));
     const preBattlePrivate = battleStep.state?.privatePlayer
       ?? inputSteps[battleIndex - 1]?.state?.privatePlayer;
     const roundStartDeckSlots = Math.min(8, round + 3);
-    const minimumDrawCount = round + 1 >= 12 ? 4 : 3;
+    const baseMinimumDrawCount = round + 1 >= 12 ? 4 : 3;
+    // Five Elements Pure Vase removes cards from the visible hand without
+    // increasing the next round's deal. Cards held in it therefore occupy
+    // slots in the ordinary deal accounting.
+    const storedCardCount = (preBattlePrivate?.cardStorage?.[199] ?? [])
+      .filter((id) => numericCardId(id) > 0).length;
+    const minimumDrawCount = Math.max(0, baseMinimumDrawCount - storedCardCount);
     let beforeHand = (preBattlePrivate?.hand ?? []).map((id) => roundStartCardId(id, { inHand: true }));
+    const authoritativePreActionIndex = inputSteps.findIndex((step, stepIndex) =>
+      stepIndex > battleIndex && stepIndex < preActionLimit
+      && isAuthoritativeStateStep(step)
+      && Number(step.state?.round) === round + 1
+      && step.state?.privatePlayer
+      && (!preBattlePrivate?.uid || step.state.privatePlayer.uid === preBattlePrivate.uid));
+    const authoritativePreAction = inputSteps[authoritativePreActionIndex];
+    if (authoritativePreActionIndex >= 0
+      && Number(authoritativePreAction.state.privatePlayer.hand?.length ?? 0) < beforeHand.length + minimumDrawCount) {
+      if (process.env.YXP_DRAW_AUDIT) console.log(`DRAW_AUDIT ${JSON.stringify({
+        round: round + 1,
+        count: null,
+        source: "authoritative-pre-action",
+        exact: true,
+      })}`);
+      continue;
+    }
     const immediate = inputSteps[battleIndex + 1];
     if (Number(immediate?.state?.round) === round + 1
       && Number(immediate?.state?.privatePlayer?.hand?.length ?? 0) >= beforeHand.length + minimumDrawCount) {
@@ -2185,23 +2337,55 @@ function ensureShopEntrySteps(inputSteps) {
     beforeHand = (reconciledPrivate?.hand ?? []).map((id) => roundStartCardId(id, { inHand: true }));
     const roundStartDeck = (reconciledPrivate?.deck ?? []).map(roundStartCardId);
     while (roundStartDeck.length < roundStartDeckSlots) roundStartDeck.push(0);
+    let choiceGrantedCardCount = 0;
     const simulateDraws = (drawCount) => {
-      const drawnTokens = Array.from({ length: drawCount }, (_unused, origin) => ({ id: null, origin }));
-      const retainedTokens = beforeHand.map((id, retainedIndex) => ({
-        id: id == null ? null : Number(id),
-        roundStartId: id == null ? null : Number(id),
-        origin: null,
-        retainedIndex,
-      }));
-      const initial = { drawnTokens, retainedTokens, tokenPrivate: {
-        hand: retainedTokens.concat(drawnTokens),
-        deck: roundStartDeck.map((id) => ({ id, origin: null })),
-        unlockedDeckSlots: roundStartDeckSlots,
-      }, trace: [] };
-      let variants = [initial];
+      const initial = (drawTiming) => {
+        const drawnTokens = Array.from({ length: drawCount }, (_unused, origin) => ({ id: null, origin }));
+        const retainedTokens = beforeHand.map((id, retainedIndex) => ({
+          id: id == null ? null : Number(id),
+          roundStartId: id == null ? null : Number(id),
+          origin: null,
+          retainedIndex,
+        }));
+        return { drawnTokens, retainedTokens, drawTiming, tokenPrivate: {
+          hand: drawTiming === "before" ? retainedTokens.concat(drawnTokens) : retainedTokens,
+          deck: roundStartDeck.map((id) => ({ id, origin: null })),
+          cardStorage: Object.fromEntries(Object.entries(reconciledPrivate?.cardStorage ?? {}).map(([key, values]) => [
+            key, values.map((id) => ({ id: Number(id), origin: null })),
+          ])),
+          unlockedDeckSlots: roundStartDeckSlots,
+        }, trace: [] };
+      };
+      let variants = preparationSteps.length ? [initial("before"), initial("after")] : [initial("before")];
       for (const step of preparationSteps) {
         variants = variants.flatMap((variant) => {
           const action = step.details ?? {};
+          if (["ReplaceCardResp", "RefineCardResp"].includes(step.type)) {
+            const target = action.targetCard;
+            const targetList = Number.parseInt(String(target?.position), 10) === 0
+              ? variant.tokenPrivate.hand : Number.parseInt(String(target?.position), 10) === 1
+                ? variant.tokenPrivate.deck : null;
+            const reportedIndex = Number(target?.index);
+            const targetId = numericCardId(target?.id);
+            const reported = targetList?.[reportedIndex];
+            const knownMatches = (targetList ?? []).map((entry, index) =>
+              index !== reportedIndex && entry?.id != null && sameCardIdentity(entry.id, targetId)
+                ? index : -1).filter((index) => index >= 0);
+            if (reported && typeof reported === "object" && reported.id == null && knownMatches.length) {
+              const alternatives = [];
+              for (const targetIndex of [reportedIndex, ...knownMatches]) {
+                const alternative = structuredClone(variant);
+                const alternativeStep = structuredClone(step);
+                alternativeStep.details.targetCard.index = targetIndex;
+                if (applyRecordedCardStep(
+                  alternative.tokenPrivate,
+                  alternativeStep,
+                  (id) => ({ id: Number(id), origin: null }),
+                )) alternatives.push(alternative);
+              }
+              return alternatives;
+            }
+          }
           const source = Number(action.sourcePosition) === 0
             ? variant.tokenPrivate.hand?.[Number(action.sourceIndex)]
             : Number(action.sourcePosition) === 1
@@ -2217,11 +2401,19 @@ function ensureShopEntrySteps(inputSteps) {
             && Boolean(sourceUnknown) !== Boolean(destinationUnknown)
             && knownCombinationId > 0 && cardCanUpgrade(knownCombinationId);
           if (!canBeUnknownCombination) {
-            applyRecordedCardStep(variant.tokenPrivate, step, (id) => ({ id: Number(id), origin: null }));
-            return [variant];
+            const applied = applyRecordedCardStep(
+              variant.tokenPrivate,
+              step,
+              (id) => ({ id: Number(id), origin: null }),
+            );
+            return applied || !cardMutationTypes.has(step.type) ? [variant] : [];
           }
           const replacement = structuredClone(variant);
-          applyRecordedCardStep(replacement.tokenPrivate, step, (id) => ({ id: Number(id), origin: null }));
+          const replacementApplied = applyRecordedCardStep(
+            replacement.tokenPrivate,
+            step,
+            (id) => ({ id: Number(id), origin: null }),
+          );
           const combination = structuredClone(variant);
           const combinedSource = Number(action.sourcePosition) === 0
             ? combination.tokenPrivate.hand[Number(action.sourceIndex)]
@@ -2230,8 +2422,15 @@ function ensureShopEntrySteps(inputSteps) {
           const unknownEntry = combinedSource.id == null ? combinedSource : combinedDestination;
           unknownEntry.id = knownCombinationId;
           if (unknownEntry.origin != null) unknownEntry.drawnId = knownCombinationId;
-          applyRecordedCardStep(combination.tokenPrivate, step, (id) => ({ id: Number(id), origin: null }));
-          return [replacement, combination];
+          const combinationApplied = applyRecordedCardStep(
+            combination.tokenPrivate,
+            step,
+            (id) => ({ id: Number(id), origin: null }),
+          );
+          return [
+            ...(replacementApplied ? [replacement] : []),
+            ...(combinationApplied ? [combination] : []),
+          ];
         });
         if (process.env.YXP_DRAW_AUDIT) {
           for (const variant of variants) variant.trace.push({
@@ -2242,6 +2441,19 @@ function ensureShopEntrySteps(inputSteps) {
           });
         }
         if (variants.length > 4096) throw new Error(`too many round-start provenance branches in ${path.basename(inputPath)}`);
+      }
+      for (const variant of variants) {
+        if (variant.drawTiming === "after") variant.tokenPrivate.hand.push(...variant.drawnTokens);
+      }
+      // A breakthrough/card choice can resolve after the player has already
+      // manipulated the ordinary start-of-round draw. Its granted cards are
+      // present in the authoritative snapshot, but the preceding operation
+      // indices were produced before those cards existed. Add them only after
+      // replaying those operations.
+      for (const variant of variants) {
+        variant.tokenPrivate.hand.push(...Array.from({ length: choiceGrantedCardCount }, () => ({
+          id: null, origin: null, choiceGranted: true,
+        })));
       }
       return variants;
     };
@@ -2275,6 +2487,21 @@ function ensureShopEntrySteps(inputSteps) {
         cultivationGain: explicitCultivationGain(info),
       };
     });
+    choiceGrantedCardCount = addedTalentIds.reduce(
+      (total, id) => total + explicitChoiceCardCount(talentInfo(id)),
+      0,
+    );
+    // A Daoist Rhyme card reserved for a later phase is delivered when that
+    // phase is reached. Double Daoist Rhyme duplicates that delivery.
+    choiceGrantedCardCount += (preBattlePrivate?.daoYunChoices ?? []).reduce((total, choice) => {
+      const selected = numericCardId(choice?.selected);
+      const selectedPhase = Number(cardConfigInfo(selected)?.level ?? 0);
+      // At Own Pace (27) is an immediate draw option represented by a hidden
+      // pseudo-card. It is never reserved and can never enter hand or deck.
+      if (!selected || selected === 27 || selectedPhase <= phaseNumber(beforePlayer?.phase)
+        || selectedPhase > phaseNumber(authoritativePlayer?.phase)) return total;
+      return total + Math.max(1, Number(choice?.multiplier ?? 1));
+    }, 0);
     const beforeFateIds = new Set((preBattlePrivate?.selectedFateStrategies ?? [])
       .map((entry) => numericCardId(entry?.id ?? entry)));
     const addedFateIds = (authoritative.state.privatePlayer.selectedFateStrategies ?? [])
@@ -2297,6 +2524,10 @@ function ensureShopEntrySteps(inputSteps) {
         : Number(afterRuntime.value) > Number(beforeRuntime.value);
     });
     const usedFateIds = usedFateEntries.map((entry) => numericCardId(entry?.id ?? entry));
+    choiceGrantedCardCount += usedFateIds.reduce((total, id) => {
+      const info = extractedFates.get(id) ?? wikiFates.get(id) ?? fateStrategyInfo(id);
+      return total + explicitChoiceCardCount(info);
+    }, 0);
     const visibleFateUses = usedFateIds.length;
     const transformsEntireHand = usedFateIds.includes(11); // Blaze a New Trail / 另辟蹊径
     const postUseCards = usedFateIds.includes(386) ? [33, 34, 35] : []; // Meow Meow Meow? / 喵喵喵？
@@ -2331,8 +2562,7 @@ function ensureShopEntrySteps(inputSteps) {
         if (tokens.length !== actual.length) return null;
         return { mapping: tokens.map((_token, position) => position), upgrades: [], used: 0 };
       }
-      if (!choiceAdvanced && tokens.length !== actual.length) return null;
-      if (tokens.length > actual.length) return null;
+      if (tokens.length !== actual.length) return null;
       const mapping = Array(tokens.length).fill(-1);
       const upgrades = [];
       let actualPosition = 0;
@@ -2368,13 +2598,18 @@ function ensureShopEntrySteps(inputSteps) {
       for (let tokenPosition = 0; tokenPosition < tokens.length; tokenPosition += 1) {
         if (mapping[tokenPosition] < 0) mapping[tokenPosition] = remainingPositions.shift() ?? -1;
       }
-      if (mapping.some((position) => position < 0)
-        || (!choiceAdvanced && remainingPositions.length)) return null;
+      if (mapping.some((position) => position < 0) || remainingPositions.length) return null;
       return { mapping, upgrades, used: upgrades.length };
     };
+    // A player may postpone a pending breakthrough until the end of the next
+    // preparation window. In that case the server can resolve the choice but
+    // never deal that round's ordinary cards before the following battle.
+    // Search zero only for an observed choice transition; the scheduled count
+    // still wins whenever it is an exact reconstruction.
+    const candidateMinimumDrawCount = choiceAdvanced ? 0 : minimumDrawCount;
     const maximumDrawCount = Math.max(20, actualHand.length + preparationSteps.length + 4, minimumDrawCount + 8);
     const drawCandidates = [];
-    for (let drawCount = minimumDrawCount; drawCount <= maximumDrawCount; drawCount += 1) {
+    for (let drawCount = candidateMinimumDrawCount; drawCount <= maximumDrawCount; drawCount += 1) {
       for (const simulation of simulateDraws(drawCount)) {
         let matched = null;
         for (let upgradeBudget = 0; upgradeBudget <= visibleFateUses && !matched; upgradeBudget += 1) {
@@ -2404,7 +2639,7 @@ function ensureShopEntrySteps(inputSteps) {
     // when the live spectator still sees anonymous hand slots. If duplicate
     // cards make forward provenance ambiguous, this restricted action set can
     // be inverted exactly from the next authoritative private snapshot.
-    if (!drawCandidates.length && !choiceAdvanced) {
+    if (!drawCandidates.length) {
       const reverseStates = Array(preparationSteps.length);
       const reversed = clone(authoritative.state.privatePlayer);
       const restoredDeckSlots = new Set();
@@ -2467,7 +2702,7 @@ function ensureShopEntrySteps(inputSteps) {
       const prefixMatches = beforeHand.every((id, index) => Number(id) === Number(reversedHand[index]));
       const deckMatches = reversedDeck.length === roundStartDeck.length
         && reversedDeck.every((id, index) => Number(id) === Number(roundStartDeck[index]));
-      if (reversible && prefixMatches && deckMatches && reverseDrawCount >= minimumDrawCount) {
+      if (reversible && prefixMatches && deckMatches && reverseDrawCount >= candidateMinimumDrawCount) {
         const retainedTokens = beforeHand.map((id, retainedIndex) => ({
           id: Number(id), roundStartId: Number(id), origin: null, retainedIndex,
         }));
@@ -2507,8 +2742,7 @@ function ensureShopEntrySteps(inputSteps) {
     if (possibleDrawCounts.length > 1 && possibleDrawCounts.includes(scheduledDrawCount)) {
       possibleDrawCounts = [scheduledDrawCount];
     }
-    const canSeparatePostChoiceCards = choiceAdvanced && possibleDrawCounts.length > 0;
-    if (possibleDrawCounts.length !== 1 && !canSeparatePostChoiceCards) {
+    if (possibleDrawCounts.length !== 1) {
       if (process.env.YXP_DRAW_AUDIT) {
         const guess = Math.max(minimumDrawCount, actualHand.length - beforeHand.length);
         const attempted = simulateDraws(guess)[0];
@@ -2521,6 +2755,15 @@ function ensureShopEntrySteps(inputSteps) {
           authoritativePhase: phaseNumber(authoritativePlayer?.phase),
           beforeTalentIds: [...beforeTalentIds],
           authoritativeTalentIds: (authoritativePlayer?.talents ?? []).map((entry) => numericCardId(entry?.id ?? entry)),
+          choiceGrantedCardCount,
+          addedTalentIds,
+          usedFateIds,
+          selectedFateIds: [...selectedFateIds],
+          daoYunChoices: preBattlePrivate?.daoYunChoices ?? [],
+          minimumDrawCount,
+          guaranteedExtraDraws,
+          scheduledDrawCount,
+          possibleDrawCounts,
           beforeHand, actualHand, actualDeck, guess,
           simulatedHand: attempted.tokenPrivate.hand.map((entry) => entry?.id),
           simulatedDeck: attempted.tokenPrivate.deck.map((entry) => entry?.id),
@@ -2554,7 +2797,7 @@ function ensureShopEntrySteps(inputSteps) {
       }
       throw new Error(`round ${round + 1} draw count has ${possibleDrawCounts.length} exact candidates in ${path.basename(inputPath)}`);
     }
-    const selectedDrawCount = Math.min(...possibleDrawCounts);
+    const [selectedDrawCount] = possibleDrawCounts;
     const selectedCandidate = drawCandidates
       .filter((candidate) => candidate.drawCount === selectedDrawCount)
       .sort((first, second) => first.inferredFateUpgrades - second.inferredFateUpgrades)[0];
@@ -2573,8 +2816,6 @@ function ensureShopEntrySteps(inputSteps) {
       ...(hasPostUseSuffix ? { postUseCards } : {}),
       ...(reversedFromAuthoritative ? { reversedFromAuthoritative: true } : {}),
       ...(possibleDrawCounts.length > 1 ? { candidateCounts: possibleDrawCounts } : {}),
-      ...(choiceAdvanced && actualHand.length > tokenPrivate.hand.length
-        ? { postChoiceCards: actualHand.length - tokenPrivate.hand.length } : {}),
     })}`);
     for (const { tokenPosition, actualPosition } of handUpgrades) {
       const token = tokenPrivate.hand[tokenPosition];
@@ -2611,33 +2852,7 @@ function ensureShopEntrySteps(inputSteps) {
     // Mystery Seed, whose first resolved identity is the best available value.
     const retainedCards = retainedTokens.map((token) =>
       Number(token.roundStartId ?? token.id) || unknownDrawCardId);
-    const authoritativeStats = visibleExchangeStats(authoritative.state);
-    const exchangeActions = preparationSteps
-      .filter((step) => step.type === "ReplaceCardResp" && String(step.details?.result).startsWith("1 ")).length;
-    const approximateStart = Math.min(
-      Number(authoritative.state.privatePlayer.exchangeLimit) || Infinity,
-      authoritativeStats.remaining + exchangeActions,
-    );
-    const candidates = [];
-    const maxStart = Math.max(100, approximateStart + 50);
-    const maxCuriosity = authoritativeStats.hasCuriosity ? Math.max(9, authoritativeStats.curiosity + exchangeActions) : 0;
-    const maxShift = authoritativeStats.hasShiftAsCloud ? 1 : 0;
-    for (let remaining = 0; remaining <= maxStart; remaining += 1) {
-      for (let curiosity = authoritativeStats.hasCuriosity ? authoritativeStats.curiosity : 0; curiosity <= maxCuriosity; curiosity += 1) {
-        for (let shiftAsCloud = authoritativeStats.hasShiftAsCloud ? authoritativeStats.shiftAsCloud : 0; shiftAsCloud <= maxShift; shiftAsCloud += 1) {
-          let stats = { ...authoritativeStats, remaining, curiosity, shiftAsCloud };
-          for (const step of preparationSteps) stats = exchangeStatsAfterStep(stats, step);
-          if (stats.remaining === authoritativeStats.remaining
-            && stats.curiosity === authoritativeStats.curiosity
-            && stats.shiftAsCloud === authoritativeStats.shiftAsCloud) {
-            candidates.push({ remaining, curiosity, shiftAsCloud });
-          }
-        }
-      }
-    }
-    candidates.sort((first, second) => Math.abs(first.remaining - approximateStart) - Math.abs(second.remaining - approximateStart)
-      || first.curiosity - second.curiosity || first.shiftAsCloud - second.shiftAsCloud);
-    const startingStats = { ...authoritativeStats, ...(candidates[0] ?? { remaining: approximateStart }) };
+    const startingStats = inferredExchangeStatsBeforeSteps(authoritative.state, preparationSteps);
     const shopState = clone(battleStep.state);
     shopState.round = round + 1;
     shopState.privatePlayer = { ...shopState.privatePlayer, ...clone(preBattlePrivate) };
@@ -2722,44 +2937,149 @@ function ensureShopEntrySteps(inputSteps) {
 
 ensureShopEntrySteps(logicalSteps);
 
-function ensureChoiceDismissalSteps(inputSteps) {
-  for (let stepIndex = 1; stepIndex < inputSteps.length - 1; stepIndex += 1) {
-    const step = inputSteps[stepIndex];
-    const previousPrivate = inputSteps[stepIndex - 1].state?.privatePlayer;
-    const currentPrivate = step.state?.privatePlayer;
-    const previousPlayer = inputSteps[stepIndex - 1].state?.players?.[previousPrivate?.uid];
-    const currentPlayer = step.state?.players?.[currentPrivate?.uid];
-    const addedDaoYun = (currentPrivate?.daoYunChoices?.length ?? 0) > (previousPrivate?.daoYunChoices?.length ?? 0);
-    const addedCardSelection = (currentPrivate?.cardSelections?.length ?? 0) > (previousPrivate?.cardSelections?.length ?? 0);
-    const previousTalentIds = new Set((previousPlayer?.talents ?? []).map((reference) => Number(reference.id)));
-    const addedTalent = (currentPlayer?.talents ?? []).some((reference) => reference.choiceHistory?.selected
-      && !previousTalentIds.has(Number(reference.id)));
-    const previousFateIds = new Set((previousPrivate?.selectedFateStrategies ?? []).map((reference) => Number(reference.id)));
-    const addedFate = (currentPrivate?.selectedFateStrategies ?? []).some((reference) => reference.choiceHistory?.selected
-      && !previousFateIds.has(Number(reference.id)));
-    if (!addedDaoYun && !addedCardSelection && !addedTalent && !addedFate) continue;
-    const nextStep = inputSteps[stepIndex + 1];
-    if (!(nextStep.humanActions?.length)) continue;
-    const kind = addedDaoYun ? "Daoist Rhyme"
-      : addedCardSelection ? "Card selection"
-      : addedTalent ? "Immortal Fate"
-      : "Heavenly Derivation Fate";
-    inputSteps.splice(stepIndex + 1, 0, {
-      sequence: step.sequence,
-      observedAt: step.observedAt,
-      direction: "synthetic",
-      type: "ChoiceDismissed",
-      description: `${kind} choice closed`,
-      details: { kind },
-      humanActions: [],
-      state: clone(step.state),
+function completedChoicesForStep(previousState, currentState) {
+  const previousPrivate = previousState?.privatePlayer;
+  const currentPrivate = currentState?.privatePlayer;
+  if (!previousPrivate || !currentPrivate || previousPrivate.uid !== currentPrivate.uid) return [];
+  const choices = [];
+  const previousPlayer = previousState?.players?.[previousPrivate.uid];
+  const currentPlayer = currentState?.players?.[currentPrivate.uid];
+  const previousTalentIds = new Set((previousPlayer?.talents ?? []).map((reference) => Number(reference.id)));
+  for (const chosenTalent of (currentPlayer?.talents ?? []).filter((reference) => reference.choiceHistory?.selected
+    && !previousTalentIds.has(Number(reference.id)))) {
+    const history = chosenTalent.choiceHistory;
+    choices.push({
+      kind: "immortal-fate",
+      title: "Select an Immortal Fate",
+      roundOrPhase: history.roundOrPhase,
+      options: (history.offers?.at(-1) ?? []).map((id) => ({ id: Number(id) })),
+      family: "talent",
+      reference: chosenTalent,
     });
-    stepIndex += 1;
   }
+  const previousFateIds = new Set((previousPrivate.selectedFateStrategies ?? [])
+    .map((reference) => Number(reference.id)));
+  for (const chosenFate of (currentPrivate.selectedFateStrategies ?? []).filter((reference) => reference.choiceHistory?.selected
+    && !previousFateIds.has(Number(reference.id)))) {
+    const history = chosenFate.choiceHistory;
+    choices.push({
+      kind: "heavenly-derivation",
+      title: "Select a Heavenly Derivation Fate",
+      roundOrPhase: history.roundOrPhase,
+      rerollsRemaining: Number(history.rerollsRemaining ?? 0),
+      options: (history.offers?.at(-1) ?? []).map((id) => ({ id: Number(id) })),
+      family: "fate",
+      reference: chosenFate,
+    });
+  }
+  const previousDaoYunCount = previousPrivate.daoYunChoices?.length ?? 0;
+  for (const history of (currentPrivate.daoYunChoices ?? []).slice(previousDaoYunCount)) {
+    choices.push({
+      kind: "daoist-rhyme",
+      title: "Select a Card",
+      roundOrPhase: history.roundOrPhase,
+      options: (history.offers?.at(-1) ?? []).map((id) => ({ id: Number(id) })),
+      family: "daoYun",
+      reference: history,
+    });
+  }
+  const previousCardSelectionCount = previousPrivate.cardSelections?.length ?? 0;
+  for (const history of (currentPrivate.cardSelections ?? []).slice(previousCardSelectionCount)) {
+    choices.push({
+      kind: "card-selection",
+      title: "Select a Card",
+      roundOrPhase: history.roundOrPhase,
+      options: (history.offers?.at(-1) ?? []).map((id) => ({ id: Number(id) })),
+      family: "cardSelection",
+      reference: history,
+    });
+  }
+  const activeKind = previousPrivate.choiceOverlay?.kind;
+  const activeIndex = choices.findIndex((choice) => choice.kind === activeKind);
+  if (activeIndex > 0) choices.unshift(...choices.splice(activeIndex, 1));
+  return choices;
+}
+
+function stateAfterCompletedChoice(beforeState, choice) {
+  const stateAfter = clone(beforeState);
+  delete stateAfter.privatePlayer.choiceOverlay;
+  if (choice.family === "talent") {
+    const player = stateAfter.players?.[stateAfter.privatePlayer.uid];
+    if (player) player.talents = [...(player.talents ?? []), clone(choice.reference)];
+  } else if (choice.family === "fate") {
+    stateAfter.privatePlayer.selectedFateStrategies = [
+      ...(stateAfter.privatePlayer.selectedFateStrategies ?? []),
+      clone(choice.reference),
+    ];
+  } else if (choice.family === "daoYun") {
+    stateAfter.privatePlayer.daoYunChoices = [
+      ...(stateAfter.privatePlayer.daoYunChoices ?? []),
+      clone(choice.reference),
+    ];
+  } else if (choice.family === "cardSelection") {
+    stateAfter.privatePlayer.cardSelections = [
+      ...(stateAfter.privatePlayer.cardSelections ?? []),
+      clone(choice.reference),
+    ];
+  }
+  return stateAfter;
+}
+
+function ensureChoiceOfferSteps(inputSteps) {
+  const normalized = inputSteps.length ? [inputSteps[0]] : [];
+  for (const step of inputSteps.slice(1)) {
+    let beforeState = normalized.at(-1).state;
+    const choices = completedChoicesForStep(beforeState, step.state);
+    if (!choices.length) {
+      normalized.push(step);
+      continue;
+    }
+    choices.forEach((choice, choiceIndex) => {
+      if (!choice.options.length) throw new Error(`completed ${choice.kind} choice has no recorded offer at sequence ${step.sequence}`);
+      if (beforeState.privatePlayer?.choiceOverlay?.kind !== choice.kind) {
+        const offerState = clone(beforeState);
+        offerState.privatePlayer.choiceOverlay = {
+          kind: choice.kind,
+          title: choice.title,
+          roundOrPhase: choice.roundOrPhase,
+          ...(choice.rerollsRemaining == null ? {} : { rerollsRemaining: choice.rerollsRemaining }),
+          options: choice.options,
+        };
+        normalized.push({
+          sequence: step.sequence,
+          observedAt: step.observedAt,
+          direction: "synthetic",
+          type: "ChoiceOffer",
+          description: `${choice.title} offer`,
+          details: { kind: choice.kind },
+          humanActions: [],
+          state: offerState,
+        });
+        beforeState = offerState;
+      }
+      if (choiceIndex === choices.length - 1) {
+        normalized.push(step);
+        return;
+      }
+      const revealedState = stateAfterCompletedChoice(beforeState, choice);
+      normalized.push({
+        sequence: step.sequence,
+        observedAt: step.observedAt,
+        direction: "synthetic",
+        type: "ChoiceRevealed",
+        description: `${choice.title} selected`,
+        details: { kind: choice.kind },
+        humanActions: [],
+        state: revealedState,
+      });
+      beforeState = revealedState;
+    });
+  }
+  inputSteps.splice(0, inputSteps.length, ...normalized);
   return inputSteps;
 }
 
-ensureChoiceDismissalSteps(logicalSteps);
+ensureChoiceOfferSteps(logicalSteps);
 
 function stabilizePreparationSnapshots(inputSteps) {
   const stabilizeSegment = (start, end) => {
@@ -2796,6 +3116,45 @@ function stabilizePreparationSnapshots(inputSteps) {
 // pre-battle segment: the battle summary keeps the old matchup, while the very
 // next step shows the new opponent and a stable prior-round snapshot.
 stabilizePreparationSnapshots(logicalSteps);
+
+function removeEmptyTimelineSteps(inputSteps) {
+  const retained = [];
+  let previousState = {};
+  for (const step of inputSteps) {
+    const hasContent = Boolean(step.battle) || Boolean(step.humanActions?.length) || !sameValue(previousState, step.state);
+    if (!hasContent) continue;
+    retained.push(step);
+    previousState = step.state;
+  }
+  inputSteps.splice(0, inputSteps.length, ...retained);
+  return inputSteps;
+}
+
+removeEmptyTimelineSteps(logicalSteps);
+
+function assertTimelinePresentation(inputSteps) {
+  let previousState = {};
+  for (const [index, step] of inputSteps.entries()) {
+    if (!step.battle && !step.humanActions?.length && sameValue(previousState, step.state)) {
+      throw new Error(`empty visible timeline step remained at index ${index}`);
+    }
+    if (index > 0) {
+      const choices = completedChoicesForStep(previousState, step.state);
+      if (choices.length > 1) {
+        throw new Error(`multiple choices remained batched at sequence ${step.sequence}`);
+      }
+      if (choices.length === 1) {
+        const priorOverlay = previousState.privatePlayer?.choiceOverlay;
+        if (priorOverlay?.kind !== choices[0].kind || !priorOverlay.options?.length) {
+          throw new Error(`completed ${choices[0].kind} choice lacks its immediately preceding offer at sequence ${step.sequence}`);
+        }
+      }
+    }
+    previousState = step.state;
+  }
+}
+
+assertTimelinePresentation(logicalSteps);
 
 function auditLogicalCardTransitions(inputSteps) {
   const issue = (step, priorPrivate, reason, extra = {}) => cardTransitionIssues.push({
@@ -2855,6 +3214,12 @@ function auditLogicalCardTransitions(inputSteps) {
 auditLogicalCardTransitions(logicalSteps);
 if (process.env.YXP_CARD_AUDIT) {
   for (const issue of cardTransitionIssues) console.log(`CARD_TRANSITION_ISSUE ${JSON.stringify(issue)}`);
+}
+
+const outputRecordingId = path.basename(outputPath).replace(/\.compact\.js$/, "");
+const checkedRegressions = assertRecordingRegression(outputRecordingId, logicalSteps);
+if (checkedRegressions) {
+  console.log(`RECORDING_REGRESSIONS ${JSON.stringify({ recording: outputRecordingId, checked: checkedRegressions })}`);
 }
 
 let previousVisibleState = {};

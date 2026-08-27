@@ -6,6 +6,7 @@ import { createHash } from "node:crypto";
 import { spawn, spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { characterInfo, decodeMessage, fateStrategyInfo } from "../scripts/decode_live_observation.mjs";
+import { recordingIdsWithAssertions } from "./recording_regressions.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const rawRoot = path.resolve(process.argv[2] ?? path.join(here, "raw-captures"));
@@ -19,106 +20,13 @@ const catalogOnly = Boolean(process.env.YXP_CATALOG_ONLY);
 const forceRebuild = Boolean(process.env.YXP_FORCE_REBUILD);
 const incremental = !forceRebuild && process.env.YXP_INCREMENTAL !== "0";
 const reuseExisting = incremental || Boolean(process.env.YXP_REUSE_EXISTING);
-const reuseCatalogMetadata = incremental || Boolean(process.env.YXP_REUSE_CATALOG_METADATA);
 const scanCacheEnabled = incremental && process.env.YXP_DISABLE_SCAN_CACHE !== "1";
 const scanCachePath = path.resolve(process.env.YXP_SCAN_CACHE_PATH
   || path.join(rawRoot, ".recording-browser-build-cache.json"));
-const scanCacheVersion = 1;
+const scanCacheVersion = 2;
 const buildJobs = Math.max(1, Number.parseInt(process.env.YXP_BUILD_JOBS || "1", 10) || 1);
+const regressionRecordingIds = recordingIdsWithAssertions();
 const numericPrefix = (value) => Number.parseInt(String(value ?? "0"), 10) || 0;
-
-function mergePatch(target, patch) {
-  if (!patch || typeof patch !== "object" || Array.isArray(patch)) return structuredClone(patch);
-  const result = target && typeof target === "object" && !Array.isArray(target) ? structuredClone(target) : {};
-  for (const [key, value] of Object.entries(patch)) {
-    if (value && typeof value === "object" && value.$deleted === true) delete result[key];
-    else result[key] = mergePatch(result[key], value);
-  }
-  return result;
-}
-
-function filterMetadataFromCompact(filename) {
-  if (!fs.existsSync(filename)) return null;
-  const data = JSON.parse(fs.readFileSync(filename, "utf8")
-    .replace(/^window\.REPLAY_RECORDING = /, "").replace(/;\s*$/, ""));
-  let state = {};
-  const states = data.steps.map((step) => {
-    state = mergePatch(state, step.patch);
-    return state;
-  });
-  const allPlayers = states.flatMap((candidate) => Object.values(candidate.players ?? {}));
-  const linXiaoyue = allPlayers.find((player) => player.uid === data.targetUid && player.characterId === 1000004)
-    ?? allPlayers.find((player) => !player.ai && player.characterId === 1000004);
-  const linUid = linXiaoyue?.uid ?? "";
-  const linCareer = numericPrefix(allPlayers.find((player) =>
-    player.uid === linUid && numericPrefix(player.career) > 0)?.career);
-  const fateIds = new Set();
-  const unchosenFateIds = new Set();
-  const incompleteFateOffers = new Map();
-  const rememberUnchosenHistory = (history, fallbackSelected = 0) => {
-    if (!history) return;
-    const selected = Number(history.selected ?? fallbackSelected);
-    const offered = [
-      ...(history.offers ?? []).flat(),
-      ...(history.rolledAway ?? []),
-      ...(history.rerolls ?? []).flatMap((reroll) => [
-        ...(Array.isArray(reroll.from) ? reroll.from : [reroll.from]), reroll.to,
-      ]),
-    ];
-    for (const id of offered.map(Number)) if (id > 0 && id !== selected) unchosenFateIds.add(id);
-  };
-  for (const candidate of states) {
-    const player = candidate.players?.[linUid];
-    for (const entry of player?.lastRound?.fateStrategies ?? []) {
-      const id = Number(entry?.id ?? entry);
-      if (id > 0) fateIds.add(id);
-    }
-    if (candidate.privatePlayer?.uid === linUid) {
-      for (const entry of candidate.privatePlayer.selectedFateStrategies ?? []) {
-        const id = Number(entry?.id ?? entry);
-        if (id > 0) fateIds.add(id);
-        rememberUnchosenHistory(entry?.choiceHistory, id);
-      }
-      const overlay = candidate.privatePlayer.choiceOverlay;
-      if (overlay?.kind === "heavenly-derivation") {
-        const key = Number(overlay.roundOrPhase) || 0;
-        const history = incompleteFateOffers.get(key) ?? { offered: new Set(), selected: 0 };
-        for (const entry of overlay.options ?? []) {
-          const id = Number(entry?.id ?? entry);
-          if (id > 0) history.offered.add(id);
-        }
-        if (Number(overlay.selected) > 0) history.selected = Number(overlay.selected);
-        incompleteFateOffers.set(key, history);
-      }
-    }
-  }
-  for (const history of incompleteFateOffers.values()) {
-    for (const id of history.offered) if (id !== history.selected) unchosenFateIds.add(id);
-  }
-  // A pending overlay can disappear on the same update that records the
-  // choice. Heavenly Derivation bans prevent a fate from being offered again,
-  // so any fate selected in this game must be removed from the global
-  // "offered but not chosen" set.
-  for (const id of fateIds) unchosenFateIds.delete(id);
-  const humanOpponentCharacterIds = new Set(allPlayers
-    .filter((player) => player.uid !== linUid && !player.ai && Number(player.characterId) > 0)
-    .map((player) => Number(player.characterId)));
-  return {
-    linCareer,
-    linFates: [...fateIds].sort((first, second) => first - second).map((id) => {
-      const info = data.catalog.fateStrategies?.[id] ?? fateStrategyInfo(id);
-      return { id, nameEnglish: info.nameEnglish, nameChinese: info.nameChinese };
-    }),
-    linUnchosenFates: [...unchosenFateIds].sort((first, second) => first - second).map((id) => {
-      const info = data.catalog.fateStrategies?.[id] ?? fateStrategyInfo(id);
-      return { id, nameEnglish: info.nameEnglish, nameChinese: info.nameChinese };
-    }),
-    humanOpponentCharacters: [...humanOpponentCharacterIds].sort((first, second) => first - second).map((id) => {
-      const info = data.catalog.characters?.[id] ?? characterInfo(id);
-      return { id, nameEnglish: info.nameEnglish, nameChinese: info.nameChinese };
-    }),
-  };
-}
 
 function publicRecordingId(capture) {
   const digest = createHash("sha256")
@@ -205,6 +113,11 @@ function inspectCapture(filename) {
     .flatMap((status) => status.publicPlayers ?? [])
     .find((player) => player.uid === targetUid && numericPrefix(player.career) > 0);
   const allPlayers = statuses.flatMap((status) => status.publicPlayers ?? []);
+  const targetPlayer = statuses.flatMap((status) => [
+    status.observedPrivatePlayer,
+    ...(status.publicPlayers ?? []),
+  ]).find((player) => player?.uid === targetUid && Number(player.characterId) > 0);
+  const targetCharacterId = Number(targetPlayer?.characterId ?? 0);
   const linXiaoyue = allPlayers.find((player) => player.uid === targetUid && player.characterId === 1000004)
     ?? allPlayers.find((player) => !player.ai && player.characterId === 1000004);
   const linUid = linXiaoyue?.uid ?? "";
@@ -212,7 +125,6 @@ function inspectCapture(filename) {
     player.uid === linUid && numericPrefix(player.career) > 0)?.career);
   const linFateIds = new Set();
   const linOfferedFateIds = new Set();
-  const linSelectedFateIds = new Set();
   for (const status of statuses) {
     const player = (status.publicPlayers ?? []).find((candidate) => candidate.uid === linUid);
     for (const id of player?.lastRound?.fateStrategies ?? []) if (Number(id) > 0) linFateIds.add(Number(id));
@@ -221,7 +133,6 @@ function inspectCapture(filename) {
         for (const id of selection.pending ?? []) if (Number(id) > 0) linOfferedFateIds.add(Number(id));
         if (Number(selection.selected) > 0) {
           linFateIds.add(Number(selection.selected));
-          linSelectedFateIds.add(Number(selection.selected));
         }
       }
       for (const id of status.observedPrivatePlayer.fateStrategies?.banned ?? []) {
@@ -229,7 +140,7 @@ function inspectCapture(filename) {
       }
     }
   }
-  const linUnchosenFateIds = [...linOfferedFateIds].filter((id) => !linSelectedFateIds.has(id));
+  const linUnchosenFateIds = [...linOfferedFateIds].filter((id) => !linFateIds.has(id));
   const humanOpponentCharacterIds = new Set(allPlayers
     .filter((player) => player.uid !== linUid && !player.ai && Number(player.characterId) > 0)
     .map((player) => Number(player.characterId)));
@@ -237,6 +148,7 @@ function inspectCapture(filename) {
     filename,
     targetUid,
     targetUsername: target.username || target.name || targetUid,
+    targetCharacterId,
     startingRating: Number(target.actualModeScore ?? target.daoXinRankScore ?? target.rankScore ?? 0),
     career: numericPrefix(roundTwoPlayer?.career),
     rounds: finalRound,
@@ -257,11 +169,10 @@ function inspectCapture(filename) {
 
 fs.mkdirSync(dataRoot, { recursive: true });
 const existingCatalogPath = path.join(dataRoot, "catalog.js");
-const existingCatalog = (catalogOnly || reuseCatalogMetadata) && fs.existsSync(existingCatalogPath)
+const existingCatalog = catalogOnly && fs.existsSync(existingCatalogPath)
   ? JSON.parse(fs.readFileSync(existingCatalogPath, "utf8")
     .replace(/^window\.RECORDING_CATALOG = /, "").replace(/;\s*$/, ""))
   : [];
-const existingCatalogById = new Map(existingCatalog.map((item) => [item.id, item]));
 const priorScanCache = readScanCache();
 const nextScanCacheEntries = {};
 let inspectedCaptureFiles = 0;
@@ -287,6 +198,7 @@ const captures = filesBelow(rawRoot).map((filename) => {
   };
   return capture ? { ...capture, sourceChanged } : null;
 }).filter(Boolean)
+  .filter((capture) => capture.targetCharacterId === 1000004)
   .filter((capture) => !maxCapturedThrough || capture.capturedThrough <= maxCapturedThrough)
   .filter((capture) => !excludedCaptureNames.has(path.basename(capture.filename)))
   .sort((first, second) => second.capturedThrough.localeCompare(first.capturedThrough));
@@ -302,7 +214,8 @@ if (!catalogOnly && buildJobs > 1) {
     const id = publicRecordingId(capture);
     const outputPath = path.join(dataRoot, `${id}.compact.js`);
     return { capture, id, outputPath };
-  }).filter((item) => forceRebuild || item.capture.sourceChanged || !fs.existsSync(item.outputPath));
+  }).filter((item) => forceRebuild || regressionRecordingIds.has(item.id)
+    || item.capture.sourceChanged || !fs.existsSync(item.outputPath));
   let cursor = 0;
   let completed = 0;
   const buildOne = ({ capture, id, outputPath }) => new Promise((resolve) => {
@@ -354,7 +267,8 @@ for (const [position, capture] of captures.entries()) {
   const outputPath = path.join(dataRoot, outputName);
   if (catalogOnly && !fs.existsSync(outputPath)) continue;
   if (!catalogOnly && !builtIds.has(id)
-    && !(reuseExisting && !forceRebuild && !capture.sourceChanged && fs.existsSync(outputPath))) {
+    && (regressionRecordingIds.has(id)
+      || !(reuseExisting && !forceRebuild && !capture.sourceChanged && fs.existsSync(outputPath)))) {
     const result = spawnSync(process.execPath, [path.join(here, "build_data.mjs"), capture.filename, outputPath], {
       encoding: "utf8",
       env: { ...process.env, YXP_WIKI_ROOT: wikiRoot },
@@ -378,27 +292,20 @@ for (const [position, capture] of captures.entries()) {
     }
     builtIds.add(id);
   }
-  const priorCatalogItem = reuseCatalogMetadata && !capture.sourceChanged
-    ? existingCatalogById.get(id) : null;
-  const compactFilterMetadata = priorCatalogItem ? {
-    linCareer: priorCatalogItem.linCareer,
-    linFates: priorCatalogItem.linFates,
-    linUnchosenFates: priorCatalogItem.linUnchosenFates,
-    humanOpponentCharacters: priorCatalogItem.humanOpponentCharacters,
-  } : filterMetadataFromCompact(outputPath) ?? {};
   catalog.push({
     id,
     file: outputName,
     targetUid: capture.targetUid,
     targetUsername: capture.targetUsername,
+    targetCharacterId: capture.targetCharacterId,
     startingRating: capture.startingRating,
     career: capture.career,
     rounds: capture.rounds,
     capturedThrough: capture.capturedThrough,
-    linCareer: compactFilterMetadata.linCareer ?? capture.linCareer,
-    linFates: compactFilterMetadata.linFates ?? capture.linFates,
-    linUnchosenFates: compactFilterMetadata.linUnchosenFates ?? capture.linUnchosenFates,
-    humanOpponentCharacters: compactFilterMetadata.humanOpponentCharacters ?? capture.humanOpponentCharacters,
+    linCareer: capture.linCareer,
+    linFates: capture.linFates,
+    linUnchosenFates: capture.linUnchosenFates,
+    humanOpponentCharacters: capture.humanOpponentCharacters,
     label: `${capture.targetUsername} · ${capture.rounds} rounds`,
   });
   if (!incremental || builtIds.has(id)) {
@@ -409,7 +316,7 @@ if (catalogOnly) {
   const catalogIds = new Set(catalog.map((item) => item.id));
   for (const item of existingCatalog) {
     if (catalogIds.has(item.id) || !fs.existsSync(path.join(dataRoot, item.file))) continue;
-    catalog.push({ ...item, ...(filterMetadataFromCompact(path.join(dataRoot, item.file)) ?? {}) });
+    catalog.push(item);
   }
 }
 if (buildFailures.length && !skipBuildFailures) {
