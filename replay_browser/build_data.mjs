@@ -3216,7 +3216,7 @@ if (process.env.YXP_CARD_AUDIT) {
   for (const issue of cardTransitionIssues) console.log(`CARD_TRANSITION_ISSUE ${JSON.stringify(issue)}`);
 }
 
-const outputRecordingId = path.basename(outputPath).replace(/\.compact\.js$/, "");
+const outputRecordingId = path.basename(outputPath).replace(/\.compact(?:\.json\.gz|\.json|\.js)$/, "");
 const checkedRegressions = assertRecordingRegression(outputRecordingId, logicalSteps);
 if (checkedRegressions) {
   console.log(`RECORDING_REGRESSIONS ${JSON.stringify({ recording: outputRecordingId, checked: checkedRegressions })}`);
@@ -3241,7 +3241,7 @@ const outputIsJson = path.extname(outputPath).toLowerCase() === ".json";
 const outputIsCompactScript = path.basename(outputPath).includes(".compact.");
 if (outputIsJson || outputIsCompactScript) {
   const compact = {
-    id: path.basename(outputPath).replace(/\.compact\.js$/, ""),
+    id: outputRecordingId,
     targetUid: payload.targetUid,
     targetUsername: payload.targetUsername,
     catalog: payload.catalog,

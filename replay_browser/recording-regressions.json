@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "recordings": {
+    "r-0315b67052373b80": [
+      {
+        "name": "round 3 public battle losses are folded into the battle, not the following shop",
+        "anchor": { "battleRound": 3 },
+        "checks": [
+          { "path": "/event/humanActions/0/changes", "op": "includesMatch", "value": { "actorUid": "669da745199d590f36f62483", "delta": -9 } },
+          { "path": "/event/humanActions/0/changes", "op": "includesMatch", "value": { "actorUid": "66801d2a133c00e10bc053a2", "delta": -5 } },
+          { "path": "/event/humanActions/0/changes", "op": "includesMatch", "value": { "actorUid": "639cbc1ac6ed6cc30365e131", "delta": -4 } },
+          { "path": "/event/humanActions/0/changes", "op": "excludesMatch", "value": { "actorUid": "638ffc5f456df367f60c0658" } },
+          { "path": "/event/battle/matchups/2/players/638ffc5f456df367f60c0658/lifeDelta", "op": "equals", "value": 0 }
+        ]
+      },
+      {
+        "name": "Five Elements Infuse is a separate start-of-round destiny gain",
+        "anchor": {
+          "round": 4,
+          "actionKind": "destiny",
+          "actorUid": "638ffc5f456df367f60c0658",
+          "where": [
+            { "path": "/humanActions/0/changes", "op": "includesMatch", "value": { "actorUid": "638ffc5f456df367f60c0658", "delta": 3 } }
+          ]
+        },
+        "checks": [
+          { "path": "/event/battle", "op": "exists", "value": false },
+          { "path": "/event/humanActions/0/changes", "op": "length", "value": 1 }
+        ]
+      }
+    ],
+    "r-d2b2b3ba28c80522": [
+      {
+        "name": "Dew Jade Vase can make a losing battle increase destiny",
+        "anchor": { "battleRound": 11 },
+        "checks": [
+          { "path": "/event/battle/matchups/0/players/6392962760096e9d3e5bcbe8/result", "op": "equals", "value": "loss" },
+          { "path": "/event/battle/matchups/0/players/6392962760096e9d3e5bcbe8/lifeDelta", "op": "equals", "value": 14 },
+          { "path": "/event/humanActions/0/changes", "op": "includesMatch", "value": { "actorUid": "6392962760096e9d3e5bcbe8", "delta": 14 } }
+        ]
+      }
+    ],
+    "r-a22895755fd255d8": [
+      {
+        "name": "older AI Build Good Karma battle keeps its direct BattleResult delta",
+        "anchor": { "battleRound": 3 },
+        "checks": [
+          { "path": "/event/battle/matchups/0/players/65db92284574f980c154b895/lifeDelta", "op": "equals", "value": -4 },
+          { "path": "/event/battle/matchups/0/players/ai7-lv3/lifeDelta", "op": "equals", "value": 0 },
+          { "path": "/event/battle/matchups/0/players/ai7-lv3/fateStrategies", "op": "includesMatch", "value": { "id": 21 } }
+        ]
+      }
+    ],
+    "r-92bdfd0645b91928": [
+      {
+        "name": "newer AI Build Good Karma battle keeps its direct BattleResult delta",
+        "anchor": { "battleRound": 3 },
+        "checks": [
+          { "path": "/event/battle/matchups/0/players/ai7-lv4/lifeDelta", "op": "equals", "value": -6 },
+          { "path": "/event/battle/matchups/0/players/693194c39cbe4c77a2c16d90/lifeDelta", "op": "equals", "value": 0 },
+          { "path": "/event/battle/matchups/0/players/ai7-lv4/fateStrategies", "op": "includesMatch", "value": { "id": 21 } }
+        ]
+      }
+    ],
+    "r-d42e1558df7d8c80": [
+      {
+        "name": "batched Hua Qinrui loss and Five Elements Infuse are decomposed",
+        "anchor": { "battleRound": 3 },
+        "checks": [
+          { "path": "/event/battle/matchups/1/players/ai7-lv2/lifeDelta", "op": "equals", "value": -3 },
+          { "path": "/event/humanActions/0/changes", "op": "includesMatch", "value": { "actorUid": "ai7-lv2", "delta": -3 } }
+        ]
+      },
+      {
+        "name": "batched Five Elements Infuse component remains a separate gain",
+        "anchor": {
+          "round": 4,
+          "actionKind": "destiny",
+          "actorUid": "ai7-lv2",
+          "where": [
+            { "path": "/humanActions/0/changes", "op": "includesMatch", "value": { "actorUid": "ai7-lv2", "delta": 4 } }
+          ]
+        },
+        "checks": [
+          { "path": "/event/battle", "op": "exists", "value": false }
+        ]
+      }
+    ],
+    "r-8ce18cfe02011874": [
+      {
+        "name": "winner post-battle destiny cost is not battle damage",
+        "anchor": { "battleRound": 17 },
+        "checks": [
+          { "path": "/event/battle/matchups/0/players/69c3d6b529093dd8107b8c7f/result", "op": "equals", "value": "win" },
+          { "path": "/event/battle/matchups/0/players/69c3d6b529093dd8107b8c7f/lifeDelta", "op": "equals", "value": 0 },
+          { "path": "/event/battle/matchups/0/players/65ae3a9d4e41c2dc2bc7f3aa/lifeDelta", "op": "equals", "value": -31 }
+        ]
+      }
+    ]
+  }
+}

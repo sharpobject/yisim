@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Match Recordings - Yi Xian Wiki</title>
+  <link rel="stylesheet" href="wiki-site.css">
+  <link rel="stylesheet" href="replay-browser.css">
+</head>
+<body data-asset-mode="local" data-recording-base="data">
+  <header>
+    <a class="brand" href="/yxp_wiki/en/index.html">Yi Xian Wiki</a>
+    <nav>
+      <a href="/yxp_wiki/en/characters/index.html">Characters</a>
+      <a href="/yxp_wiki/en/cards/index.html">Cards</a><a href="/yxp_wiki/en/sigils/index.html">Sigils</a>
+      <a href="/yxp_wiki/en/fates/index.html">Fates</a>
+      <a class="active" href="#">Recordings</a>
+    </nav>
+    <a class="lang" href="/yxp_wiki/zh/recordings/">中文</a>
+  </header>
+
+  <main class="recording-page">
+    <section class="recording-intro">
+      <div>
+        <p class="eyebrow">Match recording archive</p>
+        <h1>Match recordings</h1>
+        <p class="muted">Browse a recorded player’s actions and the prior-round information available about the rest of the lobby.</p>
+      </div>
+      <label class="recording-picker">Recording
+        <span class="recording-picker-row">
+          <select id="recording-select" aria-label="Choose a recording"></select>
+          <button id="recording-filter-toggle" type="button" aria-label="Filter recordings" aria-expanded="false">⌄</button>
+          <span id="recording-filter-popover" class="recording-filter-popover" hidden></span>
+        </span>
+      </label>
+    </section>
+
+    <section class="replay-shell" aria-live="polite">
+      <div class="replay-toolbar">
+        <button id="previous" type="button" aria-label="Previous action">←</button>
+        <button id="next" type="button" aria-label="Next action">→</button>
+        <input id="timeline" type="range" min="0" value="0" aria-label="Recording timeline">
+        <select id="round-select" aria-label="Jump to round"></select>
+        <span id="step-label">Loading…</span>
+      </div>
+
+      <div id="loading" class="recording-loading">Loading recording…</div>
+      <div id="viewer" hidden>
+        <div class="game-stage">
+          <div class="round-marker" id="round-marker"></div>
+          <div class="player-roster" id="player-roster" aria-label="Players; select one to inspect"></div>
+
+          <div class="view-caption" id="view-caption"></div>
+          <aside class="character-panel" id="character-panel"></aside>
+          <section class="board-panel" id="board-panel">
+            <div class="opponent-preview" id="opponent-preview" hidden></div>
+            <div class="card-zone deck-zone">
+              <div class="zone-label" id="deck-label">Deck</div>
+              <div class="card-strip" id="deck"></div>
+            </div>
+            <div class="card-zone hand-zone">
+              <div class="zone-label" id="hand-label">Hand</div>
+              <div class="card-strip hand" id="hand"></div>
+              <div class="exchange-counter" id="exchange-counter" hidden></div>
+            </div>
+          </section>
+
+          <section class="battle-panel" id="battle-panel" hidden></section>
+
+          <div class="selection-overlay" id="selection-overlay" hidden></div>
+        </div>
+
+        <section class="action-history">
+          <div class="action-history-head">
+            <div><p class="eyebrow">At this point</p><h2>Recent actions</h2></div>
+            <span class="muted" id="recording-meta"></span>
+          </div>
+          <ol id="action-list"></ol>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="recording-codec.js"></script>
+  <script src="replay-browser.js"></script>
+</body>
+</html>

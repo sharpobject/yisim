@@ -2,15 +2,22 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
+import { createRequire } from "node:module";
 import { spawn, spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { gunzipSync, gzipSync } from "node:zlib";
 import { characterInfo, decodeMessage, fateStrategyInfo } from "../scripts/decode_live_observation.mjs";
 import { recordingIdsWithAssertions } from "./recording_regressions.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
+const require = createRequire(import.meta.url);
+const recordingCodec = require("./recording-codec.cjs");
 const rawRoot = path.resolve(process.argv[2] ?? path.join(here, "raw-captures"));
 const dataRoot = path.resolve(process.argv[3] ?? path.join(here, "data"));
+const payloadCacheRoot = path.resolve(process.env.YXP_RECORDING_PAYLOAD_CACHE
+  || path.join(here, ".recording-payload-cache"));
 const wikiRoot = process.env.YXP_WIKI_ROOT || "/private/tmp/yxp_wiki";
 const maxCapturedThrough = process.env.YXP_MAX_CAPTURED_THROUGH || "";
 const excludedCaptureNames = new Set((process.env.YXP_EXCLUDE_CAPTURES || "")
@@ -168,11 +175,15 @@ function inspectCapture(filename) {
 }
 
 fs.mkdirSync(dataRoot, { recursive: true });
-const existingCatalogPath = path.join(dataRoot, "catalog.js");
-const existingCatalog = catalogOnly && fs.existsSync(existingCatalogPath)
-  ? JSON.parse(fs.readFileSync(existingCatalogPath, "utf8")
-    .replace(/^window\.RECORDING_CATALOG = /, "").replace(/;\s*$/, ""))
-  : [];
+fs.mkdirSync(payloadCacheRoot, { recursive: true });
+const existingCatalogPath = path.join(dataRoot, "catalog.compact.json.gz");
+let existingCatalog = [];
+let existingSharedCatalog = Object.fromEntries(recordingCodec.CATALOG_KINDS.map((kind) => [kind, {}]));
+if (fs.existsSync(existingCatalogPath)) {
+  const decoded = recordingCodec.unpackCatalog(JSON.parse(gunzipSync(fs.readFileSync(existingCatalogPath))));
+  existingCatalog = decoded.catalog;
+  existingSharedCatalog = decoded.sharedCatalog;
+}
 const priorScanCache = readScanCache();
 const nextScanCacheEntries = {};
 let inspectedCaptureFiles = 0;
@@ -212,7 +223,7 @@ const builtIds = new Set();
 if (!catalogOnly && buildJobs > 1) {
   const pending = captures.map((capture) => {
     const id = publicRecordingId(capture);
-    const outputPath = path.join(dataRoot, `${id}.compact.js`);
+    const outputPath = path.join(payloadCacheRoot, `${id}.compact.json`);
     return { capture, id, outputPath };
   }).filter((item) => forceRebuild || regressionRecordingIds.has(item.id)
     || item.capture.sourceChanged || !fs.existsSync(item.outputPath));
@@ -261,15 +272,16 @@ if (!catalogOnly && buildJobs > 1) {
 }
 for (const [position, capture] of captures.entries()) {
   const id = publicRecordingId(capture);
-  const outputName = `${id}.compact.js`;
+  const outputName = `${id}.compact.json.gz`;
   if (generatedFiles.has(outputName)) throw new Error(`public recording ID collision for ${capture.filename}`);
   generatedFiles.add(outputName);
   const outputPath = path.join(dataRoot, outputName);
+  const payloadCachePath = path.join(payloadCacheRoot, `${id}.compact.json`);
   if (catalogOnly && !fs.existsSync(outputPath)) continue;
   if (!catalogOnly && !builtIds.has(id)
     && (regressionRecordingIds.has(id)
-      || !(reuseExisting && !forceRebuild && !capture.sourceChanged && fs.existsSync(outputPath)))) {
-    const result = spawnSync(process.execPath, [path.join(here, "build_data.mjs"), capture.filename, outputPath], {
+      || !(reuseExisting && !forceRebuild && !capture.sourceChanged && fs.existsSync(payloadCachePath)))) {
+    const result = spawnSync(process.execPath, [path.join(here, "build_data.mjs"), capture.filename, payloadCachePath], {
       encoding: "utf8",
       env: { ...process.env, YXP_WIKI_ROOT: wikiRoot },
     });
@@ -327,14 +339,80 @@ if (buildFailures.length) process.stderr.write(`BUILD_FAILURE_SUMMARY ${JSON.str
 for (const failure of buildFailures) {
   delete nextScanCacheEntries[path.relative(rawRoot, failure.filename)];
 }
-if (!catalogOnly) for (const filename of fs.readdirSync(dataRoot)) {
-  if (filename.endsWith(".compact.js") && !generatedFiles.has(filename)) fs.rmSync(path.join(dataRoot, filename));
-}
 catalog.sort((first, second) => first.targetUid.localeCompare(second.targetUid)
   || second.capturedThrough.localeCompare(first.capturedThrough));
-fs.writeFileSync(path.join(dataRoot, "catalog.js"), `window.RECORDING_CATALOG = ${JSON.stringify(catalog)};\n`);
+
+function mergeSharedCatalog(target, source, recordingId) {
+  for (const kind of recordingCodec.CATALOG_KINDS) {
+    for (const [id, entry] of Object.entries(source[kind] ?? {})) {
+      if (target[kind][id] && JSON.stringify(target[kind][id]) !== JSON.stringify(entry)) {
+        throw new Error(`conflicting ${kind} metadata for ${id} while packing ${recordingId}`);
+      }
+      target[kind][id] = entry;
+    }
+  }
+}
+
+// Recompute the shared catalog from the recordings that will actually be
+// published.  Seeding this from a prior build would retain metadata for cards,
+// talents, fates, and characters no current recording references, making every
+// future catalog permanently inherit stale bytes.  Catalog-only mode may lack
+// expanded payloads for retained recordings, so only that maintenance mode
+// needs the prior catalog as its starting point.
+const sharedCatalog = catalogOnly
+  ? structuredClone(existingSharedCatalog)
+  : Object.fromEntries(recordingCodec.CATALOG_KINDS.map((kind) => [kind, {}]));
+const expandedPayloads = new Map();
+for (const item of catalog) {
+  const payloadPath = path.join(payloadCacheRoot, `${item.id}.compact.json`);
+  if (!fs.existsSync(payloadPath)) {
+    if (!catalogOnly) throw new Error(`missing expanded recording payload ${payloadPath}`);
+    continue;
+  }
+  const payload = JSON.parse(fs.readFileSync(payloadPath, "utf8"));
+  expandedPayloads.set(item.id, payload);
+  mergeSharedCatalog(sharedCatalog, payload.catalog, item.id);
+}
+
+function smallestPackedRecording(payload) {
+  let best = null;
+  for (const stringLimit of [0, 16, 64, 256, Number.POSITIVE_INFINITY]) {
+    const packed = recordingCodec.packRecording(payload, { stringLimit });
+    const compressed = gzipSync(Buffer.from(JSON.stringify(packed)), { level: 9 });
+    if (!best || compressed.length < best.compressed.length) best = { packed, compressed };
+  }
+  return best;
+}
+
+let packedBytes = 0;
+for (const item of catalog) {
+  const payload = expandedPayloads.get(item.id);
+  const outputPath = path.join(dataRoot, item.file);
+  if (payload && (!fs.existsSync(outputPath) || builtIds.has(item.id) || forceRebuild)) {
+    const { compressed } = smallestPackedRecording(payload);
+    fs.writeFileSync(outputPath, compressed);
+  }
+  if (!fs.existsSync(outputPath)) throw new Error(`missing packed recording ${outputPath}`);
+  const packed = JSON.parse(gunzipSync(fs.readFileSync(outputPath)));
+  const decoded = recordingCodec.unpackRecording(packed, sharedCatalog);
+  if (payload) assert.deepStrictEqual(decoded, payload, `packed recording changed ${item.id}`);
+  packedBytes += fs.statSync(outputPath).size;
+}
+
+const packedCatalog = recordingCodec.packCatalog(sharedCatalog, catalog);
+const decodedCatalog = recordingCodec.unpackCatalog(packedCatalog);
+assert.deepStrictEqual(decodedCatalog.sharedCatalog, sharedCatalog, "packed shared catalog changed data");
+assert.deepStrictEqual(decodedCatalog.catalog, catalog, "packed recording catalog changed data");
+fs.writeFileSync(existingCatalogPath, gzipSync(Buffer.from(JSON.stringify(packedCatalog)), { level: 9 }));
+
+if (!catalogOnly) for (const filename of fs.readdirSync(dataRoot)) {
+  const isRecording = filename.startsWith("r-")
+    && (filename.endsWith(".compact.js") || filename.endsWith(".compact.json.gz"));
+  if (isRecording && !generatedFiles.has(filename)) fs.rmSync(path.join(dataRoot, filename));
+}
+fs.rmSync(path.join(dataRoot, "catalog.js"), { force: true });
 writeScanCache(nextScanCacheEntries);
-console.log(`wrote ${catalog.length} complete recordings to ${dataRoot}`);
+console.log(`wrote ${catalog.length} complete recordings (${packedBytes} compressed bytes) to ${dataRoot}`);
 if (process.env.YXP_DRAW_AUDIT) {
   const byCount = Object.fromEntries([...new Set(drawAudit.map((entry) => entry.count))]
     .sort((first, second) => first - second)

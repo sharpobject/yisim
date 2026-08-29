@@ -37,8 +37,52 @@ To compile one live-observer capture:
 
 ```sh
 cd /Users/sharpobject/Documents/ubiq
-YXP_WIKI_ROOT=/path/to/yxp_wiki node replay_browser/build_data.mjs path/to/capture.jsonl replay_browser/data/example.compact.js
+YXP_WIKI_ROOT=/path/to/yxp_wiki node replay_browser/build_data.mjs path/to/capture.jsonl replay_browser/.recording-payload-cache/example.compact.json
 ```
+
+`build_catalog.mjs` stores the public catalog and recordings as deterministic
+gzip-compressed JSON. Static card, talent, fate, and character metadata appears
+once in the shared catalog; each recording contains only catalog references and
+a schema-packed timeline. The build decodes every emitted payload and requires
+deep equality with the expanded builder output before it succeeds.
+
+## Recording regressions
+
+When a reported recording bug is fixed, preserve it in
+`recording-regressions.json`. Assertions identify a moment by semantic facts
+such as the round, protocol message type, battle round, action kind, actor, or
+the raw capture sequence. They never use the browser's generated step number.
+If a semantic event genuinely repeats, `occurrence` is one-based among the
+matching events.
+
+Checks use JSON-pointer paths rooted at `state`, `beforeState`, `nextState`, or
+`event`. Supported operations are `equals`, `notEquals`, `exists`, `includes`,
+`excludes`, `includesMatch`, `excludesMatch`, and `length`. The two `Match`
+operations compare an array entry with an object subset, so assertions do not
+need to repeat unrelated fields. For example:
+
+```json
+{
+  "name": "round 9 enlightenment upgrades Cat Sword",
+  "anchor": {
+    "round": 9,
+    "type": "PlayerData",
+    "actionKind": "heavenlyFateUse",
+    "occurrence": 1
+  },
+  "checks": [
+    {
+      "path": "/state/privatePlayer/hand/2",
+      "op": "equals",
+      "value": 1020009
+    }
+  ]
+}
+```
+
+Any recording with assertions is rebuilt on every catalog run, even during an
+incremental build, and a missing, ambiguous, or failed assertion aborts the
+build.
 
 To copy the card images and Fate/Heavenly Derivation Fate icons used by the
 generated replay from a checkout of `sharpobject/yxp_wiki`:

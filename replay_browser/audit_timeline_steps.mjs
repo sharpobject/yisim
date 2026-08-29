@@ -2,6 +2,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { readPackedRecording, readRecordingCatalog, recordingFiles } from "./recording-data-io.mjs";
 
 function clone(value) {
   return value === undefined ? undefined : JSON.parse(JSON.stringify(value));
@@ -19,14 +20,6 @@ function applyPatch(before, patch) {
     }
   }
   return output;
-}
-
-function readCompact(filename) {
-  const source = fs.readFileSync(filename, "utf8");
-  const start = source.indexOf("=");
-  const end = source.lastIndexOf(";");
-  if (start < 0 || end <= start) throw new Error(`could not parse ${filename}`);
-  return JSON.parse(source.slice(start + 1, end));
 }
 
 function selectedChoiceIds(values = []) {
@@ -65,7 +58,8 @@ function choiceRevealKinds(before, after) {
 const root = path.resolve(process.argv[2] ?? "");
 if (!root || !fs.existsSync(root)) throw new Error("usage: audit_timeline_steps.mjs /path/to/recording/data");
 
-const files = fs.readdirSync(root).filter((name) => name.endsWith(".compact.js")).sort();
+const { sharedCatalog } = readRecordingCatalog(root);
+const files = recordingFiles(root);
 const totals = {
   recordings: files.length,
   steps: 0,
@@ -84,7 +78,7 @@ const multipleRevealExamples = [];
 const revealFollowups = {};
 
 for (const name of files) {
-  const payload = readCompact(path.join(root, name));
+  const payload = readPackedRecording(path.join(root, name), sharedCatalog);
   let state = {};
   let priorChoice = choiceSnapshot(state);
   let inNoopRun = false;
