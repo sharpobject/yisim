@@ -53,8 +53,10 @@ const exactSharedCatalog = Object.fromEntries(codec.CATALOG_KINDS.map((kind) => 
   })),
 ]));
 
+if (fs.existsSync(outputRoot) && fs.readdirSync(outputRoot).length) {
+  throw new Error(`refusing to overwrite nonempty migration output ${outputRoot}`);
+}
 fs.mkdirSync(outputRoot, { recursive: true });
-for (const filename of fs.readdirSync(outputRoot)) fs.rmSync(path.join(outputRoot, filename));
 for (const item of selected) {
   fs.copyFileSync(path.join(sourceRoot, item.file), path.join(outputRoot, item.file));
   codec.unpackRecording(readGzipJson(path.join(outputRoot, item.file)), exactSharedCatalog);
