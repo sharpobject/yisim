@@ -7,11 +7,27 @@ import {
   talentInfo, fateStrategyInfo, keYinCardInfo,
 } from "../scripts/decode_live_observation.mjs";
 import { assertRecordingRegression } from "./recording_regressions.mjs";
+import { buildReplaySummaryData } from "./generate_replay_summary_html.mjs";
 
 const [inputPath, outputPath = path.join(path.dirname(new URL(import.meta.url).pathname), "replay-data.js")] = process.argv.slice(2);
 if (!inputPath) throw new Error("usage: build_data.mjs CAPTURE.jsonl [OUTPUT.js]");
 
 const rawEvents = fs.readFileSync(inputPath, "utf8").trim().split("\n").filter(Boolean).map(JSON.parse);
+const replayPovPath = process.env.YXP_REPLAY_POV || "";
+if (process.env.YXP_REQUIRE_REPLAY_OPENING && !replayPovPath) {
+  throw new Error(`late Cup observation has no matching scraped replay POV: ${path.basename(inputPath)}`);
+}
+const observationAcceptedIndex = rawEvents.findIndex((event) => event.event === "observation_accepted");
+const firstLiveServerIndex = replayPovPath && observationAcceptedIndex >= 0
+  ? rawEvents.findIndex((event, index) => index > observationAcceptedIndex
+    && event.event === "websocket_frame"
+    && event.direction === "server->client"
+    && event.messageType)
+  : -1;
+if (replayPovPath && firstLiveServerIndex < 0) {
+  throw new Error(`late Cup observation has no server message after acceptance: ${path.basename(inputPath)}`);
+}
+const protocolEvents = firstLiveServerIndex >= 0 ? rawEvents.slice(firstLiveServerIndex) : rawEvents;
 const wikiRoot = process.env.YXP_WIKI_ROOT || "/private/tmp/yxp_wiki";
 function extractedFateMetadata() {
   const filename = path.join(steamDumpPath, "heavenly_derivation_fates.json");
@@ -1403,7 +1419,7 @@ function statePatch(before, after) {
   return Object.keys(patch).length ? patch : undefined;
 }
 
-for (const event of rawEvents) {
+for (const event of protocolEvents) {
   if (event.event !== "websocket_frame" || !event.messageType) continue;
   let decoded;
   try { decoded = decodeMessage(event.messageType, Buffer.from(event.protobufBase64 ?? "", "base64")); }
@@ -1506,6 +1522,125 @@ function collapseBattleDestinyRuns(inputSteps) {
 }
 
 const logicalSteps = collapseBattleDestinyRuns(pairGameStatusRequests(steps));
+
+function mergeReplayPatch(target, patch) {
+  if (patch?.$deleted === true && Object.keys(patch).length === 1) return undefined;
+  if (!patch || typeof patch !== "object" || Array.isArray(patch)) return clone(patch);
+  const result = target && typeof target === "object" && !Array.isArray(target) ? clone(target) : {};
+  for (const [key, value] of Object.entries(patch)) {
+    const merged = mergeReplayPatch(result[key], value);
+    if (merged === undefined && value?.$deleted === true) delete result[key];
+    else result[key] = merged;
+  }
+  return result;
+}
+
+let hybridReplaySummary = null;
+let hybridBoundary = null;
+
+function decodedBoundary() {
+  if (!replayPovPath) return null;
+  if (hybridBoundary) return hybridBoundary;
+  const event = rawEvents[firstLiveServerIndex];
+  let decoded = {};
+  try { decoded = decodeMessage(event.messageType, Buffer.from(event.protobufBase64 ?? "", "base64")); }
+  catch { /* The live processor will report a decode issue in its normal step. */ }
+  let round = Number(decoded.round) || 0;
+  if (!round) {
+    for (const later of rawEvents.slice(firstLiveServerIndex)) {
+      if (later.event !== "websocket_frame" || later.direction !== "server->client" || later.messageType !== "GameStatus") continue;
+      try {
+        round = Number(decodeMessage("GameStatus", Buffer.from(later.protobufBase64 ?? "", "base64")).round) || 0;
+      } catch { /* Keep searching. */ }
+      if (round) break;
+    }
+  }
+  hybridBoundary = { event, decoded, round };
+  return hybridBoundary;
+}
+
+function replayStepsBeforeBoundary() {
+  const boundary = decodedBoundary();
+  if (!boundary) return [];
+  const summary = hybridReplaySummary ??= buildReplaySummaryData(replayPovPath, {
+    configPaths: {
+      localization: path.join(steamDumpPath, "localization.json"),
+      cards: path.join(steamDumpPath, "protobuf", "CardConfig.json"),
+      fates: path.join(steamDumpPath, "heavenly_derivation_fates.json"),
+      talents: path.join(steamDumpPath, "protobuf_raw_json", "TalentConfig.raw.json"),
+    },
+  });
+  if (String(summary.targetView.data.uid) !== String(targetUid)) {
+    throw new Error(`scraped replay POV uid ${summary.targetView.data.uid} does not match observed uid ${targetUid}`);
+  }
+  for (const id of Object.keys(summary.recording.catalog.cards ?? {})) rememberCard(Number(id));
+  for (const id of Object.keys(summary.recording.catalog.talents ?? {})) rememberTalent(Number(id));
+  for (const id of Object.keys(summary.recording.catalog.fateStrategies ?? {})) rememberFateStrategy(Number(id));
+  for (const id of Object.keys(summary.recording.catalog.characters ?? {})) rememberCharacter({ characterId: Number(id) });
+  const snapshotBoundary = ["GameStatus", "PlayerData"].includes(boundary.event.messageType);
+  const battleBoundary = boundary.event.messageType === "BattleResult";
+  const selected = summary.recording.steps.filter((step) => {
+    const sourceRound = Number(step.replaySource?.round) || 0;
+    if (sourceRound < boundary.round) return true;
+    if (sourceRound > boundary.round) return false;
+    if (!battleBoundary || snapshotBoundary) return false;
+    return !["battle", "post-battle-destiny"].includes(step.replaySource?.phase);
+  });
+  let materializedState = {};
+  const materialized = selected.map((step, index) => {
+    materializedState = mergeReplayPatch(materializedState, step.patch);
+    const humanActions = clone(step.humanActions ?? []).map((action) => {
+      if (!["destiny", "nonBattleDestiny"].includes(action.kind) || !action.changes?.length) return action;
+      return {
+        ...action,
+        changes: action.changes.map((change) => ({
+          actorUid: change.actorUid ?? change.uid,
+          actorUsername: change.actorUsername ?? change.username,
+          delta: change.delta,
+        })),
+      };
+    });
+    return {
+      sequence: -selected.length + index,
+      observedAt: boundary.event.observedAt,
+      direction: "synthetic",
+      type: "ReplayOpening",
+      description: `Replay-derived ${step.replaySource?.phase ?? "opening"} — round ${step.replaySource?.round ?? 0}`,
+      details: { source: "scraped-replay", ...step.replaySource },
+      humanActions,
+      ...(step.battle ? { battle: clone(step.battle) } : {}),
+      state: clone(materializedState),
+      replaySource: clone(step.replaySource ?? {}),
+    };
+  });
+  if (!materialized.length) return [];
+  return [{
+    sequence: -materialized.length - 1,
+    observedAt: boundary.event.observedAt,
+    direction: "synthetic",
+    type: "ReplayOpeningBaseline",
+    description: `Replay-derived initial state — round ${materialized[0].state.round ?? 0}`,
+    details: { source: "scraped-replay", round: Number(materialized[0].state.round) || 0, phase: "initial" },
+    humanActions: [],
+    state: clone(materialized[0].state),
+    replaySource: { round: Number(materialized[0].state.round) || 0, phase: "initial" },
+  }, ...materialized];
+}
+
+const replayOpeningSteps = replayStepsBeforeBoundary();
+if (replayOpeningSteps.length) {
+  const openingState = replayOpeningSteps.at(-1).state;
+  const firstLiveStep = logicalSteps[0];
+  if (firstLiveStep && Number(firstLiveStep.state?.round) <= 0) firstLiveStep.state = clone(openingState);
+  logicalSteps.unshift(...replayOpeningSteps);
+  console.log(`HYBRID_OPENING ${JSON.stringify({
+    replay: path.basename(replayPovPath),
+    boundaryType: rawEvents[firstLiveServerIndex].messageType,
+    boundarySequence: Number(rawEvents[firstLiveServerIndex].sequence) || 0,
+    boundaryRound: decodedBoundary()?.round || 0,
+    replaySteps: replayOpeningSteps.length,
+  })}`);
+}
 
 function undoRecordedCardStep(privatePlayer, step) {
   if (step.type !== "ReplaceCardResp" || !String(step.details?.result).startsWith("1 ")) return false;
@@ -2237,6 +2372,12 @@ function explicitChoiceCardCount(info) {
 
 function ensureShopEntrySteps(inputSteps) {
   const cardMutationTypes = new Set(["MoveCardReq", "InsertCardReq", "ReplaceCardResp", "RefineCardResp", "CardOperationResp"]);
+  const isSuccessfulCardMutation = (step) => {
+    if (!cardMutationTypes.has(step.type)) return false;
+    if (step.type === "ReplaceCardResp") return String(step.details?.result).startsWith("1 ");
+    if (step.type === "RefineCardResp") return Boolean(step.details?.result);
+    return true;
+  };
   const restorePlayerDataCards = (step, expectedRound) => {
     const disclosed = step.type === "PlayerData" ? step.details?.private : null;
     const visible = step.state?.privatePlayer;
@@ -2265,7 +2406,7 @@ function ensureShopEntrySteps(inputSteps) {
     const nextBattleIndex = inputSteps.findIndex((step, stepIndex) => stepIndex > battleIndex && step.battle);
     const preparationLimit = nextBattleIndex < 0 ? inputSteps.length : nextBattleIndex;
     const firstCardActionIndex = inputSteps.findIndex((step, stepIndex) =>
-      stepIndex > battleIndex && stepIndex < preparationLimit && cardMutationTypes.has(step.type));
+      stepIndex > battleIndex && stepIndex < preparationLimit && isSuccessfulCardMutation(step));
     const preActionLimit = firstCardActionIndex < 0 ? preparationLimit : firstCardActionIndex;
     const isAuthoritativeStateStep = (step) => ["GameStatus", "PlayerData"].includes(step.type)
       || (step.type === "SimpleClientPact" && step.description?.startsWith("Authoritative game snapshot"));
@@ -2283,23 +2424,15 @@ function ensureShopEntrySteps(inputSteps) {
       .filter((id) => numericCardId(id) > 0).length;
     const minimumDrawCount = Math.max(0, baseMinimumDrawCount - storedCardCount);
     let beforeHand = (preBattlePrivate?.hand ?? []).map((id) => roundStartCardId(id, { inHand: true }));
-    const authoritativePreActionIndex = inputSteps.findIndex((step, stepIndex) =>
+    const authoritativePreActionIndexes = inputSteps
+      .map((step, stepIndex) => ({ step, stepIndex }))
+      .filter(({ step, stepIndex }) =>
       stepIndex > battleIndex && stepIndex < preActionLimit
       && isAuthoritativeStateStep(step)
       && Number(step.state?.round) === round + 1
       && step.state?.privatePlayer
-      && (!preBattlePrivate?.uid || step.state.privatePlayer.uid === preBattlePrivate.uid));
-    const authoritativePreAction = inputSteps[authoritativePreActionIndex];
-    if (authoritativePreActionIndex >= 0
-      && Number(authoritativePreAction.state.privatePlayer.hand?.length ?? 0) < beforeHand.length + minimumDrawCount) {
-      if (process.env.YXP_DRAW_AUDIT) console.log(`DRAW_AUDIT ${JSON.stringify({
-        round: round + 1,
-        count: null,
-        source: "authoritative-pre-action",
-        exact: true,
-      })}`);
-      continue;
-    }
+      && (!preBattlePrivate?.uid || step.state.privatePlayer.uid === preBattlePrivate.uid))
+      .map(({ stepIndex }) => stepIndex);
     const immediate = inputSteps[battleIndex + 1];
     if (Number(immediate?.state?.round) === round + 1
       && Number(immediate?.state?.privatePlayer?.hand?.length ?? 0) >= beforeHand.length + minimumDrawCount) {
@@ -2315,8 +2448,36 @@ function ensureShopEntrySteps(inputSteps) {
       stepIndex > battleIndex && stepIndex < preActionLimit
       && Number(step.state?.round) === round + 1
       && Number(step.state?.privatePlayer?.hand?.length ?? 0) >= beforeHand.length + minimumDrawCount);
+    const firstAuthoritativePreAction = inputSteps[authoritativePreActionIndexes[0]];
+    const firstAuthoritativeIsIncomplete = firstAuthoritativePreAction
+      && Number(firstAuthoritativePreAction.state.privatePlayer.hand?.length ?? 0)
+        < beforeHand.length + minimumDrawCount;
+    if (firstAuthoritativeIsIncomplete && (!replayPovPath || completePreActionSnapshot < 0)) {
+      if (process.env.YXP_DRAW_AUDIT) console.log(`DRAW_AUDIT ${JSON.stringify({
+        round: round + 1,
+        count: null,
+        source: "authoritative-pre-action-incomplete",
+        exact: true,
+        snapshots: authoritativePreActionIndexes.length,
+      })}`);
+      continue;
+    }
+    const secondCardActionIndex = firstCardActionIndex < 0 ? -1 : inputSteps.findIndex((step, stepIndex) =>
+      stepIndex > firstCardActionIndex && stepIndex < preparationLimit && isSuccessfulCardMutation(step));
+    const postActionStateLimit = secondCardActionIndex < 0 ? preparationLimit : secondCardActionIndex;
+    const completePostActionPlayerData = firstCardActionIndex < 0 ? -1 : inputSteps.findIndex((step, stepIndex) =>
+      stepIndex > firstCardActionIndex && stepIndex < postActionStateLimit
+      && step.type === "PlayerData"
+      && Number(step.state?.round) === round + 1
+      && step.state?.privatePlayer
+      && (!preBattlePrivate?.uid || step.state.privatePlayer.uid === preBattlePrivate.uid));
+    if (completePostActionPlayerData >= 0) {
+      restorePlayerDataCards(inputSteps[completePostActionPlayerData], round + 1);
+    }
     const authoritativeIndex = completePreActionSnapshot >= 0
       ? completePreActionSnapshot
+      : completePostActionPlayerData >= 0
+        ? completePostActionPlayerData
       : inputSteps.findIndex((step, stepIndex) =>
         stepIndex > Math.max(battleIndex, firstCardActionIndex)
         && stepIndex < preparationLimit
@@ -2336,6 +2497,7 @@ function ensureShopEntrySteps(inputSteps) {
     );
     beforeHand = (reconciledPrivate?.hand ?? []).map((id) => roundStartCardId(id, { inHand: true }));
     const roundStartDeck = (reconciledPrivate?.deck ?? []).map(roundStartCardId);
+    if (replayPovPath) roundStartDeck.splice(authoritativeDeck.length);
     while (roundStartDeck.length < roundStartDeckSlots) roundStartDeck.push(0);
     let choiceGrantedCardCount = 0;
     const simulateDraws = (drawCount) => {
@@ -2401,6 +2563,7 @@ function ensureShopEntrySteps(inputSteps) {
             && Boolean(sourceUnknown) !== Boolean(destinationUnknown)
             && knownCombinationId > 0 && cardCanUpgrade(knownCombinationId);
           if (!canBeUnknownCombination) {
+            if (!isSuccessfulCardMutation(step)) return [variant];
             const applied = applyRecordedCardStep(
               variant.tokenPrivate,
               step,
@@ -2543,9 +2706,17 @@ function ensureShopEntrySteps(inputSteps) {
     const jiCardPairs = [...selectedFateIds]
       .map((id) => extractedFates.get(id)?.jiCardPair)
       .filter((pair) => pair?.length === 2);
-    const isJiCardTransform = (oldId, newId) => jiCardPairs.some(([first, second]) =>
-      (Number(oldId) === first && Number(newId) === second)
-      || (Number(oldId) === second && Number(newId) === first));
+    const isJiCardTransform = (oldId, newId) => {
+      const oldNumeric = Number(oldId);
+      const newNumeric = Number(newId);
+      const oldBase = baseCardId(oldNumeric);
+      const newBase = baseCardId(newNumeric);
+      const oldTier = oldNumeric - oldBase;
+      const newTier = newNumeric - newBase;
+      return oldTier === newTier && jiCardPairs.some(([first, second]) =>
+        (oldBase === first && newBase === second)
+        || (oldBase === second && newBase === first));
+    };
     const deckTokenMatch = (tokens, actual, upgradeBudget) => {
       if (tokens.length !== actual.length) return null;
       const upgrades = [];
@@ -2692,6 +2863,8 @@ function ensureShopEntrySteps(inputSteps) {
           }
           reversed.hand.splice(handIndex, 1);
           reversed.deck[sourceIndex] = movedDeckId;
+        } else if (!isSuccessfulCardMutation(step)) {
+          // Failed server responses do not mutate the authoritative state.
         } else {
           reversible = false;
         }
@@ -2765,9 +2938,9 @@ function ensureShopEntrySteps(inputSteps) {
           scheduledDrawCount,
           possibleDrawCounts,
           beforeHand, actualHand, actualDeck, guess,
-          simulatedHand: attempted.tokenPrivate.hand.map((entry) => entry?.id),
-          simulatedDeck: attempted.tokenPrivate.deck.map((entry) => entry?.id),
-          trace: attempted.trace,
+          simulatedHand: attempted?.tokenPrivate.hand.map((entry) => entry?.id) ?? null,
+          simulatedDeck: attempted?.tokenPrivate.deck.map((entry) => entry?.id) ?? null,
+          trace: attempted?.trace ?? [],
           contextBeforeBattle: inputSteps
             .slice(Math.max(0, battleIndex - 12), battleIndex + 1)
             .map((step) => ({
@@ -2795,6 +2968,13 @@ function ensureShopEntrySteps(inputSteps) {
           deck: entry.tokenPrivate.deck.map((token) => token?.id),
         })) })))}`);
       }
+      // A later pre-action snapshot can complete a deal that the first
+      // snapshot exposed only partially. Use it when the forward provenance
+      // is exact; if an unmodeled between-round character effect prevents an
+      // exact reconstruction, retain the authoritative snapshots and the
+      // detailed live actions rather than turning a previously valid capture
+      // into a build failure.
+      if (firstAuthoritativeIsIncomplete && completePreActionSnapshot >= 0) continue;
       throw new Error(`round ${round + 1} draw count has ${possibleDrawCounts.length} exact candidates in ${path.basename(inputPath)}`);
     }
     const [selectedDrawCount] = possibleDrawCounts;
@@ -2936,6 +3116,136 @@ function ensureShopEntrySteps(inputSteps) {
 }
 
 ensureShopEntrySteps(logicalSteps);
+
+function bridgeHybridFirstDetailedShop(inputSteps) {
+  if (!hybridReplaySummary) return;
+  const boundary = decodedBoundary();
+  const detailedTypes = new Set([
+    "MoveCardReq", "InsertCardReq", "ReplaceCardResp", "RefineCardResp", "CardOperationResp",
+  ]);
+  const firstDetailedIndex = inputSteps.findIndex((step) =>
+    Number(step.sequence) >= Number(boundary.event.sequence)
+    && step.direction === "server->client"
+    && !step.battle
+    && detailedTypes.has(step.type)
+    && Number(step.state?.round) > 0);
+  if (firstDetailedIndex < 0) return;
+  const firstDetailed = inputSteps[firstDetailedIndex];
+  const round = Number(firstDetailed.state.round);
+  const replayShop = hybridReplaySummary.recording.steps.find((step) =>
+    Number(step.replaySource?.round) === round && step.replaySource?.phase === "shop");
+  const replayAggregate = replayShop?.humanActions?.find((action) =>
+    action.kind === "shop" && String(action.actorUid) === String(targetUid))?.aggregate;
+  if (!replayAggregate) return;
+  const nextBattleIndex = inputSteps.findIndex((step, index) =>
+    index > firstDetailedIndex && Number(step.battle?.round) >= round);
+  const shopEnd = nextBattleIndex < 0 ? inputSteps.length : nextBattleIndex;
+  const observedActions = inputSteps.slice(firstDetailedIndex, shopEnd)
+    .flatMap((step) => step.humanActions ?? [])
+    .filter((action) => !action.actorUid || String(action.actorUid) === String(targetUid));
+  const observedCombined = observedActions.filter((action) => action.kind === "upgrade").length;
+  const observedAbsorbed = observedActions.filter((action) => action.kind === "absorb").length;
+  const observedProcessed = observedCombined + observedAbsorbed;
+  const observedExchanges = observedActions.filter((action) => action.kind === "exchange").length;
+  const replayCombined = Number(replayAggregate.combinedCardsEstimate) || 0;
+  const replayAbsorbed = Number(replayAggregate.absorbedCardsEstimate) || 0;
+  const replayProcessed = Number(replayAggregate.processedCardsEstimate) || 0;
+  const replayExchanges = Number(replayAggregate.exchangesSpentEstimate) || 0;
+  const missingCombined = Math.max(0, replayCombined - observedCombined);
+  const missingAbsorbed = Math.max(0, replayAbsorbed - observedAbsorbed);
+  const missingProcessed = Math.max(missingCombined + missingAbsorbed,
+    Math.max(0, replayProcessed - observedProcessed));
+  const missingExchanges = Math.max(0, replayExchanges - observedExchanges);
+  const snapshotIndexes = inputSteps
+    .map((step, index) => ({ step, index }))
+    .filter(({ step, index }) => index < firstDetailedIndex
+      && Number(step.sequence) >= Number(boundary.event.sequence)
+      && ["GameStatus", "PlayerData"].includes(step.type)
+      && Number(step.state?.round) === round
+      && step.state?.privatePlayer)
+    .map(({ index }) => index);
+  console.log(`HYBRID_SHOP_AUDIT ${JSON.stringify({
+    replay: path.basename(replayPovPath),
+    round,
+    firstDetailedType: firstDetailed.type,
+    firstDetailedSequence: Number(firstDetailed.sequence) || 0,
+    privateSnapshotsBeforeDetail: snapshotIndexes.length,
+    replayProcessed,
+    observedProcessed,
+    replayCombined,
+    observedCombined,
+    replayAbsorbed,
+    observedAbsorbed,
+    replayExchanges,
+    observedExchanges,
+    missingProcessed,
+    missingExchanges,
+    replayUncertain: Boolean(replayAggregate.uncertain),
+  })}`);
+  if ((!missingProcessed && !missingExchanges) || replayAggregate.uncertain) return;
+  const bridgeIndex = snapshotIndexes.at(-1)
+    ?? inputSteps.findIndex((step, index) => index < firstDetailedIndex
+      && step.type === "RoundShopStart" && Number(step.state?.round) === round);
+  if (bridgeIndex < 0) {
+    throw new Error(`late Cup round ${round} has replay-only shop activity but no pre-action state to attach it to`);
+  }
+  const username = inputSteps[bridgeIndex].state?.players?.[targetUid]?.username
+    ?? profiles.get(targetUid)?.username ?? targetUid;
+  const shopStart = inputSteps.findLast((step, index) => index <= bridgeIndex
+    && step.type === "RoundShopStart" && Number(step.state?.round) === round)?.state?.privatePlayer;
+  const bridgePrivate = inputSteps[bridgeIndex].state?.privatePlayer;
+  const unmatchedBeforeCards = (() => {
+    if (!shopStart || !bridgePrivate) return [];
+    const before = [...(shopStart.hand ?? []), ...(shopStart.deck ?? [])]
+      .map(numericCardId).filter((id) => id > 0);
+    const remaining = [...(bridgePrivate.hand ?? []), ...(bridgePrivate.deck ?? [])]
+      .map(numericCardId).filter((id) => id > 0);
+    return before.filter((id) => {
+      let match = remaining.indexOf(id);
+      if (match < 0) match = remaining.findIndex((candidate) => sameCardIdentity(id, candidate));
+      if (match < 0) return true;
+      remaining.splice(match, 1);
+      return false;
+    });
+  })();
+  const identifiedAbsorbed = missingAbsorbed > 0 && !missingCombined && !missingExchanges
+    && unmatchedBeforeCards.length === missingAbsorbed ? unmatchedBeforeCards : [];
+  const identifiedExchangeInputs = missingExchanges > 0 && !missingProcessed
+    && unmatchedBeforeCards.length === missingExchanges ? unmatchedBeforeCards : [];
+  const englishCards = (cards) => cards.map((id) => compactCardName(id, "en")).join(", ");
+  const chineseCards = (cards) => cards.map((id) => compactCardName(id, "zh")).join("、");
+  const partsEnglish = [
+    ...(missingCombined ? [`combined about ${missingCombined} time${missingCombined === 1 ? "" : "s"}`] : []),
+    ...(missingAbsorbed ? [`absorbed about ${missingAbsorbed} card${missingAbsorbed === 1 ? "" : "s"}${identifiedAbsorbed.length ? ` (${englishCards(identifiedAbsorbed)})` : ""}`] : []),
+    ...(!missingCombined && !missingAbsorbed && missingProcessed ? [`processed about ${missingProcessed} card${missingProcessed === 1 ? "" : "s"}`] : []),
+    ...(missingExchanges ? [`spent about ${missingExchanges} exchange${missingExchanges === 1 ? "" : "s"}${identifiedExchangeInputs.length ? ` (on ${englishCards(identifiedExchangeInputs)})` : ""}`] : []),
+  ];
+  const partsChinese = [
+    ...(missingCombined ? [`约合成了${missingCombined}次`] : []),
+    ...(missingAbsorbed ? [`约吸收了${missingAbsorbed}张牌${identifiedAbsorbed.length ? `（${chineseCards(identifiedAbsorbed)}）` : ""}`] : []),
+    ...(!missingCombined && !missingAbsorbed && missingProcessed ? [`约处理了${missingProcessed}张牌`] : []),
+    ...(missingExchanges ? [`约花费${missingExchanges}次换牌机会${identifiedExchangeInputs.length ? `（${chineseCards(identifiedExchangeInputs)}）` : ""}`] : []),
+  ];
+  inputSteps[bridgeIndex].humanActions ??= [];
+  inputSteps[bridgeIndex].humanActions.push({
+    actorUid: targetUid,
+    actorUsername: username,
+    kind: "shop",
+    textEnglish: `${username} ${partsEnglish.join(" and ")}.`,
+    textChinese: `${username}${partsChinese.join("，并")}。`,
+    aggregate: {
+      processedCardsEstimate: missingProcessed,
+      combinedCardsEstimate: missingCombined,
+      absorbedCardsEstimate: missingAbsorbed,
+      exchangesSpentEstimate: missingExchanges,
+      ...(identifiedAbsorbed.length ? { identifiedAbsorbedCards: identifiedAbsorbed } : {}),
+      ...(identifiedExchangeInputs.length ? { identifiedExchangeInputs } : {}),
+      partialObservation: true,
+    },
+  });
+}
+
+bridgeHybridFirstDetailedShop(logicalSteps);
 
 function completedChoicesForStep(previousState, currentState) {
   const previousPrivate = previousState?.privatePlayer;
@@ -3148,6 +3458,30 @@ function assertTimelinePresentation(inputSteps) {
         if (priorOverlay?.kind !== choices[0].kind || !priorOverlay.options?.length) {
           throw new Error(`completed ${choices[0].kind} choice lacks its immediately preceding offer at sequence ${step.sequence}`);
         }
+      }
+    }
+    for (const action of step.humanActions ?? []) {
+      const actorName = String(action.actorUsername ?? "");
+      const narrative = actorName
+        ? `${action.textEnglish ?? ""} ${action.textChinese ?? ""}`.replaceAll(actorName, "")
+        : `${action.textEnglish ?? ""} ${action.textChinese ?? ""}`;
+      if (action.aggregate?.partialObservation
+        && /observ|captur|recording|replay|scrap|观战|录像|回放|捕获/i.test(narrative)) {
+        throw new Error(`shop summary exposes reconstruction provenance at sequence ${step.sequence}`);
+      }
+    }
+    const histories = [
+      ...(step.state?.privatePlayer?.selectedFateStrategies ?? []),
+      ...Object.values(step.state?.players ?? {}).flatMap((player) => player?.fateStrategies ?? []),
+    ].map((entry) => entry?.choiceHistory).filter((history) => history?.offers?.length);
+    for (const history of histories) {
+      const inferredRolledAway = history.offers.slice(0, -1).flatMap((offer, offerIndex) =>
+        multisetDifference(offer, history.offers[offerIndex + 1]));
+      const knownRows = history.rerolls?.length
+        ? history.rerolls.length
+        : (history.rolledAway?.length ? history.rolledAway.length : inferredRolledAway.length);
+      if (Number(history.rerollsUsed ?? knownRows) > knownRows) {
+        throw new Error(`heavenly derivation reroll count exceeds recovered ban-list history at sequence ${step.sequence}`);
       }
     }
     previousState = step.state;

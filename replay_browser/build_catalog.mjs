@@ -19,6 +19,8 @@ const dataRoot = path.resolve(process.argv[3] ?? path.join(here, "data"));
 const payloadCacheRoot = path.resolve(process.env.YXP_RECORDING_PAYLOAD_CACHE
   || path.join(here, ".recording-payload-cache"));
 const wikiRoot = process.env.YXP_WIKI_ROOT || "/private/tmp/yxp_wiki";
+const replayRoot = path.resolve(process.env.YXP_REPLAY_ROOT
+  || path.join(here, "../scrape/data/replays"));
 const maxCapturedThrough = process.env.YXP_MAX_CAPTURED_THROUGH || "";
 const excludedCaptureNames = new Set((process.env.YXP_EXCLUDE_CAPTURES || "")
   .split(",").map((value) => value.trim()).filter(Boolean));
@@ -27,13 +29,16 @@ const catalogOnly = Boolean(process.env.YXP_CATALOG_ONLY);
 const forceRebuild = Boolean(process.env.YXP_FORCE_REBUILD);
 const incremental = !forceRebuild && process.env.YXP_INCREMENTAL !== "0";
 const reuseExisting = incremental || Boolean(process.env.YXP_REUSE_EXISTING);
-const scanCacheEnabled = incremental && process.env.YXP_DISABLE_SCAN_CACHE !== "1";
+const scanCacheEnabled = process.env.YXP_DISABLE_SCAN_CACHE !== "1";
 const scanCachePath = path.resolve(process.env.YXP_SCAN_CACHE_PATH
   || path.join(rawRoot, ".recording-browser-build-cache.json"));
-const scanCacheVersion = 2;
+const scanCacheVersion = 4;
 const buildJobs = Math.max(1, Number.parseInt(process.env.YXP_BUILD_JOBS || "1", 10) || 1);
 const regressionRecordingIds = recordingIdsWithAssertions();
 const numericPrefix = (value) => Number.parseInt(String(value ?? "0"), 10) || 0;
+const CUP_MODE = 6;
+const cupDataByCodeId = new Map();
+const replayPovByCodeAndUid = new Map();
 
 function publicRecordingId(capture) {
   const digest = createHash("sha256")
@@ -57,6 +62,50 @@ function captureFingerprint(filename) {
 
 function sameFingerprint(first, second) {
   return first?.size === second.size && first?.mtimeNs === second.mtimeNs;
+}
+
+function cupDataForCodeId(codeId) {
+  codeId = Number(codeId) || 0;
+  if (!codeId || !fs.existsSync(replayRoot)) return null;
+  if (cupDataByCodeId.has(codeId)) return cupDataByCodeId.get(codeId);
+  const bucket = path.join(replayRoot, String(Math.floor(codeId / 1000) * 1000));
+  let cupData = null;
+  if (fs.existsSync(bucket)) {
+    const prefix = `${codeId}_p`;
+    const replayName = fs.readdirSync(bucket)
+      .find((name) => name.startsWith(prefix) && name.endsWith(".json"));
+    if (replayName) {
+      try {
+        const replay = JSON.parse(fs.readFileSync(path.join(bucket, replayName), "utf8"));
+        cupData = replay.data?.cupData ?? replay.cupData ?? null;
+      } catch { /* Missing or partial replay metadata leaves the stage unknown. */ }
+    }
+  }
+  cupDataByCodeId.set(codeId, cupData);
+  return cupData;
+}
+
+function replayPovForCodeAndUid(codeId, uid) {
+  codeId = Number(codeId) || 0;
+  const key = `${codeId}:${uid}`;
+  if (replayPovByCodeAndUid.has(key)) return replayPovByCodeAndUid.get(key);
+  let result = "";
+  const bucket = path.join(replayRoot, String(Math.floor(codeId / 1000) * 1000));
+  if (codeId && uid && fs.existsSync(bucket)) {
+    const prefix = `${codeId}_p`;
+    for (const name of fs.readdirSync(bucket).filter((entry) => entry.startsWith(prefix) && entry.endsWith(".json"))) {
+      const filename = path.join(bucket, name);
+      try {
+        const replay = JSON.parse(fs.readFileSync(filename, "utf8"));
+        if (String(replay.data?.uid ?? replay.uid ?? "") === String(uid)) {
+          result = filename;
+          break;
+        }
+      } catch { /* An incomplete archive file cannot serve as the opening. */ }
+    }
+  }
+  replayPovByCodeAndUid.set(key, result);
+  return result;
 }
 
 function readScanCache() {
@@ -109,10 +158,15 @@ function inspectCapture(filename) {
     try { statuses.push(decodeMessage("GameStatus", Buffer.from(event.protobufBase64 ?? "", "base64"))); }
     catch { /* A malformed frame cannot establish completeness. */ }
   }
-  if (!statuses.length || statuses[0].round !== 1 || !statuses.at(-1).ended) return null;
+  if (!statuses.length || !statuses.at(-1).ended) return null;
+  const firstRound = Math.min(...statuses.map((status) => status.round).filter((round) => round > 0));
   const finalRound = Math.max(...statuses.map((status) => status.round));
+  const gameMode = statuses.find((status) => status.gameMode > 0)?.gameMode ?? 0;
+  if (!Number.isFinite(firstRound)) return null;
+  if (gameMode === CUP_MODE ? firstRound > 3 : firstRound !== 1) return null;
   const recordedRounds = new Set(statuses.map((status) => status.round));
-  if (Array.from({ length: finalRound }, (_, index) => index + 1).some((round) => !recordedRounds.has(round))) return null;
+  if (Array.from({ length: finalRound - firstRound + 1 }, (_, index) => index + firstRound)
+    .some((round) => !recordedRounds.has(round))) return null;
   const targetUid = accepted.target?.uid ?? "";
   const target = profiles.get(targetUid) ?? accepted.target ?? {};
   const roundTwoPlayer = statuses
@@ -151,11 +205,15 @@ function inspectCapture(filename) {
   const humanOpponentCharacterIds = new Set(allPlayers
     .filter((player) => player.uid !== linUid && !player.ai && Number(player.characterId) > 0)
     .map((player) => Number(player.characterId)));
+  const codeId = statuses.find((status) => status.codeId > 0)?.codeId ?? 0;
   return {
     filename,
     targetUid,
     targetUsername: target.username || target.name || targetUid,
     targetCharacterId,
+    gameMode,
+    firstRound,
+    codeId,
     startingRating: Number(target.actualModeScore ?? target.daoXinRankScore ?? target.rankScore ?? 0),
     career: numericPrefix(roundTwoPlayer?.career),
     rounds: finalRound,
@@ -188,7 +246,7 @@ const priorScanCache = readScanCache();
 const nextScanCacheEntries = {};
 let inspectedCaptureFiles = 0;
 let reusedCaptureInspections = 0;
-const captures = filesBelow(rawRoot).map((filename) => {
+const eligibleCaptures = filesBelow(rawRoot).map((filename) => {
   const relativeName = path.relative(rawRoot, filename);
   const fingerprint = captureFingerprint(filename);
   const cached = priorScanCache.entries[relativeName];
@@ -209,19 +267,44 @@ const captures = filesBelow(rawRoot).map((filename) => {
   };
   return capture ? { ...capture, sourceChanged } : null;
 }).filter(Boolean)
-  .filter((capture) => capture.targetCharacterId === 1000004)
   .filter((capture) => !maxCapturedThrough || capture.capturedThrough <= maxCapturedThrough)
   .filter((capture) => !excludedCaptureNames.has(path.basename(capture.filename)))
+  .map((capture) => {
+    const cupData = capture.gameMode === CUP_MODE ? cupDataForCodeId(capture.codeId) : null;
+    const cupProgress = Number(cupData?.progress) || 0;
+    const hybridReplayPath = capture.gameMode === CUP_MODE && capture.firstRound > 1
+      ? replayPovForCodeAndUid(capture.codeId, capture.targetUid) : "";
+    return {
+      ...capture,
+      cupId: Number(cupData?.cupId) || 0,
+      cupProgress,
+      cupStage: cupProgress > 3 ? "final" : cupProgress > 0 ? "preliminary" : "",
+      hybridReplayPath,
+    };
+  })
   .sort((first, second) => second.capturedThrough.localeCompare(first.capturedThrough));
-process.stdout.write(`scan: ${inspectedCaptureFiles} inspected, ${reusedCaptureInspections} reused, ${captures.length} complete${priorScanCache.warm ? "" : " (cache initialized)"}\n`);
+const captures = eligibleCaptures.filter((capture) => capture.targetCharacterId === 1000004);
+const missingReplayOpenings = eligibleCaptures.filter((capture) =>
+  capture.gameMode === CUP_MODE && capture.firstRound > 1 && !capture.hybridReplayPath);
+process.stdout.write(`scan: ${inspectedCaptureFiles} inspected, ${reusedCaptureInspections} reused, ${eligibleCaptures.length} eligible, ${captures.length} publishable Lin Xiaoyue${priorScanCache.warm ? "" : " (cache initialized)"}\n`);
+if (missingReplayOpenings.length) process.stderr.write(`HYBRID_REPLAY_MISSING ${JSON.stringify({
+  count: missingReplayOpenings.length,
+  captures: missingReplayOpenings.map(({ filename, codeId, targetUid, firstRound }) => ({
+    filename, codeId, targetUid, firstRound,
+  })),
+})}\n`);
+// Capture eligibility depends only on the raw file, not on
+// whether payload reconstruction succeeds. Persist this expensive scan before
+// starting workers so an interrupted or failed build can resume immediately.
+writeScanCache(nextScanCacheEntries);
 const catalog = [];
 const generatedFiles = new Set();
 const drawAudit = [];
 const cultivationAudit = [];
 const buildFailures = [];
 const builtIds = new Set();
-if (!catalogOnly && buildJobs > 1) {
-  const pending = captures.map((capture) => {
+if (!catalogOnly) {
+  const pending = eligibleCaptures.map((capture) => {
     const id = publicRecordingId(capture);
     const outputPath = path.join(payloadCacheRoot, `${id}.compact.json`);
     return { capture, id, outputPath };
@@ -231,7 +314,12 @@ if (!catalogOnly && buildJobs > 1) {
   let completed = 0;
   const buildOne = ({ capture, id, outputPath }) => new Promise((resolve) => {
     const child = spawn(process.execPath, [path.join(here, "build_data.mjs"), capture.filename, outputPath], {
-      env: { ...process.env, YXP_WIKI_ROOT: wikiRoot },
+      env: {
+        ...process.env,
+        YXP_WIKI_ROOT: wikiRoot,
+        YXP_REPLAY_POV: capture.hybridReplayPath,
+        YXP_REQUIRE_REPLAY_OPENING: capture.gameMode === CUP_MODE && capture.firstRound > 1 ? "1" : "",
+      },
       stdio: ["ignore", "pipe", "pipe"],
     });
     let stdout = "";
@@ -283,7 +371,12 @@ for (const [position, capture] of captures.entries()) {
       || !(reuseExisting && !forceRebuild && !capture.sourceChanged && fs.existsSync(payloadCachePath)))) {
     const result = spawnSync(process.execPath, [path.join(here, "build_data.mjs"), capture.filename, payloadCachePath], {
       encoding: "utf8",
-      env: { ...process.env, YXP_WIKI_ROOT: wikiRoot },
+      env: {
+        ...process.env,
+        YXP_WIKI_ROOT: wikiRoot,
+        YXP_REPLAY_POV: capture.hybridReplayPath,
+        YXP_REQUIRE_REPLAY_OPENING: capture.gameMode === CUP_MODE && capture.firstRound > 1 ? "1" : "",
+      },
     });
     if (result.status !== 0) {
       const output = (result.stderr || result.stdout).trim();
@@ -310,6 +403,11 @@ for (const [position, capture] of captures.entries()) {
     targetUid: capture.targetUid,
     targetUsername: capture.targetUsername,
     targetCharacterId: capture.targetCharacterId,
+    gameMode: capture.gameMode,
+    firstRound: capture.firstRound,
+    cupId: capture.cupId,
+    cupProgress: capture.cupProgress,
+    cupStage: capture.cupStage,
     startingRating: capture.startingRating,
     career: capture.career,
     rounds: capture.rounds,
@@ -336,9 +434,6 @@ if (buildFailures.length && !skipBuildFailures) {
   process.exit(1);
 }
 if (buildFailures.length) process.stderr.write(`BUILD_FAILURE_SUMMARY ${JSON.stringify(buildFailures)}\n`);
-for (const failure of buildFailures) {
-  delete nextScanCacheEntries[path.relative(rawRoot, failure.filename)];
-}
 catalog.sort((first, second) => first.targetUid.localeCompare(second.targetUid)
   || second.capturedThrough.localeCompare(first.capturedThrough));
 
@@ -411,7 +506,6 @@ if (!catalogOnly) for (const filename of fs.readdirSync(dataRoot)) {
   if (isRecording && !generatedFiles.has(filename)) fs.rmSync(path.join(dataRoot, filename));
 }
 fs.rmSync(path.join(dataRoot, "catalog.js"), { force: true });
-writeScanCache(nextScanCacheEntries);
 console.log(`wrote ${catalog.length} complete recordings (${packedBytes} compressed bytes) to ${dataRoot}`);
 if (process.env.YXP_DRAW_AUDIT) {
   const byCount = Object.fromEntries([...new Set(drawAudit.map((entry) => entry.count))]

@@ -11,6 +11,7 @@
     "id", "file", "targetUid", "targetUsername", "targetCharacterId",
     "startingRating", "career", "rounds", "capturedThrough", "linCareer",
     "linFates", "linUnchosenFates", "humanOpponentCharacters", "label",
+    "gameMode", "firstRound", "cupId", "cupProgress", "cupStage",
   ]);
 
   const isObject = (value) => value !== null && typeof value === "object" && !Array.isArray(value);
@@ -190,6 +191,11 @@
         (item.linFates ?? []).map(({ id }) => id),
         (item.linUnchosenFates ?? []).map(({ id }) => id),
         (item.humanOpponentCharacters ?? []).map(({ id }) => id),
+        item.gameMode ?? 0,
+        item.firstRound ?? 1,
+        item.cupId ?? 0,
+        item.cupProgress ?? 0,
+        item.cupStage ?? "",
       ]);
     }
     return [FORMAT_VERSION, packSharedCatalog(sharedCatalog), [...groups.values()]];
@@ -204,7 +210,8 @@
     for (const [targetUid, targetUsername, targetCharacterId, games] of packed[2]) {
       for (const game of games) {
         const [id, startingRating, career, rounds, capturedThrough, linCareer,
-          fateIds, unchosenFateIds, opponentIds] = game;
+          fateIds, unchosenFateIds, opponentIds, gameMode = 0, firstRound = 1,
+          cupId = 0, cupProgress = 0, cupStage = ""] = game;
         catalog.push({
           id,
           file: `${id}.compact.json.gz`,
@@ -219,6 +226,11 @@
           linFates: fateIds.map((fateId) => compactFate(fateId, sharedCatalog)),
           linUnchosenFates: unchosenFateIds.map((fateId) => compactFate(fateId, sharedCatalog)),
           humanOpponentCharacters: opponentIds.map((characterId) => compactCharacter(characterId, sharedCatalog)),
+          gameMode,
+          firstRound,
+          cupId,
+          cupProgress,
+          cupStage,
           label: `${targetUsername} · ${rounds} rounds`,
         });
       }

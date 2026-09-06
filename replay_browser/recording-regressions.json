@@ -96,6 +96,85 @@
           { "path": "/event/battle/matchups/0/players/65ae3a9d4e41c2dc2bc7f3aa/lifeDelta", "op": "equals", "value": -31 }
         ]
       }
+    ],
+    "r-722e2ae1c49817cc": [
+      {
+        "name": "round 2 uses the complete PlayerData after the early incomplete GameStatus",
+        "anchor": { "type": "RoundShopStart", "round": 2 },
+        "checks": [
+          { "path": "/event/details/drawnCards", "op": "equals", "value": [1000009, 1000005, 9000002] },
+          { "path": "/event/state/privatePlayer/hand", "op": "equals", "value": [37, 1000009, 1000005, 9000002] }
+        ]
+      }
+    ],
+    "r-415558e525c100cb": [
+      {
+        "name": "round 15 failed refine is a no-op and six real draws are preserved",
+        "anchor": { "type": "RoundShopStart", "round": 15 },
+        "checks": [
+          { "path": "/event/details/drawnCards", "op": "equals", "value": [9010014, 1000046, 1000025, 9000010, 1000059, 1000034] },
+          { "path": "/event/state/privatePlayer/hand", "op": "equals", "value": [9020014, 9020010, 9020013, 9010011, 9010010, 1000031, 10009, 9010014, 1000046, 1000025, 9000010, 1000059, 1000034] }
+        ]
+      }
+    ],
+    "r-a95e55e52a6ea074": [
+      {
+        "name": "round 12 preserves card levels while Ultimate Softheart transforms the hand",
+        "anchor": { "type": "RoundShopStart", "round": 12 },
+        "checks": [
+          { "path": "/event/details/drawnCards", "op": "equals", "value": [1000019, 1000098, 2000008, 1000004] }
+        ]
+      }
+    ],
+    "r-5e9d8464f28b0876": [
+      {
+        "name": "round 2 Cup snapshot follows one replay-derived round 1 battle",
+        "anchor": { "type": "ReplayOpening", "battleRound": 1 },
+        "checks": [
+          { "path": "/beforeState/round", "op": "equals", "value": 1 },
+          { "path": "/event/state/players/6a52cf6931b1b74b73b60267/life", "op": "equals", "value": 96 },
+          { "path": "/event/battle/matchups", "op": "length", "value": 4 }
+        ]
+      },
+      {
+        "name": "first live Cup snapshot is retained exactly once after the replay opening",
+        "anchor": { "sequence": 17, "type": "GameStatus", "round": 2 },
+        "checks": [
+          { "path": "/beforeState/round", "op": "equals", "value": 1 },
+          { "path": "/event/state/privatePlayer/hand", "op": "equals", "value": [1000013, 9000003, 9000001, 1000009, 1000013] },
+          { "path": "/event/state/privatePlayer/deck", "op": "equals", "value": [1000004, 1000009, 0, 1000013] },
+          { "path": "/event/state/privatePlayer/selectedFateStrategies", "op": "length", "value": 0 },
+          { "path": "/event/state/players/6a52cf6931b1b74b73b60267/life", "op": "equals", "value": 96 },
+          { "path": "/event/state/players/6a52cf6931b1b74b73b60267/cultivation", "op": "equals", "value": 2 },
+          { "path": "/event/humanActions", "op": "includesMatch", "value": { "kind": "shop", "aggregate": { "exchangesSpentEstimate": 1, "partialObservation": true } } }
+        ]
+      }
+    ],
+    "r-5d29f97409dfd80a": [
+      {
+        "name": "first live Cup BattleResult replaces rather than duplicates the replay battle",
+        "anchor": { "sequence": 16, "type": "BattleResult", "direction": "server->client", "battleRound": 1 },
+        "checks": [
+          { "path": "/beforeState/round", "op": "equals", "value": 1 },
+          { "path": "/event/battle/matchups", "op": "length", "value": 4 },
+          { "path": "/event/state/players/69b80353227a265061aecee9/life", "op": "equals", "value": 97 },
+          { "path": "/nextState/round", "op": "equals", "value": 2 },
+          { "path": "/nextState/privatePlayer/hand", "op": "equals", "value": [1000002, 1000009, 5000001] },
+          { "path": "/nextState/privatePlayer/deck", "op": "equals", "value": [1000010, 1000006, 1000009, 0] },
+          { "path": "/nextState/privatePlayer/selectedFateStrategies", "op": "length", "value": 0 },
+          { "path": "/nextState/players/69b80353227a265061aecee9/life", "op": "equals", "value": 97 },
+          { "path": "/nextState/players/69b80353227a265061aecee9/cultivation", "op": "equals", "value": 4 }
+        ]
+      },
+      {
+        "name": "round 2 shop waits for the complete pre-action private snapshot",
+        "anchor": { "sequence": 16, "type": "RoundShopStart", "round": 2 },
+        "checks": [
+          { "path": "/event/details/drawnCards", "op": "equals", "value": [1000002, 1000009, 5000001] },
+          { "path": "/event/state/privatePlayer/hand", "op": "equals", "value": [1000002, 1000009, 5000001] },
+          { "path": "/event/state/privatePlayer/deck", "op": "equals", "value": [1000010, 1000006, 1000009, 0] }
+        ]
+      }
     ]
   }
 }

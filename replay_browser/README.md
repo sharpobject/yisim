@@ -19,13 +19,30 @@ inspection cache beside the raw capture tree and reuses existing compact files
 and catalog filter metadata. Normal runs therefore parse and package only new
 or changed captures; incomplete captures are reconsidered automatically when
 their size or modification time changes. Use `YXP_FORCE_REBUILD=1` for a clean
-historical rebuild, `YXP_INCREMENTAL=0` to retain the old non-incremental
-behavior, or `YXP_SCAN_CACHE_PATH=/path/to/cache.json` to relocate the cache.
+historical payload rebuild (the eligibility scan remains cached),
+`YXP_INCREMENTAL=0` to retain the old non-incremental behavior,
+`YXP_DISABLE_SCAN_CACHE=1` to force capture reinspection, or
+`YXP_SCAN_CACHE_PATH=/path/to/cache.json` to relocate the cache.
 
 `build_catalog.mjs` accepts the raw-capture and output directories as optional
-arguments. A complete recording must begin with round 1 and contain an
-authoritative `GameStatus` with `ended = true`. Each deployable recording is
-delta encoded and loaded on demand; raw traffic is not included.
+arguments. A standard complete recording must begin with round 1 and contain an
+authoritative `GameStatus` with `ended = true`. Cup recordings may begin as late
+as round 3, provided every round from the first captured round through the end is
+present. Every eligible perspective is built to exercise the reconstruction
+logic, while only Lin Xiaoyue perspectives are written to the deployable catalog.
+Set `YXP_REPLAY_ROOT` when the scraped replay archive is not at
+`scrape/data/replays`; its Cup progress metadata distinguishes preliminary games
+from finals in the selector. Each deployable recording is delta encoded and
+loaded on demand; raw traffic is not included.
+
+For a late Cup capture, the scraped replay supplies low-resolution history only
+through the shop before the first shop phase that has detailed live messages.
+The first server message after observation acceptance remains live even when it
+is a `BattleResult`. Post-battle snapshots can disclose the next round's deal in
+stages, so reconstruction waits for the last complete private snapshot before
+the first card action. If activity already occurred before detailed observation
+began, only the replay/live aggregate residual is attached to that first shop;
+live events and snapshots always remain authoritative.
 
 Every loaded position has a stable URL of the form
 `?recording=OPAQUE_RECORDING_ID&step=STEP_NUMBER`. The public recording ID is

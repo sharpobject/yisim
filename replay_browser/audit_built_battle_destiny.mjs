@@ -3,6 +3,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
+import { spawnSync } from "node:child_process";
 import { decodeMessage } from "../scripts/decode_live_observation.mjs";
 import { readPackedRecording, readRecordingCatalog } from "./recording-data-io.mjs";
 
@@ -75,21 +76,79 @@ const stats = {
   negativeBattleDeltas: 0,
   zeroBattleDeltas: 0,
   fiveElementsInfuseEvents: 0,
-  fiveElementsInfuseExactProgress: 0,
+  fiveElementsInfuseProgressConsistent: 0,
   fiveElementsInfuseTransformations: 0,
 };
-const { sharedCatalog } = readRecordingCatalog(dataRoot);
+const { catalog, sharedCatalog } = readRecordingCatalog(dataRoot);
+const catalogIds = new Set(catalog.map((item) => item.id));
+const scanCachePath = path.join(rawRoot, ".recording-browser-build-cache.json");
+let capturePaths = null;
+const captureMetadataByPath = new Map();
+if (fs.existsSync(scanCachePath)) {
+  const cache = JSON.parse(fs.readFileSync(scanCachePath, "utf8"));
+  const byId = new Map();
+  for (const [relativePath, entry] of Object.entries(cache.entries ?? {})) {
+    const capture = entry.capture;
+    if (!capture) continue;
+    const id = recordingId(capture.targetUid ?? "", capture.capturedThrough ?? "");
+    if (catalogIds.has(id)) {
+      const capturePath = path.join(rawRoot, relativePath);
+      byId.set(id, capturePath);
+      captureMetadataByPath.set(capturePath, capture);
+    }
+  }
+  const missing = [...catalogIds].filter((id) => !byId.has(id));
+  if (missing.length) throw new Error(`scan cache is missing ${missing.length} published capture(s)`);
+  capturePaths = [...byId.values()];
+}
 
-for (const capturePath of filesBelow(rawRoot)) {
-  let events;
-  try {
-    events = fs.readFileSync(capturePath, "utf8").trim().split("\n").filter(Boolean).map(JSON.parse);
+const filteredEventsByPath = new Map();
+if (capturePaths) {
+  const result = spawnSync("rg", [
+    "-n", "--no-heading", "--with-filename",
+    String.raw`"event":"observation_accepted"|"messageType":"BattleResult"`,
+    ...capturePaths,
+  ], { encoding: "utf8", maxBuffer: 512 * 1024 * 1024 });
+  if (![0, 1].includes(result.status)) throw new Error(`failed to scan capture battle records: ${result.stderr}`);
+  for (const line of result.stdout.split("\n").filter(Boolean)) {
+    const match = /^(.+?):(\d+):(\{.*\})$/.exec(line);
+    if (!match) continue;
+    const [, capturePath, lineNumber, json] = match;
+    const rows = filteredEventsByPath.get(capturePath) ?? [];
+    rows.push({ line: Number(lineNumber), event: JSON.parse(json) });
+    filteredEventsByPath.set(capturePath, rows);
+  }
+}
+
+for (const capturePath of capturePaths ?? filesBelow(rawRoot)) {
+  let accepted = null;
+  let capturedThrough = "";
+  const rawBattleEvents = [];
+  const cachedCapture = captureMetadataByPath.get(capturePath);
+  if (cachedCapture) {
+    const rows = filteredEventsByPath.get(capturePath) ?? [];
+    const acceptedRow = rows.find(({ event }) => event.event === "observation_accepted");
+    if (!acceptedRow) continue;
+    accepted = acceptedRow.event;
+    capturedThrough = cachedCapture.capturedThrough ?? "";
+    rawBattleEvents.push(...rows
+      .filter(({ line, event }) => line > acceptedRow.line && event.messageType === "BattleResult")
+      .map(({ event }) => event));
+  } else try {
+    const lines = fs.readFileSync(capturePath, "utf8").trim().split("\n").filter(Boolean);
+    capturedThrough = JSON.parse(lines.at(-1)).observedAt ?? "";
+    for (const line of lines) {
+      if (!accepted && line.includes('"event":"observation_accepted"')) {
+        accepted = JSON.parse(line);
+        continue;
+      }
+      if (accepted && line.includes('"messageType":"BattleResult"')) rawBattleEvents.push(JSON.parse(line));
+    }
   } catch {
     continue;
   }
-  const accepted = events.find((event) => event.event === "observation_accepted");
   if (!accepted) continue;
-  const id = recordingId(accepted.target?.uid ?? "", events.at(-1)?.observedAt ?? "");
+  const id = recordingId(accepted.target?.uid ?? "", capturedThrough);
   const builtPath = path.join(dataRoot, `${id}.compact.json.gz`);
   if (!fs.existsSync(builtPath)) continue;
 
@@ -106,8 +165,14 @@ for (const capturePath of filesBelow(rawRoot)) {
         const afterProgress = talentRuntime(afterPlayer, 133);
         if (Number.isFinite(beforeProgress) && Number.isFinite(afterProgress) && afterProgress > beforeProgress) {
           stats.fiveElementsInfuseEvents += 1;
-          if (afterProgress - beforeProgress === Number(change.delta)) stats.fiveElementsInfuseExactProgress += 1;
-          else failures.push({ id, issue: "Five Elements Infuse progress differs from destiny gain", change, beforeProgress, afterProgress });
+          // The runtime counts round-start triggers, while each trigger grants
+          // one Destiny per distinct Five Element currently in the deck.
+          const triggers = afterProgress - beforeProgress;
+          if (Number(change.delta) >= triggers && Number(change.delta) <= triggers * 5) {
+            stats.fiveElementsInfuseProgressConsistent += 1;
+          } else {
+            failures.push({ id, issue: "Five Elements Infuse destiny gain is inconsistent with trigger progress", change, beforeProgress, afterProgress });
+          }
         } else if (Number.isFinite(beforeProgress) && hasTalent(afterPlayer, 134)) {
           stats.fiveElementsInfuseEvents += 1;
           stats.fiveElementsInfuseTransformations += 1;
@@ -116,27 +181,54 @@ for (const capturePath of filesBelow(rawRoot)) {
     }
     previousState = visibleState;
   }
-  const rawBattles = events.filter((event) => event.messageType === "BattleResult").map((event) => {
+  // A late Cup observation can reuse a room journal that already contains a
+  // battle from before this perspective was accepted. Only compare traffic
+  // that belongs to the accepted observation window.
+  const rawBattles = rawBattleEvents.map((event) => {
     const decoded = decodeMessage("BattleResult", Buffer.from(event.protobufBase64 ?? "", "base64"));
     return {
+      round: Number(decoded.round),
       winnerUid: String(decoded.winnerUid ?? ""),
       destinyDamage: Math.abs(Number(decoded.destinyDamage ?? 0)),
       players: [rawBattlePlayer(decoded.p1), rawBattlePlayer(decoded.p2)].filter(Boolean),
     };
   });
-  const builtBattles = recording.steps.filter((step) => step.battle).map((step) => step.battle);
+  const builtBattleSteps = recording.steps.filter((step) => step.battle);
+  const firstRawRound = Math.min(...rawBattles.map((battle) => battle.round));
+  // Compact public payloads intentionally omit source metadata. Battles before
+  // the first BattleResult received after acceptance are the replay opening;
+  // battles from that round onward must correspond one-for-one to raw traffic.
+  const replayOpeningBattleSteps = builtBattleSteps.filter((step) =>
+    Number(step.battle.round) < firstRawRound);
+  const liveBattleSteps = builtBattleSteps.filter((step) => Number(step.battle.round) >= firstRawRound);
   stats.recordings += 1;
-  if (rawBattles.length !== builtBattles.length) {
-    failures.push({ id, issue: "battle count", raw: rawBattles.length, built: builtBattles.length });
+  if (replayOpeningBattleSteps.some((step) => Number(step.battle.round) >= firstRawRound)) {
+    failures.push({ id, issue: "replay opening battle overlaps live battle range", firstRawRound,
+      replayRounds: replayOpeningBattleSteps.map((step) => Number(step.battle.round)) });
+    continue;
+  }
+  if (rawBattles.length !== liveBattleSteps.length) {
+    failures.push({ id, issue: "live battle count", raw: rawBattles.length, builtLive: liveBattleSteps.length,
+      replayOpening: replayOpeningBattleSteps.length });
     continue;
   }
 
   for (let index = 0; index < rawBattles.length; index += 1) {
-    const battle = builtBattles[index];
+    const battle = liveBattleSteps[index].battle;
     const authoritative = battle.matchups?.find((matchup) => matchup.authoritative);
     const actualPlayers = Object.values(authoritative?.players ?? {});
     const rawBattle = rawBattles[index];
     const expectedPlayers = rawBattle.players;
+    if (actualPlayers.length !== expectedPlayers.length
+      || expectedPlayers.some((expected) => !actualPlayers.some((actual) => samePlayer(actual, rawBattle, expected)))) {
+      failures.push({ id, round: battle.round, issue: "authoritative battle differs from BattleResult", rawBattle, actualPlayers });
+    }
+  }
+
+  for (const step of builtBattleSteps) {
+    const battle = step.battle;
+    const authoritative = battle.matchups?.find((matchup) => matchup.authoritative);
+    const actualPlayers = Object.values(authoritative?.players ?? {});
     stats.battles += 1;
     stats.modalPlayers += actualPlayers.length;
     for (const player of actualPlayers) {
@@ -150,11 +242,6 @@ for (const capturePath of filesBelow(rawRoot)) {
         failures.push({ id, round: battle.round, issue: "positive battle destiny without Dew Jade Vase", player });
       }
     }
-    if (actualPlayers.length !== expectedPlayers.length
-      || expectedPlayers.some((expected) => !actualPlayers.some((actual) => samePlayer(actual, rawBattle, expected)))) {
-      failures.push({ id, round: battle.round, issue: "authoritative battle differs from BattleResult", rawBattle, actualPlayers });
-    }
-
     const expectedByUid = new Map();
     for (const player of battle.matchups.flatMap((matchup) => Object.values(matchup.players ?? {}))) {
       if (Number(player.lifeDelta) !== 0 && !expectedByUid.has(player.uid)) {
@@ -162,7 +249,6 @@ for (const capturePath of filesBelow(rawRoot)) {
       }
     }
     const expectedChanges = [...expectedByUid].map(([uid, delta]) => `${uid}:${delta}`).sort();
-    const step = recording.steps.find((candidate) => candidate.battle === battle);
     const actualChanges = (step?.humanActions ?? []).filter((action) => action.kind === "destiny")
       .flatMap((action) => action.changes ?? [])
       .map((change) => `${change.actorUid}:${Number(change.delta)}`).sort();
