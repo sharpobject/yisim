@@ -175,6 +175,29 @@
           { "path": "/event/state/privatePlayer/deck", "op": "equals", "value": [1000010, 1000006, 1000009, 0] }
         ]
       }
+    ],
+    "r-2e11116529eccdc5": [
+      {
+        "name": "round-transition Cup capture uses the later round signal for its first detailed shop",
+        "anchor": { "type": "RoundShopStart", "round": 2 },
+        "checks": [
+          { "path": "/event/details/drawnCards", "op": "length", "value": 3 },
+          { "path": "/event/details/partialObservation", "op": "exists", "value": false }
+        ]
+      }
+    ],
+    "r-36fb632762e2ea2f": [
+      {
+        "name": "late Cup round 2 preserves the exact first observable state and replay-only shop aggregate",
+        "anchor": { "type": "RoundShopStart", "round": 2 },
+        "checks": [
+          { "path": "/event/details/drawnCards", "op": "equals", "value": [399, 399, 399] },
+          { "path": "/event/details/partialObservation", "op": "equals", "value": true },
+          { "path": "/event/state/privatePlayer/hand", "op": "equals", "value": [1000010, 1000009, 1000007, 1010005] },
+          { "path": "/event/state/privatePlayer/deck", "op": "equals", "value": [1000001, 1000001, 1000002, 0] },
+          { "path": "/event/humanActions", "op": "includesMatch", "value": { "kind": "shop", "aggregate": { "processedCardsEstimate": 1, "combinedCardsEstimate": 1, "partialObservation": true } } }
+        ]
+      }
     ]
   }
 }

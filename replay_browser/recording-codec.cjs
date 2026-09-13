@@ -11,7 +11,7 @@
     "id", "file", "targetUid", "targetUsername", "targetCharacterId",
     "startingRating", "career", "rounds", "capturedThrough", "linCareer",
     "linFates", "linUnchosenFates", "humanOpponentCharacters", "label",
-    "gameMode", "firstRound", "cupId", "cupProgress", "cupStage",
+    "gameMode", "firstRound", "cupId", "cupProgress", "cupStage", "practice",
   ]);
 
   const isObject = (value) => value !== null && typeof value === "object" && !Array.isArray(value);
@@ -196,6 +196,7 @@
         item.cupId ?? 0,
         item.cupProgress ?? 0,
         item.cupStage ?? "",
+        item.practice ? 1 : 0,
       ]);
     }
     return [FORMAT_VERSION, packSharedCatalog(sharedCatalog), [...groups.values()]];
@@ -211,7 +212,7 @@
       for (const game of games) {
         const [id, startingRating, career, rounds, capturedThrough, linCareer,
           fateIds, unchosenFateIds, opponentIds, gameMode = 0, firstRound = 1,
-          cupId = 0, cupProgress = 0, cupStage = ""] = game;
+          cupId = 0, cupProgress = 0, cupStage = "", practice = 0] = game;
         catalog.push({
           id,
           file: `${id}.compact.json.gz`,
@@ -231,6 +232,7 @@
           cupId,
           cupProgress,
           cupStage,
+          practice: Boolean(practice),
           label: `${targetUsername} · ${rounds} rounds`,
         });
       }

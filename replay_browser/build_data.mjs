@@ -2487,6 +2487,10 @@ function ensureShopEntrySteps(inputSteps) {
     if (authoritativeIndex < 0) continue;
     const authoritative = inputSteps[authoritativeIndex];
     const preparationSteps = inputSteps.slice(battleIndex + 1, authoritativeIndex);
+    const hybridShop = hybridFirstDetailedShopContext(inputSteps);
+    const partialHybridShop = hybridShop
+      && hybridShop.round === round + 1 && !hybridShop.replayUncertain
+      && Boolean(hybridShop.missingProcessed || hybridShop.missingExchanges);
     const authoritativeDeck = authoritative.state.privatePlayer.deck ?? [];
     const authoritativeHand = authoritative.state.privatePlayer.hand ?? [];
     const reconciledPrivate = privateStateWithInferredRoundTransforms(
@@ -2810,6 +2814,12 @@ function ensureShopEntrySteps(inputSteps) {
     // when the live spectator still sees anonymous hand slots. If duplicate
     // cards make forward provenance ambiguous, this restricted action set can
     // be inverted exactly from the next authoritative private snapshot.
+    const guaranteedExtraDraws = (preBattlePrivate?.deck ?? []).reduce((total, id) => {
+      const config = cardConfigInfo(numericCardId(id));
+      if (config?.name !== "锦毛鼠") return total;
+      return total + Math.max(0, Number(config.otherParams?.[0] ?? 0));
+    }, 0);
+    const scheduledDrawCount = minimumDrawCount + guaranteedExtraDraws;
     if (!drawCandidates.length) {
       const reverseStates = Array(preparationSteps.length);
       const reversed = clone(authoritative.state.privatePlayer);
@@ -2863,6 +2873,21 @@ function ensureShopEntrySteps(inputSteps) {
           }
           reversed.hand.splice(handIndex, 1);
           reversed.deck[sourceIndex] = movedDeckId;
+        } else if (step.type === "MoveCardReq"
+          && Number(action.sourcePosition) === 0 && Number(action.destinationPosition) === 1) {
+          // A late hybrid capture can begin with a hand card filling an empty
+          // deck slot after earlier, replay-only shop activity. Reverse that
+          // observable move from the authoritative snapshot so the partial
+          // boundary has an exact private state.
+          const sourceIndex = Number(action.sourceIndex);
+          const destinationIndex = Number(action.destinationIndex);
+          const movedId = numericCardId(reversed.deck?.[destinationIndex]);
+          if (!movedId || sourceIndex < 0 || sourceIndex > reversed.hand.length) {
+            reversible = false;
+            break;
+          }
+          reversed.deck[destinationIndex] = 0;
+          reversed.hand.splice(sourceIndex, 0, movedId);
         } else if (!isSuccessfulCardMutation(step)) {
           // Failed server responses do not mutate the authoritative state.
         } else {
@@ -2898,6 +2923,35 @@ function ensureShopEntrySteps(inputSteps) {
           inferredFateUpgrades: 0,
           reversedFromAuthoritative: true,
         });
+      } else if (reversible && partialHybridShop && scheduledDrawCount >= candidateMinimumDrawCount) {
+        // Earlier shop actions are known only in aggregate, so an exact true
+        // round-start layout is impossible. Preserve the exact state directly
+        // before the first observed operation and represent the opening draw
+        // as unknown; bridgeHybridFirstDetailedShop adds the aggregate action.
+        const retainedTokens = beforeHand.map((id, retainedIndex) => ({
+          id: Number(id), roundStartId: Number(id), origin: null, retainedIndex,
+        }));
+        const drawnTokens = Array.from({ length: scheduledDrawCount }, (_unused, origin) => ({
+          id: null, origin,
+        }));
+        drawCandidates.push({
+          drawCount: scheduledDrawCount,
+          simulation: {
+            retainedTokens,
+            drawnTokens,
+            tokenPrivate: {
+              hand: actualHand.map((id) => ({ id: Number(id), origin: null })),
+              deck: actualDeck.map((id) => ({ id: Number(id), origin: null })),
+            },
+            partialPreparationPrivate: clone(reversed),
+          },
+          handMapping: actualHand.map((_id, index) => index),
+          handUpgrades: [],
+          deckUpgrades: [],
+          inferredFateUpgrades: 0,
+          reversedFromAuthoritative: true,
+          partialHybrid: true,
+        });
       }
     }
     let possibleDrawCounts = [...new Set(drawCandidates.map((candidate) => candidate.drawCount))];
@@ -2906,12 +2960,6 @@ function ensureShopEntrySteps(inputSteps) {
     // consumed by a combine. Do not invent an extra draw without a surviving
     // observation that requires one. Real extra-draw effects still win because
     // the scheduled count then cannot match the authoritative state.
-    const guaranteedExtraDraws = (preBattlePrivate?.deck ?? []).reduce((total, id) => {
-      const config = cardConfigInfo(numericCardId(id));
-      if (config?.name !== "锦毛鼠") return total;
-      return total + Math.max(0, Number(config.otherParams?.[0] ?? 0));
-    }, 0);
-    const scheduledDrawCount = minimumDrawCount + guaranteedExtraDraws;
     if (possibleDrawCounts.length > 1 && possibleDrawCounts.includes(scheduledDrawCount)) {
       possibleDrawCounts = [scheduledDrawCount];
     }
@@ -2983,18 +3031,19 @@ function ensureShopEntrySteps(inputSteps) {
       .sort((first, second) => first.inferredFateUpgrades - second.inferredFateUpgrades)[0];
     const {
       drawCount, simulation, handMapping, handUpgrades, deckUpgrades,
-      inferredFateUpgrades, reversedFromAuthoritative,
+      inferredFateUpgrades, reversedFromAuthoritative, partialHybrid,
     } = selectedCandidate;
     const { drawnTokens, retainedTokens, tokenPrivate } = simulation;
     if (process.env.YXP_DRAW_AUDIT) console.log(`DRAW_AUDIT ${JSON.stringify({
       round: round + 1,
       count: drawCount,
       source: completePreActionSnapshot >= 0 ? "pre-action-snapshot" : "inferred",
-      exact: true,
+      exact: !partialHybrid,
       ...(inferredFateUpgrades ? { inferredFateUpgrades } : {}),
       ...(transformsEntireHand ? { transformedEntireHand: true } : {}),
       ...(hasPostUseSuffix ? { postUseCards } : {}),
       ...(reversedFromAuthoritative ? { reversedFromAuthoritative: true } : {}),
+      ...(partialHybrid ? { partialObservation: true } : {}),
       ...(possibleDrawCounts.length > 1 ? { candidateCounts: possibleDrawCounts } : {}),
     })}`);
     for (const { tokenPosition, actualPosition } of handUpgrades) {
@@ -3036,8 +3085,12 @@ function ensureShopEntrySteps(inputSteps) {
     const shopState = clone(battleStep.state);
     shopState.round = round + 1;
     shopState.privatePlayer = { ...shopState.privatePlayer, ...clone(preBattlePrivate) };
-    shopState.privatePlayer.hand = [...retainedCards, ...drawnCards];
-    shopState.privatePlayer.deck = [...roundStartDeck];
+    shopState.privatePlayer.hand = partialHybrid && simulation.partialPreparationPrivate
+      ? clone(simulation.partialPreparationPrivate.hand)
+      : [...retainedCards, ...drawnCards];
+    shopState.privatePlayer.deck = partialHybrid && simulation.partialPreparationPrivate
+      ? clone(simulation.partialPreparationPrivate.deck)
+      : [...roundStartDeck];
     shopState.privatePlayer.unlockedDeckSlots = roundStartDeckSlots;
     const targetPlayer = shopState.players?.[shopState.privatePlayer.uid];
     if (targetPlayer) {
@@ -3072,7 +3125,7 @@ function ensureShopEntrySteps(inputSteps) {
       direction: "synthetic",
       type: "RoundShopStart",
       description: `Round ${round + 1} shop — draw ${drawnCards.join(", ")}`,
-      details: { round: round + 1, drawnCards },
+      details: { round: round + 1, drawnCards, ...(partialHybrid ? { partialObservation: true } : {}) },
       humanActions: [],
       state: shopState,
     };
@@ -3117,7 +3170,7 @@ function ensureShopEntrySteps(inputSteps) {
 
 ensureShopEntrySteps(logicalSteps);
 
-function bridgeHybridFirstDetailedShop(inputSteps) {
+function hybridFirstDetailedShopContext(inputSteps) {
   if (!hybridReplaySummary) return;
   const boundary = decodedBoundary();
   const detailedTypes = new Set([
@@ -3131,7 +3184,10 @@ function bridgeHybridFirstDetailedShop(inputSteps) {
     && Number(step.state?.round) > 0);
   if (firstDetailedIndex < 0) return;
   const firstDetailed = inputSteps[firstDetailedIndex];
-  const round = Number(firstDetailed.state.round);
+  // Around a round transition, either the decoded boundary or the initially
+  // reconstructed live state can still carry the preceding round. The later
+  // signal identifies the first detailed shop.
+  const round = Math.max(Number(boundary.round) || 0, Number(firstDetailed.state.round) || 0);
   const replayShop = hybridReplaySummary.recording.steps.find((step) =>
     Number(step.replaySource?.round) === round && step.replaySource?.phase === "shop");
   const replayAggregate = replayShop?.humanActions?.find((action) =>
@@ -3156,6 +3212,50 @@ function bridgeHybridFirstDetailedShop(inputSteps) {
   const missingProcessed = Math.max(missingCombined + missingAbsorbed,
     Math.max(0, replayProcessed - observedProcessed));
   const missingExchanges = Math.max(0, replayExchanges - observedExchanges);
+  return {
+    boundary,
+    firstDetailedIndex,
+    firstDetailed,
+    round,
+    replayAggregate,
+    replayProcessed,
+    observedProcessed,
+    replayCombined,
+    observedCombined,
+    replayAbsorbed,
+    observedAbsorbed,
+    replayExchanges,
+    observedExchanges,
+    missingCombined,
+    missingAbsorbed,
+    missingProcessed,
+    missingExchanges,
+    replayUncertain: Boolean(replayAggregate.uncertain),
+  };
+}
+
+function bridgeHybridFirstDetailedShop(inputSteps) {
+  const context = hybridFirstDetailedShopContext(inputSteps);
+  if (!context) return;
+  const {
+    boundary,
+    firstDetailedIndex,
+    firstDetailed,
+    round,
+    replayProcessed,
+    observedProcessed,
+    replayCombined,
+    observedCombined,
+    replayAbsorbed,
+    observedAbsorbed,
+    replayExchanges,
+    observedExchanges,
+    missingCombined,
+    missingAbsorbed,
+    missingProcessed,
+    missingExchanges,
+    replayUncertain,
+  } = context;
   const snapshotIndexes = inputSteps
     .map((step, index) => ({ step, index }))
     .filter(({ step, index }) => index < firstDetailedIndex
@@ -3180,9 +3280,9 @@ function bridgeHybridFirstDetailedShop(inputSteps) {
     observedExchanges,
     missingProcessed,
     missingExchanges,
-    replayUncertain: Boolean(replayAggregate.uncertain),
+    replayUncertain,
   })}`);
-  if ((!missingProcessed && !missingExchanges) || replayAggregate.uncertain) return;
+  if ((!missingProcessed && !missingExchanges) || replayUncertain) return;
   const bridgeIndex = snapshotIndexes.at(-1)
     ?? inputSteps.findIndex((step, index) => index < firstDetailedIndex
       && step.type === "RoundShopStart" && Number(step.state?.round) === round);

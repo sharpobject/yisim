@@ -70,7 +70,7 @@
     rerollsRemaining: "次刷新剩余", selectHdf: "选择天衍仙命",
     selectTalent: "选择仙命", selectDaoYun: "选择卡牌", noActions: "尚无玩家操作。",
     jumpRound: "跳转到轮次…", loading: "正在载入…", couldNotLoad: "无法载入", noRecordings: "没有完整录像。",
-    rating: "分", rounds: "轮", currentPrivate: "当前私密视角", cupPreliminary: "天衍杯初赛", cupFinal: "天衍杯决赛", cup: "天衍杯",
+    rating: "分", rounds: "轮", currentPrivate: "当前私密视角", cupPreliminary: "天衍杯初赛", cupFinal: "天衍杯决赛", cup: "天衍杯", practice: "练习赛",
     actionKinds: { move: "移动", rearrange: "调整", upgrade: "合成", exchange: "换牌", absorb: "吸收", destiny: "命元", leave: "离场", emote: "表情", breakthrough: "突破", immortalFate: "仙命", heavenlyFate: "天衍仙命", heavenlyFateUse: "使用天衍仙命", reroll: "刷新" },
     battle: "战斗", battleResult: "战斗结果", win: "胜", loss: "负", draw: "平", firstAction: "先手", opponentLastRound: "对手上一轮",
     previousOffer: "此前选项", rerolled: "刷新", rerolledAway: "已刷走", finalOffer: "最终选项", offer: "选项", daoYunChoices: "道韵预感", cardSelections: "卡牌选择", chosen: "已选择", innerDemon: "心魔", andOtherCards: (count) => `另有 ${count} 张牌`,
@@ -85,7 +85,7 @@
     rerollsRemaining: "rerolls remaining", selectHdf: "Select a Heavenly Derivation Fate",
     selectTalent: "Select an Immortal Fate", selectDaoYun: "Select a Card", noActions: "No player action has occurred yet.",
     jumpRound: "Jump to round…", loading: "Loading…", couldNotLoad: "Could not load", noRecordings: "No complete recordings are available.",
-    rating: "rating", rounds: "rounds", currentPrivate: "Current private view", cupPreliminary: "Heavenly Derivation Cup preliminary", cupFinal: "Heavenly Derivation Cup final", cup: "Heavenly Derivation Cup",
+    rating: "rating", rounds: "rounds", currentPrivate: "Current private view", cupPreliminary: "Heavenly Derivation Cup preliminary", cupFinal: "Heavenly Derivation Cup final", cup: "Heavenly Derivation Cup", practice: "Practice",
     actionKinds: { move: "move", rearrange: "rearrange", upgrade: "upgrade", exchange: "exchange", absorb: "absorb", destiny: "destiny", leave: "left", emote: "emote", breakthrough: "breakthrough", immortalFate: "Immortal Fate", heavenlyFate: "Heavenly Derivation", heavenlyFateUse: "used Heavenly Derivation", reroll: "reroll" },
     battle: "battle", battleResult: "Battle result", win: "Win", loss: "Loss", draw: "Draw", firstAction: "Acts first", opponentLastRound: "Opponent · last round",
     previousOffer: "Previous offer", rerolled: "Rerolled", rerolledAway: "Rerolled away", finalOffer: "Final offer", offer: "Offer", daoYunChoices: "Daoist Rhyme Omens", cardSelections: "Card selections", chosen: "Chosen", innerDemon: "Inner Demon", andOtherCards: (count) => `and ${count} other cards`,
@@ -799,6 +799,8 @@
     if (Number(item.gameMode) === 6) {
       parts.push(item.cupStage === "final" ? copy.cupFinal
         : item.cupStage === "preliminary" ? copy.cupPreliminary : copy.cup);
+    } else if (item.practice) {
+      parts.push(copy.practice);
     } else if (Number.isFinite(item.startingRating) && item.startingRating > 0) {
       parts.push(`${item.startingRating} ${copy.rating}`);
     }

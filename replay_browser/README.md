@@ -35,6 +35,12 @@ Set `YXP_REPLAY_ROOT` when the scraped replay archive is not at
 from finals in the selector. Each deployable recording is delta encoded and
 loaded on demand; raw traffic is not included.
 
+Complete Lin Xiaoyue recordings in mode 2 whose capture completes from
+2026-09-08 through 2026-09-18 UTC are tagged `practice`. Their selector labels
+show `Practice` / `练习赛` instead of a rating. The bounded classification keeps
+unrelated historical and future custom rooms from being labeled as part of
+this practice period.
+
 For a late Cup capture, the scraped replay supplies low-resolution history only
 through the shop before the first shop phase that has detailed live messages.
 The first server message after observation acceptance remains live even when it

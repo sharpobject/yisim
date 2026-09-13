@@ -37,6 +37,9 @@ const buildJobs = Math.max(1, Number.parseInt(process.env.YXP_BUILD_JOBS || "1",
 const regressionRecordingIds = recordingIdsWithAssertions();
 const numericPrefix = (value) => Number.parseInt(String(value ?? "0"), 10) || 0;
 const CUP_MODE = 6;
+const PRACTICE_MODE = 2;
+const PRACTICE_START = "2026-09-08T00:00:00.000Z";
+const PRACTICE_END_EXCLUSIVE = "2026-09-19T00:00:00.000Z";
 const cupDataByCodeId = new Map();
 const replayPovByCodeAndUid = new Map();
 
@@ -276,6 +279,9 @@ const eligibleCaptures = filesBelow(rawRoot).map((filename) => {
       ? replayPovForCodeAndUid(capture.codeId, capture.targetUid) : "";
     return {
       ...capture,
+      practice: capture.gameMode === PRACTICE_MODE
+        && capture.capturedThrough >= PRACTICE_START
+        && capture.capturedThrough < PRACTICE_END_EXCLUSIVE,
       cupId: Number(cupData?.cupId) || 0,
       cupProgress,
       cupStage: cupProgress > 3 ? "final" : cupProgress > 0 ? "preliminary" : "",
@@ -408,6 +414,7 @@ for (const [position, capture] of captures.entries()) {
     cupId: capture.cupId,
     cupProgress: capture.cupProgress,
     cupStage: capture.cupStage,
+    practice: capture.practice,
     startingRating: capture.startingRating,
     career: capture.career,
     rounds: capture.rounds,
