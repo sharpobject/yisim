@@ -52,7 +52,9 @@ live events and snapshots always remain authoritative.
 
 Every loaded position has a stable URL of the form
 `?recording=OPAQUE_RECORDING_ID&step=STEP_NUMBER`. The public recording ID is
-deliberately unrelated to the game room ID. The step number is one-based,
+deliberately unrelated to the game room ID. Public packaging removes internal
+`codeId` and `roomId` fields, including from previously cached payloads, while
+retaining them in the private reconstruction cache. The step number is one-based,
 matching the counter shown in the replay toolbar. Replay navigation updates the
 URL, browser back/forward restores it, and the language switch preserves it.
 

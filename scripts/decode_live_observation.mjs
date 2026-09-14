@@ -478,6 +478,11 @@ export function decodeMessage(type, bytes) {
     }),
     targetCard: value(fields, 3) ? decodeCardInfoHuman(value(fields, 3)) : null,
   };
+  if (type === "CardOperationResp") return {
+    operation: intValue(fields, 1),
+    otherParams: packed(fields, 2),
+    useCase: intValue(fields, 3),
+  };
   if (type === "SimpleClientPact") {
     const names = [
       "GiveUpReq", "QueryGameOverReq", "PendingTalentReq", "GameStatusReq",

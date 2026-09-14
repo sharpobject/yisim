@@ -471,7 +471,8 @@ for (const item of catalog) {
     if (!catalogOnly) throw new Error(`missing expanded recording payload ${payloadPath}`);
     continue;
   }
-  const payload = JSON.parse(fs.readFileSync(payloadPath, "utf8"));
+  const payload = JSON.parse(fs.readFileSync(payloadPath, "utf8"),
+    (key, value) => key === "codeId" || key === "roomId" ? undefined : value);
   expandedPayloads.set(item.id, payload);
   mergeSharedCatalog(sharedCatalog, payload.catalog, item.id);
 }
@@ -496,7 +497,16 @@ for (const item of catalog) {
   }
   if (!fs.existsSync(outputPath)) throw new Error(`missing packed recording ${outputPath}`);
   const packed = JSON.parse(gunzipSync(fs.readFileSync(outputPath)));
-  const decoded = recordingCodec.unpackRecording(packed, sharedCatalog);
+  let decoded = recordingCodec.unpackRecording(packed, sharedCatalog);
+  // Migrate cached public payloads without rewriting private reconstruction data.
+  if (/"(?:codeId|roomId)"\s*:/.test(JSON.stringify(decoded))) {
+    const publicPayload = payload ?? JSON.parse(JSON.stringify(decoded),
+      (key, value) => key === "codeId" || key === "roomId" ? undefined : value);
+    const sanitized = recordingCodec.packRecording(publicPayload);
+    fs.writeFileSync(outputPath, gzipSync(Buffer.from(JSON.stringify(sanitized)), { level: 9 }));
+    decoded = recordingCodec.unpackRecording(sanitized, sharedCatalog);
+    assert.deepStrictEqual(decoded, publicPayload, `public sanitization changed ${item.id}`);
+  }
   if (payload) assert.deepStrictEqual(decoded, payload, `packed recording changed ${item.id}`);
   packedBytes += fs.statSync(outputPath).size;
 }
