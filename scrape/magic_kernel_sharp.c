@@ -159,7 +159,11 @@ int mks_shift_rgba(
 
     int out_width = width + 2;
     int out_height = height + 2;
-    double *temp = (double *)calloc((size_t)height * (size_t)out_width * 4, sizeof(double));
+    size_t alloc_count = (size_t)height * (size_t)out_width;
+    if (alloc_count != 0 && alloc_count / (size_t)height != (size_t)out_width) {
+        return 2;
+    }
+    double *temp = (double *)calloc(alloc_count, 4 * sizeof(double));
     if (!temp) {
         return 2;
     }
@@ -269,9 +273,15 @@ int mks_resample_translate_rgba(
         return 1;
     }
 
-    double *temp = (double *)calloc((size_t)source_height * (size_t)target_width * 4, sizeof(double));
-    double *sharp_x = (double *)calloc((size_t)source_height * (size_t)target_width * 4, sizeof(double));
-    double *resampled = (double *)calloc((size_t)target_height * (size_t)target_width * 4, sizeof(double));
+    size_t src_count = (size_t)source_height * (size_t)target_width;
+    size_t dst_count = (size_t)target_height * (size_t)target_width;
+    if ((source_height != 0 && src_count / (size_t)source_height != (size_t)target_width) ||
+        (target_height != 0 && dst_count / (size_t)target_height != (size_t)target_width)) {
+        return 2;
+    }
+    double *temp = (double *)calloc(src_count, 4 * sizeof(double));
+    double *sharp_x = (double *)calloc(src_count, 4 * sizeof(double));
+    double *resampled = (double *)calloc(dst_count, 4 * sizeof(double));
     if (!temp || !sharp_x || !resampled) {
         free(temp);
         free(sharp_x);
