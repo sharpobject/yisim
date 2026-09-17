@@ -143,15 +143,30 @@
 
   function packRecording(recording, options = {}) {
     const { catalog, ...withoutCatalog } = recording;
-    return [FORMAT_VERSION, catalogReferences(catalog), packValue(withoutCatalog, options)];
+    const packed = [FORMAT_VERSION, catalogReferences(catalog), packValue(withoutCatalog, options)];
+    if (options.sharedCatalog) {
+      const overrides = {};
+      for (const kind of CATALOG_KINDS) {
+        for (const [id, entry] of Object.entries(catalog[kind] ?? {})) {
+          if (JSON.stringify(entry) !== JSON.stringify(options.sharedCatalog[kind]?.[id])) {
+            (overrides[kind] ??= {})[id] = entry;
+          }
+        }
+      }
+      if (Object.keys(overrides).length) packed.push(packValue(overrides));
+    }
+    return packed;
   }
 
   function unpackRecording(packed, sharedCatalog) {
-    if (!Array.isArray(packed) || packed[0] !== FORMAT_VERSION || packed.length !== 3) {
+    if (!Array.isArray(packed) || packed[0] !== FORMAT_VERSION || ![3, 4].includes(packed.length)) {
       throw new Error("unsupported packed recording format");
     }
     const recording = unpackValue(packed[2]);
-    const catalog = catalogFromReferences(packed[1], sharedCatalog);
+    const overrides = packed.length === 4 ? unpackValue(packed[3]) : {};
+    const effectiveCatalog = Object.fromEntries(CATALOG_KINDS.map(kind =>
+      [kind, { ...sharedCatalog[kind], ...overrides[kind] }]));
+    const catalog = catalogFromReferences(packed[1], effectiveCatalog);
     return {
       id: recording.id,
       targetUid: recording.targetUid,

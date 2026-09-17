@@ -3,6 +3,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import assert from "node:assert/strict";
+import { isDeepStrictEqual } from "node:util";
 import { createHash } from "node:crypto";
 import { createRequire } from "node:module";
 import { spawn, spawnSync } from "node:child_process";
@@ -447,10 +448,9 @@ catalog.sort((first, second) => first.targetUid.localeCompare(second.targetUid)
 function mergeSharedCatalog(target, source, recordingId) {
   for (const kind of recordingCodec.CATALOG_KINDS) {
     for (const [id, entry] of Object.entries(source[kind] ?? {})) {
-      if (target[kind][id] && JSON.stringify(target[kind][id]) !== JSON.stringify(entry)) {
-        throw new Error(`conflicting ${kind} metadata for ${id} while packing ${recordingId}`);
-      }
-      target[kind][id] = entry;
+      // The shared entry is a baseline; each recording preserves differing
+      // historical metadata as a compact local override.
+      target[kind][id] ??= entry;
     }
   }
 }
@@ -480,7 +480,7 @@ for (const item of catalog) {
 function smallestPackedRecording(payload) {
   let best = null;
   for (const stringLimit of [0, 16, 64, 256, Number.POSITIVE_INFINITY]) {
-    const packed = recordingCodec.packRecording(payload, { stringLimit });
+    const packed = recordingCodec.packRecording(payload, { stringLimit, sharedCatalog });
     const compressed = gzipSync(Buffer.from(JSON.stringify(packed)), { level: 9 });
     if (!best || compressed.length < best.compressed.length) best = { packed, compressed };
   }
@@ -499,10 +499,11 @@ for (const item of catalog) {
   const packed = JSON.parse(gunzipSync(fs.readFileSync(outputPath)));
   let decoded = recordingCodec.unpackRecording(packed, sharedCatalog);
   // Migrate cached public payloads without rewriting private reconstruction data.
-  if (/"(?:codeId|roomId)"\s*:/.test(JSON.stringify(decoded))) {
+  if (/"(?:codeId|roomId)"\s*:/.test(JSON.stringify(decoded))
+      || (payload && !isDeepStrictEqual(decoded, payload))) {
     const publicPayload = payload ?? JSON.parse(JSON.stringify(decoded),
       (key, value) => key === "codeId" || key === "roomId" ? undefined : value);
-    const sanitized = recordingCodec.packRecording(publicPayload);
+    const sanitized = recordingCodec.packRecording(publicPayload, { sharedCatalog });
     fs.writeFileSync(outputPath, gzipSync(Buffer.from(JSON.stringify(sanitized)), { level: 9 }));
     decoded = recordingCodec.unpackRecording(sanitized, sharedCatalog);
     assert.deepStrictEqual(decoded, publicPayload, `public sanitization changed ${item.id}`);

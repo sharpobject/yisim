@@ -141,3 +141,11 @@ under `assets/recordings/`, and adds a Recordings link to the English and
 Chinese landing-page navigation bars without rewriting every generated page.
 Card, character, Talent, and Heavenly Derivation Fate images continue to use
 the wiki's existing asset tree.
+
+## Historical metadata variants
+
+The shared catalog provides baseline metadata. Recordings with differing
+metadata retain exact per-recording overrides in an optional fourth packed
+element. The decoder still accepts legacy three-element recordings. This
+preserves removed fields and historical rule text across extraction updates
+without dropping recordings or silently replacing their metadata.
