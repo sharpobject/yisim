@@ -11,7 +11,7 @@ if (!wikiRoot || !fs.existsSync(path.join(wikiRoot, "assets", "site.css"))) {
 }
 
 const assetRoot = path.join(wikiRoot, "assets", "recordings");
-const assetVersion = "20260917-recordings-01";
+const assetVersion = "20260917-gallery-emotes-02";
 fs.mkdirSync(assetRoot, { recursive: true });
 if (!process.env.YXP_SKIP_STAGE_DATA) {
   const stagedDataRoot = path.join(assetRoot, "data");
@@ -54,10 +54,10 @@ const englishHtml = baseHtml
 
 const chineseHtml = baseHtml
   .replace('<html lang="en">', '<html lang="zh-CN">')
-  .replace('<title>Match Recordings - Yi Xian Wiki</title>', '<title>对局录像 - 弈仙牌 Wiki</title>')
+  .replace('<title>Match Recordings - Yi Xian Card Gallery</title>', '<title>对局录像 - 弈仙牌卡牌图鉴</title>')
   .replaceAll('https://sharpobject.github.io/yxp_wiki/en/', '/yxp_wiki/zh/')
   .replaceAll('/yxp_wiki/en/', '/yxp_wiki/zh/')
-  .replace('Yi Xian Wiki</a>', '弈仙牌 Wiki</a>')
+  .replace('Yi Xian Card Gallery</a>', '弈仙牌卡牌图鉴</a>')
   .replace('Characters</a>', '角色</a>')
   .replace('Cards</a>', '卡牌</a>')
   .replace('Sigils</a>', '刻印</a>')

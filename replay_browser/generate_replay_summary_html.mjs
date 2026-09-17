@@ -1172,8 +1172,8 @@ function renderHtmlCore(recording, catalogItem, language) {
       `\n  <script>window.RECORDING_CATALOG=${inlineScriptJson([catalogItem])};window.RECORDING_CAREER_ASSETS=${inlineScriptJson(embeddedCareerAssets(recording))};window.EMBEDDED_REPLAY_RECORDING=${inlineScriptJson(recording)};</script>\n  <script>${javascript.replace(/<\//g, "<\\/")}</script>`);
   if (language === "zh") {
     for (const [english, chinese] of [
-      ["Replay summary - Yi Xian Wiki", "回放摘要 - 弈仙牌 Wiki"], [">Characters<", ">角色<"],
-      [">Cards<", ">卡牌<"], [">Sigils<", ">天机符<"], [">Fates<", ">仙命<"],
+      ["Replay summary - Yi Xian Card Gallery", "回放摘要 - 弈仙牌卡牌图鉴"], [">Characters<", ">角色<"],
+      [">Yi Xian Card Gallery</a>", ">弈仙牌卡牌图鉴</a>"], [">Cards<", ">卡牌<"], [">Sigils<", ">天机符<"], [">Fates<", ">仙命<"],
       [">Recordings<", ">录像<"], ["<p class=\"eyebrow\">Replay summary</p>", "<p class=\"eyebrow\">回放摘要</p>"],
       ["<h1>Replay summary</h1>", "<h1>回放摘要</h1>"],
       ["Important choices, per-round shop summaries, and battle results from one replay.", "单局回放中的重要选择、每轮商店摘要与战斗结果。"],

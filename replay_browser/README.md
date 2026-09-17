@@ -149,3 +149,24 @@ metadata retain exact per-recording overrides in an optional fourth packed
 element. The decoder still accepts legacy three-element recordings. This
 preserves removed fields and historical rule text across extraction updates
 without dropping recordings or silently replacing their metadata.
+
+## Emote artwork and site branding
+
+Emotes are Spine 4.2 animations, not individual texture sprites. Keep each
+`.skel`, `.atlas`, and texture together from the same bundle.
+`extract_emote_assets.py BUNDLE_ROOT MEDIA_MANIFEST OUTPUT` extracts these
+from already-downloaded client bundles using UnityPy. Install
+`@esotericsoftware/spine-canvas@4.2` and `@napi-rs/canvas` in an isolated npm
+directory and copy `render_emote_frames.mjs` there. Run it with
+`ASSET_ROOT TEXTURE_ROOT FRAME_ROOT EMOTE_ID`, then run
+`encode_emotes.py FRAME_ROOT replay_browser/emoji-images`. The wiki uses the
+animated WebP; the local viewer uses its PNG preview. Preserve deployed assets
+when extraction output is absent. Official text-only emotes use localized
+text bubbles and must not request nonexistent image files.
+
+The public name is **Yi Xian Card Gallery** / **弈仙牌卡牌图鉴**.
+`scrape/wiki/scripts/site_branding.py` applies the localized name to all
+generated and retained HTML; the Hetz generator calls it at the end of
+`build_site`. Recording templates and the tier-list dynamic title also use
+these names. September 17 rendering and generator patch evidence is stored
+on Hetz in `reports/emotes-branding-20260917/`.

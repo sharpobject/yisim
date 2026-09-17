@@ -344,13 +344,23 @@
     return `<div class="card-selection-choice" tabindex="0"><span class="dao-round">${copy.round}${esc(choice.roundOrPhase)}${copy.roundSuffix}</span><span class="card-selection-art"><img data-asset-fallback src="${cardAsset(choice.selected)}" alt="${esc(name)}"></span><div class="trait-popover"><strong>${esc(name)}</strong><p>${esc(copy.chosen)} · ${copy.round}${esc(choice.roundOrPhase)}${copy.roundSuffix}</p>${offerHistory(choice, "card", { showFinalLabel: false })}</div></div>`;
   }
 
+  // Official text-only emotes have no Spine asset.
+  const textEmotes = {"12":{"en":"Cooooool","zh":"666666"},"13":{"en":"Yes Yes Yes","zh":"对的对的"},"14":{"en":"No No No","zh":"不对不对"},"15":{"en":"Awesome","zh":"妙啊"},"16":{"en":"Huh?","zh":"啊？"},"17":{"en":"Show your moves","zh":"请赐教"},"18":{"en":"Well played","zh":"承让了"},"19":{"en":"Wait a moment","zh":"请稍等"},"20":{"en":"A mistake","zh":"失误了"},"21":{"en":"Amazing","zh":"绝了"},"22":{"en":"Lucky","zh":"运气不错"},"23":{"en":"?!","zh":"？！"},"24":{"en":"Take my move","zh":"吃我一招"},"25":{"en":"Good cards!","zh":"好牌！"},"26":{"en":"Finally achieved it!","zh":"终于成了！"},"28":{"en":"Steady","zh":"稳了"},"30":{"en":"I changed my move!","zh":"我变招了！"}};
+
+  function emoteMarkup(emojiId) {
+    if (emojiId == null) return "";
+    const text = textEmotes[emojiId]?.[language];
+    if (text) return `<span class="player-emote text-emote" aria-label="${esc(copy.actionKinds.emote)}: ${esc(text)}">${esc(text)}</span>`;
+    return `<span class="player-emote" aria-label="${esc(copy.actionKinds.emote)} ${esc(emojiId)}"><span>${esc(emojiId)}</span><img data-emote-art src="${emojiAsset(emojiId)}" alt=""></span>`;
+  }
+
   function playerPortrait(player, state, privateOwnerUid, emojiId = null) {
     const own = state.players[privateOwnerUid];
     const upcoming = own?.nextOpponent === player.uid;
     return `<button class="player-portrait ${selectedUid === player.uid ? "selected" : ""} ${player.uid === privateOwnerUid ? "own" : ""} ${player.settled ? "settled" : ""}" data-uid="${esc(player.uid)}" data-rating="${esc(player.rating ?? 0)}" title="${esc(copy.inspect)}: ${esc(player.username)}">
       <span class="avatar-wrap"><img data-character-fallback data-default-src="${characterAsset(player, "avatar", true)}" class="avatar ${Number(player.skinNumber) > 0 ? "costume" : ""}" src="${characterAsset(player, "avatar")}" alt=""><span class="life-gem"><span>${esc(player.life)}</span></span>${upcoming ? `<span class="opponent-badge" title="${esc(copy.upcomingOpponent)}">⚔</span>` : ""}</span>
       <span class="name">${esc(player.username)}</span><span class="character-name">${esc(characterName(player))}</span>
-      ${emojiId == null ? "" : `<span class="player-emote" aria-label="${esc(copy.actionKinds.emote)} ${esc(emojiId)}"><span>${esc(emojiId)}</span><img data-emote-art src="${emojiAsset(emojiId)}" alt=""></span>`}
+      ${emoteMarkup(emojiId)}
     </button>`;
   }
 
