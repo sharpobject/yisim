@@ -1,6 +1,223 @@
 {
   "version": 1,
   "recordings": {
+    "r-1ba91e5d7e4037e8": [
+      {
+        "name": "upgraded talent selections outside the original offers do not prevent opening repair",
+        "anchor": {
+          "type": "InitialState",
+          "round": 1
+        },
+        "checks": [
+          {
+            "path": "/event/humanActions",
+            "op": "includesMatch",
+            "value": {
+              "kind": "shop",
+              "aggregate": {
+                "combinedCardsEstimate": 1,
+                "exchangesSpentEstimate": 2
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "r-82cf552f115c73aa": [
+      {
+        "name": "partial round-one opening adds only absent shop activity and retains the live snapshot",
+        "anchor": {
+          "round": 1,
+          "type": "InitialState"
+        },
+        "checks": [
+          {
+            "path": "/event/humanActions",
+            "op": "includesMatch",
+            "value": {
+              "kind": "shop",
+              "aggregate": {
+                "combinedCardsEstimate": 0,
+                "absorbedCardsEstimate": 0,
+                "processedCardsEstimate": 0,
+                "exchangesSpentEstimate": 2,
+                "partialObservation": true
+              }
+            }
+          },
+          {
+            "path": "/state/privatePlayer/hand",
+            "op": "equals",
+            "value": [
+              1000010,
+              1000012,
+              1000007,
+              1000013,
+              1000012
+            ]
+          },
+          {
+            "path": "/state/privatePlayer/deck",
+            "op": "equals",
+            "value": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "path": "/state/privatePlayer/exchangesRemaining",
+            "op": "equals",
+            "value": 1
+          }
+        ]
+      }
+    ],
+    "r-090aaa5c397be087": [
+      {
+        "name": "partial round-one opening adds only absent shop activity and retains the live snapshot",
+        "anchor": {
+          "round": 1,
+          "type": "InitialState"
+        },
+        "checks": [
+          {
+            "path": "/event/humanActions",
+            "op": "includesMatch",
+            "value": {
+              "kind": "shop",
+              "aggregate": {
+                "combinedCardsEstimate": 0,
+                "absorbedCardsEstimate": 0,
+                "processedCardsEstimate": 0,
+                "exchangesSpentEstimate": 0,
+                "arrangedDeck": true,
+                "partialObservation": true
+              }
+            }
+          },
+          {
+            "path": "/state/privatePlayer/hand",
+            "op": "equals",
+            "value": [
+              1000021,
+              1000002
+            ]
+          },
+          {
+            "path": "/state/privatePlayer/deck",
+            "op": "equals",
+            "value": [
+              1000005,
+              1000007,
+              1000013
+            ]
+          },
+          {
+            "path": "/state/privatePlayer/exchangesRemaining",
+            "op": "equals",
+            "value": 3
+          }
+        ]
+      }
+    ],
+    "r-b13a5485fbe0dce6": [
+      {
+        "name": "partial round-one opening adds only absent shop activity and retains the live snapshot",
+        "anchor": {
+          "round": 1,
+          "type": "InitialState"
+        },
+        "checks": [
+          {
+            "path": "/event/humanActions",
+            "op": "includesMatch",
+            "value": {
+              "kind": "shop",
+              "aggregate": {
+                "combinedCardsEstimate": 0,
+                "absorbedCardsEstimate": 1,
+                "processedCardsEstimate": 1,
+                "exchangesSpentEstimate": 2,
+                "arrangedDeck": true,
+                "partialObservation": true
+              }
+            }
+          },
+          {
+            "path": "/state/privatePlayer/hand",
+            "op": "equals",
+            "value": [
+              1000021
+            ]
+          },
+          {
+            "path": "/state/privatePlayer/deck",
+            "op": "equals",
+            "value": [
+              1000006,
+              1010009,
+              1000010
+            ]
+          },
+          {
+            "path": "/state/privatePlayer/exchangesRemaining",
+            "op": "equals",
+            "value": 1
+          }
+        ]
+      }
+    ],
+    "r-15b3ced028722a06": [
+      {
+        "name": "partial round-one opening adds only absent shop activity and retains the live snapshot",
+        "anchor": {
+          "round": 1,
+          "type": "InitialState"
+        },
+        "checks": [
+          {
+            "path": "/event/humanActions",
+            "op": "includesMatch",
+            "value": {
+              "kind": "shop",
+              "aggregate": {
+                "combinedCardsEstimate": 0,
+                "absorbedCardsEstimate": 0,
+                "processedCardsEstimate": 0,
+                "exchangesSpentEstimate": 2,
+                "arrangedDeck": true,
+                "partialObservation": true
+              }
+            }
+          },
+          {
+            "path": "/state/privatePlayer/hand",
+            "op": "equals",
+            "value": [
+              1000009,
+              1000013,
+              1000009,
+              1000021
+            ]
+          },
+          {
+            "path": "/state/privatePlayer/deck",
+            "op": "equals",
+            "value": [
+              1000012,
+              0,
+              0
+            ]
+          },
+          {
+            "path": "/state/privatePlayer/exchangesRemaining",
+            "op": "equals",
+            "value": 1
+          }
+        ]
+      }
+    ],
     "r-0315b67052373b80": [
       {
         "name": "round 3 public battle losses are folded into the battle, not the following shop",

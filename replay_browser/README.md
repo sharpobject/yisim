@@ -170,3 +170,25 @@ generated and retained HTML; the Hetz generator calls it at the end of
 `build_site`. Recording templates and the tier-list dynamic title also use
 these names. September 17 rendering and generator patch evidence is stored
 on Hetz in `reports/emotes-branding-20260917/`.
+
+### Partial round-one openings
+
+Every eligible live capture looks for a matching scraped replay, including
+ordinary games that start partway through round one. When the first live state
+shows prior activity, the first step receives an approximate shop summary for
+replay-derived activity absent from the detailed live actions. It does not
+invent card identities, intermediate states, or an order for missing actions.
+Observed combinations and absorptions are subtracted together before splitting
+the remaining estimate, since a combined card can subsequently be absorbed.
+All captured states and detailed events are retained.
+
+The replay's top-level UID is not sufficient to identify a human perspective:
+AI perspectives can retain human metadata. Require the human to participate in
+the perspective's battles, and never let an AI view replace that human's view.
+Initial Curiosity counters come from the talent configuration.
+
+Private payload-cache dependency receipts include the matching replay and its
+siblings; replay arrival or modification automatically invalidates the cached
+recording on the next catalog build. The private .opening-repair-audit.json
+records residual estimates and uncertainty and persists across incremental
+builds. This does not broaden the eligibility of late-start non-Cup captures.

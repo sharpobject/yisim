@@ -8,6 +8,7 @@ import {
 } from "../scripts/decode_live_observation.mjs";
 import { assertRecordingRegression } from "./recording_regressions.mjs";
 import { buildReplaySummaryData } from "./generate_replay_summary_html.mjs";
+import { openingShopResidual } from "./opening-repair.mjs";
 
 const [inputPath, outputPath = path.join(path.dirname(new URL(import.meta.url).pathname), "replay-data.js")] = process.argv.slice(2);
 if (!inputPath) throw new Error("usage: build_data.mjs CAPTURE.jsonl [OUTPUT.js]");
@@ -27,7 +28,8 @@ const firstLiveServerIndex = replayPovPath && observationAcceptedIndex >= 0
 if (replayPovPath && firstLiveServerIndex < 0) {
   throw new Error(`late Cup observation has no server message after acceptance: ${path.basename(inputPath)}`);
 }
-const protocolEvents = firstLiveServerIndex >= 0 ? rawEvents.slice(firstLiveServerIndex) : rawEvents;
+const protocolEvents = process.env.YXP_REQUIRE_REPLAY_OPENING && firstLiveServerIndex >= 0
+  ? rawEvents.slice(firstLiveServerIndex) : rawEvents;
 const wikiRoot = process.env.YXP_WIKI_ROOT || "/private/tmp/yxp_wiki";
 function extractedFateMetadata() {
   const filename = path.join(steamDumpPath, "heavenly_derivation_fates.json");
@@ -2452,7 +2454,7 @@ function ensureShopEntrySteps(inputSteps) {
     const firstAuthoritativeIsIncomplete = firstAuthoritativePreAction
       && Number(firstAuthoritativePreAction.state.privatePlayer.hand?.length ?? 0)
         < beforeHand.length + minimumDrawCount;
-    if (firstAuthoritativeIsIncomplete && (!replayPovPath || completePreActionSnapshot < 0)) {
+    if (firstAuthoritativeIsIncomplete && (!replayOpeningSteps.length || completePreActionSnapshot < 0)) {
       if (process.env.YXP_DRAW_AUDIT) console.log(`DRAW_AUDIT ${JSON.stringify({
         round: round + 1,
         count: null,
@@ -2501,7 +2503,7 @@ function ensureShopEntrySteps(inputSteps) {
     );
     beforeHand = (reconciledPrivate?.hand ?? []).map((id) => roundStartCardId(id, { inHand: true }));
     const roundStartDeck = (reconciledPrivate?.deck ?? []).map(roundStartCardId);
-    if (replayPovPath) roundStartDeck.splice(authoritativeDeck.length);
+    if (replayOpeningSteps.length) roundStartDeck.splice(authoritativeDeck.length);
     while (roundStartDeck.length < roundStartDeckSlots) roundStartDeck.push(0);
     let choiceGrantedCardCount = 0;
     const simulateDraws = (drawCount) => {
@@ -3235,6 +3237,7 @@ function hybridFirstDetailedShopContext(inputSteps) {
 }
 
 function bridgeHybridFirstDetailedShop(inputSteps) {
+  if (Number(decodedBoundary()?.round) === 1 && !replayOpeningSteps.length) return;
   const context = hybridFirstDetailedShopContext(inputSteps);
   if (!context) return;
   const {
@@ -3346,6 +3349,61 @@ function bridgeHybridFirstDetailedShop(inputSteps) {
 }
 
 bridgeHybridFirstDetailedShop(logicalSteps);
+
+function repairPartialFirstRound(inputSteps) {
+  if (!hybridReplaySummary || replayOpeningSteps.length || Number(decodedBoundary()?.round) !== 1) return;
+  const initial = inputSteps.find(step => step.type === "InitialState" && Number(step.state?.round) === 1);
+  if (!initial?.state?.privatePlayer) return;
+  const firstBattle = inputSteps.findIndex(step => Number(step.battle?.round) >= 1
+    || Number(step.state?.round) > 1);
+  if (firstBattle < 0) return;
+  const replayShop = hybridReplaySummary.recording.steps.find(step =>
+    Number(step.replaySource?.round) === 1 && step.replaySource?.phase === "shop");
+  const aggregate = replayShop?.humanActions?.find(action => action.kind === "shop"
+    && String(action.actorUid) === String(targetUid))?.aggregate;
+  const residual = openingShopResidual(aggregate,
+    inputSteps.slice(0, firstBattle).flatMap(step => step.humanActions ?? []), targetUid);
+  const opening = initial.state.privatePlayer;
+  const priorRecordedMoves = inputSteps.some(step => Number(step.sequence) < Number(initial.sequence)
+    && ["MoveCardReq", "InsertCardReq"].includes(step.type));
+  const arrangedCards = priorRecordedMoves ? 0 : (opening.deck ?? []).filter(id => Number(id) > 0).length;
+  // An aggregate estimate alone cannot prove the capture missed the opening.
+  // Require evidence in its earliest state before adding an approximate total.
+  const own = initial.state.players?.[targetUid];
+  const curiosity = (own?.talents ?? []).find(entry => Math.abs(Number(entry.id)) % 10000 === 129);
+  const initialCuriosity = Number(hybridReplaySummary.builder.talentConfigs.get(129)?.otherParams?.[0]);
+  const curiositySpent = curiosity && Number.isFinite(initialCuriosity)
+    && Number(curiosity.runtime?.value) < initialCuriosity;
+  const openingChanged = arrangedCards > 0 || Number(opening.exchangesRemaining) < 3
+    || Number(own?.cultivation) > 0 || Boolean(curiositySpent);
+  console.log(`OPENING_REPAIR_AUDIT ${JSON.stringify({ round: 1, ...residual, arrangedCards, openingChanged })}`);
+  if (!residual.usable || !openingChanged) return;
+  const { combined, absorbed, processed, exchanges } = residual.missing;
+  if (!combined && !absorbed && !processed && !exchanges && !arrangedCards) return;
+  const username = initial.state.players?.[targetUid]?.username ?? profiles.get(targetUid)?.username ?? targetUid;
+  const en = [
+    ...(combined ? [`combined about ${combined} time${combined === 1 ? "" : "s"}`] : []),
+    ...(absorbed ? [`absorbed about ${absorbed} card${absorbed === 1 ? "" : "s"}`] : []),
+    ...(processed ? [`processed about ${processed} card${processed === 1 ? "" : "s"}`] : []),
+    ...(exchanges ? [`spent about ${exchanges} exchange${exchanges === 1 ? "" : "s"}`] : []),
+    ...(arrangedCards ? ["arranged their deck"] : []),
+  ];
+  const zh = [
+    ...(combined ? [`约合成了${combined}次`] : []),
+    ...(absorbed ? [`约吸收了${absorbed}张牌`] : []),
+    ...(processed ? [`约处理了${processed}张牌`] : []),
+    ...(exchanges ? [`约花费${exchanges}次换牌机会`] : []),
+    ...(arrangedCards ? ["调整了牌组"] : []),
+  ];
+  initial.details.partialObservation = true;
+  initial.humanActions.push({ actorUid: targetUid, actorUsername: username, kind: "shop",
+    textEnglish: `${username} ${en.join(" and ")}.`, textChinese: `${username}${zh.join("，并")}。`,
+    aggregate: { combinedCardsEstimate: combined, absorbedCardsEstimate: absorbed,
+      processedCardsEstimate: combined + absorbed + processed, exchangesSpentEstimate: exchanges,
+      ...(arrangedCards ? { arrangedDeck: true } : {}), partialObservation: true },
+  });
+}
+repairPartialFirstRound(logicalSteps);
 
 function completedChoicesForStep(previousState, currentState) {
   const previousPrivate = previousState?.privatePlayer;

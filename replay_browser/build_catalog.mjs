@@ -11,6 +11,7 @@ import { fileURLToPath } from "node:url";
 import { gunzipSync, gzipSync } from "node:zlib";
 import { characterInfo, decodeMessage, fateStrategyInfo } from "../scripts/decode_live_observation.mjs";
 import { recordingIdsWithAssertions } from "./recording_regressions.mjs";
+import { replayInputFingerprint } from "./opening-repair.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const require = createRequire(import.meta.url);
@@ -101,7 +102,11 @@ function replayPovForCodeAndUid(codeId, uid) {
       const filename = path.join(bucket, name);
       try {
         const replay = JSON.parse(fs.readFileSync(filename, "utf8"));
-        if (String(replay.data?.uid ?? replay.uid ?? "") === String(uid)) {
+        const data = replay.data ?? replay;
+        if (String(data.uid ?? "") === String(uid)
+          && Array.isArray(data.roundStats) && data.roundStats.length
+          && data.roundStats.every(round => [round.p1, round.p2]
+            .some(side => String(side?.publicData?.uid ?? "") === String(uid)))) {
           result = filename;
           break;
         }
@@ -276,8 +281,7 @@ const eligibleCaptures = filesBelow(rawRoot).map((filename) => {
   .map((capture) => {
     const cupData = capture.gameMode === CUP_MODE ? cupDataForCodeId(capture.codeId) : null;
     const cupProgress = Number(cupData?.progress) || 0;
-    const hybridReplayPath = capture.gameMode === CUP_MODE && capture.firstRound > 1
-      ? replayPovForCodeAndUid(capture.codeId, capture.targetUid) : "";
+    const hybridReplayPath = replayPovForCodeAndUid(capture.codeId, capture.targetUid);
     return {
       ...capture,
       practice: capture.gameMode === PRACTICE_MODE
@@ -304,6 +308,45 @@ if (missingReplayOpenings.length) process.stderr.write(`HYBRID_REPLAY_MISSING ${
 // whether payload reconstruction succeeds. Persist this expensive scan before
 // starting workers so an interrupted or failed build can resume immediately.
 writeScanCache(nextScanCacheEntries);
+const buildInputsPath = path.join(payloadCacheRoot, ".opening-repair-inputs.json");
+let priorBuildInputs = {};
+try { priorBuildInputs = JSON.parse(fs.readFileSync(buildInputsPath, "utf8")); }
+catch { /* Missing dependency receipts require a rebuild, never stale output. */ }
+const replayGroupFingerprints = new Map();
+const inputFingerprint = (capture) => {
+  const filename = capture.hybridReplayPath;
+  if (!filename) return replayInputFingerprint("", null);
+  const group = `${path.dirname(filename)}/${capture.codeId}`;
+  if (!replayGroupFingerprints.has(group)) {
+    const prefix = `${capture.codeId}_p`;
+    const files = fs.readdirSync(path.dirname(filename))
+      .filter(name => name.startsWith(prefix) && name.endsWith(".json")).sort();
+    replayGroupFingerprints.set(group, files.map(name => [name,
+      captureFingerprint(path.join(path.dirname(filename), name))]));
+  }
+  return replayInputFingerprint(filename, replayGroupFingerprints.get(group));
+};
+// Snapshot dependencies before workers start so mid-build archive updates
+// invalidate the next pass rather than being credited to an earlier build.
+eligibleCaptures.forEach(inputFingerprint);
+const repairAuditPath = path.join(payloadCacheRoot, ".opening-repair-audit.json");
+let previousRepairAudits = [];
+try { previousRepairAudits = JSON.parse(fs.readFileSync(repairAuditPath, "utf8")); }
+catch { /* First build has no repair audit. */ }
+const repairAudits = new Map(previousRepairAudits.map(audit => [audit.recording, audit]));
+const recordBuildSuccess = (capture, id, stdout) => {
+  priorBuildInputs[id] = inputFingerprint(capture);
+  repairAudits.delete(id);
+  for (const line of stdout.split("\n")) {
+    if (line.startsWith("OPENING_REPAIR_AUDIT ")) repairAudits.set(id, { recording: id,
+      ...JSON.parse(line.slice("OPENING_REPAIR_AUDIT ".length)) });
+  }
+};
+process.stdout.write(`OPENING_REPAIR_REPLAY_COVERAGE ${JSON.stringify({
+  eligible: eligibleCaptures.length,
+  matched: eligibleCaptures.filter(c => c.hybridReplayPath).length,
+  missing: eligibleCaptures.filter(c => !c.hybridReplayPath).length,
+})}\n`);
 const catalog = [];
 const generatedFiles = new Set();
 const drawAudit = [];
@@ -316,7 +359,8 @@ if (!catalogOnly) {
     const outputPath = path.join(payloadCacheRoot, `${id}.compact.json`);
     return { capture, id, outputPath };
   }).filter((item) => forceRebuild || regressionRecordingIds.has(item.id)
-    || item.capture.sourceChanged || !fs.existsSync(item.outputPath));
+    || item.capture.sourceChanged || !fs.existsSync(item.outputPath)
+    || priorBuildInputs[item.id] !== inputFingerprint(item.capture));
   let cursor = 0;
   let completed = 0;
   const buildOne = ({ capture, id, outputPath }) => new Promise((resolve) => {
@@ -355,11 +399,17 @@ if (!catalogOnly) {
           if (line.startsWith("CULTIVATION_AUDIT ")) cultivationAudit.push({ recording: result.id, ...JSON.parse(line.slice(18)) });
         }
       }
-      if (result.status === 0) builtIds.add(result.id);
+      if (result.status === 0) {
+        builtIds.add(result.id);
+        recordBuildSuccess(result.capture, result.id, result.stdout);
+      }
       process.stdout.write(`[build ${completed}/${pending.length}] ${result.capture.targetUsername} · ${result.capture.rounds} rounds\n`);
     }
   };
   await Promise.all(Array.from({ length: Math.min(buildJobs, pending.length) }, worker));
+  fs.writeFileSync(`${buildInputsPath}.tmp`, JSON.stringify(priorBuildInputs));
+  fs.renameSync(`${buildInputsPath}.tmp`, buildInputsPath);
+  fs.writeFileSync(path.join(payloadCacheRoot, ".opening-repair-audit.json"), JSON.stringify([...repairAudits.values()], null, 2));
   if (buildFailures.length && !skipBuildFailures) {
     process.stderr.write(`BUILD_FAILURE_SUMMARY ${JSON.stringify(buildFailures)}\n`);
     process.exit(1);

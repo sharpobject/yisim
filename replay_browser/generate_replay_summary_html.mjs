@@ -915,7 +915,9 @@ function shopSummary(previousState, state, newTalentHistories, newFateHistories,
   const inventoryProcessed = round === 1 ? 0 : Math.max(0, priorInventory + normalDrawCount(round) + known.cards - currentInventory);
   const processed = Math.max(combines.count, known.uncertain ? inventoryProcessed : Math.max(inventoryProcessed, cultivationActions));
   const absorbed = Math.max(0, processed - combines.count);
-  const previousCuriosity = curiosityCount(previousState ?? {});
+  const startsWithCuriosity = (ownAfter?.talents ?? []).some(entry => Math.abs(Number(entry.id)) % 10000 === 129);
+  const previousCuriosity = previousState ? curiosityCount(previousState)
+    : startsWithCuriosity ? Number(builder.talentConfigs.get(129)?.otherParams?.[0] ?? 0) : 0;
   const currentCuriosity = curiosityCount(state);
   const curiosityRecharge = previousState && ids.has(95) && outcome?.lost
     && !newFateHistories.some((history) => Number(history.selected) === 95) ? 1 : 0;
@@ -1012,6 +1014,8 @@ export function makeTimeline(views, targetView, builder) {
       for (const history of histories) {
         const catalogName = kind === "immortal-fate" ? "talents" : kind === "heavenly-derivation" ? "fateStrategies" : "cards";
         history.offers.flat().forEach((id) => builder[`remember${kind === "immortal-fate" ? "Talent" : kind === "heavenly-derivation" ? "Fate" : "Card"}`](id));
+        // Selected talent IDs can carry an upgraded level absent from the offers.
+        builder[`remember${kind === "immortal-fate" ? "Talent" : kind === "heavenly-derivation" ? "Fate" : "Card"}`](history.selected);
         const overlay = {
           kind, roundOrPhase: history.roundOrPhase,
           rerollsRemaining: 0, rerollsKnown: kind !== "heavenly-derivation",
@@ -1087,13 +1091,33 @@ export function makeTimeline(views, targetView, builder) {
   return steps;
 }
 
+export function selectReplayPerspectives(views, targetView) {
+  // AI perspectives can retain a human UID in their top-level metadata.
+  // Only use a view as that human's perspective when its battles include them;
+  // otherwise a last-wins map can erase the real protagonist's state.
+  const ownedRounds = view => (view.data.roundStats ?? []).filter(round =>
+    Boolean(sideForUid(round, view.data.uid))).length;
+  const targetOwned = ownedRounds(targetView);
+  if (!targetOwned || targetOwned !== targetView.data.roundStats.length) {
+    throw new Error("scraped replay POV has battle rounds that do not belong to its declared player");
+  }
+  const byUid = new Map();
+  for (const view of views) {
+    if (!ownedRounds(view)) continue;
+    const prior = byUid.get(view.data.uid);
+    if (!prior || ownedRounds(view) > ownedRounds(prior)) byUid.set(view.data.uid, view);
+  }
+  byUid.set(targetView.data.uid, targetView);
+  return [...byUid.values()];
+}
+
 export function buildReplaySummaryData(input, options = {}) {
   const resolvedInput = path.resolve(input);
   const configPaths = options.configPaths ?? resolveConfigPaths({ ...options, input: resolvedInput });
   const targetView = replayData(resolvedInput);
   const replayFiles = options.siblingPovs === false ? [resolvedInput] : siblingReplayFiles(resolvedInput);
   const views = replayFiles.map(replayData);
-  const uniqueViews = [...new Map(views.map((view) => [view.data.uid, view])).values()];
+  const uniqueViews = selectReplayPerspectives(views, targetView);
   const builder = createCatalogBuilder(configPaths);
   const targetFirstRound = roundForView(targetView, Number(targetView.data.roundStats[0]?.round), true);
   const targetFirstSide = sideForUid(targetFirstRound, targetView.data.uid);
