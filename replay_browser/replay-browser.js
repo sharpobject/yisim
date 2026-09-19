@@ -71,7 +71,7 @@
     selectTalent: "选择仙命", selectDaoYun: "选择卡牌", noActions: "尚无玩家操作。",
     jumpRound: "跳转到轮次…", loading: "正在载入…", couldNotLoad: "无法载入", noRecordings: "没有完整录像。",
     rating: "分", rounds: "轮", currentPrivate: "当前私密视角", cupPreliminary: "天衍杯初赛", cupFinal: "天衍杯决赛", cup: "天衍杯", practice: "练习赛",
-    actionKinds: { move: "移动", rearrange: "调整", upgrade: "合成", exchange: "换牌", absorb: "吸收", destiny: "命元", leave: "离场", emote: "表情", breakthrough: "突破", immortalFate: "仙命", heavenlyFate: "天衍仙命", heavenlyFateUse: "使用天衍仙命", reroll: "刷新" },
+    actionKinds: { move: "移动", rearrange: "调整", upgrade: "合成", exchange: "换牌", absorb: "吸收", destiny: "命元", leave: "离场", emote: "表情", breakthrough: "突破", sideJob: "副职业", immortalFate: "仙命", heavenlyFate: "天衍仙命", heavenlyFateUse: "使用天衍仙命", reroll: "刷新" },
     battle: "战斗", battleResult: "战斗结果", win: "胜", loss: "负", draw: "平", firstAction: "先手", opponentLastRound: "对手上一轮",
     previousOffer: "此前选项", rerolled: "刷新", rerolledAway: "已刷走", finalOffer: "最终选项", offer: "选项", daoYunChoices: "道韵预感", cardSelections: "卡牌选择", chosen: "已选择", innerDemon: "心魔", andOtherCards: (count) => `另有 ${count} 张牌`,
     filters: "筛选", heavenlyFateFilter: "已选择的天衍仙命", unchosenHeavenlyFateFilter: "出现但未选择的天衍仙命", sideJobFilter: "副职业", opponentFilter: "人类对手角色", anySideJob: "任意副职业", clearFilters: "清除", noMatchingRecordings: "没有符合条件的录像",
@@ -86,7 +86,7 @@
     selectTalent: "Select an Immortal Fate", selectDaoYun: "Select a Card", noActions: "No player action has occurred yet.",
     jumpRound: "Jump to round…", loading: "Loading…", couldNotLoad: "Could not load", noRecordings: "No complete recordings are available.",
     rating: "rating", rounds: "rounds", currentPrivate: "Current private view", cupPreliminary: "Heavenly Derivation Cup preliminary", cupFinal: "Heavenly Derivation Cup final", cup: "Heavenly Derivation Cup", practice: "Practice",
-    actionKinds: { move: "move", rearrange: "rearrange", upgrade: "upgrade", exchange: "exchange", absorb: "absorb", destiny: "destiny", leave: "left", emote: "emote", breakthrough: "breakthrough", immortalFate: "Immortal Fate", heavenlyFate: "Heavenly Derivation", heavenlyFateUse: "used Heavenly Derivation", reroll: "reroll" },
+    actionKinds: { move: "move", rearrange: "rearrange", upgrade: "upgrade", exchange: "exchange", absorb: "absorb", destiny: "destiny", leave: "left", emote: "emote", breakthrough: "breakthrough", sideJob: "Side Job", immortalFate: "Immortal Fate", heavenlyFate: "Heavenly Derivation", heavenlyFateUse: "used Heavenly Derivation", reroll: "reroll" },
     battle: "battle", battleResult: "Battle result", win: "Win", loss: "Loss", draw: "Draw", firstAction: "Acts first", opponentLastRound: "Opponent · last round",
     previousOffer: "Previous offer", rerolled: "Rerolled", rerolledAway: "Rerolled away", finalOffer: "Final offer", offer: "Offer", daoYunChoices: "Daoist Rhyme Omens", cardSelections: "Card selections", chosen: "Chosen", innerDemon: "Inner Demon", andOtherCards: (count) => `and ${count} other cards`,
     filters: "Filters", heavenlyFateFilter: "Chosen Heavenly Derivation Fates", unchosenHeavenlyFateFilter: "Offered but not chosen", sideJobFilter: "Side Job", opponentFilter: "Human opponent characters", anySideJob: "Any Side Job", clearFilters: "Clear", noMatchingRecordings: "No matching recordings",
@@ -150,6 +150,9 @@
       ? `character-images/${player?.characterId}-${suffix}.png`
       : `/yxp_wiki/assets/characters/${player?.characterId}-${suffix}.webp`;
   };
+  const careerAsset = (id) => assetMode === "local"
+    ? `career-icons/Icon_Career_${id}.png`
+    : `/yxp_wiki/assets/recordings/careers/Icon_Career_${id}.png`;
   const fateAsset = (entry, kind) => {
     const iconFile = kind === "talent"
       ? `Icon_Talent_${entry.iconId || entry.id}.png`
@@ -315,12 +318,18 @@
       : "";
     const name = localizedInfo(info);
     const localizedDescription = localizedInfo(info, "description");
+    const selectedCareer = kind === "talent" && Math.abs(Number(reference.id)) % 10000 === 188
+      ? Number(reference.additionalCareer) || 0 : 0;
+    const artwork = selectedCareer
+      ? `<img class="fate-artwork" src="${careerAsset(selectedCareer)}" alt="${esc(careerName(selectedCareer))}">`
+      : fateArtwork(info, kind, name);
+
     const history = reference.choiceHistory;
     const hasHeavenlyDerivationVariables = Number(history?.rerollsRemainingAtStart ?? 0) > 0
       || Number(history?.rerollsUsed ?? 0) > 0
       || Number(history?.rerollsRemaining ?? 0) > 0;
     const showFinalLabel = kind === "talent" ? hasMyFateMyChoice : hasHeavenlyDerivationVariables;
-    return `<div class="trait-icon ${kind === "talent" ? "talent" : "heavenly-fate"}${reference.locked ? " locked" : ""}" tabindex="0">${fateArtwork(info, kind, name)}${badge}<div class="trait-popover"><strong>${esc(name)}</strong>${localizedDescription ? `<p>${esc(localizedDescription)}</p>` : ""}${offerHistory(history, kind, { showFinalLabel })}</div></div>`;
+    return `<div class="trait-icon ${kind === "talent" ? "talent" : "heavenly-fate"}${reference.locked ? " locked" : ""}" tabindex="0">${artwork}${badge}<div class="trait-popover"><strong>${esc(name)}</strong>${selectedCareer ? `<p>${esc(careerName(selectedCareer))}</p>` : ""}${localizedDescription ? `<p>${esc(localizedDescription)}</p>` : ""}${offerHistory(history, kind, { showFinalLabel })}</div></div>`;
   }
 
   function battleBuff(reference) {
@@ -422,6 +431,10 @@
     }
     const options = displayedOptions.map(({ reference, optionIndex }) => {
       const selected = optionIndex === selectedOptionIndex;
+      if (overlay.kind === "side-job" || overlay.kind === "additional-side-job") {
+        return `<article class="selection-option${selected ? " selected" : ""}"><div class="selection-icon"><img src="${careerAsset(reference.id)}" alt="${esc(careerName(reference.id))}"></div><span class="chosen-mark${selected ? "" : " placeholder"}">${selected ? `✓ ${esc(copy.chosen)}` : "—"}</span><strong>${esc(careerName(reference.id))}</strong></article>`;
+      }
+
       if (overlay.kind === "daoist-rhyme" || overlay.kind === "card-selection") {
         const info = recording.catalog.cards[reference.id] ?? {};
         return `<article class="selection-option card-choice${selected ? " selected" : ""}"><div class="selection-icon"><img data-asset-fallback src="${cardAsset(reference.id)}" alt=""></div><span class="chosen-mark${selected ? "" : " placeholder"}">${selected ? `✓ ${esc(copy.chosen)}` : "—"}</span><strong>${esc(localizedInfo(info) || reference.id)}</strong></article>`;
@@ -433,12 +446,16 @@
     }).concat(omittedCardCount > 0
       ? [`<article class="selection-option card-choice selection-more"><div class="selection-icon"><span>${esc(copy.andOtherCards(omittedCardCount))}</span></div><span class="chosen-mark placeholder">—</span><strong>${esc(copy.andOtherCards(omittedCardCount))}</strong></article>`]
       : []).join("");
-    const title = overlay.kind === "heavenly-derivation"
+    const title = overlay.kind === "side-job"
+      ? (isChinese ? "选择副职业" : "Select a Side Job")
+      : overlay.kind === "additional-side-job"
+        ? (isChinese ? "选择兼修副职业" : "Select an Additional Side Job")
+        : overlay.kind === "heavenly-derivation"
       ? copy.selectHdf
       : overlay.kind === "immortal-fate"
         ? copy.selectTalent
         : copy.selectDaoYun;
-    const roundOrPhase = overlay.kind === "heavenly-derivation" || overlay.kind === "daoist-rhyme" || overlay.kind === "card-selection"
+    const roundOrPhase = overlay.kind === "side-job" || overlay.kind === "additional-side-job" || overlay.kind === "heavenly-derivation" || overlay.kind === "daoist-rhyme" || overlay.kind === "card-selection"
       ? `${copy.round}${esc(overlay.roundOrPhase)}${copy.roundSuffix}`
       : `${esc(phaseName(overlay.roundOrPhase))}`;
     host.dataset.kind = overlay.kind;

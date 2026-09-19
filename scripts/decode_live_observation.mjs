@@ -315,6 +315,7 @@ function decodePrivateData(bytes) {
     cardSelectionData: value(fields, 17) ? decodeCardSelectionData(value(fields, 17)) : null,
     fateStrategies: value(fields, 19) ? decodeFateStrategyData(value(fields, 19)) : null,
     field100: value(fields, 100) === undefined ? null : intValue(fields, 100),
+    additionalCareers: Object.fromEntries(values(fields, 103).map(mapIntInt)),
     talentSelections: values(fields, 101).map(decodeSelection),
     daoYunSelections: values(fields, 102).map(decodeSelection),
     unknownLengthDelimitedFields: fields
@@ -326,6 +327,12 @@ function decodePrivateData(bytes) {
 const levels = ["invalid", "Qi Refining", "Foundation", "Virtuoso", "Immortality", "Incarnation", "Void Return"];
 const sects = ["invalid", "Cloud Spirit Sword Sect", "Heptastar Pavilion", "Five Elements Alliance", "Duan Xuan Sect"];
 const careers = ["none", "Elixirist", "Fuluist", "Musician", "Painter", "Formation Master", "Plant Master", "Fortune Teller"];
+export function availableCareerIds() {
+  const rows = values(decodeFields(fs.readFileSync(path.join(steamDumpPath, "protobuf", "OpenConfig.pb"))), 2);
+  return rows.map(decodeFields).filter(fields => intValue(fields, 1) === 1 && packed(fields, 3)[3] === 1)
+    .flatMap(fields => packed(fields, 2)).filter(id => id > 0).sort((a, b) => a - b);
+}
+
 
 function decodePublicData(bytes) {
   const fields = decodeFields(bytes);
@@ -370,6 +377,7 @@ function decodePublicData(bytes) {
       talentCounters: Object.fromEntries(values(lastFields, 8).map(mapIntInt)),
       permanentBuffCounters: Object.fromEntries(values(lastFields, 9).map(mapIntInt)),
       unlockedDeckSlots: intValue(lastFields, 10),
+      additionalCareers: Object.fromEntries(values(lastFields, 11).map(mapIntInt)),
       usedKeYinCards: packed(lastFields, 15),
       fateStrategies: packed(lastFields, 16),
     };
@@ -447,6 +455,7 @@ export function decodeMessage(type, bytes) {
   if (type === "PlayerData") return decodePlayerData(bytes);
   if (type === "BattleResult") return decodeBattleResult(bytes);
   if (type === "LifeRankStatus") return decodeLifeRank(bytes);
+  if (type === "SelectCareerReq") return { career: intValue(fields, 1), isRandom: Boolean(intValue(fields, 2)), isAdditional: Boolean(intValue(fields, 3)) };
   if (type === "CardSelectedReq") return { id: intValue(fields, 1) };
   if (type === "MoveCardReq") return {
     sourcePosition: intValue(fields, 1),

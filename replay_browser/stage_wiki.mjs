@@ -11,7 +11,7 @@ if (!wikiRoot || !fs.existsSync(path.join(wikiRoot, "assets", "site.css"))) {
 }
 
 const assetRoot = path.join(wikiRoot, "assets", "recordings");
-const assetVersion = "20260918-opening-repair-01";
+const assetVersion = "20260919-side-job-01";
 fs.mkdirSync(assetRoot, { recursive: true });
 if (!process.env.YXP_SKIP_STAGE_DATA) {
   const stagedDataRoot = path.join(assetRoot, "data");
@@ -37,6 +37,7 @@ function stageImageDirectory(sourceName, destinationName) {
   }
 }
 
+stageImageDirectory("career-icons", "careers");
 stageImageDirectory("buff-icons", "buffs");
 stageImageDirectory("emoji-images", "emojis");
 stageImageDirectory("special-card-art", "special-cards");

@@ -192,3 +192,26 @@ siblings; replay arrival or modification automatically invalidates the cached
 recording on the next catalog build. The private .opening-repair-audit.json
 records residual estimates and uncertainty and persists across incremental
 builds. This does not broaden the eligibility of late-start non-Cup captures.
+
+## Side-job choices
+
+Regular side-job selection and Additional Side Job career selection use two
+consecutive modal steps: all available jobs, then the same options with the
+chosen job highlighted. Add a localized side-job action to the result step.
+Read available jobs from the extracted OpenConfig OpenCareer rows for the live
+client environment; currently all seven careers are enabled. The existing
+career remains an option for Additional Side Job.
+
+Decode BattlePlayerPrivateData.FZJXCareers (protobuf field 103) and
+BattlePlayerLastRoundData.FZJXCareers (field 11). This map uses one-based
+Immortal Fate slots as keys and career IDs as values. Annotate the corresponding
+Additional Side Job fate reference only once that career is known, then render
+Icon_Career_<id> in its chosen-fate slot, including last-round/battle views.
+Keep the generic fate artwork in offer history. Normalize replay-summary maps
+at the recording boundary without changing the replay-summary schema.
+
+After reconstruction changes, run the full corpus rebuild and catch-up, then
+`node replay_browser/audit_side_job_steps.mjs replay_browser/data` alongside
+the privacy, timeline, and battle-destiny audits. The side-job audit requires
+an unselected offer immediately before each career reveal, a highlighted
+result, a timeline action, and matching chosen-fate icon metadata.

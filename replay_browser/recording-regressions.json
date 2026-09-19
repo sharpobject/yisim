@@ -1,6 +1,181 @@
 {
   "version": 1,
   "recordings": {
+    "r-0bc5e30ac2757180": [
+      {
+        "name": "side-job options precede the selected result without leaking Painter",
+        "anchor": {
+          "type": "ChoiceOffer",
+          "sequence": 34
+        },
+        "checks": [
+          {
+            "path": "/state/round",
+            "op": "equals",
+            "value": 2
+          },
+          {
+            "path": "/state/privatePlayer/choiceOverlay/kind",
+            "op": "equals",
+            "value": "side-job"
+          },
+          {
+            "path": "/state/privatePlayer/choiceOverlay/options",
+            "op": "equals",
+            "value": [
+              {
+                "id": 1
+              },
+              {
+                "id": 2
+              },
+              {
+                "id": 3
+              },
+              {
+                "id": 4
+              },
+              {
+                "id": 5
+              },
+              {
+                "id": 6
+              },
+              {
+                "id": 7
+              }
+            ]
+          },
+          {
+            "path": "/state/privatePlayer/choiceOverlay/selected",
+            "op": "exists",
+            "value": false
+          },
+          {
+            "path": "/state/players/65db92284574f980c154b895/talents/2/additionalCareer",
+            "op": "exists",
+            "value": false
+          }
+        ]
+      },
+      {
+        "name": "side-job selection is a distinct highlighted Painter result",
+        "anchor": {
+          "sequence": 34,
+          "actionKind": "sideJob"
+        },
+        "checks": [
+          {
+            "path": "/state/privatePlayer/choiceOverlay/kind",
+            "op": "equals",
+            "value": "side-job"
+          },
+          {
+            "path": "/state/privatePlayer/choiceOverlay/selected",
+            "op": "equals",
+            "value": 4
+          },
+          {
+            "path": "/event/humanActions",
+            "op": "includesMatch",
+            "value": {
+              "kind": "sideJob",
+              "career": 4,
+              "additional": false
+            }
+          }
+        ]
+      },
+      {
+        "name": "additional-side-job options precede the selected result without leaking Painter",
+        "anchor": {
+          "type": "ChoiceOffer",
+          "sequence": 121
+        },
+        "checks": [
+          {
+            "path": "/state/round",
+            "op": "equals",
+            "value": 6
+          },
+          {
+            "path": "/state/privatePlayer/choiceOverlay/kind",
+            "op": "equals",
+            "value": "additional-side-job"
+          },
+          {
+            "path": "/state/privatePlayer/choiceOverlay/options",
+            "op": "equals",
+            "value": [
+              {
+                "id": 1
+              },
+              {
+                "id": 2
+              },
+              {
+                "id": 3
+              },
+              {
+                "id": 4
+              },
+              {
+                "id": 5
+              },
+              {
+                "id": 6
+              },
+              {
+                "id": 7
+              }
+            ]
+          },
+          {
+            "path": "/state/privatePlayer/choiceOverlay/selected",
+            "op": "exists",
+            "value": false
+          },
+          {
+            "path": "/state/players/65db92284574f980c154b895/talents/2/additionalCareer",
+            "op": "exists",
+            "value": false
+          }
+        ]
+      },
+      {
+        "name": "additional-side-job selection is a distinct highlighted Painter result",
+        "anchor": {
+          "sequence": 121,
+          "actionKind": "sideJob"
+        },
+        "checks": [
+          {
+            "path": "/state/privatePlayer/choiceOverlay/kind",
+            "op": "equals",
+            "value": "additional-side-job"
+          },
+          {
+            "path": "/state/privatePlayer/choiceOverlay/selected",
+            "op": "equals",
+            "value": 4
+          },
+          {
+            "path": "/event/humanActions",
+            "op": "includesMatch",
+            "value": {
+              "kind": "sideJob",
+              "career": 4,
+              "additional": true
+            }
+          },
+          {
+            "path": "/state/players/65db92284574f980c154b895/talents/2/additionalCareer",
+            "op": "equals",
+            "value": 4
+          }
+        ]
+      }
+    ],
     "r-1ba91e5d7e4037e8": [
       {
         "name": "upgraded talent selections outside the original offers do not prevent opening repair",
@@ -357,7 +532,10 @@
         "name": "first live Cup snapshot is retained exactly once after the replay opening",
         "anchor": { "sequence": 17, "type": "GameStatus", "round": 2 },
         "checks": [
-          { "path": "/beforeState/round", "op": "equals", "value": 1 },
+          { "path": "/beforeState/round", "op": "equals", "value": 2 },
+          { "path": "/beforeState/privatePlayer/choiceOverlay/kind", "op": "equals", "value": "side-job" },
+          { "path": "/beforeState/privatePlayer/choiceOverlay/selected", "op": "exists", "value": false },
+          { "path": "/event/humanActions", "op": "includesMatch", "value": { "kind": "sideJob", "additional": false } },
           { "path": "/event/state/privatePlayer/hand", "op": "equals", "value": [1000013, 9000003, 9000001, 1000009, 1000013] },
           { "path": "/event/state/privatePlayer/deck", "op": "equals", "value": [1000004, 1000009, 0, 1000013] },
           { "path": "/event/state/privatePlayer/selectedFateStrategies", "op": "length", "value": 0 },

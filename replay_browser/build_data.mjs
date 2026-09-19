@@ -4,7 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 import {
   decodeMessage, decorateCards, cardLabel, cardCanUpgrade, cardConfigInfo, switchCardForHand, steamDumpPath,
-  talentInfo, fateStrategyInfo, keYinCardInfo,
+  talentInfo, fateStrategyInfo, keYinCardInfo, availableCareerIds,
 } from "../scripts/decode_live_observation.mjs";
 import { assertRecordingRegression } from "./recording_regressions.mjs";
 import { buildReplaySummaryData } from "./generate_replay_summary_html.mjs";
@@ -14,6 +14,8 @@ const [inputPath, outputPath = path.join(path.dirname(new URL(import.meta.url).p
 if (!inputPath) throw new Error("usage: build_data.mjs CAPTURE.jsonl [OUTPUT.js]");
 
 const rawEvents = fs.readFileSync(inputPath, "utf8").trim().split("\n").filter(Boolean).map(JSON.parse);
+const sideJobOptions = availableCareerIds().map(id => ({ id }));
+const sideJobNames = { en: ["", "Elixirist", "Fuluist", "Musician", "Painter", "Formation Master", "Plant Master", "Fortune Teller"], zh: ["", "炼丹师", "符咒师", "琴师", "画师", "阵法师", "灵植师", "命理师"] };
 const replayPovPath = process.env.YXP_REPLAY_POV || "";
 if (process.env.YXP_REQUIRE_REPLAY_OPENING && !replayPovPath) {
   throw new Error(`late Cup observation has no matching scraped replay POV: ${path.basename(inputPath)}`);
@@ -1300,7 +1302,12 @@ function visibleState() {
     character: player.character,
     skinNumber: player.skinNumber,
     skinColor: player.skinColor,
-    talents: (player.talents ?? []).map((id) => visibleTalent(id, player.talentCounters, player.uid === privateOwnerUid)),
+    talents: (player.talents ?? []).map((id, index) => ({
+      ...visibleTalent(id, player.talentCounters, player.uid === privateOwnerUid),
+      ...(Math.abs(Number(id)) % 10000 === 188 && player.uid === privateOwnerUid
+        && Number(state.privatePlayer?.additionalCareers?.[index + 1]) > 0
+        ? { additionalCareer: Number(state.privatePlayer.additionalCareers[index + 1]) } : {}),
+    })),
     rank: player.rank,
     ai: player.ai,
     exchangesRemainingPublic: player.exchangesRemainingPublic,
@@ -1314,7 +1321,11 @@ function visibleState() {
       physique: Number(player.lastRound.permanentBuffCounters?.[10023] ?? 0),
       maxPhysique: Number(player.lastRound.permanentBuffCounters?.[10024] ?? 0),
       phase: player.lastRound.phase,
-      talents: (player.lastRound.talents ?? []).map((id) => visibleTalent(id, player.lastRound.talentCounters)),
+      talents: (player.lastRound.talents ?? []).map((id, index) => ({
+        ...visibleTalent(id, player.lastRound.talentCounters),
+        ...(Math.abs(Number(id)) % 10000 === 188 && Number(player.lastRound.additionalCareers?.[index + 1]) > 0
+          ? { additionalCareer: Number(player.lastRound.additionalCareers[index + 1]) } : {}),
+      })),
       deck: visibleDeck(player.lastRound.deck, player.lastRound.unlockedDeckSlots),
       fateStrategies: (player.lastRound.fateStrategies ?? []).map((id) => visibleFateStrategy(id, state.round)),
       battleBuffs: visibleBattleBuffs(player.lastRound),
@@ -1328,6 +1339,7 @@ function visibleState() {
     unlockedDeckSlots: state.privatePlayer.unlockedDeckSlots,
     exchangesRemaining: state.privatePlayer.exchangesRemaining,
     exchangeLimit: state.privatePlayer.exchangeLimit,
+    additionalCareers: clone(state.privatePlayer.additionalCareers ?? {}),
     cardStorage: {
       199: (state.privatePlayer.cardStorage?.[199]
         ?? state.privatePlayer.talentData?.[199]?.commonParams ?? []).map((id) => rememberCard(id)),
@@ -1602,6 +1614,11 @@ function replayStepsBeforeBoundary() {
         })),
       };
     });
+    const publicState = clone(materializedState);
+    if (Array.isArray(publicState.privatePlayer?.additionalCareers)) {
+      publicState.privatePlayer.additionalCareers = Object.fromEntries(
+        publicState.privatePlayer.additionalCareers.map(entry => [entry.slot, entry.career]));
+    }
     return {
       sequence: -selected.length + index,
       observedAt: boundary.event.observedAt,
@@ -1611,7 +1628,7 @@ function replayStepsBeforeBoundary() {
       details: { source: "scraped-replay", ...step.replaySource },
       humanActions,
       ...(step.battle ? { battle: clone(step.battle) } : {}),
-      state: clone(materializedState),
+      state: publicState,
       replaySource: clone(step.replaySource ?? {}),
     };
   });
@@ -1965,7 +1982,11 @@ function attachBattleRounds(inputSteps) {
         result: player.uid === authoritativeWinner ? "win" : "loss",
         ...(innerDemon ? { innerDemon: true } : {}),
         first: player.uid === authoritativeFirst,
-        talents: (lastRound.talents ?? []).map((id) => ({ id: rememberTalent(numericCardId(id)), runtime: null })),
+        talents: (lastRound.talents ?? []).map((id, index) => ({
+          id: rememberTalent(numericCardId(id)), runtime: null,
+          ...(Math.abs(Number(numericCardId(id))) % 10000 === 188 && Number(lastRound.additionalCareers?.[index + 1]) > 0
+            ? { additionalCareer: Number(lastRound.additionalCareers[index + 1]) } : {}),
+        })),
         fateStrategies: (lastRound.fateStrategies ?? []).map((id) => ({
           id: rememberFateStrategy(numericCardId(id), round).id,
           runtime: null,
@@ -3462,6 +3483,18 @@ function completedChoicesForStep(previousState, currentState) {
       reference: history,
     });
   }
+  const oldCareer = Number.parseInt(previousPlayer?.career, 10) || 0;
+  const newCareer = Number.parseInt(currentPlayer?.career, 10) || 0;
+  if (!oldCareer && newCareer) choices.push({
+    kind: "side-job", title: "Select a Side Job", roundOrPhase: Number(currentState.round),
+    options: sideJobOptions, family: "career", reference: { id: newCareer },
+  });
+  for (const [slot, career] of Object.entries(currentPrivate.additionalCareers ?? {})) {
+    if (!(Number(career) > 0) || Number(previousPrivate.additionalCareers?.[slot]) === Number(career)) continue;
+    choices.push({ kind: "additional-side-job", title: "Select an Additional Side Job",
+      roundOrPhase: Number(currentState.round), options: sideJobOptions, family: "career",
+      reference: { id: Number(career), slot: Number(slot) } });
+  }
   const activeKind = previousPrivate.choiceOverlay?.kind;
   const activeIndex = choices.findIndex((choice) => choice.kind === activeKind);
   if (activeIndex > 0) choices.unshift(...choices.splice(activeIndex, 1));
@@ -3473,7 +3506,19 @@ function stateAfterCompletedChoice(beforeState, choice) {
   delete stateAfter.privatePlayer.choiceOverlay;
   if (choice.family === "talent") {
     const player = stateAfter.players?.[stateAfter.privatePlayer.uid];
-    if (player) player.talents = [...(player.talents ?? []), clone(choice.reference)];
+    if (player) {
+      const reference = clone(choice.reference);
+      if (Math.abs(Number(reference.id)) % 10000 === 188) delete reference.additionalCareer;
+      player.talents = [...(player.talents ?? []), reference];
+    }
+  } else if (choice.family === "career") {
+    const player = stateAfter.players[stateAfter.privatePlayer.uid];
+    if (choice.reference.slot) {
+      stateAfter.privatePlayer.additionalCareers ??= {};
+      stateAfter.privatePlayer.additionalCareers[choice.reference.slot] = choice.reference.id;
+      const talent = player.talents?.[choice.reference.slot - 1];
+      if (talent && Math.abs(Number(talent.id)) % 10000 === 188) talent.additionalCareer = choice.reference.id;
+    } else player.career = `${choice.reference.id} (${sideJobNames.en[choice.reference.id]})`;
   } else if (choice.family === "fate") {
     stateAfter.privatePlayer.selectedFateStrategies = [
       ...(stateAfter.privatePlayer.selectedFateStrategies ?? []),
@@ -3504,8 +3549,10 @@ function ensureChoiceOfferSteps(inputSteps) {
     }
     choices.forEach((choice, choiceIndex) => {
       if (!choice.options.length) throw new Error(`completed ${choice.kind} choice has no recorded offer at sequence ${step.sequence}`);
-      if (beforeState.privatePlayer?.choiceOverlay?.kind !== choice.kind) {
+      if (beforeState.privatePlayer?.choiceOverlay?.kind !== choice.kind
+        || beforeState.privatePlayer.choiceOverlay.selected != null) {
         const offerState = clone(beforeState);
+        if (choice.family === "career") offerState.round = Number(choice.roundOrPhase);
         offerState.privatePlayer.choiceOverlay = {
           kind: choice.kind,
           title: choice.title,
@@ -3525,12 +3572,27 @@ function ensureChoiceOfferSteps(inputSteps) {
         });
         beforeState = offerState;
       }
+      const careerAction = choice.family === "career" ? {
+        actorUid: beforeState.privatePlayer.uid,
+        actorUsername: beforeState.players[beforeState.privatePlayer.uid]?.username,
+        kind: "sideJob", career: choice.reference.id, additional: Boolean(choice.reference.slot),
+        textEnglish: `${beforeState.players[beforeState.privatePlayer.uid]?.username} selected ${sideJobNames.en[choice.reference.id]} as ${choice.reference.slot ? "an additional" : "their"} side job.`,
+        textChinese: `${beforeState.players[beforeState.privatePlayer.uid]?.username}选择了${choice.reference.slot ? "兼修副职业" : "副职业"}：${sideJobNames.zh[choice.reference.id]}。`,
+      } : null;
+      const finishCareer = (result) => {
+        if (!careerAction) return result;
+        result.state = clone(result.state);
+        result.state.privatePlayer.choiceOverlay = { kind: choice.kind, title: choice.title,
+          roundOrPhase: choice.roundOrPhase, options: choice.options, selected: choice.reference.id };
+        result.humanActions = [...(result.humanActions ?? []), careerAction];
+        return result;
+      };
       if (choiceIndex === choices.length - 1) {
-        normalized.push(step);
+        normalized.push(finishCareer(step));
         return;
       }
       const revealedState = stateAfterCompletedChoice(beforeState, choice);
-      normalized.push({
+      normalized.push(finishCareer({
         sequence: step.sequence,
         observedAt: step.observedAt,
         direction: "synthetic",
@@ -3539,8 +3601,8 @@ function ensureChoiceOfferSteps(inputSteps) {
         details: { kind: choice.kind },
         humanActions: [],
         state: revealedState,
-      });
-      beforeState = revealedState;
+      }));
+      beforeState = normalized.at(-1).state;
     });
   }
   inputSteps.splice(0, inputSteps.length, ...normalized);
