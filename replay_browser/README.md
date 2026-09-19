@@ -255,6 +255,9 @@ a replacement occupies that slot, exactly one red card is appended after the
 real deck slots (at most nine visible
 positions in a full deck). Otherwise no extra position is rendered. This card
 is historical, carries its original slot number, and never enters the hand.
+Deck rearrangements never append a historical card, even when slots are occupied.
+Combines show only the consumed/dragged copy in red; the upgraded target shows
+green with no old-level ghost. Absorb-triggered upgrades follow the same rule.
 Historical hand copies are excluded from the hand count. Hand matching
 is duplicate-aware, and seeking or stepping backwards gives the same display.
 Opponent snapshots, battles, round boundaries and unrelated actions do not

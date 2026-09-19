@@ -250,6 +250,11 @@
         before.privatePlayer?.uid !== after.privatePlayer?.uid) return result;
     const actions = step?.humanActions ?? [];
     if (!actions.some(action => ["move", "rearrange", "exchange", "upgrade", "absorb", "draw", "gain"].includes(action.kind))) return result;
+    const upgrading = actions.some(action => ["upgrade", "absorb"].includes(action.kind));
+    const isUpgrade = (old, current) => {
+      const base = id => id - (Math.floor(Math.abs(id) / 10000) % 100) * 10000;
+      return upgrading && old > 0 && current > old && base(old) === base(current);
+    };
     const oldHand = [...(before.privatePlayer?.hand ?? [])];
     // Match copies, not IDs as a set. Removing the first copy must not mark all
     // the surviving identical cards or shifted hand positions as new.
@@ -257,6 +262,12 @@
       const match = oldHand.indexOf(entry.id);
       if (match < 0) entry.change = "appear";
       else oldHand.splice(match, 1);
+    }
+    // An upgraded target continues as the green card. Only the consumed copy
+    // (or absorbed effect card) should remain red, not the target's old level.
+    for (const entry of hand.filter(entry => entry.change === "appear")) {
+      const target = oldHand.findIndex(old => isUpgrade(old, entry.id));
+      if (target >= 0) oldHand.splice(target, 1);
     }
     hand.push(...oldHand.filter(Boolean).map(id => ({ id, change: "leaving" })));
     const oldDeck = before.privatePlayer?.deck ?? [];
@@ -266,7 +277,7 @@
       const current = deck[slot]?.id || 0;
       if (old === current) continue;
       if (current) deck[slot].change = "appear";
-      if (!old) continue;
+      if (!old || isUpgrade(old, current)) continue;
       if (!current) {
         // An emptied slot can show its previous card without an extra position.
         deck[slot] = { id: old, change: "leaving" };
@@ -274,12 +285,11 @@
         previousDeckCards.push({ id: old, change: "leaving", slot: slot + 1 });
       }
     }
-    // Exactly one non-playing history card follows the real deck slots. For a
-    // rearrangement, prefer the moving card's recorded source slot.
-    const fromSlot = actions.map(action => (action.textEnglish ?? action.text ?? "")
-      .match(/from deck slot (\d+)/)?.[1]).find(Boolean);
-    result.deckPrevious = previousDeckCards.find(entry => entry.slot === Number(fromSlot))
-      ?? previousDeckCards[0] ?? null;
+    // Rearrangements already show the changed deck positions. Only other
+    // operations need an extra historical card when its old slot is occupied.
+    if (!actions.some(action => action.kind === "rearrange")) {
+      result.deckPrevious = previousDeckCards[0] ?? null;
+    }
     return result;
   }
 

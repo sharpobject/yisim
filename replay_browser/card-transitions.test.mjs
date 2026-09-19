@@ -12,13 +12,13 @@ assert.deepEqual(count(r,'hand','appear'),[3]);assert.deepEqual(count(r,'hand','
 r=run(state([0],[1,2]),state([1],[2]),'move');
 assert.deepEqual(count(r,'deck','appear'),[1]);assert.deepEqual(count(r,'hand','leaving'),[1]);
 r=run(state([1,2],[]),state([2,1],[]),'rearrange');
-assert.deepEqual(count(r,'deck','appear'),[2,1]);assert.deepEqual(r.hand,[]);assert.deepEqual(r.deckPrevious,{id:1,change:'leaving',slot:1});assert.equal(r.deck.length,2);
+assert.deepEqual(count(r,'deck','appear'),[2,1]);assert.deepEqual(r.hand,[]);assert.equal(r.deckPrevious,null);assert.equal(r.deck.length,2);
 r=run(state([1],[2]),state([0],[2,1]),'move');
 assert.deepEqual(r.deck[0],{id:1,change:'leaving'});assert.equal(r.deckPrevious,null);assert.deepEqual(count(r,'hand','appear'),[1]);
-r=run(state([],[1,1,2]),state([],[2,11]),'upgrade');
-assert.deepEqual(count(r,'hand','leaving'),[1,1]);assert.deepEqual(count(r,'hand','appear'),[11]);
-r=run(state([1],[1,2]),state([11],[2]),'upgrade');
-assert.deepEqual(count(r,'hand','leaving'),[1]);assert.deepEqual(count(r,'deck','appear'),[11]);assert.equal(r.deckPrevious.id,1);
+r=run(state([],[1,1,2]),state([],[2,10001]),'upgrade');
+assert.deepEqual(count(r,'hand','leaving'),[1]);assert.deepEqual(count(r,'hand','appear'),[10001]);
+r=run(state([1],[1,2]),state([10001],[2]),'upgrade');
+assert.deepEqual(count(r,'hand','leaving'),[1]);assert.deepEqual(count(r,'deck','appear'),[10001]);assert.equal(r.deckPrevious,null);
 r=run(state([],[1]),state([],[1,1]),'gain');assert.deepEqual(count(r,'hand','appear'),[1]);
 for(const [before,after,kind,extra] of [
  [null,state([1],[2]),'move'],[state([1],[2]),state([2],[3],2),'exchange'],
@@ -29,10 +29,9 @@ for(const [before,after,kind,extra] of [
 }
 console.log('PASS: duplicate-aware exchanges, moves, swaps, both combine locations, gains, and transition boundaries');
 
-// A swap can change two real slots, but displays just one history card: the
-// moving card identified by the recorded action's source slot.
+// Rearrangements never append history, even when both occupied slots change.
 r=run(state([1,2],[]),state([2,1],[]),'rearrange',{humanActions:[{kind:'rearrange',textEnglish:'Player rearranged Card 2 from deck slot 2 to 1'}]});
-assert.equal(r.deckPrevious.id,2);assert.equal(r.deckPrevious.slot,2);
+assert.equal(r.deckPrevious,null);
 assert.equal(r.deck.length,2);assert.equal(r.hand.length,0);
 r=run(state([1,2],[]),state([1,2],[]),'rearrange');assert.equal(r.deckPrevious,null);
 console.log('PASS: exactly one deck-history card when needed, zero otherwise');
@@ -47,3 +46,19 @@ r=run(state([1,0],[]),state([0,1],[]),'rearrange');
 assert.deepEqual(r.deck,[{id:1,change:'leaving'},{id:1,change:'appear'}]);
 assert.equal(r.deckPrevious,null);
 console.log('PASS: emptied deck positions show red cards in place without an extra slot or origin label');
+
+// Only the dragged card is red; the upgraded target has no old-level ghost.
+r=run(state([1],[1,2]),state([0],[10001,2]),'upgrade');
+assert.deepEqual(count(r,'deck','leaving'),[1]);
+assert.deepEqual(count(r,'hand','leaving'),[]);assert.equal(r.deckPrevious,null);
+r=run(state([1,1],[]),state([10001,0],[]),'upgrade');
+assert.deepEqual(r.deck,[{id:10001,change:'appear'},{id:1,change:'leaving'}]);
+assert.equal(r.deckPrevious,null);
+for(const inDeck of [false,true]) {
+ r=run(state(inDeck?[6000012]:[],inDeck?[34]:[34,6000012]),
+       state(inDeck?[6010012]:[],inDeck?[]:[6010012]),'absorb');
+ assert.deepEqual(count(r,'hand','leaving'),[34]);
+ assert.deepEqual(count(r,'deck','leaving'),[]);assert.equal(r.deckPrevious,null);
+ assert.deepEqual(count(r,inDeck?'deck':'hand','appear'),[6010012]);
+}
+console.log('PASS: combines and absorption show only the consumed card in red, never the upgraded target');
