@@ -71,7 +71,7 @@
     selectTalent: "选择仙命", selectDaoYun: "选择卡牌", noActions: "尚无玩家操作。",
     jumpRound: "跳转到轮次…", loading: "正在载入…", couldNotLoad: "无法载入", noRecordings: "没有完整录像。",
     rating: "分", rounds: "轮", currentPrivate: "当前私密视角", cupPreliminary: "天衍杯初赛", cupFinal: "天衍杯决赛", cup: "天衍杯", practice: "练习赛",
-    actionKinds: { move: "移动", rearrange: "调整", upgrade: "合成", exchange: "换牌", absorb: "吸收", destiny: "命元", leave: "离场", emote: "表情", breakthrough: "突破", sideJob: "副职业", immortalFate: "仙命", heavenlyFate: "天衍仙命", heavenlyFateUse: "使用天衍仙命", reroll: "刷新" },
+    actionKinds: { draw: "抽牌", gain: "获得卡牌", move: "移动", rearrange: "调整", upgrade: "合成", exchange: "换牌", absorb: "吸收", destiny: "命元", leave: "离场", emote: "表情", breakthrough: "突破", sideJob: "副职业", immortalFate: "仙命", heavenlyFate: "天衍仙命", heavenlyFateUse: "使用天衍仙命", reroll: "刷新" },
     battle: "战斗", battleResult: "战斗结果", win: "胜", loss: "负", draw: "平", firstAction: "先手", opponentLastRound: "对手上一轮",
     previousOffer: "此前选项", rerolled: "刷新", rerolledAway: "已刷走", finalOffer: "最终选项", offer: "选项", daoYunChoices: "道韵预感", cardSelections: "卡牌选择", chosen: "已选择", innerDemon: "心魔", andOtherCards: (count) => `另有 ${count} 张牌`,
     filters: "筛选", heavenlyFateFilter: "已选择的天衍仙命", unchosenHeavenlyFateFilter: "出现但未选择的天衍仙命", sideJobFilter: "副职业", opponentFilter: "人类对手角色", anySideJob: "任意副职业", clearFilters: "清除", noMatchingRecordings: "没有符合条件的录像",
@@ -86,7 +86,7 @@
     selectTalent: "Select an Immortal Fate", selectDaoYun: "Select a Card", noActions: "No player action has occurred yet.",
     jumpRound: "Jump to round…", loading: "Loading…", couldNotLoad: "Could not load", noRecordings: "No complete recordings are available.",
     rating: "rating", rounds: "rounds", currentPrivate: "Current private view", cupPreliminary: "Heavenly Derivation Cup preliminary", cupFinal: "Heavenly Derivation Cup final", cup: "Heavenly Derivation Cup", practice: "Practice",
-    actionKinds: { move: "move", rearrange: "rearrange", upgrade: "upgrade", exchange: "exchange", absorb: "absorb", destiny: "destiny", leave: "left", emote: "emote", breakthrough: "breakthrough", sideJob: "Side Job", immortalFate: "Immortal Fate", heavenlyFate: "Heavenly Derivation", heavenlyFateUse: "used Heavenly Derivation", reroll: "reroll" },
+    actionKinds: { draw: "Draw", gain: "Gain", move: "move", rearrange: "rearrange", upgrade: "upgrade", exchange: "exchange", absorb: "absorb", destiny: "destiny", leave: "left", emote: "emote", breakthrough: "breakthrough", sideJob: "Side Job", immortalFate: "Immortal Fate", heavenlyFate: "Heavenly Derivation", heavenlyFateUse: "used Heavenly Derivation", reroll: "reroll" },
     battle: "battle", battleResult: "Battle result", win: "Win", loss: "Loss", draw: "Draw", firstAction: "Acts first", opponentLastRound: "Opponent · last round",
     previousOffer: "Previous offer", rerolled: "Rerolled", rerolledAway: "Rerolled away", finalOffer: "Final offer", offer: "Offer", daoYunChoices: "Daoist Rhyme Omens", cardSelections: "Card selections", chosen: "Chosen", innerDemon: "Inner Demon", andOtherCards: (count) => `and ${count} other cards`,
     filters: "Filters", heavenlyFateFilter: "Chosen Heavenly Derivation Fates", unchosenHeavenlyFateFilter: "Offered but not chosen", sideJobFilter: "Side Job", opponentFilter: "Human opponent characters", anySideJob: "Any Side Job", clearFilters: "Clear", noMatchingRecordings: "No matching recordings",
@@ -238,6 +238,63 @@
       <span class="card-fallback"><strong>${esc(name)}</strong><small>${esc(level)}</small></span>
       <img data-asset-fallback src="${cardAsset(cardId)}" alt="${esc(name)}">
     </div>`;
+  }
+
+  // Compare adjacent recording states, never the last rendered view: seeking and
+  // backwards navigation must show exactly the same transition as stepping forward.
+  function cardTransition(before, after, step) {
+    const deck = (after?.privatePlayer?.deck ?? []).map(id => ({ id, change: "" }));
+    const hand = (after?.privatePlayer?.hand ?? []).map(id => ({ id, change: "" }));
+    const result = { deck, hand, deckPrevious: null };
+    if (!before || step?.battle || before.round !== after.round ||
+        before.privatePlayer?.uid !== after.privatePlayer?.uid) return result;
+    const actions = step?.humanActions ?? [];
+    if (!actions.some(action => ["move", "rearrange", "exchange", "upgrade", "absorb", "draw", "gain"].includes(action.kind))) return result;
+    const oldHand = [...(before.privatePlayer?.hand ?? [])];
+    // Match copies, not IDs as a set. Removing the first copy must not mark all
+    // the surviving identical cards or shifted hand positions as new.
+    for (const entry of hand) {
+      const match = oldHand.indexOf(entry.id);
+      if (match < 0) entry.change = "appear";
+      else oldHand.splice(match, 1);
+    }
+    hand.push(...oldHand.filter(Boolean).map(id => ({ id, change: "leaving" })));
+    const oldDeck = before.privatePlayer?.deck ?? [];
+    const previousDeckCards = [];
+    for (let slot = 0; slot < Math.max(oldDeck.length, deck.length); slot++) {
+      const old = oldDeck[slot] || 0;
+      const current = deck[slot]?.id || 0;
+      if (old === current) continue;
+      if (current) deck[slot].change = "appear";
+      if (!old) continue;
+      const ghost = { id: old, change: "leaving", slot: slot + 1 };
+      deck[slot] ??= { id: 0, change: "" };
+      previousDeckCards.push(ghost);
+    }
+    // Exactly one non-playing history card follows the real deck slots. For a
+    // rearrangement, prefer the moving card's recorded source slot.
+    const fromSlot = actions.map(action => (action.textEnglish ?? action.text ?? "")
+      .match(/from deck slot (\d+)/)?.[1]).find(Boolean);
+    result.deckPrevious = previousDeckCards.find(entry => entry.slot === Number(fromSlot))
+      ?? previousDeckCards[0] ?? null;
+    return result;
+  }
+
+  function transitionCard(entry) {
+    let html = card(entry.id);
+    if (!entry.change) return html;
+    const status = entry.change === "appear"
+      ? (isChinese ? "新卡牌 / 新位置" : "New card / new position")
+      : (isChinese ? "原卡牌 / 原位置" : "Previous card / previous position");
+    html = html.replace('class="game-card', `data-card-change="${entry.change}" aria-label="${status}" class="game-card card-${entry.change}`);
+    const mark = entry.change === "leaving" ? '<span class="card-change-cross" aria-hidden="true">×</span>' : '';
+    const origin = entry.slot ? `<span class="card-change-origin">${isChinese ? "原卡位" : "Old slot"} ${entry.slot}</span>` : '';
+    return html.replace(/<\/div>$/, `${mark}${origin}</div>`);
+  }
+
+  function transitionDeck(transition) {
+    return transition.deck.map(transitionCard).join("")
+      + (transition.deckPrevious ? transitionCard(transition.deckPrevious) : "");
   }
 
   function offerHistory(history, kind, { showFinalLabel = true } = {}) {
@@ -645,9 +702,10 @@
       const hasOpponentPreview = renderOpponentPreview(opponent);
       $("#board-panel").classList.toggle("has-opponent-preview", hasOpponentPreview);
       $("#deck-label").textContent = isOwn ? copy.deck : copy.previousDeck;
-      $("#deck").innerHTML = deck.map((id) => card(id, !isOwn)).join("") || `<span class="private-hand">${esc(copy.noDeck)}</span>`;
+      const transition = isOwn ? cardTransition(states[index - 1], state, recording.steps[index]) : null;
+      $("#deck").innerHTML = (transition ? transitionDeck(transition) : deck.map(id => card(id, true)).join("")) || `<span class="private-hand">${esc(copy.noDeck)}</span>`;
       $("#hand-label").textContent = isOwn ? `${copy.hand} · ${hand?.length ?? 0}` : copy.hand;
-      $("#hand").innerHTML = hand ? hand.map(card).join("") : `<span class="private-hand">${esc(copy.hiddenHand)}</span>`;
+      $("#hand").innerHTML = transition ? transition.hand.map(transitionCard).join("") : `<span class="private-hand">${esc(copy.hiddenHand)}</span>`;
     }
     const exchangeCounter = $("#exchange-counter");
     exchangeCounter.hidden = Boolean(battle) || !isOwn;

@@ -1610,3 +1610,27 @@
 .player-emote.text-emote { width: 150px; height: auto; min-height: 54px; padding: 10px; font-size: 14px; line-height: 1.3; white-space: normal; overflow-wrap: anywhere; }
 
 .player-emote:has(> img:not([hidden])) > span { display: none; }
+
+/* Historical copies belong only to this transition; they do not count as cards
+   currently held. An X and origin label keep the meaning independent of color. */
+.game-card.card-appear { filter: drop-shadow(0 0 7px rgba(127, 214, 164, .9)); }
+.game-card.card-appear::after, .game-card.card-leaving::after {
+  content: ""; position: absolute; inset: 0; z-index: 4; pointer-events: none;
+  border: 2px solid #7fd6a4; border-radius: 6px;
+}
+.game-card.card-leaving { opacity: .65; }
+.game-card.card-leaving::after { border-color: #e57e66; }
+.card-change-cross {
+  position: absolute; z-index: 5; inset: 0; display: grid; place-items: center;
+  color: #ff8f75; font: 800 44px/1 sans-serif;
+  text-shadow: 0 0 8px #000; pointer-events: none;
+}
+.card-change-origin {
+  position: absolute; z-index: 6; bottom: 2px; left: 2px; right: 2px;
+  padding: 2px; background: #351c16; color: #ffd3c7;
+  text-align: center; font: 700 9px/1.2 sans-serif; pointer-events: none;
+}
+
+/* A single red history card can follow the real deck slots. */
+#deck { overflow-x: auto; }
+#deck > .card-leaving { margin-left: 8px; }

@@ -215,3 +215,49 @@ After reconstruction changes, run the full corpus rebuild and catch-up, then
 the privacy, timeline, and battle-destiny audits. The side-job audit requires
 an unselected offer immediately before each career reveal, a highlighted
 result, a timeline action, and matching chosen-fate icon metadata.
+
+
+### Draws and gained cards after choices/active effects
+
+`card-acquisitions.mjs` adds an explicit, modal-free hand step after a selected
+Immortal Fate or used seasonal ability delivers cards. The result modal remains
+a separate step; cards are revealed on their acquisition step before subsequent
+exchanges, combinations or other actions. Follow-up choices retain their own
+unselected offer/result steps.
+
+Draw (`抽`) and gain (`获得`, including `选择…张获得`) are classified from the
+Chinese effect description, never the English localization or hand increase
+alone. Fate Path triggers use the chosen talent's Chinese name. Fixed-card gains
+must match the delivered card references; a pending reward or a level upgrade
+is not a draw/gain. Breakthrough passives use only the triggering Chinese clause,
+not unrelated game-start grants elsewhere in their description.
+
+Reserved Daoist Rhyme rewards use the selected card, its phase requirement and
+recorded multiplier; only the latest still-relevant reservation can deliver.
+They are gains, while At Own Pace uses the native tooltip's immediate-draw rule.
+Simultaneous rewards follow their actual positions in the recorded hand rather
+than an assumed global priority. Separate gain/draw steps reveal those cards
+progressively and preserve the original final snapshot.
+
+Run `node replay_browser/card-acquisitions.test.mjs` and, after a full corpus
+rebuild, `node replay_browser/audit_card_acquisition_steps.mjs replay_browser/data`.
+Private per-recording diagnostics are under `.recording-payload-cache/.card-acquisition-audit/`;
+never publish those audit files. Cases without enough evidence for attribution
+are recorded there instead of guessing a draw/gain verb.
+
+### Card transition highlights
+
+The viewer compares adjacent states for moves, rearrangements, exchanges,
+combinations, absorption, draws and gains. New cards/positions are green; old
+copies remain red with a cross for that step. When deck history is needed,
+exactly one red card is appended after the real deck slots (at most nine visible
+positions in a full deck). Otherwise no extra position is rendered. This card
+is historical, carries its original slot number, and never enters the hand.
+Historical hand copies are excluded from the hand count. Hand matching
+is duplicate-aware, and seeking or stepping backwards gives the same display.
+Opponent snapshots, battles, round boundaries and unrelated actions do not
+inherit highlights. Run `node replay_browser/card-transitions.test.mjs`.
+
+An ability choice may open in the first snapshot of a new round, alongside
+ordinary round draws. Preserve that ability's source until its choice result
+arrives; the round's normal draws must not be attributed to that ability.

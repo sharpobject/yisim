@@ -11,7 +11,7 @@ if (!wikiRoot || !fs.existsSync(path.join(wikiRoot, "assets", "site.css"))) {
 }
 
 const assetRoot = path.join(wikiRoot, "assets", "recordings");
-const assetVersion = "20260919-choice-reveal-01";
+const assetVersion = "20260919-card-acquisitions-01";
 fs.mkdirSync(assetRoot, { recursive: true });
 if (!process.env.YXP_SKIP_STAGE_DATA) {
   const stagedDataRoot = path.join(assetRoot, "data");

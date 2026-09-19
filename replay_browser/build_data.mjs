@@ -9,6 +9,7 @@ import {
 import { assertRecordingRegression } from "./recording_regressions.mjs";
 import { buildReplaySummaryData } from "./generate_replay_summary_html.mjs";
 import { openingShopResidual } from "./opening-repair.mjs";
+import { appendCardAcquisitionSteps } from "./card-acquisitions.mjs";
 
 const [inputPath, outputPath = path.join(path.dirname(new URL(import.meta.url).pathname), "replay-data.js")] = process.argv.slice(2);
 if (!inputPath) throw new Error("usage: build_data.mjs CAPTURE.jsonl [OUTPUT.js]");
@@ -3610,6 +3611,19 @@ function ensureChoiceOfferSteps(inputSteps) {
 }
 
 ensureChoiceOfferSteps(logicalSteps);
+const acquisitionAudit = appendCardAcquisitionSteps(logicalSteps, {
+  talentInfo,
+  fateInfo: (id) => rememberFateStrategy(id, state.round),
+  cardName: compactCardName,
+  baseCardId,
+  cardPhase: (id) => cardConfigInfo(id)?.level,
+  daoYunDescription: JSON.parse(fs.readFileSync(path.join(steamDumpPath, "localization.json"), "utf8"))
+    .terms["CardKeywordDesc_道韵预感"]?.["zh-CN"] ?? "",
+});
+console.log(`CARD_ACQUISITION_AUDIT ${JSON.stringify(acquisitionAudit)}`);
+const acquisitionAuditRoot = path.join(path.dirname(outputPath), ".card-acquisition-audit");
+fs.mkdirSync(acquisitionAuditRoot, { recursive: true });
+fs.writeFileSync(path.join(acquisitionAuditRoot, path.basename(outputPath) + ".json"), JSON.stringify(acquisitionAudit));
 
 function stabilizePreparationSnapshots(inputSteps) {
   const stabilizeSegment = (start, end) => {
