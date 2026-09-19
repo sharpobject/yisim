@@ -402,13 +402,8 @@
     if (!overlay) { host.hidden = true; host.innerHTML = ""; return; }
     const showRerolls = overlay.kind === "heavenly-derivation" && Number(overlay.roundOrPhase) !== 3;
     const canReroll = showRerolls && overlay.rerollsRemaining > 0;
-    const optionIds = overlay.options.map((reference) => Number(reference.id));
-    const recordedCardSelection = overlay.kind === "card-selection" && overlay.selected == null
-      ? states.slice(index + 1).flatMap((futureState) => futureState.privatePlayer?.cardSelections ?? [])
-        .find((history) => Number(history.roundOrPhase) === Number(overlay.roundOrPhase)
-          && (history.offers ?? []).some((offer) => JSON.stringify(offer.map(Number)) === JSON.stringify(optionIds)))
-      : null;
-    const recordedSelected = Number(overlay.selected ?? recordedCardSelection?.selected) || 0;
+    // An offer must not reveal a selection from a later recording step.
+    const recordedSelected = Number(overlay.selected) || 0;
     const selectedOptionIndex = !recordedSelected
       ? -1
       : overlay.options.findIndex((reference) => Number(reference.id) === recordedSelected);
