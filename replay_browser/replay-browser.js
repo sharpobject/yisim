@@ -476,10 +476,8 @@
           .find(({ optionIndex }) => !displayedOptions.some((entry) => entry.optionIndex === optionIndex));
         if (fifth) displayedOptions.push(fifth);
       }
-      // Treat the selected card as a highlighted callout alongside the four
-      // preview cards. The summary count continues to describe every other
-      // choice beyond those four previews.
-      omittedCardCount = overlay.options.length - (selectedOptionIndex >= 0 ? 4 : displayedOptions.length);
+      // Count only undisplayed options, whether this is an offer or its result.
+      omittedCardCount = overlay.options.length - displayedOptions.length;
     }
     const options = displayedOptions.map(({ reference, optionIndex }) => {
       const selected = optionIndex === selectedOptionIndex;

@@ -1632,5 +1632,4 @@
 }
 
 /* A single red history card can follow the real deck slots. */
-#deck { overflow-x: auto; }
 #deck > .card-leaving { margin-left: 8px; }
