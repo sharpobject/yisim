@@ -249,8 +249,10 @@ are recorded there instead of guessing a draw/gain verb.
 
 The viewer compares adjacent states for moves, rearrangements, exchanges,
 combinations, absorption, draws and gains. New cards/positions are green; old
-copies remain red with a cross for that step. When deck history is needed,
-exactly one red card is appended after the real deck slots (at most nine visible
+copies remain red with a cross for that step. An emptied deck slot displays its
+red historical card in place, without an origin label or extra position. When
+a replacement occupies that slot, exactly one red card is appended after the
+real deck slots (at most nine visible
 positions in a full deck). Otherwise no extra position is rendered. This card
 is historical, carries its original slot number, and never enters the hand.
 Historical hand copies are excluded from the hand count. Hand matching

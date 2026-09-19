@@ -14,7 +14,7 @@ assert.deepEqual(count(r,'deck','appear'),[1]);assert.deepEqual(count(r,'hand','
 r=run(state([1,2],[]),state([2,1],[]),'rearrange');
 assert.deepEqual(count(r,'deck','appear'),[2,1]);assert.deepEqual(r.hand,[]);assert.deepEqual(r.deckPrevious,{id:1,change:'leaving',slot:1});assert.equal(r.deck.length,2);
 r=run(state([1],[2]),state([0],[2,1]),'move');
-assert.equal(r.deck[0].id,0);assert.equal(r.deckPrevious.id,1);assert.deepEqual(count(r,'hand','appear'),[1]);
+assert.deepEqual(r.deck[0],{id:1,change:'leaving'});assert.equal(r.deckPrevious,null);assert.deepEqual(count(r,'hand','appear'),[1]);
 r=run(state([],[1,1,2]),state([],[2,11]),'upgrade');
 assert.deepEqual(count(r,'hand','leaving'),[1,1]);assert.deepEqual(count(r,'hand','appear'),[11]);
 r=run(state([1],[1,2]),state([11],[2]),'upgrade');
@@ -36,3 +36,14 @@ assert.equal(r.deckPrevious.id,2);assert.equal(r.deckPrevious.slot,2);
 assert.equal(r.deck.length,2);assert.equal(r.hand.length,0);
 r=run(state([1,2],[]),state([1,2],[]),'rearrange');assert.equal(r.deckPrevious,null);
 console.log('PASS: exactly one deck-history card when needed, zero otherwise');
+
+// Vacated positions retain their own history without a label or appended slot.
+for(const kind of ['move','absorb']) {
+ r=run(state([2,1],[3]),state([2,0],kind==='move'?[3,1]:[3]),kind);
+ assert.deepEqual(r.deck,[{id:2,change:''},{id:1,change:'leaving'}]);
+ assert.equal(r.deckPrevious,null);
+}
+r=run(state([1,0],[]),state([0,1],[]),'rearrange');
+assert.deepEqual(r.deck,[{id:1,change:'leaving'},{id:1,change:'appear'}]);
+assert.equal(r.deckPrevious,null);
+console.log('PASS: emptied deck positions show red cards in place without an extra slot or origin label');

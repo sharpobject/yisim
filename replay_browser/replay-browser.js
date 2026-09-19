@@ -267,9 +267,12 @@
       if (old === current) continue;
       if (current) deck[slot].change = "appear";
       if (!old) continue;
-      const ghost = { id: old, change: "leaving", slot: slot + 1 };
-      deck[slot] ??= { id: 0, change: "" };
-      previousDeckCards.push(ghost);
+      if (!current) {
+        // An emptied slot can show its previous card without an extra position.
+        deck[slot] = { id: old, change: "leaving" };
+      } else {
+        previousDeckCards.push({ id: old, change: "leaving", slot: slot + 1 });
+      }
     }
     // Exactly one non-playing history card follows the real deck slots. For a
     // rearrangement, prefer the moving card's recorded source slot.
