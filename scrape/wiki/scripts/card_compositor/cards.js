@@ -5,7 +5,7 @@
 const base=new URL('.',document.currentScript.src).href;
 const blank='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22308%22 height=%22508%22/%3E';
 const cache=new Map(),pending=new Map(),queue=[];let running=0,sequence=0,worker;
-const stats={rendered:0,failed:0,drawMs:[]};
+const stats={rendered:0,failed:0,cacheHits:0,drawMs:[]};
 function source(key){const image=key.startsWith('KeYinCard_')?blank.replace('308','352').replace('508','620'):blank;return image+'#yxp-card='+encodeURIComponent(key);}
 function keyFor(url){
   const marker=String(url).match(/#yxp-card=([^&]+)/);if(marker)return decodeURIComponent(marker[1]);
@@ -28,8 +28,23 @@ function getWorker(){
   }
   return worker;
 }
+let storedFaces;
+function faceStore(){
+  if(!storedFaces)storedFaces=(async()=>{
+    if(!globalThis.caches)return null;
+    const name='yxp-card-faces-'+new URL(base).pathname.split('/').filter(Boolean).at(-1);
+    const store=await caches.open(name);
+    // The bundle hash invalidates rendered pixels after any source change.
+    caches.keys().then(names=>Promise.all(names.filter(n=>n.startsWith('yxp-card-faces-')&&n!==name).map(n=>caches.delete(n)))).catch(()=>{});
+    return store;
+  })().catch(()=>null);
+  return storedFaces;
+}
 async function compose(key){
   if(!/^[\w-]+$/.test(key))throw new Error('Invalid card key');
+  const store=await faceStore(),storedUrl=new URL(`rendered/${key}.png`,base).href;
+  const saved=store?await store.match(storedUrl).catch(()=>null):null;
+  if(saved){stats.rendered++;stats.cacheHits++;return URL.createObjectURL(await saved.blob());}
   const response=await fetch(new URL(`c/${key}.json.gz`,base));
   if(!response.ok)throw new Error(`Missing card recipe ${key}: ${response.status}`);
   const recipe=await new Response(response.body.pipeThrough(new DecompressionStream('gzip'))).json();
@@ -41,12 +56,15 @@ async function compose(key){
     const canvas=await CardScene.render(recipe.n,base,recipe.s);
     blob=canvas.convertToBlob?await canvas.convertToBlob({type:'image/png'}):await new Promise(resolve=>canvas.toBlob(resolve,'image/png'));
   }
+  if(store)store.put(storedUrl,new Response(blob,{headers:{'Content-Type':'image/png'}})).then(async()=>{
+    const keys=await store.keys();await Promise.all(keys.slice(0,Math.max(0,keys.length-192)).map(k=>store.delete(k)));
+  }).catch(()=>{});
   stats.rendered++;return URL.createObjectURL(blob);
 }
 const scripts=new Map();
 function script(name){if(!scripts.has(name))scripts.set(name,new Promise((resolve,reject)=>{const el=document.createElement('script');el.src=new URL(name,base);el.onload=resolve;el.onerror=reject;document.head.append(el);}));return scripts.get(name);}
 function pump(){
-  while(running<2&&queue.length){const job=queue.shift();running++;compose(job.key).then(job.resolve,job.reject).finally(()=>{running--;pump();});}
+  while(running<8&&queue.length){const job=queue.shift();running++;compose(job.key).then(job.resolve,job.reject).finally(()=>{running--;pump();});}
 }
 function render(key){
   if(!cache.has(key)){

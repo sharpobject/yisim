@@ -34,6 +34,7 @@ def main():
  for scene in scenes.values():
   for key in walk(scene):counts[key]+=1;first.setdefault(key,len(first))
  encoded_cache=args.source/'encoded';encoded_cache.mkdir(exist_ok=True)
+ lossless=set(json.loads((args.source/'lossless.json').read_text())) if (args.source/'lossless.json').exists() else set()
  sprites={};small=set()
  for key in counts:
   p=args.source/'sprites'/f'{key}.webp'
@@ -43,7 +44,8 @@ def main():
     # Match the existing full-card WebP quality for texture layers; glyphs
     # remain lossless. Keep lossless whenever that is already smaller.
     cached=encoded_cache/(key+'-q92-m6.webp')
-    if cached.exists():data=cached.read_bytes()
+    if key in lossless:data=p.read_bytes()
+    elif cached.exists():data=cached.read_bytes()
     else:
      encoded=io.BytesIO();im.save(encoded,format='WEBP',quality=92,method=6,exact=True)
      raw=p.read_bytes();data=min([raw,encoded.getvalue()],key=len);cached.write_bytes(data)

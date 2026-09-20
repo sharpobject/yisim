@@ -44,6 +44,10 @@ small edits to other pre-existing, untracked wiki generator files.
 * `extras.py` covers sigils and all dynamic Clear Heart backgrounds.
 * `verify.py` reconstructs every trace and compares it with the original bitmap.
   Unexpected differences fail the build. Transparent RGB is ignored.
+* `bake.py` evaluates fixed resampling once at generation time and crops/deduplicates
+  the resulting layers. Text layers remain lossless. This trades some per-glyph
+  sharing for much cheaper browser compositing; frames and component layers still
+  share across faces. The baked scenes pass the same full-reference verification.
 * `pack.py` deduplicates textures by pixels and packs lossless glyphs by card
   family/language. Small family atlases avoid fetching large unrelated font
   sheets for a single card. Texture layers use the existing WebP quality 92,
@@ -78,3 +82,12 @@ full-face copy. Cold single-card visits can be slightly larger than one old
 bitmap; card levels, decks, and subsequent navigation benefit from shared
 frames and artwork. Report measured page examples separately from storage
 savings. This migration does not shrink historical Git objects.
+
+Browser loading permits eight concurrent card jobs instead of serializing all
+recipe and sprite fetches behind two jobs. Production recipes have no runtime
+resampling nodes; the browser only composites prepared layers.
+
+Completed faces also use a best-effort Cache Storage cache, bounded to 192
+entries and invalidated by bundle version. Repeated page visits can reuse full
+rendered pixels without recipe loading/composition; unavailable storage falls
+back to ordinary rendering. Existing external WebP targets are unchanged.

@@ -14,7 +14,10 @@ def main():
   extra=['--references'] if name=='export.py' else (['--asset-root',str(a.asset_root)] if a.asset_root else [])
   subprocess.run([sys.executable,str(here/name),'--repo',str(a.repo),'--site',str(a.site),'--output',str(cache),'--jobs',str(a.jobs),*extra],check=True)
  subprocess.run([sys.executable,str(here/'verify.py'),'--repo',str(a.repo),'--source',str(cache),'--jobs',str(a.jobs)],check=True)
+ baked=cache/'baked-layers'
+ subprocess.run([sys.executable,str(here/'bake.py'),'--repo',str(a.repo),'--source',str(cache),'--output',str(baked),'--jobs',str(a.jobs)],check=True)
+ subprocess.run([sys.executable,str(here/'verify.py'),'--repo',str(a.repo),'--source',str(baked),'--jobs',str(a.jobs)],check=True)
  with tempfile.TemporaryDirectory(prefix='card-components-',dir=cache) as out:
-  subprocess.run([sys.executable,str(here/'pack.py'),str(cache),out],check=True)
+  subprocess.run([sys.executable,str(here/'pack.py'),str(baked),out],check=True)
   subprocess.run([sys.executable,str(here/'stage.py'),out,str(a.site),'--legacy',a.legacy],check=True)
 if __name__=='__main__':main()
