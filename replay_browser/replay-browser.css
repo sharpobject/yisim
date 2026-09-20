@@ -1633,3 +1633,20 @@
 
 /* A single red history card can follow the real deck slots. */
 #deck > .card-leaving:has(.card-change-origin) { margin-left: 8px; }
+
+/* Three fixed vase slots beside the hand, without clipping enlarged cards. */
+.vase-zone[hidden] { display: none; }
+.hand-zone.has-vase { grid-template-columns: auto minmax(0, 1fr); column-gap: 12px; }
+.has-vase > .zone-label { grid-column: 2; grid-row: 1; }
+.has-vase > #hand { grid-column: 2; grid-row: 2; }
+.vase-zone { grid-column: 1; grid-row: 1 / 3; align-self: end; padding-right: 10px; border-right: 1px solid rgba(219,204,155,.35); }
+.vase-zone .zone-label { letter-spacing: 0; font-size: 8px; }
+#vase { overflow: visible; padding: 0; gap: 4px; }
+.vase-slot { position: relative; width: 58px; flex: 0 0 58px; aspect-ratio: 5 / 8; }
+.vase-slot .game-card, .vase-slot .empty-slot { min-width: 0; width: 100%; max-width: none; height: 100%; }
+@media (max-width: 760px) {
+  .hand-zone.has-vase { column-gap: 6px; }
+  .vase-zone { padding-right: 6px; }
+  .vase-slot { width: 40px; flex-basis: 40px; }
+  .vase-zone .zone-label { max-width: 128px; font-size: 7px; }
+}

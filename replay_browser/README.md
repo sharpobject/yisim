@@ -285,3 +285,34 @@ following private state when spectators switch players after elimination; the
 recording itself retains its full ending. Validate the private output with the
 timeline, side-job and battle-destiny audits and both language pages before
 publishing. Never copy the private selection manifest or account research.
+
+## Five Elements Pure Vase
+
+The viewer shows Qi Wangyou's three fixed vase slots beside her hand when her
+private perspective has talent 199. `cardStorage[199]` comes from the native
+`talentDatas[199].commonParams`; slots stay ordered, including zeros.
+`CardOperationResp` operation 1 / useCase 6 supplies `[fromPosition, fromIndex,
+toPosition, toIndex]`, where hand is 0 and vase is 6. Withdrawal omits toIndex.
+Emit a separate localized move/rearrange action, retaining transfer coordinates
+for audits. Hand-to-occupied-slot swaps return the displaced card to hand;
+only an empty-slot deposit adds 1 cultivation, withdrawal subtracts 1, and
+internal swaps do not change cultivation.
+
+Authoritative retail build 25343702: `Talent199Panel.Refresh`,
+`CardGridCunQuItem.MoveCardToGrid`, `MoveCardToHand`, `RefreshTalent199Icon`,
+`CardPanel.RefreshCardDes`, and `GameDefineClientOnly.WU_XING`. Only the first
+slot's native Chinese card name determines the icon. Start with 199; scan
+金灵/水灵/木灵/火灵/土灵 in that order, assigning 10199/20199/30199/40199/50199
+for matches (last match wins). Slots two/three have no icon effect. Five native
+variants are losslessly stored in `vase-icons/`; the neutral variant uses the
+existing fate asset. Do not expose another player's private vase while browsing
+public prior-round snapshots.
+
+Run `vase.test.mjs`, `card-transitions.test.mjs`, the complete reconstruction,
+and `audit_vase_steps.mjs DATA_ROOT` alongside timeline/side-job/battle checks.
+The vase audit checks exact hand/vase transitions and cultivation deltas for
+every explicit transfer. The `recordings_751` packager hashes payload contents
+as well as the catalog, so changed timelines invalidate browser caches.
+
+For hand-to-deck swaps, omit appended red deck history when the displaced copy
+is already shown as a new hand position. Keep red in-place in emptied slots.

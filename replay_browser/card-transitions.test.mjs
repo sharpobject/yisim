@@ -77,3 +77,22 @@ for(const extra of [{battle:{}},{}]) {
 r=run(state([2],[1],1),state([2],[1,3],2),'',{battle:{}});
 assert.ok([...r.hand,...r.deck].every(e=>!e.change));
 console.log('PASS: round-start additions highlight green with duplicate counts; no red history, deck highlights, or battle leakage');
+
+// Vase transfers preserve three fixed slots, and highlight both ends of a move.
+const vaseState=(hand,vase)=>({...state([],hand),privatePlayer:{uid:'p',deck:[],hand,cardStorage:{199:vase}}});
+r=run(vaseState([101,102],[0,0,0]),vaseState([102],[101,0,0]),'move');
+assert.deepEqual(count(r,'hand','leaving'),[101]);assert.deepEqual(count(r,'vase','appear'),[101]);assert.equal(r.vase.length,3);
+r=run(vaseState([102],[101,0,0]),vaseState([102,101],[0,0,0]),'move');
+assert.deepEqual(count(r,'vase','leaving'),[101]);assert.deepEqual(count(r,'hand','appear'),[101]);assert.equal(r.vase.length,3);
+r=run(vaseState([101],[102,0,0]),vaseState([102],[101,0,0]),'move');
+assert.deepEqual(count(r,'vase','appear'),[101]);assert.deepEqual(count(r,'hand','appear'),[102]);assert.equal(r.vase.length,3);
+r=run(vaseState([],[101,102,0]),vaseState([],[102,101,0]),'rearrange');
+assert.deepEqual(count(r,'vase','appear'),[102,101]);assert.equal(r.vase.length,3);
+console.log('PASS: vase deposits, withdrawals, occupied-slot swaps and rearrangements');
+
+// Swapping a hand card into an occupied deck slot shows its displaced card in
+// hand, so an extra red old-slot copy would be redundant.
+r=run(state([101],[102]),state([102],[101]),'move');
+assert.equal(r.deckPrevious,null);assert.deepEqual(count(r,'hand','appear'),[101]);
+assert.deepEqual(count(r,'deck','appear'),[102]);
+console.log('PASS: hand-to-deck swaps do not append the displaced deck card');

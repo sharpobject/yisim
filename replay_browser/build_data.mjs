@@ -1015,6 +1015,25 @@ function humanAction(type, decoded, before) {
   const destinationCard = decoded.destinationPosition === 0
     ? priorPrivate?.hand?.[decoded.destinationIndex]
     : priorPrivate?.deck?.[decoded.destinationIndex];
+  if (type === "CardOperationResp" && Number(decoded.operation) === 1 && Number(decoded.useCase) === 6) {
+    const [from, fromIndex, to, toIndex] = decoded.otherParams ?? [];
+    const storage = priorPrivate?.cardStorage?.[199] ?? priorPrivate?.talentData?.[199]?.commonParams ?? [];
+    const moved = (from === 0 ? priorPrivate?.hand : from === 6 ? storage : [])?.[fromIndex];
+    if (!numericCardId(moved)) return null;
+    const displaced = to === 6 ? storage[toIndex] : 0;
+    const en = compactCardName(moved), zh = compactCardName(moved, "zh");
+    const extra = { vaseTransfer: { from, fromIndex, to, toIndex, cardId: numericCardId(moved), displacedId: numericCardId(displaced) } };
+    if (from === 0 && to === 6) return actionFor(actor, "move",
+      `${actor.username} moved ${en} into Five Elements Pure Vase slot ${toIndex + 1}${displaced ? `, returning ${compactCardName(displaced)} to hand` : ""}`,
+      `${actor.username}将${zh}放入五行玉瓶第${toIndex + 1}格${displaced ? `，将${compactCardName(displaced, "zh")}取回手牌` : ""}`, extra);
+    if (from === 6 && to === 0) return actionFor(actor, "move",
+      `${actor.username} returned ${en} from Five Elements Pure Vase slot ${fromIndex + 1} to hand`,
+      `${actor.username}将${zh}从五行玉瓶第${fromIndex + 1}格取回手牌`, extra);
+    if (from === 6 && to === 6) return actionFor(actor, "rearrange",
+      `${actor.username} moved ${en} from Five Elements Pure Vase slot ${fromIndex + 1} to slot ${toIndex + 1}${displaced ? `, swapping with ${compactCardName(displaced)}` : ""}`,
+      `${actor.username}将${zh}从五行玉瓶第${fromIndex + 1}格移至第${toIndex + 1}格${displaced ? `，与${compactCardName(displaced, "zh")}交换位置` : ""}`, extra);
+    return null;
+  }
   if (type === "MoveCardReq") {
     if (!sourceCard) return null;
     const combined = combinationResultId(sourceCard, destinationCard, priorPrivate);
@@ -1229,10 +1248,8 @@ function apply(type, decoded) {
       state.targetUid = decoded.private.uid || state.targetUid;
     }
   } else if (type === "CardOperationResp") {
-    const sourcePosition = Number(decoded.otherParams?.[0]);
-    const destinationPosition = Number(decoded.otherParams?.[2]);
-    const cultivationDelta = sourcePosition === 0 && destinationPosition === 6 ? 1
-      : sourcePosition === 6 && destinationPosition === 0 ? -1 : 0;
+    if (Number(decoded.operation) === 1 && Number(decoded.useCase) === 6) advanceSyntheticRoundForCardAction();
+    const cultivationDelta = recordedCultivationDelta(state.privatePlayer, { type, details: decoded });
     if (applyRecordedCardStep(state.privatePlayer, { type, details: decoded })) {
       addCultivation(cultivationDelta);
     }
@@ -2368,6 +2385,12 @@ function applyRecordedCardStep(privatePlayer, step, wrap = (id) => id, reportIss
 }
 
 function recordedCultivationDelta(privatePlayer, step) {
+  if (step.type === "CardOperationResp" && Number(step.details?.operation) === 1 && Number(step.details?.useCase) === 6) {
+    const [from, , to, toIndex] = step.details.otherParams ?? [];
+    const storage = privatePlayer?.cardStorage?.[199] ?? privatePlayer?.talentData?.[199]?.commonParams ?? [];
+    return from === 0 && to === 6 ? (numericCardId(storage[toIndex]) ? 0 : 1)
+      : from === 6 && to === 0 ? -1 : 0;
+  }
   if (step.type === "RefineCardResp" && step.details?.result) {
     return refineCultivationDelta(step.details.targetCard?.id);
   }

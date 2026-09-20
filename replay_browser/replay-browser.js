@@ -36,6 +36,12 @@
   const roundSelect = $("#round-select");
   const filterToggle = $("#recording-filter-toggle");
   const filterPopover = $("#recording-filter-popover");
+  const vaseZone = document.createElement("div");
+  vaseZone.id = "vase-zone";
+  vaseZone.className = "vase-zone";
+  vaseZone.hidden = true;
+  vaseZone.innerHTML = '<div id="vase-label" class="zone-label"></div><div id="vase" class="card-strip"></div>';
+  $(".hand-zone").prepend(vaseZone);
   const mobileViewport = matchMedia("(max-width: 760px)");
   const mobileTooltipLayer = document.createElement("div");
   mobileTooltipLayer.className = "mobile-tooltip-layer";
@@ -154,6 +160,10 @@
     ? `career-icons/Icon_Career_${id}.png`
     : `/yxp_wiki/assets/recordings/careers/Icon_Career_${id}.png`;
   const fateAsset = (entry, kind) => {
+    if (kind === "talent" && [10199,20199,30199,40199,50199].includes(Number(entry.iconId))) {
+      return assetMode === "local" ? `vase-icons/Icon_Talent_${entry.iconId}.webp`
+        : `/yxp_wiki/assets/recordings/vase-icons/Icon_Talent_${entry.iconId}.webp`;
+    }
     const iconFile = kind === "talent"
       ? `Icon_Talent_${entry.iconId || entry.id}.png`
       : entry.iconFile || `Icon_FateStrategy_${entry.id}.png`;
@@ -245,7 +255,8 @@
   function cardTransition(before, after, step) {
     const deck = (after?.privatePlayer?.deck ?? []).map(id => ({ id, change: "" }));
     const hand = (after?.privatePlayer?.hand ?? []).map(id => ({ id, change: "" }));
-    const result = { deck, hand, deckPrevious: null };
+    const vase = Array.from({length: 3}, (_, i) => ({id: after?.privatePlayer?.cardStorage?.[199]?.[i] || 0, change: ""}));
+    const result = { deck, hand, vase, deckPrevious: null };
     if (!before || step?.battle ||
         before.privatePlayer?.uid !== after.privatePlayer?.uid) return result;
     if (before.round !== after.round) {
@@ -263,6 +274,12 @@
     }
     const actions = step?.humanActions ?? [];
     if (!actions.some(action => ["move", "rearrange", "exchange", "upgrade", "absorb", "draw", "gain"].includes(action.kind))) return result;
+    for (let slot = 0; slot < vase.length; slot++) {
+      const old = before.privatePlayer?.cardStorage?.[199]?.[slot] || 0;
+      if (old === vase[slot].id) continue;
+      if (vase[slot].id) vase[slot].change = "appear";
+      else if (old) vase[slot] = {id: old, change: "leaving"};
+    }
     const upgrading = actions.some(action => ["upgrade", "absorb"].includes(action.kind));
     const isUpgrade = (old, current) => {
       const base = id => id - (Math.floor(Math.abs(id) / 10000) % 100) * 10000;
@@ -301,7 +318,10 @@
     // Rearrangements already show the changed deck positions. Only other
     // operations need an extra historical card when its old slot is occupied.
     if (!actions.some(action => action.kind === "rearrange")) {
-      result.deckPrevious = previousDeckCards[0] ?? null;
+      // A hand-to-deck swap already shows the displaced copy in hand.
+      const movedToHand = actions.some(action => action.kind === "move")
+        ? hand.filter(entry => entry.change === "appear").map(entry => entry.id) : [];
+      result.deckPrevious = previousDeckCards.find(entry => !movedToHand.includes(entry.id)) ?? null;
     }
     return result;
   }
@@ -389,7 +409,7 @@
     }).join("")}</div>`;
   }
 
-  function trait(reference, kind, { hasMyFateMyChoice = false } = {}) {
+  function trait(reference, kind, { hasMyFateMyChoice = false, iconId = null } = {}) {
     const info = kind === "talent" ? recording.catalog.talents[reference.id] : recording.catalog.fateStrategies[reference.id];
     if (!info) return "";
     const runtime = reference.runtime;
@@ -405,7 +425,7 @@
       ? Number(reference.additionalCareer) || 0 : 0;
     const artwork = selectedCareer
       ? `<img class="fate-artwork" src="${careerAsset(selectedCareer)}" alt="${esc(careerName(selectedCareer))}">`
-      : fateArtwork(info, kind, name);
+      : fateArtwork(iconId ? { ...info, iconId } : info, kind, name);
 
     const history = reference.choiceHistory;
     const hasHeavenlyDerivationVariables = Number(history?.rerollsRemainingAtStart ?? 0) > 0
@@ -456,10 +476,23 @@
     </button>`;
   }
 
+  // Native CardGridCunQuItem.RefreshTalent199Icon uses only slot zero and
+  // Chinese card-name substrings in this order; later matches override earlier ones.
+  function vaseIconId(storage, cards) {
+    const name = cards[storage?.[0]]?.nameChinese ?? "";
+    let icon = 199;
+    ["金灵", "水灵", "木灵", "火灵", "土灵"].forEach((element, i) => {
+      if (name.includes(element)) icon = 10199 + i * 10000;
+    });
+    return icon;
+  }
+
   function renderCharacter(player, traits, state, priorRound, privateOwnerUid) {
     const privatePlayer = state.privatePlayer;
     const hasMyFateMyChoice = (traits.fates ?? []).some((reference) => Number(reference.id) === 12);
-    const talents = (traits.talents ?? []).map((value) => trait(value, "talent", { hasMyFateMyChoice })).join("");
+    const talents = (traits.talents ?? []).map((value) => trait(value, "talent", { hasMyFateMyChoice,
+      iconId: Number(value.id) === 199 && player.uid === privateOwnerUid
+        ? vaseIconId(privatePlayer?.cardStorage?.[199], recording.catalog.cards) : null })).join("");
     const fates = (traits.fates ?? []).map((value) => trait(value, "fateStrategy")).join("");
     const daoYunChoices = player.uid === privateOwnerUid
       ? (privatePlayer?.daoYunChoices ?? []).map(daoYunChoice).join("")
@@ -716,6 +749,10 @@
       : isOwn
       ? `${copy.currentView} · ${selected?.username || recording.targetUsername}`
       : `${selected?.username} · ${copy.previousView}`;
+    const showVase = !battle && isOwn && (selected?.talents ?? []).some(t => Number(t.id) === 199);
+    vaseZone.hidden = !showVase;
+    $(".hand-zone").classList.toggle("has-vase", showVase);
+    $("#vase-label").textContent = isChinese ? "五行玉瓶" : "Five Elements Pure Vase";
     $("#board-panel").hidden = Boolean(battle);
     $("#character-panel").hidden = Boolean(battle);
     $("#battle-panel").hidden = !battle;
@@ -728,6 +765,8 @@
       $("#deck-label").textContent = isOwn ? copy.deck : copy.previousDeck;
       const transition = isOwn ? cardTransition(states[index - 1], state, recording.steps[index]) : null;
       $("#deck").innerHTML = (transition ? transitionDeck(transition) : deck.map(id => card(id, true)).join("")) || `<span class="private-hand">${esc(copy.noDeck)}</span>`;
+      $("#vase").innerHTML = showVase ? transition.vase.map((entry, slot) =>
+        `<div class="vase-slot" data-vase-slot="${slot + 1}" aria-label="${isChinese ? "玉瓶格" : "Vase slot"} ${slot + 1}">${transitionCard(entry)}</div>`).join("") : "";
       $("#hand-label").textContent = isOwn ? `${copy.hand} · ${hand?.length ?? 0}` : copy.hand;
       $("#hand").innerHTML = transition ? transition.hand.map(transitionCard).join("") : `<span class="private-hand">${esc(copy.hiddenHand)}</span>`;
     }

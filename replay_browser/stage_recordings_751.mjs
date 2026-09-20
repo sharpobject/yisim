@@ -49,17 +49,17 @@ for(const c of matches){
  for(const kind of codec.CATALOG_KINDS)for(const[id,f]of Object.entries(payload.catalog[kind]??{}))shared[kind][id]??=f;
 }
 catalog.sort((a,b)=>a.targetUid.localeCompare(b.targetUid)||b.capturedThrough.localeCompare(a.capturedThrough));
-fs.mkdirSync(dataRoot,{recursive:true});let bytes=0;
+fs.mkdirSync(dataRoot,{recursive:true});let bytes=0;const contentHash=createHash("sha256");
 for(const c of catalog){
  const payload=payloads.get(c.id);let best;
  for(const stringLimit of [0,16,64,256,Infinity]){const packed=codec.packRecording(payload,{stringLimit,sharedCatalog:shared});const data=gzipSync(JSON.stringify(packed),{level:9});if(!best||data.length<best.length)best=data}
  assert.deepEqual(codec.unpackRecording(JSON.parse(gunzipSync(best)),shared),payload,`Round-trip ${c.id}`);
- fs.writeFileSync(path.join(dataRoot,c.file),best);bytes+=best.length;
+ fs.writeFileSync(path.join(dataRoot,c.file),best);bytes+=best.length;contentHash.update(best);
 }
 const packed=codec.packCatalog(shared,catalog);assert.deepEqual(codec.unpackCatalog(packed),{sharedCatalog:shared,catalog});
 fs.writeFileSync(path.join(dataRoot,'catalog.compact.json.gz'),gzipSync(JSON.stringify(packed),{level:9}));
 assert.deepEqual(new Set(fs.readdirSync(dataRoot)),new Set(['catalog.compact.json.gz',...catalog.map(c=>c.file)]));
-const version='751-'+createHash('sha256').update(JSON.stringify(packed)).digest('hex').slice(0,12);
+const version='751-'+contentHash.update(JSON.stringify(packed)).digest('hex').slice(0,12);
 const zhName=shared.characters[3000006].nameChinese;
 for(const lang of ['en','zh']){
  const english=lang==='en';let html=fs.readFileSync(path.join(wiki,lang,'recordings/index.html'),'utf8');

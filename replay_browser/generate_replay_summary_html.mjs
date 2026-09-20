@@ -438,6 +438,8 @@ function privatePlayerState(view, round, builder) {
   if (!side) return null;
   const privateData = side.privateData ?? {};
   [...(privateData.handCards ?? []), ...(privateData.usedCards ?? [])].forEach(builder.rememberCard);
+  const vase = privateData.talentDatas?.[199]?.commonParams;
+  if (vase) vase.forEach(builder.rememberCard);
   const daoYunChoices = mapSelections(privateData, "daoYunSelectionDatas");
   daoYunChoices.forEach((history) => history.offers.flat().concat(history.selected).forEach(builder.rememberCard));
   return {
@@ -445,6 +447,7 @@ function privatePlayerState(view, round, builder) {
     hand: [...(privateData.handCards ?? [])].map(Number), deck: [...(privateData.usedCards ?? [])].map(Number),
     unlockedDeckSlots: Number(privateData.unlockGrids ?? 0), exchangesRemaining: Number(privateData.replaceCardChance ?? 0),
     exchangeLimit: Number(privateData.replaceCardChanceLimit ?? 0),
+    ...(vase ? { cardStorage: { 199: Array.from({length: 3}, (_, i) => Number(vase[i]) || 0) } } : {}),
     selectedFateStrategies: selectedFateReferences(privateData, round, builder), daoYunChoices, cardSelections: [],
     additionalCareers: Object.entries(privateData.FZJXCareers ?? {}).map(([slot, career]) => ({ slot: Number(slot), phase: Number(slot), career: Number(career) })),
     choiceOverlay: { $deleted: true },
