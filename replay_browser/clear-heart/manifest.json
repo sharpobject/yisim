@@ -230,62 +230,96 @@
     "formation-0_en.webp": {
       "phase": 5,
       "title": "Clear Heart Sword Formation",
-      "sprite": "Card_19_1",
+      "sprite": "fusion:1000025+1000064",
       "size": [
         308,
         508
       ],
-      "sha256": "e6cb3e1e7e7f8c6a271d2ac2e25563b5bbd17e7afd57056f66163ac1a4811701"
+      "sha256": "e0fbde648297232943036498719737bbae70c9f0513983ba82238ce46a4e21b7"
     },
     "formation-0_zh.webp": {
       "phase": 5,
       "title": "澄心剑阵",
-      "sprite": "Card_19_1",
+      "sprite": "fusion:1000025+1000064",
       "size": [
         308,
         508
       ],
-      "sha256": "4aba1c386a9680b38619d27b397d2714241b94d0866d434e5111b2647747f902"
+      "sha256": "07b232f95727a94cd50b469c2ed744b00973d2304b2ac872616804794f54b8a8"
     },
     "formation-1_en.webp": {
       "phase": 5,
       "title": "Clear Heart Sword Formation",
-      "sprite": "Card_19_1",
+      "sprite": "fusion:1000025+1000064",
       "size": [
         308,
         508
       ],
-      "sha256": "263e13acc34628e410e47d5abdc1fc0439cae23b46b47bc84cb9462c0d01088a"
+      "sha256": "9ddfe5aace21296acf995b6e05eaf007ffe28fec516416cf18ccc0410721e808"
     },
     "formation-1_zh.webp": {
       "phase": 5,
       "title": "澄心剑阵",
-      "sprite": "Card_19_1",
+      "sprite": "fusion:1000025+1000064",
       "size": [
         308,
         508
       ],
-      "sha256": "fdcb673e666e1a61d7a72f9491037329e362aca60a900f196c3399946501037d"
+      "sha256": "71ec5192f313626e5cc556d9ffdf261630a659614d4d50c89e77edfe2dd76d80"
     },
     "formation-2_en.webp": {
       "phase": 5,
       "title": "Clear Heart Sword Formation",
-      "sprite": "Card_19_1",
+      "sprite": "fusion:1000025+1000064",
       "size": [
         308,
         508
       ],
-      "sha256": "528b80b032d992f93fe7246adf96cd7c2c761bc13dab020bcaa8a8a668b3eaf9"
+      "sha256": "963c91f54764d5c12b5f1a8bac7a51080f05cd9cccbc8dc7684bea127334547f"
     },
     "formation-2_zh.webp": {
       "phase": 5,
       "title": "澄心剑阵",
-      "sprite": "Card_19_1",
+      "sprite": "fusion:1000025+1000064",
       "size": [
         308,
         508
       ],
-      "sha256": "17d86b96597cdd92a1b382aa4f2a44f3ac3d5ad9815f8ed619cf31d222e31681"
+      "sha256": "b6f013e03938e0ed8dde2a0bc74e410f2ac28b3a1247255e67102dbf2e75fa62"
     }
+  },
+  "glyphAtlases": {
+    "glyphs/en-21.webp": "a0bb66852d38439f32f96772d0df4298aaec945871f582f35bbbe19b08ead731",
+    "glyphs/en-22.webp": "030a69a1ae05c0981f09e114449714717dd8da5a5ed93cc0edd5ca952d100b5d",
+    "glyphs/en-23.webp": "81434045130838945e9c37ca4e6ccc3ffb09110786408820cda94ca98a3e819e",
+    "glyphs/en-24.webp": "97224c6316067caf1569929b8b157058e987f11568d119dffeb873a65c69bba3",
+    "glyphs/en-25.webp": "c6937d9ee3fafa08eb0072dfaa3022ea40c0f0c145e3e8e73e37c80a62f512cc",
+    "glyphs/en-26.webp": "60b7621871baeb4ddfef81313797d026f6448e16a0cd635982af768ccc5928c8",
+    "glyphs/en-27.webp": "0ff46509ea7db52dd2282ca9ce14a169010b4898982f8dc2628e7f64eff01773",
+    "glyphs/en-28.webp": "bc684cd5b66a553078a2cf315d0e9f5df39c843be9af9035d4de01f837bcb090",
+    "glyphs/en-29.webp": "ab3fed8886813299c00ba54005b3fb30190adf1e192c1770f961da989073074c",
+    "glyphs/en-30.webp": "63f0ecbc280600f73d46d7b1afe8bf580c77f38afab9070482349d98ea99d5fc",
+    "glyphs/en-31.webp": "c0c9a09cf5a276cb0b1bfc3734965958e9a534100688f9d8596bc05eb025185f",
+    "glyphs/en-32.webp": "808a2cbbb183db145545da0363533821d1d698ad6cc9301199b5c00c3388f657",
+    "glyphs/en-33.webp": "980b3ae31521c67e1e8f4b3ba57fe5c387251a9cb58898ecb7b38d9821cdd1d7",
+    "glyphs/en-34.webp": "4fd61fc61ad23d8fb1300d4fdd7e80738cae9fedffce425ad27adf7cabb184c5",
+    "glyphs/en-35.webp": "17e9fa9e43aabf1128899a3d7375684efc5f752eb1932526e3dba1a9589c474d",
+    "glyphs/en-36.webp": "8b180c549e3a6e6dced46a3d5f04f10e4c59c0755d7d371c2b059a7b61d7fef9",
+    "glyphs/zh-21.webp": "a3c77f68902d701c9b8ab1f303a0648c2ccdf4d6c670148e3ffffe79e810c931",
+    "glyphs/zh-22.webp": "e8ab670bd963404dc997a1ebbf5211b01707c7118ca403b3ba2e2fd55c7ccf06",
+    "glyphs/zh-23.webp": "398d02a9500608b81485819ae82b99373a88a3e4559688898608a735458ceb9f",
+    "glyphs/zh-24.webp": "c5f098e54f54330035859193de431a10e17de8ffd352062361f3d0c3c42daf05",
+    "glyphs/zh-25.webp": "98de08188300ab6473148cecb0f78cf7a0c9731cc174f338a7083acc68f847ee",
+    "glyphs/zh-26.webp": "5e3d0169afd35368f38062827307bd4cc9596adfe787211570a5f90a3b7833cb",
+    "glyphs/zh-27.webp": "c9d2d0f8d46834651db11451cf5b3a987bd085df80fe51c39a459d292ca9a0ed",
+    "glyphs/zh-28.webp": "64f2f3c32489b94c6225f7ee64dd73c2fed033204192ef508164695670cafd02",
+    "glyphs/zh-29.webp": "c0e658cda806e0fda453a56b6b6b4f61fa16060c5802e763ce5da9cdcd362d34",
+    "glyphs/zh-30.webp": "013756f2de011079e3b1a0dc1983ecc8abc108d69120e57fb2db7160f43713b7",
+    "glyphs/zh-31.webp": "67b7e0459e8fb1be1426f4d121275f081951f08d2574ba975f807ace69f42061",
+    "glyphs/zh-32.webp": "0ba07369fab9cb4e66da296bf515a5b5995f67ddfbca83664185ba654ba7eb4b",
+    "glyphs/zh-33.webp": "fae9d88acccf2e81a4dbe9933b656478f8d8d4cd5f4c036b762af430a4b3e154",
+    "glyphs/zh-34.webp": "0b1d771a84fd1cc8ecddf57b9c5e9ba9e4ce3bcbd3ca90500a9636eeb92c833b",
+    "glyphs/zh-35.webp": "0b8c11c0125f6430747daf661d59770d686e86ad74615a4fd7b8bf1b04e023cd",
+    "glyphs/zh-36.webp": "6ac8c4dc6e1494fd2833fff9fe15fb3e7b893211c64582d23fdd52597f01f7f2"
   }
 }

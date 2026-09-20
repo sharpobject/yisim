@@ -1,7 +1,6 @@
 (async () => {
   const $ = (selector) => document.querySelector(selector);
   document.body.classList.add("recording-browser-page");
-  await document.fonts.load("24px YxpCardRules");
   const preferredTargetUid = "65db92284574f980c154b895"; // 愿与林小月长相守
   const assetMode = document.body.dataset.assetMode || "wiki";
   const recordingBase = document.body.dataset.recordingBase || "data";
@@ -263,8 +262,8 @@
       const base = assetMode === "local" ? "clear-heart" : "/yxp_wiki/assets/recordings/clear-heart";
       const lang = isChinese ? "zh" : "en";
       return `<div class="game-card dynamic-clear-heart" title="${esc(dynamic.title)}">
-        <img src="${base}/${dynamic.background}_${lang}.webp" alt="${esc(dynamic.title)}">
-        ${window.CLEAR_HEART.svg(dynamic, window.CLEAR_HEART_DATA, lang)}
+        <img src="${base}/${dynamic.background}_${lang}.webp?v=2" alt="${esc(dynamic.title)}">
+        ${window.CLEAR_HEART.svg(dynamic, window.CLEAR_HEART_DATA, lang, base)}
         ${swordMarker(cardId, owner)}
       </div>`;
     }

@@ -37,55 +37,81 @@
     return {config:c,title:term(name),background:embryo?`embryo-${c.level}-${sprite}`:`formation-${c.rarity}`,lines};
   }
   function tokens(line) {
-    const result=[]; let color='#000000',bold=false;
+    const result=[]; let color='#3D3935',bold=false;
     for(const piece of line.split(/(<color=#[0-9a-fA-F]+>|<\/color>|\[[^\]]+\])/g)) {
       if(piece.startsWith('<color=')) color=piece.slice(7,-1);
-      else if(piece==='</color>') color='#000000';
+      else if(piece==='</color>') color='#3D3935';
       else if(piece.startsWith('[')) {const text=piece.slice(1,-1);result.push({text,bold:true,color:/^(Chase|再次行动)$/.test(text)?'#378E89':color});}
       else if(piece)result.push({text:piece,bold,color});
     }
     return result;
   }
-  let context;
-  function svg(model,data,lang='en') {
-    context ||= document.createElement('canvas').getContext('2d');
-    // Allow for glyph side bearings while keeping ink inside the native box.
-    const nativeBox=data.layout[lang];
-    const box={...nativeBox,x:nativeBox.x+2,width:nativeBox.width-4};
-    function layout(size) {
-      const rows=[];let y=0;
-      context.font=`${size}px YxpCardRules`;
-      const metrics=context.measureText(lang==='zh'?'获得防剑阵灵气':'ATK DEF Gain Qyp');
-      const ascent=metrics.fontBoundingBoxAscent, descent=metrics.fontBoundingBoxDescent;
-      const lineHeight=Math.max(size*box.lineHeight,ascent+descent);
-      model.lines.forEach((line, paragraph)=>{
-        let row=[],width=0;
-        const finish=()=>{rows.push({tokens:row,width,y});y+=lineHeight;row=[];width=0;};
-        for(const token of tokens(line)) {
-          const chunks=lang==='zh'?Array.from(token.text):token.text.match(/\s+|[^\s]+/g)||[];
-          for (const chunk of chunks) {
-            context.font=`${token.bold?'bold ':''}${size}px YxpCardRules`;
-            const w=context.measureText(chunk).width+Array.from(chunk).length*size*box.letterSpacing/100;
-            if(width+w>box.width&&row.length)finish();
-            if(!row.length&&!chunk.trim())continue;
-            row.push({...token,text:chunk,width:w});width+=w;
+  // Port of the wiki renderer's TMP character-state wrapping and 0.05-point fitting.
+  function layout(model,data,lang='en') {
+    const t=data.typography,p=t.languages[lang],space=c=>/^\s$/u.test(c.text);
+    const chars=line=>tokens(line).flatMap(token=>Array.from(token.text,text=>({...token,text})));
+    const advance=(c,size)=>{const a=t.advances[c.text];if(a==null)throw Error(`Missing native glyph metric: ${c.text}`);return (a+(c.bold&&c.text===' '?t.boldSpaceExtra:0))*size};
+    const width=(row,size)=>row.reduce((n,c)=>n+advance(c,size),0)+Math.max(0,row.length-1)*size*p.characterSpacing/100;
+    const trim=row=>{while(row.length&&space(row[0]))row.shift();while(row.length&&space(row.at(-1)))row.pop();return row};
+    const cjk=c=>{const n=c?.codePointAt(0)||0;return n>0x1100&&n<0x1200||n>0xa960&&n<0xa980||n>0xac00&&n<0xd7a0||n>0x2e80&&n<0xa000||n>0xf900&&n<0xfb00||n>0xfe30&&n<0xfe50||n>0xff00&&n<0xfff0};
+    const mayBreak=(c,next)=>{if(!c||space(c))return false;if(c.text==='-'&&next&&/[\p{L}\p{N}]/u.test(next.text))return true;if(t.leading.includes(c.text)||next&&t.following.includes(next.text))return false;return cjk(c.text)};
+    function wrap(size) {
+      const rows=[];
+      for(let paragraph=0;paragraph<model.lines.length;paragraph++){
+        const input=chars(model.lines[paragraph]);let row=[],rowWidth=0,emit=-1,carry=-1;
+        const save=(a,b)=>{emit=a;carry=b};
+        const rebuild=()=>{emit=carry=-1;row.forEach((c,i)=>{if(space(c))save(i,i+1);else if(mayBreak(c,row[i+1]))save(i+1,i+1)})};
+        const overflow=w=>{const hyphen=emit>0&&emit<=row.length&&row[emit-1].text==='-';return hyphen&&w>p.width-8||w>p.width+(lang==='en'&&!hyphen?.5:.0001)};
+        input.forEach((c,i)=>{
+          const a=advance(c,size),spacing=size*p.characterSpacing/100;
+          while(row.length&&!space(c)&&overflow(rowWidth+spacing+a)){
+            const line=trim(emit>=0?row.slice(0,emit):row.slice());if(line.length)rows.push({tokens:line,gap:false});
+            row=emit>=0?row.slice(carry):[];rowWidth=width(row,size);rebuild();
           }
-        }
-        if(row.length)finish();
-        if(paragraph<model.lines.length-1)y+=size*box.paragraphSpacing/100;
-      });
-      return {rows,height:y,ascent};
+          if(!row.length&&space(c))return;
+          rowWidth+=(row.length?spacing:0)+a;row.push(c);
+          if(space(c))save(row.length-1,row.length);else if(mayBreak(c,input[i+1]))save(row.length,row.length);
+        });
+        row=trim(row);if(row.length)rows.push({tokens:row,gap:false});
+        if(rows.length)rows.at(-1).gap=paragraph<model.lines.length-1;
+      }
+      return rows;
     }
-    let size=box.maxFontSize,result=layout(size);
-    while(size>box.minFontSize && (result.height>box.height||result.rows.some(r=>r.width>box.width))) {size=Math.max(box.minFontSize,size-.25);result=layout(size);}
-    const top=box.y+(box.height-result.height)/2;
-    const rows=result.rows.map(row=>{
-      let x=box.x;
-      return row.tokens.map(t=>{const text=`<text x="${x}" y="${top+row.y+result.ascent}" font-weight="${t.bold?'bold':'normal'}" fill="${t.color}">${escape(t.text)}</text>`;x+=t.width;return text;}).join('');
-    }).join('');
-    return `<svg class="clear-heart-rules" viewBox="0 0 ${data.size.join(' ')}" aria-label="${escape(model.lines.map(l=>tokens(l).map(t=>t.text).join('')).join('\n'))}" style="font-family:YxpCardRules;font-size:${size}px;letter-spacing:${size*box.letterSpacing/100}px" xmlns="http://www.w3.org/2000/svg">${rows}</svg>`;
+    function fit(ui){const size=ui*t.uiScale,rows=wrap(size),lineHeight=Math.max(1,size*(t.lineHeight+p.lineSpacing/100)),gap=size*data.layout[lang].paragraphSpacing/100;const height=size*t.lineHeight+(rows.length-1)*lineHeight+rows.slice(0,-1).filter(r=>r.gap).length*gap;return {fontSize:size,rows,lineHeight,paragraphGap:gap,height,overflows:height>p.height+.0001||rows.some(r=>width(r.tokens,size)>p.width+(lang==='en'?.5:.0001))}}
+    let min=p.minSize,max=p.maxSize,ui=max,result=fit(ui);const roundPoint=n=>Math.floor(n*20+.5)/20;
+    for(let i=0;i<20;i++){
+      if(result.overflows){if(ui<=p.minSize)break;max=ui;ui=Math.max(roundPoint(ui-Math.max((ui-min)/2,.05)),p.minSize)}
+      else if(max-min>.051&&ui<p.maxSize){min=ui;ui=Math.min(roundPoint(ui+Math.max((max-ui)/2,.05)),p.maxSize)}
+      else break;
+      result=fit(ui);
+    }
+    return result;
   }
-  const api={describe,tokens,svg};
+  const roundEven=n=>n%1===.5?2*Math.round(n/2):Math.round(n);
+  function svg(model,data,lang='en',base='clear-heart') {
+    const fit=layout(model,data,lang),t=data.typography,p=t.languages[lang],box=data.layout[lang];
+    const size=roundEven(fit.fontSize),atlas=t.glyphs[lang][size],cx=box.x+box.width/2,cy=box.y+box.height/2;
+    const offset=(box.height-fit.height)/2;
+    let y=box.y+(offset<0?offset:Math.floor(offset));
+    const baselineOffset=roundEven((fit.lineHeight-atlas.probeHeight)/2-atlas.probeTop)+atlas.baseline;
+    const spacing=size*p.characterSpacing/100;
+    const lines=fit.rows.map(row=>{
+      const width=roundEven(row.tokens.reduce((n,c)=>n+t.advances[c.text]*size,0)+Math.max(0,row.tokens.length-1)*spacing);
+      let x=cx-width/2;
+      const glyphs=row.tokens.map(c=>{
+        let markup='';
+        if(c.text.trim()){
+          const key=`${c.text}|${c.bold?1:0}|${c.color.slice(1).toUpperCase()}`,g=atlas.glyphs[key];
+          if(!g)throw Error(`Missing native rendered glyph: ${key}`);
+          markup=`<svg x="${x+g[4]}" y="${y+baselineOffset+g[5]}" width="${g[2]}" height="${g[3]}" viewBox="${g.slice(0,4).join(' ')}"><image href="${base}/${atlas.file}" width="${atlas.size[0]}" height="${atlas.size[1]}"/></svg>`;
+        }
+        x+=t.advances[c.text]*size+spacing;return markup;
+      }).join('');
+      y+=fit.lineHeight+(row.gap?fit.paragraphGap:0);return glyphs;
+    }).join('');
+    return `<svg class="clear-heart-rules" viewBox="0 0 ${data.size.join(' ')}" aria-label="${escape(model.lines.map(l=>tokens(l).map(t=>t.text).join('')).join('\n'))}" xmlns="http://www.w3.org/2000/svg"><g transform="translate(${cx} ${cy}) scale(${p.blockScale}) translate(${-cx} ${-cy})">${lines}</g></svg>`;
+  }
+  const api={describe,tokens,layout,svg};
   if(typeof module!=='undefined')module.exports=api;
   root.CLEAR_HEART=api;
 })(typeof window==='undefined'?globalThis:window);

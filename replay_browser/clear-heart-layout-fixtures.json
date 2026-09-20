@@ -1,0 +1,458 @@
+[
+  {
+    "id": 19,
+    "talents": [
+      20093,
+      20094,
+      30095,
+      30096
+    ],
+    "lang": "en",
+    "fontSize": 28.2519298245614,
+    "rows": [
+      {
+        "text": "24 ATK",
+        "gap": true
+      },
+      {
+        "text": "DEF+10",
+        "gap": true
+      },
+      {
+        "text": "Gain 2 stack of",
+        "gap": false
+      },
+      {
+        "text": "Increase ATK",
+        "gap": true
+      },
+      {
+        "text": "Cost 2 Qi: 5 ATK",
+        "gap": false
+      },
+      {
+        "text": "× 3",
+        "gap": false
+      }
+    ]
+  },
+  {
+    "id": 20126,
+    "talents": [
+      20093,
+      20094,
+      30095,
+      30096
+    ],
+    "lang": "en",
+    "fontSize": 23.61754385964912,
+    "rows": [
+      {
+        "text": "DEF+12",
+        "gap": true
+      },
+      {
+        "text": "Gain 1 stack of",
+        "gap": false
+      },
+      {
+        "text": "Increase ATK",
+        "gap": true
+      },
+      {
+        "text": "Cost 1 Qi: 4 ATK × 2",
+        "gap": true
+      },
+      {
+        "text": "If your deck contains",
+        "gap": false
+      },
+      {
+        "text": "4 or more \"Sword",
+        "gap": false
+      },
+      {
+        "text": "Formation\", Chase",
+        "gap": false
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "talents": [
+      20093,
+      20094,
+      20095,
+      10096
+    ],
+    "lang": "en",
+    "fontSize": 22.63719298245614,
+    "rows": [
+      {
+        "text": "26 ATK",
+        "gap": true
+      },
+      {
+        "text": "DEF+9",
+        "gap": true
+      },
+      {
+        "text": "Gain 1 stack of",
+        "gap": false
+      },
+      {
+        "text": "Increase ATK",
+        "gap": true
+      },
+      {
+        "text": "Gain 3 DEF for each Qi",
+        "gap": true
+      },
+      {
+        "text": "Next card count as",
+        "gap": false
+      },
+      {
+        "text": "Unrestrained Sword",
+        "gap": false
+      }
+    ]
+  },
+  {
+    "id": 20126,
+    "talents": [
+      20093,
+      20094,
+      20095,
+      10096
+    ],
+    "lang": "en",
+    "fontSize": 22.63719298245614,
+    "rows": [
+      {
+        "text": "DEF+12",
+        "gap": true
+      },
+      {
+        "text": "Gain 1 stack of",
+        "gap": false
+      },
+      {
+        "text": "Increase ATK",
+        "gap": true
+      },
+      {
+        "text": "Gain 3 DEF for each Qi",
+        "gap": true
+      },
+      {
+        "text": "If your deck contains",
+        "gap": false
+      },
+      {
+        "text": "4 or more \"Sword",
+        "gap": false
+      },
+      {
+        "text": "Formation\", Chase",
+        "gap": false
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "talents": [
+      20093,
+      20094,
+      20095,
+      20096
+    ],
+    "lang": "en",
+    "fontSize": 22.63719298245614,
+    "rows": [
+      {
+        "text": "20 ATK",
+        "gap": true
+      },
+      {
+        "text": "DEF+9",
+        "gap": true
+      },
+      {
+        "text": "Gain 1 stack of",
+        "gap": false
+      },
+      {
+        "text": "Increase ATK",
+        "gap": true
+      },
+      {
+        "text": "Gain 3 DEF for each Qi",
+        "gap": true
+      },
+      {
+        "text": "Next Cloud Sword gain",
+        "gap": false
+      },
+      {
+        "text": "Chase",
+        "gap": false
+      }
+    ]
+  },
+  {
+    "id": 20126,
+    "talents": [
+      20093,
+      20094,
+      20095,
+      20096
+    ],
+    "lang": "en",
+    "fontSize": 22.63719298245614,
+    "rows": [
+      {
+        "text": "DEF+12",
+        "gap": true
+      },
+      {
+        "text": "Gain 1 stack of",
+        "gap": false
+      },
+      {
+        "text": "Increase ATK",
+        "gap": true
+      },
+      {
+        "text": "Gain 3 DEF for each Qi",
+        "gap": true
+      },
+      {
+        "text": "If your deck contains",
+        "gap": false
+      },
+      {
+        "text": "4 or more \"Sword",
+        "gap": false
+      },
+      {
+        "text": "Formation\", Chase",
+        "gap": false
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "talents": [
+      20093,
+      20094,
+      30095,
+      30096
+    ],
+    "lang": "zh",
+    "fontSize": 33.59929824561404,
+    "rows": [
+      {
+        "text": "24攻",
+        "gap": true
+      },
+      {
+        "text": "防+10",
+        "gap": true
+      },
+      {
+        "text": "获得2层加攻",
+        "gap": true
+      },
+      {
+        "text": "耗2灵气：追加",
+        "gap": false
+      },
+      {
+        "text": "5攻×3",
+        "gap": false
+      }
+    ]
+  },
+  {
+    "id": 20126,
+    "talents": [
+      20093,
+      20094,
+      30095,
+      30096
+    ],
+    "lang": "zh",
+    "fontSize": 26.29122807017544,
+    "rows": [
+      {
+        "text": "防+12",
+        "gap": true
+      },
+      {
+        "text": "获得1层加攻",
+        "gap": true
+      },
+      {
+        "text": "耗1灵气：追加4攻",
+        "gap": false
+      },
+      {
+        "text": "×2",
+        "gap": true
+      },
+      {
+        "text": "若卡组含4张以上",
+        "gap": false
+      },
+      {
+        "text": "“剑阵”则再次行动",
+        "gap": false
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "talents": [
+      20093,
+      20094,
+      20095,
+      10096
+    ],
+    "lang": "zh",
+    "fontSize": 31.549473684210525,
+    "rows": [
+      {
+        "text": "26攻",
+        "gap": true
+      },
+      {
+        "text": "防+9",
+        "gap": true
+      },
+      {
+        "text": "获得1层加攻",
+        "gap": true
+      },
+      {
+        "text": "每点灵气加3防",
+        "gap": true
+      },
+      {
+        "text": "下1张牌算作狂剑",
+        "gap": false
+      }
+    ]
+  },
+  {
+    "id": 20126,
+    "talents": [
+      20093,
+      20094,
+      20095,
+      10096
+    ],
+    "lang": "zh",
+    "fontSize": 28.2519298245614,
+    "rows": [
+      {
+        "text": "防+12",
+        "gap": true
+      },
+      {
+        "text": "获得1层加攻",
+        "gap": true
+      },
+      {
+        "text": "每点灵气加3防",
+        "gap": true
+      },
+      {
+        "text": "若卡组含4张以上",
+        "gap": false
+      },
+      {
+        "text": "“剑阵”则再次行",
+        "gap": false
+      },
+      {
+        "text": "动",
+        "gap": false
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "talents": [
+      20093,
+      20094,
+      20095,
+      20096
+    ],
+    "lang": "zh",
+    "fontSize": 27.89543859649123,
+    "rows": [
+      {
+        "text": "20攻",
+        "gap": true
+      },
+      {
+        "text": "防+9",
+        "gap": true
+      },
+      {
+        "text": "获得1层加攻",
+        "gap": true
+      },
+      {
+        "text": "每点灵气加3防",
+        "gap": true
+      },
+      {
+        "text": "下1张云剑获得再",
+        "gap": false
+      },
+      {
+        "text": "次行动",
+        "gap": false
+      }
+    ]
+  },
+  {
+    "id": 20126,
+    "talents": [
+      20093,
+      20094,
+      20095,
+      20096
+    ],
+    "lang": "zh",
+    "fontSize": 28.2519298245614,
+    "rows": [
+      {
+        "text": "防+12",
+        "gap": true
+      },
+      {
+        "text": "获得1层加攻",
+        "gap": true
+      },
+      {
+        "text": "每点灵气加3防",
+        "gap": true
+      },
+      {
+        "text": "若卡组含4张以上",
+        "gap": false
+      },
+      {
+        "text": "“剑阵”则再次行",
+        "gap": false
+      },
+      {
+        "text": "动",
+        "gap": false
+      }
+    ]
+  }
+]

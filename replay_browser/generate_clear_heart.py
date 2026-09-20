@@ -3,10 +3,10 @@
 import argparse, hashlib, json, math, subprocess, sys
 from pathlib import Path
 from PIL import Image
-from fontTools import subset
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scrape'))
 import render_rule_sky_sword_formation as renderer
+from clear_heart_typography import export_typography
 
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--asset-root',type=Path,required=True);ap.add_argument('--output',type=Path,required=True);args=ap.parse_args()
@@ -29,7 +29,14 @@ def main():
  for key,cardid,phase,sprite,title in variants:
   for lang in ['en','zh']:
    card={**cards[str(cardid)],'level':phase,'_new_card_name_cn':terms[title]['zh'],'_new_card_name_en':terms[title]['en']}
-   art=Image.open(asset/'textures'/f'{sprite}.png').convert('RGBA')
+   if cardid % 10000 == 126:
+    # CardItem.LoadIcon uses the fusion recipe before any sprite override.
+    rows=json.loads((asset/'protobuf_raw_json/CardCombineConfig.raw.json').read_text())
+    recipe=next({v['field']:v['value'] for v in row['value']} for row in rows if row['field']==2 and any(v['field']==3 and v['value']==126 for v in row['value']))
+    art=renderer.mixed_card_art(recipe[1],recipe[2])
+    sprite=f'fusion:{recipe[1]}+{recipe[2]}'
+   else:
+    art=Image.open(asset/'textures'/f'{sprite}.png').convert('RGBA')
    image=renderer.render_config_card(str(cardid),card,lang,skip_description=True,art_override=art)
    name=f'{key}_{lang}.webp';image.save(out/name,format='WEBP',lossless=True,method=6)
    images[name]={'phase':phase,'title':terms[title][lang],'sprite':sprite,'size':list(image.size),'sha256':hashlib.sha256((out/name).read_bytes()).hexdigest()}
@@ -40,11 +47,10 @@ def main():
   rect=renderer.DESC_TEXT_DRAW_RECT_EN if lang=='en' else renderer.DESC_TEXT_DRAW_RECT_CJK
   layout[lang]={'x':rect.left+bleed,'y':rect.top,'width':rect.right-rect.left,'height':rect.bottom-rect.top,'maxFontSize':renderer.scaled_ui_font_size_float(renderer.DESC_FONT_SIZE_MAX_EN_UI if lang=='en' else renderer.DESC_FONT_SIZE_MAX_UI,1),'minFontSize':renderer.scaled_ui_font_size_float(renderer.DESC_FONT_SIZE_MIN_UI,1),'letterSpacing':renderer.DESC_CHARACTER_SPACING_EN if lang=='en' else renderer.DESC_CHARACTER_SPACING_CJK,'lineHeight':font.line_height/font.point_size,'paragraphSpacing':renderer.DESC_PARAGRAPH_SPACING}
  data={'cards':cards,'talents':talents,'terms':terms,'layout':layout,'size':[int(renderer.CARD_SIZE[0])+2*bleed,int(renderer.CARD_SIZE[1])],'formationLevels':True}
+ export_typography(renderer,data,out)
  (out/'data.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
  (out/'data.js').write_text('window.CLEAR_HEART_DATA = '+json.dumps(data,ensure_ascii=False,separators=(',',':'))+';\n')
- chars=set(json.dumps(terms,ensure_ascii=False)+'0123456789+-×.,:;() \n')
- options=subset.Options();options.flavor='woff2';f=subset.load_font(str(renderer.FONT_PATH),options);sub=subset.Subsetter(options=options);sub.populate(unicodes={ord(c) for c in chars});sub.subset(f);f.flavor='woff2';f.save(out/'rules.woff2')
- manifest={'sourceBuild':asset.name,'rendererSha256':hashlib.sha256(Path(renderer.__file__).read_bytes()).hexdigest(),'nativeSources':{name:hashlib.sha256((asset/'code/decompiled/DarkSun.HotUpdate'/name).read_bytes()).hexdigest() for name in ['Card_19.cs','Card_126.cs','ConfigExtension.cs']},'images':images}
+ manifest={'sourceBuild':asset.name,'rendererSha256':hashlib.sha256(Path(renderer.__file__).read_bytes()).hexdigest(),'nativeSources':{name:hashlib.sha256((asset/'code/decompiled/DarkSun.HotUpdate'/name).read_bytes()).hexdigest() for name in ['Card_19.cs','Card_126.cs','ConfigExtension.cs']},'images':images,'glyphAtlases':{str(p.relative_to(out)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((out/'glyphs').glob('*.webp'))}}
  (out/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
- print('Rendered',len(images),'blank-rule backgrounds; font', (out/'rules.woff2').stat().st_size,'bytes')
+ print('Rendered',len(images),'blank-rule backgrounds with native SDF glyph atlases')
 if __name__=='__main__':main()

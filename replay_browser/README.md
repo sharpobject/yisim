@@ -320,21 +320,26 @@ is already shown as a new hand position. Keep red in-place in emptied slots.
 
 ### Clear Heart dynamic card faces
 
-Only native base cards 19 and 126 use `clear-heart.js`. The current owner
-snapshot supplies talents and the optional Swordsmith (92) runtime counter;
-opponent previews and battle cards use their own prior-round snapshots.
-Card 19 changes phase, native sprite, title and rules according to Card_19's
-sequential forging branches, including Ultimate's conditional bonuses.
-Card 126 inherits only Core Formation/Nascent Soul forging and keeps its own
-2/7/12 DEF by upgrade level. It does not inherit Swordsmith or Ultimate.
+Only native base cards 19 and 126 use `clear-heart.js`. The displayed owner
+snapshot supplies talents and the optional Swordsmith counter (92). Preserve
+current, historical, prior-round and battle context. Formation inherits only
+the middle-phase forging choices and keeps its three upgrade frames / 2/7/12
+DEF. Native LoadIcon gives its fusion recipe precedence over sprite overrides.
 
 `generate_clear_heart.py --asset-root EXTRACTED_RETAIL --output replay_browser/clear-heart`
-uses the existing wiki renderer with rules disabled, explicit native art, and
-preserved bilingual titles. It generates 11 Embryo backgrounds and three
-Formation upgrade backgrounds per language, the official rules fragments,
-font subset and a provenance manifest. Requires Pillow, fonttools[woff] and
-the existing renderer dependencies. `clear-heart.test.cjs` covers the model;
-12,288 combinations were additionally compared against the extracted native
-C# UpdateCardInfo methods for retail build 25343702. Browser SVG rules use the
-native description rectangle, colors, font and fitting with measured glyph
-bounds. Keep other cards on their existing static rendering path.
+uses the current authoritative wiki renderer on Hetz (including its existing
+TMP rendering improvements), with rules disabled. Formation ingredients come
+from CardCombineConfig; Embryo uses its dynamic sprite. The manifest records
+the exact renderer hash. `clear_heart_typography.py` exports native metrics and
+SDF glyph atlases directly through that renderer; do not substitute browser
+font measurement or browser font drawing. The browser ports its character-state
+wrapping, punctuation restrictions, 0.05-point binary font fitting, centered
+lines and spacing, then composes those glyphs in SVG. Native line advances use
+-6% line spacing; layout measurement and integer raster font sizes differ.
+
+All 1,536 forging/upgrade/language layouts matched the wiki renderer's exact
+font sizes and line breaks. `clear-heart.test.cjs` includes golden layouts,
+rules semantics and checks that all three Formation backgrounds use fusion art.
+Generation requires the current renderer and its dependencies; the clean
+publication worktree deliberately does not absorb unrelated pending renderer
+changes from the authoritative checkout. Existing baked assets remain usable.
