@@ -260,8 +260,10 @@ Combines show only the consumed/dragged copy in red; the upgraded target shows
 green with no old-level ghost. Absorb-triggered upgrades follow the same rule.
 Historical hand copies are excluded from the hand count. Hand matching
 is duplicate-aware, and seeking or stepping backwards gives the same display.
-Opponent snapshots, battles, round boundaries and unrelated actions do not
-inherit highlights. Run `node replay_browser/card-transitions.test.mjs`.
+At round starts, newly added hand copies are green even without a draw action;
+existing copies remain unhighlighted, and no red history or deck changes carry
+across the round boundary. Opponent snapshots, battles and unrelated actions
+do not inherit highlights. Run `node replay_browser/card-transitions.test.mjs`.
 
 An ability choice may open in the first snapshot of a new round, alongside
 ordinary round draws. Preserve that ability's source until its choice result

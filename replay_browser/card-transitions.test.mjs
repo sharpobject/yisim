@@ -21,7 +21,7 @@ r=run(state([1],[1,2]),state([10001],[2]),'upgrade');
 assert.deepEqual(count(r,'hand','leaving'),[1]);assert.deepEqual(count(r,'deck','appear'),[10001]);assert.equal(r.deckPrevious,null);
 r=run(state([],[1]),state([],[1,1]),'gain');assert.deepEqual(count(r,'hand','appear'),[1]);
 for(const [before,after,kind,extra] of [
- [null,state([1],[2]),'move'],[state([1],[2]),state([2],[3],2),'exchange'],
+ [null,state([1],[2]),'move'],
  [state([1],[2]),state([2],[3],1,'q'),'move'],[state([1],[2]),state([2],[3]),'emote'],
  [state([1],[2]),state([2],[3]),'move',{battle:{}}],
  [state([1],[2]),state([1],[2]),'move']]){
@@ -62,3 +62,18 @@ for(const inDeck of [false,true]) {
  assert.deepEqual(count(r,inDeck?'deck':'hand','appear'),[6010012]);
 }
 console.log('PASS: combines and absorption show only the consumed card in red, never the upgraded target');
+
+// Round-start draws highlight newly added copies without action metadata.
+r=run(state([2],[1,1,3],1),state([2,0],[1,1,3,1,4],2),'destiny');
+assert.deepEqual(count(r,'hand','appear'),[1,4]);
+assert.deepEqual(count(r,'hand','leaving'),[]);
+assert.ok(r.deck.every(e=>!e.change));assert.equal(r.deckPrevious,null);
+r=run(state([2],[1,3],1),state([4],[1,5],2),'');
+assert.deepEqual(count(r,'hand','appear'),[5]);assert.deepEqual(count(r,'hand','leaving'),[]);
+for(const extra of [{battle:{}},{}]) {
+ r=run(state([2],[1],2),state([4],[5],1),'',extra);
+ assert.ok([...r.hand,...r.deck].every(e=>!e.change));
+}
+r=run(state([2],[1],1),state([2],[1,3],2),'',{battle:{}});
+assert.ok([...r.hand,...r.deck].every(e=>!e.change));
+console.log('PASS: round-start additions highlight green with duplicate counts; no red history, deck highlights, or battle leakage');

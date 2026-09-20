@@ -246,8 +246,21 @@
     const deck = (after?.privatePlayer?.deck ?? []).map(id => ({ id, change: "" }));
     const hand = (after?.privatePlayer?.hand ?? []).map(id => ({ id, change: "" }));
     const result = { deck, hand, deckPrevious: null };
-    if (!before || step?.battle || before.round !== after.round ||
+    if (!before || step?.battle ||
         before.privatePlayer?.uid !== after.privatePlayer?.uid) return result;
+    if (before.round !== after.round) {
+      // A round-start hand already includes its draws. Highlight only new
+      // copies; round changes must not produce red history or deck highlights.
+      if (Number(after.round) > Number(before.round)) {
+        const retained = [...(before.privatePlayer?.hand ?? [])];
+        for (const entry of hand) {
+          const match = retained.indexOf(entry.id);
+          if (match < 0) entry.change = "appear";
+          else retained.splice(match, 1);
+        }
+      }
+      return result;
+    }
     const actions = step?.humanActions ?? [];
     if (!actions.some(action => ["move", "rearrange", "exchange", "upgrade", "absorb", "draw", "gain"].includes(action.kind))) return result;
     const upgrading = actions.some(action => ["upgrade", "absorb"].includes(action.kind));
