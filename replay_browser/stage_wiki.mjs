@@ -11,7 +11,7 @@ if (!wikiRoot || !fs.existsSync(path.join(wikiRoot, "assets", "site.css"))) {
 }
 
 const assetRoot = path.join(wikiRoot, "assets", "recordings");
-const assetVersion = "20260920-sword-layer-01";
+const assetVersion = "20260920-card-components-01";
 fs.mkdirSync(assetRoot, { recursive: true });
 if (!process.env.YXP_SKIP_STAGE_DATA) {
   const stagedDataRoot = path.join(assetRoot, "data");
@@ -46,6 +46,8 @@ stageImageDirectory("buff-icons", "buffs");
 stageImageDirectory("emoji-images", "emojis");
 stageImageDirectory("special-card-art", "special-cards");
 
+const componentManifest = path.join(wikiRoot, "assets/card-components/active.json");
+const componentScript = fs.existsSync(componentManifest) ? JSON.parse(fs.readFileSync(componentManifest, "utf8")).script : null;
 const baseHtml = fs.readFileSync(path.join(here, "index.html"), "utf8")
   .replace('href="wiki-site.css"', 'href="/yxp_wiki/assets/site.css"')
   .replace('href="replay-browser.css"', `href="/yxp_wiki/assets/recordings/replay-browser.css?v=${assetVersion}"`)
@@ -53,7 +55,8 @@ const baseHtml = fs.readFileSync(path.join(here, "index.html"), "utf8")
   .replace('src="recording-codec.js"', `src="/yxp_wiki/assets/recordings/recording-codec.js?v=${assetVersion}"`)
   .replace('src="clear-heart.js"', `src="/yxp_wiki/assets/recordings/clear-heart.js?v=${assetVersion}"`)
   .replace('src="clear-heart/data.js"', `src="/yxp_wiki/assets/recordings/clear-heart/data.js?v=${assetVersion}"`)
-  .replace('src="replay-browser.js"', `src="/yxp_wiki/assets/recordings/replay-browser.js?v=${assetVersion}"`);
+  .replace('src="replay-browser.js"', `src="/yxp_wiki/assets/recordings/replay-browser.js?v=${assetVersion}"`)
+  .replace("</head>", componentScript ? `<script data-card-components src="${componentScript}"></script></head>` : "</head>");
 
 const englishHtml = baseHtml
   .replaceAll('https://sharpobject.github.io/yxp_wiki/en/', '/yxp_wiki/en/')

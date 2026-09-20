@@ -1,0 +1,19 @@
+--- a/scrape/wiki/scripts/tier-list/fate-artwork.mjs
++++ b/scrape/wiki/scripts/tier-list/fate-artwork.mjs
+@@ -4 +4 @@
+-  const img = src => {const el=new Image();el.src=src;el.alt='';el.draggable=false;return el;};
++  const img = src => {const el=new Image();el.src=window.YxpCards?.sourceUrl(src) ?? src;el.alt='';el.draggable=false;return el;};
+--- a/scrape/wiki/scripts/tier-list/tier-list.mjs
++++ b/scrape/wiki/scripts/tier-list/tier-list.mjs
+@@ -1 +1 @@
+-import {createFateArtwork} from './fate-artwork.mjs?v=3';
++import {createFateArtwork} from './fate-artwork.mjs?v=card-components-1';
+--- a/scrape/wiki/scripts/update_wiki_from_latest_steam.sh
++++ b/scrape/wiki/scripts/update_wiki_from_latest_steam.sh
+@@ -245,0 +246,2 @@
++    if "card-components" in webp.parts:
++        continue
+@@ -248,0 +251,3 @@
++
++# Compose public card faces from shared sprites; preserve the WebP URLs now used by hotlinkers.
++python3 "$WIKI_DIR/scripts/card_compositor/build.py" "$PUBLIC_WIKI_DIR" --asset-root "$output_root"

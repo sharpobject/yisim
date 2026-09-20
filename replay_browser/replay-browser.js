@@ -142,7 +142,7 @@
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
   })[character]);
   const cardAsset = (id) => {
-    return assetMode === "local" ? `card-images/${id}_${language}.png` : `/yxp_wiki/assets/cards/${id}_${language}.webp`;
+    return assetMode === "local" ? `card-images/${id}_${language}.png` : (window.YxpCards?.source(`${id}_${language}`) ?? `/yxp_wiki/assets/cards/${id}_${language}.webp`);
   };
   const specialCardArt = (id) => assetMode === "local"
     ? `special-card-art/${id}.png`
@@ -262,7 +262,7 @@
       const base = assetMode === "local" ? "clear-heart" : "/yxp_wiki/assets/recordings/clear-heart";
       const lang = isChinese ? "zh" : "en";
       return `<div class="game-card dynamic-clear-heart" title="${esc(dynamic.title)}">
-        <img src="${base}/${dynamic.background}_${lang}.webp?v=2" alt="${esc(dynamic.title)}">
+        <img src="${window.YxpCards?.sourceUrl(`${base}/${dynamic.background}_${lang}.webp?v=2`) ?? `${base}/${dynamic.background}_${lang}.webp?v=2`}" alt="${esc(dynamic.title)}">
         ${window.CLEAR_HEART.svg(dynamic, window.CLEAR_HEART_DATA, lang, base)}
         ${swordMarker(cardId, owner)}
       </div>`;
