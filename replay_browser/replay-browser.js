@@ -234,7 +234,24 @@
     return result;
   }
 
-  function card(id, zeroAsNormalAttack = false) {
+  // Native CardItem.CheckJianZhaoRongHuiAllTypeFlag: rarity is the
+  // ten-thousands pair; enlightened base IDs come from talent 189's public data.
+  function countsAsAllSwords(id, owner) {
+    const value = Number(id);
+    if (!(value > 0)) return false;
+    const base = value - (Math.floor(value / 10000) % 100) * 10000;
+    return base === 213 || ((owner?.talents ?? []).some(t => Number(t?.id ?? t) === 192)
+      && (owner?.enlightenedCards ?? []).includes(base));
+  }
+
+  function swordMarker(id, owner) {
+    if (!countsAsAllSwords(id, owner)) return "";
+    const label = isChinese ? "同时视作云剑、狂剑、灵剑和剑阵" : "Counts as Cloud Sword, Unrestrained Sword, Spirit Sword, and Sword Formation";
+    const src = assetMode === "local" ? "card-markers/all-sword.webp" : "/yxp_wiki/assets/recordings/card-markers/all-sword.webp";
+    return `<img class="all-sword-marker" src="${src}" alt="${label}" title="${label}">`;
+  }
+
+  function card(id, zeroAsNormalAttack = false, owner = null) {
     if (!id && !zeroAsNormalAttack) return `<div class="empty-slot" title="${esc(copy.emptySlot)}"></div>`;
     const cardId = id || 0;
     const info = recording.catalog.cards[cardId] ?? (cardId === 0
@@ -247,6 +264,7 @@
     return `<div class="game-card" title="${esc(name)} ${esc(level)}">
       <span class="card-fallback"><strong>${esc(name)}</strong><small>${esc(level)}</small></span>
       <img data-asset-fallback src="${cardAsset(cardId)}" alt="${esc(name)}">
+      ${owner ? swordMarker(cardId, owner) : ""}
     </div>`;
   }
 
@@ -326,8 +344,8 @@
     return result;
   }
 
-  function transitionCard(entry) {
-    let html = card(entry.id);
+  function transitionCard(entry, owner = null) {
+    let html = card(entry.id, false, owner);
     if (!entry.change) return html;
     const status = entry.change === "appear"
       ? (isChinese ? "新卡牌 / 新位置" : "New card / new position")
@@ -338,9 +356,10 @@
     return html.replace(/<\/div>$/, `${mark}${origin}</div>`);
   }
 
-  function transitionDeck(transition) {
-    return transition.deck.map(transitionCard).join("")
-      + (transition.deckPrevious ? transitionCard(transition.deckPrevious) : "");
+  function transitionDeck(transition, owner, previousOwner) {
+    const renderCard = entry => transitionCard(entry, entry.change === "leaving" ? previousOwner : owner);
+    return transition.deck.map(renderCard).join("")
+      + (transition.deckPrevious ? renderCard(transition.deckPrevious) : "");
   }
 
   function offerHistory(history, kind, { showFinalLabel = true } = {}) {
@@ -683,7 +702,7 @@
             <div class="battle-effect-row battle-heavenly-fates">${fates}</div>
             <div class="battle-effect-row battle-temp-buffs">${buffs}</div>
           </div>
-          <div class="battle-deck">${(player.deck ?? []).map((id) => card(id, true)).join("")}</div>
+          <div class="battle-deck">${(player.deck ?? []).map((id) => card(id, true, player)).join("")}</div>
         </article>`;
       }).join("")}</div>`;
   }
@@ -710,7 +729,7 @@
         </div>
         <div class="opponent-effects"><div>${talents}</div><div>${fates}</div></div>
       </div>
-      <div class="opponent-deck">${(prior.deck ?? []).map((id) => card(id, true)).join("") || `<span class="private-hand">${esc(copy.noDeck)}</span>`}</div>`;
+      <div class="opponent-deck">${(prior.deck ?? []).map((id) => card(id, true, prior)).join("") || `<span class="private-hand">${esc(copy.noDeck)}</span>`}</div>`;
     host.hidden = false;
     return true;
   }
@@ -764,11 +783,11 @@
       $("#board-panel").classList.toggle("has-opponent-preview", hasOpponentPreview);
       $("#deck-label").textContent = isOwn ? copy.deck : copy.previousDeck;
       const transition = isOwn ? cardTransition(states[index - 1], state, recording.steps[index]) : null;
-      $("#deck").innerHTML = (transition ? transitionDeck(transition) : deck.map(id => card(id, true)).join("")) || `<span class="private-hand">${esc(copy.noDeck)}</span>`;
+      $("#deck").innerHTML = (transition ? transitionDeck(transition, selected, states[index - 1]?.players?.[selected?.uid]) : deck.map(id => card(id, true, isOwn ? selected : prior)).join("")) || `<span class="private-hand">${esc(copy.noDeck)}</span>`;
       $("#vase").innerHTML = showVase ? transition.vase.map((entry, slot) =>
         `<div class="vase-slot" data-vase-slot="${slot + 1}" aria-label="${isChinese ? "玉瓶格" : "Vase slot"} ${slot + 1}">${transitionCard(entry)}</div>`).join("") : "";
       $("#hand-label").textContent = isOwn ? `${copy.hand} · ${hand?.length ?? 0}` : copy.hand;
-      $("#hand").innerHTML = transition ? transition.hand.map(transitionCard).join("") : `<span class="private-hand">${esc(copy.hiddenHand)}</span>`;
+      $("#hand").innerHTML = transition ? transition.hand.map(entry => transitionCard(entry, entry.change === "leaving" ? states[index - 1]?.players?.[selected?.uid] : selected)).join("") : `<span class="private-hand">${esc(copy.hiddenHand)}</span>`;
     }
     const exchangeCounter = $("#exchange-counter");
     exchangeCounter.hidden = Boolean(battle) || !isOwn;

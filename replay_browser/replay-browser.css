@@ -1650,3 +1650,26 @@
   .vase-slot { width: 40px; flex-basis: 40px; }
   .vase-zone .zone-label { max-width: 128px; font-size: 7px; }
 }
+
+/* Native AllTypeFlag: 36x80 at scale .5/.45 on a 168x285 card,
+   centered two native pixels above its upper edge. */
+.game-card img.all-sword-marker {
+  position: absolute;
+  left: 50%;
+  top: -7.017544%;
+  width: 10.714286%;
+  height: 12.631579%;
+  transform: translateX(-50%);
+  z-index: 4;
+  border-radius: 0;
+  filter: none;
+  object-fit: fill;
+  pointer-events: none;
+}
+@media (max-width: 760px) {
+  #deck:has(.all-sword-marker), #hand:has(.all-sword-marker),
+  .opponent-deck:has(.all-sword-marker) { padding-top: 10px; min-height: 126px; }
+  .board-panel:has(.all-sword-marker) { height: auto; grid-template-rows: repeat(2, minmax(158px, auto)); }
+  .board-panel.has-opponent-preview:has(.all-sword-marker) { grid-template-rows: repeat(3, minmax(158px, auto)); }
+  .battle-deck:has(.all-sword-marker) { height: 104px; padding-top: 10px; }
+}

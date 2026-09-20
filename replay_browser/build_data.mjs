@@ -1326,6 +1326,7 @@ function visibleState() {
         && Number(state.privatePlayer?.additionalCareers?.[index + 1]) > 0
         ? { additionalCareer: Number(state.privatePlayer.additionalCareers[index + 1]) } : {}),
     })),
+    enlightenedCards: player.enlightenedCards ?? [],
     rank: player.rank,
     ai: player.ai,
     exchangesRemainingPublic: player.exchangesRemainingPublic,
@@ -1344,6 +1345,7 @@ function visibleState() {
         ...(Math.abs(Number(id)) % 10000 === 188 && Number(player.lastRound.additionalCareers?.[index + 1]) > 0
           ? { additionalCareer: Number(player.lastRound.additionalCareers[index + 1]) } : {}),
       })),
+      enlightenedCards: player.lastRound.enlightenedCards ?? [],
       deck: visibleDeck(player.lastRound.deck, player.lastRound.unlockedDeckSlots),
       fateStrategies: (player.lastRound.fateStrategies ?? []).map((id) => visibleFateStrategy(id, state.round)),
       battleBuffs: visibleBattleBuffs(player.lastRound),
@@ -1934,6 +1936,7 @@ function attachBattleRounds(inputSteps) {
         talents: lastRound.talents ?? [],
         fateStrategies: lastRound.fateStrategies ?? [],
         battleBuffs: lastRound.battleBuffs ?? [],
+        enlightenedCards: lastRound.enlightenedCards ?? [],
         deck: lastRound.deck ?? [],
       };
     }
@@ -2011,6 +2014,7 @@ function attachBattleRounds(inputSteps) {
           locked: false,
         })),
         battleBuffs: visibleBattleBuffs(lastRound),
+        enlightenedCards: lastRound.enlightenedCards ?? [],
         deck: (lastRound.deck ?? []).map(rememberCard),
       };
     }

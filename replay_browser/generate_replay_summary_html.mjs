@@ -399,6 +399,7 @@ function previousRoundState(publicData, builder) {
         : {}),
     })),
     fateStrategies: (prior.fateStrategies ?? []).map((id) => ({ id: Number(id), runtime: null, locked: false })),
+    enlightenedCards: [...(prior.talentDatas?.[189]?.commonParams ?? [])],
     battleBuffs: battleBuffs(prior), deck: [...(prior.usedCards ?? [])].map(Number),
   };
 }
@@ -418,6 +419,7 @@ function publicPlayer(view, round, builder, preBattle = true) {
   return {
     uid: publicData.uid, username: publicData.username, rating: Number(rating) || 0,
     life: preBattle && prior && isCurrentRound ? prior.life : Number(publicData.life ?? 0),
+    enlightenedCards: [...(publicData.talentDatas?.[189]?.commonParams ?? [])],
     observedRound,
     extraMaxHp: Number(publicData.extraMaxHp ?? 0), cultivation: Number(publicData.exp ?? 0),
     physique: physiqueFrom(publicData), maxPhysique: maxPhysiqueFrom(publicData), phase: Number(publicData.level ?? 0),
@@ -495,6 +497,7 @@ function combatant(side, roundStat, builder) {
     first: String(roundStat.firstPlayerId ?? "") === publicData.uid,
     talents: talentReferences(publicData, privateData, builder),
     fateStrategies: fateIds.map((id) => ({ id, runtime: fateRuntime(id, privateData, roundStat.round, builder.fateConfigs), locked: false })),
+    enlightenedCards: [...(prior.talentDatas?.[189]?.commonParams ?? [])],
     battleBuffs: battleBuffs(prior), deck: [...(privateData.usedCards ?? [])].map(Number),
   };
 }
