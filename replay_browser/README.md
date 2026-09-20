@@ -268,3 +268,20 @@ do not inherit highlights. Run `node replay_browser/card-transitions.test.mjs`.
 An ability choice may open in the first snapshot of a new round, alongside
 ordinary round draws. Preserve that ability's source until its choice result
 arrives; the round's normal draws must not be attributed to that ability.
+
+## Qi Wangyou Plant Master collection
+
+`stage_recordings_751.mjs PRIVATE_MANIFEST TEMPLATE_WIKI PRIVATE_OUTPUT` packages
+an explicitly selected complete Plant Master Qi Wangyou collection from the
+private payload cache. The private manifest has a `matches` array in the normal
+capture-scan format. Run from the authoritative checkout containing that cache.
+It produces bilingual `recordings_751` pages and their separate compact data,
+reusing the existing viewer assets. It does not modify the template wiki or the
+normal Lin Xiaoyue collection. Publication is a separate explicit operation.
+
+Each payload is sanitized with the existing public contract (no room/game IDs
+or capture paths), compacted and round-trip checked. Target-player filters stop
+following private state when spectators switch players after elimination; the
+recording itself retains its full ending. Validate the private output with the
+timeline, side-job and battle-destiny audits and both language pages before
+publishing. Never copy the private selection manifest or account research.
