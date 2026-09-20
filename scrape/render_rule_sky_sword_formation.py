@@ -4503,6 +4503,7 @@ def render_config_card(
     description_override: str | None = None,
     description_single_row: bool = False,
     vertical_name_override: str | None = None,
+    art_override: Image.Image | None = None,
 ) -> Image.Image:
     level_name = LEVEL_NAMES[int(card["level"])]
     is_dream = int(card["subcategory"]) == 14
@@ -4511,7 +4512,7 @@ def render_config_card(
     else:
         frame_name = f"CardUI_{level_name}_{int(card['rarity'])}.png"
     frame = Image.open(TEXTURE_DIR / frame_name).convert("RGBA")
-    art = art_for_config(card, ref_id)
+    art = art_override if art_override is not None else art_for_config(card, ref_id)
 
     cost = config_cost_info(card)
     bleed_x = math.ceil(CARD_OUTPUT_BLEED_X_UI * render_scale)

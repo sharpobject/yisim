@@ -495,7 +495,9 @@ function combatant(side, roundStat, builder) {
     physique: physiqueFrom(prior), maxPhysique: maxPhysiqueFrom(prior), lifeBefore, lifeDelta,
     result: !winner ? "draw" : winner === publicData.uid ? "win" : "loss",
     first: String(roundStat.firstPlayerId ?? "") === publicData.uid,
-    talents: talentReferences(publicData, privateData, builder),
+    talents: talentReferences(publicData, privateData, builder).map(reference => reference.id === 92
+      ? { ...reference, runtime: prior.talentTempDatas?.[92] == null ? null
+        : { kind: "fate counter", value: Number(prior.talentTempDatas[92]) } } : reference),
     fateStrategies: fateIds.map((id) => ({ id, runtime: fateRuntime(id, privateData, roundStat.round, builder.fateConfigs), locked: false })),
     enlightenedCards: [...(prior.talentDatas?.[189]?.commonParams ?? [])],
     battleBuffs: battleBuffs(prior), deck: [...(privateData.usedCards ?? [])].map(Number),

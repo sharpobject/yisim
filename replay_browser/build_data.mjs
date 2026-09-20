@@ -2004,7 +2004,9 @@ function attachBattleRounds(inputSteps) {
         ...(innerDemon ? { innerDemon: true } : {}),
         first: player.uid === authoritativeFirst,
         talents: (lastRound.talents ?? []).map((id, index) => ({
-          id: rememberTalent(numericCardId(id)), runtime: null,
+          id: rememberTalent(numericCardId(id)),
+          runtime: Number(numericCardId(id)) === 92 && Object.hasOwn(lastRound.talentCounters ?? {}, 92)
+            ? { kind: "fate counter", value: Number(lastRound.talentCounters[92]) } : null,
           ...(Math.abs(Number(numericCardId(id))) % 10000 === 188 && Number(lastRound.additionalCareers?.[index + 1]) > 0
             ? { additionalCareer: Number(lastRound.additionalCareers[index + 1]) } : {}),
         })),

@@ -1673,3 +1673,7 @@
   .board-panel.has-opponent-preview:has(.all-sword-marker) { grid-template-rows: repeat(3, minmax(158px, auto)); }
   .battle-deck:has(.all-sword-marker) { height: 104px; padding-top: 10px; }
 }
+
+/* Native Clear Heart rules laid over the wiki-rendered blank card face. */
+@font-face { font-family: YxpCardRules; src: url("clear-heart/rules.woff2") format("woff2"); font-display: block; }
+.game-card .clear-heart-rules { position: absolute; z-index: 3; inset: 0; width: 100%; height: 100%; pointer-events: none; }

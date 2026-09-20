@@ -1,6 +1,7 @@
 (async () => {
   const $ = (selector) => document.querySelector(selector);
   document.body.classList.add("recording-browser-page");
+  await document.fonts.load("24px YxpCardRules");
   const preferredTargetUid = "65db92284574f980c154b895"; // 愿与林小月长相守
   const assetMode = document.body.dataset.assetMode || "wiki";
   const recordingBase = document.body.dataset.recordingBase || "data";
@@ -257,6 +258,16 @@
     const info = recording.catalog.cards[cardId] ?? (cardId === 0
       ? { id: 0, nameEnglish: "Normal Attack", nameChinese: "普通攻击", upgrade: 1 }
       : { id: cardId, nameEnglish: `Card ${cardId}`, nameChinese: `卡牌 ${cardId}`, upgrade: 1 });
+    const dynamic = window.CLEAR_HEART.describe(cardId, owner, window.CLEAR_HEART_DATA, isChinese ? "zh" : "en");
+    if (dynamic) {
+      const base = assetMode === "local" ? "clear-heart" : "/yxp_wiki/assets/recordings/clear-heart";
+      const lang = isChinese ? "zh" : "en";
+      return `<div class="game-card dynamic-clear-heart" title="${esc(dynamic.title)}">
+        <img src="${base}/${dynamic.background}_${lang}.webp" alt="${esc(dynamic.title)}">
+        ${window.CLEAR_HEART.svg(dynamic, window.CLEAR_HEART_DATA, lang)}
+        ${swordMarker(cardId, owner)}
+      </div>`;
+    }
     const name = localizedInfo(info) || copy.unknownCard;
     const level = isChinese ? `${info.upgrade ?? 1}级` : `Lv.${info.upgrade ?? 1}`;
     if (info.placeholder) return `<div class="game-card placeholder-card" title="${esc(name)}"><span class="card-fallback"><strong>${esc(name)}</strong></span><img data-asset-fallback src="${cardAsset(399)}" alt="${esc(name)}"></div>`;

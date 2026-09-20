@@ -1,0 +1,291 @@
+{
+  "sourceBuild": "steam_20260917_build_25343702_depot_3858870065292427247",
+  "rendererSha256": "b4b111355777950ac9dd81543844eee11f354b36cd2a058bc8349caa1ef0471f",
+  "nativeSources": {
+    "Card_19.cs": "cf2785f938c6cd7be558ded206761296f389a901314ab1c3d161c16382c0c535",
+    "Card_126.cs": "0c1ecc92bd56d489226363faeb7ed2babfb3bc2de1b1029ce5450a5b5ff13a3a",
+    "ConfigExtension.cs": "838fb0151e27a050a5d4e6eae4cca5c6b580456291454512ce6c4bdd44b636d2"
+  },
+  "images": {
+    "embryo-1-1_en.webp": {
+      "phase": 1,
+      "title": "Clear Heart Sword Embryo",
+      "sprite": "Card_19_1",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "c4eb4bace48cf87aa103bc4fc6f1f153cbfe7192209cf09275856f0d9dde7bcf"
+    },
+    "embryo-1-1_zh.webp": {
+      "phase": 1,
+      "title": "澄心剑胚",
+      "sprite": "Card_19_1",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "3feb681e3281cd5ecc72c193ec996705b91adc1347ead829d6447cec4da45d56"
+    },
+    "embryo-2-1_en.webp": {
+      "phase": 2,
+      "title": "Clear Heart Sword Embryo",
+      "sprite": "Card_19_1",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "e8304fd64a1095bb0da731e8b0302b79c924a0ec2482d1d44170db66b394a469"
+    },
+    "embryo-2-1_zh.webp": {
+      "phase": 2,
+      "title": "澄心剑胚",
+      "sprite": "Card_19_1",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "0d13f40e679ee2effdeed79a1eeb9a4837f42d866f62fd40c29c44a50ea7f5aa"
+    },
+    "embryo-3-1_en.webp": {
+      "phase": 3,
+      "title": "Clear Heart Sword Embryo",
+      "sprite": "Card_19_1",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "03a5d2d97baed6ffe5f3312783bbf8a6e0af4e16c6b003d2213dc8aa693370fb"
+    },
+    "embryo-3-1_zh.webp": {
+      "phase": 3,
+      "title": "澄心剑胚",
+      "sprite": "Card_19_1",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "73b3fd7f3b4cc32f603a1b9d64c6a44b2d0aaa435b5581711b77afdedd73f856"
+    },
+    "embryo-4-1_en.webp": {
+      "phase": 4,
+      "title": "Clear Heart Sword Embryo",
+      "sprite": "Card_19_1",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "4fc2e606ae95014aed0860f2a42a3ac1bef60aeba2884896b33985c541883122"
+    },
+    "embryo-4-1_zh.webp": {
+      "phase": 4,
+      "title": "澄心剑胚",
+      "sprite": "Card_19_1",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "1b8cc734712350f6b3b6b6f46813ae37613ddcb09061aa7ed782a234beaa715a"
+    },
+    "embryo-5-1_en.webp": {
+      "phase": 5,
+      "title": "Clear Heart Sword Embryo",
+      "sprite": "Card_19_1",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "0a5012a3a6f9f725907ef7386b11b0a6dd49b8f50707610e1f19d4d9c735df87"
+    },
+    "embryo-5-1_zh.webp": {
+      "phase": 5,
+      "title": "澄心剑胚",
+      "sprite": "Card_19_1",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "43b6148c02e66690505d5c0344667f8301f8d14168ba99bd357fb9f331cf845c"
+    },
+    "embryo-2-2_en.webp": {
+      "phase": 2,
+      "title": "Clear Heart Sword Embryo",
+      "sprite": "Card_19_2",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "cd6fb1f5b8cf85e1e4874db11961fa7f51a28dda3910b65b25bb98264a5e0bdc"
+    },
+    "embryo-2-2_zh.webp": {
+      "phase": 2,
+      "title": "澄心剑胚",
+      "sprite": "Card_19_2",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "d595a70595b772fd1af17f942e6558729ac181c6158b421ace1745c3fa3a77df"
+    },
+    "embryo-3-3_en.webp": {
+      "phase": 3,
+      "title": "Clear Heart Sword Embryo",
+      "sprite": "Card_19_3",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "2e42f3acdce9bddbbe74625e5b2fb3ce2491e32c5901ef4d7f37299d82459826"
+    },
+    "embryo-3-3_zh.webp": {
+      "phase": 3,
+      "title": "澄心剑胚",
+      "sprite": "Card_19_3",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "3afd40c78d3c8fb7cc04adf6d2cc8edbd25e305efd081b0963946e692be63a33"
+    },
+    "embryo-4-4_en.webp": {
+      "phase": 4,
+      "title": "Clear Heart Sword Embryo",
+      "sprite": "Card_19_4",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "096d72018b88890d650dbf8b71c9e0abcfd4e5135c216c6986cf4d58a6372000"
+    },
+    "embryo-4-4_zh.webp": {
+      "phase": 4,
+      "title": "澄心剑胚",
+      "sprite": "Card_19_4",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "9444b39aa9ed018fcb4ce027ec47e3b49f4de458b33b51cbee67837a7babd3b2"
+    },
+    "embryo-5-5_1_en.webp": {
+      "phase": 5,
+      "title": "Unrestrained Sword - Clear Heart",
+      "sprite": "Card_19_5_1",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "614c26e5379bf7a85ec69789f0223a5b8294f8756e034e398f5bc3d690ab9d86"
+    },
+    "embryo-5-5_1_zh.webp": {
+      "phase": 5,
+      "title": "狂剑•澄心",
+      "sprite": "Card_19_5_1",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "b52686e3cc16cd4a4fc8ca5d789af9c8fcb58a008e42af45d1be3f53541254e1"
+    },
+    "embryo-5-5_2_en.webp": {
+      "phase": 5,
+      "title": "Cloud Sword - Clear Heart",
+      "sprite": "Card_19_5_2",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "5d053a916124108df83b9d23b2e903aff250c7f57c2e6c1ca13b11e936aac9fe"
+    },
+    "embryo-5-5_2_zh.webp": {
+      "phase": 5,
+      "title": "云剑•澄心",
+      "sprite": "Card_19_5_2",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "1ab1bfe9c34f9bf9d0f39767ce2ef4f49d4ebc2946edf02640b163914d68b152"
+    },
+    "embryo-5-5_3_en.webp": {
+      "phase": 5,
+      "title": "Clear Heart - Ultimate",
+      "sprite": "Card_19_5_3",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "6bd481eee4dc40a994ab069e1a0d3fd8d84285062084336f8b2c20c0684dac34"
+    },
+    "embryo-5-5_3_zh.webp": {
+      "phase": 5,
+      "title": "澄心•无极",
+      "sprite": "Card_19_5_3",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "3d5d77b523b080e81708db8f8fd0502d39de3934b2f006a53f8c87a1836bf9ac"
+    },
+    "formation-0_en.webp": {
+      "phase": 5,
+      "title": "Clear Heart Sword Formation",
+      "sprite": "Card_19_1",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "e6cb3e1e7e7f8c6a271d2ac2e25563b5bbd17e7afd57056f66163ac1a4811701"
+    },
+    "formation-0_zh.webp": {
+      "phase": 5,
+      "title": "澄心剑阵",
+      "sprite": "Card_19_1",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "4aba1c386a9680b38619d27b397d2714241b94d0866d434e5111b2647747f902"
+    },
+    "formation-1_en.webp": {
+      "phase": 5,
+      "title": "Clear Heart Sword Formation",
+      "sprite": "Card_19_1",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "263e13acc34628e410e47d5abdc1fc0439cae23b46b47bc84cb9462c0d01088a"
+    },
+    "formation-1_zh.webp": {
+      "phase": 5,
+      "title": "澄心剑阵",
+      "sprite": "Card_19_1",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "fdcb673e666e1a61d7a72f9491037329e362aca60a900f196c3399946501037d"
+    },
+    "formation-2_en.webp": {
+      "phase": 5,
+      "title": "Clear Heart Sword Formation",
+      "sprite": "Card_19_1",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "528b80b032d992f93fe7246adf96cd7c2c761bc13dab020bcaa8a8a668b3eaf9"
+    },
+    "formation-2_zh.webp": {
+      "phase": 5,
+      "title": "澄心剑阵",
+      "sprite": "Card_19_1",
+      "size": [
+        308,
+        508
+      ],
+      "sha256": "17d86b96597cdd92a1b382aa4f2a44f3ac3d5ad9815f8ed619cf31d222e31681"
+    }
+  }
+}

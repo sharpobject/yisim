@@ -11,7 +11,7 @@ if (!wikiRoot || !fs.existsSync(path.join(wikiRoot, "assets", "site.css"))) {
 }
 
 const assetRoot = path.join(wikiRoot, "assets", "recordings");
-const assetVersion = "20260920-swords-01";
+const assetVersion = "20260920-clearheart-01";
 fs.mkdirSync(assetRoot, { recursive: true });
 if (!process.env.YXP_SKIP_STAGE_DATA) {
   const stagedDataRoot = path.join(assetRoot, "data");
@@ -37,6 +37,8 @@ function stageImageDirectory(sourceName, destinationName) {
   }
 }
 
+stageImageDirectory("clear-heart", "clear-heart");
+fs.copyFileSync(path.join(here, "clear-heart.js"), path.join(assetRoot, "clear-heart.js"));
 stageImageDirectory("vase-icons", "vase-icons");
 stageImageDirectory("card-markers", "card-markers");
 stageImageDirectory("career-icons", "careers");
@@ -49,6 +51,8 @@ const baseHtml = fs.readFileSync(path.join(here, "index.html"), "utf8")
   .replace('href="replay-browser.css"', `href="/yxp_wiki/assets/recordings/replay-browser.css?v=${assetVersion}"`)
   .replace('data-asset-mode="local" data-recording-base="data"', `data-asset-mode="wiki" data-recording-base="/yxp_wiki/assets/recordings/data" data-recording-version="${assetVersion}"`)
   .replace('src="recording-codec.js"', `src="/yxp_wiki/assets/recordings/recording-codec.js?v=${assetVersion}"`)
+  .replace('src="clear-heart.js"', `src="/yxp_wiki/assets/recordings/clear-heart.js?v=${assetVersion}"`)
+  .replace('src="clear-heart/data.js"', `src="/yxp_wiki/assets/recordings/clear-heart/data.js?v=${assetVersion}"`)
   .replace('src="replay-browser.js"', `src="/yxp_wiki/assets/recordings/replay-browser.js?v=${assetVersion}"`);
 
 const englishHtml = baseHtml

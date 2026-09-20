@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 const source=fs.readFileSync(new URL('./replay-browser.js',import.meta.url),'utf8');
-const c=vm.createContext({isChinese:false,assetMode:'wiki'});
+const c=vm.createContext({isChinese:false,assetMode:'wiki',window:{CLEAR_HEART:{describe:()=>null}}});
 vm.runInContext(source.slice(source.indexOf('  function countsAsAllSwords('),source.indexOf('  function card(')),c);
 const owner={talents:[{id:189},{id:192}],enlightenedCards:[1000001,213]};
 for(const id of [213,10213,20213]) assert.equal(c.countsAsAllSwords(id,{}),true,'Swift Shadow works with either source, no talent gating');

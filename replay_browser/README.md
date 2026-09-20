@@ -316,3 +316,25 @@ as well as the catalog, so changed timelines invalidate browser caches.
 
 For hand-to-deck swaps, omit appended red deck history when the displaced copy
 is already shown as a new hand position. Keep red in-place in emptied slots.
+
+
+### Clear Heart dynamic card faces
+
+Only native base cards 19 and 126 use `clear-heart.js`. The current owner
+snapshot supplies talents and the optional Swordsmith (92) runtime counter;
+opponent previews and battle cards use their own prior-round snapshots.
+Card 19 changes phase, native sprite, title and rules according to Card_19's
+sequential forging branches, including Ultimate's conditional bonuses.
+Card 126 inherits only Core Formation/Nascent Soul forging and keeps its own
+2/7/12 DEF by upgrade level. It does not inherit Swordsmith or Ultimate.
+
+`generate_clear_heart.py --asset-root EXTRACTED_RETAIL --output replay_browser/clear-heart`
+uses the existing wiki renderer with rules disabled, explicit native art, and
+preserved bilingual titles. It generates 11 Embryo backgrounds and three
+Formation upgrade backgrounds per language, the official rules fragments,
+font subset and a provenance manifest. Requires Pillow, fonttools[woff] and
+the existing renderer dependencies. `clear-heart.test.cjs` covers the model;
+12,288 combinations were additionally compared against the extracted native
+C# UpdateCardInfo methods for retail build 25343702. Browser SVG rules use the
+native description rectangle, colors, font and fitting with measured glyph
+bounds. Keep other cards on their existing static rendering path.
