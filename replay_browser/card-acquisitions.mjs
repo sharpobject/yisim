@@ -86,7 +86,7 @@ export function appendCardAcquisitionSteps(steps, {talentInfo, fateInfo, cardNam
     const rawSources = valid.length ? valid : completedCardChoice ? pending : [];
     // A round-start snapshot can also open a used ability's card choice.
     // Remember that source while leaving ordinary round draws in their own step.
-    const operation = roundStart || ['MoveCardReq','InsertCardReq','ReplaceCardResp','RefineCardResp','CardOperationResp'].includes(step.type);
+    const operation = roundStart || ['MoveCardReq','InsertCardReq','ReplaceCardResp','RefineCardResp','CardOperationResp','RelicOperationResp'].includes(step.type);
     const cards = operation ? [] : addedCards(before,after,baseCardId);
     // A breakthrough can transform an existing personal card while separately
     // drawing cards. Native transformation clauses identify that replacement;

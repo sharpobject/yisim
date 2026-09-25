@@ -971,9 +971,9 @@
     if (!item.targetUsername || !item.rounds) return item.label;
     const parts = [item.targetUsername, `${item.rounds} ${copy.rounds}`];
     if (Number.isInteger(item.placementStart) && item.placementStart > 0) {
-      const tied = item.placementEnd > item.placementStart;
-      const range = tied ? `${item.placementStart}–${item.placementEnd}` : String(item.placementStart);
-      parts.push(isChinese ? `${tied ? "并列" : ""}第${range}名` : `${tied ? "Tied " : ""}#${range}`);
+      const average = (item.placementStart + item.placementEnd) / 2;
+      const ordinal = n => `${n}${n === 1 ? "st" : n === 2 ? "nd" : n === 3 ? "rd" : "th"}`;
+      parts.push(isChinese ? `第${average}名` : ordinal(average));
     }
     if (Number(item.gameMode) === 6) {
       parts.push(item.cupStage === "final" ? copy.cupFinal

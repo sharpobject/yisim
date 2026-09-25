@@ -593,6 +593,147 @@
           { "path": "/event/humanActions", "op": "includesMatch", "value": { "kind": "shop", "aggregate": { "processedCardsEstimate": 1, "combinedCardsEstimate": 1, "partialObservation": true } } }
         ]
       }
+    ],
+    "r-380b76b3ec8ff518": [
+      {
+        "name": "Palm Technique Insight upgrades level-one palms before round-ten draws",
+        "anchor": {
+          "type": "RoundShopStart",
+          "sequence": 217
+        },
+        "checks": [
+          {
+            "path": "/state/privatePlayer/deck",
+            "op": "equals",
+            "value": [
+              10010090,
+              10010024,
+              10010017,
+              10010017,
+              10010028,
+              10020005,
+              9020003,
+              10010036
+            ]
+          },
+          {
+            "path": "/state/privatePlayer/hand",
+            "op": "equals",
+            "value": [
+              9000007,
+              9020003,
+              10000026,
+              9010018,
+              10000001,
+              10000034,
+              9000004,
+              10000090
+            ]
+          }
+        ]
+      }
+    ],
+    "r-3f3aaada2d8d879c": [
+      {
+        "name": "relic deposit removes the held card immediately",
+        "anchor": {
+          "type": "RelicOperationResp",
+          "sequence": 25
+        },
+        "checks": [
+          {
+            "path": "/beforeState/privatePlayer/hand",
+            "op": "equals",
+            "value": [
+              1000009
+            ]
+          },
+          {
+            "path": "/state/privatePlayer/hand",
+            "op": "equals",
+            "value": []
+          },
+          {
+            "path": "/state/privatePlayer/relicStorage/5",
+            "op": "equals",
+            "value": [
+              1000009,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "name": "relic withdrawal returns the stored card immediately",
+        "anchor": {
+          "type": "RelicOperationResp",
+          "sequence": 56
+        },
+        "checks": [
+          {
+            "path": "/beforeState/privatePlayer/hand",
+            "op": "equals",
+            "value": []
+          },
+          {
+            "path": "/state/privatePlayer/hand",
+            "op": "equals",
+            "value": [
+              1000009
+            ]
+          },
+          {
+            "path": "/state/privatePlayer/relicStorage/5",
+            "op": "equals",
+            "value": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "r-e25527b501082eec": [
+      {
+        "name": "relic swap returns the offered card at the end of the hand",
+        "anchor": {
+          "type": "RelicOperationResp",
+          "sequence": 376
+        },
+        "checks": [
+          {
+            "path": "/beforeState/privatePlayer/hand",
+            "op": "equals",
+            "value": [
+              1000042,
+              1010039,
+              9000014,
+              9000006,
+              1000010
+            ]
+          },
+          {
+            "path": "/state/privatePlayer/hand",
+            "op": "equals",
+            "value": [
+              1000042,
+              1010039,
+              9000014,
+              9000006,
+              1000060
+            ]
+          },
+          {
+            "path": "/state/privatePlayer/relicStorage/3",
+            "op": "equals",
+            "value": [
+              1000046,
+              1000045,
+              1000010
+            ]
+          }
+        ]
+      }
     ]
   }
 }

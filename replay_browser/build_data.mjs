@@ -11,6 +11,8 @@ import { buildReplaySummaryData } from "./generate_replay_summary_html.mjs";
 import { openingShopResidual } from "./opening-repair.mjs";
 import { appendCardAcquisitionSteps } from "./card-acquisitions.mjs";
 
+import { relicStorage, relicAction, applyRelicTransfer, relicCultivation } from "./relic-operations.mjs";
+
 const [inputPath, outputPath = path.join(path.dirname(new URL(import.meta.url).pathname), "replay-data.js")] = process.argv.slice(2);
 if (!inputPath) throw new Error("usage: build_data.mjs CAPTURE.jsonl [OUTPUT.js]");
 
@@ -1015,6 +1017,16 @@ function humanAction(type, decoded, before) {
   const destinationCard = decoded.destinationPosition === 0
     ? priorPrivate?.hand?.[decoded.destinationIndex]
     : priorPrivate?.deck?.[decoded.destinationIndex];
+  if (type === "RelicOperationResp" && [2, 5].includes(relicAction(decoded).operation)) {
+    const {params: [from, fromIndex, to, toIndex]} = relicAction(decoded);
+    const storage = relicStorage(priorPrivate);
+    const moved = (from === 0 ? priorPrivate?.hand : storage[from])?.[fromIndex];
+    const displaced = to === 0 ? 0 : storage[to]?.[toIndex];
+    if (!numericCardId(moved)) return null;
+    return actionFor(actor, "move",
+      `${actor.username} moved ${compactCardName(moved)} ${to === 0 ? "from the Immortal Relic to hand" : `into Immortal Relic slot ${toIndex + 1}`}${displaced ? `, returning ${compactCardName(displaced)} to hand` : ""}`,
+      `${actor.username}将${compactCardName(moved, "zh")}${to === 0 ? "从仙府遗迹取回手牌" : `放入仙府遗迹第${toIndex + 1}格`}${displaced ? `，将${compactCardName(displaced, "zh")}取回手牌` : ""}`);
+  }
   if (type === "CardOperationResp" && Number(decoded.operation) === 1 && Number(decoded.useCase) === 6) {
     const [from, fromIndex, to, toIndex] = decoded.otherParams ?? [];
     const storage = priorPrivate?.cardStorage?.[199] ?? priorPrivate?.talentData?.[199]?.commonParams ?? [];
@@ -1247,6 +1259,10 @@ function apply(type, decoded) {
       // private uid must not make that public player the replay's viewpoint.
       state.targetUid = decoded.private.uid || state.targetUid;
     }
+  } else if (type === "RelicOperationResp") {
+    if ([2, 5].includes(relicAction(decoded).operation)) advanceSyntheticRoundForCardAction();
+    const delta = relicCultivation(state.privatePlayer, decoded);
+    if (applyRelicTransfer(state.privatePlayer, decoded)) addCultivation(delta);
   } else if (type === "CardOperationResp") {
     if (Number(decoded.operation) === 1 && Number(decoded.useCase) === 6) advanceSyntheticRoundForCardAction();
     const cultivationDelta = recordedCultivationDelta(state.privatePlayer, { type, details: decoded });
@@ -1360,6 +1376,7 @@ function visibleState() {
     exchangesRemaining: state.privatePlayer.exchangesRemaining,
     exchangeLimit: state.privatePlayer.exchangeLimit,
     additionalCareers: clone(state.privatePlayer.additionalCareers ?? {}),
+    relicStorage: clone(relicStorage(state.privatePlayer)),
     cardStorage: {
       199: (state.privatePlayer.cardStorage?.[199]
         ?? state.privatePlayer.talentData?.[199]?.commonParams ?? []).map((id) => rememberCard(id)),
@@ -2183,6 +2200,7 @@ function applyRecordedCardStep(privatePlayer, step, wrap = (id) => id, reportIss
     if (entry && typeof entry === "object") return { ...entry, id: switchedId };
     return switchedId;
   };
+  if (step.type === "RelicOperationResp") return applyRelicTransfer(privatePlayer, action, wrap);
   if (step.type === "CardOperationResp" && Number(action.operation) === 1 && Number(action.useCase) === 6) {
     privatePlayer.cardStorage ??= {};
     const storage = privatePlayer.cardStorage[199] ??= (
@@ -2391,6 +2409,7 @@ function applyRecordedCardStep(privatePlayer, step, wrap = (id) => id, reportIss
 }
 
 function recordedCultivationDelta(privatePlayer, step) {
+  if (step.type === "RelicOperationResp") return relicCultivation(privatePlayer, step.details);
   if (step.type === "CardOperationResp" && Number(step.details?.operation) === 1 && Number(step.details?.useCase) === 6) {
     const [from, , to, toIndex] = step.details.otherParams ?? [];
     const storage = privatePlayer?.cardStorage?.[199] ?? privatePlayer?.talentData?.[199]?.commonParams ?? [];
@@ -2424,7 +2443,7 @@ function explicitChoiceCardCount(info) {
 }
 
 function ensureShopEntrySteps(inputSteps) {
-  const cardMutationTypes = new Set(["MoveCardReq", "InsertCardReq", "ReplaceCardResp", "RefineCardResp", "CardOperationResp"]);
+  const cardMutationTypes = new Set(["MoveCardReq", "InsertCardReq", "ReplaceCardResp", "RefineCardResp", "CardOperationResp", "RelicOperationResp"]);
   const isSuccessfulCardMutation = (step) => {
     if (!cardMutationTypes.has(step.type)) return false;
     if (step.type === "ReplaceCardResp") return String(step.details?.result).startsWith("1 ");
@@ -2553,7 +2572,10 @@ function ensureShopEntrySteps(inputSteps) {
       authoritative.state?.players?.[authoritative.state.privatePlayer.uid],
     );
     beforeHand = (reconciledPrivate?.hand ?? []).map((id) => roundStartCardId(id, { inHand: true }));
-    const roundStartDeck = (reconciledPrivate?.deck ?? []).map(roundStartCardId);
+    const palmInsight = (preBattlePrivate?.selectedFateStrategies ?? []).some(f => Number(f.id ?? f) === 155);
+    const roundStartDeck = (reconciledPrivate?.deck ?? []).map(roundStartCardId).map(id =>
+      palmInsight && Number(id) === baseCardId(Number(id)) && compactCardName(id, "zh").includes("掌")
+        ? upgradedCardId(Number(id)) : id);
     if (replayOpeningSteps.length) roundStartDeck.splice(authoritativeDeck.length);
     while (roundStartDeck.length < roundStartDeckSlots) roundStartDeck.push(0);
     let choiceGrantedCardCount = 0;
@@ -2569,6 +2591,7 @@ function ensureShopEntrySteps(inputSteps) {
         return { drawnTokens, retainedTokens, drawTiming, tokenPrivate: {
           hand: drawTiming === "before" ? retainedTokens.concat(drawnTokens) : retainedTokens,
           deck: roundStartDeck.map((id) => ({ id, origin: null })),
+          relicStorage: Object.fromEntries(Object.entries(reconciledPrivate?.relicStorage ?? {}).map(([key, values]) => [key, values.map(id => ({ id: Number(id), origin: null }))])),
           cardStorage: Object.fromEntries(Object.entries(reconciledPrivate?.cardStorage ?? {}).map(([key, values]) => [
             key, values.map((id) => ({ id: Number(id), origin: null })),
           ])),
@@ -3227,7 +3250,7 @@ function hybridFirstDetailedShopContext(inputSteps) {
   if (!hybridReplaySummary) return;
   const boundary = decodedBoundary();
   const detailedTypes = new Set([
-    "MoveCardReq", "InsertCardReq", "ReplaceCardResp", "RefineCardResp", "CardOperationResp",
+    "MoveCardReq", "InsertCardReq", "ReplaceCardResp", "RefineCardResp", "CardOperationResp", "RelicOperationResp",
   ]);
   const firstDetailedIndex = inputSteps.findIndex((step) =>
     Number(step.sequence) >= Number(boundary.event.sequence)

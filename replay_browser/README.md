@@ -350,7 +350,9 @@ The catalog stores the original observed player's final placement range and
 settled rating change. Same-round eliminations share their occupied places;
 Heavenly Derivation Cup finals retain the server ordering, which breaks ties
 using preliminary points. A surviving winner is not grouped with eliminated
-players. Elimination rounds come from the live battle/status sequence.
+players. Elimination rounds use validated matching replay settlements when available,
+with the live battle/status sequence as fallback. Preparation exits and missing
+battle messages must not assign a player to a stale earlier battle.
 Ratings use the matching archived player perspective, checked against every
 battle to reject inherited human metadata on AI perspectives. Dao Mind games
 use beginDaoXinRankScore/diffDaoXinRankScore; ordinary ranked games use
@@ -358,3 +360,12 @@ beginRankScore/diffRankScore. Missing settlement data stays unknown, not zero.
 Metadata is refreshed on every catalog pass so later replay arrivals are used.
 Compact catalog rows append optional result fields and remain backward compatible.
 Run game-result.test.mjs and recording-codec.test.cjs for result regressions.
+
+Dropdown labels show only the average placement (for example 4.5th / 第4.5名),
+without a tie-range parenthetical. Their round count stops at the original
+player’s elimination; the complete lobby timeline remains available.
+
+Reconstruction handles Immortal Relic deposits, withdrawals and card swaps,
+including cultivation and draw provenance, and Palm Technique Insight’s
+automatic post-battle level-one palm upgrades. Semantic event regressions and
+relic-operations.test.mjs cover these transitions.

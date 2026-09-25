@@ -13,7 +13,7 @@ import { characterInfo, decodeMessage, fateStrategyInfo } from "../scripts/decod
 import { recordingIdsWithAssertions } from "./recording_regressions.mjs";
 import { replayInputFingerprint } from "./opening-repair.mjs";
 
-import { finalPlacement, replayRating } from "./game-result.mjs";
+import { finalPlacement, replayRating, roundsPlayed, eliminationRoundForStatus, replayPlayerResult, settledResultPlayers } from "./game-result.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const require = createRequire(import.meta.url);
@@ -119,6 +119,23 @@ function replayPovForCodeAndUid(codeId, uid) {
   return result;
 }
 
+const replayResultsByCode = new Map();
+function replayResultsForCode(codeId) {
+  if (replayResultsByCode.has(codeId)) return replayResultsByCode.get(codeId);
+  const directory = path.join(replayRoot, String(Math.floor(codeId / 1000) * 1000));
+  const results = [];
+  if (fs.existsSync(directory)) {
+    for (const name of fs.readdirSync(directory).filter(name => name.startsWith(codeId + "_p") && name.endsWith(".json"))) {
+      try {
+        const result = replayPlayerResult(JSON.parse(fs.readFileSync(path.join(directory, name), "utf8")));
+        if (result) results.push(result);
+      } catch { /* Incomplete archive data leaves the live result intact. */ }
+    }
+  }
+  replayResultsByCode.set(codeId, results);
+  return results;
+}
+
 function readScanCache() {
   if (!scanCacheEnabled || !fs.existsSync(scanCachePath)) return { entries: {}, warm: false };
   try {
@@ -174,10 +191,11 @@ function inspectCapture(filename) {
     if (event.messageType !== "GameStatus") continue;
     try {
       const status = decodeMessage("GameStatus", Buffer.from(event.protobufBase64 ?? "", "base64"));
+      const previousStatus = statuses.at(-1);
       statuses.push(status);
       for (const player of status.publicPlayers ?? []) {
         if (player.life <= 0 && !eliminated.has(player.uid)) {
-          eliminated.set(player.uid, lastBattleRound ?? (status.ended ? status.round : status.round - 1));
+          eliminated.set(player.uid, eliminationRoundForStatus(status, previousStatus, lastBattleRound, player.uid));
         }
       }
     }
@@ -239,6 +257,7 @@ function inspectCapture(filename) {
     gameMode,
     firstRound,
     codeId,
+    resultVersion: 2,
     resultPlayers: statuses.at(-1).publicPlayers.map(p => ({
       uid: p.uid, rank: p.rank, eliminationRound: eliminated.get(p.uid) ?? null,
     })),
@@ -280,12 +299,14 @@ const eligibleCaptures = filesBelow(rawRoot).map((filename) => {
   const cached = priorScanCache.entries[relativeName];
   let capture;
   let sourceChanged = false;
-  if (cached && sameFingerprint(cached.fingerprint, fingerprint)) {
+  // Eligibility is unchanged; refresh result metadata only for eligible captures.
+  if (cached && sameFingerprint(cached.fingerprint, fingerprint)
+    && (!cached.capture || cached.capture.resultVersion === 2)) {
     capture = cached.capture ? { ...cached.capture, filename } : null;
     reusedCaptureInspections += 1;
   } else {
     capture = inspectCapture(filename);
-    sourceChanged = Boolean(cached);
+    sourceChanged = Boolean(cached) && !sameFingerprint(cached.fingerprint, fingerprint);
     inspectedCaptureFiles += 1;
   }
   nextScanCacheEntries[relativeName] = {
@@ -301,13 +322,15 @@ const eligibleCaptures = filesBelow(rawRoot).map((filename) => {
     const cupData = capture.gameMode === CUP_MODE ? cupDataForCodeId(capture.codeId) : null;
     const cupProgress = Number(cupData?.progress) || 0;
     const hybridReplayPath = replayPovForCodeAndUid(capture.codeId, capture.targetUid);
+    const resultPlayers = settledResultPlayers(capture.resultPlayers ?? [], replayResultsForCode(capture.codeId));
     let rating = {};
     if (hybridReplayPath) {
       try { rating = replayRating(JSON.parse(fs.readFileSync(hybridReplayPath, "utf8")), capture.targetUid, capture.targetCharacterId); } catch {}
     }
     return {
       ...capture,
-      ...finalPlacement(capture.resultPlayers ?? [], capture.targetUid, capture.gameMode === CUP_MODE && cupProgress > 3),
+      resultPlayers,
+      ...finalPlacement(resultPlayers, capture.targetUid, capture.gameMode === CUP_MODE && cupProgress > 3),
       ...rating,
       practice: capture.gameMode === PRACTICE_MODE
         && capture.capturedThrough >= PRACTICE_START
@@ -497,13 +520,13 @@ for (const [position, capture] of captures.entries()) {
     ratingChange: capture.ratingChange ?? null,
     ratingKind: capture.ratingKind ?? "",
     career: capture.career,
-    rounds: capture.rounds,
+    rounds: roundsPlayed(capture.resultPlayers ?? [], capture.targetUid, capture.rounds),
     capturedThrough: capture.capturedThrough,
     linCareer: capture.linCareer,
     linFates: capture.linFates,
     linUnchosenFates: capture.linUnchosenFates,
     humanOpponentCharacters: capture.humanOpponentCharacters,
-    label: `${capture.targetUsername} · ${capture.rounds} rounds`,
+    label: `${capture.targetUsername} · ${roundsPlayed(capture.resultPlayers ?? [], capture.targetUid, capture.rounds)} rounds`,
   });
   if (!incremental || builtIds.has(id)) {
     process.stdout.write(`[${position + 1}/${captures.length}] ${catalog.at(-1).label}\n`);
