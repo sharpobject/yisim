@@ -64,8 +64,11 @@ test('settled human replay rounds resolve sparse observation; inherited AI metad
  assert.equal(settledResultPlayers(players,[{uid:'winner',rank:0,round:20}])[0].eliminationRound,null);
 });
 
-test('a winner whose opponent concedes has only the rounds recorded in settlement',()=>{
+test('dropdown counts the concession round without changing settlement placement',()=>{
  const settled=settledResultPlayers(players,[{uid:'winner',rank:0,round:17}]);
- assert.equal(roundsPlayed(settled,'winner',18),17);
+ assert.equal(roundsPlayed(settled,'winner',18),18);
+ const eliminated=settledResultPlayers([{uid:'a',rank:1,eliminationRound:18}],[{uid:'a',rank:1,round:17}]);
+ assert.equal(roundsPlayed(eliminated,'a',20),18);
+ assert.equal(eliminated[0].eliminationRound,17);
  assert.deepEqual(finalPlacement(settled,'winner'),{placementStart:1,placementEnd:1});
 });

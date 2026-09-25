@@ -369,3 +369,8 @@ Reconstruction handles Immortal Relic deposits, withdrawals and card swaps,
 including cultivation and draw provenance, and Palm Technique Insight’s
 automatic post-battle level-one palm upgrades. Semantic event regressions and
 relic-operations.test.mjs cover these transitions.
+
+For dropdown round counts only, include a preparation round that ends in a
+concession. Winners therefore use the lobby ending round; eliminated players
+retain a later observed concession round even when settlement ends earlier.
+This does not change the settlement rounds used for placements or ties.

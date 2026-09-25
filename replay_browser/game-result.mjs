@@ -51,7 +51,8 @@ export function replayPlayerResult(replay) {
 export function settledResultPlayers(players, replayResults) {
   return players.map(player => {
     const replay = replayResults.find(result => result.uid === player.uid && result.rank === player.rank);
-    return replay ? {...player, playedRounds: replay.round,
-      ...(player.eliminationRound != null ? {eliminationRound: replay.round} : {})} : player;
+    return replay && player.eliminationRound != null
+      ? {...player, playedRounds: Math.max(player.eliminationRound, replay.round), eliminationRound: replay.round}
+      : player;
   });
 }
