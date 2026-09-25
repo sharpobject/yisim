@@ -63,3 +63,9 @@ test('settled human replay rounds resolve sparse observation; inherited AI metad
  assert.equal(settledResultPlayers(players,[{...result,rank:7}])[1].eliminationRound,18);
  assert.equal(settledResultPlayers(players,[{uid:'winner',rank:0,round:20}])[0].eliminationRound,null);
 });
+
+test('a winner whose opponent concedes has only the rounds recorded in settlement',()=>{
+ const settled=settledResultPlayers(players,[{uid:'winner',rank:0,round:17}]);
+ assert.equal(roundsPlayed(settled,'winner',18),17);
+ assert.deepEqual(finalPlacement(settled,'winner'),{placementStart:1,placementEnd:1});
+});

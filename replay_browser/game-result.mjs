@@ -27,7 +27,8 @@ export function replayRating(replay, uid, characterId) {
 
 // Catalog labels stop at the recorded player’s elimination, not the lobby ending.
 export function roundsPlayed(players, uid, finalRound) {
-  return players.find(player => player.uid === uid)?.eliminationRound ?? finalRound;
+  const player = players.find(player => player.uid === uid);
+  return player?.playedRounds ?? player?.eliminationRound ?? finalRound;
 }
 
 export function eliminationRoundForStatus(status, previousStatus, lastBattleRound, uid) {
@@ -50,7 +51,7 @@ export function replayPlayerResult(replay) {
 export function settledResultPlayers(players, replayResults) {
   return players.map(player => {
     const replay = replayResults.find(result => result.uid === player.uid && result.rank === player.rank);
-    return replay && player.eliminationRound != null
-      ? {...player, eliminationRound: replay.round} : player;
+    return replay ? {...player, playedRounds: replay.round,
+      ...(player.eliminationRound != null ? {eliminationRound: replay.round} : {})} : player;
   });
 }
