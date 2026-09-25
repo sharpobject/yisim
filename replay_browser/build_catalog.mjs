@@ -13,6 +13,8 @@ import { characterInfo, decodeMessage, fateStrategyInfo } from "../scripts/decod
 import { recordingIdsWithAssertions } from "./recording_regressions.mjs";
 import { replayInputFingerprint } from "./opening-repair.mjs";
 
+import { finalPlacement, replayRating } from "./game-result.mjs";
+
 const here = path.dirname(fileURLToPath(import.meta.url));
 const require = createRequire(import.meta.url);
 const recordingCodec = require("./recording-codec.cjs");
@@ -34,7 +36,7 @@ const reuseExisting = incremental || Boolean(process.env.YXP_REUSE_EXISTING);
 const scanCacheEnabled = process.env.YXP_DISABLE_SCAN_CACHE !== "1";
 const scanCachePath = path.resolve(process.env.YXP_SCAN_CACHE_PATH
   || path.join(rawRoot, ".recording-browser-build-cache.json"));
-const scanCacheVersion = 4;
+const scanCacheVersion = 5;
 const buildJobs = Math.max(1, Number.parseInt(process.env.YXP_BUILD_JOBS || "1", 10) || 1);
 const regressionRecordingIds = recordingIdsWithAssertions();
 const numericPrefix = (value) => Number.parseInt(String(value ?? "0"), 10) || 0;
@@ -162,9 +164,23 @@ function inspectCapture(filename) {
     if (event.event === "room_profiles_decoded") for (const player of event.players ?? []) profiles.set(player.uid, player);
   }
   const statuses = [];
+  const eliminated = new Map();
+  let lastBattleRound = null;
   for (const event of events) {
-    if (event.event !== "websocket_frame" || event.messageType !== "GameStatus") continue;
-    try { statuses.push(decodeMessage("GameStatus", Buffer.from(event.protobufBase64 ?? "", "base64"))); }
+    if (event.event !== "websocket_frame") continue;
+    if (event.messageType === "BattleResult") {
+      try { lastBattleRound = decodeMessage("BattleResult", Buffer.from(event.protobufBase64 ?? "", "base64")).round; } catch {}
+    }
+    if (event.messageType !== "GameStatus") continue;
+    try {
+      const status = decodeMessage("GameStatus", Buffer.from(event.protobufBase64 ?? "", "base64"));
+      statuses.push(status);
+      for (const player of status.publicPlayers ?? []) {
+        if (player.life <= 0 && !eliminated.has(player.uid)) {
+          eliminated.set(player.uid, lastBattleRound ?? (status.ended ? status.round : status.round - 1));
+        }
+      }
+    }
     catch { /* A malformed frame cannot establish completeness. */ }
   }
   if (!statuses.length || !statuses.at(-1).ended) return null;
@@ -223,6 +239,9 @@ function inspectCapture(filename) {
     gameMode,
     firstRound,
     codeId,
+    resultPlayers: statuses.at(-1).publicPlayers.map(p => ({
+      uid: p.uid, rank: p.rank, eliminationRound: eliminated.get(p.uid) ?? null,
+    })),
     startingRating: Number(target.actualModeScore ?? target.daoXinRankScore ?? target.rankScore ?? 0),
     career: numericPrefix(roundTwoPlayer?.career),
     rounds: finalRound,
@@ -282,8 +301,14 @@ const eligibleCaptures = filesBelow(rawRoot).map((filename) => {
     const cupData = capture.gameMode === CUP_MODE ? cupDataForCodeId(capture.codeId) : null;
     const cupProgress = Number(cupData?.progress) || 0;
     const hybridReplayPath = replayPovForCodeAndUid(capture.codeId, capture.targetUid);
+    let rating = {};
+    if (hybridReplayPath) {
+      try { rating = replayRating(JSON.parse(fs.readFileSync(hybridReplayPath, "utf8")), capture.targetUid, capture.targetCharacterId); } catch {}
+    }
     return {
       ...capture,
+      ...finalPlacement(capture.resultPlayers ?? [], capture.targetUid, capture.gameMode === CUP_MODE && cupProgress > 3),
+      ...rating,
       practice: capture.gameMode === PRACTICE_MODE
         && capture.capturedThrough >= PRACTICE_START
         && capture.capturedThrough < PRACTICE_END_EXCLUSIVE,
@@ -467,6 +492,10 @@ for (const [position, capture] of captures.entries()) {
     cupStage: capture.cupStage,
     practice: capture.practice,
     startingRating: capture.startingRating,
+    placementStart: capture.placementStart ?? null,
+    placementEnd: capture.placementEnd ?? null,
+    ratingChange: capture.ratingChange ?? null,
+    ratingKind: capture.ratingKind ?? "",
     career: capture.career,
     rounds: capture.rounds,
     capturedThrough: capture.capturedThrough,

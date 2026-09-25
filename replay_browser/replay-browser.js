@@ -932,6 +932,8 @@
   function installRecording(data, item, requestedStepIndex, historyMode) {
     recording = data;
     activeCatalogItem = item;
+    const resultSummary = $("#recording-result");
+    if (resultSummary) { resultSummary.textContent = recordingLabel(item); resultSummary.hidden = false; }
     states = hydrateStates(data);
     const firstRecordedIndex = states.findIndex((state) => state.round > 0);
     index = requestedStepIndex == null ? Math.max(0, firstRecordedIndex) : requestedStepIndex;
@@ -968,13 +970,22 @@
   const recordingLabel = (item) => {
     if (!item.targetUsername || !item.rounds) return item.label;
     const parts = [item.targetUsername, `${item.rounds} ${copy.rounds}`];
+    if (Number.isInteger(item.placementStart) && item.placementStart > 0) {
+      const tied = item.placementEnd > item.placementStart;
+      const range = tied ? `${item.placementStart}–${item.placementEnd}` : String(item.placementStart);
+      parts.push(isChinese ? `${tied ? "并列" : ""}第${range}名` : `${tied ? "Tied " : ""}#${range}`);
+    }
     if (Number(item.gameMode) === 6) {
       parts.push(item.cupStage === "final" ? copy.cupFinal
         : item.cupStage === "preliminary" ? copy.cupPreliminary : copy.cup);
     } else if (item.practice) {
       parts.push(copy.practice);
     } else if (Number.isFinite(item.startingRating) && item.startingRating > 0) {
-      parts.push(`${item.startingRating} ${copy.rating}`);
+      const kind = item.ratingKind === "dao" ? (isChinese ? "道心分" : "Dao Mind rating") : copy.rating;
+      const change = Number.isFinite(item.ratingChange)
+        ? ` (${item.ratingChange > 0 ? "+" : ""}${item.ratingChange})`
+        : Number(item.gameMode) === 3 ? (isChinese ? "（分数变化未知）" : " (change unavailable)") : "";
+      parts.push(`${item.startingRating} ${kind}${change}`);
     }
     if (numericPrefix(item.career) > 0) parts.push(careerName(item.career));
     if (item.capturedThrough) parts.push(`${item.capturedThrough.slice(0, 16).replace("T", " ")} UTC`);

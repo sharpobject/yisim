@@ -343,3 +343,18 @@ rules semantics and checks that all three Formation backgrounds use fusion art.
 Generation requires the current renderer and its dependencies; the clean
 publication worktree deliberately does not absorb unrelated pending renderer
 changes from the authoritative checkout. Existing baked assets remain usable.
+
+## Final result labels
+
+The catalog stores the original observed player's final placement range and
+settled rating change. Same-round eliminations share their occupied places;
+Heavenly Derivation Cup finals retain the server ordering, which breaks ties
+using preliminary points. A surviving winner is not grouped with eliminated
+players. Elimination rounds come from the live battle/status sequence.
+Ratings use the matching archived player perspective, checked against every
+battle to reject inherited human metadata on AI perspectives. Dao Mind games
+use beginDaoXinRankScore/diffDaoXinRankScore; ordinary ranked games use
+beginRankScore/diffRankScore. Missing settlement data stays unknown, not zero.
+Metadata is refreshed on every catalog pass so later replay arrivals are used.
+Compact catalog rows append optional result fields and remain backward compatible.
+Run game-result.test.mjs and recording-codec.test.cjs for result regressions.
