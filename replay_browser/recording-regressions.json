@@ -594,12 +594,12 @@
         ]
       }
     ],
-    "r-380b76b3ec8ff518": [
+    "r-a0022d24a0a61e60": [
       {
         "name": "Palm Technique Insight upgrades level-one palms before round-ten draws",
         "anchor": {
           "type": "RoundShopStart",
-          "sequence": 217
+          "round": 10
         },
         "checks": [
           {
@@ -638,7 +638,7 @@
         "name": "relic deposit removes the held card immediately",
         "anchor": {
           "type": "RelicOperationResp",
-          "sequence": 25
+          "round": 1
         },
         "checks": [
           {
@@ -667,7 +667,8 @@
         "name": "relic withdrawal returns the stored card immediately",
         "anchor": {
           "type": "RelicOperationResp",
-          "sequence": 56
+          "round": 2,
+          "where": [{"path": "/details/fields", "op": "includesMatch", "value": {"field": 2, "hex": "050000"}}]
         },
         "checks": [
           {
@@ -698,7 +699,7 @@
         "name": "relic swap returns the offered card at the end of the hand",
         "anchor": {
           "type": "RelicOperationResp",
-          "sequence": 376
+          "round": 18
         },
         "checks": [
           {
