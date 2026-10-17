@@ -157,14 +157,19 @@ const close = () => {
 // Assumption: New DB contains exactly one batch.
 const merge = (newDbFile) => {
   const newDbName = 'tmp_' + path.basename(newDbFile, '.sqlite');
+  if (!/^[a-zA-Z0-9_]+$/.test(newDbName)) {
+    throw new Error(`Invalid database alias derived from '${newDbFile}'`);
+  }
 
-  db.run(`ATTACH DATABASE ?1 AS ${newDbName}`, newDbFile);
-  db.run(`INSERT INTO BATCH (OPTIONS, PLAYER_A, PLAYER_B, CARDS_A, CARDS_B)
-    SELECT OPTIONS, PLAYER_A, PLAYER_B, CARDS_A, CARDS_B FROM ${newDbName}.BATCH;
-  WITH const AS (SELECT LAST_INSERT_ROWID() AS ID)
-    INSERT INTO JOB (BATCH_ID, CARDS_A, CARDS_B)
-    SELECT const.ID, CARDS_A, CARDS_B FROM const, ${newDbName}.JOB;
-  DETACH DATABASE ${newDbName};`);
+  db.run('ATTACH DATABASE ?1 AS ' + newDbName, newDbFile);
+  db.run(
+    'INSERT INTO BATCH (OPTIONS, PLAYER_A, PLAYER_B, CARDS_A, CARDS_B)' +
+    ' SELECT OPTIONS, PLAYER_A, PLAYER_B, CARDS_A, CARDS_B FROM ' + newDbName + '.BATCH;' +
+    ' WITH const AS (SELECT LAST_INSERT_ROWID() AS ID)' +
+    ' INSERT INTO JOB (BATCH_ID, CARDS_A, CARDS_B)' +
+    ' SELECT const.ID, CARDS_A, CARDS_B FROM const, ' + newDbName + '.JOB;' +
+    ' DETACH DATABASE ' + newDbName + ';'
+  );
 
   console.log(`Merged from '${newDbFile}'`);
 
@@ -190,7 +195,9 @@ const getUndispatched = (limit) => {
       batchDict[j.BATCH_ID] = { jobs: [j] };
     }
   }
-  const batches = db.prepare(`SELECT ID, OPTIONS, PLAYER_A, PLAYER_B FROM BATCH WHERE ID IN (${Object.keys(batchDict).join(',')})`).all();
+  const batchIds = Object.keys(batchDict);
+  const placeholders = batchIds.map((_, i) => '?' + (i + 1)).join(',');
+  const batches = db.prepare('SELECT ID, OPTIONS, PLAYER_A, PLAYER_B FROM BATCH WHERE ID IN (' + placeholders + ')').all(...batchIds);
   for (const b of batches) {
     batchDict[b.ID].batch = {
       ID: b.ID,
@@ -203,7 +210,8 @@ const getUndispatched = (limit) => {
 };
 
 const markDispatched = (jobIds) => {
-  db.run(`UPDATE JOB SET DISPATCHED = CURRENT_TIMESTAMP WHERE ID IN (${jobIds.join(',')})`);
+  const placeholders = jobIds.map((_, i) => '?' + (i + 1)).join(',');
+  db.run('UPDATE JOB SET DISPATCHED = CURRENT_TIMESTAMP WHERE ID IN (' + placeholders + ')', ...jobIds);
 };
 
 let _insertBattles = null; // can't define while db is null
